@@ -15,9 +15,10 @@ pub(crate) fn match_describe_certificate_edd2f3a0f91460e77(
         let _prj_4 = _fld_2
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DomainValidation) -> ::std::option::Option<&crate::types::DomainStatus> {
-                    let _fld_3 = v.validation_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DomainValidation) -> ::std::option::Option<&crate::types::DomainStatus> {
+                    let _fld_3 = _v.validation_status.as_ref();
+                    _fld_3
                 }
                 map(v)
             })
@@ -55,9 +56,10 @@ pub(crate) fn match_describe_certificate_5b511d44cf4d9f812(
         let _prj_4 = _fld_2
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DomainValidation) -> ::std::option::Option<&crate::types::DomainStatus> {
-                    let _fld_3 = v.validation_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DomainValidation) -> ::std::option::Option<&crate::types::DomainStatus> {
+                    let _fld_3 = _v.validation_status.as_ref();
+                    _fld_3
                 }
                 map(v)
             })

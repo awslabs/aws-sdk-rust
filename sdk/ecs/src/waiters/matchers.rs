@@ -14,9 +14,10 @@ pub(crate) fn match_describe_services_499ce94a3ac316e04(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Failure) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.reason.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Failure) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.reason.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -52,9 +53,10 @@ pub(crate) fn match_describe_services_8f2b7a2837e52f740(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Service) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Service) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -90,9 +92,10 @@ pub(crate) fn match_describe_services_3aec8b75baa95f8d0(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Service) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Service) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -175,9 +178,10 @@ pub(crate) fn match_describe_tasks_78fef02bce63aae64(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Task) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.last_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Task) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.last_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -210,9 +214,10 @@ pub(crate) fn match_describe_tasks_499ce94a3ac316e04(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Failure) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.reason.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Failure) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.reason.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -245,9 +250,10 @@ pub(crate) fn match_describe_tasks_cb151b89a14ade877(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Task) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.last_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Task) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.last_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -281,9 +287,10 @@ pub(crate) fn match_describe_tasks_2f43971f90a3d02d9(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Task) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.last_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Task) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.last_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

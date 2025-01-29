@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -38,18 +39,18 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
                         if (true) == (partition_result.supports_dual_stack()) {
-                            if (api_type) == ("ControlPlane") {
+                            if (api_type.as_ref() as &str) == ("ControlPlane") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://neptune-graph-fips.");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&region);
+                                        out.push_str(&region.as_ref() as &str);
                                         out.push('.');
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -57,7 +58,7 @@ pub(super) fn resolve_endpoint(
                                     })
                                     .build());
                             }
-                            if (api_type) == ("DataPlane") {
+                            if (api_type.as_ref() as &str) == ("DataPlane") {
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                     "Invalid Configuration: fips endpoint is not supported for this API".to_string(),
                                 ));
@@ -74,13 +75,13 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (true) == (partition_result.supports_fips()) {
-                    if (api_type) == ("ControlPlane") {
+                    if (api_type.as_ref() as &str) == ("ControlPlane") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://neptune-graph-fips.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
@@ -88,7 +89,7 @@ pub(super) fn resolve_endpoint(
                             })
                             .build());
                     }
-                    if (api_type) == ("DataPlane") {
+                    if (api_type.as_ref() as &str) == ("DataPlane") {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: fips endpoint is not supported for this API".to_string(),
                         ));
@@ -103,13 +104,13 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_dual_stack) == (true) {
                 if (true) == (partition_result.supports_dual_stack()) {
-                    if (api_type) == ("ControlPlane") {
+                    if (api_type.as_ref() as &str) == ("ControlPlane") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://neptune-graph.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -117,13 +118,13 @@ pub(super) fn resolve_endpoint(
                             })
                             .build());
                     }
-                    if (api_type) == ("DataPlane") {
+                    if (api_type.as_ref() as &str) == ("DataPlane") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://neptune-graph.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push_str(".on.aws");
                                 out
                             })
@@ -137,13 +138,13 @@ pub(super) fn resolve_endpoint(
                     "DualStack is enabled but this partition does not support DualStack".to_string(),
                 ));
             }
-            if (api_type) == ("ControlPlane") {
+            if (api_type.as_ref() as &str) == ("ControlPlane") {
                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
                         out.push_str("https://neptune-graph.");
                         #[allow(clippy::needless_borrow)]
-                        out.push_str(&region);
+                        out.push_str(&region.as_ref() as &str);
                         out.push('.');
                         #[allow(clippy::needless_borrow)]
                         out.push_str(&partition_result.dns_suffix());
@@ -151,13 +152,13 @@ pub(super) fn resolve_endpoint(
                     })
                     .build());
             }
-            if (api_type) == ("DataPlane") {
+            if (api_type.as_ref() as &str) == ("DataPlane") {
                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url({
                         let mut out = String::new();
                         out.push_str("https://");
                         #[allow(clippy::needless_borrow)]
-                        out.push_str(&region);
+                        out.push_str(&region.as_ref() as &str);
                         out.push_str(".neptune-graph.");
                         #[allow(clippy::needless_borrow)]
                         out.push_str(&partition_result.dns_suffix());

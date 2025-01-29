@@ -29,14 +29,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -65,14 +66,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -101,14 +103,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -137,14 +140,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -173,14 +177,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -209,14 +214,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -247,14 +253,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -283,14 +290,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -319,14 +327,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -357,14 +366,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -393,14 +403,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -429,14 +440,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -467,14 +479,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -501,14 +514,15 @@ mod test {
                 .url("https://s3-outposts.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -535,14 +549,15 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -568,14 +583,15 @@ mod test {
                 .url("https://s3-control.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -602,14 +618,15 @@ mod test {
                 .url("https://s3-outposts.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -635,14 +652,15 @@ mod test {
                 .url("https://123456789012.s3-control.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -669,14 +687,15 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -705,14 +724,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -741,14 +761,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -777,14 +798,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -865,14 +887,15 @@ mod test {
                 .url("https://myid-1234.s3-control.us-west-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -902,14 +925,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -959,14 +983,15 @@ mod test {
                 .url("https://123456789012.control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -996,14 +1021,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1073,14 +1099,15 @@ mod test {
                 .url("https://beta.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1109,14 +1136,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1144,14 +1172,15 @@ mod test {
                 .url("https://beta.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1179,14 +1208,15 @@ mod test {
                 .url("https://beta.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1213,14 +1243,15 @@ mod test {
                 .url("https://s3-outposts-fips.us-east-2.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1248,14 +1279,15 @@ mod test {
                 .url("https://beta.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1304,14 +1336,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1339,14 +1372,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1374,14 +1408,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1409,14 +1444,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1444,14 +1480,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1479,14 +1516,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1514,14 +1552,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1549,14 +1588,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1584,14 +1624,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1619,14 +1660,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1654,14 +1696,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1689,14 +1732,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1724,14 +1768,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "af-south-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1759,14 +1804,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1794,14 +1840,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1829,14 +1876,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1864,14 +1912,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1967,14 +2016,15 @@ mod test {
                 .url("https://1234567890.s3-control.us-west-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2000,14 +2050,15 @@ mod test {
                 .url("https://1234567890.s3-control.dualstack.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2033,14 +2084,15 @@ mod test {
                 .url("https://1234567890.s3-control-fips.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2066,14 +2118,15 @@ mod test {
                 .url("https://123456789012.s3-control-fips.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2095,14 +2148,15 @@ mod test {
                 .url("https://s3-control.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2125,14 +2179,15 @@ mod test {
                 .url("https://s3-control-fips.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2155,14 +2210,15 @@ mod test {
                 .url("https://s3-control.dualstack.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2186,14 +2242,15 @@ mod test {
                 .url("https://s3-control-fips.dualstack.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2215,14 +2272,15 @@ mod test {
                 .url("https://s3-control.cn-north-1.amazonaws.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2263,14 +2321,15 @@ mod test {
                 .url("https://123456789012.s3-control.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2313,14 +2372,15 @@ mod test {
                 .url("https://123456789012.s3-control-fips.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2346,14 +2406,15 @@ mod test {
                 .url("https://123456789012.s3-control-fips.dualstack.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2378,14 +2439,15 @@ mod test {
                 .url("https://123456789012.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2459,14 +2521,15 @@ mod test {
                 .url("https://123456789012.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2490,14 +2553,15 @@ mod test {
                 .url("https://example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2521,14 +2585,15 @@ mod test {
                 .url("https://example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2687,14 +2752,15 @@ mod test {
                 .url("https://123456789012.beta.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2723,14 +2789,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2874,14 +2941,15 @@ mod test {
                 .url("https://s3-outposts.us-west-2.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2954,14 +3022,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -2989,14 +3058,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -3083,14 +3153,15 @@ mod test {
                 .header("x-amz-outpost-id", "op-01234567890123456")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3-outposts".to_string().into());
                         out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -3116,14 +3187,15 @@ mod test {
                 .url("https://10.0.1.12:433")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "snow".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -3148,14 +3220,15 @@ mod test {
                 .url("https://10.0.1.12:433")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "snow".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -3181,14 +3254,15 @@ mod test {
                 .url("https://10.0.1.12")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "snow".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -3214,14 +3288,15 @@ mod test {
                 .url("http://s3snow.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "s3".to_string().into());
                         out.insert("signingRegion".to_string(), "snow".to_string().into());
                         out.insert("disableDoubleEncoding".to_string(), true.into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );

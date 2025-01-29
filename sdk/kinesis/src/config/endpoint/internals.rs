@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -33,18 +34,18 @@ pub(super) fn resolve_endpoint(
             #[allow(unused_variables)]
             if let Some(region) = region {
                 #[allow(unused_variables)]
-                if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
                     if !((partition_result.name()) == ("aws-iso")) {
                         if !((partition_result.name()) == ("aws-iso-b")) {
                             #[allow(unused_variables)]
-                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(stream_arn, _diagnostic_collector) {
+                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(stream_arn.as_ref() as &str, _diagnostic_collector) {
                                 if crate::endpoint_lib::host::is_valid_host_label(arn.account_id(), false, _diagnostic_collector) {
                                     if crate::endpoint_lib::host::is_valid_host_label(arn.region(), false, _diagnostic_collector) {
                                         if (arn.service()) == ("kinesis") {
                                             #[allow(unused_variables)]
                                             if let Some(arn_type) = arn.resource_id().first().cloned() {
-                                                if !((arn_type) == ("")) {
-                                                    if (arn_type) == ("stream") {
+                                                if !((arn_type.as_ref() as &str) == ("")) {
+                                                    if (arn_type.as_ref() as &str) == ("stream") {
                                                         if (partition_result.name()) == (arn.partition()) {
                                                             #[allow(unused_variables)]
                                                             if let Some(operation_type) = operation_type {
@@ -60,10 +61,10 @@ pub(super) fn resolve_endpoint(
                                                                                         out.push_str(&arn.account_id());
                                                                                         out.push('.');
                                                                                         #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&operation_type);
+                                                                                        out.push_str(&operation_type.as_ref() as &str);
                                                                                         out.push_str("-kinesis-fips.");
                                                                                         #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&region);
+                                                                                        out.push_str(&region.as_ref() as &str);
                                                                                         out.push('.');
                                                                                         #[allow(clippy::needless_borrow)]
                                                                                         out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -89,10 +90,10 @@ pub(super) fn resolve_endpoint(
                                                                                 out.push_str(&arn.account_id());
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&operation_type);
+                                                                                out.push_str(&operation_type.as_ref() as &str);
                                                                                 out.push_str("-kinesis-fips.");
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&region);
+                                                                                out.push_str(&region.as_ref() as &str);
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
                                                                                 out.push_str(&partition_result.dns_suffix());
@@ -114,10 +115,10 @@ pub(super) fn resolve_endpoint(
                                                                                 out.push_str(&arn.account_id());
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&operation_type);
+                                                                                out.push_str(&operation_type.as_ref() as &str);
                                                                                 out.push_str("-kinesis.");
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&region);
+                                                                                out.push_str(&region.as_ref() as &str);
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
                                                                                 out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -138,10 +139,10 @@ pub(super) fn resolve_endpoint(
                                                                         out.push_str(&arn.account_id());
                                                                         out.push('.');
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&operation_type);
+                                                                        out.push_str(&operation_type.as_ref() as &str);
                                                                         out.push_str("-kinesis.");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&region);
+                                                                        out.push_str(&region.as_ref() as &str);
                                                                         out.push('.');
                                                                         #[allow(clippy::needless_borrow)]
                                                                         out.push_str(&partition_result.dns_suffix());
@@ -169,7 +170,7 @@ pub(super) fn resolve_endpoint(
                                                         let mut out = String::new();
                                                         out.push_str("Invalid ARN: Kinesis ARNs don't support `");
                                                         #[allow(clippy::needless_borrow)]
-                                                        out.push_str(&arn_type);
+                                                        out.push_str(&arn_type.as_ref() as &str);
                                                         out.push_str("` arn types.");
                                                         out
                                                     }));
@@ -211,18 +212,18 @@ pub(super) fn resolve_endpoint(
             #[allow(unused_variables)]
             if let Some(region) = region {
                 #[allow(unused_variables)]
-                if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
                     if !((partition_result.name()) == ("aws-iso")) {
                         if !((partition_result.name()) == ("aws-iso-b")) {
                             #[allow(unused_variables)]
-                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(consumer_arn, _diagnostic_collector) {
+                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(consumer_arn.as_ref() as &str, _diagnostic_collector) {
                                 if crate::endpoint_lib::host::is_valid_host_label(arn.account_id(), false, _diagnostic_collector) {
                                     if crate::endpoint_lib::host::is_valid_host_label(arn.region(), false, _diagnostic_collector) {
                                         if (arn.service()) == ("kinesis") {
                                             #[allow(unused_variables)]
                                             if let Some(arn_type) = arn.resource_id().first().cloned() {
-                                                if !((arn_type) == ("")) {
-                                                    if (arn_type) == ("stream") {
+                                                if !((arn_type.as_ref() as &str) == ("")) {
+                                                    if (arn_type.as_ref() as &str) == ("stream") {
                                                         if (partition_result.name()) == (arn.partition()) {
                                                             #[allow(unused_variables)]
                                                             if let Some(operation_type) = operation_type {
@@ -238,10 +239,10 @@ pub(super) fn resolve_endpoint(
                                                                                         out.push_str(&arn.account_id());
                                                                                         out.push('.');
                                                                                         #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&operation_type);
+                                                                                        out.push_str(&operation_type.as_ref() as &str);
                                                                                         out.push_str("-kinesis-fips.");
                                                                                         #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&region);
+                                                                                        out.push_str(&region.as_ref() as &str);
                                                                                         out.push('.');
                                                                                         #[allow(clippy::needless_borrow)]
                                                                                         out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -267,10 +268,10 @@ pub(super) fn resolve_endpoint(
                                                                                 out.push_str(&arn.account_id());
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&operation_type);
+                                                                                out.push_str(&operation_type.as_ref() as &str);
                                                                                 out.push_str("-kinesis-fips.");
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&region);
+                                                                                out.push_str(&region.as_ref() as &str);
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
                                                                                 out.push_str(&partition_result.dns_suffix());
@@ -292,10 +293,10 @@ pub(super) fn resolve_endpoint(
                                                                                 out.push_str(&arn.account_id());
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&operation_type);
+                                                                                out.push_str(&operation_type.as_ref() as &str);
                                                                                 out.push_str("-kinesis.");
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&region);
+                                                                                out.push_str(&region.as_ref() as &str);
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
                                                                                 out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -316,10 +317,10 @@ pub(super) fn resolve_endpoint(
                                                                         out.push_str(&arn.account_id());
                                                                         out.push('.');
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&operation_type);
+                                                                        out.push_str(&operation_type.as_ref() as &str);
                                                                         out.push_str("-kinesis.");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&region);
+                                                                        out.push_str(&region.as_ref() as &str);
                                                                         out.push('.');
                                                                         #[allow(clippy::needless_borrow)]
                                                                         out.push_str(&partition_result.dns_suffix());
@@ -347,7 +348,7 @@ pub(super) fn resolve_endpoint(
                                                         let mut out = String::new();
                                                         out.push_str("Invalid ARN: Kinesis ARNs don't support `");
                                                         #[allow(clippy::needless_borrow)]
-                                                        out.push_str(&arn_type);
+                                                        out.push_str(&arn_type.as_ref() as &str);
                                                         out.push_str("` arn types.");
                                                         out
                                                     }));
@@ -389,18 +390,18 @@ pub(super) fn resolve_endpoint(
             #[allow(unused_variables)]
             if let Some(region) = region {
                 #[allow(unused_variables)]
-                if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
                     if !((partition_result.name()) == ("aws-iso")) {
                         if !((partition_result.name()) == ("aws-iso-b")) {
                             #[allow(unused_variables)]
-                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(resource_arn, _diagnostic_collector) {
+                            if let Some(arn) = crate::endpoint_lib::arn::parse_arn(resource_arn.as_ref() as &str, _diagnostic_collector) {
                                 if crate::endpoint_lib::host::is_valid_host_label(arn.account_id(), false, _diagnostic_collector) {
                                     if crate::endpoint_lib::host::is_valid_host_label(arn.region(), false, _diagnostic_collector) {
                                         if (arn.service()) == ("kinesis") {
                                             #[allow(unused_variables)]
                                             if let Some(arn_type) = arn.resource_id().first().cloned() {
-                                                if !((arn_type) == ("")) {
-                                                    if (arn_type) == ("stream") {
+                                                if !((arn_type.as_ref() as &str) == ("")) {
+                                                    if (arn_type.as_ref() as &str) == ("stream") {
                                                         if (partition_result.name()) == (arn.partition()) {
                                                             #[allow(unused_variables)]
                                                             if let Some(operation_type) = operation_type {
@@ -416,10 +417,10 @@ pub(super) fn resolve_endpoint(
                                                                                         out.push_str(&arn.account_id());
                                                                                         out.push('.');
                                                                                         #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&operation_type);
+                                                                                        out.push_str(&operation_type.as_ref() as &str);
                                                                                         out.push_str("-kinesis-fips.");
                                                                                         #[allow(clippy::needless_borrow)]
-                                                                                        out.push_str(&region);
+                                                                                        out.push_str(&region.as_ref() as &str);
                                                                                         out.push('.');
                                                                                         #[allow(clippy::needless_borrow)]
                                                                                         out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -445,10 +446,10 @@ pub(super) fn resolve_endpoint(
                                                                                 out.push_str(&arn.account_id());
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&operation_type);
+                                                                                out.push_str(&operation_type.as_ref() as &str);
                                                                                 out.push_str("-kinesis-fips.");
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&region);
+                                                                                out.push_str(&region.as_ref() as &str);
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
                                                                                 out.push_str(&partition_result.dns_suffix());
@@ -470,10 +471,10 @@ pub(super) fn resolve_endpoint(
                                                                                 out.push_str(&arn.account_id());
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&operation_type);
+                                                                                out.push_str(&operation_type.as_ref() as &str);
                                                                                 out.push_str("-kinesis.");
                                                                                 #[allow(clippy::needless_borrow)]
-                                                                                out.push_str(&region);
+                                                                                out.push_str(&region.as_ref() as &str);
                                                                                 out.push('.');
                                                                                 #[allow(clippy::needless_borrow)]
                                                                                 out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -494,10 +495,10 @@ pub(super) fn resolve_endpoint(
                                                                         out.push_str(&arn.account_id());
                                                                         out.push('.');
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&operation_type);
+                                                                        out.push_str(&operation_type.as_ref() as &str);
                                                                         out.push_str("-kinesis.");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&region);
+                                                                        out.push_str(&region.as_ref() as &str);
                                                                         out.push('.');
                                                                         #[allow(clippy::needless_borrow)]
                                                                         out.push_str(&partition_result.dns_suffix());
@@ -525,7 +526,7 @@ pub(super) fn resolve_endpoint(
                                                         let mut out = String::new();
                                                         out.push_str("Invalid ARN: Kinesis ARNs don't support `");
                                                         #[allow(clippy::needless_borrow)]
-                                                        out.push_str(&arn_type);
+                                                        out.push_str(&arn_type.as_ref() as &str);
                                                         out.push_str("` arn types.");
                                                         out
                                                     }));
@@ -578,7 +579,7 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
@@ -588,7 +589,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://kinesis-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -610,7 +611,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://kinesis.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push_str(".amazonaws.com");
                                 out
                             })
@@ -621,7 +622,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://kinesis-fips.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
@@ -640,7 +641,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://kinesis.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -657,7 +658,7 @@ pub(super) fn resolve_endpoint(
                     let mut out = String::new();
                     out.push_str("https://kinesis.");
                     #[allow(clippy::needless_borrow)]
-                    out.push_str(&region);
+                    out.push_str(&region.as_ref() as &str);
                     out.push('.');
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dns_suffix());

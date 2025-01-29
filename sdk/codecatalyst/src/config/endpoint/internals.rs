@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -54,7 +55,7 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (false) {
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(

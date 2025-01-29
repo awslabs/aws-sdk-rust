@@ -14,9 +14,10 @@ pub(crate) fn match_describe_instance_health_b3a4522e5b7688145(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::InstanceState) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::InstanceState) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -52,9 +53,10 @@ pub(crate) fn match_describe_instance_health_9a046391edf3ad018(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::InstanceState) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::InstanceState) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -106,9 +108,10 @@ pub(crate) fn match_describe_instance_health_6685ca8af458dbf64(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::InstanceState) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::InstanceState) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

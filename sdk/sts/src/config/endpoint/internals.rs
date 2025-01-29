@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -26,10 +27,10 @@ pub(super) fn resolve_endpoint(
             #[allow(unused_variables)]
             if let Some(region) = region {
                 #[allow(unused_variables)]
-                if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (false) {
-                            if (region) == ("ap-northeast-1") {
+                            if (region.as_ref() as &str) == ("ap-northeast-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -44,7 +45,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("ap-south-1") {
+                            if (region.as_ref() as &str) == ("ap-south-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -59,7 +60,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("ap-southeast-1") {
+                            if (region.as_ref() as &str) == ("ap-southeast-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -74,7 +75,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("ap-southeast-2") {
+                            if (region.as_ref() as &str) == ("ap-southeast-2") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -89,7 +90,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("aws-global") {
+                            if (region.as_ref() as &str) == ("aws-global") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -104,7 +105,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("ca-central-1") {
+                            if (region.as_ref() as &str) == ("ca-central-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -119,7 +120,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("eu-central-1") {
+                            if (region.as_ref() as &str) == ("eu-central-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -134,7 +135,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("eu-north-1") {
+                            if (region.as_ref() as &str) == ("eu-north-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -149,7 +150,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("eu-west-1") {
+                            if (region.as_ref() as &str) == ("eu-west-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -164,7 +165,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("eu-west-2") {
+                            if (region.as_ref() as &str) == ("eu-west-2") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -179,7 +180,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("eu-west-3") {
+                            if (region.as_ref() as &str) == ("eu-west-3") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -194,7 +195,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("sa-east-1") {
+                            if (region.as_ref() as &str) == ("sa-east-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -209,7 +210,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("us-east-1") {
+                            if (region.as_ref() as &str) == ("us-east-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -224,7 +225,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("us-east-2") {
+                            if (region.as_ref() as &str) == ("us-east-2") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -239,7 +240,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("us-west-1") {
+                            if (region.as_ref() as &str) == ("us-west-1") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -254,7 +255,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            if (region) == ("us-west-2") {
+                            if (region.as_ref() as &str) == ("us-west-2") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
@@ -274,7 +275,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://sts.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dns_suffix());
@@ -314,7 +315,7 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
@@ -324,7 +325,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://sts-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -346,7 +347,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://sts.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push_str(".amazonaws.com");
                                 out
                             })
@@ -357,7 +358,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://sts-fips.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
@@ -376,7 +377,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://sts.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -388,7 +389,7 @@ pub(super) fn resolve_endpoint(
                     "DualStack is enabled but this partition does not support DualStack".to_string(),
                 ));
             }
-            if (region) == ("aws-global") {
+            if (region.as_ref() as &str) == ("aws-global") {
                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url("https://sts.amazonaws.com".to_string())
                     .property(
@@ -408,7 +409,7 @@ pub(super) fn resolve_endpoint(
                     let mut out = String::new();
                     out.push_str("https://sts.");
                     #[allow(clippy::needless_borrow)]
-                    out.push_str(&region);
+                    out.push_str(&region.as_ref() as &str);
                     out.push('.');
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dns_suffix());

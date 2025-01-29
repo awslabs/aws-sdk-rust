@@ -14,9 +14,10 @@ pub(crate) fn match_describe_clusters_d94f699084f934f23(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.cluster_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.cluster_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -53,9 +54,10 @@ pub(crate) fn match_describe_clusters_36fb459f8f7fb96c3(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.cluster_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.cluster_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -106,9 +108,10 @@ pub(crate) fn match_describe_clusters_578c8eab71e8a5d97(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.cluster_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.cluster_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -144,9 +147,10 @@ pub(crate) fn match_describe_clusters_fdd41c9d20f5639c9(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.cluster_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.cluster_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -182,10 +186,11 @@ pub(crate) fn match_describe_clusters_99b2faa1a0233f771(
         let _prj_4 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.restore_status.as_ref()?;
-                    let _fld_3 = _fld_2.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Cluster) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.restore_status.as_ref();
+                    let _fld_3 = _fld_2.and_then(|v| v.status.as_ref());
+                    _fld_3
                 }
                 map(v)
             })
@@ -222,9 +227,10 @@ pub(crate) fn match_describe_cluster_snapshots_9940112fa5e89d7d9(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Snapshot) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Snapshot) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -261,9 +267,10 @@ pub(crate) fn match_describe_cluster_snapshots_c752b4060229720c6(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Snapshot) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Snapshot) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -299,9 +306,10 @@ pub(crate) fn match_describe_cluster_snapshots_305bbaff8086662e2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Snapshot) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Snapshot) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

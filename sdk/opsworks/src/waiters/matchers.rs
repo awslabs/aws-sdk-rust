@@ -28,9 +28,10 @@ pub(crate) fn match_describe_deployments_e773d13ad26dfe4cc(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Deployment) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Deployment) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -67,9 +68,10 @@ pub(crate) fn match_describe_deployments_dc40b1ad835f576c0(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Deployment) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Deployment) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -105,9 +107,10 @@ pub(crate) fn match_describe_instances_879e5860f33174a71(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -144,9 +147,10 @@ pub(crate) fn match_describe_instances_ae8d9fe9dcb532dd4(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -182,9 +186,10 @@ pub(crate) fn match_describe_instances_cb65e3427d01d7667(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -220,9 +225,10 @@ pub(crate) fn match_describe_instances_c942b3f1e73dfae7f(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -258,9 +264,10 @@ pub(crate) fn match_describe_instances_dad92608d71b243c3(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -296,9 +303,10 @@ pub(crate) fn match_describe_instances_6eb5e99b738450c30(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -334,9 +342,10 @@ pub(crate) fn match_describe_instances_f086d9d7330075a64(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -372,9 +381,10 @@ pub(crate) fn match_describe_instances_e88d0bb4db07224fa(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -410,9 +420,10 @@ pub(crate) fn match_describe_instances_8d7f49fcbbbfabdf5(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -448,9 +459,10 @@ pub(crate) fn match_describe_instances_20d7399f283b555ce(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -487,9 +499,10 @@ pub(crate) fn match_describe_instances_e418e6a07b1ce7336(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -526,9 +539,10 @@ pub(crate) fn match_describe_instances_3d4fffbbb77860e29(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -564,9 +578,10 @@ pub(crate) fn match_describe_instances_a139a4c958fa25611(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -602,9 +617,10 @@ pub(crate) fn match_describe_instances_5e5e2df8010ad623d(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -640,9 +656,10 @@ pub(crate) fn match_describe_instances_23c8afba15d15ee2a(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -678,9 +695,10 @@ pub(crate) fn match_describe_instances_0f39a1b9274d8ccda(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -716,9 +734,10 @@ pub(crate) fn match_describe_instances_7510952b0735ba013(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -770,9 +789,10 @@ pub(crate) fn match_describe_instances_0ec6c686a5d9310f4(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Instance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

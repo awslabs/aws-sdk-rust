@@ -14,10 +14,11 @@ pub(crate) fn match_describe_load_balancers_c74fe109e496dabfe(
         let _prj_4 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::LoadBalancer) -> ::std::option::Option<&crate::types::LoadBalancerStateEnum> {
-                    let _fld_2 = v.state.as_ref()?;
-                    let _fld_3 = _fld_2.code.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::LoadBalancer) -> ::std::option::Option<&crate::types::LoadBalancerStateEnum> {
+                    let _fld_2 = _v.state.as_ref();
+                    let _fld_3 = _fld_2.and_then(|v| v.code.as_ref());
+                    _fld_3
                 }
                 map(v)
             })
@@ -54,10 +55,11 @@ pub(crate) fn match_describe_load_balancers_6a8c1dde616c542f3(
         let _prj_4 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::LoadBalancer) -> ::std::option::Option<&crate::types::LoadBalancerStateEnum> {
-                    let _fld_2 = v.state.as_ref()?;
-                    let _fld_3 = _fld_2.code.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::LoadBalancer) -> ::std::option::Option<&crate::types::LoadBalancerStateEnum> {
+                    let _fld_2 = _v.state.as_ref();
+                    let _fld_3 = _fld_2.and_then(|v| v.code.as_ref());
+                    _fld_3
                 }
                 map(v)
             })
@@ -133,10 +135,11 @@ pub(crate) fn match_describe_target_health_d0e4fe503cd5fcfff(
         let _prj_4 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::TargetHealthDescription) -> ::std::option::Option<&crate::types::TargetHealthStateEnum> {
-                    let _fld_2 = v.target_health.as_ref()?;
-                    let _fld_3 = _fld_2.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::TargetHealthDescription) -> ::std::option::Option<&crate::types::TargetHealthStateEnum> {
+                    let _fld_2 = _v.target_health.as_ref();
+                    let _fld_3 = _fld_2.and_then(|v| v.state.as_ref());
+                    _fld_3
                 }
                 map(v)
             })
@@ -173,10 +176,11 @@ pub(crate) fn match_describe_target_health_f8f2fa471982b9aa9(
         let _prj_4 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::TargetHealthDescription) -> ::std::option::Option<&crate::types::TargetHealthStateEnum> {
-                    let _fld_2 = v.target_health.as_ref()?;
-                    let _fld_3 = _fld_2.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_3)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::TargetHealthDescription) -> ::std::option::Option<&crate::types::TargetHealthStateEnum> {
+                    let _fld_2 = _v.target_health.as_ref();
+                    let _fld_3 = _fld_2.and_then(|v| v.state.as_ref());
+                    _fld_3
                 }
                 map(v)
             })

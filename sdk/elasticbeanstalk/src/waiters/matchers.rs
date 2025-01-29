@@ -14,9 +14,10 @@ pub(crate) fn match_describe_environments_0c537620ab36f6939(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -53,9 +54,10 @@ pub(crate) fn match_describe_environments_5274bc882067d5d8d(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -92,9 +94,10 @@ pub(crate) fn match_describe_environments_ed794ae98072768c5(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -131,9 +134,10 @@ pub(crate) fn match_describe_environments_0f48372938831eb5d(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -170,9 +174,10 @@ pub(crate) fn match_describe_environments_360c965395e4199b1(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::EnvironmentDescription) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

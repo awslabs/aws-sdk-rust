@@ -78,9 +78,10 @@ pub(crate) fn match_describe_stacks_f35395f0327f376d6(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -114,9 +115,10 @@ pub(crate) fn match_describe_stacks_dc87c5ac7c6a902ad(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -150,9 +152,10 @@ pub(crate) fn match_describe_stacks_f8f6b044b99cc99bd(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -186,9 +189,10 @@ pub(crate) fn match_describe_stacks_22b439202b116871b(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -222,9 +226,10 @@ pub(crate) fn match_describe_stacks_37db6852203f32d7f(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -258,9 +263,10 @@ pub(crate) fn match_describe_stacks_e7d5a7b6d4760fc28(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -294,9 +300,10 @@ pub(crate) fn match_describe_stacks_3f3b8409d19eae7ad(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -330,9 +337,10 @@ pub(crate) fn match_describe_stacks_f24e3cfbe8d3960ee(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -366,9 +374,10 @@ pub(crate) fn match_describe_stacks_eff5471a4e628d191(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -402,9 +411,10 @@ pub(crate) fn match_describe_stacks_60fe420bf487ae5bb(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -437,9 +447,10 @@ pub(crate) fn match_describe_stacks_f00be7fd1d73ae94d(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -472,9 +483,10 @@ pub(crate) fn match_describe_stacks_306ff5cd7dcb0b2f9(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -507,9 +519,10 @@ pub(crate) fn match_describe_stacks_13ac2c766136b1660(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -542,9 +555,10 @@ pub(crate) fn match_describe_stacks_682ca8dbac14bdcb2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -589,9 +603,10 @@ pub(crate) fn match_describe_stacks_896ea52221d791545(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -625,9 +640,10 @@ pub(crate) fn match_describe_stacks_9f5f11f5ce03a5539(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -660,9 +676,10 @@ pub(crate) fn match_describe_stacks_209974ab29da8709a(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -695,9 +712,10 @@ pub(crate) fn match_describe_stacks_b95b325a3695753bf(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -730,9 +748,10 @@ pub(crate) fn match_describe_stacks_b6bfd2655587a65a2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -772,9 +791,10 @@ pub(crate) fn match_describe_stacks_c3cc6842562f80831(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -808,9 +828,10 @@ pub(crate) fn match_describe_stacks_4e936bef118898d9e(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -843,9 +864,10 @@ pub(crate) fn match_describe_stacks_35c476527c6dc36ba(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -878,9 +900,10 @@ pub(crate) fn match_describe_stacks_8535e4f7e4074b6d9(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -913,9 +936,10 @@ pub(crate) fn match_describe_stacks_59ddbd273fc923fdf(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
-                    let _fld_2 = v.stack_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Stack) -> ::std::option::Option<&crate::types::StackStatus> {
+                    let _fld_2 = _v.stack_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

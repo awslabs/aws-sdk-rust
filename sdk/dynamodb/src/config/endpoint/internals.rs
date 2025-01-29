@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -40,8 +41,8 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
-            if (region) == ("local") {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+            if (region.as_ref() as &str) == ("local") {
                 if (*use_fips) == (true) {
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "Invalid Configuration: FIPS and local endpoint are not supported".to_string(),
@@ -68,7 +69,7 @@ pub(super) fn resolve_endpoint(
             }
             #[allow(unused_variables)]
             if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                if (account_id_endpoint_mode) == ("required") {
+                if (account_id_endpoint_mode.as_ref() as &str) == ("required") {
                     if !(account_id.is_some()) {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded.".to_string(),
@@ -81,7 +82,7 @@ pub(super) fn resolve_endpoint(
                 if (partition_result.name()) == ("aws") {
                     if !((*use_fips) == (true)) {
                         if !((*use_dual_stack) == (true)) {
-                            if !(crate::endpoint_lib::host::is_valid_host_label(account_id, false, _diagnostic_collector)) {
+                            if !(crate::endpoint_lib::host::is_valid_host_label(account_id.as_ref() as &str, false, _diagnostic_collector)) {
                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                     "Credentials-sourced account ID parameter is invalid".to_string(),
                                 ));
@@ -96,13 +97,13 @@ pub(super) fn resolve_endpoint(
                         if (partition_result.supports_dual_stack()) == (true) {
                             #[allow(unused_variables)]
                             if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                                if (account_id_endpoint_mode) == ("disabled") {
+                                if (account_id_endpoint_mode.as_ref() as &str) == ("disabled") {
                                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                         .url({
                                             let mut out = String::new();
                                             out.push_str("https://dynamodb-fips.");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&region);
+                                            out.push_str(&region.as_ref() as &str);
                                             out.push('.');
                                             #[allow(clippy::needless_borrow)]
                                             out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -116,7 +117,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://dynamodb-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -135,13 +136,13 @@ pub(super) fn resolve_endpoint(
                     if (partition_result.name()) == ("aws-us-gov") {
                         #[allow(unused_variables)]
                         if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                            if (account_id_endpoint_mode) == ("disabled") {
+                            if (account_id_endpoint_mode.as_ref() as &str) == ("disabled") {
                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://dynamodb.");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&region);
+                                        out.push_str(&region.as_ref() as &str);
                                         out.push('.');
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
@@ -155,7 +156,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://dynamodb.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
@@ -165,13 +166,13 @@ pub(super) fn resolve_endpoint(
                     }
                     #[allow(unused_variables)]
                     if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                        if (account_id_endpoint_mode) == ("disabled") {
+                        if (account_id_endpoint_mode.as_ref() as &str) == ("disabled") {
                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
                                     out.push_str("https://dynamodb-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dns_suffix());
@@ -185,7 +186,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://dynamodb-fips.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
@@ -201,13 +202,13 @@ pub(super) fn resolve_endpoint(
                 if (partition_result.supports_dual_stack()) == (true) {
                     #[allow(unused_variables)]
                     if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                        if (account_id_endpoint_mode) == ("disabled") {
+                        if (account_id_endpoint_mode.as_ref() as &str) == ("disabled") {
                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
                                     out.push_str("https://dynamodb.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -221,7 +222,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://dynamodb.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -235,13 +236,13 @@ pub(super) fn resolve_endpoint(
             }
             #[allow(unused_variables)]
             if let Some(account_id_endpoint_mode) = account_id_endpoint_mode {
-                if (account_id_endpoint_mode) == ("disabled") {
+                if (account_id_endpoint_mode.as_ref() as &str) == ("disabled") {
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();
                             out.push_str("https://dynamodb.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
@@ -260,10 +261,10 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&account_id);
+                                    out.push_str(&account_id.as_ref() as &str);
                                     out.push_str(".ddb.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dns_suffix());
@@ -279,7 +280,7 @@ pub(super) fn resolve_endpoint(
                     let mut out = String::new();
                     out.push_str("https://dynamodb.");
                     #[allow(clippy::needless_borrow)]
-                    out.push_str(&region);
+                    out.push_str(&region.as_ref() as &str);
                     out.push('.');
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dns_suffix());

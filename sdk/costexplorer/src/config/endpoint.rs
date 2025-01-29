@@ -24,13 +24,14 @@ mod test {
                 .url("https://ce.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "ce".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -114,13 +115,14 @@ mod test {
                 .url("https://ce.us-east-1.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "ce".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -144,13 +146,14 @@ mod test {
                 .url("https://ce.cn-northwest-1.amazonaws.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "ce".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -234,13 +237,14 @@ mod test {
                 .url("https://ce.cn-northwest-1.amazonaws.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "ce".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );

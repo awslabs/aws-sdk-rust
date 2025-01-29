@@ -11,9 +11,10 @@ pub(crate) fn match_describe_fleets_237cd0840475aef2b(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -47,9 +48,10 @@ pub(crate) fn match_describe_fleets_2e777a91935e73369(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -82,9 +84,10 @@ pub(crate) fn match_describe_fleets_1130b655dacd8714e(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -117,9 +120,10 @@ pub(crate) fn match_describe_fleets_b9965ae4e33017a8f(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -153,9 +157,10 @@ pub(crate) fn match_describe_fleets_f64bfec40e415273b(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -188,9 +193,10 @@ pub(crate) fn match_describe_fleets_f6a4e1628fea39925(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
-                    let _fld_2 = v.state.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Fleet) -> ::std::option::Option<&crate::types::FleetState> {
+                    let _fld_2 = _v.state.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

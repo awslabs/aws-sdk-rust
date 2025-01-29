@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -33,13 +34,13 @@ pub(super) fn resolve_endpoint(
     let use_arn_region = &_params.use_arn_region;
     #[allow(unused_variables)]
     if let Some(region) = region {
-        if (region) == ("snow") {
+        if (region.as_ref() as &str) == ("snow") {
             #[allow(unused_variables)]
             if let Some(endpoint) = endpoint {
                 #[allow(unused_variables)]
-                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) {
+                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
                     #[allow(unused_variables)]
-                    if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                    if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
                         if (*use_dual_stack) == (true) {
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                 "S3 Snow does not support DualStack".to_string(),
@@ -84,7 +85,7 @@ pub(super) fn resolve_endpoint(
         #[allow(unused_variables)]
         if let Some(outpost_id) = outpost_id {
             #[allow(unused_variables)]
-            if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+            if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
                 if (*use_fips) == (true) {
                     if (partition_result.name()) == ("aws-cn") {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -104,13 +105,13 @@ pub(super) fn resolve_endpoint(
                 }
                 #[allow(unused_variables)]
                 if let Some(account_id) = account_id {
-                    if !(crate::endpoint_lib::host::is_valid_host_label(account_id, false, _diagnostic_collector)) {
+                    if !(crate::endpoint_lib::host::is_valid_host_label(account_id.as_ref() as &str, false, _diagnostic_collector)) {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "AccountId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                         ));
                     }
                 }
-                if !(crate::endpoint_lib::host::is_valid_host_label(outpost_id, false, _diagnostic_collector)) {
+                if !(crate::endpoint_lib::host::is_valid_host_label(outpost_id.as_ref() as &str, false, _diagnostic_collector)) {
                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                         "OutpostId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                     ));
@@ -123,11 +124,11 @@ pub(super) fn resolve_endpoint(
                         ));
                     }
                 }
-                if crate::endpoint_lib::host::is_valid_host_label(region, true, _diagnostic_collector) {
+                if crate::endpoint_lib::host::is_valid_host_label(region.as_ref() as &str, true, _diagnostic_collector) {
                     #[allow(unused_variables)]
                     if let Some(endpoint) = endpoint {
                         #[allow(unused_variables)]
-                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) {
+                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
@@ -161,7 +162,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://s3-outposts-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -187,7 +188,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://s3-outposts-fips.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
@@ -212,7 +213,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://s3-outposts.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -236,7 +237,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://s3-outposts.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
@@ -268,14 +269,14 @@ pub(super) fn resolve_endpoint(
         #[allow(unused_variables)]
         if let Some(access_point_name) = access_point_name {
             #[allow(unused_variables)]
-            if let Some(access_point_arn) = crate::endpoint_lib::arn::parse_arn(access_point_name, _diagnostic_collector) {
+            if let Some(access_point_arn) = crate::endpoint_lib::arn::parse_arn(access_point_name.as_ref() as &str, _diagnostic_collector) {
                 #[allow(unused_variables)]
                 if let Some(arn_type) = access_point_arn.resource_id().first().cloned() {
-                    if !((arn_type) == ("")) {
+                    if !((arn_type.as_ref() as &str) == ("")) {
                         if (access_point_arn.service()) == ("s3-outposts") {
                             #[allow(unused_variables)]
                             if let Some(outpost_id) = access_point_arn.resource_id().get(1).cloned() {
-                                if crate::endpoint_lib::host::is_valid_host_label(outpost_id, false, _diagnostic_collector) {
+                                if crate::endpoint_lib::host::is_valid_host_label(outpost_id.as_ref() as &str, false, _diagnostic_collector) {
                                     #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
                                         if (*use_dual_stack) == (true) {
@@ -287,7 +288,7 @@ pub(super) fn resolve_endpoint(
                                     #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
-                                            if !((access_point_arn.region()) == (region)) {
+                                            if !((access_point_arn.region()) == (region.as_ref() as &str)) {
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                                     let mut out = String::new();
                                                     out.push_str("Invalid configuration: region from ARN `");
@@ -295,7 +296,7 @@ pub(super) fn resolve_endpoint(
                                                     out.push_str(&access_point_arn.region());
                                                     out.push_str("` does not match client region `");
                                                     #[allow(clippy::needless_borrow)]
-                                                    out.push_str(&region);
+                                                    out.push_str(&region.as_ref() as &str);
                                                     out.push_str("` and UseArnRegion is `false`");
                                                     out
                                                 }));
@@ -303,7 +304,9 @@ pub(super) fn resolve_endpoint(
                                         }
                                     }
                                     #[allow(unused_variables)]
-                                    if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                                    if let Some(partition_result) =
+                                        partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector)
+                                    {
                                         #[allow(unused_variables)]
                                         if let Some(arn_partition) =
                                             partition_resolver.resolve_partition(access_point_arn.region(), _diagnostic_collector)
@@ -322,7 +325,7 @@ pub(super) fn resolve_endpoint(
                                                         ) {
                                                             #[allow(unused_variables)]
                                                             if let Some(account_id) = account_id {
-                                                                if !((account_id) == (access_point_arn.account_id())) {
+                                                                if !((account_id.as_ref() as &str) == (access_point_arn.account_id())) {
                                                                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                                                         let mut out = String::new();
                                                                         out.push_str("Invalid ARN: the accountId specified in the ARN (`");
@@ -330,7 +333,7 @@ pub(super) fn resolve_endpoint(
                                                                         out.push_str(&access_point_arn.account_id());
                                                                         out.push_str("`) does not match the parameter (`");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&account_id);
+                                                                        out.push_str(&account_id.as_ref() as &str);
                                                                         out.push_str("`)");
                                                                         out
                                                                     }));
@@ -340,7 +343,7 @@ pub(super) fn resolve_endpoint(
                                                             if let Some(outpost_type) = access_point_arn.resource_id().get(2).cloned() {
                                                                 #[allow(unused_variables)]
                                                                 if let Some(access_point_name) = access_point_arn.resource_id().get(3).cloned() {
-                                                                    if (outpost_type) == ("accesspoint") {
+                                                                    if (outpost_type.as_ref() as &str) == ("accesspoint") {
                                                                         if (*use_fips) == (true) {
                                                                             if (*use_dual_stack) == (true) {
                                                                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -467,7 +470,7 @@ pub(super) fn resolve_endpoint(
                                                                         if let Some(endpoint) = endpoint {
                                                                             #[allow(unused_variables)]
                                                                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                                                                endpoint,
+                                                                                endpoint.as_ref() as &str,
                                                                                 _diagnostic_collector,
                                                                             ) {
                                                                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -557,7 +560,7 @@ pub(super) fn resolve_endpoint(
                                                                         let mut out = String::new();
                                                                         out.push_str("Expected an outpost type `accesspoint`, found `");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&outpost_type);
+                                                                        out.push_str(&outpost_type.as_ref() as &str);
                                                                         out.push('`');
                                                                         out
                                                                     }));
@@ -622,7 +625,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&outpost_id);
+                                    out.push_str(&outpost_id.as_ref() as &str);
                                     out.push('`');
                                     out
                                 }));
@@ -646,14 +649,14 @@ pub(super) fn resolve_endpoint(
         #[allow(unused_variables)]
         if let Some(bucket) = bucket {
             #[allow(unused_variables)]
-            if let Some(bucket_arn) = crate::endpoint_lib::arn::parse_arn(bucket, _diagnostic_collector) {
+            if let Some(bucket_arn) = crate::endpoint_lib::arn::parse_arn(bucket.as_ref() as &str, _diagnostic_collector) {
                 #[allow(unused_variables)]
                 if let Some(arn_type) = bucket_arn.resource_id().first().cloned() {
-                    if !((arn_type) == ("")) {
+                    if !((arn_type.as_ref() as &str) == ("")) {
                         if (bucket_arn.service()) == ("s3-outposts") {
                             #[allow(unused_variables)]
                             if let Some(outpost_id) = bucket_arn.resource_id().get(1).cloned() {
-                                if crate::endpoint_lib::host::is_valid_host_label(outpost_id, false, _diagnostic_collector) {
+                                if crate::endpoint_lib::host::is_valid_host_label(outpost_id.as_ref() as &str, false, _diagnostic_collector) {
                                     #[allow(unused_variables)]
                                     if let Some(endpoint) = endpoint {
                                         if (*use_dual_stack) == (true) {
@@ -665,7 +668,7 @@ pub(super) fn resolve_endpoint(
                                     #[allow(unused_variables)]
                                     if let Some(use_arn_region) = use_arn_region {
                                         if (*use_arn_region) == (false) {
-                                            if !((bucket_arn.region()) == (region)) {
+                                            if !((bucket_arn.region()) == (region.as_ref() as &str)) {
                                                 return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                                     let mut out = String::new();
                                                     out.push_str("Invalid configuration: region from ARN `");
@@ -673,7 +676,7 @@ pub(super) fn resolve_endpoint(
                                                     out.push_str(&bucket_arn.region());
                                                     out.push_str("` does not match client region `");
                                                     #[allow(clippy::needless_borrow)]
-                                                    out.push_str(&region);
+                                                    out.push_str(&region.as_ref() as &str);
                                                     out.push_str("` and UseArnRegion is `false`");
                                                     out
                                                 }));
@@ -683,7 +686,9 @@ pub(super) fn resolve_endpoint(
                                     #[allow(unused_variables)]
                                     if let Some(arn_partition) = partition_resolver.resolve_partition(bucket_arn.region(), _diagnostic_collector) {
                                         #[allow(unused_variables)]
-                                        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                                        if let Some(partition_result) =
+                                            partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector)
+                                        {
                                             if (arn_partition.name()) == (partition_result.name()) {
                                                 if crate::endpoint_lib::host::is_valid_host_label(bucket_arn.region(), true, _diagnostic_collector) {
                                                     if !((bucket_arn.account_id()) == ("")) {
@@ -694,7 +699,7 @@ pub(super) fn resolve_endpoint(
                                                         ) {
                                                             #[allow(unused_variables)]
                                                             if let Some(account_id) = account_id {
-                                                                if !((account_id) == (bucket_arn.account_id())) {
+                                                                if !((account_id.as_ref() as &str) == (bucket_arn.account_id())) {
                                                                     return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                                                         let mut out = String::new();
                                                                         out.push_str("Invalid ARN: the accountId specified in the ARN (`");
@@ -702,7 +707,7 @@ pub(super) fn resolve_endpoint(
                                                                         out.push_str(&bucket_arn.account_id());
                                                                         out.push_str("`) does not match the parameter (`");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&account_id);
+                                                                        out.push_str(&account_id.as_ref() as &str);
                                                                         out.push_str("`)");
                                                                         out
                                                                     }));
@@ -712,7 +717,7 @@ pub(super) fn resolve_endpoint(
                                                             if let Some(outpost_type) = bucket_arn.resource_id().get(2).cloned() {
                                                                 #[allow(unused_variables)]
                                                                 if let Some(bucket_name) = bucket_arn.resource_id().get(3).cloned() {
-                                                                    if (outpost_type) == ("bucket") {
+                                                                    if (outpost_type.as_ref() as &str) == ("bucket") {
                                                                         if (*use_fips) == (true) {
                                                                             if (*use_dual_stack) == (true) {
                                                                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -836,7 +841,7 @@ pub(super) fn resolve_endpoint(
                                                                         if let Some(endpoint) = endpoint {
                                                                             #[allow(unused_variables)]
                                                                             if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
-                                                                                endpoint,
+                                                                                endpoint.as_ref() as &str,
                                                                                 _diagnostic_collector,
                                                                             ) {
                                                                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
@@ -923,7 +928,7 @@ pub(super) fn resolve_endpoint(
                                                                         let mut out = String::new();
                                                                         out.push_str("Invalid ARN: Expected an outpost type `bucket`, found `");
                                                                         #[allow(clippy::needless_borrow)]
-                                                                        out.push_str(&outpost_type);
+                                                                        out.push_str(&outpost_type.as_ref() as &str);
                                                                         out.push('`');
                                                                         out
                                                                     }));
@@ -988,7 +993,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&outpost_id);
+                                    out.push_str(&outpost_id.as_ref() as &str);
                                     out.push('`');
                                     out
                                 }));
@@ -1010,8 +1015,8 @@ pub(super) fn resolve_endpoint(
             }
         }
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
-            if crate::endpoint_lib::host::is_valid_host_label(region, true, _diagnostic_collector) {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+            if crate::endpoint_lib::host::is_valid_host_label(region.as_ref() as &str, true, _diagnostic_collector) {
                 if (*use_fips) == (true) {
                     if (partition_result.name()) == ("aws-cn") {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -1031,7 +1036,7 @@ pub(super) fn resolve_endpoint(
                 }
                 #[allow(unused_variables)]
                 if let Some(account_id) = account_id {
-                    if !(crate::endpoint_lib::host::is_valid_host_label(account_id, false, _diagnostic_collector)) {
+                    if !(crate::endpoint_lib::host::is_valid_host_label(account_id.as_ref() as &str, false, _diagnostic_collector)) {
                         return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "AccountId must only contain a-z, A-Z, 0-9 and `-`.".to_string(),
                         ));
@@ -1040,7 +1045,7 @@ pub(super) fn resolve_endpoint(
                 #[allow(unused_variables)]
                 if let Some(endpoint) = endpoint {
                     #[allow(unused_variables)]
-                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) {
+                    if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
                         if (*use_dual_stack) == (true) {
                             return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                                 "Invalid Configuration: DualStack and custom endpoint are not supported".to_string(),
@@ -1058,7 +1063,7 @@ pub(super) fn resolve_endpoint(
                                             out.push_str(&url.scheme());
                                             out.push_str("://");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&account_id);
+                                            out.push_str(&account_id.as_ref() as &str);
                                             out.push('.');
                                             #[allow(clippy::needless_borrow)]
                                             out.push_str(&url.authority());
@@ -1119,10 +1124,10 @@ pub(super) fn resolve_endpoint(
                                             let mut out = String::new();
                                             out.push_str("https://");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&account_id);
+                                            out.push_str(&account_id.as_ref() as &str);
                                             out.push_str(".s3-control-fips.dualstack.");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&region);
+                                            out.push_str(&region.as_ref() as &str);
                                             out.push('.');
                                             #[allow(clippy::needless_borrow)]
                                             out.push_str(&partition_result.dns_suffix());
@@ -1152,7 +1157,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://s3-control-fips.dualstack.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
@@ -1184,10 +1189,10 @@ pub(super) fn resolve_endpoint(
                                             let mut out = String::new();
                                             out.push_str("https://");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&account_id);
+                                            out.push_str(&account_id.as_ref() as &str);
                                             out.push_str(".s3-control-fips.");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&region);
+                                            out.push_str(&region.as_ref() as &str);
                                             out.push('.');
                                             #[allow(clippy::needless_borrow)]
                                             out.push_str(&partition_result.dns_suffix());
@@ -1217,7 +1222,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://s3-control-fips.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
@@ -1249,10 +1254,10 @@ pub(super) fn resolve_endpoint(
                                             let mut out = String::new();
                                             out.push_str("https://");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&account_id);
+                                            out.push_str(&account_id.as_ref() as &str);
                                             out.push_str(".s3-control.dualstack.");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&region);
+                                            out.push_str(&region.as_ref() as &str);
                                             out.push('.');
                                             #[allow(clippy::needless_borrow)]
                                             out.push_str(&partition_result.dns_suffix());
@@ -1282,7 +1287,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://s3-control.dualstack.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());
@@ -1314,10 +1319,10 @@ pub(super) fn resolve_endpoint(
                                             let mut out = String::new();
                                             out.push_str("https://");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&account_id);
+                                            out.push_str(&account_id.as_ref() as &str);
                                             out.push_str(".s3-control.");
                                             #[allow(clippy::needless_borrow)]
-                                            out.push_str(&region);
+                                            out.push_str(&region.as_ref() as &str);
                                             out.push('.');
                                             #[allow(clippy::needless_borrow)]
                                             out.push_str(&partition_result.dns_suffix());
@@ -1347,7 +1352,7 @@ pub(super) fn resolve_endpoint(
                                 let mut out = String::new();
                                 out.push_str("https://s3-control.");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&region);
+                                out.push_str(&region.as_ref() as &str);
                                 out.push('.');
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.dns_suffix());

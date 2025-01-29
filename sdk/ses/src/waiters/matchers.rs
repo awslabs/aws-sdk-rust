@@ -14,9 +14,10 @@ pub(crate) fn match_get_identity_verification_attributes_469c2508d7677f08b(
         let _oprj_3 = _fld_1
             .values()
             .flat_map({
+                #[allow(clippy::let_and_return)]
                 fn map(_v: &crate::types::IdentityVerificationAttributes) -> ::std::option::Option<&crate::types::VerificationStatus> {
-                    let _fld_2 = &_v.verification_status;
-                    ::std::option::Option::Some(_fld_2)
+                    let _fld_2 = ::std::option::Option::Some(&_v.verification_status);
+                    _fld_2
                 }
                 map
             })

@@ -14,9 +14,10 @@ pub(crate) fn match_describe_db_instances_1a49e96ac4906b298(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -53,9 +54,10 @@ pub(crate) fn match_describe_db_instances_77e0187886e602da9(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -91,9 +93,10 @@ pub(crate) fn match_describe_db_instances_5ec9c383b459d62a0(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -129,9 +132,10 @@ pub(crate) fn match_describe_db_instances_545820a6bb186e52b(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -167,9 +171,10 @@ pub(crate) fn match_describe_db_instances_608daadbd71b65910(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -205,9 +210,10 @@ pub(crate) fn match_describe_db_instances_fe252904aec70cd63(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -243,9 +249,10 @@ pub(crate) fn match_describe_db_instances_5ff1466a9734c0c25(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -297,9 +304,10 @@ pub(crate) fn match_describe_db_instances_bbcaccab59728b5f5(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -335,9 +343,10 @@ pub(crate) fn match_describe_db_instances_866e8bcc02dcb5d94(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -373,9 +382,10 @@ pub(crate) fn match_describe_db_instances_ceb87a540084b9d41(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -411,9 +421,10 @@ pub(crate) fn match_describe_db_instances_b34d711b975263077(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.db_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DbInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.db_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

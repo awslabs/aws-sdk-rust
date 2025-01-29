@@ -29,9 +29,10 @@ pub(crate) fn match_describe_endpoints_01e982130e5ce98de(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Endpoint) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Endpoint) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -67,9 +68,10 @@ pub(crate) fn match_describe_endpoints_3de7d2cf38cf7be74(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Endpoint) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Endpoint) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -105,9 +107,10 @@ pub(crate) fn match_describe_replication_instances_20a54ff083e35d6a3(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.replication_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.replication_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -144,9 +147,10 @@ pub(crate) fn match_describe_replication_instances_4326e39c5fff20596(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.replication_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.replication_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -182,9 +186,10 @@ pub(crate) fn match_describe_replication_instances_48abcccf06a3b1fe2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.replication_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.replication_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -220,9 +225,10 @@ pub(crate) fn match_describe_replication_instances_ab9e5aa710c524992(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.replication_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.replication_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -258,9 +264,10 @@ pub(crate) fn match_describe_replication_instances_d810f8b90356e5dad(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.replication_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.replication_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -296,9 +303,10 @@ pub(crate) fn match_describe_replication_instances_fd0bb3cf35ece9d2b(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.replication_instance_status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationInstance) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.replication_instance_status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -349,9 +357,10 @@ pub(crate) fn match_describe_replication_tasks_1b25aac82a62b94ba(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -387,9 +396,10 @@ pub(crate) fn match_describe_replication_tasks_d4aeee88c7bfd503a(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -425,9 +435,10 @@ pub(crate) fn match_describe_replication_tasks_55c09b535f1f65ecb(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -463,9 +474,10 @@ pub(crate) fn match_describe_replication_tasks_cbe2482745939cbce(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -501,9 +513,10 @@ pub(crate) fn match_describe_replication_tasks_ffec3dac7ed61b70a(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -554,9 +567,10 @@ pub(crate) fn match_describe_replication_tasks_70f07c73ec8841480(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -593,9 +607,10 @@ pub(crate) fn match_describe_replication_tasks_3f7b68c20df47dd3e(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -631,9 +646,10 @@ pub(crate) fn match_describe_replication_tasks_605e16d950596db43(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -669,9 +685,10 @@ pub(crate) fn match_describe_replication_tasks_407522aecac30ef88(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -707,9 +724,10 @@ pub(crate) fn match_describe_replication_tasks_3fec7b96d9cc95eed(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -745,9 +763,10 @@ pub(crate) fn match_describe_replication_tasks_a83ca122dc3e3b2d2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -783,9 +802,10 @@ pub(crate) fn match_describe_replication_tasks_65b0e543ffadd8bea(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -822,9 +842,10 @@ pub(crate) fn match_describe_replication_tasks_452b66e112114876a(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ReplicationTask) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -861,9 +882,10 @@ pub(crate) fn match_describe_connections_7dbd582ecb27be1ae(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Connection) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Connection) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -900,9 +922,10 @@ pub(crate) fn match_describe_connections_c7e3339c0d2074ddd(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Connection) -> ::std::option::Option<&::std::string::String> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Connection) -> ::std::option::Option<&::std::string::String> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

@@ -933,16 +933,14 @@ mod test {
                 .url("https://abc123.456def.endpoints.email.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "ses".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -967,16 +965,14 @@ mod test {
                 .url("https://abc123.456def.endpoints.email.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "ses".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -1088,16 +1084,14 @@ mod test {
                 .url("https://example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "ses".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );

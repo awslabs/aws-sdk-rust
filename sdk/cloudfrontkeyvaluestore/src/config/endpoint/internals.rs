@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -23,24 +24,28 @@ pub(super) fn resolve_endpoint(
         #[allow(unused_variables)]
         if let Some(kvs_arn) = kvs_arn {
             #[allow(unused_variables)]
-            if let Some(parsed_arn) = crate::endpoint_lib::arn::parse_arn(kvs_arn, _diagnostic_collector) {
+            if let Some(parsed_arn) = crate::endpoint_lib::arn::parse_arn(kvs_arn.as_ref() as &str, _diagnostic_collector) {
                 if (parsed_arn.service()) == ("cloudfront") {
                     if (parsed_arn.region()) == ("") {
                         #[allow(unused_variables)]
                         if let Some(arn_type) = parsed_arn.resource_id().first().cloned() {
-                            if !((arn_type) == ("")) {
-                                if (arn_type) == ("key-value-store") {
+                            if !((arn_type.as_ref() as &str) == ("")) {
+                                if (arn_type.as_ref() as &str) == ("key-value-store") {
                                     if (parsed_arn.partition()) == ("aws") {
                                         #[allow(unused_variables)]
                                         if let Some(region) = region {
                                             #[allow(unused_variables)]
-                                            if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+                                            if let Some(partition_result) =
+                                                partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector)
+                                            {
                                                 if (partition_result.name()) == (parsed_arn.partition()) {
                                                     #[allow(unused_variables)]
                                                     if let Some(endpoint) = endpoint {
                                                         #[allow(unused_variables)]
-                                                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector)
-                                                        {
+                                                        if let Some(url) = crate::endpoint_lib::parse_url::parse_url(
+                                                            endpoint.as_ref() as &str,
+                                                            _diagnostic_collector,
+                                                        ) {
                                                             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                                                 .url({
                                                                     let mut out = String::new();
@@ -126,7 +131,9 @@ pub(super) fn resolve_endpoint(
                                         #[allow(unused_variables)]
                                         if let Some(endpoint) = endpoint {
                                             #[allow(unused_variables)]
-                                            if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint, _diagnostic_collector) {
+                                            if let Some(url) =
+                                                crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector)
+                                            {
                                                 return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                                     .url({
                                                         let mut out = String::new();
@@ -198,7 +205,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("ARN resource type is invalid. Expected `key-value-store`, found: `");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&arn_type);
+                                    out.push_str(&arn_type.as_ref() as &str);
                                     out.push('`');
                                     out
                                 }));

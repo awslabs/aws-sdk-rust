@@ -74,8 +74,9 @@ pub(crate) fn match_describe_auto_scaling_groups_2b8809e69e59ad32a(
         let _prj_12 = _fld_2
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::AutoScalingGroup) -> ::std::option::Option<::std::vec::Vec<bool>> {
-                    let _fld_4 = v.instances.as_ref()?;
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::AutoScalingGroup) -> ::std::option::Option<::std::vec::Vec<bool>> {
+                    let _fld_4 = _v.instances.as_ref()?;
                     let _fprj_8 = _fld_4
                         .iter()
                         .filter({
@@ -90,7 +91,7 @@ pub(crate) fn match_describe_auto_scaling_groups_2b8809e69e59ad32a(
                         })
                         .collect::<::std::vec::Vec<_>>();
                     let _ret_3 = _fprj_8.len() as i64;
-                    let _fld_9 = v.min_size.as_ref()?;
+                    let _fld_9 = _v.min_size.as_ref()?;
                     let _tmp_15 = *_fld_9;
                     let _tmp_16 = _tmp_15 as i64;
                     let _cmp_10 = _ret_3 >= _tmp_16;
@@ -136,8 +137,9 @@ pub(crate) fn match_describe_auto_scaling_groups_ab0cd1b1c8e0267b1(
         let _prj_12 = _fld_2
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::AutoScalingGroup) -> ::std::option::Option<::std::vec::Vec<bool>> {
-                    let _fld_4 = v.instances.as_ref()?;
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::AutoScalingGroup) -> ::std::option::Option<::std::vec::Vec<bool>> {
+                    let _fld_4 = _v.instances.as_ref()?;
                     let _fprj_8 = _fld_4
                         .iter()
                         .filter({
@@ -152,7 +154,7 @@ pub(crate) fn match_describe_auto_scaling_groups_ab0cd1b1c8e0267b1(
                         })
                         .collect::<::std::vec::Vec<_>>();
                     let _ret_3 = _fprj_8.len() as i64;
-                    let _fld_9 = v.min_size.as_ref()?;
+                    let _fld_9 = _v.min_size.as_ref()?;
                     let _tmp_15 = *_fld_9;
                     let _tmp_16 = _tmp_15 as i64;
                     let _cmp_10 = _ret_3 >= _tmp_16;

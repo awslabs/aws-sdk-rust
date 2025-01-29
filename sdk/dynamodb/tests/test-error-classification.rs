@@ -62,6 +62,7 @@ async fn assert_error_not_transient(error: ReplayedEvent) {
     let client = Client::from_conf(config);
     let _item = client
         .get_item()
+        .table_name("arn:aws:dynamodb:us-east-2:333333333333:table/table_name")
         .key("foo", AttributeValue::Bool(true))
         .send()
         .await

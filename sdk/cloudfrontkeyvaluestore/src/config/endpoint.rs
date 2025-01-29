@@ -134,16 +134,14 @@ mod test {
                 .url("https://123456789012.cloudfront-kvs.global.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -166,16 +164,14 @@ mod test {
                 .url("https://123456789012.cloudfront-kvs.global.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -233,16 +229,14 @@ mod test {
                 .url("https://123456789012.my-override.example.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -265,16 +259,14 @@ mod test {
                 .url("http://123456789012.my-override.example.com/custom-path")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("signingName".to_string(), "cloudfront-keyvaluestore".to_string().into());
                         out.insert("name".to_string(), "sigv4a".to_string().into());
-                        out.insert(
-                            "signingRegionSet".to_string(),
-                            vec![::aws_smithy_types::Document::from("*".to_string())].into(),
-                        );
+                        out.insert("signingRegionSet".to_string(), vec!["*".to_string().into()].into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );

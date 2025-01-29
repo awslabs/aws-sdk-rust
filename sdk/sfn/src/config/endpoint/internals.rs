@@ -4,7 +4,8 @@
     clippy::bool_comparison,
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
-    clippy::redundant_pattern_matching
+    clippy::redundant_pattern_matching,
+    clippy::useless_asref
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -36,7 +37,7 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(region) = region {
         #[allow(unused_variables)]
-        if let Some(partition_result) = partition_resolver.resolve_partition(region, _diagnostic_collector) {
+        if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
@@ -46,7 +47,7 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://states-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region);
+                                    out.push_str(&region.as_ref() as &str);
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -62,7 +63,7 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_fips) == (true) {
                 if (partition_result.supports_fips()) == (true) {
-                    if (region) == ("us-gov-west-1") {
+                    if (region.as_ref() as &str) == ("us-gov-west-1") {
                         return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url("https://states.us-gov-west-1.amazonaws.com".to_string())
                             .build());
@@ -72,7 +73,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://states-fips.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
@@ -91,7 +92,7 @@ pub(super) fn resolve_endpoint(
                             let mut out = String::new();
                             out.push_str("https://states.");
                             #[allow(clippy::needless_borrow)]
-                            out.push_str(&region);
+                            out.push_str(&region.as_ref() as &str);
                             out.push('.');
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dual_stack_dns_suffix());
@@ -108,7 +109,7 @@ pub(super) fn resolve_endpoint(
                     let mut out = String::new();
                     out.push_str("https://states.");
                     #[allow(clippy::needless_borrow)]
-                    out.push_str(&region);
+                    out.push_str(&region.as_ref() as &str);
                     out.push('.');
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dns_suffix());

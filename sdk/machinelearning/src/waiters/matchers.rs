@@ -14,9 +14,10 @@ pub(crate) fn match_describe_batch_predictions_147c4749b8435ead2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::BatchPrediction) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::BatchPrediction) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -53,9 +54,10 @@ pub(crate) fn match_describe_batch_predictions_772ab1725e6b52e57(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::BatchPrediction) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::BatchPrediction) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -91,9 +93,10 @@ pub(crate) fn match_describe_data_sources_147c4749b8435ead2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DataSource) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DataSource) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -130,9 +133,10 @@ pub(crate) fn match_describe_data_sources_772ab1725e6b52e57(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::DataSource) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::DataSource) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -168,9 +172,10 @@ pub(crate) fn match_describe_evaluations_147c4749b8435ead2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Evaluation) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Evaluation) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -207,9 +212,10 @@ pub(crate) fn match_describe_evaluations_772ab1725e6b52e57(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::Evaluation) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::Evaluation) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -245,9 +251,10 @@ pub(crate) fn match_describe_ml_models_147c4749b8435ead2(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::MlModel) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::MlModel) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -284,9 +291,10 @@ pub(crate) fn match_describe_ml_models_772ab1725e6b52e57(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::MlModel) -> ::std::option::Option<&crate::types::EntityStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::MlModel) -> ::std::option::Option<&crate::types::EntityStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

@@ -14,9 +14,10 @@ pub(crate) fn match_describe_project_versions_ecdc1939edd26defa(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -53,9 +54,10 @@ pub(crate) fn match_describe_project_versions_372e6b6443f871a1d(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -91,9 +93,10 @@ pub(crate) fn match_describe_project_versions_c0de0dba73a4550df(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })
@@ -130,9 +133,10 @@ pub(crate) fn match_describe_project_versions_d574c78b065cace74(
         let _prj_3 = _fld_1
             .iter()
             .flat_map(|v| {
-                fn map(v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
-                    let _fld_2 = v.status.as_ref()?;
-                    ::std::option::Option::Some(_fld_2)
+                #[allow(clippy::let_and_return)]
+                fn map(_v: &crate::types::ProjectVersionDescription) -> ::std::option::Option<&crate::types::ProjectVersionStatus> {
+                    let _fld_2 = _v.status.as_ref();
+                    _fld_2
                 }
                 map(v)
             })

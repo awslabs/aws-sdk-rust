@@ -24,13 +24,14 @@ mod test {
                 .url("https://route53.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -54,13 +55,14 @@ mod test {
                 .url("https://route53-fips.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -104,13 +106,14 @@ mod test {
                 .url("https://route53-fips.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -154,13 +157,14 @@ mod test {
                 .url("https://route53.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -184,13 +188,14 @@ mod test {
                 .url("https://route53.amazonaws.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -274,13 +279,14 @@ mod test {
                 .url("https://route53.amazonaws.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -304,13 +310,14 @@ mod test {
                 .url("https://route53.us-gov.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -334,13 +341,14 @@ mod test {
                 .url("https://route53.us-gov.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -384,13 +392,14 @@ mod test {
                 .url("https://route53.us-gov.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -434,13 +443,14 @@ mod test {
                 .url("https://route53.us-gov.amazonaws.com")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -464,13 +474,14 @@ mod test {
                 .url("https://route53.c2s.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -547,13 +558,14 @@ mod test {
                 .url("https://route53.c2s.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -577,13 +589,14 @@ mod test {
                 .url("https://route53.sc2s.sgov.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -660,13 +673,14 @@ mod test {
                 .url("https://route53.sc2s.sgov.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -690,13 +704,14 @@ mod test {
                 .url("https://route53.cloud.adc-e.uk")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -720,13 +735,14 @@ mod test {
                 .url("https://route53.csp.hci.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingName".to_string(), "route53".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );

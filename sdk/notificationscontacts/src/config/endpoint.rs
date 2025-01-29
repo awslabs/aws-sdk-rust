@@ -55,12 +55,13 @@ mod test {
                 .url("https://notifications-contacts-fips.us-east-1.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -83,12 +84,13 @@ mod test {
                 .url("https://notifications-contacts.us-east-1.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -111,12 +113,13 @@ mod test {
                 .url("https://notifications-contacts-fips.cn-northwest-1.api.amazonwebservices.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -139,12 +142,13 @@ mod test {
                 .url("https://notifications-contacts.cn-northwest-1.api.amazonwebservices.com.cn")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "cn-northwest-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -167,12 +171,13 @@ mod test {
                 .url("https://notifications-contacts-fips.us-gov-west-1.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -195,12 +200,13 @@ mod test {
                 .url("https://notifications-contacts.us-gov-west-1.api.aws")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-gov-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -223,12 +229,13 @@ mod test {
                 .url("https://notifications-contacts-fips.us-iso-east-1.c2s.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -251,12 +258,13 @@ mod test {
                 .url("https://notifications-contacts.us-iso-east-1.c2s.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -279,12 +287,13 @@ mod test {
                 .url("https://notifications-contacts-fips.us-isob-east-1.sc2s.sgov.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -307,12 +316,13 @@ mod test {
                 .url("https://notifications-contacts.us-isob-east-1.sc2s.sgov.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -335,12 +345,13 @@ mod test {
                 .url("https://notifications-contacts-fips.eu-isoe-west-1.cloud.adc-e.uk")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -363,12 +374,13 @@ mod test {
                 .url("https://notifications-contacts.eu-isoe-west-1.cloud.adc-e.uk")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -391,12 +403,13 @@ mod test {
                 .url("https://notifications-contacts-fips.us-isof-south-1.csp.hci.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
@@ -419,12 +432,13 @@ mod test {
                 .url("https://notifications-contacts.us-isof-south-1.csp.hci.ic.gov")
                 .property(
                     "authSchemes",
-                    vec![::aws_smithy_types::Document::from({
+                    vec![{
                         let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
                         out.insert("name".to_string(), "sigv4".to_string().into());
                         out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
                         out
-                    })]
+                    }
+                    .into()]
                 )
                 .build()
         );
