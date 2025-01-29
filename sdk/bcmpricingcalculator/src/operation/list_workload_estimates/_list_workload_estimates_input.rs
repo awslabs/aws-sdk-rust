@@ -3,9 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkloadEstimatesInput {
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub created_at_filter: ::std::option::Option<crate::types::FilterTimestamp>,
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub expires_at_filter: ::std::option::Option<crate::types::FilterTimestamp>,
     /// <p>Filters to apply to the list of workload estimates.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListWorkloadEstimatesFilter>>,
@@ -15,11 +15,11 @@ pub struct ListWorkloadEstimatesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListWorkloadEstimatesInput {
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn created_at_filter(&self) -> ::std::option::Option<&crate::types::FilterTimestamp> {
         self.created_at_filter.as_ref()
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn expires_at_filter(&self) -> ::std::option::Option<&crate::types::FilterTimestamp> {
         self.expires_at_filter.as_ref()
     }
@@ -56,31 +56,31 @@ pub struct ListWorkloadEstimatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListWorkloadEstimatesInputBuilder {
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn created_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.created_at_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn set_created_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.created_at_filter = input;
         self
     }
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn get_created_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         &self.created_at_filter
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn expires_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.expires_at_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn set_expires_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.expires_at_filter = input;
         self
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn get_expires_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         &self.expires_at_filter
     }

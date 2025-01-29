@@ -345,17 +345,17 @@ impl CompleteMultipartUploadFluentBuilder {
         self.inner.get_checksum_type()
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn mpu_object_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.mpu_object_size(input.into());
+    pub fn mpu_object_size(mut self, input: i64) -> Self {
+        self.inner = self.inner.mpu_object_size(input);
         self
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn set_mpu_object_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+    pub fn set_mpu_object_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_mpu_object_size(input);
         self
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn get_mpu_object_size(&self) -> &::std::option::Option<::std::string::String> {
+    pub fn get_mpu_object_size(&self) -> &::std::option::Option<i64> {
         self.inner.get_mpu_object_size()
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>

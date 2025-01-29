@@ -22,7 +22,9 @@ impl crate::operation::batch_create_workload_estimate_usage::builders::BatchCrea
 }
 /// Fluent builder constructing a request to `BatchCreateWorkloadEstimateUsage`.
 ///
-/// <p>Create Amazon Web Services service usage that you want to model in a Workload Estimate.</p>
+/// <p>Create Amazon Web Services service usage that you want to model in a Workload Estimate.</p><note>
+/// <p>The <code>BatchCreateWorkloadEstimateUsage</code> operation doesn't have its own IAM permission. To authorize this operation for Amazon Web Services principals, include the permission <code>bcm-pricing-calculator:CreateWorkloadEstimateUsage</code> in your policies.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateWorkloadEstimateUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

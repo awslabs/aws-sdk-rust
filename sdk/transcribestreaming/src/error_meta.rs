@@ -11,6 +11,8 @@ pub enum Error {
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The request references a resource which doesn't exist.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -29,6 +31,7 @@ impl ::std::fmt::Display for Error {
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
             Error::LimitExceededException(inner) => inner.fmt(f),
+            Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -55,8 +58,43 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
             Self::LimitExceededException(inner) => inner.meta(),
+            Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError> for Error {
+    fn from(err: crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError) -> Self {
+        match err {
+            crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_medical_scribe_stream::GetMedicalScribeStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -106,6 +144,43 @@ impl From<crate::operation::start_call_analytics_stream_transcription::StartCall
             crate::operation::start_call_analytics_stream_transcription::StartCallAnalyticsStreamTranscriptionError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError> for Error {
+    fn from(err: crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError) -> Self {
+        match err {
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_medical_scribe_stream::StartMedicalScribeStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -242,6 +317,53 @@ impl From<crate::types::error::CallAnalyticsTranscriptResultStreamError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::MedicalScribeInputStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::MedicalScribeInputStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::MedicalScribeInputStreamError> for Error {
+    fn from(err: crate::types::error::MedicalScribeInputStreamError) -> Self {
+        match err {
+            crate::types::error::MedicalScribeInputStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::MedicalScribeResultStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::MedicalScribeResultStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::MedicalScribeResultStreamError> for Error {
+    fn from(err: crate::types::error::MedicalScribeResultStreamError) -> Self {
+        match err {
+            crate::types::error::MedicalScribeResultStreamError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::types::error::MedicalScribeResultStreamError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::types::error::MedicalScribeResultStreamError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::types::error::MedicalScribeResultStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::types::error::MedicalScribeResultStreamError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::types::error::MedicalScribeResultStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::MedicalTranscriptResultStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -301,6 +423,7 @@ impl ::std::error::Error for Error {
             Error::ConflictException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
             Error::LimitExceededException(inner) => inner.source(),
+            Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -313,6 +436,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ConflictException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),
             Self::LimitExceededException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

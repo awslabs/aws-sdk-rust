@@ -124,6 +124,70 @@ impl From<crate::operation::create_addon_subscription::CreateAddonSubscriptionEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_address_list::CreateAddressListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_address_list::CreateAddressListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_address_list::CreateAddressListError> for Error {
+    fn from(err: crate::operation::create_address_list::CreateAddressListError) -> Self {
+        match err {
+            crate::operation::create_address_list::CreateAddressListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_address_list::CreateAddressListError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_address_list::CreateAddressListError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_address_list::CreateAddressListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_address_list::CreateAddressListError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_address_list::CreateAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_address_list_import_job::CreateAddressListImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_address_list_import_job::CreateAddressListImportJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_address_list_import_job::CreateAddressListImportJobError> for Error {
+    fn from(err: crate::operation::create_address_list_import_job::CreateAddressListImportJobError) -> Self {
+        match err {
+            crate::operation::create_address_list_import_job::CreateAddressListImportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_address_list_import_job::CreateAddressListImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_address_list_import_job::CreateAddressListImportJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_address_list_import_job::CreateAddressListImportJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_address_list_import_job::CreateAddressListImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_archive::CreateArchiveError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -303,6 +367,30 @@ impl From<crate::operation::delete_addon_subscription::DeleteAddonSubscriptionEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_address_list::DeleteAddressListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_address_list::DeleteAddressListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_address_list::DeleteAddressListError> for Error {
+    fn from(err: crate::operation::delete_address_list::DeleteAddressListError) -> Self {
+        match err {
+            crate::operation::delete_address_list::DeleteAddressListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_address_list::DeleteAddressListError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_address_list::DeleteAddressListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_address_list::DeleteAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_archive::DeleteArchiveError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -427,6 +515,50 @@ impl From<crate::operation::delete_traffic_policy::DeleteTrafficPolicyError> for
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError> for Error {
+    fn from(err: crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError) -> Self {
+        match err {
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_addon_instance::GetAddonInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -472,6 +604,67 @@ impl From<crate::operation::get_addon_subscription::GetAddonSubscriptionError> f
             }
             crate::operation::get_addon_subscription::GetAddonSubscriptionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_addon_subscription::GetAddonSubscriptionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_address_list::GetAddressListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_address_list::GetAddressListError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_address_list::GetAddressListError> for Error {
+    fn from(err: crate::operation::get_address_list::GetAddressListError) -> Self {
+        match err {
+            crate::operation::get_address_list::GetAddressListError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_address_list::GetAddressListError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_address_list::GetAddressListError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_address_list::GetAddressListError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_address_list::GetAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_address_list_import_job::GetAddressListImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_address_list_import_job::GetAddressListImportJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_address_list_import_job::GetAddressListImportJobError> for Error {
+    fn from(err: crate::operation::get_address_list_import_job::GetAddressListImportJobError) -> Self {
+        match err {
+            crate::operation::get_address_list_import_job::GetAddressListImportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_address_list_import_job::GetAddressListImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_address_list_import_job::GetAddressListImportJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_address_list_import_job::GetAddressListImportJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_address_list_import_job::GetAddressListImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -662,6 +855,42 @@ impl From<crate::operation::get_ingress_point::GetIngressPointError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_member_of_address_list::GetMemberOfAddressListError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_member_of_address_list::GetMemberOfAddressListError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_member_of_address_list::GetMemberOfAddressListError> for Error {
+    fn from(err: crate::operation::get_member_of_address_list::GetMemberOfAddressListError) -> Self {
+        match err {
+            crate::operation::get_member_of_address_list::GetMemberOfAddressListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_member_of_address_list::GetMemberOfAddressListError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_member_of_address_list::GetMemberOfAddressListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_member_of_address_list::GetMemberOfAddressListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_member_of_address_list::GetMemberOfAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_relay::GetRelayError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -777,6 +1006,66 @@ impl From<crate::operation::list_addon_subscriptions::ListAddonSubscriptionsErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError> for Error {
+    fn from(err: crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError) -> Self {
+        match err {
+            crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_address_list_import_jobs::ListAddressListImportJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_address_lists::ListAddressListsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_address_lists::ListAddressListsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_address_lists::ListAddressListsError> for Error {
+    fn from(err: crate::operation::list_address_lists::ListAddressListsError) -> Self {
+        match err {
+            crate::operation::list_address_lists::ListAddressListsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_address_lists::ListAddressListsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_address_lists::ListAddressListsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_address_lists::ListAddressListsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_archive_exports::ListArchiveExportsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -877,6 +1166,42 @@ impl From<crate::operation::list_ingress_points::ListIngressPointsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_members_of_address_list::ListMembersOfAddressListError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_members_of_address_list::ListMembersOfAddressListError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_members_of_address_list::ListMembersOfAddressListError> for Error {
+    fn from(err: crate::operation::list_members_of_address_list::ListMembersOfAddressListError) -> Self {
+        match err {
+            crate::operation::list_members_of_address_list::ListMembersOfAddressListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_members_of_address_list::ListMembersOfAddressListError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_members_of_address_list::ListMembersOfAddressListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_members_of_address_list::ListMembersOfAddressListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_members_of_address_list::ListMembersOfAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_relays::ListRelaysError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -968,6 +1293,91 @@ impl From<crate::operation::list_traffic_policies::ListTrafficPoliciesError> for
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_member_to_address_list::RegisterMemberToAddressListError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_member_to_address_list::RegisterMemberToAddressListError> for Error {
+    fn from(err: crate::operation::register_member_to_address_list::RegisterMemberToAddressListError) -> Self {
+        match err {
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::register_member_to_address_list::RegisterMemberToAddressListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_address_list_import_job::StartAddressListImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_address_list_import_job::StartAddressListImportJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_address_list_import_job::StartAddressListImportJobError> for Error {
+    fn from(err: crate::operation::start_address_list_import_job::StartAddressListImportJobError) -> Self {
+        match err {
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_address_list_import_job::StartAddressListImportJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_archive_export::StartArchiveExportError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1026,6 +1436,45 @@ impl From<crate::operation::start_archive_search::StartArchiveSearchError> for E
             crate::operation::start_archive_search::StartArchiveSearchError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_archive_search::StartArchiveSearchError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_archive_search::StartArchiveSearchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_address_list_import_job::StopAddressListImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_address_list_import_job::StopAddressListImportJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_address_list_import_job::StopAddressListImportJobError> for Error {
+    fn from(err: crate::operation::stop_address_list_import_job::StopAddressListImportJobError) -> Self {
+        match err {
+            crate::operation::stop_address_list_import_job::StopAddressListImportJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_address_list_import_job::StopAddressListImportJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::stop_address_list_import_job::StopAddressListImportJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_address_list_import_job::StopAddressListImportJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::stop_address_list_import_job::StopAddressListImportJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::stop_address_list_import_job::StopAddressListImportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -15,8 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub(crate) mod shape_start_call_analytics_stream_transcription;
-
 pub fn parse_http_error_metadata(
     _response_status: u16,
     response_headers: &::aws_smithy_runtime_api::http::Headers,
@@ -24,6 +22,12 @@ pub fn parse_http_error_metadata(
 ) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
+
+pub(crate) mod shape_get_medical_scribe_stream;
+
+pub(crate) mod shape_start_call_analytics_stream_transcription;
+
+pub(crate) mod shape_start_medical_scribe_stream;
 
 pub(crate) mod shape_start_medical_stream_transcription;
 
@@ -47,9 +51,15 @@ pub(crate) mod shape_internal_failure_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_medical_scribe_input_stream;
+
+pub(crate) mod shape_resource_not_found_exception;
+
 pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_start_call_analytics_stream_transcription_output;
+
+pub(crate) mod shape_start_medical_scribe_stream_output;
 
 pub(crate) mod shape_start_medical_stream_transcription_output;
 
@@ -63,9 +73,27 @@ pub fn parse_event_stream_error_metadata(
 
 pub(crate) mod shape_configuration_event;
 
+pub(crate) mod shape_medical_scribe_configuration_event;
+
+pub(crate) mod shape_medical_scribe_session_control_event;
+
+pub(crate) mod shape_medical_scribe_stream_details;
+
 pub(crate) mod shape_category_event;
 
 pub(crate) mod shape_channel_definition;
+
+pub(crate) mod shape_medical_scribe_channel_definition;
+
+pub(crate) mod shape_medical_scribe_channel_definitions;
+
+pub(crate) mod shape_medical_scribe_encryption_settings;
+
+pub(crate) mod shape_medical_scribe_post_stream_analytics_result;
+
+pub(crate) mod shape_medical_scribe_post_stream_analytics_settings;
+
+pub(crate) mod shape_medical_scribe_transcript_event;
 
 pub(crate) mod shape_medical_transcript_event;
 
@@ -75,6 +103,12 @@ pub(crate) mod shape_transcript_event;
 
 pub(crate) mod shape_utterance_event;
 
+pub(crate) mod shape_clinical_note_generation_result;
+
+pub(crate) mod shape_clinical_note_generation_settings;
+
+pub(crate) mod shape_kms_encryption_context_map;
+
 pub(crate) mod shape_call_analytics_entity_list;
 
 pub(crate) mod shape_call_analytics_item_list;
@@ -82,6 +116,8 @@ pub(crate) mod shape_call_analytics_item_list;
 pub(crate) mod shape_issues_detected;
 
 pub(crate) mod shape_matched_category_details;
+
+pub(crate) mod shape_medical_scribe_transcript_segment;
 
 pub(crate) mod shape_medical_transcript;
 
@@ -97,6 +133,8 @@ pub(crate) mod shape_issue_detected;
 
 pub(crate) mod shape_medical_result_list;
 
+pub(crate) mod shape_medical_scribe_transcript_item_list;
+
 pub(crate) mod shape_points_of_interest;
 
 pub(crate) mod shape_result_list;
@@ -104,6 +142,8 @@ pub(crate) mod shape_result_list;
 pub(crate) mod shape_character_offsets;
 
 pub(crate) mod shape_medical_result;
+
+pub(crate) mod shape_medical_scribe_transcript_item;
 
 pub(crate) mod shape_result;
 

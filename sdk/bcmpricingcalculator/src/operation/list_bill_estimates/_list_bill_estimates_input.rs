@@ -5,9 +5,9 @@
 pub struct ListBillEstimatesInput {
     /// <p>Filters to apply to the list of bill estimates.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListBillEstimatesFilter>>,
-    /// <p>Filter bill estimates based on their creation date.</p>
+    /// <p>Filter bill estimates based on the creation date.</p>
     pub created_at_filter: ::std::option::Option<crate::types::FilterTimestamp>,
-    /// <p>Filter bill estimates based on their expiration date.</p>
+    /// <p>Filter bill estimates based on the expiration date.</p>
     pub expires_at_filter: ::std::option::Option<crate::types::FilterTimestamp>,
     /// <p>A token to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,11 +21,11 @@ impl ListBillEstimatesInput {
     pub fn filters(&self) -> &[crate::types::ListBillEstimatesFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>Filter bill estimates based on their creation date.</p>
+    /// <p>Filter bill estimates based on the creation date.</p>
     pub fn created_at_filter(&self) -> ::std::option::Option<&crate::types::FilterTimestamp> {
         self.created_at_filter.as_ref()
     }
-    /// <p>Filter bill estimates based on their expiration date.</p>
+    /// <p>Filter bill estimates based on the expiration date.</p>
     pub fn expires_at_filter(&self) -> ::std::option::Option<&crate::types::FilterTimestamp> {
         self.expires_at_filter.as_ref()
     }
@@ -76,31 +76,31 @@ impl ListBillEstimatesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListBillEstimatesFilter>> {
         &self.filters
     }
-    /// <p>Filter bill estimates based on their creation date.</p>
+    /// <p>Filter bill estimates based on the creation date.</p>
     pub fn created_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.created_at_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter bill estimates based on their creation date.</p>
+    /// <p>Filter bill estimates based on the creation date.</p>
     pub fn set_created_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.created_at_filter = input;
         self
     }
-    /// <p>Filter bill estimates based on their creation date.</p>
+    /// <p>Filter bill estimates based on the creation date.</p>
     pub fn get_created_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         &self.created_at_filter
     }
-    /// <p>Filter bill estimates based on their expiration date.</p>
+    /// <p>Filter bill estimates based on the expiration date.</p>
     pub fn expires_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.expires_at_filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter bill estimates based on their expiration date.</p>
+    /// <p>Filter bill estimates based on the expiration date.</p>
     pub fn set_expires_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.expires_at_filter = input;
         self
     }
-    /// <p>Filter bill estimates based on their expiration date.</p>
+    /// <p>Filter bill estimates based on the expiration date.</p>
     pub fn get_expires_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         &self.expires_at_filter
     }

@@ -22,7 +22,9 @@ impl crate::operation::batch_delete_workload_estimate_usage::builders::BatchDele
 }
 /// Fluent builder constructing a request to `BatchDeleteWorkloadEstimateUsage`.
 ///
-/// <p>Delete usage that you have created in a Workload estimate. You can only delete usage that you had added and cannot model deletion (or removal) of a existing usage. If you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html"> BatchUpdateWorkloadEstimateUsage</a>.</p>
+/// <p>Delete usage that you have created in a Workload estimate. You can only delete usage that you had added and cannot model deletion (or removal) of a existing usage. If you want model removal of an existing usage, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AWSBCMPricingCalculator_BatchUpdateWorkloadEstimateUsage.html"> BatchUpdateWorkloadEstimateUsage</a>.</p><note>
+/// <p>The <code>BatchDeleteWorkloadEstimateUsage</code> operation doesn't have its own IAM permission. To authorize this operation for Amazon Web Services principals, include the permission <code>bcm-pricing-calculator:DeleteWorkloadEstimateUsage</code> in your policies.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteWorkloadEstimateUsageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

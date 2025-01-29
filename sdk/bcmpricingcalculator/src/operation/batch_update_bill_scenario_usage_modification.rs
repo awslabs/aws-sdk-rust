@@ -261,6 +261,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchUpdateBi
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum BatchUpdateBillScenarioUsageModificationError {
+    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The requested data is currently unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>The specified resource was not found.</p>
@@ -308,6 +310,7 @@ impl BatchUpdateBillScenarioUsageModificationError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DataUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -317,6 +320,10 @@ impl BatchUpdateBillScenarioUsageModificationError {
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `BatchUpdateBillScenarioUsageModificationError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `BatchUpdateBillScenarioUsageModificationError::DataUnavailableException`.
     pub fn is_data_unavailable_exception(&self) -> bool {
@@ -350,6 +357,7 @@ impl BatchUpdateBillScenarioUsageModificationError {
 impl ::std::error::Error for BatchUpdateBillScenarioUsageModificationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::DataUnavailableException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -364,6 +372,7 @@ impl ::std::error::Error for BatchUpdateBillScenarioUsageModificationError {
 impl ::std::fmt::Display for BatchUpdateBillScenarioUsageModificationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::DataUnavailableException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -392,6 +401,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for BatchUpdateBillScenarioUsag
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchUpdateBillScenarioUsageModificationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DataUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

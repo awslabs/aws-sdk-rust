@@ -33,6 +33,26 @@ pub use crate::types::_medical_entity::MedicalEntityBuilder;
 
 pub use crate::types::_medical_item::MedicalItemBuilder;
 
+pub use crate::types::_medical_scribe_transcript_event::MedicalScribeTranscriptEventBuilder;
+
+pub use crate::types::_medical_scribe_transcript_segment::MedicalScribeTranscriptSegmentBuilder;
+
+pub use crate::types::_medical_scribe_transcript_item::MedicalScribeTranscriptItemBuilder;
+
+pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigurationEventBuilder;
+
+pub use crate::types::_medical_scribe_post_stream_analytics_settings::MedicalScribePostStreamAnalyticsSettingsBuilder;
+
+pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettingsBuilder;
+
+pub use crate::types::_medical_scribe_encryption_settings::MedicalScribeEncryptionSettingsBuilder;
+
+pub use crate::types::_medical_scribe_channel_definition::MedicalScribeChannelDefinitionBuilder;
+
+pub use crate::types::_medical_scribe_session_control_event::MedicalScribeSessionControlEventBuilder;
+
+pub use crate::types::_medical_scribe_audio_event::MedicalScribeAudioEventBuilder;
+
 pub use crate::types::_category_event::CategoryEventBuilder;
 
 pub use crate::types::_points_of_interest::PointsOfInterestBuilder;
@@ -48,3 +68,9 @@ pub use crate::types::_character_offsets::CharacterOffsetsBuilder;
 pub use crate::types::_call_analytics_entity::CallAnalyticsEntityBuilder;
 
 pub use crate::types::_call_analytics_item::CallAnalyticsItemBuilder;
+
+pub use crate::types::_medical_scribe_stream_details::MedicalScribeStreamDetailsBuilder;
+
+pub use crate::types::_medical_scribe_post_stream_analytics_result::MedicalScribePostStreamAnalyticsResultBuilder;
+
+pub use crate::types::_clinical_note_generation_result::ClinicalNoteGenerationResultBuilder;

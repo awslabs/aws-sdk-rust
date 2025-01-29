@@ -6,6 +6,8 @@
 pub enum IngressBooleanToEvaluate {
     /// <p>The structure type for a boolean condition stating the Add On ARN and its returned value.</p>
     Analysis(crate::types::IngressAnalysis),
+    /// <p>The structure type for a boolean condition that provides the address lists to evaluate incoming traffic on.</p>
+    IsInAddressList(crate::types::IngressIsInAddressList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum IngressBooleanToEvaluate {
     Unknown,
 }
 impl IngressBooleanToEvaluate {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Analysis`](crate::types::IngressBooleanToEvaluate::Analysis), extracting the inner [`IngressAnalysis`](crate::types::IngressAnalysis).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_analysis(&self) -> ::std::result::Result<&crate::types::IngressAnalysis, &Self> {
@@ -30,6 +31,19 @@ impl IngressBooleanToEvaluate {
     /// Returns true if this is a [`Analysis`](crate::types::IngressBooleanToEvaluate::Analysis).
     pub fn is_analysis(&self) -> bool {
         self.as_analysis().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IsInAddressList`](crate::types::IngressBooleanToEvaluate::IsInAddressList), extracting the inner [`IngressIsInAddressList`](crate::types::IngressIsInAddressList).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_is_in_address_list(&self) -> ::std::result::Result<&crate::types::IngressIsInAddressList, &Self> {
+        if let IngressBooleanToEvaluate::IsInAddressList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IsInAddressList`](crate::types::IngressBooleanToEvaluate::IsInAddressList).
+    pub fn is_is_in_address_list(&self) -> bool {
+        self.as_is_in_address_list().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

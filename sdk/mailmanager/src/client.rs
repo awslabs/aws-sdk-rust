@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetArchiveExport`](crate::operation::get_archive_export) operation has
-/// a [`Client::get_archive_export`], function which returns a builder for that operation.
+/// For example, the [`CreateAddressListImportJob`](crate::operation::create_address_list_import_job) operation has
+/// a [`Client::create_address_list_import_job`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_archive_export()
-///     .export_id("example")
+/// let result = client.create_address_list_import_job()
+///     .client_token("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -140,6 +140,10 @@ mod create_addon_instance;
 
 mod create_addon_subscription;
 
+mod create_address_list;
+
+mod create_address_list_import_job;
+
 mod create_archive;
 
 mod create_ingress_point;
@@ -161,7 +165,7 @@ mod create_traffic_policy;
 /// # let client: aws_sdk_mailmanager::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_archive_export()
+/// let result = client.create_address_list_import_job()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -181,6 +185,8 @@ mod delete_addon_instance;
 
 mod delete_addon_subscription;
 
+mod delete_address_list;
+
 mod delete_archive;
 
 mod delete_ingress_point;
@@ -191,9 +197,15 @@ mod delete_rule_set;
 
 mod delete_traffic_policy;
 
+mod deregister_member_from_address_list;
+
 mod get_addon_instance;
 
 mod get_addon_subscription;
+
+mod get_address_list;
+
+mod get_address_list_import_job;
 
 mod get_archive;
 
@@ -209,6 +221,8 @@ mod get_archive_search_results;
 
 mod get_ingress_point;
 
+mod get_member_of_address_list;
+
 mod get_relay;
 
 mod get_rule_set;
@@ -219,6 +233,10 @@ mod list_addon_instances;
 
 mod list_addon_subscriptions;
 
+mod list_address_list_import_jobs;
+
+mod list_address_lists;
+
 mod list_archive_exports;
 
 mod list_archive_searches;
@@ -226,6 +244,8 @@ mod list_archive_searches;
 mod list_archives;
 
 mod list_ingress_points;
+
+mod list_members_of_address_list;
 
 mod list_relays;
 
@@ -235,9 +255,15 @@ mod list_tags_for_resource;
 
 mod list_traffic_policies;
 
+mod register_member_to_address_list;
+
+mod start_address_list_import_job;
+
 mod start_archive_export;
 
 mod start_archive_search;
+
+mod stop_address_list_import_job;
 
 mod stop_archive_export;
 

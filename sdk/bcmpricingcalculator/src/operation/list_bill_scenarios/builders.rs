@@ -133,31 +133,31 @@ impl ListBillScenariosFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListBillScenariosFilter>> {
         self.inner.get_filters()
     }
-    /// <p>Filter bill scenarios based on their creation date.</p>
+    /// <p>Filter bill scenarios based on the creation date.</p>
     pub fn created_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.inner = self.inner.created_at_filter(input);
         self
     }
-    /// <p>Filter bill scenarios based on their creation date.</p>
+    /// <p>Filter bill scenarios based on the creation date.</p>
     pub fn set_created_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.inner = self.inner.set_created_at_filter(input);
         self
     }
-    /// <p>Filter bill scenarios based on their creation date.</p>
+    /// <p>Filter bill scenarios based on the creation date.</p>
     pub fn get_created_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         self.inner.get_created_at_filter()
     }
-    /// <p>Filter bill scenarios based on their expiration date.</p>
+    /// <p>Filter bill scenarios based on the expiration date.</p>
     pub fn expires_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.inner = self.inner.expires_at_filter(input);
         self
     }
-    /// <p>Filter bill scenarios based on their expiration date.</p>
+    /// <p>Filter bill scenarios based on the expiration date.</p>
     pub fn set_expires_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.inner = self.inner.set_expires_at_filter(input);
         self
     }
-    /// <p>Filter bill scenarios based on their expiration date.</p>
+    /// <p>Filter bill scenarios based on the expiration date.</p>
     pub fn get_expires_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         self.inner.get_expires_at_filter()
     }

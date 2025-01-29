@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_addon_subscriptions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_address_list_import_jobs_output_output_next_token(
+    input: &crate::operation::list_address_list_import_jobs::ListAddressListImportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_address_lists_output_output_next_token(
+    input: &crate::operation::list_address_lists::ListAddressListsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_archive_exports_output_output_next_token(
     input: &crate::operation::list_archive_exports::ListArchiveExportsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -51,6 +71,16 @@ pub(crate) fn reflens_list_archives_output_output_next_token(
 
 pub(crate) fn reflens_list_ingress_points_output_output_next_token(
     input: &crate::operation::list_ingress_points::ListIngressPointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_members_of_address_list_output_output_next_token(
+    input: &crate::operation::list_members_of_address_list::ListMembersOfAddressListOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -109,6 +139,20 @@ pub(crate) fn lens_list_addon_subscriptions_output_output_addon_subscriptions(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_address_list_import_jobs_output_output_import_jobs(
+    input: crate::operation::list_address_list_import_jobs::ListAddressListImportJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportJob>> {
+    let input = input.import_jobs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_address_lists_output_output_address_lists(
+    input: crate::operation::list_address_lists::ListAddressListsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AddressList>> {
+    let input = input.address_lists;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_archive_exports_output_output_exports(
     input: crate::operation::list_archive_exports::ListArchiveExportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExportSummary>> {
@@ -143,6 +187,13 @@ pub(crate) fn lens_list_ingress_points_output_output_ingress_points(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_members_of_address_list_output_output_addresses(
+    input: crate::operation::list_members_of_address_list::ListMembersOfAddressListOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SavedAddress>> {
+    let input = input.addresses;
     ::std::option::Option::Some(input)
 }
 

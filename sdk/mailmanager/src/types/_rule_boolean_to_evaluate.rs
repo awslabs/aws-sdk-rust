@@ -6,6 +6,8 @@
 pub enum RuleBooleanToEvaluate {
     /// <p>The boolean type representing the allowed attribute types for an email.</p>
     Attribute(crate::types::RuleBooleanEmailAttribute),
+    /// <p>The structure representing the address lists and address list attribute that will be used in evaluation of boolean expression.</p>
+    IsInAddressList(crate::types::RuleIsInAddressList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum RuleBooleanToEvaluate {
     Unknown,
 }
 impl RuleBooleanToEvaluate {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Attribute`](crate::types::RuleBooleanToEvaluate::Attribute), extracting the inner [`RuleBooleanEmailAttribute`](crate::types::RuleBooleanEmailAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> ::std::result::Result<&crate::types::RuleBooleanEmailAttribute, &Self> {
@@ -30,6 +31,19 @@ impl RuleBooleanToEvaluate {
     /// Returns true if this is a [`Attribute`](crate::types::RuleBooleanToEvaluate::Attribute).
     pub fn is_attribute(&self) -> bool {
         self.as_attribute().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IsInAddressList`](crate::types::RuleBooleanToEvaluate::IsInAddressList), extracting the inner [`RuleIsInAddressList`](crate::types::RuleIsInAddressList).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_is_in_address_list(&self) -> ::std::result::Result<&crate::types::RuleIsInAddressList, &Self> {
+        if let RuleBooleanToEvaluate::IsInAddressList(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IsInAddressList`](crate::types::RuleBooleanToEvaluate::IsInAddressList).
+    pub fn is_is_in_address_list(&self) -> bool {
+        self.as_is_in_address_list().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

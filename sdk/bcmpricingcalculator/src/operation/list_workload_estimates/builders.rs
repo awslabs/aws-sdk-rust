@@ -114,31 +114,31 @@ impl ListWorkloadEstimatesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_workload_estimates::paginator::ListWorkloadEstimatesPaginator {
         crate::operation::list_workload_estimates::paginator::ListWorkloadEstimatesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn created_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.inner = self.inner.created_at_filter(input);
         self
     }
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn set_created_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.inner = self.inner.set_created_at_filter(input);
         self
     }
-    /// <p>Filter workload estimates based on their creation date.</p>
+    /// <p>Filter workload estimates based on the creation date.</p>
     pub fn get_created_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         self.inner.get_created_at_filter()
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn expires_at_filter(mut self, input: crate::types::FilterTimestamp) -> Self {
         self.inner = self.inner.expires_at_filter(input);
         self
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn set_expires_at_filter(mut self, input: ::std::option::Option<crate::types::FilterTimestamp>) -> Self {
         self.inner = self.inner.set_expires_at_filter(input);
         self
     }
-    /// <p>Filter workload estimates based on their expiration date.</p>
+    /// <p>Filter workload estimates based on the expiration date.</p>
     pub fn get_expires_at_filter(&self) -> &::std::option::Option<crate::types::FilterTimestamp> {
         self.inner.get_expires_at_filter()
     }

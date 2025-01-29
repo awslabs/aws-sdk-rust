@@ -388,6 +388,242 @@ impl ::aws_types::request_id::RequestId for crate::types::error::MedicalTranscri
     }
 }
 
+/// Error type for the `MedicalScribeResultStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum MedicalScribeResultStreamError {
+    /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
+    BadRequestException(crate::types::error::BadRequestException),
+    /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
+    InternalFailureException(crate::types::error::InternalFailureException),
+    /// <p>A new stream started with the same session ID. The current stream has been terminated.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p>The service is currently unavailable. Try your request later.</p>
+    ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-MedicalScribeResultStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl MedicalScribeResultStreamError {
+    /// Creates the `MedicalScribeResultStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
+
+    /// Creates the `MedicalScribeResultStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::BadRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+    /// Returns `true` if the error kind is `MedicalScribeResultStreamError::BadRequestException`.
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(self, Self::BadRequestException(_))
+    }
+    /// Returns `true` if the error kind is `MedicalScribeResultStreamError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
+    }
+    /// Returns `true` if the error kind is `MedicalScribeResultStreamError::InternalFailureException`.
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(self, Self::InternalFailureException(_))
+    }
+    /// Returns `true` if the error kind is `MedicalScribeResultStreamError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `MedicalScribeResultStreamError::ServiceUnavailableException`.
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(self, Self::ServiceUnavailableException(_))
+    }
+}
+impl ::std::error::Error for MedicalScribeResultStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::BadRequestException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for MedicalScribeResultStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for MedicalScribeResultStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MedicalScribeResultStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::BadRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for MedicalScribeResultStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::MedicalScribeResultStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
+
+/// Error type for the `MedicalScribeInputStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum MedicalScribeInputStreamError {
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-MedicalScribeInputStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl MedicalScribeInputStreamError {
+    /// Creates the `MedicalScribeInputStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
+
+    /// Creates the `MedicalScribeInputStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+}
+impl ::std::error::Error for MedicalScribeInputStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for MedicalScribeInputStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for MedicalScribeInputStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for MedicalScribeInputStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for MedicalScribeInputStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::MedicalScribeInputStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
+
 /// Error type for the `CallAnalyticsTranscriptResultStreamError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -531,6 +767,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::CallAnalyticsTr
     }
 }
 
+pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
 mod _bad_request_exception;
 
 mod _conflict_exception;
@@ -538,6 +776,8 @@ mod _conflict_exception;
 mod _internal_failure_exception;
 
 mod _limit_exceeded_exception;
+
+mod _resource_not_found_exception;
 
 mod _service_unavailable_exception;
 

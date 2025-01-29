@@ -22,7 +22,9 @@ impl crate::operation::batch_create_bill_scenario_commitment_modification::build
 }
 /// Fluent builder constructing a request to `BatchCreateBillScenarioCommitmentModification`.
 ///
-/// <p>Create Compute Savings Plans, EC2 Instance Savings Plans, or EC2 Reserved Instances commitments that you want to model in a Bill Scenario.</p>
+/// <p>Create Compute Savings Plans, EC2 Instance Savings Plans, or EC2 Reserved Instances commitments that you want to model in a Bill Scenario.</p><note>
+/// <p>The <code>BatchCreateBillScenarioCommitmentModification</code> operation doesn't have its own IAM permission. To authorize this operation for Amazon Web Services principals, include the permission <code>bcm-pricing-calculator:CreateBillScenarioCommitmentModification</code> in your policies.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateBillScenarioCommitmentModificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

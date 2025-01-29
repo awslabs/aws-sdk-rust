@@ -3,6 +3,8 @@ pub use crate::types::_policy_statement::PolicyStatementBuilder;
 
 pub use crate::types::_ingress_boolean_expression::IngressBooleanExpressionBuilder;
 
+pub use crate::types::_ingress_is_in_address_list::IngressIsInAddressListBuilder;
+
 pub use crate::types::_ingress_analysis::IngressAnalysisBuilder;
 
 pub use crate::types::_ingress_tls_protocol_expression::IngressTlsProtocolExpressionBuilder;
@@ -49,6 +51,8 @@ pub use crate::types::_rule_string_expression::RuleStringExpressionBuilder;
 
 pub use crate::types::_rule_boolean_expression::RuleBooleanExpressionBuilder;
 
+pub use crate::types::_rule_is_in_address_list::RuleIsInAddressListBuilder;
+
 pub use crate::types::_rule_set::RuleSetBuilder;
 
 pub use crate::types::_no_authentication::NoAuthenticationBuilder;
@@ -63,6 +67,8 @@ pub use crate::types::_ingress_point::IngressPointBuilder;
 
 pub use crate::types::_archive::ArchiveBuilder;
 
+pub use crate::types::_address_list::AddressListBuilder;
+
 pub use crate::types::_addon_subscription::AddonSubscriptionBuilder;
 
 pub use crate::types::_addon_instance::AddonInstanceBuilder;
@@ -75,6 +81,10 @@ pub use crate::types::_archive_string_expression::ArchiveStringExpressionBuilder
 
 pub use crate::types::_s3_export_destination_configuration::S3ExportDestinationConfigurationBuilder;
 
+pub use crate::types::_saved_address::SavedAddressBuilder;
+
+pub use crate::types::_address_filter::AddressFilterBuilder;
+
 pub use crate::types::_search_summary::SearchSummaryBuilder;
 
 pub use crate::types::_search_status::SearchStatusBuilder;
@@ -82,6 +92,10 @@ pub use crate::types::_search_status::SearchStatusBuilder;
 pub use crate::types::_export_summary::ExportSummaryBuilder;
 
 pub use crate::types::_export_status::ExportStatusBuilder;
+
+pub use crate::types::_import_job::ImportJobBuilder;
+
+pub use crate::types::_import_data_format::ImportDataFormatBuilder;
 
 pub use crate::types::_row::RowBuilder;
 

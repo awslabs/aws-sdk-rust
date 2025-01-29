@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`StartCallAnalyticsStreamTranscription`](crate::operation::start_call_analytics_stream_transcription) operation has
-/// a [`Client::start_call_analytics_stream_transcription`], function which returns a builder for that operation.
+/// For example, the [`GetMedicalScribeStream`](crate::operation::get_medical_scribe_stream) operation has
+/// a [`Client::get_medical_scribe_stream`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.start_call_analytics_stream_transcription()
-///     .language_code("example")
+/// let result = client.get_medical_scribe_stream()
+///     .session_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -147,7 +147,7 @@ impl Client {
 /// # let client: aws_sdk_transcribestreaming::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.start_call_analytics_stream_transcription()
+/// let result = client.get_medical_scribe_stream()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -163,7 +163,11 @@ impl Client {
 /// ```
 pub mod customize;
 
+mod get_medical_scribe_stream;
+
 mod start_call_analytics_stream_transcription;
+
+mod start_medical_scribe_stream;
 
 mod start_medical_stream_transcription;
 

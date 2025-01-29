@@ -10,6 +10,12 @@ pub fn ser_ingress_boolean_to_evaluate(
             crate::protocol_serde::shape_ingress_analysis::ser_ingress_analysis(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::IngressBooleanToEvaluate::IsInAddressList(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("IsInAddressList").start_object();
+            crate::protocol_serde::shape_ingress_is_in_address_list::ser_ingress_is_in_address_list(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::IngressBooleanToEvaluate::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IngressBooleanToEvaluate",
@@ -52,6 +58,11 @@ where
                         "Analysis" => Some(crate::types::IngressBooleanToEvaluate::Analysis(
                             crate::protocol_serde::shape_ingress_analysis::de_ingress_analysis(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
+                            })?,
+                        )),
+                        "IsInAddressList" => Some(crate::types::IngressBooleanToEvaluate::IsInAddressList(
+                            crate::protocol_serde::shape_ingress_is_in_address_list::de_ingress_is_in_address_list(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IsInAddressList' cannot be null")
                             })?,
                         )),
                         _ => {

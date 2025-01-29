@@ -63,6 +63,42 @@ pub use crate::types::_type_::Type;
 
 pub use crate::types::_specialty::Specialty;
 
+pub use crate::types::_medical_scribe_result_stream::MedicalScribeResultStream;
+
+pub use crate::types::_medical_scribe_transcript_event::MedicalScribeTranscriptEvent;
+
+pub use crate::types::_medical_scribe_transcript_segment::MedicalScribeTranscriptSegment;
+
+pub use crate::types::_medical_scribe_transcript_item::MedicalScribeTranscriptItem;
+
+pub use crate::types::_medical_scribe_transcript_item_type::MedicalScribeTranscriptItemType;
+
+pub use crate::types::_medical_scribe_media_encoding::MedicalScribeMediaEncoding;
+
+pub use crate::types::_medical_scribe_language_code::MedicalScribeLanguageCode;
+
+pub use crate::types::_medical_scribe_input_stream::MedicalScribeInputStream;
+
+pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigurationEvent;
+
+pub use crate::types::_medical_scribe_post_stream_analytics_settings::MedicalScribePostStreamAnalyticsSettings;
+
+pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettings;
+
+pub use crate::types::_medical_scribe_encryption_settings::MedicalScribeEncryptionSettings;
+
+pub use crate::types::_medical_scribe_channel_definition::MedicalScribeChannelDefinition;
+
+pub use crate::types::_medical_scribe_participant_role::MedicalScribeParticipantRole;
+
+pub use crate::types::_medical_scribe_vocabulary_filter_method::MedicalScribeVocabularyFilterMethod;
+
+pub use crate::types::_medical_scribe_session_control_event::MedicalScribeSessionControlEvent;
+
+pub use crate::types::_medical_scribe_session_control_event_type::MedicalScribeSessionControlEventType;
+
+pub use crate::types::_medical_scribe_audio_event::MedicalScribeAudioEvent;
+
 pub use crate::types::_call_analytics_transcript_result_stream::CallAnalyticsTranscriptResultStream;
 
 pub use crate::types::_category_event::CategoryEvent;
@@ -85,6 +121,16 @@ pub use crate::types::_call_analytics_item::CallAnalyticsItem;
 
 pub use crate::types::_call_analytics_language_code::CallAnalyticsLanguageCode;
 
+pub use crate::types::_medical_scribe_stream_details::MedicalScribeStreamDetails;
+
+pub use crate::types::_medical_scribe_post_stream_analytics_result::MedicalScribePostStreamAnalyticsResult;
+
+pub use crate::types::_clinical_note_generation_result::ClinicalNoteGenerationResult;
+
+pub use crate::types::_clinical_note_generation_status::ClinicalNoteGenerationStatus;
+
+pub use crate::types::_medical_scribe_stream_status::MedicalScribeStreamStatus;
+
 mod _alternative;
 
 mod _audio_event;
@@ -104,6 +150,12 @@ mod _category_event;
 mod _channel_definition;
 
 mod _character_offsets;
+
+mod _clinical_note_generation_result;
+
+mod _clinical_note_generation_settings;
+
+mod _clinical_note_generation_status;
 
 mod _configuration_event;
 
@@ -136,6 +188,46 @@ mod _medical_entity;
 mod _medical_item;
 
 mod _medical_result;
+
+mod _medical_scribe_audio_event;
+
+mod _medical_scribe_channel_definition;
+
+mod _medical_scribe_configuration_event;
+
+mod _medical_scribe_encryption_settings;
+
+mod _medical_scribe_input_stream;
+
+mod _medical_scribe_language_code;
+
+mod _medical_scribe_media_encoding;
+
+mod _medical_scribe_participant_role;
+
+mod _medical_scribe_post_stream_analytics_result;
+
+mod _medical_scribe_post_stream_analytics_settings;
+
+mod _medical_scribe_result_stream;
+
+mod _medical_scribe_session_control_event;
+
+mod _medical_scribe_session_control_event_type;
+
+mod _medical_scribe_stream_details;
+
+mod _medical_scribe_stream_status;
+
+mod _medical_scribe_transcript_event;
+
+mod _medical_scribe_transcript_item;
+
+mod _medical_scribe_transcript_item_type;
+
+mod _medical_scribe_transcript_segment;
+
+mod _medical_scribe_vocabulary_filter_method;
 
 mod _medical_transcript;
 

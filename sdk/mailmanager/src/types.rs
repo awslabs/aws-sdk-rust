@@ -11,6 +11,10 @@ pub use crate::types::_ingress_boolean_operator::IngressBooleanOperator;
 
 pub use crate::types::_ingress_boolean_to_evaluate::IngressBooleanToEvaluate;
 
+pub use crate::types::_ingress_is_in_address_list::IngressIsInAddressList;
+
+pub use crate::types::_ingress_address_list_email_attribute::IngressAddressListEmailAttribute;
+
 pub use crate::types::_ingress_analysis::IngressAnalysis;
 
 pub use crate::types::_ingress_tls_protocol_expression::IngressTlsProtocolExpression;
@@ -119,6 +123,10 @@ pub use crate::types::_rule_boolean_operator::RuleBooleanOperator;
 
 pub use crate::types::_rule_boolean_to_evaluate::RuleBooleanToEvaluate;
 
+pub use crate::types::_rule_is_in_address_list::RuleIsInAddressList;
+
+pub use crate::types::_rule_address_list_email_attribute::RuleAddressListEmailAttribute;
+
 pub use crate::types::_rule_boolean_email_attribute::RuleBooleanEmailAttribute;
 
 pub use crate::types::_rule_set::RuleSet;
@@ -151,6 +159,8 @@ pub use crate::types::_archive_state::ArchiveState;
 
 pub use crate::types::_archive::Archive;
 
+pub use crate::types::_address_list::AddressList;
+
 pub use crate::types::_addon_subscription::AddonSubscription;
 
 pub use crate::types::_addon_instance::AddonInstance;
@@ -179,6 +189,10 @@ pub use crate::types::_export_destination_configuration::ExportDestinationConfig
 
 pub use crate::types::_s3_export_destination_configuration::S3ExportDestinationConfiguration;
 
+pub use crate::types::_saved_address::SavedAddress;
+
+pub use crate::types::_address_filter::AddressFilter;
+
 pub use crate::types::_search_summary::SearchSummary;
 
 pub use crate::types::_search_status::SearchStatus;
@@ -190,6 +204,14 @@ pub use crate::types::_export_summary::ExportSummary;
 pub use crate::types::_export_status::ExportStatus;
 
 pub use crate::types::_export_state::ExportState;
+
+pub use crate::types::_import_job::ImportJob;
+
+pub use crate::types::_import_data_format::ImportDataFormat;
+
+pub use crate::types::_import_data_type::ImportDataType;
+
+pub use crate::types::_import_job_status::ImportJobStatus;
 
 pub use crate::types::_row::Row;
 
@@ -208,6 +230,10 @@ mod _add_header_action;
 mod _addon_instance;
 
 mod _addon_subscription;
+
+mod _address_filter;
+
+mod _address_list;
 
 mod _analysis;
 
@@ -255,6 +281,16 @@ mod _export_status;
 
 mod _export_summary;
 
+mod _import_data_format;
+
+mod _import_data_type;
+
+mod _import_job;
+
+mod _import_job_status;
+
+mod _ingress_address_list_email_attribute;
+
 mod _ingress_analysis;
 
 mod _ingress_boolean_expression;
@@ -270,6 +306,8 @@ mod _ingress_ip_to_evaluate;
 mod _ingress_ipv4_attribute;
 
 mod _ingress_ipv4_expression;
+
+mod _ingress_is_in_address_list;
 
 mod _ingress_point;
 
@@ -331,6 +369,8 @@ mod _rule;
 
 mod _rule_action;
 
+mod _rule_address_list_email_attribute;
+
 mod _rule_boolean_email_attribute;
 
 mod _rule_boolean_expression;
@@ -354,6 +394,8 @@ mod _rule_ip_expression;
 mod _rule_ip_operator;
 
 mod _rule_ip_to_evaluate;
+
+mod _rule_is_in_address_list;
 
 mod _rule_number_email_attribute;
 
@@ -386,6 +428,8 @@ mod _rule_verdict_to_evaluate;
 mod _s3_action;
 
 mod _s3_export_destination_configuration;
+
+mod _saved_address;
 
 mod _search_state;
 

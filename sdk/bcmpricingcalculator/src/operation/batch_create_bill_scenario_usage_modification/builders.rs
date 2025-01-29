@@ -22,7 +22,9 @@ impl crate::operation::batch_create_bill_scenario_usage_modification::builders::
 }
 /// Fluent builder constructing a request to `BatchCreateBillScenarioUsageModification`.
 ///
-/// <p>Create Amazon Web Services service usage that you want to model in a Bill Scenario.</p>
+/// <p>Create Amazon Web Services service usage that you want to model in a Bill Scenario.</p><note>
+/// <p>The <code>BatchCreateBillScenarioUsageModification</code> operation doesn't have its own IAM permission. To authorize this operation for Amazon Web Services principals, include the permission <code>bcm-pricing-calculator:CreateBillScenarioUsageModification</code> in your policies.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateBillScenarioUsageModificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

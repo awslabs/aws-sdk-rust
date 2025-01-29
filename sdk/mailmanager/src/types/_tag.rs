@@ -2,7 +2,7 @@
 
 /// <p>A key-value pair (the value is optional), that you can define and assign to Amazon Web Services resources.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
     /// <p>The key of the key-value tag.</p>
     pub key: ::std::string::String,
@@ -21,14 +21,6 @@ impl Tag {
         self.value.deref()
     }
 }
-impl ::std::fmt::Debug for Tag {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("Tag");
-        formatter.field("key", &"*** Sensitive Data Redacted ***");
-        formatter.field("value", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
-    }
-}
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::types::Tag).
     pub fn builder() -> crate::types::builders::TagBuilder {
@@ -37,7 +29,7 @@ impl Tag {
 }
 
 /// A builder for [`Tag`](crate::types::Tag).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct TagBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -90,13 +82,5 @@ impl TagBuilder {
                 )
             })?,
         })
-    }
-}
-impl ::std::fmt::Debug for TagBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("TagBuilder");
-        formatter.field("key", &"*** Sensitive Data Redacted ***");
-        formatter.field("value", &"*** Sensitive Data Redacted ***");
-        formatter.finish()
     }
 }

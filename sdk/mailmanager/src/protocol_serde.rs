@@ -27,6 +27,10 @@ pub(crate) mod shape_create_addon_instance;
 
 pub(crate) mod shape_create_addon_subscription;
 
+pub(crate) mod shape_create_address_list;
+
+pub(crate) mod shape_create_address_list_import_job;
+
 pub(crate) mod shape_create_archive;
 
 pub(crate) mod shape_create_ingress_point;
@@ -41,6 +45,8 @@ pub(crate) mod shape_delete_addon_instance;
 
 pub(crate) mod shape_delete_addon_subscription;
 
+pub(crate) mod shape_delete_address_list;
+
 pub(crate) mod shape_delete_archive;
 
 pub(crate) mod shape_delete_ingress_point;
@@ -51,9 +57,15 @@ pub(crate) mod shape_delete_rule_set;
 
 pub(crate) mod shape_delete_traffic_policy;
 
+pub(crate) mod shape_deregister_member_from_address_list;
+
 pub(crate) mod shape_get_addon_instance;
 
 pub(crate) mod shape_get_addon_subscription;
+
+pub(crate) mod shape_get_address_list;
+
+pub(crate) mod shape_get_address_list_import_job;
 
 pub(crate) mod shape_get_archive;
 
@@ -69,6 +81,8 @@ pub(crate) mod shape_get_archive_search_results;
 
 pub(crate) mod shape_get_ingress_point;
 
+pub(crate) mod shape_get_member_of_address_list;
+
 pub(crate) mod shape_get_relay;
 
 pub(crate) mod shape_get_rule_set;
@@ -79,6 +93,10 @@ pub(crate) mod shape_list_addon_instances;
 
 pub(crate) mod shape_list_addon_subscriptions;
 
+pub(crate) mod shape_list_address_list_import_jobs;
+
+pub(crate) mod shape_list_address_lists;
+
 pub(crate) mod shape_list_archive_exports;
 
 pub(crate) mod shape_list_archive_searches;
@@ -86,6 +104,8 @@ pub(crate) mod shape_list_archive_searches;
 pub(crate) mod shape_list_archives;
 
 pub(crate) mod shape_list_ingress_points;
+
+pub(crate) mod shape_list_members_of_address_list;
 
 pub(crate) mod shape_list_relays;
 
@@ -95,9 +115,15 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_traffic_policies;
 
+pub(crate) mod shape_register_member_to_address_list;
+
+pub(crate) mod shape_start_address_list_import_job;
+
 pub(crate) mod shape_start_archive_export;
 
 pub(crate) mod shape_start_archive_search;
+
+pub(crate) mod shape_stop_address_list_import_job;
 
 pub(crate) mod shape_stop_archive_export;
 
@@ -133,6 +159,10 @@ pub(crate) mod shape_create_addon_instance_input;
 
 pub(crate) mod shape_create_addon_subscription_input;
 
+pub(crate) mod shape_create_address_list_import_job_input;
+
+pub(crate) mod shape_create_address_list_input;
+
 pub(crate) mod shape_create_archive_input;
 
 pub(crate) mod shape_create_ingress_point_input;
@@ -147,6 +177,8 @@ pub(crate) mod shape_delete_addon_instance_input;
 
 pub(crate) mod shape_delete_addon_subscription_input;
 
+pub(crate) mod shape_delete_address_list_input;
+
 pub(crate) mod shape_delete_archive_input;
 
 pub(crate) mod shape_delete_ingress_point_input;
@@ -157,9 +189,15 @@ pub(crate) mod shape_delete_rule_set_input;
 
 pub(crate) mod shape_delete_traffic_policy_input;
 
+pub(crate) mod shape_deregister_member_from_address_list_input;
+
 pub(crate) mod shape_get_addon_instance_input;
 
 pub(crate) mod shape_get_addon_subscription_input;
+
+pub(crate) mod shape_get_address_list_import_job_input;
+
+pub(crate) mod shape_get_address_list_input;
 
 pub(crate) mod shape_get_archive_export_input;
 
@@ -175,6 +213,8 @@ pub(crate) mod shape_get_archive_search_results_input;
 
 pub(crate) mod shape_get_ingress_point_input;
 
+pub(crate) mod shape_get_member_of_address_list_input;
+
 pub(crate) mod shape_get_relay_input;
 
 pub(crate) mod shape_get_rule_set_input;
@@ -185,6 +225,10 @@ pub(crate) mod shape_list_addon_instances_input;
 
 pub(crate) mod shape_list_addon_subscriptions_input;
 
+pub(crate) mod shape_list_address_list_import_jobs_input;
+
+pub(crate) mod shape_list_address_lists_input;
+
 pub(crate) mod shape_list_archive_exports_input;
 
 pub(crate) mod shape_list_archive_searches_input;
@@ -192,6 +236,8 @@ pub(crate) mod shape_list_archive_searches_input;
 pub(crate) mod shape_list_archives_input;
 
 pub(crate) mod shape_list_ingress_points_input;
+
+pub(crate) mod shape_list_members_of_address_list_input;
 
 pub(crate) mod shape_list_relays_input;
 
@@ -201,13 +247,19 @@ pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_traffic_policies_input;
 
+pub(crate) mod shape_register_member_to_address_list_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_address_list_import_job_input;
+
 pub(crate) mod shape_start_archive_export_input;
 
 pub(crate) mod shape_start_archive_search_input;
+
+pub(crate) mod shape_stop_address_list_import_job_input;
 
 pub(crate) mod shape_stop_archive_export_input;
 
@@ -235,6 +287,10 @@ pub(crate) mod shape_addon_instances;
 
 pub(crate) mod shape_addon_subscriptions;
 
+pub(crate) mod shape_address_filter;
+
+pub(crate) mod shape_address_lists;
+
 pub(crate) mod shape_archive_filters;
 
 pub(crate) mod shape_archive_retention;
@@ -248,6 +304,10 @@ pub(crate) mod shape_export_destination_configuration;
 pub(crate) mod shape_export_status;
 
 pub(crate) mod shape_export_summary_list;
+
+pub(crate) mod shape_import_data_format;
+
+pub(crate) mod shape_import_jobs;
 
 pub(crate) mod shape_ingress_point_auth_configuration;
 
@@ -275,6 +335,8 @@ pub(crate) mod shape_rule_sets;
 
 pub(crate) mod shape_rules;
 
+pub(crate) mod shape_saved_addresses;
+
 pub(crate) mod shape_search_status;
 
 pub(crate) mod shape_search_summary_list;
@@ -289,6 +351,8 @@ pub(crate) mod shape_addon_instance;
 
 pub(crate) mod shape_addon_subscription;
 
+pub(crate) mod shape_address_list;
+
 pub(crate) mod shape_archive;
 
 pub(crate) mod shape_archive_filter_condition;
@@ -296,6 +360,8 @@ pub(crate) mod shape_archive_filter_condition;
 pub(crate) mod shape_archive_filter_conditions;
 
 pub(crate) mod shape_export_summary;
+
+pub(crate) mod shape_import_job;
 
 pub(crate) mod shape_ingress_point;
 
@@ -316,6 +382,8 @@ pub(crate) mod shape_rule_condition;
 pub(crate) mod shape_rule_set;
 
 pub(crate) mod shape_s3_export_destination_configuration;
+
+pub(crate) mod shape_saved_address;
 
 pub(crate) mod shape_search_summary;
 
@@ -399,6 +467,10 @@ pub(crate) mod shape_analysis;
 
 pub(crate) mod shape_ingress_analysis;
 
+pub(crate) mod shape_ingress_is_in_address_list;
+
+pub(crate) mod shape_rule_is_in_address_list;
+
 pub(crate) mod shape_string_value_list;
 
 pub(crate) mod shape_ipv4_cidrs;
@@ -412,3 +484,7 @@ pub(crate) mod shape_rule_ip_value_list;
 pub(crate) mod shape_rule_string_list;
 
 pub(crate) mod shape_rule_verdict_value_list;
+
+pub(crate) mod shape_ingress_address_list_arn_list;
+
+pub(crate) mod shape_rule_address_list_arn_list;

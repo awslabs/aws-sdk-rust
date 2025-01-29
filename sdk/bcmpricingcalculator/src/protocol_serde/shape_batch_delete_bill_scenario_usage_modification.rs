@@ -24,6 +24,19 @@ pub fn de_batch_delete_bill_scenario_usage_modification_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output).map_err(crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::conflict_exception_correct_errors(output).build().map_err(crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::unhandled)?
+                }
+            ;
+            tmp
+        }),
         "DataUnavailableException" => crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::DataUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =

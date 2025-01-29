@@ -17,10 +17,11 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
-//! Amazon Transcribe streaming offers three main types of real-time transcription: __Standard__, __Medical__, and __Call Analytics__.
+//! Amazon Transcribe streaming offers four main types of real-time transcription: __Standard__, __Medical__, __Call Analytics__, and __Health Scribe__.
 //!   - __Standard transcriptions__ are the most common option. Refer to for details.
 //!   - __Medical transcriptions__ are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue in real time, so doctors can focus on their patient instead of taking notes. Refer to for details.
 //!   - __Call Analytics transcriptions__ are designed for use with call center audio on two different channels; if you're looking for insight into customer service calls, use this option. Refer to for details.
+//!   - __HealthScribe transcriptions__ are designed to automatically create clinical notes from patient-clinician conversations using generative AI. Refer to [here] for details.
 //!
 //! ## Getting Started
 //!
@@ -151,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`StartCallAnalyticsStreamTranscription`](crate::operation::start_call_analytics_stream_transcription) operation has
-/// a [`Client::start_call_analytics_stream_transcription`], function which returns a builder for that operation.
+/// For example, the [`GetMedicalScribeStream`](crate::operation::get_medical_scribe_stream) operation has
+/// a [`Client::get_medical_scribe_stream`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.start_call_analytics_stream_transcription()
-///     .language_code("example")
+/// let result = client.get_medical_scribe_stream()
+///     .session_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -203,6 +204,8 @@ mod serialization_settings;
 mod endpoint_lib;
 
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

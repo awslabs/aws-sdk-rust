@@ -69,6 +69,75 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller 
 
 #[non_exhaustive]
 #[derive(Debug)]
+pub struct MedicalScribeInputStreamErrorMarshaller;
+
+impl MedicalScribeInputStreamErrorMarshaller {
+    pub fn new() -> Self {
+        MedicalScribeInputStreamErrorMarshaller
+    }
+}
+impl ::aws_smithy_eventstream::frame::MarshallMessage for MedicalScribeInputStreamErrorMarshaller {
+    type Input = crate::types::error::MedicalScribeInputStreamError;
+    fn marshall(
+        &self,
+        _input: Self::Input,
+    ) -> std::result::Result<::aws_smithy_types::event_stream::Message, ::aws_smithy_eventstream::error::Error> {
+        let mut headers = Vec::new();
+        headers.push(::aws_smithy_types::event_stream::Header::new(
+            ":message-type",
+            ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
+        ));
+        let payload = Vec::new();
+        Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
+    }
+}
+
+#[non_exhaustive]
+#[derive(Debug)]
+pub struct MedicalScribeInputStreamMarshaller;
+
+impl MedicalScribeInputStreamMarshaller {
+    pub fn new() -> Self {
+        MedicalScribeInputStreamMarshaller
+    }
+}
+impl ::aws_smithy_eventstream::frame::MarshallMessage for MedicalScribeInputStreamMarshaller {
+    type Input = crate::types::MedicalScribeInputStream;
+    fn marshall(&self, input: Self::Input) -> std::result::Result<::aws_smithy_types::event_stream::Message, ::aws_smithy_eventstream::error::Error> {
+        let mut headers = Vec::new();
+        headers.push(::aws_smithy_types::event_stream::Header::new(
+            ":message-type",
+            ::aws_smithy_types::event_stream::HeaderValue::String("event".into()),
+        ));
+        let payload = match input {
+            Self::Input::AudioEvent(inner) =>  {
+                headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("AudioEvent".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/octet-stream".into())));
+                inner.audio_chunk.into_inner()
+            }
+            Self::Input::SessionControlEvent(inner) =>  {
+                headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("SessionControlEvent".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
+                crate::protocol_serde::shape_medical_scribe_input_stream::ser_session_control_event_payload(&inner)
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+            }
+            Self::Input::ConfigurationEvent(inner) =>  {
+                headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
+                headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
+                crate::protocol_serde::shape_medical_scribe_input_stream::ser_configuration_event_payload(&inner)
+                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{}", err)))?
+            }
+            Self::Input::Unknown => return Err(
+                                            ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `MedicalScribeInputStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())
+                                        )
+        }
+        ;
+        Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
+    }
+}
+
+#[non_exhaustive]
+#[derive(Debug)]
 pub struct CallAnalyticsTranscriptResultStreamUnmarshaller;
 
 impl CallAnalyticsTranscriptResultStreamUnmarshaller {
@@ -192,6 +261,136 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for CallAnalyticsTranscr
                 }
                 Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                     crate::types::error::CallAnalyticsTranscriptResultStreamError::generic(generic),
+                ))
+            }
+            value => {
+                return Err(::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                    "unrecognized :message-type: {}",
+                    value
+                )));
+            }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(Debug)]
+pub struct MedicalScribeResultStreamUnmarshaller;
+
+impl MedicalScribeResultStreamUnmarshaller {
+    pub fn new() -> Self {
+        MedicalScribeResultStreamUnmarshaller
+    }
+}
+impl ::aws_smithy_eventstream::frame::UnmarshallMessage for MedicalScribeResultStreamUnmarshaller {
+    type Output = crate::types::MedicalScribeResultStream;
+    type Error = crate::types::error::MedicalScribeResultStreamError;
+    fn unmarshall(
+        &self,
+        message: &::aws_smithy_types::event_stream::Message,
+    ) -> std::result::Result<::aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>, ::aws_smithy_eventstream::error::Error>
+    {
+        let response_headers = ::aws_smithy_eventstream::smithy::parse_response_headers(message)?;
+        match response_headers.message_type.as_str() {
+            "event" => match response_headers.smithy_type.as_str() {
+                "TranscriptEvent" => {
+                    let parsed = crate::protocol_serde::shape_medical_scribe_transcript_event::de_medical_scribe_transcript_event_payload(
+                        &message.payload()[..],
+                    )
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall TranscriptEvent: {}", err)))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::MedicalScribeResultStream::TranscriptEvent(parsed),
+                    ))
+                }
+                _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    crate::types::MedicalScribeResultStream::Unknown,
+                )),
+            },
+            "exception" => {
+                let generic = match crate::protocol_serde::parse_event_stream_error_metadata(message.payload()) {
+                    Ok(builder) => builder.build(),
+                    Err(err) => {
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::MedicalScribeResultStreamError::unhandled(err),
+                        ))
+                    }
+                };
+                match response_headers.smithy_type.as_str() {
+                    "BadRequestException" => {
+                        let mut builder = crate::types::error::builders::BadRequestExceptionBuilder::default();
+                        builder =
+                            crate::protocol_serde::shape_bad_request_exception::de_bad_request_exception_json_err(&message.payload()[..], builder)
+                                .map_err(|err| {
+                                    ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                        "failed to unmarshall BadRequestException: {}",
+                                        err
+                                    ))
+                                })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::MedicalScribeResultStreamError::BadRequestException(builder.build()),
+                        ));
+                    }
+                    "LimitExceededException" => {
+                        let mut builder = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall LimitExceededException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::MedicalScribeResultStreamError::LimitExceededException(builder.build()),
+                        ));
+                    }
+                    "InternalFailureException" => {
+                        let mut builder = crate::types::error::builders::InternalFailureExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_internal_failure_exception::de_internal_failure_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall InternalFailureException: {}", err))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::MedicalScribeResultStreamError::InternalFailureException(builder.build()),
+                        ));
+                    }
+                    "ConflictException" => {
+                        let mut builder = crate::types::error::builders::ConflictExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(&message.payload()[..], builder)
+                            .map_err(|err| {
+                                ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ConflictException: {}", err))
+                            })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::MedicalScribeResultStreamError::ConflictException(builder.build()),
+                        ));
+                    }
+                    "ServiceUnavailableException" => {
+                        let mut builder = crate::types::error::builders::ServiceUnavailableExceptionBuilder::default();
+                        builder = crate::protocol_serde::shape_service_unavailable_exception::de_service_unavailable_exception_json_err(
+                            &message.payload()[..],
+                            builder,
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!(
+                                "failed to unmarshall ServiceUnavailableException: {}",
+                                err
+                            ))
+                        })?;
+                        builder.set_meta(Some(generic));
+                        return Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            crate::types::error::MedicalScribeResultStreamError::ServiceUnavailableException(builder.build()),
+                        ));
+                    }
+                    _ => {}
+                }
+                Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
+                    crate::types::error::MedicalScribeResultStreamError::generic(generic),
                 ))
             }
             value => {

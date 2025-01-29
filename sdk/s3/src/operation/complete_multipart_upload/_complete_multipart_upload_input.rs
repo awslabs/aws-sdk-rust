@@ -29,7 +29,7 @@ pub struct CompleteMultipartUploadInput {
     /// <p>This header specifies the checksum type of the object, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header as a data integrity check to verify that the checksum type that is received is the same checksum that was specified. If the checksum type doesn’t match the checksum type that was specified for the object during the <code>CreateMultipartUpload</code> request, it’ll result in a <code>BadDigest</code> error. For more information, see Checking object integrity in the Amazon S3 User Guide.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub mpu_object_size: ::std::option::Option<::std::string::String>,
+    pub mpu_object_size: ::std::option::Option<i64>,
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
@@ -106,8 +106,8 @@ impl CompleteMultipartUploadInput {
         self.checksum_type.as_ref()
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn mpu_object_size(&self) -> ::std::option::Option<&str> {
-        self.mpu_object_size.as_deref()
+    pub fn mpu_object_size(&self) -> ::std::option::Option<i64> {
+        self.mpu_object_size
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>
     /// <p>This functionality is not supported for directory buckets.</p>
@@ -197,7 +197,7 @@ pub struct CompleteMultipartUploadInputBuilder {
     pub(crate) checksum_sha1: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
-    pub(crate) mpu_object_size: ::std::option::Option<::std::string::String>,
+    pub(crate) mpu_object_size: ::std::option::Option<i64>,
     pub(crate) request_payer: ::std::option::Option<crate::types::RequestPayer>,
     pub(crate) expected_bucket_owner: ::std::option::Option<::std::string::String>,
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
@@ -366,17 +366,17 @@ impl CompleteMultipartUploadInputBuilder {
         &self.checksum_type
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn mpu_object_size(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.mpu_object_size = ::std::option::Option::Some(input.into());
+    pub fn mpu_object_size(mut self, input: i64) -> Self {
+        self.mpu_object_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn set_mpu_object_size(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+    pub fn set_mpu_object_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.mpu_object_size = input;
         self
     }
     /// <p>The expected total object size of the multipart upload request. If there’s a mismatch between the specified object size value and the actual object size value, it results in an <code>HTTP 400 InvalidRequest</code> error.</p>
-    pub fn get_mpu_object_size(&self) -> &::std::option::Option<::std::string::String> {
+    pub fn get_mpu_object_size(&self) -> &::std::option::Option<i64> {
         &self.mpu_object_size
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p><note>

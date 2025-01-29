@@ -17,6 +17,27 @@ pub(crate) fn create_addon_subscription_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_address_list_output_output_correct_errors(
+    mut builder: crate::operation::create_address_list::builders::CreateAddressListOutputBuilder,
+) -> crate::operation::create_address_list::builders::CreateAddressListOutputBuilder {
+    if builder.address_list_id.is_none() {
+        builder.address_list_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_address_list_import_job_output_output_correct_errors(
+    mut builder: crate::operation::create_address_list_import_job::builders::CreateAddressListImportJobOutputBuilder,
+) -> crate::operation::create_address_list_import_job::builders::CreateAddressListImportJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.pre_signed_url.is_none() {
+        builder.pre_signed_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_archive_output_output_correct_errors(
     mut builder: crate::operation::create_archive::builders::CreateArchiveOutputBuilder,
 ) -> crate::operation::create_archive::builders::CreateArchiveOutputBuilder {
@@ -62,6 +83,57 @@ pub(crate) fn create_traffic_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_address_list_output_output_correct_errors(
+    mut builder: crate::operation::get_address_list::builders::GetAddressListOutputBuilder,
+) -> crate::operation::get_address_list::builders::GetAddressListOutputBuilder {
+    if builder.address_list_id.is_none() {
+        builder.address_list_id = Some(Default::default())
+    }
+    if builder.address_list_arn.is_none() {
+        builder.address_list_arn = Some(Default::default())
+    }
+    if builder.address_list_name.is_none() {
+        builder.address_list_name = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_timestamp.is_none() {
+        builder.last_updated_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_address_list_import_job_output_output_correct_errors(
+    mut builder: crate::operation::get_address_list_import_job::builders::GetAddressListImportJobOutputBuilder,
+) -> crate::operation::get_address_list_import_job::builders::GetAddressListImportJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ImportJobStatus>().ok()
+    }
+    if builder.pre_signed_url.is_none() {
+        builder.pre_signed_url = Some(Default::default())
+    }
+    if builder.import_data_format.is_none() {
+        builder.import_data_format = {
+            let builder = crate::types::builders::ImportDataFormatBuilder::default();
+            crate::serde_util::import_data_format_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.address_list_id.is_none() {
+        builder.address_list_id = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_archive_output_output_correct_errors(
     mut builder: crate::operation::get_archive::builders::GetArchiveOutputBuilder,
 ) -> crate::operation::get_archive::builders::GetArchiveOutputBuilder {
@@ -91,6 +163,18 @@ pub(crate) fn get_ingress_point_output_output_correct_errors(
     }
     if builder.ingress_point_name.is_none() {
         builder.ingress_point_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_member_of_address_list_output_output_correct_errors(
+    mut builder: crate::operation::get_member_of_address_list::builders::GetMemberOfAddressListOutputBuilder,
+) -> crate::operation::get_member_of_address_list::builders::GetMemberOfAddressListOutputBuilder {
+    if builder.address.is_none() {
+        builder.address = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -140,11 +224,38 @@ pub(crate) fn get_traffic_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_address_list_import_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_address_list_import_jobs::builders::ListAddressListImportJobsOutputBuilder,
+) -> crate::operation::list_address_list_import_jobs::builders::ListAddressListImportJobsOutputBuilder {
+    if builder.import_jobs.is_none() {
+        builder.import_jobs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_address_lists_output_output_correct_errors(
+    mut builder: crate::operation::list_address_lists::builders::ListAddressListsOutputBuilder,
+) -> crate::operation::list_address_lists::builders::ListAddressListsOutputBuilder {
+    if builder.address_lists.is_none() {
+        builder.address_lists = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_archives_output_output_correct_errors(
     mut builder: crate::operation::list_archives::builders::ListArchivesOutputBuilder,
 ) -> crate::operation::list_archives::builders::ListArchivesOutputBuilder {
     if builder.archives.is_none() {
         builder.archives = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_members_of_address_list_output_output_correct_errors(
+    mut builder: crate::operation::list_members_of_address_list::builders::ListMembersOfAddressListOutputBuilder,
+) -> crate::operation::list_members_of_address_list::builders::ListMembersOfAddressListOutputBuilder {
+    if builder.addresses.is_none() {
+        builder.addresses = Some(Default::default())
     }
     builder
 }
@@ -176,9 +287,65 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn import_data_format_correct_errors(
+    mut builder: crate::types::builders::ImportDataFormatBuilder,
+) -> crate::types::builders::ImportDataFormatBuilder {
+    if builder.import_data_type.is_none() {
+        builder.import_data_type = "no value was set".parse::<crate::types::ImportDataType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn address_list_correct_errors(mut builder: crate::types::builders::AddressListBuilder) -> crate::types::builders::AddressListBuilder {
+    if builder.address_list_id.is_none() {
+        builder.address_list_id = Some(Default::default())
+    }
+    if builder.address_list_arn.is_none() {
+        builder.address_list_arn = Some(Default::default())
+    }
+    if builder.address_list_name.is_none() {
+        builder.address_list_name = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_timestamp.is_none() {
+        builder.last_updated_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn archive_correct_errors(mut builder: crate::types::builders::ArchiveBuilder) -> crate::types::builders::ArchiveBuilder {
     if builder.archive_id.is_none() {
         builder.archive_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn import_job_correct_errors(mut builder: crate::types::builders::ImportJobBuilder) -> crate::types::builders::ImportJobBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ImportJobStatus>().ok()
+    }
+    if builder.pre_signed_url.is_none() {
+        builder.pre_signed_url = Some(Default::default())
+    }
+    if builder.import_data_format.is_none() {
+        builder.import_data_format = {
+            let builder = crate::types::builders::ImportDataFormatBuilder::default();
+            crate::serde_util::import_data_format_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.address_list_id.is_none() {
+        builder.address_list_id = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -214,6 +381,16 @@ pub(crate) fn policy_statement_correct_errors(
 pub(crate) fn rule_correct_errors(mut builder: crate::types::builders::RuleBuilder) -> crate::types::builders::RuleBuilder {
     if builder.actions.is_none() {
         builder.actions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn saved_address_correct_errors(mut builder: crate::types::builders::SavedAddressBuilder) -> crate::types::builders::SavedAddressBuilder {
+    if builder.address.is_none() {
+        builder.address = Some(Default::default())
+    }
+    if builder.created_timestamp.is_none() {
+        builder.created_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -501,6 +678,30 @@ pub(crate) fn ingress_analysis_correct_errors(
     }
     if builder.result_field.is_none() {
         builder.result_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ingress_is_in_address_list_correct_errors(
+    mut builder: crate::types::builders::IngressIsInAddressListBuilder,
+) -> crate::types::builders::IngressIsInAddressListBuilder {
+    if builder.attribute.is_none() {
+        builder.attribute = "no value was set".parse::<crate::types::IngressAddressListEmailAttribute>().ok()
+    }
+    if builder.address_lists.is_none() {
+        builder.address_lists = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rule_is_in_address_list_correct_errors(
+    mut builder: crate::types::builders::RuleIsInAddressListBuilder,
+) -> crate::types::builders::RuleIsInAddressListBuilder {
+    if builder.attribute.is_none() {
+        builder.attribute = "no value was set".parse::<crate::types::RuleAddressListEmailAttribute>().ok()
+    }
+    if builder.address_lists.is_none() {
+        builder.address_lists = Some(Default::default())
     }
     builder
 }

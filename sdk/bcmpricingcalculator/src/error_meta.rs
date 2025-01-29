@@ -237,6 +237,7 @@ where
 impl From<crate::operation::batch_delete_bill_scenario_commitment_modification::BatchDeleteBillScenarioCommitmentModificationError> for Error {
     fn from(err: crate::operation::batch_delete_bill_scenario_commitment_modification::BatchDeleteBillScenarioCommitmentModificationError) -> Self {
         match err {
+            crate::operation::batch_delete_bill_scenario_commitment_modification::BatchDeleteBillScenarioCommitmentModificationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::batch_delete_bill_scenario_commitment_modification::BatchDeleteBillScenarioCommitmentModificationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::batch_delete_bill_scenario_commitment_modification::BatchDeleteBillScenarioCommitmentModificationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::batch_delete_bill_scenario_commitment_modification::BatchDeleteBillScenarioCommitmentModificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
@@ -275,6 +276,7 @@ where
 impl From<crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError> for Error {
     fn from(err: crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError) -> Self {
         match err {
+            crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::batch_delete_bill_scenario_usage_modification::BatchDeleteBillScenarioUsageModificationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
@@ -369,6 +371,7 @@ where
 impl From<crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError> for Error {
     fn from(err: crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError) -> Self {
         match err {
+            crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::batch_update_bill_scenario_commitment_modification::BatchUpdateBillScenarioCommitmentModificationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
@@ -407,6 +410,7 @@ where
 impl From<crate::operation::batch_update_bill_scenario_usage_modification::BatchUpdateBillScenarioUsageModificationError> for Error {
     fn from(err: crate::operation::batch_update_bill_scenario_usage_modification::BatchUpdateBillScenarioUsageModificationError) -> Self {
         match err {
+            crate::operation::batch_update_bill_scenario_usage_modification::BatchUpdateBillScenarioUsageModificationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::batch_update_bill_scenario_usage_modification::BatchUpdateBillScenarioUsageModificationError::DataUnavailableException(inner) => Error::DataUnavailableException(inner),
             crate::operation::batch_update_bill_scenario_usage_modification::BatchUpdateBillScenarioUsageModificationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::batch_update_bill_scenario_usage_modification::BatchUpdateBillScenarioUsageModificationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
@@ -621,6 +625,7 @@ where
 impl From<crate::operation::delete_bill_scenario::DeleteBillScenarioError> for Error {
     fn from(err: crate::operation::delete_bill_scenario::DeleteBillScenarioError) -> Self {
         match err {
+            crate::operation::delete_bill_scenario::DeleteBillScenarioError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_bill_scenario::DeleteBillScenarioError::DataUnavailableException(inner) => {
                 Error::DataUnavailableException(inner)
             }

@@ -152,7 +152,8 @@ pub fn ser_complete_multipart_upload_headers(
         builder = builder.header("x-amz-checksum-type", header_value);
     }
     if let ::std::option::Option::Some(inner_13) = &input.mpu_object_size {
-        let formatted_14 = inner_13.as_str();
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_13);
+        let formatted_14 = encoder.encode();
         let header_value = formatted_14;
         let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
