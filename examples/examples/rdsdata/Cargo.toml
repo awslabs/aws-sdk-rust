@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 aws-config= { version = "1.5.15", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
-aws-sdk-rdsdata= { version = "1.57.0", path = "../../../sdk/rdsdata" }
+aws-sdk-rdsdata= { version = "1.58.0", path = "../../../sdk/rdsdata" }
 
 [dependencies.tokio]
 version = "1.20.1"
