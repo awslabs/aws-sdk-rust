@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDataAccessorsInput {
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -11,7 +11,7 @@ pub struct ListDataAccessorsInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDataAccessorsInput {
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
@@ -40,18 +40,18 @@ pub struct ListDataAccessorsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListDataAccessorsInputBuilder {
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     /// This field is required.
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_id = input;
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }

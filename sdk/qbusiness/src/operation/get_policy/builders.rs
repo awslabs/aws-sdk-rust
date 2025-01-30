@@ -22,7 +22,7 @@ impl crate::operation::get_policy::builders::GetPolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPolicy`.
 ///
-/// <p>Retrieves the current permission policy for a Q Business application. The policy is returned as a JSON-formatted string and defines the IAM actions that are allowed or denied for the application's resources.</p>
+/// <p>Retrieves the current permission policy for a Amazon Q Business application. The policy is returned as a JSON-formatted string and defines the IAM actions that are allowed or denied for the application's resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +102,17 @@ impl GetPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

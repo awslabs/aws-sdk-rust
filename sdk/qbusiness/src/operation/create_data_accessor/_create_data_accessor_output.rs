@@ -5,7 +5,7 @@
 pub struct CreateDataAccessorOutput {
     /// <p>The unique identifier of the created data accessor.</p>
     pub data_accessor_id: ::std::string::String,
-    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application created for this data accessor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created for this data accessor.</p>
     pub idc_application_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the created data accessor.</p>
     pub data_accessor_arn: ::std::string::String,
@@ -17,7 +17,7 @@ impl CreateDataAccessorOutput {
         use std::ops::Deref;
         self.data_accessor_id.deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application created for this data accessor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created for this data accessor.</p>
     pub fn idc_application_arn(&self) -> &str {
         use std::ops::Deref;
         self.idc_application_arn.deref()
@@ -65,18 +65,18 @@ impl CreateDataAccessorOutputBuilder {
     pub fn get_data_accessor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_accessor_id
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application created for this data accessor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created for this data accessor.</p>
     /// This field is required.
     pub fn idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idc_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application created for this data accessor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created for this data accessor.</p>
     pub fn set_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idc_application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS IAM Identity Center application created for this data accessor.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center application created for this data accessor.</p>
     pub fn get_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.idc_application_arn
     }

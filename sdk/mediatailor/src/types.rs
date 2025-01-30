@@ -31,6 +31,10 @@ pub use crate::types::_operator::Operator;
 
 pub use crate::types::_prefetch_schedule::PrefetchSchedule;
 
+pub use crate::types::_ad_conditioning_configuration::AdConditioningConfiguration;
+
+pub use crate::types::_streaming_media_file_conditioning::StreamingMediaFileConditioning;
+
 pub use crate::types::_manifest_processing_rules::ManifestProcessingRules;
 
 pub use crate::types::_ad_marker_passthrough::AdMarkerPassthrough;
@@ -135,6 +139,8 @@ mod _ad_break;
 
 mod _ad_break_opportunity;
 
+mod _ad_conditioning_configuration;
+
 mod _ad_marker_passthrough;
 
 mod _ad_markup_type;
@@ -238,6 +244,8 @@ mod _slate_source;
 mod _source_location;
 
 mod _splice_insert_message;
+
+mod _streaming_media_file_conditioning;
 
 mod _tier;
 

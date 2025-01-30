@@ -6,7 +6,15 @@
 pub struct InternalServerException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>
+    pub reason: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl InternalServerException {
+    /// <p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>
+    pub fn reason(&self) -> ::std::option::Option<&str> {
+        self.reason.as_deref()
+    }
 }
 impl InternalServerException {
     /// Returns the error message.
@@ -49,6 +57,7 @@ impl InternalServerException {
 #[non_exhaustive]
 pub struct InternalServerExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InternalServerExceptionBuilder {
@@ -66,6 +75,20 @@ impl InternalServerExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// <p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>The reason for the exception. If the reason is <code>BEDROCK_MODEL_INVOCATION_SERVICE_UNAVAILABLE</code>, the model invocation service is unavailable. Retry your request.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.reason
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +104,7 @@ impl InternalServerExceptionBuilder {
     pub fn build(self) -> crate::types::error::InternalServerException {
         crate::types::error::InternalServerException {
             message: self.message,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         }
     }

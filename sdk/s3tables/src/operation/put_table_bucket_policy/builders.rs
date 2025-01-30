@@ -22,7 +22,15 @@ impl crate::operation::put_table_bucket_policy::builders::PutTableBucketPolicyIn
 }
 /// Fluent builder constructing a request to `PutTableBucketPolicy`.
 ///
-/// <p>Creates a new maintenance configuration or replaces an existing table bucket policy for a table bucket.</p>
+/// <p>Creates a new maintenance configuration or replaces an existing table bucket policy for a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:PutTableBucketPolicy</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutTableBucketPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +116,31 @@ impl PutTableBucketPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_bucket_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn set_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_bucket_arn(input);
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn get_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_bucket_arn()
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_policy(input.into());
         self
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_policy(input);
         self
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_policy()
     }

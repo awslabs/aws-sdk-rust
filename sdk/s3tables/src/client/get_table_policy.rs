@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTablePolicy`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_bucket_arn(impl Into<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::table_bucket_arn) / [`set_table_bucket_arn(Option<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::set_table_bucket_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p><br>
+    ///   - [`table_bucket_arn(impl Into<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::table_bucket_arn) / [`set_table_bucket_arn(Option<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::set_table_bucket_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p><br>
     ///   - [`namespace(impl Into<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::namespace) / [`set_namespace(Option<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::set_namespace):<br>required: **true**<br><p>The namespace associated with the table.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::set_name):<br>required: **true**<br><p>The name of the table.</p><br>
     /// - On success, responds with [`GetTablePolicyOutput`](crate::operation::get_table_policy::GetTablePolicyOutput) with field(s):
-    ///   - [`resource_policy(String)`](crate::operation::get_table_policy::GetTablePolicyOutput::resource_policy): <p>The name of the resource policy.</p>
+    ///   - [`resource_policy(String)`](crate::operation::get_table_policy::GetTablePolicyOutput::resource_policy): <p>The <code>JSON</code> that defines the policy.</p>
     /// - On failure, responds with [`SdkError<GetTablePolicyError>`](crate::operation::get_table_policy::GetTablePolicyError)
     pub fn get_table_policy(&self) -> crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder {
         crate::operation::get_table_policy::builders::GetTablePolicyFluentBuilder::new(self.handle.clone())

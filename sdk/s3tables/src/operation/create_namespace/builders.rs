@@ -22,7 +22,15 @@ impl crate::operation::create_namespace::builders::CreateNamespaceInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateNamespace`.
 ///
-/// <p>Creates a namespace. A namespace is a logical grouping of tables within your table bucket, which you can use to organize tables. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table namespaces</a>.</p>
+/// <p>Creates a namespace. A namespace is a logical grouping of tables within your table bucket, which you can use to organize tables. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-create.html">Create a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:CreateNamespace</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

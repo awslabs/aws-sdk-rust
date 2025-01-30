@@ -22,7 +22,15 @@ impl crate::operation::delete_table::builders::DeleteTableInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteTable`.
 ///
-/// <p>Deletes a table.</p>
+/// <p>Deletes a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-delete.html">Deleting an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:DeleteTable</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

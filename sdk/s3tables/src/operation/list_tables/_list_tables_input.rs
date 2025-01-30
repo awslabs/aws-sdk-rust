@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTablesInput {
-    /// <p>The Amazon resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon resource Name (ARN) of the table bucket.</p>
     pub table_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the tables.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListTablesInput {
     pub max_tables: ::std::option::Option<i32>,
 }
 impl ListTablesInput {
-    /// <p>The Amazon resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon resource Name (ARN) of the table bucket.</p>
     pub fn table_bucket_arn(&self) -> ::std::option::Option<&str> {
         self.table_bucket_arn.as_deref()
     }
@@ -54,18 +54,18 @@ pub struct ListTablesInputBuilder {
     pub(crate) max_tables: ::std::option::Option<i32>,
 }
 impl ListTablesInputBuilder {
-    /// <p>The Amazon resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon resource Name (ARN) of the table bucket.</p>
     /// This field is required.
     pub fn table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon resource Name (ARN) of the table bucket.</p>
     pub fn set_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_bucket_arn = input;
         self
     }
-    /// <p>The Amazon resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon resource Name (ARN) of the table bucket.</p>
     pub fn get_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_bucket_arn
     }

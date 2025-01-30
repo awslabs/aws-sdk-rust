@@ -120,6 +120,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AdConditioningConfiguration" => {
+                            builder = builder.set_ad_conditioning_configuration(
+                                crate::protocol_serde::shape_ad_conditioning_configuration::de_ad_conditioning_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

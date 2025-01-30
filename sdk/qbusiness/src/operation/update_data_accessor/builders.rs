@@ -108,17 +108,17 @@ impl UpdateDataAccessorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

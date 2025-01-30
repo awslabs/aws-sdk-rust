@@ -3,9 +3,14 @@
 /// <p>Contains the list of entities to be considered during an authorization request. This includes all principals, resources, and actions required to successfully evaluate the request.</p>
 /// <p>This data type is used as a field in the response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a> and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a> operations.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum EntitiesDefinition {
-    /// <p>An array of entities that are needed to successfully evaluate an authorization request. Each entity in this array must include an identifier for the entity, the attributes of the entity, and a list of any parent entities.</p>
+    /// <p>A Cedar JSON string representation of the entities needed to successfully evaluate an authorization request.</p>
+    /// <p>Example: <code>{"cedarJson": "\[{\"uid\":{\"type\":\"Photo\",\"id\":\"VacationPhoto94.jpg\"},\"attrs\":{\"accessLevel\":\"public\"},\"parents\":\[\]}\]"}</code></p>
+    CedarJson(::std::string::String),
+    /// <p>An array of entities that are needed to successfully evaluate an authorization request. Each entity in this array must include an identifier for the entity, the attributes of the entity, and a list of any parent entities.</p><note>
+    /// <p>If you include multiple entities with the same <code>identifier</code>, only the last one is processed in the request.</p>
+    /// </note>
     EntityList(::std::vec::Vec<crate::types::EntityItem>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -18,7 +23,19 @@ pub enum EntitiesDefinition {
     Unknown,
 }
 impl EntitiesDefinition {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`CedarJson`](crate::types::EntitiesDefinition::CedarJson), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cedar_json(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let EntitiesDefinition::CedarJson(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CedarJson`](crate::types::EntitiesDefinition::CedarJson).
+    pub fn is_cedar_json(&self) -> bool {
+        self.as_cedar_json().is_ok()
+    }
     /// Tries to convert the enum instance into [`EntityList`](crate::types::EntitiesDefinition::EntityList), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_entity_list(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::EntityItem>, &Self> {
@@ -35,5 +52,14 @@ impl EntitiesDefinition {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for EntitiesDefinition {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            EntitiesDefinition::CedarJson(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            EntitiesDefinition::EntityList(val) => f.debug_tuple("EntityList").field(&val).finish(),
+            EntitiesDefinition::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

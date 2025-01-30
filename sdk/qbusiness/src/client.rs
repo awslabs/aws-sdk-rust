@@ -142,6 +142,8 @@ mod batch_delete_document;
 
 mod batch_put_document;
 
+mod cancel_subscription;
+
 mod chat;
 
 mod chat_sync;
@@ -157,6 +159,8 @@ mod create_index;
 mod create_plugin;
 
 mod create_retriever;
+
+mod create_subscription;
 
 mod create_user;
 
@@ -267,6 +271,8 @@ mod list_plugins;
 
 mod list_retrievers;
 
+mod list_subscriptions;
+
 mod list_tags_for_resource;
 
 mod list_web_experiences;
@@ -298,6 +304,8 @@ mod update_index;
 mod update_plugin;
 
 mod update_retriever;
+
+mod update_subscription;
 
 mod update_user;
 

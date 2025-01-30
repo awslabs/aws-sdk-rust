@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTableBucketPolicy`](crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`table_bucket_arn(impl Into<String>)`](crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder::table_bucket_arn) / [`set_table_bucket_arn(Option<String>)`](crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder::set_table_bucket_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the table bucket.</p><br>
+    ///   - [`table_bucket_arn(impl Into<String>)`](crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder::table_bucket_arn) / [`set_table_bucket_arn(Option<String>)`](crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder::set_table_bucket_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the table bucket.</p><br>
     /// - On success, responds with [`GetTableBucketPolicyOutput`](crate::operation::get_table_bucket_policy::GetTableBucketPolicyOutput) with field(s):
-    ///   - [`resource_policy(String)`](crate::operation::get_table_bucket_policy::GetTableBucketPolicyOutput::resource_policy): <p>The name of the resource policy.</p>
+    ///   - [`resource_policy(String)`](crate::operation::get_table_bucket_policy::GetTableBucketPolicyOutput::resource_policy): <p>The <code>JSON</code> that defines the policy.</p>
     /// - On failure, responds with [`SdkError<GetTableBucketPolicyError>`](crate::operation::get_table_bucket_policy::GetTableBucketPolicyError)
     pub fn get_table_bucket_policy(&self) -> crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder {
         crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyFluentBuilder::new(self.handle.clone())

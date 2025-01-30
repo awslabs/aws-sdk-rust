@@ -22,7 +22,7 @@ impl crate::operation::delete_data_accessor::builders::DeleteDataAccessorInputBu
 }
 /// Fluent builder constructing a request to `DeleteDataAccessor`.
 ///
-/// <p>Deletes a specified data accessor. This operation permanently removes the data accessor and its associated AWS IAM Identity Center application. Any access granted to the ISV through this data accessor will be revoked</p>
+/// <p>Deletes a specified data accessor. This operation permanently removes the data accessor and its associated IAM Identity Center application. Any access granted to the ISV through this data accessor will be revoked.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDataAccessorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteDataAccessorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

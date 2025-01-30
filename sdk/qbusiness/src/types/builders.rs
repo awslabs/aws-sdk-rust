@@ -101,6 +101,8 @@ pub use crate::types::_data_accessor::DataAccessorBuilder;
 
 pub use crate::types::_user_alias::UserAliasBuilder;
 
+pub use crate::types::_subscription_details::SubscriptionDetailsBuilder;
+
 pub use crate::types::_creator_mode_configuration::CreatorModeConfigurationBuilder;
 
 pub use crate::types::_topic_configuration::TopicConfigurationBuilder;
@@ -130,6 +132,8 @@ pub use crate::types::_member_user::MemberUserBuilder;
 pub use crate::types::_member_group::MemberGroupBuilder;
 
 pub use crate::types::_message_usefulness_feedback::MessageUsefulnessFeedbackBuilder;
+
+pub use crate::types::_subscription::SubscriptionBuilder;
 
 pub use crate::types::_plugin_type_metadata_summary::PluginTypeMetadataSummaryBuilder;
 

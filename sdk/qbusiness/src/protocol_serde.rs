@@ -29,6 +29,8 @@ pub(crate) mod shape_batch_delete_document;
 
 pub(crate) mod shape_batch_put_document;
 
+pub(crate) mod shape_cancel_subscription;
+
 pub(crate) mod shape_chat;
 
 pub(crate) mod shape_chat_sync;
@@ -44,6 +46,8 @@ pub(crate) mod shape_create_index;
 pub(crate) mod shape_create_plugin;
 
 pub(crate) mod shape_create_retriever;
+
+pub(crate) mod shape_create_subscription;
 
 pub(crate) mod shape_create_user;
 
@@ -127,6 +131,8 @@ pub(crate) mod shape_list_plugins;
 
 pub(crate) mod shape_list_retrievers;
 
+pub(crate) mod shape_list_subscriptions;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_web_experiences;
@@ -158,6 +164,8 @@ pub(crate) mod shape_update_index;
 pub(crate) mod shape_update_plugin;
 
 pub(crate) mod shape_update_retriever;
+
+pub(crate) mod shape_update_subscription;
 
 pub(crate) mod shape_update_user;
 
@@ -199,6 +207,8 @@ pub(crate) mod shape_create_plugin_input;
 
 pub(crate) mod shape_create_retriever_input;
 
+pub(crate) mod shape_create_subscription_input;
+
 pub(crate) mod shape_create_user_input;
 
 pub(crate) mod shape_create_web_experience_input;
@@ -238,6 +248,8 @@ pub(crate) mod shape_update_index_input;
 pub(crate) mod shape_update_plugin_input;
 
 pub(crate) mod shape_update_retriever_input;
+
+pub(crate) mod shape_update_subscription_input;
 
 pub(crate) mod shape_update_user_input;
 
@@ -381,6 +393,12 @@ pub(crate) mod shape_retrievers;
 
 pub(crate) mod shape_source_attributions;
 
+pub(crate) mod shape_subscription_details;
+
+pub(crate) mod shape_subscription_principal;
+
+pub(crate) mod shape_subscriptions;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;
@@ -508,6 +526,8 @@ pub(crate) mod shape_security_group_ids;
 pub(crate) mod shape_source_attribution;
 
 pub(crate) mod shape_subnet_ids;
+
+pub(crate) mod shape_subscription;
 
 pub(crate) mod shape_text_document_statistics;
 

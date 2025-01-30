@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableBucketPolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub table_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTableBucketPolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn table_bucket_arn(&self) -> ::std::option::Option<&str> {
         self.table_bucket_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetTableBucketPolicyInputBuilder {
     pub(crate) table_bucket_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetTableBucketPolicyInputBuilder {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     /// This field is required.
     pub fn table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn set_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_bucket_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn get_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_bucket_arn
     }

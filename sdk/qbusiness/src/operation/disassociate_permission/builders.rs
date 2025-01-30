@@ -22,7 +22,7 @@ impl crate::operation::disassociate_permission::builders::DisassociatePermission
 }
 /// Fluent builder constructing a request to `DisassociatePermission`.
 ///
-/// <p>Removes a permission policy from a Q Business application, revoking the cross-account access that was previously granted to an ISV. This operation deletes the specified policy statement from the application's permission policy.</p>
+/// <p>Removes a permission policy from a Amazon Q Business application, revoking the cross-account access that was previously granted to an ISV. This operation deletes the specified policy statement from the application's permission policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociatePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DisassociatePermissionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

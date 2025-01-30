@@ -22,7 +22,17 @@ impl crate::operation::create_table::builders::CreateTableInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateTable`.
 ///
-/// <p>Creates a new table associated with the given namespace in a table bucket.</p>
+/// <p>Creates a new table associated with the given namespace in a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:CreateTable</code> permission to use this operation.</p><note>
+/// <p>Additionally, you must have the <code>s3tables:PutTableData</code> permission to use this operation with the optional <code>metadata</code> request parameter.</p>
+/// </note>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -163,5 +173,19 @@ impl CreateTableFluentBuilder {
     /// <p>The format for the table.</p>
     pub fn get_format(&self) -> &::std::option::Option<crate::types::OpenTableFormat> {
         self.inner.get_format()
+    }
+    /// <p>The metadata for the table.</p>
+    pub fn metadata(mut self, input: crate::types::TableMetadata) -> Self {
+        self.inner = self.inner.metadata(input);
+        self
+    }
+    /// <p>The metadata for the table.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::TableMetadata>) -> Self {
+        self.inner = self.inner.set_metadata(input);
+        self
+    }
+    /// <p>The metadata for the table.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::TableMetadata> {
+        self.inner.get_metadata()
     }
 }

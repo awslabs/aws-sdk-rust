@@ -22,7 +22,15 @@ impl crate::operation::get_table_maintenance_job_status::builders::GetTableMaint
 }
 /// Fluent builder constructing a request to `GetTableMaintenanceJobStatus`.
 ///
-/// <p>Gets the status of a maintenance job for a table.</p>
+/// <p>Gets the status of a maintenance job for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3 Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:GetTableMaintenanceJobStatus</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableMaintenanceJobStatusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

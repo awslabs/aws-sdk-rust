@@ -22,7 +22,15 @@ impl crate::operation::put_table_maintenance_configuration::builders::PutTableMa
 }
 /// Fluent builder constructing a request to `PutTableMaintenanceConfiguration`.
 ///
-/// <p>Creates a new maintenance configuration or replaces an existing maintenance configuration for a table.</p>
+/// <p>Creates a new maintenance configuration or replaces an existing maintenance configuration for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3 Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:PutTableMaintenanceConfiguration</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutTableMaintenanceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

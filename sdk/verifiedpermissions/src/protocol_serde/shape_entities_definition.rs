@@ -16,6 +16,9 @@ pub fn ser_entities_definition(
             }
             array_1.finish();
         }
+        crate::types::EntitiesDefinition::CedarJson(inner) => {
+            object_3.key("cedarJson").string(inner.as_str());
+        }
         crate::types::EntitiesDefinition::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EntitiesDefinition",

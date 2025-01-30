@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociatePermission`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the Q Business application.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the Amazon Q Business application.</p><br>
     ///   - [`statement_id(impl Into<String>)`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder::statement_id) / [`set_statement_id(Option<String>)`](crate::operation::disassociate_permission::builders::DisassociatePermissionFluentBuilder::set_statement_id):<br>required: **true**<br><p>The statement ID of the permission to remove.</p><br>
     /// - On success, responds with [`DisassociatePermissionOutput`](crate::operation::disassociate_permission::DisassociatePermissionOutput)
     /// - On failure, responds with [`SdkError<DisassociatePermissionError>`](crate::operation::disassociate_permission::DisassociatePermissionError)

@@ -22,7 +22,15 @@ impl crate::operation::delete_table_bucket::builders::DeleteTableBucketInputBuil
 }
 /// Fluent builder constructing a request to `DeleteTableBucket`.
 ///
-/// <p>Deletes a table bucket.</p>
+/// <p>Deletes a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html">Deleting a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:DeleteTableBucket</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTableBucketFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

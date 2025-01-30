@@ -22,7 +22,15 @@ impl crate::operation::delete_table_policy::builders::DeleteTablePolicyInputBuil
 }
 /// Fluent builder constructing a request to `DeleteTablePolicy`.
 ///
-/// <p>Deletes a table policy.</p>
+/// <p>Deletes a table policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-delete">Deleting a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:DeleteTablePolicy</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTablePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +116,17 @@ impl DeleteTablePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub fn table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_bucket_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub fn set_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_bucket_arn(input);
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub fn get_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_bucket_arn()
     }

@@ -22,7 +22,7 @@ impl crate::operation::search_relevant_content::builders::SearchRelevantContentI
 }
 /// Fluent builder constructing a request to `SearchRelevantContent`.
 ///
-/// <p>Searches for relevant content in a Q Business application based on a query. This operation takes a search query text, the Q Business application identifier, and optional filters (such as content source and maximum results) as input. It returns a list of relevant content items, where each item includes the content text, the unique document identifier, the document title, the document URI, any relevant document attributes, and score attributes indicating the confidence level of the relevance.</p>
+/// <p>Searches for relevant content in a Amazon Q Business application based on a query. This operation takes a search query text, the Amazon Q Business application identifier, and optional filters (such as content source and maximum results) as input. It returns a list of relevant content items, where each item includes the content text, the unique document identifier, the document title, the document URI, any relevant document attributes, and score attributes indicating the confidence level of the relevance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchRelevantContentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl SearchRelevantContentFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_relevant_content::paginator::SearchRelevantContentPaginator {
         crate::operation::search_relevant_content::paginator::SearchRelevantContentPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the Q Business application to search.</p>
+    /// <p>The unique identifier of the Amazon Q Business application to search.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application to search.</p>
+    /// <p>The unique identifier of the Amazon Q Business application to search.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application to search.</p>
+    /// <p>The unique identifier of the Amazon Q Business application to search.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableBucketSummary {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub arn: ::std::string::String,
     /// <p>The name of the table bucket.</p>
     pub name: ::std::string::String,
@@ -14,7 +14,7 @@ pub struct TableBucketSummary {
     pub created_at: ::aws_smithy_types::DateTime,
 }
 impl TableBucketSummary {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn arn(&self) -> &str {
         use std::ops::Deref;
         self.arn.deref()
@@ -51,18 +51,18 @@ pub struct TableBucketSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TableBucketSummaryBuilder {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

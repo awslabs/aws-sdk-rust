@@ -22,7 +22,15 @@ impl crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteNamespace`.
 ///
-/// <p>Deletes a namespace.</p>
+/// <p>Deletes a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-delete.html">Delete a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:DeleteNamespace</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

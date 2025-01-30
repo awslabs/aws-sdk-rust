@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTablePolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub table_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The namespace associated with the table.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutTablePolicyInput {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub fn table_bucket_arn(&self) -> ::std::option::Option<&str> {
         self.table_bucket_arn.as_deref()
     }
@@ -25,7 +25,7 @@ impl PutTablePolicyInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn resource_policy(&self) -> ::std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
@@ -47,18 +47,18 @@ pub struct PutTablePolicyInputBuilder {
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl PutTablePolicyInputBuilder {
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     /// This field is required.
     pub fn table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub fn set_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_bucket_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket that contains the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket that contains the table.</p>
     pub fn get_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_bucket_arn
     }
@@ -92,18 +92,18 @@ impl PutTablePolicyInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
     }

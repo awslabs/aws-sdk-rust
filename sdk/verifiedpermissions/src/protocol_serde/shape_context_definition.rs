@@ -17,6 +17,9 @@ pub fn ser_context_definition(
             }
             object_1.finish();
         }
+        crate::types::ContextDefinition::CedarJson(inner) => {
+            object_9.key("cedarJson").string(inner.as_str());
+        }
         crate::types::ContextDefinition::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ContextDefinition",
@@ -60,6 +63,14 @@ where
                             crate::protocol_serde::shape_context_map::de_context_map(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contextMap' cannot be null")
                             })?,
+                        )),
+                        "cedarJson" => Some(crate::types::ContextDefinition::CedarJson(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cedarJson' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

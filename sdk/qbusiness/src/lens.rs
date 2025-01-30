@@ -159,6 +159,16 @@ pub(crate) fn reflens_list_retrievers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_subscriptions_output_output_next_token(
+    input: &crate::operation::list_subscriptions::ListSubscriptionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_web_experiences_output_output_next_token(
     input: &crate::operation::list_web_experiences::ListWebExperiencesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -333,6 +343,16 @@ pub(crate) fn lens_list_retrievers_output_output_retrievers(
     input: crate::operation::list_retrievers::ListRetrieversOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Retriever>> {
     let input = match input.retrievers {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_subscriptions_output_output_subscriptions(
+    input: crate::operation::list_subscriptions::ListSubscriptionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Subscription>> {
+    let input = match input.subscriptions {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

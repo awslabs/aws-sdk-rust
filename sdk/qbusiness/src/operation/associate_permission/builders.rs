@@ -22,7 +22,7 @@ impl crate::operation::associate_permission::builders::AssociatePermissionInputB
 }
 /// Fluent builder constructing a request to `AssociatePermission`.
 ///
-/// <p>Adds or updates a permission policy for a Q Business application, allowing cross-account access for an ISV. This operation creates a new policy statement for the specified Q Business application. The policy statement defines the IAM actions that the ISV is allowed to perform on the Q Business application's resources.</p>
+/// <p>Adds or updates a permission policy for a Amazon Q Business application, allowing cross-account access for an ISV. This operation creates a new policy statement for the specified Amazon Q Business application. The policy statement defines the IAM actions that the ISV is allowed to perform on the Amazon Q Business application's resources.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociatePermissionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AssociatePermissionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }
@@ -141,31 +141,31 @@ impl AssociatePermissionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
-    /// <p>The list of Q Business actions that the ISV is allowed to perform.</p>
+    /// <p>The list of Amazon Q Business actions that the ISV is allowed to perform.</p>
     pub fn actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.actions(input.into());
         self
     }
-    /// <p>The list of Q Business actions that the ISV is allowed to perform.</p>
+    /// <p>The list of Amazon Q Business actions that the ISV is allowed to perform.</p>
     pub fn set_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
-    /// <p>The list of Q Business actions that the ISV is allowed to perform.</p>
+    /// <p>The list of Amazon Q Business actions that the ISV is allowed to perform.</p>
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_actions()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the ISV that is being granted permission.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the ISV that is being granted permission.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for the ISV that is being granted permission.</p>
+    /// <p>The Amazon Resource Name of the IAM role for the ISV that is being granted permission.</p>
     pub fn get_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_principal()
     }

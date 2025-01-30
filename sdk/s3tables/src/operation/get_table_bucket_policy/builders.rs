@@ -22,7 +22,15 @@ impl crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyIn
 }
 /// Fluent builder constructing a request to `GetTableBucketPolicy`.
 ///
-/// <p>Gets details about a table bucket policy.</p>
+/// <p>Gets details about a table bucket policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-get">Viewing a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:GetTableBucketPolicy</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableBucketPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +116,17 @@ impl GetTableBucketPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_bucket_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn set_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_bucket_arn(input);
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table bucket.</p>
     pub fn get_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_bucket_arn()
     }

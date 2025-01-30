@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`metadata_location(impl Into<String>)`](crate::operation::update_table_metadata_location::builders::UpdateTableMetadataLocationFluentBuilder::metadata_location) / [`set_metadata_location(Option<String>)`](crate::operation::update_table_metadata_location::builders::UpdateTableMetadataLocationFluentBuilder::set_metadata_location):<br>required: **true**<br><p>The new metadata location for the table.</p><br>
     /// - On success, responds with [`UpdateTableMetadataLocationOutput`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput) with field(s):
     ///   - [`name(String)`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput::name): <p>The name of the table.</p>
-    ///   - [`table_arn(String)`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput::table_arn): <p>The Amazon Resource Number (ARN) of the table.</p>
+    ///   - [`table_arn(String)`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput::table_arn): <p>The Amazon Resource Name (ARN) of the table.</p>
     ///   - [`namespace(Vec::<String>)`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput::namespace): <p>The namespace the table is associated with.</p>
     ///   - [`version_token(String)`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput::version_token): <p>The version token of the table.</p>
     ///   - [`metadata_location(String)`](crate::operation::update_table_metadata_location::UpdateTableMetadataLocationOutput::metadata_location): <p>The metadata location of the table.</p>

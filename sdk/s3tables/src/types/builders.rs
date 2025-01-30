@@ -9,6 +9,12 @@ pub use crate::types::_table_summary::TableSummaryBuilder;
 
 pub use crate::types::_table_maintenance_job_status_value::TableMaintenanceJobStatusValueBuilder;
 
+pub use crate::types::_iceberg_metadata::IcebergMetadataBuilder;
+
+pub use crate::types::_iceberg_schema::IcebergSchemaBuilder;
+
+pub use crate::types::_schema_field::SchemaFieldBuilder;
+
 pub use crate::types::_table_bucket_maintenance_configuration_value::TableBucketMaintenanceConfigurationValueBuilder;
 
 pub use crate::types::_iceberg_unreferenced_file_removal_settings::IcebergUnreferencedFileRemovalSettingsBuilder;

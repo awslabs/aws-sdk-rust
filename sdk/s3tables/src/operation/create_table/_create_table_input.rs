@@ -11,6 +11,8 @@ pub struct CreateTableInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format for the table.</p>
     pub format: ::std::option::Option<crate::types::OpenTableFormat>,
+    /// <p>The metadata for the table.</p>
+    pub metadata: ::std::option::Option<crate::types::TableMetadata>,
 }
 impl CreateTableInput {
     /// <p>The Amazon Resource Name (ARN) of the table bucket to create the table in.</p>
@@ -29,6 +31,10 @@ impl CreateTableInput {
     pub fn format(&self) -> ::std::option::Option<&crate::types::OpenTableFormat> {
         self.format.as_ref()
     }
+    /// <p>The metadata for the table.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::TableMetadata> {
+        self.metadata.as_ref()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -45,6 +51,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) format: ::std::option::Option<crate::types::OpenTableFormat>,
+    pub(crate) metadata: ::std::option::Option<crate::types::TableMetadata>,
 }
 impl CreateTableInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the table bucket to create the table in.</p>
@@ -107,6 +114,20 @@ impl CreateTableInputBuilder {
     pub fn get_format(&self) -> &::std::option::Option<crate::types::OpenTableFormat> {
         &self.format
     }
+    /// <p>The metadata for the table.</p>
+    pub fn metadata(mut self, input: crate::types::TableMetadata) -> Self {
+        self.metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The metadata for the table.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<crate::types::TableMetadata>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>The metadata for the table.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<crate::types::TableMetadata> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -114,6 +135,7 @@ impl CreateTableInputBuilder {
             namespace: self.namespace,
             name: self.name,
             format: self.format,
+            metadata: self.metadata,
         })
     }
 }

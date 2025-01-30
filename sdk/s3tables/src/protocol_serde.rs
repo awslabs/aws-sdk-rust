@@ -131,7 +131,11 @@ pub(crate) mod shape_table_maintenance_configuration_value;
 
 pub(crate) mod shape_table_maintenance_job_status;
 
+pub(crate) mod shape_table_metadata;
+
 pub(crate) mod shape_table_summary_list;
+
+pub(crate) mod shape_iceberg_metadata;
 
 pub(crate) mod shape_namespace_summary;
 
@@ -147,6 +151,10 @@ pub(crate) mod shape_table_summary;
 
 pub(crate) mod shape_iceberg_compaction_settings;
 
+pub(crate) mod shape_iceberg_schema;
+
 pub(crate) mod shape_iceberg_snapshot_management_settings;
 
 pub(crate) mod shape_iceberg_unreferenced_file_removal_settings;
+
+pub(crate) mod shape_schema_field;

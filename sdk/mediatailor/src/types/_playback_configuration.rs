@@ -12,7 +12,7 @@ pub struct PlaybackConfiguration {
     pub bumper: ::std::option::Option<crate::types::Bumper>,
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
     pub cdn_configuration: ::std::option::Option<crate::types::CdnConfiguration>,
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub configuration_aliases: ::std::option::Option<
         ::std::collections::HashMap<::std::string::String, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
@@ -24,7 +24,7 @@ pub struct PlaybackConfiguration {
     pub insertion_mode: crate::types::InsertionMode,
     /// <p>The configuration for pre-roll ad insertion.</p>
     pub live_pre_roll_configuration: ::std::option::Option<crate::types::LivePreRollConfiguration>,
-    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    /// <p>Defines where AWS Elemental MediaTailor sends logs for the playback configuration.</p>
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
     pub manifest_processing_rules: ::std::option::Option<crate::types::ManifestProcessingRules>,
@@ -46,6 +46,8 @@ pub struct PlaybackConfiguration {
     pub transcode_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub video_content_source_url: ::std::option::Option<::std::string::String>,
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
 }
 impl PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -64,7 +66,7 @@ impl PlaybackConfiguration {
     pub fn cdn_configuration(&self) -> ::std::option::Option<&crate::types::CdnConfiguration> {
         self.cdn_configuration.as_ref()
     }
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn configuration_aliases(
         &self,
     ) -> ::std::option::Option<
@@ -88,7 +90,7 @@ impl PlaybackConfiguration {
     pub fn live_pre_roll_configuration(&self) -> ::std::option::Option<&crate::types::LivePreRollConfiguration> {
         self.live_pre_roll_configuration.as_ref()
     }
-    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    /// <p>Defines where AWS Elemental MediaTailor sends logs for the playback configuration.</p>
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
         self.log_configuration.as_ref()
     }
@@ -132,6 +134,10 @@ impl PlaybackConfiguration {
     pub fn video_content_source_url(&self) -> ::std::option::Option<&str> {
         self.video_content_source_url.as_deref()
     }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn ad_conditioning_configuration(&self) -> ::std::option::Option<&crate::types::AdConditioningConfiguration> {
+        self.ad_conditioning_configuration.as_ref()
+    }
 }
 impl PlaybackConfiguration {
     /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
@@ -166,6 +172,7 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) transcode_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
+    pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
 }
 impl PlaybackConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -228,7 +235,7 @@ impl PlaybackConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_aliases`](Self::set_configuration_aliases).
     ///
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn configuration_aliases(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -239,7 +246,7 @@ impl PlaybackConfigurationBuilder {
         self.configuration_aliases = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn set_configuration_aliases(
         mut self,
         input: ::std::option::Option<
@@ -249,7 +256,7 @@ impl PlaybackConfigurationBuilder {
         self.configuration_aliases = input;
         self
     }
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn get_configuration_aliases(
         &self,
     ) -> &::std::option::Option<
@@ -313,17 +320,17 @@ impl PlaybackConfigurationBuilder {
     pub fn get_live_pre_roll_configuration(&self) -> &::std::option::Option<crate::types::LivePreRollConfiguration> {
         &self.live_pre_roll_configuration
     }
-    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    /// <p>Defines where AWS Elemental MediaTailor sends logs for the playback configuration.</p>
     pub fn log_configuration(mut self, input: crate::types::LogConfiguration) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    /// <p>Defines where AWS Elemental MediaTailor sends logs for the playback configuration.</p>
     pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.log_configuration = input;
         self
     }
-    /// <p>The Amazon CloudWatch log settings for a playback configuration.</p>
+    /// <p>Defines where AWS Elemental MediaTailor sends logs for the playback configuration.</p>
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
         &self.log_configuration
     }
@@ -473,6 +480,20 @@ impl PlaybackConfigurationBuilder {
     pub fn get_video_content_source_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.video_content_source_url
     }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn ad_conditioning_configuration(mut self, input: crate::types::AdConditioningConfiguration) -> Self {
+        self.ad_conditioning_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn set_ad_conditioning_configuration(mut self, input: ::std::option::Option<crate::types::AdConditioningConfiguration>) -> Self {
+        self.ad_conditioning_configuration = input;
+        self
+    }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
+        &self.ad_conditioning_configuration
+    }
     /// Consumes the builder and constructs a [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
     pub fn build(self) -> crate::types::PlaybackConfiguration {
         crate::types::PlaybackConfiguration {
@@ -500,6 +521,7 @@ impl PlaybackConfigurationBuilder {
             tags: self.tags,
             transcode_profile_name: self.transcode_profile_name,
             video_content_source_url: self.video_content_source_url,
+            ad_conditioning_configuration: self.ad_conditioning_configuration,
         }
     }
 }

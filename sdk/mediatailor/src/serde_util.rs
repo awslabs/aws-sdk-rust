@@ -20,6 +20,15 @@ pub(crate) fn describe_channel_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn ad_conditioning_configuration_correct_errors(
+    mut builder: crate::types::builders::AdConditioningConfigurationBuilder,
+) -> crate::types::builders::AdConditioningConfigurationBuilder {
+    if builder.streaming_media_file_conditioning.is_none() {
+        builder.streaming_media_file_conditioning = "no value was set".parse::<crate::types::StreamingMediaFileConditioning>().ok()
+    }
+    builder
+}
+
 pub(crate) fn http_configuration_correct_errors(
     mut builder: crate::types::builders::HttpConfigurationBuilder,
 ) -> crate::types::builders::HttpConfigurationBuilder {

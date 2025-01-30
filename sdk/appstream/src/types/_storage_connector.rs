@@ -10,6 +10,8 @@ pub struct StorageConnector {
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The names of the domains for the account.</p>
     pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The OneDrive for Business domains where you require admin consent when users try to link their OneDrive account to AppStream 2.0. The attribute can only be specified when ConnectorType=ONE_DRIVE.</p>
+    pub domains_require_admin_consent: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageConnector {
     /// <p>The type of storage connector.</p>
@@ -26,6 +28,12 @@ impl StorageConnector {
     pub fn domains(&self) -> &[::std::string::String] {
         self.domains.as_deref().unwrap_or_default()
     }
+    /// <p>The OneDrive for Business domains where you require admin consent when users try to link their OneDrive account to AppStream 2.0. The attribute can only be specified when ConnectorType=ONE_DRIVE.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domains_require_admin_consent.is_none()`.
+    pub fn domains_require_admin_consent(&self) -> &[::std::string::String] {
+        self.domains_require_admin_consent.as_deref().unwrap_or_default()
+    }
 }
 impl StorageConnector {
     /// Creates a new builder-style object to manufacture [`StorageConnector`](crate::types::StorageConnector).
@@ -41,6 +49,7 @@ pub struct StorageConnectorBuilder {
     pub(crate) connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) domains_require_admin_consent: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageConnectorBuilder {
     /// <p>The type of storage connector.</p>
@@ -92,12 +101,33 @@ impl StorageConnectorBuilder {
     pub fn get_domains(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.domains
     }
+    /// Appends an item to `domains_require_admin_consent`.
+    ///
+    /// To override the contents of this collection use [`set_domains_require_admin_consent`](Self::set_domains_require_admin_consent).
+    ///
+    /// <p>The OneDrive for Business domains where you require admin consent when users try to link their OneDrive account to AppStream 2.0. The attribute can only be specified when ConnectorType=ONE_DRIVE.</p>
+    pub fn domains_require_admin_consent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.domains_require_admin_consent.unwrap_or_default();
+        v.push(input.into());
+        self.domains_require_admin_consent = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The OneDrive for Business domains where you require admin consent when users try to link their OneDrive account to AppStream 2.0. The attribute can only be specified when ConnectorType=ONE_DRIVE.</p>
+    pub fn set_domains_require_admin_consent(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.domains_require_admin_consent = input;
+        self
+    }
+    /// <p>The OneDrive for Business domains where you require admin consent when users try to link their OneDrive account to AppStream 2.0. The attribute can only be specified when ConnectorType=ONE_DRIVE.</p>
+    pub fn get_domains_require_admin_consent(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domains_require_admin_consent
+    }
     /// Consumes the builder and constructs a [`StorageConnector`](crate::types::StorageConnector).
     pub fn build(self) -> crate::types::StorageConnector {
         crate::types::StorageConnector {
             connector_type: self.connector_type,
             resource_identifier: self.resource_identifier,
             domains: self.domains,
+            domains_require_admin_consent: self.domains_require_admin_consent,
         }
     }
 }

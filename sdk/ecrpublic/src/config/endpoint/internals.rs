@@ -82,18 +82,6 @@ pub(super) fn resolve_endpoint(
             }
             if (*use_dual_stack) == (true) {
                 if (true) == (partition_result.supports_dual_stack()) {
-                    if ("aws") == (partition_result.name()) {
-                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                            .url({
-                                let mut out = String::new();
-                                out.push_str("https://ecr-public.");
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&region.as_ref() as &str);
-                                out.push_str(".api.aws");
-                                out
-                            })
-                            .build());
-                    }
                     return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();

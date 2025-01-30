@@ -22,7 +22,15 @@ impl crate::operation::list_namespaces::builders::ListNamespacesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListNamespaces`.
 ///
-/// <p>Lists the namespaces within a table bucket.</p>
+/// <p>Lists the namespaces within a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:ListNamespaces</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNamespacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

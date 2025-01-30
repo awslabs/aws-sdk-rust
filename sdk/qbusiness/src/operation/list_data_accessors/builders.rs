@@ -22,7 +22,7 @@ impl crate::operation::list_data_accessors::builders::ListDataAccessorsInputBuil
 }
 /// Fluent builder constructing a request to `ListDataAccessors`.
 ///
-/// <p>Lists the data accessors for a Q Business application. This operation returns a paginated list of data accessor summaries, including the friendly name, unique identifier, ARN, associated IAM role, and creation/update timestamps for each data accessor.</p>
+/// <p>Lists the data accessors for a Amazon Q Business application. This operation returns a paginated list of data accessor summaries, including the friendly name, unique identifier, ARN, associated IAM role, and creation/update timestamps for each data accessor.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataAccessorsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListDataAccessorsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_data_accessors::paginator::ListDataAccessorsPaginator {
         crate::operation::list_data_accessors::paginator::ListDataAccessorsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn application_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn set_application_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
-    /// <p>The unique identifier of the Q Business application.</p>
+    /// <p>The unique identifier of the Amazon Q Business application.</p>
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_id()
     }

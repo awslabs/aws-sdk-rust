@@ -10,7 +10,7 @@ pub struct DataAccessor {
     pub data_accessor_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the data accessor.</p>
     pub data_accessor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the associated AWS IAM Identity Center application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the associated IAM Identity Center application.</p>
     pub idc_application_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role for the ISV associated with this data accessor.</p>
     pub principal: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl DataAccessor {
     pub fn data_accessor_arn(&self) -> ::std::option::Option<&str> {
         self.data_accessor_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the associated AWS IAM Identity Center application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the associated IAM Identity Center application.</p>
     pub fn idc_application_arn(&self) -> ::std::option::Option<&str> {
         self.idc_application_arn.as_deref()
     }
@@ -124,17 +124,17 @@ impl DataAccessorBuilder {
     pub fn get_data_accessor_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_accessor_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the associated AWS IAM Identity Center application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the associated IAM Identity Center application.</p>
     pub fn idc_application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idc_application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the associated AWS IAM Identity Center application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the associated IAM Identity Center application.</p>
     pub fn set_idc_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idc_application_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the associated AWS IAM Identity Center application.</p>
+    /// <p>The Amazon Resource Name (ARN) of the associated IAM Identity Center application.</p>
     pub fn get_idc_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.idc_application_arn
     }

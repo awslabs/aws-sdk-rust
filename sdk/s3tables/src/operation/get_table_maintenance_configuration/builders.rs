@@ -22,7 +22,15 @@ impl crate::operation::get_table_maintenance_configuration::builders::GetTableMa
 }
 /// Fluent builder constructing a request to `GetTableMaintenanceConfiguration`.
 ///
-/// <p>Gets details about the maintenance configuration of a table.</p>
+/// <p>Gets details about the maintenance configuration of a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3 Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:GetTableMaintenanceConfiguration</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableMaintenanceConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

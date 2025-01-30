@@ -161,6 +161,8 @@ pub(crate) mod shape_ad_break;
 
 pub(crate) mod shape_ad_break_opportunities;
 
+pub(crate) mod shape_ad_conditioning_configuration;
+
 pub(crate) mod shape_audience_media;
 
 pub(crate) mod shape_audiences;

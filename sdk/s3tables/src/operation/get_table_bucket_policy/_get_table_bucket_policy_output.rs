@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableBucketPolicyOutput {
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub resource_policy: ::std::string::String,
     _request_id: Option<String>,
 }
 impl GetTableBucketPolicyOutput {
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn resource_policy(&self) -> &str {
         use std::ops::Deref;
         self.resource_policy.deref()
@@ -34,18 +34,18 @@ pub struct GetTableBucketPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTableBucketPolicyOutputBuilder {
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     /// This field is required.
     pub fn resource_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn set_resource_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_policy = input;
         self
     }
-    /// <p>The name of the resource policy.</p>
+    /// <p>The <code>JSON</code> that defines the policy.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
     }

@@ -25,6 +25,7 @@ impl crate::operation::retrieve_and_generate_stream::builders::RetrieveAndGenera
 /// <p>Queries a knowledge base and generates responses based on the retrieved results, with output in streaming format.</p><note>
 /// <p>The CLI doesn't support streaming operations in Amazon Bedrock, including <code>InvokeModelWithResponseStream</code>.</p>
 /// </note>
+/// <p>This operation requires permission for the <code> bedrock:RetrieveAndGenerate</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RetrieveAndGenerateStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

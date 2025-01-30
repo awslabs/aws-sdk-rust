@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionConfiguration {
-    /// <p>The Q Business action that is allowed.</p>
+    /// <p>The Amazon Q Business action that is allowed.</p>
     pub action: ::std::string::String,
     /// <p>The filter configuration for the action, if any.</p>
     pub filter_configuration: ::std::option::Option<crate::types::ActionFilterConfiguration>,
 }
 impl ActionConfiguration {
-    /// <p>The Q Business action that is allowed.</p>
+    /// <p>The Amazon Q Business action that is allowed.</p>
     pub fn action(&self) -> &str {
         use std::ops::Deref;
         self.action.deref()
@@ -35,18 +35,18 @@ pub struct ActionConfigurationBuilder {
     pub(crate) filter_configuration: ::std::option::Option<crate::types::ActionFilterConfiguration>,
 }
 impl ActionConfigurationBuilder {
-    /// <p>The Q Business action that is allowed.</p>
+    /// <p>The Amazon Q Business action that is allowed.</p>
     /// This field is required.
     pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.action = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Q Business action that is allowed.</p>
+    /// <p>The Amazon Q Business action that is allowed.</p>
     pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
-    /// <p>The Q Business action that is allowed.</p>
+    /// <p>The Amazon Q Business action that is allowed.</p>
     pub fn get_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.action
     }

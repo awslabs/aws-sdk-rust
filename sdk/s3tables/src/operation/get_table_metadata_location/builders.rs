@@ -23,6 +23,14 @@ impl crate::operation::get_table_metadata_location::builders::GetTableMetadataLo
 /// Fluent builder constructing a request to `GetTableMetadataLocation`.
 ///
 /// <p>Gets the location of the table metadata.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:GetTableMetadataLocation</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableMetadataLocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

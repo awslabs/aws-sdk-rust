@@ -22,7 +22,15 @@ impl crate::operation::get_table::builders::GetTableInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTable`.
 ///
-/// <p>Gets details about a table.</p>
+/// <p>Gets details about a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3 Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+/// <dl>
+/// <dt>
+/// Permissions
+/// </dt>
+/// <dd>
+/// <p>You must have the <code>s3tables:GetTable</code> permission to use this operation.</p>
+/// </dd>
+/// </dl>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

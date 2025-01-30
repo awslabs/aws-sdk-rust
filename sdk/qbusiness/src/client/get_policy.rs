@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPolicy`](crate::operation::get_policy::builders::GetPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the Q Business application.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_policy::builders::GetPolicyFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the Amazon Q Business application.</p><br>
     /// - On success, responds with [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput) with field(s):
     ///   - [`policy(Option<String>)`](crate::operation::get_policy::GetPolicyOutput::policy): <p>The JSON representation of the permission policy.</p>
     /// - On failure, responds with [`SdkError<GetPolicyError>`](crate::operation::get_policy::GetPolicyError)

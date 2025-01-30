@@ -25,6 +25,8 @@ pub use crate::types::_avail_matching_criteria::AvailMatchingCriteriaBuilder;
 
 pub use crate::types::_prefetch_schedule::PrefetchScheduleBuilder;
 
+pub use crate::types::_ad_conditioning_configuration::AdConditioningConfigurationBuilder;
+
 pub use crate::types::_manifest_processing_rules::ManifestProcessingRulesBuilder;
 
 pub use crate::types::_ad_marker_passthrough::AdMarkerPassthroughBuilder;

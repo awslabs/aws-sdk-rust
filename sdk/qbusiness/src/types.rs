@@ -175,6 +175,8 @@ pub use crate::types::_data_accessor::DataAccessor;
 
 pub use crate::types::_user_alias::UserAlias;
 
+pub use crate::types::_subscription_details::SubscriptionDetails;
+
 pub use crate::types::_creator_mode_configuration::CreatorModeConfiguration;
 
 pub use crate::types::_creator_mode_control::CreatorModeControl;
@@ -222,6 +224,10 @@ pub use crate::types::_message_usefulness_feedback::MessageUsefulnessFeedback;
 pub use crate::types::_message_usefulness_reason::MessageUsefulnessReason;
 
 pub use crate::types::_message_usefulness::MessageUsefulness;
+
+pub use crate::types::_subscription::Subscription;
+
+pub use crate::types::_subscription_principal::SubscriptionPrincipal;
 
 pub use crate::types::_plugin_type_metadata_summary::PluginTypeMetadataSummary;
 
@@ -660,6 +666,12 @@ mod _string_attribute_boosting_configuration;
 mod _string_attribute_value_boosting_level;
 
 mod _string_list_attribute_boosting_configuration;
+
+mod _subscription;
+
+mod _subscription_details;
+
+mod _subscription_principal;
 
 mod _subscription_type;
 

@@ -10,7 +10,7 @@ pub struct TableSummary {
     pub name: ::std::string::String,
     /// <p>The type of the table.</p>
     pub r#type: crate::types::TableType,
-    /// <p>The Amazon Resource Number (ARN) of the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
     pub table_arn: ::std::string::String,
     /// <p>The date and time the table was created at.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -32,7 +32,7 @@ impl TableSummary {
     pub fn r#type(&self) -> &crate::types::TableType {
         &self.r#type
     }
-    /// <p>The Amazon Resource Number (ARN) of the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
     pub fn table_arn(&self) -> &str {
         use std::ops::Deref;
         self.table_arn.deref()
@@ -115,18 +115,18 @@ impl TableSummaryBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TableType> {
         &self.r#type
     }
-    /// <p>The Amazon Resource Number (ARN) of the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
     /// This field is required.
     pub fn table_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
     pub fn set_table_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_arn = input;
         self
     }
-    /// <p>The Amazon Resource Number (ARN) of the table.</p>
+    /// <p>The Amazon Resource Name (ARN) of the table.</p>
     pub fn get_table_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_arn
     }

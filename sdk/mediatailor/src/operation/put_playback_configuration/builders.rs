@@ -169,7 +169,7 @@ impl PutPlaybackConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_configuration_aliases`](Self::set_configuration_aliases).
     ///
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn configuration_aliases(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -178,7 +178,7 @@ impl PutPlaybackConfigurationFluentBuilder {
         self.inner = self.inner.configuration_aliases(k.into(), v);
         self
     }
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn set_configuration_aliases(
         mut self,
         input: ::std::option::Option<
@@ -188,7 +188,7 @@ impl PutPlaybackConfigurationFluentBuilder {
         self.inner = self.inner.set_configuration_aliases(input);
         self
     }
-    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
+    /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain Variables</a>.</p>
     pub fn get_configuration_aliases(
         &self,
     ) -> &::std::option::Option<
@@ -340,5 +340,19 @@ impl PutPlaybackConfigurationFluentBuilder {
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub fn get_video_content_source_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_video_content_source_url()
+    }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn ad_conditioning_configuration(mut self, input: crate::types::AdConditioningConfiguration) -> Self {
+        self.inner = self.inner.ad_conditioning_configuration(input);
+        self
+    }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn set_ad_conditioning_configuration(mut self, input: ::std::option::Option<crate::types::AdConditioningConfiguration>) -> Self {
+        self.inner = self.inner.set_ad_conditioning_configuration(input);
+        self
+    }
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
+        self.inner.get_ad_conditioning_configuration()
     }
 }

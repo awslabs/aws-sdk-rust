@@ -18,6 +18,15 @@ pub fn ser_storage_connector(
         }
         array_4.finish();
     }
+    if let Some(var_6) = &input.domains_require_admin_consent {
+        let mut array_7 = object.key("DomainsRequireAdminConsent").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -52,6 +61,9 @@ where
                         }
                         "Domains" => {
                             builder = builder.set_domains(crate::protocol_serde::shape_domain_list::de_domain_list(tokens)?);
+                        }
+                        "DomainsRequireAdminConsent" => {
+                            builder = builder.set_domains_require_admin_consent(crate::protocol_serde::shape_domain_list::de_domain_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

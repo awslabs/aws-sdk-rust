@@ -23,6 +23,14 @@ pub use crate::types::_table_maintenance_job_type::TableMaintenanceJobType;
 
 pub use crate::types::_open_table_format::OpenTableFormat;
 
+pub use crate::types::_table_metadata::TableMetadata;
+
+pub use crate::types::_iceberg_metadata::IcebergMetadata;
+
+pub use crate::types::_iceberg_schema::IcebergSchema;
+
+pub use crate::types::_schema_field::SchemaField;
+
 pub use crate::types::_table_bucket_maintenance_configuration_value::TableBucketMaintenanceConfigurationValue;
 
 pub use crate::types::_table_bucket_maintenance_settings::TableBucketMaintenanceSettings;
@@ -37,6 +45,10 @@ pub use crate::types::_namespace_summary::NamespaceSummary;
 
 mod _iceberg_compaction_settings;
 
+mod _iceberg_metadata;
+
+mod _iceberg_schema;
+
 mod _iceberg_snapshot_management_settings;
 
 mod _iceberg_unreferenced_file_removal_settings;
@@ -48,6 +60,8 @@ mod _maintenance_status;
 mod _namespace_summary;
 
 mod _open_table_format;
+
+mod _schema_field;
 
 mod _table_bucket_maintenance_configuration_value;
 
@@ -66,6 +80,8 @@ mod _table_maintenance_job_type;
 mod _table_maintenance_settings;
 
 mod _table_maintenance_type;
+
+mod _table_metadata;
 
 mod _table_summary;
 

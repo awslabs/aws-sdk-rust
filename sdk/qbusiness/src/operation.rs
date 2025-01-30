@@ -10,6 +10,9 @@ pub mod batch_delete_document;
 /// Types for the `BatchPutDocument` operation.
 pub mod batch_put_document;
 
+/// Types for the `CancelSubscription` operation.
+pub mod cancel_subscription;
+
 /// Types for the `Chat` operation.
 pub mod chat;
 
@@ -33,6 +36,9 @@ pub mod create_plugin;
 
 /// Types for the `CreateRetriever` operation.
 pub mod create_retriever;
+
+/// Types for the `CreateSubscription` operation.
+pub mod create_subscription;
 
 /// Types for the `CreateUser` operation.
 pub mod create_user;
@@ -157,6 +163,9 @@ pub mod list_plugins;
 /// Types for the `ListRetrievers` operation.
 pub mod list_retrievers;
 
+/// Types for the `ListSubscriptions` operation.
+pub mod list_subscriptions;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -204,6 +213,9 @@ pub mod update_plugin;
 
 /// Types for the `UpdateRetriever` operation.
 pub mod update_retriever;
+
+/// Types for the `UpdateSubscription` operation.
+pub mod update_subscription;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
