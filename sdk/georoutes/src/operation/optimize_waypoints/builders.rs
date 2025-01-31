@@ -22,7 +22,7 @@ impl crate::operation::optimize_waypoints::builders::OptimizeWaypointsInputBuild
 }
 /// Fluent builder constructing a request to `OptimizeWaypoints`.
 ///
-/// <p>Calculates the optimal order to travel between a set of waypoints to minimize either the travel time or the distance travelled during the journey, based on road network restrictions and the traffic pattern data.</p>
+/// <p><code>OptimizeWaypoints</code> calculates the optimal order to travel between a set of waypoints to minimize either the travel time or the distance travelled during the journey, based on road network restrictions and the traffic pattern data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct OptimizeWaypointsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,19 +108,33 @@ impl OptimizeWaypointsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn avoid(mut self, input: crate::types::WaypointOptimizationAvoidanceOptions) -> Self {
         self.inner = self.inner.avoid(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn set_avoid(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationAvoidanceOptions>) -> Self {
         self.inner = self.inner.set_avoid(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn get_avoid(&self) -> &::std::option::Option<crate::types::WaypointOptimizationAvoidanceOptions> {
         self.inner.get_avoid()
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn clustering(mut self, input: crate::types::WaypointOptimizationClusteringOptions) -> Self {
+        self.inner = self.inner.clustering(input);
+        self
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn set_clustering(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationClusteringOptions>) -> Self {
+        self.inner = self.inner.set_clustering(input);
+        self
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn get_clustering(&self) -> &::std::option::Option<crate::types::WaypointOptimizationClusteringOptions> {
+        self.inner.get_clustering()
     }
     /// <p>Departure time from the waypoint.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>

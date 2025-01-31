@@ -26,6 +26,8 @@ pub struct ScraperSummary {
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The Amazon Managed Service for Prometheus workspace the scraper sends metrics to.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
+    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    pub role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
 }
 impl ScraperSummary {
     /// <p>(Optional) A name associated with the scraper.</p>
@@ -75,6 +77,10 @@ impl ScraperSummary {
     pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
+    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    pub fn role_configuration(&self) -> ::std::option::Option<&crate::types::RoleConfiguration> {
+        self.role_configuration.as_ref()
+    }
 }
 impl ScraperSummary {
     /// Creates a new builder-style object to manufacture [`ScraperSummary`](crate::types::ScraperSummary).
@@ -98,6 +104,7 @@ pub struct ScraperSummaryBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
+    pub(crate) role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
 }
 impl ScraperSummaryBuilder {
     /// <p>(Optional) A name associated with the scraper.</p>
@@ -268,6 +275,20 @@ impl ScraperSummaryBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.destination
     }
+    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    pub fn role_configuration(mut self, input: crate::types::RoleConfiguration) -> Self {
+        self.role_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    pub fn set_role_configuration(mut self, input: ::std::option::Option<crate::types::RoleConfiguration>) -> Self {
+        self.role_configuration = input;
+        self
+    }
+    /// <p>To configure roles that allows users to write to an Amazon Managed Service for Prometheus workspace in a different account.</p>
+    pub fn get_role_configuration(&self) -> &::std::option::Option<crate::types::RoleConfiguration> {
+        &self.role_configuration
+    }
     /// Consumes the builder and constructs a [`ScraperSummary`](crate::types::ScraperSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`scraper_id`](crate::types::builders::ScraperSummaryBuilder::scraper_id)
@@ -313,6 +334,7 @@ impl ScraperSummaryBuilder {
             status_reason: self.status_reason,
             source: self.source,
             destination: self.destination,
+            role_configuration: self.role_configuration,
         })
     }
 }

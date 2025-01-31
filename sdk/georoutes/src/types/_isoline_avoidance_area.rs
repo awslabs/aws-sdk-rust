@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsolineAvoidanceArea {
-    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating the route.</p>
+    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating an isoline.</p>
     pub except: ::std::option::Option<::std::vec::Vec<crate::types::IsolineAvoidanceAreaGeometry>>,
     /// <p>Geometry of the area to be avoided.</p>
     pub geometry: ::std::option::Option<crate::types::IsolineAvoidanceAreaGeometry>,
 }
 impl IsolineAvoidanceArea {
-    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating the route.</p>
+    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating an isoline.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.except.is_none()`.
     pub fn except(&self) -> &[crate::types::IsolineAvoidanceAreaGeometry] {
@@ -40,19 +40,19 @@ impl IsolineAvoidanceAreaBuilder {
     ///
     /// To override the contents of this collection use [`set_except`](Self::set_except).
     ///
-    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating the route.</p>
+    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating an isoline.</p>
     pub fn except(mut self, input: crate::types::IsolineAvoidanceAreaGeometry) -> Self {
         let mut v = self.except.unwrap_or_default();
         v.push(input);
         self.except = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating the route.</p>
+    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating an isoline.</p>
     pub fn set_except(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IsolineAvoidanceAreaGeometry>>) -> Self {
         self.except = input;
         self
     }
-    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating the route.</p>
+    /// <p>Exceptions to the provided avoidance geometry, to be included while calculating an isoline.</p>
     pub fn get_except(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IsolineAvoidanceAreaGeometry>> {
         &self.except
     }

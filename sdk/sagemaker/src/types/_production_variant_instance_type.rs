@@ -173,6 +173,7 @@
 ///     ProductionVariantInstanceType::MlP4De24Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlP548Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlP5E48Xlarge => { /* ... */ },
+///     ProductionVariantInstanceType::MlP5En48Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR512Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR524Xlarge => { /* ... */ },
 ///     ProductionVariantInstanceType::MlR52Xlarge => { /* ... */ },
@@ -576,6 +577,8 @@ pub enum ProductionVariantInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlP5E48Xlarge,
     #[allow(missing_docs)] // documentation missing in model
+    MlP5En48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     MlR512Xlarge,
     #[allow(missing_docs)] // documentation missing in model
     MlR524Xlarge,
@@ -847,6 +850,7 @@ impl ::std::convert::From<&str> for ProductionVariantInstanceType {
             "ml.p4de.24xlarge" => ProductionVariantInstanceType::MlP4De24Xlarge,
             "ml.p5.48xlarge" => ProductionVariantInstanceType::MlP548Xlarge,
             "ml.p5e.48xlarge" => ProductionVariantInstanceType::MlP5E48Xlarge,
+            "ml.p5en.48xlarge" => ProductionVariantInstanceType::MlP5En48Xlarge,
             "ml.r5.12xlarge" => ProductionVariantInstanceType::MlR512Xlarge,
             "ml.r5.24xlarge" => ProductionVariantInstanceType::MlR524Xlarge,
             "ml.r5.2xlarge" => ProductionVariantInstanceType::MlR52Xlarge,
@@ -1075,6 +1079,7 @@ impl ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlP4De24Xlarge => "ml.p4de.24xlarge",
             ProductionVariantInstanceType::MlP548Xlarge => "ml.p5.48xlarge",
             ProductionVariantInstanceType::MlP5E48Xlarge => "ml.p5e.48xlarge",
+            ProductionVariantInstanceType::MlP5En48Xlarge => "ml.p5en.48xlarge",
             ProductionVariantInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
             ProductionVariantInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
             ProductionVariantInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
@@ -1294,6 +1299,7 @@ impl ProductionVariantInstanceType {
             "ml.p4de.24xlarge",
             "ml.p5.48xlarge",
             "ml.p5e.48xlarge",
+            "ml.p5en.48xlarge",
             "ml.r5.12xlarge",
             "ml.r5.24xlarge",
             "ml.r5.2xlarge",
@@ -1530,6 +1536,7 @@ impl ::std::fmt::Display for ProductionVariantInstanceType {
             ProductionVariantInstanceType::MlP4De24Xlarge => write!(f, "ml.p4de.24xlarge"),
             ProductionVariantInstanceType::MlP548Xlarge => write!(f, "ml.p5.48xlarge"),
             ProductionVariantInstanceType::MlP5E48Xlarge => write!(f, "ml.p5e.48xlarge"),
+            ProductionVariantInstanceType::MlP5En48Xlarge => write!(f, "ml.p5en.48xlarge"),
             ProductionVariantInstanceType::MlR512Xlarge => write!(f, "ml.r5.12xlarge"),
             ProductionVariantInstanceType::MlR524Xlarge => write!(f, "ml.r5.24xlarge"),
             ProductionVariantInstanceType::MlR52Xlarge => write!(f, "ml.r5.2xlarge"),

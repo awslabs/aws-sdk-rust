@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateIsolinesInput {
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub allow: ::std::option::Option<crate::types::IsolineAllowOptions>,
     /// <p>Time of arrival at the destination.</p>
     /// <p>Time format: <code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
@@ -28,7 +28,7 @@ pub struct CalculateIsolinesInput {
     /// <p>The format of the returned IsolineGeometry.</p>
     /// <p>Default Value:<code>FlexiblePolyline</code></p>
     pub isoline_geometry_format: ::std::option::Option<crate::types::GeometryFormat>,
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub isoline_granularity: ::std::option::Option<crate::types::IsolineGranularityOptions>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -43,6 +43,7 @@ pub struct CalculateIsolinesInput {
     /// <p>Origin related options.</p>
     pub origin_options: ::std::option::Option<crate::types::IsolineOriginOptions>,
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub thresholds: ::std::option::Option<crate::types::IsolineThresholds>,
     /// <p>Traffic related options.</p>
     pub traffic: ::std::option::Option<crate::types::IsolineTrafficOptions>,
@@ -55,7 +56,7 @@ pub struct CalculateIsolinesInput {
     pub travel_mode_options: ::std::option::Option<crate::types::IsolineTravelModeOptions>,
 }
 impl CalculateIsolinesInput {
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn allow(&self) -> ::std::option::Option<&crate::types::IsolineAllowOptions> {
         self.allow.as_ref()
     }
@@ -98,7 +99,7 @@ impl CalculateIsolinesInput {
     pub fn isoline_geometry_format(&self) -> ::std::option::Option<&crate::types::GeometryFormat> {
         self.isoline_geometry_format.as_ref()
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn isoline_granularity(&self) -> ::std::option::Option<&crate::types::IsolineGranularityOptions> {
         self.isoline_granularity.as_ref()
     }
@@ -127,6 +128,7 @@ impl CalculateIsolinesInput {
         self.origin_options.as_ref()
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub fn thresholds(&self) -> ::std::option::Option<&crate::types::IsolineThresholds> {
         self.thresholds.as_ref()
     }
@@ -201,17 +203,17 @@ pub struct CalculateIsolinesInputBuilder {
     pub(crate) travel_mode_options: ::std::option::Option<crate::types::IsolineTravelModeOptions>,
 }
 impl CalculateIsolinesInputBuilder {
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn allow(mut self, input: crate::types::IsolineAllowOptions) -> Self {
         self.allow = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::IsolineAllowOptions>) -> Self {
         self.allow = input;
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::IsolineAllowOptions> {
         &self.allow
     }
@@ -346,17 +348,17 @@ impl CalculateIsolinesInputBuilder {
     pub fn get_isoline_geometry_format(&self) -> &::std::option::Option<crate::types::GeometryFormat> {
         &self.isoline_geometry_format
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn isoline_granularity(mut self, input: crate::types::IsolineGranularityOptions) -> Self {
         self.isoline_granularity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn set_isoline_granularity(mut self, input: ::std::option::Option<crate::types::IsolineGranularityOptions>) -> Self {
         self.isoline_granularity = input;
         self
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn get_isoline_granularity(&self) -> &::std::option::Option<crate::types::IsolineGranularityOptions> {
         &self.isoline_granularity
     }
@@ -443,17 +445,20 @@ impl CalculateIsolinesInputBuilder {
         &self.origin_options
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     /// This field is required.
     pub fn thresholds(mut self, input: crate::types::IsolineThresholds) -> Self {
         self.thresholds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub fn set_thresholds(mut self, input: ::std::option::Option<crate::types::IsolineThresholds>) -> Self {
         self.thresholds = input;
         self
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub fn get_thresholds(&self) -> &::std::option::Option<crate::types::IsolineThresholds> {
         &self.thresholds
     }

@@ -6,7 +6,9 @@
 pub struct IsolineTravelModeOptions {
     /// <p>Travel mode options when the provided travel mode is "Car"</p>
     pub car: ::std::option::Option<crate::types::IsolineCarOptions>,
-    /// <p>Travel mode options when the provided travel mode is "Scooter"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p><note>
+    /// <p>When travel mode is set to <code>Scooter</code>, then the avoidance option <code>ControlledAccessHighways</code> defaults to <code>true</code>.</p>
+    /// </note>
     pub scooter: ::std::option::Option<crate::types::IsolineScooterOptions>,
     /// <p>Travel mode options when the provided travel mode is "Truck"</p>
     pub truck: ::std::option::Option<crate::types::IsolineTruckOptions>,
@@ -16,7 +18,9 @@ impl IsolineTravelModeOptions {
     pub fn car(&self) -> ::std::option::Option<&crate::types::IsolineCarOptions> {
         self.car.as_ref()
     }
-    /// <p>Travel mode options when the provided travel mode is "Scooter"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p><note>
+    /// <p>When travel mode is set to <code>Scooter</code>, then the avoidance option <code>ControlledAccessHighways</code> defaults to <code>true</code>.</p>
+    /// </note>
     pub fn scooter(&self) -> ::std::option::Option<&crate::types::IsolineScooterOptions> {
         self.scooter.as_ref()
     }
@@ -55,17 +59,23 @@ impl IsolineTravelModeOptionsBuilder {
     pub fn get_car(&self) -> &::std::option::Option<crate::types::IsolineCarOptions> {
         &self.car
     }
-    /// <p>Travel mode options when the provided travel mode is "Scooter"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p><note>
+    /// <p>When travel mode is set to <code>Scooter</code>, then the avoidance option <code>ControlledAccessHighways</code> defaults to <code>true</code>.</p>
+    /// </note>
     pub fn scooter(mut self, input: crate::types::IsolineScooterOptions) -> Self {
         self.scooter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Scooter"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p><note>
+    /// <p>When travel mode is set to <code>Scooter</code>, then the avoidance option <code>ControlledAccessHighways</code> defaults to <code>true</code>.</p>
+    /// </note>
     pub fn set_scooter(mut self, input: ::std::option::Option<crate::types::IsolineScooterOptions>) -> Self {
         self.scooter = input;
         self
     }
-    /// <p>Travel mode options when the provided travel mode is "Scooter"</p>
+    /// <p>Travel mode options when the provided travel mode is <code>Scooter</code></p><note>
+    /// <p>When travel mode is set to <code>Scooter</code>, then the avoidance option <code>ControlledAccessHighways</code> defaults to <code>true</code>.</p>
+    /// </note>
     pub fn get_scooter(&self) -> &::std::option::Option<crate::types::IsolineScooterOptions> {
         &self.scooter
     }

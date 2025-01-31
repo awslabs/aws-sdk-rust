@@ -57,6 +57,10 @@ pub use crate::types::_waypoint_optimization_rest_cycle_durations::WaypointOptim
 
 pub use crate::types::_waypoint_optimization_destination_options::WaypointOptimizationDestinationOptionsBuilder;
 
+pub use crate::types::_waypoint_optimization_clustering_options::WaypointOptimizationClusteringOptionsBuilder;
+
+pub use crate::types::_waypoint_optimization_driving_distance_options::WaypointOptimizationDrivingDistanceOptionsBuilder;
+
 pub use crate::types::_waypoint_optimization_avoidance_options::WaypointOptimizationAvoidanceOptionsBuilder;
 
 pub use crate::types::_waypoint_optimization_avoidance_area::WaypointOptimizationAvoidanceAreaBuilder;

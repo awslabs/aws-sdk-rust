@@ -131,6 +131,8 @@ pub(crate) mod shape_logging_configuration_metadata;
 
 pub(crate) mod shape_logging_configuration_status;
 
+pub(crate) mod shape_role_configuration;
+
 pub(crate) mod shape_rule_groups_namespace_description;
 
 pub(crate) mod shape_rule_groups_namespace_status;

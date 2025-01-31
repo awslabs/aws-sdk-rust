@@ -804,7 +804,7 @@ pub struct CreateDbInstanceInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i></p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub network_type: ::std::option::Option<::std::string::String>,
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub storage_throughput: ::std::option::Option<i32>,
@@ -1773,7 +1773,7 @@ impl CreateDbInstanceInput {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn storage_throughput(&self) -> ::std::option::Option<i32> {
@@ -4797,21 +4797,21 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
         self.storage_throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_throughput = input;
         self
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {

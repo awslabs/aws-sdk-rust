@@ -82,7 +82,9 @@ pub struct DbCluster {
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
     /// <p>Indicates whether the mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub iam_database_authentication_enabled: ::std::option::Option<bool>,
-    /// <p>The ID of the clone group with which the DB cluster is associated.</p>
+    /// <p>The ID of the clone group with which the DB cluster is associated. For newly created clusters, the ID is typically null.</p>
+    /// <p>If you clone a DB cluster when the ID is null, the operation populates the ID value for the source cluster and the clone because both clusters become part of the same clone group. Even if you delete the clone cluster, the clone group ID remains for the lifetime of the source cluster to show that it was used in a cloning operation.</p>
+    /// <p>For PITR, the clone group ID is inherited from the source cluster. For snapshot restore operations, the clone group ID isn't inherited from the source cluster.</p>
     pub clone_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -379,7 +381,9 @@ impl DbCluster {
     pub fn iam_database_authentication_enabled(&self) -> ::std::option::Option<bool> {
         self.iam_database_authentication_enabled
     }
-    /// <p>The ID of the clone group with which the DB cluster is associated.</p>
+    /// <p>The ID of the clone group with which the DB cluster is associated. For newly created clusters, the ID is typically null.</p>
+    /// <p>If you clone a DB cluster when the ID is null, the operation populates the ID value for the source cluster and the clone because both clusters become part of the same clone group. Even if you delete the clone cluster, the clone group ID remains for the lifetime of the source cluster to show that it was used in a cloning operation.</p>
+    /// <p>For PITR, the clone group ID is inherited from the source cluster. For snapshot restore operations, the clone group ID isn't inherited from the source cluster.</p>
     pub fn clone_group_id(&self) -> ::std::option::Option<&str> {
         self.clone_group_id.as_deref()
     }
@@ -1267,17 +1271,23 @@ impl DbClusterBuilder {
     pub fn get_iam_database_authentication_enabled(&self) -> &::std::option::Option<bool> {
         &self.iam_database_authentication_enabled
     }
-    /// <p>The ID of the clone group with which the DB cluster is associated.</p>
+    /// <p>The ID of the clone group with which the DB cluster is associated. For newly created clusters, the ID is typically null.</p>
+    /// <p>If you clone a DB cluster when the ID is null, the operation populates the ID value for the source cluster and the clone because both clusters become part of the same clone group. Even if you delete the clone cluster, the clone group ID remains for the lifetime of the source cluster to show that it was used in a cloning operation.</p>
+    /// <p>For PITR, the clone group ID is inherited from the source cluster. For snapshot restore operations, the clone group ID isn't inherited from the source cluster.</p>
     pub fn clone_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.clone_group_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the clone group with which the DB cluster is associated.</p>
+    /// <p>The ID of the clone group with which the DB cluster is associated. For newly created clusters, the ID is typically null.</p>
+    /// <p>If you clone a DB cluster when the ID is null, the operation populates the ID value for the source cluster and the clone because both clusters become part of the same clone group. Even if you delete the clone cluster, the clone group ID remains for the lifetime of the source cluster to show that it was used in a cloning operation.</p>
+    /// <p>For PITR, the clone group ID is inherited from the source cluster. For snapshot restore operations, the clone group ID isn't inherited from the source cluster.</p>
     pub fn set_clone_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.clone_group_id = input;
         self
     }
-    /// <p>The ID of the clone group with which the DB cluster is associated.</p>
+    /// <p>The ID of the clone group with which the DB cluster is associated. For newly created clusters, the ID is typically null.</p>
+    /// <p>If you clone a DB cluster when the ID is null, the operation populates the ID value for the source cluster and the clone because both clusters become part of the same clone group. Even if you delete the clone cluster, the clone group ID remains for the lifetime of the source cluster to show that it was used in a cloning operation.</p>
+    /// <p>For PITR, the clone group ID is inherited from the source cluster. For snapshot restore operations, the clone group ID isn't inherited from the source cluster.</p>
     pub fn get_clone_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.clone_group_id
     }

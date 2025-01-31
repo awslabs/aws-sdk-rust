@@ -15,11 +15,17 @@ pub fn ser_update_scraper_input_input(
         crate::protocol_serde::shape_destination::ser_destination(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.scrape_configuration {
+    if let Some(var_5) = &input.role_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("scrapeConfiguration").start_object();
-        crate::protocol_serde::shape_scrape_configuration::ser_scrape_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("roleConfiguration").start_object();
+        crate::protocol_serde::shape_role_configuration::ser_role_configuration(&mut object_6, var_5)?;
         object_6.finish();
+    }
+    if let Some(var_7) = &input.scrape_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("scrapeConfiguration").start_object();
+        crate::protocol_serde::shape_scrape_configuration::ser_scrape_configuration(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

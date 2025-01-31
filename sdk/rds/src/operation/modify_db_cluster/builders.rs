@@ -536,9 +536,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | instance | slowquery</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>instance | postgresql</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
     /// <li>
@@ -555,9 +555,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | instance | slowquery</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>instance | postgresql</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
     /// <li>
@@ -574,9 +574,9 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | instance | slowquery</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>instance | postgresql</code></p></li>
     /// <li>
     /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
     /// <li>

@@ -145,6 +145,8 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_waypoint_optimization_avoidance_options;
 
+pub(crate) mod shape_waypoint_optimization_clustering_options;
+
 pub(crate) mod shape_waypoint_optimization_connection_list;
 
 pub(crate) mod shape_waypoint_optimization_destination_options;
@@ -240,6 +242,8 @@ pub(crate) mod shape_waypoint_optimization_access_hours;
 pub(crate) mod shape_waypoint_optimization_avoidance_area;
 
 pub(crate) mod shape_waypoint_optimization_connection;
+
+pub(crate) mod shape_waypoint_optimization_driving_distance_options;
 
 pub(crate) mod shape_waypoint_optimization_impeding_waypoint;
 

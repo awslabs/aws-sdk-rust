@@ -10,6 +10,8 @@ pub struct WaypointOptimizationOptimizedWaypoint {
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub arrival_time: ::std::option::Option<::std::string::String>,
+    /// <p>Index of the cluster the waypoint is associated with. The index is included in the response only if clustering was performed while processing the request.</p>
+    pub cluster_index: ::std::option::Option<i32>,
     /// <p>Estimated time of departure from thr origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
@@ -29,6 +31,10 @@ impl WaypointOptimizationOptimizedWaypoint {
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub fn arrival_time(&self) -> ::std::option::Option<&str> {
         self.arrival_time.as_deref()
+    }
+    /// <p>Index of the cluster the waypoint is associated with. The index is included in the response only if clustering was performed while processing the request.</p>
+    pub fn cluster_index(&self) -> ::std::option::Option<i32> {
+        self.cluster_index
     }
     /// <p>Estimated time of departure from thr origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
@@ -54,6 +60,7 @@ impl ::std::fmt::Debug for WaypointOptimizationOptimizedWaypoint {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WaypointOptimizationOptimizedWaypoint");
         formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("cluster_index", &self.cluster_index);
         formatter.field("departure_time", &self.departure_time);
         formatter.field("id", &self.id);
         formatter.field("position", &"*** Sensitive Data Redacted ***");
@@ -72,6 +79,7 @@ impl WaypointOptimizationOptimizedWaypoint {
 #[non_exhaustive]
 pub struct WaypointOptimizationOptimizedWaypointBuilder {
     pub(crate) arrival_time: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_index: ::std::option::Option<i32>,
     pub(crate) departure_time: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) position: ::std::option::Option<::std::vec::Vec<f64>>,
@@ -102,6 +110,20 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub fn get_arrival_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.arrival_time
+    }
+    /// <p>Index of the cluster the waypoint is associated with. The index is included in the response only if clustering was performed while processing the request.</p>
+    pub fn cluster_index(mut self, input: i32) -> Self {
+        self.cluster_index = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Index of the cluster the waypoint is associated with. The index is included in the response only if clustering was performed while processing the request.</p>
+    pub fn set_cluster_index(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.cluster_index = input;
+        self
+    }
+    /// <p>Index of the cluster the waypoint is associated with. The index is included in the response only if clustering was performed while processing the request.</p>
+    pub fn get_cluster_index(&self) -> &::std::option::Option<i32> {
+        &self.cluster_index
     }
     /// <p>Estimated time of departure from thr origin.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
@@ -175,6 +197,7 @@ impl WaypointOptimizationOptimizedWaypointBuilder {
     ) -> ::std::result::Result<crate::types::WaypointOptimizationOptimizedWaypoint, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::WaypointOptimizationOptimizedWaypoint {
             arrival_time: self.arrival_time,
+            cluster_index: self.cluster_index,
             departure_time: self.departure_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "departure_time",
@@ -200,6 +223,7 @@ impl ::std::fmt::Debug for WaypointOptimizationOptimizedWaypointBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WaypointOptimizationOptimizedWaypointBuilder");
         formatter.field("arrival_time", &self.arrival_time);
+        formatter.field("cluster_index", &self.cluster_index);
         formatter.field("departure_time", &self.departure_time);
         formatter.field("id", &self.id);
         formatter.field("position", &"*** Sensitive Data Redacted ***");

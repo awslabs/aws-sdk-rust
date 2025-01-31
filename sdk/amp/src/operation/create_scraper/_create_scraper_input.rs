@@ -12,6 +12,8 @@ pub struct CreateScraperInput {
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub destination: ::std::option::Option<crate::types::Destination>,
+    /// <p>The scraper role configuration for the workspace.</p>
+    pub role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
@@ -33,6 +35,10 @@ impl CreateScraperInput {
     /// <p>The Amazon Managed Service for Prometheus workspace to send metrics to.</p>
     pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
+    }
+    /// <p>The scraper role configuration for the workspace.</p>
+    pub fn role_configuration(&self) -> ::std::option::Option<&crate::types::RoleConfiguration> {
+        self.role_configuration.as_ref()
     }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -58,6 +64,7 @@ pub struct CreateScraperInputBuilder {
     pub(crate) scrape_configuration: ::std::option::Option<crate::types::ScrapeConfiguration>,
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
+    pub(crate) role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -121,6 +128,20 @@ impl CreateScraperInputBuilder {
     pub fn get_destination(&self) -> &::std::option::Option<crate::types::Destination> {
         &self.destination
     }
+    /// <p>The scraper role configuration for the workspace.</p>
+    pub fn role_configuration(mut self, input: crate::types::RoleConfiguration) -> Self {
+        self.role_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scraper role configuration for the workspace.</p>
+    pub fn set_role_configuration(mut self, input: ::std::option::Option<crate::types::RoleConfiguration>) -> Self {
+        self.role_configuration = input;
+        self
+    }
+    /// <p>The scraper role configuration for the workspace.</p>
+    pub fn get_role_configuration(&self) -> &::std::option::Option<crate::types::RoleConfiguration> {
+        &self.role_configuration
+    }
     /// <p>(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -164,6 +185,7 @@ impl CreateScraperInputBuilder {
             scrape_configuration: self.scrape_configuration,
             source: self.source,
             destination: self.destination,
+            role_configuration: self.role_configuration,
             client_token: self.client_token,
             tags: self.tags,
         })

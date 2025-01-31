@@ -85,6 +85,12 @@ pub use crate::types::_waypoint_optimization_rest_cycle_durations::WaypointOptim
 
 pub use crate::types::_waypoint_optimization_destination_options::WaypointOptimizationDestinationOptions;
 
+pub use crate::types::_waypoint_optimization_clustering_options::WaypointOptimizationClusteringOptions;
+
+pub use crate::types::_waypoint_optimization_driving_distance_options::WaypointOptimizationDrivingDistanceOptions;
+
+pub use crate::types::_waypoint_optimization_clustering_algorithm::WaypointOptimizationClusteringAlgorithm;
+
 pub use crate::types::_waypoint_optimization_avoidance_options::WaypointOptimizationAvoidanceOptions;
 
 pub use crate::types::_waypoint_optimization_avoidance_area::WaypointOptimizationAvoidanceArea;
@@ -927,6 +933,10 @@ mod _waypoint_optimization_avoidance_area_geometry;
 
 mod _waypoint_optimization_avoidance_options;
 
+mod _waypoint_optimization_clustering_algorithm;
+
+mod _waypoint_optimization_clustering_options;
+
 mod _waypoint_optimization_connection;
 
 mod _waypoint_optimization_constraint;
@@ -934,6 +944,8 @@ mod _waypoint_optimization_constraint;
 mod _waypoint_optimization_destination_options;
 
 mod _waypoint_optimization_driver_options;
+
+mod _waypoint_optimization_driving_distance_options;
 
 mod _waypoint_optimization_exclusion_options;
 

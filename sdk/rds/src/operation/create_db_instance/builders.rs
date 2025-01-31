@@ -2989,21 +2989,21 @@ impl CreateDBInstanceFluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_network_type()
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn storage_throughput(mut self, input: i32) -> Self {
         self.inner = self.inner.storage_throughput(input);
         self
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn set_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_throughput(input);
         self
     }
-    /// <p>The storage throughput value for the DB instance.</p>
+    /// <p>The storage throughput value, in mebibyte per second (MiBps), for the DB instance.</p>
     /// <p>This setting applies only to the <code>gp3</code> storage type.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
     pub fn get_storage_throughput(&self) -> &::std::option::Option<i32> {

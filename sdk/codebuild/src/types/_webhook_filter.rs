@@ -82,6 +82,8 @@ pub struct WebhookFilter {
     /// <li>
     /// <p>A webhook triggers a build when the workflow name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>WORKFLOW_JOB_QUEUED</code> events only.</p>
+    /// </note> <note>
+    /// <p>For CodeBuild-hosted Buildkite runner builds, WORKFLOW_NAME filters will filter by pipeline name.</p>
     /// </note></li>
     /// </ul></li>
     /// </ul>
@@ -171,6 +173,8 @@ impl WebhookFilter {
     /// <li>
     /// <p>A webhook triggers a build when the workflow name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>WORKFLOW_JOB_QUEUED</code> events only.</p>
+    /// </note> <note>
+    /// <p>For CodeBuild-hosted Buildkite runner builds, WORKFLOW_NAME filters will filter by pipeline name.</p>
     /// </note></li>
     /// </ul></li>
     /// </ul>
@@ -282,6 +286,8 @@ impl WebhookFilterBuilder {
     /// <li>
     /// <p>A webhook triggers a build when the workflow name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>WORKFLOW_JOB_QUEUED</code> events only.</p>
+    /// </note> <note>
+    /// <p>For CodeBuild-hosted Buildkite runner builds, WORKFLOW_NAME filters will filter by pipeline name.</p>
     /// </note></li>
     /// </ul></li>
     /// </ul>
@@ -368,6 +374,8 @@ impl WebhookFilterBuilder {
     /// <li>
     /// <p>A webhook triggers a build when the workflow name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>WORKFLOW_JOB_QUEUED</code> events only.</p>
+    /// </note> <note>
+    /// <p>For CodeBuild-hosted Buildkite runner builds, WORKFLOW_NAME filters will filter by pipeline name.</p>
     /// </note></li>
     /// </ul></li>
     /// </ul>
@@ -453,6 +461,8 @@ impl WebhookFilterBuilder {
     /// <li>
     /// <p>A webhook triggers a build when the workflow name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with <code>WORKFLOW_JOB_QUEUED</code> events only.</p>
+    /// </note> <note>
+    /// <p>For CodeBuild-hosted Buildkite runner builds, WORKFLOW_NAME filters will filter by pipeline name.</p>
     /// </note></li>
     /// </ul></li>
     /// </ul>

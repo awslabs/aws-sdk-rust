@@ -7,7 +7,7 @@ pub struct IsolineGranularityOptions {
     /// <p>Maximum number of points of returned Isoline.</p>
     pub max_points: ::std::option::Option<i32>,
     /// <p>Maximum resolution of the returned isoline.</p>
-    /// <p><b>Unit</b>: <code>centimeters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub max_resolution: i64,
 }
 impl IsolineGranularityOptions {
@@ -16,7 +16,7 @@ impl IsolineGranularityOptions {
         self.max_points
     }
     /// <p>Maximum resolution of the returned isoline.</p>
-    /// <p><b>Unit</b>: <code>centimeters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn max_resolution(&self) -> i64 {
         self.max_resolution
     }
@@ -51,19 +51,19 @@ impl IsolineGranularityOptionsBuilder {
         &self.max_points
     }
     /// <p>Maximum resolution of the returned isoline.</p>
-    /// <p><b>Unit</b>: <code>centimeters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn max_resolution(mut self, input: i64) -> Self {
         self.max_resolution = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum resolution of the returned isoline.</p>
-    /// <p><b>Unit</b>: <code>centimeters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn set_max_resolution(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_resolution = input;
         self
     }
     /// <p>Maximum resolution of the returned isoline.</p>
-    /// <p><b>Unit</b>: <code>centimeters</code></p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn get_max_resolution(&self) -> &::std::option::Option<i64> {
         &self.max_resolution
     }

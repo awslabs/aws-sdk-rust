@@ -22,7 +22,7 @@ impl crate::operation::calculate_routes::builders::CalculateRoutesInputBuilder {
 }
 /// Fluent builder constructing a request to `CalculateRoutes`.
 ///
-/// <p>Calculates a route given the following required parameters: <code>Origin</code> and <code>Destination</code>.</p>
+/// <p><code>CalculateRoutes</code> computes routes given the following required parameters: <code>Origin</code> and <code>Destination</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CalculateRoutesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CalculateRoutesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn allow(mut self, input: crate::types::RouteAllowOptions) -> Self {
         self.inner = self.inner.allow(input);
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::RouteAllowOptions>) -> Self {
         self.inner = self.inner.set_allow(input);
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::RouteAllowOptions> {
         self.inner.get_allow()
     }
@@ -557,17 +557,17 @@ impl CalculateRoutesFluentBuilder {
     pub fn get_travel_mode_options(&self) -> &::std::option::Option<crate::types::RouteTravelModeOptions> {
         self.inner.get_travel_mode_options()
     }
-    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based naviagtion system.</p>
+    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based navigation system.</p>
     pub fn travel_step_type(mut self, input: crate::types::RouteTravelStepType) -> Self {
         self.inner = self.inner.travel_step_type(input);
         self
     }
-    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based naviagtion system.</p>
+    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based navigation system.</p>
     pub fn set_travel_step_type(mut self, input: ::std::option::Option<crate::types::RouteTravelStepType>) -> Self {
         self.inner = self.inner.set_travel_step_type(input);
         self
     }
-    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based naviagtion system.</p>
+    /// <p>Type of step returned by the response. Default provides basic steps intended for web based applications. TurnByTurn provides detailed instructions with more granularity intended for a turn based navigation system.</p>
     pub fn get_travel_step_type(&self) -> &::std::option::Option<crate::types::RouteTravelStepType> {
         self.inner.get_travel_step_type()
     }

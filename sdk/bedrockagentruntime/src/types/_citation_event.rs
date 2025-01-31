@@ -5,12 +5,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CitationEvent {
     /// <p>The citation.</p>
+    #[deprecated(
+        note = "Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event.",
+        since = "2024-12-17"
+    )]
     pub citation: ::std::option::Option<crate::types::Citation>,
+    /// <p>The generated response to the citation event.</p>
+    pub generated_response_part: ::std::option::Option<crate::types::GeneratedResponsePart>,
+    /// <p>The retrieved references of the citation event.</p>
+    pub retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
 }
 impl CitationEvent {
     /// <p>The citation.</p>
+    #[deprecated(
+        note = "Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event.",
+        since = "2024-12-17"
+    )]
     pub fn citation(&self) -> ::std::option::Option<&crate::types::Citation> {
         self.citation.as_ref()
+    }
+    /// <p>The generated response to the citation event.</p>
+    pub fn generated_response_part(&self) -> ::std::option::Option<&crate::types::GeneratedResponsePart> {
+        self.generated_response_part.as_ref()
+    }
+    /// <p>The retrieved references of the citation event.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.retrieved_references.is_none()`.
+    pub fn retrieved_references(&self) -> &[crate::types::RetrievedReference] {
+        self.retrieved_references.as_deref().unwrap_or_default()
     }
 }
 impl CitationEvent {
@@ -25,24 +47,76 @@ impl CitationEvent {
 #[non_exhaustive]
 pub struct CitationEventBuilder {
     pub(crate) citation: ::std::option::Option<crate::types::Citation>,
+    pub(crate) generated_response_part: ::std::option::Option<crate::types::GeneratedResponsePart>,
+    pub(crate) retrieved_references: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>,
 }
 impl CitationEventBuilder {
     /// <p>The citation.</p>
+    #[deprecated(
+        note = "Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event.",
+        since = "2024-12-17"
+    )]
     pub fn citation(mut self, input: crate::types::Citation) -> Self {
         self.citation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The citation.</p>
+    #[deprecated(
+        note = "Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event.",
+        since = "2024-12-17"
+    )]
     pub fn set_citation(mut self, input: ::std::option::Option<crate::types::Citation>) -> Self {
         self.citation = input;
         self
     }
     /// <p>The citation.</p>
+    #[deprecated(
+        note = "Citation is deprecated. Please use GeneratedResponsePart and RetrievedReferences for citation event.",
+        since = "2024-12-17"
+    )]
     pub fn get_citation(&self) -> &::std::option::Option<crate::types::Citation> {
         &self.citation
     }
+    /// <p>The generated response to the citation event.</p>
+    pub fn generated_response_part(mut self, input: crate::types::GeneratedResponsePart) -> Self {
+        self.generated_response_part = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The generated response to the citation event.</p>
+    pub fn set_generated_response_part(mut self, input: ::std::option::Option<crate::types::GeneratedResponsePart>) -> Self {
+        self.generated_response_part = input;
+        self
+    }
+    /// <p>The generated response to the citation event.</p>
+    pub fn get_generated_response_part(&self) -> &::std::option::Option<crate::types::GeneratedResponsePart> {
+        &self.generated_response_part
+    }
+    /// Appends an item to `retrieved_references`.
+    ///
+    /// To override the contents of this collection use [`set_retrieved_references`](Self::set_retrieved_references).
+    ///
+    /// <p>The retrieved references of the citation event.</p>
+    pub fn retrieved_references(mut self, input: crate::types::RetrievedReference) -> Self {
+        let mut v = self.retrieved_references.unwrap_or_default();
+        v.push(input);
+        self.retrieved_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The retrieved references of the citation event.</p>
+    pub fn set_retrieved_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>>) -> Self {
+        self.retrieved_references = input;
+        self
+    }
+    /// <p>The retrieved references of the citation event.</p>
+    pub fn get_retrieved_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RetrievedReference>> {
+        &self.retrieved_references
+    }
     /// Consumes the builder and constructs a [`CitationEvent`](crate::types::CitationEvent).
     pub fn build(self) -> crate::types::CitationEvent {
-        crate::types::CitationEvent { citation: self.citation }
+        crate::types::CitationEvent {
+            citation: self.citation,
+            generated_response_part: self.generated_response_part,
+            retrieved_references: self.retrieved_references,
+        }
     }
 }

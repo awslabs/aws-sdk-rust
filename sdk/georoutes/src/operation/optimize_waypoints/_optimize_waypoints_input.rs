@@ -3,8 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OptimizeWaypointsInput {
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub avoid: ::std::option::Option<crate::types::WaypointOptimizationAvoidanceOptions>,
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub clustering: ::std::option::Option<crate::types::WaypointOptimizationClusteringOptions>,
     /// <p>Departure time from the waypoint.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
     /// <p>Examples:</p>
@@ -39,9 +41,13 @@ pub struct OptimizeWaypointsInput {
     pub waypoints: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>>,
 }
 impl OptimizeWaypointsInput {
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn avoid(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationAvoidanceOptions> {
         self.avoid.as_ref()
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn clustering(&self) -> ::std::option::Option<&crate::types::WaypointOptimizationClusteringOptions> {
+        self.clustering.as_ref()
     }
     /// <p>Departure time from the waypoint.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
@@ -112,6 +118,7 @@ impl ::std::fmt::Debug for OptimizeWaypointsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OptimizeWaypointsInput");
         formatter.field("avoid", &self.avoid);
+        formatter.field("clustering", &self.clustering);
         formatter.field("departure_time", &self.departure_time);
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);
@@ -140,6 +147,7 @@ impl OptimizeWaypointsInput {
 #[non_exhaustive]
 pub struct OptimizeWaypointsInputBuilder {
     pub(crate) avoid: ::std::option::Option<crate::types::WaypointOptimizationAvoidanceOptions>,
+    pub(crate) clustering: ::std::option::Option<crate::types::WaypointOptimizationClusteringOptions>,
     pub(crate) departure_time: ::std::option::Option<::std::string::String>,
     pub(crate) destination: ::std::option::Option<::std::vec::Vec<f64>>,
     pub(crate) destination_options: ::std::option::Option<crate::types::WaypointOptimizationDestinationOptions>,
@@ -155,19 +163,33 @@ pub struct OptimizeWaypointsInputBuilder {
     pub(crate) waypoints: ::std::option::Option<::std::vec::Vec<crate::types::WaypointOptimizationWaypoint>>,
 }
 impl OptimizeWaypointsInputBuilder {
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn avoid(mut self, input: crate::types::WaypointOptimizationAvoidanceOptions) -> Self {
         self.avoid = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn set_avoid(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationAvoidanceOptions>) -> Self {
         self.avoid = input;
         self
     }
-    /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
+    /// <p>Features that are avoided. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, this setting is ignored.</p>
     pub fn get_avoid(&self) -> &::std::option::Option<crate::types::WaypointOptimizationAvoidanceOptions> {
         &self.avoid
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn clustering(mut self, input: crate::types::WaypointOptimizationClusteringOptions) -> Self {
+        self.clustering = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn set_clustering(mut self, input: ::std::option::Option<crate::types::WaypointOptimizationClusteringOptions>) -> Self {
+        self.clustering = input;
+        self
+    }
+    /// <p>Clustering allows you to specify how nearby waypoints can be clustered to improve the optimized sequence.</p>
+    pub fn get_clustering(&self) -> &::std::option::Option<crate::types::WaypointOptimizationClusteringOptions> {
+        &self.clustering
     }
     /// <p>Departure time from the waypoint.</p>
     /// <p>Time format:<code>YYYY-MM-DDThh:mm:ss.sssZ | YYYY-MM-DDThh:mm:ss.sss+hh:mm</code></p>
@@ -393,6 +415,7 @@ impl OptimizeWaypointsInputBuilder {
     ) -> ::std::result::Result<crate::operation::optimize_waypoints::OptimizeWaypointsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::optimize_waypoints::OptimizeWaypointsInput {
             avoid: self.avoid,
+            clustering: self.clustering,
             departure_time: self.departure_time,
             destination: self.destination,
             destination_options: self.destination_options,
@@ -413,6 +436,7 @@ impl ::std::fmt::Debug for OptimizeWaypointsInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OptimizeWaypointsInputBuilder");
         formatter.field("avoid", &self.avoid);
+        formatter.field("clustering", &self.clustering);
         formatter.field("departure_time", &self.departure_time);
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("destination_options", &self.destination_options);

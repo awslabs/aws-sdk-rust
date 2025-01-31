@@ -77,6 +77,9 @@ where
                         "destination" => {
                             builder = builder.set_destination(crate::protocol_serde::shape_destination::de_destination(tokens)?);
                         }
+                        "roleConfiguration" => {
+                            builder = builder.set_role_configuration(crate::protocol_serde::shape_role_configuration::de_role_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

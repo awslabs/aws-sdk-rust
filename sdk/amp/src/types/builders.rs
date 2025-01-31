@@ -23,6 +23,8 @@ pub use crate::types::_alert_manager_definition_description::AlertManagerDefinit
 
 pub use crate::types::_scraper_status::ScraperStatusBuilder;
 
+pub use crate::types::_role_configuration::RoleConfigurationBuilder;
+
 pub use crate::types::_amp_configuration::AmpConfigurationBuilder;
 
 pub use crate::types::_scraper_description::ScraperDescriptionBuilder;

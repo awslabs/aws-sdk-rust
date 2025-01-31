@@ -18,7 +18,9 @@ pub struct AppDetails {
     pub status: ::std::option::Option<crate::types::AppStatus>,
     /// <p>The creation time.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl AppDetails {
@@ -50,7 +52,9 @@ impl AppDetails {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
@@ -174,17 +178,23 @@ impl AppDetailsBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn set_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.resource_spec = input;
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.resource_spec
     }

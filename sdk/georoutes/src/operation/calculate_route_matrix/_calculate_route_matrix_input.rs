@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteMatrixInput {
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub allow: ::std::option::Option<crate::types::RouteMatrixAllowOptions>,
     /// <p>Features that are avoided while calculating a route. Avoidance is on a best-case basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance and the returned response produces a notice for the violation.</p>
     pub avoid: ::std::option::Option<crate::types::RouteMatrixAvoidanceOptions>,
@@ -15,7 +15,9 @@ pub struct CalculateRouteMatrixInput {
     /// <p><code>2020-04-22T17:57:24Z</code></p>
     /// <p><code>2020-04-22T17:57:24+02:00</code></p>
     pub departure_time: ::std::option::Option<::std::string::String>,
-    /// <p>List of destinations for the route.</p>
+    /// <p>List of destinations for the route.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>>,
     /// <p>Features to be strictly excluded while calculating the route.</p>
     pub exclude: ::std::option::Option<crate::types::RouteMatrixExclusionOptions>,
@@ -24,7 +26,9 @@ pub struct CalculateRouteMatrixInput {
     /// <p>Specifies the optimization criteria for calculating a route.</p>
     /// <p>Default Value: <code>FastestRoute</code></p>
     pub optimize_routing_for: ::std::option::Option<crate::types::RoutingObjective>,
-    /// <p>The position in longitude and latitude for the origin.</p>
+    /// <p>The position in longitude and latitude for the origin.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub origins: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>>,
     /// <p>Boundary within which the matrix is to be calculated. All data, origins and destinations outside the boundary are considered invalid.</p><note>
     /// <p>When request routing boundary was set as AutoCircle, the response routing boundary will return Circle derived from the AutoCircle settings.</p>
@@ -39,7 +43,7 @@ pub struct CalculateRouteMatrixInput {
     pub travel_mode_options: ::std::option::Option<crate::types::RouteMatrixTravelModeOptions>,
 }
 impl CalculateRouteMatrixInput {
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn allow(&self) -> ::std::option::Option<&crate::types::RouteMatrixAllowOptions> {
         self.allow.as_ref()
     }
@@ -59,7 +63,9 @@ impl CalculateRouteMatrixInput {
     pub fn departure_time(&self) -> ::std::option::Option<&str> {
         self.departure_time.as_deref()
     }
-    /// <p>List of destinations for the route.</p>
+    /// <p>List of destinations for the route.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destinations.is_none()`.
     pub fn destinations(&self) -> &[crate::types::RouteMatrixDestination] {
@@ -78,7 +84,9 @@ impl CalculateRouteMatrixInput {
     pub fn optimize_routing_for(&self) -> ::std::option::Option<&crate::types::RoutingObjective> {
         self.optimize_routing_for.as_ref()
     }
-    /// <p>The position in longitude and latitude for the origin.</p>
+    /// <p>The position in longitude and latitude for the origin.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.origins.is_none()`.
     pub fn origins(&self) -> &[crate::types::RouteMatrixOrigin] {
@@ -149,17 +157,17 @@ pub struct CalculateRouteMatrixInputBuilder {
     pub(crate) travel_mode_options: ::std::option::Option<crate::types::RouteMatrixTravelModeOptions>,
 }
 impl CalculateRouteMatrixInputBuilder {
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn allow(mut self, input: crate::types::RouteMatrixAllowOptions) -> Self {
         self.allow = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::RouteMatrixAllowOptions>) -> Self {
         self.allow = input;
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating a route.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::RouteMatrixAllowOptions> {
         &self.allow
     }
@@ -221,19 +229,25 @@ impl CalculateRouteMatrixInputBuilder {
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
     ///
-    /// <p>List of destinations for the route.</p>
+    /// <p>List of destinations for the route.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub fn destinations(mut self, input: crate::types::RouteMatrixDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
         self.destinations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of destinations for the route.</p>
+    /// <p>List of destinations for the route.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub fn set_destinations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>>) -> Self {
         self.destinations = input;
         self
     }
-    /// <p>List of destinations for the route.</p>
+    /// <p>List of destinations for the route.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. If you use a large matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub fn get_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixDestination>> {
         &self.destinations
     }
@@ -286,19 +300,25 @@ impl CalculateRouteMatrixInputBuilder {
     ///
     /// To override the contents of this collection use [`set_origins`](Self::set_origins).
     ///
-    /// <p>The position in longitude and latitude for the origin.</p>
+    /// <p>The position in longitude and latitude for the origin.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub fn origins(mut self, input: crate::types::RouteMatrixOrigin) -> Self {
         let mut v = self.origins.unwrap_or_default();
         v.push(input);
         self.origins = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The position in longitude and latitude for the origin.</p>
+    /// <p>The position in longitude and latitude for the origin.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub fn set_origins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>>) -> Self {
         self.origins = input;
         self
     }
-    /// <p>The position in longitude and latitude for the origin.</p>
+    /// <p>The position in longitude and latitude for the origin.</p><note>
+    /// <p>Route calculations are billed for each origin and destination pair. Using a large amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
+    /// </note>
     pub fn get_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteMatrixOrigin>> {
         &self.origins
     }

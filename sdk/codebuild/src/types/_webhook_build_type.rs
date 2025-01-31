@@ -14,6 +14,7 @@
 /// match webhookbuildtype {
 ///     WebhookBuildType::Build => { /* ... */ },
 ///     WebhookBuildType::BuildBatch => { /* ... */ },
+///     WebhookBuildType::RunnerBuildkiteBuild => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum WebhookBuildType {
     Build,
     #[allow(missing_docs)] // documentation missing in model
     BuildBatch,
+    #[allow(missing_docs)] // documentation missing in model
+    RunnerBuildkiteBuild,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for WebhookBuildType {
         match s {
             "BUILD" => WebhookBuildType::Build,
             "BUILD_BATCH" => WebhookBuildType::BuildBatch,
+            "RUNNER_BUILDKITE_BUILD" => WebhookBuildType::RunnerBuildkiteBuild,
             other => WebhookBuildType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl WebhookBuildType {
         match self {
             WebhookBuildType::Build => "BUILD",
             WebhookBuildType::BuildBatch => "BUILD_BATCH",
+            WebhookBuildType::RunnerBuildkiteBuild => "RUNNER_BUILDKITE_BUILD",
             WebhookBuildType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BUILD", "BUILD_BATCH"]
+        &["BUILD", "BUILD_BATCH", "RUNNER_BUILDKITE_BUILD"]
     }
 }
 impl ::std::convert::AsRef<str> for WebhookBuildType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for WebhookBuildType {
         match self {
             WebhookBuildType::Build => write!(f, "BUILD"),
             WebhookBuildType::BuildBatch => write!(f, "BUILD_BATCH"),
+            WebhookBuildType::RunnerBuildkiteBuild => write!(f, "RUNNER_BUILDKITE_BUILD"),
             WebhookBuildType::Unknown(value) => write!(f, "{}", value),
         }
     }

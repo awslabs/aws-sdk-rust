@@ -6,7 +6,9 @@
 pub struct RStudioServerProDomainSettingsForUpdate {
     /// <p>The execution role for the <code>RStudioServerPro</code> Domain-level app.</p>
     pub domain_execution_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A URL pointing to an RStudio Connect server.</p>
     pub r_studio_connect_url: ::std::option::Option<::std::string::String>,
@@ -18,7 +20,9 @@ impl RStudioServerProDomainSettingsForUpdate {
     pub fn domain_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.domain_execution_role_arn.as_deref()
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
@@ -63,17 +67,23 @@ impl RStudioServerProDomainSettingsForUpdateBuilder {
     pub fn get_domain_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_execution_role_arn
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
     }

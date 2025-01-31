@@ -5,16 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteMatrixAllowOptions {
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub hot: ::std::option::Option<bool>,
     /// <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub hov: ::std::option::Option<bool>,
 }
 impl RouteMatrixAllowOptions {
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn hot(&self) -> ::std::option::Option<bool> {
         self.hot
     }
     /// <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn hov(&self) -> ::std::option::Option<bool> {
         self.hov
     }
@@ -35,30 +39,36 @@ pub struct RouteMatrixAllowOptionsBuilder {
 }
 impl RouteMatrixAllowOptionsBuilder {
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn hot(mut self, input: bool) -> Self {
         self.hot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn set_hot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hot = input;
         self
     }
     /// <p>Allow Hot (High Occupancy Toll) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn get_hot(&self) -> &::std::option::Option<bool> {
         &self.hot
     }
     /// <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn hov(mut self, input: bool) -> Self {
         self.hov = ::std::option::Option::Some(input);
         self
     }
     /// <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn set_hov(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hov = input;
         self
     }
     /// <p>Allow Hov (High Occupancy vehicle) lanes while calculating the route.</p>
+    /// <p>Default value: <code>false</code></p>
     pub fn get_hov(&self) -> &::std::option::Option<bool> {
         &self.hov
     }

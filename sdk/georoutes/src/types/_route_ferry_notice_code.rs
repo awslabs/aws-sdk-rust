@@ -15,6 +15,7 @@
 ///     RouteFerryNoticeCode::AccuratePolylineUnavailable => { /* ... */ },
 ///     RouteFerryNoticeCode::NoSchedule => { /* ... */ },
 ///     RouteFerryNoticeCode::Other => { /* ... */ },
+///     RouteFerryNoticeCode::SeasonalClosure => { /* ... */ },
 ///     RouteFerryNoticeCode::ViolatedAvoidFerry => { /* ... */ },
 ///     RouteFerryNoticeCode::ViolatedAvoidRailFerry => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum RouteFerryNoticeCode {
     #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
+    SeasonalClosure,
+    #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidFerry,
     #[allow(missing_docs)] // documentation missing in model
     ViolatedAvoidRailFerry,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for RouteFerryNoticeCode {
             "AccuratePolylineUnavailable" => RouteFerryNoticeCode::AccuratePolylineUnavailable,
             "NoSchedule" => RouteFerryNoticeCode::NoSchedule,
             "Other" => RouteFerryNoticeCode::Other,
+            "SeasonalClosure" => RouteFerryNoticeCode::SeasonalClosure,
             "ViolatedAvoidFerry" => RouteFerryNoticeCode::ViolatedAvoidFerry,
             "ViolatedAvoidRailFerry" => RouteFerryNoticeCode::ViolatedAvoidRailFerry,
             other => RouteFerryNoticeCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl RouteFerryNoticeCode {
             RouteFerryNoticeCode::AccuratePolylineUnavailable => "AccuratePolylineUnavailable",
             RouteFerryNoticeCode::NoSchedule => "NoSchedule",
             RouteFerryNoticeCode::Other => "Other",
+            RouteFerryNoticeCode::SeasonalClosure => "SeasonalClosure",
             RouteFerryNoticeCode::ViolatedAvoidFerry => "ViolatedAvoidFerry",
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => "ViolatedAvoidRailFerry",
             RouteFerryNoticeCode::Unknown(value) => value.as_str(),
@@ -96,6 +101,7 @@ impl RouteFerryNoticeCode {
             "AccuratePolylineUnavailable",
             "NoSchedule",
             "Other",
+            "SeasonalClosure",
             "ViolatedAvoidFerry",
             "ViolatedAvoidRailFerry",
         ]
@@ -124,6 +130,7 @@ impl ::std::fmt::Display for RouteFerryNoticeCode {
             RouteFerryNoticeCode::AccuratePolylineUnavailable => write!(f, "AccuratePolylineUnavailable"),
             RouteFerryNoticeCode::NoSchedule => write!(f, "NoSchedule"),
             RouteFerryNoticeCode::Other => write!(f, "Other"),
+            RouteFerryNoticeCode::SeasonalClosure => write!(f, "SeasonalClosure"),
             RouteFerryNoticeCode::ViolatedAvoidFerry => write!(f, "ViolatedAvoidFerry"),
             RouteFerryNoticeCode::ViolatedAvoidRailFerry => write!(f, "ViolatedAvoidRailFerry"),
             RouteFerryNoticeCode::Unknown(value) => write!(f, "{}", value),

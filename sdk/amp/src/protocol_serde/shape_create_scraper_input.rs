@@ -15,27 +15,33 @@ pub fn ser_create_scraper_input_input(
         crate::protocol_serde::shape_destination::ser_destination(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.scrape_configuration {
+    if let Some(var_5) = &input.role_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("scrapeConfiguration").start_object();
-        crate::protocol_serde::shape_scrape_configuration::ser_scrape_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("roleConfiguration").start_object();
+        crate::protocol_serde::shape_role_configuration::ser_role_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.source {
+    if let Some(var_7) = &input.scrape_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("source").start_object();
-        crate::protocol_serde::shape_source::ser_source(&mut object_8, var_7)?;
+        let mut object_8 = object.key("scrapeConfiguration").start_object();
+        crate::protocol_serde::shape_scrape_configuration::ser_scrape_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.source {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_10 = object.key("source").start_object();
+        crate::protocol_serde::shape_source::ser_source(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
     Ok(())
 }

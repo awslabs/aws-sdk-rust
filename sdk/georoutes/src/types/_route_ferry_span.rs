@@ -7,6 +7,7 @@ pub struct RouteFerrySpan {
     /// <p>3 letter Country code corresponding to the Span.</p>
     pub country: ::std::option::Option<::std::string::String>,
     /// <p>Distance of the computed span. This feature doesn't split a span, but is always computed on a span split by other properties.</p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub distance: i64,
     /// <p>Duration of the computed span. This feature doesn't split a span, but is always computed on a span split by other properties.</p>
     /// <p><b>Unit</b>: <code>seconds</code></p>
@@ -24,6 +25,7 @@ impl RouteFerrySpan {
         self.country.as_deref()
     }
     /// <p>Distance of the computed span. This feature doesn't split a span, but is always computed on a span split by other properties.</p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn distance(&self) -> i64 {
         self.distance
     }
@@ -81,16 +83,19 @@ impl RouteFerrySpanBuilder {
         &self.country
     }
     /// <p>Distance of the computed span. This feature doesn't split a span, but is always computed on a span split by other properties.</p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn distance(mut self, input: i64) -> Self {
         self.distance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Distance of the computed span. This feature doesn't split a span, but is always computed on a span split by other properties.</p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn set_distance(mut self, input: ::std::option::Option<i64>) -> Self {
         self.distance = input;
         self
     }
     /// <p>Distance of the computed span. This feature doesn't split a span, but is always computed on a span split by other properties.</p>
+    /// <p><b>Unit</b>: <code>meters</code></p>
     pub fn get_distance(&self) -> &::std::option::Option<i64> {
         &self.distance
     }

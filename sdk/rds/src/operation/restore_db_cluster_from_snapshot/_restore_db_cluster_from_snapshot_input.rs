@@ -107,9 +107,9 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -380,9 +380,9 @@ impl RestoreDbClusterFromSnapshotInput {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1041,9 +1041,9 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1059,9 +1059,9 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
@@ -1075,9 +1075,9 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     /// <p><b>RDS for PostgreSQL</b></p>
     /// <p>Possible values are <code>postgresql</code> and <code>upgrade</code>.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
     /// <p><b>Aurora PostgreSQL</b></p>
-    /// <p>Possible value is <code>postgresql</code>.</p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>

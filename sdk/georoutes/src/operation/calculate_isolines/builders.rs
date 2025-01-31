@@ -108,17 +108,17 @@ impl CalculateIsolinesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn allow(mut self, input: crate::types::IsolineAllowOptions) -> Self {
         self.inner = self.inner.allow(input);
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn set_allow(mut self, input: ::std::option::Option<crate::types::IsolineAllowOptions>) -> Self {
         self.inner = self.inner.set_allow(input);
         self
     }
-    /// <p>Features that are allowed while calculating. a route</p>
+    /// <p>Features that are allowed while calculating an isoline.</p>
     pub fn get_allow(&self) -> &::std::option::Option<crate::types::IsolineAllowOptions> {
         self.inner.get_allow()
     }
@@ -252,17 +252,17 @@ impl CalculateIsolinesFluentBuilder {
     pub fn get_isoline_geometry_format(&self) -> &::std::option::Option<crate::types::GeometryFormat> {
         self.inner.get_isoline_geometry_format()
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn isoline_granularity(mut self, input: crate::types::IsolineGranularityOptions) -> Self {
         self.inner = self.inner.isoline_granularity(input);
         self
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn set_isoline_granularity(mut self, input: ::std::option::Option<crate::types::IsolineGranularityOptions>) -> Self {
         self.inner = self.inner.set_isoline_granularity(input);
         self
     }
-    /// <p>Defines the granularity of the returned Isoline</p>
+    /// <p>Defines the granularity of the returned Isoline.</p>
     pub fn get_isoline_granularity(&self) -> &::std::option::Option<crate::types::IsolineGranularityOptions> {
         self.inner.get_isoline_granularity()
     }
@@ -348,16 +348,19 @@ impl CalculateIsolinesFluentBuilder {
         self.inner.get_origin_options()
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub fn thresholds(mut self, input: crate::types::IsolineThresholds) -> Self {
         self.inner = self.inner.thresholds(input);
         self
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub fn set_thresholds(mut self, input: ::std::option::Option<crate::types::IsolineThresholds>) -> Self {
         self.inner = self.inner.set_thresholds(input);
         self
     }
     /// <p>Threshold to be used for the isoline calculation. Up to 3 thresholds per provided type can be requested.</p>
+    /// <p>You incur a calculation charge for each threshold. Using a large amount of thresholds in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`"> Amazon Location's pricing page</a> for more information.</p>
     pub fn get_thresholds(&self) -> &::std::option::Option<crate::types::IsolineThresholds> {
         self.inner.get_thresholds()
     }

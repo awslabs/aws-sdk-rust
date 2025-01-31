@@ -134,7 +134,10 @@ pub struct RestoreDbClusterFromS3Input {
     pub backtrack_window: ::std::option::Option<i64>,
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
+    /// <p><b>Aurora PostgreSQL</b></p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
@@ -384,7 +387,10 @@ impl RestoreDbClusterFromS3Input {
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
+    /// <p><b>Aurora PostgreSQL</b></p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
@@ -1144,7 +1150,10 @@ impl RestoreDbClusterFromS3InputBuilder {
     ///
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
+    /// <p><b>Aurora PostgreSQL</b></p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
@@ -1154,7 +1163,10 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
+    /// <p><b>Aurora PostgreSQL</b></p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
@@ -1162,7 +1174,10 @@ impl RestoreDbClusterFromS3InputBuilder {
     }
     /// <p>The list of logs that the restored DB cluster is to export to CloudWatch Logs. The values in the list depend on the DB engine being used.</p>
     /// <p><b>Aurora MySQL</b></p>
-    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.</p>
+    /// <p>Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, <code>instance</code>, and <code>slowquery</code>.</p>
+    /// <p><b>Aurora PostgreSQL</b></p>
+    /// <p>Possible value are <code>instance</code> and <code>postgresql</code>.</p>
+    /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports

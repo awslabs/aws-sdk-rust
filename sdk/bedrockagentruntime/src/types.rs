@@ -73,8 +73,6 @@ pub use crate::types::_guardrail_event::GuardrailEvent;
 
 pub use crate::types::_citation_event::CitationEvent;
 
-pub use crate::types::_citation::Citation;
-
 pub use crate::types::_retrieved_reference::RetrievedReference;
 
 pub use crate::types::_generated_response_part::GeneratedResponsePart;
@@ -82,6 +80,8 @@ pub use crate::types::_generated_response_part::GeneratedResponsePart;
 pub use crate::types::_text_response_part::TextResponsePart;
 
 pub use crate::types::_span::Span;
+
+pub use crate::types::_citation::Citation;
 
 pub use crate::types::_retrieve_and_generate_output_event::RetrieveAndGenerateOutputEvent;
 

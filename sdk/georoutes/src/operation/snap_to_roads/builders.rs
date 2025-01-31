@@ -22,7 +22,7 @@ impl crate::operation::snap_to_roads::builders::SnapToRoadsInputBuilder {
 }
 /// Fluent builder constructing a request to `SnapToRoads`.
 ///
-/// <p>The SnapToRoads action matches GPS trace to roads most likely traveled on.</p>
+/// <p><code>SnapToRoads</code> matches GPS trace to roads most likely traveled on.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SnapToRoadsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

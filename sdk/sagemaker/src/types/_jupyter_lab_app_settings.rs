@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JupyterLabAppSettings {
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of custom SageMaker images that are configured to run as a JupyterLab app.</p>
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
@@ -20,7 +22,9 @@ pub struct JupyterLabAppSettings {
     pub built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl JupyterLabAppSettings {
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
@@ -75,17 +79,23 @@ pub struct JupyterLabAppSettingsBuilder {
     pub(crate) built_in_lifecycle_config_arn: ::std::option::Option<::std::string::String>,
 }
 impl JupyterLabAppSettingsBuilder {
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
         self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn set_default_resource_spec(mut self, input: ::std::option::Option<crate::types::ResourceSpec>) -> Self {
         self.default_resource_spec = input;
         self
     }
-    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p>
+    /// <p>Specifies the ARN's of a SageMaker AI image and SageMaker AI image version, and the instance type that the version runs on.</p><note>
+    /// <p>When both <code>SageMakerImageVersionArn</code> and <code>SageMakerImageArn</code> are passed, <code>SageMakerImageVersionArn</code> is used. Any updates to <code>SageMakerImageArn</code> will not take effect if <code>SageMakerImageVersionArn</code> already exists in the <code>ResourceSpec</code> because <code>SageMakerImageVersionArn</code> always takes precedence. To clear the value set for <code>SageMakerImageVersionArn</code>, pass <code>None</code> as the value.</p>
+    /// </note>
     pub fn get_default_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.default_resource_spec
     }

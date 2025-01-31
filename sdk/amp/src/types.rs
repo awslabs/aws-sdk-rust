@@ -35,6 +35,8 @@ pub use crate::types::_scraper_status::ScraperStatus;
 
 pub use crate::types::_scraper_status_code::ScraperStatusCode;
 
+pub use crate::types::_role_configuration::RoleConfiguration;
+
 pub use crate::types::_destination::Destination;
 
 pub use crate::types::_amp_configuration::AmpConfiguration;
@@ -66,6 +68,8 @@ mod _logging_configuration_metadata;
 mod _logging_configuration_status;
 
 mod _logging_configuration_status_code;
+
+mod _role_configuration;
 
 mod _rule_groups_namespace_description;
 

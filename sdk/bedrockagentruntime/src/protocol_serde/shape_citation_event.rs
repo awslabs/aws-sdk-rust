@@ -32,6 +32,15 @@ where
                         "citation" => {
                             builder = builder.set_citation(crate::protocol_serde::shape_citation::de_citation(tokens)?);
                         }
+                        "generatedResponsePart" => {
+                            builder = builder.set_generated_response_part(
+                                crate::protocol_serde::shape_generated_response_part::de_generated_response_part(tokens)?,
+                            );
+                        }
+                        "retrievedReferences" => {
+                            builder =
+                                builder.set_retrieved_references(crate::protocol_serde::shape_retrieved_references::de_retrieved_references(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
