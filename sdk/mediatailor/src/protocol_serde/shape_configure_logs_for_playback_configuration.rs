@@ -66,6 +66,11 @@ pub(crate) fn de_configure_logs_for_playback_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "EnabledLoggingStrategies" => {
+                    builder = builder.set_enabled_logging_strategies(
+                        crate::protocol_serde::shape_list_of_logging_strategies::de_list_of_logging_strategies(tokens)?,
+                    );
+                }
                 "PercentEnabled" => {
                     builder = builder.set_percent_enabled(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

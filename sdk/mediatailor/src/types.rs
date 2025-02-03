@@ -41,6 +41,8 @@ pub use crate::types::_ad_marker_passthrough::AdMarkerPassthrough;
 
 pub use crate::types::_log_configuration::LogConfiguration;
 
+pub use crate::types::_logging_strategy::LoggingStrategy;
+
 pub use crate::types::_live_pre_roll_configuration::LivePreRollConfiguration;
 
 pub use crate::types::_insertion_mode::InsertionMode;
@@ -198,6 +200,8 @@ mod _log_configuration;
 mod _log_configuration_for_channel;
 
 mod _log_type;
+
+mod _logging_strategy;
 
 mod _manifest_processing_rules;
 

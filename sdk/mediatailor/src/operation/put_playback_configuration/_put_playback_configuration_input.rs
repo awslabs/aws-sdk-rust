@@ -35,7 +35,7 @@ pub struct PutPlaybackConfigurationInput {
     pub transcode_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     pub video_content_source_url: ::std::option::Option<::std::string::String>,
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
 }
 impl PutPlaybackConfigurationInput {
@@ -103,7 +103,7 @@ impl PutPlaybackConfigurationInput {
     pub fn video_content_source_url(&self) -> ::std::option::Option<&str> {
         self.video_content_source_url.as_deref()
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn ad_conditioning_configuration(&self) -> ::std::option::Option<&crate::types::AdConditioningConfiguration> {
         self.ad_conditioning_configuration.as_ref()
     }
@@ -375,17 +375,17 @@ impl PutPlaybackConfigurationInputBuilder {
     pub fn get_video_content_source_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.video_content_source_url
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn ad_conditioning_configuration(mut self, input: crate::types::AdConditioningConfiguration) -> Self {
         self.ad_conditioning_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn set_ad_conditioning_configuration(mut self, input: ::std::option::Option<crate::types::AdConditioningConfiguration>) -> Self {
         self.ad_conditioning_configuration = input;
         self
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
         &self.ad_conditioning_configuration
     }

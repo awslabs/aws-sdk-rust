@@ -142,4 +142,26 @@ impl ConfigureLogsForPlaybackConfigurationFluentBuilder {
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_playback_configuration_name()
     }
+    ///
+    /// Appends an item to `EnabledLoggingStrategies`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_logging_strategies`](Self::set_enabled_logging_strategies).
+    ///
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose <code>LEGACY_CLOUDWATCH</code>. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose <code>VENDED_LOGS</code>. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    /// <p>To use vended logs, you must configure the delivery destination in Amazon CloudWatch, as described in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions-V2">Enable logging from AWS services, Logging that requires additional permissions \[V2\]</a>.</p>
+    pub fn enabled_logging_strategies(mut self, input: crate::types::LoggingStrategy) -> Self {
+        self.inner = self.inner.enabled_logging_strategies(input);
+        self
+    }
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose <code>LEGACY_CLOUDWATCH</code>. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose <code>VENDED_LOGS</code>. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    /// <p>To use vended logs, you must configure the delivery destination in Amazon CloudWatch, as described in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions-V2">Enable logging from AWS services, Logging that requires additional permissions \[V2\]</a>.</p>
+    pub fn set_enabled_logging_strategies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>) -> Self {
+        self.inner = self.inner.set_enabled_logging_strategies(input);
+        self
+    }
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose <code>LEGACY_CLOUDWATCH</code>. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose <code>VENDED_LOGS</code>. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    /// <p>To use vended logs, you must configure the delivery destination in Amazon CloudWatch, as described in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions-V2">Enable logging from AWS services, Logging that requires additional permissions \[V2\]</a>.</p>
+    pub fn get_enabled_logging_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>> {
+        self.inner.get_enabled_logging_strategies()
+    }
 }

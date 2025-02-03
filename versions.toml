@@ -1516,9 +1516,9 @@ model_hash = '5f37ca20e94fbb48d218b6a952a3b36c008b645c17f4eb2aee562342137b4d51'
 
 [crates.aws-sdk-mediatailor]
 category = 'AwsSdk'
-version = '1.60.0'
-source_hash = '58218fdf765410a479968c2d6ef97d9eeabd81736ef579a3c06e0ad44b32f28e'
-model_hash = '750d68b5efe2e2d1a06f3d6e3155668c532d7b2fd846abd6381bbf53a72c5252'
+version = '1.61.0'
+source_hash = 'd306808f4adf0c69056510de2cf2450052b93b431a047b5477b08b32f8784405'
+model_hash = '1a9ef8f1b4a3357d8af68033c380a641a068e607407401ac419e43094b5c3c7c'
 
 [crates.aws-sdk-medicalimaging]
 category = 'AwsSdk'
@@ -2589,14 +2589,5 @@ source_hash = 'dd55a22705d07da35ff355ff7ac6234548be0ed77473eebfa19458217b71856e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd999125f6bfc789e54adab9a18a8b602da78b1902ce1c4e86e5857ea7e9aee72'
-
-[release]
-tag = 'release-2025-01-31'
-
 [release.crates]
-aws-sdk-amp = '1.58.0'
-aws-sdk-bedrockagentruntime = '1.76.0'
-aws-sdk-codebuild = '1.72.0'
-aws-sdk-georoutes = '1.11.0'
-aws-sdk-rds = '1.76.1'
-aws-sdk-sagemaker = '1.101.0'
+aws-sdk-mediatailor = '1.61.0'

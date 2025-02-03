@@ -341,17 +341,17 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_video_content_source_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_video_content_source_url()
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn ad_conditioning_configuration(mut self, input: crate::types::AdConditioningConfiguration) -> Self {
         self.inner = self.inner.ad_conditioning_configuration(input);
         self
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn set_ad_conditioning_configuration(mut self, input: ::std::option::Option<crate::types::AdConditioningConfiguration>) -> Self {
         self.inner = self.inner.set_ad_conditioning_configuration(input);
         self
     }
-    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns.</p>
+    /// <p>The setting that indicates what conditioning MediaTailor will perform on ads that the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting ads.</p>
     pub fn get_ad_conditioning_configuration(&self) -> &::std::option::Option<crate::types::AdConditioningConfiguration> {
         self.inner.get_ad_conditioning_configuration()
     }

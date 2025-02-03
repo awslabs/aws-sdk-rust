@@ -201,6 +201,8 @@ pub(crate) mod shape_list_of_channel;
 
 pub(crate) mod shape_list_of_live_source;
 
+pub(crate) mod shape_list_of_logging_strategies;
+
 pub(crate) mod shape_list_of_playback_configuration;
 
 pub(crate) mod shape_list_of_prefetch_schedule;

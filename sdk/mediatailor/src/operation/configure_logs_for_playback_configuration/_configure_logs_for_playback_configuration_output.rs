@@ -7,6 +7,8 @@ pub struct ConfigureLogsForPlaybackConfigurationOutput {
     pub percent_enabled: i32,
     /// <p>The name of the playback configuration.</p>
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs to your destination of choice. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    pub enabled_logging_strategies: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>,
     _request_id: Option<String>,
 }
 impl ConfigureLogsForPlaybackConfigurationOutput {
@@ -17,6 +19,12 @@ impl ConfigureLogsForPlaybackConfigurationOutput {
     /// <p>The name of the playback configuration.</p>
     pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
         self.playback_configuration_name.as_deref()
+    }
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs to your destination of choice. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_logging_strategies.is_none()`.
+    pub fn enabled_logging_strategies(&self) -> &[crate::types::LoggingStrategy] {
+        self.enabled_logging_strategies.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for ConfigureLogsForPlaybackConfigurationOutput {
@@ -37,6 +45,7 @@ impl ConfigureLogsForPlaybackConfigurationOutput {
 pub struct ConfigureLogsForPlaybackConfigurationOutputBuilder {
     pub(crate) percent_enabled: ::std::option::Option<i32>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled_logging_strategies: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>,
     _request_id: Option<String>,
 }
 impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
@@ -69,6 +78,26 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
     pub fn get_playback_configuration_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.playback_configuration_name
     }
+    /// Appends an item to `enabled_logging_strategies`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_logging_strategies`](Self::set_enabled_logging_strategies).
+    ///
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs to your destination of choice. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    pub fn enabled_logging_strategies(mut self, input: crate::types::LoggingStrategy) -> Self {
+        let mut v = self.enabled_logging_strategies.unwrap_or_default();
+        v.push(input);
+        self.enabled_logging_strategies = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs to your destination of choice. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    pub fn set_enabled_logging_strategies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>) -> Self {
+        self.enabled_logging_strategies = input;
+        self
+    }
+    /// <p>The method used for collecting logs from AWS Elemental MediaTailor. <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs to your destination of choice. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
+    pub fn get_enabled_logging_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>> {
+        &self.enabled_logging_strategies
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,6 +112,7 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
         crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput {
             percent_enabled: self.percent_enabled.unwrap_or_default(),
             playback_configuration_name: self.playback_configuration_name,
+            enabled_logging_strategies: self.enabled_logging_strategies,
             _request_id: self._request_id,
         }
     }

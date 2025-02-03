@@ -21,6 +21,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EnabledLoggingStrategies" => {
+                            builder = builder.set_enabled_logging_strategies(
+                                crate::protocol_serde::shape_list_of_logging_strategies::de_list_of_logging_strategies(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
