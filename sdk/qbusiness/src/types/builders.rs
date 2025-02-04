@@ -119,6 +119,8 @@ pub use crate::types::_users_and_groups::UsersAndGroupsBuilder;
 
 pub use crate::types::_blocked_phrases_configuration_update::BlockedPhrasesConfigurationUpdateBuilder;
 
+pub use crate::types::_orchestration_configuration::OrchestrationConfigurationBuilder;
+
 pub use crate::types::_relevant_content::RelevantContentBuilder;
 
 pub use crate::types::_score_attributes::ScoreAttributesBuilder;
@@ -178,6 +180,8 @@ pub use crate::types::_group_status_detail::GroupStatusDetailBuilder;
 pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfigurationBuilder;
 
 pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfigurationBuilder;
+
+pub use crate::types::_applied_orchestration_configuration::AppliedOrchestrationConfigurationBuilder;
 
 pub use crate::types::_auth_challenge_request::AuthChallengeRequestBuilder;
 

@@ -146,6 +146,11 @@ pub(crate) fn de_get_chat_controls_configuration(
                             .transpose()?,
                     );
                 }
+                "orchestrationConfiguration" => {
+                    builder = builder.set_orchestration_configuration(
+                        crate::protocol_serde::shape_applied_orchestration_configuration::de_applied_orchestration_configuration(tokens)?,
+                    );
+                }
                 "responseScope" => {
                     builder = builder.set_response_scope(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

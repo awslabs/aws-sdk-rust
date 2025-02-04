@@ -5,6 +5,10 @@
 pub struct GetChatControlsConfigurationOutput {
     /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub response_scope: ::std::option::Option<crate::types::ResponseScope>,
+    /// <p>The chat response orchestration settings for your application.</p><note>
+    /// <p>Chat orchestration is optimized to work for English language content. For more details on language support in Amazon Q Business, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported languages</a>.</p>
+    /// </note>
+    pub orchestration_configuration: ::std::option::Option<crate::types::AppliedOrchestrationConfiguration>,
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,
     /// <p>The topic specific controls configured for a Amazon Q Business application.</p>
@@ -19,6 +23,12 @@ impl GetChatControlsConfigurationOutput {
     /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn response_scope(&self) -> ::std::option::Option<&crate::types::ResponseScope> {
         self.response_scope.as_ref()
+    }
+    /// <p>The chat response orchestration settings for your application.</p><note>
+    /// <p>Chat orchestration is optimized to work for English language content. For more details on language support in Amazon Q Business, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported languages</a>.</p>
+    /// </note>
+    pub fn orchestration_configuration(&self) -> ::std::option::Option<&crate::types::AppliedOrchestrationConfiguration> {
+        self.orchestration_configuration.as_ref()
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn blocked_phrases(&self) -> ::std::option::Option<&crate::types::BlockedPhrasesConfiguration> {
@@ -56,6 +66,7 @@ impl GetChatControlsConfigurationOutput {
 #[non_exhaustive]
 pub struct GetChatControlsConfigurationOutputBuilder {
     pub(crate) response_scope: ::std::option::Option<crate::types::ResponseScope>,
+    pub(crate) orchestration_configuration: ::std::option::Option<crate::types::AppliedOrchestrationConfiguration>,
     pub(crate) blocked_phrases: ::std::option::Option<crate::types::BlockedPhrasesConfiguration>,
     pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) creator_mode_configuration: ::std::option::Option<crate::types::AppliedCreatorModeConfiguration>,
@@ -76,6 +87,26 @@ impl GetChatControlsConfigurationOutputBuilder {
     /// <p>The response scope configured for a Amazon Q Business application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn get_response_scope(&self) -> &::std::option::Option<crate::types::ResponseScope> {
         &self.response_scope
+    }
+    /// <p>The chat response orchestration settings for your application.</p><note>
+    /// <p>Chat orchestration is optimized to work for English language content. For more details on language support in Amazon Q Business, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported languages</a>.</p>
+    /// </note>
+    pub fn orchestration_configuration(mut self, input: crate::types::AppliedOrchestrationConfiguration) -> Self {
+        self.orchestration_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The chat response orchestration settings for your application.</p><note>
+    /// <p>Chat orchestration is optimized to work for English language content. For more details on language support in Amazon Q Business, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported languages</a>.</p>
+    /// </note>
+    pub fn set_orchestration_configuration(mut self, input: ::std::option::Option<crate::types::AppliedOrchestrationConfiguration>) -> Self {
+        self.orchestration_configuration = input;
+        self
+    }
+    /// <p>The chat response orchestration settings for your application.</p><note>
+    /// <p>Chat orchestration is optimized to work for English language content. For more details on language support in Amazon Q Business, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported languages</a>.</p>
+    /// </note>
+    pub fn get_orchestration_configuration(&self) -> &::std::option::Option<crate::types::AppliedOrchestrationConfiguration> {
+        &self.orchestration_configuration
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn blocked_phrases(mut self, input: crate::types::BlockedPhrasesConfiguration) -> Self {
@@ -152,6 +183,7 @@ impl GetChatControlsConfigurationOutputBuilder {
     pub fn build(self) -> crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput {
         crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput {
             response_scope: self.response_scope,
+            orchestration_configuration: self.orchestration_configuration,
             blocked_phrases: self.blocked_phrases,
             topic_configurations: self.topic_configurations,
             creator_mode_configuration: self.creator_mode_configuration,

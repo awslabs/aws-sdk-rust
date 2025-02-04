@@ -15,6 +15,21 @@ pub fn ser_update_saml_provider_input_input_input(
     if let Some(var_4) = &input.saml_provider_arn {
         scope_3.string(var_4);
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("AssertionEncryptionMode");
+    if let Some(var_6) = &input.assertion_encryption_mode {
+        scope_5.string(var_6.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("AddPrivateKey");
+    if let Some(var_8) = &input.add_private_key {
+        scope_7.string(var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("RemovePrivateKey");
+    if let Some(var_10) = &input.remove_private_key {
+        scope_9.string(var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

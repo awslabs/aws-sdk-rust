@@ -30,14 +30,26 @@ pub fn ser_modify_data_migration_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.number_of_jobs {
+    if let Some(var_10) = &input.target_data_settings {
+        let mut array_11 = object.key("TargetDataSettings").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_target_data_setting::ser_target_data_setting(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.number_of_jobs {
         object.key("NumberOfJobs").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_11) = &input.selection_rules {
-        object.key("SelectionRules").string(var_11.as_str());
+    if let Some(var_15) = &input.selection_rules {
+        object.key("SelectionRules").string(var_15.as_str());
     }
     Ok(())
 }

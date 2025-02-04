@@ -42,7 +42,7 @@ pub struct MicrosoftSqlServerSettings {
     pub tlog_access_mode: ::std::option::Option<crate::types::TlogAccessMode>,
     /// <p>Forces LOB lookup on inline LOB.</p>
     pub force_lob_lookup: ::std::option::Option<bool>,
-    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    /// <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
     pub authentication_method: ::std::option::Option<crate::types::SqlServerAuthenticationMethod>,
 }
 impl MicrosoftSqlServerSettings {
@@ -118,7 +118,7 @@ impl MicrosoftSqlServerSettings {
     pub fn force_lob_lookup(&self) -> ::std::option::Option<bool> {
         self.force_lob_lookup
     }
-    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    /// <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
     pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::SqlServerAuthenticationMethod> {
         self.authentication_method.as_ref()
     }
@@ -428,17 +428,17 @@ impl MicrosoftSqlServerSettingsBuilder {
     pub fn get_force_lob_lookup(&self) -> &::std::option::Option<bool> {
         &self.force_lob_lookup
     }
-    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    /// <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
     pub fn authentication_method(mut self, input: crate::types::SqlServerAuthenticationMethod) -> Self {
         self.authentication_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    /// <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::SqlServerAuthenticationMethod>) -> Self {
         self.authentication_method = input;
         self
     }
-    /// <p>Specifies using Kerberos authentication with Microsoft SQL Server.</p>
+    /// <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::SqlServerAuthenticationMethod> {
         &self.authentication_method
     }

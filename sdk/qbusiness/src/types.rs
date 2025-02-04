@@ -199,6 +199,10 @@ pub use crate::types::_users_and_groups::UsersAndGroups;
 
 pub use crate::types::_blocked_phrases_configuration_update::BlockedPhrasesConfigurationUpdate;
 
+pub use crate::types::_orchestration_configuration::OrchestrationConfiguration;
+
+pub use crate::types::_orchestration_control::OrchestrationControl;
+
 pub use crate::types::_response_scope::ResponseScope;
 
 pub use crate::types::_relevant_content::RelevantContent;
@@ -288,6 +292,8 @@ pub use crate::types::_group_status::GroupStatus;
 pub use crate::types::_applied_creator_mode_configuration::AppliedCreatorModeConfiguration;
 
 pub use crate::types::_blocked_phrases_configuration::BlockedPhrasesConfiguration;
+
+pub use crate::types::_applied_orchestration_configuration::AppliedOrchestrationConfiguration;
 
 pub use crate::types::_auth_challenge_request::AuthChallengeRequest;
 
@@ -388,6 +394,8 @@ mod _application_status;
 mod _applied_attachments_configuration;
 
 mod _applied_creator_mode_configuration;
+
+mod _applied_orchestration_configuration;
 
 mod _attachment;
 
@@ -590,6 +598,10 @@ mod _number_attribute_boosting_type;
 mod _o_auth2_client_credential_configuration;
 
 mod _open_id_connect_provider_configuration;
+
+mod _orchestration_configuration;
+
+mod _orchestration_control;
 
 mod _personalization_configuration;
 

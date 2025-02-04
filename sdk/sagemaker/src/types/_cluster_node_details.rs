@@ -16,7 +16,7 @@ pub struct ClusterNodeDetails {
     pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The LifeCycle configuration applied to the instance.</p>
     pub life_cycle_config: ::std::option::Option<crate::types::ClusterLifeCycleConfig>,
-    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
     pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>The number of threads per CPU core you specified under <code>CreateCluster</code>.</p>
     pub threads_per_core: ::std::option::Option<i32>,
@@ -24,7 +24,7 @@ pub struct ClusterNodeDetails {
     pub instance_storage_configs: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceStorageConfig>>,
     /// <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
     pub private_primary_ip: ::std::option::Option<::std::string::String>,
-    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>
     pub private_primary_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
     pub private_dns_hostname: ::std::option::Option<::std::string::String>,
@@ -56,7 +56,7 @@ impl ClusterNodeDetails {
     pub fn life_cycle_config(&self) -> ::std::option::Option<&crate::types::ClusterLifeCycleConfig> {
         self.life_cycle_config.as_ref()
     }
-    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn override_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.override_vpc_config.as_ref()
     }
@@ -74,7 +74,7 @@ impl ClusterNodeDetails {
     pub fn private_primary_ip(&self) -> ::std::option::Option<&str> {
         self.private_primary_ip.as_deref()
     }
-    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>
     pub fn private_primary_ipv6(&self) -> ::std::option::Option<&str> {
         self.private_primary_ipv6.as_deref()
     }
@@ -197,17 +197,17 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_life_cycle_config(&self) -> &::std::option::Option<crate::types::ClusterLifeCycleConfig> {
         &self.life_cycle_config
     }
-    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn override_vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.override_vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn set_override_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.override_vpc_config = input;
         self
     }
-    /// <p>Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give SageMaker Access to Resources in your Amazon VPC</a>.</p>
+    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn get_override_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.override_vpc_config
     }
@@ -259,17 +259,17 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_private_primary_ip(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_primary_ip
     }
-    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>
     pub fn private_primary_ipv6(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.private_primary_ipv6 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>
     pub fn set_private_primary_ipv6(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_primary_ipv6 = input;
         self
     }
-    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node.</p>
+    /// <p>The private primary IPv6 address of the SageMaker HyperPod cluster node when configured with an Amazon VPC that supports IPv6 and includes subnets with IPv6 addressing enabled in either the cluster VPC configuration or the instance group VPC configuration.</p>
     pub fn get_private_primary_ipv6(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_primary_ipv6
     }

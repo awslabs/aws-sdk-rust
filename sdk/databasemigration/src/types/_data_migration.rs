@@ -24,6 +24,8 @@ pub struct DataMigration {
     pub data_migration_settings: ::std::option::Option<crate::types::DataMigrationSettings>,
     /// <p>Specifies information about the data migration's source data provider.</p>
     pub source_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>>,
+    /// <p>Specifies information about the data migration's target data provider.</p>
+    pub target_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>,
     /// <p>Provides information about the data migration's run, including start and stop time, latency, and data migration progress.</p>
     pub data_migration_statistics: ::std::option::Option<crate::types::DataMigrationStatistics>,
     /// <p>The current status of the data migration.</p>
@@ -80,6 +82,12 @@ impl DataMigration {
     pub fn source_data_settings(&self) -> &[crate::types::SourceDataSetting] {
         self.source_data_settings.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies information about the data migration's target data provider.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_data_settings.is_none()`.
+    pub fn target_data_settings(&self) -> &[crate::types::TargetDataSetting] {
+        self.target_data_settings.as_deref().unwrap_or_default()
+    }
     /// <p>Provides information about the data migration's run, including start and stop time, latency, and data migration progress.</p>
     pub fn data_migration_statistics(&self) -> ::std::option::Option<&crate::types::DataMigrationStatistics> {
         self.data_migration_statistics.as_ref()
@@ -122,6 +130,7 @@ impl ::std::fmt::Debug for DataMigration {
         formatter.field("data_migration_type", &self.data_migration_type);
         formatter.field("data_migration_settings", &self.data_migration_settings);
         formatter.field("source_data_settings", &self.source_data_settings);
+        formatter.field("target_data_settings", &self.target_data_settings);
         formatter.field("data_migration_statistics", &self.data_migration_statistics);
         formatter.field("data_migration_status", &self.data_migration_status);
         formatter.field("public_ip_addresses", &"*** Sensitive Data Redacted ***");
@@ -152,6 +161,7 @@ pub struct DataMigrationBuilder {
     pub(crate) data_migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     pub(crate) data_migration_settings: ::std::option::Option<crate::types::DataMigrationSettings>,
     pub(crate) source_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>>,
+    pub(crate) target_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>,
     pub(crate) data_migration_statistics: ::std::option::Option<crate::types::DataMigrationStatistics>,
     pub(crate) data_migration_status: ::std::option::Option<::std::string::String>,
     pub(crate) public_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -306,6 +316,26 @@ impl DataMigrationBuilder {
     pub fn get_source_data_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>> {
         &self.source_data_settings
     }
+    /// Appends an item to `target_data_settings`.
+    ///
+    /// To override the contents of this collection use [`set_target_data_settings`](Self::set_target_data_settings).
+    ///
+    /// <p>Specifies information about the data migration's target data provider.</p>
+    pub fn target_data_settings(mut self, input: crate::types::TargetDataSetting) -> Self {
+        let mut v = self.target_data_settings.unwrap_or_default();
+        v.push(input);
+        self.target_data_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies information about the data migration's target data provider.</p>
+    pub fn set_target_data_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>) -> Self {
+        self.target_data_settings = input;
+        self
+    }
+    /// <p>Specifies information about the data migration's target data provider.</p>
+    pub fn get_target_data_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>> {
+        &self.target_data_settings
+    }
     /// <p>Provides information about the data migration's run, including start and stop time, latency, and data migration progress.</p>
     pub fn data_migration_statistics(mut self, input: crate::types::DataMigrationStatistics) -> Self {
         self.data_migration_statistics = ::std::option::Option::Some(input);
@@ -415,6 +445,7 @@ impl DataMigrationBuilder {
             data_migration_type: self.data_migration_type,
             data_migration_settings: self.data_migration_settings,
             source_data_settings: self.source_data_settings,
+            target_data_settings: self.target_data_settings,
             data_migration_statistics: self.data_migration_statistics,
             data_migration_status: self.data_migration_status,
             public_ip_addresses: self.public_ip_addresses,
@@ -437,6 +468,7 @@ impl ::std::fmt::Debug for DataMigrationBuilder {
         formatter.field("data_migration_type", &self.data_migration_type);
         formatter.field("data_migration_settings", &self.data_migration_settings);
         formatter.field("source_data_settings", &self.source_data_settings);
+        formatter.field("target_data_settings", &self.target_data_settings);
         formatter.field("data_migration_statistics", &self.data_migration_statistics);
         formatter.field("data_migration_status", &self.data_migration_status);
         formatter.field("public_ip_addresses", &"*** Sensitive Data Redacted ***");

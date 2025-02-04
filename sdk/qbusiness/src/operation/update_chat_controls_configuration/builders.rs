@@ -22,7 +22,7 @@ impl crate::operation::update_chat_controls_configuration::builders::UpdateChatC
 }
 /// Fluent builder constructing a request to `UpdateChatControlsConfiguration`.
 ///
-/// <p>Updates an set of chat controls configured for an existing Amazon Q Business application.</p>
+/// <p>Updates a set of chat controls configured for an existing Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChatControlsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,6 +149,20 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn get_response_scope(&self) -> &::std::option::Option<crate::types::ResponseScope> {
         self.inner.get_response_scope()
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn orchestration_configuration(mut self, input: crate::types::OrchestrationConfiguration) -> Self {
+        self.inner = self.inner.orchestration_configuration(input);
+        self
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn set_orchestration_configuration(mut self, input: ::std::option::Option<crate::types::OrchestrationConfiguration>) -> Self {
+        self.inner = self.inner.set_orchestration_configuration(input);
+        self
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn get_orchestration_configuration(&self) -> &::std::option::Option<crate::types::OrchestrationConfiguration> {
+        self.inner.get_orchestration_configuration()
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn blocked_phrases_configuration_update(mut self, input: crate::types::BlockedPhrasesConfigurationUpdate) -> Self {

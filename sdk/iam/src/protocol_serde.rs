@@ -817,6 +817,8 @@ pub(crate) mod shape_policy_user_list_type;
 
 pub(crate) mod shape_policy_version;
 
+pub(crate) mod shape_private_key_list;
+
 pub(crate) mod shape_role;
 
 pub(crate) mod shape_role_detail_list_type;
@@ -892,6 +894,8 @@ pub(crate) mod shape_role_detail;
 pub(crate) mod shape_role_last_used;
 
 pub(crate) mod shape_role_usage_list_type;
+
+pub(crate) mod shape_saml_private_key;
 
 pub(crate) mod shape_saml_provider_list_entry;
 

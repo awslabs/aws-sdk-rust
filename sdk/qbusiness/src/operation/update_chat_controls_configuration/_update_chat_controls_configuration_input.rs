@@ -9,6 +9,8 @@ pub struct UpdateChatControlsConfigurationInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub response_scope: ::std::option::Option<crate::types::ResponseScope>,
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub orchestration_configuration: ::std::option::Option<crate::types::OrchestrationConfiguration>,
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub blocked_phrases_configuration_update: ::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate>,
     /// <p>The configured topic specific chat controls you want to update.</p>
@@ -30,6 +32,10 @@ impl UpdateChatControlsConfigurationInput {
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn response_scope(&self) -> ::std::option::Option<&crate::types::ResponseScope> {
         self.response_scope.as_ref()
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn orchestration_configuration(&self) -> ::std::option::Option<&crate::types::OrchestrationConfiguration> {
+        self.orchestration_configuration.as_ref()
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn blocked_phrases_configuration_update(&self) -> ::std::option::Option<&crate::types::BlockedPhrasesConfigurationUpdate> {
@@ -66,6 +72,7 @@ pub struct UpdateChatControlsConfigurationInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) response_scope: ::std::option::Option<crate::types::ResponseScope>,
+    pub(crate) orchestration_configuration: ::std::option::Option<crate::types::OrchestrationConfiguration>,
     pub(crate) blocked_phrases_configuration_update: ::std::option::Option<crate::types::BlockedPhrasesConfigurationUpdate>,
     pub(crate) topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
@@ -114,6 +121,20 @@ impl UpdateChatControlsConfigurationInputBuilder {
     /// <p>The response scope configured for your application. This determines whether your application uses its retrieval augmented generation (RAG) system to generate answers only from your enterprise data, or also uses the large language models (LLM) knowledge to respons to end user questions in chat.</p>
     pub fn get_response_scope(&self) -> &::std::option::Option<crate::types::ResponseScope> {
         &self.response_scope
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn orchestration_configuration(mut self, input: crate::types::OrchestrationConfiguration) -> Self {
+        self.orchestration_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn set_orchestration_configuration(mut self, input: ::std::option::Option<crate::types::OrchestrationConfiguration>) -> Self {
+        self.orchestration_configuration = input;
+        self
+    }
+    /// <p>The chat response orchestration settings for your application.</p>
+    pub fn get_orchestration_configuration(&self) -> &::std::option::Option<crate::types::OrchestrationConfiguration> {
+        &self.orchestration_configuration
     }
     /// <p>The phrases blocked from chat by your chat control configuration.</p>
     pub fn blocked_phrases_configuration_update(mut self, input: crate::types::BlockedPhrasesConfigurationUpdate) -> Self {
@@ -198,6 +219,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
                 application_id: self.application_id,
                 client_token: self.client_token,
                 response_scope: self.response_scope,
+                orchestration_configuration: self.orchestration_configuration,
                 blocked_phrases_configuration_update: self.blocked_phrases_configuration_update,
                 topic_configurations_to_create_or_update: self.topic_configurations_to_create_or_update,
                 topic_configurations_to_delete: self.topic_configurations_to_delete,

@@ -76,6 +76,10 @@ where
                             builder =
                                 builder.set_source_data_settings(crate::protocol_serde::shape_source_data_settings::de_source_data_settings(tokens)?);
                         }
+                        "TargetDataSettings" => {
+                            builder =
+                                builder.set_target_data_settings(crate::protocol_serde::shape_target_data_settings::de_target_data_settings(tokens)?);
+                        }
                         "DataMigrationStatistics" => {
                             builder = builder.set_data_migration_statistics(
                                 crate::protocol_serde::shape_data_migration_statistics::de_data_migration_statistics(tokens)?,

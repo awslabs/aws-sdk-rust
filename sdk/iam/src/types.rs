@@ -9,6 +9,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_server_certificate_metadata::ServerCertificateMetadata;
 
+pub use crate::types::_assertion_encryption_mode_type::AssertionEncryptionModeType;
+
 pub use crate::types::_role::Role;
 
 pub use crate::types::_role_last_used::RoleLastUsed;
@@ -115,6 +117,8 @@ pub use crate::types::_access_advisor_usage_granularity_type::AccessAdvisorUsage
 
 pub use crate::types::_server_certificate::ServerCertificate;
 
+pub use crate::types::_saml_private_key::SamlPrivateKey;
+
 pub use crate::types::_access_detail::AccessDetail;
 
 pub use crate::types::_sort_key_type::SortKeyType;
@@ -152,6 +156,8 @@ mod _access_key;
 mod _access_key_last_used;
 
 mod _access_key_metadata;
+
+mod _assertion_encryption_mode_type;
 
 mod _assignment_status_type;
 
@@ -250,6 +256,8 @@ mod _role_detail;
 mod _role_last_used;
 
 mod _role_usage_type;
+
+mod _saml_private_key;
 
 mod _saml_provider_list_entry;
 

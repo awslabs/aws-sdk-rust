@@ -81,6 +81,8 @@ pub use crate::types::_tracked_action_last_accessed::TrackedActionLastAccessedBu
 
 pub use crate::types::_server_certificate::ServerCertificateBuilder;
 
+pub use crate::types::_saml_private_key::SamlPrivateKeyBuilder;
+
 pub use crate::types::_access_detail::AccessDetailBuilder;
 
 pub use crate::types::_login_profile::LoginProfileBuilder;

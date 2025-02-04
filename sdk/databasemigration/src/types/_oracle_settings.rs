@@ -110,7 +110,7 @@ pub struct OracleSettings {
     /// <p>This parameter is only valid in DMS version 3.5.0 and later.</p>
     /// </note>
     pub open_transaction_window: ::std::option::Option<i32>,
-    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    /// <p>Specifies the authentication method to be used with Oracle.</p>
     pub authentication_method: ::std::option::Option<crate::types::OracleAuthenticationMethod>,
 }
 impl OracleSettings {
@@ -308,7 +308,7 @@ impl OracleSettings {
     pub fn open_transaction_window(&self) -> ::std::option::Option<i32> {
         self.open_transaction_window
     }
-    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    /// <p>Specifies the authentication method to be used with Oracle.</p>
     pub fn authentication_method(&self) -> ::std::option::Option<&crate::types::OracleAuthenticationMethod> {
         self.authentication_method.as_ref()
     }
@@ -1094,17 +1094,17 @@ impl OracleSettingsBuilder {
     pub fn get_open_transaction_window(&self) -> &::std::option::Option<i32> {
         &self.open_transaction_window
     }
-    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    /// <p>Specifies the authentication method to be used with Oracle.</p>
     pub fn authentication_method(mut self, input: crate::types::OracleAuthenticationMethod) -> Self {
         self.authentication_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    /// <p>Specifies the authentication method to be used with Oracle.</p>
     pub fn set_authentication_method(mut self, input: ::std::option::Option<crate::types::OracleAuthenticationMethod>) -> Self {
         self.authentication_method = input;
         self
     }
-    /// <p>Specifies using Kerberos authentication with Oracle.</p>
+    /// <p>Specifies the authentication method to be used with Oracle.</p>
     pub fn get_authentication_method(&self) -> &::std::option::Option<crate::types::OracleAuthenticationMethod> {
         &self.authentication_method
     }

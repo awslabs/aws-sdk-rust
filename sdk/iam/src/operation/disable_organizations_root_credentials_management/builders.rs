@@ -22,7 +22,7 @@ impl crate::operation::disable_organizations_root_credentials_management::builde
 }
 /// Fluent builder constructing a request to `DisableOrganizationsRootCredentialsManagement`.
 ///
-/// <p>Disables the management of privileged root user credentials across member accounts in your organization. When you disable this feature, the management account and the delegated admininstrator for IAM can no longer manage root user credentials for member accounts in your organization.</p>
+/// <p>Disables the management of privileged root user credentials across member accounts in your organization. When you disable this feature, the management account and the delegated administrator for IAM can no longer manage root user credentials for member accounts in your organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableOrganizationsRootCredentialsManagementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::disable_organizations_root_sessions::builders::DisableOrg
 }
 /// Fluent builder constructing a request to `DisableOrganizationsRootSessions`.
 ///
-/// <p>Disables root user sessions for privileged tasks across member accounts in your organization. When you disable this feature, the management account and the delegated admininstrator for IAM can no longer perform privileged tasks on member accounts in your organization.</p>
+/// <p>Disables root user sessions for privileged tasks across member accounts in your organization. When you disable this feature, the management account and the delegated administrator for IAM can no longer perform privileged tasks on member accounts in your organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableOrganizationsRootSessionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

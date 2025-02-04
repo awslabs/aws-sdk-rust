@@ -197,6 +197,25 @@ impl ModifyDataMigrationFluentBuilder {
     pub fn get_source_data_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>> {
         self.inner.get_source_data_settings()
     }
+    ///
+    /// Appends an item to `TargetDataSettings`.
+    ///
+    /// To override the contents of this collection use [`set_target_data_settings`](Self::set_target_data_settings).
+    ///
+    /// <p>The new information about the target data provider for the data migration.</p>
+    pub fn target_data_settings(mut self, input: crate::types::TargetDataSetting) -> Self {
+        self.inner = self.inner.target_data_settings(input);
+        self
+    }
+    /// <p>The new information about the target data provider for the data migration.</p>
+    pub fn set_target_data_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>) -> Self {
+        self.inner = self.inner.set_target_data_settings(input);
+        self
+    }
+    /// <p>The new information about the target data provider for the data migration.</p>
+    pub fn get_target_data_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>> {
+        self.inner.get_target_data_settings()
+    }
     /// <p>The number of parallel jobs that trigger parallel threads to unload the tables from the source, and then load them to the target.</p>
     pub fn number_of_jobs(mut self, input: i32) -> Self {
         self.inner = self.inner.number_of_jobs(input);

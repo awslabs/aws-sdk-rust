@@ -30,26 +30,38 @@ pub fn ser_create_data_migration_input_input(
         }
         array_7.finish();
     }
-    if let Some(var_10) = &input.number_of_jobs {
-        object.key("NumberOfJobs").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
-        );
-    }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("Tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_10) = &input.target_data_settings {
+        let mut array_11 = object.key("TargetDataSettings").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_target_data_setting::ser_target_data_setting(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_12.finish();
+        array_11.finish();
     }
-    if let Some(var_15) = &input.selection_rules {
-        object.key("SelectionRules").string(var_15.as_str());
+    if let Some(var_14) = &input.number_of_jobs {
+        object.key("NumberOfJobs").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+        );
+    }
+    if let Some(var_15) = &input.tags {
+        let mut array_16 = object.key("Tags").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.selection_rules {
+        object.key("SelectionRules").string(var_19.as_str());
     }
     Ok(())
 }

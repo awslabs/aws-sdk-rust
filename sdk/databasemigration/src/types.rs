@@ -17,6 +17,10 @@ pub use crate::types::_data_migration::DataMigration;
 
 pub use crate::types::_data_migration_statistics::DataMigrationStatistics;
 
+pub use crate::types::_target_data_setting::TargetDataSetting;
+
+pub use crate::types::_table_preparation_mode::TablePreparationMode;
+
 pub use crate::types::_source_data_setting::SourceDataSetting;
 
 pub use crate::types::_data_migration_settings::DataMigrationSettings;
@@ -551,11 +555,15 @@ mod _supported_endpoint_type;
 
 mod _sybase_settings;
 
+mod _table_preparation_mode;
+
 mod _table_statistics;
 
 mod _table_to_reload;
 
 mod _tag;
+
+mod _target_data_setting;
 
 mod _target_db_type;
 

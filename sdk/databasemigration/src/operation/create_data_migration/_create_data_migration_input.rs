@@ -23,6 +23,8 @@ pub struct CreateDataMigrationInput {
     pub enable_cloudwatch_logs: ::std::option::Option<bool>,
     /// <p>Specifies information about the source data provider.</p>
     pub source_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>>,
+    /// <p>Specifies information about the target data provider.</p>
+    pub target_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>,
     /// <p>The number of parallel jobs that trigger parallel threads to unload the tables from the source, and then load them to the target.</p>
     pub number_of_jobs: ::std::option::Option<i32>,
     /// <p>One or more tags to be assigned to the data migration.</p>
@@ -65,6 +67,12 @@ impl CreateDataMigrationInput {
     pub fn source_data_settings(&self) -> &[crate::types::SourceDataSetting] {
         self.source_data_settings.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies information about the target data provider.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_data_settings.is_none()`.
+    pub fn target_data_settings(&self) -> &[crate::types::TargetDataSetting] {
+        self.target_data_settings.as_deref().unwrap_or_default()
+    }
     /// <p>The number of parallel jobs that trigger parallel threads to unload the tables from the source, and then load them to the target.</p>
     pub fn number_of_jobs(&self) -> ::std::option::Option<i32> {
         self.number_of_jobs
@@ -89,6 +97,7 @@ impl ::std::fmt::Debug for CreateDataMigrationInput {
         formatter.field("service_access_role_arn", &self.service_access_role_arn);
         formatter.field("enable_cloudwatch_logs", &self.enable_cloudwatch_logs);
         formatter.field("source_data_settings", &self.source_data_settings);
+        formatter.field("target_data_settings", &self.target_data_settings);
         formatter.field("number_of_jobs", &self.number_of_jobs);
         formatter.field("tags", &self.tags);
         formatter.field("selection_rules", &"*** Sensitive Data Redacted ***");
@@ -112,6 +121,7 @@ pub struct CreateDataMigrationInputBuilder {
     pub(crate) service_access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_cloudwatch_logs: ::std::option::Option<bool>,
     pub(crate) source_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>>,
+    pub(crate) target_data_settings: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>,
     pub(crate) number_of_jobs: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) selection_rules: ::std::option::Option<::std::string::String>,
@@ -234,6 +244,26 @@ impl CreateDataMigrationInputBuilder {
     pub fn get_source_data_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceDataSetting>> {
         &self.source_data_settings
     }
+    /// Appends an item to `target_data_settings`.
+    ///
+    /// To override the contents of this collection use [`set_target_data_settings`](Self::set_target_data_settings).
+    ///
+    /// <p>Specifies information about the target data provider.</p>
+    pub fn target_data_settings(mut self, input: crate::types::TargetDataSetting) -> Self {
+        let mut v = self.target_data_settings.unwrap_or_default();
+        v.push(input);
+        self.target_data_settings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies information about the target data provider.</p>
+    pub fn set_target_data_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>>) -> Self {
+        self.target_data_settings = input;
+        self
+    }
+    /// <p>Specifies information about the target data provider.</p>
+    pub fn get_target_data_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TargetDataSetting>> {
+        &self.target_data_settings
+    }
     /// <p>The number of parallel jobs that trigger parallel threads to unload the tables from the source, and then load them to the target.</p>
     pub fn number_of_jobs(mut self, input: i32) -> Self {
         self.number_of_jobs = ::std::option::Option::Some(input);
@@ -294,6 +324,7 @@ impl CreateDataMigrationInputBuilder {
             service_access_role_arn: self.service_access_role_arn,
             enable_cloudwatch_logs: self.enable_cloudwatch_logs,
             source_data_settings: self.source_data_settings,
+            target_data_settings: self.target_data_settings,
             number_of_jobs: self.number_of_jobs,
             tags: self.tags,
             selection_rules: self.selection_rules,
@@ -309,6 +340,7 @@ impl ::std::fmt::Debug for CreateDataMigrationInputBuilder {
         formatter.field("service_access_role_arn", &self.service_access_role_arn);
         formatter.field("enable_cloudwatch_logs", &self.enable_cloudwatch_logs);
         formatter.field("source_data_settings", &self.source_data_settings);
+        formatter.field("target_data_settings", &self.target_data_settings);
         formatter.field("number_of_jobs", &self.number_of_jobs);
         formatter.field("tags", &self.tags);
         formatter.field("selection_rules", &"*** Sensitive Data Redacted ***");

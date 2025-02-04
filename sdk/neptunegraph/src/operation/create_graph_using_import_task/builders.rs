@@ -236,19 +236,19 @@ impl CreateGraphUsingImportTaskFluentBuilder {
         self.inner.get_import_options()
     }
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
-    /// <p>If both the minimum and maximum values are specified, the max of the <code>min-provisioned-memory</code> and <code>max-provisioned memory</code> is used to create the graph. If neither value is specified 128 m-NCUs are used.</p>
+    /// <p>If both the minimum and maximum values are specified, the final <code>provisioned-memory</code> will be chosen per the actual size of your imported data. If neither value is specified, 128 m-NCUs are used.</p>
     pub fn max_provisioned_memory(mut self, input: i32) -> Self {
         self.inner = self.inner.max_provisioned_memory(input);
         self
     }
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
-    /// <p>If both the minimum and maximum values are specified, the max of the <code>min-provisioned-memory</code> and <code>max-provisioned memory</code> is used to create the graph. If neither value is specified 128 m-NCUs are used.</p>
+    /// <p>If both the minimum and maximum values are specified, the final <code>provisioned-memory</code> will be chosen per the actual size of your imported data. If neither value is specified, 128 m-NCUs are used.</p>
     pub fn set_max_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_provisioned_memory(input);
         self
     }
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
-    /// <p>If both the minimum and maximum values are specified, the max of the <code>min-provisioned-memory</code> and <code>max-provisioned memory</code> is used to create the graph. If neither value is specified 128 m-NCUs are used.</p>
+    /// <p>If both the minimum and maximum values are specified, the final <code>provisioned-memory</code> will be chosen per the actual size of your imported data. If neither value is specified, 128 m-NCUs are used.</p>
     pub fn get_max_provisioned_memory(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_provisioned_memory()
     }

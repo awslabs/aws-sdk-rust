@@ -134,6 +134,15 @@ pub(crate) fn applied_creator_mode_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn applied_orchestration_configuration_correct_errors(
+    mut builder: crate::types::builders::AppliedOrchestrationConfigurationBuilder,
+) -> crate::types::builders::AppliedOrchestrationConfigurationBuilder {
+    if builder.control.is_none() {
+        builder.control = "no value was set".parse::<crate::types::OrchestrationControl>().ok()
+    }
+    builder
+}
+
 pub(crate) fn auth_challenge_request_correct_errors(
     mut builder: crate::types::builders::AuthChallengeRequestBuilder,
 ) -> crate::types::builders::AuthChallengeRequestBuilder {

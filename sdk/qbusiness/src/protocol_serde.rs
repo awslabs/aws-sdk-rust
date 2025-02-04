@@ -281,6 +281,8 @@ pub(crate) mod shape_applied_attachments_configuration;
 
 pub(crate) mod shape_applied_creator_mode_configuration;
 
+pub(crate) mod shape_applied_orchestration_configuration;
+
 pub(crate) mod shape_attachment_input;
 
 pub(crate) mod shape_attachment_input_event;
@@ -374,6 +376,8 @@ pub(crate) mod shape_media_extraction_configuration;
 pub(crate) mod shape_message_usefulness_feedback;
 
 pub(crate) mod shape_messages;
+
+pub(crate) mod shape_orchestration_configuration;
 
 pub(crate) mod shape_personalization_configuration;
 

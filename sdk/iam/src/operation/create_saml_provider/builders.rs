@@ -172,4 +172,32 @@ impl CreateSAMLProviderFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Specifies the encryption setting for the SAML provider.</p>
+    pub fn assertion_encryption_mode(mut self, input: crate::types::AssertionEncryptionModeType) -> Self {
+        self.inner = self.inner.assertion_encryption_mode(input);
+        self
+    }
+    /// <p>Specifies the encryption setting for the SAML provider.</p>
+    pub fn set_assertion_encryption_mode(mut self, input: ::std::option::Option<crate::types::AssertionEncryptionModeType>) -> Self {
+        self.inner = self.inner.set_assertion_encryption_mode(input);
+        self
+    }
+    /// <p>Specifies the encryption setting for the SAML provider.</p>
+    pub fn get_assertion_encryption_mode(&self) -> &::std::option::Option<crate::types::AssertionEncryptionModeType> {
+        self.inner.get_assertion_encryption_mode()
+    }
+    /// <p>The private key generated from your external identity provider. The private key must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to decrypt SAML assertions.</p>
+    pub fn add_private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.add_private_key(input.into());
+        self
+    }
+    /// <p>The private key generated from your external identity provider. The private key must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to decrypt SAML assertions.</p>
+    pub fn set_add_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_add_private_key(input);
+        self
+    }
+    /// <p>The private key generated from your external identity provider. The private key must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to decrypt SAML assertions.</p>
+    pub fn get_add_private_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_add_private_key()
+    }
 }

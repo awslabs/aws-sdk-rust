@@ -699,6 +699,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_target_data_setting;
+
 pub(crate) mod shape_timestream_settings;
 
 pub(crate) mod shape_account_quota;
@@ -794,6 +796,8 @@ pub(crate) mod shape_subnet_list;
 pub(crate) mod shape_supported_endpoint_type;
 
 pub(crate) mod shape_table_statistics;
+
+pub(crate) mod shape_target_data_settings;
 
 pub(crate) mod shape_vpc_security_group_membership_list;
 

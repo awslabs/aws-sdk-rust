@@ -20,7 +20,7 @@ pub struct DescribeLocationSmbOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IPv4 addresses for the DNS servers that your SMB file server belongs to. This element applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The Kerberos principal that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
     /// <p>The authentication protocol that DataSync uses to connect to your SMB file server.</p>
     pub authentication_type: ::std::option::Option<crate::types::SmbAuthenticationType>,
@@ -63,7 +63,7 @@ impl DescribeLocationSmbOutput {
     pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
         self.dns_ip_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The Kerberos principal that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
         self.kerberos_principal.as_deref()
     }
@@ -225,17 +225,17 @@ impl DescribeLocationSmbOutputBuilder {
     pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addresses
     }
-    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The Kerberos principal that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kerberos_principal = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The Kerberos principal that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kerberos_principal = input;
         self
     }
-    /// <p>The Kerberos service principal name (SPN) that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>The Kerberos principal that has permission to access the files, folders, and file metadata in your SMB file server.</p>
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.kerberos_principal
     }

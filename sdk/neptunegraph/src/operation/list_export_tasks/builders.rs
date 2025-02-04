@@ -114,6 +114,20 @@ impl ListExportTasksFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_export_tasks::paginator::ListExportTasksPaginator {
         crate::operation::list_export_tasks::paginator::ListExportTasksPaginator::new(self.handle, self.inner)
     }
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn graph_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.graph_identifier(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_graph_identifier(input);
+        self
+    }
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_graph_identifier()
+    }
     /// <p>Pagination token used to paginate input.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

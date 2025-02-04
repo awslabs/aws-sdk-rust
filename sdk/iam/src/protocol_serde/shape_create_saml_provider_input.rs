@@ -26,6 +26,16 @@ pub fn ser_create_saml_provider_input_input_input(
         }
         list_8.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("AssertionEncryptionMode");
+    if let Some(var_11) = &input.assertion_encryption_mode {
+        scope_10.string(var_11.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("AddPrivateKey");
+    if let Some(var_13) = &input.add_private_key {
+        scope_12.string(var_13);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -35,17 +35,16 @@ pub struct CreateLocationSmbInput {
     /// <p>Specifies the IPv4 addresses for the DNS servers that your SMB file server belongs to. This parameter applies only if <code>AuthenticationType</code> is set to <code>KERBEROS</code>.</p>
     /// <p>If you have multiple domains in your environment, configuring this parameter makes sure that DataSync connects to the right SMB file server.</p>
     pub dns_ip_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
-    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub kerberos_principal: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
-    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub kerberos_keytab: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
-    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     pub kerberos_krb5_conf: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CreateLocationSmbInput {
@@ -106,21 +105,20 @@ impl CreateLocationSmbInput {
     pub fn dns_ip_addresses(&self) -> &[::std::string::String] {
         self.dns_ip_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
-    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn kerberos_principal(&self) -> ::std::option::Option<&str> {
         self.kerberos_principal.as_deref()
     }
-    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
-    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn kerberos_keytab(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.kerberos_keytab.as_ref()
     }
     /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
-    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     pub fn kerberos_krb5_conf(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.kerberos_krb5_conf.as_ref()
     }
@@ -363,63 +361,60 @@ impl CreateLocationSmbInputBuilder {
     pub fn get_dns_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ip_addresses
     }
-    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
-    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kerberos_principal = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
-    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kerberos_principal = input;
         self
     }
-    /// <p>Specifies a service principal name (SPN), which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>SPNs are case sensitive and must include a prepended <code>cifs/</code>. For example, an SPN might look like <code>cifs/kerberosuser@EXAMPLE.COM</code>.</p>
-    /// <p>Your task execution will fail if the SPN that you provide for this parameter doesn’t match what’s exactly in your keytab or <code>krb5.conf</code> files.</p>
+    /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
         &self.kerberos_principal
     }
-    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
-    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn kerberos_keytab(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.kerberos_keytab = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
-    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn set_kerberos_keytab(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.kerberos_keytab = input;
         self
     }
-    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your service principal name (SPN) and encryption keys.</p>
-    /// <p>You can specify the keytab using a file path (for example, <code>file://path/to/file.keytab</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the SPN in the keytab file matches exactly what you specify for <code>KerberosPrincipal</code> and in your <code>krb5.conf</code> file.</p>
+    /// <p>Specifies your Kerberos key table (keytab) file, which includes mappings between your Kerberos principal and encryption keys.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
+    /// <p>To avoid task execution errors, make sure that the Kerberos principal that you use to create the keytab file matches exactly what you specify for <code>KerberosPrincipal</code>.</p>
     pub fn get_kerberos_keytab(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.kerberos_keytab
     }
     /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
-    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     pub fn kerberos_krb5_conf(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.kerberos_krb5_conf = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
-    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     pub fn set_kerberos_krb5_conf(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.kerberos_krb5_conf = input;
         self
     }
     /// <p>Specifies a Kerberos configuration file (<code>krb5.conf</code>) that defines your Kerberos realm configuration.</p>
-    /// <p>You can specify the <code>krb5.conf</code> using a file path (for example, <code>file://path/to/krb5.conf</code>). The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
-    /// <p>To avoid task execution errors, make sure that the service principal name (SPN) in the <code>krb5.conf</code> file matches exactly what you specify for <code>KerberosPrincipal</code> and in your keytab file.</p>
+    /// <p>The file must be base64 encoded. If you're using the CLI, the encoding is done for you.</p>
     pub fn get_kerberos_krb5_conf(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.kerberos_krb5_conf
     }

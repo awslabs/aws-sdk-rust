@@ -15,6 +15,8 @@ pub use crate::types::_data_migration::DataMigrationBuilder;
 
 pub use crate::types::_data_migration_statistics::DataMigrationStatisticsBuilder;
 
+pub use crate::types::_target_data_setting::TargetDataSettingBuilder;
+
 pub use crate::types::_source_data_setting::SourceDataSettingBuilder;
 
 pub use crate::types::_data_migration_settings::DataMigrationSettingsBuilder;

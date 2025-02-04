@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExportTasksInput {
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub graph_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Pagination token used to paginate input.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of export tasks to return.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListExportTasksInput {
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn graph_identifier(&self) -> ::std::option::Option<&str> {
+        self.graph_identifier.as_deref()
+    }
     /// <p>Pagination token used to paginate input.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -29,10 +35,25 @@ impl ListExportTasksInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListExportTasksInputBuilder {
+    pub(crate) graph_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListExportTasksInputBuilder {
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn graph_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.graph_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn set_graph_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.graph_identifier = input;
+        self
+    }
+    /// <p>The unique identifier of the Neptune Analytics graph.</p>
+    pub fn get_graph_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.graph_identifier
+    }
     /// <p>Pagination token used to paginate input.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +87,7 @@ impl ListExportTasksInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_export_tasks::ListExportTasksInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_export_tasks::ListExportTasksInput {
+            graph_identifier: self.graph_identifier,
             next_token: self.next_token,
             max_results: self.max_results,
         })

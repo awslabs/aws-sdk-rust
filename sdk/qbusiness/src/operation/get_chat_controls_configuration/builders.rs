@@ -22,7 +22,7 @@ impl crate::operation::get_chat_controls_configuration::builders::GetChatControl
 }
 /// Fluent builder constructing a request to `GetChatControlsConfiguration`.
 ///
-/// <p>Gets information about an chat controls configured for an existing Amazon Q Business application.</p>
+/// <p>Gets information about chat controls configured for an existing Amazon Q Business application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChatControlsConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
