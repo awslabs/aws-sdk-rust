@@ -463,12 +463,7 @@ pub(crate) mod identity_provider {
             config_builder.runtime_components = rc_builder;
 
             let client = crate::Client::from_conf(config_builder.build());
-            let response = client
-                .create_session()
-                .bucket(bucket_name)
-                .session_mode(crate::types::SessionMode::ReadWrite)
-                .send()
-                .await?;
+            let response = client.create_session().bucket(bucket_name).send().await?;
 
             response.credentials.ok_or("no session credentials in response".into())
         }

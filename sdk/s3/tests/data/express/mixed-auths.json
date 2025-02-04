@@ -8,10 +8,7 @@
             "uri": "https://s3express-test-bucket--usw2-az1--x-s3.s3express-usw2-az1.us-west-2.amazonaws.com/?session",
             "headers": {
               "authorization": [
-                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/s3express/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-create-session-mode;x-amz-date;x-amz-user-agent, Signature=38991fe77e65f7e9ffba9ddaeb0ba457d8673bb5c11068eaeb53a4f5fa7c4136"
-              ],
-              "x-amz-create-session-mode": [
-                "ReadWrite"
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/s3express/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-user-agent, Signature=41c2b04a140b0973d5f82d18c412c21a2328d86435b5568e4fbdf6af5d99ebb5"
               ],
               "amz-sdk-request": [
                 "attempt=1; max=3"
@@ -308,13 +305,10 @@
                 "20090213T233130Z"
               ],
               "authorization": [
-                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/s3express/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-create-session-mode;x-amz-date;x-amz-user-agent, Signature=9e664e775f458662091e9df58f1f37f66cb74e21ac19fd9a618a9189285ca152"
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/s3express/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-user-agent, Signature=44d20d3ee77ea1d7d0dd871e27b862b48803e1810ac4ae4debed958ceef3af4e"
               ],
               "x-amz-content-sha256": [
                 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-              ],
-              "x-amz-create-session-mode": [
-                "ReadWrite"
               ]
             },
             "method": "GET"

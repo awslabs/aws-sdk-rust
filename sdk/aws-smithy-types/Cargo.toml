@@ -1,6 +1,6 @@
 [package]
 name = "aws-smithy-types"
-version = "1.2.12"
+version = "1.2.13"
 authors = [
     "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
     "Russell Cohen <rcoh@amazon.com>",
@@ -69,7 +69,7 @@ tokio = { version = "1.23.1", features = [
 ] }
 # This is used in a doctest, don't listen to udeps.
 tokio-stream = "0.1.5"
-tempfile = "3.2.0"
+tempfile = "3.16.0"
 
 criterion = "0.5"
 

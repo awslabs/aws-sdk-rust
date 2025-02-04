@@ -51,8 +51,8 @@ async fn create_session_request_should_not_include_x_amz_s3session_token() {
 
     let req = request.expect_request();
     assert!(
-        req.headers().get("x-amz-create-session-mode").is_some(),
-        "`x-amz-create-session-mode` should appear in headers of the first request when an express bucket is specified"
+        req.headers().get("x-amz-create-session-mode").is_none(),
+        "`x-amz-create-session-mode` should not appear in headers of the first request when an express bucket is specified"
     );
     assert!(req.headers().get("x-amz-security-token").is_some());
     assert!(req.headers().get("x-amz-s3session-token").is_none());
@@ -109,7 +109,6 @@ async fn mixed_auths() {
 fn create_session_request() -> http::Request<SdkBody> {
     http::Request::builder()
         .uri("https://s3express-test-bucket--usw2-az1--x-s3.s3express-usw2-az1.us-west-2.amazonaws.com/?session")
-        .header("x-amz-create-session-mode", "ReadWrite")
         .method("GET")
         .body(SdkBody::empty())
         .unwrap()
