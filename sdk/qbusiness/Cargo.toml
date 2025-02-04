@@ -25,7 +25,7 @@ version = "1.5.4"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
-version = "1.2.7"
+version = "1.2.8"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

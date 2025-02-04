@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use http0::header::{AUTHORIZATION, USER_AGENT};
+use http0::header::{AUTHORIZATION, TRANSFER_ENCODING, USER_AGENT};
 use std::borrow::Cow;
 use std::time::Duration;
 
@@ -126,6 +126,8 @@ impl Default for SigningSettings {
                 Cow::Borrowed(USER_AGENT.as_str()),
                 // Changes based on the request from the client
                 Cow::Borrowed(HEADER_NAME_X_RAY_TRACE_ID),
+                // Hop by hop header, can be erased by Cloudfront
+                Cow::Borrowed(TRANSFER_ENCODING.as_str()),
             ]
             .to_vec(),
         );

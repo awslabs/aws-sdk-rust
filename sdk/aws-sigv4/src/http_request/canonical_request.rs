@@ -877,7 +877,7 @@ mod tests {
         assert_eq!(creq.values.signed_headers().as_str(), "host;x-amz-date");
     }
 
-    // It should exclude authorization, user-agent, x-amzn-trace-id headers from presigning
+    // It should exclude authorization, user-agent, x-amzn-trace-id, and transfer-encoding headers from presigning
     #[test]
     fn non_presigning_header_exclusion() {
         let request = http0::Request::builder()
@@ -888,6 +888,7 @@ mod tests {
             .header("user-agent", "test-user-agent")
             .header("x-amzn-trace-id", "test-trace-id")
             .header("x-amz-user-agent", "test-user-agent")
+            .header("transfer-encoding", "chunked")
             .body("")
             .unwrap()
             .into();
@@ -909,7 +910,7 @@ mod tests {
         );
     }
 
-    // It should exclude authorization, user-agent, x-amz-user-agent, x-amzn-trace-id headers from presigning
+    // It should exclude authorization, user-agent, x-amz-user-agent, x-amzn-trace-id, and transfer-encoding headers from presigning
     #[test]
     fn presigning_header_exclusion() {
         let request = http0::Request::builder()
@@ -920,6 +921,7 @@ mod tests {
             .header("user-agent", "test-user-agent")
             .header("x-amzn-trace-id", "test-trace-id")
             .header("x-amz-user-agent", "test-user-agent")
+            .header("transfer-encoding", "chunked")
             .body("")
             .unwrap()
             .into();
