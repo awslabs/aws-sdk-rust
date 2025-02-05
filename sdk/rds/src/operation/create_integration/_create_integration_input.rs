@@ -17,8 +17,7 @@ pub struct CreateIntegrationInput {
     /// <p>A list of tags.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging Amazon Aurora and Amazon RDS resources</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/zero-etl.filtering.html">Data filtering for Amazon RDS zero-ETL integrations with Amazon Redshift</a>.</p>
     pub data_filter: ::std::option::Option<::std::string::String>,
     /// <p>A description of the integration.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -52,8 +51,7 @@ impl CreateIntegrationInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/zero-etl.filtering.html">Data filtering for Amazon RDS zero-ETL integrations with Amazon Redshift</a>.</p>
     pub fn data_filter(&self) -> ::std::option::Option<&str> {
         self.data_filter.as_deref()
     }
@@ -197,20 +195,17 @@ impl CreateIntegrationInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/zero-etl.filtering.html">Data filtering for Amazon RDS zero-ETL integrations with Amazon Redshift</a>.</p>
     pub fn data_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_filter = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/zero-etl.filtering.html">Data filtering for Amazon RDS zero-ETL integrations with Amazon Redshift</a>.</p>
     pub fn set_data_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_filter = input;
         self
     }
-    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-    /// <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+    /// <p>Data filtering options for the integration. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data filtering for Aurora zero-ETL integrations with Amazon Redshift</a> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/zero-etl.filtering.html">Data filtering for Amazon RDS zero-ETL integrations with Amazon Redshift</a>.</p>
     pub fn get_data_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_filter
     }

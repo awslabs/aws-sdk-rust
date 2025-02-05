@@ -207,17 +207,17 @@ impl DeleteDBClusterFluentBuilder {
     pub fn get_final_db_snapshot_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_final_db_snapshot_identifier()
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted, unless the Amazon Web Services Backup policy specifies a point-in-time restore rule.</p>
     pub fn delete_automated_backups(mut self, input: bool) -> Self {
         self.inner = self.inner.delete_automated_backups(input);
         self
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted, unless the Amazon Web Services Backup policy specifies a point-in-time restore rule.</p>
     pub fn set_delete_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_automated_backups(input);
         self
     }
-    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted.</p>
+    /// <p>Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted, unless the Amazon Web Services Backup policy specifies a point-in-time restore rule.</p>
     pub fn get_delete_automated_backups(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_automated_backups()
     }

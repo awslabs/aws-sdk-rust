@@ -10,6 +10,7 @@ pub struct ModifyDbProxyTargetGroupInput {
     /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
     pub connection_pool_config: ::std::option::Option<crate::types::ConnectionPoolConfiguration>,
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>You can't rename the <code>default</code> target group.</p>
     pub new_name: ::std::option::Option<::std::string::String>,
 }
 impl ModifyDbProxyTargetGroupInput {
@@ -26,6 +27,7 @@ impl ModifyDbProxyTargetGroupInput {
         self.connection_pool_config.as_ref()
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>You can't rename the <code>default</code> target group.</p>
     pub fn new_name(&self) -> ::std::option::Option<&str> {
         self.new_name.as_deref()
     }
@@ -92,16 +94,19 @@ impl ModifyDbProxyTargetGroupInputBuilder {
         &self.connection_pool_config
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>You can't rename the <code>default</code> target group.</p>
     pub fn new_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>You can't rename the <code>default</code> target group.</p>
     pub fn set_new_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_name = input;
         self
     }
     /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>You can't rename the <code>default</code> target group.</p>
     pub fn get_new_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_name
     }
