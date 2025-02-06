@@ -28,6 +28,9 @@ pub mod create_stack;
 /// Types for the `CreateStackInstances` operation.
 pub mod create_stack_instances;
 
+/// Types for the `CreateStackRefactor` operation.
+pub mod create_stack_refactor;
+
 /// Types for the `CreateStackSet` operation.
 pub mod create_stack_set;
 
@@ -85,6 +88,9 @@ pub mod describe_stack_events;
 /// Types for the `DescribeStackInstance` operation.
 pub mod describe_stack_instance;
 
+/// Types for the `DescribeStackRefactor` operation.
+pub mod describe_stack_refactor;
+
 /// Types for the `DescribeStackResource` operation.
 pub mod describe_stack_resource;
 
@@ -123,6 +129,9 @@ pub mod estimate_template_cost;
 
 /// Types for the `ExecuteChangeSet` operation.
 pub mod execute_change_set;
+
+/// Types for the `ExecuteStackRefactor` operation.
+pub mod execute_stack_refactor;
 
 /// Types for the `GetGeneratedTemplate` operation.
 pub mod get_generated_template;
@@ -168,6 +177,12 @@ pub mod list_stack_instance_resource_drifts;
 
 /// Types for the `ListStackInstances` operation.
 pub mod list_stack_instances;
+
+/// Types for the `ListStackRefactorActions` operation.
+pub mod list_stack_refactor_actions;
+
+/// Types for the `ListStackRefactors` operation.
+pub mod list_stack_refactors;
 
 /// Types for the `ListStackResources` operation.
 pub mod list_stack_resources;

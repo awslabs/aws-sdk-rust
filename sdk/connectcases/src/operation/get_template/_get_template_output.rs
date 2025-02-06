@@ -25,6 +25,8 @@ pub struct GetTemplateOutput {
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp at which the resource was created or last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutput {
@@ -77,6 +79,12 @@ impl GetTemplateOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::TemplateRule] {
+        self.rules.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTemplateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -105,6 +113,7 @@ pub struct GetTemplateOutputBuilder {
     pub(crate) deleted: ::std::option::Option<bool>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
@@ -283,6 +292,26 @@ impl GetTemplateOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// Appends an item to `rules`.
+    ///
+    /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+    ///
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn rules(mut self, input: crate::types::TemplateRule) -> Self {
+        let mut v = self.rules.unwrap_or_default();
+        v.push(input);
+        self.rules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>) -> Self {
+        self.rules = input;
+        self
+    }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>> {
+        &self.rules
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -331,6 +360,7 @@ impl GetTemplateOutputBuilder {
             deleted: self.deleted.unwrap_or_default(),
             created_time: self.created_time,
             last_modified_time: self.last_modified_time,
+            rules: self.rules,
             _request_id: self._request_id,
         })
     }

@@ -17,6 +17,8 @@ pub struct UpdateTemplateInput {
     pub required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     /// <p>The status of the template.</p>
     pub status: ::std::option::Option<crate::types::TemplateStatus>,
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>,
 }
 impl UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -49,6 +51,12 @@ impl UpdateTemplateInput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::TemplateStatus> {
         self.status.as_ref()
     }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
+    pub fn rules(&self) -> &[crate::types::TemplateRule] {
+        self.rules.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
@@ -68,6 +76,7 @@ pub struct UpdateTemplateInputBuilder {
     pub(crate) layout_configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
     pub(crate) required_fields: ::std::option::Option<::std::vec::Vec<crate::types::RequiredField>>,
     pub(crate) status: ::std::option::Option<crate::types::TemplateStatus>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>,
 }
 impl UpdateTemplateInputBuilder {
     /// <p>The unique identifier of the Cases domain.</p>
@@ -176,6 +185,26 @@ impl UpdateTemplateInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
         &self.status
     }
+    /// Appends an item to `rules`.
+    ///
+    /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+    ///
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn rules(mut self, input: crate::types::TemplateRule) -> Self {
+        let mut v = self.rules.unwrap_or_default();
+        v.push(input);
+        self.rules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>) -> Self {
+        self.rules = input;
+        self
+    }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>> {
+        &self.rules
+    }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
     pub fn build(
         self,
@@ -188,6 +217,7 @@ impl UpdateTemplateInputBuilder {
             layout_configuration: self.layout_configuration,
             required_fields: self.required_fields,
             status: self.status,
+            rules: self.rules,
         })
     }
 }

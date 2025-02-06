@@ -23,6 +23,17 @@ impl crate::operation::list_templates::builders::ListTemplatesInputBuilder {
 /// Fluent builder constructing a request to `ListTemplates`.
 ///
 /// <p>Lists all of the templates in a Cases domain. Each list item is a condensed summary object of the template.</p>
+/// <p>Other template APIs are:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

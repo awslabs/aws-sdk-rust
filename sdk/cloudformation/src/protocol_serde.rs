@@ -59,6 +59,10 @@ pub(crate) mod shape_create_stack_instances;
 
 pub(crate) mod shape_create_stack_instances_input;
 
+pub(crate) mod shape_create_stack_refactor;
+
+pub(crate) mod shape_create_stack_refactor_input;
+
 pub(crate) mod shape_create_stack_set;
 
 pub(crate) mod shape_create_stack_set_input;
@@ -135,6 +139,10 @@ pub(crate) mod shape_describe_stack_instance;
 
 pub(crate) mod shape_describe_stack_instance_input;
 
+pub(crate) mod shape_describe_stack_refactor;
+
+pub(crate) mod shape_describe_stack_refactor_input;
+
 pub(crate) mod shape_describe_stack_resource;
 
 pub(crate) mod shape_describe_stack_resource_drifts;
@@ -186,6 +194,10 @@ pub(crate) mod shape_estimate_template_cost_input;
 pub(crate) mod shape_execute_change_set;
 
 pub(crate) mod shape_execute_change_set_input;
+
+pub(crate) mod shape_execute_stack_refactor;
+
+pub(crate) mod shape_execute_stack_refactor_input;
 
 pub(crate) mod shape_get_generated_template;
 
@@ -246,6 +258,14 @@ pub(crate) mod shape_list_stack_instance_resource_drifts_input;
 pub(crate) mod shape_list_stack_instances;
 
 pub(crate) mod shape_list_stack_instances_input;
+
+pub(crate) mod shape_list_stack_refactor_actions;
+
+pub(crate) mod shape_list_stack_refactor_actions_input;
+
+pub(crate) mod shape_list_stack_refactors;
+
+pub(crate) mod shape_list_stack_refactors_input;
 
 pub(crate) mod shape_list_stack_resources;
 
@@ -403,6 +423,8 @@ pub(crate) mod shape_parameter;
 
 pub(crate) mod shape_resource_definition;
 
+pub(crate) mod shape_resource_mapping;
+
 pub(crate) mod shape_resource_scan_in_progress_exception;
 
 pub(crate) mod shape_resource_scan_limit_exceeded_exception;
@@ -415,11 +437,15 @@ pub(crate) mod shape_rollback_configuration;
 
 pub(crate) mod shape_scanned_resource_identifier;
 
+pub(crate) mod shape_stack_definition;
+
 pub(crate) mod shape_stack_instance_filter;
 
 pub(crate) mod shape_stack_instance_not_found_exception;
 
 pub(crate) mod shape_stack_not_found_exception;
+
+pub(crate) mod shape_stack_refactor_not_found_exception;
 
 pub(crate) mod shape_stack_set_not_empty_exception;
 
@@ -479,6 +505,8 @@ pub(crate) mod shape_resource_details;
 
 pub(crate) mod shape_resource_identifier_summaries;
 
+pub(crate) mod shape_resource_location;
+
 pub(crate) mod shape_resource_scan_summaries;
 
 pub(crate) mod shape_resource_types;
@@ -489,11 +517,17 @@ pub(crate) mod shape_scanned_resources;
 
 pub(crate) mod shape_stack_events;
 
+pub(crate) mod shape_stack_ids;
+
 pub(crate) mod shape_stack_instance;
 
 pub(crate) mod shape_stack_instance_resource_drifts_summaries;
 
 pub(crate) mod shape_stack_instance_summaries;
+
+pub(crate) mod shape_stack_refactor_actions;
+
+pub(crate) mod shape_stack_refactor_summaries;
 
 pub(crate) mod shape_stack_resource_detail;
 
@@ -591,6 +625,10 @@ pub(crate) mod shape_stack_instance_resource_drifts_summary;
 
 pub(crate) mod shape_stack_instance_summary;
 
+pub(crate) mod shape_stack_refactor_action;
+
+pub(crate) mod shape_stack_refactor_summary;
+
 pub(crate) mod shape_stack_resource;
 
 pub(crate) mod shape_stack_resource_drift_information;
@@ -648,6 +686,10 @@ pub(crate) mod shape_resource_identifiers;
 pub(crate) mod shape_stack_drift_information;
 
 pub(crate) mod shape_stack_drift_information_summary;
+
+pub(crate) mod shape_stack_refactor_tag_resources;
+
+pub(crate) mod shape_stack_refactor_untag_resources;
 
 pub(crate) mod shape_stack_resource_drift_information_summary;
 

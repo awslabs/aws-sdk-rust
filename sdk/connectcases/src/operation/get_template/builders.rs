@@ -22,7 +22,17 @@ impl crate::operation::get_template::builders::GetTemplateInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTemplate`.
 ///
-/// <p>Returns the details for the requested template.</p>
+/// <p>Returns the details for the requested template. Other template APIs are:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_UpdateTemplate.html">UpdateTemplate</a></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

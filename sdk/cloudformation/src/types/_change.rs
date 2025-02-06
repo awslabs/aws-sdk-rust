@@ -10,7 +10,7 @@ pub struct Change {
     /// <p><code>Resource</code> This change is for a resource.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::ChangeType>,
-    /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
+    /// <p>Is either <code>null</code>, if no Hooks invoke for the resource, or contains the number of Hooks that will invoke for the resource.</p>
     pub hook_invocation_count: ::std::option::Option<i32>,
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub resource_change: ::std::option::Option<crate::types::ResourceChange>,
@@ -24,7 +24,7 @@ impl Change {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.r#type.as_ref()
     }
-    /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
+    /// <p>Is either <code>null</code>, if no Hooks invoke for the resource, or contains the number of Hooks that will invoke for the resource.</p>
     pub fn hook_invocation_count(&self) -> ::std::option::Option<i32> {
         self.hook_invocation_count
     }
@@ -75,17 +75,17 @@ impl ChangeBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ChangeType> {
         &self.r#type
     }
-    /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
+    /// <p>Is either <code>null</code>, if no Hooks invoke for the resource, or contains the number of Hooks that will invoke for the resource.</p>
     pub fn hook_invocation_count(mut self, input: i32) -> Self {
         self.hook_invocation_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
+    /// <p>Is either <code>null</code>, if no Hooks invoke for the resource, or contains the number of Hooks that will invoke for the resource.</p>
     pub fn set_hook_invocation_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hook_invocation_count = input;
         self
     }
-    /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
+    /// <p>Is either <code>null</code>, if no Hooks invoke for the resource, or contains the number of Hooks that will invoke for the resource.</p>
     pub fn get_hook_invocation_count(&self) -> &::std::option::Option<i32> {
         &self.hook_invocation_count
     }

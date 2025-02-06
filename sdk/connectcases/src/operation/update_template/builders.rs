@@ -23,6 +23,17 @@ impl crate::operation::update_template::builders::UpdateTemplateInputBuilder {
 /// Fluent builder constructing a request to `UpdateTemplate`.
 ///
 /// <p>Updates the attributes of an existing template. The template attributes that can be modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>, <code>requiredFields</code>, and <code>status</code>. At least one of these attributes must not be null. If a null value is provided for a given attribute, that attribute is ignored and its current value is preserved.</p>
+/// <p>Other template APIs are:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateTemplate.html">CreateTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_DeleteTemplate.html">DeleteTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetTemplate.html">GetTemplate</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_ListTemplates.html">ListTemplates</a></p></li>
+/// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -210,5 +221,24 @@ impl UpdateTemplateFluentBuilder {
     /// <p>The status of the template.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TemplateStatus> {
         self.inner.get_status()
+    }
+    ///
+    /// Appends an item to `rules`.
+    ///
+    /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+    ///
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn rules(mut self, input: crate::types::TemplateRule) -> Self {
+        self.inner = self.inner.rules(input);
+        self
+    }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>>) -> Self {
+        self.inner = self.inner.set_rules(input);
+        self
+    }
+    /// <p>A list of case rules (also known as <a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">case field conditions</a>) on a template.</p>
+    pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateRule>> {
+        self.inner.get_rules()
     }
 }

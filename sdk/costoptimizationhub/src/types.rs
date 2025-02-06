@@ -99,6 +99,12 @@ pub use crate::types::_ec2_auto_scaling_group::Ec2AutoScalingGroup;
 
 pub use crate::types::_ec2_auto_scaling_group_configuration::Ec2AutoScalingGroupConfiguration;
 
+pub use crate::types::_allocation_strategy::AllocationStrategy;
+
+pub use crate::types::_ec2_auto_scaling_group_type::Ec2AutoScalingGroupType;
+
+pub use crate::types::_mixed_instance_configuration::MixedInstanceConfiguration;
+
 pub use crate::types::_instance_configuration::InstanceConfiguration;
 
 pub use crate::types::_ebs_volume::EbsVolume;
@@ -127,6 +133,8 @@ mod _account_enrollment_status;
 
 mod _action_type;
 
+mod _allocation_strategy;
+
 mod _block_storage_performance_configuration;
 
 mod _compute_configuration;
@@ -144,6 +152,8 @@ mod _ebs_volume_configuration;
 mod _ec2_auto_scaling_group;
 
 mod _ec2_auto_scaling_group_configuration;
+
+mod _ec2_auto_scaling_group_type;
 
 mod _ec2_instance;
 
@@ -180,6 +190,8 @@ mod _lambda_function;
 mod _lambda_function_configuration;
 
 mod _member_account_discount_visibility;
+
+mod _mixed_instance_configuration;
 
 mod _open_search_reserved_instances;
 

@@ -15,7 +15,7 @@ pub struct ListObjectVersionsOutput {
     pub next_version_id_marker: ::std::option::Option<::std::string::String>,
     /// <p>Container for version information.</p>
     pub versions: ::std::option::Option<::std::vec::Vec<crate::types::ObjectVersion>>,
-    /// <p>Container for an object that is a delete marker.</p>
+    /// <p>Container for an object that is a delete marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working with delete markers</a>.</p>
     pub delete_markers: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>,
     /// <p>The bucket name.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -65,7 +65,7 @@ impl ListObjectVersionsOutput {
     pub fn versions(&self) -> &[crate::types::ObjectVersion] {
         self.versions.as_deref().unwrap_or_default()
     }
-    /// <p>Container for an object that is a delete marker.</p>
+    /// <p>Container for an object that is a delete marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working with delete markers</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.delete_markers.is_none()`.
     pub fn delete_markers(&self) -> &[crate::types::DeleteMarkerEntry] {
@@ -239,19 +239,19 @@ impl ListObjectVersionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_delete_markers`](Self::set_delete_markers).
     ///
-    /// <p>Container for an object that is a delete marker.</p>
+    /// <p>Container for an object that is a delete marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working with delete markers</a>.</p>
     pub fn delete_markers(mut self, input: crate::types::DeleteMarkerEntry) -> Self {
         let mut v = self.delete_markers.unwrap_or_default();
         v.push(input);
         self.delete_markers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Container for an object that is a delete marker.</p>
+    /// <p>Container for an object that is a delete marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working with delete markers</a>.</p>
     pub fn set_delete_markers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>>) -> Self {
         self.delete_markers = input;
         self
     }
-    /// <p>Container for an object that is a delete marker.</p>
+    /// <p>Container for an object that is a delete marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working with delete markers</a>.</p>
     pub fn get_delete_markers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeleteMarkerEntry>> {
         &self.delete_markers
     }

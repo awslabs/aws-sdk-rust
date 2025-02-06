@@ -17,6 +17,25 @@ where
                         "instance" => {
                             builder = builder.set_instance(crate::protocol_serde::shape_instance_configuration::de_instance_configuration(tokens)?);
                         }
+                        "mixedInstances" => {
+                            builder = builder.set_mixed_instances(
+                                crate::protocol_serde::shape_mixed_instance_configuration_list::de_mixed_instance_configuration_list(tokens)?,
+                            );
+                        }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Ec2AutoScalingGroupType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "allocationStrategy" => {
+                            builder = builder.set_allocation_strategy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AllocationStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -50,6 +50,18 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn batch_get_case_rule_output_output_correct_errors(
+    mut builder: crate::operation::batch_get_case_rule::builders::BatchGetCaseRuleOutputBuilder,
+) -> crate::operation::batch_get_case_rule::builders::BatchGetCaseRuleOutputBuilder {
+    if builder.case_rules.is_none() {
+        builder.case_rules = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_get_field_output_output_correct_errors(
     mut builder: crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder,
 ) -> crate::operation::batch_get_field::builders::BatchGetFieldOutputBuilder {
@@ -88,6 +100,18 @@ pub(crate) fn create_case_output_output_correct_errors(
     }
     if builder.case_arn.is_none() {
         builder.case_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_case_rule_output_output_correct_errors(
+    mut builder: crate::operation::create_case_rule::builders::CreateCaseRuleOutputBuilder,
+) -> crate::operation::create_case_rule::builders::CreateCaseRuleOutputBuilder {
+    if builder.case_rule_id.is_none() {
+        builder.case_rule_id = Some(Default::default())
+    }
+    if builder.case_rule_arn.is_none() {
+        builder.case_rule_arn = Some(Default::default())
     }
     builder
 }
@@ -245,6 +269,15 @@ pub(crate) fn get_template_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_case_rules_output_output_correct_errors(
+    mut builder: crate::operation::list_case_rules::builders::ListCaseRulesOutputBuilder,
+) -> crate::operation::list_case_rules::builders::ListCaseRulesOutputBuilder {
+    if builder.case_rules.is_none() {
+        builder.case_rules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_cases_for_contact_output_output_correct_errors(
     mut builder: crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder,
 ) -> crate::operation::list_cases_for_contact::builders::ListCasesForContactOutputBuilder {
@@ -342,6 +375,36 @@ pub(crate) fn audit_event_correct_errors(mut builder: crate::types::builders::Au
     builder
 }
 
+pub(crate) fn case_rule_error_correct_errors(
+    mut builder: crate::types::builders::CaseRuleErrorBuilder,
+) -> crate::types::builders::CaseRuleErrorBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn case_rule_summary_correct_errors(
+    mut builder: crate::types::builders::CaseRuleSummaryBuilder,
+) -> crate::types::builders::CaseRuleSummaryBuilder {
+    if builder.case_rule_id.is_none() {
+        builder.case_rule_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.case_rule_arn.is_none() {
+        builder.case_rule_arn = Some(Default::default())
+    }
+    if builder.rule_type.is_none() {
+        builder.rule_type = "no value was set".parse::<crate::types::RuleType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn case_summary_correct_errors(mut builder: crate::types::builders::CaseSummaryBuilder) -> crate::types::builders::CaseSummaryBuilder {
     if builder.case_id.is_none() {
         builder.case_id = Some(Default::default())
@@ -434,6 +497,24 @@ pub(crate) fn field_value_correct_errors(mut builder: crate::types::builders::Fi
     builder
 }
 
+pub(crate) fn get_case_rule_response_correct_errors(
+    mut builder: crate::types::builders::GetCaseRuleResponseBuilder,
+) -> crate::types::builders::GetCaseRuleResponseBuilder {
+    if builder.case_rule_id.is_none() {
+        builder.case_rule_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.case_rule_arn.is_none() {
+        builder.case_rule_arn = Some(Default::default())
+    }
+    if builder.rule.is_none() {
+        builder.rule = Some(crate::types::CaseRuleDetails::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn get_field_response_correct_errors(
     mut builder: crate::types::builders::GetFieldResponseBuilder,
 ) -> crate::types::builders::GetFieldResponseBuilder {
@@ -508,6 +589,16 @@ pub(crate) fn search_related_items_response_item_correct_errors(
     }
     if builder.content.is_none() {
         builder.content = Some(crate::types::RelatedItemContent::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn template_rule_correct_errors(mut builder: crate::types::builders::TemplateRuleBuilder) -> crate::types::builders::TemplateRuleBuilder {
+    if builder.case_rule_id.is_none() {
+        builder.case_rule_id = Some(Default::default())
+    }
+    if builder.field_id.is_none() {
+        builder.field_id = Some(Default::default())
     }
     builder
 }
@@ -603,6 +694,18 @@ pub(crate) fn file_content_correct_errors(mut builder: crate::types::builders::F
     builder
 }
 
+pub(crate) fn required_case_rule_correct_errors(
+    mut builder: crate::types::builders::RequiredCaseRuleBuilder,
+) -> crate::types::builders::RequiredCaseRuleBuilder {
+    if builder.default_value.is_none() {
+        builder.default_value = Some(Default::default())
+    }
+    if builder.conditions.is_none() {
+        builder.conditions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn field_identifier_correct_errors(
     mut builder: crate::types::builders::FieldIdentifierBuilder,
 ) -> crate::types::builders::FieldIdentifierBuilder {
@@ -615,6 +718,21 @@ pub(crate) fn field_identifier_correct_errors(
 pub(crate) fn field_group_correct_errors(mut builder: crate::types::builders::FieldGroupBuilder) -> crate::types::builders::FieldGroupBuilder {
     if builder.fields.is_none() {
         builder.fields = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn boolean_operands_correct_errors(
+    mut builder: crate::types::builders::BooleanOperandsBuilder,
+) -> crate::types::builders::BooleanOperandsBuilder {
+    if builder.operand_one.is_none() {
+        builder.operand_one = Some(crate::types::OperandOne::Unknown)
+    }
+    if builder.operand_two.is_none() {
+        builder.operand_two = Some(crate::types::OperandTwo::Unknown)
+    }
+    if builder.result.is_none() {
+        builder.result = Some(Default::default())
     }
     builder
 }

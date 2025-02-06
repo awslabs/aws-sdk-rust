@@ -142,6 +142,12 @@ impl Client {
 pub trait Waiters {
     /// Wait until change set status is CREATE_COMPLETE.
     fn wait_until_change_set_create_complete(&self) -> crate::waiters::change_set_create_complete::ChangeSetCreateCompleteFluentBuilder;
+    /// Wait until the stack refactor status is CREATE_COMPLETE.
+    fn wait_until_stack_refactor_create_complete(&self) -> crate::waiters::stack_refactor_create_complete::StackRefactorCreateCompleteFluentBuilder;
+    /// Wait until the stack refactor status is EXECUTE_COMPLETE.
+    fn wait_until_stack_refactor_execute_complete(
+        &self,
+    ) -> crate::waiters::stack_refactor_execute_complete::StackRefactorExecuteCompleteFluentBuilder;
     /// Wait until stack status is CREATE_COMPLETE.
     fn wait_until_stack_create_complete(&self) -> crate::waiters::stack_create_complete::StackCreateCompleteFluentBuilder;
     /// Wait until stack status is DELETE_COMPLETE.
@@ -160,6 +166,14 @@ pub trait Waiters {
 impl Waiters for Client {
     fn wait_until_change_set_create_complete(&self) -> crate::waiters::change_set_create_complete::ChangeSetCreateCompleteFluentBuilder {
         crate::waiters::change_set_create_complete::ChangeSetCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_refactor_create_complete(&self) -> crate::waiters::stack_refactor_create_complete::StackRefactorCreateCompleteFluentBuilder {
+        crate::waiters::stack_refactor_create_complete::StackRefactorCreateCompleteFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_stack_refactor_execute_complete(
+        &self,
+    ) -> crate::waiters::stack_refactor_execute_complete::StackRefactorExecuteCompleteFluentBuilder {
+        crate::waiters::stack_refactor_execute_complete::StackRefactorExecuteCompleteFluentBuilder::new(self.handle.clone())
     }
     fn wait_until_stack_create_complete(&self) -> crate::waiters::stack_create_complete::StackCreateCompleteFluentBuilder {
         crate::waiters::stack_create_complete::StackCreateCompleteFluentBuilder::new(self.handle.clone())
@@ -217,6 +231,8 @@ mod create_generated_template;
 mod create_stack;
 
 mod create_stack_instances;
+
+mod create_stack_refactor;
 
 mod create_stack_set;
 
@@ -283,6 +299,8 @@ mod describe_stack_events;
 
 mod describe_stack_instance;
 
+mod describe_stack_refactor;
+
 mod describe_stack_resource;
 
 mod describe_stack_resource_drifts;
@@ -308,6 +326,8 @@ mod detect_stack_set_drift;
 mod estimate_template_cost;
 
 mod execute_change_set;
+
+mod execute_stack_refactor;
 
 mod get_generated_template;
 
@@ -338,6 +358,10 @@ mod list_resource_scans;
 mod list_stack_instance_resource_drifts;
 
 mod list_stack_instances;
+
+mod list_stack_refactor_actions;
+
+mod list_stack_refactors;
 
 mod list_stack_resources;
 

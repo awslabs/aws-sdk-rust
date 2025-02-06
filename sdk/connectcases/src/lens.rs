@@ -19,6 +19,16 @@ pub(crate) fn reflens_get_case_audit_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_case_rules_output_output_next_token(
+    input: &crate::operation::list_case_rules::ListCaseRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_cases_for_contact_output_output_next_token(
     input: &crate::operation::list_cases_for_contact::ListCasesForContactOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -96,6 +106,13 @@ pub(crate) fn reflens_search_related_items_output_output_next_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_case_rules_output_output_case_rules(
+    input: crate::operation::list_case_rules::ListCaseRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CaseRuleSummary>> {
+    let input = input.case_rules;
     ::std::option::Option::Some(input)
 }
 

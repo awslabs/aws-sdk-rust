@@ -17,6 +17,7 @@
 ///     ActionType::PurchaseReservedInstances => { /* ... */ },
 ///     ActionType::PurchaseSavingsPlans => { /* ... */ },
 ///     ActionType::Rightsize => { /* ... */ },
+///     ActionType::ScaleIn => { /* ... */ },
 ///     ActionType::Stop => { /* ... */ },
 ///     ActionType::Upgrade => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -58,6 +59,8 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     Rightsize,
     #[allow(missing_docs)] // documentation missing in model
+    ScaleIn,
+    #[allow(missing_docs)] // documentation missing in model
     Stop,
     #[allow(missing_docs)] // documentation missing in model
     Upgrade,
@@ -73,6 +76,7 @@ impl ::std::convert::From<&str> for ActionType {
             "PurchaseReservedInstances" => ActionType::PurchaseReservedInstances,
             "PurchaseSavingsPlans" => ActionType::PurchaseSavingsPlans,
             "Rightsize" => ActionType::Rightsize,
+            "ScaleIn" => ActionType::ScaleIn,
             "Stop" => ActionType::Stop,
             "Upgrade" => ActionType::Upgrade,
             other => ActionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -95,6 +99,7 @@ impl ActionType {
             ActionType::PurchaseReservedInstances => "PurchaseReservedInstances",
             ActionType::PurchaseSavingsPlans => "PurchaseSavingsPlans",
             ActionType::Rightsize => "Rightsize",
+            ActionType::ScaleIn => "ScaleIn",
             ActionType::Stop => "Stop",
             ActionType::Upgrade => "Upgrade",
             ActionType::Unknown(value) => value.as_str(),
@@ -108,6 +113,7 @@ impl ActionType {
             "PurchaseReservedInstances",
             "PurchaseSavingsPlans",
             "Rightsize",
+            "ScaleIn",
             "Stop",
             "Upgrade",
         ]
@@ -138,6 +144,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::PurchaseReservedInstances => write!(f, "PurchaseReservedInstances"),
             ActionType::PurchaseSavingsPlans => write!(f, "PurchaseSavingsPlans"),
             ActionType::Rightsize => write!(f, "Rightsize"),
+            ActionType::ScaleIn => write!(f, "ScaleIn"),
             ActionType::Stop => write!(f, "Stop"),
             ActionType::Upgrade => write!(f, "Upgrade"),
             ActionType::Unknown(value) => write!(f, "{}", value),

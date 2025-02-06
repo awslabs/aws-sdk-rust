@@ -22,7 +22,7 @@ impl crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInpu
 }
 /// Fluent builder constructing a request to `DetectStackSetDrift`.
 ///
-/// <p>Detect drift on a stack set. When CloudFormation performs drift detection on a stack set, it performs drift detection on the stack associated with each stack instance in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How CloudFormation performs drift detection on a stack set</a>.</p>
+/// <p>Detect drift on a stack set. When CloudFormation performs drift detection on a stack set, it performs drift detection on the stack associated with each stack instance in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Performing drift detection on CloudFormation StackSets</a>.</p>
 /// <p><code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack set drift detection operation. Use this operation id with <code>DescribeStackSetOperation</code> to monitor the progress of the drift detection operation. The drift detection operation may take some time, depending on the number of stack instances included in the stack set, in addition to the number of resources included in each stack.</p>
 /// <p>Once the operation has completed, use the following actions to return drift information:</p>
 /// <ul>
@@ -33,7 +33,6 @@ impl crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInpu
 /// <li>
 /// <p>Use <code>DescribeStackInstance</code> to return detailed information about a specific stack instance, including its drift status and last drift time checked.</p></li>
 /// </ul>
-/// <p>For more information about performing a drift detection operation on a stack set, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting unmanaged changes in stack sets</a>.</p>
 /// <p>You can only run a single drift detection operation on a given stack set at one time.</p>
 /// <p>To stop a drift detection stack set operation, use <code>StopStackSetOperation</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

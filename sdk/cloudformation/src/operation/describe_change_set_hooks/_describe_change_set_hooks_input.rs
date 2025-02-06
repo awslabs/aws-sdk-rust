@@ -9,7 +9,7 @@ pub struct DescribeChangeSetHooksInput {
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string, provided by the <code>DescribeChangeSetHooks</code> response output, that identifies the next page of information that you want to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChangeSetHooksInput {
@@ -25,7 +25,7 @@ impl DescribeChangeSetHooksInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
@@ -90,17 +90,17 @@ impl DescribeChangeSetHooksInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logical_resource_id
     }

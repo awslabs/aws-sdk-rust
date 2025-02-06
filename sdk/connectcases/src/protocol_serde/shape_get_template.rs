@@ -160,6 +160,9 @@ pub(crate) fn de_get_template(
                 "requiredFields" => {
                     builder = builder.set_required_fields(crate::protocol_serde::shape_required_field_list::de_required_field_list(tokens)?);
                 }
+                "rules" => {
+                    builder = builder.set_rules(crate::protocol_serde::shape_template_case_rule_list::de_template_case_rule_list(tokens)?);
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

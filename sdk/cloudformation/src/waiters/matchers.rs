@@ -925,6 +925,151 @@ pub(crate) fn match_describe_stacks_8535e4f7e4074b6d9(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"Status","expected":"CREATE_COMPLETE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_stack_refactor_ee24601e746b68869(
+    _result: ::std::result::Result<
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+    ) -> ::std::option::Option<&'a crate::types::StackRefactorStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_COMPLETE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"Status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_stack_refactor_22c66a56e806df25e(
+    _result: ::std::result::Result<
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+    ) -> ::std::option::Option<&'a crate::types::StackRefactorStatus> {
+        let _fld_1 = _output.status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"errorType":"ValidationError"}
+pub(crate) fn match_describe_stack_refactor_67b5dc55bf035ef25(
+    _result: ::std::result::Result<
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ValidationError";
+        }
+    }
+    false
+}
+
+/// Matcher union: {"output":{"path":"ExecutionStatus","expected":"EXECUTE_COMPLETE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_stack_refactor_12d209be852f7fc47(
+    _result: ::std::result::Result<
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+    ) -> ::std::option::Option<&'a crate::types::StackRefactorExecutionStatus> {
+        let _fld_1 = _output.execution_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "EXECUTE_COMPLETE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"ExecutionStatus","expected":"EXECUTE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_stack_refactor_f6d56ec760d363909(
+    _result: ::std::result::Result<
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+    ) -> ::std::option::Option<&'a crate::types::StackRefactorExecutionStatus> {
+        let _fld_1 = _output.execution_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "EXECUTE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"ExecutionStatus","expected":"ROLLBACK_COMPLETE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_stack_refactor_bf533a5c7b09da8b4(
+    _result: ::std::result::Result<
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+        &crate::operation::describe_stack_refactor::DescribeStackRefactorError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_stack_refactor::DescribeStackRefactorOutput,
+    ) -> ::std::option::Option<&'a crate::types::StackRefactorExecutionStatus> {
+        let _fld_1 = _output.execution_status.as_ref()?;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ROLLBACK_COMPLETE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"Stacks[].StackStatus","expected":"UPDATE_FAILED","comparator":"anyStringEquals"}}
 pub(crate) fn match_describe_stacks_59ddbd273fc923fdf(
     _result: ::std::result::Result<&crate::operation::describe_stacks::DescribeStacksOutput, &crate::operation::describe_stacks::DescribeStacksError>,

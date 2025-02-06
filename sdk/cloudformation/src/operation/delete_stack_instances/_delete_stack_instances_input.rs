@@ -5,7 +5,7 @@
 pub struct DeleteStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to delete stack instances for.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>\[Self-managed permissions\] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>\[Service-managed permissions\] The Organizations accounts from which to delete stack instances.</p>
@@ -39,7 +39,7 @@ impl DeleteStackInstancesInput {
     pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>\[Self-managed permissions\] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
@@ -126,7 +126,7 @@ impl DeleteStackInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>\[Self-managed permissions\] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
@@ -134,13 +134,13 @@ impl DeleteStackInstancesInputBuilder {
         self.accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>\[Self-managed permissions\] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
-    /// <p>\[Self-managed permissions\] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of the Amazon Web Services accounts that you want to delete stack instances for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts

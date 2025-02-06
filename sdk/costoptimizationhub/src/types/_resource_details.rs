@@ -32,7 +32,7 @@ pub enum ResourceDetails {
     RdsReservedInstances(crate::types::RdsReservedInstances),
     /// <p>The Redshift reserved instances recommendation details.</p>
     RedshiftReservedInstances(crate::types::RedshiftReservedInstances),
-    /// <p>The SageMaker Savings Plans recommendation details.</p>
+    /// <p>The SageMaker AI Savings Plans recommendation details.</p>
     SageMakerSavingsPlans(crate::types::SageMakerSavingsPlans),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

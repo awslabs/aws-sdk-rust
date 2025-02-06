@@ -34,7 +34,7 @@ pub struct StackEvent {
     pub hook_status: ::std::option::Option<crate::types::HookStatus>,
     /// <p>Provides the reason for the hook status.</p>
     pub hook_status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
+    /// <p>Invocation points are points in provisioning logic where Hooks are initiated.</p>
     pub hook_invocation_point: ::std::option::Option<crate::types::HookInvocationPoint>,
     /// <p>Specify the hook failure mode for non-compliant resources in the followings ways.</p>
     /// <ul>
@@ -114,7 +114,7 @@ impl StackEvent {
     pub fn hook_status_reason(&self) -> ::std::option::Option<&str> {
         self.hook_status_reason.as_deref()
     }
-    /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
+    /// <p>Invocation points are points in provisioning logic where Hooks are initiated.</p>
     pub fn hook_invocation_point(&self) -> ::std::option::Option<&crate::types::HookInvocationPoint> {
         self.hook_invocation_point.as_ref()
     }
@@ -377,17 +377,17 @@ impl StackEventBuilder {
     pub fn get_hook_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.hook_status_reason
     }
-    /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
+    /// <p>Invocation points are points in provisioning logic where Hooks are initiated.</p>
     pub fn hook_invocation_point(mut self, input: crate::types::HookInvocationPoint) -> Self {
         self.hook_invocation_point = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
+    /// <p>Invocation points are points in provisioning logic where Hooks are initiated.</p>
     pub fn set_hook_invocation_point(mut self, input: ::std::option::Option<crate::types::HookInvocationPoint>) -> Self {
         self.hook_invocation_point = input;
         self
     }
-    /// <p>Invocation points are points in provisioning logic where hooks are initiated.</p>
+    /// <p>Invocation points are points in provisioning logic where Hooks are initiated.</p>
     pub fn get_hook_invocation_point(&self) -> &::std::option::Option<crate::types::HookInvocationPoint> {
         &self.hook_invocation_point
     }

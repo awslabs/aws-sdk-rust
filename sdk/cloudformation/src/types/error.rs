@@ -45,6 +45,8 @@ pub use crate::types::error::_change_set_not_found_exception::ChangeSetNotFoundE
 
 pub use crate::types::error::_invalid_change_set_status_exception::InvalidChangeSetStatusException;
 
+pub use crate::types::error::_stack_refactor_not_found_exception::StackRefactorNotFoundException;
+
 pub use crate::types::error::_stack_set_not_empty_exception::StackSetNotEmptyException;
 
 pub use crate::types::error::_concurrent_resources_limit_exceeded_exception::ConcurrentResourcesLimitExceededException;
@@ -98,6 +100,8 @@ mod _resource_scan_not_found_exception;
 mod _stack_instance_not_found_exception;
 
 mod _stack_not_found_exception;
+
+mod _stack_refactor_not_found_exception;
 
 mod _stack_set_not_empty_exception;
 

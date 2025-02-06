@@ -169,6 +169,8 @@ pub(crate) mod shape_db_instance_configuration;
 
 pub(crate) mod shape_instance_configuration;
 
+pub(crate) mod shape_mixed_instance_configuration_list;
+
 pub(crate) mod shape_reserved_instances_pricing;
 
 pub(crate) mod shape_resource_pricing;
@@ -180,5 +182,7 @@ pub(crate) mod shape_storage_configuration;
 pub(crate) mod shape_usage_list;
 
 pub(crate) mod shape_estimated_discounts;
+
+pub(crate) mod shape_mixed_instance_configuration;
 
 pub(crate) mod shape_usage;

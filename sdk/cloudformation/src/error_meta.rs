@@ -56,6 +56,8 @@ pub enum Error {
     StackInstanceNotFoundException(crate::types::error::StackInstanceNotFoundException),
     /// <p>The specified stack ARN doesn't exist or stack doesn't exist corresponding to the ARN in input.</p>
     StackNotFoundException(crate::types::error::StackNotFoundException),
+    /// <p>The specified stack refactor can't be found.</p>
+    StackRefactorNotFoundException(crate::types::error::StackRefactorNotFoundException),
     /// <p>You can't yet delete this stack set, because it still contains one or more stack instances. Delete all stack instances from the stack set before deleting the stack set.</p>
     StackSetNotEmptyException(crate::types::error::StackSetNotEmptyException),
     /// <p>The specified stack set doesn't exist.</p>
@@ -102,6 +104,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourceScanNotFoundException(inner) => inner.fmt(f),
             Error::StackInstanceNotFoundException(inner) => inner.fmt(f),
             Error::StackNotFoundException(inner) => inner.fmt(f),
+            Error::StackRefactorNotFoundException(inner) => inner.fmt(f),
             Error::StackSetNotEmptyException(inner) => inner.fmt(f),
             Error::StackSetNotFoundException(inner) => inner.fmt(f),
             Error::StaleRequestException(inner) => inner.fmt(f),
@@ -151,6 +154,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceScanNotFoundException(inner) => inner.meta(),
             Self::StackInstanceNotFoundException(inner) => inner.meta(),
             Self::StackNotFoundException(inner) => inner.meta(),
+            Self::StackRefactorNotFoundException(inner) => inner.meta(),
             Self::StackSetNotEmptyException(inner) => inner.meta(),
             Self::StackSetNotFoundException(inner) => inner.meta(),
             Self::StaleRequestException(inner) => inner.meta(),
@@ -422,6 +426,27 @@ impl From<crate::operation::create_stack_instances::CreateStackInstancesError> f
             }
             crate::operation::create_stack_instances::CreateStackInstancesError::StaleRequestException(inner) => Error::StaleRequestException(inner),
             crate::operation::create_stack_instances::CreateStackInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stack_refactor::CreateStackRefactorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stack_refactor::CreateStackRefactorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_stack_refactor::CreateStackRefactorError> for Error {
+    fn from(err: crate::operation::create_stack_refactor::CreateStackRefactorError) -> Self {
+        match err {
+            crate::operation::create_stack_refactor::CreateStackRefactorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -925,6 +950,32 @@ impl From<crate::operation::describe_stack_instance::DescribeStackInstanceError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_stack_refactor::DescribeStackRefactorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_stack_refactor::DescribeStackRefactorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_stack_refactor::DescribeStackRefactorError> for Error {
+    fn from(err: crate::operation::describe_stack_refactor::DescribeStackRefactorError) -> Self {
+        match err {
+            crate::operation::describe_stack_refactor::DescribeStackRefactorError::StackRefactorNotFoundException(inner) => {
+                Error::StackRefactorNotFoundException(inner)
+            }
+            crate::operation::describe_stack_refactor::DescribeStackRefactorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_stack_resource::DescribeStackResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1248,6 +1299,27 @@ impl From<crate::operation::execute_change_set::ExecuteChangeSetError> for Error
                 Error::TokenAlreadyExistsException(inner)
             }
             crate::operation::execute_change_set::ExecuteChangeSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_stack_refactor::ExecuteStackRefactorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::execute_stack_refactor::ExecuteStackRefactorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::execute_stack_refactor::ExecuteStackRefactorError> for Error {
+    fn from(err: crate::operation::execute_stack_refactor::ExecuteStackRefactorError) -> Self {
+        match err {
+            crate::operation::execute_stack_refactor::ExecuteStackRefactorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1650,6 +1722,51 @@ impl From<crate::operation::list_stack_instances::ListStackInstancesError> for E
                 Error::StackSetNotFoundException(inner)
             }
             crate::operation::list_stack_instances::ListStackInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_stack_refactor_actions::ListStackRefactorActionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_stack_refactor_actions::ListStackRefactorActionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_stack_refactor_actions::ListStackRefactorActionsError> for Error {
+    fn from(err: crate::operation::list_stack_refactor_actions::ListStackRefactorActionsError) -> Self {
+        match err {
+            crate::operation::list_stack_refactor_actions::ListStackRefactorActionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_stack_refactors::ListStackRefactorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_stack_refactors::ListStackRefactorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_stack_refactors::ListStackRefactorsError> for Error {
+    fn from(err: crate::operation::list_stack_refactors::ListStackRefactorsError) -> Self {
+        match err {
+            crate::operation::list_stack_refactors::ListStackRefactorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2384,6 +2501,7 @@ impl ::std::error::Error for Error {
             Error::ResourceScanNotFoundException(inner) => inner.source(),
             Error::StackInstanceNotFoundException(inner) => inner.source(),
             Error::StackNotFoundException(inner) => inner.source(),
+            Error::StackRefactorNotFoundException(inner) => inner.source(),
             Error::StackSetNotEmptyException(inner) => inner.source(),
             Error::StackSetNotFoundException(inner) => inner.source(),
             Error::StaleRequestException(inner) => inner.source(),
@@ -2419,6 +2537,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceScanNotFoundException(e) => e.request_id(),
             Self::StackInstanceNotFoundException(e) => e.request_id(),
             Self::StackNotFoundException(e) => e.request_id(),
+            Self::StackRefactorNotFoundException(e) => e.request_id(),
             Self::StackSetNotEmptyException(e) => e.request_id(),
             Self::StackSetNotFoundException(e) => e.request_id(),
             Self::StaleRequestException(e) => e.request_id(),

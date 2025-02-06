@@ -142,7 +142,7 @@ impl RegisterTypeFluentBuilder {
     /// <li>
     /// <p>For modules, <code>company_or_organization::service::type::MODULE</code>.</p></li>
     /// <li>
-    /// <p>For hooks, <code>MyCompany::Testing::MyTestHook</code>.</p></li>
+    /// <p>For Hooks, <code>MyCompany::Testing::MyTestHook</code>.</p></li>
     /// </ul><note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
@@ -172,7 +172,7 @@ impl RegisterTypeFluentBuilder {
     /// <li>
     /// <p>For modules, <code>company_or_organization::service::type::MODULE</code>.</p></li>
     /// <li>
-    /// <p>For hooks, <code>MyCompany::Testing::MyTestHook</code>.</p></li>
+    /// <p>For Hooks, <code>MyCompany::Testing::MyTestHook</code>.</p></li>
     /// </ul><note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>
@@ -202,7 +202,7 @@ impl RegisterTypeFluentBuilder {
     /// <li>
     /// <p>For modules, <code>company_or_organization::service::type::MODULE</code>.</p></li>
     /// <li>
-    /// <p>For hooks, <code>MyCompany::Testing::MyTestHook</code>.</p></li>
+    /// <p>For Hooks, <code>MyCompany::Testing::MyTestHook</code>.</p></li>
     /// </ul><note>
     /// <p>The following organization namespaces are reserved and can't be used in your extension names:</p>
     /// <ul>

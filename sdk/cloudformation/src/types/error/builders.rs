@@ -45,6 +45,8 @@ pub use crate::types::error::_change_set_not_found_exception::ChangeSetNotFoundE
 
 pub use crate::types::error::_invalid_change_set_status_exception::InvalidChangeSetStatusExceptionBuilder;
 
+pub use crate::types::error::_stack_refactor_not_found_exception::StackRefactorNotFoundExceptionBuilder;
+
 pub use crate::types::error::_stack_set_not_empty_exception::StackSetNotEmptyExceptionBuilder;
 
 pub use crate::types::error::_concurrent_resources_limit_exceeded_exception::ConcurrentResourcesLimitExceededExceptionBuilder;

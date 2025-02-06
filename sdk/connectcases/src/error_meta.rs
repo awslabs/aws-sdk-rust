@@ -68,6 +68,32 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_case_rule::BatchGetCaseRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_case_rule::BatchGetCaseRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_case_rule::BatchGetCaseRuleError> for Error {
+    fn from(err: crate::operation::batch_get_case_rule::BatchGetCaseRuleError) -> Self {
+        match err {
+            crate::operation::batch_get_case_rule::BatchGetCaseRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_get_case_rule::BatchGetCaseRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::batch_get_case_rule::BatchGetCaseRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::batch_get_case_rule::BatchGetCaseRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::batch_get_case_rule::BatchGetCaseRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_get_case_rule::BatchGetCaseRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_field::BatchGetFieldError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -153,6 +179,36 @@ impl From<crate::operation::create_case::CreateCaseError> for Error {
             crate::operation::create_case::CreateCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_case::CreateCaseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_case::CreateCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_case_rule::CreateCaseRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_case_rule::CreateCaseRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_case_rule::CreateCaseRuleError> for Error {
+    fn from(err: crate::operation::create_case_rule::CreateCaseRuleError) -> Self {
+        match err {
+            crate::operation::create_case_rule::CreateCaseRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_case_rule::CreateCaseRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_case_rule::CreateCaseRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_case_rule::CreateCaseRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_case_rule::CreateCaseRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_case_rule::CreateCaseRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_case_rule::CreateCaseRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_case_rule::CreateCaseRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -297,6 +353,32 @@ impl From<crate::operation::create_template::CreateTemplateError> for Error {
             crate::operation::create_template::CreateTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_template::CreateTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_template::CreateTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_case_rule::DeleteCaseRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_case_rule::DeleteCaseRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_case_rule::DeleteCaseRuleError> for Error {
+    fn from(err: crate::operation::delete_case_rule::DeleteCaseRuleError) -> Self {
+        match err {
+            crate::operation::delete_case_rule::DeleteCaseRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_case_rule::DeleteCaseRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_case_rule::DeleteCaseRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_case_rule::DeleteCaseRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_case_rule::DeleteCaseRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_case_rule::DeleteCaseRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -577,6 +659,32 @@ impl From<crate::operation::get_template::GetTemplateError> for Error {
             crate::operation::get_template::GetTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_template::GetTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_template::GetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_case_rules::ListCaseRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_case_rules::ListCaseRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_case_rules::ListCaseRulesError> for Error {
+    fn from(err: crate::operation::list_case_rules::ListCaseRulesError) -> Self {
+        match err {
+            crate::operation::list_case_rules::ListCaseRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_case_rules::ListCaseRulesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_case_rules::ListCaseRulesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_case_rules::ListCaseRulesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_case_rules::ListCaseRulesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_case_rules::ListCaseRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -937,6 +1045,33 @@ impl From<crate::operation::update_case::UpdateCaseError> for Error {
             crate::operation::update_case::UpdateCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_case::UpdateCaseError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_case::UpdateCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_case_rule::UpdateCaseRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_case_rule::UpdateCaseRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_case_rule::UpdateCaseRuleError> for Error {
+    fn from(err: crate::operation::update_case_rule::UpdateCaseRuleError) -> Self {
+        match err {
+            crate::operation::update_case_rule::UpdateCaseRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_case_rule::UpdateCaseRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

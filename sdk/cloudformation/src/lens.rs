@@ -119,6 +119,26 @@ pub(crate) fn reflens_list_stack_instances_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_stack_refactor_actions_output_output_next_token(
+    input: &crate::operation::list_stack_refactor_actions::ListStackRefactorActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_stack_refactors_output_output_next_token(
+    input: &crate::operation::list_stack_refactors::ListStackRefactorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_stack_resources_output_output_next_token(
     input: &crate::operation::list_stack_resources::ListStackResourcesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -303,6 +323,26 @@ pub(crate) fn lens_list_stack_instances_output_output_summaries(
     input: crate::operation::list_stack_instances::ListStackInstancesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StackInstanceSummary>> {
     let input = match input.summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_stack_refactor_actions_output_output_stack_refactor_actions(
+    input: crate::operation::list_stack_refactor_actions::ListStackRefactorActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::StackRefactorAction>> {
+    let input = match input.stack_refactor_actions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_stack_refactors_output_output_stack_refactor_summaries(
+    input: crate::operation::list_stack_refactors::ListStackRefactorsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::StackRefactorSummary>> {
+    let input = match input.stack_refactor_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

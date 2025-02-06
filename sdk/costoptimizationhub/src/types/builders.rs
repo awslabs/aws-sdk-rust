@@ -77,6 +77,8 @@ pub use crate::types::_ec2_auto_scaling_group::Ec2AutoScalingGroupBuilder;
 
 pub use crate::types::_ec2_auto_scaling_group_configuration::Ec2AutoScalingGroupConfigurationBuilder;
 
+pub use crate::types::_mixed_instance_configuration::MixedInstanceConfigurationBuilder;
+
 pub use crate::types::_instance_configuration::InstanceConfigurationBuilder;
 
 pub use crate::types::_ebs_volume::EbsVolumeBuilder;

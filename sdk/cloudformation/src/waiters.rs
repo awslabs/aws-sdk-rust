@@ -15,6 +15,12 @@ pub mod stack_exists;
 /// Supporting types for the `stack_import_complete` waiter.
 pub mod stack_import_complete;
 
+/// Supporting types for the `stack_refactor_create_complete` waiter.
+pub mod stack_refactor_create_complete;
+
+/// Supporting types for the `stack_refactor_execute_complete` waiter.
+pub mod stack_refactor_execute_complete;
+
 /// Supporting types for the `stack_rollback_complete` waiter.
 pub mod stack_rollback_complete;
 

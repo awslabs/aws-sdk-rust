@@ -111,6 +111,24 @@ pub use crate::types::_stack_resource_drift_status::StackResourceDriftStatus;
 
 pub use crate::types::_resource_status::ResourceStatus;
 
+pub use crate::types::_stack_refactor_summary::StackRefactorSummary;
+
+pub use crate::types::_stack_refactor_status::StackRefactorStatus;
+
+pub use crate::types::_stack_refactor_execution_status::StackRefactorExecutionStatus;
+
+pub use crate::types::_stack_refactor_action::StackRefactorAction;
+
+pub use crate::types::_resource_mapping::ResourceMapping;
+
+pub use crate::types::_resource_location::ResourceLocation;
+
+pub use crate::types::_stack_refactor_detection::StackRefactorDetection;
+
+pub use crate::types::_stack_refactor_action_entity::StackRefactorActionEntity;
+
+pub use crate::types::_stack_refactor_action_type::StackRefactorActionType;
+
 pub use crate::types::_stack_instance_summary::StackInstanceSummary;
 
 pub use crate::types::_stack_instance_comprehensive_status::StackInstanceComprehensiveStatus;
@@ -268,6 +286,8 @@ pub use crate::types::_policy_action::PolicyAction;
 pub use crate::types::_change_type::ChangeType;
 
 pub use crate::types::_account_limit::AccountLimit;
+
+pub use crate::types::_stack_definition::StackDefinition;
 
 pub use crate::types::_on_failure::OnFailure;
 
@@ -429,6 +449,10 @@ mod _resource_detail;
 
 mod _resource_identifier_summary;
 
+mod _resource_location;
+
+mod _resource_mapping;
+
 mod _resource_scan_status;
 
 mod _resource_scan_summary;
@@ -450,6 +474,8 @@ mod _scanned_resource;
 mod _scanned_resource_identifier;
 
 mod _stack;
+
+mod _stack_definition;
 
 mod _stack_drift_detection_status;
 
@@ -476,6 +502,20 @@ mod _stack_instance_resource_drifts_summary;
 mod _stack_instance_status;
 
 mod _stack_instance_summary;
+
+mod _stack_refactor_action;
+
+mod _stack_refactor_action_entity;
+
+mod _stack_refactor_action_type;
+
+mod _stack_refactor_detection;
+
+mod _stack_refactor_execution_status;
+
+mod _stack_refactor_status;
+
+mod _stack_refactor_summary;
 
 mod _stack_resource;
 

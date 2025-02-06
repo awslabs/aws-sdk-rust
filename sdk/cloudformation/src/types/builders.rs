@@ -53,6 +53,14 @@ pub use crate::types::_module_info::ModuleInfoBuilder;
 
 pub use crate::types::_stack_resource_drift_information_summary::StackResourceDriftInformationSummaryBuilder;
 
+pub use crate::types::_stack_refactor_summary::StackRefactorSummaryBuilder;
+
+pub use crate::types::_stack_refactor_action::StackRefactorActionBuilder;
+
+pub use crate::types::_resource_mapping::ResourceMappingBuilder;
+
+pub use crate::types::_resource_location::ResourceLocationBuilder;
+
 pub use crate::types::_stack_instance_summary::StackInstanceSummaryBuilder;
 
 pub use crate::types::_stack_instance_comprehensive_status::StackInstanceComprehensiveStatusBuilder;
@@ -138,6 +146,8 @@ pub use crate::types::_resource_change_detail::ResourceChangeDetailBuilder;
 pub use crate::types::_resource_target_definition::ResourceTargetDefinitionBuilder;
 
 pub use crate::types::_account_limit::AccountLimitBuilder;
+
+pub use crate::types::_stack_definition::StackDefinitionBuilder;
 
 pub use crate::types::_resource_to_import::ResourceToImportBuilder;
 

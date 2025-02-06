@@ -10,7 +10,7 @@ pub struct Parameter {
     pub parameter_value: ::std::option::Option<::std::string::String>,
     /// <p>During a stack update, use the existing parameter value that the stack is using for a given parameter key. If you specify <code>true</code>, do not specify a parameter value.</p>
     pub use_previous_value: ::std::option::Option<bool>,
-    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Use CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Specify existing resources at runtime with CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
     pub resolved_value: ::std::option::Option<::std::string::String>,
 }
 impl Parameter {
@@ -26,7 +26,7 @@ impl Parameter {
     pub fn use_previous_value(&self) -> ::std::option::Option<bool> {
         self.use_previous_value
     }
-    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Use CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Specify existing resources at runtime with CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn resolved_value(&self) -> ::std::option::Option<&str> {
         self.resolved_value.as_deref()
     }
@@ -90,17 +90,17 @@ impl ParameterBuilder {
     pub fn get_use_previous_value(&self) -> &::std::option::Option<bool> {
         &self.use_previous_value
     }
-    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Use CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Specify existing resources at runtime with CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn resolved_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resolved_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Use CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Specify existing resources at runtime with CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_resolved_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolved_value = input;
         self
     }
-    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Use CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Read-only. The value that corresponds to a Systems Manager parameter key. This field is returned only for Systems Manager parameter types in the template. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-supplied-parameter-types.html">Specify existing resources at runtime with CloudFormation-supplied parameter types</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn get_resolved_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.resolved_value
     }

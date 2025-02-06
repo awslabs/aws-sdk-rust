@@ -20,7 +20,7 @@ pub struct DescribeChangeSetOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
     pub execution_status: ::std::option::Option<crate::types::ExecutionStatus>,
-    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the change set, such as <code>CREATE_PENDING</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub status: ::std::option::Option<crate::types::ChangeSetStatus>,
     /// <p>A description of the change set's status. For example, if your attempt to create a change set failed, CloudFormation shows the error message.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -93,7 +93,7 @@ impl DescribeChangeSetOutput {
     pub fn execution_status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
-    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the change set, such as <code>CREATE_PENDING</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeSetStatus> {
         self.status.as_ref()
     }
@@ -322,17 +322,17 @@ impl DescribeChangeSetOutputBuilder {
     pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.execution_status
     }
-    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the change set, such as <code>CREATE_PENDING</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::ChangeSetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the change set, such as <code>CREATE_PENDING</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ChangeSetStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+    /// <p>The current status of the change set, such as <code>CREATE_PENDING</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ChangeSetStatus> {
         &self.status
     }

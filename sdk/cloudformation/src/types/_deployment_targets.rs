@@ -5,11 +5,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentTargets {
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
+    /// <p>The account IDs of the Amazon Web Services accounts. If you have many account numbers, you can provide those accounts using the <code>AccountsUrl</code> property instead.</p>
     pub accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
+    /// <p>The Amazon S3 URL path to a file that contains a list of Amazon Web Services account IDs. The file format must be either <code>.csv</code> or <code>.txt</code>, and the data can be comma-separated or new-line-separated. There is currently a 10MB limit for the data (approximately 800,000 accounts).</p>
+    /// <p></p>
     pub accounts_url: ::std::option::Option<::std::string::String>,
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs.</p>
     pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Limit deployment targets to individual accounts or include additional accounts with provided OUs.</p>
     /// <p>The following is a list of possible values for the <code>AccountFilterType</code> operation.</p>
@@ -27,17 +28,18 @@ pub struct DeploymentTargets {
     pub account_filter_type: ::std::option::Option<crate::types::AccountFilterType>,
 }
 impl DeploymentTargets {
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
+    /// <p>The account IDs of the Amazon Web Services accounts. If you have many account numbers, you can provide those accounts using the <code>AccountsUrl</code> property instead.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.accounts.is_none()`.
     pub fn accounts(&self) -> &[::std::string::String] {
         self.accounts.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
+    /// <p>The Amazon S3 URL path to a file that contains a list of Amazon Web Services account IDs. The file format must be either <code>.csv</code> or <code>.txt</code>, and the data can be comma-separated or new-line-separated. There is currently a 10MB limit for the data (approximately 800,000 accounts).</p>
+    /// <p></p>
     pub fn accounts_url(&self) -> ::std::option::Option<&str> {
         self.accounts_url.as_deref()
     }
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
     pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
@@ -81,33 +83,36 @@ impl DeploymentTargetsBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
+    /// <p>The account IDs of the Amazon Web Services accounts. If you have many account numbers, you can provide those accounts using the <code>AccountsUrl</code> property instead.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
         v.push(input.into());
         self.accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
+    /// <p>The account IDs of the Amazon Web Services accounts. If you have many account numbers, you can provide those accounts using the <code>AccountsUrl</code> property instead.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.accounts = input;
         self
     }
-    /// <p>The names of one or more Amazon Web Services accounts for which you want to deploy stack set updates.</p>
+    /// <p>The account IDs of the Amazon Web Services accounts. If you have many account numbers, you can provide those accounts using the <code>AccountsUrl</code> property instead.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.accounts
     }
-    /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
+    /// <p>The Amazon S3 URL path to a file that contains a list of Amazon Web Services account IDs. The file format must be either <code>.csv</code> or <code>.txt</code>, and the data can be comma-separated or new-line-separated. There is currently a 10MB limit for the data (approximately 800,000 accounts).</p>
+    /// <p></p>
     pub fn accounts_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.accounts_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
+    /// <p>The Amazon S3 URL path to a file that contains a list of Amazon Web Services account IDs. The file format must be either <code>.csv</code> or <code>.txt</code>, and the data can be comma-separated or new-line-separated. There is currently a 10MB limit for the data (approximately 800,000 accounts).</p>
+    /// <p></p>
     pub fn set_accounts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accounts_url = input;
         self
     }
-    /// <p>Returns the value of the <code>AccountsUrl</code> property.</p>
+    /// <p>The Amazon S3 URL path to a file that contains a list of Amazon Web Services account IDs. The file format must be either <code>.csv</code> or <code>.txt</code>, and the data can be comma-separated or new-line-separated. There is currently a 10MB limit for the data (approximately 800,000 accounts).</p>
+    /// <p></p>
     pub fn get_accounts_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.accounts_url
     }
@@ -115,19 +120,19 @@ impl DeploymentTargetsBuilder {
     ///
     /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
     ///
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs.</p>
     pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.organizational_unit_ids.unwrap_or_default();
         v.push(input.into());
         self.organizational_unit_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs.</p>
     pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.organizational_unit_ids = input;
         self
     }
-    /// <p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>
+    /// <p>The organization root ID or organizational unit (OU) IDs.</p>
     pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.organizational_unit_ids
     }

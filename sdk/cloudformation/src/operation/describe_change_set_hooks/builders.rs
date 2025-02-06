@@ -150,17 +150,17 @@ impl DescribeChangeSetHooksFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
-    /// <p>If specified, lists only the hooks related to the specified <code>LogicalResourceId</code>.</p>
+    /// <p>If specified, lists only the Hooks related to the specified <code>LogicalResourceId</code>.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logical_resource_id()
     }

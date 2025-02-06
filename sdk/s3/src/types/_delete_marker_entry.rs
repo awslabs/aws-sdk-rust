@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMarkerEntry {
-    /// <p>The account that created the delete marker.&gt;</p>
+    /// <p>The account that created the delete marker.</p>
     pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The object key.</p>
     pub key: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct DeleteMarkerEntry {
     pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntry {
-    /// <p>The account that created the delete marker.&gt;</p>
+    /// <p>The account that created the delete marker.</p>
     pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
@@ -55,17 +55,17 @@ pub struct DeleteMarkerEntryBuilder {
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeleteMarkerEntryBuilder {
-    /// <p>The account that created the delete marker.&gt;</p>
+    /// <p>The account that created the delete marker.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
         self.owner = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The account that created the delete marker.&gt;</p>
+    /// <p>The account that created the delete marker.</p>
     pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
     }
-    /// <p>The account that created the delete marker.&gt;</p>
+    /// <p>The account that created the delete marker.</p>
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::Owner> {
         &self.owner
     }

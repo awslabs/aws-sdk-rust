@@ -127,19 +127,19 @@ impl CreateStackInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
     ///
-    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn accounts(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.accounts(input.into());
         self
     }
-    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn set_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_accounts(input);
         self
     }
-    /// <p>\[Self-managed permissions\] The names of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>\[Self-managed permissions\] The account IDs of one or more Amazon Web Services accounts that you want to create stack instances in the specified Region(s) for.</p>
     /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
     pub fn get_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_accounts()

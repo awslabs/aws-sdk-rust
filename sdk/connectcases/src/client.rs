@@ -136,11 +136,15 @@ impl Client {
     }
 }
 
+mod batch_get_case_rule;
+
 mod batch_get_field;
 
 mod batch_put_field_options;
 
 mod create_case;
+
+mod create_case_rule;
 
 mod create_domain;
 
@@ -179,6 +183,8 @@ mod create_template;
 /// ```
 pub mod customize;
 
+mod delete_case_rule;
+
 mod delete_domain;
 
 mod delete_field;
@@ -198,6 +204,8 @@ mod get_domain;
 mod get_layout;
 
 mod get_template;
+
+mod list_case_rules;
 
 mod list_cases_for_contact;
 
@@ -224,6 +232,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_case;
+
+mod update_case_rule;
 
 mod update_field;
 
