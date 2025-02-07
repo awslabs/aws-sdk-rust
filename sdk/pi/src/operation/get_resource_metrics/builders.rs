@@ -271,17 +271,17 @@ impl GetResourceMetricsFluentBuilder {
     pub fn get_period_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_period_in_seconds()
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

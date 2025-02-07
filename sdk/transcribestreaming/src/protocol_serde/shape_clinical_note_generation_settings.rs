@@ -6,6 +6,9 @@ pub fn ser_clinical_note_generation_settings(
     {
         object.key("OutputBucketName").string(input.output_bucket_name.as_str());
     }
+    if let Some(var_1) = &input.note_template {
+        object.key("NoteTemplate").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_output_bucket_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "NoteTemplate" => {
+                            builder = builder.set_note_template(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MedicalScribeNoteTemplate::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

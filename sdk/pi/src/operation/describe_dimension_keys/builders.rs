@@ -310,16 +310,19 @@ impl DescribeDimensionKeysFluentBuilder {
     /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
     ///
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub fn additional_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.additional_metrics(input.into());
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_additional_metrics(input);
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_additional_metrics()
     }

@@ -203,18 +203,44 @@ impl DescribeClusterVersionsFluentBuilder {
     pub fn get_cluster_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cluster_versions()
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn status(mut self, input: crate::types::ClusterVersionStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClusterVersionStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterVersionStatus> {
         self.inner.get_status()
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn version_status(mut self, input: crate::types::VersionStatus) -> Self {
+        self.inner = self.inner.version_status(input);
+        self
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
+        self.inner = self.inner.set_version_status(input);
+        self
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn get_version_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
+        self.inner.get_version_status()
     }
 }

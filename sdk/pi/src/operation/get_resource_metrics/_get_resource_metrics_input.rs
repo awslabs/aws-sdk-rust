@@ -37,7 +37,7 @@ pub struct GetResourceMetricsInput {
     /// </ul>
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.</p>
     pub period_in_seconds: ::std::option::Option<i32>,
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by <code>MaxRecords</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -93,7 +93,7 @@ impl GetResourceMetricsInput {
     pub fn period_in_seconds(&self) -> ::std::option::Option<i32> {
         self.period_in_seconds
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -288,17 +288,17 @@ impl GetResourceMetricsInputBuilder {
     pub fn get_period_in_seconds(&self) -> &::std::option::Option<i32> {
         &self.period_in_seconds
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to return in the response. If more items exist than the specified <code>MaxRecords</code> value, a pagination token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of items to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

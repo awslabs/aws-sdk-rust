@@ -85,6 +85,8 @@ pub use crate::types::_medical_scribe_post_stream_analytics_settings::MedicalScr
 
 pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettings;
 
+pub use crate::types::_medical_scribe_note_template::MedicalScribeNoteTemplate;
+
 pub use crate::types::_medical_scribe_encryption_settings::MedicalScribeEncryptionSettings;
 
 pub use crate::types::_medical_scribe_channel_definition::MedicalScribeChannelDefinition;
@@ -202,6 +204,8 @@ mod _medical_scribe_input_stream;
 mod _medical_scribe_language_code;
 
 mod _medical_scribe_media_encoding;
+
+mod _medical_scribe_note_template;
 
 mod _medical_scribe_participant_role;
 

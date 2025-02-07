@@ -89,6 +89,10 @@ pub use crate::types::_medical_scribe_participant_role::MedicalScribeParticipant
 
 pub use crate::types::_medical_scribe_settings::MedicalScribeSettings;
 
+pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettings;
+
+pub use crate::types::_medical_scribe_note_template::MedicalScribeNoteTemplate;
+
 pub use crate::types::_medical_scribe_output::MedicalScribeOutput;
 
 pub use crate::types::_medical_scribe_language_code::MedicalScribeLanguageCode;
@@ -161,6 +165,8 @@ mod _category_properties;
 
 mod _channel_definition;
 
+mod _clinical_note_generation_settings;
+
 mod _clm_language_code;
 
 mod _content_redaction;
@@ -196,6 +202,8 @@ mod _medical_scribe_job_status;
 mod _medical_scribe_job_summary;
 
 mod _medical_scribe_language_code;
+
+mod _medical_scribe_note_template;
 
 mod _medical_scribe_output;
 

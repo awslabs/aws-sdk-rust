@@ -24,7 +24,7 @@ impl crate::operation::register_cluster::builders::RegisterClusterInputBuilder {
 ///
 /// <p>Connects a Kubernetes cluster to the Amazon EKS control plane.</p>
 /// <p>Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the cluster and its nodes.</p>
-/// <p>Cluster connection requires two steps. First, send a <code> <code>RegisterClusterRequest</code> </code> to add it to the Amazon EKS control plane.</p>
+/// <p>Cluster connection requires two steps. First, send a <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html"> <code>RegisterClusterRequest</code> </a> to add it to the Amazon EKS control plane.</p>
 /// <p>Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the Kubernetes cluster through it's native provider to provide visibility.</p>
 /// <p>After the manifest is updated and applied, the connected cluster is visible to the Amazon EKS control plane. If the manifest isn't applied within three days, the connected cluster will no longer be visible and must be deregistered using <code>DeregisterCluster</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

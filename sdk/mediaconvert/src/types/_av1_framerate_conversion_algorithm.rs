@@ -15,6 +15,7 @@
 ///     Av1FramerateConversionAlgorithm::DuplicateDrop => { /* ... */ },
 ///     Av1FramerateConversionAlgorithm::Frameformer => { /* ... */ },
 ///     Av1FramerateConversionAlgorithm::Interpolate => { /* ... */ },
+///     Av1FramerateConversionAlgorithm::MaintainFrameCount => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -37,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
+/// Choose the method that you want MediaConvert to use when increasing or decreasing your video's frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96. To create an output with the same number of frames as your input: Choose Maintain frame count. When you do, MediaConvert will not drop, interpolate, add, or otherwise change the frame count from your input to your output. Note that since the frame count is maintained, the duration of your output will become shorter at higher frame rates and longer at lower frame rates.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -49,6 +50,8 @@ pub enum Av1FramerateConversionAlgorithm {
     Frameformer,
     #[allow(missing_docs)] // documentation missing in model
     Interpolate,
+    #[allow(missing_docs)] // documentation missing in model
+    MaintainFrameCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for Av1FramerateConversionAlgorithm {
             "DUPLICATE_DROP" => Av1FramerateConversionAlgorithm::DuplicateDrop,
             "FRAMEFORMER" => Av1FramerateConversionAlgorithm::Frameformer,
             "INTERPOLATE" => Av1FramerateConversionAlgorithm::Interpolate,
+            "MAINTAIN_FRAME_COUNT" => Av1FramerateConversionAlgorithm::MaintainFrameCount,
             other => Av1FramerateConversionAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl Av1FramerateConversionAlgorithm {
             Av1FramerateConversionAlgorithm::DuplicateDrop => "DUPLICATE_DROP",
             Av1FramerateConversionAlgorithm::Frameformer => "FRAMEFORMER",
             Av1FramerateConversionAlgorithm::Interpolate => "INTERPOLATE",
+            Av1FramerateConversionAlgorithm::MaintainFrameCount => "MAINTAIN_FRAME_COUNT",
             Av1FramerateConversionAlgorithm::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DUPLICATE_DROP", "FRAMEFORMER", "INTERPOLATE"]
+        &["DUPLICATE_DROP", "FRAMEFORMER", "INTERPOLATE", "MAINTAIN_FRAME_COUNT"]
     }
 }
 impl ::std::convert::AsRef<str> for Av1FramerateConversionAlgorithm {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for Av1FramerateConversionAlgorithm {
             Av1FramerateConversionAlgorithm::DuplicateDrop => write!(f, "DUPLICATE_DROP"),
             Av1FramerateConversionAlgorithm::Frameformer => write!(f, "FRAMEFORMER"),
             Av1FramerateConversionAlgorithm::Interpolate => write!(f, "INTERPOLATE"),
+            Av1FramerateConversionAlgorithm::MaintainFrameCount => write!(f, "MAINTAIN_FRAME_COUNT"),
             Av1FramerateConversionAlgorithm::Unknown(value) => write!(f, "{}", value),
         }
     }

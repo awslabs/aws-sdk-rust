@@ -23,7 +23,7 @@ impl crate::operation::describe_update::builders::DescribeUpdateInputBuilder {
 /// Fluent builder constructing a request to `DescribeUpdate`.
 ///
 /// <p>Describes an update to an Amazon EKS resource.</p>
-/// <p>When the status of the update is <code>Succeeded</code>, the update is complete. If an update fails, the status is <code>Failed</code>, and an error detail explains the reason for the failure.</p>
+/// <p>When the status of the update is <code>Successful</code>, the update is complete. If an update fails, the status is <code>Failed</code>, and an error detail explains the reason for the failure.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUpdateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

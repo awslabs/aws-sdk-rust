@@ -12,6 +12,7 @@
 /// ```text
 /// # let wavformat = unimplemented!();
 /// match wavformat {
+///     WavFormat::Extensible => { /* ... */ },
 ///     WavFormat::Rf64 => { /* ... */ },
 ///     WavFormat::Riff => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -36,12 +37,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+/// Specify the file format for your wave audio output. To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely to exceed 4GB in file size, or if you otherwise need the extended support of the RF64 format: Choose RF64. If your player only supports the extensible wave format: Choose Extensible.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum WavFormat {
+    #[allow(missing_docs)] // documentation missing in model
+    Extensible,
     #[allow(missing_docs)] // documentation missing in model
     Rf64,
     #[allow(missing_docs)] // documentation missing in model
@@ -53,6 +56,7 @@ pub enum WavFormat {
 impl ::std::convert::From<&str> for WavFormat {
     fn from(s: &str) -> Self {
         match s {
+            "EXTENSIBLE" => WavFormat::Extensible,
             "RF64" => WavFormat::Rf64,
             "RIFF" => WavFormat::Riff,
             other => WavFormat::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl WavFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            WavFormat::Extensible => "EXTENSIBLE",
             WavFormat::Rf64 => "RF64",
             WavFormat::Riff => "RIFF",
             WavFormat::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl WavFormat {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RF64", "RIFF"]
+        &["EXTENSIBLE", "RF64", "RIFF"]
     }
 }
 impl ::std::convert::AsRef<str> for WavFormat {
@@ -100,6 +105,7 @@ impl WavFormat {
 impl ::std::fmt::Display for WavFormat {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            WavFormat::Extensible => write!(f, "EXTENSIBLE"),
             WavFormat::Rf64 => write!(f, "RF64"),
             WavFormat::Riff => write!(f, "RIFF"),
             WavFormat::Unknown(value) => write!(f, "{}", value),

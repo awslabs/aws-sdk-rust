@@ -8,6 +8,14 @@ pub struct ClinicalNoteGenerationSettings {
     /// <p>HealthScribe outputs transcript and clinical note files under the prefix: <code>S3://$output-bucket-name/healthscribe-streaming/session-id/post-stream-analytics/clinical-notes</code></p>
     /// <p>The role <code>ResourceAccessRoleArn</code> specified in the <code>MedicalScribeConfigurationEvent</code> must have permission to use the specified location. You can change Amazon S3 permissions using the <a href="https://console.aws.amazon.com/s3"> Amazon Web Services Management Console </a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles </a> .</p>
     pub output_bucket_name: ::std::string::String,
+    /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// </ul>
+    pub note_template: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>,
 }
 impl ClinicalNoteGenerationSettings {
     /// <p>The name of the Amazon S3 bucket where you want the output of Amazon Web Services HealthScribe post-stream analytics stored. Don't include the <code>S3://</code> prefix of the specified bucket.</p>
@@ -16,6 +24,16 @@ impl ClinicalNoteGenerationSettings {
     pub fn output_bucket_name(&self) -> &str {
         use std::ops::Deref;
         self.output_bucket_name.deref()
+    }
+    /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// </ul>
+    pub fn note_template(&self) -> ::std::option::Option<&crate::types::MedicalScribeNoteTemplate> {
+        self.note_template.as_ref()
     }
 }
 impl ClinicalNoteGenerationSettings {
@@ -30,6 +48,7 @@ impl ClinicalNoteGenerationSettings {
 #[non_exhaustive]
 pub struct ClinicalNoteGenerationSettingsBuilder {
     pub(crate) output_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) note_template: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>,
 }
 impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>The name of the Amazon S3 bucket where you want the output of Amazon Web Services HealthScribe post-stream analytics stored. Don't include the <code>S3://</code> prefix of the specified bucket.</p>
@@ -53,6 +72,38 @@ impl ClinicalNoteGenerationSettingsBuilder {
     pub fn get_output_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_bucket_name
     }
+    /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// </ul>
+    pub fn note_template(mut self, input: crate::types::MedicalScribeNoteTemplate) -> Self {
+        self.note_template = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// </ul>
+    pub fn set_note_template(mut self, input: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>) -> Self {
+        self.note_template = input;
+        self
+    }
+    /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// </ul>
+    pub fn get_note_template(&self) -> &::std::option::Option<crate::types::MedicalScribeNoteTemplate> {
+        &self.note_template
+    }
     /// Consumes the builder and constructs a [`ClinicalNoteGenerationSettings`](crate::types::ClinicalNoteGenerationSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`output_bucket_name`](crate::types::builders::ClinicalNoteGenerationSettingsBuilder::output_bucket_name)
@@ -64,6 +115,7 @@ impl ClinicalNoteGenerationSettingsBuilder {
                     "output_bucket_name was not specified but it is required when building ClinicalNoteGenerationSettings",
                 )
             })?,
+            note_template: self.note_template,
         })
     }
 }

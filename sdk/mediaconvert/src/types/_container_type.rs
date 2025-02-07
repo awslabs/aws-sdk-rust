@@ -14,6 +14,7 @@
 /// match containertype {
 ///     ContainerType::Cmfc => { /* ... */ },
 ///     ContainerType::F4V => { /* ... */ },
+///     ContainerType::Gif => { /* ... */ },
 ///     ContainerType::Ismv => { /* ... */ },
 ///     ContainerType::M2Ts => { /* ... */ },
 ///     ContainerType::M3U8 => { /* ... */ },
@@ -58,6 +59,8 @@ pub enum ContainerType {
     #[allow(missing_docs)] // documentation missing in model
     F4V,
     #[allow(missing_docs)] // documentation missing in model
+    Gif,
+    #[allow(missing_docs)] // documentation missing in model
     Ismv,
     #[allow(missing_docs)] // documentation missing in model
     M2Ts,
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for ContainerType {
         match s {
             "CMFC" => ContainerType::Cmfc,
             "F4V" => ContainerType::F4V,
+            "GIF" => ContainerType::Gif,
             "ISMV" => ContainerType::Ismv,
             "M2TS" => ContainerType::M2Ts,
             "M3U8" => ContainerType::M3U8,
@@ -116,6 +120,7 @@ impl ContainerType {
         match self {
             ContainerType::Cmfc => "CMFC",
             ContainerType::F4V => "F4V",
+            ContainerType::Gif => "GIF",
             ContainerType::Ismv => "ISMV",
             ContainerType::M2Ts => "M2TS",
             ContainerType::M3U8 => "M3U8",
@@ -133,7 +138,7 @@ impl ContainerType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CMFC", "F4V", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "OGG", "RAW", "WEBM", "Y4M",
+            "CMFC", "F4V", "GIF", "ISMV", "M2TS", "M3U8", "MOV", "MP4", "MPD", "MXF", "OGG", "RAW", "WEBM", "Y4M",
         ]
     }
 }
@@ -159,6 +164,7 @@ impl ::std::fmt::Display for ContainerType {
         match self {
             ContainerType::Cmfc => write!(f, "CMFC"),
             ContainerType::F4V => write!(f, "F4V"),
+            ContainerType::Gif => write!(f, "GIF"),
             ContainerType::Ismv => write!(f, "ISMV"),
             ContainerType::M2Ts => write!(f, "M2TS"),
             ContainerType::M3U8 => write!(f, "M3U8"),

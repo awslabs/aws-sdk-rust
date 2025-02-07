@@ -14,6 +14,7 @@
 /// match webvttstylepassthrough {
 ///     WebvttStylePassthrough::Disabled => { /* ... */ },
 ///     WebvttStylePassthrough::Enabled => { /* ... */ },
+///     WebvttStylePassthrough::Merge => { /* ... */ },
 ///     WebvttStylePassthrough::Strict => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -37,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// To use the available style, color, and position information from your input captions: Set Style passthrough to Enabled. MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict. MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled, or leave blank.
+/// Specify how MediaConvert writes style information in your output WebVTT captions. To use the available style, color, and position information from your input captions: Choose Enabled. MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Choose Strict. MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Keep the default value, Disabled. Or leave blank. To use the available style, color, and position information from your input captions, while merging cues with identical time ranges: Choose merge. This setting can help prevent positioning overlaps for certain players that expect a single single cue for any given time range.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -47,6 +48,8 @@ pub enum WebvttStylePassthrough {
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
+    Merge,
     #[allow(missing_docs)] // documentation missing in model
     Strict,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for WebvttStylePassthrough {
         match s {
             "DISABLED" => WebvttStylePassthrough::Disabled,
             "ENABLED" => WebvttStylePassthrough::Enabled,
+            "MERGE" => WebvttStylePassthrough::Merge,
             "STRICT" => WebvttStylePassthrough::Strict,
             other => WebvttStylePassthrough::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl WebvttStylePassthrough {
         match self {
             WebvttStylePassthrough::Disabled => "DISABLED",
             WebvttStylePassthrough::Enabled => "ENABLED",
+            WebvttStylePassthrough::Merge => "MERGE",
             WebvttStylePassthrough::Strict => "STRICT",
             WebvttStylePassthrough::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED", "STRICT"]
+        &["DISABLED", "ENABLED", "MERGE", "STRICT"]
     }
 }
 impl ::std::convert::AsRef<str> for WebvttStylePassthrough {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for WebvttStylePassthrough {
         match self {
             WebvttStylePassthrough::Disabled => write!(f, "DISABLED"),
             WebvttStylePassthrough::Enabled => write!(f, "ENABLED"),
+            WebvttStylePassthrough::Merge => write!(f, "MERGE"),
             WebvttStylePassthrough::Strict => write!(f, "STRICT"),
             WebvttStylePassthrough::Unknown(value) => write!(f, "{}", value),
         }

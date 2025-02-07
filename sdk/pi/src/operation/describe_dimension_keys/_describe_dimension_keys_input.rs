@@ -48,6 +48,7 @@ pub struct DescribeDimensionKeysInput {
     /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub group_by: ::std::option::Option<crate::types::DimensionGroup>,
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub additional_metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>For each dimension specified in <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
     pub partition_by: ::std::option::Option<crate::types::DimensionGroup>,
@@ -126,6 +127,7 @@ impl DescribeDimensionKeysInput {
         self.group_by.as_ref()
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.additional_metrics.is_none()`.
     pub fn additional_metrics(&self) -> &[::std::string::String] {
@@ -380,6 +382,7 @@ impl DescribeDimensionKeysInputBuilder {
     /// To override the contents of this collection use [`set_additional_metrics`](Self::set_additional_metrics).
     ///
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub fn additional_metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.additional_metrics.unwrap_or_default();
         v.push(input.into());
@@ -387,11 +390,13 @@ impl DescribeDimensionKeysInputBuilder {
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub fn set_additional_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.additional_metrics = input;
         self
     }
     /// <p>Additional metrics for the top <code>N</code> dimension keys. If the specified dimension group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests. The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</code>.</p>
+    /// <p>The only supported statistic function is <code>.avg</code>.</p>
     pub fn get_additional_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.additional_metrics
     }

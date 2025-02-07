@@ -22,7 +22,7 @@ impl crate::operation::update_cluster_version::builders::UpdateClusterVersionInp
 }
 /// Fluent builder constructing a request to `UpdateClusterVersion`.
 ///
-/// <p>Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with the <code>DescribeUpdate</code> API operation.</p>
+/// <p>Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html"> <code>DescribeUpdate</code> </a> API operation.</p>
 /// <p>Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
 /// <p>If your cluster has managed node groups attached to it, all of your node groups' Kubernetes versions must match the cluster's Kubernetes version in order to update the cluster to a new Kubernetes version.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

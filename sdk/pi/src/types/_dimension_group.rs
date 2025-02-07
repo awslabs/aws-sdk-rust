@@ -45,7 +45,15 @@ pub struct DimensionGroup {
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>db.blocking_sql</code> - The SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session</code> - The sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object</code> - The object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
     /// <p><code>db.host</code> - The host name of the connected client (all engines).</p></li>
+    /// <li>
+    /// <p><code>db.plans</code> - The execution plans for the query (only Aurora PostgreSQL).</p></li>
     /// <li>
     /// <p><code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p></li>
     /// <li>
@@ -79,6 +87,18 @@ pub struct DimensionGroup {
     /// <li>
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.id</code> - The ID for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.sql</code> - The SQL text for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session.id</code> - The ID for each of the sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.id</code> - The ID for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.type</code> - The object type for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.value</code> - The value for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
     /// <li>
     /// <p><code>db.host.id</code> - The host ID of the connected client (all engines).</p></li>
     /// <li>
@@ -176,7 +196,15 @@ impl DimensionGroup {
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>db.blocking_sql</code> - The SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session</code> - The sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object</code> - The object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
     /// <p><code>db.host</code> - The host name of the connected client (all engines).</p></li>
+    /// <li>
+    /// <p><code>db.plans</code> - The execution plans for the query (only Aurora PostgreSQL).</p></li>
     /// <li>
     /// <p><code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p></li>
     /// <li>
@@ -213,6 +241,18 @@ impl DimensionGroup {
     /// <li>
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.id</code> - The ID for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.sql</code> - The SQL text for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session.id</code> - The ID for each of the sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.id</code> - The ID for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.type</code> - The object type for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.value</code> - The value for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
     /// <li>
     /// <p><code>db.host.id</code> - The host ID of the connected client (all engines).</p></li>
     /// <li>
@@ -331,7 +371,15 @@ impl DimensionGroupBuilder {
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>db.blocking_sql</code> - The SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session</code> - The sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object</code> - The object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
     /// <p><code>db.host</code> - The host name of the connected client (all engines).</p></li>
+    /// <li>
+    /// <p><code>db.plans</code> - The execution plans for the query (only Aurora PostgreSQL).</p></li>
     /// <li>
     /// <p><code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p></li>
     /// <li>
@@ -385,7 +433,15 @@ impl DimensionGroupBuilder {
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>db.blocking_sql</code> - The SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session</code> - The sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object</code> - The object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
     /// <p><code>db.host</code> - The host name of the connected client (all engines).</p></li>
+    /// <li>
+    /// <p><code>db.plans</code> - The execution plans for the query (only Aurora PostgreSQL).</p></li>
     /// <li>
     /// <p><code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p></li>
     /// <li>
@@ -438,7 +494,15 @@ impl DimensionGroupBuilder {
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>db.blocking_sql</code> - The SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session</code> - The sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object</code> - The object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
     /// <p><code>db.host</code> - The host name of the connected client (all engines).</p></li>
+    /// <li>
+    /// <p><code>db.plans</code> - The execution plans for the query (only Aurora PostgreSQL).</p></li>
     /// <li>
     /// <p><code>db.query</code> - The query that is currently running (only Amazon DocumentDB).</p></li>
     /// <li>
@@ -478,6 +542,18 @@ impl DimensionGroupBuilder {
     /// <li>
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.id</code> - The ID for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.sql</code> - The SQL text for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session.id</code> - The ID for each of the sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.id</code> - The ID for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.type</code> - The object type for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.value</code> - The value for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
     /// <li>
     /// <p><code>db.host.id</code> - The host ID of the connected client (all engines).</p></li>
     /// <li>
@@ -561,6 +637,18 @@ impl DimensionGroupBuilder {
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
     /// <li>
+    /// <p><code>db.blocking_sql.id</code> - The ID for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.sql</code> - The SQL text for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session.id</code> - The ID for each of the sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.id</code> - The ID for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.type</code> - The object type for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.value</code> - The value for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
     /// <p><code>db.host.id</code> - The host ID of the connected client (all engines).</p></li>
     /// <li>
     /// <p><code>db.host.name</code> - The host name of the connected client (all engines).</p></li>
@@ -640,6 +728,18 @@ impl DimensionGroupBuilder {
     /// <li>
     /// <p>Amazon DocumentDB</p></li>
     /// </ul></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.id</code> - The ID for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_sql.sql</code> - The SQL text for each of the SQL queries blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_session.id</code> - The ID for each of the sessions blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.id</code> - The ID for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.type</code> - The object type for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
+    /// <li>
+    /// <p><code>db.blocking_object.value</code> - The value for each of the object resources acquired by other sessions that are blocking the most DB load.</p></li>
     /// <li>
     /// <p><code>db.host.id</code> - The host ID of the connected client (all engines).</p></li>
     /// <li>

@@ -24,6 +24,12 @@ pub fn ser_medical_scribe_settings(
     if let Some(var_6) = &input.vocabulary_filter_method {
         object.key("VocabularyFilterMethod").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.clinical_note_generation_settings {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ClinicalNoteGenerationSettings").start_object();
+        crate::protocol_serde::shape_clinical_note_generation_settings::ser_clinical_note_generation_settings(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -74,6 +80,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::VocabularyFilterMethod::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "ClinicalNoteGenerationSettings" => {
+                            builder = builder.set_clinical_note_generation_settings(
+                                crate::protocol_serde::shape_clinical_note_generation_settings::de_clinical_note_generation_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

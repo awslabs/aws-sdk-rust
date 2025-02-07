@@ -218,6 +218,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeClus
                         query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_8));
                     }
                 }
+                if let ::std::option::Option::Some(inner_9) = &_input.version_status {
+                    {
+                        query.push_kv("versionStatus", &::aws_smithy_http::query::fmt_string(inner_9));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

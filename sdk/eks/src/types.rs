@@ -203,6 +203,8 @@ pub use crate::types::_fargate_profile_selector::FargateProfileSelector;
 
 pub use crate::types::_cluster_version_information::ClusterVersionInformation;
 
+pub use crate::types::_version_status::VersionStatus;
+
 pub use crate::types::_cluster_version_status::ClusterVersionStatus;
 
 pub use crate::types::_addon_info::AddonInfo;
@@ -462,6 +464,8 @@ mod _update_type;
 mod _upgrade_policy_request;
 
 mod _upgrade_policy_response;
+
+mod _version_status;
 
 mod _vpc_config_request;
 

@@ -8,7 +8,7 @@ pub struct NodegroupUpdateConfig {
     pub max_unavailable: ::std::option::Option<i32>,
     /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub max_unavailable_percentage: ::std::option::Option<i32>,
-    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a> action.</p>
+    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html"> <code>UpdateNodegroupVersion</code> </a> action.</p>
     /// <p>An Amazon EKS managed node group updates by replacing nodes with new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes the managed node update behavior of the managed node group for each quantity. The <i>default</i> strategy has guardrails to protect you from misconfiguration and launches the new instances first, before terminating the old instances. The <i>minimal</i> strategy removes the guardrails and terminates the old instances before launching the new instances. This minimal strategy is useful in scenarios where you are constrained to resources or costs (for example, with hardware accelerators such as GPUs).</p>
     pub update_strategy: ::std::option::Option<crate::types::NodegroupUpdateStrategies>,
 }
@@ -21,7 +21,7 @@ impl NodegroupUpdateConfig {
     pub fn max_unavailable_percentage(&self) -> ::std::option::Option<i32> {
         self.max_unavailable_percentage
     }
-    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a> action.</p>
+    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html"> <code>UpdateNodegroupVersion</code> </a> action.</p>
     /// <p>An Amazon EKS managed node group updates by replacing nodes with new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes the managed node update behavior of the managed node group for each quantity. The <i>default</i> strategy has guardrails to protect you from misconfiguration and launches the new instances first, before terminating the old instances. The <i>minimal</i> strategy removes the guardrails and terminates the old instances before launching the new instances. This minimal strategy is useful in scenarios where you are constrained to resources or costs (for example, with hardware accelerators such as GPUs).</p>
     pub fn update_strategy(&self) -> ::std::option::Option<&crate::types::NodegroupUpdateStrategies> {
         self.update_strategy.as_ref()
@@ -71,19 +71,19 @@ impl NodegroupUpdateConfigBuilder {
     pub fn get_max_unavailable_percentage(&self) -> &::std::option::Option<i32> {
         &self.max_unavailable_percentage
     }
-    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a> action.</p>
+    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html"> <code>UpdateNodegroupVersion</code> </a> action.</p>
     /// <p>An Amazon EKS managed node group updates by replacing nodes with new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes the managed node update behavior of the managed node group for each quantity. The <i>default</i> strategy has guardrails to protect you from misconfiguration and launches the new instances first, before terminating the old instances. The <i>minimal</i> strategy removes the guardrails and terminates the old instances before launching the new instances. This minimal strategy is useful in scenarios where you are constrained to resources or costs (for example, with hardware accelerators such as GPUs).</p>
     pub fn update_strategy(mut self, input: crate::types::NodegroupUpdateStrategies) -> Self {
         self.update_strategy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a> action.</p>
+    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html"> <code>UpdateNodegroupVersion</code> </a> action.</p>
     /// <p>An Amazon EKS managed node group updates by replacing nodes with new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes the managed node update behavior of the managed node group for each quantity. The <i>default</i> strategy has guardrails to protect you from misconfiguration and launches the new instances first, before terminating the old instances. The <i>minimal</i> strategy removes the guardrails and terminates the old instances before launching the new instances. This minimal strategy is useful in scenarios where you are constrained to resources or costs (for example, with hardware accelerators such as GPUs).</p>
     pub fn set_update_strategy(mut self, input: ::std::option::Option<crate::types::NodegroupUpdateStrategies>) -> Self {
         self.update_strategy = input;
         self
     }
-    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/latest/APIReference/API_UpdateNodegroupVersion.html">UpdateNodegroupVersion</a> action.</p>
+    /// <p>The configuration for the behavior to follow during a node group version update of this managed node group. You choose between two possible strategies for replacing nodes during an <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateNodegroupVersion.html"> <code>UpdateNodegroupVersion</code> </a> action.</p>
     /// <p>An Amazon EKS managed node group updates by replacing nodes with new nodes of newer AMI versions in parallel. The <i>update strategy</i> changes the managed node update behavior of the managed node group for each quantity. The <i>default</i> strategy has guardrails to protect you from misconfiguration and launches the new instances first, before terminating the old instances. The <i>minimal</i> strategy removes the guardrails and terminates the old instances before launching the new instances. This minimal strategy is useful in scenarios where you are constrained to resources or costs (for example, with hardware accelerators such as GPUs).</p>
     pub fn get_update_strategy(&self) -> &::std::option::Option<crate::types::NodegroupUpdateStrategies> {
         &self.update_strategy

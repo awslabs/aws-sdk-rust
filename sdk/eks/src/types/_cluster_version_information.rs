@@ -18,8 +18,13 @@ pub struct ClusterVersionInformation {
     pub end_of_standard_support_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date when extended support ends for this version.</p>
     pub end_of_extended_support_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Current status of this cluster version.</p>
     pub status: ::std::option::Option<crate::types::ClusterVersionStatus>,
+    /// <p>Current status of this cluster version.</p>
+    pub version_status: ::std::option::Option<crate::types::VersionStatus>,
     /// <p>The patch version of Kubernetes for this cluster version.</p>
     pub kubernetes_patch_version: ::std::option::Option<::std::string::String>,
 }
@@ -52,9 +57,16 @@ impl ClusterVersionInformation {
     pub fn end_of_extended_support_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_of_extended_support_date.as_ref()
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Current status of this cluster version.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ClusterVersionStatus> {
         self.status.as_ref()
+    }
+    /// <p>Current status of this cluster version.</p>
+    pub fn version_status(&self) -> ::std::option::Option<&crate::types::VersionStatus> {
+        self.version_status.as_ref()
     }
     /// <p>The patch version of Kubernetes for this cluster version.</p>
     pub fn kubernetes_patch_version(&self) -> ::std::option::Option<&str> {
@@ -80,6 +92,7 @@ pub struct ClusterVersionInformationBuilder {
     pub(crate) end_of_standard_support_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_of_extended_support_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterVersionStatus>,
+    pub(crate) version_status: ::std::option::Option<crate::types::VersionStatus>,
     pub(crate) kubernetes_patch_version: ::std::option::Option<::std::string::String>,
 }
 impl ClusterVersionInformationBuilder {
@@ -181,19 +194,42 @@ impl ClusterVersionInformationBuilder {
     pub fn get_end_of_extended_support_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_of_extended_support_date
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Current status of this cluster version.</p>
     pub fn status(mut self, input: crate::types::ClusterVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Current status of this cluster version.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClusterVersionStatus>) -> Self {
         self.status = input;
         self
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Current status of this cluster version.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterVersionStatus> {
         &self.status
+    }
+    /// <p>Current status of this cluster version.</p>
+    pub fn version_status(mut self, input: crate::types::VersionStatus) -> Self {
+        self.version_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Current status of this cluster version.</p>
+    pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
+        self.version_status = input;
+        self
+    }
+    /// <p>Current status of this cluster version.</p>
+    pub fn get_version_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
+        &self.version_status
     }
     /// <p>The patch version of Kubernetes for this cluster version.</p>
     pub fn kubernetes_patch_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -220,6 +256,7 @@ impl ClusterVersionInformationBuilder {
             end_of_standard_support_date: self.end_of_standard_support_date,
             end_of_extended_support_date: self.end_of_extended_support_date,
             status: self.status,
+            version_status: self.version_status,
             kubernetes_patch_version: self.kubernetes_patch_version,
         }
     }

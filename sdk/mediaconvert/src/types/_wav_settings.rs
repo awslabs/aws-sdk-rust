@@ -8,7 +8,7 @@ pub struct WavSettings {
     pub bit_depth: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
     pub channels: ::std::option::Option<i32>,
-    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    /// Specify the file format for your wave audio output. To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely to exceed 4GB in file size, or if you otherwise need the extended support of the RF64 format: Choose RF64. If your player only supports the extensible wave format: Choose Extensible.
     pub format: ::std::option::Option<crate::types::WavFormat>,
     /// Sample rate in Hz.
     pub sample_rate: ::std::option::Option<i32>,
@@ -22,7 +22,7 @@ impl WavSettings {
     pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
-    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    /// Specify the file format for your wave audio output. To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely to exceed 4GB in file size, or if you otherwise need the extended support of the RF64 format: Choose RF64. If your player only supports the extensible wave format: Choose Extensible.
     pub fn format(&self) -> ::std::option::Option<&crate::types::WavFormat> {
         self.format.as_ref()
     }
@@ -76,17 +76,17 @@ impl WavSettingsBuilder {
     pub fn get_channels(&self) -> &::std::option::Option<i32> {
         &self.channels
     }
-    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    /// Specify the file format for your wave audio output. To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely to exceed 4GB in file size, or if you otherwise need the extended support of the RF64 format: Choose RF64. If your player only supports the extensible wave format: Choose Extensible.
     pub fn format(mut self, input: crate::types::WavFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
         self
     }
-    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    /// Specify the file format for your wave audio output. To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely to exceed 4GB in file size, or if you otherwise need the extended support of the RF64 format: Choose RF64. If your player only supports the extensible wave format: Choose Extensible.
     pub fn set_format(mut self, input: ::std::option::Option<crate::types::WavFormat>) -> Self {
         self.format = input;
         self
     }
-    /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
+    /// Specify the file format for your wave audio output. To use a RIFF wave format: Keep the default value, RIFF. If your output audio is likely to exceed 4GB in file size, or if you otherwise need the extended support of the RF64 format: Choose RF64. If your player only supports the extensible wave format: Choose Extensible.
     pub fn get_format(&self) -> &::std::option::Option<crate::types::WavFormat> {
         &self.format
     }

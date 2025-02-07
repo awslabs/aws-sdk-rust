@@ -393,6 +393,12 @@ pub use crate::types::_h264_codec_level::H264CodecLevel;
 
 pub use crate::types::_h264_adaptive_quantization::H264AdaptiveQuantization;
 
+pub use crate::types::_gif_settings::GifSettings;
+
+pub use crate::types::_gif_framerate_conversion_algorithm::GifFramerateConversionAlgorithm;
+
+pub use crate::types::_gif_framerate_control::GifFramerateControl;
+
 pub use crate::types::_frame_capture_settings::FrameCaptureSettings;
 
 pub use crate::types::_video_codec::VideoCodec;
@@ -434,6 +440,8 @@ pub use crate::types::_av1_film_grain_synthesis::Av1FilmGrainSynthesis;
 pub use crate::types::_av1_bit_depth::Av1BitDepth;
 
 pub use crate::types::_av1_adaptive_quantization::Av1AdaptiveQuantization;
+
+pub use crate::types::_chroma_position_mode::ChromaPositionMode;
 
 pub use crate::types::_anti_alias::AntiAlias;
 
@@ -1429,6 +1437,8 @@ mod _caption_source_type;
 
 mod _channel_mapping;
 
+mod _chroma_position_mode;
+
 mod _clip_limits;
 
 mod _cmaf_additional_manifest;
@@ -1710,6 +1720,12 @@ mod _font_script;
 mod _force_include_rendition_size;
 
 mod _frame_capture_settings;
+
+mod _gif_framerate_control;
+
+mod _gif_framerate_conversion_algorithm;
+
+mod _gif_settings;
 
 mod _h264_adaptive_quantization;
 

@@ -10,6 +10,8 @@ pub struct PerformanceInsightsMetric {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The filter for the Performance Insights metric.</p>
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
     pub value: ::std::option::Option<f64>,
 }
@@ -25,6 +27,10 @@ impl PerformanceInsightsMetric {
     /// <p>A dimension map that contains the dimensions for this partition.</p>
     pub fn dimensions(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.dimensions.as_ref()
+    }
+    /// <p>The filter for the Performance Insights metric.</p>
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.filter.as_ref()
     }
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
     pub fn value(&self) -> ::std::option::Option<f64> {
@@ -45,6 +51,7 @@ pub struct PerformanceInsightsMetricBuilder {
     pub(crate) metric: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) value: ::std::option::Option<f64>,
 }
 impl PerformanceInsightsMetricBuilder {
@@ -96,6 +103,26 @@ impl PerformanceInsightsMetricBuilder {
     pub fn get_dimensions(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.dimensions
     }
+    /// Adds a key-value pair to `filter`.
+    ///
+    /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+    ///
+    /// <p>The filter for the Performance Insights metric.</p>
+    pub fn filter(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.filter.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.filter = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The filter for the Performance Insights metric.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>The filter for the Performance Insights metric.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.filter
+    }
     /// <p>The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.</p>
     pub fn value(mut self, input: f64) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -116,6 +143,7 @@ impl PerformanceInsightsMetricBuilder {
             metric: self.metric,
             display_name: self.display_name,
             dimensions: self.dimensions,
+            filter: self.filter,
             value: self.value,
         }
     }

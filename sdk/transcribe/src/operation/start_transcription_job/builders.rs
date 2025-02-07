@@ -141,7 +141,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><note>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     /// </note>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
@@ -151,7 +151,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><note>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     /// </note>
     pub fn set_language_code(mut self, input: ::std::option::Option<crate::types::LanguageCode>) -> Self {
         self.inner = self.inner.set_language_code(input);
@@ -161,7 +161,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>If you're unsure of the language spoken in your media file, consider using <code>IdentifyLanguage</code> or <code>IdentifyMultipleLanguages</code> to enable automatic language identification.</p>
     /// <p>Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your transcription job fails.</p>
     /// <p>For a list of supported languages and their associated language codes, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p><note>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary, ca-west-1) and Africa (Cape Town, af-south-1), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     /// </note>
     pub fn get_language_code(&self) -> &::std::option::Option<crate::types::LanguageCode> {
         self.inner.get_language_code()
@@ -512,7 +512,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>)in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), in Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn language_options(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_options(input);
         self
@@ -520,7 +520,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>)in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), in Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn set_language_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>) -> Self {
         self.inner = self.inner.set_language_options(input);
         self
@@ -528,7 +528,7 @@ impl StartTranscriptionJobFluentBuilder {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.</p>
     /// <p>For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>)in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), in Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn get_language_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
         self.inner.get_language_options()
     }

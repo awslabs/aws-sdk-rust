@@ -63,6 +63,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "versionStatus" => {
+                            builder = builder.set_version_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VersionStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "kubernetesPatchVersion" => {
                             builder = builder.set_kubernetes_patch_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

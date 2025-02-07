@@ -9,70 +9,73 @@ pub fn ser_video_description(
     if let Some(var_2) = &input.anti_alias {
         object.key("antiAlias").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.codec_settings {
+    if let Some(var_3) = &input.chroma_position_mode {
+        object.key("chromaPositionMode").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.codec_settings {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("codecSettings").start_object();
-        crate::protocol_serde::shape_video_codec_settings::ser_video_codec_settings(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("codecSettings").start_object();
+        crate::protocol_serde::shape_video_codec_settings::ser_video_codec_settings(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.color_metadata {
-        object.key("colorMetadata").string(var_5.as_str());
+    if let Some(var_6) = &input.color_metadata {
+        object.key("colorMetadata").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.crop {
+    if let Some(var_7) = &input.crop {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("crop").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("crop").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.drop_frame_timecode {
-        object.key("dropFrameTimecode").string(var_8.as_str());
+    if let Some(var_9) = &input.drop_frame_timecode {
+        object.key("dropFrameTimecode").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.fixed_afd {
+    if let Some(var_10) = &input.fixed_afd {
         object.key("fixedAfd").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
-        );
-    }
-    if let Some(var_10) = &input.height {
-        object.key("height").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_11) = &input.position {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("position").start_object();
-        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.respond_to_afd {
-        object.key("respondToAfd").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.scaling_behavior {
-        object.key("scalingBehavior").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.sharpness {
-        object.key("sharpness").number(
+    if let Some(var_11) = &input.height {
+        object.key("height").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_11).into()),
         );
     }
-    if let Some(var_16) = &input.timecode_insertion {
-        object.key("timecodeInsertion").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.timecode_track {
-        object.key("timecodeTrack").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.video_preprocessors {
+    if let Some(var_12) = &input.position {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("videoPreprocessors").start_object();
-        crate::protocol_serde::shape_video_preprocessor::ser_video_preprocessor(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_13 = object.key("position").start_object();
+        crate::protocol_serde::shape_rectangle::ser_rectangle(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_20) = &input.width {
+    if let Some(var_14) = &input.respond_to_afd {
+        object.key("respondToAfd").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.scaling_behavior {
+        object.key("scalingBehavior").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.sharpness {
+        object.key("sharpness").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
+    }
+    if let Some(var_17) = &input.timecode_insertion {
+        object.key("timecodeInsertion").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.timecode_track {
+        object.key("timecodeTrack").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.video_preprocessors {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("videoPreprocessors").start_object();
+        crate::protocol_serde::shape_video_preprocessor::ser_video_preprocessor(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.width {
         object.key("width").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_20).into()),
+            ::aws_smithy_types::Number::NegInt((*var_21).into()),
         );
     }
     Ok(())
@@ -104,6 +107,13 @@ where
                             builder = builder.set_anti_alias(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AntiAlias::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "chromaPositionMode" => {
+                            builder = builder.set_chroma_position_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ChromaPositionMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

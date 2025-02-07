@@ -15,8 +15,14 @@ pub struct DescribeClusterVersionsInput {
     pub include_all: ::std::option::Option<bool>,
     /// <p>List of specific cluster versions to describe.</p>
     pub cluster_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub status: ::std::option::Option<crate::types::ClusterVersionStatus>,
+    /// <p>Filter versions by their current status.</p>
+    pub version_status: ::std::option::Option<crate::types::VersionStatus>,
 }
 impl DescribeClusterVersionsInput {
     /// <p>The type of cluster to filter versions by.</p>
@@ -45,9 +51,17 @@ impl DescribeClusterVersionsInput {
     pub fn cluster_versions(&self) -> &[::std::string::String] {
         self.cluster_versions.as_deref().unwrap_or_default()
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn status(&self) -> ::std::option::Option<&crate::types::ClusterVersionStatus> {
         self.status.as_ref()
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn version_status(&self) -> ::std::option::Option<&crate::types::VersionStatus> {
+        self.version_status.as_ref()
     }
 }
 impl DescribeClusterVersionsInput {
@@ -68,6 +82,7 @@ pub struct DescribeClusterVersionsInputBuilder {
     pub(crate) include_all: ::std::option::Option<bool>,
     pub(crate) cluster_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<crate::types::ClusterVersionStatus>,
+    pub(crate) version_status: ::std::option::Option<crate::types::VersionStatus>,
 }
 impl DescribeClusterVersionsInputBuilder {
     /// <p>The type of cluster to filter versions by.</p>
@@ -160,19 +175,45 @@ impl DescribeClusterVersionsInputBuilder {
     pub fn get_cluster_versions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cluster_versions
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn status(mut self, input: crate::types::ClusterVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClusterVersionStatus>) -> Self {
         self.status = input;
         self
     }
+    /// <important>
+    /// <p>This field is deprecated. Use <code>versionStatus</code> instead, as that field matches for input and output of this action.</p>
+    /// </important>
     /// <p>Filter versions by their current status.</p>
+    #[deprecated(note = "status has been replaced by versionStatus", since = "2025-02-15")]
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ClusterVersionStatus> {
         &self.status
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn version_status(mut self, input: crate::types::VersionStatus) -> Self {
+        self.version_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn set_version_status(mut self, input: ::std::option::Option<crate::types::VersionStatus>) -> Self {
+        self.version_status = input;
+        self
+    }
+    /// <p>Filter versions by their current status.</p>
+    pub fn get_version_status(&self) -> &::std::option::Option<crate::types::VersionStatus> {
+        &self.version_status
     }
     /// Consumes the builder and constructs a [`DescribeClusterVersionsInput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsInput).
     pub fn build(
@@ -189,6 +230,7 @@ impl DescribeClusterVersionsInputBuilder {
             include_all: self.include_all,
             cluster_versions: self.cluster_versions,
             status: self.status,
+            version_status: self.version_status,
         })
     }
 }

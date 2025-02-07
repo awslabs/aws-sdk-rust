@@ -281,6 +281,8 @@ pub(crate) mod shape_call_analytics_job_summary;
 
 pub(crate) mod shape_channel_definitions;
 
+pub(crate) mod shape_clinical_note_generation_settings;
+
 pub(crate) mod shape_interruption_filter;
 
 pub(crate) mod shape_language_code_list;

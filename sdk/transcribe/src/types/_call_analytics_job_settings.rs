@@ -22,7 +22,7 @@ pub struct CallAnalyticsJobSettings {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub language_options: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>,
     /// <p>If using automatic language identification in your request and you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
     /// <p><code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you specify must match the languages of the associated custom language models, custom vocabularies, and custom vocabulary filters.</p>
@@ -62,7 +62,7 @@ impl CallAnalyticsJobSettings {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.language_options.is_none()`.
     pub fn language_options(&self) -> &[crate::types::LanguageCode] {
@@ -196,7 +196,7 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn language_options(mut self, input: crate::types::LanguageCode) -> Self {
         let mut v = self.language_options.unwrap_or_default();
         v.push(input);
@@ -206,7 +206,7 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn set_language_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>>) -> Self {
         self.language_options = input;
         self
@@ -214,7 +214,7 @@ impl CallAnalyticsJobSettingsBuilder {
     /// <p>You can specify two or more language codes that represent the languages you think may be present in your media. Including more than five is not recommended. If you're unsure what languages are present, do not include this parameter.</p>
     /// <p>Including language options can improve the accuracy of language identification.</p>
     /// <p>For a list of languages supported with Call Analytics, refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.</p>
-    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
+    /// <p>To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>) in Amazon Web Services GovCloud (US) (US-West, us-gov-west-1), Amazon Web Services GovCloud (US) (US-East, us-gov-east-1), Canada (Calgary) ca-west-1 and Africa (Cape Town) af-south-1, your media file must be encoded at a sample rate of 16,000 Hz or higher.</p>
     pub fn get_language_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LanguageCode>> {
         &self.language_options
     }

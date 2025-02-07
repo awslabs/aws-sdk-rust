@@ -22,7 +22,7 @@ impl crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetai
 }
 /// Fluent builder constructing a request to `GetDimensionKeyDetails`.
 ///
-/// <p>Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.</p>
+/// <p>Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text, lock snapshots, and execution plans.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -139,6 +139,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
     /// <li>
+    /// <p><code>db.lock_snapshot</code> (Aurora only)</p></li>
+    /// <li>
     /// <p><code>db.query</code> (Amazon DocumentDB only)</p></li>
     /// <li>
     /// <p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
@@ -150,6 +152,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
     /// <li>
+    /// <p><code>db.lock_snapshot</code> (Aurora only)</p></li>
+    /// <li>
     /// <p><code>db.query</code> (Amazon DocumentDB only)</p></li>
     /// <li>
     /// <p><code>db.sql</code> (Amazon RDS and Aurora only)</p></li>
@@ -160,6 +164,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>db.lock_snapshot</code> (Aurora only)</p></li>
     /// <li>
     /// <p><code>db.query</code> (Amazon DocumentDB only)</p></li>
     /// <li>
@@ -174,6 +180,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
     /// <li>
     /// <p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
+    /// <li>
+    /// <p>For the dimension group <code>db.lock_snapshot</code>, the <code>GroupIdentifier</code> is the epoch timestamp when Performance Insights captured the snapshot, in seconds. You can retrieve this value with the <code>GetResourceMetrics</code> operation for a 1 second period.</p></li>
     /// </ul>
     pub fn group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_identifier(input.into());
@@ -185,6 +193,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
     /// <li>
     /// <p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
+    /// <li>
+    /// <p>For the dimension group <code>db.lock_snapshot</code>, the <code>GroupIdentifier</code> is the epoch timestamp when Performance Insights captured the snapshot, in seconds. You can retrieve this value with the <code>GetResourceMetrics</code> operation for a 1 second period.</p></li>
     /// </ul>
     pub fn set_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_identifier(input);
@@ -196,6 +206,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p><code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p></li>
     /// <li>
     /// <p><code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p></li>
+    /// <li>
+    /// <p>For the dimension group <code>db.lock_snapshot</code>, the <code>GroupIdentifier</code> is the epoch timestamp when Performance Insights captured the snapshot, in seconds. You can retrieve this value with the <code>GetResourceMetrics</code> operation for a 1 second period.</p></li>
     /// </ul>
     pub fn get_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_identifier()
@@ -208,6 +220,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
     /// <li>
+    /// <p><code>db.lock_trees</code> - Specify the dimension name <code>db.lock_trees</code>. (Aurora only)</p></li>
+    /// <li>
     /// <p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
     /// <li>
     /// <p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
@@ -219,6 +233,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
     /// <li>
+    /// <p><code>db.lock_trees</code> - Specify the dimension name <code>db.lock_trees</code>. (Aurora only)</p></li>
+    /// <li>
     /// <p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
     /// <li>
     /// <p><code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p></li>
@@ -229,6 +245,8 @@ impl GetDimensionKeyDetailsFluentBuilder {
     }
     /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:</p>
     /// <ul>
+    /// <li>
+    /// <p><code>db.lock_trees</code> - Specify the dimension name <code>db.lock_trees</code>. (Aurora only)</p></li>
     /// <li>
     /// <p><code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p></li>
     /// <li>

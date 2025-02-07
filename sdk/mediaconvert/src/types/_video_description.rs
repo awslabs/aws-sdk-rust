@@ -8,7 +8,9 @@ pub struct VideoDescription {
     pub afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     /// The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting.
     pub anti_alias: ::std::option::Option<crate::types::AntiAlias>,
-    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// Specify the chroma sample positioning metadata for your H.264 or H.265 output. To have MediaConvert automatically determine chroma positioning: We recommend that you keep the default value, Auto. To specify center positioning: Choose Force center. To specify top left positioning: Choose Force top left.
+    pub chroma_position_mode: ::std::option::Option<crate::types::ChromaPositionMode>,
+    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub codec_settings: ::std::option::Option<crate::types::VideoCodecSettings>,
     /// Choose Insert for this setting to include color metadata in this output. Choose Ignore to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default.
     pub color_metadata: ::std::option::Option<crate::types::ColorMetadata>,
@@ -46,7 +48,11 @@ impl VideoDescription {
     pub fn anti_alias(&self) -> ::std::option::Option<&crate::types::AntiAlias> {
         self.anti_alias.as_ref()
     }
-    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// Specify the chroma sample positioning metadata for your H.264 or H.265 output. To have MediaConvert automatically determine chroma positioning: We recommend that you keep the default value, Auto. To specify center positioning: Choose Force center. To specify top left positioning: Choose Force top left.
+    pub fn chroma_position_mode(&self) -> ::std::option::Option<&crate::types::ChromaPositionMode> {
+        self.chroma_position_mode.as_ref()
+    }
+    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub fn codec_settings(&self) -> ::std::option::Option<&crate::types::VideoCodecSettings> {
         self.codec_settings.as_ref()
     }
@@ -116,6 +122,7 @@ impl VideoDescription {
 pub struct VideoDescriptionBuilder {
     pub(crate) afd_signaling: ::std::option::Option<crate::types::AfdSignaling>,
     pub(crate) anti_alias: ::std::option::Option<crate::types::AntiAlias>,
+    pub(crate) chroma_position_mode: ::std::option::Option<crate::types::ChromaPositionMode>,
     pub(crate) codec_settings: ::std::option::Option<crate::types::VideoCodecSettings>,
     pub(crate) color_metadata: ::std::option::Option<crate::types::ColorMetadata>,
     pub(crate) crop: ::std::option::Option<crate::types::Rectangle>,
@@ -160,17 +167,31 @@ impl VideoDescriptionBuilder {
     pub fn get_anti_alias(&self) -> &::std::option::Option<crate::types::AntiAlias> {
         &self.anti_alias
     }
-    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// Specify the chroma sample positioning metadata for your H.264 or H.265 output. To have MediaConvert automatically determine chroma positioning: We recommend that you keep the default value, Auto. To specify center positioning: Choose Force center. To specify top left positioning: Choose Force top left.
+    pub fn chroma_position_mode(mut self, input: crate::types::ChromaPositionMode) -> Self {
+        self.chroma_position_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the chroma sample positioning metadata for your H.264 or H.265 output. To have MediaConvert automatically determine chroma positioning: We recommend that you keep the default value, Auto. To specify center positioning: Choose Force center. To specify top left positioning: Choose Force top left.
+    pub fn set_chroma_position_mode(mut self, input: ::std::option::Option<crate::types::ChromaPositionMode>) -> Self {
+        self.chroma_position_mode = input;
+        self
+    }
+    /// Specify the chroma sample positioning metadata for your H.264 or H.265 output. To have MediaConvert automatically determine chroma positioning: We recommend that you keep the default value, Auto. To specify center positioning: Choose Force center. To specify top left positioning: Choose Force top left.
+    pub fn get_chroma_position_mode(&self) -> &::std::option::Option<crate::types::ChromaPositionMode> {
+        &self.chroma_position_mode
+    }
+    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub fn codec_settings(mut self, input: crate::types::VideoCodecSettings) -> Self {
         self.codec_settings = ::std::option::Option::Some(input);
         self
     }
-    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub fn set_codec_settings(mut self, input: ::std::option::Option<crate::types::VideoCodecSettings>) -> Self {
         self.codec_settings = input;
         self
     }
-    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
+    /// Video codec settings contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec. For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * GIF, GifSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
     pub fn get_codec_settings(&self) -> &::std::option::Option<crate::types::VideoCodecSettings> {
         &self.codec_settings
     }
@@ -361,6 +382,7 @@ impl VideoDescriptionBuilder {
         crate::types::VideoDescription {
             afd_signaling: self.afd_signaling,
             anti_alias: self.anti_alias,
+            chroma_position_mode: self.chroma_position_mode,
             codec_settings: self.codec_settings,
             color_metadata: self.color_metadata,
             crop: self.crop,

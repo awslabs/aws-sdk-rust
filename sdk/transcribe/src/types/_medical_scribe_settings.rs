@@ -26,6 +26,8 @@ pub struct MedicalScribeSettings {
     /// <p>To delete words, choose <code>remove</code>.</p>
     /// <p>To flag words without changing them, choose <code>tag</code>.</p>
     pub vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
+    /// <p>Specify settings for the clinical note generation.</p>
+    pub clinical_note_generation_settings: ::std::option::Option<crate::types::ClinicalNoteGenerationSettings>,
 }
 impl MedicalScribeSettings {
     /// <p>Enables speaker partitioning (diarization) in your Medical Scribe output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
@@ -62,6 +64,10 @@ impl MedicalScribeSettings {
     pub fn vocabulary_filter_method(&self) -> ::std::option::Option<&crate::types::VocabularyFilterMethod> {
         self.vocabulary_filter_method.as_ref()
     }
+    /// <p>Specify settings for the clinical note generation.</p>
+    pub fn clinical_note_generation_settings(&self) -> ::std::option::Option<&crate::types::ClinicalNoteGenerationSettings> {
+        self.clinical_note_generation_settings.as_ref()
+    }
 }
 impl MedicalScribeSettings {
     /// Creates a new builder-style object to manufacture [`MedicalScribeSettings`](crate::types::MedicalScribeSettings).
@@ -80,6 +86,7 @@ pub struct MedicalScribeSettingsBuilder {
     pub(crate) vocabulary_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_name: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_method: ::std::option::Option<crate::types::VocabularyFilterMethod>,
+    pub(crate) clinical_note_generation_settings: ::std::option::Option<crate::types::ClinicalNoteGenerationSettings>,
 }
 impl MedicalScribeSettingsBuilder {
     /// <p>Enables speaker partitioning (diarization) in your Medical Scribe output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
@@ -196,6 +203,20 @@ impl MedicalScribeSettingsBuilder {
     pub fn get_vocabulary_filter_method(&self) -> &::std::option::Option<crate::types::VocabularyFilterMethod> {
         &self.vocabulary_filter_method
     }
+    /// <p>Specify settings for the clinical note generation.</p>
+    pub fn clinical_note_generation_settings(mut self, input: crate::types::ClinicalNoteGenerationSettings) -> Self {
+        self.clinical_note_generation_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify settings for the clinical note generation.</p>
+    pub fn set_clinical_note_generation_settings(mut self, input: ::std::option::Option<crate::types::ClinicalNoteGenerationSettings>) -> Self {
+        self.clinical_note_generation_settings = input;
+        self
+    }
+    /// <p>Specify settings for the clinical note generation.</p>
+    pub fn get_clinical_note_generation_settings(&self) -> &::std::option::Option<crate::types::ClinicalNoteGenerationSettings> {
+        &self.clinical_note_generation_settings
+    }
     /// Consumes the builder and constructs a [`MedicalScribeSettings`](crate::types::MedicalScribeSettings).
     pub fn build(self) -> crate::types::MedicalScribeSettings {
         crate::types::MedicalScribeSettings {
@@ -205,6 +226,7 @@ impl MedicalScribeSettingsBuilder {
             vocabulary_name: self.vocabulary_name,
             vocabulary_filter_name: self.vocabulary_filter_name,
             vocabulary_filter_method: self.vocabulary_filter_method,
+            clinical_note_generation_settings: self.clinical_note_generation_settings,
         }
     }
 }

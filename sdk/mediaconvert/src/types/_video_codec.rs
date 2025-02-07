@@ -15,6 +15,7 @@
 ///     VideoCodec::Av1 => { /* ... */ },
 ///     VideoCodec::AvcIntra => { /* ... */ },
 ///     VideoCodec::FrameCapture => { /* ... */ },
+///     VideoCodec::Gif => { /* ... */ },
 ///     VideoCodec::H264 => { /* ... */ },
 ///     VideoCodec::H265 => { /* ... */ },
 ///     VideoCodec::Mpeg2 => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum VideoCodec {
     #[allow(missing_docs)] // documentation missing in model
     FrameCapture,
     #[allow(missing_docs)] // documentation missing in model
+    Gif,
+    #[allow(missing_docs)] // documentation missing in model
     H264,
     #[allow(missing_docs)] // documentation missing in model
     H265,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for VideoCodec {
             "AV1" => VideoCodec::Av1,
             "AVC_INTRA" => VideoCodec::AvcIntra,
             "FRAME_CAPTURE" => VideoCodec::FrameCapture,
+            "GIF" => VideoCodec::Gif,
             "H_264" => VideoCodec::H264,
             "H_265" => VideoCodec::H265,
             "MPEG2" => VideoCodec::Mpeg2,
@@ -117,6 +121,7 @@ impl VideoCodec {
             VideoCodec::Av1 => "AV1",
             VideoCodec::AvcIntra => "AVC_INTRA",
             VideoCodec::FrameCapture => "FRAME_CAPTURE",
+            VideoCodec::Gif => "GIF",
             VideoCodec::H264 => "H_264",
             VideoCodec::H265 => "H_265",
             VideoCodec::Mpeg2 => "MPEG2",
@@ -136,6 +141,7 @@ impl VideoCodec {
             "AV1",
             "AVC_INTRA",
             "FRAME_CAPTURE",
+            "GIF",
             "H_264",
             "H_265",
             "MPEG2",
@@ -172,6 +178,7 @@ impl ::std::fmt::Display for VideoCodec {
             VideoCodec::Av1 => write!(f, "AV1"),
             VideoCodec::AvcIntra => write!(f, "AVC_INTRA"),
             VideoCodec::FrameCapture => write!(f, "FRAME_CAPTURE"),
+            VideoCodec::Gif => write!(f, "GIF"),
             VideoCodec::H264 => write!(f, "H_264"),
             VideoCodec::H265 => write!(f, "H_265"),
             VideoCodec::Mpeg2 => write!(f, "MPEG2"),

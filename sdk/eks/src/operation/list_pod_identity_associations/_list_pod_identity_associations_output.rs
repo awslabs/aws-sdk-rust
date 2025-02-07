@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPodIdentityAssociationsOutput {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
-    /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
+    /// <p>Each summary is simplified by removing these fields compared to the full <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html"> <code>PodIdentityAssociation</code> </a>:</p>
     /// <ul>
     /// <li>
     /// <p>The IAM role: <code>roleArn</code></p></li>
@@ -24,7 +24,7 @@ pub struct ListPodIdentityAssociationsOutput {
 }
 impl ListPodIdentityAssociationsOutput {
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
-    /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
+    /// <p>Each summary is simplified by removing these fields compared to the full <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html"> <code>PodIdentityAssociation</code> </a>:</p>
     /// <ul>
     /// <li>
     /// <p>The IAM role: <code>roleArn</code></p></li>
@@ -73,7 +73,7 @@ impl ListPodIdentityAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_associations`](Self::set_associations).
     ///
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
-    /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
+    /// <p>Each summary is simplified by removing these fields compared to the full <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html"> <code>PodIdentityAssociation</code> </a>:</p>
     /// <ul>
     /// <li>
     /// <p>The IAM role: <code>roleArn</code></p></li>
@@ -91,7 +91,7 @@ impl ListPodIdentityAssociationsOutputBuilder {
         self
     }
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
-    /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
+    /// <p>Each summary is simplified by removing these fields compared to the full <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html"> <code>PodIdentityAssociation</code> </a>:</p>
     /// <ul>
     /// <li>
     /// <p>The IAM role: <code>roleArn</code></p></li>
@@ -107,7 +107,7 @@ impl ListPodIdentityAssociationsOutputBuilder {
         self
     }
     /// <p>The list of summarized descriptions of the associations that are in the cluster and match any filters that you provided.</p>
-    /// <p>Each summary is simplified by removing these fields compared to the full <code> <code>PodIdentityAssociation</code> </code>:</p>
+    /// <p>Each summary is simplified by removing these fields compared to the full <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_PodIdentityAssociation.html"> <code>PodIdentityAssociation</code> </a>:</p>
     /// <ul>
     /// <li>
     /// <p>The IAM role: <code>roleArn</code></p></li>

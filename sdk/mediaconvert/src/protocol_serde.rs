@@ -361,6 +361,8 @@ pub(crate) mod shape_flac_settings;
 
 pub(crate) mod shape_frame_capture_settings;
 
+pub(crate) mod shape_gif_settings;
+
 pub(crate) mod shape_h264_settings;
 
 pub(crate) mod shape_h265_settings;

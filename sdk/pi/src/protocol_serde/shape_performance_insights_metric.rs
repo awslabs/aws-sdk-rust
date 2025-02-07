@@ -31,6 +31,9 @@ where
                         "Dimensions" => {
                             builder = builder.set_dimensions(crate::protocol_serde::shape_descriptive_map::de_descriptive_map(tokens)?);
                         }
+                        "Filter" => {
+                            builder = builder.set_filter(crate::protocol_serde::shape_descriptive_map::de_descriptive_map(tokens)?);
+                        }
                         "Value" => {
                             builder = builder
                                 .set_value(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
