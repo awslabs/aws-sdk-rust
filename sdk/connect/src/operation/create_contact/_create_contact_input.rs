@@ -14,9 +14,13 @@ pub struct CreateContactInput {
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.</p>
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub channel: ::std::option::Option<crate::types::Channel>,
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub initiation_method: ::std::option::Option<crate::types::ContactInitiationMethod>,
     /// <p>Number of minutes the contact will be active for before expiring</p>
     pub expiry_duration_in_minutes: ::std::option::Option<i32>,
@@ -57,11 +61,15 @@ impl CreateContactInput {
     pub fn references(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn initiation_method(&self) -> ::std::option::Option<&crate::types::ContactInitiationMethod> {
         self.initiation_method.as_ref()
     }
@@ -230,33 +238,45 @@ impl CreateContactInputBuilder {
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         &self.references
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     /// This field is required.
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.channel = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         &self.channel
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     /// This field is required.
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
         self.initiation_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
         self.initiation_method = input;
         self
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
         &self.initiation_method
     }

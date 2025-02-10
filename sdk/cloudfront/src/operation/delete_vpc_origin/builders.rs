@@ -122,17 +122,17 @@ impl DeleteVpcOriginFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>The VPC origin to delete, if a match occurs.</p>
+    /// <p>The version identifier of the VPC origin to delete. This is the <code>ETag</code> value returned in the response to <code>GetVpcOrigin</code>.</p>
     pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
-    /// <p>The VPC origin to delete, if a match occurs.</p>
+    /// <p>The version identifier of the VPC origin to delete. This is the <code>ETag</code> value returned in the response to <code>GetVpcOrigin</code>.</p>
     pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }
-    /// <p>The VPC origin to delete, if a match occurs.</p>
+    /// <p>The version identifier of the VPC origin to delete. This is the <code>ETag</code> value returned in the response to <code>GetVpcOrigin</code>.</p>
     pub fn get_if_match(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_if_match()
     }

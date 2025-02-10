@@ -22,7 +22,9 @@ impl crate::operation::update_traffic_distribution::builders::UpdateTrafficDistr
 }
 /// Fluent builder constructing a request to `UpdateTrafficDistribution`.
 ///
-/// <p>Updates the traffic distribution for a given traffic distribution group.</p><note>
+/// <p>Updates the traffic distribution for a given traffic distribution group.</p><important>
+/// <p>When you shift telephony traffic, also shift agents and/or agent sign-ins to ensure they can handle the calls in the other Region. If you don't shift the agents, voice calls will go to the shifted Region but there won't be any agents available to receive the calls.</p>
+/// </important> <note>
 /// <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p>
 /// </note>
 /// <p>For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator Guide</i>.</p>

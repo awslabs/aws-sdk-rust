@@ -22,7 +22,10 @@ impl crate::operation::create_contact::builders::CreateContactInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateContact`.
 ///
-/// <p>Creates a new contact.</p>
+/// <important>
+/// <p>Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND, AGENT_REPLY, and FLOW.</p>
+/// </important>
+/// <p>Creates a new EMAIL contact.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -194,31 +197,43 @@ impl CreateContactFluentBuilder {
     pub fn get_references(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>> {
         self.inner.get_references()
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
         self.inner = self.inner.channel(input);
         self
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.inner = self.inner.set_channel(input);
         self
     }
-    /// <p>The channel for the contact</p>
+    /// <p>The channel for the contact</p><important>
+    /// <p>CreateContact only supports the EMAIL channel. The following information that states other channels are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn get_channel(&self) -> &::std::option::Option<crate::types::Channel> {
         self.inner.get_channel()
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn initiation_method(mut self, input: crate::types::ContactInitiationMethod) -> Self {
         self.inner = self.inner.initiation_method(input);
         self
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn set_initiation_method(mut self, input: ::std::option::Option<crate::types::ContactInitiationMethod>) -> Self {
         self.inner = self.inner.set_initiation_method(input);
         self
     }
-    /// <p>Indicates how the contact was initiated.</p>
+    /// <p>Indicates how the contact was initiated.</p><important>
+    /// <p>CreateContact only supports the following initiation methods: OUTBOUND, AGENT_REPLY, and FLOW. The following information that states other initiation methods are supported is incorrect. We are working to update this topic.</p>
+    /// </important>
     pub fn get_initiation_method(&self) -> &::std::option::Option<crate::types::ContactInitiationMethod> {
         self.inner.get_initiation_method()
     }

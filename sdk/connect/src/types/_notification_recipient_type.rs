@@ -6,7 +6,7 @@
 pub struct NotificationRecipientType {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users with the specified tags will be notified.</p>
     pub user_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>A list of user IDs.</p>
+    /// <p>A list of user IDs. Supports variable injection of <code>$.ContactLens.ContactEvaluation.Agent.AgentId</code> for <code>OnContactEvaluationSubmit</code> event source.</p>
     pub user_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NotificationRecipientType {
@@ -14,7 +14,7 @@ impl NotificationRecipientType {
     pub fn user_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.user_tags.as_ref()
     }
-    /// <p>A list of user IDs.</p>
+    /// <p>A list of user IDs. Supports variable injection of <code>$.ContactLens.ContactEvaluation.Agent.AgentId</code> for <code>OnContactEvaluationSubmit</code> event source.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_ids.is_none()`.
     pub fn user_ids(&self) -> &[::std::string::String] {
@@ -60,19 +60,19 @@ impl NotificationRecipientTypeBuilder {
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
     ///
-    /// <p>A list of user IDs.</p>
+    /// <p>A list of user IDs. Supports variable injection of <code>$.ContactLens.ContactEvaluation.Agent.AgentId</code> for <code>OnContactEvaluationSubmit</code> event source.</p>
     pub fn user_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
         v.push(input.into());
         self.user_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of user IDs.</p>
+    /// <p>A list of user IDs. Supports variable injection of <code>$.ContactLens.ContactEvaluation.Agent.AgentId</code> for <code>OnContactEvaluationSubmit</code> event source.</p>
     pub fn set_user_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.user_ids = input;
         self
     }
-    /// <p>A list of user IDs.</p>
+    /// <p>A list of user IDs. Supports variable injection of <code>$.ContactLens.ContactEvaluation.Agent.AgentId</code> for <code>OnContactEvaluationSubmit</code> event source.</p>
     pub fn get_user_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_ids
     }

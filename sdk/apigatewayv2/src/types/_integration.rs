@@ -43,7 +43,7 @@ pub struct Integration {
     /// <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p>
     /// <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
     pub passthrough_behavior: ::std::option::Option<crate::types::PassthroughBehavior>,
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub payload_format_version: ::std::option::Option<::std::string::String>,
     /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>
     /// {location}
@@ -136,7 +136,7 @@ impl Integration {
     pub fn passthrough_behavior(&self) -> ::std::option::Option<&crate::types::PassthroughBehavior> {
         self.passthrough_behavior.as_ref()
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn payload_format_version(&self) -> ::std::option::Option<&str> {
         self.payload_format_version.as_deref()
     }
@@ -435,17 +435,17 @@ impl IntegrationBuilder {
     pub fn get_passthrough_behavior(&self) -> &::std::option::Option<crate::types::PassthroughBehavior> {
         &self.passthrough_behavior
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn payload_format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload_format_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn set_payload_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload_format_version = input;
         self
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn get_payload_format_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload_format_version
     }

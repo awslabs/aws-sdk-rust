@@ -22,7 +22,7 @@ impl crate::operation::describe_pending_maintenance_actions::builders::DescribeP
 }
 /// Fluent builder constructing a request to `DescribePendingMaintenanceActions`.
 ///
-/// <p>For internal use only</p>
+/// <p>Returns a list of upcoming maintenance events for replication instances in your account in the current Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePendingMaintenanceActionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -735,6 +735,10 @@ pub(crate) mod shape_fleet_advisor_lsa_analysis_response;
 
 pub(crate) mod shape_fleet_advisor_schema_object_response;
 
+pub(crate) mod shape_ibm_db2_luw_data_provider_settings;
+
+pub(crate) mod shape_ibm_db2z_os_data_provider_settings;
+
 pub(crate) mod shape_limitation;
 
 pub(crate) mod shape_maria_db_data_provider_settings;

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::delete_vpc_origin::builders::DeleteVpcOriginFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_vpc_origin::builders::DeleteVpcOriginFluentBuilder::set_id):<br>required: **true**<br><p>The VPC origin ID.</p><br>
-    ///   - [`if_match(impl Into<String>)`](crate::operation::delete_vpc_origin::builders::DeleteVpcOriginFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_vpc_origin::builders::DeleteVpcOriginFluentBuilder::set_if_match):<br>required: **true**<br><p>The VPC origin to delete, if a match occurs.</p><br>
+    ///   - [`if_match(impl Into<String>)`](crate::operation::delete_vpc_origin::builders::DeleteVpcOriginFluentBuilder::if_match) / [`set_if_match(Option<String>)`](crate::operation::delete_vpc_origin::builders::DeleteVpcOriginFluentBuilder::set_if_match):<br>required: **true**<br><p>The version identifier of the VPC origin to delete. This is the <code>ETag</code> value returned in the response to <code>GetVpcOrigin</code>.</p><br>
     /// - On success, responds with [`DeleteVpcOriginOutput`](crate::operation::delete_vpc_origin::DeleteVpcOriginOutput) with field(s):
     ///   - [`vpc_origin(Option<VpcOrigin>)`](crate::operation::delete_vpc_origin::DeleteVpcOriginOutput::vpc_origin): <p>The VPC origin.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::delete_vpc_origin::DeleteVpcOriginOutput::e_tag): <p>The VPC origin ETag.</p>

@@ -55,7 +55,7 @@ pub struct CreateReplicationInstanceInput {
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub network_type: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    /// <p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>
     pub kerberos_authentication_settings: ::std::option::Option<crate::types::KerberosAuthenticationSettings>,
 }
 impl CreateReplicationInstanceInput {
@@ -146,7 +146,7 @@ impl CreateReplicationInstanceInput {
     pub fn network_type(&self) -> ::std::option::Option<&str> {
         self.network_type.as_deref()
     }
-    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    /// <p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>
     pub fn kerberos_authentication_settings(&self) -> ::std::option::Option<&crate::types::KerberosAuthenticationSettings> {
         self.kerberos_authentication_settings.as_ref()
     }
@@ -476,17 +476,17 @@ impl CreateReplicationInstanceInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_type
     }
-    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    /// <p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>
     pub fn kerberos_authentication_settings(mut self, input: crate::types::KerberosAuthenticationSettings) -> Self {
         self.kerberos_authentication_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    /// <p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>
     pub fn set_kerberos_authentication_settings(mut self, input: ::std::option::Option<crate::types::KerberosAuthenticationSettings>) -> Self {
         self.kerberos_authentication_settings = input;
         self
     }
-    /// <p>Specifies the ID of the secret that stores the key cache file required for kerberos authentication, when creating a replication instance.</p>
+    /// <p>Specifies the settings required for kerberos authentication when creating the replication instance.</p>
     pub fn get_kerberos_authentication_settings(&self) -> &::std::option::Option<crate::types::KerberosAuthenticationSettings> {
         &self.kerberos_authentication_settings
     }

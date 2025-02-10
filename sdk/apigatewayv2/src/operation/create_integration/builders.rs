@@ -301,17 +301,17 @@ impl CreateIntegrationFluentBuilder {
     pub fn get_passthrough_behavior(&self) -> &::std::option::Option<crate::types::PassthroughBehavior> {
         self.inner.get_passthrough_behavior()
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn payload_format_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.payload_format_version(input.into());
         self
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn set_payload_format_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_payload_format_version(input);
         self
     }
-    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
+    /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs. Supported values for Lambda proxy integrations are 1.0 and 2.0. For all other integrations, 1.0 is the only supported value. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">Working with AWS Lambda proxy integrations for HTTP APIs</a>.</p>
     pub fn get_payload_format_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_payload_format_version()
     }

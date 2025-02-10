@@ -222,17 +222,17 @@ impl CreateSecurityProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
     ///
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code></p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. For a list of Amazon Connect resources that you can tag, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn tag_restricted_resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_restricted_resources(input.into());
         self
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code></p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. For a list of Amazon Connect resources that you can tag, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_tag_restricted_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_restricted_resources(input);
         self
     }
-    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code></p>
+    /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. For a list of Amazon Connect resources that you can tag, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Add tags to resources in Amazon Connect</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn get_tag_restricted_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_restricted_resources()
     }

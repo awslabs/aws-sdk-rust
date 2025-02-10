@@ -6,6 +6,10 @@
 pub enum DataProviderSettings {
     /// <p>Provides information that defines a DocumentDB data provider.</p>
     DocDbSettings(crate::types::DocDbDataProviderSettings),
+    /// <p>Provides information that defines an IBM DB2 LUW data provider.</p>
+    IbmDb2LuwSettings(crate::types::IbmDb2LuwDataProviderSettings),
+    /// <p>Provides information that defines an IBM DB2 for z/OS data provider.</p>
+    IbmDb2zOsSettings(crate::types::IbmDb2zOsDataProviderSettings),
     /// <p>Provides information that defines a MariaDB data provider.</p>
     MariaDbSettings(crate::types::MariaDbDataProviderSettings),
     /// <p>Provides information that defines a Microsoft SQL Server data provider.</p>
@@ -43,6 +47,32 @@ impl DataProviderSettings {
     /// Returns true if this is a [`DocDbSettings`](crate::types::DataProviderSettings::DocDbSettings).
     pub fn is_doc_db_settings(&self) -> bool {
         self.as_doc_db_settings().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IbmDb2LuwSettings`](crate::types::DataProviderSettings::IbmDb2LuwSettings), extracting the inner [`IbmDb2LuwDataProviderSettings`](crate::types::IbmDb2LuwDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ibm_db2_luw_settings(&self) -> ::std::result::Result<&crate::types::IbmDb2LuwDataProviderSettings, &Self> {
+        if let DataProviderSettings::IbmDb2LuwSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IbmDb2LuwSettings`](crate::types::DataProviderSettings::IbmDb2LuwSettings).
+    pub fn is_ibm_db2_luw_settings(&self) -> bool {
+        self.as_ibm_db2_luw_settings().is_ok()
+    }
+    /// Tries to convert the enum instance into [`IbmDb2zOsSettings`](crate::types::DataProviderSettings::IbmDb2zOsSettings), extracting the inner [`IbmDb2zOsDataProviderSettings`](crate::types::IbmDb2zOsDataProviderSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ibm_db2z_os_settings(&self) -> ::std::result::Result<&crate::types::IbmDb2zOsDataProviderSettings, &Self> {
+        if let DataProviderSettings::IbmDb2zOsSettings(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IbmDb2zOsSettings`](crate::types::DataProviderSettings::IbmDb2zOsSettings).
+    pub fn is_ibm_db2z_os_settings(&self) -> bool {
+        self.as_ibm_db2z_os_settings().is_ok()
     }
     /// Tries to convert the enum instance into [`MariaDbSettings`](crate::types::DataProviderSettings::MariaDbSettings), extracting the inner [`MariaDbDataProviderSettings`](crate::types::MariaDbDataProviderSettings).
     /// Returns `Err(&Self)` if it can't be converted.

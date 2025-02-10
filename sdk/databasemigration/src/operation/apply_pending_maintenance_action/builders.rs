@@ -123,19 +123,19 @@ impl ApplyPendingMaintenanceActionFluentBuilder {
         self.inner.get_replication_instance_arn()
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>, <code>os-patch</code></p>
     pub fn apply_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.apply_action(input.into());
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>, <code>os-patch</code></p>
     pub fn set_apply_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_apply_action(input);
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>os-upgrade</code>, <code>system-update</code>, <code>db-upgrade</code>, <code>os-patch</code></p>
     pub fn get_apply_action(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_apply_action()
     }

@@ -49,11 +49,23 @@ pub fn ser_data_provider_settings(
             crate::protocol_serde::shape_maria_db_data_provider_settings::ser_maria_db_data_provider_settings(&mut object_7, inner)?;
             object_7.finish();
         }
+        crate::types::DataProviderSettings::IbmDb2LuwSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_8 = object_5.key("IbmDb2LuwSettings").start_object();
+            crate::protocol_serde::shape_ibm_db2_luw_data_provider_settings::ser_ibm_db2_luw_data_provider_settings(&mut object_8, inner)?;
+            object_8.finish();
+        }
+        crate::types::DataProviderSettings::IbmDb2zOsSettings(inner) => {
+            #[allow(unused_mut)]
+            let mut object_9 = object_5.key("IbmDb2zOsSettings").start_object();
+            crate::protocol_serde::shape_ibm_db2z_os_data_provider_settings::ser_ibm_db2z_os_data_provider_settings(&mut object_9, inner)?;
+            object_9.finish();
+        }
         crate::types::DataProviderSettings::MongoDbSettings(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_5.key("MongoDbSettings").start_object();
-            crate::protocol_serde::shape_mongo_db_data_provider_settings::ser_mongo_db_data_provider_settings(&mut object_8, inner)?;
-            object_8.finish();
+            let mut object_10 = object_5.key("MongoDbSettings").start_object();
+            crate::protocol_serde::shape_mongo_db_data_provider_settings::ser_mongo_db_data_provider_settings(&mut object_10, inner)?;
+            object_10.finish();
         }
         crate::types::DataProviderSettings::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -134,6 +146,18 @@ where
                             crate::protocol_serde::shape_maria_db_data_provider_settings::de_maria_db_data_provider_settings(tokens)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MariaDbSettings' cannot be null"),
                             )?,
+                        )),
+                        "IbmDb2LuwSettings" => Some(crate::types::DataProviderSettings::IbmDb2LuwSettings(
+                            crate::protocol_serde::shape_ibm_db2_luw_data_provider_settings::de_ibm_db2_luw_data_provider_settings(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IbmDb2LuwSettings' cannot be null")
+                                })?,
+                        )),
+                        "IbmDb2zOsSettings" => Some(crate::types::DataProviderSettings::IbmDb2zOsSettings(
+                            crate::protocol_serde::shape_ibm_db2z_os_data_provider_settings::de_ibm_db2z_os_data_provider_settings(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IbmDb2zOsSettings' cannot be null")
+                                })?,
                         )),
                         "MongoDbSettings" => Some(crate::types::DataProviderSettings::MongoDbSettings(
                             crate::protocol_serde::shape_mongo_db_data_provider_settings::de_mongo_db_data_provider_settings(tokens)?.ok_or_else(

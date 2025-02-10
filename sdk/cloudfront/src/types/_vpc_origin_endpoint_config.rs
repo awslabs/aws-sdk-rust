@@ -8,9 +8,9 @@ pub struct VpcOriginEndpointConfig {
     pub name: ::std::string::String,
     /// <p>The ARN of the CloudFront VPC origin endpoint configuration.</p>
     pub arn: ::std::string::String,
-    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration. The default value is <code>80</code>.</p>
     pub http_port: i32,
-    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration. The default value is <code>443</code>.</p>
     pub https_port: i32,
     /// <p>The origin protocol policy for the CloudFront VPC origin endpoint configuration.</p>
     pub origin_protocol_policy: crate::types::OriginProtocolPolicy,
@@ -28,11 +28,11 @@ impl VpcOriginEndpointConfig {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration. The default value is <code>80</code>.</p>
     pub fn http_port(&self) -> i32 {
         self.http_port
     }
-    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration. The default value is <code>443</code>.</p>
     pub fn https_port(&self) -> i32 {
         self.https_port
     }
@@ -94,33 +94,33 @@ impl VpcOriginEndpointConfigBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration. The default value is <code>80</code>.</p>
     /// This field is required.
     pub fn http_port(mut self, input: i32) -> Self {
         self.http_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration. The default value is <code>80</code>.</p>
     pub fn set_http_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_port = input;
         self
     }
-    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTP port for the CloudFront VPC origin endpoint configuration. The default value is <code>80</code>.</p>
     pub fn get_http_port(&self) -> &::std::option::Option<i32> {
         &self.http_port
     }
-    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration. The default value is <code>443</code>.</p>
     /// This field is required.
     pub fn https_port(mut self, input: i32) -> Self {
         self.https_port = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration. The default value is <code>443</code>.</p>
     pub fn set_https_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.https_port = input;
         self
     }
-    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration.</p>
+    /// <p>The HTTPS port of the CloudFront VPC origin endpoint configuration. The default value is <code>443</code>.</p>
     pub fn get_https_port(&self) -> &::std::option::Option<i32> {
         &self.https_port
     }

@@ -109,6 +109,10 @@ pub use crate::types::_data_provider::DataProviderBuilder;
 
 pub use crate::types::_mongo_db_data_provider_settings::MongoDbDataProviderSettingsBuilder;
 
+pub use crate::types::_ibm_db2z_os_data_provider_settings::IbmDb2zOsDataProviderSettingsBuilder;
+
+pub use crate::types::_ibm_db2_luw_data_provider_settings::IbmDb2LuwDataProviderSettingsBuilder;
+
 pub use crate::types::_maria_db_data_provider_settings::MariaDbDataProviderSettingsBuilder;
 
 pub use crate::types::_doc_db_data_provider_settings::DocDbDataProviderSettingsBuilder;

@@ -181,6 +181,10 @@ pub use crate::types::_data_provider_settings::DataProviderSettings;
 
 pub use crate::types::_mongo_db_data_provider_settings::MongoDbDataProviderSettings;
 
+pub use crate::types::_ibm_db2z_os_data_provider_settings::IbmDb2zOsDataProviderSettings;
+
+pub use crate::types::_ibm_db2_luw_data_provider_settings::IbmDb2LuwDataProviderSettings;
+
 pub use crate::types::_maria_db_data_provider_settings::MariaDbDataProviderSettings;
 
 pub use crate::types::_doc_db_data_provider_settings::DocDbDataProviderSettings;
@@ -393,7 +397,11 @@ mod _fleet_advisor_schema_object_response;
 
 mod _gcp_my_sql_settings;
 
+mod _ibm_db2_luw_data_provider_settings;
+
 mod _ibm_db2_settings;
+
+mod _ibm_db2z_os_data_provider_settings;
 
 mod _instance_profile;
 
