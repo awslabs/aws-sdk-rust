@@ -68,6 +68,18 @@ pub struct CrlConfiguration {
     pub s3_object_acl: ::std::option::Option<crate::types::S3ObjectAcl>,
     /// <p>Configures the behavior of the CRL Distribution Point extension for certificates issued by your certificate authority. If this field is not provided, then the CRl Distribution Point Extension will be present and contain the default CRL URL.</p>
     pub crl_distribution_point_extension_configuration: ::std::option::Option<crate::types::CrlDistributionPointExtensionConfiguration>,
+    /// <p>Choose whether to use a partitioned or complete CRL. Your choice determines the maximum number of certificates that the certificate authority can issue and revoke, as described in the <a href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca-connector-ad">Amazon Web Services Private CA quotas</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PARTITIONED</code> - The default setting. Partitioned CRLs are an especially good option for devices that have limited processing power or storage capacity, such as certain IoT devices. Compared to complete CRLs, partitioned CRLs dramatically increase the number of certificates your private CA can issue. Each certificate that Amazon Web Services Private CA issues is bound to a specific CRL partition through the CRL distribution point (CDP) defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p><important>
+    /// <p>To make sure that your client fetches the CRL from a valid endpoint, we recommend that you programmatically validate that the CRL's issuing distribution point (IDP) URI matches the certificate's CDP URI. Amazon Web Services Private CA marks the IDP extension as critical, which your client must be able to process.</p>
+    /// </important></li>
+    /// <li>
+    /// <p><code>COMPLETE</code> - Amazon Web Services Private CA maintains a single CRL file for all unexpired certificates issued by a CA that have been revoked for any reason.</p></li>
+    /// </ul>
+    pub crl_type: ::std::option::Option<crate::types::CrlType>,
+    /// <p>Designates a custom file path in S3 for CRL(s). For example, <code>http://&lt;CustomName&gt;/&lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. You can change the custom path up to five times.</p>
+    pub custom_path: ::std::option::Option<::std::string::String>,
 }
 impl CrlConfiguration {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action.</p>
@@ -101,6 +113,22 @@ impl CrlConfiguration {
     pub fn crl_distribution_point_extension_configuration(&self) -> ::std::option::Option<&crate::types::CrlDistributionPointExtensionConfiguration> {
         self.crl_distribution_point_extension_configuration.as_ref()
     }
+    /// <p>Choose whether to use a partitioned or complete CRL. Your choice determines the maximum number of certificates that the certificate authority can issue and revoke, as described in the <a href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca-connector-ad">Amazon Web Services Private CA quotas</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PARTITIONED</code> - The default setting. Partitioned CRLs are an especially good option for devices that have limited processing power or storage capacity, such as certain IoT devices. Compared to complete CRLs, partitioned CRLs dramatically increase the number of certificates your private CA can issue. Each certificate that Amazon Web Services Private CA issues is bound to a specific CRL partition through the CRL distribution point (CDP) defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p><important>
+    /// <p>To make sure that your client fetches the CRL from a valid endpoint, we recommend that you programmatically validate that the CRL's issuing distribution point (IDP) URI matches the certificate's CDP URI. Amazon Web Services Private CA marks the IDP extension as critical, which your client must be able to process.</p>
+    /// </important></li>
+    /// <li>
+    /// <p><code>COMPLETE</code> - Amazon Web Services Private CA maintains a single CRL file for all unexpired certificates issued by a CA that have been revoked for any reason.</p></li>
+    /// </ul>
+    pub fn crl_type(&self) -> ::std::option::Option<&crate::types::CrlType> {
+        self.crl_type.as_ref()
+    }
+    /// <p>Designates a custom file path in S3 for CRL(s). For example, <code>http://&lt;CustomName&gt;/&lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. You can change the custom path up to five times.</p>
+    pub fn custom_path(&self) -> ::std::option::Option<&str> {
+        self.custom_path.as_deref()
+    }
 }
 impl CrlConfiguration {
     /// Creates a new builder-style object to manufacture [`CrlConfiguration`](crate::types::CrlConfiguration).
@@ -119,6 +147,8 @@ pub struct CrlConfigurationBuilder {
     pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_object_acl: ::std::option::Option<crate::types::S3ObjectAcl>,
     pub(crate) crl_distribution_point_extension_configuration: ::std::option::Option<crate::types::CrlDistributionPointExtensionConfiguration>,
+    pub(crate) crl_type: ::std::option::Option<crate::types::CrlType>,
+    pub(crate) custom_path: ::std::option::Option<::std::string::String>,
 }
 impl CrlConfigurationBuilder {
     /// <p>Boolean value that specifies whether certificate revocation lists (CRLs) are enabled. You can use this value to enable certificate revocation for a new CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action or for an existing CA when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a> action.</p>
@@ -232,6 +262,58 @@ impl CrlConfigurationBuilder {
     ) -> &::std::option::Option<crate::types::CrlDistributionPointExtensionConfiguration> {
         &self.crl_distribution_point_extension_configuration
     }
+    /// <p>Choose whether to use a partitioned or complete CRL. Your choice determines the maximum number of certificates that the certificate authority can issue and revoke, as described in the <a href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca-connector-ad">Amazon Web Services Private CA quotas</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PARTITIONED</code> - The default setting. Partitioned CRLs are an especially good option for devices that have limited processing power or storage capacity, such as certain IoT devices. Compared to complete CRLs, partitioned CRLs dramatically increase the number of certificates your private CA can issue. Each certificate that Amazon Web Services Private CA issues is bound to a specific CRL partition through the CRL distribution point (CDP) defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p><important>
+    /// <p>To make sure that your client fetches the CRL from a valid endpoint, we recommend that you programmatically validate that the CRL's issuing distribution point (IDP) URI matches the certificate's CDP URI. Amazon Web Services Private CA marks the IDP extension as critical, which your client must be able to process.</p>
+    /// </important></li>
+    /// <li>
+    /// <p><code>COMPLETE</code> - Amazon Web Services Private CA maintains a single CRL file for all unexpired certificates issued by a CA that have been revoked for any reason.</p></li>
+    /// </ul>
+    pub fn crl_type(mut self, input: crate::types::CrlType) -> Self {
+        self.crl_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Choose whether to use a partitioned or complete CRL. Your choice determines the maximum number of certificates that the certificate authority can issue and revoke, as described in the <a href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca-connector-ad">Amazon Web Services Private CA quotas</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PARTITIONED</code> - The default setting. Partitioned CRLs are an especially good option for devices that have limited processing power or storage capacity, such as certain IoT devices. Compared to complete CRLs, partitioned CRLs dramatically increase the number of certificates your private CA can issue. Each certificate that Amazon Web Services Private CA issues is bound to a specific CRL partition through the CRL distribution point (CDP) defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p><important>
+    /// <p>To make sure that your client fetches the CRL from a valid endpoint, we recommend that you programmatically validate that the CRL's issuing distribution point (IDP) URI matches the certificate's CDP URI. Amazon Web Services Private CA marks the IDP extension as critical, which your client must be able to process.</p>
+    /// </important></li>
+    /// <li>
+    /// <p><code>COMPLETE</code> - Amazon Web Services Private CA maintains a single CRL file for all unexpired certificates issued by a CA that have been revoked for any reason.</p></li>
+    /// </ul>
+    pub fn set_crl_type(mut self, input: ::std::option::Option<crate::types::CrlType>) -> Self {
+        self.crl_type = input;
+        self
+    }
+    /// <p>Choose whether to use a partitioned or complete CRL. Your choice determines the maximum number of certificates that the certificate authority can issue and revoke, as described in the <a href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca-connector-ad">Amazon Web Services Private CA quotas</a>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PARTITIONED</code> - The default setting. Partitioned CRLs are an especially good option for devices that have limited processing power or storage capacity, such as certain IoT devices. Compared to complete CRLs, partitioned CRLs dramatically increase the number of certificates your private CA can issue. Each certificate that Amazon Web Services Private CA issues is bound to a specific CRL partition through the CRL distribution point (CDP) defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>.</p><important>
+    /// <p>To make sure that your client fetches the CRL from a valid endpoint, we recommend that you programmatically validate that the CRL's issuing distribution point (IDP) URI matches the certificate's CDP URI. Amazon Web Services Private CA marks the IDP extension as critical, which your client must be able to process.</p>
+    /// </important></li>
+    /// <li>
+    /// <p><code>COMPLETE</code> - Amazon Web Services Private CA maintains a single CRL file for all unexpired certificates issued by a CA that have been revoked for any reason.</p></li>
+    /// </ul>
+    pub fn get_crl_type(&self) -> &::std::option::Option<crate::types::CrlType> {
+        &self.crl_type
+    }
+    /// <p>Designates a custom file path in S3 for CRL(s). For example, <code>http://&lt;CustomName&gt;/&lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. You can change the custom path up to five times.</p>
+    pub fn custom_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Designates a custom file path in S3 for CRL(s). For example, <code>http://&lt;CustomName&gt;/&lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. You can change the custom path up to five times.</p>
+    pub fn set_custom_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_path = input;
+        self
+    }
+    /// <p>Designates a custom file path in S3 for CRL(s). For example, <code>http://&lt;CustomName&gt;/&lt;CustomPath&gt;/&lt;CrlPartition_GUID&gt;.crl</code>. You can change the custom path up to five times.</p>
+    pub fn get_custom_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_path
+    }
     /// Consumes the builder and constructs a [`CrlConfiguration`](crate::types::CrlConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`enabled`](crate::types::builders::CrlConfigurationBuilder::enabled)
@@ -248,6 +330,8 @@ impl CrlConfigurationBuilder {
             s3_bucket_name: self.s3_bucket_name,
             s3_object_acl: self.s3_object_acl,
             crl_distribution_point_extension_configuration: self.crl_distribution_point_extension_configuration,
+            crl_type: self.crl_type,
+            custom_path: self.custom_path,
         })
     }
 }

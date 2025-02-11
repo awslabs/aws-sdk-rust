@@ -30,6 +30,12 @@ pub fn ser_crl_configuration(
         )?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.crl_type {
+        object.key("CrlType").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.custom_path {
+        object.key("CustomPath").string(var_8.as_str());
+    }
     Ok(())
 }
 
@@ -83,6 +89,20 @@ where
                             builder = builder.set_crl_distribution_point_extension_configuration(
                                     crate::protocol_serde::shape_crl_distribution_point_extension_configuration::de_crl_distribution_point_extension_configuration(tokens)?
                                 );
+                        }
+                        "CrlType" => {
+                            builder = builder.set_crl_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CrlType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CustomPath" => {
+                            builder = builder.set_custom_path(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

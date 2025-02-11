@@ -15,9 +15,15 @@ pub struct AvailabilityZone {
     pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Availability Zone, Local Zone, or Wavelength Zone.</p>
     pub zone_id: ::std::option::Option<::std::string::String>,
-    /// <p>For Availability Zones, this parameter has the same value as the Region name.</p>
-    /// <p>For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.</p>
-    /// <p>For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    /// <p>The name of the zone group. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Availability Zones - <code>us-east-1-zg-1</code></p></li>
+    /// <li>
+    /// <p>Local Zones - <code>us-west-2-lax-1</code></p></li>
+    /// <li>
+    /// <p>Wavelength Zones - <code>us-east-1-wl1-bos-wlz-1</code></p></li>
+    /// </ul>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network border group.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
@@ -54,9 +60,15 @@ impl AvailabilityZone {
     pub fn zone_id(&self) -> ::std::option::Option<&str> {
         self.zone_id.as_deref()
     }
-    /// <p>For Availability Zones, this parameter has the same value as the Region name.</p>
-    /// <p>For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.</p>
-    /// <p>For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    /// <p>The name of the zone group. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Availability Zones - <code>us-east-1-zg-1</code></p></li>
+    /// <li>
+    /// <p>Local Zones - <code>us-west-2-lax-1</code></p></li>
+    /// <li>
+    /// <p>Wavelength Zones - <code>us-east-1-wl1-bos-wlz-1</code></p></li>
+    /// </ul>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
@@ -184,23 +196,41 @@ impl AvailabilityZoneBuilder {
     pub fn get_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.zone_id
     }
-    /// <p>For Availability Zones, this parameter has the same value as the Region name.</p>
-    /// <p>For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.</p>
-    /// <p>For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    /// <p>The name of the zone group. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Availability Zones - <code>us-east-1-zg-1</code></p></li>
+    /// <li>
+    /// <p>Local Zones - <code>us-west-2-lax-1</code></p></li>
+    /// <li>
+    /// <p>Wavelength Zones - <code>us-east-1-wl1-bos-wlz-1</code></p></li>
+    /// </ul>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For Availability Zones, this parameter has the same value as the Region name.</p>
-    /// <p>For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.</p>
-    /// <p>For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    /// <p>The name of the zone group. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Availability Zones - <code>us-east-1-zg-1</code></p></li>
+    /// <li>
+    /// <p>Local Zones - <code>us-west-2-lax-1</code></p></li>
+    /// <li>
+    /// <p>Wavelength Zones - <code>us-east-1-wl1-bos-wlz-1</code></p></li>
+    /// </ul>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>For Availability Zones, this parameter has the same value as the Region name.</p>
-    /// <p>For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.</p>
-    /// <p>For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.</p>
+    /// <p>The name of the zone group. For example:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Availability Zones - <code>us-east-1-zg-1</code></p></li>
+    /// <li>
+    /// <p>Local Zones - <code>us-west-2-lax-1</code></p></li>
+    /// <li>
+    /// <p>Wavelength Zones - <code>us-east-1-wl1-bos-wlz-1</code></p></li>
+    /// </ul>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name
     }

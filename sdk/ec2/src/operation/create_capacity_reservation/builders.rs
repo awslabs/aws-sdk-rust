@@ -229,7 +229,7 @@ impl CreateCapacityReservationFluentBuilder {
         self.inner.get_tenancy()
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn instance_count(mut self, input: i32) -> Self {
@@ -237,7 +237,7 @@ impl CreateCapacityReservationFluentBuilder {
         self
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -245,7 +245,7 @@ impl CreateCapacityReservationFluentBuilder {
         self
     }
     /// <p>The number of instances for which to reserve capacity.</p><note>
-    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 VPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
+    /// <p>You can request future-dated Capacity Reservations for an instance count with a minimum of 100 vCPUs. For example, if you request a future-dated Capacity Reservation for <code>m5.xlarge</code> instances, you must request at least 25 instances (<i>25 * m5.xlarge = 100 vCPUs</i>).</p>
     /// </note>
     /// <p>Valid range: 1 - 1000</p>
     pub fn get_instance_count(&self) -> &::std::option::Option<i32> {

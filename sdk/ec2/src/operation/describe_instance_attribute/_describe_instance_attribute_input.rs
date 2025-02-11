@@ -8,7 +8,7 @@ pub struct DescribeInstanceAttributeInput {
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
 }
 impl DescribeInstanceAttributeInput {
@@ -21,7 +21,7 @@ impl DescribeInstanceAttributeInput {
         self.instance_id.as_deref()
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::InstanceAttributeName> {
         self.attribute.as_ref()
     }
@@ -72,20 +72,20 @@ impl DescribeInstanceAttributeInputBuilder {
         &self.instance_id
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     /// This field is required.
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
         &self.attribute
     }

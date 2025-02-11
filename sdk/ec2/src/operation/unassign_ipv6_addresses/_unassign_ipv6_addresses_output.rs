@@ -7,7 +7,7 @@ pub struct UnassignIpv6AddressesOutput {
     pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    /// <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -22,7 +22,7 @@ impl UnassignIpv6AddressesOutput {
     pub fn unassigned_ipv6_addresses(&self) -> &[::std::string::String] {
         self.unassigned_ipv6_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    /// <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.unassigned_ipv6_prefixes.is_none()`.
     pub fn unassigned_ipv6_prefixes(&self) -> &[::std::string::String] {
@@ -89,19 +89,19 @@ impl UnassignIpv6AddressesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_unassigned_ipv6_prefixes`](Self::set_unassigned_ipv6_prefixes).
     ///
-    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    /// <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
     pub fn unassigned_ipv6_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.unassigned_ipv6_prefixes.unwrap_or_default();
         v.push(input.into());
         self.unassigned_ipv6_prefixes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    /// <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
     pub fn set_unassigned_ipv6_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.unassigned_ipv6_prefixes = input;
         self
     }
-    /// <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    /// <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
     pub fn get_unassigned_ipv6_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.unassigned_ipv6_prefixes
     }

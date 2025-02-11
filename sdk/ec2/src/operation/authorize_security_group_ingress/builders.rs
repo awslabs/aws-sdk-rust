@@ -113,21 +113,27 @@ impl AuthorizeSecurityGroupIngressFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The IPv4 address range, in CIDR format.</p>
+    /// <p>The IPv4 address range, in CIDR format.</p><note>
+    /// <p>Amazon Web Services <a href="https://en.wikipedia.org/wiki/Canonicalization">canonicalizes</a> IPv4 and IPv6 CIDRs. For example, if you specify 100.68.0.18/18 for the CIDR block, Amazon Web Services canonicalizes the CIDR block to 100.68.0.0/18. Any subsequent DescribeSecurityGroups and DescribeSecurityGroupRules calls will return the canonicalized form of the CIDR block. Additionally, if you attempt to add another rule with the non-canonical form of the CIDR (such as 100.68.0.18/18) and there is already a rule for the canonicalized form of the CIDR block (such as 100.68.0.0/18), the API throws an duplicate rule error.</p>
+    /// </note>
     /// <p>To specify an IPv6 address range, use IP permissions instead.</p>
     /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_ip(input.into());
         self
     }
-    /// <p>The IPv4 address range, in CIDR format.</p>
+    /// <p>The IPv4 address range, in CIDR format.</p><note>
+    /// <p>Amazon Web Services <a href="https://en.wikipedia.org/wiki/Canonicalization">canonicalizes</a> IPv4 and IPv6 CIDRs. For example, if you specify 100.68.0.18/18 for the CIDR block, Amazon Web Services canonicalizes the CIDR block to 100.68.0.0/18. Any subsequent DescribeSecurityGroups and DescribeSecurityGroupRules calls will return the canonicalized form of the CIDR block. Additionally, if you attempt to add another rule with the non-canonical form of the CIDR (such as 100.68.0.18/18) and there is already a rule for the canonicalized form of the CIDR block (such as 100.68.0.0/18), the API throws an duplicate rule error.</p>
+    /// </note>
     /// <p>To specify an IPv6 address range, use IP permissions instead.</p>
     /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cidr_ip(input);
         self
     }
-    /// <p>The IPv4 address range, in CIDR format.</p>
+    /// <p>The IPv4 address range, in CIDR format.</p><note>
+    /// <p>Amazon Web Services <a href="https://en.wikipedia.org/wiki/Canonicalization">canonicalizes</a> IPv4 and IPv6 CIDRs. For example, if you specify 100.68.0.18/18 for the CIDR block, Amazon Web Services canonicalizes the CIDR block to 100.68.0.0/18. Any subsequent DescribeSecurityGroups and DescribeSecurityGroupRules calls will return the canonicalized form of the CIDR block. Additionally, if you attempt to add another rule with the non-canonical form of the CIDR (such as 100.68.0.18/18) and there is already a rule for the canonicalized form of the CIDR block (such as 100.68.0.0/18), the API throws an duplicate rule error.</p>
+    /// </note>
     /// <p>To specify an IPv6 address range, use IP permissions instead.</p>
     /// <p>To specify multiple rules and descriptions for the rules, use IP permissions instead.</p>
     pub fn get_cidr_ip(&self) -> &::std::option::Option<::std::string::String> {

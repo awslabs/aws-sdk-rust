@@ -22,7 +22,7 @@ impl crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesI
 }
 /// Fluent builder constructing a request to `UnassignIpv6Addresses`.
 ///
-/// <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network interface.</p>
+/// <p>Unassigns the specified IPv6 addresses or Prefix Delegation prefixes from a network interface.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnassignIpv6AddressesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

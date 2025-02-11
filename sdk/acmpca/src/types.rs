@@ -7,6 +7,8 @@ pub use crate::types::_ocsp_configuration::OcspConfiguration;
 
 pub use crate::types::_crl_configuration::CrlConfiguration;
 
+pub use crate::types::_crl_type::CrlType;
+
 pub use crate::types::_crl_distribution_point_extension_configuration::CrlDistributionPointExtensionConfiguration;
 
 pub use crate::types::_s3_object_acl::S3ObjectAcl;
@@ -112,6 +114,8 @@ mod _certificate_authority_usage_mode;
 mod _crl_configuration;
 
 mod _crl_distribution_point_extension_configuration;
+
+mod _crl_type;
 
 mod _csr_extensions;
 

@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`UnassignIpv6AddressesOutput`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput) with field(s):
     ///   - [`network_interface_id(Option<String>)`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput::network_interface_id): <p>The ID of the network interface.</p>
     ///   - [`unassigned_ipv6_addresses(Option<Vec::<String>>)`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput::unassigned_ipv6_addresses): <p>The IPv6 addresses that have been unassigned from the network interface.</p>
-    ///   - [`unassigned_ipv6_prefixes(Option<Vec::<String>>)`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput::unassigned_ipv6_prefixes): <p>The IPv4 prefixes that have been unassigned from the network interface.</p>
+    ///   - [`unassigned_ipv6_prefixes(Option<Vec::<String>>)`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput::unassigned_ipv6_prefixes): <p>The IPv6 prefixes that have been unassigned from the network interface.</p>
     /// - On failure, responds with [`SdkError<UnassignIpv6AddressesError>`](crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError)
     pub fn unassign_ipv6_addresses(&self) -> crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesFluentBuilder {
         crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesFluentBuilder::new(self.handle.clone())

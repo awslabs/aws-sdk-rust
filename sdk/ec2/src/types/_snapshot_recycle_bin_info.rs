@@ -6,7 +6,7 @@
 pub struct SnapshotRecycleBinInfo {
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
+    /// <p>The date and time when the snapshot entered the Recycle Bin.</p>
     pub recycle_bin_enter_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
     pub recycle_bin_exit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -20,7 +20,7 @@ impl SnapshotRecycleBinInfo {
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
+    /// <p>The date and time when the snapshot entered the Recycle Bin.</p>
     pub fn recycle_bin_enter_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.recycle_bin_enter_time.as_ref()
     }
@@ -69,17 +69,17 @@ impl SnapshotRecycleBinInfoBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
-    /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
+    /// <p>The date and time when the snapshot entered the Recycle Bin.</p>
     pub fn recycle_bin_enter_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.recycle_bin_enter_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
+    /// <p>The date and time when the snapshot entered the Recycle Bin.</p>
     pub fn set_recycle_bin_enter_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.recycle_bin_enter_time = input;
         self
     }
-    /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
+    /// <p>The date and time when the snapshot entered the Recycle Bin.</p>
     pub fn get_recycle_bin_enter_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.recycle_bin_enter_time
     }

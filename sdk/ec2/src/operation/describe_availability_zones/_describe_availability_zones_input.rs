@@ -15,7 +15,7 @@ pub struct DescribeAvailabilityZonesInput {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
-    /// <p><code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
+    /// <p><code>group-name</code> - The name of the zone group for the Availability Zone (for example, <code>us-east-1-zg-1</code>), the Local Zone (for example, <code>us-west-2-lax-1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
     /// <li>
     /// <p><code>message</code> - The Zone message.</p></li>
     /// <li>
@@ -62,7 +62,7 @@ impl DescribeAvailabilityZonesInput {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
-    /// <p><code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
+    /// <p><code>group-name</code> - The name of the zone group for the Availability Zone (for example, <code>us-east-1-zg-1</code>), the Local Zone (for example, <code>us-west-2-lax-1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
     /// <li>
     /// <p><code>message</code> - The Zone message.</p></li>
     /// <li>
@@ -184,7 +184,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
-    /// <p><code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
+    /// <p><code>group-name</code> - The name of the zone group for the Availability Zone (for example, <code>us-east-1-zg-1</code>), the Local Zone (for example, <code>us-west-2-lax-1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
     /// <li>
     /// <p><code>message</code> - The Zone message.</p></li>
     /// <li>
@@ -213,7 +213,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
-    /// <p><code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
+    /// <p><code>group-name</code> - The name of the zone group for the Availability Zone (for example, <code>us-east-1-zg-1</code>), the Local Zone (for example, <code>us-west-2-lax-1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
     /// <li>
     /// <p><code>message</code> - The Zone message.</p></li>
     /// <li>
@@ -240,7 +240,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
-    /// <p><code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
+    /// <p><code>group-name</code> - The name of the zone group for the Availability Zone (for example, <code>us-east-1-zg-1</code>), the Local Zone (for example, <code>us-west-2-lax-1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1</code>).</p></li>
     /// <li>
     /// <p><code>message</code> - The Zone message.</p></li>
     /// <li>

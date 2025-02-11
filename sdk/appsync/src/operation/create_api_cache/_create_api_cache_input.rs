@@ -16,9 +16,11 @@ pub struct CreateApiCacheInput {
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li>
-    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests from the same user are cached. Individual resolvers are automatically cached. All API calls will try to return responses from the cache.</p></li>
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>OPERATION_LEVEL_CACHING</b>: Full requests are cached together and returned without executing resolvers.</p></li>
     /// </ul>
     pub api_caching_behavior: ::std::option::Option<crate::types::ApiCachingBehavior>,
     /// <p>The cache instance type. Valid values are</p>
@@ -90,9 +92,11 @@ impl CreateApiCacheInput {
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li>
-    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests from the same user are cached. Individual resolvers are automatically cached. All API calls will try to return responses from the cache.</p></li>
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>OPERATION_LEVEL_CACHING</b>: Full requests are cached together and returned without executing resolvers.</p></li>
     /// </ul>
     pub fn api_caching_behavior(&self) -> ::std::option::Option<&crate::types::ApiCachingBehavior> {
         self.api_caching_behavior.as_ref()
@@ -233,9 +237,11 @@ impl CreateApiCacheInputBuilder {
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li>
-    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests from the same user are cached. Individual resolvers are automatically cached. All API calls will try to return responses from the cache.</p></li>
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>OPERATION_LEVEL_CACHING</b>: Full requests are cached together and returned without executing resolvers.</p></li>
     /// </ul>
     /// This field is required.
     pub fn api_caching_behavior(mut self, input: crate::types::ApiCachingBehavior) -> Self {
@@ -245,9 +251,11 @@ impl CreateApiCacheInputBuilder {
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li>
-    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests from the same user are cached. Individual resolvers are automatically cached. All API calls will try to return responses from the cache.</p></li>
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>OPERATION_LEVEL_CACHING</b>: Full requests are cached together and returned without executing resolvers.</p></li>
     /// </ul>
     pub fn set_api_caching_behavior(mut self, input: ::std::option::Option<crate::types::ApiCachingBehavior>) -> Self {
         self.api_caching_behavior = input;
@@ -256,9 +264,11 @@ impl CreateApiCacheInputBuilder {
     /// <p>Caching behavior.</p>
     /// <ul>
     /// <li>
-    /// <p><b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p></li>
+    /// <p><b>FULL_REQUEST_CACHING</b>: All requests from the same user are cached. Individual resolvers are automatically cached. All API calls will try to return responses from the cache.</p></li>
     /// <li>
     /// <p><b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p></li>
+    /// <li>
+    /// <p><b>OPERATION_LEVEL_CACHING</b>: Full requests are cached together and returned without executing resolvers.</p></li>
     /// </ul>
     pub fn get_api_caching_behavior(&self) -> &::std::option::Option<crate::types::ApiCachingBehavior> {
         &self.api_caching_behavior

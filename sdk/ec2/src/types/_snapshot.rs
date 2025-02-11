@@ -36,6 +36,10 @@ pub struct Snapshot {
     pub completion_duration_minutes: ::std::option::Option<i32>,
     /// <p>The time stamp when the snapshot was completed.</p>
     pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The full size of the snapshot, in bytes.</p><important>
+    /// <p>This is <b>not</b> the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub full_snapshot_size_in_bytes: ::std::option::Option<i64>,
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <code>CopySnapshot</code> action have an arbitrary volume ID that should not be used for any purpose.</p>
@@ -116,6 +120,12 @@ impl Snapshot {
     pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
+    /// <p>The full size of the snapshot, in bytes.</p><important>
+    /// <p>This is <b>not</b> the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn full_snapshot_size_in_bytes(&self) -> ::std::option::Option<i64> {
+        self.full_snapshot_size_in_bytes
+    }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
@@ -186,6 +196,7 @@ pub struct SnapshotBuilder {
     pub(crate) transfer_type: ::std::option::Option<crate::types::TransferType>,
     pub(crate) completion_duration_minutes: ::std::option::Option<i32>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) full_snapshot_size_in_bytes: ::std::option::Option<i64>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SnapshotState>,
@@ -382,6 +393,26 @@ impl SnapshotBuilder {
     pub fn get_completion_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.completion_time
     }
+    /// <p>The full size of the snapshot, in bytes.</p><important>
+    /// <p>This is <b>not</b> the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn full_snapshot_size_in_bytes(mut self, input: i64) -> Self {
+        self.full_snapshot_size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The full size of the snapshot, in bytes.</p><important>
+    /// <p>This is <b>not</b> the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn set_full_snapshot_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.full_snapshot_size_in_bytes = input;
+        self
+    }
+    /// <p>The full size of the snapshot, in bytes.</p><important>
+    /// <p>This is <b>not</b> the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn get_full_snapshot_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.full_snapshot_size_in_bytes
+    }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -563,6 +594,7 @@ impl SnapshotBuilder {
             transfer_type: self.transfer_type,
             completion_duration_minutes: self.completion_duration_minutes,
             completion_time: self.completion_time,
+            full_snapshot_size_in_bytes: self.full_snapshot_size_in_bytes,
             snapshot_id: self.snapshot_id,
             volume_id: self.volume_id,
             state: self.state,

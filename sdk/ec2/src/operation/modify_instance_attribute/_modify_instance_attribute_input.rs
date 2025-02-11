@@ -21,7 +21,7 @@ pub struct ModifyInstanceAttributeInput {
     /// <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is <code>true</code> and the volume is deleted when the instance is terminated. You can't modify the <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.</p>
     /// <p>To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>>,
-    /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
+    /// <p>Enable or disable termination protection for the instance. If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, command line interface, or API. You can't enable termination protection for Spot Instances.</p>
     pub disable_api_termination: ::std::option::Option<crate::types::AttributeBooleanValue>,
     /// <p>Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.</p>
     pub instance_type: ::std::option::Option<crate::types::AttributeValue>,
@@ -80,7 +80,7 @@ impl ModifyInstanceAttributeInput {
     pub fn block_device_mappings(&self) -> &[crate::types::InstanceBlockDeviceMappingSpecification] {
         self.block_device_mappings.as_deref().unwrap_or_default()
     }
-    /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
+    /// <p>Enable or disable termination protection for the instance. If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, command line interface, or API. You can't enable termination protection for Spot Instances.</p>
     pub fn disable_api_termination(&self) -> ::std::option::Option<&crate::types::AttributeBooleanValue> {
         self.disable_api_termination.as_ref()
     }
@@ -276,17 +276,17 @@ impl ModifyInstanceAttributeInputBuilder {
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMappingSpecification>> {
         &self.block_device_mappings
     }
-    /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
+    /// <p>Enable or disable termination protection for the instance. If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, command line interface, or API. You can't enable termination protection for Spot Instances.</p>
     pub fn disable_api_termination(mut self, input: crate::types::AttributeBooleanValue) -> Self {
         self.disable_api_termination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
+    /// <p>Enable or disable termination protection for the instance. If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, command line interface, or API. You can't enable termination protection for Spot Instances.</p>
     pub fn set_disable_api_termination(mut self, input: ::std::option::Option<crate::types::AttributeBooleanValue>) -> Self {
         self.disable_api_termination = input;
         self
     }
-    /// <p>If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.</p>
+    /// <p>Enable or disable termination protection for the instance. If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, command line interface, or API. You can't enable termination protection for Spot Instances.</p>
     pub fn get_disable_api_termination(&self) -> &::std::option::Option<crate::types::AttributeBooleanValue> {
         &self.disable_api_termination
     }

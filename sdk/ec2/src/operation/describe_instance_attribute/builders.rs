@@ -22,7 +22,7 @@ impl crate::operation::describe_instance_attribute::builders::DescribeInstanceAt
 }
 /// Fluent builder constructing a request to `DescribeInstanceAttribute`.
 ///
-/// <p>Describes the specified attribute of the specified instance. You can specify only one attribute at a time. Valid attribute values are: <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>userData</code> | <code>disableApiTermination</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> | <code>blockDeviceMapping</code> | <code>productCodes</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code></p>
+/// <p>Describes the specified attribute of the specified instance. You can specify only one attribute at a time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstanceAttributeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,19 +137,19 @@ impl DescribeInstanceAttributeFluentBuilder {
         self.inner.get_instance_id()
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.inner = self.inner.attribute(input);
         self
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
     /// <p>The instance attribute.</p>
-    /// <p>Note: The <code>enaSupport</code> attribute is not supported at this time.</p>
+    /// <p>Note that the <code>enaSupport</code> attribute is not supported.</p>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {
         self.inner.get_attribute()
     }
