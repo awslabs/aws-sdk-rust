@@ -2589,6 +2589,10 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6e26eaa642b8952342a70574fc8e0b431a8f910780f8df9f884f3a72542a499a'
+
+[release]
+tag = 'release-2025-02-12'
+
 [release.crates]
 aws-sdk-b2bi = '1.63.0'
 aws-sdk-bedrockagent = '1.78.0'
