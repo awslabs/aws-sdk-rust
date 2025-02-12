@@ -156,4 +156,18 @@ impl CreateEventBridgeRuleTemplateGroupFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.request_id(input.into());
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_request_id(input);
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
 }

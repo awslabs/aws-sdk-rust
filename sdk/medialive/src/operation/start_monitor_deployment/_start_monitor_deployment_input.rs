@@ -8,6 +8,8 @@ pub struct StartMonitorDeploymentInput {
     pub dry_run: ::std::option::Option<bool>,
     /// A signal map's identifier. Can be either be its id or current name.
     pub identifier: ::std::option::Option<::std::string::String>,
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl StartMonitorDeploymentInput {
     /// Placeholder documentation for __boolean
@@ -17,6 +19,10 @@ impl StartMonitorDeploymentInput {
     /// A signal map's identifier. Can be either be its id or current name.
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
+        self.request_id.as_deref()
     }
 }
 impl StartMonitorDeploymentInput {
@@ -32,6 +38,7 @@ impl StartMonitorDeploymentInput {
 pub struct StartMonitorDeploymentInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl StartMonitorDeploymentInputBuilder {
     /// Placeholder documentation for __boolean
@@ -63,6 +70,20 @@ impl StartMonitorDeploymentInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_id = input;
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Consumes the builder and constructs a [`StartMonitorDeploymentInput`](crate::operation::start_monitor_deployment::StartMonitorDeploymentInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl StartMonitorDeploymentInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_monitor_deployment::StartMonitorDeploymentInput {
             dry_run: self.dry_run,
             identifier: self.identifier,
+            request_id: self.request_id,
         })
     }
 }

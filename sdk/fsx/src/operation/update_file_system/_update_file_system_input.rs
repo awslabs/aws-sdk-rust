@@ -35,6 +35,8 @@ pub struct UpdateFileSystemInput {
     pub open_zfs_configuration: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
     /// <p>Specifies the file system's storage type.</p>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub file_system_type_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFileSystemInput {
     /// <p>The ID of the file system that you are updating.</p>
@@ -84,6 +86,10 @@ impl UpdateFileSystemInput {
     pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
         self.storage_type.as_ref()
     }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn file_system_type_version(&self) -> ::std::option::Option<&str> {
+        self.file_system_type_version.as_deref()
+    }
 }
 impl UpdateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
@@ -104,6 +110,7 @@ pub struct UpdateFileSystemInputBuilder {
     pub(crate) ontap_configuration: ::std::option::Option<crate::types::UpdateFileSystemOntapConfiguration>,
     pub(crate) open_zfs_configuration: ::std::option::Option<crate::types::UpdateFileSystemOpenZfsConfiguration>,
     pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
+    pub(crate) file_system_type_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateFileSystemInputBuilder {
     /// <p>The ID of the file system that you are updating.</p>
@@ -264,6 +271,20 @@ impl UpdateFileSystemInputBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         &self.storage_type
     }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_system_type_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.file_system_type_version = input;
+        self
+    }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.file_system_type_version
+    }
     /// Consumes the builder and constructs a [`UpdateFileSystemInput`](crate::operation::update_file_system::UpdateFileSystemInput).
     pub fn build(
         self,
@@ -277,6 +298,7 @@ impl UpdateFileSystemInputBuilder {
             ontap_configuration: self.ontap_configuration,
             open_zfs_configuration: self.open_zfs_configuration,
             storage_type: self.storage_type,
+            file_system_type_version: self.file_system_type_version,
         })
     }
 }

@@ -16,6 +16,8 @@ pub struct CreateEventBridgeRuleTemplateInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// Represents the tags associated with a resource.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventBridgeRuleTemplateInput {
     /// A resource's optional description.
@@ -44,6 +46,10 @@ impl CreateEventBridgeRuleTemplateInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl CreateEventBridgeRuleTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateEventBridgeRuleTemplateInput`](crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateInput).
@@ -62,6 +68,7 @@ pub struct CreateEventBridgeRuleTemplateInputBuilder {
     pub(crate) group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventBridgeRuleTemplateInputBuilder {
     /// A resource's optional description.
@@ -163,6 +170,20 @@ impl CreateEventBridgeRuleTemplateInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_id = input;
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Consumes the builder and constructs a [`CreateEventBridgeRuleTemplateInput`](crate::operation::create_event_bridge_rule_template::CreateEventBridgeRuleTemplateInput).
     pub fn build(
         self,
@@ -177,6 +198,7 @@ impl CreateEventBridgeRuleTemplateInputBuilder {
             group_identifier: self.group_identifier,
             name: self.name,
             tags: self.tags,
+            request_id: self.request_id,
         })
     }
 }

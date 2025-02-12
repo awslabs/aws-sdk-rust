@@ -54,6 +54,7 @@
 ///     VoiceId::Ivy => { /* ... */ },
 ///     VoiceId::Jacek => { /* ... */ },
 ///     VoiceId::Jan => { /* ... */ },
+///     VoiceId::Jasmine => { /* ... */ },
 ///     VoiceId::Jitka => { /* ... */ },
 ///     VoiceId::Joanna => { /* ... */ },
 ///     VoiceId::Joey => { /* ... */ },
@@ -223,6 +224,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Jan,
     #[allow(missing_docs)] // documentation missing in model
+    Jasmine,
+    #[allow(missing_docs)] // documentation missing in model
     Jitka,
     #[allow(missing_docs)] // documentation missing in model
     Joanna,
@@ -383,6 +386,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Ivy" => VoiceId::Ivy,
             "Jacek" => VoiceId::Jacek,
             "Jan" => VoiceId::Jan,
+            "Jasmine" => VoiceId::Jasmine,
             "Jitka" => VoiceId::Jitka,
             "Joanna" => VoiceId::Joanna,
             "Joey" => VoiceId::Joey,
@@ -496,6 +500,7 @@ impl VoiceId {
             VoiceId::Ivy => "Ivy",
             VoiceId::Jacek => "Jacek",
             VoiceId::Jan => "Jan",
+            VoiceId::Jasmine => "Jasmine",
             VoiceId::Jitka => "Jitka",
             VoiceId::Joanna => "Joanna",
             VoiceId::Joey => "Joey",
@@ -600,6 +605,7 @@ impl VoiceId {
             "Ivy",
             "Jacek",
             "Jan",
+            "Jasmine",
             "Jitka",
             "Joanna",
             "Joey",
@@ -721,6 +727,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Ivy => write!(f, "Ivy"),
             VoiceId::Jacek => write!(f, "Jacek"),
             VoiceId::Jan => write!(f, "Jan"),
+            VoiceId::Jasmine => write!(f, "Jasmine"),
             VoiceId::Jitka => write!(f, "Jitka"),
             VoiceId::Joanna => write!(f, "Joanna"),
             VoiceId::Joey => write!(f, "Joey"),

@@ -28,6 +28,9 @@ pub struct PromptConfiguration {
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
     /// <p>The agent's foundation model.</p>
     pub foundation_model: ::std::option::Option<::std::string::String>,
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptConfiguration {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
@@ -68,6 +71,11 @@ impl PromptConfiguration {
     pub fn foundation_model(&self) -> ::std::option::Option<&str> {
         self.foundation_model.as_deref()
     }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_model_request_fields.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PromptConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -79,6 +87,7 @@ impl ::std::fmt::Debug for PromptConfiguration {
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
         formatter.field("foundation_model", &self.foundation_model);
+        formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.finish()
     }
 }
@@ -100,6 +109,7 @@ pub struct PromptConfigurationBuilder {
     pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) parser_mode: ::std::option::Option<crate::types::CreationMode>,
     pub(crate) foundation_model: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptConfigurationBuilder {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
@@ -230,6 +240,23 @@ impl PromptConfigurationBuilder {
     pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
         &self.foundation_model
     }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_model_request_fields = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn set_additional_model_request_fields(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_model_request_fields = input;
+        self
+    }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_model_request_fields
+    }
     /// Consumes the builder and constructs a [`PromptConfiguration`](crate::types::PromptConfiguration).
     pub fn build(self) -> crate::types::PromptConfiguration {
         crate::types::PromptConfiguration {
@@ -240,6 +267,7 @@ impl PromptConfigurationBuilder {
             inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
             foundation_model: self.foundation_model,
+            additional_model_request_fields: self.additional_model_request_fields,
         }
     }
 }
@@ -253,6 +281,7 @@ impl ::std::fmt::Debug for PromptConfigurationBuilder {
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
         formatter.field("foundation_model", &self.foundation_model);
+        formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.finish()
     }
 }

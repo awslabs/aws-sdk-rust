@@ -28,6 +28,7 @@
 ///     LanguageCode::EnIe => { /* ... */ },
 ///     LanguageCode::EnIn => { /* ... */ },
 ///     LanguageCode::EnNz => { /* ... */ },
+///     LanguageCode::EnSg => { /* ... */ },
 ///     LanguageCode::EnUs => { /* ... */ },
 ///     LanguageCode::EnZa => { /* ... */ },
 ///     LanguageCode::EsEs => { /* ... */ },
@@ -114,6 +115,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     EnNz,
     #[allow(missing_docs)] // documentation missing in model
+    EnSg,
+    #[allow(missing_docs)] // documentation missing in model
     EnUs,
     #[allow(missing_docs)] // documentation missing in model
     EnZa,
@@ -186,6 +189,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "en-IE" => LanguageCode::EnIe,
             "en-IN" => LanguageCode::EnIn,
             "en-NZ" => LanguageCode::EnNz,
+            "en-SG" => LanguageCode::EnSg,
             "en-US" => LanguageCode::EnUs,
             "en-ZA" => LanguageCode::EnZa,
             "es-ES" => LanguageCode::EsEs,
@@ -242,6 +246,7 @@ impl LanguageCode {
             LanguageCode::EnIe => "en-IE",
             LanguageCode::EnIn => "en-IN",
             LanguageCode::EnNz => "en-NZ",
+            LanguageCode::EnSg => "en-SG",
             LanguageCode::EnUs => "en-US",
             LanguageCode::EnZa => "en-ZA",
             LanguageCode::EsEs => "es-ES",
@@ -289,6 +294,7 @@ impl LanguageCode {
             "en-IE",
             "en-IN",
             "en-NZ",
+            "en-SG",
             "en-US",
             "en-ZA",
             "es-ES",
@@ -353,6 +359,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::EnIe => write!(f, "en-IE"),
             LanguageCode::EnIn => write!(f, "en-IN"),
             LanguageCode::EnNz => write!(f, "en-NZ"),
+            LanguageCode::EnSg => write!(f, "en-SG"),
             LanguageCode::EnUs => write!(f, "en-US"),
             LanguageCode::EnZa => write!(f, "en-ZA"),
             LanguageCode::EsEs => write!(f, "es-ES"),

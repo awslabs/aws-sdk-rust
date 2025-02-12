@@ -295,4 +295,18 @@ impl CreateCloudWatchAlarmTemplateFluentBuilder {
     pub fn get_treat_missing_data(&self) -> &::std::option::Option<crate::types::CloudWatchAlarmTemplateTreatMissingData> {
         self.inner.get_treat_missing_data()
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.request_id(input.into());
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_request_id(input);
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_request_id()
+    }
 }

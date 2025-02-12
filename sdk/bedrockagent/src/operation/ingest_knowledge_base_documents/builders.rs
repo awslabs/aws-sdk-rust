@@ -22,7 +22,7 @@ impl crate::operation::ingest_knowledge_base_documents::builders::IngestKnowledg
 }
 /// Fluent builder constructing a request to `IngestKnowledgeBaseDocuments`.
 ///
-/// <p>Ingests documents directly into the knowledge base that is connected to the data source. The <code>dataSourceType</code> specified in the content for each document must match the type of the data source that you specify in the header. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Ingests documents directly into the knowledge base that is connected to the data source. The <code>dataSourceType</code> specified in the content for each document must match the type of the data source that you specify in the header. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IngestKnowledgeBaseDocumentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

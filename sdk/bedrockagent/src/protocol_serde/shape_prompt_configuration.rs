@@ -27,6 +27,9 @@ pub fn ser_prompt_configuration(
     if let Some(var_8) = &input.foundation_model {
         object.key("foundationModel").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.additional_model_request_fields {
+        object.key("additionalModelRequestFields").document(var_9);
+    }
     Ok(())
 }
 
@@ -91,6 +94,10 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "additionalModelRequestFields" => {
+                            builder =
+                                builder.set_additional_model_request_fields(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

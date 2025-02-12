@@ -30,6 +30,8 @@ pub struct CreateCloudWatchAlarmTemplateInput {
     pub threshold: ::std::option::Option<f64>,
     /// Specifies how missing data points are treated when evaluating the alarm's condition.
     pub treat_missing_data: ::std::option::Option<crate::types::CloudWatchAlarmTemplateTreatMissingData>,
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCloudWatchAlarmTemplateInput {
     /// The comparison operator used to compare the specified statistic and the threshold.
@@ -84,6 +86,10 @@ impl CreateCloudWatchAlarmTemplateInput {
     pub fn treat_missing_data(&self) -> ::std::option::Option<&crate::types::CloudWatchAlarmTemplateTreatMissingData> {
         self.treat_missing_data.as_ref()
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl CreateCloudWatchAlarmTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateCloudWatchAlarmTemplateInput`](crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateInput).
@@ -109,6 +115,7 @@ pub struct CreateCloudWatchAlarmTemplateInputBuilder {
     pub(crate) target_resource_type: ::std::option::Option<crate::types::CloudWatchAlarmTemplateTargetResourceType>,
     pub(crate) threshold: ::std::option::Option<f64>,
     pub(crate) treat_missing_data: ::std::option::Option<crate::types::CloudWatchAlarmTemplateTreatMissingData>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateCloudWatchAlarmTemplateInputBuilder {
     /// The comparison operator used to compare the specified statistic and the threshold.
@@ -309,6 +316,20 @@ impl CreateCloudWatchAlarmTemplateInputBuilder {
     pub fn get_treat_missing_data(&self) -> &::std::option::Option<crate::types::CloudWatchAlarmTemplateTreatMissingData> {
         &self.treat_missing_data
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_id = input;
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Consumes the builder and constructs a [`CreateCloudWatchAlarmTemplateInput`](crate::operation::create_cloud_watch_alarm_template::CreateCloudWatchAlarmTemplateInput).
     pub fn build(
         self,
@@ -330,6 +351,7 @@ impl CreateCloudWatchAlarmTemplateInputBuilder {
             target_resource_type: self.target_resource_type,
             threshold: self.threshold,
             treat_missing_data: self.treat_missing_data,
+            request_id: self.request_id,
         })
     }
 }

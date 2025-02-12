@@ -166,17 +166,23 @@ impl CreateWebhookFluentBuilder {
     pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
         self.inner.get_filter_groups()
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn build_type(mut self, input: crate::types::WebhookBuildType) -> Self {
         self.inner = self.inner.build_type(input);
         self
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::WebhookBuildType>) -> Self {
         self.inner = self.inner.set_build_type(input);
         self
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
         self.inner.get_build_type()
     }

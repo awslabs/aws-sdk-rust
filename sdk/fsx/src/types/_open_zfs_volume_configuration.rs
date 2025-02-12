@@ -10,7 +10,7 @@ pub struct OpenZfsVolumeConfiguration {
     pub volume_path: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
     pub storage_capacity_reservation_gib: ::std::option::Option<i32>,
-    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
     pub storage_capacity_quota_gib: ::std::option::Option<i32>,
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub record_size_kib: ::std::option::Option<i32>,
@@ -71,7 +71,7 @@ impl OpenZfsVolumeConfiguration {
     pub fn storage_capacity_reservation_gib(&self) -> ::std::option::Option<i32> {
         self.storage_capacity_reservation_gib
     }
-    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
     pub fn storage_capacity_quota_gib(&self) -> ::std::option::Option<i32> {
         self.storage_capacity_quota_gib
     }
@@ -226,17 +226,17 @@ impl OpenZfsVolumeConfigurationBuilder {
     pub fn get_storage_capacity_reservation_gib(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity_reservation_gib
     }
-    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
     pub fn storage_capacity_quota_gib(mut self, input: i32) -> Self {
         self.storage_capacity_quota_gib = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
     pub fn set_storage_capacity_quota_gib(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity_quota_gib = input;
         self
     }
-    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    /// <p>The maximum amount of storage in gibibytes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
     pub fn get_storage_capacity_quota_gib(&self) -> &::std::option::Option<i32> {
         &self.storage_capacity_quota_gib
     }

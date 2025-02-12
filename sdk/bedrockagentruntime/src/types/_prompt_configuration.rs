@@ -26,6 +26,9 @@ pub struct PromptConfiguration {
     pub inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>. If you set the field as <code>OVERRIDEN</code>, the <code>overrideLambda</code> field in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> must be specified with the ARN of a Lambda function.</p>
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptConfiguration {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
@@ -62,6 +65,11 @@ impl PromptConfiguration {
     pub fn parser_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
         self.parser_mode.as_ref()
     }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_model_request_fields.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PromptConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -72,6 +80,7 @@ impl ::std::fmt::Debug for PromptConfiguration {
         formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
+        formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.finish()
     }
 }
@@ -92,6 +101,7 @@ pub struct PromptConfigurationBuilder {
     pub(crate) base_prompt_template: ::std::option::Option<::std::string::String>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptConfigurationBuilder {
     /// <p>The step in the agent sequence that this prompt configuration applies to.</p>
@@ -208,6 +218,23 @@ impl PromptConfigurationBuilder {
     pub fn get_parser_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
         &self.parser_mode
     }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_model_request_fields = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn set_additional_model_request_fields(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_model_request_fields = input;
+        self
+    }
+    /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
+    /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
+    pub fn get_additional_model_request_fields(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_model_request_fields
+    }
     /// Consumes the builder and constructs a [`PromptConfiguration`](crate::types::PromptConfiguration).
     pub fn build(self) -> crate::types::PromptConfiguration {
         crate::types::PromptConfiguration {
@@ -217,6 +244,7 @@ impl PromptConfigurationBuilder {
             base_prompt_template: self.base_prompt_template,
             inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
+            additional_model_request_fields: self.additional_model_request_fields,
         }
     }
 }
@@ -229,6 +257,7 @@ impl ::std::fmt::Debug for PromptConfigurationBuilder {
         formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
+        formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.finish()
     }
 }

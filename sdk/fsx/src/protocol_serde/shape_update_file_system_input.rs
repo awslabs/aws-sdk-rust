@@ -45,5 +45,8 @@ pub fn ser_update_file_system_input_input(
     if let Some(var_12) = &input.storage_type {
         object.key("StorageType").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.file_system_type_version {
+        object.key("FileSystemTypeVersion").string(var_13.as_str());
+    }
     Ok(())
 }

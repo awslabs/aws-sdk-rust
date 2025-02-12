@@ -12,10 +12,13 @@ pub fn ser_saml_config_options(
     if let Some(var_2) = &input.group_attribute {
         object.key("groupAttribute").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.session_timeout {
+    if let Some(var_3) = &input.open_search_serverless_entity_id {
+        object.key("openSearchServerlessEntityId").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.session_timeout {
         object.key("sessionTimeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())
@@ -52,6 +55,13 @@ where
                         }
                         "groupAttribute" => {
                             builder = builder.set_group_attribute(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "openSearchServerlessEntityId" => {
+                            builder = builder.set_open_search_serverless_entity_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

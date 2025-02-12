@@ -16,6 +16,8 @@ pub struct CreateSignalMapInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// Represents the tags associated with a resource.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateSignalMapInput {
     /// Placeholder documentation for __listOf__stringPatternS
@@ -46,6 +48,10 @@ impl CreateSignalMapInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
+        self.request_id.as_deref()
+    }
 }
 impl CreateSignalMapInput {
     /// Creates a new builder-style object to manufacture [`CreateSignalMapInput`](crate::operation::create_signal_map::CreateSignalMapInput).
@@ -64,6 +70,7 @@ pub struct CreateSignalMapInputBuilder {
     pub(crate) event_bridge_rule_template_group_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateSignalMapInputBuilder {
     /// Appends an item to `cloud_watch_alarm_template_group_identifiers`.
@@ -170,6 +177,20 @@ impl CreateSignalMapInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.request_id = input;
+        self
+    }
+    /// An ID that you assign to a create request. This ID ensures idempotency when creating resources.
+    pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.request_id
+    }
     /// Consumes the builder and constructs a [`CreateSignalMapInput`](crate::operation::create_signal_map::CreateSignalMapInput).
     pub fn build(
         self,
@@ -181,6 +202,7 @@ impl CreateSignalMapInputBuilder {
             event_bridge_rule_template_group_identifiers: self.event_bridge_rule_template_group_identifiers,
             name: self.name,
             tags: self.tags,
+            request_id: self.request_id,
         })
     }
 }

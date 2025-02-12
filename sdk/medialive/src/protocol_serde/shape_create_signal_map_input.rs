@@ -30,15 +30,18 @@ pub fn ser_create_signal_map_input_input(
     if let Some(var_9) = &input.name {
         object.key("name").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_10) = &input.request_id {
+        object.key("requestId").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
     Ok(())
 }

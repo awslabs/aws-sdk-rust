@@ -55,6 +55,8 @@ impl crate::operation::update_file_system::builders::UpdateFileSystemInputBuilde
 /// <li>
 /// <p><code>DataCompressionType</code></p></li>
 /// <li>
+/// <p><code>FileSystemTypeVersion</code></p></li>
+/// <li>
 /// <p><code>LogConfiguration</code></p></li>
 /// <li>
 /// <p><code>LustreRootSquashConfiguration</code></p></li>
@@ -358,5 +360,19 @@ impl UpdateFileSystemFluentBuilder {
     /// <p>Specifies the file system's storage type.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
         self.inner.get_storage_type()
+    }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn file_system_type_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.file_system_type_version(input.into());
+        self
+    }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn set_file_system_type_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_file_system_type_version(input);
+        self
+    }
+    /// <p>The Lustre version you are updating an FSx for Lustre file system to. Valid values are <code>2.12</code> and <code>2.15</code>. The value you choose must be newer than the file system's current Lustre version.</p>
+    pub fn get_file_system_type_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_file_system_type_version()
     }
 }

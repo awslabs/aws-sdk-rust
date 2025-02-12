@@ -22,7 +22,7 @@ impl crate::operation::get_knowledge_base_documents::builders::GetKnowledgeBaseD
 }
 /// Fluent builder constructing a request to `GetKnowledgeBaseDocuments`.
 ///
-/// <p>Retrieves specific documents from a data source that is connected to a knowledge base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.</p>
+/// <p>Retrieves specific documents from a data source that is connected to a knowledge base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-direct-ingestion.html">Ingest changes directly into a knowledge base</a> in the Amazon Bedrock User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetKnowledgeBaseDocumentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

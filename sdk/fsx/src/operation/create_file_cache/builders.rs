@@ -26,7 +26,7 @@ impl crate::operation::create_file_cache::builders::CreateFileCacheInputBuilder 
 /// <p>You can use this operation with a client request token in the request that Amazon File Cache uses to ensure idempotent creation. If a cache with the specified client request token exists and the parameters match, <code>CreateFileCache</code> returns the description of the existing cache. If a cache with the specified client request token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>. If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code> does the following:</p>
 /// <ul>
 /// <li>
-/// <p>Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p></li>
+/// <p>Creates a new, empty Amazon File Cache resource with an assigned ID, and an initial lifecycle state of <code>CREATING</code>.</p></li>
 /// <li>
 /// <p>Returns the description of the cache in JSON format.</p></li>
 /// </ul><note>

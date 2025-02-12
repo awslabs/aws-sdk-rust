@@ -10,6 +10,8 @@ pub struct SamlConfigOptions {
     pub user_attribute: ::std::option::Option<::std::string::String>,
     /// <p>The group attribute for this SAML integration.</p>
     pub group_attribute: ::std::option::Option<::std::string::String>,
+    /// <p>Custom entity id attribute to override default entity id for this saml integration.</p>
+    pub open_search_serverless_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub session_timeout: ::std::option::Option<i32>,
 }
@@ -26,6 +28,10 @@ impl SamlConfigOptions {
     /// <p>The group attribute for this SAML integration.</p>
     pub fn group_attribute(&self) -> ::std::option::Option<&str> {
         self.group_attribute.as_deref()
+    }
+    /// <p>Custom entity id attribute to override default entity id for this saml integration.</p>
+    pub fn open_search_serverless_entity_id(&self) -> ::std::option::Option<&str> {
+        self.open_search_serverless_entity_id.as_deref()
     }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn session_timeout(&self) -> ::std::option::Option<i32> {
@@ -46,6 +52,7 @@ pub struct SamlConfigOptionsBuilder {
     pub(crate) metadata: ::std::option::Option<::std::string::String>,
     pub(crate) user_attribute: ::std::option::Option<::std::string::String>,
     pub(crate) group_attribute: ::std::option::Option<::std::string::String>,
+    pub(crate) open_search_serverless_entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_timeout: ::std::option::Option<i32>,
 }
 impl SamlConfigOptionsBuilder {
@@ -92,6 +99,20 @@ impl SamlConfigOptionsBuilder {
     pub fn get_group_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_attribute
     }
+    /// <p>Custom entity id attribute to override default entity id for this saml integration.</p>
+    pub fn open_search_serverless_entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.open_search_serverless_entity_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Custom entity id attribute to override default entity id for this saml integration.</p>
+    pub fn set_open_search_serverless_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.open_search_serverless_entity_id = input;
+        self
+    }
+    /// <p>Custom entity id attribute to override default entity id for this saml integration.</p>
+    pub fn get_open_search_serverless_entity_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.open_search_serverless_entity_id
+    }
     /// <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
     pub fn session_timeout(mut self, input: i32) -> Self {
         self.session_timeout = ::std::option::Option::Some(input);
@@ -119,6 +140,7 @@ impl SamlConfigOptionsBuilder {
             })?,
             user_attribute: self.user_attribute,
             group_attribute: self.group_attribute,
+            open_search_serverless_entity_id: self.open_search_serverless_entity_id,
             session_timeout: self.session_timeout,
         })
     }

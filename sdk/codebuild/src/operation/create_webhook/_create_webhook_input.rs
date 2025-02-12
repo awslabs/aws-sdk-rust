@@ -12,7 +12,9 @@ pub struct CreateWebhookInput {
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>.</p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass.</p>
     pub filter_groups: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub build_type: ::std::option::Option<crate::types::WebhookBuildType>,
     /// <p>If manualCreation is true, CodeBuild doesn't create a webhook in GitHub and instead returns <code>payloadUrl</code> and <code>secret</code> values for the webhook. The <code>payloadUrl</code> and <code>secret</code> values in the output can be used to manually create a webhook within GitHub.</p><note>
     /// <p><code>manualCreation</code> is only available for GitHub webhooks.</p>
@@ -41,7 +43,9 @@ impl CreateWebhookInput {
     pub fn filter_groups(&self) -> &[::std::vec::Vec<crate::types::WebhookFilter>] {
         self.filter_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn build_type(&self) -> ::std::option::Option<&crate::types::WebhookBuildType> {
         self.build_type.as_ref()
     }
@@ -135,17 +139,23 @@ impl CreateWebhookInputBuilder {
     pub fn get_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>> {
         &self.filter_groups
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn build_type(mut self, input: crate::types::WebhookBuildType) -> Self {
         self.build_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn set_build_type(mut self, input: ::std::option::Option<crate::types::WebhookBuildType>) -> Self {
         self.build_type = input;
         self
     }
-    /// <p>Specifies the type of build this webhook will trigger.</p>
+    /// <p>Specifies the type of build this webhook will trigger.</p><note>
+    /// <p><code>RUNNER_BUILDKITE_BUILD</code> is only available for <code>NO_SOURCE</code> source type projects configured for Buildkite runner builds. For more information about CodeBuild-hosted Buildkite runner builds, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-runner-buildkite.html">Tutorial: Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user guide</i>.</p>
+    /// </note>
     pub fn get_build_type(&self) -> &::std::option::Option<crate::types::WebhookBuildType> {
         &self.build_type
     }

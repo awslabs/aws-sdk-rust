@@ -36,30 +36,33 @@ pub fn ser_create_cloud_watch_alarm_template_input_input(
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_9) = &input.statistic {
-        object.key("statistic").string(var_9.as_str());
+    if let Some(var_9) = &input.request_id {
+        object.key("requestId").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_10) = &input.statistic {
+        object.key("statistic").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_14) = &input.target_resource_type {
-        object.key("targetResourceType").string(var_14.as_str());
+    if let Some(var_15) = &input.target_resource_type {
+        object.key("targetResourceType").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.threshold {
+    if let Some(var_16) = &input.threshold {
         object.key("threshold").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_15).into()),
+            ::aws_smithy_types::Number::Float((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.treat_missing_data {
-        object.key("treatMissingData").string(var_16.as_str());
+    if let Some(var_17) = &input.treat_missing_data {
+        object.key("treatMissingData").string(var_17.as_str());
     }
     Ok(())
 }
