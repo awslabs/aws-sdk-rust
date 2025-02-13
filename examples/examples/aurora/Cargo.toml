@@ -16,7 +16,7 @@ tracing = "0.1.37"
 aws-config= { version = "1.5.16", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-smithy-types= { version = "1.2.13", path = "../../../sdk/aws-smithy-types" }
 aws-smithy-runtime-api= { version = "1.7.3", path = "../../../sdk/aws-smithy-runtime-api" }
-aws-sdk-rds= { version = "1.77.1", path = "../../../sdk/rds" }
+aws-sdk-rds= { version = "1.78.0", path = "../../../sdk/rds" }
 
 [dependencies.phf]
 version = "0.11.2"

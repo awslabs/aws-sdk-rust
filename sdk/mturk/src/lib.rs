@@ -29,7 +29,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-mturk = "1.58.0"
+//! aws-sdk-mturk = "1.59.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
