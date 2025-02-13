@@ -16,6 +16,7 @@ use crate::sign::v4::sha256_hex_string;
 use crate::SignatureVersion;
 use aws_smithy_http::query_writer::QueryWriter;
 use http0::header::{AsHeaderName, HeaderName, HOST};
+use http0::uri::{Port, Scheme};
 use http0::{HeaderMap, HeaderValue, Uri};
 use std::borrow::Cow;
 use std::cmp::Ordering;
@@ -389,10 +390,28 @@ impl<'a> CanonicalRequest<'a> {
         match canonical_headers.get(&HOST) {
             Some(header) => header.clone(),
             None => {
+                let port = uri.port();
+                let scheme = uri.scheme();
                 let authority = uri
                     .authority()
-                    .expect("request uri authority must be set for signing");
-                let header = HeaderValue::try_from(authority.as_str())
+                    .expect("request uri authority must be set for signing")
+                    .as_str();
+                let host = uri
+                    .host()
+                    .expect("request uri host must be set for signing");
+
+                // Check if port is default (80 for HTTP, 443 for HTTPS) and if so exclude it from the
+                // Host header when signing since RFC 2616 indicates that the default port should not be
+                // sent in the Host header (and Hyper strips default ports if they are present)
+                // https://datatracker.ietf.org/doc/html/rfc2616#section-14.23
+                // https://github.com/awslabs/aws-sdk-rust/issues/1244
+                let header_value = if is_port_scheme_default(scheme, port) {
+                    host
+                } else {
+                    authority
+                };
+
+                let header = HeaderValue::try_from(header_value)
                     .expect("endpoint must contain valid header characters");
                 canonical_headers.insert(HOST, header.clone());
                 header
@@ -473,6 +492,15 @@ fn trim_all(text: &str) -> Cow<'_, str> {
 fn normalize_header_value(header_value: &str) -> Result<HeaderValue, CanonicalRequestError> {
     let trimmed_value = trim_all(header_value);
     HeaderValue::from_str(&trimmed_value).map_err(CanonicalRequestError::from)
+}
+
+#[inline]
+fn is_port_scheme_default(scheme: Option<&Scheme>, port: Option<Port<&str>>) -> bool {
+    if let (Some(scheme), Some(port)) = (scheme, port) {
+        return [("http", "80"), ("https", "443")].contains(&(scheme.as_str(), port.as_str()));
+    }
+
+    false
 }
 
 #[derive(Debug, PartialEq, Default)]
@@ -690,6 +718,40 @@ mod tests {
             creq.header_values_for("x-amz-object-attributes"),
             "Checksum,ObjectSize",
         );
+    }
+
+    #[test]
+    fn test_host_header_properly_handles_ports() {
+        fn host_header_test_setup(endpoint: String) -> String {
+            let mut req = test::v4::test_request("get-vanilla");
+            req.uri = endpoint;
+            let req = SignableRequest::from(&req);
+            let settings = SigningSettings {
+                payload_checksum_kind: PayloadChecksumKind::XAmzSha256,
+                session_token_mode: SessionTokenMode::Exclude,
+                ..Default::default()
+            };
+            let identity = Credentials::for_tests().into();
+            let signing_params = signing_params(&identity, settings);
+            let creq = CanonicalRequest::from(&req, &signing_params).unwrap();
+            creq.header_values_for("host")
+        }
+
+        // HTTP request with 80 port should not be signed with that port
+        let http_80_host_header = host_header_test_setup("http://localhost:80".into());
+        assert_eq!(http_80_host_header, "localhost",);
+
+        // HTTP request with non-80 port should be signed with that port
+        let http_1234_host_header = host_header_test_setup("http://localhost:1234".into());
+        assert_eq!(http_1234_host_header, "localhost:1234",);
+
+        // HTTPS request with 443 port should not be signed with that port
+        let https_443_host_header = host_header_test_setup("https://localhost:443".into());
+        assert_eq!(https_443_host_header, "localhost",);
+
+        // HTTPS request with non-443 port should be signed with that port
+        let https_1234_host_header = host_header_test_setup("https://localhost:1234".into());
+        assert_eq!(https_1234_host_header, "localhost:1234",);
     }
 
     #[test]

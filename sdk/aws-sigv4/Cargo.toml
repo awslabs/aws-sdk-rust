@@ -10,7 +10,7 @@ required-features = ["sigv4a"]
 
 [package]
 name = "aws-sigv4"
-version = "1.2.8"
+version = "1.2.9"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
 description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2021"
