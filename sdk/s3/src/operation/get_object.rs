@@ -140,6 +140,13 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetObje
                             .load::<::aws_smithy_types::checksum_config::ResponseChecksumValidation>()
                             .unwrap_or(&::aws_smithy_types::checksum_config::ResponseChecksumValidation::WhenSupported);
 
+                        let is_presigned_req = cfg.load::<crate::presigning::PresigningMarker>().is_some();
+
+                        // For presigned requests we do not enable the checksum-mode header.
+                        if is_presigned_req {
+                            return ::std::result::Result::Ok(());
+                        }
+
                         // If validation setting is WhenSupported (or unknown) we enable response checksum
                         // validation. If it is WhenRequired we do not enable (since there is no way to
                         // indicate that a response checksum is required).

@@ -100,13 +100,13 @@ async fn test_presigning() {
         ][..],
         &query_params
     );
-    assert_eq!(presigned.headers().count(), 1);
+    assert_eq!(presigned.headers().count(), 0);
     let headers = presigned.headers().collect::<HashMap<_, _>>();
-    assert_eq!(headers.get("x-amz-checksum-mode").unwrap(), &"ENABLED");
 
     // Checksum headers should not be included by default in presigned requests
     assert_eq!(headers.get("x-amz-sdk-checksum-algorithm"), None);
     assert_eq!(headers.get("x-amz-checksum-crc32"), None);
+    assert_eq!(headers.get("x-amz-checksum-mode"), None);
 }
 
 #[tokio::test]

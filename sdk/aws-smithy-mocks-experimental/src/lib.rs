@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! This crate allows mocking of smithy clients.
+
 /* Automatically managed default lints */
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 /* End of automatically managed default lints */
@@ -94,23 +96,51 @@ macro_rules! mock {
 ///   .then_error(||GetObjectError::NoSuchKey(NoSuchKey::builder().build()));
 /// let client = mock_client!(aws_sdk_s3, RuleMode::Sequential, &[&get_object_error_path, &get_object_happy_path]);
 /// ```
+///
+/// **Create a client but customize a specific setting**:
+/// ```rust,ignore
+/// use aws_sdk_s3::operation::get_object::GetObjectOutput;
+/// use aws_sdk_s3::Client;
+/// use aws_smithy_types::byte_stream::ByteStream;
+/// use aws_smithy_mocks_experimental::{mock_client, mock, RuleMode};
+/// let get_object_happy_path = mock!(Client::get_object)
+///   .match_requests(|req|req.bucket() == Some("test-bucket") && req.key() == Some("test-key"))
+///   .then_output(||GetObjectOutput::builder().body(ByteStream::from_static(b"12345-abcde")).build());
+/// let client = mock_client!(
+///     aws_sdk_s3,
+///     RuleMode::Sequential,
+///     &[&get_object_happy_path],
+///     // Perhaps you need to force path style
+///     |client_builder|client_builder.force_path_style(true)
+/// );
+/// ```
+///
 #[macro_export]
 macro_rules! mock_client {
     ($aws_crate: ident, $rules: expr) => {
         mock_client!($aws_crate, $crate::RuleMode::Sequential, $rules)
     };
     ($aws_crate: ident, $rule_mode: expr, $rules: expr) => {{
+        mock_client!($aws_crate, $rule_mode, $rules, |conf| conf)
+    }};
+    ($aws_crate: ident, $rule_mode: expr, $rules: expr, $additional_configuration: expr) => {{
         let mut mock_response_interceptor =
             $crate::MockResponseInterceptor::new().rule_mode($rule_mode);
         for rule in $rules {
             mock_response_interceptor = mock_response_interceptor.with_rule(rule)
         }
+        // allow callers to avoid explicitly specifying the type
+        fn coerce<T: Fn($aws_crate::config::Builder) -> $aws_crate::config::Builder>(f: T) -> T {
+            f
+        }
         $aws_crate::client::Client::from_conf(
-            $aws_crate::config::Config::builder()
-                .with_test_defaults()
-                .region($aws_crate::config::Region::from_static("us-east-1"))
-                .interceptor(mock_response_interceptor)
-                .build(),
+            coerce($additional_configuration)(
+                $aws_crate::config::Config::builder()
+                    .with_test_defaults()
+                    .region($aws_crate::config::Region::from_static("us-east-1"))
+                    .interceptor(mock_response_interceptor),
+            )
+            .build(),
         )
     }};
 }
