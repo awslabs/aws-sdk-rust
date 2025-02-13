@@ -62,6 +62,7 @@
 /// <li>
 /// <p>Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.</p></li>
 /// </ul>
+/// <p>For an example of how to specify a task definition with multiple containers where container dependency is specified, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/example_task_definitions.html#example_task_definition-containerdependency">Container dependency</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheck {
@@ -72,13 +73,13 @@ pub struct HealthCheck {
     /// <p><code> CMD-SHELL, curl -f http://localhost/ || exit 1</code></p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For more information, see <code>HealthCheck</code> in the docker container create command.</p>
     pub command: ::std::vec::Vec<::std::string::String>,
-    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds. This value applies only when you specify a <code>command</code>.</p>
     pub interval: ::std::option::Option<i32>,
-    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
+    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5. This value applies only when you specify a <code>command</code>.</p>
     pub timeout: ::std::option::Option<i32>,
-    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
+    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3. This value applies only when you specify a <code>command</code>.</p>
     pub retries: ::std::option::Option<i32>,
-    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p><note>
+    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off. This value applies only when you specify a <code>command</code>.</p><note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub start_period: ::std::option::Option<i32>,
@@ -94,19 +95,19 @@ impl HealthCheck {
         use std::ops::Deref;
         self.command.deref()
     }
-    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds. This value applies only when you specify a <code>command</code>.</p>
     pub fn interval(&self) -> ::std::option::Option<i32> {
         self.interval
     }
-    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
+    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5. This value applies only when you specify a <code>command</code>.</p>
     pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
-    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
+    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3. This value applies only when you specify a <code>command</code>.</p>
     pub fn retries(&self) -> ::std::option::Option<i32> {
         self.retries
     }
-    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p><note>
+    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off. This value applies only when you specify a <code>command</code>.</p><note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub fn start_period(&self) -> ::std::option::Option<i32> {
@@ -166,63 +167,63 @@ impl HealthCheckBuilder {
     pub fn get_command(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.command
     }
-    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds. This value applies only when you specify a <code>command</code>.</p>
     pub fn interval(mut self, input: i32) -> Self {
         self.interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds. This value applies only when you specify a <code>command</code>.</p>
     pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
     }
-    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds.</p>
+    /// <p>The time period in seconds between each health check execution. You may specify between 5 and 300 seconds. The default value is 30 seconds. This value applies only when you specify a <code>command</code>.</p>
     pub fn get_interval(&self) -> &::std::option::Option<i32> {
         &self.interval
     }
-    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
+    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5. This value applies only when you specify a <code>command</code>.</p>
     pub fn timeout(mut self, input: i32) -> Self {
         self.timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
+    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5. This value applies only when you specify a <code>command</code>.</p>
     pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
-    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5.</p>
+    /// <p>The time period in seconds to wait for a health check to succeed before it is considered a failure. You may specify between 2 and 60 seconds. The default value is 5. This value applies only when you specify a <code>command</code>.</p>
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
         &self.timeout
     }
-    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
+    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3. This value applies only when you specify a <code>command</code>.</p>
     pub fn retries(mut self, input: i32) -> Self {
         self.retries = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
+    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3. This value applies only when you specify a <code>command</code>.</p>
     pub fn set_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retries = input;
         self
     }
-    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3.</p>
+    /// <p>The number of times to retry a failed health check before the container is considered unhealthy. You may specify between 1 and 10 retries. The default value is 3. This value applies only when you specify a <code>command</code>.</p>
     pub fn get_retries(&self) -> &::std::option::Option<i32> {
         &self.retries
     }
-    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p><note>
+    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off. This value applies only when you specify a <code>command</code>.</p><note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub fn start_period(mut self, input: i32) -> Self {
         self.start_period = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p><note>
+    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off. This value applies only when you specify a <code>command</code>.</p><note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub fn set_start_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_period = input;
         self
     }
-    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off.</p><note>
+    /// <p>The optional grace period to provide containers time to bootstrap before failed health checks count towards the maximum number of retries. You can specify between 0 and 300 seconds. By default, the <code>startPeriod</code> is off. This value applies only when you specify a <code>command</code>.</p><note>
     /// <p>If a health check succeeds within the <code>startPeriod</code>, then the container is considered healthy and any subsequent failures count toward the maximum number of retries.</p>
     /// </note>
     pub fn get_start_period(&self) -> &::std::option::Option<i32> {

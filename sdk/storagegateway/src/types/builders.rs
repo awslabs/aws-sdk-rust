@@ -15,6 +15,8 @@ pub use crate::types::_bandwidth_rate_limit_interval::BandwidthRateLimitInterval
 
 pub use crate::types::_automatic_tape_creation_rule::AutomaticTapeCreationRuleBuilder;
 
+pub use crate::types::_cache_report_filter::CacheReportFilterBuilder;
+
 pub use crate::types::_volume_info::VolumeInfoBuilder;
 
 pub use crate::types::_volume_recovery_point_info::VolumeRecoveryPointInfoBuilder;
@@ -30,6 +32,8 @@ pub use crate::types::_gateway_info::GatewayInfoBuilder;
 pub use crate::types::_file_system_association_summary::FileSystemAssociationSummaryBuilder;
 
 pub use crate::types::_file_share_info::FileShareInfoBuilder;
+
+pub use crate::types::_cache_report_info::CacheReportInfoBuilder;
 
 pub use crate::types::_automatic_tape_creation_policy_info::AutomaticTapeCreationPolicyInfoBuilder;
 

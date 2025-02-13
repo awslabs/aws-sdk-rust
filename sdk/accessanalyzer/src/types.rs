@@ -125,6 +125,18 @@ pub use crate::types::_unused_action::UnusedAction;
 
 pub use crate::types::_external_access_details::ExternalAccessDetails;
 
+pub use crate::types::_findings_statistics::FindingsStatistics;
+
+pub use crate::types::_unused_access_findings_statistics::UnusedAccessFindingsStatistics;
+
+pub use crate::types::_finding_aggregation_account_details::FindingAggregationAccountDetails;
+
+pub use crate::types::_unused_access_type_statistics::UnusedAccessTypeStatistics;
+
+pub use crate::types::_external_access_findings_statistics::ExternalAccessFindingsStatistics;
+
+pub use crate::types::_resource_type_details::ResourceTypeDetails;
+
 pub use crate::types::_status::Status;
 
 pub use crate::types::_recommendation_type::RecommendationType;
@@ -277,7 +289,11 @@ mod _efs_file_system_configuration;
 
 mod _external_access_details;
 
+mod _external_access_findings_statistics;
+
 mod _finding;
+
+mod _finding_aggregation_account_details;
 
 mod _finding_change_type;
 
@@ -298,6 +314,8 @@ mod _finding_summary;
 mod _finding_summary_v2;
 
 mod _finding_type;
+
+mod _findings_statistics;
 
 mod _generated_policy;
 
@@ -369,6 +387,8 @@ mod _resource_control_policy_restriction;
 
 mod _resource_type;
 
+mod _resource_type_details;
+
 mod _s3_access_point_configuration;
 
 mod _s3_bucket_acl_grant_configuration;
@@ -402,6 +422,10 @@ mod _trail_properties;
 mod _type_;
 
 mod _unused_access_configuration;
+
+mod _unused_access_findings_statistics;
+
+mod _unused_access_type_statistics;
 
 mod _unused_action;
 

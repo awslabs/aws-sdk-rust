@@ -28,6 +28,9 @@ pub mod attach_volume;
 /// Types for the `CancelArchival` operation.
 pub mod cancel_archival;
 
+/// Types for the `CancelCacheReport` operation.
+pub mod cancel_cache_report;
+
 /// Types for the `CancelRetrieval` operation.
 pub mod cancel_retrieval;
 
@@ -64,6 +67,9 @@ pub mod delete_automatic_tape_creation_policy;
 /// Types for the `DeleteBandwidthRateLimit` operation.
 pub mod delete_bandwidth_rate_limit;
 
+/// Types for the `DeleteCacheReport` operation.
+pub mod delete_cache_report;
+
 /// Types for the `DeleteChapCredentials` operation.
 pub mod delete_chap_credentials;
 
@@ -99,6 +105,9 @@ pub mod describe_bandwidth_rate_limit_schedule;
 
 /// Types for the `DescribeCache` operation.
 pub mod describe_cache;
+
+/// Types for the `DescribeCacheReport` operation.
+pub mod describe_cache_report;
 
 /// Types for the `DescribeCachediSCSIVolumes` operation.
 pub mod describe_cachedi_scsi_volumes;
@@ -163,6 +172,9 @@ pub mod join_domain;
 /// Types for the `ListAutomaticTapeCreationPolicies` operation.
 pub mod list_automatic_tape_creation_policies;
 
+/// Types for the `ListCacheReports` operation.
+pub mod list_cache_reports;
+
 /// Types for the `ListFileShares` operation.
 pub mod list_file_shares;
 
@@ -222,6 +234,9 @@ pub mod shutdown_gateway;
 
 /// Types for the `StartAvailabilityMonitorTest` operation.
 pub mod start_availability_monitor_test;
+
+/// Types for the `StartCacheReport` operation.
+pub mod start_cache_report;
 
 /// Types for the `StartGateway` operation.
 pub mod start_gateway;

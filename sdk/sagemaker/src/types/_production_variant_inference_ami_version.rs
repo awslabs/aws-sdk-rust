@@ -13,6 +13,8 @@
 /// # let productionvariantinferenceamiversion = unimplemented!();
 /// match productionvariantinferenceamiversion {
 ///     ProductionVariantInferenceAmiVersion::Al2Gpu2 => { /* ... */ },
+///     ProductionVariantInferenceAmiVersion::Al2Gpu21 => { /* ... */ },
+///     ProductionVariantInferenceAmiVersion::Al2Gpu31 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +45,10 @@
 pub enum ProductionVariantInferenceAmiVersion {
     #[allow(missing_docs)] // documentation missing in model
     Al2Gpu2,
+    #[allow(missing_docs)] // documentation missing in model
+    Al2Gpu21,
+    #[allow(missing_docs)] // documentation missing in model
+    Al2Gpu31,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +57,8 @@ impl ::std::convert::From<&str> for ProductionVariantInferenceAmiVersion {
     fn from(s: &str) -> Self {
         match s {
             "al2-ami-sagemaker-inference-gpu-2" => ProductionVariantInferenceAmiVersion::Al2Gpu2,
+            "al2-ami-sagemaker-inference-gpu-2-1" => ProductionVariantInferenceAmiVersion::Al2Gpu21,
+            "al2-ami-sagemaker-inference-gpu-3-1" => ProductionVariantInferenceAmiVersion::Al2Gpu31,
             other => ProductionVariantInferenceAmiVersion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +75,18 @@ impl ProductionVariantInferenceAmiVersion {
     pub fn as_str(&self) -> &str {
         match self {
             ProductionVariantInferenceAmiVersion::Al2Gpu2 => "al2-ami-sagemaker-inference-gpu-2",
+            ProductionVariantInferenceAmiVersion::Al2Gpu21 => "al2-ami-sagemaker-inference-gpu-2-1",
+            ProductionVariantInferenceAmiVersion::Al2Gpu31 => "al2-ami-sagemaker-inference-gpu-3-1",
             ProductionVariantInferenceAmiVersion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["al2-ami-sagemaker-inference-gpu-2"]
+        &[
+            "al2-ami-sagemaker-inference-gpu-2",
+            "al2-ami-sagemaker-inference-gpu-2-1",
+            "al2-ami-sagemaker-inference-gpu-3-1",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ProductionVariantInferenceAmiVersion {
@@ -96,6 +110,8 @@ impl ::std::fmt::Display for ProductionVariantInferenceAmiVersion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ProductionVariantInferenceAmiVersion::Al2Gpu2 => write!(f, "al2-ami-sagemaker-inference-gpu-2"),
+            ProductionVariantInferenceAmiVersion::Al2Gpu21 => write!(f, "al2-ami-sagemaker-inference-gpu-2-1"),
+            ProductionVariantInferenceAmiVersion::Al2Gpu31 => write!(f, "al2-ami-sagemaker-inference-gpu-3-1"),
             ProductionVariantInferenceAmiVersion::Unknown(value) => write!(f, "{}", value),
         }
     }

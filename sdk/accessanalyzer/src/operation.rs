@@ -55,6 +55,9 @@ pub mod get_finding_recommendation;
 /// Types for the `GetFindingV2` operation.
 pub mod get_finding_v2;
 
+/// Types for the `GetFindingsStatistics` operation.
+pub mod get_findings_statistics;
+
 /// Types for the `GetGeneratedPolicy` operation.
 pub mod get_generated_policy;
 

@@ -5,16 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedStorageConfiguration {
     /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Key Management Service key ID for the Fargate ephemeral storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fargate_ephemeral_storage_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ManagedStorageConfiguration {
     /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Specify the Key Management Service key ID for the Fargate ephemeral storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn fargate_ephemeral_storage_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.fargate_ephemeral_storage_kms_key_id.as_deref()
     }
@@ -35,30 +39,36 @@ pub struct ManagedStorageConfigurationBuilder {
 }
 impl ManagedStorageConfigurationBuilder {
     /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }
     /// <p>Specify the Key Management Service key ID for the Fargate ephemeral storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn fargate_ephemeral_storage_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.fargate_ephemeral_storage_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the Key Management Service key ID for the Fargate ephemeral storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn set_fargate_ephemeral_storage_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fargate_ephemeral_storage_kms_key_id = input;
         self
     }
     /// <p>Specify the Key Management Service key ID for the Fargate ephemeral storage.</p>
+    /// <p>The key must be a single Region key.</p>
     pub fn get_fargate_ephemeral_storage_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.fargate_ephemeral_storage_kms_key_id
     }

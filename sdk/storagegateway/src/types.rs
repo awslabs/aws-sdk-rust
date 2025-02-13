@@ -29,6 +29,10 @@ pub use crate::types::_bandwidth_rate_limit_interval::BandwidthRateLimitInterval
 
 pub use crate::types::_automatic_tape_creation_rule::AutomaticTapeCreationRule;
 
+pub use crate::types::_cache_report_filter::CacheReportFilter;
+
+pub use crate::types::_cache_report_filter_name::CacheReportFilterName;
+
 pub use crate::types::_volume_info::VolumeInfo;
 
 pub use crate::types::_volume_recovery_point_info::VolumeRecoveryPointInfo;
@@ -54,6 +58,10 @@ pub use crate::types::_file_system_association_summary::FileSystemAssociationSum
 pub use crate::types::_file_share_info::FileShareInfo;
 
 pub use crate::types::_file_share_type::FileShareType;
+
+pub use crate::types::_cache_report_info::CacheReportInfo;
+
+pub use crate::types::_cache_report_status::CacheReportStatus;
 
 pub use crate::types::_automatic_tape_creation_policy_info::AutomaticTapeCreationPolicyInfo;
 
@@ -104,6 +112,14 @@ mod _availability_monitor_test_status;
 mod _bandwidth_rate_limit_interval;
 
 mod _cache_attributes;
+
+mod _cache_report_filter;
+
+mod _cache_report_filter_name;
+
+mod _cache_report_info;
+
+mod _cache_report_status;
 
 mod _cachedi_scsi_volume;
 

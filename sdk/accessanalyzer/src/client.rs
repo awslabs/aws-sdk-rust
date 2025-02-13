@@ -199,6 +199,8 @@ mod get_finding_recommendation;
 
 mod get_finding_v2;
 
+mod get_findings_statistics;
+
 mod get_generated_policy;
 
 mod list_access_preview_findings;

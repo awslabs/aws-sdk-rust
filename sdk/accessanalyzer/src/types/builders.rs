@@ -79,6 +79,16 @@ pub use crate::types::_unused_action::UnusedActionBuilder;
 
 pub use crate::types::_external_access_details::ExternalAccessDetailsBuilder;
 
+pub use crate::types::_unused_access_findings_statistics::UnusedAccessFindingsStatisticsBuilder;
+
+pub use crate::types::_finding_aggregation_account_details::FindingAggregationAccountDetailsBuilder;
+
+pub use crate::types::_unused_access_type_statistics::UnusedAccessTypeStatisticsBuilder;
+
+pub use crate::types::_external_access_findings_statistics::ExternalAccessFindingsStatisticsBuilder;
+
+pub use crate::types::_resource_type_details::ResourceTypeDetailsBuilder;
+
 pub use crate::types::_unused_permissions_recommended_step::UnusedPermissionsRecommendedStepBuilder;
 
 pub use crate::types::_recommendation_error::RecommendationErrorBuilder;

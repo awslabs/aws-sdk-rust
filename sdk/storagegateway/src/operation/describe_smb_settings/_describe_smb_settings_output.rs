@@ -7,7 +7,9 @@ pub struct DescribeSmbSettingsOutput {
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain that the gateway is joined to.</p>
     pub domain_name: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -55,7 +57,9 @@ impl DescribeSmbSettingsOutput {
     pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -157,7 +161,9 @@ impl DescribeSmbSettingsOutputBuilder {
     pub fn get_domain_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_name
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -178,7 +184,9 @@ impl DescribeSmbSettingsOutputBuilder {
         self.active_directory_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -199,7 +207,9 @@ impl DescribeSmbSettingsOutputBuilder {
         self.active_directory_status = input;
         self
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>

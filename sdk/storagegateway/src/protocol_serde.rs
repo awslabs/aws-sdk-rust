@@ -41,6 +41,8 @@ pub(crate) mod shape_attach_volume;
 
 pub(crate) mod shape_cancel_archival;
 
+pub(crate) mod shape_cancel_cache_report;
+
 pub(crate) mod shape_cancel_retrieval;
 
 pub(crate) mod shape_create_cachedi_scsi_volume;
@@ -65,6 +67,8 @@ pub(crate) mod shape_delete_automatic_tape_creation_policy;
 
 pub(crate) mod shape_delete_bandwidth_rate_limit;
 
+pub(crate) mod shape_delete_cache_report;
+
 pub(crate) mod shape_delete_chap_credentials;
 
 pub(crate) mod shape_delete_file_share;
@@ -88,6 +92,8 @@ pub(crate) mod shape_describe_bandwidth_rate_limit;
 pub(crate) mod shape_describe_bandwidth_rate_limit_schedule;
 
 pub(crate) mod shape_describe_cache;
+
+pub(crate) mod shape_describe_cache_report;
 
 pub(crate) mod shape_describe_cachedi_scsi_volumes;
 
@@ -131,6 +137,8 @@ pub(crate) mod shape_join_domain;
 
 pub(crate) mod shape_list_automatic_tape_creation_policies;
 
+pub(crate) mod shape_list_cache_reports;
+
 pub(crate) mod shape_list_file_shares;
 
 pub(crate) mod shape_list_file_system_associations;
@@ -170,6 +178,8 @@ pub(crate) mod shape_set_smb_guest_password;
 pub(crate) mod shape_shutdown_gateway;
 
 pub(crate) mod shape_start_availability_monitor_test;
+
+pub(crate) mod shape_start_cache_report;
 
 pub(crate) mod shape_start_gateway;
 
@@ -229,6 +239,8 @@ pub(crate) mod shape_attach_volume_input;
 
 pub(crate) mod shape_cancel_archival_input;
 
+pub(crate) mod shape_cancel_cache_report_input;
+
 pub(crate) mod shape_cancel_retrieval_input;
 
 pub(crate) mod shape_create_cachedi_scsi_volume_input;
@@ -253,6 +265,8 @@ pub(crate) mod shape_delete_automatic_tape_creation_policy_input;
 
 pub(crate) mod shape_delete_bandwidth_rate_limit_input;
 
+pub(crate) mod shape_delete_cache_report_input;
+
 pub(crate) mod shape_delete_chap_credentials_input;
 
 pub(crate) mod shape_delete_file_share_input;
@@ -276,6 +290,8 @@ pub(crate) mod shape_describe_bandwidth_rate_limit_input;
 pub(crate) mod shape_describe_bandwidth_rate_limit_schedule_input;
 
 pub(crate) mod shape_describe_cache_input;
+
+pub(crate) mod shape_describe_cache_report_input;
 
 pub(crate) mod shape_describe_cachedi_scsi_volumes_input;
 
@@ -323,6 +339,8 @@ pub(crate) mod shape_join_domain_input;
 
 pub(crate) mod shape_list_automatic_tape_creation_policies_input;
 
+pub(crate) mod shape_list_cache_reports_input;
+
 pub(crate) mod shape_list_file_shares_input;
 
 pub(crate) mod shape_list_file_system_associations_input;
@@ -365,6 +383,8 @@ pub(crate) mod shape_shutdown_gateway_input;
 
 pub(crate) mod shape_start_availability_monitor_test_input;
 
+pub(crate) mod shape_start_cache_report_input;
+
 pub(crate) mod shape_start_gateway_input;
 
 pub(crate) mod shape_update_automatic_tape_creation_policy_input;
@@ -406,6 +426,12 @@ pub(crate) mod shape_bandwidth_rate_limit_interval;
 pub(crate) mod shape_bandwidth_rate_limit_intervals;
 
 pub(crate) mod shape_cache_attributes;
+
+pub(crate) mod shape_cache_report_filter;
+
+pub(crate) mod shape_cache_report_info;
+
+pub(crate) mod shape_cache_report_list;
 
 pub(crate) mod shape_cachedi_scsi_volumes;
 
@@ -469,6 +495,8 @@ pub(crate) mod shape_vtl_devices;
 
 pub(crate) mod shape_automatic_tape_creation_policy_info;
 
+pub(crate) mod shape_cache_report_filter_list;
+
 pub(crate) mod shape_cachedi_scsi_volume;
 
 pub(crate) mod shape_chap_info;
@@ -524,6 +552,8 @@ pub(crate) mod shape_file_share_client_list;
 pub(crate) mod shape_file_system_association_status_details;
 
 pub(crate) mod shape_volumei_scsi_attributes;
+
+pub(crate) mod shape_cache_report_filter_values;
 
 pub(crate) mod shape_file_system_association_status_detail;
 

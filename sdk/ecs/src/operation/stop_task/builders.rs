@@ -117,17 +117,17 @@ impl StopTaskFluentBuilder {
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster()
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.task(input.into());
         self
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_task(input);
         self
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_task()
     }

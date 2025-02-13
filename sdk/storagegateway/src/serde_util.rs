@@ -30,6 +30,18 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn cache_report_filter_correct_errors(
+    mut builder: crate::types::builders::CacheReportFilterBuilder,
+) -> crate::types::builders::CacheReportFilterBuilder {
+    if builder.name.is_none() {
+        builder.name = "no value was set".parse::<crate::types::CacheReportFilterName>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn automatic_tape_creation_rule_correct_errors(
     mut builder: crate::types::builders::AutomaticTapeCreationRuleBuilder,
 ) -> crate::types::builders::AutomaticTapeCreationRuleBuilder {

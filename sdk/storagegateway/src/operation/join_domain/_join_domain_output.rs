@@ -6,7 +6,9 @@
 pub struct JoinDomainOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -31,7 +33,9 @@ impl JoinDomainOutput {
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
-    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -87,7 +91,9 @@ impl JoinDomainOutputBuilder {
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }
-    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -108,7 +114,9 @@ impl JoinDomainOutputBuilder {
         self.active_directory_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>
@@ -129,7 +137,9 @@ impl JoinDomainOutputBuilder {
         self.active_directory_status = input;
         self
     }
-    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
+    /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p><note>
+    /// <p>This field is only used as part of a <code>JoinDomain</code> request. It is not affected by Active Directory connectivity changes that occur after the <code>JoinDomain</code> request succeeds.</p>
+    /// </note>
     /// <ul>
     /// <li>
     /// <p><code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p></li>

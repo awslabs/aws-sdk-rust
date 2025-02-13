@@ -273,6 +273,31 @@ impl From<crate::operation::cancel_archival::CancelArchivalError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_cache_report::CancelCacheReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_cache_report::CancelCacheReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_cache_report::CancelCacheReportError> for Error {
+    fn from(err: crate::operation::cancel_cache_report::CancelCacheReportError) -> Self {
+        match err {
+            crate::operation::cancel_cache_report::CancelCacheReportError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::cancel_cache_report::CancelCacheReportError::InvalidGatewayRequestException(inner) => {
+                Error::InvalidGatewayRequestException(inner)
+            }
+            crate::operation::cancel_cache_report::CancelCacheReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_retrieval::CancelRetrievalError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -611,6 +636,31 @@ impl From<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimi
                 Error::InvalidGatewayRequestException(inner)
             }
             crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimitError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cache_report::DeleteCacheReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cache_report::DeleteCacheReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cache_report::DeleteCacheReportError> for Error {
+    fn from(err: crate::operation::delete_cache_report::DeleteCacheReportError) -> Self {
+        match err {
+            crate::operation::delete_cache_report::DeleteCacheReportError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_cache_report::DeleteCacheReportError::InvalidGatewayRequestException(inner) => {
+                Error::InvalidGatewayRequestException(inner)
+            }
+            crate::operation::delete_cache_report::DeleteCacheReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -974,6 +1024,31 @@ impl From<crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVo
                 Error::InvalidGatewayRequestException(inner)
             }
             crate::operation::describe_cachedi_scsi_volumes::DescribeCachediSCSIVolumesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cache_report::DescribeCacheReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cache_report::DescribeCacheReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cache_report::DescribeCacheReportError> for Error {
+    fn from(err: crate::operation::describe_cache_report::DescribeCacheReportError) -> Self {
+        match err {
+            crate::operation::describe_cache_report::DescribeCacheReportError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_cache_report::DescribeCacheReportError::InvalidGatewayRequestException(inner) => {
+                Error::InvalidGatewayRequestException(inner)
+            }
+            crate::operation::describe_cache_report::DescribeCacheReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1543,6 +1618,31 @@ impl From<crate::operation::list_automatic_tape_creation_policies::ListAutomatic
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cache_reports::ListCacheReportsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cache_reports::ListCacheReportsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cache_reports::ListCacheReportsError> for Error {
+    fn from(err: crate::operation::list_cache_reports::ListCacheReportsError) -> Self {
+        match err {
+            crate::operation::list_cache_reports::ListCacheReportsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_cache_reports::ListCacheReportsError::InvalidGatewayRequestException(inner) => {
+                Error::InvalidGatewayRequestException(inner)
+            }
+            crate::operation::list_cache_reports::ListCacheReportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_file_shares::ListFileSharesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2062,6 +2162,31 @@ impl From<crate::operation::start_availability_monitor_test::StartAvailabilityMo
                 Error::InvalidGatewayRequestException(inner)
             }
             crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cache_report::StartCacheReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_cache_report::StartCacheReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_cache_report::StartCacheReportError> for Error {
+    fn from(err: crate::operation::start_cache_report::StartCacheReportError) -> Self {
+        match err {
+            crate::operation::start_cache_report::StartCacheReportError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_cache_report::StartCacheReportError::InvalidGatewayRequestException(inner) => {
+                Error::InvalidGatewayRequestException(inner)
+            }
+            crate::operation::start_cache_report::StartCacheReportError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

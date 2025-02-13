@@ -154,6 +154,8 @@ mod attach_volume;
 
 mod cancel_archival;
 
+mod cancel_cache_report;
+
 mod cancel_retrieval;
 
 mod create_cachedi_scsi_volume;
@@ -205,6 +207,8 @@ mod delete_automatic_tape_creation_policy;
 
 mod delete_bandwidth_rate_limit;
 
+mod delete_cache_report;
+
 mod delete_chap_credentials;
 
 mod delete_file_share;
@@ -228,6 +232,8 @@ mod describe_bandwidth_rate_limit;
 mod describe_bandwidth_rate_limit_schedule;
 
 mod describe_cache;
+
+mod describe_cache_report;
 
 mod describe_cachedi_scsi_volumes;
 
@@ -271,6 +277,8 @@ mod join_domain;
 
 mod list_automatic_tape_creation_policies;
 
+mod list_cache_reports;
+
 mod list_file_shares;
 
 mod list_file_system_associations;
@@ -310,6 +318,8 @@ mod set_smb_guest_password;
 mod shutdown_gateway;
 
 mod start_availability_monitor_test;
+
+mod start_cache_report;
 
 mod start_gateway;
 

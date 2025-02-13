@@ -5,7 +5,7 @@
 pub struct StopTaskInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task to stop. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: ::std::option::Option<::std::string::String>,
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub task: ::std::option::Option<::std::string::String>,
     /// <p>An optional message specified when a task is stopped. For example, if you're using a custom scheduler, you can use this parameter to specify the reason for stopping the task here, and the message appears in subsequent <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>&gt; API operations on this task.</p>
     pub reason: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl StopTaskInput {
     pub fn cluster(&self) -> ::std::option::Option<&str> {
         self.cluster.as_deref()
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub fn task(&self) -> ::std::option::Option<&str> {
         self.task.as_deref()
     }
@@ -54,18 +54,18 @@ impl StopTaskInputBuilder {
     pub fn get_cluster(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     /// This field is required.
     pub fn task(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub fn set_task(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task = input;
         self
     }
-    /// <p>The task ID of the task to stop.</p>
+    /// <p>Thefull Amazon Resource Name (ARN) of the task.</p>
     pub fn get_task(&self) -> &::std::option::Option<::std::string::String> {
         &self.task
     }

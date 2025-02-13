@@ -4,6 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+    /// <p>In order to tag a service that has the following ARN format, you need to migrate the service to the long ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-arn-migration.html">Migrate an Amazon ECS short service ARN to a long ARN</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/service-name</code></p>
+    /// <p>After the migration is complete, the service has the long ARN format, as shown below. Use this ARN to tag the service.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
+    /// <p>If you try to tag a service with a short ARN, you receive an <code>InvalidParameterException</code> error.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
     /// <p>The following basic restrictions apply to tags:</p>
@@ -27,6 +32,11 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+    /// <p>In order to tag a service that has the following ARN format, you need to migrate the service to the long ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-arn-migration.html">Migrate an Amazon ECS short service ARN to a long ARN</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/service-name</code></p>
+    /// <p>After the migration is complete, the service has the long ARN format, as shown below. Use this ARN to tag the service.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
+    /// <p>If you try to tag a service with a short ARN, you receive an <code>InvalidParameterException</code> error.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -70,17 +80,32 @@ pub struct TagResourceInputBuilder {
 }
 impl TagResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+    /// <p>In order to tag a service that has the following ARN format, you need to migrate the service to the long ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-arn-migration.html">Migrate an Amazon ECS short service ARN to a long ARN</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/service-name</code></p>
+    /// <p>After the migration is complete, the service has the long ARN format, as shown below. Use this ARN to tag the service.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
+    /// <p>If you try to tag a service with a short ARN, you receive an <code>InvalidParameterException</code> error.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+    /// <p>In order to tag a service that has the following ARN format, you need to migrate the service to the long ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-arn-migration.html">Migrate an Amazon ECS short service ARN to a long ARN</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/service-name</code></p>
+    /// <p>After the migration is complete, the service has the long ARN format, as shown below. Use this ARN to tag the service.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
+    /// <p>If you try to tag a service with a short ARN, you receive an <code>InvalidParameterException</code> error.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. Currently, the supported resources are Amazon ECS capacity providers, tasks, services, task definitions, clusters, and container instances.</p>
+    /// <p>In order to tag a service that has the following ARN format, you need to migrate the service to the long ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-arn-migration.html">Migrate an Amazon ECS short service ARN to a long ARN</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/service-name</code></p>
+    /// <p>After the migration is complete, the service has the long ARN format, as shown below. Use this ARN to tag the service.</p>
+    /// <p><code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code></p>
+    /// <p>If you try to tag a service with a short ARN, you receive an <code>InvalidParameterException</code> error.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
