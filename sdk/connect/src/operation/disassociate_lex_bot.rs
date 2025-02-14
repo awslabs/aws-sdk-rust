@@ -59,9 +59,18 @@ impl DisassociateLexBot {
         config_override: ::std::option::Option<crate::config::Builder>,
     ) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
-        runtime_plugins = runtime_plugins.with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
-            ::aws_runtime::auth::sigv4::SCHEME_ID,
-        ]));
+        runtime_plugins = runtime_plugins
+            .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
+                |token_provider, input| {
+                    let input: &mut crate::operation::disassociate_lex_bot::DisassociateLexBotInput = input.downcast_mut().expect("correct type");
+                    if input.client_token.is_none() {
+                        input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                    }
+                },
+            ))
+            .with_client_plugin(crate::auth_plugin::DefaultAuthOptionsPlugin::new(vec![
+                ::aws_runtime::auth::sigv4::SCHEME_ID,
+            ]));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);
@@ -214,6 +223,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for Disassociate
                     ));
                 }
                 query.push_kv("lexRegion", &::aws_smithy_http::query::fmt_string(inner_3));
+                if let ::std::option::Option::Some(inner_4) = &_input.client_token {
+                    {
+                        query.push_kv("clientToken", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

@@ -16,7 +16,7 @@
 /// <li>
 /// <p>In this documentation, the descriptions of the individual fields talk about specifying the web request component to inspect, but for field redaction, you are specifying the component type to redact from the logs.</p></li>
 /// <li>
-/// <p>If you have request sampling enabled, the redacted fields configuration for logging has no impact on sampling. The only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.</p></li>
+/// <p>If you have request sampling enabled, the redacted fields configuration for logging has no impact on sampling. You can only exclude fields from request sampling by disabling sampling in the web ACL visibility configuration or by configuring data protection for the web ACL.</p></li>
 /// </ul></li>
 /// </ul>
 #[non_exhaustive]

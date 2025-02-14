@@ -5,7 +5,7 @@
 pub struct DeleteRegexPatternSetInput {
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -24,7 +24,7 @@ impl DeleteRegexPatternSetInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -76,7 +76,7 @@ impl DeleteRegexPatternSetInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -89,7 +89,7 @@ impl DeleteRegexPatternSetInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -101,7 +101,7 @@ impl DeleteRegexPatternSetInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

@@ -7,6 +7,8 @@ pub struct DisassociateLambdaFunctionInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     pub function_arn: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..</p>
@@ -16,6 +18,10 @@ impl DisassociateLambdaFunctionInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     pub fn function_arn(&self) -> ::std::option::Option<&str> {
         self.function_arn.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DisassociateLambdaFunctionInput {
@@ -31,6 +37,7 @@ impl DisassociateLambdaFunctionInput {
 pub struct DisassociateLambdaFunctionInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateLambdaFunctionInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..</p>
@@ -63,6 +70,20 @@ impl DisassociateLambdaFunctionInputBuilder {
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_arn
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DisassociateLambdaFunctionInput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl DisassociateLambdaFunctionInputBuilder {
         ::std::result::Result::Ok(crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput {
             instance_id: self.instance_id,
             function_arn: self.function_arn,
+            client_token: self.client_token,
         })
     }
 }

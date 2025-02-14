@@ -39,48 +39,54 @@ pub fn ser_update_web_acl_input_input(
         crate::protocol_serde::shape_visibility_config::ser_visibility_config(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.lock_token {
-        object.key("LockToken").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.custom_response_bodies {
+    if let Some(var_13) = &input.data_protection_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("CustomResponseBodies").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_14 = object.key("DataProtectionConfig").start_object();
+        crate::protocol_serde::shape_data_protection_config::ser_data_protection_config(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.lock_token {
+        object.key("LockToken").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.custom_response_bodies {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("CustomResponseBodies").start_object();
+        for (key_18, value_19) in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = object_15.key(key_16.as_str()).start_object();
-                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_18, value_17)?;
-                object_18.finish();
+                let mut object_20 = object_17.key(key_18.as_str()).start_object();
+                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_20, value_19)?;
+                object_20.finish();
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.captcha_config {
+    if let Some(var_21) = &input.captcha_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("CaptchaConfig").start_object();
-        crate::protocol_serde::shape_captcha_config::ser_captcha_config(&mut object_20, var_19)?;
-        object_20.finish();
-    }
-    if let Some(var_21) = &input.challenge_config {
-        #[allow(unused_mut)]
-        let mut object_22 = object.key("ChallengeConfig").start_object();
-        crate::protocol_serde::shape_challenge_config::ser_challenge_config(&mut object_22, var_21)?;
+        let mut object_22 = object.key("CaptchaConfig").start_object();
+        crate::protocol_serde::shape_captcha_config::ser_captcha_config(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.token_domains {
-        let mut array_24 = object.key("TokenDomains").start_array();
-        for item_25 in var_23 {
+    if let Some(var_23) = &input.challenge_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("ChallengeConfig").start_object();
+        crate::protocol_serde::shape_challenge_config::ser_challenge_config(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.token_domains {
+        let mut array_26 = object.key("TokenDomains").start_array();
+        for item_27 in var_25 {
             {
-                array_24.value().string(item_25.as_str());
+                array_26.value().string(item_27.as_str());
             }
         }
-        array_24.finish();
+        array_26.finish();
     }
-    if let Some(var_26) = &input.association_config {
+    if let Some(var_28) = &input.association_config {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("AssociationConfig").start_object();
-        crate::protocol_serde::shape_association_config::ser_association_config(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_29 = object.key("AssociationConfig").start_object();
+        crate::protocol_serde::shape_association_config::ser_association_config(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }

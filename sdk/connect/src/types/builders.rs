@@ -491,6 +491,8 @@ pub use crate::types::_authentication_profile_summary::AuthenticationProfileSumm
 
 pub use crate::types::_associated_contact_summary::AssociatedContactSummaryBuilder;
 
+pub use crate::types::_analytics_data_sets_result::AnalyticsDataSetsResultBuilder;
+
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResultBuilder;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummaryBuilder;

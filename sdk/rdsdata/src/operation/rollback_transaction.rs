@@ -259,6 +259,8 @@ pub enum RollbackTransactionError {
     HttpEndpointNotEnabledException(crate::types::error::HttpEndpointNotEnabledException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
+    /// <p>The resource is in an invalid state.</p>
+    InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
     /// <p>The Secrets Manager secret used with the request isn't valid.</p>
     InvalidSecretException(crate::types::error::InvalidSecretException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
@@ -320,6 +322,7 @@ impl RollbackTransactionError {
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HttpEndpointNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidResourceStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSecretException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SecretsErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -361,6 +364,10 @@ impl RollbackTransactionError {
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(self, Self::InternalServerErrorException(_))
     }
+    /// Returns `true` if the error kind is `RollbackTransactionError::InvalidResourceStateException`.
+    pub fn is_invalid_resource_state_exception(&self) -> bool {
+        matches!(self, Self::InvalidResourceStateException(_))
+    }
     /// Returns `true` if the error kind is `RollbackTransactionError::InvalidSecretException`.
     pub fn is_invalid_secret_exception(&self) -> bool {
         matches!(self, Self::InvalidSecretException(_))
@@ -397,6 +404,7 @@ impl ::std::error::Error for RollbackTransactionError {
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::HttpEndpointNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerErrorException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidResourceStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSecretException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::SecretsErrorException(_inner) => ::std::option::Option::Some(_inner),
@@ -418,6 +426,7 @@ impl ::std::fmt::Display for RollbackTransactionError {
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::HttpEndpointNotEnabledException(_inner) => _inner.fmt(f),
             Self::InternalServerErrorException(_inner) => _inner.fmt(f),
+            Self::InvalidResourceStateException(_inner) => _inner.fmt(f),
             Self::InvalidSecretException(_inner) => _inner.fmt(f),
             Self::NotFoundException(_inner) => _inner.fmt(f),
             Self::SecretsErrorException(_inner) => _inner.fmt(f),
@@ -453,6 +462,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RollbackTrans
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HttpEndpointNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidResourceStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSecretException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SecretsErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

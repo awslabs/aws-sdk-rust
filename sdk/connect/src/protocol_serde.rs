@@ -293,6 +293,8 @@ pub(crate) mod shape_list_agent_statuses;
 
 pub(crate) mod shape_list_analytics_data_associations;
 
+pub(crate) mod shape_list_analytics_data_lake_data_sets;
+
 pub(crate) mod shape_list_approved_origins;
 
 pub(crate) mod shape_list_associated_contacts;
@@ -985,6 +987,8 @@ pub(crate) mod shape_allowed_capabilities;
 
 pub(crate) mod shape_analytics_data_association_results;
 
+pub(crate) mod shape_analytics_data_sets_results;
+
 pub(crate) mod shape_answer_machine_detection_config;
 
 pub(crate) mod shape_application;
@@ -1400,6 +1404,8 @@ pub(crate) mod shape_agent_status_summary;
 pub(crate) mod shape_allowed_access_control_tags;
 
 pub(crate) mod shape_analytics_data_association_result;
+
+pub(crate) mod shape_analytics_data_sets_result;
 
 pub(crate) mod shape_assign_contact_category_action_definition;
 

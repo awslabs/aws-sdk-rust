@@ -4,8 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisibilityConfig {
-    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p><note>
-    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.</p>
+    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
+    /// <p>If you configure data protection for the web ACL, the protection applies to the web ACL's sampled web request data.</p><note>
+    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. You can only exclude fields from request sampling by disabling sampling in the web ACL visibility configuration or by configuring data protection for the web ACL.</p>
     /// </note>
     pub sampled_requests_enabled: bool,
     /// <p>Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF Metrics</a> in the <i>WAF Developer Guide</i>.</p>
@@ -15,8 +16,9 @@ pub struct VisibilityConfig {
     pub metric_name: ::std::string::String,
 }
 impl VisibilityConfig {
-    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p><note>
-    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.</p>
+    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
+    /// <p>If you configure data protection for the web ACL, the protection applies to the web ACL's sampled web request data.</p><note>
+    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. You can only exclude fields from request sampling by disabling sampling in the web ACL visibility configuration or by configuring data protection for the web ACL.</p>
     /// </note>
     pub fn sampled_requests_enabled(&self) -> bool {
         self.sampled_requests_enabled
@@ -48,23 +50,26 @@ pub struct VisibilityConfigBuilder {
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
 }
 impl VisibilityConfigBuilder {
-    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p><note>
-    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.</p>
+    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
+    /// <p>If you configure data protection for the web ACL, the protection applies to the web ACL's sampled web request data.</p><note>
+    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. You can only exclude fields from request sampling by disabling sampling in the web ACL visibility configuration or by configuring data protection for the web ACL.</p>
     /// </note>
     /// This field is required.
     pub fn sampled_requests_enabled(mut self, input: bool) -> Self {
         self.sampled_requests_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p><note>
-    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.</p>
+    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
+    /// <p>If you configure data protection for the web ACL, the protection applies to the web ACL's sampled web request data.</p><note>
+    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. You can only exclude fields from request sampling by disabling sampling in the web ACL visibility configuration or by configuring data protection for the web ACL.</p>
     /// </note>
     pub fn set_sampled_requests_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sampled_requests_enabled = input;
         self
     }
-    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p><note>
-    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.</p>
+    /// <p>Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled requests through the WAF console.</p>
+    /// <p>If you configure data protection for the web ACL, the protection applies to the web ACL's sampled web request data.</p><note>
+    /// <p>Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your logging configuration doesn't affect sampling. You can only exclude fields from request sampling by disabling sampling in the web ACL visibility configuration or by configuring data protection for the web ACL.</p>
     /// </note>
     pub fn get_sampled_requests_enabled(&self) -> &::std::option::Option<bool> {
         &self.sampled_requests_enabled

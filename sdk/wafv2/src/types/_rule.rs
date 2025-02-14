@@ -26,7 +26,9 @@ pub struct Rule {
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings.</p>
     /// </note>
     pub override_action: ::std::option::Option<crate::types::OverrideAction>,
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p><note>
+    /// <p>Any rule that isn't a rule group reference statement or managed rule group statement can add labels to matching web requests.</p>
+    /// </note>
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
@@ -83,7 +85,9 @@ impl Rule {
     pub fn override_action(&self) -> ::std::option::Option<&crate::types::OverrideAction> {
         self.override_action.as_ref()
     }
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p><note>
+    /// <p>Any rule that isn't a rule group reference statement or managed rule group statement can add labels to matching web requests.</p>
+    /// </note>
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
@@ -251,7 +255,9 @@ impl RuleBuilder {
     ///
     /// To override the contents of this collection use [`set_rule_labels`](Self::set_rule_labels).
     ///
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p><note>
+    /// <p>Any rule that isn't a rule group reference statement or managed rule group statement can add labels to matching web requests.</p>
+    /// </note>
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
@@ -271,7 +277,9 @@ impl RuleBuilder {
         self.rule_labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p><note>
+    /// <p>Any rule that isn't a rule group reference statement or managed rule group statement can add labels to matching web requests.</p>
+    /// </note>
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>
@@ -289,7 +297,9 @@ impl RuleBuilder {
         self.rule_labels = input;
         self
     }
-    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p>
+    /// <p>Labels to apply to web requests that match the rule match statement. WAF applies fully qualified labels to matching web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule group or web ACL defines the label namespace.</p><note>
+    /// <p>Any rule that isn't a rule group reference statement or managed rule group statement can add labels to matching web requests.</p>
+    /// </note>
     /// <p>Rules that run after this rule in the web ACL can match against these labels using a <code>LabelMatchStatement</code>.</p>
     /// <p>For each label, provide a case-sensitive string containing optional namespaces and a label name, according to the following guidelines:</p>
     /// <ul>

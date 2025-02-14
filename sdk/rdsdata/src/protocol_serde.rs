@@ -71,6 +71,8 @@ pub(crate) mod shape_http_endpoint_not_enabled_exception;
 
 pub(crate) mod shape_internal_server_error_exception;
 
+pub(crate) mod shape_invalid_resource_state_exception;
+
 pub(crate) mod shape_invalid_secret_exception;
 
 pub(crate) mod shape_not_found_exception;

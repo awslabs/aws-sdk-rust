@@ -295,6 +295,8 @@ pub(crate) mod shape_challenge_config;
 
 pub(crate) mod shape_custom_response_body;
 
+pub(crate) mod shape_data_protection_config;
+
 pub(crate) mod shape_default_action;
 
 pub(crate) mod shape_ip_set;
@@ -373,6 +375,8 @@ pub(crate) mod shape_block_action;
 
 pub(crate) mod shape_custom_response_bodies;
 
+pub(crate) mod shape_data_protection;
+
 pub(crate) mod shape_field_to_match;
 
 pub(crate) mod shape_firewall_manager_rule_groups;
@@ -444,6 +448,10 @@ pub(crate) mod shape_count_action;
 pub(crate) mod shape_custom_request_handling;
 
 pub(crate) mod shape_custom_response;
+
+pub(crate) mod shape_data_protections;
+
+pub(crate) mod shape_field_to_protect;
 
 pub(crate) mod shape_filter;
 
@@ -578,6 +586,8 @@ pub(crate) mod shape_cookie_names;
 pub(crate) mod shape_country_codes;
 
 pub(crate) mod shape_excluded_rules;
+
+pub(crate) mod shape_field_to_protect_keys;
 
 pub(crate) mod shape_header_names;
 

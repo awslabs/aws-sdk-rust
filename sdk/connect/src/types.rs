@@ -707,6 +707,8 @@ pub use crate::types::_authentication_profile_summary::AuthenticationProfileSumm
 
 pub use crate::types::_associated_contact_summary::AssociatedContactSummary;
 
+pub use crate::types::_analytics_data_sets_result::AnalyticsDataSetsResult;
+
 pub use crate::types::_analytics_data_association_result::AnalyticsDataAssociationResult;
 
 pub use crate::types::_agent_status_summary::AgentStatusSummary;
@@ -948,6 +950,8 @@ mod _agents_criteria;
 mod _allowed_capabilities;
 
 mod _analytics_data_association_result;
+
+mod _analytics_data_sets_result;
 
 mod _answer_machine_detection_config;
 

@@ -433,6 +433,8 @@ mod list_agent_statuses;
 
 mod list_analytics_data_associations;
 
+mod list_analytics_data_lake_data_sets;
+
 mod list_approved_origins;
 
 mod list_associated_contacts;

@@ -18,6 +18,8 @@ pub struct Replication {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
     pub provision_data: ::std::option::Option<crate::types::ProvisionData>,
+    /// <p>The status output of premigration assessment in describe-replications.</p>
+    pub premigration_assessment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::PremigrationAssessmentStatus>>,
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li>
@@ -101,6 +103,12 @@ impl Replication {
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
     pub fn provision_data(&self) -> ::std::option::Option<&crate::types::ProvisionData> {
         self.provision_data.as_ref()
+    }
+    /// <p>The status output of premigration assessment in describe-replications.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.premigration_assessment_statuses.is_none()`.
+    pub fn premigration_assessment_statuses(&self) -> &[crate::types::PremigrationAssessmentStatus] {
+        self.premigration_assessment_statuses.as_deref().unwrap_or_default()
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
@@ -201,6 +209,7 @@ pub struct ReplicationBuilder {
     pub(crate) replication_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) provision_data: ::std::option::Option<crate::types::ProvisionData>,
+    pub(crate) premigration_assessment_statuses: ::std::option::Option<::std::vec::Vec<crate::types::PremigrationAssessmentStatus>>,
     pub(crate) stop_reason: ::std::option::Option<::std::string::String>,
     pub(crate) failure_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) replication_stats: ::std::option::Option<crate::types::ReplicationStats>,
@@ -312,6 +321,29 @@ impl ReplicationBuilder {
     /// <p>Information about provisioning resources for an DMS serverless replication.</p>
     pub fn get_provision_data(&self) -> &::std::option::Option<crate::types::ProvisionData> {
         &self.provision_data
+    }
+    /// Appends an item to `premigration_assessment_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_premigration_assessment_statuses`](Self::set_premigration_assessment_statuses).
+    ///
+    /// <p>The status output of premigration assessment in describe-replications.</p>
+    pub fn premigration_assessment_statuses(mut self, input: crate::types::PremigrationAssessmentStatus) -> Self {
+        let mut v = self.premigration_assessment_statuses.unwrap_or_default();
+        v.push(input);
+        self.premigration_assessment_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The status output of premigration assessment in describe-replications.</p>
+    pub fn set_premigration_assessment_statuses(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PremigrationAssessmentStatus>>,
+    ) -> Self {
+        self.premigration_assessment_statuses = input;
+        self
+    }
+    /// <p>The status output of premigration assessment in describe-replications.</p>
+    pub fn get_premigration_assessment_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PremigrationAssessmentStatus>> {
+        &self.premigration_assessment_statuses
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
@@ -587,6 +619,7 @@ impl ReplicationBuilder {
             replication_type: self.replication_type,
             status: self.status,
             provision_data: self.provision_data,
+            premigration_assessment_statuses: self.premigration_assessment_statuses,
             stop_reason: self.stop_reason,
             failure_messages: self.failure_messages,
             replication_stats: self.replication_stats,

@@ -24,7 +24,12 @@ impl crate::operation::describe_contact::builders::DescribeContactInputBuilder {
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Describes the specified contact.</p><important>
-/// <p>Contact information remains available in Amazon Connect for 24 months from the InitiationTimestamp, and then it is deleted. Only contact information that is available in Amazon Connect is returned by this API</p>
+/// <ul>
+/// <li>
+/// <p><code>CustomerEndpoint</code> and <code>SystemEndpoint</code> are only populated for EMAIL contacts.</p></li>
+/// <li>
+/// <p>Contact information remains available in Amazon Connect for 24 months from the <code>InitiationTimestamp</code>, and then it is deleted. Only contact information that is available in Amazon Connect is returned by this API.</p></li>
+/// </ul>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeContactFluentBuilder {

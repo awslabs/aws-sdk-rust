@@ -9,6 +9,12 @@ pub use crate::types::_replication::ReplicationBuilder;
 
 pub use crate::types::_replication_stats::ReplicationStatsBuilder;
 
+pub use crate::types::_premigration_assessment_status::PremigrationAssessmentStatusBuilder;
+
+pub use crate::types::_replication_task_assessment_run_result_statistic::ReplicationTaskAssessmentRunResultStatisticBuilder;
+
+pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgressBuilder;
+
 pub use crate::types::_provision_data::ProvisionDataBuilder;
 
 pub use crate::types::_data_migration::DataMigrationBuilder;
@@ -22,10 +28,6 @@ pub use crate::types::_source_data_setting::SourceDataSettingBuilder;
 pub use crate::types::_data_migration_settings::DataMigrationSettingsBuilder;
 
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRunBuilder;
-
-pub use crate::types::_replication_task_assessment_run_result_statistic::ReplicationTaskAssessmentRunResultStatisticBuilder;
-
-pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgressBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 

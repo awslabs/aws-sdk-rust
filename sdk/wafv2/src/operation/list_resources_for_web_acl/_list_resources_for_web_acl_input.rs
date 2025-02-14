@@ -5,7 +5,8 @@
 pub struct ListResourcesForWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p><note>
+    /// <p>Retrieves the web ACLs that are used by the specified resource type.</p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.</p><note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.</p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code></p>
@@ -16,7 +17,8 @@ impl ListResourcesForWebAclInput {
     pub fn web_acl_arn(&self) -> ::std::option::Option<&str> {
         self.web_acl_arn.as_deref()
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p><note>
+    /// <p>Retrieves the web ACLs that are used by the specified resource type.</p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.</p><note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.</p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code></p>
@@ -54,7 +56,8 @@ impl ListResourcesForWebAclInputBuilder {
     pub fn get_web_acl_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.web_acl_arn
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p><note>
+    /// <p>Retrieves the web ACLs that are used by the specified resource type.</p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.</p><note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.</p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code></p>
@@ -62,7 +65,8 @@ impl ListResourcesForWebAclInputBuilder {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p><note>
+    /// <p>Retrieves the web ACLs that are used by the specified resource type.</p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.</p><note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.</p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code></p>
@@ -70,7 +74,8 @@ impl ListResourcesForWebAclInputBuilder {
         self.resource_type = input;
         self
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p><note>
+    /// <p>Retrieves the web ACLs that are used by the specified resource type.</p>
+    /// <p>For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a> in the <i>Amazon CloudFront API Reference</i>.</p><note>
     /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.</p>
     /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code></p>

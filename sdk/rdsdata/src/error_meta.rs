@@ -11,7 +11,7 @@ pub enum Error {
     DatabaseErrorException(crate::types::error::DatabaseErrorException),
     /// <p>The DB cluster doesn't have a DB instance.</p>
     DatabaseNotFoundException(crate::types::error::DatabaseNotFoundException),
-    /// <p>A request was canceled because the Aurora Serverless v2 DB instance was in a paused state. The Data API request automatically causes the DB instance to begin resuming. Wait a few seconds and try again.</p>
+    /// <p>A request was cancelled because the Aurora Serverless v2 DB instance was paused. The Data API request automatically resumes the DB instance. Wait a few seconds and try again.</p>
     DatabaseResumingException(crate::types::error::DatabaseResumingException),
     /// <p>The writer instance in the DB cluster isn't available.</p>
     DatabaseUnavailableException(crate::types::error::DatabaseUnavailableException),
@@ -21,6 +21,8 @@ pub enum Error {
     HttpEndpointNotEnabledException(crate::types::error::HttpEndpointNotEnabledException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
+    /// <p>The resource is in an invalid state.</p>
+    InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
     /// <p>The Secrets Manager secret used with the request isn't valid.</p>
     InvalidSecretException(crate::types::error::InvalidSecretException),
     /// <p>The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code> value can't be found.</p>
@@ -72,6 +74,7 @@ impl ::std::fmt::Display for Error {
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::HttpEndpointNotEnabledException(inner) => inner.fmt(f),
             Error::InternalServerErrorException(inner) => inner.fmt(f),
+            Error::InvalidResourceStateException(inner) => inner.fmt(f),
             Error::InvalidSecretException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::SecretsErrorException(inner) => inner.fmt(f),
@@ -109,6 +112,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ForbiddenException(inner) => inner.meta(),
             Self::HttpEndpointNotEnabledException(inner) => inner.meta(),
             Self::InternalServerErrorException(inner) => inner.meta(),
+            Self::InvalidResourceStateException(inner) => inner.meta(),
             Self::InvalidSecretException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
             Self::SecretsErrorException(inner) => inner.meta(),
@@ -162,6 +166,9 @@ impl From<crate::operation::batch_execute_statement::BatchExecuteStatementError>
             crate::operation::batch_execute_statement::BatchExecuteStatementError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
+            crate::operation::batch_execute_statement::BatchExecuteStatementError::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
+            }
             crate::operation::batch_execute_statement::BatchExecuteStatementError::InvalidSecretException(inner) => {
                 Error::InvalidSecretException(inner)
             }
@@ -213,6 +220,9 @@ impl From<crate::operation::begin_transaction::BeginTransactionError> for Error 
             crate::operation::begin_transaction::BeginTransactionError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
+            crate::operation::begin_transaction::BeginTransactionError::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
+            }
             crate::operation::begin_transaction::BeginTransactionError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::begin_transaction::BeginTransactionError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
             crate::operation::begin_transaction::BeginTransactionError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
@@ -254,6 +264,9 @@ impl From<crate::operation::commit_transaction::CommitTransactionError> for Erro
             }
             crate::operation::commit_transaction::CommitTransactionError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
+            }
+            crate::operation::commit_transaction::CommitTransactionError::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
             }
             crate::operation::commit_transaction::CommitTransactionError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::commit_transaction::CommitTransactionError::NotFoundException(inner) => Error::NotFoundException(inner),
@@ -325,6 +338,9 @@ impl From<crate::operation::execute_statement::ExecuteStatementError> for Error 
             crate::operation::execute_statement::ExecuteStatementError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
+            crate::operation::execute_statement::ExecuteStatementError::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
+            }
             crate::operation::execute_statement::ExecuteStatementError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::execute_statement::ExecuteStatementError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
             crate::operation::execute_statement::ExecuteStatementError::ServiceUnavailableError(inner) => Error::ServiceUnavailableError(inner),
@@ -370,6 +386,9 @@ impl From<crate::operation::rollback_transaction::RollbackTransactionError> for 
             crate::operation::rollback_transaction::RollbackTransactionError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
+            crate::operation::rollback_transaction::RollbackTransactionError::InvalidResourceStateException(inner) => {
+                Error::InvalidResourceStateException(inner)
+            }
             crate::operation::rollback_transaction::RollbackTransactionError::InvalidSecretException(inner) => Error::InvalidSecretException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::rollback_transaction::RollbackTransactionError::SecretsErrorException(inner) => Error::SecretsErrorException(inner),
@@ -396,6 +415,7 @@ impl ::std::error::Error for Error {
             Error::ForbiddenException(inner) => inner.source(),
             Error::HttpEndpointNotEnabledException(inner) => inner.source(),
             Error::InternalServerErrorException(inner) => inner.source(),
+            Error::InvalidResourceStateException(inner) => inner.source(),
             Error::InvalidSecretException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
             Error::SecretsErrorException(inner) => inner.source(),
@@ -419,6 +439,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ForbiddenException(e) => e.request_id(),
             Self::HttpEndpointNotEnabledException(e) => e.request_id(),
             Self::InternalServerErrorException(e) => e.request_id(),
+            Self::InvalidResourceStateException(e) => e.request_id(),
             Self::InvalidSecretException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
             Self::SecretsErrorException(e) => e.request_id(),

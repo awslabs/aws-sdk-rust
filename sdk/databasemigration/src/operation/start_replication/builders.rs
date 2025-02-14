@@ -148,6 +148,62 @@ impl StartReplicationFluentBuilder {
     pub fn get_start_replication_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_start_replication_type()
     }
+    /// <p>User-defined settings for the premigration assessment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ResultLocationFinder</code>: The folder within an Amazon Amazon S3 bucket where you want DMS to store the results of this assessment run.</p></li>
+    /// <li>
+    /// <p><code>ResultEncryptionMode</code>: The supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these values are not provided, then the files are not encrypted at rest. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating Amazon Web Services KMS keys to encrypt Amazon Amazon S3 target objects</a>.</p></li>
+    /// <li>
+    /// <p><code>ResultKmsKeyArn</code>: The ARN of a customer KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>SSE_KMS</code>.</p></li>
+    /// <li>
+    /// <p><code>IncludeOnly</code>: A space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p></li>
+    /// <li>
+    /// <p><code>Exclude</code>: A space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p></li>
+    /// <li>
+    /// <p><code>FailOnAssessmentFailure</code>: A configurable setting you can set to <code>true</code> (the default setting) or <code>false</code>. Use this setting to to stop the replication from starting automatically if the assessment fails. This can help you evaluate the issue that is preventing the replication from running successfully.</p></li>
+    /// </ul>
+    pub fn premigration_assessment_settings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.premigration_assessment_settings(input.into());
+        self
+    }
+    /// <p>User-defined settings for the premigration assessment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ResultLocationFinder</code>: The folder within an Amazon Amazon S3 bucket where you want DMS to store the results of this assessment run.</p></li>
+    /// <li>
+    /// <p><code>ResultEncryptionMode</code>: The supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these values are not provided, then the files are not encrypted at rest. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating Amazon Web Services KMS keys to encrypt Amazon Amazon S3 target objects</a>.</p></li>
+    /// <li>
+    /// <p><code>ResultKmsKeyArn</code>: The ARN of a customer KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>SSE_KMS</code>.</p></li>
+    /// <li>
+    /// <p><code>IncludeOnly</code>: A space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p></li>
+    /// <li>
+    /// <p><code>Exclude</code>: A space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p></li>
+    /// <li>
+    /// <p><code>FailOnAssessmentFailure</code>: A configurable setting you can set to <code>true</code> (the default setting) or <code>false</code>. Use this setting to to stop the replication from starting automatically if the assessment fails. This can help you evaluate the issue that is preventing the replication from running successfully.</p></li>
+    /// </ul>
+    pub fn set_premigration_assessment_settings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_premigration_assessment_settings(input);
+        self
+    }
+    /// <p>User-defined settings for the premigration assessment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ResultLocationFinder</code>: The folder within an Amazon Amazon S3 bucket where you want DMS to store the results of this assessment run.</p></li>
+    /// <li>
+    /// <p><code>ResultEncryptionMode</code>: The supported values are <code>SSE_KMS</code> and <code>SSE_S3</code>. If these values are not provided, then the files are not encrypted at rest. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating Amazon Web Services KMS keys to encrypt Amazon Amazon S3 target objects</a>.</p></li>
+    /// <li>
+    /// <p><code>ResultKmsKeyArn</code>: The ARN of a customer KMS encryption key that you specify when you set <code>ResultEncryptionMode</code> to <code>SSE_KMS</code>.</p></li>
+    /// <li>
+    /// <p><code>IncludeOnly</code>: A space-separated list of names for specific individual assessments that you want to include. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p></li>
+    /// <li>
+    /// <p><code>Exclude</code>: A space-separated list of names for specific individual assessments that you want to exclude. These names come from the default list of individual assessments that Database Migration Service supports for the associated migration.</p></li>
+    /// <li>
+    /// <p><code>FailOnAssessmentFailure</code>: A configurable setting you can set to <code>true</code> (the default setting) or <code>false</code>. Use this setting to to stop the replication from starting automatically if the assessment fails. This can help you evaluate the issue that is preventing the replication from running successfully.</p></li>
+    /// </ul>
+    pub fn get_premigration_assessment_settings(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_premigration_assessment_settings()
+    }
     /// <p>Indicates the start time for a change data capture (CDC) operation. Use either <code>CdcStartTime</code> or <code>CdcStartPosition</code> to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
     pub fn cdc_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.cdc_start_time(input);

@@ -7,6 +7,8 @@ pub struct DisassociateApprovedOriginInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain URL of the integrated application.</p>
     pub origin: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -16,6 +18,10 @@ impl DisassociateApprovedOriginInput {
     /// <p>The domain URL of the integrated application.</p>
     pub fn origin(&self) -> ::std::option::Option<&str> {
         self.origin.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DisassociateApprovedOriginInput {
@@ -31,6 +37,7 @@ impl DisassociateApprovedOriginInput {
 pub struct DisassociateApprovedOriginInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateApprovedOriginInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -63,6 +70,20 @@ impl DisassociateApprovedOriginInputBuilder {
     pub fn get_origin(&self) -> &::std::option::Option<::std::string::String> {
         &self.origin
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DisassociateApprovedOriginInput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl DisassociateApprovedOriginInputBuilder {
         ::std::result::Result::Ok(crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput {
             instance_id: self.instance_id,
             origin: self.origin,
+            client_token: self.client_token,
         })
     }
 }

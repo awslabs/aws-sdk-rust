@@ -7,7 +7,7 @@ pub struct GetSampledRequestsInput {
     pub web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension for which you want a sample of requests.</p>
     pub rule_metric_name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -30,7 +30,7 @@ impl GetSampledRequestsInput {
     pub fn rule_metric_name(&self) -> ::std::option::Option<&str> {
         self.rule_metric_name.as_deref()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -98,7 +98,7 @@ impl GetSampledRequestsInputBuilder {
     pub fn get_rule_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.rule_metric_name
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -111,7 +111,7 @@ impl GetSampledRequestsInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -123,7 +123,7 @@ impl GetSampledRequestsInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

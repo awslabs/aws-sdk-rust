@@ -59,6 +59,11 @@ where
                         "ProvisionData" => {
                             builder = builder.set_provision_data(crate::protocol_serde::shape_provision_data::de_provision_data(tokens)?);
                         }
+                        "PremigrationAssessmentStatuses" => {
+                            builder = builder.set_premigration_assessment_statuses(
+                                crate::protocol_serde::shape_premigration_assessment_status_list::de_premigration_assessment_status_list(tokens)?,
+                            );
+                        }
                         "StopReason" => {
                             builder = builder.set_stop_reason(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

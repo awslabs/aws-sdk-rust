@@ -253,7 +253,7 @@ pub enum BatchExecuteStatementError {
     DatabaseErrorException(crate::types::error::DatabaseErrorException),
     /// <p>The DB cluster doesn't have a DB instance.</p>
     DatabaseNotFoundException(crate::types::error::DatabaseNotFoundException),
-    /// <p>A request was canceled because the Aurora Serverless v2 DB instance was in a paused state. The Data API request automatically causes the DB instance to begin resuming. Wait a few seconds and try again.</p>
+    /// <p>A request was cancelled because the Aurora Serverless v2 DB instance was paused. The Data API request automatically resumes the DB instance. Wait a few seconds and try again.</p>
     DatabaseResumingException(crate::types::error::DatabaseResumingException),
     /// <p>The writer instance in the DB cluster isn't available.</p>
     DatabaseUnavailableException(crate::types::error::DatabaseUnavailableException),
@@ -263,6 +263,8 @@ pub enum BatchExecuteStatementError {
     HttpEndpointNotEnabledException(crate::types::error::HttpEndpointNotEnabledException),
     /// <p>An internal error occurred.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
+    /// <p>The resource is in an invalid state.</p>
+    InvalidResourceStateException(crate::types::error::InvalidResourceStateException),
     /// <p>The Secrets Manager secret used with the request isn't valid.</p>
     InvalidSecretException(crate::types::error::InvalidSecretException),
     /// <p>There was a problem with the Secrets Manager secret used with the request, caused by one of the following conditions:</p>
@@ -323,6 +325,7 @@ impl BatchExecuteStatementError {
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::HttpEndpointNotEnabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidResourceStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSecretException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SecretsErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceUnavailableError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -367,6 +370,10 @@ impl BatchExecuteStatementError {
     pub fn is_internal_server_error_exception(&self) -> bool {
         matches!(self, Self::InternalServerErrorException(_))
     }
+    /// Returns `true` if the error kind is `BatchExecuteStatementError::InvalidResourceStateException`.
+    pub fn is_invalid_resource_state_exception(&self) -> bool {
+        matches!(self, Self::InvalidResourceStateException(_))
+    }
     /// Returns `true` if the error kind is `BatchExecuteStatementError::InvalidSecretException`.
     pub fn is_invalid_secret_exception(&self) -> bool {
         matches!(self, Self::InvalidSecretException(_))
@@ -400,6 +407,7 @@ impl ::std::error::Error for BatchExecuteStatementError {
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::HttpEndpointNotEnabledException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerErrorException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidResourceStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSecretException(_inner) => ::std::option::Option::Some(_inner),
             Self::SecretsErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceUnavailableError(_inner) => ::std::option::Option::Some(_inner),
@@ -421,6 +429,7 @@ impl ::std::fmt::Display for BatchExecuteStatementError {
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::HttpEndpointNotEnabledException(_inner) => _inner.fmt(f),
             Self::InternalServerErrorException(_inner) => _inner.fmt(f),
+            Self::InvalidResourceStateException(_inner) => _inner.fmt(f),
             Self::InvalidSecretException(_inner) => _inner.fmt(f),
             Self::SecretsErrorException(_inner) => _inner.fmt(f),
             Self::ServiceUnavailableError(_inner) => _inner.fmt(f),
@@ -456,6 +465,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchExecuteS
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::HttpEndpointNotEnabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidResourceStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSecretException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SecretsErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceUnavailableError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

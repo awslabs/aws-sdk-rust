@@ -268,7 +268,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SOURCE</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -313,7 +313,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SOURCE</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -358,7 +358,7 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Note the following limits:</p>
     /// <ul>
     /// <li>
-    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
+    /// <p><b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request. Valid filter keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code> BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> |<code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SOURCE</code> | <code>FEATURE</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_ID</code> | <code>FLOWS_NEXT_RESOURCE_QUEUE_ID</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> | <code>QUEUE</code> | <code>Q_CONNECT_ENABLED</code> |</p></li>
     /// <li>
     /// <p><b>Filter values</b>: A maximum of 100 filter values are supported in a single request. VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key. They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2 request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 3 channel filters.</p>
     /// <p><code>contact_lens_conversational_analytics</code> is a valid filterValue for the <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact Lens conversational analytics.</p>
@@ -384,21 +384,30 @@ impl GetMetricDataV2FluentBuilder {
     ///
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SOURCE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Type: Array of strings</p>
+    /// <p>Array Members: Maximum number of 4 items</p>
+    /// <p>Required: No</p>
     pub fn groupings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.groupings(input.into());
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SOURCE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Type: Array of strings</p>
+    /// <p>Array Members: Maximum number of 4 items</p>
+    /// <p>Required: No</p>
     pub fn set_groupings(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_groupings(input);
         self
     }
     /// <p>The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.</p>
     /// <p>If no grouping is specified, a summary of all metrics is returned.</p>
-    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Valid grouping keys: <code>AGENT</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code> | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code> | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>ANSWERING_MACHINE_DETECTION_STATUS</code> | <code>BOT_ID</code> | <code>BOT_ALIAS</code> | <code>BOT_VERSION</code> | <code>BOT_LOCALE</code> | <code>BOT_INTENT_NAME</code> | <code>CAMPAIGN</code> | <code>CAMPAIGN_DELIVERY_EVENT_TYPE</code> | <code>CASE_TEMPLATE_ARN</code> | <code>CASE_STATUS</code> | <code>CHANNEL</code> | <code>contact/segmentAttributes/connect:Subtype</code> | <code>DISCONNECT_REASON</code> | <code>EVALUATION_FORM</code> | <code>EVALUATION_SECTION</code> | <code>EVALUATION_QUESTION</code> | <code>EVALUATION_SOURCE</code> | <code>FLOWS_RESOURCE_ID</code> | <code>FLOWS_MODULE_RESOURCE_ID</code> | <code>FLOW_ACTION_ID</code> | <code>FLOW_TYPE</code> | <code>FLOWS_OUTCOME_TYPE</code> | <code>FORM_VERSION</code> | <code>INITIATION_METHOD</code> | <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>INVOKING_RESOURCE_TYPE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code></p>
+    /// <p>Type: Array of strings</p>
+    /// <p>Array Members: Maximum number of 4 items</p>
+    /// <p>Required: No</p>
     pub fn get_groupings(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_groupings()
     }
@@ -593,6 +602,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_EVALUATION_SCORE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-evaluation-score-historical">Average agent evaluation score</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -746,6 +763,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WEIGHTED_EVALUATION_SCORE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form Id, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-weighted-agent-evaluation-score-historical">Average weighted agent evaluation score</a></p>
     /// </dd>
     /// <dt>
     /// BOT_CONVERSATIONS_COMPLETED
@@ -984,6 +1009,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// EVALUATIONS_PERFORMED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#evaluations-performed-historical">Evaluations performed</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -1031,6 +1064,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum flow time</a></p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_AUTOMATIC_FAILS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#percent-evaluation-automatic-failures-historical">Automatic fails percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_BOT_CONVERSATIONS_OUTCOME
@@ -1494,6 +1535,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_EVALUATION_SCORE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-evaluation-score-historical">Average agent evaluation score</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -1647,6 +1696,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WEIGHTED_EVALUATION_SCORE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form Id, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-weighted-agent-evaluation-score-historical">Average weighted agent evaluation score</a></p>
     /// </dd>
     /// <dt>
     /// BOT_CONVERSATIONS_COMPLETED
@@ -1885,6 +1942,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// EVALUATIONS_PERFORMED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#evaluations-performed-historical">Evaluations performed</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -1932,6 +1997,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum flow time</a></p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_AUTOMATIC_FAILS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#percent-evaluation-automatic-failures-historical">Automatic fails percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_BOT_CONVERSATIONS_OUTCOME
@@ -2395,6 +2468,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-dials-historical">Average dials per minute</a></p>
     /// </dd>
     /// <dt>
+    /// AVG_EVALUATION_SCORE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-agent-evaluation-score-historical">Average agent evaluation score</a></p>
+    /// </dd>
+    /// <dt>
     /// AVG_FLOW_TIME
     /// </dt>
     /// <dd>
@@ -2548,6 +2629,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Campaign</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-wait-time-historical">Average wait time after customer connection</a></p>
+    /// </dd>
+    /// <dt>
+    /// AVG_WEIGHTED_EVALUATION_SCORE
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form Id, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-weighted-agent-evaluation-score-historical">Average weighted agent evaluation score</a></p>
     /// </dd>
     /// <dt>
     /// BOT_CONVERSATIONS_COMPLETED
@@ -2786,6 +2875,14 @@ impl GetMetricDataV2FluentBuilder {
     /// </note>
     /// </dd>
     /// <dt>
+    /// EVALUATIONS_PERFORMED
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Count</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#evaluations-performed-historical">Evaluations performed</a></p>
+    /// </dd>
+    /// <dt>
     /// FLOWS_OUTCOME
     /// </dt>
     /// <dd>
@@ -2833,6 +2930,14 @@ impl GetMetricDataV2FluentBuilder {
     /// <p>Unit: Seconds</p>
     /// <p>Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp</p>
     /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#minimum-flow-time-historical">Minimum flow time</a></p>
+    /// </dd>
+    /// <dt>
+    /// PERCENT_AUTOMATIC_FAILS
+    /// </dt>
+    /// <dd>
+    /// <p>Unit: Percent</p>
+    /// <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+    /// <p>UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#percent-evaluation-automatic-failures-historical">Automatic fails percent</a></p>
     /// </dd>
     /// <dt>
     /// PERCENT_BOT_CONVERSATIONS_OUTCOME

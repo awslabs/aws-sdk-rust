@@ -757,6 +757,8 @@ pub(crate) mod shape_pending_maintenance_action_details;
 
 pub(crate) mod shape_postgre_sql_data_provider_settings;
 
+pub(crate) mod shape_premigration_assessment_status_list;
+
 pub(crate) mod shape_provision_data;
 
 pub(crate) mod shape_public_ip_address_list;
@@ -830,6 +832,8 @@ pub(crate) mod shape_integer_list;
 pub(crate) mod shape_inventory_data;
 
 pub(crate) mod shape_pending_maintenance_action;
+
+pub(crate) mod shape_premigration_assessment_status;
 
 pub(crate) mod shape_recommendation_data;
 

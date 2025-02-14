@@ -102,6 +102,15 @@ pub(crate) fn web_acl_correct_errors(mut builder: crate::types::builders::WebAcl
     builder
 }
 
+pub(crate) fn data_protection_config_correct_errors(
+    mut builder: crate::types::builders::DataProtectionConfigBuilder,
+) -> crate::types::builders::DataProtectionConfigBuilder {
+    if builder.data_protections.is_none() {
+        builder.data_protections = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn logging_filter_correct_errors(
     mut builder: crate::types::builders::LoggingFilterBuilder,
 ) -> crate::types::builders::LoggingFilterBuilder {
@@ -261,6 +270,21 @@ pub(crate) fn custom_response_correct_errors(
     builder
 }
 
+pub(crate) fn data_protection_correct_errors(
+    mut builder: crate::types::builders::DataProtectionBuilder,
+) -> crate::types::builders::DataProtectionBuilder {
+    if builder.field.is_none() {
+        builder.field = {
+            let builder = crate::types::builders::FieldToProtectBuilder::default();
+            crate::serde_util::field_to_protect_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::DataProtectionAction>().ok()
+    }
+    builder
+}
+
 pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterBuilder) -> crate::types::builders::FilterBuilder {
     if builder.behavior.is_none() {
         builder.behavior = "no value was set".parse::<crate::types::FilterBehavior>().ok()
@@ -375,6 +399,15 @@ pub(crate) fn byte_match_statement_correct_errors(
     }
     if builder.positional_constraint.is_none() {
         builder.positional_constraint = "no value was set".parse::<crate::types::PositionalConstraint>().ok()
+    }
+    builder
+}
+
+pub(crate) fn field_to_protect_correct_errors(
+    mut builder: crate::types::builders::FieldToProtectBuilder,
+) -> crate::types::builders::FieldToProtectBuilder {
+    if builder.field_type.is_none() {
+        builder.field_type = "no value was set".parse::<crate::types::FieldToProtectType>().ok()
     }
     builder
 }

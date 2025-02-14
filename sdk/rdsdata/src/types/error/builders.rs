@@ -11,6 +11,8 @@ pub use crate::types::error::_not_found_exception::NotFoundExceptionBuilder;
 
 pub use crate::types::error::_invalid_secret_exception::InvalidSecretExceptionBuilder;
 
+pub use crate::types::error::_invalid_resource_state_exception::InvalidResourceStateExceptionBuilder;
+
 pub use crate::types::error::_internal_server_error_exception::InternalServerErrorExceptionBuilder;
 
 pub use crate::types::error::_http_endpoint_not_enabled_exception::HttpEndpointNotEnabledExceptionBuilder;

@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsInput {
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct ListAvailableManagedRuleGroupsInput {
     pub limit: ::std::option::Option<i32>,
 }
 impl ListAvailableManagedRuleGroupsInput {
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -54,7 +54,7 @@ pub struct ListAvailableManagedRuleGroupsInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
 }
 impl ListAvailableManagedRuleGroupsInputBuilder {
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -67,7 +67,7 @@ impl ListAvailableManagedRuleGroupsInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -79,7 +79,7 @@ impl ListAvailableManagedRuleGroupsInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

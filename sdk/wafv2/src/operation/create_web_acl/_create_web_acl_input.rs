@@ -5,7 +5,7 @@
 pub struct CreateWebAclInput {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -22,6 +22,9 @@ pub struct CreateWebAclInput {
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
+    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    pub data_protection_config: ::std::option::Option<crate::types::DataProtectionConfig>,
     /// <p>An array of key:value pairs to associate with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL.</p>
@@ -48,7 +51,7 @@ impl CreateWebAclInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -76,6 +79,11 @@ impl CreateWebAclInput {
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
+    }
+    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    pub fn data_protection_config(&self) -> ::std::option::Option<&crate::types::DataProtectionConfig> {
+        self.data_protection_config.as_ref()
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
     ///
@@ -133,6 +141,7 @@ pub struct CreateWebAclInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     pub(crate) visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
+    pub(crate) data_protection_config: ::std::option::Option<crate::types::DataProtectionConfig>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) custom_response_bodies: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::CustomResponseBody>>,
     pub(crate) captcha_config: ::std::option::Option<crate::types::CaptchaConfig>,
@@ -156,7 +165,7 @@ impl CreateWebAclInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -169,7 +178,7 @@ impl CreateWebAclInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -181,7 +190,7 @@ impl CreateWebAclInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -255,6 +264,23 @@ impl CreateWebAclInputBuilder {
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
         &self.visibility_config
+    }
+    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    pub fn data_protection_config(mut self, input: crate::types::DataProtectionConfig) -> Self {
+        self.data_protection_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    pub fn set_data_protection_config(mut self, input: ::std::option::Option<crate::types::DataProtectionConfig>) -> Self {
+        self.data_protection_config = input;
+        self
+    }
+    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    pub fn get_data_protection_config(&self) -> &::std::option::Option<crate::types::DataProtectionConfig> {
+        &self.data_protection_config
     }
     /// Appends an item to `tags`.
     ///
@@ -398,6 +424,7 @@ impl CreateWebAclInputBuilder {
             description: self.description,
             rules: self.rules,
             visibility_config: self.visibility_config,
+            data_protection_config: self.data_protection_config,
             tags: self.tags,
             custom_response_bodies: self.custom_response_bodies,
             captcha_config: self.captcha_config,

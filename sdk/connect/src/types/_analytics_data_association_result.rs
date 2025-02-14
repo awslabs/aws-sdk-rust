@@ -13,6 +13,8 @@ pub struct AnalyticsDataAssociationResult {
     pub resource_share_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Resource Access Manager share.</p>
     pub resource_share_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services Resource Access Manager status of association.</p>
+    pub resource_share_status: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsDataAssociationResult {
     /// <p>The identifier of the dataset.</p>
@@ -31,6 +33,10 @@ impl AnalyticsDataAssociationResult {
     pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
+    /// <p>The Amazon Web Services Resource Access Manager status of association.</p>
+    pub fn resource_share_status(&self) -> ::std::option::Option<&str> {
+        self.resource_share_status.as_deref()
+    }
 }
 impl AnalyticsDataAssociationResult {
     /// Creates a new builder-style object to manufacture [`AnalyticsDataAssociationResult`](crate::types::AnalyticsDataAssociationResult).
@@ -47,6 +53,7 @@ pub struct AnalyticsDataAssociationResultBuilder {
     pub(crate) target_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_share_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_share_status: ::std::option::Option<::std::string::String>,
 }
 impl AnalyticsDataAssociationResultBuilder {
     /// <p>The identifier of the dataset.</p>
@@ -105,6 +112,20 @@ impl AnalyticsDataAssociationResultBuilder {
     pub fn get_resource_share_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_share_arn
     }
+    /// <p>The Amazon Web Services Resource Access Manager status of association.</p>
+    pub fn resource_share_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_share_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Resource Access Manager status of association.</p>
+    pub fn set_resource_share_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.resource_share_status = input;
+        self
+    }
+    /// <p>The Amazon Web Services Resource Access Manager status of association.</p>
+    pub fn get_resource_share_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.resource_share_status
+    }
     /// Consumes the builder and constructs a [`AnalyticsDataAssociationResult`](crate::types::AnalyticsDataAssociationResult).
     pub fn build(self) -> crate::types::AnalyticsDataAssociationResult {
         crate::types::AnalyticsDataAssociationResult {
@@ -112,6 +133,7 @@ impl AnalyticsDataAssociationResultBuilder {
             target_account_id: self.target_account_id,
             resource_share_id: self.resource_share_id,
             resource_share_arn: self.resource_share_arn,
+            resource_share_status: self.resource_share_status,
         }
     }
 }

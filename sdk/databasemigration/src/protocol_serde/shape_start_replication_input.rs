@@ -9,16 +9,19 @@ pub fn ser_start_replication_input_input(
     if let Some(var_2) = &input.start_replication_type {
         object.key("StartReplicationType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.cdc_start_time {
+    if let Some(var_3) = &input.premigration_assessment_settings {
+        object.key("PremigrationAssessmentSettings").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.cdc_start_time {
         object
             .key("CdcStartTime")
-            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_4, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_4) = &input.cdc_start_position {
-        object.key("CdcStartPosition").string(var_4.as_str());
+    if let Some(var_5) = &input.cdc_start_position {
+        object.key("CdcStartPosition").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.cdc_stop_position {
-        object.key("CdcStopPosition").string(var_5.as_str());
+    if let Some(var_6) = &input.cdc_stop_position {
+        object.key("CdcStopPosition").string(var_6.as_str());
     }
     Ok(())
 }

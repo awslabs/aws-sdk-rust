@@ -19,6 +19,16 @@ pub use crate::types::_custom_response_body::CustomResponseBody;
 
 pub use crate::types::_response_content_type::ResponseContentType;
 
+pub use crate::types::_data_protection_config::DataProtectionConfig;
+
+pub use crate::types::_data_protection::DataProtection;
+
+pub use crate::types::_data_protection_action::DataProtectionAction;
+
+pub use crate::types::_field_to_protect::FieldToProtect;
+
+pub use crate::types::_field_to_protect_type::FieldToProtectType;
+
 pub use crate::types::_visibility_config::VisibilityConfig;
 
 pub use crate::types::_rule::Rule;
@@ -369,6 +379,12 @@ mod _custom_response;
 
 mod _custom_response_body;
 
+mod _data_protection;
+
+mod _data_protection_action;
+
+mod _data_protection_config;
+
 mod _default_action;
 
 mod _email_field;
@@ -380,6 +396,10 @@ mod _failure_reason;
 mod _fallback_behavior;
 
 mod _field_to_match;
+
+mod _field_to_protect;
+
+mod _field_to_protect_type;
 
 mod _filter;
 

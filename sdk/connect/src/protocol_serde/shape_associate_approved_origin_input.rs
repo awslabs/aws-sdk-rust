@@ -3,8 +3,11 @@ pub fn ser_associate_approved_origin_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_approved_origin::AssociateApprovedOriginInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.origin {
-        object.key("Origin").string(var_1.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("ClientToken").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.origin {
+        object.key("Origin").string(var_2.as_str());
     }
     Ok(())
 }

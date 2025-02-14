@@ -5105,6 +5105,53 @@ impl From<crate::operation::list_analytics_data_associations::ListAnalyticsDataA
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError> for Error {
+    fn from(err: crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError) -> Self {
+        match err {
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_analytics_data_lake_data_sets::ListAnalyticsDataLakeDataSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_approved_origins::ListApprovedOriginsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

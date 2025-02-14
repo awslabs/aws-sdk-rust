@@ -140,7 +140,7 @@ impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -152,7 +152,7 @@ impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -164,7 +164,7 @@ impl ListAvailableManagedRuleGroupVersionsFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

@@ -20,6 +20,8 @@ pub struct TestCase {
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild.</p>
     pub expired: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The name of the test suite that the test case is a part of.</p>
+    pub test_suite_name: ::std::option::Option<::std::string::String>,
 }
 impl TestCase {
     /// <p>The ARN of the report to which the test case belongs.</p>
@@ -54,6 +56,10 @@ impl TestCase {
     pub fn expired(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expired.as_ref()
     }
+    /// <p>The name of the test suite that the test case is a part of.</p>
+    pub fn test_suite_name(&self) -> ::std::option::Option<&str> {
+        self.test_suite_name.as_deref()
+    }
 }
 impl TestCase {
     /// Creates a new builder-style object to manufacture [`TestCase`](crate::types::TestCase).
@@ -74,6 +80,7 @@ pub struct TestCaseBuilder {
     pub(crate) duration_in_nano_seconds: ::std::option::Option<i64>,
     pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) expired: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) test_suite_name: ::std::option::Option<::std::string::String>,
 }
 impl TestCaseBuilder {
     /// <p>The ARN of the report to which the test case belongs.</p>
@@ -188,6 +195,20 @@ impl TestCaseBuilder {
     pub fn get_expired(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expired
     }
+    /// <p>The name of the test suite that the test case is a part of.</p>
+    pub fn test_suite_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test_suite_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the test suite that the test case is a part of.</p>
+    pub fn set_test_suite_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_suite_name = input;
+        self
+    }
+    /// <p>The name of the test suite that the test case is a part of.</p>
+    pub fn get_test_suite_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_suite_name
+    }
     /// Consumes the builder and constructs a [`TestCase`](crate::types::TestCase).
     pub fn build(self) -> crate::types::TestCase {
         crate::types::TestCase {
@@ -199,6 +220,7 @@ impl TestCaseBuilder {
             duration_in_nano_seconds: self.duration_in_nano_seconds,
             message: self.message,
             expired: self.expired,
+            test_suite_name: self.test_suite_name,
         }
     }
 }

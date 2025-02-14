@@ -11,6 +11,8 @@ pub use crate::types::error::_not_found_exception::NotFoundException;
 
 pub use crate::types::error::_invalid_secret_exception::InvalidSecretException;
 
+pub use crate::types::error::_invalid_resource_state_exception::InvalidResourceStateException;
+
 pub use crate::types::error::_internal_server_error_exception::InternalServerErrorException;
 
 pub use crate::types::error::_http_endpoint_not_enabled_exception::HttpEndpointNotEnabledException;
@@ -48,6 +50,8 @@ mod _forbidden_exception;
 mod _http_endpoint_not_enabled_exception;
 
 mod _internal_server_error_exception;
+
+mod _invalid_resource_state_exception;
 
 mod _invalid_secret_exception;
 

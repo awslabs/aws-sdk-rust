@@ -22,8 +22,8 @@ impl crate::operation::disassociate_web_acl::builders::DisassociateWebAclInputBu
 }
 /// Fluent builder constructing a request to `DisassociateWebACL`.
 ///
-/// <p>Disassociates the specified regional application resource from any existing web ACL association. A resource can have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-/// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a> in the <i>Amazon CloudFront API Reference</i>.</p>
+/// <p>Disassociates the specified resource from its web ACL association, if it has one.</p>
+/// <p>Use this for all resource types except for Amazon CloudFront distributions. For Amazon CloudFront, call <code>UpdateDistribution</code> for the distribution and provide an empty web ACL ID. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a> in the <i>Amazon CloudFront API Reference</i>.</p>
 /// <p><b>Required permissions for customer-managed IAM policies</b></p>
 /// <p>This call requires permissions that are specific to the protected resource type. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-DisassociateWebACL">Permissions for DisassociateWebACL</a> in the <i>WAF Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

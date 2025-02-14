@@ -11,6 +11,8 @@ pub struct UpdateInstanceStorageConfigInput {
     pub resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
     /// <p>The storage configuration for the instance.</p>
     pub storage_config: ::std::option::Option<crate::types::InstanceStorageConfig>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -29,6 +31,10 @@ impl UpdateInstanceStorageConfigInput {
     pub fn storage_config(&self) -> ::std::option::Option<&crate::types::InstanceStorageConfig> {
         self.storage_config.as_ref()
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl UpdateInstanceStorageConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceStorageConfigInput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput).
@@ -45,6 +51,7 @@ pub struct UpdateInstanceStorageConfigInputBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
     pub(crate) storage_config: ::std::option::Option<crate::types::InstanceStorageConfig>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateInstanceStorageConfigInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -107,6 +114,20 @@ impl UpdateInstanceStorageConfigInputBuilder {
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::InstanceStorageConfig> {
         &self.storage_config
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`UpdateInstanceStorageConfigInput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput).
     pub fn build(
         self,
@@ -119,6 +140,7 @@ impl UpdateInstanceStorageConfigInputBuilder {
             association_id: self.association_id,
             resource_type: self.resource_type,
             storage_config: self.storage_config,
+            client_token: self.client_token,
         })
     }
 }

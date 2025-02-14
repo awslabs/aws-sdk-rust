@@ -7,6 +7,8 @@ pub struct AssociateSecurityKeyInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A valid security key in PEM format as a String.</p>
     pub key: ::std::option::Option<::std::string::String>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSecurityKeyInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -16,6 +18,10 @@ impl AssociateSecurityKeyInput {
     /// <p>A valid security key in PEM format as a String.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl AssociateSecurityKeyInput {
@@ -31,6 +37,7 @@ impl AssociateSecurityKeyInput {
 pub struct AssociateSecurityKeyInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSecurityKeyInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -63,6 +70,20 @@ impl AssociateSecurityKeyInputBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`AssociateSecurityKeyInput`](crate::operation::associate_security_key::AssociateSecurityKeyInput).
     pub fn build(
         self,
@@ -71,6 +92,7 @@ impl AssociateSecurityKeyInputBuilder {
         ::std::result::Result::Ok(crate::operation::associate_security_key::AssociateSecurityKeyInput {
             instance_id: self.instance_id,
             key: self.key,
+            client_token: self.client_token,
         })
     }
 }

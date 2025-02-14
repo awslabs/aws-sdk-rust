@@ -31,7 +31,7 @@ impl crate::operation::start_chat_contact::builders::StartChatContactInputBuilde
 /// <li>
 /// <p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.</p></li>
 /// </ul>
-/// <p>If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your account may not support the ability to configure custom chat durations. For more information, contact Amazon Web Services Support.</p>
+/// <p>If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error, your account may not support the ability to configure custom chat durations. For more information, contact Amazon Web ServicesSupport.</p>
 /// <p>For more information about chat, see the following topics in the <i>Amazon Connect Administrator Guide</i>:</p>
 /// <ul>
 /// <li>

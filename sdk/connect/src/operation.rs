@@ -406,6 +406,9 @@ pub mod list_agent_statuses;
 /// Types for the `ListAnalyticsDataAssociations` operation.
 pub mod list_analytics_data_associations;
 
+/// Types for the `ListAnalyticsDataLakeDataSets` operation.
+pub mod list_analytics_data_lake_data_sets;
+
 /// Types for the `ListApprovedOrigins` operation.
 pub mod list_approved_origins;
 

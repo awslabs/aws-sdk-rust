@@ -11,6 +11,12 @@ pub use crate::types::_captcha_config::CaptchaConfigBuilder;
 
 pub use crate::types::_custom_response_body::CustomResponseBodyBuilder;
 
+pub use crate::types::_data_protection_config::DataProtectionConfigBuilder;
+
+pub use crate::types::_data_protection::DataProtectionBuilder;
+
+pub use crate::types::_field_to_protect::FieldToProtectBuilder;
+
 pub use crate::types::_visibility_config::VisibilityConfigBuilder;
 
 pub use crate::types::_rule::RuleBuilder;

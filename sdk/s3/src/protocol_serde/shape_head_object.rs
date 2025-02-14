@@ -116,6 +116,10 @@ pub fn de_head_object_http_response(
                 crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ContentLength from header `Content-Length")
             })?,
         );
+        output = output.set_content_range(
+            crate::protocol_serde::shape_head_object_output::de_content_range_header(_response_headers)
+                .map_err(|_| crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ContentRange from header `Content-Range"))?,
+        );
         output = output.set_content_type(
             crate::protocol_serde::shape_head_object_output::de_content_type_header(_response_headers)
                 .map_err(|_| crate::operation::head_object::HeadObjectError::unhandled("Failed to parse ContentType from header `Content-Type"))?,

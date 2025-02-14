@@ -282,7 +282,7 @@ pub enum CreateWebACLError {
     WafTagOperationException(crate::types::error::WafTagOperationException),
     /// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
     WafTagOperationInternalErrorException(crate::types::error::WafTagOperationInternalErrorException),
-    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resources that you are specifying in your request parameters and then retry the operation.</p>
+    /// <p>WAF couldn’t retrieve a resource that you specified for this operation. If you've just created a resource that you're using in this operation, you might just need to wait a few minutes. It can take from a few seconds to a number of minutes for changes to propagate. Verify the resource specifications in your request parameters and then retry the operation.</p>
     WafUnavailableEntityException(crate::types::error::WafUnavailableEntityException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

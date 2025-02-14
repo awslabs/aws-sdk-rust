@@ -191,15 +191,15 @@ impl PutBucketPolicyFluentBuilder {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC-32</code></p></li>
+    /// <p><code>CRC32</code></p></li>
     /// <li>
-    /// <p><code>CRC-32C</code></p></li>
+    /// <p><code>CRC32C</code></p></li>
     /// <li>
-    /// <p><code>CRC-64NVME</code></p></li>
+    /// <p><code>CRC64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA-1</code></p></li>
+    /// <p><code>SHA1</code></p></li>
     /// <li>
-    /// <p><code>SHA-256</code></p></li>
+    /// <p><code>SHA256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -213,15 +213,15 @@ impl PutBucketPolicyFluentBuilder {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC-32</code></p></li>
+    /// <p><code>CRC32</code></p></li>
     /// <li>
-    /// <p><code>CRC-32C</code></p></li>
+    /// <p><code>CRC32C</code></p></li>
     /// <li>
-    /// <p><code>CRC-64NVME</code></p></li>
+    /// <p><code>CRC64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA-1</code></p></li>
+    /// <p><code>SHA1</code></p></li>
     /// <li>
-    /// <p><code>SHA-256</code></p></li>
+    /// <p><code>SHA256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>
@@ -235,15 +235,15 @@ impl PutBucketPolicyFluentBuilder {
     /// <p>For the <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code> <i>algorithm</i> </code> with the supported algorithm from the following list:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CRC-32</code></p></li>
+    /// <p><code>CRC32</code></p></li>
     /// <li>
-    /// <p><code>CRC-32C</code></p></li>
+    /// <p><code>CRC32C</code></p></li>
     /// <li>
-    /// <p><code>CRC-64NVME</code></p></li>
+    /// <p><code>CRC64NVME</code></p></li>
     /// <li>
-    /// <p><code>SHA-1</code></p></li>
+    /// <p><code>SHA1</code></p></li>
     /// <li>
-    /// <p><code>SHA-256</code></p></li>
+    /// <p><code>SHA256</code></p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>If the individual checksum value you provide through <code>x-amz-checksum-<i>algorithm</i> </code> doesn't match the checksum algorithm you set through <code>x-amz-sdk-checksum-algorithm</code>, Amazon S3 fails the request with a <code>BadDigest</code> error.</p><note>

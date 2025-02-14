@@ -26,6 +26,7 @@
 ///     ParameterExceptionField::CustomRequestHandling => { /* ... */ },
 ///     ParameterExceptionField::CustomResponse => { /* ... */ },
 ///     ParameterExceptionField::CustomResponseBody => { /* ... */ },
+///     ParameterExceptionField::DataProtectionConfig => { /* ... */ },
 ///     ParameterExceptionField::DefaultAction => { /* ... */ },
 ///     ParameterExceptionField::EntityLimit => { /* ... */ },
 ///     ParameterExceptionField::ExcludedRule => { /* ... */ },
@@ -138,6 +139,8 @@ pub enum ParameterExceptionField {
     CustomResponse,
     #[allow(missing_docs)] // documentation missing in model
     CustomResponseBody,
+    #[allow(missing_docs)] // documentation missing in model
+    DataProtectionConfig,
     #[allow(missing_docs)] // documentation missing in model
     DefaultAction,
     #[allow(missing_docs)] // documentation missing in model
@@ -271,6 +274,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "CUSTOM_REQUEST_HANDLING" => ParameterExceptionField::CustomRequestHandling,
             "CUSTOM_RESPONSE" => ParameterExceptionField::CustomResponse,
             "CUSTOM_RESPONSE_BODY" => ParameterExceptionField::CustomResponseBody,
+            "DATA_PROTECTION_CONFIG" => ParameterExceptionField::DataProtectionConfig,
             "DEFAULT_ACTION" => ParameterExceptionField::DefaultAction,
             "ENTITY_LIMIT" => ParameterExceptionField::EntityLimit,
             "EXCLUDED_RULE" => ParameterExceptionField::ExcludedRule,
@@ -356,6 +360,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::CustomRequestHandling => "CUSTOM_REQUEST_HANDLING",
             ParameterExceptionField::CustomResponse => "CUSTOM_RESPONSE",
             ParameterExceptionField::CustomResponseBody => "CUSTOM_RESPONSE_BODY",
+            ParameterExceptionField::DataProtectionConfig => "DATA_PROTECTION_CONFIG",
             ParameterExceptionField::DefaultAction => "DEFAULT_ACTION",
             ParameterExceptionField::EntityLimit => "ENTITY_LIMIT",
             ParameterExceptionField::ExcludedRule => "EXCLUDED_RULE",
@@ -432,6 +437,7 @@ impl ParameterExceptionField {
             "CUSTOM_REQUEST_HANDLING",
             "CUSTOM_RESPONSE",
             "CUSTOM_RESPONSE_BODY",
+            "DATA_PROTECTION_CONFIG",
             "DEFAULT_ACTION",
             "ENTITY_LIMIT",
             "EXCLUDED_RULE",
@@ -525,6 +531,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::CustomRequestHandling => write!(f, "CUSTOM_REQUEST_HANDLING"),
             ParameterExceptionField::CustomResponse => write!(f, "CUSTOM_RESPONSE"),
             ParameterExceptionField::CustomResponseBody => write!(f, "CUSTOM_RESPONSE_BODY"),
+            ParameterExceptionField::DataProtectionConfig => write!(f, "DATA_PROTECTION_CONFIG"),
             ParameterExceptionField::DefaultAction => write!(f, "DEFAULT_ACTION"),
             ParameterExceptionField::EntityLimit => write!(f, "ENTITY_LIMIT"),
             ParameterExceptionField::ExcludedRule => write!(f, "EXCLUDED_RULE"),

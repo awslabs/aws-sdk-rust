@@ -3,14 +3,17 @@ pub fn ser_associate_instance_storage_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfigInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.resource_type {
-        object.key("ResourceType").string(var_1.as_str());
+    if let Some(var_1) = &input.client_token {
+        object.key("ClientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.storage_config {
+    if let Some(var_2) = &input.resource_type {
+        object.key("ResourceType").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.storage_config {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("StorageConfig").start_object();
-        crate::protocol_serde::shape_instance_storage_config::ser_instance_storage_config(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("StorageConfig").start_object();
+        crate::protocol_serde::shape_instance_storage_config::ser_instance_storage_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

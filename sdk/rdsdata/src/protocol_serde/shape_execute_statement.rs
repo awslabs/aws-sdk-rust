@@ -157,6 +157,24 @@ pub fn de_execute_statement_http_error(
             }
             tmp
         }),
+        "InvalidResourceStateException" => crate::operation::execute_statement::ExecuteStatementError::InvalidResourceStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidResourceStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_resource_state_exception::de_invalid_resource_state_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::execute_statement::ExecuteStatementError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidSecretException" => crate::operation::execute_statement::ExecuteStatementError::InvalidSecretException({
             #[allow(unused_mut)]
             let mut tmp = {

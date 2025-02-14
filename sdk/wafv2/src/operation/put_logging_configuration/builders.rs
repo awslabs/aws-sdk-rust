@@ -22,7 +22,8 @@ impl crate::operation::put_logging_configuration::builders::PutLoggingConfigurat
 }
 /// Fluent builder constructing a request to `PutLoggingConfiguration`.
 ///
-/// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided.</p><note>
+/// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided.</p>
+/// <p>If you configure data protection for the web ACL, the protection applies to the data that WAF sends to the logs.</p><note>
 /// <p>This operation completely replaces any mutable specifications that you already have for a logging configuration with the ones that you provide to this call.</p>
 /// <p>To modify an existing logging configuration, do the following:</p>
 /// <ol>

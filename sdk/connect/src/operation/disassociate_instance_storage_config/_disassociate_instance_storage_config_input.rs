@@ -9,6 +9,8 @@ pub struct DisassociateInstanceStorageConfigInput {
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>A valid resource type.</p>
     pub resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -22,6 +24,10 @@ impl DisassociateInstanceStorageConfigInput {
     /// <p>A valid resource type.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::InstanceStorageResourceType> {
         self.resource_type.as_ref()
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
 }
 impl DisassociateInstanceStorageConfigInput {
@@ -38,6 +44,7 @@ pub struct DisassociateInstanceStorageConfigInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type: ::std::option::Option<crate::types::InstanceStorageResourceType>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateInstanceStorageConfigInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -85,6 +92,20 @@ impl DisassociateInstanceStorageConfigInputBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::InstanceStorageResourceType> {
         &self.resource_type
     }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`DisassociateInstanceStorageConfigInput`](crate::operation::disassociate_instance_storage_config::DisassociateInstanceStorageConfigInput).
     pub fn build(
         self,
@@ -97,6 +118,7 @@ impl DisassociateInstanceStorageConfigInputBuilder {
                 instance_id: self.instance_id,
                 association_id: self.association_id,
                 resource_type: self.resource_type,
+                client_token: self.client_token,
             },
         )
     }

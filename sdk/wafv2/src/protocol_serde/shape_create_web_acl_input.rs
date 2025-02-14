@@ -36,57 +36,63 @@ pub fn ser_create_web_acl_input_input(
         crate::protocol_serde::shape_visibility_config::ser_visibility_config(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.tags {
-        let mut array_13 = object.key("Tags").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.data_protection_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("DataProtectionConfig").start_object();
+        crate::protocol_serde::shape_data_protection_config::ser_data_protection_config(&mut object_13, var_12)?;
+        object_13.finish();
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.custom_response_bodies {
+    if let Some(var_18) = &input.custom_response_bodies {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("CustomResponseBodies").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_19 = object.key("CustomResponseBodies").start_object();
+        for (key_20, value_21) in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_20 = object_17.key(key_18.as_str()).start_object();
-                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_20, value_19)?;
-                object_20.finish();
+                let mut object_22 = object_19.key(key_20.as_str()).start_object();
+                crate::protocol_serde::shape_custom_response_body::ser_custom_response_body(&mut object_22, value_21)?;
+                object_22.finish();
             }
         }
-        object_17.finish();
+        object_19.finish();
     }
-    if let Some(var_21) = &input.captcha_config {
+    if let Some(var_23) = &input.captcha_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("CaptchaConfig").start_object();
-        crate::protocol_serde::shape_captcha_config::ser_captcha_config(&mut object_22, var_21)?;
-        object_22.finish();
-    }
-    if let Some(var_23) = &input.challenge_config {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("ChallengeConfig").start_object();
-        crate::protocol_serde::shape_challenge_config::ser_challenge_config(&mut object_24, var_23)?;
+        let mut object_24 = object.key("CaptchaConfig").start_object();
+        crate::protocol_serde::shape_captcha_config::ser_captcha_config(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.token_domains {
-        let mut array_26 = object.key("TokenDomains").start_array();
-        for item_27 in var_25 {
+    if let Some(var_25) = &input.challenge_config {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("ChallengeConfig").start_object();
+        crate::protocol_serde::shape_challenge_config::ser_challenge_config(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.token_domains {
+        let mut array_28 = object.key("TokenDomains").start_array();
+        for item_29 in var_27 {
             {
-                array_26.value().string(item_27.as_str());
+                array_28.value().string(item_29.as_str());
             }
         }
-        array_26.finish();
+        array_28.finish();
     }
-    if let Some(var_28) = &input.association_config {
+    if let Some(var_30) = &input.association_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("AssociationConfig").start_object();
-        crate::protocol_serde::shape_association_config::ser_association_config(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_31 = object.key("AssociationConfig").start_object();
+        crate::protocol_serde::shape_association_config::ser_association_config(&mut object_31, var_30)?;
+        object_31.finish();
     }
     Ok(())
 }

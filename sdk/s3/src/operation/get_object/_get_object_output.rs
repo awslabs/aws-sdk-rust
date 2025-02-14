@@ -30,15 +30,15 @@ pub struct GetObjectOutput {
     pub content_length: ::std::option::Option<i64>,
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_crc32: ::std::option::Option<::std::string::String>,
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_crc32_c: ::std::option::Option<::std::string::String>,
-    /// <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    /// <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub checksum_crc64_nvme: ::std::option::Option<::std::string::String>,
-    /// <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_sha1: ::std::option::Option<::std::string::String>,
-    /// <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The checksum type, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header response to verify that the checksum type that is received is the same checksum type that was specified in the <code>CreateMultipartUpload</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
@@ -166,23 +166,23 @@ impl GetObjectOutput {
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32(&self) -> ::std::option::Option<&str> {
         self.checksum_crc32.as_deref()
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32_c(&self) -> ::std::option::Option<&str> {
         self.checksum_crc32_c.as_deref()
     }
-    /// <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    /// <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub fn checksum_crc64_nvme(&self) -> ::std::option::Option<&str> {
         self.checksum_crc64_nvme.as_deref()
     }
-    /// <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha1(&self) -> ::std::option::Option<&str> {
         self.checksum_sha1.as_deref()
     }
-    /// <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(&self) -> ::std::option::Option<&str> {
         self.checksum_sha256.as_deref()
     }
@@ -576,73 +576,73 @@ impl GetObjectOutputBuilder {
     pub fn get_e_tag(&self) -> &::std::option::Option<::std::string::String> {
         &self.e_tag
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_crc32 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_crc32 = input;
         self
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the object. This checksum is only present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_crc32(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_crc32
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32_c(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_crc32_c = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32_c(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_crc32_c = input;
         self
     }
-    /// <p>The Base64 encoded, 32-bit <code>CRC-32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_crc32_c(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_crc32_c
     }
-    /// <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    /// <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub fn checksum_crc64_nvme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_crc64_nvme = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    /// <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub fn set_checksum_crc64_nvme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_crc64_nvme = input;
         self
     }
-    /// <p>The Base64 encoded, 64-bit <code>CRC-64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+    /// <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub fn get_checksum_crc64_nvme(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_crc64_nvme
     }
-    /// <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_sha1 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_sha1 = input;
         self
     }
-    /// <p>The Base64 encoded, 160-bit <code>SHA-1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha1(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_sha1
     }
-    /// <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.checksum_sha256 = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum_sha256 = input;
         self
     }
-    /// <p>The Base64 encoded, 256-bit <code>SHA-256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the object. This will only be present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_checksum_sha256(&self) -> &::std::option::Option<::std::string::String> {
         &self.checksum_sha256
     }

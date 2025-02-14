@@ -54,7 +54,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RateBasedStatement {
-    /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
+    /// <p>The limit on requests during the specified evaluation window for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>
@@ -98,7 +98,7 @@ pub struct RateBasedStatement {
     pub custom_keys: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
 }
 impl RateBasedStatement {
-    /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
+    /// <p>The limit on requests during the specified evaluation window for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>
@@ -174,7 +174,7 @@ pub struct RateBasedStatementBuilder {
     pub(crate) custom_keys: ::std::option::Option<::std::vec::Vec<crate::types::RateBasedStatementCustomKey>>,
 }
 impl RateBasedStatementBuilder {
-    /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
+    /// <p>The limit on requests during the specified evaluation window for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>
@@ -187,7 +187,7 @@ impl RateBasedStatementBuilder {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
+    /// <p>The limit on requests during the specified evaluation window for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>
@@ -199,7 +199,7 @@ impl RateBasedStatementBuilder {
         self.limit = input;
         self
     }
-    /// <p>The limit on requests per 5-minute period for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
+    /// <p>The limit on requests during the specified evaluation window for a single aggregation instance for the rate-based rule. If the rate-based statement includes a <code>ScopeDownStatement</code>, this limit is applied only to the requests that match the statement.</p>
     /// <p>Examples:</p>
     /// <ul>
     /// <li>

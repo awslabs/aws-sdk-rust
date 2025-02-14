@@ -11,6 +11,12 @@ pub use crate::types::_replication::Replication;
 
 pub use crate::types::_replication_stats::ReplicationStats;
 
+pub use crate::types::_premigration_assessment_status::PremigrationAssessmentStatus;
+
+pub use crate::types::_replication_task_assessment_run_result_statistic::ReplicationTaskAssessmentRunResultStatistic;
+
+pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgress;
+
 pub use crate::types::_provision_data::ProvisionData;
 
 pub use crate::types::_data_migration::DataMigration;
@@ -26,10 +32,6 @@ pub use crate::types::_source_data_setting::SourceDataSetting;
 pub use crate::types::_data_migration_settings::DataMigrationSettings;
 
 pub use crate::types::_replication_task_assessment_run::ReplicationTaskAssessmentRun;
-
-pub use crate::types::_replication_task_assessment_run_result_statistic::ReplicationTaskAssessmentRunResultStatistic;
-
-pub use crate::types::_replication_task_assessment_run_progress::ReplicationTaskAssessmentRunProgress;
 
 pub use crate::types::_tag::Tag;
 
@@ -466,6 +468,8 @@ mod _plugin_name_value;
 mod _postgre_sql_data_provider_settings;
 
 mod _postgre_sql_settings;
+
+mod _premigration_assessment_status;
 
 mod _provision_data;
 

@@ -51,6 +51,10 @@ where
                         "VisibilityConfig" => {
                             builder = builder.set_visibility_config(crate::protocol_serde::shape_visibility_config::de_visibility_config(tokens)?);
                         }
+                        "DataProtectionConfig" => {
+                            builder = builder
+                                .set_data_protection_config(crate::protocol_serde::shape_data_protection_config::de_data_protection_config(tokens)?);
+                        }
                         "Capacity" => {
                             builder = builder.set_capacity(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

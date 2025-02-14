@@ -22,8 +22,8 @@ impl crate::operation::associate_web_acl::builders::AssociateWebAclInputBuilder 
 }
 /// Fluent builder constructing a request to `AssociateWebACL`.
 ///
-/// <p>Associates a web ACL with a regional application resource, to protect the resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.</p>
-/// <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+/// <p>Associates a web ACL with a resource, to protect the resource.</p>
+/// <p>Use this for all resource types except for Amazon CloudFront distributions. For Amazon CloudFront, call <code>UpdateDistribution</code> for the distribution and provide the Amazon Resource Name (ARN) of the web ACL in the web ACL ID. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 /// <p><b>Required permissions for customer-managed IAM policies</b></p>
 /// <p>This call requires permissions that are specific to the protected resource type. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/security_iam_service-with-iam.html#security_iam_action-AssociateWebACL">Permissions for AssociateWebACL</a> in the <i>WAF Developer Guide</i>.</p>
 /// <p><b>Temporary inconsistencies during updates</b></p>

@@ -30,7 +30,9 @@ pub struct ManagedRuleGroupStatement {
     /// <p>Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you want the Bot Control rule group to use.</p></li>
     /// </ul>
     pub managed_rule_group_configs: ::std::option::Option<::std::vec::Vec<crate::types::ManagedRuleGroupConfig>>,
-    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
+    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p><note>
+    /// <p>Take care to verify the rule names in your overrides. If you provide a rule name that doesn't match the name of any rule in the rule group, WAF doesn't return an error and doesn't apply the override setting.</p>
+    /// </note>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     pub rule_action_overrides: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>,
 }
@@ -76,7 +78,9 @@ impl ManagedRuleGroupStatement {
     pub fn managed_rule_group_configs(&self) -> &[crate::types::ManagedRuleGroupConfig] {
         self.managed_rule_group_configs.as_deref().unwrap_or_default()
     }
-    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
+    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p><note>
+    /// <p>Take care to verify the rule names in your overrides. If you provide a rule name that doesn't match the name of any rule in the rule group, WAF doesn't return an error and doesn't apply the override setting.</p>
+    /// </note>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rule_action_overrides.is_none()`.
@@ -239,7 +243,9 @@ impl ManagedRuleGroupStatementBuilder {
     ///
     /// To override the contents of this collection use [`set_rule_action_overrides`](Self::set_rule_action_overrides).
     ///
-    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
+    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p><note>
+    /// <p>Take care to verify the rule names in your overrides. If you provide a rule name that doesn't match the name of any rule in the rule group, WAF doesn't return an error and doesn't apply the override setting.</p>
+    /// </note>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     pub fn rule_action_overrides(mut self, input: crate::types::RuleActionOverride) -> Self {
         let mut v = self.rule_action_overrides.unwrap_or_default();
@@ -247,13 +253,17 @@ impl ManagedRuleGroupStatementBuilder {
         self.rule_action_overrides = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
+    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p><note>
+    /// <p>Take care to verify the rule names in your overrides. If you provide a rule name that doesn't match the name of any rule in the rule group, WAF doesn't return an error and doesn't apply the override setting.</p>
+    /// </note>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     pub fn set_rule_action_overrides(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>>) -> Self {
         self.rule_action_overrides = input;
         self
     }
-    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p>
+    /// <p>Action settings to use in the place of the rule actions that are configured inside the rule group. You specify one override for each rule whose action you want to change.</p><note>
+    /// <p>Take care to verify the rule names in your overrides. If you provide a rule name that doesn't match the name of any rule in the rule group, WAF doesn't return an error and doesn't apply the override setting.</p>
+    /// </note>
     /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
     pub fn get_rule_action_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RuleActionOverride>> {
         &self.rule_action_overrides

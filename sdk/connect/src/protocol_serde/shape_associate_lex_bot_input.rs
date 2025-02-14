@@ -3,11 +3,14 @@ pub fn ser_associate_lex_bot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_lex_bot::AssociateLexBotInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.lex_bot {
+    if let Some(var_1) = &input.client_token {
+        object.key("ClientToken").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.lex_bot {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("LexBot").start_object();
-        crate::protocol_serde::shape_lex_bot::ser_lex_bot(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("LexBot").start_object();
+        crate::protocol_serde::shape_lex_bot::ser_lex_bot(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }
