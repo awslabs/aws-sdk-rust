@@ -10,3 +10,7 @@ pub use crate::types::_log_delivery_configuration::LogDeliveryConfigurationBuild
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
 pub use crate::types::_db_instance_summary::DbInstanceSummaryBuilder;
+
+pub use crate::types::_db_instance_for_cluster_summary::DbInstanceForClusterSummaryBuilder;
+
+pub use crate::types::_db_cluster_summary::DbClusterSummaryBuilder;

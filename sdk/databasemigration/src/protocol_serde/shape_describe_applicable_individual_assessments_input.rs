@@ -9,23 +9,26 @@ pub fn ser_describe_applicable_individual_assessments_input_input(
     if let Some(var_2) = &input.replication_instance_arn {
         object.key("ReplicationInstanceArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.source_engine_name {
-        object.key("SourceEngineName").string(var_3.as_str());
+    if let Some(var_3) = &input.replication_config_arn {
+        object.key("ReplicationConfigArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.target_engine_name {
-        object.key("TargetEngineName").string(var_4.as_str());
+    if let Some(var_4) = &input.source_engine_name {
+        object.key("SourceEngineName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.migration_type {
-        object.key("MigrationType").string(var_5.as_str());
+    if let Some(var_5) = &input.target_engine_name {
+        object.key("TargetEngineName").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.max_records {
+    if let Some(var_6) = &input.migration_type {
+        object.key("MigrationType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.max_records {
         object.key("MaxRecords").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.marker {
-        object.key("Marker").string(var_7.as_str());
+    if let Some(var_8) = &input.marker {
+        object.key("Marker").string(var_8.as_str());
     }
     Ok(())
 }

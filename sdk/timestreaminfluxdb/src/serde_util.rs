@@ -128,6 +128,21 @@ pub(crate) fn delete_db_instance_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_db_cluster_output_output_correct_errors(
+    mut builder: crate::operation::get_db_cluster::builders::GetDbClusterOutputBuilder,
+) -> crate::operation::get_db_cluster::builders::GetDbClusterOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_db_instance_output_output_correct_errors(
     mut builder: crate::operation::get_db_instance::builders::GetDbInstanceOutputBuilder,
 ) -> crate::operation::get_db_instance::builders::GetDbInstanceOutputBuilder {
@@ -161,9 +176,27 @@ pub(crate) fn get_db_parameter_group_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_db_clusters_output_output_correct_errors(
+    mut builder: crate::operation::list_db_clusters::builders::ListDbClustersOutputBuilder,
+) -> crate::operation::list_db_clusters::builders::ListDbClustersOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_db_instances_output_output_correct_errors(
     mut builder: crate::operation::list_db_instances::builders::ListDbInstancesOutputBuilder,
 ) -> crate::operation::list_db_instances::builders::ListDbInstancesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_db_instances_for_cluster_output_output_correct_errors(
+    mut builder: crate::operation::list_db_instances_for_cluster::builders::ListDbInstancesForClusterOutputBuilder,
+) -> crate::operation::list_db_instances_for_cluster::builders::ListDbInstancesForClusterOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }
@@ -205,6 +238,36 @@ pub(crate) fn log_delivery_configuration_correct_errors(
             let builder = crate::types::builders::S3ConfigurationBuilder::default();
             crate::serde_util::s3_configuration_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn db_cluster_summary_correct_errors(
+    mut builder: crate::types::builders::DbClusterSummaryBuilder,
+) -> crate::types::builders::DbClusterSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn db_instance_for_cluster_summary_correct_errors(
+    mut builder: crate::types::builders::DbInstanceForClusterSummaryBuilder,
+) -> crate::types::builders::DbInstanceForClusterSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

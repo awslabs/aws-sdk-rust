@@ -70,9 +70,9 @@ model_hash = '5b3e2cbab73ac98666a4cef83553e39bd2a2a6af19f81be2db5bfcb045b166bf'
 
 [crates.aws-sdk-amplify]
 category = 'AwsSdk'
-version = '1.64.0'
-source_hash = 'bac820717f02c6612e05c5366de5b8810147a084a9502f6724a4a0faeaa8a0e0'
-model_hash = '0ed0efda94eec7881f3b3b110d2e9b24ee32639ec6debd44068c1fdf18aaa925'
+version = '1.65.0'
+source_hash = '52474cac68c2be3a4b1025c97576ed1b207efac719ff9170bd363b0a084b74aa'
+model_hash = 'c47269399194c2624167462300ea27f87a1558ba1bd6bf2c64732a57f625351d'
 
 [crates.aws-sdk-amplifybackend]
 category = 'AwsSdk'
@@ -664,9 +664,9 @@ model_hash = 'fe4ff2498d89479566940bf870fe24597c512c97c3435140c88480a40aa25a14'
 
 [crates.aws-sdk-databasemigration]
 category = 'AwsSdk'
-version = '1.64.0'
-source_hash = '90e56aca277eaa59e5452b2ce6d0fe4053751b452bd61dd5e1b24750637b7ef5'
-model_hash = '1afb87e3056567fbe46a4f95f26de089d5f612793366816b0af0cb7fb8051495'
+version = '1.65.0'
+source_hash = '2ce16b74d03b508f63bdcb15494cbdfad93d047fd18a513eec49741bc8536cd7'
+model_hash = 'ffff982aff116ecb0845d6e85fbf802419050dcbaebbdaaefe0e62f788c99fba'
 
 [crates.aws-sdk-databrew]
 category = 'AwsSdk'
@@ -2308,9 +2308,9 @@ model_hash = 'a53d78aba76a9e4ea3ea54db9720f8c1bf9a20b349516a5afce390bb40f55a9f'
 
 [crates.aws-sdk-timestreaminfluxdb]
 category = 'AwsSdk'
-version = '1.45.0'
-source_hash = 'a8715a2cbfd8a1df6d4b039e9a0d809f9c529bd6d955a3c1499c98f91f84652f'
-model_hash = '64da9f3790eab8f5ca9099c9605979b7a2e221652660a412fa98b2bb488abcd1'
+version = '1.46.0'
+source_hash = '4513dcbc3c80a2697e59cc2e0bccb54f6f3bd3f1d072db92dddba41b4139ced4'
+model_hash = '1dec89536ced51da0cb896887e44dd2bb6abdaf41151295b786bb88a540240bd'
 
 [crates.aws-sdk-timestreamquery]
 category = 'AwsSdk'
@@ -2589,15 +2589,7 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6e26eaa642b8952342a70574fc8e0b431a8f910780f8df9f884f3a72542a499a'
-
-[release]
-tag = 'release-2025-02-14'
-
 [release.crates]
-aws-sdk-codebuild = '1.75.0'
-aws-sdk-connect = '1.92.0'
-aws-sdk-databasemigration = '1.64.0'
-aws-sdk-rdsdata = '1.61.0'
-aws-sdk-s3 = '1.76.0'
-aws-sdk-wafv2 = '1.65.0'
-aws-sdk-workspacesthinclient = '1.61.0'
+aws-sdk-amplify = '1.65.0'
+aws-sdk-databasemigration = '1.65.0'
+aws-sdk-timestreaminfluxdb = '1.46.0'

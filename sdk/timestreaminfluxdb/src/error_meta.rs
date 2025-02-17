@@ -68,6 +68,36 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_cluster::CreateDbClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_cluster::CreateDbClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_db_cluster::CreateDbClusterError> for Error {
+    fn from(err: crate::operation::create_db_cluster::CreateDbClusterError) -> Self {
+        match err {
+            crate::operation::create_db_cluster::CreateDbClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_db_cluster::CreateDbClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_db_cluster::CreateDbClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_db_cluster::CreateDbClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_db_cluster::CreateDbClusterError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_db_cluster::CreateDbClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_db_cluster::CreateDbClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_db_cluster::CreateDbClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_instance::CreateDbInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -137,6 +167,33 @@ impl From<crate::operation::create_db_parameter_group::CreateDbParameterGroupErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_cluster::DeleteDbClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_cluster::DeleteDbClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_db_cluster::DeleteDbClusterError> for Error {
+    fn from(err: crate::operation::delete_db_cluster::DeleteDbClusterError) -> Self {
+        match err {
+            crate::operation::delete_db_cluster::DeleteDbClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_db_cluster::DeleteDbClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_db_cluster::DeleteDbClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_db_cluster::DeleteDbClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_db_cluster::DeleteDbClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_db_cluster::DeleteDbClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_db_cluster::DeleteDbClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_instance::DeleteDbInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -161,6 +218,32 @@ impl From<crate::operation::delete_db_instance::DeleteDbInstanceError> for Error
             crate::operation::delete_db_instance::DeleteDbInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_db_instance::DeleteDbInstanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_db_instance::DeleteDbInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_db_cluster::GetDbClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_db_cluster::GetDbClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_db_cluster::GetDbClusterError> for Error {
+    fn from(err: crate::operation::get_db_cluster::GetDbClusterError) -> Self {
+        match err {
+            crate::operation::get_db_cluster::GetDbClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_db_cluster::GetDbClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_db_cluster::GetDbClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_db_cluster::GetDbClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_db_cluster::GetDbClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_db_cluster::GetDbClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -220,6 +303,32 @@ impl From<crate::operation::get_db_parameter_group::GetDbParameterGroupError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_clusters::ListDbClustersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_clusters::ListDbClustersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_db_clusters::ListDbClustersError> for Error {
+    fn from(err: crate::operation::list_db_clusters::ListDbClustersError) -> Self {
+        match err {
+            crate::operation::list_db_clusters::ListDbClustersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_db_clusters::ListDbClustersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_db_clusters::ListDbClustersError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_db_clusters::ListDbClustersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_db_clusters::ListDbClustersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_db_clusters::ListDbClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_instances::ListDbInstancesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -243,6 +352,45 @@ impl From<crate::operation::list_db_instances::ListDbInstancesError> for Error {
             crate::operation::list_db_instances::ListDbInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_db_instances::ListDbInstancesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_db_instances::ListDbInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError> for Error {
+    fn from(err: crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError) -> Self {
+        match err {
+            crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_db_instances_for_cluster::ListDbInstancesForClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -346,6 +494,33 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         match err {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_db_cluster::UpdateDbClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_db_cluster::UpdateDbClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_db_cluster::UpdateDbClusterError> for Error {
+    fn from(err: crate::operation::update_db_cluster::UpdateDbClusterError) -> Self {
+        match err {
+            crate::operation::update_db_cluster::UpdateDbClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_db_cluster::UpdateDbClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_db_cluster::UpdateDbClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_db_cluster::UpdateDbClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_db_cluster::UpdateDbClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_db_cluster::UpdateDbClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_db_cluster::UpdateDbClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

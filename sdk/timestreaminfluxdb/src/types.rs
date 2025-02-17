@@ -15,6 +15,8 @@ pub use crate::types::_log_level::LogLevel;
 
 pub use crate::types::_db_parameter_group_summary::DbParameterGroupSummary;
 
+pub use crate::types::_instance_mode::InstanceMode;
+
 pub use crate::types::_log_delivery_configuration::LogDeliveryConfiguration;
 
 pub use crate::types::_s3_configuration::S3Configuration;
@@ -31,6 +33,24 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_db_instance_summary::DbInstanceSummary;
 
+pub use crate::types::_db_instance_for_cluster_summary::DbInstanceForClusterSummary;
+
+pub use crate::types::_cluster_status::ClusterStatus;
+
+pub use crate::types::_failover_mode::FailoverMode;
+
+pub use crate::types::_cluster_deployment_type::ClusterDeploymentType;
+
+pub use crate::types::_db_cluster_summary::DbClusterSummary;
+
+mod _cluster_deployment_type;
+
+mod _cluster_status;
+
+mod _db_cluster_summary;
+
+mod _db_instance_for_cluster_summary;
+
 mod _db_instance_summary;
 
 mod _db_instance_type;
@@ -45,7 +65,11 @@ mod _duration;
 
 mod _duration_type;
 
+mod _failover_mode;
+
 mod _influx_dbv2_parameters;
+
+mod _instance_mode;
 
 mod _log_delivery_configuration;
 

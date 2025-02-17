@@ -18,48 +18,51 @@ pub fn ser_update_branch_input_input(
     if let Some(var_5) = &input.build_spec {
         object.key("buildSpec").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
+    if let Some(var_6) = &input.compute_role_arn {
+        object.key("computeRoleArn").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.display_name {
-        object.key("displayName").string(var_7.as_str());
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.enable_auto_build {
-        object.key("enableAutoBuild").boolean(*var_8);
+    if let Some(var_8) = &input.display_name {
+        object.key("displayName").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.enable_basic_auth {
-        object.key("enableBasicAuth").boolean(*var_9);
+    if let Some(var_9) = &input.enable_auto_build {
+        object.key("enableAutoBuild").boolean(*var_9);
     }
-    if let Some(var_10) = &input.enable_notification {
-        object.key("enableNotification").boolean(*var_10);
+    if let Some(var_10) = &input.enable_basic_auth {
+        object.key("enableBasicAuth").boolean(*var_10);
     }
-    if let Some(var_11) = &input.enable_performance_mode {
-        object.key("enablePerformanceMode").boolean(*var_11);
+    if let Some(var_11) = &input.enable_notification {
+        object.key("enableNotification").boolean(*var_11);
     }
-    if let Some(var_12) = &input.enable_pull_request_preview {
-        object.key("enablePullRequestPreview").boolean(*var_12);
+    if let Some(var_12) = &input.enable_performance_mode {
+        object.key("enablePerformanceMode").boolean(*var_12);
     }
-    if let Some(var_13) = &input.environment_variables {
+    if let Some(var_13) = &input.enable_pull_request_preview {
+        object.key("enablePullRequestPreview").boolean(*var_13);
+    }
+    if let Some(var_14) = &input.environment_variables {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("environmentVariables").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("environmentVariables").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
-    if let Some(var_17) = &input.framework {
-        object.key("framework").string(var_17.as_str());
+    if let Some(var_18) = &input.framework {
+        object.key("framework").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_18.as_str());
+    if let Some(var_19) = &input.pull_request_environment_name {
+        object.key("pullRequestEnvironmentName").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.stage {
-        object.key("stage").string(var_19.as_str());
+    if let Some(var_20) = &input.stage {
+        object.key("stage").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.ttl {
-        object.key("ttl").string(var_20.as_str());
+    if let Some(var_21) = &input.ttl {
+        object.key("ttl").string(var_21.as_str());
     }
     Ok(())
 }

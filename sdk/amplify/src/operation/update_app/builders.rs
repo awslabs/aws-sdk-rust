@@ -161,17 +161,31 @@ impl UpdateAppFluentBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         self.inner.get_platform()
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.compute_role_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn set_compute_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_compute_role_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn get_compute_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_compute_role_arn()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn iam_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.iam_service_role_arn(input.into());
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn set_iam_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_iam_service_role_arn(input);
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn get_iam_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_iam_service_role_arn()
     }

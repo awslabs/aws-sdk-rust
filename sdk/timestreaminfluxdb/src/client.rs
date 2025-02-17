@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_db_cluster;
+
 mod create_db_instance;
 
 mod create_db_parameter_group;
@@ -167,13 +169,21 @@ mod create_db_parameter_group;
 /// ```
 pub mod customize;
 
+mod delete_db_cluster;
+
 mod delete_db_instance;
+
+mod get_db_cluster;
 
 mod get_db_instance;
 
 mod get_db_parameter_group;
 
+mod list_db_clusters;
+
 mod list_db_instances;
+
+mod list_db_instances_for_cluster;
 
 mod list_db_parameter_groups;
 
@@ -182,5 +192,7 @@ mod list_tags_for_resource;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_db_cluster;
 
 mod update_db_instance;

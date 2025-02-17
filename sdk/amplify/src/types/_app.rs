@@ -23,7 +23,9 @@ pub struct App {
     pub create_time: ::aws_smithy_types::DateTime,
     /// <p>A timestamp of when Amplify updated the application.</p>
     pub update_time: ::aws_smithy_types::DateTime,
-    /// <p>The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for an SSR app. The Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub compute_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables for the Amplify app.</p>
     /// <p>For a list of the environment variables that are accessible to Amplify by default, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.</p>
@@ -107,7 +109,11 @@ impl App {
     pub fn update_time(&self) -> &::aws_smithy_types::DateTime {
         &self.update_time
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for an SSR app. The Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(&self) -> ::std::option::Option<&str> {
+        self.compute_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn iam_service_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
@@ -201,6 +207,7 @@ impl ::std::fmt::Debug for App {
         formatter.field("platform", &self.platform);
         formatter.field("create_time", &self.create_time);
         formatter.field("update_time", &self.update_time);
+        formatter.field("compute_role_arn", &self.compute_role_arn);
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("default_domain", &self.default_domain);
@@ -242,6 +249,7 @@ pub struct AppBuilder {
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) compute_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) default_domain: ::std::option::Option<::std::string::String>,
@@ -405,17 +413,31 @@ impl AppBuilder {
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for an SSR app. The Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.compute_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for an SSR app. The Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn set_compute_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.compute_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for an SSR app. The Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn get_compute_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_role_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn iam_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn set_iam_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_service_role_arn = input;
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn get_iam_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_service_role_arn
     }
@@ -759,6 +781,7 @@ impl AppBuilder {
                     "update_time was not specified but it is required when building App",
                 )
             })?,
+            compute_role_arn: self.compute_role_arn,
             iam_service_role_arn: self.iam_service_role_arn,
             environment_variables: self.environment_variables.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -812,6 +835,7 @@ impl ::std::fmt::Debug for AppBuilder {
         formatter.field("platform", &self.platform);
         formatter.field("create_time", &self.create_time);
         formatter.field("update_time", &self.update_time);
+        formatter.field("compute_role_arn", &self.compute_role_arn);
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("default_domain", &self.default_domain);

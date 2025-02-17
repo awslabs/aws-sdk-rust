@@ -154,6 +154,20 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder {
     pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_replication_instance_arn()
     }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_config_arn(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_replication_config_arn(input);
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_replication_config_arn()
+    }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
     pub fn source_engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_engine_name(input.into());

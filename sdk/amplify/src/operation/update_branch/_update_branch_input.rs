@@ -43,6 +43,8 @@ pub struct UpdateBranchInput {
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
     /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub backend: ::std::option::Option<crate::types::Backend>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub compute_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBranchInput {
     /// <p>The unique ID for an Amplify app.</p>
@@ -120,6 +122,10 @@ impl UpdateBranchInput {
     pub fn backend(&self) -> ::std::option::Option<&crate::types::Backend> {
         self.backend.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(&self) -> ::std::option::Option<&str> {
+        self.compute_role_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateBranchInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -142,6 +148,7 @@ impl ::std::fmt::Debug for UpdateBranchInput {
         formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.field("backend", &self.backend);
+        formatter.field("compute_role_arn", &self.compute_role_arn);
         formatter.finish()
     }
 }
@@ -174,6 +181,7 @@ pub struct UpdateBranchInputBuilder {
     pub(crate) pull_request_environment_name: ::std::option::Option<::std::string::String>,
     pub(crate) backend_environment_arn: ::std::option::Option<::std::string::String>,
     pub(crate) backend: ::std::option::Option<crate::types::Backend>,
+    pub(crate) compute_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateBranchInputBuilder {
     /// <p>The unique ID for an Amplify app.</p>
@@ -452,6 +460,20 @@ impl UpdateBranchInputBuilder {
     pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
         &self.backend
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.compute_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn set_compute_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.compute_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn get_compute_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_role_arn
+    }
     /// Consumes the builder and constructs a [`UpdateBranchInput`](crate::operation::update_branch::UpdateBranchInput).
     pub fn build(
         self,
@@ -475,6 +497,7 @@ impl UpdateBranchInputBuilder {
             pull_request_environment_name: self.pull_request_environment_name,
             backend_environment_arn: self.backend_environment_arn,
             backend: self.backend,
+            compute_role_arn: self.compute_role_arn,
         })
     }
 }
@@ -499,6 +522,7 @@ impl ::std::fmt::Debug for UpdateBranchInputBuilder {
         formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.field("backend", &self.backend);
+        formatter.field("compute_role_arn", &self.compute_role_arn);
         formatter.finish()
     }
 }

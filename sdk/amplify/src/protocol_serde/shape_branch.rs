@@ -171,6 +171,13 @@ where
                         "backend" => {
                             builder = builder.set_backend(crate::protocol_serde::shape_backend::de_backend(tokens)?);
                         }
+                        "computeRoleArn" => {
+                            builder = builder.set_compute_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

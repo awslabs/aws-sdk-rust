@@ -282,6 +282,20 @@ pub(crate) fn de_create_db_instance(
                             .transpose()?,
                     );
                 }
+                "dbClusterId" => {
+                    builder = builder.set_db_cluster_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "instanceMode" => {
+                    builder = builder.set_instance_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::InstanceMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -8,6 +8,8 @@ pub struct DescribeApplicableIndividualAssessmentsInput {
     pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
     pub replication_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub replication_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
     pub source_engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of a database engine that the specified replication instance supports as a target.</p>
@@ -27,6 +29,10 @@ impl DescribeApplicableIndividualAssessmentsInput {
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
     pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn replication_config_arn(&self) -> ::std::option::Option<&str> {
+        self.replication_config_arn.as_deref()
     }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
     pub fn source_engine_name(&self) -> ::std::option::Option<&str> {
@@ -62,6 +68,7 @@ impl DescribeApplicableIndividualAssessmentsInput {
 pub struct DescribeApplicableIndividualAssessmentsInputBuilder {
     pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_config_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_engine_name: ::std::option::Option<::std::string::String>,
     pub(crate) target_engine_name: ::std::option::Option<::std::string::String>,
     pub(crate) migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
@@ -96,6 +103,20 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
     /// <p>ARN of a replication instance on which you want to base the default list of individual assessments.</p>
     pub fn get_replication_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.replication_instance_arn
+    }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn replication_config_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.replication_config_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn set_replication_config_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.replication_config_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of a serverless replication on which you want to base the default list of individual assessments.</p>
+    pub fn get_replication_config_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.replication_config_arn
     }
     /// <p>Name of a database engine that the specified replication instance supports as a source.</p>
     pub fn source_engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +199,7 @@ impl DescribeApplicableIndividualAssessmentsInputBuilder {
             crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessmentsInput {
                 replication_task_arn: self.replication_task_arn,
                 replication_instance_arn: self.replication_instance_arn,
+                replication_config_arn: self.replication_config_arn,
                 source_engine_name: self.source_engine_name,
                 target_engine_name: self.target_engine_name,
                 migration_type: self.migration_type,

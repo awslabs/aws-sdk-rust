@@ -13,7 +13,9 @@ pub struct CreateAppInput {
     /// <p>The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     /// <p>If you are deploying an SSG only app with Next.js version 14 or later, you must set the platform type to <code>WEB_COMPUTE</code> and set the artifacts <code>baseDirectory</code> to <code>.next</code> in the application's build settings. For an example of the build specification settings, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/deploy-nextjs-app.html#build-setting-detection-ssg-14">Amplify build settings for a Next.js 14 SSG application</a> in the <i>Amplify Hosting User Guide</i>.</p>
     pub platform: ::std::option::Option<crate::types::Platform>,
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub compute_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
     /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
@@ -71,7 +73,11 @@ impl CreateAppInput {
     pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(&self) -> ::std::option::Option<&str> {
+        self.compute_role_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn iam_service_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
@@ -154,6 +160,7 @@ impl ::std::fmt::Debug for CreateAppInput {
         formatter.field("description", &self.description);
         formatter.field("repository", &self.repository);
         formatter.field("platform", &self.platform);
+        formatter.field("compute_role_arn", &self.compute_role_arn);
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -188,6 +195,7 @@ pub struct CreateAppInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) repository: ::std::option::Option<::std::string::String>,
     pub(crate) platform: ::std::option::Option<crate::types::Platform>,
+    pub(crate) compute_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) iam_service_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) oauth_token: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
@@ -266,17 +274,31 @@ impl CreateAppInputBuilder {
     pub fn get_platform(&self) -> &::std::option::Option<crate::types::Platform> {
         &self.platform
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn compute_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.compute_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn set_compute_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.compute_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn get_compute_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.compute_role_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn iam_service_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.iam_service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn set_iam_service_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_service_role_arn = input;
         self
     }
-    /// <p>The AWS Identity and Access Management (IAM) service role for an Amplify app.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for the Amplify app.</p>
     pub fn get_iam_service_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.iam_service_role_arn
     }
@@ -549,6 +571,7 @@ impl CreateAppInputBuilder {
             description: self.description,
             repository: self.repository,
             platform: self.platform,
+            compute_role_arn: self.compute_role_arn,
             iam_service_role_arn: self.iam_service_role_arn,
             oauth_token: self.oauth_token,
             access_token: self.access_token,
@@ -575,6 +598,7 @@ impl ::std::fmt::Debug for CreateAppInputBuilder {
         formatter.field("description", &self.description);
         formatter.field("repository", &self.repository);
         formatter.field("platform", &self.platform);
+        formatter.field("compute_role_arn", &self.compute_role_arn);
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");

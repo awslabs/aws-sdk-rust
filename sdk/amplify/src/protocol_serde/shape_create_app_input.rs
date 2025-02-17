@@ -33,70 +33,73 @@ pub fn ser_create_app_input_input(
         crate::protocol_serde::shape_cache_config::ser_cache_config(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.custom_headers {
-        object.key("customHeaders").string(var_11.as_str());
+    if let Some(var_11) = &input.compute_role_arn {
+        object.key("computeRoleArn").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.custom_rules {
-        let mut array_13 = object.key("customRules").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.custom_headers {
+        object.key("customHeaders").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.custom_rules {
+        let mut array_14 = object.key("customRules").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_custom_rule::ser_custom_rule(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_custom_rule::ser_custom_rule(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_16) = &input.description {
-        object.key("description").string(var_16.as_str());
+    if let Some(var_17) = &input.description {
+        object.key("description").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.enable_auto_branch_creation {
-        object.key("enableAutoBranchCreation").boolean(*var_17);
+    if let Some(var_18) = &input.enable_auto_branch_creation {
+        object.key("enableAutoBranchCreation").boolean(*var_18);
     }
-    if let Some(var_18) = &input.enable_basic_auth {
-        object.key("enableBasicAuth").boolean(*var_18);
+    if let Some(var_19) = &input.enable_basic_auth {
+        object.key("enableBasicAuth").boolean(*var_19);
     }
-    if let Some(var_19) = &input.enable_branch_auto_build {
-        object.key("enableBranchAutoBuild").boolean(*var_19);
+    if let Some(var_20) = &input.enable_branch_auto_build {
+        object.key("enableBranchAutoBuild").boolean(*var_20);
     }
-    if let Some(var_20) = &input.enable_branch_auto_deletion {
-        object.key("enableBranchAutoDeletion").boolean(*var_20);
+    if let Some(var_21) = &input.enable_branch_auto_deletion {
+        object.key("enableBranchAutoDeletion").boolean(*var_21);
     }
-    if let Some(var_21) = &input.environment_variables {
+    if let Some(var_22) = &input.environment_variables {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("environmentVariables").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_23 = object.key("environmentVariables").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_22.finish();
+        object_23.finish();
     }
-    if let Some(var_25) = &input.iam_service_role_arn {
-        object.key("iamServiceRoleArn").string(var_25.as_str());
+    if let Some(var_26) = &input.iam_service_role_arn {
+        object.key("iamServiceRoleArn").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.name {
-        object.key("name").string(var_26.as_str());
+    if let Some(var_27) = &input.name {
+        object.key("name").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.oauth_token {
-        object.key("oauthToken").string(var_27.as_str());
+    if let Some(var_28) = &input.oauth_token {
+        object.key("oauthToken").string(var_28.as_str());
     }
-    if let Some(var_28) = &input.platform {
-        object.key("platform").string(var_28.as_str());
+    if let Some(var_29) = &input.platform {
+        object.key("platform").string(var_29.as_str());
     }
-    if let Some(var_29) = &input.repository {
-        object.key("repository").string(var_29.as_str());
+    if let Some(var_30) = &input.repository {
+        object.key("repository").string(var_30.as_str());
     }
-    if let Some(var_30) = &input.tags {
+    if let Some(var_31) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_31 = object.key("tags").start_object();
-        for (key_32, value_33) in var_30 {
+        let mut object_32 = object.key("tags").start_object();
+        for (key_33, value_34) in var_31 {
             {
-                object_31.key(key_32.as_str()).string(value_33.as_str());
+                object_32.key(key_33.as_str()).string(value_34.as_str());
             }
         }
-        object_31.finish();
+        object_32.finish();
     }
     Ok(())
 }

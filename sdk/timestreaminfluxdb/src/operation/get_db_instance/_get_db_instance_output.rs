@@ -41,6 +41,10 @@ pub struct GetDbInstanceOutput {
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub influx_auth_parameters_secret_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
+    pub db_cluster_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the DbInstance's role in the cluster.</p>
+    pub instance_mode: ::std::option::Option<crate::types::InstanceMode>,
     _request_id: Option<String>,
 }
 impl GetDbInstanceOutput {
@@ -126,6 +130,14 @@ impl GetDbInstanceOutput {
     pub fn influx_auth_parameters_secret_arn(&self) -> ::std::option::Option<&str> {
         self.influx_auth_parameters_secret_arn.as_deref()
     }
+    /// <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
+    pub fn db_cluster_id(&self) -> ::std::option::Option<&str> {
+        self.db_cluster_id.as_deref()
+    }
+    /// <p>Specifies the DbInstance's role in the cluster.</p>
+    pub fn instance_mode(&self) -> ::std::option::Option<&crate::types::InstanceMode> {
+        self.instance_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDbInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -162,6 +174,8 @@ pub struct GetDbInstanceOutputBuilder {
     pub(crate) secondary_availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) influx_auth_parameters_secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_mode: ::std::option::Option<crate::types::InstanceMode>,
     _request_id: Option<String>,
 }
 impl GetDbInstanceOutputBuilder {
@@ -446,6 +460,34 @@ impl GetDbInstanceOutputBuilder {
     pub fn get_influx_auth_parameters_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.influx_auth_parameters_secret_arn
     }
+    /// <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
+    pub fn db_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.db_cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
+    pub fn set_db_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.db_cluster_id = input;
+        self
+    }
+    /// <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
+    pub fn get_db_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.db_cluster_id
+    }
+    /// <p>Specifies the DbInstance's role in the cluster.</p>
+    pub fn instance_mode(mut self, input: crate::types::InstanceMode) -> Self {
+        self.instance_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the DbInstance's role in the cluster.</p>
+    pub fn set_instance_mode(mut self, input: ::std::option::Option<crate::types::InstanceMode>) -> Self {
+        self.instance_mode = input;
+        self
+    }
+    /// <p>Specifies the DbInstance's role in the cluster.</p>
+    pub fn get_instance_mode(&self) -> &::std::option::Option<crate::types::InstanceMode> {
+        &self.instance_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -504,6 +546,8 @@ impl GetDbInstanceOutputBuilder {
             secondary_availability_zone: self.secondary_availability_zone,
             log_delivery_configuration: self.log_delivery_configuration,
             influx_auth_parameters_secret_arn: self.influx_auth_parameters_secret_arn,
+            db_cluster_id: self.db_cluster_id,
+            instance_mode: self.instance_mode,
             _request_id: self._request_id,
         })
     }
