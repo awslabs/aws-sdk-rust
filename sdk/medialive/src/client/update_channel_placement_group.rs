@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`cluster_id(Option<String>)`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupOutput::cluster_id): The ID of the Cluster that the Node belongs to.
     ///   - [`id(Option<String>)`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupOutput::id): The ID of the ChannelPlacementGroup. Unique in the AWS account. The ID is the resource-id portion of the ARN.
     ///   - [`name(Option<String>)`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupOutput::name): The name that you specified for the ChannelPlacementGroup.
-    ///   - [`nodes(Option<Vec::<String>>)`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupOutput::nodes): An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    ///   - [`nodes(Option<Vec::<String>>)`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupOutput::nodes): An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     ///   - [`state(Option<ChannelPlacementGroupState>)`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupOutput::state): The current state of the ChannelPlacementGroup.
     /// - On failure, responds with [`SdkError<UpdateChannelPlacementGroupError>`](crate::operation::update_channel_placement_group::UpdateChannelPlacementGroupError)
     pub fn update_channel_placement_group(

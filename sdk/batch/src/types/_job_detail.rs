@@ -18,7 +18,7 @@ pub struct JobDetail {
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The share identifier for the job.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>A list of job attempts that are associated with this job.</p>
     pub attempts: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>,
@@ -104,7 +104,7 @@ impl JobDetail {
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(&self) -> ::std::option::Option<i32> {
         self.scheduling_priority
     }
@@ -353,17 +353,17 @@ impl JobDetailBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
         self.scheduling_priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_priority = input;
         self
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
         &self.scheduling_priority
     }

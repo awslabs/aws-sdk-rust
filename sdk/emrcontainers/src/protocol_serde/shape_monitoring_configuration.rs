@@ -3,26 +3,32 @@ pub fn ser_monitoring_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringConfiguration,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.persistent_app_ui {
-        object.key("persistentAppUI").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.cloud_watch_monitoring_configuration {
+    if let Some(var_1) = &input.managed_logs {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("cloudWatchMonitoringConfiguration").start_object();
-        crate::protocol_serde::shape_cloud_watch_monitoring_configuration::ser_cloud_watch_monitoring_configuration(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("managedLogs").start_object();
+        crate::protocol_serde::shape_managed_logs::ser_managed_logs(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.s3_monitoring_configuration {
+    if let Some(var_3) = &input.persistent_app_ui {
+        object.key("persistentAppUI").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.cloud_watch_monitoring_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("s3MonitoringConfiguration").start_object();
-        crate::protocol_serde::shape_s3_monitoring_configuration::ser_s3_monitoring_configuration(&mut object_5, var_4)?;
+        let mut object_5 = object.key("cloudWatchMonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_cloud_watch_monitoring_configuration::ser_cloud_watch_monitoring_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.container_log_rotation_configuration {
+    if let Some(var_6) = &input.s3_monitoring_configuration {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("containerLogRotationConfiguration").start_object();
-        crate::protocol_serde::shape_container_log_rotation_configuration::ser_container_log_rotation_configuration(&mut object_7, var_6)?;
+        let mut object_7 = object.key("s3MonitoringConfiguration").start_object();
+        crate::protocol_serde::shape_s3_monitoring_configuration::ser_s3_monitoring_configuration(&mut object_7, var_6)?;
         object_7.finish();
+    }
+    if let Some(var_8) = &input.container_log_rotation_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("containerLogRotationConfiguration").start_object();
+        crate::protocol_serde::shape_container_log_rotation_configuration::ser_container_log_rotation_configuration(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }
@@ -42,6 +48,9 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "managedLogs" => {
+                            builder = builder.set_managed_logs(crate::protocol_serde::shape_managed_logs::de_managed_logs(tokens)?);
+                        }
                         "persistentAppUI" => {
                             builder = builder.set_persistent_app_ui(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

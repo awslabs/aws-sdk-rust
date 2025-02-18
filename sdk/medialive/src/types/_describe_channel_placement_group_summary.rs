@@ -14,7 +14,7 @@ pub struct DescribeChannelPlacementGroupSummary {
     pub id: ::std::option::Option<::std::string::String>,
     /// The name that you specified for the ChannelPlacementGroup.
     pub name: ::std::option::Option<::std::string::String>,
-    /// An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    /// An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     pub nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// The current state of the ChannelPlacementGroup.
     pub state: ::std::option::Option<crate::types::ChannelPlacementGroupState>,
@@ -42,7 +42,7 @@ impl DescribeChannelPlacementGroupSummary {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    /// An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
     pub fn nodes(&self) -> &[::std::string::String] {
@@ -153,19 +153,19 @@ impl DescribeChannelPlacementGroupSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_nodes`](Self::set_nodes).
     ///
-    /// An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    /// An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     pub fn nodes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.nodes.unwrap_or_default();
         v.push(input.into());
         self.nodes = ::std::option::Option::Some(v);
         self
     }
-    /// An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    /// An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     pub fn set_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.nodes = input;
         self
     }
-    /// An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    /// An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     pub fn get_nodes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.nodes
     }

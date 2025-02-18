@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobQueueSnapshotOutput {
-    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
+    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub front_of_queue: ::std::option::Option<crate::types::FrontOfQueueDetail>,
     _request_id: Option<String>,
 }
 impl GetJobQueueSnapshotOutput {
-    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
+    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub fn front_of_queue(&self) -> ::std::option::Option<&crate::types::FrontOfQueueDetail> {
         self.front_of_queue.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetJobQueueSnapshotOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetJobQueueSnapshotOutputBuilder {
-    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
+    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub fn front_of_queue(mut self, input: crate::types::FrontOfQueueDetail) -> Self {
         self.front_of_queue = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
+    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub fn set_front_of_queue(mut self, input: ::std::option::Option<crate::types::FrontOfQueueDetail>) -> Self {
         self.front_of_queue = input;
         self
     }
-    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
+    /// <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
     pub fn get_front_of_queue(&self) -> &::std::option::Option<crate::types::FrontOfQueueDetail> {
         &self.front_of_queue
     }

@@ -179,19 +179,19 @@ impl RegisterJobDefinitionFluentBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_parameters()
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
         self.inner = self.inner.scheduling_priority(input);
         self
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scheduling_priority(input);
         self
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
         self.inner.get_scheduling_priority()

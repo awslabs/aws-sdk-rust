@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfiguration {
+    /// <p>The entity that controls configuration for managed logs.</p>
+    pub managed_logs: ::std::option::Option<crate::types::ManagedLogs>,
     /// <p>Monitoring configurations for the persistent application UI.</p>
     pub persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
     /// <p>Monitoring configurations for CloudWatch.</p>
@@ -14,6 +16,10 @@ pub struct MonitoringConfiguration {
     pub container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfiguration {
+    /// <p>The entity that controls configuration for managed logs.</p>
+    pub fn managed_logs(&self) -> ::std::option::Option<&crate::types::ManagedLogs> {
+        self.managed_logs.as_ref()
+    }
     /// <p>Monitoring configurations for the persistent application UI.</p>
     pub fn persistent_app_ui(&self) -> ::std::option::Option<&crate::types::PersistentAppUi> {
         self.persistent_app_ui.as_ref()
@@ -42,12 +48,27 @@ impl MonitoringConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct MonitoringConfigurationBuilder {
+    pub(crate) managed_logs: ::std::option::Option<crate::types::ManagedLogs>,
     pub(crate) persistent_app_ui: ::std::option::Option<crate::types::PersistentAppUi>,
     pub(crate) cloud_watch_monitoring_configuration: ::std::option::Option<crate::types::CloudWatchMonitoringConfiguration>,
     pub(crate) s3_monitoring_configuration: ::std::option::Option<crate::types::S3MonitoringConfiguration>,
     pub(crate) container_log_rotation_configuration: ::std::option::Option<crate::types::ContainerLogRotationConfiguration>,
 }
 impl MonitoringConfigurationBuilder {
+    /// <p>The entity that controls configuration for managed logs.</p>
+    pub fn managed_logs(mut self, input: crate::types::ManagedLogs) -> Self {
+        self.managed_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that controls configuration for managed logs.</p>
+    pub fn set_managed_logs(mut self, input: ::std::option::Option<crate::types::ManagedLogs>) -> Self {
+        self.managed_logs = input;
+        self
+    }
+    /// <p>The entity that controls configuration for managed logs.</p>
+    pub fn get_managed_logs(&self) -> &::std::option::Option<crate::types::ManagedLogs> {
+        &self.managed_logs
+    }
     /// <p>Monitoring configurations for the persistent application UI.</p>
     pub fn persistent_app_ui(mut self, input: crate::types::PersistentAppUi) -> Self {
         self.persistent_app_ui = ::std::option::Option::Some(input);
@@ -107,6 +128,7 @@ impl MonitoringConfigurationBuilder {
     /// Consumes the builder and constructs a [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
     pub fn build(self) -> crate::types::MonitoringConfiguration {
         crate::types::MonitoringConfiguration {
+            managed_logs: self.managed_logs,
             persistent_app_ui: self.persistent_app_ui,
             cloud_watch_monitoring_configuration: self.cloud_watch_monitoring_configuration,
             s3_monitoring_configuration: self.s3_monitoring_configuration,

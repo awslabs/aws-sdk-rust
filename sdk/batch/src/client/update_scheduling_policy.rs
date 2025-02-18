@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p><br>
-    ///   - [`fairshare_policy(FairsharePolicy)`](crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder::fairshare_policy) / [`set_fairshare_policy(Option<FairsharePolicy>)`](crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder::set_fairshare_policy):<br>required: **false**<br><p>The fair share policy.</p><br>
+    ///   - [`fairshare_policy(FairsharePolicy)`](crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder::fairshare_policy) / [`set_fairshare_policy(Option<FairsharePolicy>)`](crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder::set_fairshare_policy):<br>required: **false**<br><p>The fair-share policy scheduling details.</p><br>
     /// - On success, responds with [`UpdateSchedulingPolicyOutput`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyOutput)
     /// - On failure, responds with [`SdkError<UpdateSchedulingPolicyError>`](crate::operation::update_scheduling_policy::UpdateSchedulingPolicyError)
     pub fn update_scheduling_policy(&self) -> crate::operation::update_scheduling_policy::builders::UpdateSchedulingPolicyFluentBuilder {

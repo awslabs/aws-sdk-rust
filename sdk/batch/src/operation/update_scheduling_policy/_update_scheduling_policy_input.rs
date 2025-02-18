@@ -6,7 +6,7 @@
 pub struct UpdateSchedulingPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fairshare_policy: ::std::option::Option<crate::types::FairsharePolicy>,
 }
 impl UpdateSchedulingPolicyInput {
@@ -14,7 +14,7 @@ impl UpdateSchedulingPolicyInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn fairshare_policy(&self) -> ::std::option::Option<&crate::types::FairsharePolicy> {
         self.fairshare_policy.as_ref()
     }
@@ -49,17 +49,17 @@ impl UpdateSchedulingPolicyInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.fairshare_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.fairshare_policy = input;
         self
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
         &self.fairshare_policy
     }

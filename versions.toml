@@ -256,9 +256,9 @@ model_hash = '66fa4bdab3394f5d156cd8eb17636f6afc6c32447af1e5047c3b9dabb883bac4'
 
 [crates.aws-sdk-batch]
 category = 'AwsSdk'
-version = '1.68.0'
-source_hash = 'f3424a687d872ee7ead372a8a8f88442c0d54adced7c2da7c19ea82dcdf2058f'
-model_hash = '018de1b92150d334bcc9fc2b08426e249f99c06865f99c6fc4b24e833b808406'
+version = '1.68.1'
+source_hash = '47b7926fc476d4dba4e86e584f594b24e2cf85e9572d6db29446a574a5ff97f6'
+model_hash = 'd3c17fee514b0042570caec79c607b3d67da70c890a55b35fe33e9b77f2cf940'
 
 [crates.aws-sdk-bcmdataexports]
 category = 'AwsSdk'
@@ -892,9 +892,9 @@ model_hash = '5336a58f8d5ffb866e72dbdd012601369f43eb18af2bcae341299a0b18ecc768'
 
 [crates.aws-sdk-emrcontainers]
 category = 'AwsSdk'
-version = '1.63.0'
-source_hash = 'c21789aecd0d24421935e41e7531ace680244d7142049ba0cd1d9a1b46da209a'
-model_hash = 'e01331983fdcb25639be7ab206764bb644f490965875e69dc078c0e6f8ae05fc'
+version = '1.64.0'
+source_hash = 'e19a5e37d2887d970e4827b0c52acc76c2d7eddcfc19bf32640cfac78e14f1bd'
+model_hash = 'a39666f61364fed55b6bb9e18360dff4d71dad1a7ef289d8b80015c36d796dae'
 
 [crates.aws-sdk-emrserverless]
 category = 'AwsSdk'
@@ -1480,9 +1480,9 @@ model_hash = '06bb2e5c6a43aab21578867f45aa99fb83db716b9e29a728c0fbbbf488929244'
 
 [crates.aws-sdk-medialive]
 category = 'AwsSdk'
-version = '1.74.0'
-source_hash = '1defa27056bfdf96cb23d6ad1ce34155a6e74b77f9007365b7b1fbaf62e6d404'
-model_hash = 'a32aee7b8dde7b4c0f94b57798f984d41132ea306f4e30ba00cddd185b3e464d'
+version = '1.75.0'
+source_hash = '51ba0099853aec6f6524f46607c95a9cf6a960058ebd0bf06fdad5d740005c3b'
+model_hash = '66c2796127a102ee7d73dde91fcb0f4b07718a94e63d2444eba4daf34c953207'
 
 [crates.aws-sdk-mediapackage]
 category = 'AwsSdk'
@@ -2589,11 +2589,7 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6e26eaa642b8952342a70574fc8e0b431a8f910780f8df9f884f3a72542a499a'
-
-[release]
-tag = 'release-2025-02-17'
-
 [release.crates]
-aws-sdk-amplify = '1.65.0'
-aws-sdk-databasemigration = '1.65.0'
-aws-sdk-timestreaminfluxdb = '1.46.0'
+aws-sdk-batch = '1.68.1'
+aws-sdk-emrcontainers = '1.64.0'
+aws-sdk-medialive = '1.75.0'

@@ -171,6 +171,8 @@ pub(crate) mod shape_encryption_configuration;
 
 pub(crate) mod shape_lake_formation_configuration;
 
+pub(crate) mod shape_managed_logs;
+
 pub(crate) mod shape_parametric_monitoring_configuration;
 
 pub(crate) mod shape_s3_monitoring_configuration;

@@ -19,6 +19,7 @@
 ///     CloudWatchAlarmTemplateTargetResourceType::MedialiveMultiplex => { /* ... */ },
 ///     CloudWatchAlarmTemplateTargetResourceType::MediapackageChannel => { /* ... */ },
 ///     CloudWatchAlarmTemplateTargetResourceType::MediapackageOriginEndpoint => { /* ... */ },
+///     CloudWatchAlarmTemplateTargetResourceType::MediatailorPlaybackConfiguration => { /* ... */ },
 ///     CloudWatchAlarmTemplateTargetResourceType::S3Bucket => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum CloudWatchAlarmTemplateTargetResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MediapackageOriginEndpoint,
     #[allow(missing_docs)] // documentation missing in model
+    MediatailorPlaybackConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     S3Bucket,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -78,6 +81,7 @@ impl ::std::convert::From<&str> for CloudWatchAlarmTemplateTargetResourceType {
             "MEDIALIVE_MULTIPLEX" => CloudWatchAlarmTemplateTargetResourceType::MedialiveMultiplex,
             "MEDIAPACKAGE_CHANNEL" => CloudWatchAlarmTemplateTargetResourceType::MediapackageChannel,
             "MEDIAPACKAGE_ORIGIN_ENDPOINT" => CloudWatchAlarmTemplateTargetResourceType::MediapackageOriginEndpoint,
+            "MEDIATAILOR_PLAYBACK_CONFIGURATION" => CloudWatchAlarmTemplateTargetResourceType::MediatailorPlaybackConfiguration,
             "S3_BUCKET" => CloudWatchAlarmTemplateTargetResourceType::S3Bucket,
             other => {
                 CloudWatchAlarmTemplateTargetResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
@@ -103,6 +107,7 @@ impl CloudWatchAlarmTemplateTargetResourceType {
             CloudWatchAlarmTemplateTargetResourceType::MedialiveMultiplex => "MEDIALIVE_MULTIPLEX",
             CloudWatchAlarmTemplateTargetResourceType::MediapackageChannel => "MEDIAPACKAGE_CHANNEL",
             CloudWatchAlarmTemplateTargetResourceType::MediapackageOriginEndpoint => "MEDIAPACKAGE_ORIGIN_ENDPOINT",
+            CloudWatchAlarmTemplateTargetResourceType::MediatailorPlaybackConfiguration => "MEDIATAILOR_PLAYBACK_CONFIGURATION",
             CloudWatchAlarmTemplateTargetResourceType::S3Bucket => "S3_BUCKET",
             CloudWatchAlarmTemplateTargetResourceType::Unknown(value) => value.as_str(),
         }
@@ -117,6 +122,7 @@ impl CloudWatchAlarmTemplateTargetResourceType {
             "MEDIALIVE_MULTIPLEX",
             "MEDIAPACKAGE_CHANNEL",
             "MEDIAPACKAGE_ORIGIN_ENDPOINT",
+            "MEDIATAILOR_PLAYBACK_CONFIGURATION",
             "S3_BUCKET",
         ]
     }
@@ -148,6 +154,7 @@ impl ::std::fmt::Display for CloudWatchAlarmTemplateTargetResourceType {
             CloudWatchAlarmTemplateTargetResourceType::MedialiveMultiplex => write!(f, "MEDIALIVE_MULTIPLEX"),
             CloudWatchAlarmTemplateTargetResourceType::MediapackageChannel => write!(f, "MEDIAPACKAGE_CHANNEL"),
             CloudWatchAlarmTemplateTargetResourceType::MediapackageOriginEndpoint => write!(f, "MEDIAPACKAGE_ORIGIN_ENDPOINT"),
+            CloudWatchAlarmTemplateTargetResourceType::MediatailorPlaybackConfiguration => write!(f, "MEDIATAILOR_PLAYBACK_CONFIGURATION"),
             CloudWatchAlarmTemplateTargetResourceType::S3Bucket => write!(f, "S3_BUCKET"),
             CloudWatchAlarmTemplateTargetResourceType::Unknown(value) => write!(f, "{}", value),
         }

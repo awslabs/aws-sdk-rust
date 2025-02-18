@@ -13,6 +13,10 @@ pub use crate::types::_cloud_watch_monitoring_configuration::CloudWatchMonitorin
 
 pub use crate::types::_persistent_app_ui::PersistentAppUi;
 
+pub use crate::types::_managed_logs::ManagedLogs;
+
+pub use crate::types::_allow_aws_to_retain_logs::AllowAwsToRetainLogs;
+
 pub use crate::types::_configuration::Configuration;
 
 pub use crate::types::_job_driver::JobDriver;
@@ -83,6 +87,8 @@ pub use crate::types::_job_run_state::JobRunState;
 
 pub use crate::types::_credentials::Credentials;
 
+mod _allow_aws_to_retain_logs;
+
 mod _authorization_configuration;
 
 mod _certificate;
@@ -128,6 +134,8 @@ mod _job_template;
 mod _job_template_data;
 
 mod _lake_formation_configuration;
+
+mod _managed_logs;
 
 mod _monitoring_configuration;
 

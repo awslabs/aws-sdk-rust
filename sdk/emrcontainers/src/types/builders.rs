@@ -11,6 +11,8 @@ pub use crate::types::_s3_monitoring_configuration::S3MonitoringConfigurationBui
 
 pub use crate::types::_cloud_watch_monitoring_configuration::CloudWatchMonitoringConfigurationBuilder;
 
+pub use crate::types::_managed_logs::ManagedLogsBuilder;
+
 pub use crate::types::_configuration::ConfigurationBuilder;
 
 pub use crate::types::_job_driver::JobDriverBuilder;

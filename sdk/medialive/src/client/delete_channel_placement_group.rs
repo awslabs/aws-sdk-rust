@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`cluster_id(Option<String>)`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupOutput::cluster_id): The ID of the Cluster that the Node belongs to.
     ///   - [`id(Option<String>)`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupOutput::id): The ID of the ChannelPlacementGroup. Unique in the AWS account. The ID is the resource-id portion of the ARN.
     ///   - [`name(Option<String>)`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupOutput::name): The name that you specified for the ChannelPlacementGroup.
-    ///   - [`nodes(Option<Vec::<String>>)`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupOutput::nodes): An array with one item, which is the signle Node that is associated with the ChannelPlacementGroup.
+    ///   - [`nodes(Option<Vec::<String>>)`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupOutput::nodes): An array with one item, which is the single Node that is associated with the ChannelPlacementGroup.
     ///   - [`state(Option<ChannelPlacementGroupState>)`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupOutput::state): The current state of the ChannelPlacementGroup.
     /// - On failure, responds with [`SdkError<DeleteChannelPlacementGroupError>`](crate::operation::delete_channel_placement_group::DeleteChannelPlacementGroupError)
     pub fn delete_channel_placement_group(
