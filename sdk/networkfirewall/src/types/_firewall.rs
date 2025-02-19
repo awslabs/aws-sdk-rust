@@ -30,6 +30,8 @@ pub struct Firewall {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your firewall.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub enabled_analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>,
 }
 impl Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -87,6 +89,12 @@ impl Firewall {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_analysis_types.is_none()`.
+    pub fn enabled_analysis_types(&self) -> &[crate::types::EnabledAnalysisType] {
+        self.enabled_analysis_types.as_deref().unwrap_or_default()
+    }
 }
 impl Firewall {
     /// Creates a new builder-style object to manufacture [`Firewall`](crate::types::Firewall).
@@ -111,6 +119,7 @@ pub struct FirewallBuilder {
     pub(crate) firewall_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) enabled_analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>,
 }
 impl FirewallBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -299,6 +308,26 @@ impl FirewallBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// Appends an item to `enabled_analysis_types`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_analysis_types`](Self::set_enabled_analysis_types).
+    ///
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn enabled_analysis_types(mut self, input: crate::types::EnabledAnalysisType) -> Self {
+        let mut v = self.enabled_analysis_types.unwrap_or_default();
+        v.push(input);
+        self.enabled_analysis_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn set_enabled_analysis_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>) -> Self {
+        self.enabled_analysis_types = input;
+        self
+    }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn get_enabled_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>> {
+        &self.enabled_analysis_types
+    }
     /// Consumes the builder and constructs a [`Firewall`](crate::types::Firewall).
     /// This method will fail if any of the following fields are not set:
     /// - [`firewall_policy_arn`](crate::types::builders::FirewallBuilder::firewall_policy_arn)
@@ -339,6 +368,7 @@ impl FirewallBuilder {
             })?,
             tags: self.tags,
             encryption_configuration: self.encryption_configuration,
+            enabled_analysis_types: self.enabled_analysis_types,
         })
     }
 }

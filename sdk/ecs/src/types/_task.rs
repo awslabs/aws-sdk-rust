@@ -23,8 +23,8 @@ pub struct Task {
     /// <p>The containers that's associated with the task.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
-    /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
+    /// <p>If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
+    /// <p>If you're using the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
     /// <li>
@@ -185,8 +185,8 @@ impl Task {
         self.containers.as_deref().unwrap_or_default()
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
-    /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
+    /// <p>If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
+    /// <p>If you're using the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
     /// <li>
@@ -558,8 +558,8 @@ impl TaskBuilder {
         &self.containers
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
-    /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
+    /// <p>If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
+    /// <p>If you're using the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
     /// <li>
@@ -584,8 +584,8 @@ impl TaskBuilder {
         self
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
-    /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
+    /// <p>If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
+    /// <p>If you're using the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
     /// <li>
@@ -610,8 +610,8 @@ impl TaskBuilder {
         self
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
-    /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
-    /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
+    /// <p>If you're using the EC2 launch type or the external launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>196608</code> CPU units (<code>192</code> vCPUs). If you do not specify a value, the parameter is ignored.</p>
+    /// <p>If you're using the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
     /// <p>The CPU units cannot be less than 1 vCPU when you use Windows containers on Fargate.</p>
     /// <ul>
     /// <li>

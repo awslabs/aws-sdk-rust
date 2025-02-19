@@ -16,7 +16,7 @@ pub struct PutAlarmInput {
     /// <li>
     /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
-    /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub metric_name: ::std::option::Option<crate::types::MetricName>,
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
@@ -90,7 +90,7 @@ impl PutAlarmInput {
     /// <li>
     /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
-    /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn metric_name(&self) -> ::std::option::Option<&crate::types::MetricName> {
         self.metric_name.as_ref()
     }
@@ -222,7 +222,7 @@ impl PutAlarmInputBuilder {
     /// <li>
     /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
-    /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     /// This field is required.
     pub fn metric_name(mut self, input: crate::types::MetricName) -> Self {
         self.metric_name = ::std::option::Option::Some(input);
@@ -239,7 +239,7 @@ impl PutAlarmInputBuilder {
     /// <li>
     /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
-    /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn set_metric_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
         self.metric_name = input;
         self
@@ -255,7 +255,7 @@ impl PutAlarmInputBuilder {
     /// <li>
     /// <p><b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p></li>
     /// </ul>
-    /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
+    /// <p>For more information about these metrics, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
     pub fn get_metric_name(&self) -> &::std::option::Option<crate::types::MetricName> {
         &self.metric_name
     }

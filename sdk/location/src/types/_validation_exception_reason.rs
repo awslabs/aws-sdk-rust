@@ -12,7 +12,14 @@ impl ValidationExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CannotParse", "FieldValidationFailed", "Missing", "Other", "UnknownOperation"]
+        &[
+            "CannotParse",
+            "FieldValidationFailed",
+            "Missing",
+            "Other",
+            "UnknownField",
+            "UnknownOperation",
+        ]
     }
 }
 impl<T> ::std::convert::From<T> for ValidationExceptionReason

@@ -10,7 +10,7 @@ pub struct GetBucketsOutput {
     /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
-    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     pub account_level_bpa_sync: ::std::option::Option<crate::types::AccountLevelBpaSync>,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl GetBucketsOutput {
         self.next_page_token.as_deref()
     }
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
-    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     pub fn account_level_bpa_sync(&self) -> ::std::option::Option<&crate::types::AccountLevelBpaSync> {
         self.account_level_bpa_sync.as_ref()
     }
@@ -96,19 +96,19 @@ impl GetBucketsOutputBuilder {
         &self.next_page_token
     }
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
-    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     pub fn account_level_bpa_sync(mut self, input: crate::types::AccountLevelBpaSync) -> Self {
         self.account_level_bpa_sync = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
-    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     pub fn set_account_level_bpa_sync(mut self, input: ::std::option::Option<crate::types::AccountLevelBpaSync>) -> Self {
         self.account_level_bpa_sync = input;
         self
     }
     /// <p>An object that describes the synchronization status of the Amazon S3 account-level block public access feature for your Lightsail buckets.</p>
-    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
+    /// <p>For more information about this feature and how it affects Lightsail buckets, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-block-public-access-for-buckets">Block public access for buckets in Amazon Lightsail</a>.</p>
     pub fn get_account_level_bpa_sync(&self) -> &::std::option::Option<crate::types::AccountLevelBpaSync> {
         &self.account_level_bpa_sync
     }

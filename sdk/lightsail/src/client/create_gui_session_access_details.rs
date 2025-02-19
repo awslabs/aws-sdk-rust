@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`status(Option<Status>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::status): <p>The status of the operation.</p>
     ///   - [`percentage_complete(Option<i32>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::percentage_complete): <p>The percentage of completion for the operation.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::failure_reason): <p>The reason the operation failed.</p>
-    ///   - [`sessions(Option<Vec::<Session>>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::sessions): <p>Returns information about the specified NICE DCV GUI session.</p>
+    ///   - [`sessions(Option<Vec::<Session>>)`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput::sessions): <p>Returns information about the specified Amazon DCV GUI session.</p>
     /// - On failure, responds with [`SdkError<CreateGUISessionAccessDetailsError>`](crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError)
     pub fn create_gui_session_access_details(
         &self,

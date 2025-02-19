@@ -37,6 +37,8 @@ pub use crate::types::_retry_configuration::RetryConfigurationBuilder;
 
 pub use crate::types::_action_declaration::ActionDeclarationBuilder;
 
+pub use crate::types::_environment_variable::EnvironmentVariableBuilder;
+
 pub use crate::types::_output_artifact::OutputArtifactBuilder;
 
 pub use crate::types::_action_type_id::ActionTypeIdBuilder;

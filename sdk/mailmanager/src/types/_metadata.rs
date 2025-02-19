@@ -20,6 +20,16 @@ pub struct Metadata {
     pub tls_cipher_suite: ::std::option::Option<::std::string::String>,
     /// <p>The TLS protocol used to communicate with the host from which the email was received.</p>
     pub tls_protocol: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the API call used when sent through a configuration set with archiving enabled.</p>
+    pub sending_method: ::std::option::Option<::std::string::String>,
+    /// <p>The identity name used to authorize the sending action when sent through a configuration set with archiving enabled.</p>
+    pub source_identity: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the dedicated IP pool used when sent through a configuration set with archiving enabled.</p>
+    pub sending_pool: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the configuration set used when sent through a configuration set with archiving enabled.</p>
+    pub configuration_set: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub source_arn: ::std::option::Option<::std::string::String>,
 }
 impl Metadata {
     /// <p>The timestamp of when the email was received.</p>
@@ -54,6 +64,26 @@ impl Metadata {
     pub fn tls_protocol(&self) -> ::std::option::Option<&str> {
         self.tls_protocol.as_deref()
     }
+    /// <p>The name of the API call used when sent through a configuration set with archiving enabled.</p>
+    pub fn sending_method(&self) -> ::std::option::Option<&str> {
+        self.sending_method.as_deref()
+    }
+    /// <p>The identity name used to authorize the sending action when sent through a configuration set with archiving enabled.</p>
+    pub fn source_identity(&self) -> ::std::option::Option<&str> {
+        self.source_identity.as_deref()
+    }
+    /// <p>The name of the dedicated IP pool used when sent through a configuration set with archiving enabled.</p>
+    pub fn sending_pool(&self) -> ::std::option::Option<&str> {
+        self.sending_pool.as_deref()
+    }
+    /// <p>The name of the configuration set used when sent through a configuration set with archiving enabled.</p>
+    pub fn configuration_set(&self) -> ::std::option::Option<&str> {
+        self.configuration_set.as_deref()
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+        self.source_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for Metadata {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -66,6 +96,11 @@ impl ::std::fmt::Debug for Metadata {
         formatter.field("sender_ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("tls_cipher_suite", &self.tls_cipher_suite);
         formatter.field("tls_protocol", &self.tls_protocol);
+        formatter.field("sending_method", &self.sending_method);
+        formatter.field("source_identity", &self.source_identity);
+        formatter.field("sending_pool", &self.sending_pool);
+        formatter.field("configuration_set", &self.configuration_set);
+        formatter.field("source_arn", &self.source_arn);
         formatter.finish()
     }
 }
@@ -88,6 +123,11 @@ pub struct MetadataBuilder {
     pub(crate) sender_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) tls_cipher_suite: ::std::option::Option<::std::string::String>,
     pub(crate) tls_protocol: ::std::option::Option<::std::string::String>,
+    pub(crate) sending_method: ::std::option::Option<::std::string::String>,
+    pub(crate) source_identity: ::std::option::Option<::std::string::String>,
+    pub(crate) sending_pool: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_set: ::std::option::Option<::std::string::String>,
+    pub(crate) source_arn: ::std::option::Option<::std::string::String>,
 }
 impl MetadataBuilder {
     /// <p>The timestamp of when the email was received.</p>
@@ -202,6 +242,76 @@ impl MetadataBuilder {
     pub fn get_tls_protocol(&self) -> &::std::option::Option<::std::string::String> {
         &self.tls_protocol
     }
+    /// <p>The name of the API call used when sent through a configuration set with archiving enabled.</p>
+    pub fn sending_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sending_method = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the API call used when sent through a configuration set with archiving enabled.</p>
+    pub fn set_sending_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sending_method = input;
+        self
+    }
+    /// <p>The name of the API call used when sent through a configuration set with archiving enabled.</p>
+    pub fn get_sending_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sending_method
+    }
+    /// <p>The identity name used to authorize the sending action when sent through a configuration set with archiving enabled.</p>
+    pub fn source_identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_identity = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identity name used to authorize the sending action when sent through a configuration set with archiving enabled.</p>
+    pub fn set_source_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_identity = input;
+        self
+    }
+    /// <p>The identity name used to authorize the sending action when sent through a configuration set with archiving enabled.</p>
+    pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_identity
+    }
+    /// <p>The name of the dedicated IP pool used when sent through a configuration set with archiving enabled.</p>
+    pub fn sending_pool(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sending_pool = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the dedicated IP pool used when sent through a configuration set with archiving enabled.</p>
+    pub fn set_sending_pool(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.sending_pool = input;
+        self
+    }
+    /// <p>The name of the dedicated IP pool used when sent through a configuration set with archiving enabled.</p>
+    pub fn get_sending_pool(&self) -> &::std::option::Option<::std::string::String> {
+        &self.sending_pool
+    }
+    /// <p>The name of the configuration set used when sent through a configuration set with archiving enabled.</p>
+    pub fn configuration_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.configuration_set = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the configuration set used when sent through a configuration set with archiving enabled.</p>
+    pub fn set_configuration_set(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.configuration_set = input;
+        self
+    }
+    /// <p>The name of the configuration set used when sent through a configuration set with archiving enabled.</p>
+    pub fn get_configuration_set(&self) -> &::std::option::Option<::std::string::String> {
+        &self.configuration_set
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_arn = input;
+        self
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
+    }
     /// Consumes the builder and constructs a [`Metadata`](crate::types::Metadata).
     pub fn build(self) -> crate::types::Metadata {
         crate::types::Metadata {
@@ -213,6 +323,11 @@ impl MetadataBuilder {
             sender_ip_address: self.sender_ip_address,
             tls_cipher_suite: self.tls_cipher_suite,
             tls_protocol: self.tls_protocol,
+            sending_method: self.sending_method,
+            source_identity: self.source_identity,
+            sending_pool: self.sending_pool,
+            configuration_set: self.configuration_set,
+            source_arn: self.source_arn,
         }
     }
 }
@@ -227,6 +342,11 @@ impl ::std::fmt::Debug for MetadataBuilder {
         formatter.field("sender_ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("tls_cipher_suite", &self.tls_cipher_suite);
         formatter.field("tls_protocol", &self.tls_protocol);
+        formatter.field("sending_method", &self.sending_method);
+        formatter.field("source_identity", &self.source_identity);
+        formatter.field("sending_pool", &self.sending_pool);
+        formatter.field("configuration_set", &self.configuration_set);
+        formatter.field("source_arn", &self.source_arn);
         formatter.finish()
     }
 }

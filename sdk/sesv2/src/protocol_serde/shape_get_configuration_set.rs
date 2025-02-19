@@ -102,6 +102,9 @@ pub(crate) fn de_get_configuration_set(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "ArchivingOptions" => {
+                    builder = builder.set_archiving_options(crate::protocol_serde::shape_archiving_options::de_archiving_options(tokens)?);
+                }
                 "ConfigurationSetName" => {
                     builder = builder.set_configuration_set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

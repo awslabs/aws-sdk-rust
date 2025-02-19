@@ -22,7 +22,7 @@ impl crate::operation::delete_auto_snapshot::builders::DeleteAutoSnapshotInputBu
 }
 /// Fluent builder constructing a request to `DeleteAutoSnapshot`.
 ///
-/// <p>Deletes an automatic snapshot of an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>Deletes an automatic snapshot of an instance or disk. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAutoSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

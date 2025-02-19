@@ -22,7 +22,7 @@ impl crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsInputBuilde
 }
 /// Fluent builder constructing a request to `GetAutoSnapshots`.
 ///
-/// <p>Returns the available automatic snapshots for an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>Returns the available automatic snapshots for an instance or disk. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAutoSnapshotsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

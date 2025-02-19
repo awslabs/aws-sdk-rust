@@ -23,7 +23,7 @@ impl crate::operation::create_distribution::builders::CreateDistributionInputBui
 /// Fluent builder constructing a request to `CreateDistribution`.
 ///
 /// <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
-/// <p>A distribution is a globally distributed network of caching servers that improve the performance of your website or web application hosted on a Lightsail instance. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content delivery networks in Amazon Lightsail</a>.</p>
+/// <p>A distribution is a globally distributed network of caching servers that improve the performance of your website or web application hosted on a Lightsail instance. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-content-delivery-network-distributions">Content delivery networks in Amazon Lightsail</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDistributionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

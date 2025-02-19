@@ -24,6 +24,8 @@ pub struct CreateFirewallInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub enabled_analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>,
 }
 impl CreateFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -71,6 +73,12 @@ impl CreateFirewallInput {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_analysis_types.is_none()`.
+    pub fn enabled_analysis_types(&self) -> &[crate::types::EnabledAnalysisType] {
+        self.enabled_analysis_types.as_deref().unwrap_or_default()
+    }
 }
 impl CreateFirewallInput {
     /// Creates a new builder-style object to manufacture [`CreateFirewallInput`](crate::operation::create_firewall::CreateFirewallInput).
@@ -93,6 +101,7 @@ pub struct CreateFirewallInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) enabled_analysis_types: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>,
 }
 impl CreateFirewallInputBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -127,7 +136,6 @@ impl CreateFirewallInputBuilder {
     }
     /// <p>The unique identifier of the VPC where Network Firewall should create the firewall.</p>
     /// <p>You can't change this setting after you create the firewall.</p>
-    /// This field is required.
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
         self
@@ -253,6 +261,26 @@ impl CreateFirewallInputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// Appends an item to `enabled_analysis_types`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_analysis_types`](Self::set_enabled_analysis_types).
+    ///
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn enabled_analysis_types(mut self, input: crate::types::EnabledAnalysisType) -> Self {
+        let mut v = self.enabled_analysis_types.unwrap_or_default();
+        v.push(input);
+        self.enabled_analysis_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn set_enabled_analysis_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>) -> Self {
+        self.enabled_analysis_types = input;
+        self
+    }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn get_enabled_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>> {
+        &self.enabled_analysis_types
+    }
     /// Consumes the builder and constructs a [`CreateFirewallInput`](crate::operation::create_firewall::CreateFirewallInput).
     pub fn build(
         self,
@@ -268,6 +296,7 @@ impl CreateFirewallInputBuilder {
             description: self.description,
             tags: self.tags,
             encryption_configuration: self.encryption_configuration,
+            enabled_analysis_types: self.enabled_analysis_types,
         })
     }
 }

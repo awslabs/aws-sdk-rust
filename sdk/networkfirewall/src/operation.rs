@@ -58,6 +58,12 @@ pub mod describe_tls_inspection_configuration;
 /// Types for the `DisassociateSubnets` operation.
 pub mod disassociate_subnets;
 
+/// Types for the `GetAnalysisReportResults` operation.
+pub mod get_analysis_report_results;
+
+/// Types for the `ListAnalysisReports` operation.
+pub mod list_analysis_reports;
+
 /// Types for the `ListFirewallPolicies` operation.
 pub mod list_firewall_policies;
 
@@ -76,11 +82,17 @@ pub mod list_tls_inspection_configurations;
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;
 
+/// Types for the `StartAnalysisReport` operation.
+pub mod start_analysis_report;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateFirewallAnalysisSettings` operation.
+pub mod update_firewall_analysis_settings;
 
 /// Types for the `UpdateFirewallDeleteProtection` operation.
 pub mod update_firewall_delete_protection;

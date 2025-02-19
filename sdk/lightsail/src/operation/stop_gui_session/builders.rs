@@ -22,7 +22,7 @@ impl crate::operation::stop_gui_session::builders::StopGuiSessionInputBuilder {
 }
 /// Fluent builder constructing a request to `StopGUISession`.
 ///
-/// <p>Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or application. The session will close and any unsaved data will be lost.</p>
+/// <p>Terminates a web-based Amazon DCV session that’s used to access a virtual computer’s operating system or application. The session will close and any unsaved data will be lost.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopGUISessionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

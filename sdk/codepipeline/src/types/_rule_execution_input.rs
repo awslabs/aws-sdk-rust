@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleExecutionInput {
-    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version.</p>
+    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline rule reference</a>.</p>
     pub rule_type_id: ::std::option::Option<crate::types::RuleTypeId>,
     /// <p>Configuration data for a rule execution, such as the resolved values for that run.</p>
     pub configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -18,7 +18,7 @@ pub struct RuleExecutionInput {
     pub input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
 }
 impl RuleExecutionInput {
-    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version.</p>
+    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline rule reference</a>.</p>
     pub fn rule_type_id(&self) -> ::std::option::Option<&crate::types::RuleTypeId> {
         self.rule_type_id.as_ref()
     }
@@ -64,17 +64,17 @@ pub struct RuleExecutionInputBuilder {
     pub(crate) input_artifacts: ::std::option::Option<::std::vec::Vec<crate::types::ArtifactDetail>>,
 }
 impl RuleExecutionInputBuilder {
-    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version.</p>
+    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline rule reference</a>.</p>
     pub fn rule_type_id(mut self, input: crate::types::RuleTypeId) -> Self {
         self.rule_type_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version.</p>
+    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline rule reference</a>.</p>
     pub fn set_rule_type_id(mut self, input: ::std::option::Option<crate::types::RuleTypeId>) -> Self {
         self.rule_type_id = input;
         self
     }
-    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version.</p>
+    /// <p>The ID for the rule type, which is made up of the combined values for category, owner, provider, and version. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage conditions</a>. For more information about rules, see the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline rule reference</a>.</p>
     pub fn get_rule_type_id(&self) -> &::std::option::Option<crate::types::RuleTypeId> {
         &self.rule_type_id
     }

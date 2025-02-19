@@ -243,6 +243,8 @@ pub use crate::types::_dedicated_ip_pool::DedicatedIpPool;
 
 pub use crate::types::_event_destination::EventDestination;
 
+pub use crate::types::_archiving_options::ArchivingOptions;
+
 pub use crate::types::_suppression_options::SuppressionOptions;
 
 pub use crate::types::_sending_options::SendingOptions;
@@ -278,6 +280,8 @@ pub use crate::types::_metric_data_result::MetricDataResult;
 pub use crate::types::_batch_get_metric_data_query::BatchGetMetricDataQuery;
 
 mod _account_details;
+
+mod _archiving_options;
 
 mod _batch_get_metric_data_query;
 

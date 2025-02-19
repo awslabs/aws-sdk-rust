@@ -40,7 +40,8 @@ where
                             builder = builder.set_accuracy(crate::protocol_serde::shape_positional_accuracy::de_positional_accuracy(tokens)?);
                         }
                         "PositionProperties" => {
-                            builder = builder.set_position_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
+                            builder = builder
+                                .set_position_properties(crate::protocol_serde::shape_position_property_map::de_position_property_map(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

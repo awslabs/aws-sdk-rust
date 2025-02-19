@@ -143,6 +143,15 @@ pub(crate) fn describe_tls_inspection_configuration_output_output_correct_errors
     builder
 }
 
+pub(crate) fn start_analysis_report_output_output_correct_errors(
+    mut builder: crate::operation::start_analysis_report::builders::StartAnalysisReportOutputBuilder,
+) -> crate::operation::start_analysis_report::builders::StartAnalysisReportOutputBuilder {
+    if builder.analysis_report_id.is_none() {
+        builder.analysis_report_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_firewall_policy_output_output_correct_errors(
     mut builder: crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyOutputBuilder,
 ) -> crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyOutputBuilder {

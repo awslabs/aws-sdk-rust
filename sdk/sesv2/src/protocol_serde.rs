@@ -159,6 +159,8 @@ pub(crate) mod shape_put_account_suppression_attributes;
 
 pub(crate) mod shape_put_account_vdm_attributes;
 
+pub(crate) mod shape_put_configuration_set_archiving_options;
+
 pub(crate) mod shape_put_configuration_set_delivery_options;
 
 pub(crate) mod shape_put_configuration_set_reputation_options;
@@ -291,6 +293,8 @@ pub(crate) mod shape_put_account_suppression_attributes_input;
 
 pub(crate) mod shape_put_account_vdm_attributes_input;
 
+pub(crate) mod shape_put_configuration_set_archiving_options_input;
+
 pub(crate) mod shape_put_configuration_set_delivery_options_input;
 
 pub(crate) mod shape_put_configuration_set_reputation_options_input;
@@ -350,6 +354,8 @@ pub(crate) mod shape_update_email_identity_policy_input;
 pub(crate) mod shape_update_email_template_input;
 
 pub(crate) mod shape_account_details;
+
+pub(crate) mod shape_archiving_options;
 
 pub(crate) mod shape_batch_get_metric_data_query;
 

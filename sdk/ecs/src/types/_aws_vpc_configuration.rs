@@ -12,7 +12,16 @@ pub struct AwsVpcConfiguration {
     /// <p>All specified security groups must be from the same VPC.</p>
     /// </note>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>ENABLED</code>.</p>
+    /// <p>Whether the task's elastic network interface receives a public IP address.</p>
+    /// <p>Consider the following when you set this value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
+    /// </ul>
     pub assign_public_ip: ::std::option::Option<crate::types::AssignPublicIp>,
 }
 impl AwsVpcConfiguration {
@@ -31,7 +40,16 @@ impl AwsVpcConfiguration {
     pub fn security_groups(&self) -> &[::std::string::String] {
         self.security_groups.as_deref().unwrap_or_default()
     }
-    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>ENABLED</code>.</p>
+    /// <p>Whether the task's elastic network interface receives a public IP address.</p>
+    /// <p>Consider the following when you set this value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
+    /// </ul>
     pub fn assign_public_ip(&self) -> ::std::option::Option<&crate::types::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
@@ -104,17 +122,44 @@ impl AwsVpcConfigurationBuilder {
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }
-    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>ENABLED</code>.</p>
+    /// <p>Whether the task's elastic network interface receives a public IP address.</p>
+    /// <p>Consider the following when you set this value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
+    /// </ul>
     pub fn assign_public_ip(mut self, input: crate::types::AssignPublicIp) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>ENABLED</code>.</p>
+    /// <p>Whether the task's elastic network interface receives a public IP address.</p>
+    /// <p>Consider the following when you set this value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
+    /// </ul>
     pub fn set_assign_public_ip(mut self, input: ::std::option::Option<crate::types::AssignPublicIp>) -> Self {
         self.assign_public_ip = input;
         self
     }
-    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>ENABLED</code>.</p>
+    /// <p>Whether the task's elastic network interface receives a public IP address.</p>
+    /// <p>Consider the following when you set this value:</p>
+    /// <ul>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
+    /// <li>
+    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
+    /// </ul>
     pub fn get_assign_public_ip(&self) -> &::std::option::Option<crate::types::AssignPublicIp> {
         &self.assign_public_ip
     }

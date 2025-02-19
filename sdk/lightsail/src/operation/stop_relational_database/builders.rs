@@ -22,8 +22,10 @@ impl crate::operation::stop_relational_database::builders::StopRelationalDatabas
 }
 /// Fluent builder constructing a request to `StopRelationalDatabase`.
 ///
-/// <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
-/// <p>The <code>stop relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>Stops a specific database that is currently running in Amazon Lightsail.</p><note>
+/// <p>If you don't manually start your database instance after it has been stopped for seven consecutive days, Amazon Lightsail automatically starts it for you. This action helps ensure that your database instance doesn't fall behind on any required maintenance updates.</p>
+/// </note>
+/// <p>The <code>stop relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopRelationalDatabaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,7 +23,7 @@ impl crate::operation::create_instance_snapshot::builders::CreateInstanceSnapsho
 /// Fluent builder constructing a request to `CreateInstanceSnapshot`.
 ///
 /// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a new instance that is based on that snapshot.</p>
-/// <p>The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

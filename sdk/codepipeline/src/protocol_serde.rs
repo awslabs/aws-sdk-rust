@@ -499,6 +499,8 @@ pub(crate) mod shape_condition;
 
 pub(crate) mod shape_condition_state_list;
 
+pub(crate) mod shape_environment_variable;
+
 pub(crate) mod shape_git_pull_request_filter;
 
 pub(crate) mod shape_git_push_filter;
@@ -566,6 +568,8 @@ pub(crate) mod shape_rule_declaration;
 pub(crate) mod shape_command_list;
 
 pub(crate) mod shape_condition_execution;
+
+pub(crate) mod shape_environment_variable_list;
 
 pub(crate) mod shape_input_artifact_list;
 

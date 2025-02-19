@@ -23,7 +23,7 @@ impl crate::operation::delete_instance_snapshot::builders::DeleteInstanceSnapsho
 /// Fluent builder constructing a request to `DeleteInstanceSnapshot`.
 ///
 /// <p>Deletes a specific snapshot of a virtual private server (or <i>instance</i>).</p>
-/// <p>The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>delete instance snapshot</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance snapshot name</code>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInstanceSnapshotFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

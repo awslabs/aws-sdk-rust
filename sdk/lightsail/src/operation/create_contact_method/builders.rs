@@ -23,7 +23,7 @@ impl crate::operation::create_contact_method::builders::CreateContactMethodInput
 /// Fluent builder constructing a request to `CreateContactMethod`.
 ///
 /// <p>Creates an email or SMS text message contact method.</p>
-/// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+/// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactMethodFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,7 +126,7 @@ impl CreateContactMethodFluentBuilder {
     /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p></li>
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     pub fn protocol(mut self, input: crate::types::ContactProtocol) -> Self {
         self.inner = self.inner.protocol(input);
         self
@@ -148,7 +148,7 @@ impl CreateContactMethodFluentBuilder {
     /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p></li>
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::ContactProtocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
@@ -170,7 +170,7 @@ impl CreateContactMethodFluentBuilder {
     /// <p>Asia Pacific (Sydney) (<code>ap-southeast-2</code>)</p></li>
     /// </ul>
     /// <p>For a list of countries/regions where SMS text messages can be sent, and the latest Amazon Web Services Regions where SMS text messaging is supported, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html">Supported Regions and Countries</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+    /// <p>For more information about notifications in Amazon Lightsail, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::ContactProtocol> {
         self.inner.get_protocol()
     }

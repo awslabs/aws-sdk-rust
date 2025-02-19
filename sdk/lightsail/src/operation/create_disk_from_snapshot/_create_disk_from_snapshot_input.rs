@@ -28,7 +28,7 @@ pub struct CreateDiskFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub source_disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the automatic snapshot to use for the new disk. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
@@ -39,7 +39,7 @@ pub struct CreateDiskFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub restore_date: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
@@ -48,7 +48,7 @@ pub struct CreateDiskFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
 }
@@ -94,7 +94,7 @@ impl CreateDiskFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn source_disk_name(&self) -> ::std::option::Option<&str> {
         self.source_disk_name.as_deref()
@@ -107,7 +107,7 @@ impl CreateDiskFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn restore_date(&self) -> ::std::option::Option<&str> {
         self.restore_date.as_deref()
@@ -118,7 +118,7 @@ impl CreateDiskFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn use_latest_restorable_auto_snapshot(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_auto_snapshot
@@ -272,7 +272,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn source_disk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_disk_name = ::std::option::Option::Some(input.into());
@@ -284,7 +284,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn set_source_disk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_disk_name = input;
@@ -296,7 +296,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>disk snapshot name</code> parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn get_source_disk_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_disk_name
@@ -309,7 +309,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn restore_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_date = ::std::option::Option::Some(input.into());
@@ -323,7 +323,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn set_restore_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_date = input;
@@ -337,7 +337,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn get_restore_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_date
@@ -348,7 +348,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
         self.use_latest_restorable_auto_snapshot = ::std::option::Option::Some(input);
@@ -360,7 +360,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn set_use_latest_restorable_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_latest_restorable_auto_snapshot = input;
@@ -372,7 +372,7 @@ impl CreateDiskFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn get_use_latest_restorable_auto_snapshot(&self) -> &::std::option::Option<bool> {
         &self.use_latest_restorable_auto_snapshot

@@ -205,6 +205,9 @@ pub mod put_account_suppression_attributes;
 /// Types for the `PutAccountVdmAttributes` operation.
 pub mod put_account_vdm_attributes;
 
+/// Types for the `PutConfigurationSetArchivingOptions` operation.
+pub mod put_configuration_set_archiving_options;
+
 /// Types for the `PutConfigurationSetDeliveryOptions` operation.
 pub mod put_configuration_set_delivery_options;
 

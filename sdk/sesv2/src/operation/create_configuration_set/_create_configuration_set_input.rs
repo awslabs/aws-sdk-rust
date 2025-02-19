@@ -20,6 +20,8 @@ pub struct CreateConfigurationSetInput {
     pub suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     /// <p>An object that defines the VDM options for emails that you send using the configuration set.</p>
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
 }
 impl CreateConfigurationSetInput {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
@@ -56,6 +58,10 @@ impl CreateConfigurationSetInput {
     pub fn vdm_options(&self) -> ::std::option::Option<&crate::types::VdmOptions> {
         self.vdm_options.as_ref()
     }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn archiving_options(&self) -> ::std::option::Option<&crate::types::ArchivingOptions> {
+        self.archiving_options.as_ref()
+    }
 }
 impl CreateConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
@@ -76,6 +82,7 @@ pub struct CreateConfigurationSetInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,
+    pub(crate) archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
@@ -197,6 +204,20 @@ impl CreateConfigurationSetInputBuilder {
     pub fn get_vdm_options(&self) -> &::std::option::Option<crate::types::VdmOptions> {
         &self.vdm_options
     }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn archiving_options(mut self, input: crate::types::ArchivingOptions) -> Self {
+        self.archiving_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn set_archiving_options(mut self, input: ::std::option::Option<crate::types::ArchivingOptions>) -> Self {
+        self.archiving_options = input;
+        self
+    }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn get_archiving_options(&self) -> &::std::option::Option<crate::types::ArchivingOptions> {
+        &self.archiving_options
+    }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
@@ -213,6 +234,7 @@ impl CreateConfigurationSetInputBuilder {
             tags: self.tags,
             suppression_options: self.suppression_options,
             vdm_options: self.vdm_options,
+            archiving_options: self.archiving_options,
         })
     }
 }

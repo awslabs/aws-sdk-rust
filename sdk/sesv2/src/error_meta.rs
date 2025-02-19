@@ -2215,6 +2215,49 @@ impl From<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesE
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError> for Error {
+    fn from(err: crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError) -> Self {
+        match err {
+            crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError,
             R,
         >,

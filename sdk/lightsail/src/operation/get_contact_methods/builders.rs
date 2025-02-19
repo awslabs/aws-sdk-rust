@@ -23,7 +23,7 @@ impl crate::operation::get_contact_methods::builders::GetContactMethodsInputBuil
 /// Fluent builder constructing a request to `GetContactMethods`.
 ///
 /// <p>Returns information about the configured contact methods. Specify a protocol in your request to return information about a specific contact method.</p>
-/// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+/// <p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can add one email address and one mobile phone number contact method in each Amazon Web Services Region. However, SMS text messaging is not supported in some Amazon Web Services Regions, and SMS text messages cannot be sent to some countries/regions. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetContactMethodsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -19,7 +19,7 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <p>The bundle of specification information for your virtual private server (or <i>instance</i>), including the pricing plan (<code>micro_x_x</code>).</p>
     pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p><note>
-    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The name for your key pair.</p>
@@ -39,7 +39,7 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub source_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The date of the automatic snapshot to use for the new instance. Use the <code>get auto snapshots</code> operation to identify the dates of the available automatic snapshots.</p>
@@ -50,7 +50,7 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub restore_date: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value to indicate whether to use the latest available automatic snapshot.</p>
@@ -59,7 +59,7 @@ pub struct CreateInstancesFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub use_latest_restorable_auto_snapshot: ::std::option::Option<bool>,
 }
@@ -94,7 +94,7 @@ impl CreateInstancesFromSnapshotInput {
         self.bundle_id.as_deref()
     }
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p><note>
-    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
@@ -128,7 +128,7 @@ impl CreateInstancesFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn source_instance_name(&self) -> ::std::option::Option<&str> {
         self.source_instance_name.as_deref()
@@ -141,7 +141,7 @@ impl CreateInstancesFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn restore_date(&self) -> ::std::option::Option<&str> {
         self.restore_date.as_deref()
@@ -152,7 +152,7 @@ impl CreateInstancesFromSnapshotInput {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn use_latest_restorable_auto_snapshot(&self) -> ::std::option::Option<bool> {
         self.use_latest_restorable_auto_snapshot
@@ -290,21 +290,21 @@ impl CreateInstancesFromSnapshotInputBuilder {
         &self.bundle_id
     }
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p><note>
-    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p><note>
-    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
     }
     /// <p>You can create a launch script that configures a server with additional user data. For example, <code>apt-get -y update</code>.</p><note>
-    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
+    /// <p>Depending on the machine image you choose, the command to get software on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
     /// </note>
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_data
@@ -392,7 +392,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn source_instance_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_instance_name = ::std::option::Option::Some(input.into());
@@ -404,7 +404,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn set_source_instance_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_instance_name = input;
@@ -416,7 +416,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>instance snapshot name</code> parameter. The <code>source instance name</code> and <code>instance snapshot name</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn get_source_instance_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_instance_name
@@ -429,7 +429,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn restore_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_date = ::std::option::Option::Some(input.into());
@@ -443,7 +443,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn set_restore_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_date = input;
@@ -457,7 +457,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>use latest restorable auto snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable auto snapshot</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn get_restore_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_date
@@ -468,7 +468,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
         self.use_latest_restorable_auto_snapshot = ::std::option::Option::Some(input);
@@ -480,7 +480,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn set_use_latest_restorable_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_latest_restorable_auto_snapshot = input;
@@ -492,7 +492,7 @@ impl CreateInstancesFromSnapshotInputBuilder {
     /// <li>
     /// <p>This parameter cannot be defined together with the <code>restore date</code> parameter. The <code>use latest restorable auto snapshot</code> and <code>restore date</code> parameters are mutually exclusive.</p></li>
     /// <li>
-    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
+    /// <p>Define this parameter only when creating a new instance from an automatic snapshot. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p></li>
     /// </ul>
     pub fn get_use_latest_restorable_auto_snapshot(&self) -> &::std::option::Option<bool> {
         &self.use_latest_restorable_auto_snapshot

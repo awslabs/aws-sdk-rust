@@ -24,7 +24,7 @@ impl crate::operation::create_load_balancer_tls_certificate::builders::CreateLoa
 ///
 /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.</p>
 /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
-/// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerTlsCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -201,6 +201,10 @@ mod describe_tls_inspection_configuration;
 
 mod disassociate_subnets;
 
+mod get_analysis_report_results;
+
+mod list_analysis_reports;
+
 mod list_firewall_policies;
 
 mod list_firewalls;
@@ -213,9 +217,13 @@ mod list_tls_inspection_configurations;
 
 mod put_resource_policy;
 
+mod start_analysis_report;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_firewall_analysis_settings;
 
 mod update_firewall_delete_protection;
 

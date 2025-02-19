@@ -137,7 +137,7 @@ pub(crate) fn de_get_device_position(
                     builder = builder.set_position(crate::protocol_serde::shape_position::de_position(tokens)?);
                 }
                 "PositionProperties" => {
-                    builder = builder.set_position_properties(crate::protocol_serde::shape_property_map::de_property_map(tokens)?);
+                    builder = builder.set_position_properties(crate::protocol_serde::shape_position_property_map::de_position_property_map(tokens)?);
                 }
                 "ReceivedTime" => {
                     builder = builder.set_received_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

@@ -323,6 +323,8 @@ pub(crate) mod shape_position;
 
 pub(crate) mod shape_position_list;
 
+pub(crate) mod shape_position_property_map;
+
 pub(crate) mod shape_positional_accuracy;
 
 pub(crate) mod shape_property_map;

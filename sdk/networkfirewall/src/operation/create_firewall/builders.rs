@@ -28,6 +28,7 @@ impl crate::operation::create_firewall::builders::CreateFirewallInputBuilder {
 /// <p>To update the settings for a firewall, you use the operations that apply to the settings themselves, for example <code>UpdateLoggingConfiguration</code>, <code>AssociateSubnets</code>, and <code>UpdateFirewallDeleteProtection</code>.</p>
 /// <p>To manage a firewall's tags, use the standard Amazon Web Services resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
 /// <p>To retrieve information about firewalls, use <code>ListFirewalls</code> and <code>DescribeFirewall</code>.</p>
+/// <p>To generate a report on the last 30 days of traffic monitored by a firewall, use <code>StartAnalysisReport</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFirewallFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -265,5 +266,24 @@ impl CreateFirewallFluentBuilder {
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
+    }
+    ///
+    /// Appends an item to `EnabledAnalysisTypes`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_analysis_types`](Self::set_enabled_analysis_types).
+    ///
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn enabled_analysis_types(mut self, input: crate::types::EnabledAnalysisType) -> Self {
+        self.inner = self.inner.enabled_analysis_types(input);
+        self
+    }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn set_enabled_analysis_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>>) -> Self {
+        self.inner = self.inner.set_enabled_analysis_types(input);
+        self
+    }
+    /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
+    pub fn get_enabled_analysis_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledAnalysisType>> {
+        self.inner.get_enabled_analysis_types()
     }
 }

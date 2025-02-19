@@ -22,7 +22,7 @@ impl crate::operation::enable_add_on::builders::EnableAddOnInputBuilder {
 }
 /// Fluent builder constructing a request to `EnableAddOn`.
 ///
-/// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableAddOnFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

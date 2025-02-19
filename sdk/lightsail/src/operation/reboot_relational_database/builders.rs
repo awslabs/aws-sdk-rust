@@ -23,7 +23,7 @@ impl crate::operation::reboot_relational_database::builders::RebootRelationalDat
 /// Fluent builder constructing a request to `RebootRelationalDatabase`.
 ///
 /// <p>Restarts a specific database in Amazon Lightsail.</p>
-/// <p>The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>reboot relational database</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RebootRelationalDatabaseFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

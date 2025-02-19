@@ -6,7 +6,7 @@
 pub struct Recommendation {
     /// <p>The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>, <code>BIMI</code>, or <code>COMPLAINT</code>.</p>
     pub r#type: ::std::option::Option<crate::types::RecommendationType>,
     /// <p>The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code> are different recommendations about your DKIM setup.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl Recommendation {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>, <code>BIMI</code>, or <code>COMPLAINT</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecommendationType> {
         self.r#type.as_ref()
     }
@@ -83,17 +83,17 @@ impl RecommendationBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>, <code>BIMI</code>, or <code>COMPLAINT</code>.</p>
     pub fn r#type(mut self, input: crate::types::RecommendationType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>, <code>BIMI</code>, or <code>COMPLAINT</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecommendationType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code> or <code>BIMI</code>.</p>
+    /// <p>The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>, <code>BIMI</code>, or <code>COMPLAINT</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
         &self.r#type
     }

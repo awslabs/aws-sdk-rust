@@ -23,7 +23,7 @@ impl crate::operation::delete_instance::builders::DeleteInstanceInputBuilder {
 /// Fluent builder constructing a request to `DeleteInstance`.
 ///
 /// <p>Deletes an Amazon Lightsail instance.</p>
-/// <p>The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>delete instance</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>instance name</code>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

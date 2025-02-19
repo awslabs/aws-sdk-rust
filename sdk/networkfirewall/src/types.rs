@@ -121,6 +121,8 @@ pub use crate::types::_override_action::OverrideAction;
 
 pub use crate::types::_stateless_rule_group_reference::StatelessRuleGroupReference;
 
+pub use crate::types::_enabled_analysis_type::EnabledAnalysisType;
+
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadata;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadata;
@@ -132,6 +134,14 @@ pub use crate::types::_resource_managed_status::ResourceManagedStatus;
 pub use crate::types::_firewall_metadata::FirewallMetadata;
 
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadata;
+
+pub use crate::types::_analysis_report::AnalysisReport;
+
+pub use crate::types::_analysis_type_report_result::AnalysisTypeReportResult;
+
+pub use crate::types::_unique_sources::UniqueSources;
+
+pub use crate::types::_hits::Hits;
 
 pub use crate::types::_subnet_mapping::SubnetMapping;
 
@@ -165,7 +175,11 @@ mod _action_definition;
 
 mod _address;
 
+mod _analysis_report;
+
 mod _analysis_result;
+
+mod _analysis_type_report_result;
 
 mod _attachment;
 
@@ -182,6 +196,8 @@ mod _configuration_sync_state;
 mod _custom_action;
 
 mod _dimension;
+
+mod _enabled_analysis_type;
 
 mod _encryption_configuration;
 
@@ -206,6 +222,8 @@ mod _flow_timeouts;
 mod _generated_rules_type;
 
 mod _header;
+
+mod _hits;
 
 mod _identified_type;
 
@@ -322,6 +340,8 @@ mod _tls_inspection_configuration;
 mod _tls_inspection_configuration_metadata;
 
 mod _tls_inspection_configuration_response;
+
+mod _unique_sources;
 
 /// Builders
 pub mod builders;

@@ -43,7 +43,7 @@ pub struct ClusterInstanceGroupDetails {
     pub training_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the training plan associated with this cluster instance group.</p>
     pub training_plan_status: ::std::option::Option<::std::string::String>,
-    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
+    /// <p>The customized Amazon VPC configuration at the instance group level that overrides the default Amazon VPC configuration of the SageMaker HyperPod cluster.</p>
     pub override_vpc_config: ::std::option::Option<crate::types::VpcConfig>,
 }
 impl ClusterInstanceGroupDetails {
@@ -114,7 +114,7 @@ impl ClusterInstanceGroupDetails {
     pub fn training_plan_status(&self) -> ::std::option::Option<&str> {
         self.training_plan_status.as_deref()
     }
-    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
+    /// <p>The customized Amazon VPC configuration at the instance group level that overrides the default Amazon VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn override_vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.override_vpc_config.as_ref()
     }
@@ -370,17 +370,17 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_training_plan_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.training_plan_status
     }
-    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
+    /// <p>The customized Amazon VPC configuration at the instance group level that overrides the default Amazon VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn override_vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.override_vpc_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
+    /// <p>The customized Amazon VPC configuration at the instance group level that overrides the default Amazon VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn set_override_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.override_vpc_config = input;
         self
     }
-    /// <p>The customized VPC configuration at the instance group level that overrides the default VPC configuration of the SageMaker HyperPod cluster.</p>
+    /// <p>The customized Amazon VPC configuration at the instance group level that overrides the default Amazon VPC configuration of the SageMaker HyperPod cluster.</p>
     pub fn get_override_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.override_vpc_config
     }

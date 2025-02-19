@@ -23,7 +23,7 @@ impl crate::operation::create_disk::builders::CreateDiskInputBuilder {
 /// Fluent builder constructing a request to `CreateDisk`.
 ///
 /// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (<code>us-east-2a</code>).</p>
-/// <p>The <code>create disk</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>create disk</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDiskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

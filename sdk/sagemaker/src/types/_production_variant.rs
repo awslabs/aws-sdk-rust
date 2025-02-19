@@ -45,7 +45,7 @@ pub struct ProductionVariant {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
     /// <p>CUDA version: 12.2</p></li>
     /// </ul>
@@ -58,11 +58,11 @@ pub struct ProductionVariant {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
-    /// <p>CUDA driver version: 12.2</p></li>
+    /// <p>CUDA version: 12.2</p></li>
     /// <li>
-    /// <p>CUDA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -73,11 +73,11 @@ pub struct ProductionVariant {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 550.144.01</p></li>
+    /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
-    /// <p>Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -153,7 +153,7 @@ impl ProductionVariant {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
     /// <p>CUDA version: 12.2</p></li>
     /// </ul>
@@ -166,11 +166,11 @@ impl ProductionVariant {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
-    /// <p>CUDA driver version: 12.2</p></li>
+    /// <p>CUDA version: 12.2</p></li>
     /// <li>
-    /// <p>CUDA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -181,11 +181,11 @@ impl ProductionVariant {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 550.144.01</p></li>
+    /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
-    /// <p>Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -433,7 +433,7 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
     /// <p>CUDA version: 12.2</p></li>
     /// </ul>
@@ -446,11 +446,11 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
-    /// <p>CUDA driver version: 12.2</p></li>
+    /// <p>CUDA version: 12.2</p></li>
     /// <li>
-    /// <p>CUDA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -461,11 +461,11 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 550.144.01</p></li>
+    /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
-    /// <p>Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -485,7 +485,7 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
     /// <p>CUDA version: 12.2</p></li>
     /// </ul>
@@ -498,11 +498,11 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
-    /// <p>CUDA driver version: 12.2</p></li>
+    /// <p>CUDA version: 12.2</p></li>
     /// <li>
-    /// <p>CUDA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -513,11 +513,11 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 550.144.01</p></li>
+    /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
-    /// <p>Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// </dl>
@@ -537,7 +537,7 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
     /// <p>CUDA version: 12.2</p></li>
     /// </ul>
@@ -550,11 +550,11 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 535.54.03</p></li>
+    /// <p>NVIDIA driver version: 535</p></li>
     /// <li>
-    /// <p>CUDA driver version: 12.2</p></li>
+    /// <p>CUDA version: 12.2</p></li>
     /// <li>
-    /// <p>CUDA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// <dt>
@@ -565,11 +565,11 @@ impl ProductionVariantBuilder {
     /// <li>
     /// <p>Accelerator: GPU</p></li>
     /// <li>
-    /// <p>NVIDIA driver version: 550.144.01</p></li>
+    /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
     /// <li>
-    /// <p>Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
     /// </dd>
     /// </dl>

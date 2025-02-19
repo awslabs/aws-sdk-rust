@@ -29,7 +29,7 @@ pub struct VerificationInfo {
     /// <li>
     /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
     /// <li>
-    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid Amazon Web Services region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub error_type: ::std::option::Option<crate::types::VerificationError>,
     /// <p>An object that contains information about the start of authority (SOA) record associated with the identity.</p>
@@ -65,7 +65,7 @@ impl VerificationInfo {
     /// <li>
     /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
     /// <li>
-    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid Amazon Web Services region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn error_type(&self) -> ::std::option::Option<&crate::types::VerificationError> {
         self.error_type.as_ref()
@@ -141,7 +141,7 @@ impl VerificationInfoBuilder {
     /// <li>
     /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
     /// <li>
-    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid Amazon Web Services region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn error_type(mut self, input: crate::types::VerificationError) -> Self {
         self.error_type = ::std::option::Option::Some(input);
@@ -168,7 +168,7 @@ impl VerificationInfoBuilder {
     /// <li>
     /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
     /// <li>
-    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid Amazon Web Services region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn set_error_type(mut self, input: ::std::option::Option<crate::types::VerificationError>) -> Self {
         self.error_type = input;
@@ -195,7 +195,7 @@ impl VerificationInfoBuilder {
     /// <li>
     /// <p><code>REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED</code> – The verification failed because the specified primary identity is a replica of another identity, and multi-level replication is not supported; the primary identity must be a non-replica identity.</p></li>
     /// <li>
-    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid AWS region where Amazon SES is available and different from the replica region.</p></li>
+    /// <p><code>REPLICATION_PRIMARY_INVALID_REGION</code> – The verification failed due to an invalid primary region specified. Ensure you provide a valid Amazon Web Services region where Amazon SES is available and different from the replica region.</p></li>
     /// </ul>
     pub fn get_error_type(&self) -> &::std::option::Option<crate::types::VerificationError> {
         &self.error_type

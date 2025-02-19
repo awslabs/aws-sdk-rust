@@ -514,6 +514,18 @@ pub(crate) fn s3_artifact_location_correct_errors(
     builder
 }
 
+pub(crate) fn environment_variable_correct_errors(
+    mut builder: crate::types::builders::EnvironmentVariableBuilder,
+) -> crate::types::builders::EnvironmentVariableBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn input_artifact_correct_errors(
     mut builder: crate::types::builders::InputArtifactBuilder,
 ) -> crate::types::builders::InputArtifactBuilder {

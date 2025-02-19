@@ -54,5 +54,14 @@ pub fn ser_create_firewall_input_input(
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_17, var_16)?;
         object_17.finish();
     }
+    if let Some(var_18) = &input.enabled_analysis_types {
+        let mut array_19 = object.key("EnabledAnalysisTypes").start_array();
+        for item_20 in var_18 {
+            {
+                array_19.value().string(item_20.as_str());
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }

@@ -11,7 +11,7 @@ pub struct CreateGuiSessionAccessDetailsOutput {
     pub percentage_complete: ::std::option::Option<i32>,
     /// <p>The reason the operation failed.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
-    /// <p>Returns information about the specified NICE DCV GUI session.</p>
+    /// <p>Returns information about the specified Amazon DCV GUI session.</p>
     pub sessions: ::std::option::Option<::std::vec::Vec<crate::types::Session>>,
     _request_id: Option<String>,
 }
@@ -32,7 +32,7 @@ impl CreateGuiSessionAccessDetailsOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
-    /// <p>Returns information about the specified NICE DCV GUI session.</p>
+    /// <p>Returns information about the specified Amazon DCV GUI session.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sessions.is_none()`.
     pub fn sessions(&self) -> &[crate::types::Session] {
@@ -123,19 +123,19 @@ impl CreateGuiSessionAccessDetailsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sessions`](Self::set_sessions).
     ///
-    /// <p>Returns information about the specified NICE DCV GUI session.</p>
+    /// <p>Returns information about the specified Amazon DCV GUI session.</p>
     pub fn sessions(mut self, input: crate::types::Session) -> Self {
         let mut v = self.sessions.unwrap_or_default();
         v.push(input);
         self.sessions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns information about the specified NICE DCV GUI session.</p>
+    /// <p>Returns information about the specified Amazon DCV GUI session.</p>
     pub fn set_sessions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Session>>) -> Self {
         self.sessions = input;
         self
     }
-    /// <p>Returns information about the specified NICE DCV GUI session.</p>
+    /// <p>Returns information about the specified Amazon DCV GUI session.</p>
     pub fn get_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Session>> {
         &self.sessions
     }

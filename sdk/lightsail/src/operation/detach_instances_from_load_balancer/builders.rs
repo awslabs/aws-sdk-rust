@@ -24,7 +24,7 @@ impl crate::operation::detach_instances_from_load_balancer::builders::DetachInst
 ///
 /// <p>Detaches the specified instances from a Lightsail load balancer.</p>
 /// <p>This operation waits until the instances are no longer needed before they are detached from the load balancer.</p>
-/// <p>The <code>detach instances from load balancer</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>detach instances from load balancer</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetachInstancesFromLoadBalancerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

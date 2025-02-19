@@ -85,6 +85,18 @@ pub fn ser_action_declaration(
             ::aws_smithy_types::Number::NegInt((*var_25).into()),
         );
     }
+    if let Some(var_26) = &input.environment_variables {
+        let mut array_27 = object.key("environmentVariables").start_array();
+        for item_28 in var_26 {
+            {
+                #[allow(unused_mut)]
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_environment_variable::ser_environment_variable(&mut object_29, item_28)?;
+                object_29.finish();
+            }
+        }
+        array_27.finish();
+    }
     Ok(())
 }
 
@@ -165,6 +177,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "environmentVariables" => {
+                            builder = builder.set_environment_variables(
+                                crate::protocol_serde::shape_environment_variable_list::de_environment_variable_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

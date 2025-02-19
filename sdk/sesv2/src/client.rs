@@ -299,6 +299,8 @@ mod put_account_suppression_attributes;
 
 mod put_account_vdm_attributes;
 
+mod put_configuration_set_archiving_options;
+
 mod put_configuration_set_delivery_options;
 
 mod put_configuration_set_reputation_options;

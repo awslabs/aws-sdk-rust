@@ -249,7 +249,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RunTaskEndpoi
 pub enum RunTaskError {
     /// <p>You don't have authorization to perform the requested action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web Services Support</a>.</p>
+    /// <p>Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/"> Amazon Web ServicesSupport</a>.</p>
     BlockedException(crate::types::error::BlockedException),
     /// <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
     /// <p>The following list includes additional causes for the error:</p>

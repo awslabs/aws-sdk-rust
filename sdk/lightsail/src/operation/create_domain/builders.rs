@@ -23,7 +23,7 @@ impl crate::operation::create_domain::builders::CreateDomainInputBuilder {
 /// Fluent builder constructing a request to `CreateDomain`.
 ///
 /// <p>Creates a domain resource for the specified domain (example.com).</p>
-/// <p>The <code>create domain</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>create domain</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDomainFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

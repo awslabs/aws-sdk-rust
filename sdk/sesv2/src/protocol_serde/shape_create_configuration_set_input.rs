@@ -3,56 +3,62 @@ pub fn ser_create_configuration_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_configuration_set::CreateConfigurationSetInput,
 ) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.delivery_options {
+    if let Some(var_1) = &input.archiving_options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("DeliveryOptions").start_object();
-        crate::protocol_serde::shape_delivery_options::ser_delivery_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("ArchivingOptions").start_object();
+        crate::protocol_serde::shape_archiving_options::ser_archiving_options(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.reputation_options {
+    if let Some(var_3) = &input.configuration_set_name {
+        object.key("ConfigurationSetName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.delivery_options {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("ReputationOptions").start_object();
-        crate::protocol_serde::shape_reputation_options::ser_reputation_options(&mut object_5, var_4)?;
+        let mut object_5 = object.key("DeliveryOptions").start_object();
+        crate::protocol_serde::shape_delivery_options::ser_delivery_options(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.sending_options {
+    if let Some(var_6) = &input.reputation_options {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("SendingOptions").start_object();
-        crate::protocol_serde::shape_sending_options::ser_sending_options(&mut object_7, var_6)?;
+        let mut object_7 = object.key("ReputationOptions").start_object();
+        crate::protocol_serde::shape_reputation_options::ser_reputation_options(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.suppression_options {
+    if let Some(var_8) = &input.sending_options {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("SuppressionOptions").start_object();
-        crate::protocol_serde::shape_suppression_options::ser_suppression_options(&mut object_9, var_8)?;
+        let mut object_9 = object.key("SendingOptions").start_object();
+        crate::protocol_serde::shape_sending_options::ser_sending_options(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("Tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.suppression_options {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("SuppressionOptions").start_object();
+        crate::protocol_serde::shape_suppression_options::ser_suppression_options(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
-    if let Some(var_14) = &input.tracking_options {
+    if let Some(var_16) = &input.tracking_options {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("TrackingOptions").start_object();
-        crate::protocol_serde::shape_tracking_options::ser_tracking_options(&mut object_15, var_14)?;
-        object_15.finish();
-    }
-    if let Some(var_16) = &input.vdm_options {
-        #[allow(unused_mut)]
-        let mut object_17 = object.key("VdmOptions").start_object();
-        crate::protocol_serde::shape_vdm_options::ser_vdm_options(&mut object_17, var_16)?;
+        let mut object_17 = object.key("TrackingOptions").start_object();
+        crate::protocol_serde::shape_tracking_options::ser_tracking_options(&mut object_17, var_16)?;
         object_17.finish();
+    }
+    if let Some(var_18) = &input.vdm_options {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("VdmOptions").start_object();
+        crate::protocol_serde::shape_vdm_options::ser_vdm_options(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

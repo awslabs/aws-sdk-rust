@@ -20,6 +20,8 @@ pub struct GetConfigurationSetOutput {
     pub suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     /// <p>An object that contains information about the VDM preferences for your configuration set.</p>
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
+    /// <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
+    pub archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
     _request_id: Option<String>,
 }
 impl GetConfigurationSetOutput {
@@ -57,6 +59,10 @@ impl GetConfigurationSetOutput {
     pub fn vdm_options(&self) -> ::std::option::Option<&crate::types::VdmOptions> {
         self.vdm_options.as_ref()
     }
+    /// <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
+    pub fn archiving_options(&self) -> ::std::option::Option<&crate::types::ArchivingOptions> {
+        self.archiving_options.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetConfigurationSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -82,6 +88,7 @@ pub struct GetConfigurationSetOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,
+    pub(crate) archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
     _request_id: Option<String>,
 }
 impl GetConfigurationSetOutputBuilder {
@@ -203,6 +210,20 @@ impl GetConfigurationSetOutputBuilder {
     pub fn get_vdm_options(&self) -> &::std::option::Option<crate::types::VdmOptions> {
         &self.vdm_options
     }
+    /// <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
+    pub fn archiving_options(mut self, input: crate::types::ArchivingOptions) -> Self {
+        self.archiving_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
+    pub fn set_archiving_options(mut self, input: ::std::option::Option<crate::types::ArchivingOptions>) -> Self {
+        self.archiving_options = input;
+        self
+    }
+    /// <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
+    pub fn get_archiving_options(&self) -> &::std::option::Option<crate::types::ArchivingOptions> {
+        &self.archiving_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -223,6 +244,7 @@ impl GetConfigurationSetOutputBuilder {
             tags: self.tags,
             suppression_options: self.suppression_options,
             vdm_options: self.vdm_options,
+            archiving_options: self.archiving_options,
             _request_id: self._request_id,
         }
     }

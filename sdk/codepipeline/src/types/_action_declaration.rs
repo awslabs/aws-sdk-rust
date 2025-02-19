@@ -33,6 +33,8 @@ pub struct ActionDeclaration {
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>A timeout duration in minutes that can be applied against the ActionType’s default timeout value specified in <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas for CodePipeline </a>. This attribute is available only to the manual approval ActionType.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
+    /// <p>The environment variables for the action.</p>
+    pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
 }
 impl ActionDeclaration {
     /// <p>The action declaration's name.</p>
@@ -97,6 +99,12 @@ impl ActionDeclaration {
     pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_in_minutes
     }
+    /// <p>The environment variables for the action.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.environment_variables.is_none()`.
+    pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
+        self.environment_variables.as_deref().unwrap_or_default()
+    }
 }
 impl ActionDeclaration {
     /// Creates a new builder-style object to manufacture [`ActionDeclaration`](crate::types::ActionDeclaration).
@@ -121,6 +129,7 @@ pub struct ActionDeclarationBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
     pub(crate) namespace: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
+    pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
 }
 impl ActionDeclarationBuilder {
     /// <p>The action declaration's name.</p>
@@ -341,6 +350,26 @@ impl ActionDeclarationBuilder {
     pub fn get_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.timeout_in_minutes
     }
+    /// Appends an item to `environment_variables`.
+    ///
+    /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+    ///
+    /// <p>The environment variables for the action.</p>
+    pub fn environment_variables(mut self, input: crate::types::EnvironmentVariable) -> Self {
+        let mut v = self.environment_variables.unwrap_or_default();
+        v.push(input);
+        self.environment_variables = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The environment variables for the action.</p>
+    pub fn set_environment_variables(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment_variables = input;
+        self
+    }
+    /// <p>The environment variables for the action.</p>
+    pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
+        &self.environment_variables
+    }
     /// Consumes the builder and constructs a [`ActionDeclaration`](crate::types::ActionDeclaration).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ActionDeclarationBuilder::name)
@@ -363,6 +392,7 @@ impl ActionDeclarationBuilder {
             region: self.region,
             namespace: self.namespace,
             timeout_in_minutes: self.timeout_in_minutes,
+            environment_variables: self.environment_variables,
         })
     }
 }

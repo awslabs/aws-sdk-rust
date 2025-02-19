@@ -22,7 +22,7 @@ impl crate::operation::override_stage_condition::builders::OverrideStageConditio
 }
 /// Fluent builder constructing a request to `OverrideStageCondition`.
 ///
-/// <p>Used to override a stage condition.</p>
+/// <p>Used to override a stage condition. For more information about conditions, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html">Stage conditions</a> and <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How do stage conditions work?</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct OverrideStageConditionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -163,6 +163,8 @@ pub use crate::types::_dedicated_ip_pool::DedicatedIpPoolBuilder;
 
 pub use crate::types::_event_destination::EventDestinationBuilder;
 
+pub use crate::types::_archiving_options::ArchivingOptionsBuilder;
+
 pub use crate::types::_suppression_options::SuppressionOptionsBuilder;
 
 pub use crate::types::_sending_options::SendingOptionsBuilder;

@@ -61,6 +61,10 @@ pub(crate) mod shape_describe_tls_inspection_configuration;
 
 pub(crate) mod shape_disassociate_subnets;
 
+pub(crate) mod shape_get_analysis_report_results;
+
+pub(crate) mod shape_list_analysis_reports;
+
 pub(crate) mod shape_list_firewall_policies;
 
 pub(crate) mod shape_list_firewalls;
@@ -73,9 +77,13 @@ pub(crate) mod shape_list_tls_inspection_configurations;
 
 pub(crate) mod shape_put_resource_policy;
 
+pub(crate) mod shape_start_analysis_report;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_firewall_analysis_settings;
 
 pub(crate) mod shape_update_firewall_delete_protection;
 
@@ -141,6 +149,8 @@ pub(crate) mod shape_describe_tls_inspection_configuration_input;
 
 pub(crate) mod shape_disassociate_subnets_input;
 
+pub(crate) mod shape_get_analysis_report_results_input;
+
 pub(crate) mod shape_insufficient_capacity_exception;
 
 pub(crate) mod shape_internal_server_error;
@@ -154,6 +164,8 @@ pub(crate) mod shape_invalid_resource_policy_exception;
 pub(crate) mod shape_invalid_token_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_analysis_reports_input;
 
 pub(crate) mod shape_list_firewall_policies_input;
 
@@ -173,6 +185,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_owner_check_exception;
 
+pub(crate) mod shape_start_analysis_report_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
@@ -180,6 +194,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_unsupported_operation_exception;
 
 pub(crate) mod shape_untag_resource_input;
+
+pub(crate) mod shape_update_firewall_analysis_settings_input;
 
 pub(crate) mod shape_update_firewall_delete_protection_input;
 
@@ -198,6 +214,12 @@ pub(crate) mod shape_update_rule_group_input;
 pub(crate) mod shape_update_subnet_change_protection_input;
 
 pub(crate) mod shape_update_tls_inspection_configuration_input;
+
+pub(crate) mod shape_analysis_report_results;
+
+pub(crate) mod shape_analysis_reports;
+
+pub(crate) mod shape_enabled_analysis_types;
 
 pub(crate) mod shape_encryption_configuration;
 
@@ -239,7 +261,11 @@ pub(crate) mod shape_tls_inspection_configuration_response;
 
 pub(crate) mod shape_tls_inspection_configurations;
 
+pub(crate) mod shape_analysis_report;
+
 pub(crate) mod shape_analysis_result_list;
+
+pub(crate) mod shape_analysis_type_report_result;
 
 pub(crate) mod shape_capacity_usage_summary;
 
@@ -301,6 +327,8 @@ pub(crate) mod shape_cidr_summary;
 
 pub(crate) mod shape_flow_timeouts;
 
+pub(crate) mod shape_hits;
+
 pub(crate) mod shape_ip_set;
 
 pub(crate) mod shape_ip_set_reference;
@@ -328,6 +356,8 @@ pub(crate) mod shape_stateful_rules;
 pub(crate) mod shape_stateless_rules_and_custom_actions;
 
 pub(crate) mod shape_sync_state;
+
+pub(crate) mod shape_unique_sources;
 
 pub(crate) mod shape_address;
 

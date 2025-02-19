@@ -23,7 +23,7 @@ impl crate::operation::update_domain_entry::builders::UpdateDomainEntryInputBuil
 /// Fluent builder constructing a request to `UpdateDomainEntry`.
 ///
 /// <p>Updates a domain recordset after it is created.</p>
-/// <p>The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
+/// <p>The <code>update domain entry</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>domain name</code>. For more information, see the <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainEntryFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

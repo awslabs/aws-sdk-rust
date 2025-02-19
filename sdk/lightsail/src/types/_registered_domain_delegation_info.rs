@@ -11,7 +11,7 @@
 /// <li>
 /// <p>The Route&nbsp;53 hosted zone for the domain must be empty. It cannot contain DNS records other than start of authority (SOA) and name server records.</p></li>
 /// </ul>
-/// <p>If automatic domain delegation fails, or if you manage the DNS of your domain using a service other than Route&nbsp;53, then you must manually add the Lightsail DNS zone name servers to your domain in order to delegate management of its DNS to Lightsail. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-create-dns-entry">Creating a DNS zone to manage your domain’s records in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
+/// <p>If automatic domain delegation fails, or if you manage the DNS of your domain using a service other than Route&nbsp;53, then you must manually add the Lightsail DNS zone name servers to your domain in order to delegate management of its DNS to Lightsail. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-create-dns-entry">Creating a DNS zone to manage your domain’s records in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredDomainDelegationInfo {

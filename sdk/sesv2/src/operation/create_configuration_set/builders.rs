@@ -225,4 +225,18 @@ impl CreateConfigurationSetFluentBuilder {
     pub fn get_vdm_options(&self) -> &::std::option::Option<crate::types::VdmOptions> {
         self.inner.get_vdm_options()
     }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn archiving_options(mut self, input: crate::types::ArchivingOptions) -> Self {
+        self.inner = self.inner.archiving_options(input);
+        self
+    }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn set_archiving_options(mut self, input: ::std::option::Option<crate::types::ArchivingOptions>) -> Self {
+        self.inner = self.inner.set_archiving_options(input);
+        self
+    }
+    /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
+    pub fn get_archiving_options(&self) -> &::std::option::Option<crate::types::ArchivingOptions> {
+        self.inner.get_archiving_options()
+    }
 }

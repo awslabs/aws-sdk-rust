@@ -97,6 +97,14 @@ pub use crate::types::_firewall_metadata::FirewallMetadataBuilder;
 
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadataBuilder;
 
+pub use crate::types::_analysis_report::AnalysisReportBuilder;
+
+pub use crate::types::_analysis_type_report_result::AnalysisTypeReportResultBuilder;
+
+pub use crate::types::_unique_sources::UniqueSourcesBuilder;
+
+pub use crate::types::_hits::HitsBuilder;
+
 pub use crate::types::_subnet_mapping::SubnetMappingBuilder;
 
 pub use crate::types::_firewall_status::FirewallStatusBuilder;

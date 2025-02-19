@@ -36,10 +36,17 @@ pub struct Row {
     pub ingress_point_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the host from which the email was received.</p>
     pub sender_hostname: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address of the host from which the email was received.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Mail archived with Mail Manager: The IP address of the client that connects to the ingress endpoint.</p></li>
+    /// <li>
+    /// <p>Mail sent through a configuration set with the archiving option enabled: The IP address of the client that makes the SendEmail API call.</p></li>
+    /// </ul>
     pub sender_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The SMTP envelope information of the email.</p>
     pub envelope: ::std::option::Option<crate::types::Envelope>,
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub source_arn: ::std::option::Option<::std::string::String>,
 }
 impl Row {
     /// <p>The unique identifier of the archived message.</p>
@@ -108,13 +115,22 @@ impl Row {
     pub fn sender_hostname(&self) -> ::std::option::Option<&str> {
         self.sender_hostname.as_deref()
     }
-    /// <p>The IP address of the host from which the email was received.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Mail archived with Mail Manager: The IP address of the client that connects to the ingress endpoint.</p></li>
+    /// <li>
+    /// <p>Mail sent through a configuration set with the archiving option enabled: The IP address of the client that makes the SendEmail API call.</p></li>
+    /// </ul>
     pub fn sender_ip_address(&self) -> ::std::option::Option<&str> {
         self.sender_ip_address.as_deref()
     }
     /// <p>The SMTP envelope information of the email.</p>
     pub fn envelope(&self) -> ::std::option::Option<&crate::types::Envelope> {
         self.envelope.as_ref()
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn source_arn(&self) -> ::std::option::Option<&str> {
+        self.source_arn.as_deref()
     }
 }
 impl ::std::fmt::Debug for Row {
@@ -138,6 +154,7 @@ impl ::std::fmt::Debug for Row {
         formatter.field("sender_hostname", &self.sender_hostname);
         formatter.field("sender_ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("envelope", &self.envelope);
+        formatter.field("source_arn", &self.source_arn);
         formatter.finish()
     }
 }
@@ -170,6 +187,7 @@ pub struct RowBuilder {
     pub(crate) sender_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) sender_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) envelope: ::std::option::Option<crate::types::Envelope>,
+    pub(crate) source_arn: ::std::option::Option<::std::string::String>,
 }
 impl RowBuilder {
     /// <p>The unique identifier of the archived message.</p>
@@ -402,17 +420,32 @@ impl RowBuilder {
     pub fn get_sender_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.sender_hostname
     }
-    /// <p>The IP address of the host from which the email was received.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Mail archived with Mail Manager: The IP address of the client that connects to the ingress endpoint.</p></li>
+    /// <li>
+    /// <p>Mail sent through a configuration set with the archiving option enabled: The IP address of the client that makes the SendEmail API call.</p></li>
+    /// </ul>
     pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sender_ip_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IP address of the host from which the email was received.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Mail archived with Mail Manager: The IP address of the client that connects to the ingress endpoint.</p></li>
+    /// <li>
+    /// <p>Mail sent through a configuration set with the archiving option enabled: The IP address of the client that makes the SendEmail API call.</p></li>
+    /// </ul>
     pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_ip_address = input;
         self
     }
-    /// <p>The IP address of the host from which the email was received.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Mail archived with Mail Manager: The IP address of the client that connects to the ingress endpoint.</p></li>
+    /// <li>
+    /// <p>Mail sent through a configuration set with the archiving option enabled: The IP address of the client that makes the SendEmail API call.</p></li>
+    /// </ul>
     pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.sender_ip_address
     }
@@ -429,6 +462,20 @@ impl RowBuilder {
     /// <p>The SMTP envelope information of the email.</p>
     pub fn get_envelope(&self) -> &::std::option::Option<crate::types::Envelope> {
         &self.envelope
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_arn = input;
+        self
+    }
+    /// <p>Specifies the archived email source, identified by either a Rule Set's ARN with an Archive action, or a Configuration Set's Archive ARN.</p>
+    pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_arn
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
@@ -451,6 +498,7 @@ impl RowBuilder {
             sender_hostname: self.sender_hostname,
             sender_ip_address: self.sender_ip_address,
             envelope: self.envelope,
+            source_arn: self.source_arn,
         }
     }
 }
@@ -475,6 +523,7 @@ impl ::std::fmt::Debug for RowBuilder {
         formatter.field("sender_hostname", &self.sender_hostname);
         formatter.field("sender_ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("envelope", &self.envelope);
+        formatter.field("source_arn", &self.source_arn);
         formatter.finish()
     }
 }

@@ -743,6 +743,71 @@ impl From<crate::operation::disassociate_subnets::DisassociateSubnetsError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_analysis_report_results::GetAnalysisReportResultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_analysis_report_results::GetAnalysisReportResultsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_analysis_report_results::GetAnalysisReportResultsError> for Error {
+    fn from(err: crate::operation::get_analysis_report_results::GetAnalysisReportResultsError) -> Self {
+        match err {
+            crate::operation::get_analysis_report_results::GetAnalysisReportResultsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::get_analysis_report_results::GetAnalysisReportResultsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_analysis_report_results::GetAnalysisReportResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_analysis_report_results::GetAnalysisReportResultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_analysis_report_results::GetAnalysisReportResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_analysis_reports::ListAnalysisReportsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_analysis_reports::ListAnalysisReportsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_analysis_reports::ListAnalysisReportsError> for Error {
+    fn from(err: crate::operation::list_analysis_reports::ListAnalysisReportsError) -> Self {
+        match err {
+            crate::operation::list_analysis_reports::ListAnalysisReportsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_analysis_reports::ListAnalysisReportsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_analysis_reports::ListAnalysisReportsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_analysis_reports::ListAnalysisReportsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_analysis_reports::ListAnalysisReportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_policies::ListFirewallPoliciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -917,6 +982,35 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_analysis_report::StartAnalysisReportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_analysis_report::StartAnalysisReportError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_analysis_report::StartAnalysisReportError> for Error {
+    fn from(err: crate::operation::start_analysis_report::StartAnalysisReportError) -> Self {
+        match err {
+            crate::operation::start_analysis_report::StartAnalysisReportError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_analysis_report::StartAnalysisReportError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_analysis_report::StartAnalysisReportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_analysis_report::StartAnalysisReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_analysis_report::StartAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -964,6 +1058,50 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError> for Error {
+    fn from(err: crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError) -> Self {
+        match err {
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
