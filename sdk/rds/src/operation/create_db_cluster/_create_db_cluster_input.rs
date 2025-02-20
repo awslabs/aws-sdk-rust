@@ -354,7 +354,7 @@ pub struct CreateDbClusterInput {
     pub monitoring_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you set this value to <code>advanced</code>, you must also set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to turn on Performance Insights for the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
@@ -881,7 +881,7 @@ impl CreateDbClusterInput {
     }
     /// <p>The mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you set this value to <code>advanced</code>, you must also set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
     }
@@ -2470,21 +2470,21 @@ impl CreateDbClusterInputBuilder {
     }
     /// <p>The mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you set this value to <code>advanced</code>, you must also set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you set this value to <code>advanced</code>, you must also set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
     /// <p>The mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you set this value to <code>advanced</code>, you must also set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode
     }

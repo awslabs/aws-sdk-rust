@@ -1050,7 +1050,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
     /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.inner = self.inner.database_insights_mode(input);
         self
@@ -1058,7 +1058,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
     /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.inner = self.inner.set_database_insights_mode(input);
         self
@@ -1066,7 +1066,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Specifies the mode of Database Insights to enable for the DB cluster.</p>
     /// <p>If you change the value from <code>standard</code> to <code>advanced</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>true</code> and the <code>PerformanceInsightsRetentionPeriod</code> parameter to 465.</p>
     /// <p>If you change the value from <code>advanced</code> to <code>standard</code>, you must set the <code>PerformanceInsightsEnabled</code> parameter to <code>false</code>.</p>
-    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         self.inner.get_database_insights_mode()
     }

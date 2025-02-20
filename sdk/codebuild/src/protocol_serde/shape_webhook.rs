@@ -65,6 +65,20 @@ where
                             builder =
                                 builder.set_scope_configuration(crate::protocol_serde::shape_scope_configuration::de_scope_configuration(tokens)?);
                         }
+                        "status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::WebhookStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "statusMessage" => {
+                            builder = builder.set_status_message(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

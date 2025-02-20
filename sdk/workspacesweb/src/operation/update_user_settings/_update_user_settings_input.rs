@@ -27,6 +27,8 @@ pub struct UpdateUserSettingsInput {
     pub cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
     /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
     pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
 }
 impl UpdateUserSettingsInput {
     /// <p>The ARN of the user settings.</p>
@@ -75,6 +77,10 @@ impl UpdateUserSettingsInput {
     pub fn deep_link_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
         self.deep_link_allowed.as_ref()
     }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn toolbar_configuration(&self) -> ::std::option::Option<&crate::types::ToolbarConfiguration> {
+        self.toolbar_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateUserSettingsInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -90,6 +96,7 @@ impl ::std::fmt::Debug for UpdateUserSettingsInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
+        formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.finish()
     }
 }
@@ -115,6 +122,7 @@ pub struct UpdateUserSettingsInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) cookie_synchronization_configuration: ::std::option::Option<crate::types::CookieSynchronizationConfiguration>,
     pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
+    pub(crate) toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
 }
 impl UpdateUserSettingsInputBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -281,6 +289,20 @@ impl UpdateUserSettingsInputBuilder {
     pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
         &self.deep_link_allowed
     }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn toolbar_configuration(mut self, input: crate::types::ToolbarConfiguration) -> Self {
+        self.toolbar_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn set_toolbar_configuration(mut self, input: ::std::option::Option<crate::types::ToolbarConfiguration>) -> Self {
+        self.toolbar_configuration = input;
+        self
+    }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
+        &self.toolbar_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
     pub fn build(
         self,
@@ -298,6 +320,7 @@ impl UpdateUserSettingsInputBuilder {
             client_token: self.client_token,
             cookie_synchronization_configuration: self.cookie_synchronization_configuration,
             deep_link_allowed: self.deep_link_allowed,
+            toolbar_configuration: self.toolbar_configuration,
         })
     }
 }
@@ -315,6 +338,7 @@ impl ::std::fmt::Debug for UpdateUserSettingsInputBuilder {
         formatter.field("client_token", &self.client_token);
         formatter.field("cookie_synchronization_configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
+        formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.finish()
     }
 }

@@ -97,6 +97,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "toolbarConfiguration" => {
+                            builder = builder
+                                .set_toolbar_configuration(crate::protocol_serde::shape_toolbar_configuration::de_toolbar_configuration(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

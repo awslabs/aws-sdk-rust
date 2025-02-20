@@ -64,8 +64,14 @@ pub fn ser_create_user_settings_input_input(
         }
         array_17.finish();
     }
-    if let Some(var_20) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_20.as_str());
+    if let Some(var_20) = &input.toolbar_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("toolbarConfiguration").start_object();
+        crate::protocol_serde::shape_toolbar_configuration::ser_toolbar_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_22.as_str());
     }
     Ok(())
 }

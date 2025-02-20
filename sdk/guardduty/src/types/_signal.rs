@@ -7,7 +7,7 @@ pub struct Signal {
     /// <p>The unique identifier of the signal.</p>
     pub uid: ::std::option::Option<::std::string::String>,
     /// <p>The type of the signal used to identify an attack sequence.</p>
-    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// <p>A signal type can be one of the valid values listed in this API. Here are the related descriptions:</p>
     /// <ul>
     /// <li>
@@ -15,7 +15,7 @@ pub struct Signal {
     /// <li>
     /// <p><code>CLOUD_TRAIL</code> - Activity observed from CloudTrail logs</p></li>
     /// <li>
-    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>GuardDuty User Guide</i>.</p></li>
+    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// </ul>
     pub r#type: ::std::option::Option<crate::types::SignalType>,
     /// <p>The description of the signal.</p>
@@ -30,7 +30,7 @@ pub struct Signal {
     pub first_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the last finding or activity related to this signal was observed.</p>
     pub last_seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub severity: ::std::option::Option<f64>,
     /// <p>The number of times this signal was observed.</p>
     pub count: ::std::option::Option<i32>,
@@ -49,7 +49,7 @@ impl Signal {
         self.uid.as_deref()
     }
     /// <p>The type of the signal used to identify an attack sequence.</p>
-    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// <p>A signal type can be one of the valid values listed in this API. Here are the related descriptions:</p>
     /// <ul>
     /// <li>
@@ -57,7 +57,7 @@ impl Signal {
     /// <li>
     /// <p><code>CLOUD_TRAIL</code> - Activity observed from CloudTrail logs</p></li>
     /// <li>
-    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>GuardDuty User Guide</i>.</p></li>
+    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::SignalType> {
         self.r#type.as_ref()
@@ -86,7 +86,7 @@ impl Signal {
     pub fn last_seen_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_seen_at.as_ref()
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn severity(&self) -> ::std::option::Option<f64> {
         self.severity
     }
@@ -162,7 +162,7 @@ impl SignalBuilder {
         &self.uid
     }
     /// <p>The type of the signal used to identify an attack sequence.</p>
-    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// <p>A signal type can be one of the valid values listed in this API. Here are the related descriptions:</p>
     /// <ul>
     /// <li>
@@ -170,7 +170,7 @@ impl SignalBuilder {
     /// <li>
     /// <p><code>CLOUD_TRAIL</code> - Activity observed from CloudTrail logs</p></li>
     /// <li>
-    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>GuardDuty User Guide</i>.</p></li>
+    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::SignalType) -> Self {
@@ -178,7 +178,7 @@ impl SignalBuilder {
         self
     }
     /// <p>The type of the signal used to identify an attack sequence.</p>
-    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// <p>A signal type can be one of the valid values listed in this API. Here are the related descriptions:</p>
     /// <ul>
     /// <li>
@@ -186,14 +186,14 @@ impl SignalBuilder {
     /// <li>
     /// <p><code>CLOUD_TRAIL</code> - Activity observed from CloudTrail logs</p></li>
     /// <li>
-    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>GuardDuty User Guide</i>.</p></li>
+    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::SignalType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of the signal used to identify an attack sequence.</p>
-    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>Signals can be GuardDuty findings or activities observed in data sources that GuardDuty monitors. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_data-sources.html">Foundational data sources</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// <p>A signal type can be one of the valid values listed in this API. Here are the related descriptions:</p>
     /// <ul>
     /// <li>
@@ -201,7 +201,7 @@ impl SignalBuilder {
     /// <li>
     /// <p><code>CLOUD_TRAIL</code> - Activity observed from CloudTrail logs</p></li>
     /// <li>
-    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>GuardDuty User Guide</i>.</p></li>
+    /// <p><code>S3_DATA_EVENTS</code> - Activity observed from CloudTrail data events for S3. Activities associated with this type will show up only when you have enabled GuardDuty S3 Protection feature in your account. For more information about S3 Protection and steps to enable it, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html">S3 Protection</a> in the <i>Amazon GuardDuty User Guide</i>.</p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SignalType> {
         &self.r#type
@@ -295,17 +295,17 @@ impl SignalBuilder {
     pub fn get_last_seen_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_seen_at
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn severity(mut self, input: f64) -> Self {
         self.severity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn set_severity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.severity = input;
         self
     }
-    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>GuardDuty User Guide</i>.</p>
+    /// <p>The severity associated with the signal. For more information about severity, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn get_severity(&self) -> &::std::option::Option<f64> {
         &self.severity
     }

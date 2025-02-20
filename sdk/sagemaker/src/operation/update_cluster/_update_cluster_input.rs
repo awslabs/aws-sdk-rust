@@ -9,6 +9,8 @@ pub struct UpdateClusterInput {
     pub instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     /// <p>The node recovery mode to be applied to the SageMaker HyperPod cluster.</p>
     pub node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateClusterInput {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -25,6 +27,12 @@ impl UpdateClusterInput {
     pub fn node_recovery(&self) -> ::std::option::Option<&crate::types::ClusterNodeRecovery> {
         self.node_recovery.as_ref()
     }
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_groups_to_delete.is_none()`.
+    pub fn instance_groups_to_delete(&self) -> &[::std::string::String] {
+        self.instance_groups_to_delete.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
@@ -40,6 +48,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_groups: ::std::option::Option<::std::vec::Vec<crate::types::ClusterInstanceGroupSpecification>>,
     pub(crate) node_recovery: ::std::option::Option<crate::types::ClusterNodeRecovery>,
+    pub(crate) instance_groups_to_delete: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>Specify the name of the SageMaker HyperPod cluster you want to update.</p>
@@ -91,6 +100,26 @@ impl UpdateClusterInputBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         &self.node_recovery
     }
+    /// Appends an item to `instance_groups_to_delete`.
+    ///
+    /// To override the contents of this collection use [`set_instance_groups_to_delete`](Self::set_instance_groups_to_delete).
+    ///
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub fn instance_groups_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.instance_groups_to_delete.unwrap_or_default();
+        v.push(input.into());
+        self.instance_groups_to_delete = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub fn set_instance_groups_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.instance_groups_to_delete = input;
+        self
+    }
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub fn get_instance_groups_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.instance_groups_to_delete
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -99,6 +128,7 @@ impl UpdateClusterInputBuilder {
             cluster_name: self.cluster_name,
             instance_groups: self.instance_groups,
             node_recovery: self.node_recovery,
+            instance_groups_to_delete: self.instance_groups_to_delete,
         })
     }
 }

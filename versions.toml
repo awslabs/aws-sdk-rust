@@ -484,9 +484,9 @@ model_hash = 'b4b741370ba8961708abf7da89928b5db646fa8d605805dbd8d0138d0ff1955f'
 
 [crates.aws-sdk-codebuild]
 category = 'AwsSdk'
-version = '1.75.0'
-source_hash = 'c3da9964e4e9865e54d47ec0aae9cd3bd4d383da03619c2541cc0107142e089d'
-model_hash = 'de5d5f12f2fdb98ac9533a636133ea9af8e262f13cd854797669e320a427e2eb'
+version = '1.76.0'
+source_hash = 'be3f6e434cde3e0388582769bf890faa05e6205614940e2bed6ddba2f2bd7d1f'
+model_hash = '385b7dd889a97fc150903b60086e751540ed4f856c3b14388a22e07e9281836e'
 
 [crates.aws-sdk-codecatalyst]
 category = 'AwsSdk'
@@ -1048,9 +1048,9 @@ model_hash = '2c97f5de5fc40115222b8f4b2eadc768ed5f4107083921c1a4efc05ee74ad219'
 
 [crates.aws-sdk-guardduty]
 category = 'AwsSdk'
-version = '1.68.0'
-source_hash = '965c3f467171182e8a7235becc4e28ee6de44a61709c821c381045111c0dfa58'
-model_hash = '0d67f379cb4dd3a129be28c9faf85de0ca1944c911cb6bfe78f91637fbba833d'
+version = '1.69.0'
+source_hash = '9a95a118bdcb598995bca9f9d4ac12fd60ff4fa76f2d1e2d6389117e97d4a471'
+model_hash = '4f4f88531a1282d47b46823c4013264ddd64ba6c1f5ea4917cc1cdf6cf9e06dd'
 
 [crates.aws-sdk-health]
 category = 'AwsSdk'
@@ -1354,9 +1354,9 @@ model_hash = '7c43a524389f318abc311ca9224b01cd2056473497898285394e83b8dc8cb87b'
 
 [crates.aws-sdk-licensemanagerusersubscriptions]
 category = 'AwsSdk'
-version = '1.60.0'
-source_hash = '367142b523ab0b5497305594bd7fc34ba500fc518ae0864b717a4c3670b59a89'
-model_hash = '4ee7601814f70e10656b6dd353b6aad57004b791d3178883304ad48b6ef3cea3'
+version = '1.60.1'
+source_hash = '75a8ae9428caa6a5f209a9087a3b451e7bf7e2841b08dbcf5e4586ed2b3ecef9'
+model_hash = '1ea45bd8327aab3b2ceceef9ac059845e609380b0f5663952ac19d1b8c8d14d2'
 
 [crates.aws-sdk-lightsail]
 category = 'AwsSdk'
@@ -1870,9 +1870,9 @@ model_hash = '89b66df6ed8dd9dd5b9b7ce463ebf12ea437a2fc24a36a001c23fd2db6877a6d'
 
 [crates.aws-sdk-rds]
 category = 'AwsSdk'
-version = '1.78.0'
-source_hash = 'd6b219c212bdac66cfb676fd52cef5e32460d803304dfb986129b02a5797e806'
-model_hash = '6db7eef630f3e9e29eac96dce8d389c87afa010a12c2020422c4482e95a24641'
+version = '1.78.1'
+source_hash = '35c283b1e6c4ca47cf8ed37790c3efa532b718a2dd520dd83f30901ef0fea5ea'
+model_hash = '9181e0710e77fd8271b84404fcf47cb97fbac3e01c32870edee366af0fe3f7b1'
 
 [crates.aws-sdk-rdsdata]
 category = 'AwsSdk'
@@ -2020,9 +2020,9 @@ model_hash = '172361c4c7238894cc08fad9fc6840cf9edea43668b91b066350da9e3c2d96a4'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.104.0'
-source_hash = '5409cdba9d110f57dc308374e5a1bcd7f345cfa5df787127c1f9119ca35e5fb9'
-model_hash = '5292bb989df1c3460843d8262ee55611c503d3c510aebd71cb7819c2d50e11ba'
+version = '1.105.0'
+source_hash = '3eef581dc0060cebc4a4eba92b32e777e9df6445af6e6c5fb2e8e90c4824b545'
+model_hash = '3c85974cfdd1ce9aed11f6925b9ce98155dcd08b37da32312d65ec4984e62c4a'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2440,9 +2440,9 @@ model_hash = 'aa8f28a918e02803953798ba84259ef51397513c398a231f44508e3c6e9924d2'
 
 [crates.aws-sdk-workspacesweb]
 category = 'AwsSdk'
-version = '1.63.0'
-source_hash = 'd7db7555f3e830f2768ba810d95caeb88faec1baedc49033e88a36d2e239d293'
-model_hash = '48995047da31d8d65d2d72f4b0934ae5e42ea22c698d8ad2a04a76b70d0d35b3'
+version = '1.64.0'
+source_hash = '825430dfc2642df4143e3200de409299ff15d27602f162a0131fc19f1ca4c801'
+model_hash = '811ef3148c47e474f77996b44e9c5ee24e332c9108a14d67892dcbbaef7dae4d'
 
 [crates.aws-sdk-xray]
 category = 'AwsSdk'
@@ -2589,16 +2589,10 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '6e26eaa642b8952342a70574fc8e0b431a8f910780f8df9f884f3a72542a499a'
-
-[release]
-tag = 'release-2025-02-19'
-
 [release.crates]
-aws-sdk-codepipeline = '1.69.0'
-aws-sdk-ecs = '1.67.1'
-aws-sdk-lightsail = '1.63.1'
-aws-sdk-location = '1.63.0'
-aws-sdk-mailmanager = '1.38.0'
-aws-sdk-networkfirewall = '1.62.0'
-aws-sdk-sagemaker = '1.104.0'
-aws-sdk-sesv2 = '1.67.0'
+aws-sdk-codebuild = '1.76.0'
+aws-sdk-guardduty = '1.69.0'
+aws-sdk-licensemanagerusersubscriptions = '1.60.1'
+aws-sdk-rds = '1.78.1'
+aws-sdk-sagemaker = '1.105.0'
+aws-sdk-workspacesweb = '1.64.0'

@@ -3,6 +3,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_user_settings::UserSettingsBuilder;
 
+pub use crate::types::_toolbar_configuration::ToolbarConfigurationBuilder;
+
 pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfigurationBuilder;
 
 pub use crate::types::_cookie_specification::CookieSpecificationBuilder;

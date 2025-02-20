@@ -4,21 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Indicator {
-    /// <p>Specific indicator keys observed in the attack sequence.</p>
+    /// <p>Specific indicator keys observed in the attack sequence. For description of the valid values for key, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub key: ::std::option::Option<crate::types::IndicatorType>,
     /// <p>Values associated with each indicator key. For example, if the indicator key is <code>SUSPICIOUS_NETWORK</code>, then the value will be the name of the network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will be one of the MITRE tactics.</p>
-    /// <p>For more information about the values associated with the key, see GuardDuty Extended Threat Detection in the <i>GuardDuty User Guide.</i></p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Title describing the indicator.</p>
     pub title: ::std::option::Option<::std::string::String>,
 }
 impl Indicator {
-    /// <p>Specific indicator keys observed in the attack sequence.</p>
+    /// <p>Specific indicator keys observed in the attack sequence. For description of the valid values for key, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn key(&self) -> ::std::option::Option<&crate::types::IndicatorType> {
         self.key.as_ref()
     }
     /// <p>Values associated with each indicator key. For example, if the indicator key is <code>SUSPICIOUS_NETWORK</code>, then the value will be the name of the network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will be one of the MITRE tactics.</p>
-    /// <p>For more information about the values associated with the key, see GuardDuty Extended Threat Detection in the <i>GuardDuty User Guide.</i></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
     pub fn values(&self) -> &[::std::string::String] {
@@ -45,18 +43,18 @@ pub struct IndicatorBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
 }
 impl IndicatorBuilder {
-    /// <p>Specific indicator keys observed in the attack sequence.</p>
+    /// <p>Specific indicator keys observed in the attack sequence. For description of the valid values for key, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     /// This field is required.
     pub fn key(mut self, input: crate::types::IndicatorType) -> Self {
         self.key = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specific indicator keys observed in the attack sequence.</p>
+    /// <p>Specific indicator keys observed in the attack sequence. For description of the valid values for key, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn set_key(mut self, input: ::std::option::Option<crate::types::IndicatorType>) -> Self {
         self.key = input;
         self
     }
-    /// <p>Specific indicator keys observed in the attack sequence.</p>
+    /// <p>Specific indicator keys observed in the attack sequence. For description of the valid values for key, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-summary.html#guardduty-extended-threat-detection-attack-sequence-finding-details">Attack sequence finding details</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
     pub fn get_key(&self) -> &::std::option::Option<crate::types::IndicatorType> {
         &self.key
     }
@@ -65,7 +63,6 @@ impl IndicatorBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>Values associated with each indicator key. For example, if the indicator key is <code>SUSPICIOUS_NETWORK</code>, then the value will be the name of the network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will be one of the MITRE tactics.</p>
-    /// <p>For more information about the values associated with the key, see GuardDuty Extended Threat Detection in the <i>GuardDuty User Guide.</i></p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
@@ -73,13 +70,11 @@ impl IndicatorBuilder {
         self
     }
     /// <p>Values associated with each indicator key. For example, if the indicator key is <code>SUSPICIOUS_NETWORK</code>, then the value will be the name of the network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will be one of the MITRE tactics.</p>
-    /// <p>For more information about the values associated with the key, see GuardDuty Extended Threat Detection in the <i>GuardDuty User Guide.</i></p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
     /// <p>Values associated with each indicator key. For example, if the indicator key is <code>SUSPICIOUS_NETWORK</code>, then the value will be the name of the network. If the indicator key is <code>ATTACK_TACTIC</code>, then the value will be one of the MITRE tactics.</p>
-    /// <p>For more information about the values associated with the key, see GuardDuty Extended Threat Detection in the <i>GuardDuty User Guide.</i></p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }

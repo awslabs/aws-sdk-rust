@@ -315,4 +315,18 @@ impl CreateUserSettingsFluentBuilder {
     pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
         self.inner.get_deep_link_allowed()
     }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn toolbar_configuration(mut self, input: crate::types::ToolbarConfiguration) -> Self {
+        self.inner = self.inner.toolbar_configuration(input);
+        self
+    }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn set_toolbar_configuration(mut self, input: ::std::option::Option<crate::types::ToolbarConfiguration>) -> Self {
+        self.inner = self.inner.set_toolbar_configuration(input);
+        self
+    }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
+        self.inner.get_toolbar_configuration()
+    }
 }

@@ -263,6 +263,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_toolbar_configuration;
+
 pub(crate) mod shape_trust_store;
 
 pub(crate) mod shape_trust_store_summary_list;
@@ -324,6 +326,8 @@ pub(crate) mod shape_cookie_specifications;
 pub(crate) mod shape_custom_pattern;
 
 pub(crate) mod shape_global_inline_redaction_urls;
+
+pub(crate) mod shape_hidden_toolbar_item_list;
 
 pub(crate) mod shape_inline_redaction_patterns;
 

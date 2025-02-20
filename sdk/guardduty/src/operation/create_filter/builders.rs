@@ -378,7 +378,7 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.runtimeDetails.process.name</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
     /// <p>resource.lambdaDetails.functionName</p></li>
     /// <li>
@@ -589,7 +589,7 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.runtimeDetails.process.name</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
     /// <p>resource.lambdaDetails.functionName</p></li>
     /// <li>
@@ -800,7 +800,7 @@ impl CreateFilterFluentBuilder {
     /// <li>
     /// <p>service.runtimeDetails.process.name</p></li>
     /// <li>
-    /// <p>service.runtimeDetails.process.name</p></li>
+    /// <p>service.runtimeDetails.process.executablePath</p></li>
     /// <li>
     /// <p>resource.lambdaDetails.functionName</p></li>
     /// <li>

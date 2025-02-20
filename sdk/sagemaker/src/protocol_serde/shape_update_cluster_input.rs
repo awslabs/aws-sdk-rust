@@ -21,5 +21,14 @@ pub fn ser_update_cluster_input_input(
     if let Some(var_6) = &input.node_recovery {
         object.key("NodeRecovery").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.instance_groups_to_delete {
+        let mut array_8 = object.key("InstanceGroupsToDelete").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

@@ -5,6 +5,16 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_user_settings::UserSettings;
 
+pub use crate::types::_toolbar_configuration::ToolbarConfiguration;
+
+pub use crate::types::_max_display_resolution::MaxDisplayResolution;
+
+pub use crate::types::_toolbar_item::ToolbarItem;
+
+pub use crate::types::_visual_mode::VisualMode;
+
+pub use crate::types::_toolbar_type::ToolbarType;
+
 pub use crate::types::_enabled_type::EnabledType;
 
 pub use crate::types::_cookie_synchronization_configuration::CookieSynchronizationConfiguration;
@@ -125,6 +135,8 @@ mod _ip_access_settings_summary;
 
 mod _ip_rule;
 
+mod _max_display_resolution;
+
 mod _network_settings;
 
 mod _network_settings_summary;
@@ -151,6 +163,12 @@ mod _session_summary;
 
 mod _tag;
 
+mod _toolbar_configuration;
+
+mod _toolbar_item;
+
+mod _toolbar_type;
+
 mod _trust_store;
 
 mod _trust_store_summary;
@@ -166,6 +184,8 @@ mod _user_settings_summary;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _visual_mode;
 
 /// Builders
 pub mod builders;

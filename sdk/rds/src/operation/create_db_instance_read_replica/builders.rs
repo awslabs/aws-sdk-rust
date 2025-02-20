@@ -705,21 +705,21 @@ impl CreateDBInstanceReadReplicaFluentBuilder {
         self.inner.get_enable_iam_database_authentication()
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.inner = self.inner.database_insights_mode(input);
         self
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.inner = self.inner.set_database_insights_mode(input);
         self
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         self.inner.get_database_insights_mode()

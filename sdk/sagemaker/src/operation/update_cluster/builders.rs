@@ -155,4 +155,23 @@ impl UpdateClusterFluentBuilder {
     pub fn get_node_recovery(&self) -> &::std::option::Option<crate::types::ClusterNodeRecovery> {
         self.inner.get_node_recovery()
     }
+    ///
+    /// Appends an item to `InstanceGroupsToDelete`.
+    ///
+    /// To override the contents of this collection use [`set_instance_groups_to_delete`](Self::set_instance_groups_to_delete).
+    ///
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub fn instance_groups_to_delete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_groups_to_delete(input.into());
+        self
+    }
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub fn set_instance_groups_to_delete(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_instance_groups_to_delete(input);
+        self
+    }
+    /// <p>Specify the names of the instance groups to delete. Use a single <code>,</code> as the separator between multiple names.</p>
+    pub fn get_instance_groups_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_groups_to_delete()
+    }
 }

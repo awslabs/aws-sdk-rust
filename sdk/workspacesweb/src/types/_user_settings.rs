@@ -30,6 +30,8 @@ pub struct UserSettings {
     pub additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether the user can use deep links that open automatically when connecting to a session.</p>
     pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
 }
 impl UserSettings {
     /// <p>The ARN of the user settings.</p>
@@ -87,6 +89,10 @@ impl UserSettings {
     pub fn deep_link_allowed(&self) -> ::std::option::Option<&crate::types::EnabledType> {
         self.deep_link_allowed.as_ref()
     }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn toolbar_configuration(&self) -> ::std::option::Option<&crate::types::ToolbarConfiguration> {
+        self.toolbar_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserSettings {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -104,6 +110,7 @@ impl ::std::fmt::Debug for UserSettings {
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
+        formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.finish()
     }
 }
@@ -131,6 +138,7 @@ pub struct UserSettingsBuilder {
     pub(crate) customer_managed_key: ::std::option::Option<::std::string::String>,
     pub(crate) additional_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
+    pub(crate) toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
 }
 impl UserSettingsBuilder {
     /// <p>The ARN of the user settings.</p>
@@ -340,6 +348,20 @@ impl UserSettingsBuilder {
     pub fn get_deep_link_allowed(&self) -> &::std::option::Option<crate::types::EnabledType> {
         &self.deep_link_allowed
     }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn toolbar_configuration(mut self, input: crate::types::ToolbarConfiguration) -> Self {
+        self.toolbar_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn set_toolbar_configuration(mut self, input: ::std::option::Option<crate::types::ToolbarConfiguration>) -> Self {
+        self.toolbar_configuration = input;
+        self
+    }
+    /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
+    pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
+        &self.toolbar_configuration
+    }
     /// Consumes the builder and constructs a [`UserSettings`](crate::types::UserSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_settings_arn`](crate::types::builders::UserSettingsBuilder::user_settings_arn)
@@ -363,6 +385,7 @@ impl UserSettingsBuilder {
             customer_managed_key: self.customer_managed_key,
             additional_encryption_context: self.additional_encryption_context,
             deep_link_allowed: self.deep_link_allowed,
+            toolbar_configuration: self.toolbar_configuration,
         })
     }
 }
@@ -382,6 +405,7 @@ impl ::std::fmt::Debug for UserSettingsBuilder {
         formatter.field("customer_managed_key", &self.customer_managed_key);
         formatter.field("additional_encryption_context", &self.additional_encryption_context);
         formatter.field("deep_link_allowed", &self.deep_link_allowed);
+        formatter.field("toolbar_configuration", &self.toolbar_configuration);
         formatter.finish()
     }
 }

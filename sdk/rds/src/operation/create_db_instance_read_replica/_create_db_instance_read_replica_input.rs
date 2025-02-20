@@ -142,7 +142,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>This setting doesn't apply to RDS Custom DB instances.</p>
     pub enable_iam_database_authentication: ::std::option::Option<bool>,
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to enable Performance Insights for the read replica.</p>
@@ -469,7 +469,7 @@ impl CreateDbInstanceReadReplicaInput {
         self.enable_iam_database_authentication
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
@@ -1321,21 +1321,21 @@ impl CreateDbInstanceReadReplicaInputBuilder {
         &self.enable_iam_database_authentication
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
     /// <p>The mode of Database Insights to enable for the read replica.</p><note>
-    /// <p>Currently, this setting is not supported.</p>
+    /// <p>This setting isn't supported.</p>
     /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode

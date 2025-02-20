@@ -39,8 +39,14 @@ pub fn ser_update_user_settings_input_input(
     if let Some(var_10) = &input.print_allowed {
         object.key("printAllowed").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.upload_allowed {
-        object.key("uploadAllowed").string(var_11.as_str());
+    if let Some(var_11) = &input.toolbar_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("toolbarConfiguration").start_object();
+        crate::protocol_serde::shape_toolbar_configuration::ser_toolbar_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.upload_allowed {
+        object.key("uploadAllowed").string(var_13.as_str());
     }
     Ok(())
 }

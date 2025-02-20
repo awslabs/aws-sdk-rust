@@ -171,9 +171,8 @@ pub struct RestoreDbInstanceFromS3Input {
     pub s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services Identity and Access Management (IAM) role with a trust policy and a permissions policy that allows Amazon RDS to access your Amazon S3 bucket. For information about this role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html#MySQL.Procedural.Importing.Enabling.IAM"> Creating an IAM role manually</a> in the <i>Amazon RDS User Guide.</i></p>
     pub s3_ingestion_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
-    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
-    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p><note>
+    /// <p>Aurora DB instances inherit this value from the DB cluster, so you can't change this value.</p>
     /// </note>
     pub database_insights_mode: ::std::option::Option<crate::types::DatabaseInsightsMode>,
     /// <p>Specifies whether to enable Performance Insights for the DB instance.</p>
@@ -506,9 +505,8 @@ impl RestoreDbInstanceFromS3Input {
     pub fn s3_ingestion_role_arn(&self) -> ::std::option::Option<&str> {
         self.s3_ingestion_role_arn.as_deref()
     }
-    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
-    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
-    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p><note>
+    /// <p>Aurora DB instances inherit this value from the DB cluster, so you can't change this value.</p>
     /// </note>
     pub fn database_insights_mode(&self) -> ::std::option::Option<&crate::types::DatabaseInsightsMode> {
         self.database_insights_mode.as_ref()
@@ -1512,25 +1510,22 @@ impl RestoreDbInstanceFromS3InputBuilder {
     pub fn get_s3_ingestion_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_ingestion_role_arn
     }
-    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
-    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
-    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p><note>
+    /// <p>Aurora DB instances inherit this value from the DB cluster, so you can't change this value.</p>
     /// </note>
     pub fn database_insights_mode(mut self, input: crate::types::DatabaseInsightsMode) -> Self {
         self.database_insights_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
-    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
-    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p><note>
+    /// <p>Aurora DB instances inherit this value from the DB cluster, so you can't change this value.</p>
     /// </note>
     pub fn set_database_insights_mode(mut self, input: ::std::option::Option<crate::types::DatabaseInsightsMode>) -> Self {
         self.database_insights_mode = input;
         self
     }
-    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p>
-    /// <p>This setting only applies to Amazon Aurora DB instances.</p><note>
-    /// <p>Currently, this value is inherited from the DB cluster and can't be changed.</p>
+    /// <p>Specifies the mode of Database Insights to enable for the DB instance.</p><note>
+    /// <p>Aurora DB instances inherit this value from the DB cluster, so you can't change this value.</p>
     /// </note>
     pub fn get_database_insights_mode(&self) -> &::std::option::Option<crate::types::DatabaseInsightsMode> {
         &self.database_insights_mode

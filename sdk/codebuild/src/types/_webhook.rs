@@ -33,6 +33,20 @@ pub struct Webhook {
     /// <p>Global or organization webhooks are only available for GitHub and Github Enterprise webhooks.</p>
     /// </note>
     pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    /// <p>The status of the webhook. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code>: The webhook is being created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: The webhook has failed to create.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The webhook has succeeded and is active.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: The webhook is being deleted.</p></li>
+    /// </ul>
+    pub status: ::std::option::Option<crate::types::WebhookStatus>,
+    /// <p>A message associated with the status of a webhook.</p>
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl Webhook {
     /// <p>The URL to the webhook.</p>
@@ -84,6 +98,24 @@ impl Webhook {
     pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
         self.scope_configuration.as_ref()
     }
+    /// <p>The status of the webhook. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code>: The webhook is being created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: The webhook has failed to create.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The webhook has succeeded and is active.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: The webhook is being deleted.</p></li>
+    /// </ul>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WebhookStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A message associated with the status of a webhook.</p>
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
+        self.status_message.as_deref()
+    }
 }
 impl Webhook {
     /// Creates a new builder-style object to manufacture [`Webhook`](crate::types::Webhook).
@@ -105,6 +137,8 @@ pub struct WebhookBuilder {
     pub(crate) manual_creation: ::std::option::Option<bool>,
     pub(crate) last_modified_secret: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    pub(crate) status: ::std::option::Option<crate::types::WebhookStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl WebhookBuilder {
     /// <p>The URL to the webhook.</p>
@@ -272,6 +306,64 @@ impl WebhookBuilder {
     pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
         &self.scope_configuration
     }
+    /// <p>The status of the webhook. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code>: The webhook is being created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: The webhook has failed to create.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The webhook has succeeded and is active.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: The webhook is being deleted.</p></li>
+    /// </ul>
+    pub fn status(mut self, input: crate::types::WebhookStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the webhook. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code>: The webhook is being created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: The webhook has failed to create.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The webhook has succeeded and is active.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: The webhook is being deleted.</p></li>
+    /// </ul>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WebhookStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The status of the webhook. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CREATING</code>: The webhook is being created.</p></li>
+    /// <li>
+    /// <p><code>CREATE_FAILED</code>: The webhook has failed to create.</p></li>
+    /// <li>
+    /// <p><code>ACTIVE</code>: The webhook has succeeded and is active.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code>: The webhook is being deleted.</p></li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::WebhookStatus> {
+        &self.status
+    }
+    /// <p>A message associated with the status of a webhook.</p>
+    pub fn status_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A message associated with the status of a webhook.</p>
+    pub fn set_status_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_message = input;
+        self
+    }
+    /// <p>A message associated with the status of a webhook.</p>
+    pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_message
+    }
     /// Consumes the builder and constructs a [`Webhook`](crate::types::Webhook).
     pub fn build(self) -> crate::types::Webhook {
         crate::types::Webhook {
@@ -284,6 +376,8 @@ impl WebhookBuilder {
             manual_creation: self.manual_creation,
             last_modified_secret: self.last_modified_secret,
             scope_configuration: self.scope_configuration,
+            status: self.status,
+            status_message: self.status_message,
         }
     }
 }
