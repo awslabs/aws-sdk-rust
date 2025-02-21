@@ -2395,6 +2395,9 @@ impl From<crate::operation::update_directory_config::UpdateDirectoryConfigError>
             crate::operation::update_directory_config::UpdateDirectoryConfigError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::update_directory_config::UpdateDirectoryConfigError::IncompatibleImageException(inner) => {
+                Error::IncompatibleImageException(inner)
+            }
             crate::operation::update_directory_config::UpdateDirectoryConfigError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
             crate::operation::update_directory_config::UpdateDirectoryConfigError::OperationNotPermittedException(inner) => {
                 Error::OperationNotPermittedException(inner)

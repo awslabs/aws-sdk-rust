@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VectorKnowledgeBaseConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub embedding_model_arn: ::std::string::String,
     /// <p>The embeddings model configuration details for the vector model used in Knowledge Base.</p>
     pub embedding_model_configuration: ::std::option::Option<crate::types::EmbeddingModelConfiguration>,
@@ -12,7 +12,7 @@ pub struct VectorKnowledgeBaseConfiguration {
     pub supplemental_data_storage_configuration: ::std::option::Option<crate::types::SupplementalDataStorageConfiguration>,
 }
 impl VectorKnowledgeBaseConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn embedding_model_arn(&self) -> &str {
         use std::ops::Deref;
         self.embedding_model_arn.deref()
@@ -42,18 +42,18 @@ pub struct VectorKnowledgeBaseConfigurationBuilder {
     pub(crate) supplemental_data_storage_configuration: ::std::option::Option<crate::types::SupplementalDataStorageConfiguration>,
 }
 impl VectorKnowledgeBaseConfigurationBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     /// This field is required.
     pub fn embedding_model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.embedding_model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn set_embedding_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.embedding_model_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the model or inference profile used to create vector embeddings for the knowledge base.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn get_embedding_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.embedding_model_arn
     }

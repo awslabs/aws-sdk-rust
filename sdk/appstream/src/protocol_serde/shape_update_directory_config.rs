@@ -40,6 +40,21 @@ pub fn de_update_directory_config_http_error(
                 tmp
             })
         }
+        "IncompatibleImageException" => crate::operation::update_directory_config::UpdateDirectoryConfigError::IncompatibleImageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::IncompatibleImageExceptionBuilder::default();
+                output = crate::protocol_serde::shape_incompatible_image_exception::de_incompatible_image_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_directory_config::UpdateDirectoryConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidRoleException" => crate::operation::update_directory_config::UpdateDirectoryConfigError::InvalidRoleException({
             #[allow(unused_mut)]
             let mut tmp = {

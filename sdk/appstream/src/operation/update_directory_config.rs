@@ -253,6 +253,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateDirecto
 pub enum UpdateDirectoryConfigError {
     /// <p>An API error occurred. Wait a few minutes and try again.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>The image can't be updated because it's not compatible for updates.</p>
+    IncompatibleImageException(crate::types::error::IncompatibleImageException),
     /// <p>The specified role is invalid.</p>
     InvalidRoleException(crate::types::error::InvalidRoleException),
     /// <p>The attempted operation is not permitted.</p>
@@ -295,6 +297,7 @@ impl UpdateDirectoryConfigError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::IncompatibleImageException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRoleException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationNotPermittedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceInUseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -305,6 +308,10 @@ impl UpdateDirectoryConfigError {
     /// Returns `true` if the error kind is `UpdateDirectoryConfigError::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(self, Self::ConcurrentModificationException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDirectoryConfigError::IncompatibleImageException`.
+    pub fn is_incompatible_image_exception(&self) -> bool {
+        matches!(self, Self::IncompatibleImageException(_))
     }
     /// Returns `true` if the error kind is `UpdateDirectoryConfigError::InvalidRoleException`.
     pub fn is_invalid_role_exception(&self) -> bool {
@@ -327,6 +334,7 @@ impl ::std::error::Error for UpdateDirectoryConfigError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::IncompatibleImageException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationNotPermittedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceInUseException(_inner) => ::std::option::Option::Some(_inner),
@@ -339,6 +347,7 @@ impl ::std::fmt::Display for UpdateDirectoryConfigError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::IncompatibleImageException(_inner) => _inner.fmt(f),
             Self::InvalidRoleException(_inner) => _inner.fmt(f),
             Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
             Self::ResourceInUseException(_inner) => _inner.fmt(f),
@@ -365,6 +374,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDirecto
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::IncompatibleImageException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationNotPermittedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceInUseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

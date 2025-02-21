@@ -33,6 +33,9 @@ pub fn ser_web_crawler_configuration(
     if let Some(var_10) = &input.user_agent {
         object.key("userAgent").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.user_agent_header {
+        object.key("userAgentHeader").string(var_11.as_str());
+    }
     Ok(())
 }
 
@@ -69,6 +72,13 @@ where
                         }
                         "userAgent" => {
                             builder = builder.set_user_agent(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "userAgentHeader" => {
+                            builder = builder.set_user_agent_header(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
