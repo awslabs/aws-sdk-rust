@@ -1,4 +1,4 @@
-smithy_rs_revision = 'a51570be4ad4c5440399018f8c5e3eab25071918'
+smithy_rs_revision = '77e80622b6a1b14c78b8f81c98fc2a1610746c20'
 aws_doc_sdk_examples_revision = '103927a3358876ab04cc02e75e8c7c91fbbc51de'
 
 [manual_interventions]
@@ -2526,8 +2526,8 @@ source_hash = '4ccb6d7086aa9b1488c994a914f6bbc457b0d892daa5be7306e5be62b677fea6'
 
 [crates.aws-smithy-mocks-experimental]
 category = 'SmithyRuntime'
-version = '0.2.2'
-source_hash = '25816d50f13dd87e2059ba310861e0166c088b0829770eeca63f27833f566cb8'
+version = '0.2.3'
+source_hash = '6f940a267a9e8d3101ba64155f7b9bec842ca92c724dd4e14de5effc9a6a467a'
 
 [crates.aws-smithy-protocol-test]
 category = 'SmithyRuntime'
@@ -2985,3 +2985,4 @@ aws-sdk-workspaces = '1.71.0'
 aws-sdk-workspacesthinclient = '1.62.0'
 aws-sdk-workspacesweb = '1.65.0'
 aws-sdk-xray = '1.61.0'
+aws-smithy-mocks-experimental = '0.2.3'

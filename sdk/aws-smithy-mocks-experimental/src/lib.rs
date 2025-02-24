@@ -118,10 +118,10 @@ macro_rules! mock {
 #[macro_export]
 macro_rules! mock_client {
     ($aws_crate: ident, $rules: expr) => {
-        mock_client!($aws_crate, $crate::RuleMode::Sequential, $rules)
+        $crate::mock_client!($aws_crate, $crate::RuleMode::Sequential, $rules)
     };
     ($aws_crate: ident, $rule_mode: expr, $rules: expr) => {{
-        mock_client!($aws_crate, $rule_mode, $rules, |conf| conf)
+        $crate::mock_client!($aws_crate, $rule_mode, $rules, |conf| conf)
     }};
     ($aws_crate: ident, $rule_mode: expr, $rules: expr, $additional_configuration: expr) => {{
         let mut mock_response_interceptor =

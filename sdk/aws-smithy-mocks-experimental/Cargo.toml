@@ -5,7 +5,7 @@ doc-scrape-examples = true
 
 [package]
 name = "aws-smithy-mocks-experimental"
-version = "0.2.2"
+version = "0.2.3"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "Experimental testing utilities for smithy-rs generated clients"
 edition = "2021"
@@ -24,10 +24,6 @@ version = "1.2.13"
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
 version = "1.7.3"
-[dev-dependencies.aws-sdk-s3]
-version = "1"
-features = ["test-util"]
-
 [dev-dependencies.tokio]
 version = "1"
 features = ["full"]
