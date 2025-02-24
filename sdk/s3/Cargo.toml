@@ -124,7 +124,7 @@ version = "1.12.0"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 features = ["behavior-version-latest"]
-version = "1.5.16"
+version = "1.5.17"
 
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
