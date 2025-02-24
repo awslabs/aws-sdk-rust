@@ -203,6 +203,8 @@ pub use crate::types::_request_body::RequestBodyBuilder;
 
 pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutputBuilder;
 
+pub use crate::types::_reasoning_text_block::ReasoningTextBlockBuilder;
+
 pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponseBuilder;
 
 pub use crate::types::_orchestration_model_invocation_output::OrchestrationModelInvocationOutputBuilder;

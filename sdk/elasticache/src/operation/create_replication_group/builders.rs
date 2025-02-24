@@ -531,17 +531,17 @@ impl CreateReplicationGroupFluentBuilder {
     pub fn get_cache_node_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cache_node_type()
     }
-    /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>Redis</code>.</p>
+    /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>valkey</code> or <code>redis</code>.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>Redis</code>.</p>
+    /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>valkey</code> or <code>redis</code>.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>Redis</code>.</p>
+    /// <p>The name of the cache engine to be used for the clusters in this replication group. The value must be set to <code>valkey</code> or <code>redis</code>.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }
@@ -953,24 +953,24 @@ impl CreateReplicationGroupFluentBuilder {
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.at_rest_encryption_enabled(input);
         self
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn set_at_rest_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_at_rest_encryption_enabled(input);
         self
     }
     /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
     /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication group is created. To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication group.</p>
-    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Redis OSS version <code>3.2.6</code>, <code>4.x</code> or later.</p>
-    /// <p>Default: <code>false</code></p>
+    /// <p><b>Required:</b> Only available when creating a replication group in an Amazon VPC using Valkey 7.2 and later, Redis OSS version <code>3.2.6</code>, or Redis OSS <code>4.x</code> and later.</p>
+    /// <p>Default: <code>true</code> when using Valkey, <code>false</code> when using Redis OSS</p>
     pub fn get_at_rest_encryption_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_at_rest_encryption_enabled()
     }
@@ -1043,31 +1043,31 @@ impl CreateReplicationGroupFluentBuilder {
     pub fn get_data_tiering_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_data_tiering_enabled()
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 and Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
         self.inner = self.inner.network_type(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 and Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
-    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 and Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         self.inner.get_network_type()
     }
-    /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn ip_discovery(mut self, input: crate::types::IpDiscovery) -> Self {
         self.inner = self.inner.ip_discovery(input);
         self
     }
-    /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_ip_discovery(mut self, input: ::std::option::Option<crate::types::IpDiscovery>) -> Self {
         self.inner = self.inner.set_ip_discovery(input);
         self
     }
-    /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+    /// <p>The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 to 7.1 or Memcached engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn get_ip_discovery(&self) -> &::std::option::Option<crate::types::IpDiscovery> {
         self.inner.get_ip_discovery()
     }

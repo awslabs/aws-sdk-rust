@@ -43,6 +43,12 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_6, inner)?;
             object_6.finish();
         }
+        crate::types::ContentBlock::ReasoningContent(inner) => {
+            #[allow(unused_mut)]
+            let mut object_7 = object_3.key("reasoningContent").start_object();
+            crate::protocol_serde::shape_reasoning_content_block::ser_reasoning_content_block(&mut object_7, inner)?;
+            object_7.finish();
+        }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
     Ok(())
@@ -111,6 +117,11 @@ where
                             crate::protocol_serde::shape_guardrail_converse_content_block::de_guardrail_converse_content_block(tokens)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'guardContent' cannot be null"),
                             )?,
+                        )),
+                        "reasoningContent" => Some(crate::types::ContentBlock::ReasoningContent(
+                            crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

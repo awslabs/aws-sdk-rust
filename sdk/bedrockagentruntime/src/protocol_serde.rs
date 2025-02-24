@@ -463,6 +463,8 @@ pub(crate) mod shape_pre_processing_parsed_response;
 
 pub(crate) mod shape_raw_response;
 
+pub(crate) mod shape_reasoning_content_block;
+
 pub(crate) mod shape_reprompt_response;
 
 pub(crate) mod shape_agent_collaborator_input_payload;
@@ -490,6 +492,8 @@ pub(crate) mod shape_guardrail_topic_policy_assessment;
 pub(crate) mod shape_guardrail_word_policy_assessment;
 
 pub(crate) mod shape_parameters;
+
+pub(crate) mod shape_reasoning_text_block;
 
 pub(crate) mod shape_request_body;
 

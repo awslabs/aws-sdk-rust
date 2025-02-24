@@ -93,6 +93,8 @@ pub use crate::types::_content_block_delta_event::ContentBlockDeltaEvent;
 
 pub use crate::types::_content_block_delta::ContentBlockDelta;
 
+pub use crate::types::_reasoning_content_block_delta::ReasoningContentBlockDelta;
+
 pub use crate::types::_tool_use_block_delta::ToolUseBlockDelta;
 
 pub use crate::types::_content_block_start_event::ContentBlockStartEvent;
@@ -148,6 +150,10 @@ pub use crate::types::_guardrail_converse_content_qualifier::GuardrailConverseCo
 pub use crate::types::_message::Message;
 
 pub use crate::types::_content_block::ContentBlock;
+
+pub use crate::types::_reasoning_content_block::ReasoningContentBlock;
+
+pub use crate::types::_reasoning_text_block::ReasoningTextBlock;
 
 pub use crate::types::_tool_result_block::ToolResultBlock;
 
@@ -386,6 +392,12 @@ mod _performance_configuration;
 mod _prompt_router_trace;
 
 mod _prompt_variable_values;
+
+mod _reasoning_content_block;
+
+mod _reasoning_content_block_delta;
+
+mod _reasoning_text_block;
 
 mod _response_stream;
 

@@ -85,6 +85,8 @@ pub use crate::types::_guardrail_converse_text_block::GuardrailConverseTextBlock
 
 pub use crate::types::_message::MessageBuilder;
 
+pub use crate::types::_reasoning_text_block::ReasoningTextBlockBuilder;
+
 pub use crate::types::_tool_result_block::ToolResultBlockBuilder;
 
 pub use crate::types::_video_block::VideoBlockBuilder;

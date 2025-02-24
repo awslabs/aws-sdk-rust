@@ -9,7 +9,7 @@ pub struct ModifyUserGroupInput {
     pub user_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of user IDs to remove from the user group.</p>
     pub user_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The engine for a user group.</p>
+    /// <p>Modifies the engine listed in a user group. The options are valkey or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl ModifyUserGroupInput {
@@ -29,7 +29,7 @@ impl ModifyUserGroupInput {
     pub fn user_ids_to_remove(&self) -> &[::std::string::String] {
         self.user_ids_to_remove.as_deref().unwrap_or_default()
     }
-    /// <p>The engine for a user group.</p>
+    /// <p>Modifies the engine listed in a user group. The options are valkey or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -106,17 +106,17 @@ impl ModifyUserGroupInputBuilder {
     pub fn get_user_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.user_ids_to_remove
     }
-    /// <p>The engine for a user group.</p>
+    /// <p>Modifies the engine listed in a user group. The options are valkey or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine for a user group.</p>
+    /// <p>Modifies the engine listed in a user group. The options are valkey or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The engine for a user group.</p>
+    /// <p>Modifies the engine listed in a user group. The options are valkey or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

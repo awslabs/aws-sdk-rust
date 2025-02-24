@@ -15,7 +15,7 @@ pub struct ModifyUserInput {
     pub no_password_required: ::std::option::Option<bool>,
     /// <p>Specifies how to authenticate the user.</p>
     pub authentication_mode: ::std::option::Option<crate::types::AuthenticationMode>,
-    /// <p>The engine for a specific user.</p>
+    /// <p>Modifies the engine listed for a user. The options are valkey or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
 }
 impl ModifyUserInput {
@@ -45,7 +45,7 @@ impl ModifyUserInput {
     pub fn authentication_mode(&self) -> ::std::option::Option<&crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
-    /// <p>The engine for a specific user.</p>
+    /// <p>Modifies the engine listed for a user. The options are valkey or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -161,17 +161,17 @@ impl ModifyUserInputBuilder {
     pub fn get_authentication_mode(&self) -> &::std::option::Option<crate::types::AuthenticationMode> {
         &self.authentication_mode
     }
-    /// <p>The engine for a specific user.</p>
+    /// <p>Modifies the engine listed for a user. The options are valkey or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The engine for a specific user.</p>
+    /// <p>Modifies the engine listed for a user. The options are valkey or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The engine for a specific user.</p>
+    /// <p>Modifies the engine listed for a user. The options are valkey or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

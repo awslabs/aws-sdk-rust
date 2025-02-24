@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`DeleteUserGroupOutput`](crate::operation::delete_user_group::DeleteUserGroupOutput) with field(s):
     ///   - [`user_group_id(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::user_group_id): <p>The ID of the user group.</p>
     ///   - [`status(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::status): <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    ///   - [`engine(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::engine): <p>The current supported value is Redis user.</p>
+    ///   - [`engine(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::engine): <p>The options are valkey or redis.</p>
     ///   - [`user_ids(Option<Vec::<String>>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::user_ids): <p>The list of user IDs that belong to the user group.</p>
     ///   - [`minimum_engine_version(Option<String>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::minimum_engine_version): <p>The minimum engine version required, which is Redis OSS 6.0</p>
     ///   - [`pending_changes(Option<UserGroupPendingChanges>)`](crate::operation::delete_user_group::DeleteUserGroupOutput::pending_changes): <p>A list of updates being applied to the user group.</p>

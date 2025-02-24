@@ -499,6 +499,15 @@ pub(crate) fn guardrail_converse_text_block_correct_errors(
     builder
 }
 
+pub(crate) fn reasoning_text_block_correct_errors(
+    mut builder: crate::types::builders::ReasoningTextBlockBuilder,
+) -> crate::types::builders::ReasoningTextBlockBuilder {
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.uri.is_none() {
         builder.uri = Some(Default::default())

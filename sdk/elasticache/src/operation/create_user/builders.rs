@@ -22,7 +22,7 @@ impl crate::operation::create_user::builders::CreateUserInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateUser`.
 ///
-/// <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 and onwards: Creates a user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
+/// <p>For Valkey engine version 7.2 onwards and Redis OSS 6.0 to 7.1: Creates a user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl CreateUserFluentBuilder {
     pub fn get_user_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_name()
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_engine()
     }

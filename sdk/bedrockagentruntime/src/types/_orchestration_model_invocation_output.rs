@@ -10,6 +10,8 @@ pub struct OrchestrationModelInvocationOutput {
     pub raw_response: ::std::option::Option<crate::types::RawResponse>,
     /// <p>Contains information about the foundation model output from the orchestration step.</p>
     pub metadata: ::std::option::Option<crate::types::Metadata>,
+    /// <p>Contains content about the reasoning that the model made during the orchestration step.</p>
+    pub reasoning_content: ::std::option::Option<crate::types::ReasoningContentBlock>,
 }
 impl OrchestrationModelInvocationOutput {
     /// <p>The unique identifier of the trace.</p>
@@ -24,6 +26,10 @@ impl OrchestrationModelInvocationOutput {
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
         self.metadata.as_ref()
     }
+    /// <p>Contains content about the reasoning that the model made during the orchestration step.</p>
+    pub fn reasoning_content(&self) -> ::std::option::Option<&crate::types::ReasoningContentBlock> {
+        self.reasoning_content.as_ref()
+    }
 }
 impl ::std::fmt::Debug for OrchestrationModelInvocationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for OrchestrationModelInvocationOutput {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reasoning_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -48,6 +55,7 @@ pub struct OrchestrationModelInvocationOutputBuilder {
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) raw_response: ::std::option::Option<crate::types::RawResponse>,
     pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
+    pub(crate) reasoning_content: ::std::option::Option<crate::types::ReasoningContentBlock>,
 }
 impl OrchestrationModelInvocationOutputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -92,12 +100,27 @@ impl OrchestrationModelInvocationOutputBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
         &self.metadata
     }
+    /// <p>Contains content about the reasoning that the model made during the orchestration step.</p>
+    pub fn reasoning_content(mut self, input: crate::types::ReasoningContentBlock) -> Self {
+        self.reasoning_content = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains content about the reasoning that the model made during the orchestration step.</p>
+    pub fn set_reasoning_content(mut self, input: ::std::option::Option<crate::types::ReasoningContentBlock>) -> Self {
+        self.reasoning_content = input;
+        self
+    }
+    /// <p>Contains content about the reasoning that the model made during the orchestration step.</p>
+    pub fn get_reasoning_content(&self) -> &::std::option::Option<crate::types::ReasoningContentBlock> {
+        &self.reasoning_content
+    }
     /// Consumes the builder and constructs a [`OrchestrationModelInvocationOutput`](crate::types::OrchestrationModelInvocationOutput).
     pub fn build(self) -> crate::types::OrchestrationModelInvocationOutput {
         crate::types::OrchestrationModelInvocationOutput {
             trace_id: self.trace_id,
             raw_response: self.raw_response,
             metadata: self.metadata,
+            reasoning_content: self.reasoning_content,
         }
     }
 }
@@ -107,6 +130,7 @@ impl ::std::fmt::Debug for OrchestrationModelInvocationOutputBuilder {
         formatter.field("trace_id", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reasoning_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

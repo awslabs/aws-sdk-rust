@@ -211,6 +211,8 @@ pub(crate) mod shape_image_block;
 
 pub(crate) mod shape_model_outputs;
 
+pub(crate) mod shape_reasoning_content_block;
+
 pub(crate) mod shape_specific_tool_choice;
 
 pub(crate) mod shape_tool_result_block;
@@ -249,6 +251,8 @@ pub(crate) mod shape_guardrail_topic_list;
 
 pub(crate) mod shape_image_source;
 
+pub(crate) mod shape_reasoning_text_block;
+
 pub(crate) mod shape_tool_input_schema;
 
 pub(crate) mod shape_tool_result_content_block;
@@ -268,6 +272,8 @@ pub(crate) mod shape_guardrail_pii_entity_filter;
 pub(crate) mod shape_guardrail_regex_filter;
 
 pub(crate) mod shape_guardrail_topic;
+
+pub(crate) mod shape_reasoning_content_block_delta;
 
 pub(crate) mod shape_s3_location;
 

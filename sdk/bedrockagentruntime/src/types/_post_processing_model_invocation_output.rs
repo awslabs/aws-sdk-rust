@@ -12,6 +12,8 @@ pub struct PostProcessingModelInvocationOutput {
     pub raw_response: ::std::option::Option<crate::types::RawResponse>,
     /// <p>Contains information about the foundation model output from the post-processing step.</p>
     pub metadata: ::std::option::Option<crate::types::Metadata>,
+    /// <p>Contains content about the reasoning that the model made during the post-processing step.</p>
+    pub reasoning_content: ::std::option::Option<crate::types::ReasoningContentBlock>,
 }
 impl PostProcessingModelInvocationOutput {
     /// <p>The unique identifier of the trace.</p>
@@ -30,6 +32,10 @@ impl PostProcessingModelInvocationOutput {
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
         self.metadata.as_ref()
     }
+    /// <p>Contains content about the reasoning that the model made during the post-processing step.</p>
+    pub fn reasoning_content(&self) -> ::std::option::Option<&crate::types::ReasoningContentBlock> {
+        self.reasoning_content.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PostProcessingModelInvocationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for PostProcessingModelInvocationOutput {
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reasoning_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct PostProcessingModelInvocationOutputBuilder {
     pub(crate) parsed_response: ::std::option::Option<crate::types::PostProcessingParsedResponse>,
     pub(crate) raw_response: ::std::option::Option<crate::types::RawResponse>,
     pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
+    pub(crate) reasoning_content: ::std::option::Option<crate::types::ReasoningContentBlock>,
 }
 impl PostProcessingModelInvocationOutputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -114,6 +122,20 @@ impl PostProcessingModelInvocationOutputBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
         &self.metadata
     }
+    /// <p>Contains content about the reasoning that the model made during the post-processing step.</p>
+    pub fn reasoning_content(mut self, input: crate::types::ReasoningContentBlock) -> Self {
+        self.reasoning_content = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains content about the reasoning that the model made during the post-processing step.</p>
+    pub fn set_reasoning_content(mut self, input: ::std::option::Option<crate::types::ReasoningContentBlock>) -> Self {
+        self.reasoning_content = input;
+        self
+    }
+    /// <p>Contains content about the reasoning that the model made during the post-processing step.</p>
+    pub fn get_reasoning_content(&self) -> &::std::option::Option<crate::types::ReasoningContentBlock> {
+        &self.reasoning_content
+    }
     /// Consumes the builder and constructs a [`PostProcessingModelInvocationOutput`](crate::types::PostProcessingModelInvocationOutput).
     pub fn build(self) -> crate::types::PostProcessingModelInvocationOutput {
         crate::types::PostProcessingModelInvocationOutput {
@@ -121,6 +143,7 @@ impl PostProcessingModelInvocationOutputBuilder {
             parsed_response: self.parsed_response,
             raw_response: self.raw_response,
             metadata: self.metadata,
+            reasoning_content: self.reasoning_content,
         }
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for PostProcessingModelInvocationOutputBuilder {
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reasoning_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

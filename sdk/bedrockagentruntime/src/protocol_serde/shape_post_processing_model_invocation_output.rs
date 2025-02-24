@@ -32,6 +32,10 @@ where
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens)?);
                         }
+                        "reasoningContent" => {
+                            builder = builder
+                                .set_reasoning_content(crate::protocol_serde::shape_reasoning_content_block::de_reasoning_content_block(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

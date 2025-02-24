@@ -12,6 +12,8 @@ pub struct PreProcessingModelInvocationOutput {
     pub raw_response: ::std::option::Option<crate::types::RawResponse>,
     /// <p>Contains information about the foundation model output from the pre-processing step.</p>
     pub metadata: ::std::option::Option<crate::types::Metadata>,
+    /// <p>Contains content about the reasoning that the model made during the pre-processing step.</p>
+    pub reasoning_content: ::std::option::Option<crate::types::ReasoningContentBlock>,
 }
 impl PreProcessingModelInvocationOutput {
     /// <p>The unique identifier of the trace.</p>
@@ -30,6 +32,10 @@ impl PreProcessingModelInvocationOutput {
     pub fn metadata(&self) -> ::std::option::Option<&crate::types::Metadata> {
         self.metadata.as_ref()
     }
+    /// <p>Contains content about the reasoning that the model made during the pre-processing step.</p>
+    pub fn reasoning_content(&self) -> ::std::option::Option<&crate::types::ReasoningContentBlock> {
+        self.reasoning_content.as_ref()
+    }
 }
 impl ::std::fmt::Debug for PreProcessingModelInvocationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for PreProcessingModelInvocationOutput {
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reasoning_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct PreProcessingModelInvocationOutputBuilder {
     pub(crate) parsed_response: ::std::option::Option<crate::types::PreProcessingParsedResponse>,
     pub(crate) raw_response: ::std::option::Option<crate::types::RawResponse>,
     pub(crate) metadata: ::std::option::Option<crate::types::Metadata>,
+    pub(crate) reasoning_content: ::std::option::Option<crate::types::ReasoningContentBlock>,
 }
 impl PreProcessingModelInvocationOutputBuilder {
     /// <p>The unique identifier of the trace.</p>
@@ -114,6 +122,20 @@ impl PreProcessingModelInvocationOutputBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<crate::types::Metadata> {
         &self.metadata
     }
+    /// <p>Contains content about the reasoning that the model made during the pre-processing step.</p>
+    pub fn reasoning_content(mut self, input: crate::types::ReasoningContentBlock) -> Self {
+        self.reasoning_content = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains content about the reasoning that the model made during the pre-processing step.</p>
+    pub fn set_reasoning_content(mut self, input: ::std::option::Option<crate::types::ReasoningContentBlock>) -> Self {
+        self.reasoning_content = input;
+        self
+    }
+    /// <p>Contains content about the reasoning that the model made during the pre-processing step.</p>
+    pub fn get_reasoning_content(&self) -> &::std::option::Option<crate::types::ReasoningContentBlock> {
+        &self.reasoning_content
+    }
     /// Consumes the builder and constructs a [`PreProcessingModelInvocationOutput`](crate::types::PreProcessingModelInvocationOutput).
     pub fn build(self) -> crate::types::PreProcessingModelInvocationOutput {
         crate::types::PreProcessingModelInvocationOutput {
@@ -121,6 +143,7 @@ impl PreProcessingModelInvocationOutputBuilder {
             parsed_response: self.parsed_response,
             raw_response: self.raw_response,
             metadata: self.metadata,
+            reasoning_content: self.reasoning_content,
         }
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for PreProcessingModelInvocationOutputBuilder {
         formatter.field("parsed_response", &"*** Sensitive Data Redacted ***");
         formatter.field("raw_response", &"*** Sensitive Data Redacted ***");
         formatter.field("metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("reasoning_content", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

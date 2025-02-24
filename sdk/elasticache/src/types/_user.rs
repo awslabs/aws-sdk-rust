@@ -9,7 +9,7 @@ pub struct User {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
     pub status: ::std::option::Option<::std::string::String>,
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The minimum engine version required, which is Redis OSS 6.0</p>
     pub minimum_engine_version: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl User {
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
@@ -126,17 +126,17 @@ impl UserBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.engine = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
-    /// <p>The current supported value is Redis.</p>
+    /// <p>The options are valkey or redis.</p>
     pub fn get_engine(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine
     }

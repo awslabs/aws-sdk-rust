@@ -283,6 +283,10 @@ pub use crate::types::_post_processing_trace::PostProcessingTrace;
 
 pub use crate::types::_post_processing_model_invocation_output::PostProcessingModelInvocationOutput;
 
+pub use crate::types::_reasoning_content_block::ReasoningContentBlock;
+
+pub use crate::types::_reasoning_text_block::ReasoningTextBlock;
+
 pub use crate::types::_post_processing_parsed_response::PostProcessingParsedResponse;
 
 pub use crate::types::_orchestration_trace::OrchestrationTrace;
@@ -824,6 +828,10 @@ mod _query_transformation_type;
 mod _rationale;
 
 mod _raw_response;
+
+mod _reasoning_content_block;
+
+mod _reasoning_text_block;
 
 mod _reprompt_response;
 
