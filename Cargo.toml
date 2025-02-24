@@ -2,12 +2,12 @@
 resolver = "2"
 exclude = [
     "examples/webassembly",
-    "examples/lambda",
     "examples/examples",
+    "examples/lambda",
     "examples/cross_service",
     "examples/test-utils",
-    "tests/webassembly",
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/webassembly"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -176,7 +176,6 @@ members = [
     "sdk/eksauth",
     "sdk/elasticache",
     "sdk/elasticbeanstalk",
-    "sdk/elasticinference",
     "sdk/elasticloadbalancing",
     "sdk/elasticloadbalancingv2",
     "sdk/elasticsearch",

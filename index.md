@@ -240,7 +240,6 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon EMR | [aws-sdk-emr](https://crates.io/crates/aws-sdk-emr) ([docs](https://docs.rs/aws-sdk-emr)) |
 | Amazon EMR Containers | [aws-sdk-emrcontainers](https://crates.io/crates/aws-sdk-emrcontainers) ([docs](https://docs.rs/aws-sdk-emrcontainers)) |
 | Amazon ElastiCache | [aws-sdk-elasticache](https://crates.io/crates/aws-sdk-elasticache) ([docs](https://docs.rs/aws-sdk-elasticache)) |
-| Amazon Elastic  Inference | [aws-sdk-elasticinference](https://crates.io/crates/aws-sdk-elasticinference) ([docs](https://docs.rs/aws-sdk-elasticinference)) |
 | Amazon Elastic Block Store | [aws-sdk-ebs](https://crates.io/crates/aws-sdk-ebs) ([docs](https://docs.rs/aws-sdk-ebs)) |
 | Amazon Elastic Compute Cloud | [aws-sdk-ec2](https://crates.io/crates/aws-sdk-ec2) ([docs](https://docs.rs/aws-sdk-ec2)) |
 | Amazon Elastic Container Registry | [aws-sdk-ecr](https://crates.io/crates/aws-sdk-ecr) ([docs](https://docs.rs/aws-sdk-ecr)) |
