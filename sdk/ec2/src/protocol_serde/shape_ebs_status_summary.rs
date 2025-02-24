@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ebs_status_summary(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::EbsStatusSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::EbsStatusSummary, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::EbsStatusSummary::builder();
     while let Some(mut tag) = decoder.next_tag() {

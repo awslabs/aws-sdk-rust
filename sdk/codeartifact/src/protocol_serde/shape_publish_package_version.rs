@@ -172,7 +172,7 @@ pub fn ser_publish_package_version_headers(
 pub(crate) fn de_publish_package_version(
     value: &[u8],
     mut builder: crate::operation::publish_package_version::builders::PublishPackageVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::publish_package_version::builders::PublishPackageVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

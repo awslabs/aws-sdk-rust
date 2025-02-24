@@ -91,7 +91,7 @@ pub fn de_put_supplemental_tax_registration_http_response(
 
 pub fn ser_put_supplemental_tax_registration_input(
     input: &crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_supplemental_tax_registration_input::ser_put_supplemental_tax_registration_input_input(&mut object, input)?;
@@ -102,7 +102,7 @@ pub fn ser_put_supplemental_tax_registration_input(
 pub(crate) fn de_put_supplemental_tax_registration(
     value: &[u8],
     mut builder: crate::operation::put_supplemental_tax_registration::builders::PutSupplementalTaxRegistrationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_supplemental_tax_registration::builders::PutSupplementalTaxRegistrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

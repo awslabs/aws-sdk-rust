@@ -2,7 +2,7 @@
 pub fn ser_dicom_study_date_and_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DicomStudyDateAndTime,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DICOMStudyDate").string(input.dicom_study_date.as_str());
     }

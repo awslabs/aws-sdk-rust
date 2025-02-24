@@ -2,7 +2,7 @@
 pub fn ser_update_case_action_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateCaseActionDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Fields").start_array();
         for item_2 in &input.fields {
@@ -20,7 +20,7 @@ pub fn ser_update_case_action_definition(
 
 pub(crate) fn de_update_case_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UpdateCaseActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UpdateCaseActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

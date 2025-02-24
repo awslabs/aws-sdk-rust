@@ -2,7 +2,7 @@
 pub fn ser_list_account_links_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_account_links::ListAccountLinksInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.link_status_filter {
         let mut array_2 = object.key("LinkStatusFilter").start_array();
         for item_3 in var_1 {

@@ -105,7 +105,7 @@ pub fn de_get_data_quality_model_http_response(
 
 pub fn ser_get_data_quality_model_input(
     input: &crate::operation::get_data_quality_model::GetDataQualityModelInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_data_quality_model_input::ser_get_data_quality_model_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_get_data_quality_model_input(
 pub(crate) fn de_get_data_quality_model(
     value: &[u8],
     mut builder: crate::operation::get_data_quality_model::builders::GetDataQualityModelOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_quality_model::builders::GetDataQualityModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -39,7 +39,10 @@ pub fn de_deprovision_byoip_cidr_http_response(
 pub fn de_deprovision_byoip_cidr(
     inp: &[u8],
     mut builder: crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrOutputBuilder,
-) -> Result<crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

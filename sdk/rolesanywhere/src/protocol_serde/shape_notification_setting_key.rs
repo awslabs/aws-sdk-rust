@@ -2,7 +2,7 @@
 pub fn ser_notification_setting_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationSettingKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("event").string(input.event.as_str());
     }

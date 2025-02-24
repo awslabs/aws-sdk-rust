@@ -106,7 +106,7 @@ pub fn de_list_segment_references_http_response(
 pub(crate) fn de_list_segment_references(
     value: &[u8],
     mut builder: crate::operation::list_segment_references::builders::ListSegmentReferencesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_segment_references::builders::ListSegmentReferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

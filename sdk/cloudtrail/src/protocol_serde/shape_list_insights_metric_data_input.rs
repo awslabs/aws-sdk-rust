@@ -2,7 +2,7 @@
 pub fn ser_list_insights_metric_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_insights_metric_data::ListInsightsMetricDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_source {
         object.key("EventSource").string(var_1.as_str());
     }

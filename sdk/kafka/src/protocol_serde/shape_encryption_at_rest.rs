@@ -2,7 +2,7 @@
 pub fn ser_encryption_at_rest(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EncryptionAtRest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_volume_kms_key_id {
         object.key("dataVolumeKMSKeyId").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_encryption_at_rest(
 
 pub(crate) fn de_encryption_at_rest<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EncryptionAtRest>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EncryptionAtRest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

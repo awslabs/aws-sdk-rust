@@ -2,7 +2,7 @@
 pub fn ser_pipeline_execution_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipelineExecutionFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.succeeded_in_stage {
         #[allow(unused_mut)]
         let mut object_2 = object.key("succeededInStage").start_object();

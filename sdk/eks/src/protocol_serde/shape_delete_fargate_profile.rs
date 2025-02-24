@@ -106,7 +106,7 @@ pub fn de_delete_fargate_profile_http_response(
 pub(crate) fn de_delete_fargate_profile(
     value: &[u8],
     mut builder: crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_fargate_profile::builders::DeleteFargateProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

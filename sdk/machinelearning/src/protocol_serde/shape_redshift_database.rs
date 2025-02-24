@@ -2,7 +2,7 @@
 pub fn ser_redshift_database(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftDatabase,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DatabaseName").string(input.database_name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_redshift_database(
 
 pub(crate) fn de_redshift_database<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RedshiftDatabase>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RedshiftDatabase>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

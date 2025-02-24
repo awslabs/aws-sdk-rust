@@ -106,7 +106,7 @@ pub fn de_get_default_scraper_configuration_http_response(
 pub(crate) fn de_get_default_scraper_configuration(
     value: &[u8],
     mut builder: crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_default_scraper_configuration::builders::GetDefaultScraperConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -125,7 +125,7 @@ pub fn de_get_direct_query_data_source_http_response(
 pub(crate) fn de_get_direct_query_data_source(
     value: &[u8],
     mut builder: crate::operation::get_direct_query_data_source::builders::GetDirectQueryDataSourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_direct_query_data_source::builders::GetDirectQueryDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

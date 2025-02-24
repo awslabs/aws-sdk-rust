@@ -2,7 +2,7 @@
 pub fn ser_encrypt_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::encrypt_data::EncryptDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EncryptionAttributes").start_object();

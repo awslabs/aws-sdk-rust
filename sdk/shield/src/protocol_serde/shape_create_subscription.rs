@@ -76,6 +76,6 @@ pub fn de_create_subscription_http_response(
 
 pub fn ser_create_subscription_input(
     _input: &crate::operation::create_subscription::CreateSubscriptionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

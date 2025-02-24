@@ -106,7 +106,7 @@ pub fn de_remove_notification_channel_http_response(
 pub(crate) fn de_remove_notification_channel(
     value: &[u8],
     mut builder: crate::operation::remove_notification_channel::builders::RemoveNotificationChannelOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_notification_channel::builders::RemoveNotificationChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

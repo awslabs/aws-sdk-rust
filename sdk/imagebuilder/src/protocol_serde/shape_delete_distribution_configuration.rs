@@ -164,7 +164,7 @@ pub fn de_delete_distribution_configuration_http_response(
 pub(crate) fn de_delete_distribution_configuration(
     value: &[u8],
     mut builder: crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_distribution_configuration::builders::DeleteDistributionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

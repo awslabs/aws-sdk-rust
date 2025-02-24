@@ -2,7 +2,7 @@
 pub fn ser_bandwidth_reduction_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BandwidthReductionFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sharpening {
         object.key("sharpening").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_bandwidth_reduction_filter(
 
 pub(crate) fn de_bandwidth_reduction_filter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BandwidthReductionFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BandwidthReductionFilter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -108,7 +108,7 @@ pub fn de_get_model_invocation_logging_configuration_http_response(
 pub(crate) fn de_get_model_invocation_logging_configuration(
     value: &[u8],
     mut builder: crate::operation::get_model_invocation_logging_configuration::builders::GetModelInvocationLoggingConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_model_invocation_logging_configuration::builders::GetModelInvocationLoggingConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

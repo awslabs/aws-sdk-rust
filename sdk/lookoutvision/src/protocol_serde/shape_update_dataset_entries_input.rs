@@ -2,7 +2,7 @@
 pub fn ser_update_dataset_entries_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_dataset_entries::UpdateDatasetEntriesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.changes {
         object.key("Changes").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

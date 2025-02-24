@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_alias_icp_recordal(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AliasIcpRecordal, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AliasIcpRecordal, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AliasIcpRecordal::builder();
     while let Some(mut tag) = decoder.next_tag() {

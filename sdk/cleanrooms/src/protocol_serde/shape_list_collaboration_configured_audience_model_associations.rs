@@ -118,7 +118,7 @@ pub fn de_list_collaboration_configured_audience_model_associations_http_respons
     })
 }
 
-pub(crate) fn de_list_collaboration_configured_audience_model_associations(value: &[u8], mut builder: crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder) -> Result<crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+pub(crate) fn de_list_collaboration_configured_audience_model_associations(value: &[u8], mut builder: crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder) -> ::std::result::Result<crate::operation::list_collaboration_configured_audience_model_associations::builders::ListCollaborationConfiguredAudienceModelAssociationsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -42,7 +42,7 @@ pub fn de_disassociate_transit_gateway_multicast_domain_http_response(
 pub fn de_disassociate_transit_gateway_multicast_domain(
     inp: &[u8],
     mut builder: crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_transit_gateway_multicast_domain::builders::DisassociateTransitGatewayMulticastDomainOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -3,7 +3,7 @@
 pub fn de_subnet_not_allowed_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::SubnetNotAllowedFaultBuilder,
-) -> Result<crate::types::error::builders::SubnetNotAllowedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::SubnetNotAllowedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

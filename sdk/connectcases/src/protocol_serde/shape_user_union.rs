@@ -2,7 +2,7 @@
 pub fn ser_user_union(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::UserUnion::UserArn(inner) => {
             object_7.key("userArn").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_user_union(
 
 pub(crate) fn de_user_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UserUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UserUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_initiate_auth_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::initiate_auth::InitiateAuthInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auth_flow {
         object.key("AuthFlow").string(var_1.as_str());
     }

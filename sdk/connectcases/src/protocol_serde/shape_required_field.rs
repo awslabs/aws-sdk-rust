@@ -2,7 +2,7 @@
 pub fn ser_required_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequiredField,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fieldId").string(input.field_id.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_required_field(
 
 pub(crate) fn de_required_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RequiredField>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RequiredField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

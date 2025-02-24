@@ -2,7 +2,7 @@
 pub fn ser_update_default_q_business_application_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_default_q_business_application::UpdateDefaultQBusinessApplicationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_id {
         object.key("ApplicationId").string(var_1.as_str());
     }

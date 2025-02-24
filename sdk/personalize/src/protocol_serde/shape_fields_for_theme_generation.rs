@@ -2,7 +2,7 @@
 pub fn ser_fields_for_theme_generation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldsForThemeGeneration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("itemName").string(input.item_name.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_fields_for_theme_generation(
 
 pub(crate) fn de_fields_for_theme_generation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FieldsForThemeGeneration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FieldsForThemeGeneration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

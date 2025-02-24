@@ -2,7 +2,7 @@
 pub fn ser_step_action(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StepAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::StepAction::ResourceAction(inner) => {
             #[allow(unused_mut)]
@@ -29,7 +29,7 @@ pub fn ser_step_action(
 
 pub(crate) fn de_step_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StepAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StepAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

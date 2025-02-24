@@ -2,7 +2,7 @@
 pub fn ser_get_media_analysis_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_media_analysis_job::GetMediaAnalysisJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_id {
         object.key("JobId").string(var_1.as_str());
     }

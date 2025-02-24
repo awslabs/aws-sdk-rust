@@ -2,7 +2,7 @@
 pub fn ser_tax_registration_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaxRegistrationEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("registrationId").string(input.registration_id.as_str());
     }

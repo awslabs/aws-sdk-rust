@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_access_hours_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationAccessHoursEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DayOfWeek").string(input.day_of_week.as_str());
     }

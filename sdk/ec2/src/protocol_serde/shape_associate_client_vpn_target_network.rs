@@ -39,7 +39,7 @@ pub fn de_associate_client_vpn_target_network_http_response(
 pub fn de_associate_client_vpn_target_network(
     inp: &[u8],
     mut builder: crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -144,7 +144,7 @@ pub fn de_check_access_not_granted_http_response(
 
 pub fn ser_check_access_not_granted_input(
     input: &crate::operation::check_access_not_granted::CheckAccessNotGrantedInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_check_access_not_granted_input::ser_check_access_not_granted_input_input(&mut object, input)?;
@@ -155,7 +155,7 @@ pub fn ser_check_access_not_granted_input(
 pub(crate) fn de_check_access_not_granted(
     value: &[u8],
     mut builder: crate::operation::check_access_not_granted::builders::CheckAccessNotGrantedOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::check_access_not_granted::builders::CheckAccessNotGrantedOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

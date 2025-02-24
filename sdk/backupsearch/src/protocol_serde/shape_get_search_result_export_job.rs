@@ -136,7 +136,7 @@ pub fn de_get_search_result_export_job_http_response(
 pub(crate) fn de_get_search_result_export_job(
     value: &[u8],
     mut builder: crate::operation::get_search_result_export_job::builders::GetSearchResultExportJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_search_result_export_job::builders::GetSearchResultExportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_fetch_page_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FetchPageRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TransactionId").string(input.transaction_id.as_str());
     }

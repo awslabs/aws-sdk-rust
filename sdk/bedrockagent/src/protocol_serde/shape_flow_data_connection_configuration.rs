@@ -2,7 +2,7 @@
 pub fn ser_flow_data_connection_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FlowDataConnectionConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceOutput").string(input.source_output.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_flow_data_connection_configuration(
 
 pub(crate) fn de_flow_data_connection_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FlowDataConnectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FlowDataConnectionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

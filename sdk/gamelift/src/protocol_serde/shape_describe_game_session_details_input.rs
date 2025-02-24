@@ -2,7 +2,7 @@
 pub fn ser_describe_game_session_details_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_game_session_details::DescribeGameSessionDetailsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_id {
         object.key("FleetId").string(var_1.as_str());
     }

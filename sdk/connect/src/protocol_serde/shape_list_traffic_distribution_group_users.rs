@@ -132,7 +132,7 @@ pub fn de_list_traffic_distribution_group_users_http_response(
 pub(crate) fn de_list_traffic_distribution_group_users(
     value: &[u8],
     mut builder: crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_traffic_distribution_group_users::builders::ListTrafficDistributionGroupUsersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -110,7 +110,7 @@ pub fn de_get_autoshift_observer_notification_status_http_response(
 pub(crate) fn de_get_autoshift_observer_notification_status(
     value: &[u8],
     mut builder: crate::operation::get_autoshift_observer_notification_status::builders::GetAutoshiftObserverNotificationStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_autoshift_observer_notification_status::builders::GetAutoshiftObserverNotificationStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

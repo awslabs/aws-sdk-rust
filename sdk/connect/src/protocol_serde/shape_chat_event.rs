@@ -2,7 +2,7 @@
 pub fn ser_chat_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Type").string(input.r#type.as_str());
     }

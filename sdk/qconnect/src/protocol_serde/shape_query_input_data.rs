@@ -2,7 +2,7 @@
 pub fn ser_query_input_data(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QueryInputData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::QueryInputData::QueryTextInputData(inner) => {
             #[allow(unused_mut)]

@@ -56,7 +56,7 @@ pub fn de_reject_data_share_http_response(
 pub fn de_reject_data_share(
     inp: &[u8],
     mut builder: crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder,
-) -> Result<crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::reject_data_share::builders::RejectDataShareOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

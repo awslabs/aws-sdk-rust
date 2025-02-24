@@ -2,7 +2,7 @@
 pub fn ser_update_template_group_access_control_entry_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_template_group_access_control_entry::UpdateTemplateGroupAccessControlEntryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_rights {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AccessRights").start_object();

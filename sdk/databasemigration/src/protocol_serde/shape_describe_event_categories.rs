@@ -39,7 +39,7 @@ pub fn de_describe_event_categories_http_response(
 
 pub fn ser_describe_event_categories_input(
     input: &crate::operation::describe_event_categories::DescribeEventCategoriesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_event_categories_input::ser_describe_event_categories_input_input(&mut object, input)?;
@@ -50,7 +50,7 @@ pub fn ser_describe_event_categories_input(
 pub(crate) fn de_describe_event_categories(
     value: &[u8],
     mut builder: crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

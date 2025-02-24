@@ -2,7 +2,7 @@
 pub fn ser_list_unique_problems_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_unique_problems::ListUniqueProblemsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }

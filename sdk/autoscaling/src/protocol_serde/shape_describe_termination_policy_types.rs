@@ -62,7 +62,7 @@ pub fn de_describe_termination_policy_types_http_response(
 pub fn de_describe_termination_policy_types(
     inp: &[u8],
     mut builder: crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_termination_policy_types::builders::DescribeTerminationPolicyTypesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

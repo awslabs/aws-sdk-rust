@@ -2,7 +2,7 @@
 pub fn ser_what_if_range_scenario(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WhatIfRangeScenario,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("StartDate")
@@ -24,7 +24,7 @@ pub fn ser_what_if_range_scenario(
 
 pub(crate) fn de_what_if_range_scenario<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WhatIfRangeScenario>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WhatIfRangeScenario>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

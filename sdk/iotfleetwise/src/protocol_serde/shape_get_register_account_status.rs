@@ -121,14 +121,14 @@ pub fn de_get_register_account_status_http_response(
 
 pub fn ser_get_register_account_status_input(
     _input: &crate::operation::get_register_account_status::GetRegisterAccountStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_register_account_status(
     value: &[u8],
     mut builder: crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

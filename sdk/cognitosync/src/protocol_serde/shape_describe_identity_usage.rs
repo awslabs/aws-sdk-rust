@@ -116,7 +116,7 @@ pub fn de_describe_identity_usage_http_response(
 pub(crate) fn de_describe_identity_usage(
     value: &[u8],
     mut builder: crate::operation::describe_identity_usage::builders::DescribeIdentityUsageOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_identity_usage::builders::DescribeIdentityUsageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -90,7 +90,7 @@ pub fn de_check_schema_version_validity_http_response(
 
 pub fn ser_check_schema_version_validity_input(
     input: &crate::operation::check_schema_version_validity::CheckSchemaVersionValidityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_check_schema_version_validity_input::ser_check_schema_version_validity_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_check_schema_version_validity_input(
 pub(crate) fn de_check_schema_version_validity(
     value: &[u8],
     mut builder: crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

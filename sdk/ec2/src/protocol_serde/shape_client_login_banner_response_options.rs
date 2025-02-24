@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_client_login_banner_response_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ClientLoginBannerResponseOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ClientLoginBannerResponseOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ClientLoginBannerResponseOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_revoke_subscription_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::revoke_subscription::RevokeSubscriptionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.retain_permissions {
         object.key("retainPermissions").boolean(*var_1);
     }

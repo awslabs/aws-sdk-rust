@@ -2,7 +2,7 @@
 pub fn ser_metadata_configuration_for_reranking(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetadataConfigurationForReranking,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("selectionMode").string(input.selection_mode.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_appflow_integration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AppflowIntegration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flow_definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FlowDefinition").start_object();

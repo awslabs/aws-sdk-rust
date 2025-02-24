@@ -39,7 +39,7 @@ pub fn de_cancel_declarative_policies_report_http_response(
 pub fn de_cancel_declarative_policies_report(
     inp: &[u8],
     mut builder: crate::operation::cancel_declarative_policies_report::builders::CancelDeclarativePoliciesReportOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::cancel_declarative_policies_report::builders::CancelDeclarativePoliciesReportOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

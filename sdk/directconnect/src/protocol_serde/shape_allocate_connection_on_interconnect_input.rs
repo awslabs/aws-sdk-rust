@@ -2,7 +2,7 @@
 pub fn ser_allocate_connection_on_interconnect_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bandwidth {
         object.key("bandwidth").string(var_1.as_str());
     }

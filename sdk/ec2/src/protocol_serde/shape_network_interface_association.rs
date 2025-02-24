@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_network_interface_association(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::NetworkInterfaceAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::NetworkInterfaceAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::NetworkInterfaceAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {

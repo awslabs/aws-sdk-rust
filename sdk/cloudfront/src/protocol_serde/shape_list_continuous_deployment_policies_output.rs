@@ -15,7 +15,7 @@ pub(crate) fn de_continuous_deployment_policy_list_payload(
 
 pub fn de_continuous_deployment_policy_list(
     inp: &[u8],
-) -> Result<crate::types::ContinuousDeploymentPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::ContinuousDeploymentPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

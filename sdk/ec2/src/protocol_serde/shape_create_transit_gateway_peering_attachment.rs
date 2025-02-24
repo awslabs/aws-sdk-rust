@@ -43,7 +43,7 @@ pub fn de_create_transit_gateway_peering_attachment_http_response(
 pub fn de_create_transit_gateway_peering_attachment(
     inp: &[u8],
     mut builder: crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -103,7 +103,7 @@ pub fn de_describe_journal_kinesis_stream_http_response(
 pub(crate) fn de_describe_journal_kinesis_stream(
     value: &[u8],
     mut builder: crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_journal_kinesis_stream::builders::DescribeJournalKinesisStreamOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

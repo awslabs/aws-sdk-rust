@@ -2,7 +2,7 @@
 pub fn ser_put_event_selectors_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_event_selectors::PutEventSelectorsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trail_name {
         object.key("TrailName").string(var_1.as_str());
     }

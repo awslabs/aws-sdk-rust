@@ -77,7 +77,7 @@ pub fn de_get_connectivity_info_http_response(
 pub(crate) fn de_get_connectivity_info(
     value: &[u8],
     mut builder: crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_traffic_pattern(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrafficPattern,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.traffic_type {
         object.key("TrafficType").string(var_1.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_traffic_pattern(
 
 pub(crate) fn de_traffic_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TrafficPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TrafficPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

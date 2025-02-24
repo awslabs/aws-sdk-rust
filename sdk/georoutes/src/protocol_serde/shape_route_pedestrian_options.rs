@@ -2,7 +2,7 @@
 pub fn ser_route_pedestrian_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoutePedestrianOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.speed {
         object.key("Speed").number(
             #[allow(clippy::useless_conversion)]

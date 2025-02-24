@@ -61,7 +61,7 @@ pub fn de_get_deployment_status_http_response(
 pub(crate) fn de_get_deployment_status(
     value: &[u8],
     mut builder: crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

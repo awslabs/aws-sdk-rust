@@ -62,7 +62,7 @@ pub fn de_describe_scaling_process_types_http_response(
 pub fn de_describe_scaling_process_types(
     inp: &[u8],
     mut builder: crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_scaling_process_types::builders::DescribeScalingProcessTypesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

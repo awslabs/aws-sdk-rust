@@ -123,7 +123,7 @@ pub fn de_describe_mount_target_security_groups_http_response(
 pub(crate) fn de_describe_mount_target_security_groups(
     value: &[u8],
     mut builder: crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

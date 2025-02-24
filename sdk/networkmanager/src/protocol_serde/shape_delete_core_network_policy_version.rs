@@ -151,7 +151,7 @@ pub fn de_delete_core_network_policy_version_http_response(
 pub(crate) fn de_delete_core_network_policy_version(
     value: &[u8],
     mut builder: crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -42,7 +42,7 @@ pub fn de_register_transit_gateway_multicast_group_members_http_response(
 pub fn de_register_transit_gateway_multicast_group_members(
     inp: &[u8],
     mut builder: crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::register_transit_gateway_multicast_group_members::builders::RegisterTransitGatewayMulticastGroupMembersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

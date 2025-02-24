@@ -3,7 +3,7 @@
 pub fn de_too_many_continuous_deployment_policies_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyContinuousDeploymentPoliciesBuilder,
-) -> Result<crate::types::error::builders::TooManyContinuousDeploymentPoliciesBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TooManyContinuousDeploymentPoliciesBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -151,7 +151,7 @@ pub fn de_delete_custom_vocabulary_http_response(
 pub(crate) fn de_delete_custom_vocabulary(
     value: &[u8],
     mut builder: crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

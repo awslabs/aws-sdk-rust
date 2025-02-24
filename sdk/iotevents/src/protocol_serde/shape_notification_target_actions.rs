@@ -2,7 +2,7 @@
 pub fn ser_notification_target_actions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationTargetActions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lambda_action {
         #[allow(unused_mut)]
         let mut object_2 = object.key("lambdaAction").start_object();
@@ -14,7 +14,7 @@ pub fn ser_notification_target_actions(
 
 pub(crate) fn de_notification_target_actions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NotificationTargetActions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NotificationTargetActions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

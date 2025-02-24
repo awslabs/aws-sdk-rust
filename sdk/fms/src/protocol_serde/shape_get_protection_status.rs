@@ -90,7 +90,7 @@ pub fn de_get_protection_status_http_response(
 
 pub fn ser_get_protection_status_input(
     input: &crate::operation::get_protection_status::GetProtectionStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_protection_status_input::ser_get_protection_status_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_get_protection_status_input(
 pub(crate) fn de_get_protection_status(
     value: &[u8],
     mut builder: crate::operation::get_protection_status::builders::GetProtectionStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_protection_status::builders::GetProtectionStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

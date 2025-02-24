@@ -2,7 +2,7 @@
 pub fn ser_data_lake_dataset_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLakeDatasetSchema,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_data_lake_dataset_schema(
 
 pub(crate) fn de_data_lake_dataset_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DataLakeDatasetSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DataLakeDatasetSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

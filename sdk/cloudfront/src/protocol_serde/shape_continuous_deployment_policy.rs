@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_continuous_deployment_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ContinuousDeploymentPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentPolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {

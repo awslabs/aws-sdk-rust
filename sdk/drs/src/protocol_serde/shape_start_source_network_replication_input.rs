@@ -2,7 +2,7 @@
 pub fn ser_start_source_network_replication_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_source_network_replication::StartSourceNetworkReplicationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_network_id {
         object.key("sourceNetworkID").string(var_1.as_str());
     }

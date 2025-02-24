@@ -123,7 +123,7 @@ pub fn de_disable_organizations_root_credentials_management_http_response(
 pub fn de_disable_organizations_root_credentials_management(
     inp: &[u8],
     mut builder: crate::operation::disable_organizations_root_credentials_management::builders::DisableOrganizationsRootCredentialsManagementOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_organizations_root_credentials_management::builders::DisableOrganizationsRootCredentialsManagementOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

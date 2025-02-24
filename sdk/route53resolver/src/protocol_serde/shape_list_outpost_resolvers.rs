@@ -123,7 +123,7 @@ pub fn de_list_outpost_resolvers_http_response(
 
 pub fn ser_list_outpost_resolvers_input(
     input: &crate::operation::list_outpost_resolvers::ListOutpostResolversInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_outpost_resolvers_input::ser_list_outpost_resolvers_input_input(&mut object, input)?;
@@ -134,7 +134,7 @@ pub fn ser_list_outpost_resolvers_input(
 pub(crate) fn de_list_outpost_resolvers(
     value: &[u8],
     mut builder: crate::operation::list_outpost_resolvers::builders::ListOutpostResolversOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_outpost_resolvers::builders::ListOutpostResolversOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_multiplex_program_service_descriptor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiplexProgramServiceDescriptor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.provider_name {
         object.key("providerName").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_multiplex_program_service_descriptor(
 
 pub(crate) fn de_multiplex_program_service_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MultiplexProgramServiceDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MultiplexProgramServiceDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_source_data(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SourceData::X509CertificateData(inner) => {
             object_3.key("x509CertificateData").string(inner.as_str());
@@ -17,7 +17,7 @@ pub fn ser_source_data(
 
 pub(crate) fn de_source_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SourceData>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SourceData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

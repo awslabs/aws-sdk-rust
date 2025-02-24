@@ -137,7 +137,7 @@ pub fn de_list_thing_principals_v2_http_response(
 pub(crate) fn de_list_thing_principals_v2(
     value: &[u8],
     mut builder: crate::operation::list_thing_principals_v2::builders::ListThingPrincipalsV2OutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_thing_principals_v2::builders::ListThingPrincipalsV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

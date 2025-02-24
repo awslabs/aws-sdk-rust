@@ -2,7 +2,7 @@
 pub fn ser_calculate_route_car_mode_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CalculateRouteCarModeOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.avoid_ferries {
         object.key("AvoidFerries").boolean(*var_1);
     }

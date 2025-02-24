@@ -102,7 +102,7 @@ pub fn de_get_documentation_version_http_response(
 pub(crate) fn de_get_documentation_version(
     value: &[u8],
     mut builder: crate::operation::get_documentation_version::builders::GetDocumentationVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_documentation_version::builders::GetDocumentationVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

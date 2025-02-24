@@ -2,7 +2,7 @@
 pub fn ser_customer_content_encryption_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomerContentEncryptionConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KmsKey").string(input.kms_key.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_customer_content_encryption_configuration(
 
 pub(crate) fn de_customer_content_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CustomerContentEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CustomerContentEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

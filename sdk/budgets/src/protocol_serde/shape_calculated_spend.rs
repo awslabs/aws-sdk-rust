@@ -2,7 +2,7 @@
 pub fn ser_calculated_spend(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CalculatedSpend,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.actual_spend {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ActualSpend").start_object();
@@ -20,7 +20,7 @@ pub fn ser_calculated_spend(
 
 pub(crate) fn de_calculated_spend<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CalculatedSpend>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CalculatedSpend>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

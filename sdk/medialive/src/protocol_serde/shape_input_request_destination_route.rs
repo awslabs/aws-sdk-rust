@@ -2,7 +2,7 @@
 pub fn ser_input_request_destination_route(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputRequestDestinationRoute,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr {
         object.key("cidr").string(var_1.as_str());
     }

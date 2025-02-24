@@ -2,7 +2,7 @@
 pub fn ser_auto_tune_maintenance_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoTuneMaintenanceSchedule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.start_at {
         object
             .key("StartAt")
@@ -22,7 +22,7 @@ pub fn ser_auto_tune_maintenance_schedule(
 
 pub(crate) fn de_auto_tune_maintenance_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AutoTuneMaintenanceSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AutoTuneMaintenanceSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

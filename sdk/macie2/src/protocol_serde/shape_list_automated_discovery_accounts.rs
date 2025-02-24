@@ -126,7 +126,7 @@ pub fn de_list_automated_discovery_accounts_http_response(
 pub(crate) fn de_list_automated_discovery_accounts(
     value: &[u8],
     mut builder: crate::operation::list_automated_discovery_accounts::builders::ListAutomatedDiscoveryAccountsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_automated_discovery_accounts::builders::ListAutomatedDiscoveryAccountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_create_license_server_endpoint_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_license_server_endpoint::CreateLicenseServerEndpointInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_provider_arn {
         object.key("IdentityProviderArn").string(var_1.as_str());
     }

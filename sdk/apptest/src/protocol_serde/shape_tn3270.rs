@@ -2,7 +2,7 @@
 pub fn ser_tn3270(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tn3270,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.script {
         #[allow(unused_mut)]
         let mut object_2 = object.key("script").start_object();
@@ -23,7 +23,7 @@ pub fn ser_tn3270(
 
 pub(crate) fn de_tn3270<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Tn3270>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Tn3270>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

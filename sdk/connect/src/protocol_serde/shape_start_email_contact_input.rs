@@ -2,7 +2,7 @@
 pub fn ser_start_email_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_email_contact::StartEmailContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_recipients {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AdditionalRecipients").start_object();

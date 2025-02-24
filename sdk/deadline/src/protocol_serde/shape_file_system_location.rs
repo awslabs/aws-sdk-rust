@@ -2,7 +2,7 @@
 pub fn ser_file_system_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileSystemLocation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_file_system_location(
 
 pub(crate) fn de_file_system_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FileSystemLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FileSystemLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

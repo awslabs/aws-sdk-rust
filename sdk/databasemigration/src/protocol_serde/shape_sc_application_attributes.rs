@@ -2,7 +2,7 @@
 pub fn ser_sc_application_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScApplicationAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_bucket_path {
         object.key("S3BucketPath").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_sc_application_attributes(
 
 pub(crate) fn de_sc_application_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ScApplicationAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ScApplicationAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

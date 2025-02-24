@@ -131,7 +131,7 @@ pub fn de_describe_user_hierarchy_structure_http_response(
 pub(crate) fn de_describe_user_hierarchy_structure(
     value: &[u8],
     mut builder: crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

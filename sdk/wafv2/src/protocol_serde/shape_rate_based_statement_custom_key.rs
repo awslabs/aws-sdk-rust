@@ -2,7 +2,7 @@
 pub fn ser_rate_based_statement_custom_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateBasedStatementCustomKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.header {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Header").start_object();
@@ -62,7 +62,7 @@ pub fn ser_rate_based_statement_custom_key(
 
 pub(crate) fn de_rate_based_statement_custom_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RateBasedStatementCustomKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RateBasedStatementCustomKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_list_speaker_enrollment_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_id {
         object.key("DomainId").string(var_1.as_str());
     }

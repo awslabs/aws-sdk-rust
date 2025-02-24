@@ -2,7 +2,7 @@
 pub fn ser_s3_bucket_log_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3BucketLogDestination,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_s3_bucket_log_destination(
 
 pub(crate) fn de_s3_bucket_log_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::S3BucketLogDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::S3BucketLogDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

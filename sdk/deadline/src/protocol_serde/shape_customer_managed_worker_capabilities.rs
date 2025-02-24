@@ -2,7 +2,7 @@
 pub fn ser_customer_managed_worker_capabilities(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomerManagedWorkerCapabilities,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.v_cpu_count {
         #[allow(unused_mut)]
         let mut object_2 = object.key("vCpuCount").start_object();
@@ -71,7 +71,7 @@ pub fn ser_customer_managed_worker_capabilities(
 
 pub(crate) fn de_customer_managed_worker_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CustomerManagedWorkerCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CustomerManagedWorkerCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

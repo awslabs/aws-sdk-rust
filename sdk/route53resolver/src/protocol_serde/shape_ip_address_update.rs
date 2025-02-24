@@ -2,7 +2,7 @@
 pub fn ser_ip_address_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpAddressUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_id {
         object.key("IpId").string(var_1.as_str());
     }

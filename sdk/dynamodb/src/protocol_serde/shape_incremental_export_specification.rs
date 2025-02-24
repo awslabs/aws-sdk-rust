@@ -2,7 +2,7 @@
 pub fn ser_incremental_export_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IncrementalExportSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_from_time {
         object
             .key("ExportFromTime")
@@ -21,7 +21,7 @@ pub fn ser_incremental_export_specification(
 
 pub(crate) fn de_incremental_export_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IncrementalExportSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IncrementalExportSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

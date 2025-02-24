@@ -2,7 +2,7 @@
 pub fn ser_deprecation_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeprecationRequestDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("DeprecationAt")

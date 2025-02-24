@@ -3,7 +3,7 @@
 pub fn de_availability_zone_not_supported_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder,
-) -> Result<crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::AvailabilityZoneNotSupportedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

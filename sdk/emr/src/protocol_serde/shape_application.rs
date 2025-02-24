@@ -2,7 +2,7 @@
 pub fn ser_application(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Application,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
@@ -33,7 +33,7 @@ pub fn ser_application(
 
 pub(crate) fn de_application<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Application>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Application>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

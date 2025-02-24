@@ -41,7 +41,10 @@ pub fn de_restore_address_to_classic_http_response(
 pub fn de_restore_address_to_classic(
     inp: &[u8],
     mut builder: crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder,
-) -> Result<crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

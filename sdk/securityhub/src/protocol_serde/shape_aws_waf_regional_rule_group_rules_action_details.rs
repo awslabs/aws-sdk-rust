@@ -2,7 +2,7 @@
 pub fn ser_aws_waf_regional_rule_group_rules_action_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafRegionalRuleGroupRulesActionDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("Type").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_aws_waf_regional_rule_group_rules_action_details(
 
 pub(crate) fn de_aws_waf_regional_rule_group_rules_action_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsWafRegionalRuleGroupRulesActionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

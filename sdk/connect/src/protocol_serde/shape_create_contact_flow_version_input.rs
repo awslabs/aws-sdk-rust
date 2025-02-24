@@ -2,7 +2,7 @@
 pub fn ser_create_contact_flow_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_contact_flow_version::CreateContactFlowVersionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_flow_version {
         object.key("ContactFlowVersion").number(
             #[allow(clippy::useless_conversion)]

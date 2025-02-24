@@ -2,7 +2,7 @@
 pub fn ser_list_custom_line_item_versions_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListCustomLineItemVersionsFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.billing_period_range {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BillingPeriodRange").start_object();

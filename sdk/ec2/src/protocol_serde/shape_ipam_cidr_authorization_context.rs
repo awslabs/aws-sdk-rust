@@ -3,7 +3,7 @@
 pub fn ser_ipam_cidr_authorization_context(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IpamCidrAuthorizationContext,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Message");
     if let Some(var_2) = &input.message {

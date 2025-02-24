@@ -2,7 +2,7 @@
 pub fn ser_create_progress_update_stream_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.progress_update_stream_name {
         object.key("ProgressUpdateStreamName").string(var_1.as_str());
     }

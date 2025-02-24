@@ -141,7 +141,7 @@ pub fn de_put_registration_field_value_http_response(
 
 pub fn ser_put_registration_field_value_input(
     input: &crate::operation::put_registration_field_value::PutRegistrationFieldValueInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_registration_field_value_input::ser_put_registration_field_value_input_input(&mut object, input)?;
@@ -152,7 +152,7 @@ pub fn ser_put_registration_field_value_input(
 pub(crate) fn de_put_registration_field_value(
     value: &[u8],
     mut builder: crate::operation::put_registration_field_value::builders::PutRegistrationFieldValueOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_registration_field_value::builders::PutRegistrationFieldValueOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

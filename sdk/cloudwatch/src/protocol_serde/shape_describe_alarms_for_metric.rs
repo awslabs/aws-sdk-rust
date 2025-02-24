@@ -41,7 +41,10 @@ pub fn de_describe_alarms_for_metric_http_response(
 pub fn de_describe_alarms_for_metric(
     inp: &[u8],
     mut builder: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder,
-) -> Result<crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

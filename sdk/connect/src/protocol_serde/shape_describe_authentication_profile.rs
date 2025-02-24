@@ -131,7 +131,7 @@ pub fn de_describe_authentication_profile_http_response(
 pub(crate) fn de_describe_authentication_profile(
     value: &[u8],
     mut builder: crate::operation::describe_authentication_profile::builders::DescribeAuthenticationProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_authentication_profile::builders::DescribeAuthenticationProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

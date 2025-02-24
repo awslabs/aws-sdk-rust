@@ -3,7 +3,7 @@
 pub fn ser_cloud_watch_log_options_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CloudWatchLogOptionsSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("LogEnabled");
     if let Some(var_2) = &input.log_enabled {

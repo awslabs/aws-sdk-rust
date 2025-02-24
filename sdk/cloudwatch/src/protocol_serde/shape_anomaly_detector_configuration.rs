@@ -3,7 +3,7 @@
 pub fn ser_anomaly_detector_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AnomalyDetectorConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ExcludedTimeRanges");
     if let Some(var_2) = &input.excluded_time_ranges {
@@ -26,7 +26,7 @@ pub fn ser_anomaly_detector_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_anomaly_detector_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AnomalyDetectorConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AnomalyDetectorConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AnomalyDetectorConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_document_content(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DocumentContent::Blob(inner) => {
             object_6.key("blob").string_unchecked(&::aws_smithy_types::base64::encode(inner));

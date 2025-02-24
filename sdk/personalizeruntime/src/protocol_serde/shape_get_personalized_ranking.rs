@@ -79,7 +79,7 @@ pub fn de_get_personalized_ranking_http_response(
 
 pub fn ser_get_personalized_ranking_input(
     input: &crate::operation::get_personalized_ranking::GetPersonalizedRankingInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_personalized_ranking_input::ser_get_personalized_ranking_input_input(&mut object, input)?;
@@ -90,7 +90,7 @@ pub fn ser_get_personalized_ranking_input(
 pub(crate) fn de_get_personalized_ranking(
     value: &[u8],
     mut builder: crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_personalized_ranking::builders::GetPersonalizedRankingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

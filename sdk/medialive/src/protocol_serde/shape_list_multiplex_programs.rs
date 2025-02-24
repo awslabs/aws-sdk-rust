@@ -152,7 +152,7 @@ pub fn de_list_multiplex_programs_http_response(
 pub(crate) fn de_list_multiplex_programs(
     value: &[u8],
     mut builder: crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

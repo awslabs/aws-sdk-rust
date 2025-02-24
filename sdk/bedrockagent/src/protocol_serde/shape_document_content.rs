@@ -2,7 +2,7 @@
 pub fn ser_document_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("dataSourceType").string(input.data_source_type.as_str());
     }

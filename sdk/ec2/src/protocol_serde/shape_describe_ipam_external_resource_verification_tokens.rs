@@ -46,7 +46,7 @@ pub fn de_describe_ipam_external_resource_verification_tokens_http_response(
 pub fn de_describe_ipam_external_resource_verification_tokens(
     inp: &[u8],
     mut builder: crate::operation::describe_ipam_external_resource_verification_tokens::builders::DescribeIpamExternalResourceVerificationTokensOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_ipam_external_resource_verification_tokens::builders::DescribeIpamExternalResourceVerificationTokensOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -138,14 +138,14 @@ pub fn de_get_enrollment_status_http_response(
 
 pub fn ser_get_enrollment_status_input(
     _input: &crate::operation::get_enrollment_status::GetEnrollmentStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_enrollment_status(
     value: &[u8],
     mut builder: crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_enrollment_status::builders::GetEnrollmentStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

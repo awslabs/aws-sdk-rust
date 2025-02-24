@@ -2,7 +2,7 @@
 pub fn ser_notification_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationChannel,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SNSTopicArn").string(input.sns_topic_arn.as_str());
     }

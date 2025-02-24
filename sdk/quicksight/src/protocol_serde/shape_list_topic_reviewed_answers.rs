@@ -131,7 +131,7 @@ pub fn de_list_topic_reviewed_answers_http_response(
 pub(crate) fn de_list_topic_reviewed_answers(
     value: &[u8],
     mut builder: crate::operation::list_topic_reviewed_answers::builders::ListTopicReviewedAnswersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_topic_reviewed_answers::builders::ListTopicReviewedAnswersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

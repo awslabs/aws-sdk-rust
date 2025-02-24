@@ -156,7 +156,7 @@ pub fn de_associate_browser_settings_http_response(
 pub(crate) fn de_associate_browser_settings(
     value: &[u8],
     mut builder: crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_browser_settings::builders::AssociateBrowserSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

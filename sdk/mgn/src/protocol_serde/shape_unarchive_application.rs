@@ -94,7 +94,7 @@ pub fn de_unarchive_application_http_response(
 
 pub fn ser_unarchive_application_input(
     input: &crate::operation::unarchive_application::UnarchiveApplicationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_unarchive_application_input::ser_unarchive_application_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_unarchive_application_input(
 pub(crate) fn de_unarchive_application(
     value: &[u8],
     mut builder: crate::operation::unarchive_application::builders::UnarchiveApplicationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::unarchive_application::builders::UnarchiveApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

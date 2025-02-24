@@ -2,7 +2,7 @@
 pub fn ser_ec2_recommendations_export_preferences(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ec2RecommendationsExportPreferences,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.enabled {
         object.key("enabled").boolean(input.enabled);
     }

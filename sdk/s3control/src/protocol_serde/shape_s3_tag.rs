@@ -2,7 +2,7 @@
 pub fn ser_s3_tag(
     input: &crate::types::S3Tag,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -18,7 +18,9 @@ pub fn ser_s3_tag(
 }
 
 #[allow(clippy::needless_question_mark)]
-pub fn de_s3_tag(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::S3Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_s3_tag(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::S3Tag, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3Tag::builder();
     while let Some(mut tag) = decoder.next_tag() {

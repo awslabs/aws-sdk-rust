@@ -2,7 +2,7 @@
 pub fn ser_qualification_requirement(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QualificationRequirement,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("QualificationTypeId").string(input.qualification_type_id.as_str());
     }
@@ -44,7 +44,7 @@ pub fn ser_qualification_requirement(
 
 pub(crate) fn de_qualification_requirement<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::QualificationRequirement>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::QualificationRequirement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -75,7 +75,7 @@ pub fn de_get_report_group_trend_http_response(
 
 pub fn ser_get_report_group_trend_input(
     input: &crate::operation::get_report_group_trend::GetReportGroupTrendInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_report_group_trend_input::ser_get_report_group_trend_input_input(&mut object, input)?;
@@ -86,7 +86,7 @@ pub fn ser_get_report_group_trend_input(
 pub(crate) fn de_get_report_group_trend(
     value: &[u8],
     mut builder: crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_report_group_trend::builders::GetReportGroupTrendOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

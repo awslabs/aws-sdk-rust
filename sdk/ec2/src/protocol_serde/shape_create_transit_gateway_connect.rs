@@ -39,7 +39,7 @@ pub fn de_create_transit_gateway_connect_http_response(
 pub fn de_create_transit_gateway_connect(
     inp: &[u8],
     mut builder: crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

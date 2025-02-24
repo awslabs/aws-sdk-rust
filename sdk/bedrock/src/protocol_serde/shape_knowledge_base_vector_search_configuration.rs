@@ -2,7 +2,7 @@
 pub fn ser_knowledge_base_vector_search_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KnowledgeBaseVectorSearchConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.number_of_results {
         object.key("numberOfResults").number(
             #[allow(clippy::useless_conversion)]
@@ -23,7 +23,7 @@ pub fn ser_knowledge_base_vector_search_configuration(
 
 pub(crate) fn de_knowledge_base_vector_search_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::KnowledgeBaseVectorSearchConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::KnowledgeBaseVectorSearchConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

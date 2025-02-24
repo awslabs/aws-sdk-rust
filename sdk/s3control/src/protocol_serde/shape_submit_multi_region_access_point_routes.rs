@@ -54,7 +54,7 @@ pub fn ser_submit_multi_region_access_point_routes_headers(
 
 pub fn ser_submit_multi_region_access_point_routes_op_input(
     input: &crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

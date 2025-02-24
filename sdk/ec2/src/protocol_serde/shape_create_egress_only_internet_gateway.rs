@@ -39,7 +39,7 @@ pub fn de_create_egress_only_internet_gateway_http_response(
 pub fn de_create_egress_only_internet_gateway(
     inp: &[u8],
     mut builder: crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

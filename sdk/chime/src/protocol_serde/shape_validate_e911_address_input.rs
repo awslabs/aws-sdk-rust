@@ -2,7 +2,7 @@
 pub fn ser_validate_e911_address_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::validate_e911_address::ValidateE911AddressInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aws_account_id {
         object.key("AwsAccountId").string(var_1.as_str());
     }

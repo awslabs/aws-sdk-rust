@@ -138,7 +138,7 @@ pub fn de_describe_custom_vocabulary_metadata_http_response(
 pub(crate) fn de_describe_custom_vocabulary_metadata(
     value: &[u8],
     mut builder: crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_custom_vocabulary_metadata::builders::DescribeCustomVocabularyMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

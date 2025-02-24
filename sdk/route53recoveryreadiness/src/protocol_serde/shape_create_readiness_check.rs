@@ -120,7 +120,7 @@ pub fn de_create_readiness_check_http_response(
 
 pub fn ser_create_readiness_check_input(
     input: &crate::operation::create_readiness_check::CreateReadinessCheckInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_readiness_check_input::ser_create_readiness_check_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_create_readiness_check_input(
 pub(crate) fn de_create_readiness_check(
     value: &[u8],
     mut builder: crate::operation::create_readiness_check::builders::CreateReadinessCheckOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_readiness_check::builders::CreateReadinessCheckOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

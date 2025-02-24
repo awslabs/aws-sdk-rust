@@ -3,7 +3,7 @@
 pub fn ser_option_setting(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::OptionSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     if let Some(var_2) = &input.name {
@@ -55,7 +55,7 @@ pub fn ser_option_setting(
 #[allow(clippy::needless_question_mark)]
 pub fn de_option_setting(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::OptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::OptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::OptionSetting::builder();
     while let Some(mut tag) = decoder.next_tag() {

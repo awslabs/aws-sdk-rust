@@ -3,7 +3,7 @@
 pub fn de_scheduled_action_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ScheduledActionAlreadyExistsFaultBuilder,
-) -> Result<crate::types::error::builders::ScheduledActionAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ScheduledActionAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

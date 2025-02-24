@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_managed_policy_detail(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ManagedPolicyDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ManagedPolicyDetail, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ManagedPolicyDetail::builder();
     while let Some(mut tag) = decoder.next_tag() {

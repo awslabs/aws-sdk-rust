@@ -3,7 +3,7 @@
 pub fn ser_dns_servers_options_modify_structure(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::DnsServersOptionsModifyStructure,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CustomDnsServers");
     if let Some(var_2) = &input.custom_dns_servers {

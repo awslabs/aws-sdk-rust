@@ -2,7 +2,7 @@
 pub fn ser_message_usefulness_feedback(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MessageUsefulnessFeedback,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("usefulness").string(input.usefulness.as_str());
     }

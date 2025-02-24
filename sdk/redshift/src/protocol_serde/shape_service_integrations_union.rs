@@ -3,7 +3,7 @@
 pub fn ser_service_integrations_union(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ServiceIntegrationsUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ServiceIntegrationsUnion::LakeFormation(inner) => {
             let mut list_2 = writer.start_list(false, None);
@@ -38,7 +38,7 @@ pub fn ser_service_integrations_union(
 
 pub fn de_service_integrations_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ServiceIntegrationsUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ServiceIntegrationsUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut base: Option<crate::types::ServiceIntegrationsUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

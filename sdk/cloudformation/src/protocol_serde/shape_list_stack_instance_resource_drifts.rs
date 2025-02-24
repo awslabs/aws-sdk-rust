@@ -103,7 +103,7 @@ pub fn de_list_stack_instance_resource_drifts_http_response(
 pub fn de_list_stack_instance_resource_drifts(
     inp: &[u8],
     mut builder: crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_stack_instance_resource_drifts::builders::ListStackInstanceResourceDriftsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

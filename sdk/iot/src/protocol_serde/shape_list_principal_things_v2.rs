@@ -155,7 +155,7 @@ pub fn ser_list_principal_things_v2_headers(
 pub(crate) fn de_list_principal_things_v2(
     value: &[u8],
     mut builder: crate::operation::list_principal_things_v2::builders::ListPrincipalThingsV2OutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_principal_things_v2::builders::ListPrincipalThingsV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

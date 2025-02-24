@@ -78,14 +78,14 @@ pub fn de_run_fleet_advisor_lsa_analysis_http_response(
 
 pub fn ser_run_fleet_advisor_lsa_analysis_input(
     _input: &crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_run_fleet_advisor_lsa_analysis(
     value: &[u8],
     mut builder: crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

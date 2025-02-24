@@ -2,7 +2,7 @@
 pub fn ser_create_simulation_application_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application {
         object.key("application").string(var_1.as_str());
     }

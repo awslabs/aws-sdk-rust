@@ -2,7 +2,7 @@
 pub fn ser_update_brand_published_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_brand_published_version::UpdateBrandPublishedVersionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version_id {
         object.key("VersionId").string(var_1.as_str());
     }

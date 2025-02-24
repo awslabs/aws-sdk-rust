@@ -2,7 +2,7 @@
 pub fn ser_batch_get_crawlers_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_crawlers::BatchGetCrawlersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.crawler_names {
         let mut array_2 = object.key("CrawlerNames").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_batch_create_bill_scenario_commitment_modification_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchCreateBillScenarioCommitmentModificationEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("key").string(input.key.as_str());
     }

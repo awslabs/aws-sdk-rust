@@ -2,7 +2,7 @@
 pub fn ser_restore_graph_from_snapshot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::restore_graph_from_snapshot::RestoreGraphFromSnapshotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deletion_protection {
         object.key("deletionProtection").boolean(*var_1);
     }

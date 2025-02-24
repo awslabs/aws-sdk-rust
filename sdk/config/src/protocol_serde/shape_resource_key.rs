@@ -2,7 +2,7 @@
 pub fn ser_resource_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resourceType").string(input.resource_type.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_resource_key(
 
 pub(crate) fn de_resource_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResourceKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResourceKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

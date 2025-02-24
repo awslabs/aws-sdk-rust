@@ -115,7 +115,7 @@ pub fn de_describe_package_import_job_http_response(
 pub(crate) fn de_describe_package_import_job(
     value: &[u8],
     mut builder: crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_package_import_job::builders::DescribePackageImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

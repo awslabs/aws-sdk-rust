@@ -121,7 +121,7 @@ pub fn de_get_event_integration_http_response(
 pub(crate) fn de_get_event_integration(
     value: &[u8],
     mut builder: crate::operation::get_event_integration::builders::GetEventIntegrationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_event_integration::builders::GetEventIntegrationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

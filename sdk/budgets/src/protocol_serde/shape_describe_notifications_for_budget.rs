@@ -161,7 +161,7 @@ pub fn de_describe_notifications_for_budget_http_response(
 
 pub fn ser_describe_notifications_for_budget_input(
     input: &crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_notifications_for_budget_input::ser_describe_notifications_for_budget_input_input(&mut object, input)?;
@@ -172,7 +172,7 @@ pub fn ser_describe_notifications_for_budget_input(
 pub(crate) fn de_describe_notifications_for_budget(
     value: &[u8],
     mut builder: crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_notifications_for_budget::builders::DescribeNotificationsForBudgetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

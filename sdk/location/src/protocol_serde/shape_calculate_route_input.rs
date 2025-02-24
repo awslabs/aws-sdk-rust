@@ -2,7 +2,7 @@
 pub fn ser_calculate_route_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::calculate_route::CalculateRouteInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arrival_time {
         object
             .key("ArrivalTime")

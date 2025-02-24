@@ -3,7 +3,7 @@
 pub fn ser_launch_permission_modifications(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LaunchPermissionModifications,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Add");
     if let Some(var_2) = &input.add {

@@ -2,7 +2,7 @@
 pub fn ser_aws_managed_rules_atp_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesAtpRuleSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LoginPath").string(input.login_path.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_aws_managed_rules_atp_rule_set(
 
 pub(crate) fn de_aws_managed_rules_atp_rule_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsManagedRulesAtpRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsManagedRulesAtpRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

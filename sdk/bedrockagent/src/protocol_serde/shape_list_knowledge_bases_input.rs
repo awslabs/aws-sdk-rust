@@ -2,7 +2,7 @@
 pub fn ser_list_knowledge_bases_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_knowledge_bases::ListKnowledgeBasesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]

@@ -2,7 +2,7 @@
 pub fn ser_idp_metadata(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdpMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IdpMetadata::Url(inner) => {
             object_2.key("url").string(inner.as_str());
@@ -17,7 +17,7 @@ pub fn ser_idp_metadata(
 
 pub(crate) fn de_idp_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IdpMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IdpMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

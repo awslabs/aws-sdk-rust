@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_topic_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TopicConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TopicConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TopicConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -75,7 +75,7 @@ pub fn de_topic_configuration(
 pub fn ser_topic_configuration(
     input: &crate::types::TopicConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_6) = &input.id {

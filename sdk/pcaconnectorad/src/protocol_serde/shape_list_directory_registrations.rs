@@ -102,7 +102,7 @@ pub fn de_list_directory_registrations_http_response(
 pub(crate) fn de_list_directory_registrations(
     value: &[u8],
     mut builder: crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_directory_registrations::builders::ListDirectoryRegistrationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

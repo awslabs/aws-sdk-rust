@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_image_metadata(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InstanceImageMetadata, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InstanceImageMetadata, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceImageMetadata::builder();
     while let Some(mut tag) = decoder.next_tag() {

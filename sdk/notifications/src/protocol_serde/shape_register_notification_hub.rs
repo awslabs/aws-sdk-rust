@@ -147,7 +147,7 @@ pub fn de_register_notification_hub_http_response(
 
 pub fn ser_register_notification_hub_input(
     input: &crate::operation::register_notification_hub::RegisterNotificationHubInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_notification_hub_input::ser_register_notification_hub_input_input(&mut object, input)?;
@@ -158,7 +158,7 @@ pub fn ser_register_notification_hub_input(
 pub(crate) fn de_register_notification_hub(
     value: &[u8],
     mut builder: crate::operation::register_notification_hub::builders::RegisterNotificationHubOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::register_notification_hub::builders::RegisterNotificationHubOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

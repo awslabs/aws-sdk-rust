@@ -132,7 +132,7 @@ pub fn de_list_search_job_results_http_response(
 pub(crate) fn de_list_search_job_results(
     value: &[u8],
     mut builder: crate::operation::list_search_job_results::builders::ListSearchJobResultsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_search_job_results::builders::ListSearchJobResultsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

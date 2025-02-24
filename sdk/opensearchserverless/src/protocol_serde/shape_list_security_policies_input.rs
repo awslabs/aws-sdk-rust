@@ -2,7 +2,7 @@
 pub fn ser_list_security_policies_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_security_policies::ListSecurityPoliciesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());
     }

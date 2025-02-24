@@ -2,7 +2,7 @@
 pub fn ser_create_usage_plan_key_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_usage_plan_key::CreateUsagePlanKeyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_id {
         object.key("keyId").string(var_1.as_str());
     }

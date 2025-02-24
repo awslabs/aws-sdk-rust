@@ -2,7 +2,7 @@
 pub fn ser_data_set_search_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSetSearchFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Operator").string(input.operator.as_str());
     }

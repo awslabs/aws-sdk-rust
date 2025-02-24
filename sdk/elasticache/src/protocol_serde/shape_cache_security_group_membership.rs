@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_security_group_membership(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CacheSecurityGroupMembership, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CacheSecurityGroupMembership, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheSecurityGroupMembership::builder();
     while let Some(mut tag) = decoder.next_tag() {

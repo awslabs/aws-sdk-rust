@@ -66,7 +66,7 @@ pub fn de_list_distributions_by_realtime_log_config_http_response(
 
 pub fn ser_list_distributions_by_realtime_log_config_op_input(
     input: &crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

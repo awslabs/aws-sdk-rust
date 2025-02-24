@@ -2,7 +2,7 @@
 pub fn ser_list_cost_allocation_tags_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }

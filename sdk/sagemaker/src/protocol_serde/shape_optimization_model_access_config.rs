@@ -2,7 +2,7 @@
 pub fn ser_optimization_model_access_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OptimizationModelAccessConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accept_eula {
         object.key("AcceptEula").boolean(*var_1);
     }
@@ -11,7 +11,7 @@ pub fn ser_optimization_model_access_config(
 
 pub(crate) fn de_optimization_model_access_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OptimizationModelAccessConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OptimizationModelAccessConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

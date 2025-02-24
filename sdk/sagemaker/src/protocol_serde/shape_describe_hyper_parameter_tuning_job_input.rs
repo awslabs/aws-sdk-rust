@@ -2,7 +2,7 @@
 pub fn ser_describe_hyper_parameter_tuning_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hyper_parameter_tuning_job_name {
         object.key("HyperParameterTuningJobName").string(var_1.as_str());
     }

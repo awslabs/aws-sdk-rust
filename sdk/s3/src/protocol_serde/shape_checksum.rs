@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_checksum(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Checksum, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Checksum, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Checksum::builder();
     while let Some(mut tag) = decoder.next_tag() {

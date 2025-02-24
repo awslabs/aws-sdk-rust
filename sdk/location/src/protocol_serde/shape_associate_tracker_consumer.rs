@@ -150,7 +150,7 @@ pub fn de_associate_tracker_consumer_http_response(
 
 pub fn ser_associate_tracker_consumer_input(
     input: &crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_tracker_consumer_input::ser_associate_tracker_consumer_input_input(&mut object, input)?;

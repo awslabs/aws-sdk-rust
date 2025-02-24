@@ -42,7 +42,7 @@ pub fn de_create_local_gateway_route_table_vpc_association_http_response(
 pub fn de_create_local_gateway_route_table_vpc_association(
     inp: &[u8],
     mut builder: crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

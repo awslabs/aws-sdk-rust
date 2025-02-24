@@ -2,7 +2,7 @@
 pub fn ser_id_namespace_association_input_reference_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdNamespaceAssociationInputReferenceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("inputReferenceArn").string(input.input_reference_arn.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_id_namespace_association_input_reference_config(
 
 pub(crate) fn de_id_namespace_association_input_reference_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IdNamespaceAssociationInputReferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IdNamespaceAssociationInputReferenceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -3,7 +3,7 @@
 pub fn de_custom_cname_association_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::CustomCnameAssociationFaultBuilder,
-) -> Result<crate::types::error::builders::CustomCnameAssociationFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::CustomCnameAssociationFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

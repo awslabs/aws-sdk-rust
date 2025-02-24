@@ -2,7 +2,7 @@
 pub fn ser_response_inspection_status_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResponseInspectionStatusCode,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("SuccessCodes").start_array();
         for item_2 in &input.success_codes {
@@ -32,7 +32,7 @@ pub fn ser_response_inspection_status_code(
 
 pub(crate) fn de_response_inspection_status_code<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResponseInspectionStatusCode>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResponseInspectionStatusCode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

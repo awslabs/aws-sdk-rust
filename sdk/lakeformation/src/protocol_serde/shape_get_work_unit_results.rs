@@ -125,7 +125,7 @@ pub fn de_get_work_unit_results_http_error(
 
 pub fn ser_get_work_unit_results_input(
     input: &crate::operation::get_work_unit_results::GetWorkUnitResultsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_work_unit_results_input::ser_get_work_unit_results_input_input(&mut object, input)?;

@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_cluster_configuration_execute_command_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_1.as_str());
     }
@@ -20,7 +20,10 @@ pub fn ser_aws_ecs_cluster_configuration_execute_command_configuration_details(
 
 pub(crate) fn de_aws_ecs_cluster_configuration_execute_command_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

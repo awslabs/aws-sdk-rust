@@ -191,7 +191,7 @@ pub fn ser_invoke_endpoint_async_headers(
 pub(crate) fn de_invoke_endpoint_async(
     value: &[u8],
     mut builder: crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

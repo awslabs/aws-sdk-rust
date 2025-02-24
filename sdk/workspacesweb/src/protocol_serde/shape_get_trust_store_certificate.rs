@@ -141,7 +141,7 @@ pub fn de_get_trust_store_certificate_http_response(
 pub(crate) fn de_get_trust_store_certificate(
     value: &[u8],
     mut builder: crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_rds_sal_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsSalSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rds_sal_credentials_provider {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RdsSalCredentialsProvider").start_object();

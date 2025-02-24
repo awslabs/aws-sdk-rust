@@ -138,7 +138,7 @@ pub fn de_update_stack_set_http_response(
 pub fn de_update_stack_set(
     inp: &[u8],
     mut builder: crate::operation::update_stack_set::builders::UpdateStackSetOutputBuilder,
-) -> Result<crate::operation::update_stack_set::builders::UpdateStackSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::update_stack_set::builders::UpdateStackSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

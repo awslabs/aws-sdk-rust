@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_saml_provider_list_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SamlProviderListEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SamlProviderListEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SamlProviderListEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {

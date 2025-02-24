@@ -133,7 +133,7 @@ pub fn de_list_sessions_for_worker_http_response(
 pub(crate) fn de_list_sessions_for_worker(
     value: &[u8],
     mut builder: crate::operation::list_sessions_for_worker::builders::ListSessionsForWorkerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_sessions_for_worker::builders::ListSessionsForWorkerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

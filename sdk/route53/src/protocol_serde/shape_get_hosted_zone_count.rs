@@ -64,7 +64,8 @@ pub fn de_get_hosted_zone_count_http_response(
 pub fn de_get_hosted_zone_count(
     inp: &[u8],
     mut builder: crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder,
-) -> Result<crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

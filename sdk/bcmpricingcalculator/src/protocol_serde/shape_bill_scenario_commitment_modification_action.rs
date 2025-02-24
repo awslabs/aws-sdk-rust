@@ -2,7 +2,7 @@
 pub fn ser_bill_scenario_commitment_modification_action(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BillScenarioCommitmentModificationAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::BillScenarioCommitmentModificationAction::AddReservedInstanceAction(inner) => {
             #[allow(unused_mut)]
@@ -39,7 +39,7 @@ pub fn ser_bill_scenario_commitment_modification_action(
 
 pub(crate) fn de_bill_scenario_commitment_modification_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BillScenarioCommitmentModificationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BillScenarioCommitmentModificationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

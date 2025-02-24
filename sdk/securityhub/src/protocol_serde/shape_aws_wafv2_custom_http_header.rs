@@ -2,7 +2,7 @@
 pub fn ser_aws_wafv2_custom_http_header(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2CustomHttpHeader,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_wafv2_custom_http_header(
 
 pub(crate) fn de_aws_wafv2_custom_http_header<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsWafv2CustomHttpHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsWafv2CustomHttpHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

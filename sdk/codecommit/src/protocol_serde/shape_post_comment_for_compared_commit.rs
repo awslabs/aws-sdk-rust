@@ -475,7 +475,7 @@ pub fn de_post_comment_for_compared_commit_http_response(
 
 pub fn ser_post_comment_for_compared_commit_input(
     input: &crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_post_comment_for_compared_commit_input::ser_post_comment_for_compared_commit_input_input(&mut object, input)?;
@@ -486,7 +486,7 @@ pub fn ser_post_comment_for_compared_commit_input(
 pub(crate) fn de_post_comment_for_compared_commit(
     value: &[u8],
     mut builder: crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

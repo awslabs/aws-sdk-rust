@@ -2,7 +2,7 @@
 pub fn ser_update_web_app_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_web_app::UpdateWebAppInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.web_app_id {
         object.key("WebAppId").string(var_1.as_str());
     }

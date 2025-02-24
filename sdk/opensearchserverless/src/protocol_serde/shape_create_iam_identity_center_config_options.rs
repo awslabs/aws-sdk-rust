@@ -2,7 +2,7 @@
 pub fn ser_create_iam_identity_center_config_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateIamIdentityCenterConfigOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("instanceArn").string(input.instance_arn.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_revoke_vpc_endpoint_access_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account {
         object.key("Account").string(var_1.as_str());
     }

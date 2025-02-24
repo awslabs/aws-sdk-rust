@@ -2,7 +2,7 @@
 pub fn ser_s3_object_doc(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ObjectDoc,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("uri").string(input.uri.as_str());
     }

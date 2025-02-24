@@ -2,7 +2,7 @@
 pub fn ser_timeout_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeoutSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.disconnect_timeout_in_seconds {
         object.key("DisconnectTimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -26,7 +26,7 @@ pub fn ser_timeout_settings(
 
 pub(crate) fn de_timeout_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TimeoutSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TimeoutSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

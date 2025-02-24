@@ -99,7 +99,7 @@ pub fn de_list_allowed_multi_region_cluster_updates_http_response(
 
 pub fn ser_list_allowed_multi_region_cluster_updates_input(
     input: &crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_allowed_multi_region_cluster_updates_input::ser_list_allowed_multi_region_cluster_updates_input_input(
@@ -113,7 +113,7 @@ pub fn ser_list_allowed_multi_region_cluster_updates_input(
 pub(crate) fn de_list_allowed_multi_region_cluster_updates(
     value: &[u8],
     mut builder: crate::operation::list_allowed_multi_region_cluster_updates::builders::ListAllowedMultiRegionClusterUpdatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_allowed_multi_region_cluster_updates::builders::ListAllowedMultiRegionClusterUpdatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

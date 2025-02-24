@@ -15,7 +15,7 @@ pub(crate) fn de_get_bucket_metadata_table_configuration_result_payload(
 
 pub fn de_get_bucket_metadata_table_configuration_result(
     inp: &[u8],
-) -> Result<crate::types::GetBucketMetadataTableConfigurationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::GetBucketMetadataTableConfigurationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

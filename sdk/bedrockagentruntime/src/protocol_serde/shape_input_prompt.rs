@@ -2,7 +2,7 @@
 pub fn ser_input_prompt(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputPrompt,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::InputPrompt::TextPrompt(inner) => {
             #[allow(unused_mut)]

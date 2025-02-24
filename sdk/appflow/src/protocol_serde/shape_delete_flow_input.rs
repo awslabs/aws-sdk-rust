@@ -2,7 +2,7 @@
 pub fn ser_delete_flow_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_flow::DeleteFlowInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flow_name {
         object.key("flowName").string(var_1.as_str());
     }

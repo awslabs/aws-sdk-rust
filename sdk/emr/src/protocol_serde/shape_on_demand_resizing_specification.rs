@@ -2,7 +2,7 @@
 pub fn ser_on_demand_resizing_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OnDemandResizingSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.timeout_duration_minutes {
         object.key("TimeoutDurationMinutes").number(
             #[allow(clippy::useless_conversion)]
@@ -23,7 +23,7 @@ pub fn ser_on_demand_resizing_specification(
 
 pub(crate) fn de_on_demand_resizing_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OnDemandResizingSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OnDemandResizingSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_channel_flow_callback_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::channel_flow_callback::ChannelFlowCallbackInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.callback_id {
         object.key("CallbackId").string(var_1.as_str());
     }

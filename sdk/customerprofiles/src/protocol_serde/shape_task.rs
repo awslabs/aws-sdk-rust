@@ -2,7 +2,7 @@
 pub fn ser_task(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Task,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connector_operator {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConnectorOperator").start_object();

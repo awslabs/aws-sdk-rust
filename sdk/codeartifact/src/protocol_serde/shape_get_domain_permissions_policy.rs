@@ -123,7 +123,7 @@ pub fn de_get_domain_permissions_policy_http_response(
 pub(crate) fn de_get_domain_permissions_policy(
     value: &[u8],
     mut builder: crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_domain_permissions_policy::builders::GetDomainPermissionsPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -108,7 +108,7 @@ pub fn de_modify_db_cluster_snapshot_attribute_http_response(
 pub fn de_modify_db_cluster_snapshot_attribute(
     inp: &[u8],
     mut builder: crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

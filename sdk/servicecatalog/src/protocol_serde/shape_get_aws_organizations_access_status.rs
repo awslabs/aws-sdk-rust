@@ -83,14 +83,14 @@ pub fn de_get_aws_organizations_access_status_http_response(
 
 pub fn ser_get_aws_organizations_access_status_input(
     _input: &crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_aws_organizations_access_status(
     value: &[u8],
     mut builder: crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

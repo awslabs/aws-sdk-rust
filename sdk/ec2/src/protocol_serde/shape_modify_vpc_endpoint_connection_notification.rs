@@ -43,7 +43,7 @@ pub fn de_modify_vpc_endpoint_connection_notification_http_response(
 pub fn de_modify_vpc_endpoint_connection_notification(
     inp: &[u8],
     mut builder: crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

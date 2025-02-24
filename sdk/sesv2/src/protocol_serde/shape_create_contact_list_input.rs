@@ -2,7 +2,7 @@
 pub fn ser_create_contact_list_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_contact_list::CreateContactListInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_list_name {
         object.key("ContactListName").string(var_1.as_str());
     }

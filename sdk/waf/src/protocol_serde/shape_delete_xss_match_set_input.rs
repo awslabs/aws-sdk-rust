@@ -2,7 +2,7 @@
 pub fn ser_delete_xss_match_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_xss_match_set::DeleteXssMatchSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.xss_match_set_id {
         object.key("XssMatchSetId").string(var_1.as_str());
     }

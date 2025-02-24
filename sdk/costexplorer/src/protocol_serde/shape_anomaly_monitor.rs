@@ -2,7 +2,7 @@
 pub fn ser_anomaly_monitor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnomalyMonitor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monitor_arn {
         object.key("MonitorArn").string(var_1.as_str());
     }
@@ -41,7 +41,7 @@ pub fn ser_anomaly_monitor(
 
 pub(crate) fn de_anomaly_monitor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AnomalyMonitor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AnomalyMonitor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

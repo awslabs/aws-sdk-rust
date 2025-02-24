@@ -2,7 +2,7 @@
 pub fn ser_create_access_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateAccessConfigRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bootstrap_cluster_creator_admin_permissions {
         object.key("bootstrapClusterCreatorAdminPermissions").boolean(*var_1);
     }

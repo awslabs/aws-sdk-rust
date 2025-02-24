@@ -188,7 +188,7 @@ pub fn de_get_auto_scaling_group_recommendations_http_response(
 
 pub fn ser_get_auto_scaling_group_recommendations_input(
     input: &crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_auto_scaling_group_recommendations_input::ser_get_auto_scaling_group_recommendations_input_input(
@@ -202,7 +202,7 @@ pub fn ser_get_auto_scaling_group_recommendations_input(
 pub(crate) fn de_get_auto_scaling_group_recommendations(
     value: &[u8],
     mut builder: crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

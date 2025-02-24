@@ -171,7 +171,7 @@ pub fn de_start_voice_tone_analysis_task_http_response(
 
 pub fn ser_start_voice_tone_analysis_task_input(
     input: &crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_voice_tone_analysis_task_input::ser_start_voice_tone_analysis_task_input_input(&mut object, input)?;
@@ -182,7 +182,7 @@ pub fn ser_start_voice_tone_analysis_task_input(
 pub(crate) fn de_start_voice_tone_analysis_task(
     value: &[u8],
     mut builder: crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_voice_tone_analysis_task::builders::StartVoiceToneAnalysisTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -119,7 +119,7 @@ pub fn de_get_chat_controls_configuration_http_response(
 pub(crate) fn de_get_chat_controls_configuration(
     value: &[u8],
     mut builder: crate::operation::get_chat_controls_configuration::builders::GetChatControlsConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_chat_controls_configuration::builders::GetChatControlsConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

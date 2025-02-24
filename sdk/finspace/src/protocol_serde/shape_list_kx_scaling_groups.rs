@@ -151,7 +151,7 @@ pub fn de_list_kx_scaling_groups_http_response(
 pub(crate) fn de_list_kx_scaling_groups(
     value: &[u8],
     mut builder: crate::operation::list_kx_scaling_groups::builders::ListKxScalingGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_kx_scaling_groups::builders::ListKxScalingGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

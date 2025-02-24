@@ -2,7 +2,7 @@
 pub fn ser_update_traffic_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_traffic_policy::UpdateTrafficPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.traffic_policy_id {
         object.key("TrafficPolicyId").string(var_1.as_str());
     }

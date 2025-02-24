@@ -2,7 +2,7 @@
 pub fn ser_search_vulnerabilities_filter_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchVulnerabilitiesFilterCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("vulnerabilityIds").start_array();
         for item_2 in &input.vulnerability_ids {

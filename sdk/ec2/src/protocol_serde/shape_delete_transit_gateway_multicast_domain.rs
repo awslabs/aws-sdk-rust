@@ -41,7 +41,7 @@ pub fn de_delete_transit_gateway_multicast_domain_http_response(
 pub fn de_delete_transit_gateway_multicast_domain(
     inp: &[u8],
     mut builder: crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -99,7 +99,7 @@ pub fn de_create_custom_domain_association_http_response(
 pub fn de_create_custom_domain_association(
     inp: &[u8],
     mut builder: crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_custom_domain_association::builders::CreateCustomDomainAssociationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

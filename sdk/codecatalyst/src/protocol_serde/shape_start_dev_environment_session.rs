@@ -136,7 +136,7 @@ pub fn de_start_dev_environment_session_http_response(
 
 pub fn ser_start_dev_environment_session_input(
     input: &crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_dev_environment_session_input::ser_start_dev_environment_session_input_input(&mut object, input)?;
@@ -147,7 +147,7 @@ pub fn ser_start_dev_environment_session_input(
 pub(crate) fn de_start_dev_environment_session(
     value: &[u8],
     mut builder: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_web_app_identity_provider_details(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WebAppIdentityProviderDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::WebAppIdentityProviderDetails::IdentityCenterConfig(inner) => {
             #[allow(unused_mut)]

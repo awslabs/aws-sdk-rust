@@ -3,7 +3,7 @@
 pub fn ser_ecpu_per_second(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::EcpuPerSecond,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Maximum");
     if let Some(var_2) = &input.maximum {
@@ -26,7 +26,7 @@ pub fn ser_ecpu_per_second(
 #[allow(clippy::needless_question_mark)]
 pub fn de_ecpu_per_second(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::EcpuPerSecond, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::EcpuPerSecond, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::EcpuPerSecond::builder();
     while let Some(mut tag) = decoder.next_tag() {

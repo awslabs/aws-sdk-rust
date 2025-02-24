@@ -124,7 +124,7 @@ pub fn de_get_restore_testing_inferred_metadata_http_response(
 pub(crate) fn de_get_restore_testing_inferred_metadata(
     value: &[u8],
     mut builder: crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_restore_testing_inferred_metadata::builders::GetRestoreTestingInferredMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

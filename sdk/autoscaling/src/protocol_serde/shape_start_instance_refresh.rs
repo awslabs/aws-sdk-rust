@@ -95,7 +95,10 @@ pub fn de_start_instance_refresh_http_response(
 pub fn de_start_instance_refresh(
     inp: &[u8],
     mut builder: crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder,
-) -> Result<crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::start_instance_refresh::builders::StartInstanceRefreshOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

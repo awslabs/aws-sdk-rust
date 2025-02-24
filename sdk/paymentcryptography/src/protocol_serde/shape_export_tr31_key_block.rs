@@ -2,7 +2,7 @@
 pub fn ser_export_tr31_key_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportTr31KeyBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("WrappingKeyIdentifier").string(input.wrapping_key_identifier.as_str());
     }

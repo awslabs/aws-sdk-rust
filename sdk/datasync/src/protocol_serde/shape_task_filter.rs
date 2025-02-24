@@ -2,7 +2,7 @@
 pub fn ser_task_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }

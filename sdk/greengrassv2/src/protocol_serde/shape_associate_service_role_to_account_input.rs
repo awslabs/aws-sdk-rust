@@ -2,7 +2,7 @@
 pub fn ser_associate_service_role_to_account_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_service_role_to_account::AssociateServiceRoleToAccountInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("RoleArn").string(var_1.as_str());
     }

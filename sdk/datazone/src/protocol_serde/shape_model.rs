@@ -2,7 +2,7 @@
 pub fn ser_model(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Model,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Model::Smithy(inner) => {
             object_3.key("smithy").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_model(
 
 pub(crate) fn de_model<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Model>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Model>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

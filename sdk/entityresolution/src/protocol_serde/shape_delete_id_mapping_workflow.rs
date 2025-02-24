@@ -127,7 +127,7 @@ pub fn de_delete_id_mapping_workflow_http_response(
 pub(crate) fn de_delete_id_mapping_workflow(
     value: &[u8],
     mut builder: crate::operation::delete_id_mapping_workflow::builders::DeleteIdMappingWorkflowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_id_mapping_workflow::builders::DeleteIdMappingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

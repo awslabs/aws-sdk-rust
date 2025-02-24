@@ -2,7 +2,7 @@
 pub fn ser_event_orchestration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventOrchestration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("eventBridgeEnabled").boolean(input.event_bridge_enabled);
     }
@@ -11,7 +11,7 @@ pub fn ser_event_orchestration(
 
 pub(crate) fn de_event_orchestration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EventOrchestration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EventOrchestration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

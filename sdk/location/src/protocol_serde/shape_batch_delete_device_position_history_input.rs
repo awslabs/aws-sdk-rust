@@ -2,7 +2,7 @@
 pub fn ser_batch_delete_device_position_history_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_ids {
         let mut array_2 = object.key("DeviceIds").start_array();
         for item_3 in var_1 {

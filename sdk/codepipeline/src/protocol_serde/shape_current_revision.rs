@@ -2,7 +2,7 @@
 pub fn ser_current_revision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CurrentRevision,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("revision").string(input.revision.as_str());
     }

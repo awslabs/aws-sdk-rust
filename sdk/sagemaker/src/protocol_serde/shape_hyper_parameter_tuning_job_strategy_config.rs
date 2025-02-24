@@ -2,7 +2,7 @@
 pub fn ser_hyper_parameter_tuning_job_strategy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HyperParameterTuningJobStrategyConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hyperband_strategy_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("HyperbandStrategyConfig").start_object();
@@ -14,7 +14,7 @@ pub fn ser_hyper_parameter_tuning_job_strategy_config(
 
 pub(crate) fn de_hyper_parameter_tuning_job_strategy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HyperParameterTuningJobStrategyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HyperParameterTuningJobStrategyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

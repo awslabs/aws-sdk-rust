@@ -151,7 +151,7 @@ pub fn de_describe_migration_task_http_response(
 
 pub fn ser_describe_migration_task_input(
     input: &crate::operation::describe_migration_task::DescribeMigrationTaskInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_migration_task_input::ser_describe_migration_task_input_input(&mut object, input)?;
@@ -162,7 +162,7 @@ pub fn ser_describe_migration_task_input(
 pub(crate) fn de_describe_migration_task(
     value: &[u8],
     mut builder: crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_migration_task::builders::DescribeMigrationTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

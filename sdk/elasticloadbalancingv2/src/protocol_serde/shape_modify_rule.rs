@@ -222,7 +222,7 @@ pub fn de_modify_rule_http_response(
 pub fn de_modify_rule(
     inp: &[u8],
     mut builder: crate::operation::modify_rule::builders::ModifyRuleOutputBuilder,
-) -> Result<crate::operation::modify_rule::builders::ModifyRuleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::modify_rule::builders::ModifyRuleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

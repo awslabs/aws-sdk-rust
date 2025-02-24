@@ -2,7 +2,7 @@
 pub fn ser_event_time_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventTimeRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("FromTime")

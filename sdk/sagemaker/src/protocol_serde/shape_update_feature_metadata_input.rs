@@ -2,7 +2,7 @@
 pub fn ser_update_feature_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_feature_metadata::UpdateFeatureMetadataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.feature_group_name {
         object.key("FeatureGroupName").string(var_1.as_str());
     }

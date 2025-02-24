@@ -2,7 +2,7 @@
 pub fn ser_check_access_not_granted_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::check_access_not_granted::CheckAccessNotGrantedInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access {
         let mut array_2 = object.key("access").start_array();
         for item_3 in var_1 {

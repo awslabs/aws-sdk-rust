@@ -131,7 +131,7 @@ pub fn de_describe_topic_permissions_http_response(
 pub(crate) fn de_describe_topic_permissions(
     value: &[u8],
     mut builder: crate::operation::describe_topic_permissions::builders::DescribeTopicPermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_topic_permissions::builders::DescribeTopicPermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

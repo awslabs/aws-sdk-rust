@@ -2,7 +2,7 @@
 pub fn ser_visa_pin_verification_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VisaPinVerificationValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EncryptedPinBlock").string(input.encrypted_pin_block.as_str());
     }

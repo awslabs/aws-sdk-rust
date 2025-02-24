@@ -2,7 +2,7 @@
 pub fn ser_get_report_group_trend_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_report_group_trend::GetReportGroupTrendInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.report_group_arn {
         object.key("reportGroupArn").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_get_organization_custom_rule_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organization_config_rule_name {
         object.key("OrganizationConfigRuleName").string(var_1.as_str());
     }

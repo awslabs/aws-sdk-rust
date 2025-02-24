@@ -2,7 +2,7 @@
 pub fn ser_set_default_authorizer_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_default_authorizer::SetDefaultAuthorizerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authorizer_name {
         object.key("authorizerName").string(var_1.as_str());
     }

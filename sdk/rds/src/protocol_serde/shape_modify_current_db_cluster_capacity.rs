@@ -104,7 +104,7 @@ pub fn de_modify_current_db_cluster_capacity_http_response(
 pub fn de_modify_current_db_cluster_capacity(
     inp: &[u8],
     mut builder: crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

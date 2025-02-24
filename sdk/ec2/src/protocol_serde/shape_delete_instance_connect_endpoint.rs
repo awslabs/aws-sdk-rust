@@ -39,7 +39,7 @@ pub fn de_delete_instance_connect_endpoint_http_response(
 pub fn de_delete_instance_connect_endpoint(
     inp: &[u8],
     mut builder: crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_instance_connect_endpoint::builders::DeleteInstanceConnectEndpointOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

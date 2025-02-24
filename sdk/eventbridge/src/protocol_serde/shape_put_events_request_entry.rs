@@ -2,7 +2,7 @@
 pub fn ser_put_events_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutEventsRequestEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time {
         object.key("Time").date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }

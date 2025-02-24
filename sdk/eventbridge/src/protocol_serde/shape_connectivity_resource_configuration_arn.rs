@@ -2,7 +2,7 @@
 pub fn ser_connectivity_resource_configuration_arn(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectivityResourceConfigurationArn,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResourceConfigurationArn").string(input.resource_configuration_arn.as_str());
     }

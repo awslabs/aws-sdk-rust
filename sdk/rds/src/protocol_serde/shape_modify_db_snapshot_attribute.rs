@@ -102,8 +102,10 @@ pub fn de_modify_db_snapshot_attribute_http_response(
 pub fn de_modify_db_snapshot_attribute(
     inp: &[u8],
     mut builder: crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeOutputBuilder,
-) -> Result<crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

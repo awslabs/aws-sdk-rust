@@ -84,7 +84,7 @@ pub fn de_register_instances_with_load_balancer_http_response(
 pub fn de_register_instances_with_load_balancer(
     inp: &[u8],
     mut builder: crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::register_instances_with_load_balancer::builders::RegisterInstancesWithLoadBalancerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_private_dns_namespace_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateDnsNamespaceProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dns_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DnsProperties").start_object();

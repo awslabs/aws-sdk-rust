@@ -2,7 +2,7 @@
 pub fn ser_guardrail_sensitive_information_policy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailSensitiveInformationPolicyConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pii_entities_config {
         let mut array_2 = object.key("piiEntitiesConfig").start_array();
         for item_3 in var_1 {

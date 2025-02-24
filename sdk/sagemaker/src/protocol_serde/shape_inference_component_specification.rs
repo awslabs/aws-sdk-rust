@@ -2,7 +2,7 @@
 pub fn ser_inference_component_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceComponentSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_name {
         object.key("ModelName").string(var_1.as_str());
     }

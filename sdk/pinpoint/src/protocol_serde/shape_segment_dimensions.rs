@@ -2,7 +2,7 @@
 pub fn ser_segment_dimensions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SegmentDimensions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Attributes").start_object();
@@ -65,7 +65,7 @@ pub fn ser_segment_dimensions(
 
 pub(crate) fn de_segment_dimensions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SegmentDimensions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SegmentDimensions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

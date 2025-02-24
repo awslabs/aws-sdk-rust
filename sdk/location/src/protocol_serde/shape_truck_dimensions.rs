@@ -2,7 +2,7 @@
 pub fn ser_truck_dimensions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TruckDimensions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.length {
         object.key("Length").number(
             #[allow(clippy::useless_conversion)]

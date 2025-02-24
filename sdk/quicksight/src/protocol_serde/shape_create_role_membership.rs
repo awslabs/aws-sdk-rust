@@ -157,7 +157,7 @@ pub fn de_create_role_membership_http_response(
 pub(crate) fn de_create_role_membership(
     value: &[u8],
     mut builder: crate::operation::create_role_membership::builders::CreateRoleMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_role_membership::builders::CreateRoleMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

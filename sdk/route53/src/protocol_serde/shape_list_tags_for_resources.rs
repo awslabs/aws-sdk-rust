@@ -122,7 +122,7 @@ pub fn de_list_tags_for_resources_http_response(
 
 pub fn ser_list_tags_for_resources_op_input(
     input: &crate::operation::list_tags_for_resources::ListTagsForResourcesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -139,7 +139,10 @@ pub fn ser_list_tags_for_resources_op_input(
 pub fn de_list_tags_for_resources(
     inp: &[u8],
     mut builder: crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder,
-) -> Result<crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_tags_for_resources::builders::ListTagsForResourcesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

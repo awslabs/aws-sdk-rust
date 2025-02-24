@@ -94,7 +94,7 @@ pub fn de_list_medical_vocabularies_http_response(
 
 pub fn ser_list_medical_vocabularies_input(
     input: &crate::operation::list_medical_vocabularies::ListMedicalVocabulariesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_medical_vocabularies_input::ser_list_medical_vocabularies_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_list_medical_vocabularies_input(
 pub(crate) fn de_list_medical_vocabularies(
     value: &[u8],
     mut builder: crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_medical_vocabularies::builders::ListMedicalVocabulariesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

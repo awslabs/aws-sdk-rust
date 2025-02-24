@@ -2,7 +2,7 @@
 pub fn ser_attendee_capabilities(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttendeeCapabilities,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Audio").string(input.audio.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_attendee_capabilities(
 
 pub(crate) fn de_attendee_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AttendeeCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AttendeeCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

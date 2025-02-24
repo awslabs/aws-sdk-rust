@@ -2,7 +2,7 @@
 pub fn ser_request_sender_id_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::request_sender_id::RequestSenderIdInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sender_id {
         object.key("SenderId").string(var_1.as_str());
     }

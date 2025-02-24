@@ -163,7 +163,7 @@ pub fn de_deregister_gateway_instance_http_response(
 pub(crate) fn de_deregister_gateway_instance(
     value: &[u8],
     mut builder: crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

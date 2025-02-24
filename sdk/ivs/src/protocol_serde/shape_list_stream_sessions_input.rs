@@ -2,7 +2,7 @@
 pub fn ser_list_stream_sessions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_stream_sessions::ListStreamSessionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_arn {
         object.key("channelArn").string(var_1.as_str());
     }

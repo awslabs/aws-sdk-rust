@@ -2,7 +2,7 @@
 pub fn ser_invoke_data_automation_async_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_data_automation_async::InvokeDataAutomationAsyncInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }

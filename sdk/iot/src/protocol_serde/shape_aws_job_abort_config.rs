@@ -2,7 +2,7 @@
 pub fn ser_aws_job_abort_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsJobAbortConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("abortCriteriaList").start_array();
         for item_2 in &input.abort_criteria_list {

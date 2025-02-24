@@ -161,7 +161,7 @@ pub fn de_describe_channel_placement_group_http_response(
 pub(crate) fn de_describe_channel_placement_group(
     value: &[u8],
     mut builder: crate::operation::describe_channel_placement_group::builders::DescribeChannelPlacementGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_channel_placement_group::builders::DescribeChannelPlacementGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

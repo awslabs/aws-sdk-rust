@@ -135,7 +135,7 @@ pub fn de_get_transit_gateway_registrations_http_response(
 pub(crate) fn de_get_transit_gateway_registrations(
     value: &[u8],
     mut builder: crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_transit_gateway_registrations::builders::GetTransitGatewayRegistrationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

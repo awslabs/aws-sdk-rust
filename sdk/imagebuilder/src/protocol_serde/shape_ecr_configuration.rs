@@ -2,7 +2,7 @@
 pub fn ser_ecr_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcrConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.repository_name {
         object.key("repositoryName").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_ecr_configuration(
 
 pub(crate) fn de_ecr_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EcrConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EcrConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

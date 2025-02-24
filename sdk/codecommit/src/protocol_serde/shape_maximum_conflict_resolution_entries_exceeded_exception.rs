@@ -2,7 +2,7 @@
 pub(crate) fn de_maximum_conflict_resolution_entries_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::MaximumConflictResolutionEntriesExceededExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::MaximumConflictResolutionEntriesExceededExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

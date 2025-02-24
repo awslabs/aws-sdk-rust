@@ -2,7 +2,7 @@
 pub fn ser_policy_generation_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyGenerationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("principalArn").string(input.principal_arn.as_str());
     }

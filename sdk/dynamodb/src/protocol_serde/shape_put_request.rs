@@ -2,7 +2,7 @@
 pub fn ser_put_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         #[allow(unused_mut)]
         let mut object_1 = object.key("Item").start_object();
@@ -21,7 +21,7 @@ pub fn ser_put_request(
 
 pub(crate) fn de_put_request<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PutRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PutRequest>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

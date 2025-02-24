@@ -168,7 +168,7 @@ pub fn de_get_linked_whats_app_business_account_http_response(
 pub(crate) fn de_get_linked_whats_app_business_account(
     value: &[u8],
     mut builder: crate::operation::get_linked_whats_app_business_account::builders::GetLinkedWhatsAppBusinessAccountOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_linked_whats_app_business_account::builders::GetLinkedWhatsAppBusinessAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

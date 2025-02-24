@@ -101,7 +101,7 @@ pub fn de_accept_inbound_cross_cluster_search_connection_http_response(
 pub(crate) fn de_accept_inbound_cross_cluster_search_connection(
     value: &[u8],
     mut builder: crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

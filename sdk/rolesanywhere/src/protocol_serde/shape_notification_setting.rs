@@ -2,7 +2,7 @@
 pub fn ser_notification_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enabled").boolean(input.enabled);
     }

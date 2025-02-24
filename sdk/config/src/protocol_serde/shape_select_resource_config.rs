@@ -90,7 +90,7 @@ pub fn de_select_resource_config_http_response(
 
 pub fn ser_select_resource_config_input(
     input: &crate::operation::select_resource_config::SelectResourceConfigInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_select_resource_config_input::ser_select_resource_config_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_select_resource_config_input(
 pub(crate) fn de_select_resource_config(
     value: &[u8],
     mut builder: crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

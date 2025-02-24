@@ -2,7 +2,7 @@
 pub fn ser_blocked_phrases_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlockedPhrasesConfigurationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blocked_phrases_to_create_or_update {
         let mut array_2 = object.key("blockedPhrasesToCreateOrUpdate").start_array();
         for item_3 in var_1 {

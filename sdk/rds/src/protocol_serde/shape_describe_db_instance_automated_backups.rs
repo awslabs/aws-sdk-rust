@@ -67,7 +67,7 @@ pub fn de_describe_db_instance_automated_backups_http_response(
 pub fn de_describe_db_instance_automated_backups(
     inp: &[u8],
     mut builder: crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_db_instance_automated_backups::builders::DescribeDbInstanceAutomatedBackupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

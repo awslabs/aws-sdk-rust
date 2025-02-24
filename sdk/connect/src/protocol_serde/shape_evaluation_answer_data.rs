@@ -2,7 +2,7 @@
 pub fn ser_evaluation_answer_data(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationAnswerData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EvaluationAnswerData::StringValue(inner) => {
             object_2.key("StringValue").string(inner.as_str());
@@ -27,7 +27,7 @@ pub fn ser_evaluation_answer_data(
 
 pub(crate) fn de_evaluation_answer_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationAnswerData>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationAnswerData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

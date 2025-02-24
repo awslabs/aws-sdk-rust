@@ -2,7 +2,7 @@
 pub fn ser_redshift_credentials(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RedshiftCredentials::SecretArn(inner) => {
             object_7.key("secretArn").string(inner.as_str());
@@ -24,7 +24,7 @@ pub fn ser_redshift_credentials(
 
 pub(crate) fn de_redshift_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RedshiftCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RedshiftCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

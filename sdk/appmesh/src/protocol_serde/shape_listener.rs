@@ -2,7 +2,7 @@
 pub fn ser_listener(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Listener,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.port_mapping {
         #[allow(unused_mut)]
         let mut object_2 = object.key("portMapping").start_object();
@@ -44,7 +44,7 @@ pub fn ser_listener(
 
 pub(crate) fn de_listener<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Listener>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Listener>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

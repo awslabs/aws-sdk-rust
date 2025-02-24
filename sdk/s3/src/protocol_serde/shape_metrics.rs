@@ -2,7 +2,7 @@
 pub fn ser_metrics(
     input: &crate::types::Metrics,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -18,7 +18,9 @@ pub fn ser_metrics(
 }
 
 #[allow(clippy::needless_question_mark)]
-pub fn de_metrics(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Metrics, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_metrics(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::Metrics, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Metrics::builder();
     while let Some(mut tag) = decoder.next_tag() {

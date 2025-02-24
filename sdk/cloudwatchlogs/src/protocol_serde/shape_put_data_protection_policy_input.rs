@@ -2,7 +2,7 @@
 pub fn ser_put_data_protection_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_identifier {
         object.key("logGroupIdentifier").string(var_1.as_str());
     }

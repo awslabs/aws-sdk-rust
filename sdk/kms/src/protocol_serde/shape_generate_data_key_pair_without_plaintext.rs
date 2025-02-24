@@ -237,7 +237,7 @@ pub fn de_generate_data_key_pair_without_plaintext_http_response(
 
 pub fn ser_generate_data_key_pair_without_plaintext_input(
     input: &crate::operation::generate_data_key_pair_without_plaintext::GenerateDataKeyPairWithoutPlaintextInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_generate_data_key_pair_without_plaintext_input::ser_generate_data_key_pair_without_plaintext_input_input(
@@ -251,7 +251,7 @@ pub fn ser_generate_data_key_pair_without_plaintext_input(
 pub(crate) fn de_generate_data_key_pair_without_plaintext(
     value: &[u8],
     mut builder: crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::generate_data_key_pair_without_plaintext::builders::GenerateDataKeyPairWithoutPlaintextOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

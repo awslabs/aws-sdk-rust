@@ -2,7 +2,7 @@
 pub fn ser_invoke_agent_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_agent::InvokeAgentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bedrock_model_configurations {
         #[allow(unused_mut)]
         let mut object_2 = object.key("bedrockModelConfigurations").start_object();

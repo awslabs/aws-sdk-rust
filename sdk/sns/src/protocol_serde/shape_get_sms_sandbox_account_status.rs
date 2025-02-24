@@ -92,7 +92,7 @@ pub fn de_get_sms_sandbox_account_status_http_response(
 pub fn de_get_sms_sandbox_account_status(
     inp: &[u8],
     mut builder: crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_sms_sandbox_account_status::builders::GetSmsSandboxAccountStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

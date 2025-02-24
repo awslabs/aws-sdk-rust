@@ -2,7 +2,7 @@
 pub fn ser_put_access_point_policy_for_object_lambda_input_input_input(
     input: &crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.policy {

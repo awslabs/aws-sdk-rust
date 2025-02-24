@@ -2,7 +2,7 @@
 pub fn ser_data_quality_ruleset_evaluation_run_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataQualityRulesetEvaluationRunFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataSource").start_object();

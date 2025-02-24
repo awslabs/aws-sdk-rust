@@ -2,7 +2,7 @@
 pub fn ser_delete_file_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteFileEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("filePath").string(input.file_path.as_str());
     }

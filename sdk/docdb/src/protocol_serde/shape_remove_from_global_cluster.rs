@@ -102,7 +102,10 @@ pub fn de_remove_from_global_cluster_http_response(
 pub fn de_remove_from_global_cluster(
     inp: &[u8],
     mut builder: crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder,
-) -> Result<crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_get_ip_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_ip_set::GetIpSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_set_id {
         object.key("IPSetId").string(var_1.as_str());
     }

@@ -39,7 +39,7 @@ pub fn de_replace_route_table_association_http_response(
 pub fn de_replace_route_table_association(
     inp: &[u8],
     mut builder: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

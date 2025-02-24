@@ -2,7 +2,7 @@
 pub fn ser_create_queue_fleet_association_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_queue_fleet_association::CreateQueueFleetAssociationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_id {
         object.key("fleetId").string(var_1.as_str());
     }

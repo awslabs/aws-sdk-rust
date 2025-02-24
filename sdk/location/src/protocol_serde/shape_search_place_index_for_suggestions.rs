@@ -124,7 +124,7 @@ pub fn de_search_place_index_for_suggestions_http_response(
 
 pub fn ser_search_place_index_for_suggestions_input(
     input: &crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_search_place_index_for_suggestions_input::ser_search_place_index_for_suggestions_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_search_place_index_for_suggestions_input(
 pub(crate) fn de_search_place_index_for_suggestions(
     value: &[u8],
     mut builder: crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

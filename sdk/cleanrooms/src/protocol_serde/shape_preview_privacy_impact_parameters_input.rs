@@ -2,7 +2,7 @@
 pub fn ser_preview_privacy_impact_parameters_input(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PreviewPrivacyImpactParametersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PreviewPrivacyImpactParametersInput::DifferentialPrivacy(inner) => {
             #[allow(unused_mut)]

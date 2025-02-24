@@ -157,7 +157,7 @@ pub fn de_get_sip_media_application_http_response(
 pub(crate) fn de_get_sip_media_application(
     value: &[u8],
     mut builder: crate::operation::get_sip_media_application::builders::GetSipMediaApplicationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_sip_media_application::builders::GetSipMediaApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

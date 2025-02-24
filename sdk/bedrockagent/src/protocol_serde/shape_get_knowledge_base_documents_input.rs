@@ -2,7 +2,7 @@
 pub fn ser_get_knowledge_base_documents_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_knowledge_base_documents::GetKnowledgeBaseDocumentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_identifiers {
         let mut array_2 = object.key("documentIdentifiers").start_array();
         for item_3 in var_1 {

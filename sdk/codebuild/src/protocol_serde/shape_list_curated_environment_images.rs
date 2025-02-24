@@ -37,14 +37,14 @@ pub fn de_list_curated_environment_images_http_response(
 
 pub fn ser_list_curated_environment_images_input(
     _input: &crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_list_curated_environment_images(
     value: &[u8],
     mut builder: crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_curated_environment_images::builders::ListCuratedEnvironmentImagesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

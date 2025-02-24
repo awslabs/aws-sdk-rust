@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_question_type_properties(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormQuestionTypeProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EvaluationFormQuestionTypeProperties::Numeric(inner) => {
             #[allow(unused_mut)]
@@ -33,7 +33,7 @@ pub fn ser_evaluation_form_question_type_properties(
 
 pub(crate) fn de_evaluation_form_question_type_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationFormQuestionTypeProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationFormQuestionTypeProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

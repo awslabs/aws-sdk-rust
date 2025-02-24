@@ -2,7 +2,7 @@
 pub fn ser_session_key_derivation_value(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionKeyDerivationValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SessionKeyDerivationValue::ApplicationCryptogram(inner) => {
             object_2.key("ApplicationCryptogram").string(inner.as_str());

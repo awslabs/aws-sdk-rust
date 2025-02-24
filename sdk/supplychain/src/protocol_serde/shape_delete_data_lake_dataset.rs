@@ -156,7 +156,7 @@ pub fn de_delete_data_lake_dataset_http_response(
 pub(crate) fn de_delete_data_lake_dataset(
     value: &[u8],
     mut builder: crate::operation::delete_data_lake_dataset::builders::DeleteDataLakeDatasetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_data_lake_dataset::builders::DeleteDataLakeDatasetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

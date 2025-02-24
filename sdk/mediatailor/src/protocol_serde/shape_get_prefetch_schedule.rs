@@ -38,7 +38,7 @@ pub fn de_get_prefetch_schedule_http_response(
 pub(crate) fn de_get_prefetch_schedule(
     value: &[u8],
     mut builder: crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_prefetch_schedule::builders::GetPrefetchScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_search_sample_queries_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_sample_queries::SearchSampleQueriesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.search_phrase {
         object.key("SearchPhrase").string(var_1.as_str());
     }

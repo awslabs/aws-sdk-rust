@@ -114,7 +114,7 @@ pub fn de_list_network_analyzer_configurations_http_response(
 pub(crate) fn de_list_network_analyzer_configurations(
     value: &[u8],
     mut builder: crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

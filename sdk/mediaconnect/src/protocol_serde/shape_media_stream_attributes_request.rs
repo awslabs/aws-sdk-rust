@@ -2,7 +2,7 @@
 pub fn ser_media_stream_attributes_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaStreamAttributesRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fmtp {
         #[allow(unused_mut)]
         let mut object_2 = object.key("fmtp").start_object();

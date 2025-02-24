@@ -64,7 +64,7 @@ pub fn de_create_presigned_domain_url_http_response(
 
 pub fn ser_create_presigned_domain_url_input(
     input: &crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_presigned_domain_url_input::ser_create_presigned_domain_url_input_input(&mut object, input)?;
@@ -75,7 +75,7 @@ pub fn ser_create_presigned_domain_url_input(
 pub(crate) fn de_create_presigned_domain_url(
     value: &[u8],
     mut builder: crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_presigned_domain_url::builders::CreatePresignedDomainUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

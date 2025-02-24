@@ -88,7 +88,7 @@ pub fn de_get_tax_exemption_types_http_response(
 pub(crate) fn de_get_tax_exemption_types(
     value: &[u8],
     mut builder: crate::operation::get_tax_exemption_types::builders::GetTaxExemptionTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_tax_exemption_types::builders::GetTaxExemptionTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

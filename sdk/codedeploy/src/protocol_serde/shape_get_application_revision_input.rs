@@ -2,7 +2,7 @@
 pub fn ser_get_application_revision_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_application_revision::GetApplicationRevisionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_name {
         object.key("applicationName").string(var_1.as_str());
     }

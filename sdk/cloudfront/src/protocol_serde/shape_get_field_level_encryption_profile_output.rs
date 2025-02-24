@@ -20,7 +20,9 @@ pub(crate) fn de_field_level_encryption_profile_payload(
         .transpose()
 }
 
-pub fn de_field_level_encryption_profile(inp: &[u8]) -> Result<crate::types::FieldLevelEncryptionProfile, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_field_level_encryption_profile(
+    inp: &[u8],
+) -> std::result::Result<crate::types::FieldLevelEncryptionProfile, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

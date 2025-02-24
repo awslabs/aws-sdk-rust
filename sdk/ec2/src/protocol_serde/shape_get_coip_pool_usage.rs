@@ -35,7 +35,7 @@ pub fn de_get_coip_pool_usage_http_response(
 pub fn de_get_coip_pool_usage(
     inp: &[u8],
     mut builder: crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageOutputBuilder,
-) -> Result<crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_coip_pool_usage::builders::GetCoipPoolUsageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

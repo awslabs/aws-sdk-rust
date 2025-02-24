@@ -2,7 +2,7 @@
 pub fn ser_chat_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatMessage,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ContentType").string(input.content_type.as_str());
     }

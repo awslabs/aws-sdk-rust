@@ -2,7 +2,7 @@
 pub fn ser_publish_metric_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PublishMetricAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Dimensions").start_array();
         for item_2 in &input.dimensions {
@@ -20,7 +20,7 @@ pub fn ser_publish_metric_action(
 
 pub(crate) fn de_publish_metric_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PublishMetricAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PublishMetricAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

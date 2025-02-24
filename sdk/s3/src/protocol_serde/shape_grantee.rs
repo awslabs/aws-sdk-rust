@@ -2,7 +2,7 @@
 pub fn ser_grantee(
     input: &crate::types::Grantee,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut writer = writer;
     {
         writer.write_attribute("xsi:type", input.r#type.as_str());
@@ -30,7 +30,9 @@ pub fn ser_grantee(
 }
 
 #[allow(clippy::needless_question_mark)]
-pub fn de_grantee(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Grantee, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_grantee(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::Grantee, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Grantee::builder();
     let attrib_5 = {

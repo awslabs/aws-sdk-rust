@@ -2,7 +2,7 @@
 pub fn ser_knowledge_base_vector_search_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KnowledgeBaseVectorSearchConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.number_of_results != 5 {
         object.key("numberOfResults").number(
             #[allow(clippy::useless_conversion)]

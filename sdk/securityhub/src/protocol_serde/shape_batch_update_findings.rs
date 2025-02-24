@@ -105,7 +105,7 @@ pub fn de_batch_update_findings_http_response(
 
 pub fn ser_batch_update_findings_input(
     input: &crate::operation::batch_update_findings::BatchUpdateFindingsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_update_findings_input::ser_batch_update_findings_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_batch_update_findings_input(
 pub(crate) fn de_batch_update_findings(
     value: &[u8],
     mut builder: crate::operation::batch_update_findings::builders::BatchUpdateFindingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_update_findings::builders::BatchUpdateFindingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -105,7 +105,7 @@ pub fn de_put_pipeline_definition_http_response(
 
 pub fn ser_put_pipeline_definition_input(
     input: &crate::operation::put_pipeline_definition::PutPipelineDefinitionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_pipeline_definition_input::ser_put_pipeline_definition_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_put_pipeline_definition_input(
 pub(crate) fn de_put_pipeline_definition(
     value: &[u8],
     mut builder: crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

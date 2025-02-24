@@ -2,7 +2,7 @@
 pub fn ser_list_billing_views_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_billing_views::ListBillingViewsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.active_time_range {
         #[allow(unused_mut)]
         let mut object_2 = object.key("activeTimeRange").start_object();

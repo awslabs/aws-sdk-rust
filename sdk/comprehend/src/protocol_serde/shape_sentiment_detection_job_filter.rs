@@ -2,7 +2,7 @@
 pub fn ser_sentiment_detection_job_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SentimentDetectionJobFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_name {
         object.key("JobName").string(var_1.as_str());
     }

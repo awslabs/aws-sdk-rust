@@ -117,7 +117,7 @@ pub fn de_authorize_cluster_security_group_ingress_http_response(
 pub fn de_authorize_cluster_security_group_ingress(
     inp: &[u8],
     mut builder: crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

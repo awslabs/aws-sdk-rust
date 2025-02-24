@@ -2,7 +2,7 @@
 pub fn ser_start_web_rtc_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_web_rtc_contact::StartWebRtcContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_capabilities {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AllowedCapabilities").start_object();

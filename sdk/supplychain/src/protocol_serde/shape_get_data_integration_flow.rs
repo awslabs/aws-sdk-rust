@@ -158,7 +158,7 @@ pub fn de_get_data_integration_flow_http_response(
 pub(crate) fn de_get_data_integration_flow(
     value: &[u8],
     mut builder: crate::operation::get_data_integration_flow::builders::GetDataIntegrationFlowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_integration_flow::builders::GetDataIntegrationFlowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

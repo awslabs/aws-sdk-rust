@@ -2,7 +2,7 @@
 pub fn ser_list_model_manifests_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_model_manifests::ListModelManifestsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.signal_catalog_arn {
         object.key("signalCatalogArn").string(var_1.as_str());
     }

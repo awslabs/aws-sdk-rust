@@ -2,7 +2,7 @@
 pub fn ser_create_chime_webhook_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_chime_webhook_configuration::CreateChimeWebhookConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_name {
         object.key("ConfigurationName").string(var_1.as_str());
     }

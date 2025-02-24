@@ -2,7 +2,7 @@
 pub fn ser_custom_policy_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomPolicyDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PolicyRuntime").string(input.policy_runtime.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_custom_policy_details(
 
 pub(crate) fn de_custom_policy_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CustomPolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CustomPolicyDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

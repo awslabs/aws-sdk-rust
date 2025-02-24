@@ -2,7 +2,7 @@
 pub fn ser_get_lineage_group_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lineage_group_name {
         object.key("LineageGroupName").string(var_1.as_str());
     }

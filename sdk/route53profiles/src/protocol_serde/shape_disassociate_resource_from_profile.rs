@@ -180,7 +180,7 @@ pub fn de_disassociate_resource_from_profile_http_response(
 pub(crate) fn de_disassociate_resource_from_profile(
     value: &[u8],
     mut builder: crate::operation::disassociate_resource_from_profile::builders::DisassociateResourceFromProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_resource_from_profile::builders::DisassociateResourceFromProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_cis_date_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CisDateFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.earliest_scan_start_time {
         object
             .key("earliestScanStartTime")

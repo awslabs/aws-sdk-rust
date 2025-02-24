@@ -58,7 +58,7 @@ pub fn de_list_roles_http_response(
 pub fn de_list_roles(
     inp: &[u8],
     mut builder: crate::operation::list_roles::builders::ListRolesOutputBuilder,
-) -> Result<crate::operation::list_roles::builders::ListRolesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_roles::builders::ListRolesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

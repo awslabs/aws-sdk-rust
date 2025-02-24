@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_state_change(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InstanceStateChange, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InstanceStateChange, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceStateChange::builder();
     while let Some(mut tag) = decoder.next_tag() {

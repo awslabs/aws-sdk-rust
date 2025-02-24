@@ -2,7 +2,7 @@
 pub fn ser_job_timeout(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobTimeout,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attempt_duration_seconds {
         object.key("attemptDurationSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_job_timeout(
 
 pub(crate) fn de_job_timeout<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::JobTimeout>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::JobTimeout>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

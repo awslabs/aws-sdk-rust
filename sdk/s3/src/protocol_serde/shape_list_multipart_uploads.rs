@@ -77,7 +77,10 @@ pub fn ser_list_multipart_uploads_headers(
 pub fn de_list_multipart_uploads(
     inp: &[u8],
     mut builder: crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder,
-) -> Result<crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_multipart_uploads::builders::ListMultipartUploadsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

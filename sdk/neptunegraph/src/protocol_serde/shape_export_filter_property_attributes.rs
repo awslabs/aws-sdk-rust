@@ -2,7 +2,7 @@
 pub fn ser_export_filter_property_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportFilterPropertyAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.output_type {
         object.key("outputType").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_export_filter_property_attributes(
 
 pub(crate) fn de_export_filter_property_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ExportFilterPropertyAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ExportFilterPropertyAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

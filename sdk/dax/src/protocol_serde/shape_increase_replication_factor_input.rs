@@ -2,7 +2,7 @@
 pub fn ser_increase_replication_factor_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::increase_replication_factor::IncreaseReplicationFactorInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_name {
         object.key("ClusterName").string(var_1.as_str());
     }

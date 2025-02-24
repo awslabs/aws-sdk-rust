@@ -2,7 +2,7 @@
 pub fn ser_import_firewall_domains_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_firewall_domains::ImportFirewallDomainsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.firewall_domain_list_id {
         object.key("FirewallDomainListId").string(var_1.as_str());
     }

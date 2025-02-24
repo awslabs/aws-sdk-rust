@@ -2,7 +2,7 @@
 pub fn ser_batch_delete_import_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_delete_import_data::BatchDeleteImportDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.import_task_ids {
         let mut array_2 = object.key("importTaskIds").start_array();
         for item_3 in var_1 {

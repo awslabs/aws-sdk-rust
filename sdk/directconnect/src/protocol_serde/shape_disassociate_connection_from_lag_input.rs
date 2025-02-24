@@ -2,7 +2,7 @@
 pub fn ser_disassociate_connection_from_lag_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_id {
         object.key("connectionId").string(var_1.as_str());
     }

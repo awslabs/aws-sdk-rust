@@ -40,7 +40,7 @@ pub fn de_list_organization_service_access_status_http_response(
 pub(crate) fn de_list_organization_service_access_status(
     value: &[u8],
     mut builder: crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_organization_service_access_status::builders::ListOrganizationServiceAccessStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

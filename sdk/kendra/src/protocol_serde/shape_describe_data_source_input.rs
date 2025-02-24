@@ -2,7 +2,7 @@
 pub fn ser_describe_data_source_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_data_source::DescribeDataSourceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("Id").string(var_1.as_str());
     }

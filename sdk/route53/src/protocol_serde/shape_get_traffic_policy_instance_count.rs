@@ -41,7 +41,7 @@ pub fn de_get_traffic_policy_instance_count_http_response(
 pub fn de_get_traffic_policy_instance_count(
     inp: &[u8],
     mut builder: crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_traffic_policy_instance_count::builders::GetTrafficPolicyInstanceCountOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

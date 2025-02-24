@@ -134,7 +134,7 @@ pub fn de_get_connect_instance_config_http_response(
 pub(crate) fn de_get_connect_instance_config(
     value: &[u8],
     mut builder: crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_connect_instance_config::builders::GetConnectInstanceConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

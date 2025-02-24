@@ -116,7 +116,7 @@ pub fn de_get_challenge_metadata_http_response(
 pub(crate) fn de_get_challenge_metadata(
     value: &[u8],
     mut builder: crate::operation::get_challenge_metadata::builders::GetChallengeMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_challenge_metadata::builders::GetChallengeMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

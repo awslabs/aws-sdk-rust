@@ -39,7 +39,7 @@ pub fn de_describe_import_snapshot_tasks_http_response(
 pub fn de_describe_import_snapshot_tasks(
     inp: &[u8],
     mut builder: crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

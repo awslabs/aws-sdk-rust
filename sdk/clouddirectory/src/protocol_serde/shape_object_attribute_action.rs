@@ -2,7 +2,7 @@
 pub fn ser_object_attribute_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ObjectAttributeAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_attribute_action_type {
         object.key("ObjectAttributeActionType").string(var_1.as_str());
     }

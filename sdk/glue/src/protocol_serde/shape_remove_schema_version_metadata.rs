@@ -90,7 +90,7 @@ pub fn de_remove_schema_version_metadata_http_response(
 
 pub fn ser_remove_schema_version_metadata_input(
     input: &crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadataInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_remove_schema_version_metadata_input::ser_remove_schema_version_metadata_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_remove_schema_version_metadata_input(
 pub(crate) fn de_remove_schema_version_metadata(
     value: &[u8],
     mut builder: crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

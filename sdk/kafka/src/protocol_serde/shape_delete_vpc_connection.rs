@@ -107,7 +107,7 @@ pub fn de_delete_vpc_connection_http_response(
 pub(crate) fn de_delete_vpc_connection(
     value: &[u8],
     mut builder: crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_vpc_connection::builders::DeleteVpcConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

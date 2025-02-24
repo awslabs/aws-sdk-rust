@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_failed_capacity_reservation_fleet_cancellation_result(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FailedCapacityReservationFleetCancellationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::FailedCapacityReservationFleetCancellationResult, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FailedCapacityReservationFleetCancellationResult::builder();
     while let Some(mut tag) = decoder.next_tag() {

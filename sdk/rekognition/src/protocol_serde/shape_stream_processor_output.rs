@@ -2,7 +2,7 @@
 pub fn ser_stream_processor_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessorOutput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kinesis_data_stream {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KinesisDataStream").start_object();
@@ -20,7 +20,7 @@ pub fn ser_stream_processor_output(
 
 pub(crate) fn de_stream_processor_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StreamProcessorOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StreamProcessorOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

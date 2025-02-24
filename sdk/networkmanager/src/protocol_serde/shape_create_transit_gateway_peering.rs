@@ -146,7 +146,7 @@ pub fn de_create_transit_gateway_peering_http_response(
 
 pub fn ser_create_transit_gateway_peering_input(
     input: &crate::operation::create_transit_gateway_peering::CreateTransitGatewayPeeringInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_transit_gateway_peering_input::ser_create_transit_gateway_peering_input_input(&mut object, input)?;
@@ -157,7 +157,7 @@ pub fn ser_create_transit_gateway_peering_input(
 pub(crate) fn de_create_transit_gateway_peering(
     value: &[u8],
     mut builder: crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_transit_gateway_peering::builders::CreateTransitGatewayPeeringOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

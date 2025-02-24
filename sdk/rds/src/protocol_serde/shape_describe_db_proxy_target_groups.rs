@@ -100,7 +100,7 @@ pub fn de_describe_db_proxy_target_groups_http_response(
 pub fn de_describe_db_proxy_target_groups(
     inp: &[u8],
     mut builder: crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

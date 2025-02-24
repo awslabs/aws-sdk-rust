@@ -99,7 +99,7 @@ pub fn de_cancel_replication_task_assessment_run_http_response(
 
 pub fn ser_cancel_replication_task_assessment_run_input(
     input: &crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_replication_task_assessment_run_input::ser_cancel_replication_task_assessment_run_input_input(
@@ -113,7 +113,7 @@ pub fn ser_cancel_replication_task_assessment_run_input(
 pub(crate) fn de_cancel_replication_task_assessment_run(
     value: &[u8],
     mut builder: crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_replication_task_assessment_run::builders::CancelReplicationTaskAssessmentRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

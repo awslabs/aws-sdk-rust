@@ -3,7 +3,7 @@
 pub fn ser_index_field(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IndexField,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IndexFieldName");
     {
@@ -75,7 +75,7 @@ pub fn ser_index_field(
 #[allow(clippy::needless_question_mark)]
 pub fn de_index_field(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::IndexField, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::IndexField, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IndexField::builder();
     while let Some(mut tag) = decoder.next_tag() {

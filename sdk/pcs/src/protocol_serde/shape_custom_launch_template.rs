@@ -2,7 +2,7 @@
 pub fn ser_custom_launch_template(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomLaunchTemplate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("id").string(input.id.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_custom_launch_template(
 
 pub(crate) fn de_custom_launch_template<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CustomLaunchTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CustomLaunchTemplate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

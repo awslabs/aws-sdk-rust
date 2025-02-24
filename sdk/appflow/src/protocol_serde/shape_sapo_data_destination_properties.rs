@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_destination_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataDestinationProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("objectPath").string(input.object_path.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_sapo_data_destination_properties(
 
 pub(crate) fn de_sapo_data_destination_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SapoDataDestinationProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SapoDataDestinationProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

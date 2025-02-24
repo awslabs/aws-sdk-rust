@@ -2,7 +2,7 @@
 pub fn ser_wireless_connection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WirelessConnection,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.is_wifi_enabled {
         object.key("IsWifiEnabled").boolean(input.is_wifi_enabled);
     }
@@ -11,7 +11,7 @@ pub fn ser_wireless_connection(
 
 pub(crate) fn de_wireless_connection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WirelessConnection>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WirelessConnection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

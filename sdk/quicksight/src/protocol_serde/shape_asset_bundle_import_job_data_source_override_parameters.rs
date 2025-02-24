@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_job_data_source_override_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobDataSourceOverrideParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSourceId").string(input.data_source_id.as_str());
     }
@@ -41,7 +41,10 @@ pub fn ser_asset_bundle_import_job_data_source_override_parameters(
 
 pub(crate) fn de_asset_bundle_import_job_data_source_override_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AssetBundleImportJobDataSourceOverrideParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AssetBundleImportJobDataSourceOverrideParameters>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -38,7 +38,7 @@ pub fn de_list_subscription_definitions_http_response(
 pub(crate) fn de_list_subscription_definitions(
     value: &[u8],
     mut builder: crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

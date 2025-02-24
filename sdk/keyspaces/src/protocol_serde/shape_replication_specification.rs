@@ -2,7 +2,7 @@
 pub fn ser_replication_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicationSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("replicationStrategy").string(input.replication_strategy.as_str());
     }

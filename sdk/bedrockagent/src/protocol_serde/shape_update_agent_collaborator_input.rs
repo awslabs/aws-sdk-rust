@@ -2,7 +2,7 @@
 pub fn ser_update_agent_collaborator_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_agent_collaborator::UpdateAgentCollaboratorInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.agent_descriptor {
         #[allow(unused_mut)]
         let mut object_2 = object.key("agentDescriptor").start_object();

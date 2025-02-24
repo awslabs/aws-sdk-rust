@@ -157,7 +157,7 @@ pub fn de_grant_flow_entitlements_http_response(
 
 pub fn ser_grant_flow_entitlements_input(
     input: &crate::operation::grant_flow_entitlements::GrantFlowEntitlementsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_grant_flow_entitlements_input::ser_grant_flow_entitlements_input_input(&mut object, input)?;
@@ -168,7 +168,7 @@ pub fn ser_grant_flow_entitlements_input(
 pub(crate) fn de_grant_flow_entitlements(
     value: &[u8],
     mut builder: crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

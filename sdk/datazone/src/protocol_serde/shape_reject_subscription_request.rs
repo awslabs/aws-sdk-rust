@@ -149,7 +149,7 @@ pub fn de_reject_subscription_request_http_response(
 
 pub fn ser_reject_subscription_request_input(
     input: &crate::operation::reject_subscription_request::RejectSubscriptionRequestInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reject_subscription_request_input::ser_reject_subscription_request_input_input(&mut object, input)?;
@@ -160,7 +160,7 @@ pub fn ser_reject_subscription_request_input(
 pub(crate) fn de_reject_subscription_request(
     value: &[u8],
     mut builder: crate::operation::reject_subscription_request::builders::RejectSubscriptionRequestOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::reject_subscription_request::builders::RejectSubscriptionRequestOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

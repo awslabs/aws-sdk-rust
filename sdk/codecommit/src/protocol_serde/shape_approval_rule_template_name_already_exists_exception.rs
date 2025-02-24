@@ -2,7 +2,7 @@
 pub(crate) fn de_approval_rule_template_name_already_exists_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::ApprovalRuleTemplateNameAlreadyExistsExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

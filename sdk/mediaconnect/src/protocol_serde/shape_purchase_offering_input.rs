@@ -2,7 +2,7 @@
 pub fn ser_purchase_offering_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::purchase_offering::PurchaseOfferingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.reservation_name {
         object.key("reservationName").string(var_1.as_str());
     }

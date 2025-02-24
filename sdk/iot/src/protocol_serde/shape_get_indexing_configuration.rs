@@ -126,7 +126,7 @@ pub fn de_get_indexing_configuration_http_response(
 pub(crate) fn de_get_indexing_configuration(
     value: &[u8],
     mut builder: crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

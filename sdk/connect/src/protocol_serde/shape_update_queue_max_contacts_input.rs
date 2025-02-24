@@ -2,7 +2,7 @@
 pub fn ser_update_queue_max_contacts_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_queue_max_contacts::UpdateQueueMaxContactsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_contacts {
         object.key("MaxContacts").number(
             #[allow(clippy::useless_conversion)]

@@ -39,7 +39,10 @@ pub fn de_list_platform_branches_http_response(
 pub fn de_list_platform_branches(
     inp: &[u8],
     mut builder: crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder,
-) -> Result<crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_platform_branches::builders::ListPlatformBranchesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

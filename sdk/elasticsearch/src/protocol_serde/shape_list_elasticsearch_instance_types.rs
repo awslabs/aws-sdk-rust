@@ -109,7 +109,7 @@ pub fn de_list_elasticsearch_instance_types_http_response(
 pub(crate) fn de_list_elasticsearch_instance_types(
     value: &[u8],
     mut builder: crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

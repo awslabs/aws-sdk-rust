@@ -126,7 +126,7 @@ pub fn de_get_profile_resource_association_http_response(
 pub(crate) fn de_get_profile_resource_association(
     value: &[u8],
     mut builder: crate::operation::get_profile_resource_association::builders::GetProfileResourceAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_profile_resource_association::builders::GetProfileResourceAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

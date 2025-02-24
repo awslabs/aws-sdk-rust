@@ -86,7 +86,7 @@ pub fn de_put_scaling_policy_http_response(
 pub fn de_put_scaling_policy(
     inp: &[u8],
     mut builder: crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder,
-) -> Result<crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::put_scaling_policy::builders::PutScalingPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

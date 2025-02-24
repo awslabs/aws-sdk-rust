@@ -2,7 +2,7 @@
 pub fn ser_continuous_deployment_policy_config(
     input: &crate::types::ContinuousDeploymentPolicyConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.staging_distribution_dns_names {
@@ -24,7 +24,7 @@ pub fn ser_continuous_deployment_policy_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_continuous_deployment_policy_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ContinuousDeploymentPolicyConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

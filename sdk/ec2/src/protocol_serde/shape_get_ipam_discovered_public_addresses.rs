@@ -39,7 +39,7 @@ pub fn de_get_ipam_discovered_public_addresses_http_response(
 pub fn de_get_ipam_discovered_public_addresses(
     inp: &[u8],
     mut builder: crate::operation::get_ipam_discovered_public_addresses::builders::GetIpamDiscoveredPublicAddressesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_ipam_discovered_public_addresses::builders::GetIpamDiscoveredPublicAddressesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

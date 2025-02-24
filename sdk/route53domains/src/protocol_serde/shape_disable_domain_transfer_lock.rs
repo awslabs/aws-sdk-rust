@@ -124,7 +124,7 @@ pub fn de_disable_domain_transfer_lock_http_response(
 
 pub fn ser_disable_domain_transfer_lock_input(
     input: &crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disable_domain_transfer_lock_input::ser_disable_domain_transfer_lock_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_disable_domain_transfer_lock_input(
 pub(crate) fn de_disable_domain_transfer_lock(
     value: &[u8],
     mut builder: crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disable_domain_transfer_lock::builders::DisableDomainTransferLockOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_open_table_format_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenTableFormatInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iceberg_input {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IcebergInput").start_object();

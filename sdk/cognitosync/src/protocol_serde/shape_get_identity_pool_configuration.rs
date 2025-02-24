@@ -125,7 +125,7 @@ pub fn de_get_identity_pool_configuration_http_response(
 pub(crate) fn de_get_identity_pool_configuration(
     value: &[u8],
     mut builder: crate::operation::get_identity_pool_configuration::builders::GetIdentityPoolConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_identity_pool_configuration::builders::GetIdentityPoolConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

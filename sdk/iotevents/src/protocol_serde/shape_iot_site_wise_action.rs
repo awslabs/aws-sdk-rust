@@ -2,7 +2,7 @@
 pub fn ser_iot_site_wise_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.entry_id {
         object.key("entryId").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_iot_site_wise_action(
 
 pub(crate) fn de_iot_site_wise_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IotSiteWiseAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IotSiteWiseAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

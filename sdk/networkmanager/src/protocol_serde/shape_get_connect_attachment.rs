@@ -130,7 +130,7 @@ pub fn de_get_connect_attachment_http_response(
 pub(crate) fn de_get_connect_attachment(
     value: &[u8],
     mut builder: crate::operation::get_connect_attachment::builders::GetConnectAttachmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_connect_attachment::builders::GetConnectAttachmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -43,7 +43,7 @@ pub fn de_start_network_insights_access_scope_analysis_http_response(
 pub fn de_start_network_insights_access_scope_analysis(
     inp: &[u8],
     mut builder: crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::start_network_insights_access_scope_analysis::builders::StartNetworkInsightsAccessScopeAnalysisOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

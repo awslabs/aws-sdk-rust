@@ -157,7 +157,7 @@ pub fn de_get_media_capture_pipeline_http_response(
 pub(crate) fn de_get_media_capture_pipeline(
     value: &[u8],
     mut builder: crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

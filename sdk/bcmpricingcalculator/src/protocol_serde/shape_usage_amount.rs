@@ -2,7 +2,7 @@
 pub fn ser_usage_amount(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UsageAmount,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("startHour")

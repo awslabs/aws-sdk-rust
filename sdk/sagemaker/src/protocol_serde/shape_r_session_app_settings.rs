@@ -2,7 +2,7 @@
 pub fn ser_r_session_app_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RSessionAppSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_resource_spec {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultResourceSpec").start_object();
@@ -26,7 +26,7 @@ pub fn ser_r_session_app_settings(
 
 pub(crate) fn de_r_session_app_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RSessionAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RSessionAppSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

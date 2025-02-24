@@ -3,7 +3,7 @@
 pub fn ser_metric_stat(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricStat,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Metric");
     if let Some(var_2) = &input.metric {
@@ -33,7 +33,7 @@ pub fn ser_metric_stat(
 #[allow(clippy::needless_question_mark)]
 pub fn de_metric_stat(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MetricStat, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MetricStat, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricStat::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -41,7 +41,7 @@ pub fn de_create_vpc_peering_connection_http_response(
 pub fn de_create_vpc_peering_connection(
     inp: &[u8],
     mut builder: crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_vpc_peering_connection::builders::CreateVpcPeeringConnectionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -3,8 +3,10 @@
 pub fn de_too_many_distributions_associated_to_field_level_encryption_config_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder,
-) -> Result<crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::types::error::builders::TooManyDistributionsAssociatedToFieldLevelEncryptionConfigBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

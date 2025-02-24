@@ -135,7 +135,7 @@ pub fn de_get_source_repository_http_response(
 pub(crate) fn de_get_source_repository(
     value: &[u8],
     mut builder: crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_source_repository::builders::GetSourceRepositoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

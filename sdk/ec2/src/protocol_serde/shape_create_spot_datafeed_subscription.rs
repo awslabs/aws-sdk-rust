@@ -39,7 +39,7 @@ pub fn de_create_spot_datafeed_subscription_http_response(
 pub fn de_create_spot_datafeed_subscription(
     inp: &[u8],
     mut builder: crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

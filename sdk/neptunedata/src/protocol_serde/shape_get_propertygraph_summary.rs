@@ -285,7 +285,7 @@ pub fn de_get_propertygraph_summary_http_response(
 pub(crate) fn de_get_propertygraph_summary(
     value: &[u8],
     mut builder: crate::operation::get_propertygraph_summary::builders::GetPropertygraphSummaryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_propertygraph_summary::builders::GetPropertygraphSummaryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

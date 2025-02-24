@@ -39,7 +39,7 @@ pub fn de_describe_default_cluster_parameters_http_response(
 pub fn de_describe_default_cluster_parameters(
     inp: &[u8],
     mut builder: crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

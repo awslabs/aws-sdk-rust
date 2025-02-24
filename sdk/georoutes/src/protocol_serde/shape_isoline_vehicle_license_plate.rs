@@ -2,7 +2,7 @@
 pub fn ser_isoline_vehicle_license_plate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IsolineVehicleLicensePlate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.last_character {
         object.key("LastCharacter").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_whats_app_setup_finalization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WhatsAppSetupFinalization,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("associateInProgressToken").string(input.associate_in_progress_token.as_str());
     }

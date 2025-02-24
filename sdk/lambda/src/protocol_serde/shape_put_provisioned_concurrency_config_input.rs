@@ -2,7 +2,7 @@
 pub fn ser_put_provisioned_concurrency_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.provisioned_concurrent_executions {
         object.key("ProvisionedConcurrentExecutions").number(
             #[allow(clippy::useless_conversion)]

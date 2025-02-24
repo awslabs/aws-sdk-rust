@@ -134,7 +134,7 @@ pub fn de_list_lineage_node_history_http_response(
 pub(crate) fn de_list_lineage_node_history(
     value: &[u8],
     mut builder: crate::operation::list_lineage_node_history::builders::ListLineageNodeHistoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_lineage_node_history::builders::ListLineageNodeHistoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

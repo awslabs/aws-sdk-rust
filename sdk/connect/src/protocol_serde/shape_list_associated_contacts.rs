@@ -125,7 +125,7 @@ pub fn de_list_associated_contacts_http_response(
 pub(crate) fn de_list_associated_contacts(
     value: &[u8],
     mut builder: crate::operation::list_associated_contacts::builders::ListAssociatedContactsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_associated_contacts::builders::ListAssociatedContactsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

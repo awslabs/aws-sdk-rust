@@ -2,7 +2,7 @@
 pub fn ser_differential_privacy_template_update_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DifferentialPrivacyTemplateUpdateParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.epsilon {
         object.key("epsilon").number(
             #[allow(clippy::useless_conversion)]

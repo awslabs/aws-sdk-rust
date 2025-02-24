@@ -2,7 +2,7 @@
 pub fn ser_s3_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DestinationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RoleARN").string(input.role_arn.as_str());
     }

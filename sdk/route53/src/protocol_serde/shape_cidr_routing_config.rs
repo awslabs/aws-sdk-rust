@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cidr_routing_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CidrRoutingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CidrRoutingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CidrRoutingConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -44,7 +44,7 @@ pub fn de_cidr_routing_config(
 pub fn ser_cidr_routing_config(
     input: &crate::types::CidrRoutingConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

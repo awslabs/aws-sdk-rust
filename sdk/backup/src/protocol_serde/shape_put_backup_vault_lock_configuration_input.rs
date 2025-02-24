@@ -2,7 +2,7 @@
 pub fn ser_put_backup_vault_lock_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.changeable_for_days {
         object.key("ChangeableForDays").number(
             #[allow(clippy::useless_conversion)]

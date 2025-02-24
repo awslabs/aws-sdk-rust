@@ -2,7 +2,7 @@
 pub fn ser_dolby_vision(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DolbyVision,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.l6_metadata {
         #[allow(unused_mut)]
         let mut object_2 = object.key("l6Metadata").start_object();
@@ -23,7 +23,7 @@ pub fn ser_dolby_vision(
 
 pub(crate) fn de_dolby_vision<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DolbyVision>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DolbyVision>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

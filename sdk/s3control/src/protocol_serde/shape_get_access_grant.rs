@@ -51,7 +51,7 @@ pub fn ser_get_access_grant_headers(
 pub fn de_get_access_grant(
     inp: &[u8],
     mut builder: crate::operation::get_access_grant::builders::GetAccessGrantOutputBuilder,
-) -> Result<crate::operation::get_access_grant::builders::GetAccessGrantOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_access_grant::builders::GetAccessGrantOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

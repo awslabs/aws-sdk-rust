@@ -2,7 +2,7 @@
 pub fn ser_account_jira_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountJiraConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.issue_management_status {
         object.key("IssueManagementStatus").string(var_1.as_str());
     }

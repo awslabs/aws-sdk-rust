@@ -78,7 +78,7 @@ pub fn de_update_subscriptions_to_event_bridge_http_response(
 
 pub fn ser_update_subscriptions_to_event_bridge_input(
     input: &crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_subscriptions_to_event_bridge_input::ser_update_subscriptions_to_event_bridge_input_input(
@@ -92,7 +92,7 @@ pub fn ser_update_subscriptions_to_event_bridge_input(
 pub(crate) fn de_update_subscriptions_to_event_bridge(
     value: &[u8],
     mut builder: crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

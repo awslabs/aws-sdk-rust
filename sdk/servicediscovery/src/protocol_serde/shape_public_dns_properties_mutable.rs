@@ -2,7 +2,7 @@
 pub fn ser_public_dns_properties_mutable(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PublicDnsPropertiesMutable,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.soa {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SOA").start_object();

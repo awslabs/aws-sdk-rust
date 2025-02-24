@@ -479,7 +479,7 @@ pub fn de_create_db_instance_read_replica_http_response(
 pub fn de_create_db_instance_read_replica(
     inp: &[u8],
     mut builder: crate::operation::create_db_instance_read_replica::builders::CreateDbInstanceReadReplicaOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_db_instance_read_replica::builders::CreateDbInstanceReadReplicaOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_timestamp_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestampRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("StartTimestamp")

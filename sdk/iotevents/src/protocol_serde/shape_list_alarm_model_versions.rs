@@ -126,7 +126,7 @@ pub fn de_list_alarm_model_versions_http_response(
 pub(crate) fn de_list_alarm_model_versions(
     value: &[u8],
     mut builder: crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

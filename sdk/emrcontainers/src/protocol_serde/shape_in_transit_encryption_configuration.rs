@@ -2,7 +2,7 @@
 pub fn ser_in_transit_encryption_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InTransitEncryptionConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tls_certificate_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("tlsCertificateConfiguration").start_object();
@@ -14,7 +14,7 @@ pub fn ser_in_transit_encryption_configuration(
 
 pub(crate) fn de_in_transit_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InTransitEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InTransitEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -121,7 +121,7 @@ pub fn de_get_agent_collaborator_http_response(
 pub(crate) fn de_get_agent_collaborator(
     value: &[u8],
     mut builder: crate::operation::get_agent_collaborator::builders::GetAgentCollaboratorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_agent_collaborator::builders::GetAgentCollaboratorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_configuration(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Configuration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Configuration::CognitoUserPoolConfiguration(inner) => {
             #[allow(unused_mut)]

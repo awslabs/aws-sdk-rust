@@ -77,7 +77,7 @@ pub fn de_get_predictive_scaling_forecast_http_response(
 
 pub fn ser_get_predictive_scaling_forecast_input(
     input: &crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecastInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_predictive_scaling_forecast_input::ser_get_predictive_scaling_forecast_input_input(&mut object, input)?;
@@ -88,7 +88,7 @@ pub fn ser_get_predictive_scaling_forecast_input(
 pub(crate) fn de_get_predictive_scaling_forecast(
     value: &[u8],
     mut builder: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

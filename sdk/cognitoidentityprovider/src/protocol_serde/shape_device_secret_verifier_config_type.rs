@@ -2,7 +2,7 @@
 pub fn ser_device_secret_verifier_config_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeviceSecretVerifierConfigType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.password_verifier {
         object.key("PasswordVerifier").string(var_1.as_str());
     }

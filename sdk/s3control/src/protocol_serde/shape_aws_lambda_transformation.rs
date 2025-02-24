@@ -2,7 +2,7 @@
 pub fn ser_aws_lambda_transformation(
     input: &crate::types::AwsLambdaTransformation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -20,7 +20,7 @@ pub fn ser_aws_lambda_transformation(
 #[allow(clippy::needless_question_mark)]
 pub fn de_aws_lambda_transformation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AwsLambdaTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AwsLambdaTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AwsLambdaTransformation::builder();
     while let Some(mut tag) = decoder.next_tag() {

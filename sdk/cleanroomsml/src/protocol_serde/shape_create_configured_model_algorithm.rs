@@ -108,7 +108,7 @@ pub fn de_create_configured_model_algorithm_http_response(
 
 pub fn ser_create_configured_model_algorithm_input(
     input: &crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_configured_model_algorithm_input::ser_create_configured_model_algorithm_input_input(&mut object, input)?;
@@ -119,7 +119,7 @@ pub fn ser_create_configured_model_algorithm_input(
 pub(crate) fn de_create_configured_model_algorithm(
     value: &[u8],
     mut builder: crate::operation::create_configured_model_algorithm::builders::CreateConfiguredModelAlgorithmOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_configured_model_algorithm::builders::CreateConfiguredModelAlgorithmOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

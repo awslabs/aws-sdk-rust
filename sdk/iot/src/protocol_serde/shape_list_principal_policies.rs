@@ -155,7 +155,7 @@ pub fn ser_list_principal_policies_headers(
 pub(crate) fn de_list_principal_policies(
     value: &[u8],
     mut builder: crate::operation::list_principal_policies::builders::ListPrincipalPoliciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_principal_policies::builders::ListPrincipalPoliciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -127,7 +127,7 @@ pub fn de_stop_app_replication_http_response(
 
 pub fn ser_stop_app_replication_input(
     input: &crate::operation::stop_app_replication::StopAppReplicationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_app_replication_input::ser_stop_app_replication_input_input(&mut object, input)?;

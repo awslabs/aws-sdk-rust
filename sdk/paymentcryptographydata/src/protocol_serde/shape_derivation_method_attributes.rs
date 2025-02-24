@@ -2,7 +2,7 @@
 pub fn ser_derivation_method_attributes(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DerivationMethodAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DerivationMethodAttributes::EmvCommon(inner) => {
             #[allow(unused_mut)]

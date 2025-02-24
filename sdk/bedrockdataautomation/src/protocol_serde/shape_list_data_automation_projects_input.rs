@@ -2,7 +2,7 @@
 pub fn ser_list_data_automation_projects_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_data_automation_projects::ListDataAutomationProjectsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blueprint_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("blueprintFilter").start_object();

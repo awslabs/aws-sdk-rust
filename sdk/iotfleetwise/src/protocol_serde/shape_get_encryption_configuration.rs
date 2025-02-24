@@ -117,14 +117,14 @@ pub fn de_get_encryption_configuration_http_response(
 
 pub fn ser_get_encryption_configuration_input(
     _input: &crate::operation::get_encryption_configuration::GetEncryptionConfigurationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_encryption_configuration(
     value: &[u8],
     mut builder: crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_encryption_configuration::builders::GetEncryptionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

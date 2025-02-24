@@ -103,7 +103,7 @@ pub fn ser_delete_objects_headers(
 pub fn de_delete_objects(
     inp: &[u8],
     mut builder: crate::operation::delete_objects::builders::DeleteObjectsOutputBuilder,
-) -> Result<crate::operation::delete_objects::builders::DeleteObjectsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_objects::builders::DeleteObjectsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

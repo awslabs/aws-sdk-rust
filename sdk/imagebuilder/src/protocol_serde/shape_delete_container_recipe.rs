@@ -156,7 +156,7 @@ pub fn de_delete_container_recipe_http_response(
 pub(crate) fn de_delete_container_recipe(
     value: &[u8],
     mut builder: crate::operation::delete_container_recipe::builders::DeleteContainerRecipeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_container_recipe::builders::DeleteContainerRecipeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

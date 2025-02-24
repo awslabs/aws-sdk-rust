@@ -2,7 +2,7 @@
 pub fn ser_document_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DocumentId").string(input.document_id.as_str());
     }

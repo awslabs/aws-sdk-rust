@@ -2,7 +2,7 @@
 pub fn ser_recipe_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecipeReference,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RecipeArn").string(input.recipe_arn.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_recipe_reference(
 
 pub(crate) fn de_recipe_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RecipeReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RecipeReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

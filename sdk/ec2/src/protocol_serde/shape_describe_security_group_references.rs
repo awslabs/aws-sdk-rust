@@ -39,7 +39,7 @@ pub fn de_describe_security_group_references_http_response(
 pub fn de_describe_security_group_references(
     inp: &[u8],
     mut builder: crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_security_group_references::builders::DescribeSecurityGroupReferencesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

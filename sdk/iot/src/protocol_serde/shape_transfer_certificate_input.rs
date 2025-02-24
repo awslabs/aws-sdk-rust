@@ -2,7 +2,7 @@
 pub fn ser_transfer_certificate_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::transfer_certificate::TransferCertificateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transfer_message {
         object.key("transferMessage").string(var_1.as_str());
     }

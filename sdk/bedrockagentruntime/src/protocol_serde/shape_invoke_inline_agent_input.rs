@@ -2,7 +2,7 @@
 pub fn ser_invoke_inline_agent_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_inline_agent::InvokeInlineAgentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_groups {
         let mut array_2 = object.key("actionGroups").start_array();
         for item_3 in var_1 {

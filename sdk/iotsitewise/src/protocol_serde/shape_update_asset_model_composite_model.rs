@@ -221,7 +221,7 @@ pub fn ser_update_asset_model_composite_model_headers(
 
 pub fn ser_update_asset_model_composite_model_input(
     input: &crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_asset_model_composite_model_input::ser_update_asset_model_composite_model_input_input(&mut object, input)?;
@@ -232,7 +232,7 @@ pub fn ser_update_asset_model_composite_model_input(
 pub(crate) fn de_update_asset_model_composite_model(
     value: &[u8],
     mut builder: crate::operation::update_asset_model_composite_model::builders::UpdateAssetModelCompositeModelOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_asset_model_composite_model::builders::UpdateAssetModelCompositeModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

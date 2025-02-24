@@ -3,7 +3,7 @@
 pub fn de_tag_quota_per_resource_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TagQuotaPerResourceExceededBuilder,
-) -> Result<crate::types::error::builders::TagQuotaPerResourceExceededBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TagQuotaPerResourceExceededBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

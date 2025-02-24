@@ -46,7 +46,7 @@ pub fn de_start_vpc_endpoint_service_private_dns_verification_http_response(
 pub fn de_start_vpc_endpoint_service_private_dns_verification(
     inp: &[u8],
     mut builder: crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

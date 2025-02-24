@@ -147,8 +147,10 @@ pub fn de_reset_cache_parameter_group_http_response(
 pub fn de_reset_cache_parameter_group(
     inp: &[u8],
     mut builder: crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupOutputBuilder,
-) -> Result<crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

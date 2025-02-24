@@ -165,7 +165,7 @@ pub fn de_associate_vpc_with_hosted_zone_http_response(
 
 pub fn ser_associate_vpc_with_hosted_zone_op_input(
     input: &crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -182,7 +182,7 @@ pub fn ser_associate_vpc_with_hosted_zone_op_input(
 pub fn de_associate_vpc_with_hosted_zone(
     inp: &[u8],
     mut builder: crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_vpc_with_hosted_zone::builders::AssociateVpcWithHostedZoneOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

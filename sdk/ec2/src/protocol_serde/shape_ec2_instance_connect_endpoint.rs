@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ec2_instance_connect_endpoint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Ec2InstanceConnectEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Ec2InstanceConnectEndpoint, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Ec2InstanceConnectEndpoint::builder();
     while let Some(mut tag) = decoder.next_tag() {

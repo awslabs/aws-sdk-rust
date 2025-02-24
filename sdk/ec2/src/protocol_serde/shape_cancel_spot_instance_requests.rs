@@ -41,7 +41,7 @@ pub fn de_cancel_spot_instance_requests_http_response(
 pub fn de_cancel_spot_instance_requests(
     inp: &[u8],
     mut builder: crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

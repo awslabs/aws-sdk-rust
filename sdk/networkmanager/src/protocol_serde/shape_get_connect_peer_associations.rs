@@ -144,7 +144,7 @@ pub fn de_get_connect_peer_associations_http_response(
 pub(crate) fn de_get_connect_peer_associations(
     value: &[u8],
     mut builder: crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_connect_peer_associations::builders::GetConnectPeerAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

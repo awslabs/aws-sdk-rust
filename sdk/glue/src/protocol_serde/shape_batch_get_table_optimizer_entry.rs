@@ -2,7 +2,7 @@
 pub fn ser_batch_get_table_optimizer_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetTableOptimizerEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("catalogId").string(var_1.as_str());
     }

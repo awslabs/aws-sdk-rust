@@ -3,7 +3,7 @@
 pub fn ser_cache_usage_limits(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CacheUsageLimits,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DataStorage");
     if let Some(var_2) = &input.data_storage {
@@ -20,7 +20,7 @@ pub fn ser_cache_usage_limits(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_usage_limits(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CacheUsageLimits, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CacheUsageLimits, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CacheUsageLimits::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -90,7 +90,7 @@ pub fn de_describe_simulation_job_batch_http_response(
 
 pub fn ser_describe_simulation_job_batch_input(
     input: &crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_simulation_job_batch_input::ser_describe_simulation_job_batch_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_describe_simulation_job_batch_input(
 pub(crate) fn de_describe_simulation_job_batch(
     value: &[u8],
     mut builder: crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

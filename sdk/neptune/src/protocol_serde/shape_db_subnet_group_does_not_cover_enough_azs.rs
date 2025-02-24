@@ -3,7 +3,7 @@
 pub fn de_db_subnet_group_does_not_cover_enough_azs_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder,
-) -> Result<crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

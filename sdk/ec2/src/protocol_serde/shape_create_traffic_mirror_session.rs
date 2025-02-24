@@ -41,7 +41,7 @@ pub fn de_create_traffic_mirror_session_http_response(
 pub fn de_create_traffic_mirror_session(
     inp: &[u8],
     mut builder: crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

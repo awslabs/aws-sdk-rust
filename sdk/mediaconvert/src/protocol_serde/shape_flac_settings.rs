@@ -2,7 +2,7 @@
 pub fn ser_flac_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FlacSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bit_depth {
         object.key("bitDepth").number(
             #[allow(clippy::useless_conversion)]
@@ -26,7 +26,7 @@ pub fn ser_flac_settings(
 
 pub(crate) fn de_flac_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FlacSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FlacSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

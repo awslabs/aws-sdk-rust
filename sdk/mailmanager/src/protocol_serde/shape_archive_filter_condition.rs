@@ -2,7 +2,7 @@
 pub fn ser_archive_filter_condition(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ArchiveFilterCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ArchiveFilterCondition::StringExpression(inner) => {
             #[allow(unused_mut)]
@@ -27,7 +27,7 @@ pub fn ser_archive_filter_condition(
 
 pub(crate) fn de_archive_filter_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ArchiveFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ArchiveFilterCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

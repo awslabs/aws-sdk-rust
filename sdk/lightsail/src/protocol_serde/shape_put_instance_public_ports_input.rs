@@ -2,7 +2,7 @@
 pub fn ser_put_instance_public_ports_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_instance_public_ports::PutInstancePublicPortsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.port_infos {
         let mut array_2 = object.key("portInfos").start_array();
         for item_3 in var_1 {

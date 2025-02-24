@@ -2,7 +2,7 @@
 pub fn ser_describe_direct_connect_gateway_attachments_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.direct_connect_gateway_id {
         object.key("directConnectGatewayId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_m2_managed_application_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M2ManagedApplicationAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resource").string(input.resource.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_m2_managed_application_action(
 
 pub(crate) fn de_m2_managed_application_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::M2ManagedApplicationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::M2ManagedApplicationAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

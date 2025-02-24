@@ -2,7 +2,7 @@
 pub fn ser_rds_data_api_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsDataApiConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("resourceArn").string(input.resource_arn.as_str());
     }

@@ -124,7 +124,7 @@ pub fn de_list_function_event_invoke_configs_http_response(
 pub(crate) fn de_list_function_event_invoke_configs(
     value: &[u8],
     mut builder: crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_function_event_invoke_configs::builders::ListFunctionEventInvokeConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

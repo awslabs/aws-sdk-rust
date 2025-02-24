@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_container_definitions_volumes_from_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.read_only {
         object.key("ReadOnly").boolean(*var_1);
     }
@@ -14,7 +14,10 @@ pub fn ser_aws_ecs_task_definition_container_definitions_volumes_from_details(
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_volumes_from_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

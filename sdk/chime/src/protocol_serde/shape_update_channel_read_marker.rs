@@ -175,7 +175,7 @@ pub fn ser_update_channel_read_marker_headers(
 pub(crate) fn de_update_channel_read_marker(
     value: &[u8],
     mut builder: crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

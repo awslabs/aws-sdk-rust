@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_traffic_mirror_filter_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TrafficMirrorFilterRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TrafficMirrorFilterRule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TrafficMirrorFilterRule::builder();
     while let Some(mut tag) = decoder.next_tag() {

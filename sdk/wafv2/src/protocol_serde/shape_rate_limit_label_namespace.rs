@@ -2,7 +2,7 @@
 pub fn ser_rate_limit_label_namespace(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RateLimitLabelNamespace,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Namespace").string(input.namespace.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_rate_limit_label_namespace(
 
 pub(crate) fn de_rate_limit_label_namespace<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RateLimitLabelNamespace>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RateLimitLabelNamespace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

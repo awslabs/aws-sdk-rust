@@ -108,7 +108,8 @@ pub fn de_rotate_encryption_key_http_response(
 pub fn de_rotate_encryption_key(
     inp: &[u8],
     mut builder: crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder,
-) -> Result<crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

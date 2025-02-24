@@ -2,7 +2,7 @@
 pub fn ser_module_logging_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModuleLoggingConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Enabled").boolean(input.enabled);
     }

@@ -142,7 +142,7 @@ pub fn de_get_public_key_certificate_http_response(
 
 pub fn ser_get_public_key_certificate_input(
     input: &crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_public_key_certificate_input::ser_get_public_key_certificate_input_input(&mut object, input)?;
@@ -153,7 +153,7 @@ pub fn ser_get_public_key_certificate_input(
 pub(crate) fn de_get_public_key_certificate(
     value: &[u8],
     mut builder: crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_public_key_certificate::builders::GetPublicKeyCertificateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

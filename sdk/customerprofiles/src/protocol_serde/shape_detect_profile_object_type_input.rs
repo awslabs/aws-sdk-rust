@@ -2,7 +2,7 @@
 pub fn ser_detect_profile_object_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detect_profile_object_type::DetectProfileObjectTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.objects {
         let mut array_2 = object.key("Objects").start_array();
         for item_3 in var_1 {

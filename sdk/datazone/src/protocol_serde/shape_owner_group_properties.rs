@@ -2,7 +2,7 @@
 pub fn ser_owner_group_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OwnerGroupProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("groupIdentifier").string(input.group_identifier.as_str());
     }

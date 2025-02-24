@@ -106,7 +106,7 @@ pub fn de_list_associated_packages_http_response(
 pub(crate) fn de_list_associated_packages(
     value: &[u8],
     mut builder: crate::operation::list_associated_packages::builders::ListAssociatedPackagesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_associated_packages::builders::ListAssociatedPackagesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

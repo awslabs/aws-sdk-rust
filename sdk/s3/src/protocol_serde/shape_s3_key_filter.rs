@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_key_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3KeyFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::S3KeyFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3KeyFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -33,7 +33,7 @@ pub fn de_s3_key_filter(
 pub fn ser_s3_key_filter(
     input: &crate::types::S3KeyFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.filter_rules {

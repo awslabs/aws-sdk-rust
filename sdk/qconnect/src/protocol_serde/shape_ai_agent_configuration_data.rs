@@ -2,7 +2,7 @@
 pub fn ser_ai_agent_configuration_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AiAgentConfigurationData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("aiAgentId").string(input.ai_agent_id.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_ai_agent_configuration_data(
 
 pub(crate) fn de_ai_agent_configuration_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AiAgentConfigurationData>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AiAgentConfigurationData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -39,7 +39,7 @@ pub fn de_modify_vpc_peering_connection_options_http_response(
 pub fn de_modify_vpc_peering_connection_options(
     inp: &[u8],
     mut builder: crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

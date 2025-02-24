@@ -2,7 +2,7 @@
 pub fn ser_model_package_validation_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelPackageValidationProfile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.profile_name {
         object.key("ProfileName").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_model_package_validation_profile(
 
 pub(crate) fn de_model_package_validation_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ModelPackageValidationProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ModelPackageValidationProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

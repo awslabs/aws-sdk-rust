@@ -2,7 +2,7 @@
 pub fn ser_list_activated_rules_in_rule_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_group_id {
         object.key("RuleGroupId").string(var_1.as_str());
     }

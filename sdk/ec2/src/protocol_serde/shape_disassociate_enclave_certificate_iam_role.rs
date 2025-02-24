@@ -43,7 +43,7 @@ pub fn de_disassociate_enclave_certificate_iam_role_http_response(
 pub fn de_disassociate_enclave_certificate_iam_role(
     inp: &[u8],
     mut builder: crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_enclave_certificate_iam_role::builders::DisassociateEnclaveCertificateIamRoleOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

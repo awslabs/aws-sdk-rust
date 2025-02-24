@@ -3,7 +3,7 @@
 pub fn de_export_task_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ExportTaskAlreadyExistsFaultBuilder,
-) -> Result<crate::types::error::builders::ExportTaskAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ExportTaskAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub fn ser_reject_client_vpc_connection_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vpc_connection_arn {
         object.key("vpcConnectionArn").string(var_1.as_str());
     }

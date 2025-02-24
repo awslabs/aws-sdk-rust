@@ -109,7 +109,7 @@ pub fn de_create_hsm_client_certificate_http_response(
 pub fn de_create_hsm_client_certificate(
     inp: &[u8],
     mut builder: crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_hsm_client_certificate::builders::CreateHsmClientCertificateOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

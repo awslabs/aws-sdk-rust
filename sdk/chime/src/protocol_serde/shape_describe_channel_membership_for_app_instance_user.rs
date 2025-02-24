@@ -172,7 +172,7 @@ pub fn ser_describe_channel_membership_for_app_instance_user_headers(
 pub(crate) fn de_describe_channel_membership_for_app_instance_user(
     value: &[u8],
     mut builder: crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

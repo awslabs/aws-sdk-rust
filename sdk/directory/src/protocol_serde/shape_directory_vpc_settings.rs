@@ -2,7 +2,7 @@
 pub fn ser_directory_vpc_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DirectoryVpcSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VpcId").string(input.vpc_id.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_directory_vpc_settings(
 
 pub(crate) fn de_directory_vpc_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DirectoryVpcSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DirectoryVpcSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

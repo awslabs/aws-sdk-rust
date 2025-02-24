@@ -85,7 +85,7 @@ pub fn de_describe_custom_domain_associations_http_response(
 pub fn de_describe_custom_domain_associations(
     inp: &[u8],
     mut builder: crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_custom_domain_associations::builders::DescribeCustomDomainAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

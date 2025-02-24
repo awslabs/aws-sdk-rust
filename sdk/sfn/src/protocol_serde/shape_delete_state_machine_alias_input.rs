@@ -2,7 +2,7 @@
 pub fn ser_delete_state_machine_alias_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_state_machine_alias::DeleteStateMachineAliasInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.state_machine_alias_arn {
         object.key("stateMachineAliasArn").string(var_1.as_str());
     }

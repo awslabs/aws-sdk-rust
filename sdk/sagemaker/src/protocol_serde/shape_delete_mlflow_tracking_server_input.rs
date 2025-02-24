@@ -2,7 +2,7 @@
 pub fn ser_delete_mlflow_tracking_server_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_mlflow_tracking_server::DeleteMlflowTrackingServerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tracking_server_name {
         object.key("TrackingServerName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_participating_gateways(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipatingGateways,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DownlinkMode").string(input.downlink_mode.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_participating_gateways(
 
 pub(crate) fn de_participating_gateways<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ParticipatingGateways>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ParticipatingGateways>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyList::builder();
     while let Some(mut tag) = decoder.next_tag() {

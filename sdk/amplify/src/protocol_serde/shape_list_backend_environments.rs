@@ -97,7 +97,7 @@ pub fn de_list_backend_environments_http_response(
 pub(crate) fn de_list_backend_environments(
     value: &[u8],
     mut builder: crate::operation::list_backend_environments::builders::ListBackendEnvironmentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_backend_environments::builders::ListBackendEnvironmentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

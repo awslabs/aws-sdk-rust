@@ -2,7 +2,7 @@
 pub fn ser_list_lf_tag_expressions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_lf_tag_expressions::ListLfTagExpressionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }

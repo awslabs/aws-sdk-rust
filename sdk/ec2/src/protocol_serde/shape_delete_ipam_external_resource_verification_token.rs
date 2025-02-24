@@ -42,7 +42,7 @@ pub fn de_delete_ipam_external_resource_verification_token_http_response(
 pub fn de_delete_ipam_external_resource_verification_token(
     inp: &[u8],
     mut builder: crate::operation::delete_ipam_external_resource_verification_token::builders::DeleteIpamExternalResourceVerificationTokenOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_ipam_external_resource_verification_token::builders::DeleteIpamExternalResourceVerificationTokenOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_register_cross_account_access_role_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("roleArn").string(var_1.as_str());
     }

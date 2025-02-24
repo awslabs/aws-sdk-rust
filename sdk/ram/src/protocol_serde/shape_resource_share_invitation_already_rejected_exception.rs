@@ -2,7 +2,7 @@
 pub(crate) fn de_resource_share_invitation_already_rejected_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::ResourceShareInvitationAlreadyRejectedExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::ResourceShareInvitationAlreadyRejectedExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

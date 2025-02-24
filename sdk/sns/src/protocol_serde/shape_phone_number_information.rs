@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_phone_number_information(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PhoneNumberInformation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::PhoneNumberInformation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PhoneNumberInformation::builder();
     while let Some(mut tag) = decoder.next_tag() {

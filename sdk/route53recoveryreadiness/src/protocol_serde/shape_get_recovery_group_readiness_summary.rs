@@ -132,7 +132,7 @@ pub fn de_get_recovery_group_readiness_summary_http_response(
 pub(crate) fn de_get_recovery_group_readiness_summary(
     value: &[u8],
     mut builder: crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

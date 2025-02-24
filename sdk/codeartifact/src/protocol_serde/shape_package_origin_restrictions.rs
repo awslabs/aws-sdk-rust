@@ -2,7 +2,7 @@
 pub fn ser_package_origin_restrictions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PackageOriginRestrictions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("publish").string(input.publish.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_package_origin_restrictions(
 
 pub(crate) fn de_package_origin_restrictions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PackageOriginRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PackageOriginRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

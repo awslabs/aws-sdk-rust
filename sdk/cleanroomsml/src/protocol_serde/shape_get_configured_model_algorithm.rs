@@ -93,7 +93,7 @@ pub fn de_get_configured_model_algorithm_http_response(
 pub(crate) fn de_get_configured_model_algorithm(
     value: &[u8],
     mut builder: crate::operation::get_configured_model_algorithm::builders::GetConfiguredModelAlgorithmOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_configured_model_algorithm::builders::GetConfiguredModelAlgorithmOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

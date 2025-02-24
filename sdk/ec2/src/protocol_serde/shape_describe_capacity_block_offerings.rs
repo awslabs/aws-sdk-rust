@@ -39,7 +39,7 @@ pub fn de_describe_capacity_block_offerings_http_response(
 pub fn de_describe_capacity_block_offerings(
     inp: &[u8],
     mut builder: crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_capacity_block_offerings::builders::DescribeCapacityBlockOfferingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -41,7 +41,7 @@ pub fn de_describe_managed_prefix_lists_http_response(
 pub fn de_describe_managed_prefix_lists(
     inp: &[u8],
     mut builder: crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

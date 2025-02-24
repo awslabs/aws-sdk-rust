@@ -124,7 +124,7 @@ pub fn de_search_hours_of_operations_http_response(
 
 pub fn ser_search_hours_of_operations_input(
     input: &crate::operation::search_hours_of_operations::SearchHoursOfOperationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_search_hours_of_operations_input::ser_search_hours_of_operations_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_search_hours_of_operations_input(
 pub(crate) fn de_search_hours_of_operations(
     value: &[u8],
     mut builder: crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::search_hours_of_operations::builders::SearchHoursOfOperationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

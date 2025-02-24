@@ -136,7 +136,7 @@ pub fn de_get_metadata_generation_run_http_response(
 pub(crate) fn de_get_metadata_generation_run(
     value: &[u8],
     mut builder: crate::operation::get_metadata_generation_run::builders::GetMetadataGenerationRunOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_metadata_generation_run::builders::GetMetadataGenerationRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

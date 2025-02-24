@@ -3,7 +3,7 @@
 pub fn ser_v_cpu_count_range_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::VCpuCountRangeRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {

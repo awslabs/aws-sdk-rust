@@ -154,7 +154,7 @@ pub fn de_create_template_alias_http_response(
 
 pub fn ser_create_template_alias_input(
     input: &crate::operation::create_template_alias::CreateTemplateAliasInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_template_alias_input::ser_create_template_alias_input_input(&mut object, input)?;
@@ -165,7 +165,7 @@ pub fn ser_create_template_alias_input(
 pub(crate) fn de_create_template_alias(
     value: &[u8],
     mut builder: crate::operation::create_template_alias::builders::CreateTemplateAliasOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_template_alias::builders::CreateTemplateAliasOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_respond_decision_task_completed_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.task_token {
         object.key("taskToken").string(var_1.as_str());
     }

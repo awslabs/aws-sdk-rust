@@ -2,7 +2,7 @@
 pub fn ser_create_kx_scaling_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_kx_scaling_group::CreateKxScalingGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_zone_id {
         object.key("availabilityZoneId").string(var_1.as_str());
     }

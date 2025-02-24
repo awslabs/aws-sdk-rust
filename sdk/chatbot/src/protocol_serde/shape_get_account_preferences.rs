@@ -79,7 +79,7 @@ pub fn de_get_account_preferences_http_response(
 pub(crate) fn de_get_account_preferences(
     value: &[u8],
     mut builder: crate::operation::get_account_preferences::builders::GetAccountPreferencesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_account_preferences::builders::GetAccountPreferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

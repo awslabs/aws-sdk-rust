@@ -77,7 +77,7 @@ pub fn de_describe_endpoint_authorization_http_response(
 pub fn de_describe_endpoint_authorization(
     inp: &[u8],
     mut builder: crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

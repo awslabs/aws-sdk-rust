@@ -58,7 +58,7 @@ pub fn de_get_account_summary_http_response(
 pub fn de_get_account_summary(
     inp: &[u8],
     mut builder: crate::operation::get_account_summary::builders::GetAccountSummaryOutputBuilder,
-) -> Result<crate::operation::get_account_summary::builders::GetAccountSummaryOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_account_summary::builders::GetAccountSummaryOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

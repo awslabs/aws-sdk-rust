@@ -136,7 +136,7 @@ pub fn de_get_finding_aggregator_http_response(
 pub(crate) fn de_get_finding_aggregator(
     value: &[u8],
     mut builder: crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

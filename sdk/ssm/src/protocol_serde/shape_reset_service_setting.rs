@@ -90,7 +90,7 @@ pub fn de_reset_service_setting_http_response(
 
 pub fn ser_reset_service_setting_input(
     input: &crate::operation::reset_service_setting::ResetServiceSettingInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reset_service_setting_input::ser_reset_service_setting_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_reset_service_setting_input(
 pub(crate) fn de_reset_service_setting(
     value: &[u8],
     mut builder: crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::reset_service_setting::builders::ResetServiceSettingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

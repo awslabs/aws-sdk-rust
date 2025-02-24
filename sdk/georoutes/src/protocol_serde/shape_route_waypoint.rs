@@ -2,7 +2,7 @@
 pub fn ser_route_waypoint(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteWaypoint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.avoid_actions_for_distance != 0 {
         object.key("AvoidActionsForDistance").number(
             #[allow(clippy::useless_conversion)]

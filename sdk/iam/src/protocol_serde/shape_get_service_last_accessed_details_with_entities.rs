@@ -92,7 +92,7 @@ pub fn de_get_service_last_accessed_details_with_entities_http_response(
 pub fn de_get_service_last_accessed_details_with_entities(
     inp: &[u8],
     mut builder: crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

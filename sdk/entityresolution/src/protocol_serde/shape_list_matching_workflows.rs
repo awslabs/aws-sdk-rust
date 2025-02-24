@@ -106,7 +106,7 @@ pub fn de_list_matching_workflows_http_response(
 pub(crate) fn de_list_matching_workflows(
     value: &[u8],
     mut builder: crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_matching_workflows::builders::ListMatchingWorkflowsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

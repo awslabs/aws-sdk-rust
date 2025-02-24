@@ -79,7 +79,10 @@ pub fn de_list_hosted_zones_by_vpc_http_response(
 pub fn de_list_hosted_zones_by_vpc(
     inp: &[u8],
     mut builder: crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder,
-) -> Result<crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_hosted_zones_by_vpc::builders::ListHostedZonesByVpcOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

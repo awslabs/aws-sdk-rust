@@ -2,7 +2,7 @@
 pub fn ser_ec2_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ec2Configuration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("scanMode").string(input.scan_mode.as_str());
     }

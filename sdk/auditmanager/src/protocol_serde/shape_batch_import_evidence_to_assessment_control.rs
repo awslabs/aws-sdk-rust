@@ -142,7 +142,7 @@ pub fn de_batch_import_evidence_to_assessment_control_http_response(
 
 pub fn ser_batch_import_evidence_to_assessment_control_input(
     input: &crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_import_evidence_to_assessment_control_input::ser_batch_import_evidence_to_assessment_control_input_input(
@@ -156,7 +156,7 @@ pub fn ser_batch_import_evidence_to_assessment_control_input(
 pub(crate) fn de_batch_import_evidence_to_assessment_control(
     value: &[u8],
     mut builder: crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

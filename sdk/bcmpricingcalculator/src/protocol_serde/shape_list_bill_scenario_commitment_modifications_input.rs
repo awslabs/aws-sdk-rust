@@ -2,7 +2,7 @@
 pub fn ser_list_bill_scenario_commitment_modifications_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_bill_scenario_commitment_modifications::ListBillScenarioCommitmentModificationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bill_scenario_id {
         object.key("billScenarioId").string(var_1.as_str());
     }

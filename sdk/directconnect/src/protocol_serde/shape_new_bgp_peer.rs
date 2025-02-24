@@ -2,7 +2,7 @@
 pub fn ser_new_bgp_peer(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NewBgpPeer,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.asn != 0 {
         object.key("asn").number(
             #[allow(clippy::useless_conversion)]

@@ -150,7 +150,7 @@ pub fn de_list_tags_for_resource_http_response(
 pub(crate) fn de_list_tags_for_resource(
     value: &[u8],
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

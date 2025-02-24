@@ -2,7 +2,7 @@
 pub fn ser_contact_data_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContactDataRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.system_endpoint {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SystemEndpoint").start_object();

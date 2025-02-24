@@ -86,7 +86,7 @@ pub fn de_list_restore_job_summaries_http_response(
 pub(crate) fn de_list_restore_job_summaries(
     value: &[u8],
     mut builder: crate::operation::list_restore_job_summaries::builders::ListRestoreJobSummariesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_restore_job_summaries::builders::ListRestoreJobSummariesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

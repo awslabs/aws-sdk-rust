@@ -131,7 +131,7 @@ pub fn de_invoke_data_automation_async_http_response(
 
 pub fn ser_invoke_data_automation_async_input(
     input: &crate::operation::invoke_data_automation_async::InvokeDataAutomationAsyncInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_invoke_data_automation_async_input::ser_invoke_data_automation_async_input_input(&mut object, input)?;
@@ -142,7 +142,7 @@ pub fn ser_invoke_data_automation_async_input(
 pub(crate) fn de_invoke_data_automation_async(
     value: &[u8],
     mut builder: crate::operation::invoke_data_automation_async::builders::InvokeDataAutomationAsyncOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::invoke_data_automation_async::builders::InvokeDataAutomationAsyncOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

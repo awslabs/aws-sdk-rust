@@ -2,7 +2,7 @@
 pub fn ser_list_profile_objects_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_profile_objects::ListProfileObjectsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ObjectFilter").start_object();

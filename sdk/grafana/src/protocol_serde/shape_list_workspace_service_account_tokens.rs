@@ -157,7 +157,7 @@ pub fn de_list_workspace_service_account_tokens_http_response(
 pub(crate) fn de_list_workspace_service_account_tokens(
     value: &[u8],
     mut builder: crate::operation::list_workspace_service_account_tokens::builders::ListWorkspaceServiceAccountTokensOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_workspace_service_account_tokens::builders::ListWorkspaceServiceAccountTokensOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

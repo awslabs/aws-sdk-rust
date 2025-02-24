@@ -2,7 +2,7 @@
 pub fn ser_notebook_s3_location_from_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotebookS3LocationFromInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bucket {
         object.key("Bucket").string(var_1.as_str());
     }

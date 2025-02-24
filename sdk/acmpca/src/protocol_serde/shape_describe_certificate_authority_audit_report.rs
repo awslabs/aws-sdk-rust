@@ -110,7 +110,7 @@ pub fn de_describe_certificate_authority_audit_report_http_response(
 
 pub fn ser_describe_certificate_authority_audit_report_input(
     input: &crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_certificate_authority_audit_report_input::ser_describe_certificate_authority_audit_report_input_input(
@@ -124,7 +124,7 @@ pub fn ser_describe_certificate_authority_audit_report_input(
 pub(crate) fn de_describe_certificate_authority_audit_report(
     value: &[u8],
     mut builder: crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

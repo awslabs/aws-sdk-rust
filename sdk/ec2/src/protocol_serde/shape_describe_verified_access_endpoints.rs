@@ -39,7 +39,7 @@ pub fn de_describe_verified_access_endpoints_http_response(
 pub fn de_describe_verified_access_endpoints(
     inp: &[u8],
     mut builder: crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_verified_access_endpoints::builders::DescribeVerifiedAccessEndpointsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

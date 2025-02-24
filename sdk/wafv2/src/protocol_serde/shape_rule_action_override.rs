@@ -2,7 +2,7 @@
 pub fn ser_rule_action_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleActionOverride,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_rule_action_override(
 
 pub(crate) fn de_rule_action_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleActionOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RuleActionOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_rule_group_source_stateful_rules_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatefulRulesOptionsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.keyword {
         object.key("Keyword").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_rule_group_source_stateful_rules_options_details(
 
 pub(crate) fn de_rule_group_source_stateful_rules_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

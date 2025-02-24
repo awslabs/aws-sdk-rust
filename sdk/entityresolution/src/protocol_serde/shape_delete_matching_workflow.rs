@@ -127,7 +127,7 @@ pub fn de_delete_matching_workflow_http_response(
 pub(crate) fn de_delete_matching_workflow(
     value: &[u8],
     mut builder: crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

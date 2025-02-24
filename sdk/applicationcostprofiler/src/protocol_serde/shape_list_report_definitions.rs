@@ -106,7 +106,7 @@ pub fn de_list_report_definitions_http_response(
 pub(crate) fn de_list_report_definitions(
     value: &[u8],
     mut builder: crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -114,7 +114,7 @@ pub fn de_describe_access_points_http_response(
 pub(crate) fn de_describe_access_points(
     value: &[u8],
     mut builder: crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

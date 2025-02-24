@@ -2,7 +2,7 @@
 pub fn ser_list_ingress_points_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_ingress_points::ListIngressPointsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.page_size {
         object.key("PageSize").number(
             #[allow(clippy::useless_conversion)]

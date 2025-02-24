@@ -140,7 +140,7 @@ pub fn de_describe_routing_control_http_response(
 pub(crate) fn de_describe_routing_control(
     value: &[u8],
     mut builder: crate::operation::describe_routing_control::builders::DescribeRoutingControlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_routing_control::builders::DescribeRoutingControlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

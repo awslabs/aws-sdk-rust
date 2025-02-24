@@ -2,7 +2,7 @@
 pub fn ser_dataset_input_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetInputDataConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.augmented_manifests {
         let mut array_2 = object.key("AugmentedManifests").start_array();
         for item_3 in var_1 {

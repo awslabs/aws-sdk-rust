@@ -180,7 +180,7 @@ pub fn de_describe_dashboard_definition_http_response(
 pub(crate) fn de_describe_dashboard_definition(
     value: &[u8],
     mut builder: crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

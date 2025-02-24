@@ -3,7 +3,7 @@
 pub fn ser_configuration_option_setting(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ConfigurationOptionSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceName");
     if let Some(var_2) = &input.resource_name {
@@ -30,7 +30,7 @@ pub fn ser_configuration_option_setting(
 #[allow(clippy::needless_question_mark)]
 pub fn de_configuration_option_setting(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ConfigurationOptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ConfigurationOptionSetting, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ConfigurationOptionSetting::builder();
     while let Some(mut tag) = decoder.next_tag() {

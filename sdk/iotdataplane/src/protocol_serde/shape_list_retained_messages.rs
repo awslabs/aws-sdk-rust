@@ -137,7 +137,7 @@ pub fn de_list_retained_messages_http_response(
 pub(crate) fn de_list_retained_messages(
     value: &[u8],
     mut builder: crate::operation::list_retained_messages::builders::ListRetainedMessagesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_retained_messages::builders::ListRetainedMessagesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

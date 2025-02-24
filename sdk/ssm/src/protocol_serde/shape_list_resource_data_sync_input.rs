@@ -2,7 +2,7 @@
 pub fn ser_list_resource_data_sync_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_resource_data_sync::ListResourceDataSyncInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sync_type {
         object.key("SyncType").string(var_1.as_str());
     }

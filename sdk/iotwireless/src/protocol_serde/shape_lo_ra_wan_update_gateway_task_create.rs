@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_update_gateway_task_create(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanUpdateGatewayTaskCreate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update_signature {
         object.key("UpdateSignature").string(var_1.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_lo_ra_wan_update_gateway_task_create(
 
 pub(crate) fn de_lo_ra_wan_update_gateway_task_create<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LoRaWanUpdateGatewayTaskCreate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LoRaWanUpdateGatewayTaskCreate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

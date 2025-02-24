@@ -126,7 +126,7 @@ pub fn de_get_resource_event_configuration_http_response(
 pub(crate) fn de_get_resource_event_configuration(
     value: &[u8],
     mut builder: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

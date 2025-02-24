@@ -146,7 +146,7 @@ pub fn de_create_key_value_store_http_response(
 
 pub fn ser_create_key_value_store_op_input(
     input: &crate::operation::create_key_value_store::CreateKeyValueStoreInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

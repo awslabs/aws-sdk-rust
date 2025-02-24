@@ -2,7 +2,7 @@
 pub fn ser_create_wireless_gateway_task_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_create_tasks {
         object.key("AutoCreateTasks").boolean(*var_1);
     }

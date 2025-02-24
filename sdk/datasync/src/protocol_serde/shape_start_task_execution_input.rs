@@ -2,7 +2,7 @@
 pub fn ser_start_task_execution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_task_execution::StartTaskExecutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.task_arn {
         object.key("TaskArn").string(var_1.as_str());
     }

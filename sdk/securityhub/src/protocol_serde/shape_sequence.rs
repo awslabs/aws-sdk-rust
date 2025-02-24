@@ -2,7 +2,7 @@
 pub fn ser_sequence(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Sequence,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.uid {
         object.key("Uid").string(var_1.as_str());
     }
@@ -59,7 +59,7 @@ pub fn ser_sequence(
 
 pub(crate) fn de_sequence<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Sequence>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Sequence>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

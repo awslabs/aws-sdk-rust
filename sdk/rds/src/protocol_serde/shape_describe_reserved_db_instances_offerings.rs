@@ -69,7 +69,7 @@ pub fn de_describe_reserved_db_instances_offerings_http_response(
 pub fn de_describe_reserved_db_instances_offerings(
     inp: &[u8],
     mut builder: crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

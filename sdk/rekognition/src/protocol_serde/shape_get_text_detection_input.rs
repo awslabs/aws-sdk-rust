@@ -2,7 +2,7 @@
 pub fn ser_get_text_detection_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_text_detection::GetTextDetectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_id {
         object.key("JobId").string(var_1.as_str());
     }

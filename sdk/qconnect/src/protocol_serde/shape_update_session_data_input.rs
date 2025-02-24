@@ -2,7 +2,7 @@
 pub fn ser_update_session_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_session_data::UpdateSessionDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data {
         let mut array_2 = object.key("data").start_array();
         for item_3 in var_1 {

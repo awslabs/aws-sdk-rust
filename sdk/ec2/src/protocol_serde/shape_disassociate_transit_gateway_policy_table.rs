@@ -43,7 +43,7 @@ pub fn de_disassociate_transit_gateway_policy_table_http_response(
 pub fn de_disassociate_transit_gateway_policy_table(
     inp: &[u8],
     mut builder: crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

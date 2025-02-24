@@ -2,7 +2,7 @@
 pub fn ser_attachments_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttachmentsConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("attachmentsControlMode").string(input.attachments_control_mode.as_str());
     }

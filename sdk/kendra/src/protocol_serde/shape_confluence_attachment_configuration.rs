@@ -2,7 +2,7 @@
 pub fn ser_confluence_attachment_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfluenceAttachmentConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_attachments {
         object.key("CrawlAttachments").boolean(input.crawl_attachments);
     }
@@ -26,7 +26,7 @@ pub fn ser_confluence_attachment_configuration(
 
 pub(crate) fn de_confluence_attachment_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConfluenceAttachmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConfluenceAttachmentConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

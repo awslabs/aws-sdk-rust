@@ -120,7 +120,7 @@ pub fn de_get_network_resource_counts_http_response(
 pub(crate) fn de_get_network_resource_counts(
     value: &[u8],
     mut builder: crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_network_resource_counts::builders::GetNetworkResourceCountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

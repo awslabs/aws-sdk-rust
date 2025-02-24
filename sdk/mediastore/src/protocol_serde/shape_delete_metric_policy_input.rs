@@ -2,7 +2,7 @@
 pub fn ser_delete_metric_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_metric_policy::DeleteMetricPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.container_name {
         object.key("ContainerName").string(var_1.as_str());
     }

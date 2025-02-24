@@ -2,7 +2,7 @@
 pub fn ser_create_ontap_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateOntapVolumeConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.junction_path {
         object.key("JunctionPath").string(var_1.as_str());
     }

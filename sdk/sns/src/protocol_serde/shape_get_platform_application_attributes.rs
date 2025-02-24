@@ -112,7 +112,7 @@ pub fn de_get_platform_application_attributes_http_response(
 pub fn de_get_platform_application_attributes(
     inp: &[u8],
     mut builder: crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_platform_application_attributes::builders::GetPlatformApplicationAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

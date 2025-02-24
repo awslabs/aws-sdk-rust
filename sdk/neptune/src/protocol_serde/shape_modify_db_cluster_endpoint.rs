@@ -139,7 +139,10 @@ pub fn de_modify_db_cluster_endpoint_http_response(
 pub fn de_modify_db_cluster_endpoint(
     inp: &[u8],
     mut builder: crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointOutputBuilder,
-) -> Result<crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

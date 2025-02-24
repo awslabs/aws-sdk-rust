@@ -41,8 +41,10 @@ pub fn de_describe_snapshot_attribute_http_response(
 pub fn de_describe_snapshot_attribute(
     inp: &[u8],
     mut builder: crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeOutputBuilder,
-) -> Result<crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

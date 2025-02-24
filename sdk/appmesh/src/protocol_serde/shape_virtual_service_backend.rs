@@ -2,7 +2,7 @@
 pub fn ser_virtual_service_backend(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualServiceBackend,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("virtualServiceName").string(input.virtual_service_name.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_virtual_service_backend(
 
 pub(crate) fn de_virtual_service_backend<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VirtualServiceBackend>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VirtualServiceBackend>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

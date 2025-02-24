@@ -41,8 +41,10 @@ pub fn de_create_capacity_reservation_http_response(
 pub fn de_create_capacity_reservation(
     inp: &[u8],
     mut builder: crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder,
-) -> Result<crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::create_capacity_reservation::builders::CreateCapacityReservationOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_create_storage_virtual_machine_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.active_directory_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ActiveDirectoryConfiguration").start_object();

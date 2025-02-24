@@ -2,7 +2,7 @@
 pub fn ser_update_environment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_environment::UpdateEnvironmentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apply_during_maintenance_window {
         object.key("applyDuringMaintenanceWindow").boolean(*var_1);
     }

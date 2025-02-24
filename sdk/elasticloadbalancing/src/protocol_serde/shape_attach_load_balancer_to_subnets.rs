@@ -118,7 +118,7 @@ pub fn de_attach_load_balancer_to_subnets_http_response(
 pub fn de_attach_load_balancer_to_subnets(
     inp: &[u8],
     mut builder: crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

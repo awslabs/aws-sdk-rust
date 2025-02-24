@@ -87,7 +87,7 @@ pub fn de_get_trust_store_revocation_content_http_response(
 pub fn de_get_trust_store_revocation_content(
     inp: &[u8],
     mut builder: crate::operation::get_trust_store_revocation_content::builders::GetTrustStoreRevocationContentOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_trust_store_revocation_content::builders::GetTrustStoreRevocationContentOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

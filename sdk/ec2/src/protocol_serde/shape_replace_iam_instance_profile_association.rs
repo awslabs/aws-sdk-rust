@@ -43,7 +43,7 @@ pub fn de_replace_iam_instance_profile_association_http_response(
 pub fn de_replace_iam_instance_profile_association(
     inp: &[u8],
     mut builder: crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::replace_iam_instance_profile_association::builders::ReplaceIamInstanceProfileAssociationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

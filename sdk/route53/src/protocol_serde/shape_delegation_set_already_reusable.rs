@@ -3,7 +3,7 @@
 pub fn de_delegation_set_already_reusable_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DelegationSetAlreadyReusableBuilder,
-) -> Result<crate::types::error::builders::DelegationSetAlreadyReusableBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::DelegationSetAlreadyReusableBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

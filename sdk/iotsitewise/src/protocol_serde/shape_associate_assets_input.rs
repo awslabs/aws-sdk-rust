@@ -2,7 +2,7 @@
 pub fn ser_associate_assets_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_assets::AssociateAssetsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.child_asset_id {
         object.key("childAssetId").string(var_1.as_str());
     }

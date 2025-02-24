@@ -111,7 +111,7 @@ pub fn de_get_telemetry_evaluation_status_for_organization_http_response(
 pub(crate) fn de_get_telemetry_evaluation_status_for_organization(
     value: &[u8],
     mut builder: crate::operation::get_telemetry_evaluation_status_for_organization::builders::GetTelemetryEvaluationStatusForOrganizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_telemetry_evaluation_status_for_organization::builders::GetTelemetryEvaluationStatusForOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

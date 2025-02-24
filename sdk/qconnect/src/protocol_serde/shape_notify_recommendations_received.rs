@@ -93,7 +93,7 @@ pub fn de_notify_recommendations_received_http_response(
 
 pub fn ser_notify_recommendations_received_input(
     input: &crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_notify_recommendations_received_input::ser_notify_recommendations_received_input_input(&mut object, input)?;
@@ -104,7 +104,7 @@ pub fn ser_notify_recommendations_received_input(
 pub(crate) fn de_notify_recommendations_received(
     value: &[u8],
     mut builder: crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

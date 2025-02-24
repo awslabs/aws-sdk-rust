@@ -2,7 +2,7 @@
 pub fn ser_impersonation_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImpersonationRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ImpersonationRuleId").string(input.impersonation_rule_id.as_str());
     }
@@ -38,7 +38,7 @@ pub fn ser_impersonation_rule(
 
 pub(crate) fn de_impersonation_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ImpersonationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ImpersonationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

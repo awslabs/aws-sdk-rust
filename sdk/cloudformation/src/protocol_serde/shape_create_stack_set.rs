@@ -87,7 +87,7 @@ pub fn de_create_stack_set_http_response(
 pub fn de_create_stack_set(
     inp: &[u8],
     mut builder: crate::operation::create_stack_set::builders::CreateStackSetOutputBuilder,
-) -> Result<crate::operation::create_stack_set::builders::CreateStackSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_stack_set::builders::CreateStackSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -121,7 +121,7 @@ pub fn de_get_kx_connection_string_http_response(
 pub(crate) fn de_get_kx_connection_string(
     value: &[u8],
     mut builder: crate::operation::get_kx_connection_string::builders::GetKxConnectionStringOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_kx_connection_string::builders::GetKxConnectionStringOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

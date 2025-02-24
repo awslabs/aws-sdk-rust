@@ -2,7 +2,7 @@
 pub fn ser_describe_solution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_solution::DescribeSolutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.solution_arn {
         object.key("solutionArn").string(var_1.as_str());
     }

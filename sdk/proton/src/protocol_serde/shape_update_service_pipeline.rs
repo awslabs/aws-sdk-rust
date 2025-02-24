@@ -129,7 +129,7 @@ pub fn de_update_service_pipeline_http_response(
 
 pub fn ser_update_service_pipeline_input(
     input: &crate::operation::update_service_pipeline::UpdateServicePipelineInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_service_pipeline_input::ser_update_service_pipeline_input_input(&mut object, input)?;
@@ -140,7 +140,7 @@ pub fn ser_update_service_pipeline_input(
 pub(crate) fn de_update_service_pipeline(
     value: &[u8],
     mut builder: crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

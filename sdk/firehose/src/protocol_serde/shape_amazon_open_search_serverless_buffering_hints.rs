@@ -2,7 +2,7 @@
 pub fn ser_amazon_open_search_serverless_buffering_hints(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonOpenSearchServerlessBufferingHints,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.interval_in_seconds {
         object.key("IntervalInSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_amazon_open_search_serverless_buffering_hints(
 
 pub(crate) fn de_amazon_open_search_serverless_buffering_hints<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AmazonOpenSearchServerlessBufferingHints>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AmazonOpenSearchServerlessBufferingHints>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

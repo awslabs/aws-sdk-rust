@@ -35,7 +35,7 @@ pub fn de_get_caller_identity_http_response(
 pub fn de_get_caller_identity(
     inp: &[u8],
     mut builder: crate::operation::get_caller_identity::builders::GetCallerIdentityOutputBuilder,
-) -> Result<crate::operation::get_caller_identity::builders::GetCallerIdentityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_caller_identity::builders::GetCallerIdentityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

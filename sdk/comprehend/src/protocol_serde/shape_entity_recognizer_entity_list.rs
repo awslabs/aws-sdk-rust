@@ -2,7 +2,7 @@
 pub fn ser_entity_recognizer_entity_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityRecognizerEntityList,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3Uri").string(input.s3_uri.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_entity_recognizer_entity_list(
 
 pub(crate) fn de_entity_recognizer_entity_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EntityRecognizerEntityList>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EntityRecognizerEntityList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

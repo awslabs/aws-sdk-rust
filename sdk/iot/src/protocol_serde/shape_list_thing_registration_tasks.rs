@@ -106,7 +106,7 @@ pub fn de_list_thing_registration_tasks_http_response(
 pub(crate) fn de_list_thing_registration_tasks(
     value: &[u8],
     mut builder: crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

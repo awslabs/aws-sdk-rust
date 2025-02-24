@@ -2,7 +2,7 @@
 pub fn ser_input_log_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLogEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timestamp").number(
             #[allow(clippy::useless_conversion)]

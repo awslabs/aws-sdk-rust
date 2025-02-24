@@ -2,7 +2,7 @@
 pub fn ser_usage_metric_basis(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UsageMetricBasis,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

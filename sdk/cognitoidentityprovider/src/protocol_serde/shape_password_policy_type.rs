@@ -2,7 +2,7 @@
 pub fn ser_password_policy_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PasswordPolicyType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_length {
         object.key("MinimumLength").number(
             #[allow(clippy::useless_conversion)]
@@ -38,7 +38,7 @@ pub fn ser_password_policy_type(
 
 pub(crate) fn de_password_policy_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PasswordPolicyType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PasswordPolicyType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

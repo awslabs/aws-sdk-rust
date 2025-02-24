@@ -3,7 +3,7 @@
 pub fn ser_classic_load_balancers_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ClassicLoadBalancersConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ClassicLoadBalancers");
     if let Some(var_2) = &input.classic_load_balancers {
@@ -23,7 +23,7 @@ pub fn ser_classic_load_balancers_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_classic_load_balancers_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ClassicLoadBalancersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ClassicLoadBalancersConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ClassicLoadBalancersConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

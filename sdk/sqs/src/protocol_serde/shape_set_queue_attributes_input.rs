@@ -2,7 +2,7 @@
 pub fn ser_set_queue_attributes_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_queue_attributes::SetQueueAttributesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.queue_url {
         object.key("QueueUrl").string(var_1.as_str());
     }

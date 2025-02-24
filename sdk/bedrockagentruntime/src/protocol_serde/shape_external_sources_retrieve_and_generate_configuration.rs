@@ -2,7 +2,7 @@
 pub fn ser_external_sources_retrieve_and_generate_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExternalSourcesRetrieveAndGenerateConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("modelArn").string(input.model_arn.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_prompt_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PromptConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prompt_type {
         object.key("promptType").string(var_1.as_str());
     }

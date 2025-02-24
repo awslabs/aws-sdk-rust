@@ -2,7 +2,7 @@
 pub fn ser_entity_type_filters(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityTypeFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EntityTypeFilters::DataProductFilters(inner) => {
             #[allow(unused_mut)]

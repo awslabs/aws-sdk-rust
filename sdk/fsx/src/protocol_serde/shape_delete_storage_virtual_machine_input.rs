@@ -2,7 +2,7 @@
 pub fn ser_delete_storage_virtual_machine_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_1.as_str());
     }

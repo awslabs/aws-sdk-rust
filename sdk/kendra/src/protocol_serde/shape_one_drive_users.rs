@@ -2,7 +2,7 @@
 pub fn ser_one_drive_users(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OneDriveUsers,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.one_drive_user_list {
         let mut array_2 = object.key("OneDriveUserList").start_array();
         for item_3 in var_1 {
@@ -23,7 +23,7 @@ pub fn ser_one_drive_users(
 
 pub(crate) fn de_one_drive_users<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OneDriveUsers>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OneDriveUsers>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

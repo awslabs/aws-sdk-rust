@@ -2,7 +2,7 @@
 pub fn ser_pipe_log_configuration_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeLogConfigurationParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_log_destination {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3LogDestination").start_object();

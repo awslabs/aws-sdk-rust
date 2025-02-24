@@ -2,7 +2,7 @@
 pub fn ser_failover_condition_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FailoverConditionSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audio_silence_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("audioSilenceSettings").start_object();
@@ -26,7 +26,7 @@ pub fn ser_failover_condition_settings(
 
 pub(crate) fn de_failover_condition_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FailoverConditionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FailoverConditionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

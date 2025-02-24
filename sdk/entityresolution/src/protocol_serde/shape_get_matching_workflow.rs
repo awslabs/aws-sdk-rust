@@ -123,7 +123,7 @@ pub fn de_get_matching_workflow_http_response(
 pub(crate) fn de_get_matching_workflow(
     value: &[u8],
     mut builder: crate::operation::get_matching_workflow::builders::GetMatchingWorkflowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_matching_workflow::builders::GetMatchingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

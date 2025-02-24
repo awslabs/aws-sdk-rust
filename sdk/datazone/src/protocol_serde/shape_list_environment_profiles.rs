@@ -122,7 +122,7 @@ pub fn de_list_environment_profiles_http_response(
 pub(crate) fn de_list_environment_profiles(
     value: &[u8],
     mut builder: crate::operation::list_environment_profiles::builders::ListEnvironmentProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_environment_profiles::builders::ListEnvironmentProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

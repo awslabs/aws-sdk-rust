@@ -88,7 +88,7 @@ pub fn de_list_subscriptions_http_response(
 pub fn de_list_subscriptions(
     inp: &[u8],
     mut builder: crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder,
-) -> Result<crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_subscriptions::builders::ListSubscriptionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

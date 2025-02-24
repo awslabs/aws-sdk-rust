@@ -2,7 +2,7 @@
 pub fn ser_predict_q_app_input_options(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredictQAppInputOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PredictQAppInputOptions::Conversation(inner) => {
             let mut array_1 = object_2.key("conversation").start_array();

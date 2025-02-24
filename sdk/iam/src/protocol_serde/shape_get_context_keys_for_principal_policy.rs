@@ -77,7 +77,7 @@ pub fn de_get_context_keys_for_principal_policy_http_response(
 pub fn de_get_context_keys_for_principal_policy(
     inp: &[u8],
     mut builder: crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

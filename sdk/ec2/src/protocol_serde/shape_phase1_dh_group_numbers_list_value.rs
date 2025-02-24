@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_phase1_dh_group_numbers_list_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Phase1DhGroupNumbersListValue, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Phase1DhGroupNumbersListValue, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Phase1DhGroupNumbersListValue::builder();
     while let Some(mut tag) = decoder.next_tag() {

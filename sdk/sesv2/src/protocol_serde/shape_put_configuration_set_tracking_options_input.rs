@@ -2,7 +2,7 @@
 pub fn ser_put_configuration_set_tracking_options_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_redirect_domain {
         object.key("CustomRedirectDomain").string(var_1.as_str());
     }

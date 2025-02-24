@@ -110,7 +110,7 @@ pub fn de_check_if_phone_number_is_opted_out_http_response(
 pub fn de_check_if_phone_number_is_opted_out(
     inp: &[u8],
     mut builder: crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

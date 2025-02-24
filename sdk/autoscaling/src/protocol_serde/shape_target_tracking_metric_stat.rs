@@ -3,7 +3,7 @@
 pub fn ser_target_tracking_metric_stat(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TargetTrackingMetricStat,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Metric");
     if let Some(var_2) = &input.metric {
@@ -33,7 +33,7 @@ pub fn ser_target_tracking_metric_stat(
 #[allow(clippy::needless_question_mark)]
 pub fn de_target_tracking_metric_stat(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TargetTrackingMetricStat, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TargetTrackingMetricStat, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TargetTrackingMetricStat::builder();
     while let Some(mut tag) = decoder.next_tag() {

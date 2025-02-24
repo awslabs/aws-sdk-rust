@@ -106,7 +106,7 @@ pub fn de_list_sol_function_instances_http_response(
 pub(crate) fn de_list_sol_function_instances(
     value: &[u8],
     mut builder: crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_sol_function_instances::builders::ListSolFunctionInstancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

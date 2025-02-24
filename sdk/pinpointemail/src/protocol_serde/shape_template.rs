@@ -2,7 +2,7 @@
 pub fn ser_template(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Template,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.template_arn {
         object.key("TemplateArn").string(var_1.as_str());
     }

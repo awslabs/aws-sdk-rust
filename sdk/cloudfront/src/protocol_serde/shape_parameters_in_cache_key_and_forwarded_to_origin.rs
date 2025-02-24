@@ -2,7 +2,7 @@
 pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
     input: &crate::types::ParametersInCacheKeyAndForwardedToOrigin,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -32,7 +32,7 @@ pub fn ser_parameters_in_cache_key_and_forwarded_to_origin(
 #[allow(clippy::needless_question_mark)]
 pub fn de_parameters_in_cache_key_and_forwarded_to_origin(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ParametersInCacheKeyAndForwardedToOrigin, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ParametersInCacheKeyAndForwardedToOrigin::builder();
     while let Some(mut tag) = decoder.next_tag() {

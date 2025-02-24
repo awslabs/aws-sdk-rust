@@ -2,7 +2,7 @@
 pub fn ser_describe_connections_on_interconnect_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.interconnect_id {
         object.key("interconnectId").string(var_1.as_str());
     }

@@ -118,7 +118,7 @@ pub fn de_list_custom_routing_port_mappings_by_destination_http_response(
 
 pub fn ser_list_custom_routing_port_mappings_by_destination_input(
     input: &crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_custom_routing_port_mappings_by_destination_input::ser_list_custom_routing_port_mappings_by_destination_input_input(&mut object, input)?;
@@ -129,7 +129,7 @@ pub fn ser_list_custom_routing_port_mappings_by_destination_input(
 pub(crate) fn de_list_custom_routing_port_mappings_by_destination(
     value: &[u8],
     mut builder: crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

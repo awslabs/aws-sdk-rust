@@ -108,7 +108,7 @@ pub fn de_list_configured_tables_http_response(
 pub(crate) fn de_list_configured_tables(
     value: &[u8],
     mut builder: crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configured_tables::builders::ListConfiguredTablesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

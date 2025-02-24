@@ -2,7 +2,7 @@
 pub fn ser_create_web_experience_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_web_experience::CreateWebExperienceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.browser_extension_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("browserExtensionConfiguration").start_object();

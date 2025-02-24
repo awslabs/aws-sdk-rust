@@ -2,7 +2,7 @@
 pub fn ser_asset_property_timestamp(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetPropertyTimestamp,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeInSeconds").string(input.time_in_seconds.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_asset_property_timestamp(
 
 pub(crate) fn de_asset_property_timestamp<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AssetPropertyTimestamp>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AssetPropertyTimestamp>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

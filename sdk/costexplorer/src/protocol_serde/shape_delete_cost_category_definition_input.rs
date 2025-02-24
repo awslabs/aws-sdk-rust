@@ -2,7 +2,7 @@
 pub fn ser_delete_cost_category_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cost_category_arn {
         object.key("CostCategoryArn").string(var_1.as_str());
     }

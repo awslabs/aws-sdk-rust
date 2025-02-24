@@ -41,8 +41,10 @@ pub fn de_get_ipam_discovered_accounts_http_response(
 pub fn de_get_ipam_discovered_accounts(
     inp: &[u8],
     mut builder: crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder,
-) -> Result<crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_http_gateway_route_header(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpGatewayRouteHeader,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_http_gateway_route_header(
 
 pub(crate) fn de_http_gateway_route_header<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HttpGatewayRouteHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HttpGatewayRouteHeader>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

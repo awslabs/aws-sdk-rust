@@ -180,7 +180,10 @@ pub fn ser_enable_directory_headers(
 pub(crate) fn de_enable_directory(
     value: &[u8],
     mut builder: crate::operation::enable_directory::builders::EnableDirectoryOutputBuilder,
-) -> Result<crate::operation::enable_directory::builders::EnableDirectoryOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::enable_directory::builders::EnableDirectoryOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

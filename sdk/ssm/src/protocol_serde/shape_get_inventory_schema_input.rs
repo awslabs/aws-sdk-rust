@@ -2,7 +2,7 @@
 pub fn ser_get_inventory_schema_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_inventory_schema::GetInventorySchemaInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.type_name {
         object.key("TypeName").string(var_1.as_str());
     }

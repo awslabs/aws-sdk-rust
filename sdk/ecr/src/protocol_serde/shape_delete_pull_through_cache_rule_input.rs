@@ -2,7 +2,7 @@
 pub fn ser_delete_pull_through_cache_rule_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ecr_repository_prefix {
         object.key("ecrRepositoryPrefix").string(var_1.as_str());
     }

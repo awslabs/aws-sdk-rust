@@ -159,7 +159,7 @@ pub fn de_remove_lf_tags_from_resource_http_response(
 
 pub fn ser_remove_lf_tags_from_resource_input(
     input: &crate::operation::remove_lf_tags_from_resource::RemoveLfTagsFromResourceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_remove_lf_tags_from_resource_input::ser_remove_lf_tags_from_resource_input_input(&mut object, input)?;
@@ -170,7 +170,7 @@ pub fn ser_remove_lf_tags_from_resource_input(
 pub(crate) fn de_remove_lf_tags_from_resource(
     value: &[u8],
     mut builder: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

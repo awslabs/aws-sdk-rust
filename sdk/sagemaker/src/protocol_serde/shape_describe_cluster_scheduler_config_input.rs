@@ -2,7 +2,7 @@
 pub fn ser_describe_cluster_scheduler_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_cluster_scheduler_config::DescribeClusterSchedulerConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_scheduler_config_id {
         object.key("ClusterSchedulerConfigId").string(var_1.as_str());
     }

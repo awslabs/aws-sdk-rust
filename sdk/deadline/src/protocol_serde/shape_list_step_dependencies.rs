@@ -133,7 +133,7 @@ pub fn de_list_step_dependencies_http_response(
 pub(crate) fn de_list_step_dependencies(
     value: &[u8],
     mut builder: crate::operation::list_step_dependencies::builders::ListStepDependenciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_step_dependencies::builders::ListStepDependenciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

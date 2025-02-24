@@ -3,7 +3,7 @@
 pub fn ser_application_version_lifecycle_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ApplicationVersionLifecycleConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MaxCountRule");
     if let Some(var_2) = &input.max_count_rule {
@@ -20,7 +20,7 @@ pub fn ser_application_version_lifecycle_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_application_version_lifecycle_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ApplicationVersionLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ApplicationVersionLifecycleConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ApplicationVersionLifecycleConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

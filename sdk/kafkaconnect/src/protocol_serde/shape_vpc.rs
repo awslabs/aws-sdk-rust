@@ -2,7 +2,7 @@
 pub fn ser_vpc(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Vpc,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.security_groups {
         let mut array_2 = object.key("securityGroups").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_describe_opted_out_numbers_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.opt_out_list_name {
         object.key("OptOutListName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_buckets_aggregation_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BucketsAggregationType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.terms_aggregation {
         #[allow(unused_mut)]
         let mut object_2 = object.key("termsAggregation").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_describe_retention_configurations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.retention_configuration_names {
         let mut array_2 = object.key("RetentionConfigurationNames").start_array();
         for item_3 in var_1 {

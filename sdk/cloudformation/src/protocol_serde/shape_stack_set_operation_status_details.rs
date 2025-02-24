@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation_status_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::StackSetOperationStatusDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::StackSetOperationStatusDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetOperationStatusDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {

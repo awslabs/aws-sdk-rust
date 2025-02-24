@@ -113,7 +113,7 @@ pub fn de_list_control_insights_by_control_domain_http_response(
 pub(crate) fn de_list_control_insights_by_control_domain(
     value: &[u8],
     mut builder: crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_control_insights_by_control_domain::builders::ListControlInsightsByControlDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_sectional_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SectionalElement,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("type").string(input.r#type.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_sectional_element(
 
 pub(crate) fn de_sectional_element<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SectionalElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SectionalElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_key_store_access_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyStoreAccessOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_access_role_arn {
         object.key("KeyAccessRoleArn").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_key_store_access_option(
 
 pub(crate) fn de_key_store_access_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::KeyStoreAccessOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::KeyStoreAccessOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

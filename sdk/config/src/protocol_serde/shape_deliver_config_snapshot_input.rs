@@ -2,7 +2,7 @@
 pub fn ser_deliver_config_snapshot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_channel_name {
         object.key("deliveryChannelName").string(var_1.as_str());
     }

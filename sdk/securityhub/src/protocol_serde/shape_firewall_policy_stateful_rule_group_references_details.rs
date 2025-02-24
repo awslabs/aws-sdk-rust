@@ -2,7 +2,7 @@
 pub fn ser_firewall_policy_stateful_rule_group_references_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceArn").string(var_1.as_str());
     }
@@ -11,7 +11,10 @@ pub fn ser_firewall_policy_stateful_rule_group_references_details(
 
 pub(crate) fn de_firewall_policy_stateful_rule_group_references_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::FirewallPolicyStatefulRuleGroupReferencesDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

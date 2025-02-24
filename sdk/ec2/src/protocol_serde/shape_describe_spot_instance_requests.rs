@@ -39,7 +39,7 @@ pub fn de_describe_spot_instance_requests_http_response(
 pub fn de_describe_spot_instance_requests(
     inp: &[u8],
     mut builder: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

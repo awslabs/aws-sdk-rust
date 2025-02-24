@@ -39,7 +39,7 @@ pub fn de_get_capacity_reservation_usage_http_response(
 pub fn de_get_capacity_reservation_usage(
     inp: &[u8],
     mut builder: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

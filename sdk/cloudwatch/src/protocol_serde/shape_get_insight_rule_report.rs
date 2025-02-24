@@ -98,7 +98,10 @@ pub fn de_get_insight_rule_report_http_response(
 pub fn de_get_insight_rule_report(
     inp: &[u8],
     mut builder: crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
-) -> Result<crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_insight_rule_report::builders::GetInsightRuleReportOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

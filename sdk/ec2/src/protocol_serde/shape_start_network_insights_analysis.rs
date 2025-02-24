@@ -39,7 +39,7 @@ pub fn de_start_network_insights_analysis_http_response(
 pub fn de_start_network_insights_analysis(
     inp: &[u8],
     mut builder: crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

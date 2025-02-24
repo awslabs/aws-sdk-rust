@@ -2,7 +2,7 @@
 pub fn ser_create_explainability_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_explainability::CreateExplainabilityInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.explainability_name {
         object.key("ExplainabilityName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_attribute_value_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeValueUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Value").start_object();

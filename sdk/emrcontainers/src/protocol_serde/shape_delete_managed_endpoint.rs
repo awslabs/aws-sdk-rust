@@ -76,7 +76,7 @@ pub fn de_delete_managed_endpoint_http_response(
 pub(crate) fn de_delete_managed_endpoint(
     value: &[u8],
     mut builder: crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

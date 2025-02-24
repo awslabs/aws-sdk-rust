@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_group_provider(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingGroupProvider,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("autoScalingGroupArn").string(input.auto_scaling_group_arn.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_auto_scaling_group_provider(
 
 pub(crate) fn de_auto_scaling_group_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AutoScalingGroupProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AutoScalingGroupProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

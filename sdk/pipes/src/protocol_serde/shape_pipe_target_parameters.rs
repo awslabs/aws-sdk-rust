@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_template {
         object.key("InputTemplate").string(var_1.as_str());
     }
@@ -89,7 +89,7 @@ pub fn ser_pipe_target_parameters(
 
 pub(crate) fn de_pipe_target_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PipeTargetParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PipeTargetParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

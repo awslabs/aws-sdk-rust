@@ -2,7 +2,7 @@
 pub fn ser_template_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CustomAttributes").start_object();

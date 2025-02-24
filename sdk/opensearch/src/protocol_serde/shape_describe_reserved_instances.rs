@@ -110,7 +110,7 @@ pub fn de_describe_reserved_instances_http_response(
 pub(crate) fn de_describe_reserved_instances(
     value: &[u8],
     mut builder: crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_reserved_instances::builders::DescribeReservedInstancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_put_registry_scanning_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scan_type {
         object.key("scanType").string(var_1.as_str());
     }

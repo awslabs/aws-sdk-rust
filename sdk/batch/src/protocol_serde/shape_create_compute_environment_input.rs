@@ -2,7 +2,7 @@
 pub fn ser_create_compute_environment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_compute_environment::CreateComputeEnvironmentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_environment_name {
         object.key("computeEnvironmentName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_lex_v2_bot(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LexV2Bot,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alias_arn {
         object.key("AliasArn").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_lex_v2_bot(
 
 pub(crate) fn de_lex_v2_bot<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LexV2Bot>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LexV2Bot>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

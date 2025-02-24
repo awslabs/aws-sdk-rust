@@ -2,7 +2,7 @@
 pub fn ser_indexing_rule_value_update(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IndexingRuleValueUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IndexingRuleValueUpdate::Probabilistic(inner) => {
             #[allow(unused_mut)]

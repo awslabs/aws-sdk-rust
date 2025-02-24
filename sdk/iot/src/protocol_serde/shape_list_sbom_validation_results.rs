@@ -110,7 +110,7 @@ pub fn de_list_sbom_validation_results_http_response(
 pub(crate) fn de_list_sbom_validation_results(
     value: &[u8],
     mut builder: crate::operation::list_sbom_validation_results::builders::ListSbomValidationResultsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_sbom_validation_results::builders::ListSbomValidationResultsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

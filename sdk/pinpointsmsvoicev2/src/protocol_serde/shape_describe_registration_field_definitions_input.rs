@@ -2,7 +2,7 @@
 pub fn ser_describe_registration_field_definitions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_registration_field_definitions::DescribeRegistrationFieldDefinitionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.registration_type {
         object.key("RegistrationType").string(var_1.as_str());
     }

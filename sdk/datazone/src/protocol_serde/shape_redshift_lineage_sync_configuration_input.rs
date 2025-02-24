@@ -2,7 +2,7 @@
 pub fn ser_redshift_lineage_sync_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftLineageSyncConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("enabled").boolean(*var_1);
     }

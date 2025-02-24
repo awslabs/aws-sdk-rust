@@ -2,7 +2,7 @@
 pub fn ser_image(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Image,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bytes {
         object.key("Bytes").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

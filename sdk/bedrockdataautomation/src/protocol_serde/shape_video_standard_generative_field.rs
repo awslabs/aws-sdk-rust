@@ -2,7 +2,7 @@
 pub fn ser_video_standard_generative_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoStandardGenerativeField,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("state").string(input.state.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_video_standard_generative_field(
 
 pub(crate) fn de_video_standard_generative_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VideoStandardGenerativeField>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VideoStandardGenerativeField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

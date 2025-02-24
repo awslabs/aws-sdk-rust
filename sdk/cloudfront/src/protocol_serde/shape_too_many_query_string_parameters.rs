@@ -3,7 +3,7 @@
 pub fn de_too_many_query_string_parameters_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyQueryStringParametersBuilder,
-) -> Result<crate::types::error::builders::TooManyQueryStringParametersBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TooManyQueryStringParametersBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

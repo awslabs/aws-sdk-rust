@@ -124,7 +124,7 @@ pub fn de_associate_analytics_data_set_http_response(
 
 pub fn ser_associate_analytics_data_set_input(
     input: &crate::operation::associate_analytics_data_set::AssociateAnalyticsDataSetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_analytics_data_set_input::ser_associate_analytics_data_set_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_associate_analytics_data_set_input(
 pub(crate) fn de_associate_analytics_data_set(
     value: &[u8],
     mut builder: crate::operation::associate_analytics_data_set::builders::AssociateAnalyticsDataSetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_analytics_data_set::builders::AssociateAnalyticsDataSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

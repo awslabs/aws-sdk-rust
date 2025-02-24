@@ -2,7 +2,7 @@
 pub fn ser_get_dashboard_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_dashboard::GetDashboardInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dashboard_id {
         object.key("DashboardId").string(var_1.as_str());
     }

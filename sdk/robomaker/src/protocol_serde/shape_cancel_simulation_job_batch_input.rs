@@ -2,7 +2,7 @@
 pub fn ser_cancel_simulation_job_batch_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.batch {
         object.key("batch").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_topic_column(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicColumn,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ColumnName").string(input.column_name.as_str());
     }
@@ -95,7 +95,7 @@ pub fn ser_topic_column(
 
 pub(crate) fn de_topic_column<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TopicColumn>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TopicColumn>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

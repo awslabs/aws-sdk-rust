@@ -2,7 +2,7 @@
 pub fn ser_recommendation_job_compiled_output_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecommendationJobCompiledOutputConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_output_uri {
         object.key("S3OutputUri").string(var_1.as_str());
     }

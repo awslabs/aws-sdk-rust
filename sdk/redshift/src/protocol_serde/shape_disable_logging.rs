@@ -86,7 +86,7 @@ pub fn de_disable_logging_http_response(
 pub fn de_disable_logging(
     inp: &[u8],
     mut builder: crate::operation::disable_logging::builders::DisableLoggingOutputBuilder,
-) -> Result<crate::operation::disable_logging::builders::DisableLoggingOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::disable_logging::builders::DisableLoggingOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_update_experiment_template_stop_condition_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateExperimentTemplateStopConditionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("source").string(input.source.as_str());
     }

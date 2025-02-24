@@ -158,7 +158,7 @@ pub fn de_list_connect_instance_integrations_http_response(
 pub(crate) fn de_list_connect_instance_integrations(
     value: &[u8],
     mut builder: crate::operation::list_connect_instance_integrations::builders::ListConnectInstanceIntegrationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_connect_instance_integrations::builders::ListConnectInstanceIntegrationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

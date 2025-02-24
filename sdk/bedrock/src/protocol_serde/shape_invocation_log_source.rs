@@ -2,7 +2,7 @@
 pub fn ser_invocation_log_source(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InvocationLogSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::InvocationLogSource::S3Uri(inner) => {
             object_2.key("s3Uri").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_invocation_log_source(
 
 pub(crate) fn de_invocation_log_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InvocationLogSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InvocationLogSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

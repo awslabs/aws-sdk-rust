@@ -2,7 +2,7 @@
 pub fn ser_create_service_level_objective_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_service_level_objective::CreateServiceLevelObjectiveInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.burn_rate_configurations {
         let mut array_2 = object.key("BurnRateConfigurations").start_array();
         for item_3 in var_1 {

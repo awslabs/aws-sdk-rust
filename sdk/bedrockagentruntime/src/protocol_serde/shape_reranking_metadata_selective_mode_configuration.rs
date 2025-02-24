@@ -2,7 +2,7 @@
 pub fn ser_reranking_metadata_selective_mode_configuration(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RerankingMetadataSelectiveModeConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RerankingMetadataSelectiveModeConfiguration::FieldsToInclude(inner) => {
             let mut array_1 = object_2.key("fieldsToInclude").start_array();

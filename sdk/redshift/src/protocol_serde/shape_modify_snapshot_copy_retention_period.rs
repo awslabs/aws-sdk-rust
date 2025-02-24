@@ -134,7 +134,7 @@ pub fn de_modify_snapshot_copy_retention_period_http_response(
 pub fn de_modify_snapshot_copy_retention_period(
     inp: &[u8],
     mut builder: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

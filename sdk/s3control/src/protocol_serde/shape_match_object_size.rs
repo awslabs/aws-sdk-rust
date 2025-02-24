@@ -2,7 +2,7 @@
 pub fn ser_match_object_size(
     input: &crate::types::MatchObjectSize,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.bytes_greater_than != 0 {
@@ -20,7 +20,7 @@ pub fn ser_match_object_size(
 #[allow(clippy::needless_question_mark)]
 pub fn de_match_object_size(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MatchObjectSize, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MatchObjectSize, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MatchObjectSize::builder();
     while let Some(mut tag) = decoder.next_tag() {

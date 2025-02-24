@@ -2,7 +2,7 @@
 pub fn ser_put_table_maintenance_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_table_maintenance_configuration::PutTableMaintenanceConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("value").start_object();

@@ -33,7 +33,7 @@ pub fn de_import_image_http_response(
 pub fn de_import_image(
     inp: &[u8],
     mut builder: crate::operation::import_image::builders::ImportImageOutputBuilder,
-) -> Result<crate::operation::import_image::builders::ImportImageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::import_image::builders::ImportImageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

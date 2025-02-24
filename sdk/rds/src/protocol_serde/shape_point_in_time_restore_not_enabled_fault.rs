@@ -3,7 +3,7 @@
 pub fn de_point_in_time_restore_not_enabled_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::PointInTimeRestoreNotEnabledFaultBuilder,
-) -> Result<crate::types::error::builders::PointInTimeRestoreNotEnabledFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::PointInTimeRestoreNotEnabledFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

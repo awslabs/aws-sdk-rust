@@ -2,7 +2,7 @@
 pub fn ser_delete_volume_ontap_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteVolumeOntapConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.skip_final_backup {
         object.key("SkipFinalBackup").boolean(*var_1);
     }

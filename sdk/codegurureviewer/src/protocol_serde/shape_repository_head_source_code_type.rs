@@ -2,7 +2,7 @@
 pub fn ser_repository_head_source_code_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RepositoryHeadSourceCodeType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BranchName").string(input.branch_name.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_repository_head_source_code_type(
 
 pub(crate) fn de_repository_head_source_code_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RepositoryHeadSourceCodeType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RepositoryHeadSourceCodeType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

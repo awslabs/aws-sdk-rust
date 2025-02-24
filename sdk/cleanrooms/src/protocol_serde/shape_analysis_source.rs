@@ -2,7 +2,7 @@
 pub fn ser_analysis_source(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AnalysisSource::Text(inner) => {
             object_9.key("text").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_analysis_source(
 
 pub(crate) fn de_analysis_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AnalysisSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AnalysisSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

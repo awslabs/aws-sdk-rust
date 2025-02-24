@@ -187,7 +187,7 @@ pub fn ser_list_typed_link_facet_names_headers(
 
 pub fn ser_list_typed_link_facet_names_input(
     input: &crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_typed_link_facet_names_input::ser_list_typed_link_facet_names_input_input(&mut object, input)?;
@@ -198,7 +198,7 @@ pub fn ser_list_typed_link_facet_names_input(
 pub(crate) fn de_list_typed_link_facet_names(
     value: &[u8],
     mut builder: crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_ja3_fingerprint(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ja3Fingerprint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FallbackBehavior").string(input.fallback_behavior.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_ja3_fingerprint(
 
 pub(crate) fn de_ja3_fingerprint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Ja3Fingerprint>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Ja3Fingerprint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_update_inference_component_runtime_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inference_component_name {
         object.key("InferenceComponentName").string(var_1.as_str());
     }

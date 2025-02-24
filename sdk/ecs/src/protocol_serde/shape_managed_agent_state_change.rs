@@ -2,7 +2,7 @@
 pub fn ser_managed_agent_state_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManagedAgentStateChange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("containerName").string(input.container_name.as_str());
     }

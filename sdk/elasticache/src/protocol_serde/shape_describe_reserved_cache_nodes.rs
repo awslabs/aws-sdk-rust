@@ -108,7 +108,7 @@ pub fn de_describe_reserved_cache_nodes_http_response(
 pub fn de_describe_reserved_cache_nodes(
     inp: &[u8],
     mut builder: crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_reserved_cache_nodes::builders::DescribeReservedCacheNodesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -132,7 +132,7 @@ pub fn de_get_subscription_target_http_response(
 pub(crate) fn de_get_subscription_target(
     value: &[u8],
     mut builder: crate::operation::get_subscription_target::builders::GetSubscriptionTargetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_subscription_target::builders::GetSubscriptionTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

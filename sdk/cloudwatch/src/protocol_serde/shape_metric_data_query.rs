@@ -3,7 +3,7 @@
 pub fn ser_metric_data_query(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricDataQuery,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
     if let Some(var_2) = &input.id {
@@ -48,7 +48,7 @@ pub fn ser_metric_data_query(
 #[allow(clippy::needless_question_mark)]
 pub fn de_metric_data_query(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MetricDataQuery, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MetricDataQuery, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricDataQuery::builder();
     while let Some(mut tag) = decoder.next_tag() {

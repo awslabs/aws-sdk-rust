@@ -2,7 +2,7 @@
 pub fn ser_tabular_job_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TabularJobConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.candidate_generation_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CandidateGenerationConfig").start_object();
@@ -38,7 +38,7 @@ pub fn ser_tabular_job_config(
 
 pub(crate) fn de_tabular_job_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TabularJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TabularJobConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

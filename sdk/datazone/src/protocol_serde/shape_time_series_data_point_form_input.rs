@@ -2,7 +2,7 @@
 pub fn ser_time_series_data_point_form_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeSeriesDataPointFormInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("formName").string(input.form_name.as_str());
     }

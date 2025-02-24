@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_hsm_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterHsmStatus,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hsm_client_certificate_identifier {
         object.key("HsmClientCertificateIdentifier").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_aws_redshift_cluster_hsm_status(
 
 pub(crate) fn de_aws_redshift_cluster_hsm_status<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsRedshiftClusterHsmStatus>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsRedshiftClusterHsmStatus>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

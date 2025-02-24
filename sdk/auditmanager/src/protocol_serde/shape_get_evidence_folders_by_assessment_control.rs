@@ -124,7 +124,7 @@ pub fn de_get_evidence_folders_by_assessment_control_http_response(
 pub(crate) fn de_get_evidence_folders_by_assessment_control(
     value: &[u8],
     mut builder: crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_evidence_folders_by_assessment_control::builders::GetEvidenceFoldersByAssessmentControlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

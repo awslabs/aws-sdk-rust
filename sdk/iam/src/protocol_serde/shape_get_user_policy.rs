@@ -73,7 +73,7 @@ pub fn de_get_user_policy_http_response(
 pub fn de_get_user_policy(
     inp: &[u8],
     mut builder: crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder,
-) -> Result<crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_user_policy::builders::GetUserPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

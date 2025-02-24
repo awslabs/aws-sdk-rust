@@ -118,7 +118,7 @@ pub fn de_get_received_data_grant_http_response(
 pub(crate) fn de_get_received_data_grant(
     value: &[u8],
     mut builder: crate::operation::get_received_data_grant::builders::GetReceivedDataGrantOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_received_data_grant::builders::GetReceivedDataGrantOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

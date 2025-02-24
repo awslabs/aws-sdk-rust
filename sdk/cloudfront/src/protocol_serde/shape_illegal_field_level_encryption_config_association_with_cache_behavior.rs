@@ -3,7 +3,7 @@
 pub fn de_illegal_field_level_encryption_config_association_with_cache_behavior_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::types::error::builders::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

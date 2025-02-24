@@ -2,7 +2,7 @@
 pub fn ser_get_archive_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_archive::GetArchiveInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.archive_id {
         object.key("ArchiveId").string(var_1.as_str());
     }

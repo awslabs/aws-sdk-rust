@@ -131,7 +131,7 @@ pub fn de_get_effective_hours_of_operations_http_response(
 pub(crate) fn de_get_effective_hours_of_operations(
     value: &[u8],
     mut builder: crate::operation::get_effective_hours_of_operations::builders::GetEffectiveHoursOfOperationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_effective_hours_of_operations::builders::GetEffectiveHoursOfOperationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

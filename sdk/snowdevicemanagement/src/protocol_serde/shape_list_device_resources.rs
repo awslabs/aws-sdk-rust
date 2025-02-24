@@ -116,7 +116,7 @@ pub fn de_list_device_resources_http_response(
 pub(crate) fn de_list_device_resources(
     value: &[u8],
     mut builder: crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -126,7 +126,7 @@ pub fn de_describe_provisioning_template_http_response(
 pub(crate) fn de_describe_provisioning_template(
     value: &[u8],
     mut builder: crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_provisioning_template::builders::DescribeProvisioningTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

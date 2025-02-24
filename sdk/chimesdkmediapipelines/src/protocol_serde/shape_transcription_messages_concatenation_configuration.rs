@@ -2,7 +2,7 @@
 pub fn ser_transcription_messages_concatenation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TranscriptionMessagesConcatenationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("State").string(input.state.as_str());
     }
@@ -11,7 +11,10 @@ pub fn ser_transcription_messages_concatenation_configuration(
 
 pub(crate) fn de_transcription_messages_concatenation_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TranscriptionMessagesConcatenationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::TranscriptionMessagesConcatenationConfiguration>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -82,7 +82,7 @@ pub fn de_start_cost_allocation_tag_backfill_http_response(
 
 pub fn ser_start_cost_allocation_tag_backfill_input(
     input: &crate::operation::start_cost_allocation_tag_backfill::StartCostAllocationTagBackfillInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_cost_allocation_tag_backfill_input::ser_start_cost_allocation_tag_backfill_input_input(&mut object, input)?;
@@ -93,7 +93,7 @@ pub fn ser_start_cost_allocation_tag_backfill_input(
 pub(crate) fn de_start_cost_allocation_tag_backfill(
     value: &[u8],
     mut builder: crate::operation::start_cost_allocation_tag_backfill::builders::StartCostAllocationTagBackfillOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_cost_allocation_tag_backfill::builders::StartCostAllocationTagBackfillOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

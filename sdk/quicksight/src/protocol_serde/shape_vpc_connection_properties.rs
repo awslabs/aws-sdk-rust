@@ -2,7 +2,7 @@
 pub fn ser_vpc_connection_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConnectionProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VpcConnectionArn").string(input.vpc_connection_arn.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_vpc_connection_properties(
 
 pub(crate) fn de_vpc_connection_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VpcConnectionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VpcConnectionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

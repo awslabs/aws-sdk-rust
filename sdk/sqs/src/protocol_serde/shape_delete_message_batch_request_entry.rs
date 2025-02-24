@@ -2,7 +2,7 @@
 pub fn ser_delete_message_batch_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteMessageBatchRequestEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Id").string(input.id.as_str());
     }

@@ -110,7 +110,7 @@ pub fn de_list_control_operations_http_response(
 
 pub fn ser_list_control_operations_input(
     input: &crate::operation::list_control_operations::ListControlOperationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_control_operations_input::ser_list_control_operations_input_input(&mut object, input)?;
@@ -121,7 +121,7 @@ pub fn ser_list_control_operations_input(
 pub(crate) fn de_list_control_operations(
     value: &[u8],
     mut builder: crate::operation::list_control_operations::builders::ListControlOperationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_control_operations::builders::ListControlOperationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -125,7 +125,7 @@ pub fn de_get_identity_resolution_job_http_response(
 pub(crate) fn de_get_identity_resolution_job(
     value: &[u8],
     mut builder: crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

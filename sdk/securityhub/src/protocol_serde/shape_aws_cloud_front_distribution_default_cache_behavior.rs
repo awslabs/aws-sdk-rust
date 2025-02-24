@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_front_distribution_default_cache_behavior(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFrontDistributionDefaultCacheBehavior,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.viewer_protocol_policy {
         object.key("ViewerProtocolPolicy").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_aws_cloud_front_distribution_default_cache_behavior(
 
 pub(crate) fn de_aws_cloud_front_distribution_default_cache_behavior<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsCloudFrontDistributionDefaultCacheBehavior>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

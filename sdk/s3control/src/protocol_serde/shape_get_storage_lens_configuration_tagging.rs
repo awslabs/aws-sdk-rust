@@ -59,7 +59,7 @@ pub fn ser_get_storage_lens_configuration_tagging_headers(
 pub fn de_get_storage_lens_configuration_tagging(
     inp: &[u8],
     mut builder: crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_storage_lens_configuration_tagging::builders::GetStorageLensConfigurationTaggingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

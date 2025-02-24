@@ -122,7 +122,7 @@ pub fn de_list_raster_data_collections_http_response(
 pub(crate) fn de_list_raster_data_collections(
     value: &[u8],
     mut builder: crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -257,7 +257,7 @@ pub fn de_list_ml_data_processing_jobs_http_response(
 pub(crate) fn de_list_ml_data_processing_jobs(
     value: &[u8],
     mut builder: crate::operation::list_ml_data_processing_jobs::builders::ListMlDataProcessingJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_ml_data_processing_jobs::builders::ListMlDataProcessingJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

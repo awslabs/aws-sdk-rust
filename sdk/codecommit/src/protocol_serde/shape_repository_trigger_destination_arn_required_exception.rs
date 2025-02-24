@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_trigger_destination_arn_required_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::RepositoryTriggerDestinationArnRequiredExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::RepositoryTriggerDestinationArnRequiredExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

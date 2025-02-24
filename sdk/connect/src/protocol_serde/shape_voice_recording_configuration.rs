@@ -2,7 +2,7 @@
 pub fn ser_voice_recording_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VoiceRecordingConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.voice_recording_track {
         object.key("VoiceRecordingTrack").string(var_1.as_str());
     }

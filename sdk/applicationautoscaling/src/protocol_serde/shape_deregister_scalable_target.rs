@@ -107,7 +107,7 @@ pub fn de_deregister_scalable_target_http_response(
 
 pub fn ser_deregister_scalable_target_input(
     input: &crate::operation::deregister_scalable_target::DeregisterScalableTargetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deregister_scalable_target_input::ser_deregister_scalable_target_input_input(&mut object, input)?;

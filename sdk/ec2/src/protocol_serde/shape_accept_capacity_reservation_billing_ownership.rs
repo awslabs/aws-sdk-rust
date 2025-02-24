@@ -42,7 +42,7 @@ pub fn de_accept_capacity_reservation_billing_ownership_http_response(
 pub fn de_accept_capacity_reservation_billing_ownership(
     inp: &[u8],
     mut builder: crate::operation::accept_capacity_reservation_billing_ownership::builders::AcceptCapacityReservationBillingOwnershipOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::accept_capacity_reservation_billing_ownership::builders::AcceptCapacityReservationBillingOwnershipOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_get_temporary_glue_table_credentials_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audit_context {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AuditContext").start_object();

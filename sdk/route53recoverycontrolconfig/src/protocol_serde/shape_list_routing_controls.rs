@@ -121,7 +121,7 @@ pub fn de_list_routing_controls_http_response(
 pub(crate) fn de_list_routing_controls(
     value: &[u8],
     mut builder: crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_routing_controls::builders::ListRoutingControlsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_revoke_ip_rules_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::revoke_ip_rules::RevokeIpRulesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_id {
         object.key("GroupId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_pause_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::pause_contact::PauseContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_flow_id {
         object.key("ContactFlowId").string(var_1.as_str());
     }

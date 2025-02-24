@@ -2,7 +2,7 @@
 pub fn ser_fsx_update_protocol_smb(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FsxUpdateProtocolSmb,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain {
         object.key("Domain").string(var_1.as_str());
     }

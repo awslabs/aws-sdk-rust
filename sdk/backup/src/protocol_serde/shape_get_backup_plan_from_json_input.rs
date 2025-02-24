@@ -2,7 +2,7 @@
 pub fn ser_get_backup_plan_from_json_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_plan_template_json {
         object.key("BackupPlanTemplateJson").string(var_1.as_str());
     }

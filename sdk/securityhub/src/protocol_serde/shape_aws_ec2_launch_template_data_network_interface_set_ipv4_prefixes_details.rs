@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ipv4_prefix {
         object.key("Ipv4Prefix").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_deta
 
 pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_ipv4_prefixes_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

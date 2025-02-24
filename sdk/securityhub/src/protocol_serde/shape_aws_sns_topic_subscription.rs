@@ -2,7 +2,7 @@
 pub fn ser_aws_sns_topic_subscription(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSnsTopicSubscription,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint {
         object.key("Endpoint").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_sns_topic_subscription(
 
 pub(crate) fn de_aws_sns_topic_subscription<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsSnsTopicSubscription>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsSnsTopicSubscription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

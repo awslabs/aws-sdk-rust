@@ -2,7 +2,7 @@
 pub fn ser_disassociate_file_system_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_file_system::DisassociateFileSystemInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_system_association_arn {
         object.key("FileSystemAssociationARN").string(var_1.as_str());
     }

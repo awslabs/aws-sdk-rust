@@ -2,7 +2,7 @@
 pub fn ser_function_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.required_properties {
         let mut array_2 = object.key("requiredProperties").start_array();
         for item_3 in var_1 {

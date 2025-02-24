@@ -82,7 +82,7 @@ pub fn de_update_configuration_template_http_response(
 pub fn de_update_configuration_template(
     inp: &[u8],
     mut builder: crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_configuration_template::builders::UpdateConfigurationTemplateOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

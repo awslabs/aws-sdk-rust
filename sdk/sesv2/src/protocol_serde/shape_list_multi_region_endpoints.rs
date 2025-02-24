@@ -80,7 +80,7 @@ pub fn de_list_multi_region_endpoints_http_response(
 pub(crate) fn de_list_multi_region_endpoints(
     value: &[u8],
     mut builder: crate::operation::list_multi_region_endpoints::builders::ListMultiRegionEndpointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_multi_region_endpoints::builders::ListMultiRegionEndpointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_disassociate_time_series_from_asset_property_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }

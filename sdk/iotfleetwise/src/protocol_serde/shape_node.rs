@@ -2,7 +2,7 @@
 pub fn ser_node(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Node,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Node::Branch(inner) => {
             #[allow(unused_mut)]
@@ -47,7 +47,7 @@ pub fn ser_node(
 
 pub(crate) fn de_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Node>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Node>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

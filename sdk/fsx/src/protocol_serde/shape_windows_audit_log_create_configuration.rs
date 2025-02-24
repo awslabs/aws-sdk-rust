@@ -2,7 +2,7 @@
 pub fn ser_windows_audit_log_create_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WindowsAuditLogCreateConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_access_audit_log_level {
         object.key("FileAccessAuditLogLevel").string(var_1.as_str());
     }

@@ -122,7 +122,7 @@ pub fn de_get_recovery_point_index_details_http_response(
 pub(crate) fn de_get_recovery_point_index_details(
     value: &[u8],
     mut builder: crate::operation::get_recovery_point_index_details::builders::GetRecoveryPointIndexDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_recovery_point_index_details::builders::GetRecoveryPointIndexDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

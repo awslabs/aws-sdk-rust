@@ -151,7 +151,7 @@ pub fn de_delete_permission_group_http_response(
 pub(crate) fn de_delete_permission_group(
     value: &[u8],
     mut builder: crate::operation::delete_permission_group::builders::DeletePermissionGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_permission_group::builders::DeletePermissionGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

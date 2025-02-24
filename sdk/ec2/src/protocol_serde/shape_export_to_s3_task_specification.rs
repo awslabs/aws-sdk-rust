@@ -3,7 +3,7 @@
 pub fn ser_export_to_s3_task_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ExportToS3TaskSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DiskImageFormat");
     if let Some(var_2) = &input.disk_image_format {

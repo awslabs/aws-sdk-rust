@@ -2,7 +2,7 @@
 pub fn ser_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Repository,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.code_commit {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CodeCommit").start_object();

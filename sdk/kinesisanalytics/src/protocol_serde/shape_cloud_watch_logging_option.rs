@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_logging_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLoggingOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LogStreamARN").string(input.log_stream_arn.as_str());
     }

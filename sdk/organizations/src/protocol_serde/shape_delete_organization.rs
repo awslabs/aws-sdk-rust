@@ -157,6 +157,6 @@ pub fn de_delete_organization_http_response(
 
 pub fn ser_delete_organization_input(
     _input: &crate::operation::delete_organization::DeleteOrganizationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

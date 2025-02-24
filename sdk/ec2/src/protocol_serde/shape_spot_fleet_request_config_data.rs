@@ -3,7 +3,7 @@
 pub fn ser_spot_fleet_request_config_data(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SpotFleetRequestConfigData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AllocationStrategy");
     if let Some(var_2) = &input.allocation_strategy {
@@ -179,7 +179,7 @@ pub fn ser_spot_fleet_request_config_data(
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_request_config_data(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SpotFleetRequestConfigData, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SpotFleetRequestConfigData, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotFleetRequestConfigData::builder();
     while let Some(mut tag) = decoder.next_tag() {

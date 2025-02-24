@@ -2,7 +2,7 @@
 pub fn ser_owner_user_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OwnerUserProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("userIdentifier").string(input.user_identifier.as_str());
     }

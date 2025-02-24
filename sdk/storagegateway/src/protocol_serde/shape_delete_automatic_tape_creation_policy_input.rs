@@ -2,7 +2,7 @@
 pub fn ser_delete_automatic_tape_creation_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_arn {
         object.key("GatewayARN").string(var_1.as_str());
     }

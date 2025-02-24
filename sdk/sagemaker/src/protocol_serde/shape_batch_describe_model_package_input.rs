@@ -2,7 +2,7 @@
 pub fn ser_batch_describe_model_package_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_package_arn_list {
         let mut array_2 = object.key("ModelPackageArnList").start_array();
         for item_3 in var_1 {

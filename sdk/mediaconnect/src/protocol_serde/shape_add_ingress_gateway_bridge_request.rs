@@ -2,7 +2,7 @@
 pub fn ser_add_ingress_gateway_bridge_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddIngressGatewayBridgeRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_bitrate {
         object.key("maxBitrate").number(
             #[allow(clippy::useless_conversion)]

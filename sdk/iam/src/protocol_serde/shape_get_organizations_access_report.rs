@@ -64,7 +64,7 @@ pub fn de_get_organizations_access_report_http_response(
 pub fn de_get_organizations_access_report(
     inp: &[u8],
     mut builder: crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

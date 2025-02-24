@@ -57,7 +57,7 @@ pub fn ser_get_access_point_policy_status_headers(
 pub fn de_get_access_point_policy_status(
     inp: &[u8],
     mut builder: crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

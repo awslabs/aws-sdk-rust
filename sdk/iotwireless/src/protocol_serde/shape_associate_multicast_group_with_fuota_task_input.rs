@@ -2,7 +2,7 @@
 pub fn ser_associate_multicast_group_with_fuota_task_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.multicast_group_id {
         object.key("MulticastGroupId").string(var_1.as_str());
     }

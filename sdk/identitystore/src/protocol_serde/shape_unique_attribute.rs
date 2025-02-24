@@ -2,7 +2,7 @@
 pub fn ser_unique_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UniqueAttribute,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributePath").string(input.attribute_path.as_str());
     }

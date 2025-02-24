@@ -2,7 +2,7 @@
 pub fn ser_delete_source_network_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_source_network::DeleteSourceNetworkInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_network_id {
         object.key("sourceNetworkID").string(var_1.as_str());
     }

@@ -164,7 +164,7 @@ pub fn ser_describe_folder_contents_headers(
 pub(crate) fn de_describe_folder_contents(
     value: &[u8],
     mut builder: crate::operation::describe_folder_contents::builders::DescribeFolderContentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_folder_contents::builders::DescribeFolderContentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

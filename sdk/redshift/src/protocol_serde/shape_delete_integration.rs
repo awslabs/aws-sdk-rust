@@ -109,7 +109,7 @@ pub fn de_delete_integration_http_response(
 pub fn de_delete_integration(
     inp: &[u8],
     mut builder: crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder,
-) -> Result<crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_integration::builders::DeleteIntegrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -157,7 +157,7 @@ pub fn de_delete_group_membership_http_response(
 pub(crate) fn de_delete_group_membership(
     value: &[u8],
     mut builder: crate::operation::delete_group_membership::builders::DeleteGroupMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_group_membership::builders::DeleteGroupMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

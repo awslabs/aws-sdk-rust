@@ -39,7 +39,7 @@ pub fn de_export_client_vpn_client_certificate_revocation_list_http_response(
 pub fn de_export_client_vpn_client_certificate_revocation_list(
     inp: &[u8],
     mut builder: crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

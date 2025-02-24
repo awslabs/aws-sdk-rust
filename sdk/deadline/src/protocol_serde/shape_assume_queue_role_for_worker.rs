@@ -155,7 +155,7 @@ pub fn de_assume_queue_role_for_worker_http_response(
 pub(crate) fn de_assume_queue_role_for_worker(
     value: &[u8],
     mut builder: crate::operation::assume_queue_role_for_worker::builders::AssumeQueueRoleForWorkerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::assume_queue_role_for_worker::builders::AssumeQueueRoleForWorkerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

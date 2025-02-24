@@ -115,7 +115,7 @@ pub fn de_generate_mac_http_response(
 
 pub fn ser_generate_mac_input(
     input: &crate::operation::generate_mac::GenerateMacInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_generate_mac_input::ser_generate_mac_input_input(&mut object, input)?;
@@ -126,7 +126,8 @@ pub fn ser_generate_mac_input(
 pub(crate) fn de_generate_mac(
     value: &[u8],
     mut builder: crate::operation::generate_mac::builders::GenerateMacOutputBuilder,
-) -> Result<crate::operation::generate_mac::builders::GenerateMacOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::generate_mac::builders::GenerateMacOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
+{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

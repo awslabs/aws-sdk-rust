@@ -120,7 +120,7 @@ pub fn de_list_fleet_deployments_http_response(
 
 pub fn ser_list_fleet_deployments_input(
     input: &crate::operation::list_fleet_deployments::ListFleetDeploymentsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_fleet_deployments_input::ser_list_fleet_deployments_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_list_fleet_deployments_input(
 pub(crate) fn de_list_fleet_deployments(
     value: &[u8],
     mut builder: crate::operation::list_fleet_deployments::builders::ListFleetDeploymentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_fleet_deployments::builders::ListFleetDeploymentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

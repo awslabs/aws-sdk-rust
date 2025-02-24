@@ -2,7 +2,7 @@
 pub fn ser_update_open_id_connect_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateOpenIdConnectConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("issuer").string(input.issuer.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_communication_limits_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CommunicationLimitsConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.all_channel_subtypes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("allChannelSubtypes").start_object();
@@ -14,7 +14,7 @@ pub fn ser_communication_limits_config(
 
 pub(crate) fn de_communication_limits_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CommunicationLimitsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CommunicationLimitsConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

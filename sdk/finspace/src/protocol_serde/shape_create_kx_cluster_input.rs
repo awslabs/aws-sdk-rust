@@ -2,7 +2,7 @@
 pub fn ser_create_kx_cluster_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_kx_cluster::CreateKxClusterInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_scaling_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("autoScalingConfiguration").start_object();

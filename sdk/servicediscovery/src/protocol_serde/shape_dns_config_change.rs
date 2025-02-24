@@ -2,7 +2,7 @@
 pub fn ser_dns_config_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DnsConfigChange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("DnsRecords").start_array();
         for item_2 in &input.dns_records {

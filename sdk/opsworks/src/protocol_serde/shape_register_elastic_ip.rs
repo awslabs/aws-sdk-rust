@@ -71,7 +71,7 @@ pub fn de_register_elastic_ip_http_response(
 
 pub fn ser_register_elastic_ip_input(
     input: &crate::operation::register_elastic_ip::RegisterElasticIpInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_elastic_ip_input::ser_register_elastic_ip_input_input(&mut object, input)?;
@@ -82,8 +82,10 @@ pub fn ser_register_elastic_ip_input(
 pub(crate) fn de_register_elastic_ip(
     value: &[u8],
     mut builder: crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder,
-) -> Result<crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

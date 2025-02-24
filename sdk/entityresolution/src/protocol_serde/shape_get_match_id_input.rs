@@ -2,7 +2,7 @@
 pub fn ser_get_match_id_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_match_id::GetMatchIdInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apply_normalization {
         object.key("applyNormalization").boolean(*var_1);
     }

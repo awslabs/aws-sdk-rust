@@ -123,7 +123,7 @@ pub fn de_get_repository_endpoint_http_response(
 pub(crate) fn de_get_repository_endpoint(
     value: &[u8],
     mut builder: crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -44,7 +44,7 @@ pub fn de_describe_transit_gateway_peering_attachments_http_response(
 pub fn de_describe_transit_gateway_peering_attachments(
     inp: &[u8],
     mut builder: crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

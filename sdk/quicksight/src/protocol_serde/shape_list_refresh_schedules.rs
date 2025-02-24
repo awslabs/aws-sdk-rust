@@ -140,7 +140,7 @@ pub fn de_list_refresh_schedules_http_response(
 pub(crate) fn de_list_refresh_schedules(
     value: &[u8],
     mut builder: crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_put_tax_inheritance_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_tax_inheritance::PutTaxInheritanceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.heritage_status {
         object.key("heritageStatus").string(var_1.as_str());
     }

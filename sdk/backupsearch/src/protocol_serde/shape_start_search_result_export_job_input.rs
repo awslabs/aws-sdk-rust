@@ -2,7 +2,7 @@
 pub fn ser_start_search_result_export_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_search_result_export_job::StartSearchResultExportJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("ClientToken").string(var_1.as_str());
     }

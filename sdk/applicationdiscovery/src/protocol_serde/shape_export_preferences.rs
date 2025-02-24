@@ -2,7 +2,7 @@
 pub fn ser_export_preferences(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportPreferences,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ExportPreferences::Ec2RecommendationsPreferences(inner) => {
             #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_batch_permissions_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchPermissionsRequestEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Id").string(input.id.as_str());
     }
@@ -41,7 +41,7 @@ pub fn ser_batch_permissions_request_entry(
 
 pub(crate) fn de_batch_permissions_request_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BatchPermissionsRequestEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BatchPermissionsRequestEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

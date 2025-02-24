@@ -41,7 +41,7 @@ pub fn de_describe_fpga_image_attribute_http_response(
 pub fn de_describe_fpga_image_attribute(
     inp: &[u8],
     mut builder: crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

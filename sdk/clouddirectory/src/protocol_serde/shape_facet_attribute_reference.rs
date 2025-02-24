@@ -2,7 +2,7 @@
 pub fn ser_facet_attribute_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FacetAttributeReference,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TargetFacetName").string(input.target_facet_name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_facet_attribute_reference(
 
 pub(crate) fn de_facet_attribute_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FacetAttributeReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FacetAttributeReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

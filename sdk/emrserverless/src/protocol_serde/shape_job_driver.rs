@@ -2,7 +2,7 @@
 pub fn ser_job_driver(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobDriver,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::JobDriver::SparkSubmit(inner) => {
             #[allow(unused_mut)]
@@ -23,7 +23,7 @@ pub fn ser_job_driver(
 
 pub(crate) fn de_job_driver<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::JobDriver>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::JobDriver>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

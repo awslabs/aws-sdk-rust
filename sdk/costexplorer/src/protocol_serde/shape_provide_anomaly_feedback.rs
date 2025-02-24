@@ -66,7 +66,7 @@ pub fn de_provide_anomaly_feedback_http_response(
 
 pub fn ser_provide_anomaly_feedback_input(
     input: &crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_provide_anomaly_feedback_input::ser_provide_anomaly_feedback_input_input(&mut object, input)?;
@@ -77,7 +77,7 @@ pub fn ser_provide_anomaly_feedback_input(
 pub(crate) fn de_provide_anomaly_feedback(
     value: &[u8],
     mut builder: crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

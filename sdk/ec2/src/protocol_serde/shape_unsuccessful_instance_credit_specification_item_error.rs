@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_unsuccessful_instance_credit_specification_item_error(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::UnsuccessfulInstanceCreditSpecificationItemError, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::UnsuccessfulInstanceCreditSpecificationItemError, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::UnsuccessfulInstanceCreditSpecificationItemError::builder();
     while let Some(mut tag) = decoder.next_tag() {

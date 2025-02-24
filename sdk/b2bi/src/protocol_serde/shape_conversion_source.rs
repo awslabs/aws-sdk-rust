@@ -2,7 +2,7 @@
 pub fn ser_conversion_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversionSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fileFormat").string(input.file_format.as_str());
     }

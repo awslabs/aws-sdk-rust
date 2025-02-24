@@ -2,7 +2,7 @@
 pub fn ser_input_destination_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputDestinationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stream_name {
         object.key("streamName").string(var_1.as_str());
     }

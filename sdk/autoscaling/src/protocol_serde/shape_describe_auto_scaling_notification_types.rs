@@ -70,7 +70,7 @@ pub fn de_describe_auto_scaling_notification_types_http_response(
 pub fn de_describe_auto_scaling_notification_types(
     inp: &[u8],
     mut builder: crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_auto_scaling_notification_types::builders::DescribeAutoScalingNotificationTypesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_sapo_data_pagination_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SapoDataPaginationConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("maxPageSize").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_sapo_data_pagination_config(
 
 pub(crate) fn de_sapo_data_pagination_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SapoDataPaginationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SapoDataPaginationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

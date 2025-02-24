@@ -450,7 +450,7 @@ pub fn de_create_cluster_http_response(
 pub fn de_create_cluster(
     inp: &[u8],
     mut builder: crate::operation::create_cluster::builders::CreateClusterOutputBuilder,
-) -> Result<crate::operation::create_cluster::builders::CreateClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_cluster::builders::CreateClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

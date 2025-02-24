@@ -2,7 +2,7 @@
 pub fn ser_execution_controls(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExecutionControls,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ssm_controls {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SsmControls").start_object();
@@ -14,7 +14,7 @@ pub fn ser_execution_controls(
 
 pub(crate) fn de_execution_controls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ExecutionControls>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ExecutionControls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

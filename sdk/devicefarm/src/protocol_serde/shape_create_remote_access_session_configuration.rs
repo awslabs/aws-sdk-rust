@@ -2,7 +2,7 @@
 pub fn ser_create_remote_access_session_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateRemoteAccessSessionConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.billing_method {
         object.key("billingMethod").string(var_1.as_str());
     }

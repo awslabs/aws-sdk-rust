@@ -102,7 +102,7 @@ pub fn de_list_data_set_revisions_http_response(
 pub(crate) fn de_list_data_set_revisions(
     value: &[u8],
     mut builder: crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

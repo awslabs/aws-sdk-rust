@@ -82,7 +82,7 @@ pub fn de_list_service_specific_credentials_http_response(
 pub fn de_list_service_specific_credentials(
     inp: &[u8],
     mut builder: crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

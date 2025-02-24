@@ -2,7 +2,7 @@
 pub fn ser_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Association,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("arn").string(input.arn.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_association(
 
 pub(crate) fn de_association<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Association>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Association>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

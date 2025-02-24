@@ -120,7 +120,7 @@ pub fn de_list_environment_actions_http_response(
 pub(crate) fn de_list_environment_actions(
     value: &[u8],
     mut builder: crate::operation::list_environment_actions::builders::ListEnvironmentActionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_environment_actions::builders::ListEnvironmentActionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

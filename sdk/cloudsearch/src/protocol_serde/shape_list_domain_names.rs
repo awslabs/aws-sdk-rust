@@ -56,7 +56,7 @@ pub fn de_list_domain_names_http_response(
 pub fn de_list_domain_names(
     inp: &[u8],
     mut builder: crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder,
-) -> Result<crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

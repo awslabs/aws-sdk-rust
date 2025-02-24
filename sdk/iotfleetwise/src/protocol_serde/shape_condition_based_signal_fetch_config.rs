@@ -2,7 +2,7 @@
 pub fn ser_condition_based_signal_fetch_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConditionBasedSignalFetchConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("conditionExpression").string(input.condition_expression.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_condition_based_signal_fetch_config(
 
 pub(crate) fn de_condition_based_signal_fetch_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConditionBasedSignalFetchConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConditionBasedSignalFetchConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

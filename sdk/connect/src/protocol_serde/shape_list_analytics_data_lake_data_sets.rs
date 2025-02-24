@@ -131,7 +131,7 @@ pub fn de_list_analytics_data_lake_data_sets_http_response(
 pub(crate) fn de_list_analytics_data_lake_data_sets(
     value: &[u8],
     mut builder: crate::operation::list_analytics_data_lake_data_sets::builders::ListAnalyticsDataLakeDataSetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_analytics_data_lake_data_sets::builders::ListAnalyticsDataLakeDataSetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

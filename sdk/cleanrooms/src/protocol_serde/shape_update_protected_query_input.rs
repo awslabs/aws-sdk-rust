@@ -2,7 +2,7 @@
 pub fn ser_update_protected_query_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_protected_query::UpdateProtectedQueryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_status {
         object.key("targetStatus").string(var_1.as_str());
     }

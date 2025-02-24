@@ -2,7 +2,7 @@
 pub fn ser_user_property(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserProperty,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("key").string(input.key.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_user_property(
 
 pub(crate) fn de_user_property<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UserProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UserProperty>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

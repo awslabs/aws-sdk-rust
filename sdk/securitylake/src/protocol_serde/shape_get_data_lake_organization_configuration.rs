@@ -164,7 +164,7 @@ pub fn de_get_data_lake_organization_configuration_http_response(
 pub(crate) fn de_get_data_lake_organization_configuration(
     value: &[u8],
     mut builder: crate::operation::get_data_lake_organization_configuration::builders::GetDataLakeOrganizationConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_lake_organization_configuration::builders::GetDataLakeOrganizationConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

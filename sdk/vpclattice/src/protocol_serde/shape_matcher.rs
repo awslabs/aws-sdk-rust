@@ -2,7 +2,7 @@
 pub fn ser_matcher(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Matcher,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Matcher::HttpCode(inner) => {
             object_11.key("httpCode").string(inner.as_str());
@@ -14,7 +14,7 @@ pub fn ser_matcher(
 
 pub(crate) fn de_matcher<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Matcher>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Matcher>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

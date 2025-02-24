@@ -2,7 +2,7 @@
 pub fn ser_reject_grouping_recommendation_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RejectGroupingRecommendationEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("groupingRecommendationId").string(input.grouping_recommendation_id.as_str());
     }

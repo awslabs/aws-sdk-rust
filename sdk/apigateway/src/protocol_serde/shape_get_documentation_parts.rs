@@ -113,7 +113,7 @@ pub fn de_get_documentation_parts_http_response(
 pub(crate) fn de_get_documentation_parts(
     value: &[u8],
     mut builder: crate::operation::get_documentation_parts::builders::GetDocumentationPartsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_documentation_parts::builders::GetDocumentationPartsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

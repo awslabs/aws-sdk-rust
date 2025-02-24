@@ -122,7 +122,7 @@ pub fn de_list_id_mapping_tables_http_response(
 pub(crate) fn de_list_id_mapping_tables(
     value: &[u8],
     mut builder: crate::operation::list_id_mapping_tables::builders::ListIdMappingTablesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_id_mapping_tables::builders::ListIdMappingTablesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -123,7 +123,7 @@ pub fn de_list_sub_package_groups_http_response(
 pub(crate) fn de_list_sub_package_groups(
     value: &[u8],
     mut builder: crate::operation::list_sub_package_groups::builders::ListSubPackageGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_sub_package_groups::builders::ListSubPackageGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

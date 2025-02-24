@@ -138,7 +138,7 @@ pub fn de_list_app_instance_users_http_response(
 pub(crate) fn de_list_app_instance_users(
     value: &[u8],
     mut builder: crate::operation::list_app_instance_users::builders::ListAppInstanceUsersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_app_instance_users::builders::ListAppInstanceUsersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

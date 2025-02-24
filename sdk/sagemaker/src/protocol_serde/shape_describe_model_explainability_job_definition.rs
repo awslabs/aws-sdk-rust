@@ -72,7 +72,7 @@ pub fn de_describe_model_explainability_job_definition_http_response(
 
 pub fn ser_describe_model_explainability_job_definition_input(
     input: &crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_model_explainability_job_definition_input::ser_describe_model_explainability_job_definition_input_input(
@@ -86,7 +86,7 @@ pub fn ser_describe_model_explainability_job_definition_input(
 pub(crate) fn de_describe_model_explainability_job_definition(
     value: &[u8],
     mut builder: crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

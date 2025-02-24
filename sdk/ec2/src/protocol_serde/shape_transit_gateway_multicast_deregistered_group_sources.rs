@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_multicast_deregistered_group_sources(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TransitGatewayMulticastDeregisteredGroupSources, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TransitGatewayMulticastDeregisteredGroupSources, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayMulticastDeregisteredGroupSources::builder();
     while let Some(mut tag) = decoder.next_tag() {

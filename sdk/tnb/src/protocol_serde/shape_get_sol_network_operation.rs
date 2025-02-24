@@ -122,7 +122,7 @@ pub fn de_get_sol_network_operation_http_response(
 pub(crate) fn de_get_sol_network_operation(
     value: &[u8],
     mut builder: crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

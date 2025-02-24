@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_group_identifier(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::GroupIdentifier, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::GroupIdentifier, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::GroupIdentifier::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -43,7 +43,7 @@ pub fn de_group_identifier(
 pub fn ser_group_identifier(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::GroupIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("GroupId");
     if let Some(var_4) = &input.group_id {

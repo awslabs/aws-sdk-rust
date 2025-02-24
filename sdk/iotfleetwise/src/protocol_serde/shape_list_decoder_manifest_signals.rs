@@ -115,7 +115,7 @@ pub fn de_list_decoder_manifest_signals_http_response(
 
 pub fn ser_list_decoder_manifest_signals_input(
     input: &crate::operation::list_decoder_manifest_signals::ListDecoderManifestSignalsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_decoder_manifest_signals_input::ser_list_decoder_manifest_signals_input_input(&mut object, input)?;
@@ -126,7 +126,7 @@ pub fn ser_list_decoder_manifest_signals_input(
 pub(crate) fn de_list_decoder_manifest_signals(
     value: &[u8],
     mut builder: crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_decoder_manifest_signals::builders::ListDecoderManifestSignalsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

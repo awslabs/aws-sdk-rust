@@ -2,7 +2,7 @@
 pub fn ser_card_verification_value2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CardVerificationValue2,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CardExpiryDate").string(input.card_expiry_date.as_str());
     }

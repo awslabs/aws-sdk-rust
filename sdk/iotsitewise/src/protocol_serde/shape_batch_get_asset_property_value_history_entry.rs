@@ -2,7 +2,7 @@
 pub fn ser_batch_get_asset_property_value_history_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetAssetPropertyValueHistoryEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entryId").string(input.entry_id.as_str());
     }

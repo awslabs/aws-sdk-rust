@@ -39,7 +39,7 @@ pub fn de_delete_queued_reserved_instances_http_response(
 pub fn de_delete_queued_reserved_instances(
     inp: &[u8],
     mut builder: crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_queued_reserved_instances::builders::DeleteQueuedReservedInstancesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

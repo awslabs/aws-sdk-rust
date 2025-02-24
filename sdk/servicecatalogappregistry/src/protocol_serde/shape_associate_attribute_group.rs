@@ -130,7 +130,7 @@ pub fn de_associate_attribute_group_http_response(
 pub(crate) fn de_associate_attribute_group(
     value: &[u8],
     mut builder: crate::operation::associate_attribute_group::builders::AssociateAttributeGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_attribute_group::builders::AssociateAttributeGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

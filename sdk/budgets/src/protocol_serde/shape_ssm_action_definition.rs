@@ -2,7 +2,7 @@
 pub fn ser_ssm_action_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmActionDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ActionSubType").string(input.action_sub_type.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_ssm_action_definition(
 
 pub(crate) fn de_ssm_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SsmActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SsmActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

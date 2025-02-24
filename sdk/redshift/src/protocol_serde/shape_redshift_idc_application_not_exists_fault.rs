@@ -3,7 +3,7 @@
 pub fn de_redshift_idc_application_not_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::RedshiftIdcApplicationNotExistsFaultBuilder,
-) -> Result<crate::types::error::builders::RedshiftIdcApplicationNotExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::RedshiftIdcApplicationNotExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

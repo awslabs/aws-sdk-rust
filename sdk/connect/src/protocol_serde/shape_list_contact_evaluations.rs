@@ -112,7 +112,7 @@ pub fn de_list_contact_evaluations_http_response(
 pub(crate) fn de_list_contact_evaluations(
     value: &[u8],
     mut builder: crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_contact_evaluations::builders::ListContactEvaluationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_rename_table_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::rename_table::RenameTableInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.new_name {
         object.key("newName").string(var_1.as_str());
     }

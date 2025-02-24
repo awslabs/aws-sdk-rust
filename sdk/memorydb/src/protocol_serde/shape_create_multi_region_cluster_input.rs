@@ -2,7 +2,7 @@
 pub fn ser_create_multi_region_cluster_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_multi_region_cluster::CreateMultiRegionClusterInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.multi_region_cluster_name_suffix {
         object.key("MultiRegionClusterNameSuffix").string(var_1.as_str());
     }

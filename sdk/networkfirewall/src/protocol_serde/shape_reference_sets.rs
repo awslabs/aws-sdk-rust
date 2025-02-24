@@ -2,7 +2,7 @@
 pub fn ser_reference_sets(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReferenceSets,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_set_references {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IPSetReferences").start_object();
@@ -21,7 +21,7 @@ pub fn ser_reference_sets(
 
 pub(crate) fn de_reference_sets<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ReferenceSets>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ReferenceSets>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

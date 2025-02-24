@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_capacity_reservation_specification_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capacity_reservation_preference {
         object.key("CapacityReservationPreference").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_aws_ec2_launch_template_data_capacity_reservation_specification_detai
 
 pub(crate) fn de_aws_ec2_launch_template_data_capacity_reservation_specification_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

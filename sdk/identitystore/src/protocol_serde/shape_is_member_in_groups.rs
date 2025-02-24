@@ -118,7 +118,7 @@ pub fn de_is_member_in_groups_http_response(
 
 pub fn ser_is_member_in_groups_input(
     input: &crate::operation::is_member_in_groups::IsMemberInGroupsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_is_member_in_groups_input::ser_is_member_in_groups_input_input(&mut object, input)?;
@@ -129,7 +129,10 @@ pub fn ser_is_member_in_groups_input(
 pub(crate) fn de_is_member_in_groups(
     value: &[u8],
     mut builder: crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder,
-) -> Result<crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

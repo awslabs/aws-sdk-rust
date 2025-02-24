@@ -3,7 +3,7 @@
 pub fn de_too_many_cookies_in_origin_request_policy_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TooManyCookiesInOriginRequestPolicyBuilder,
-) -> Result<crate::types::error::builders::TooManyCookiesInOriginRequestPolicyBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TooManyCookiesInOriginRequestPolicyBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

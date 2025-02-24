@@ -2,7 +2,7 @@
 pub fn ser_sql_injection_match_set_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SqlInjectionMatchSetUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Action").string(input.action.as_str());
     }

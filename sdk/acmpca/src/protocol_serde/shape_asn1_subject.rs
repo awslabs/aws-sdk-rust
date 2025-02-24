@@ -2,7 +2,7 @@
 pub fn ser_asn1_subject(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Asn1Subject,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.country {
         object.key("Country").string(var_1.as_str());
     }
@@ -62,7 +62,7 @@ pub fn ser_asn1_subject(
 
 pub(crate) fn de_asn1_subject<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Asn1Subject>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Asn1Subject>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

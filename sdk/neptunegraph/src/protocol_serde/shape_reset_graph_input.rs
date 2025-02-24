@@ -2,7 +2,7 @@
 pub fn ser_reset_graph_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reset_graph::ResetGraphInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.skip_snapshot {
         object.key("skipSnapshot").boolean(*var_1);
     }

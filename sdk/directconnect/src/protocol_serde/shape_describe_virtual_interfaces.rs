@@ -89,7 +89,7 @@ pub fn de_describe_virtual_interfaces_http_response(
 
 pub fn ser_describe_virtual_interfaces_input(
     input: &crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_virtual_interfaces_input::ser_describe_virtual_interfaces_input_input(&mut object, input)?;
@@ -100,7 +100,7 @@ pub fn ser_describe_virtual_interfaces_input(
 pub(crate) fn de_describe_virtual_interfaces(
     value: &[u8],
     mut builder: crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_virtual_interfaces::builders::DescribeVirtualInterfacesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

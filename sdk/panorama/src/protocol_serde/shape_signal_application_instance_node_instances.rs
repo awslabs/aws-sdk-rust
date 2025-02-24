@@ -138,7 +138,7 @@ pub fn de_signal_application_instance_node_instances_http_response(
 
 pub fn ser_signal_application_instance_node_instances_input(
     input: &crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_signal_application_instance_node_instances_input::ser_signal_application_instance_node_instances_input_input(
@@ -152,7 +152,7 @@ pub fn ser_signal_application_instance_node_instances_input(
 pub(crate) fn de_signal_application_instance_node_instances(
     value: &[u8],
     mut builder: crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

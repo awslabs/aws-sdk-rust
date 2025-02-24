@@ -2,7 +2,7 @@
 pub fn ser_describe_campaign_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_campaign::DescribeCampaignInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.campaign_arn {
         object.key("campaignArn").string(var_1.as_str());
     }

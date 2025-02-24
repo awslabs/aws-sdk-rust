@@ -2,7 +2,7 @@
 pub fn ser_traffic_config(
     input: &crate::types::TrafficConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.single_weight_config {
@@ -24,7 +24,7 @@ pub fn ser_traffic_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_traffic_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TrafficConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TrafficConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TrafficConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

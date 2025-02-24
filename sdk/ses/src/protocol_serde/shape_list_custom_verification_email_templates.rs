@@ -43,7 +43,7 @@ pub fn de_list_custom_verification_email_templates_http_response(
 pub fn de_list_custom_verification_email_templates(
     inp: &[u8],
     mut builder: crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

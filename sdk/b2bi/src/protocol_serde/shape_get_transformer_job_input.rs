@@ -2,7 +2,7 @@
 pub fn ser_get_transformer_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_transformer_job::GetTransformerJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transformer_job_id {
         object.key("transformerJobId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_delete_destination_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_destination::DeleteDestinationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_name {
         object.key("destinationName").string(var_1.as_str());
     }

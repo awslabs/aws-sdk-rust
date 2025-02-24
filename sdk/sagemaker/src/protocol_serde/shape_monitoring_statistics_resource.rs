@@ -2,7 +2,7 @@
 pub fn ser_monitoring_statistics_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringStatisticsResource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_uri {
         object.key("S3Uri").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_monitoring_statistics_resource(
 
 pub(crate) fn de_monitoring_statistics_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MonitoringStatisticsResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MonitoringStatisticsResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

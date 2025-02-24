@@ -2,7 +2,7 @@
 pub fn ser_iceberg_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IcebergDestinationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_table_configuration_list {
         let mut array_2 = object.key("DestinationTableConfigurationList").start_array();
         for item_3 in var_1 {

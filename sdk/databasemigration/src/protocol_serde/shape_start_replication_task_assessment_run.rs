@@ -245,7 +245,7 @@ pub fn de_start_replication_task_assessment_run_http_response(
 
 pub fn ser_start_replication_task_assessment_run_input(
     input: &crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_replication_task_assessment_run_input::ser_start_replication_task_assessment_run_input_input(
@@ -259,7 +259,7 @@ pub fn ser_start_replication_task_assessment_run_input(
 pub(crate) fn de_start_replication_task_assessment_run(
     value: &[u8],
     mut builder: crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

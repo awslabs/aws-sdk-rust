@@ -109,7 +109,7 @@ pub fn de_list_job_executions_for_thing_http_response(
 pub(crate) fn de_list_job_executions_for_thing(
     value: &[u8],
     mut builder: crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_job_executions_for_thing::builders::ListJobExecutionsForThingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

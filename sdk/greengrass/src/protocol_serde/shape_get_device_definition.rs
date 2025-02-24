@@ -61,7 +61,7 @@ pub fn de_get_device_definition_http_response(
 pub(crate) fn de_get_device_definition(
     value: &[u8],
     mut builder: crate::operation::get_device_definition::builders::GetDeviceDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_device_definition::builders::GetDeviceDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

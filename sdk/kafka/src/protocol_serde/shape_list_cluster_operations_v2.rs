@@ -157,7 +157,7 @@ pub fn de_list_cluster_operations_v2_http_response(
 pub(crate) fn de_list_cluster_operations_v2(
     value: &[u8],
     mut builder: crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2OutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_cluster_operations_v2::builders::ListClusterOperationsV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

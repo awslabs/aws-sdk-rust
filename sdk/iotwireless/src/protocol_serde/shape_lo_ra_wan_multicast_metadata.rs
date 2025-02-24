@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_multicast_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanMulticastMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.f_port {
         object.key("FPort").number(
             #[allow(clippy::useless_conversion)]

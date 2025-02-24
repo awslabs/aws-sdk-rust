@@ -60,14 +60,14 @@ pub fn de_list_source_credentials_http_response(
 
 pub fn ser_list_source_credentials_input(
     _input: &crate::operation::list_source_credentials::ListSourceCredentialsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_list_source_credentials(
     value: &[u8],
     mut builder: crate::operation::list_source_credentials::builders::ListSourceCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_source_credentials::builders::ListSourceCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

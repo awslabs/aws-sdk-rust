@@ -2,7 +2,7 @@
 pub fn ser_revoke_signature_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::revoke_signature::RevokeSignatureInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_owner {
         object.key("jobOwner").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_resource_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_name {
         object.key("resourceName").string(var_1.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_resource_mapping(
 
 pub(crate) fn de_resource_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResourceMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResourceMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -90,7 +90,7 @@ pub fn de_describe_valid_db_instance_modifications_http_response(
 pub fn de_describe_valid_db_instance_modifications(
     inp: &[u8],
     mut builder: crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

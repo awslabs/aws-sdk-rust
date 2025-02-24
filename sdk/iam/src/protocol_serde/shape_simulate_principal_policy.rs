@@ -96,7 +96,10 @@ pub fn de_simulate_principal_policy_http_response(
 pub fn de_simulate_principal_policy(
     inp: &[u8],
     mut builder: crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder,
-) -> Result<crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

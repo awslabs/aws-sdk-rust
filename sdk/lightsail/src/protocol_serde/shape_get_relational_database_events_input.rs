@@ -2,7 +2,7 @@
 pub fn ser_get_relational_database_events_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_relational_database_events::GetRelationalDatabaseEventsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relational_database_name {
         object.key("relationalDatabaseName").string(var_1.as_str());
     }

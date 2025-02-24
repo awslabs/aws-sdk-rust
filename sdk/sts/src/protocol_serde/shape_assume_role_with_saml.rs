@@ -146,7 +146,8 @@ pub fn de_assume_role_with_saml_http_response(
 pub fn de_assume_role_with_saml(
     inp: &[u8],
     mut builder: crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder,
-) -> Result<crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

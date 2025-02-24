@@ -2,7 +2,7 @@
 pub fn ser_comment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Comment,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("message").string(input.message.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_comment(
 
 pub(crate) fn de_comment<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Comment>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Comment>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

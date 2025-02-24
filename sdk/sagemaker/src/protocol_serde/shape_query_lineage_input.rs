@@ -2,7 +2,7 @@
 pub fn ser_query_lineage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::query_lineage::QueryLineageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.start_arns {
         let mut array_2 = object.key("StartArns").start_array();
         for item_3 in var_1 {

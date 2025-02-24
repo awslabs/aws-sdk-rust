@@ -113,7 +113,7 @@ pub fn de_get_request_validator_http_response(
 pub(crate) fn de_get_request_validator(
     value: &[u8],
     mut builder: crate::operation::get_request_validator::builders::GetRequestValidatorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_request_validator::builders::GetRequestValidatorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

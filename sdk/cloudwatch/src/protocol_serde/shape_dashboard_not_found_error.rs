@@ -3,7 +3,7 @@
 pub fn de_dashboard_not_found_error_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DashboardNotFoundErrorBuilder,
-) -> Result<crate::types::error::builders::DashboardNotFoundErrorBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::DashboardNotFoundErrorBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

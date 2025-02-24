@@ -117,7 +117,7 @@ pub fn de_batch_put_data_quality_statistic_annotation_http_response(
 
 pub fn ser_batch_put_data_quality_statistic_annotation_input(
     input: &crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_put_data_quality_statistic_annotation_input::ser_batch_put_data_quality_statistic_annotation_input_input(
@@ -131,7 +131,7 @@ pub fn ser_batch_put_data_quality_statistic_annotation_input(
 pub(crate) fn de_batch_put_data_quality_statistic_annotation(
     value: &[u8],
     mut builder: crate::operation::batch_put_data_quality_statistic_annotation::builders::BatchPutDataQualityStatisticAnnotationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_put_data_quality_statistic_annotation::builders::BatchPutDataQualityStatisticAnnotationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

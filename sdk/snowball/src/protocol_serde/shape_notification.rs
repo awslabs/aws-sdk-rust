@@ -2,7 +2,7 @@
 pub fn ser_notification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Notification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sns_topic_arn {
         object.key("SnsTopicARN").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_notification(
 
 pub(crate) fn de_notification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Notification>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Notification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

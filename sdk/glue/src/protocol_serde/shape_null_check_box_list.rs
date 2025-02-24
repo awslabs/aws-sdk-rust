@@ -2,7 +2,7 @@
 pub fn ser_null_check_box_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NullCheckBoxList,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_empty {
         object.key("IsEmpty").boolean(*var_1);
     }
@@ -17,7 +17,7 @@ pub fn ser_null_check_box_list(
 
 pub(crate) fn de_null_check_box_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NullCheckBoxList>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NullCheckBoxList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

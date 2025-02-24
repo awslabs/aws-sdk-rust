@@ -41,7 +41,7 @@ pub fn de_describe_instance_credit_specifications_http_response(
 pub fn de_describe_instance_credit_specifications(
     inp: &[u8],
     mut builder: crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

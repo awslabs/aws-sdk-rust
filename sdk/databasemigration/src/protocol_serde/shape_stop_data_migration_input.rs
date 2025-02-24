@@ -2,7 +2,7 @@
 pub fn ser_stop_data_migration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_data_migration::StopDataMigrationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_migration_identifier {
         object.key("DataMigrationIdentifier").string(var_1.as_str());
     }

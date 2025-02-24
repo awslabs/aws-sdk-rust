@@ -176,7 +176,7 @@ pub fn de_create_phone_number_order_http_response(
 
 pub fn ser_create_phone_number_order_input(
     input: &crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_phone_number_order_input::ser_create_phone_number_order_input_input(&mut object, input)?;
@@ -187,7 +187,7 @@ pub fn ser_create_phone_number_order_input(
 pub(crate) fn de_create_phone_number_order(
     value: &[u8],
     mut builder: crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

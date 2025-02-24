@@ -112,7 +112,10 @@ pub fn de_failover_global_cluster_http_response(
 pub fn de_failover_global_cluster(
     inp: &[u8],
     mut builder: crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder,
-) -> Result<crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::failover_global_cluster::builders::FailoverGlobalClusterOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

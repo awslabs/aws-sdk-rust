@@ -254,7 +254,7 @@ pub fn de_send_serial_console_ssh_public_key_http_response(
 
 pub fn ser_send_serial_console_ssh_public_key_input(
     input: &crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_serial_console_ssh_public_key_input::ser_send_serial_console_ssh_public_key_input_input(&mut object, input)?;
@@ -265,7 +265,7 @@ pub fn ser_send_serial_console_ssh_public_key_input(
 pub(crate) fn de_send_serial_console_ssh_public_key(
     value: &[u8],
     mut builder: crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

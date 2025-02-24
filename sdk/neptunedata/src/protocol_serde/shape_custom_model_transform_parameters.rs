@@ -2,7 +2,7 @@
 pub fn ser_custom_model_transform_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomModelTransformParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceS3DirectoryPath").string(input.source_s3_directory_path.as_str());
     }

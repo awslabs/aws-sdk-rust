@@ -2,7 +2,7 @@
 pub fn ser_open_id_connect_group_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenIdConnectGroupConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("groupClaim").string(input.group_claim.as_str());
     }

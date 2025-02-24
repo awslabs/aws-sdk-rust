@@ -2,7 +2,7 @@
 pub fn ser_start_bulk_associate_wireless_device_with_multicast_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_string {
         object.key("QueryString").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_metadata_updates(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetadataUpdates,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::MetadataUpdates::DicomUpdates(inner) => {
             #[allow(unused_mut)]

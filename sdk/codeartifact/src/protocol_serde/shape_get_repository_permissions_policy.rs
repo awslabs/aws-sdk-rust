@@ -128,7 +128,7 @@ pub fn de_get_repository_permissions_policy_http_response(
 pub(crate) fn de_get_repository_permissions_policy(
     value: &[u8],
     mut builder: crate::operation::get_repository_permissions_policy::builders::GetRepositoryPermissionsPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_repository_permissions_policy::builders::GetRepositoryPermissionsPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

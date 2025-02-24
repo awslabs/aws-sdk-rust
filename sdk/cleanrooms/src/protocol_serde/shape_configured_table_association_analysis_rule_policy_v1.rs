@@ -2,7 +2,7 @@
 pub fn ser_configured_table_association_analysis_rule_policy_v1(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1::List(inner) => {
             #[allow(unused_mut)]
@@ -39,7 +39,10 @@ pub fn ser_configured_table_association_analysis_rule_policy_v1(
 
 pub(crate) fn de_configured_table_association_analysis_rule_policy_v1<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicyV1>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

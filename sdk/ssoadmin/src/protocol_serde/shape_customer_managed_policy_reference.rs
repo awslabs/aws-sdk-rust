@@ -2,7 +2,7 @@
 pub fn ser_customer_managed_policy_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomerManagedPolicyReference,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_customer_managed_policy_reference(
 
 pub(crate) fn de_customer_managed_policy_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CustomerManagedPolicyReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CustomerManagedPolicyReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

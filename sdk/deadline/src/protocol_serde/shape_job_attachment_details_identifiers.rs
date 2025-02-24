@@ -2,7 +2,7 @@
 pub fn ser_job_attachment_details_identifiers(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobAttachmentDetailsIdentifiers,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("jobId").string(input.job_id.as_str());
     }

@@ -17,7 +17,7 @@ pub(crate) fn de_location_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_invalidation(inp: &[u8]) -> Result<crate::types::Invalidation, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_invalidation(inp: &[u8]) -> std::result::Result<crate::types::Invalidation, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

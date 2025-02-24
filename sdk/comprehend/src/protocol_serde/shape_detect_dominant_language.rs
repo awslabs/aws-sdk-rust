@@ -99,7 +99,7 @@ pub fn de_detect_dominant_language_http_response(
 
 pub fn ser_detect_dominant_language_input(
     input: &crate::operation::detect_dominant_language::DetectDominantLanguageInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_detect_dominant_language_input::ser_detect_dominant_language_input_input(&mut object, input)?;
@@ -110,7 +110,7 @@ pub fn ser_detect_dominant_language_input(
 pub(crate) fn de_detect_dominant_language(
     value: &[u8],
     mut builder: crate::operation::detect_dominant_language::builders::DetectDominantLanguageOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::detect_dominant_language::builders::DetectDominantLanguageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

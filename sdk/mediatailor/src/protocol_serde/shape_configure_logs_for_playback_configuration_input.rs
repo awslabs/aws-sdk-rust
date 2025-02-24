@@ -2,7 +2,7 @@
 pub fn ser_configure_logs_for_playback_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled_logging_strategies {
         let mut array_2 = object.key("EnabledLoggingStrategies").start_array();
         for item_3 in var_1 {

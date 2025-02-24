@@ -39,7 +39,10 @@ pub fn de_check_dns_availability_http_response(
 pub fn de_check_dns_availability(
     inp: &[u8],
     mut builder: crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder,
-) -> Result<crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::check_dns_availability::builders::CheckDnsAvailabilityOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

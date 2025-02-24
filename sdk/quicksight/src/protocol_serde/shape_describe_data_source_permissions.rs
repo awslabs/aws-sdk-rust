@@ -132,7 +132,7 @@ pub fn de_describe_data_source_permissions_http_response(
 pub(crate) fn de_describe_data_source_permissions(
     value: &[u8],
     mut builder: crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_data_source_permissions::builders::DescribeDataSourcePermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

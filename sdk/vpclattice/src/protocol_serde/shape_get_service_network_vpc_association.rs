@@ -137,7 +137,7 @@ pub fn de_get_service_network_vpc_association_http_response(
 pub(crate) fn de_get_service_network_vpc_association(
     value: &[u8],
     mut builder: crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

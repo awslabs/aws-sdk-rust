@@ -179,14 +179,14 @@ pub fn de_get_association_for_service_quota_template_http_response(
 
 pub fn ser_get_association_for_service_quota_template_input(
     _input: &crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_association_for_service_quota_template(
     value: &[u8],
     mut builder: crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_association_for_service_quota_template::builders::GetAssociationForServiceQuotaTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

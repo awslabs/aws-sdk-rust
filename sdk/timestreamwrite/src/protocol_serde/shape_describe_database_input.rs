@@ -2,7 +2,7 @@
 pub fn ser_describe_database_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_database::DescribeDatabaseInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database_name {
         object.key("DatabaseName").string(var_1.as_str());
     }

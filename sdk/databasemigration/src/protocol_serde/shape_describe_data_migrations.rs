@@ -94,7 +94,7 @@ pub fn de_describe_data_migrations_http_response(
 
 pub fn ser_describe_data_migrations_input(
     input: &crate::operation::describe_data_migrations::DescribeDataMigrationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_data_migrations_input::ser_describe_data_migrations_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_describe_data_migrations_input(
 pub(crate) fn de_describe_data_migrations(
     value: &[u8],
     mut builder: crate::operation::describe_data_migrations::builders::DescribeDataMigrationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_data_migrations::builders::DescribeDataMigrationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

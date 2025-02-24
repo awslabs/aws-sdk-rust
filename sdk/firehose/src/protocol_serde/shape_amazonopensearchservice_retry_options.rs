@@ -2,7 +2,7 @@
 pub fn ser_amazonopensearchservice_retry_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonopensearchserviceRetryOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration_in_seconds {
         object.key("DurationInSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_amazonopensearchservice_retry_options(
 
 pub(crate) fn de_amazonopensearchservice_retry_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AmazonopensearchserviceRetryOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AmazonopensearchserviceRetryOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

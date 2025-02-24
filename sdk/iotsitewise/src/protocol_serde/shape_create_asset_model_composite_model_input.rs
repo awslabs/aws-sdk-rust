@@ -2,7 +2,7 @@
 pub fn ser_create_asset_model_composite_model_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asset_model_composite_model_description {
         object.key("assetModelCompositeModelDescription").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_partitioned_prefix(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PartitionedPrefix, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::PartitionedPrefix, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PartitionedPrefix::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -30,7 +30,7 @@ pub fn de_partitioned_prefix(
 pub fn ser_partitioned_prefix(
     input: &crate::types::PartitionedPrefix,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_2) = &input.partition_date_source {

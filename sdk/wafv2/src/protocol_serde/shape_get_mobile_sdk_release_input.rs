@@ -2,7 +2,7 @@
 pub fn ser_get_mobile_sdk_release_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_mobile_sdk_release::GetMobileSdkReleaseInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.platform {
         object.key("Platform").string(var_1.as_str());
     }

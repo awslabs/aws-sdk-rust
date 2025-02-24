@@ -135,7 +135,7 @@ pub fn de_assume_fleet_role_for_read_http_response(
 pub(crate) fn de_assume_fleet_role_for_read(
     value: &[u8],
     mut builder: crate::operation::assume_fleet_role_for_read::builders::AssumeFleetRoleForReadOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::assume_fleet_role_for_read::builders::AssumeFleetRoleForReadOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

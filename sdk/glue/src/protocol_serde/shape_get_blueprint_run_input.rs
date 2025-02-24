@@ -2,7 +2,7 @@
 pub fn ser_get_blueprint_run_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_blueprint_run::GetBlueprintRunInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blueprint_name {
         object.key("BlueprintName").string(var_1.as_str());
     }

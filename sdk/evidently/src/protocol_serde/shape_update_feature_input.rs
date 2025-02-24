@@ -2,7 +2,7 @@
 pub fn ser_update_feature_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_feature::UpdateFeatureInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.add_or_update_variations {
         let mut array_2 = object.key("addOrUpdateVariations").start_array();
         for item_3 in var_1 {

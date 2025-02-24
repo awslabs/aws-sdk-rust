@@ -106,7 +106,7 @@ pub fn de_get_backend_environment_http_response(
 pub(crate) fn de_get_backend_environment(
     value: &[u8],
     mut builder: crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_backend_environment::builders::GetBackendEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

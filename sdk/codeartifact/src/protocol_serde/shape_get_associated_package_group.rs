@@ -106,7 +106,7 @@ pub fn de_get_associated_package_group_http_response(
 pub(crate) fn de_get_associated_package_group(
     value: &[u8],
     mut builder: crate::operation::get_associated_package_group::builders::GetAssociatedPackageGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_associated_package_group::builders::GetAssociatedPackageGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

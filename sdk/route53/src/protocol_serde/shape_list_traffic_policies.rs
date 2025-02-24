@@ -64,7 +64,8 @@ pub fn de_list_traffic_policies_http_response(
 pub fn de_list_traffic_policies(
     inp: &[u8],
     mut builder: crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder,
-) -> Result<crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_aws_step_function_state_machine_logging_configuration_destinations_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_logs_log_group {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CloudWatchLogsLogGroup").start_object();
@@ -14,7 +14,7 @@ pub fn ser_aws_step_function_state_machine_logging_configuration_destinations_de
 
 pub(crate) fn de_aws_step_function_state_machine_logging_configuration_destinations_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_bucket_versioning_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketVersioningConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_mfa_delete_enabled {
         object.key("IsMfaDeleteEnabled").boolean(*var_1);
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_s3_bucket_bucket_versioning_configuration(
 
 pub(crate) fn de_aws_s3_bucket_bucket_versioning_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsS3BucketBucketVersioningConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsS3BucketBucketVersioningConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

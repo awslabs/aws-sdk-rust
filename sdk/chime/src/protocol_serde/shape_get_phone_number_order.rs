@@ -153,7 +153,7 @@ pub fn de_get_phone_number_order_http_response(
 pub(crate) fn de_get_phone_number_order(
     value: &[u8],
     mut builder: crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

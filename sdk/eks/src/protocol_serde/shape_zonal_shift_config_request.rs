@@ -2,7 +2,7 @@
 pub fn ser_zonal_shift_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ZonalShiftConfigRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("enabled").boolean(*var_1);
     }

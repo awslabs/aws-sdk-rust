@@ -59,7 +59,7 @@ pub fn ser_put_access_grants_instance_resource_policy_headers(
 
 pub fn ser_put_access_grants_instance_resource_policy_op_input(
     input: &crate::operation::put_access_grants_instance_resource_policy::PutAccessGrantsInstanceResourcePolicyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -76,7 +76,7 @@ pub fn ser_put_access_grants_instance_resource_policy_op_input(
 pub fn de_put_access_grants_instance_resource_policy(
     inp: &[u8],
     mut builder: crate::operation::put_access_grants_instance_resource_policy::builders::PutAccessGrantsInstanceResourcePolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::put_access_grants_instance_resource_policy::builders::PutAccessGrantsInstanceResourcePolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

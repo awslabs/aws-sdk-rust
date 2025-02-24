@@ -137,7 +137,7 @@ pub fn de_delete_cluster_snapshot_http_response(
 pub(crate) fn de_delete_cluster_snapshot(
     value: &[u8],
     mut builder: crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

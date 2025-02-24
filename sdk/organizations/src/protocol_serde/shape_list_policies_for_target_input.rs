@@ -2,7 +2,7 @@
 pub fn ser_list_policies_for_target_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_policies_for_target::ListPoliciesForTargetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_id {
         object.key("TargetId").string(var_1.as_str());
     }

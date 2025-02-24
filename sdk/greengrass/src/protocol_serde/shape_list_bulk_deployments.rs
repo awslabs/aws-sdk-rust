@@ -61,7 +61,7 @@ pub fn de_list_bulk_deployments_http_response(
 pub(crate) fn de_list_bulk_deployments(
     value: &[u8],
     mut builder: crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_bulk_deployments::builders::ListBulkDeploymentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

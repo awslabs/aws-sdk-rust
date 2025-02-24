@@ -2,7 +2,7 @@
 pub(crate) fn de_xks_proxy_incorrect_authentication_credential_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::XksProxyIncorrectAuthenticationCredentialExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::XksProxyIncorrectAuthenticationCredentialExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

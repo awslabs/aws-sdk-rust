@@ -2,7 +2,7 @@
 pub fn ser_restore_testing_selection_for_create(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RestoreTestingSelectionForCreate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IamRoleArn").string(input.iam_role_arn.as_str());
     }

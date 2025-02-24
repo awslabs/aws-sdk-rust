@@ -39,7 +39,7 @@ pub fn de_delete_verified_access_trust_provider_http_response(
 pub fn de_delete_verified_access_trust_provider(
     inp: &[u8],
     mut builder: crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_verified_access_trust_provider::builders::DeleteVerifiedAccessTrustProviderOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

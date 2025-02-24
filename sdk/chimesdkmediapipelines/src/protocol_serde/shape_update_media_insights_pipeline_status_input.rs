@@ -2,7 +2,7 @@
 pub fn ser_update_media_insights_pipeline_status_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_media_insights_pipeline_status::UpdateMediaInsightsPipelineStatusInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update_status {
         object.key("UpdateStatus").string(var_1.as_str());
     }

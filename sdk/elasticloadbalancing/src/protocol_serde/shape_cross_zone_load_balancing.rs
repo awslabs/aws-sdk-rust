@@ -3,7 +3,7 @@
 pub fn ser_cross_zone_load_balancing(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CrossZoneLoadBalancing,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     {
@@ -15,7 +15,7 @@ pub fn ser_cross_zone_load_balancing(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cross_zone_load_balancing(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CrossZoneLoadBalancing, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CrossZoneLoadBalancing, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CrossZoneLoadBalancing::builder();
     while let Some(mut tag) = decoder.next_tag() {

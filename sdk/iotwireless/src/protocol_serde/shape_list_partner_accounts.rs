@@ -106,7 +106,7 @@ pub fn de_list_partner_accounts_http_response(
 pub(crate) fn de_list_partner_accounts(
     value: &[u8],
     mut builder: crate::operation::list_partner_accounts::builders::ListPartnerAccountsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_partner_accounts::builders::ListPartnerAccountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

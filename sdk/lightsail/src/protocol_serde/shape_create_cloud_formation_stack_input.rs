@@ -2,7 +2,7 @@
 pub fn ser_create_cloud_formation_stack_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_cloud_formation_stack::CreateCloudFormationStackInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instances {
         let mut array_2 = object.key("instances").start_array();
         for item_3 in var_1 {

@@ -97,7 +97,7 @@ pub fn de_list_content_associations_http_response(
 pub(crate) fn de_list_content_associations(
     value: &[u8],
     mut builder: crate::operation::list_content_associations::builders::ListContentAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_content_associations::builders::ListContentAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

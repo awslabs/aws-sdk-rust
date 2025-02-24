@@ -163,7 +163,7 @@ pub fn de_associate_aws_account_with_partner_account_http_response(
 
 pub fn ser_associate_aws_account_with_partner_account_input(
     input: &crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_aws_account_with_partner_account_input::ser_associate_aws_account_with_partner_account_input_input(
@@ -177,7 +177,7 @@ pub fn ser_associate_aws_account_with_partner_account_input(
 pub(crate) fn de_associate_aws_account_with_partner_account(
     value: &[u8],
     mut builder: crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

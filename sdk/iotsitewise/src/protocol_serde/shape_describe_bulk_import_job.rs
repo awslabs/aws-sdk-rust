@@ -104,7 +104,7 @@ pub fn de_describe_bulk_import_job_http_response(
 pub(crate) fn de_describe_bulk_import_job(
     value: &[u8],
     mut builder: crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_bulk_import_job::builders::DescribeBulkImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -58,7 +58,7 @@ pub fn de_list_saml_providers_http_response(
 pub fn de_list_saml_providers(
     inp: &[u8],
     mut builder: crate::operation::list_saml_providers::builders::ListSamlProvidersOutputBuilder,
-) -> Result<crate::operation::list_saml_providers::builders::ListSamlProvidersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_saml_providers::builders::ListSamlProvidersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

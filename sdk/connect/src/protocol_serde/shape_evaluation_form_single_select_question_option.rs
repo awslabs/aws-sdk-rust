@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_single_select_question_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormSingleSelectQuestionOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RefId").string(input.ref_id.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_evaluation_form_single_select_question_option(
 
 pub(crate) fn de_evaluation_form_single_select_question_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationFormSingleSelectQuestionOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationFormSingleSelectQuestionOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -3,7 +3,7 @@
 pub fn ser_connection_settings(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ConnectionSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IdleTimeout");
     {
@@ -18,7 +18,7 @@ pub fn ser_connection_settings(
 #[allow(clippy::needless_question_mark)]
 pub fn de_connection_settings(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ConnectionSettings, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ConnectionSettings, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ConnectionSettings::builder();
     while let Some(mut tag) = decoder.next_tag() {

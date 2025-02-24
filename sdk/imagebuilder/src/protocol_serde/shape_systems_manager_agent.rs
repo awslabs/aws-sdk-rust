@@ -2,7 +2,7 @@
 pub fn ser_systems_manager_agent(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SystemsManagerAgent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.uninstall_after_build {
         object.key("uninstallAfterBuild").boolean(*var_1);
     }
@@ -11,7 +11,7 @@ pub fn ser_systems_manager_agent(
 
 pub(crate) fn de_systems_manager_agent<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SystemsManagerAgent>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SystemsManagerAgent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

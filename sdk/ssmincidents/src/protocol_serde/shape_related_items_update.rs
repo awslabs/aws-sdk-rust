@@ -2,7 +2,7 @@
 pub fn ser_related_items_update(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelatedItemsUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RelatedItemsUpdate::ItemToAdd(inner) => {
             #[allow(unused_mut)]

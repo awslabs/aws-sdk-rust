@@ -106,7 +106,7 @@ pub fn de_get_resource_snapshot_http_response(
 
 pub fn ser_get_resource_snapshot_input(
     input: &crate::operation::get_resource_snapshot::GetResourceSnapshotInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_resource_snapshot_input::ser_get_resource_snapshot_input_input(&mut object, input)?;
@@ -117,7 +117,7 @@ pub fn ser_get_resource_snapshot_input(
 pub(crate) fn de_get_resource_snapshot(
     value: &[u8],
     mut builder: crate::operation::get_resource_snapshot::builders::GetResourceSnapshotOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_resource_snapshot::builders::GetResourceSnapshotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

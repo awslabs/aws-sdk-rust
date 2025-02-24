@@ -87,7 +87,7 @@ pub fn de_list_resource_scan_related_resources_http_response(
 pub fn de_list_resource_scan_related_resources(
     inp: &[u8],
     mut builder: crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_resource_scan_related_resources::builders::ListResourceScanRelatedResourcesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

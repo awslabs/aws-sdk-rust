@@ -39,7 +39,8 @@ pub fn de_describe_environments_http_response(
 pub fn de_describe_environments(
     inp: &[u8],
     mut builder: crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder,
-) -> Result<crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::describe_environments::builders::DescribeEnvironmentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

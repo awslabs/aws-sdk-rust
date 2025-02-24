@@ -2,7 +2,7 @@
 pub fn ser_dynamic_card_verification_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DynamicCardVerificationCode,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("UnpredictableNumber").string(input.unpredictable_number.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_batch_get_calculated_attribute_for_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_calculated_attribute_for_profile::BatchGetCalculatedAttributeForProfileInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.condition_overrides {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConditionOverrides").start_object();

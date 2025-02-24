@@ -3,7 +3,7 @@
 pub fn de_traffic_policy_instance_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TrafficPolicyInstanceAlreadyExistsBuilder,
-) -> Result<crate::types::error::builders::TrafficPolicyInstanceAlreadyExistsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TrafficPolicyInstanceAlreadyExistsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

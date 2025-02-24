@@ -91,7 +91,7 @@ pub fn de_list_application_instance_node_instances_http_response(
 pub(crate) fn de_list_application_instance_node_instances(
     value: &[u8],
     mut builder: crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -102,7 +102,10 @@ pub fn de_list_managed_insight_rules_http_response(
 pub fn de_list_managed_insight_rules(
     inp: &[u8],
     mut builder: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
-) -> Result<crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

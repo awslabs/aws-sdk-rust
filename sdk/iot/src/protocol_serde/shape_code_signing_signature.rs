@@ -2,7 +2,7 @@
 pub fn ser_code_signing_signature(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeSigningSignature,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inline_document {
         object.key("inlineDocument").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
@@ -11,7 +11,7 @@ pub fn ser_code_signing_signature(
 
 pub(crate) fn de_code_signing_signature<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodeSigningSignature>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodeSigningSignature>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

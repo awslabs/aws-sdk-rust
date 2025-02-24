@@ -81,6 +81,6 @@ pub fn de_delete_usage_report_subscription_http_response(
 
 pub fn ser_delete_usage_report_subscription_input(
     _input: &crate::operation::delete_usage_report_subscription::DeleteUsageReportSubscriptionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

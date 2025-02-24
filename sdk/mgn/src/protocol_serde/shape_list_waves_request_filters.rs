@@ -2,7 +2,7 @@
 pub fn ser_list_waves_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListWavesRequestFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.wave_ids {
         let mut array_2 = object.key("waveIDs").start_array();
         for item_3 in var_1 {

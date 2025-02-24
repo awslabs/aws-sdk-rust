@@ -2,7 +2,7 @@
 pub fn ser_test_event_pattern_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_event_pattern::TestEventPatternInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_pattern {
         object.key("EventPattern").string(var_1.as_str());
     }

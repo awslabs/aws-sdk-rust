@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_clustering_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationClusteringOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Algorithm").string(input.algorithm.as_str());
     }

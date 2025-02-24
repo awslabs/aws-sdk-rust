@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_numeric_question_automation(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormNumericQuestionAutomation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue(inner) => {
             #[allow(unused_mut)]
@@ -24,7 +24,7 @@ pub fn ser_evaluation_form_numeric_question_automation(
 
 pub(crate) fn de_evaluation_form_numeric_question_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationFormNumericQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationFormNumericQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_media_connect_flow_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaConnectFlowRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flow_arn {
         object.key("flowArn").string(var_1.as_str());
     }

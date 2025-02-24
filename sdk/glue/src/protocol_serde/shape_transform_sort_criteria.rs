@@ -2,7 +2,7 @@
 pub fn ser_transform_sort_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TransformSortCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Column").string(input.column.as_str());
     }

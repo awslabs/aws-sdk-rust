@@ -244,7 +244,7 @@ pub fn de_invite_account_to_organization_http_response(
 
 pub fn ser_invite_account_to_organization_input(
     input: &crate::operation::invite_account_to_organization::InviteAccountToOrganizationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_invite_account_to_organization_input::ser_invite_account_to_organization_input_input(&mut object, input)?;
@@ -255,7 +255,7 @@ pub fn ser_invite_account_to_organization_input(
 pub(crate) fn de_invite_account_to_organization(
     value: &[u8],
     mut builder: crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::invite_account_to_organization::builders::InviteAccountToOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

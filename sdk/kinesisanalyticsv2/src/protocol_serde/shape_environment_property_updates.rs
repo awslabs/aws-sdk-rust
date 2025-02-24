@@ -2,7 +2,7 @@
 pub fn ser_environment_property_updates(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnvironmentPropertyUpdates,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("PropertyGroups").start_array();
         for item_2 in &input.property_groups {

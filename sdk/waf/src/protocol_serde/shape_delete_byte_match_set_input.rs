@@ -2,7 +2,7 @@
 pub fn ser_delete_byte_match_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_byte_match_set::DeleteByteMatchSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.byte_match_set_id {
         object.key("ByteMatchSetId").string(var_1.as_str());
     }

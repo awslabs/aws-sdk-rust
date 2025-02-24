@@ -2,7 +2,7 @@
 pub fn ser_codegen_generic_data_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenGenericDataField,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("dataType").string(input.data_type.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_codegen_generic_data_field(
 
 pub(crate) fn de_codegen_generic_data_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodegenGenericDataField>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodegenGenericDataField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

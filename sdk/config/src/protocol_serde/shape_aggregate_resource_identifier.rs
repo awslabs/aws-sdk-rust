@@ -2,7 +2,7 @@
 pub fn ser_aggregate_resource_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateResourceIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SourceAccountId").string(input.source_account_id.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_aggregate_resource_identifier(
 
 pub(crate) fn de_aggregate_resource_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AggregateResourceIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AggregateResourceIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

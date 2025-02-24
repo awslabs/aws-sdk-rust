@@ -2,7 +2,7 @@
 pub fn ser_body_section_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BodySectionContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.layout {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Layout").start_object();
@@ -14,7 +14,7 @@ pub fn ser_body_section_content(
 
 pub(crate) fn de_body_section_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BodySectionContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BodySectionContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

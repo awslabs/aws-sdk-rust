@@ -85,7 +85,7 @@ pub fn de_disassociate_role_from_group_http_response(
 pub(crate) fn de_disassociate_role_from_group(
     value: &[u8],
     mut builder: crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_role_from_group::builders::DisassociateRoleFromGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

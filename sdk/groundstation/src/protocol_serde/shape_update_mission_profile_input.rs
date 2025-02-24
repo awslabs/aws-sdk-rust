@@ -2,7 +2,7 @@
 pub fn ser_update_mission_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_mission_profile::UpdateMissionProfileInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_post_pass_duration_seconds {
         object.key("contactPostPassDurationSeconds").number(
             #[allow(clippy::useless_conversion)]

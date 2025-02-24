@@ -2,7 +2,7 @@
 pub fn ser_describe_index_policies_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_index_policies::DescribeIndexPoliciesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_identifiers {
         let mut array_2 = object.key("logGroupIdentifiers").start_array();
         for item_3 in var_1 {

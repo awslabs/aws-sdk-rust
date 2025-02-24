@@ -116,7 +116,7 @@ pub fn de_list_wireless_gateway_task_definitions_http_response(
 pub(crate) fn de_list_wireless_gateway_task_definitions(
     value: &[u8],
     mut builder: crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_wireless_gateway_task_definitions::builders::ListWirelessGatewayTaskDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

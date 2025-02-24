@@ -2,7 +2,7 @@
 pub fn ser_analysis_rule_custom(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisRuleCustom,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("allowedAnalyses").start_array();
         for item_2 in &input.allowed_analyses {
@@ -44,7 +44,7 @@ pub fn ser_analysis_rule_custom(
 
 pub(crate) fn de_analysis_rule_custom<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AnalysisRuleCustom>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AnalysisRuleCustom>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

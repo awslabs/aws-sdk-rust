@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_successful_queued_purchase_deletion(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SuccessfulQueuedPurchaseDeletion, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SuccessfulQueuedPurchaseDeletion, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SuccessfulQueuedPurchaseDeletion::builder();
     while let Some(mut tag) = decoder.next_tag() {

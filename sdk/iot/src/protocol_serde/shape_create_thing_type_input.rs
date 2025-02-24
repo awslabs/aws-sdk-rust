@@ -2,7 +2,7 @@
 pub fn ser_create_thing_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_thing_type::CreateThingTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tags {
         let mut array_2 = object.key("tags").start_array();
         for item_3 in var_1 {

@@ -129,7 +129,7 @@ pub fn de_get_notifications_access_for_organization_http_response(
 pub(crate) fn de_get_notifications_access_for_organization(
     value: &[u8],
     mut builder: crate::operation::get_notifications_access_for_organization::builders::GetNotificationsAccessForOrganizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_notifications_access_for_organization::builders::GetNotificationsAccessForOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

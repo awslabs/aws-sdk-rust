@@ -2,7 +2,7 @@
 pub fn ser_organization_custom_policy_rule_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OrganizationCustomPolicyRuleMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }

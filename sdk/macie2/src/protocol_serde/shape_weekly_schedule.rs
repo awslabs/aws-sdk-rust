@@ -2,7 +2,7 @@
 pub fn ser_weekly_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WeeklySchedule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.day_of_week {
         object.key("dayOfWeek").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_weekly_schedule(
 
 pub(crate) fn de_weekly_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WeeklySchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WeeklySchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

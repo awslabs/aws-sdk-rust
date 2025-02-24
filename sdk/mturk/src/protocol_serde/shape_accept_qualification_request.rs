@@ -73,7 +73,7 @@ pub fn de_accept_qualification_request_http_response(
 
 pub fn ser_accept_qualification_request_input(
     input: &crate::operation::accept_qualification_request::AcceptQualificationRequestInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_accept_qualification_request_input::ser_accept_qualification_request_input_input(&mut object, input)?;

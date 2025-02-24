@@ -2,7 +2,7 @@
 pub fn ser_registered_customer_managed_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegisteredCustomerManagedKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_arn {
         object.key("KeyArn").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_registered_customer_managed_key(
 
 pub(crate) fn de_registered_customer_managed_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RegisteredCustomerManagedKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RegisteredCustomerManagedKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

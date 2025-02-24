@@ -116,7 +116,7 @@ pub fn de_delete_expression_http_response(
 pub fn de_delete_expression(
     inp: &[u8],
     mut builder: crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder,
-) -> Result<crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_expression::builders::DeleteExpressionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -77,7 +77,7 @@ pub fn de_describe_cluster_db_revisions_http_response(
 pub fn de_describe_cluster_db_revisions(
     inp: &[u8],
     mut builder: crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

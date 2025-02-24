@@ -74,7 +74,7 @@ pub fn de_disassociate_qualification_from_worker_http_response(
 
 pub fn ser_disassociate_qualification_from_worker_input(
     input: &crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_qualification_from_worker_input::ser_disassociate_qualification_from_worker_input_input(

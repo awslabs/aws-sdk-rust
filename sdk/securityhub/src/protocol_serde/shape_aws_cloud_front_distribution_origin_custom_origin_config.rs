@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_front_distribution_origin_custom_origin_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.http_port {
         object.key("HttpPort").number(
             #[allow(clippy::useless_conversion)]
@@ -44,7 +44,10 @@ pub fn ser_aws_cloud_front_distribution_origin_custom_origin_config(
 
 pub(crate) fn de_aws_cloud_front_distribution_origin_custom_origin_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

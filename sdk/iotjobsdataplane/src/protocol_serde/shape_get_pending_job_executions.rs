@@ -131,7 +131,7 @@ pub fn de_get_pending_job_executions_http_response(
 pub(crate) fn de_get_pending_job_executions(
     value: &[u8],
     mut builder: crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

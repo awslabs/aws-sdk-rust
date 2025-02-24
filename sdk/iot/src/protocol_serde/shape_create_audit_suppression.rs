@@ -127,7 +127,7 @@ pub fn de_create_audit_suppression_http_response(
 
 pub fn ser_create_audit_suppression_input(
     input: &crate::operation::create_audit_suppression::CreateAuditSuppressionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_audit_suppression_input::ser_create_audit_suppression_input_input(&mut object, input)?;

@@ -2,7 +2,7 @@
 pub fn ser_catalog_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CatalogProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_lake_access_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataLakeAccessProperties").start_object();

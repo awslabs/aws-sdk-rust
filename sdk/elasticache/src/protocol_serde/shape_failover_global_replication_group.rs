@@ -125,7 +125,7 @@ pub fn de_failover_global_replication_group_http_response(
 pub fn de_failover_global_replication_group(
     inp: &[u8],
     mut builder: crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

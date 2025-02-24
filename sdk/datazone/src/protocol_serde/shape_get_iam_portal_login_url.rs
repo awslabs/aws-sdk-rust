@@ -146,7 +146,7 @@ pub fn de_get_iam_portal_login_url_http_response(
 pub(crate) fn de_get_iam_portal_login_url(
     value: &[u8],
     mut builder: crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_iam_portal_login_url::builders::GetIamPortalLoginUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

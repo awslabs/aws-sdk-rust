@@ -43,7 +43,7 @@ pub fn de_describe_reserved_instances_modifications_http_response(
 pub fn de_describe_reserved_instances_modifications(
     inp: &[u8],
     mut builder: crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_reserved_instances_modifications::builders::DescribeReservedInstancesModificationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

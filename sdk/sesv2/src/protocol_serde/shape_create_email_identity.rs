@@ -138,7 +138,7 @@ pub fn de_create_email_identity_http_response(
 
 pub fn ser_create_email_identity_input(
     input: &crate::operation::create_email_identity::CreateEmailIdentityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_email_identity_input::ser_create_email_identity_input_input(&mut object, input)?;
@@ -149,7 +149,7 @@ pub fn ser_create_email_identity_input(
 pub(crate) fn de_create_email_identity(
     value: &[u8],
     mut builder: crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_email_identity::builders::CreateEmailIdentityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

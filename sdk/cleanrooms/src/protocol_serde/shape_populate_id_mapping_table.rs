@@ -158,7 +158,7 @@ pub fn de_populate_id_mapping_table_http_response(
 pub(crate) fn de_populate_id_mapping_table(
     value: &[u8],
     mut builder: crate::operation::populate_id_mapping_table::builders::PopulateIdMappingTableOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::populate_id_mapping_table::builders::PopulateIdMappingTableOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

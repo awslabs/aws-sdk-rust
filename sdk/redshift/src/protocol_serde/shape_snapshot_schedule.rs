@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_snapshot_schedule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SnapshotSchedule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SnapshotSchedule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SnapshotSchedule::builder();
     while let Some(mut tag) = decoder.next_tag() {

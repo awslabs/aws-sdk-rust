@@ -2,7 +2,7 @@
 pub fn ser_derive_shared_secret_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::derive_shared_secret::DeriveSharedSecretInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_id {
         object.key("KeyId").string(var_1.as_str());
     }

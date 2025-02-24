@@ -109,7 +109,7 @@ pub fn de_add_communication_to_case_http_response(
 
 pub fn ser_add_communication_to_case_input(
     input: &crate::operation::add_communication_to_case::AddCommunicationToCaseInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_add_communication_to_case_input::ser_add_communication_to_case_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_add_communication_to_case_input(
 pub(crate) fn de_add_communication_to_case(
     value: &[u8],
     mut builder: crate::operation::add_communication_to_case::builders::AddCommunicationToCaseOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::add_communication_to_case::builders::AddCommunicationToCaseOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

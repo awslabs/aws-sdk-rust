@@ -2,7 +2,7 @@
 pub fn ser_create_experiment_template_report_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateExperimentTemplateReportConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.outputs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("outputs").start_object();

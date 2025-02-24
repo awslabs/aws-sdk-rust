@@ -2,7 +2,7 @@
 pub fn ser_prompt_template(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PromptTemplate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text_prompt_template {
         object.key("textPromptTemplate").string(var_1.as_str());
     }

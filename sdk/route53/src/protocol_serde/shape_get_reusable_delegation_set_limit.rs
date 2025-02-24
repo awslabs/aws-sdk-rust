@@ -77,7 +77,7 @@ pub fn de_get_reusable_delegation_set_limit_http_response(
 pub fn de_get_reusable_delegation_set_limit(
     inp: &[u8],
     mut builder: crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

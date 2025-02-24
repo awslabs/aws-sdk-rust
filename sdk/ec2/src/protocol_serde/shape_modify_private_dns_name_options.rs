@@ -39,7 +39,7 @@ pub fn de_modify_private_dns_name_options_http_response(
 pub fn de_modify_private_dns_name_options(
     inp: &[u8],
     mut builder: crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_private_dns_name_options::builders::ModifyPrivateDnsNameOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

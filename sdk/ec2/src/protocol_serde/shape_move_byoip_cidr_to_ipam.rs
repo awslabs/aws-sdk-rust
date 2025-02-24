@@ -39,7 +39,10 @@ pub fn de_move_byoip_cidr_to_ipam_http_response(
 pub fn de_move_byoip_cidr_to_ipam(
     inp: &[u8],
     mut builder: crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder,
-) -> Result<crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::move_byoip_cidr_to_ipam::builders::MoveByoipCidrToIpamOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

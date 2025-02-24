@@ -2,7 +2,7 @@
 pub fn ser_model_training_data_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelTrainingDataChannel,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("mlInputChannelArn").string(input.ml_input_channel_arn.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_model_training_data_channel(
 
 pub(crate) fn de_model_training_data_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ModelTrainingDataChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ModelTrainingDataChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

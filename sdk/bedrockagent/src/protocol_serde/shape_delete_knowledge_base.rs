@@ -138,7 +138,7 @@ pub fn de_delete_knowledge_base_http_response(
 pub(crate) fn de_delete_knowledge_base(
     value: &[u8],
     mut builder: crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_knowledge_base::builders::DeleteKnowledgeBaseOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

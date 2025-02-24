@@ -147,7 +147,7 @@ pub fn de_get_task_protection_http_response(
 
 pub fn ser_get_task_protection_input(
     input: &crate::operation::get_task_protection::GetTaskProtectionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_task_protection_input::ser_get_task_protection_input_input(&mut object, input)?;
@@ -158,8 +158,10 @@ pub fn ser_get_task_protection_input(
 pub(crate) fn de_get_task_protection(
     value: &[u8],
     mut builder: crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder,
-) -> Result<crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::get_task_protection::builders::GetTaskProtectionOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

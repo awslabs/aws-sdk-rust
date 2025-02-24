@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_not_associated_with_pull_request_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::RepositoryNotAssociatedWithPullRequestExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::RepositoryNotAssociatedWithPullRequestExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

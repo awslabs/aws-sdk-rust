@@ -80,7 +80,7 @@ pub fn de_reject_inbound_connection_http_response(
 pub(crate) fn de_reject_inbound_connection(
     value: &[u8],
     mut builder: crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::reject_inbound_connection::builders::RejectInboundConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

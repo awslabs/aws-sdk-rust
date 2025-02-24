@@ -79,7 +79,7 @@ pub fn de_delete_db_instance_automated_backup_http_response(
 pub fn de_delete_db_instance_automated_backup(
     inp: &[u8],
     mut builder: crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

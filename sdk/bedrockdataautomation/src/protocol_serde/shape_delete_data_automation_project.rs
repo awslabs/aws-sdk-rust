@@ -126,7 +126,7 @@ pub fn de_delete_data_automation_project_http_response(
 pub(crate) fn de_delete_data_automation_project(
     value: &[u8],
     mut builder: crate::operation::delete_data_automation_project::builders::DeleteDataAutomationProjectOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_data_automation_project::builders::DeleteDataAutomationProjectOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

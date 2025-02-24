@@ -122,7 +122,7 @@ pub fn de_get_container_service_deployments_http_response(
 
 pub fn ser_get_container_service_deployments_input(
     input: &crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_container_service_deployments_input::ser_get_container_service_deployments_input_input(&mut object, input)?;
@@ -133,7 +133,7 @@ pub fn ser_get_container_service_deployments_input(
 pub(crate) fn de_get_container_service_deployments(
     value: &[u8],
     mut builder: crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

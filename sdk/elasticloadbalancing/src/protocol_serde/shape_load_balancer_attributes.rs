@@ -3,7 +3,7 @@
 pub fn ser_load_balancer_attributes(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LoadBalancerAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CrossZoneLoadBalancing");
     if let Some(var_2) = &input.cross_zone_load_balancing {
@@ -41,7 +41,7 @@ pub fn ser_load_balancer_attributes(
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_attributes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LoadBalancerAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LoadBalancerAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadBalancerAttributes::builder();
     while let Some(mut tag) = decoder.next_tag() {

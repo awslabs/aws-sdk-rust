@@ -129,7 +129,7 @@ pub fn de_get_event_bridge_rule_template_group_http_response(
 pub(crate) fn de_get_event_bridge_rule_template_group(
     value: &[u8],
     mut builder: crate::operation::get_event_bridge_rule_template_group::builders::GetEventBridgeRuleTemplateGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_event_bridge_rule_template_group::builders::GetEventBridgeRuleTemplateGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

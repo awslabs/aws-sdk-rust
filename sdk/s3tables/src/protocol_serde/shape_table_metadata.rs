@@ -2,7 +2,7 @@
 pub fn ser_table_metadata(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TableMetadata::Iceberg(inner) => {
             #[allow(unused_mut)]

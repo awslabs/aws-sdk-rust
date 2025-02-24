@@ -2,7 +2,7 @@
 pub fn ser_create_custom_key_store_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_custom_key_store::CreateCustomKeyStoreInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_key_store_name {
         object.key("CustomKeyStoreName").string(var_1.as_str());
     }

@@ -39,14 +39,14 @@ pub fn de_describe_operating_systems_http_response(
 
 pub fn ser_describe_operating_systems_input(
     _input: &crate::operation::describe_operating_systems::DescribeOperatingSystemsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_operating_systems(
     value: &[u8],
     mut builder: crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_operating_systems::builders::DescribeOperatingSystemsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

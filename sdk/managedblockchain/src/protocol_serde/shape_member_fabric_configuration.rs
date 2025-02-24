@@ -2,7 +2,7 @@
 pub fn ser_member_fabric_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MemberFabricConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AdminUsername").string(input.admin_username.as_str());
     }

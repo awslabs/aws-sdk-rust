@@ -94,7 +94,7 @@ pub fn de_get_domain_deliverability_campaign_http_response(
 pub(crate) fn de_get_domain_deliverability_campaign(
     value: &[u8],
     mut builder: crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

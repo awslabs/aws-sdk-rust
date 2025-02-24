@@ -2,7 +2,7 @@
 pub fn ser_describe_hapg_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_hapg::DescribeHapgInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hapg_arn {
         object.key("HapgArn").string(var_1.as_str());
     }

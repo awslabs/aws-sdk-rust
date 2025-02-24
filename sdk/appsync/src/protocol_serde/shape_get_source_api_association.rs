@@ -110,7 +110,7 @@ pub fn de_get_source_api_association_http_response(
 pub(crate) fn de_get_source_api_association(
     value: &[u8],
     mut builder: crate::operation::get_source_api_association::builders::GetSourceApiAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_source_api_association::builders::GetSourceApiAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

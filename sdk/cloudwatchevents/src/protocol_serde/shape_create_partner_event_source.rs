@@ -134,7 +134,7 @@ pub fn de_create_partner_event_source_http_response(
 
 pub fn ser_create_partner_event_source_input(
     input: &crate::operation::create_partner_event_source::CreatePartnerEventSourceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_partner_event_source_input::ser_create_partner_event_source_input_input(&mut object, input)?;
@@ -145,7 +145,7 @@ pub fn ser_create_partner_event_source_input(
 pub(crate) fn de_create_partner_event_source(
     value: &[u8],
     mut builder: crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_partner_event_source::builders::CreatePartnerEventSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

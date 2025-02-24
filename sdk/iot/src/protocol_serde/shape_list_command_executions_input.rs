@@ -2,7 +2,7 @@
 pub fn ser_list_command_executions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_command_executions::ListCommandExecutionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.command_arn {
         object.key("commandArn").string(var_1.as_str());
     }

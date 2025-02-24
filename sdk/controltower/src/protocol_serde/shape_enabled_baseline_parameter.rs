@@ -2,7 +2,7 @@
 pub fn ser_enabled_baseline_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnabledBaselineParameter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("key").string(input.key.as_str());
     }

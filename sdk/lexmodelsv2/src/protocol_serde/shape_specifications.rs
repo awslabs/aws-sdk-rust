@@ -2,7 +2,7 @@
 pub fn ser_specifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Specifications,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("slotTypeId").string(input.slot_type_id.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_specifications(
 
 pub(crate) fn de_specifications<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Specifications>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Specifications>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

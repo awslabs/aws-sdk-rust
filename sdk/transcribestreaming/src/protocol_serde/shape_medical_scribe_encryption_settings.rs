@@ -2,7 +2,7 @@
 pub fn ser_medical_scribe_encryption_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MedicalScribeEncryptionSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_encryption_context {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KmsEncryptionContext").start_object();
@@ -21,7 +21,7 @@ pub fn ser_medical_scribe_encryption_settings(
 
 pub(crate) fn de_medical_scribe_encryption_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MedicalScribeEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MedicalScribeEncryptionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

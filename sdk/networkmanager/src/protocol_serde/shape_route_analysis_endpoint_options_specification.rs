@@ -2,7 +2,7 @@
 pub fn ser_route_analysis_endpoint_options_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteAnalysisEndpointOptionsSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transit_gateway_attachment_arn {
         object.key("TransitGatewayAttachmentArn").string(var_1.as_str());
     }

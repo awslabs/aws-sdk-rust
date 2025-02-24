@@ -156,7 +156,7 @@ pub fn de_describe_input_security_group_http_response(
 pub(crate) fn de_describe_input_security_group(
     value: &[u8],
     mut builder: crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

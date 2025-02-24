@@ -124,7 +124,7 @@ pub fn de_list_permission_groups_by_user_http_response(
 pub(crate) fn de_list_permission_groups_by_user(
     value: &[u8],
     mut builder: crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_permission_groups_by_user::builders::ListPermissionGroupsByUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

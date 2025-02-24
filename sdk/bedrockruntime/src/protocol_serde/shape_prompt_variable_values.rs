@@ -2,7 +2,7 @@
 pub fn ser_prompt_variable_values(
     object_19: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PromptVariableValues,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PromptVariableValues::Text(inner) => {
             object_19.key("text").string(inner.as_str());

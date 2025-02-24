@@ -76,7 +76,7 @@ pub fn de_list_configured_model_algorithms_http_response(
 pub(crate) fn de_list_configured_model_algorithms(
     value: &[u8],
     mut builder: crate::operation::list_configured_model_algorithms::builders::ListConfiguredModelAlgorithmsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configured_model_algorithms::builders::ListConfiguredModelAlgorithmsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

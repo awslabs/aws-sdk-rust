@@ -2,7 +2,7 @@
 pub fn ser_avail_matching_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AvailMatchingCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DynamicVariable").string(input.dynamic_variable.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_avail_matching_criteria(
 
 pub(crate) fn de_avail_matching_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AvailMatchingCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AvailMatchingCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

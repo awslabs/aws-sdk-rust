@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.write_capacity_auto_scaling {
         #[allow(unused_mut)]
         let mut object_2 = object.key("writeCapacityAutoScaling").start_object();
@@ -20,7 +20,7 @@ pub fn ser_auto_scaling_specification(
 
 pub(crate) fn de_auto_scaling_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AutoScalingSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AutoScalingSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_update_wireless_gateway_task_create(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateWirelessGatewayTaskCreate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update_data_source {
         object.key("UpdateDataSource").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_update_wireless_gateway_task_create(
 
 pub(crate) fn de_update_wireless_gateway_task_create<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UpdateWirelessGatewayTaskCreate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UpdateWirelessGatewayTaskCreate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

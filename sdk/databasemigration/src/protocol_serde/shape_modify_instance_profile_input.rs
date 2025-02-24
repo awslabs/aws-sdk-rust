@@ -2,7 +2,7 @@
 pub fn ser_modify_instance_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_instance_profile::ModifyInstanceProfileInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_profile_identifier {
         object.key("InstanceProfileIdentifier").string(var_1.as_str());
     }

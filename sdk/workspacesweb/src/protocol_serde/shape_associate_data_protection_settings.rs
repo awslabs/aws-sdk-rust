@@ -159,7 +159,7 @@ pub fn de_associate_data_protection_settings_http_response(
 pub(crate) fn de_associate_data_protection_settings(
     value: &[u8],
     mut builder: crate::operation::associate_data_protection_settings::builders::AssociateDataProtectionSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_data_protection_settings::builders::AssociateDataProtectionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_lifecycle_policy_detail_exclusion_rules_amis(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LifecyclePolicyDetailExclusionRulesAmis,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.is_public {
         object.key("isPublic").boolean(input.is_public);
     }
@@ -45,7 +45,7 @@ pub fn ser_lifecycle_policy_detail_exclusion_rules_amis(
 
 pub(crate) fn de_lifecycle_policy_detail_exclusion_rules_amis<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LifecyclePolicyDetailExclusionRulesAmis>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

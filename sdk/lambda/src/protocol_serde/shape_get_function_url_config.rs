@@ -118,7 +118,7 @@ pub fn de_get_function_url_config_http_response(
 pub(crate) fn de_get_function_url_config(
     value: &[u8],
     mut builder: crate::operation::get_function_url_config::builders::GetFunctionUrlConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_function_url_config::builders::GetFunctionUrlConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

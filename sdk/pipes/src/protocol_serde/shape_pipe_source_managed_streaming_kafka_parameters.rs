@@ -2,7 +2,7 @@
 pub fn ser_pipe_source_managed_streaming_kafka_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeSourceManagedStreamingKafkaParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TopicName").string(input.topic_name.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_pipe_source_managed_streaming_kafka_parameters(
 
 pub(crate) fn de_pipe_source_managed_streaming_kafka_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PipeSourceManagedStreamingKafkaParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PipeSourceManagedStreamingKafkaParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -134,7 +134,7 @@ pub fn de_start_query_workload_insights_top_contributors_http_response(
 
 pub fn ser_start_query_workload_insights_top_contributors_input(
     input: &crate::operation::start_query_workload_insights_top_contributors::StartQueryWorkloadInsightsTopContributorsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_query_workload_insights_top_contributors_input::ser_start_query_workload_insights_top_contributors_input_input(&mut object, input)?;
@@ -145,7 +145,7 @@ pub fn ser_start_query_workload_insights_top_contributors_input(
 pub(crate) fn de_start_query_workload_insights_top_contributors(
     value: &[u8],
     mut builder: crate::operation::start_query_workload_insights_top_contributors::builders::StartQueryWorkloadInsightsTopContributorsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_query_workload_insights_top_contributors::builders::StartQueryWorkloadInsightsTopContributorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

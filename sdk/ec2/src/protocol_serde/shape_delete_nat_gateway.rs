@@ -33,7 +33,7 @@ pub fn de_delete_nat_gateway_http_response(
 pub fn de_delete_nat_gateway(
     inp: &[u8],
     mut builder: crate::operation::delete_nat_gateway::builders::DeleteNatGatewayOutputBuilder,
-) -> Result<crate::operation::delete_nat_gateway::builders::DeleteNatGatewayOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_nat_gateway::builders::DeleteNatGatewayOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

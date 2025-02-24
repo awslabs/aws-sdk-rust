@@ -2,7 +2,7 @@
 pub fn ser_listener_tls_validation_context_trust(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListenerTlsValidationContextTrust,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ListenerTlsValidationContextTrust::File(inner) => {
             #[allow(unused_mut)]
@@ -27,7 +27,7 @@ pub fn ser_listener_tls_validation_context_trust(
 
 pub(crate) fn de_listener_tls_validation_context_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ListenerTlsValidationContextTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ListenerTlsValidationContextTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

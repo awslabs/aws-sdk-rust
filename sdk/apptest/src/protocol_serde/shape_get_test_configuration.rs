@@ -132,7 +132,7 @@ pub fn de_get_test_configuration_http_response(
 pub(crate) fn de_get_test_configuration(
     value: &[u8],
     mut builder: crate::operation::get_test_configuration::builders::GetTestConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_test_configuration::builders::GetTestConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

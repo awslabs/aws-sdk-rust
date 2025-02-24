@@ -2,7 +2,7 @@
 pub fn ser_create_multi_region_access_point_input_input_input(
     input: &crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.client_token {
@@ -20,7 +20,7 @@ pub fn ser_create_multi_region_access_point_input_input_input(
 pub fn ser_create_multi_region_access_point_input(
     input: &crate::types::CreateMultiRegionAccessPointInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -47,7 +47,7 @@ pub fn ser_create_multi_region_access_point_input(
 #[allow(clippy::needless_question_mark)]
 pub fn de_create_multi_region_access_point_input(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CreateMultiRegionAccessPointInput, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CreateMultiRegionAccessPointInput::builder();
     while let Some(mut tag) = decoder.next_tag() {

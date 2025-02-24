@@ -116,7 +116,7 @@ pub fn de_list_challenge_metadata_http_response(
 pub(crate) fn de_list_challenge_metadata(
     value: &[u8],
     mut builder: crate::operation::list_challenge_metadata::builders::ListChallengeMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_challenge_metadata::builders::ListChallengeMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

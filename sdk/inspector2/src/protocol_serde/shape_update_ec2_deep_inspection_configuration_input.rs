@@ -2,7 +2,7 @@
 pub fn ser_update_ec2_deep_inspection_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activate_deep_inspection {
         object.key("activateDeepInspection").boolean(*var_1);
     }

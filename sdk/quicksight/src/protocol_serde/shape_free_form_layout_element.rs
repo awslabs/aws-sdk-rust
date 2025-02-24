@@ -2,7 +2,7 @@
 pub fn ser_free_form_layout_element(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FreeFormLayoutElement,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ElementId").string(input.element_id.as_str());
     }
@@ -68,7 +68,7 @@ pub fn ser_free_form_layout_element(
 
 pub(crate) fn de_free_form_layout_element<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FreeFormLayoutElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FreeFormLayoutElement>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

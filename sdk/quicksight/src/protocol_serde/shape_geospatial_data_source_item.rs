@@ -2,7 +2,7 @@
 pub fn ser_geospatial_data_source_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialDataSourceItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.static_file_data_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("StaticFileDataSource").start_object();
@@ -14,7 +14,7 @@ pub fn ser_geospatial_data_source_item(
 
 pub(crate) fn de_geospatial_data_source_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GeospatialDataSourceItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GeospatialDataSourceItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

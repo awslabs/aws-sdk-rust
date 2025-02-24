@@ -2,7 +2,7 @@
 pub fn ser_check_no_new_access_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::check_no_new_access::CheckNoNewAccessInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.existing_policy_document {
         object.key("existingPolicyDocument").string(var_1.as_str());
     }

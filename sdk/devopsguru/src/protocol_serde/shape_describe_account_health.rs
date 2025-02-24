@@ -118,7 +118,7 @@ pub fn de_describe_account_health_http_response(
 pub(crate) fn de_describe_account_health(
     value: &[u8],
     mut builder: crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_account_health::builders::DescribeAccountHealthOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

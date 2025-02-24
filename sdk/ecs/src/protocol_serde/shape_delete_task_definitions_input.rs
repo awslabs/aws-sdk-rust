@@ -2,7 +2,7 @@
 pub fn ser_delete_task_definitions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_task_definitions::DeleteTaskDefinitionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.task_definitions {
         let mut array_2 = object.key("taskDefinitions").start_array();
         for item_3 in var_1 {

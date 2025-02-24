@@ -81,8 +81,10 @@ pub fn de_describe_stack_set_operation_http_response(
 pub fn de_describe_stack_set_operation(
     inp: &[u8],
     mut builder: crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationOutputBuilder,
-) -> Result<crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::describe_stack_set_operation::builders::DescribeStackSetOperationOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

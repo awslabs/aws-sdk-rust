@@ -85,7 +85,7 @@ pub fn de_get_organization_statistics_http_response(
 pub(crate) fn de_get_organization_statistics(
     value: &[u8],
     mut builder: crate::operation::get_organization_statistics::builders::GetOrganizationStatisticsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_organization_statistics::builders::GetOrganizationStatisticsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

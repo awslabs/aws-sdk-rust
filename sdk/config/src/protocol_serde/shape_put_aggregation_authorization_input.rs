@@ -2,7 +2,7 @@
 pub fn ser_put_aggregation_authorization_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_aggregation_authorization::PutAggregationAuthorizationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authorized_account_id {
         object.key("AuthorizedAccountId").string(var_1.as_str());
     }

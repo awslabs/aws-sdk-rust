@@ -2,7 +2,7 @@
 pub fn ser_cloud_formation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudFormation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("templateLocation").string(input.template_location.as_str());
     }
@@ -21,7 +21,7 @@ pub fn ser_cloud_formation(
 
 pub(crate) fn de_cloud_formation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CloudFormation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CloudFormation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

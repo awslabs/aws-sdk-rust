@@ -125,7 +125,7 @@ pub fn de_get_configured_table_association_http_response(
 pub(crate) fn de_get_configured_table_association(
     value: &[u8],
     mut builder: crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_configured_table_association::builders::GetConfiguredTableAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

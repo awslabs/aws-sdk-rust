@@ -110,7 +110,7 @@ pub fn de_list_profile_notifications_http_response(
 pub(crate) fn de_list_profile_notifications(
     value: &[u8],
     mut builder: crate::operation::list_profile_notifications::builders::ListProfileNotificationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_profile_notifications::builders::ListProfileNotificationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

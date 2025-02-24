@@ -2,7 +2,7 @@
 pub(crate) fn de_cannot_modify_approval_rule_from_template_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::CannotModifyApprovalRuleFromTemplateExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::CannotModifyApprovalRuleFromTemplateExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -3,7 +3,7 @@
 pub fn de_snapshot_schedule_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::SnapshotScheduleQuotaExceededFaultBuilder,
-) -> Result<crate::types::error::builders::SnapshotScheduleQuotaExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::SnapshotScheduleQuotaExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub fn ser_object_type_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ObjectTypeKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.standard_identifiers {
         let mut array_2 = object.key("StandardIdentifiers").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_object_type_key(
 
 pub(crate) fn de_object_type_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ObjectTypeKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ObjectTypeKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

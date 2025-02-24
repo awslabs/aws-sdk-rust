@@ -423,7 +423,7 @@ pub(crate) mod shape_upload_part_output;
 
 pub fn parse_event_stream_error_metadata(
     payload: &::bytes::Bytes,
-) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_xml::decode::XmlDecodeError> {
     crate::rest_xml_unwrapped_errors::parse_error_metadata(payload.as_ref())
 }
 

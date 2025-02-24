@@ -2,7 +2,7 @@
 pub fn ser_external_location(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExternalLocation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ExternalLocation::S3Location(inner) => {
             object_4.key("s3Location").string(inner.as_str());

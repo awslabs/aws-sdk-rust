@@ -129,7 +129,7 @@ pub fn de_enable_import_findings_for_product_http_response(
 
 pub fn ser_enable_import_findings_for_product_input(
     input: &crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_enable_import_findings_for_product_input::ser_enable_import_findings_for_product_input_input(&mut object, input)?;
@@ -140,7 +140,7 @@ pub fn ser_enable_import_findings_for_product_input(
 pub(crate) fn de_enable_import_findings_for_product(
     value: &[u8],
     mut builder: crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

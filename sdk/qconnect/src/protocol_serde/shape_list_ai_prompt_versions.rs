@@ -108,7 +108,7 @@ pub fn de_list_ai_prompt_versions_http_response(
 pub(crate) fn de_list_ai_prompt_versions(
     value: &[u8],
     mut builder: crate::operation::list_ai_prompt_versions::builders::ListAiPromptVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_ai_prompt_versions::builders::ListAiPromptVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

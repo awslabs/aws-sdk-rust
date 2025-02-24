@@ -2,7 +2,7 @@
 pub fn ser_inference_profile_model_source(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceProfileModelSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::InferenceProfileModelSource::CopyFrom(inner) => {
             object_5.key("copyFrom").string(inner.as_str());

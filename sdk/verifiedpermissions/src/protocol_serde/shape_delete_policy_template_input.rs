@@ -2,7 +2,7 @@
 pub fn ser_delete_policy_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_policy_template::DeletePolicyTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy_store_id {
         object.key("policyStoreId").string(var_1.as_str());
     }

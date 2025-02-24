@@ -94,7 +94,7 @@ pub fn de_evaluate_mapping_template_http_response(
 
 pub fn ser_evaluate_mapping_template_input(
     input: &crate::operation::evaluate_mapping_template::EvaluateMappingTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_evaluate_mapping_template_input::ser_evaluate_mapping_template_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_evaluate_mapping_template_input(
 pub(crate) fn de_evaluate_mapping_template(
     value: &[u8],
     mut builder: crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

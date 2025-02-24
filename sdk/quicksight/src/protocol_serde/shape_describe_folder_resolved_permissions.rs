@@ -174,7 +174,7 @@ pub fn de_describe_folder_resolved_permissions_http_response(
 pub(crate) fn de_describe_folder_resolved_permissions(
     value: &[u8],
     mut builder: crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -95,7 +95,7 @@ pub fn de_list_configuration_profiles_http_response(
 pub(crate) fn de_list_configuration_profiles(
     value: &[u8],
     mut builder: crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configuration_profiles::builders::ListConfigurationProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

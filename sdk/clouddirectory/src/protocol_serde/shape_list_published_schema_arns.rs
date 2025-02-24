@@ -169,7 +169,7 @@ pub fn de_list_published_schema_arns_http_response(
 
 pub fn ser_list_published_schema_arns_input(
     input: &crate::operation::list_published_schema_arns::ListPublishedSchemaArnsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_published_schema_arns_input::ser_list_published_schema_arns_input_input(&mut object, input)?;
@@ -180,7 +180,7 @@ pub fn ser_list_published_schema_arns_input(
 pub(crate) fn de_list_published_schema_arns(
     value: &[u8],
     mut builder: crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_published_schema_arns::builders::ListPublishedSchemaArnsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -167,7 +167,7 @@ pub fn de_delete_user_by_principal_id_http_response(
 pub(crate) fn de_delete_user_by_principal_id(
     value: &[u8],
     mut builder: crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_user_by_principal_id::builders::DeleteUserByPrincipalIdOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

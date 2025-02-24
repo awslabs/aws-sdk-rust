@@ -39,7 +39,10 @@ pub fn de_modify_vpn_tunnel_options_http_response(
 pub fn de_modify_vpn_tunnel_options(
     inp: &[u8],
     mut builder: crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder,
-) -> Result<crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_vpn_tunnel_options::builders::ModifyVpnTunnelOptionsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

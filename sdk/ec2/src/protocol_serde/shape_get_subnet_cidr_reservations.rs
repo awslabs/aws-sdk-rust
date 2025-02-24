@@ -41,8 +41,10 @@ pub fn de_get_subnet_cidr_reservations_http_response(
 pub fn de_get_subnet_cidr_reservations(
     inp: &[u8],
     mut builder: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder,
-) -> Result<crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

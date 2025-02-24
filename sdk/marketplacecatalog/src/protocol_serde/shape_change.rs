@@ -2,7 +2,7 @@
 pub fn ser_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Change,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ChangeType").string(input.change_type.as_str());
     }

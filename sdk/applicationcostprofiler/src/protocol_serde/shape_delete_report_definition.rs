@@ -110,7 +110,7 @@ pub fn de_delete_report_definition_http_response(
 pub(crate) fn de_delete_report_definition(
     value: &[u8],
     mut builder: crate::operation::delete_report_definition::builders::DeleteReportDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_report_definition::builders::DeleteReportDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

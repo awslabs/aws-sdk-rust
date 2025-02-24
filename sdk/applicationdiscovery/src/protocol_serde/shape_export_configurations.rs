@@ -144,14 +144,14 @@ pub fn de_export_configurations_http_response(
 
 pub fn ser_export_configurations_input(
     _input: &crate::operation::export_configurations::ExportConfigurationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_export_configurations(
     value: &[u8],
     mut builder: crate::operation::export_configurations::builders::ExportConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::export_configurations::builders::ExportConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

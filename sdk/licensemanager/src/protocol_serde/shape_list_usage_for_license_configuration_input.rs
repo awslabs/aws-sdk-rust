@@ -2,7 +2,7 @@
 pub fn ser_list_usage_for_license_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.license_configuration_arn {
         object.key("LicenseConfigurationArn").string(var_1.as_str());
     }

@@ -3,7 +3,7 @@
 pub fn de_no_such_field_level_encryption_config_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder,
-) -> Result<crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::NoSuchFieldLevelEncryptionConfigBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

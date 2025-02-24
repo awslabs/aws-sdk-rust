@@ -2,7 +2,7 @@
 pub fn ser_area_of_interest_geometry(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AreaOfInterestGeometry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AreaOfInterestGeometry::PolygonGeometry(inner) => {
             #[allow(unused_mut)]
@@ -27,7 +27,7 @@ pub fn ser_area_of_interest_geometry(
 
 pub(crate) fn de_area_of_interest_geometry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AreaOfInterestGeometry>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AreaOfInterestGeometry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

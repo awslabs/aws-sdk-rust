@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_image_recycle_bin_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ImageRecycleBinInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ImageRecycleBinInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ImageRecycleBinInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {

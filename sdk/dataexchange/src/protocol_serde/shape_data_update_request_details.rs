@@ -2,7 +2,7 @@
 pub fn ser_data_update_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataUpdateRequestDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_updated_at {
         object
             .key("DataUpdatedAt")

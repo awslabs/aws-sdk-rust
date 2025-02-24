@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_target_definition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResourceTargetDefinition, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResourceTargetDefinition, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceTargetDefinition::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -108,7 +108,7 @@ pub fn de_list_detect_mitigation_actions_executions_http_response(
 pub(crate) fn de_list_detect_mitigation_actions_executions(
     value: &[u8],
     mut builder: crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

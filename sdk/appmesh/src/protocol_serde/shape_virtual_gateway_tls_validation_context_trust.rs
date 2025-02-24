@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_tls_validation_context_trust(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayTlsValidationContextTrust,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VirtualGatewayTlsValidationContextTrust::Acm(inner) => {
             #[allow(unused_mut)]
@@ -42,7 +42,7 @@ pub fn ser_virtual_gateway_tls_validation_context_trust(
 
 pub(crate) fn de_virtual_gateway_tls_validation_context_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VirtualGatewayTlsValidationContextTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VirtualGatewayTlsValidationContextTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

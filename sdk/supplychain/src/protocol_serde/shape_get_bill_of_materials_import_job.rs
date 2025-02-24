@@ -159,7 +159,7 @@ pub fn de_get_bill_of_materials_import_job_http_response(
 pub(crate) fn de_get_bill_of_materials_import_job(
     value: &[u8],
     mut builder: crate::operation::get_bill_of_materials_import_job::builders::GetBillOfMaterialsImportJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_bill_of_materials_import_job::builders::GetBillOfMaterialsImportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

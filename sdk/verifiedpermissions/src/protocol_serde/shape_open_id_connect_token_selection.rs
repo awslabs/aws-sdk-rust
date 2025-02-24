@@ -2,7 +2,7 @@
 pub fn ser_open_id_connect_token_selection(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenIdConnectTokenSelection,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::OpenIdConnectTokenSelection::AccessTokenOnly(inner) => {
             #[allow(unused_mut)]

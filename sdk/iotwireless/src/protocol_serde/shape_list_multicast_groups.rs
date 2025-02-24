@@ -106,7 +106,7 @@ pub fn de_list_multicast_groups_http_response(
 pub(crate) fn de_list_multicast_groups(
     value: &[u8],
     mut builder: crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_multicast_groups::builders::ListMulticastGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

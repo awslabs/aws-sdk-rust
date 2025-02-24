@@ -2,7 +2,7 @@
 pub fn ser_amazon_open_search_serverless_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonOpenSearchServerlessDestinationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RoleARN").string(input.role_arn.as_str());
     }

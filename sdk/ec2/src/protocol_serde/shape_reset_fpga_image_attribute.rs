@@ -41,7 +41,10 @@ pub fn de_reset_fpga_image_attribute_http_response(
 pub fn de_reset_fpga_image_attribute(
     inp: &[u8],
     mut builder: crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder,
-) -> Result<crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::reset_fpga_image_attribute::builders::ResetFpgaImageAttributeOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

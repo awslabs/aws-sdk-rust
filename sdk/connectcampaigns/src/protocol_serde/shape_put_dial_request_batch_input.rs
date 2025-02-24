@@ -2,7 +2,7 @@
 pub fn ser_put_dial_request_batch_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_dial_request_batch::PutDialRequestBatchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dial_requests {
         let mut array_2 = object.key("dialRequests").start_array();
         for item_3 in var_1 {

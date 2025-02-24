@@ -108,7 +108,7 @@ pub fn de_describe_cache_security_groups_http_response(
 pub fn de_describe_cache_security_groups(
     inp: &[u8],
     mut builder: crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

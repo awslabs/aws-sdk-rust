@@ -114,7 +114,10 @@ pub fn de_modify_cluster_db_revision_http_response(
 pub fn de_modify_cluster_db_revision(
     inp: &[u8],
     mut builder: crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionOutputBuilder,
-) -> Result<crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

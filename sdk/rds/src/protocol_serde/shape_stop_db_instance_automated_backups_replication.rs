@@ -86,7 +86,7 @@ pub fn de_stop_db_instance_automated_backups_replication_http_response(
 pub fn de_stop_db_instance_automated_backups_replication(
     inp: &[u8],
     mut builder: crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

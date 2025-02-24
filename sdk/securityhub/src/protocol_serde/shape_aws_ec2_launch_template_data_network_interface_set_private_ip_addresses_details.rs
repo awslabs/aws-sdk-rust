@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.primary {
         object.key("Primary").boolean(*var_1);
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_ec2_launch_template_data_network_interface_set_private_ip_address
 
 pub(crate) fn de_aws_ec2_launch_template_data_network_interface_set_private_ip_addresses_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -103,7 +103,7 @@ pub fn de_list_indexed_recovery_points_http_response(
 pub(crate) fn de_list_indexed_recovery_points(
     value: &[u8],
     mut builder: crate::operation::list_indexed_recovery_points::builders::ListIndexedRecoveryPointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_indexed_recovery_points::builders::ListIndexedRecoveryPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

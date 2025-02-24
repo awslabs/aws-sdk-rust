@@ -129,7 +129,7 @@ pub fn de_list_configured_table_associations_http_response(
 pub(crate) fn de_list_configured_table_associations(
     value: &[u8],
     mut builder: crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

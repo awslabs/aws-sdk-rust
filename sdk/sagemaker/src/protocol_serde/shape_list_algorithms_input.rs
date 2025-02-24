@@ -2,7 +2,7 @@
 pub fn ser_list_algorithms_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_algorithms::ListAlgorithmsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.creation_time_after {
         object
             .key("CreationTimeAfter")

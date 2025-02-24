@@ -2,7 +2,7 @@
 pub fn ser_refresh_cache_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::refresh_cache::RefreshCacheInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_share_arn {
         object.key("FileShareARN").string(var_1.as_str());
     }

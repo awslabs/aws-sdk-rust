@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_pending_maintenance_actions(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResourcePendingMaintenanceActions, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResourcePendingMaintenanceActions, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourcePendingMaintenanceActions::builder();
     while let Some(mut tag) = decoder.next_tag() {

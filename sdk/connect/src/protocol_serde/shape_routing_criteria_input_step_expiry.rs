@@ -2,7 +2,7 @@
 pub fn ser_routing_criteria_input_step_expiry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoutingCriteriaInputStepExpiry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration_in_seconds {
         object.key("DurationInSeconds").number(
             #[allow(clippy::useless_conversion)]

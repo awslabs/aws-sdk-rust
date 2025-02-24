@@ -136,7 +136,7 @@ pub fn de_list_subscription_grants_http_response(
 pub(crate) fn de_list_subscription_grants(
     value: &[u8],
     mut builder: crate::operation::list_subscription_grants::builders::ListSubscriptionGrantsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_subscription_grants::builders::ListSubscriptionGrantsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

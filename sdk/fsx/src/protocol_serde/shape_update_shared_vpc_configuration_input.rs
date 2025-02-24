@@ -2,7 +2,7 @@
 pub fn ser_update_shared_vpc_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_shared_vpc_configuration::UpdateSharedVpcConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_fsx_route_table_updates_from_participant_accounts {
         object.key("EnableFsxRouteTableUpdatesFromParticipantAccounts").string(var_1.as_str());
     }

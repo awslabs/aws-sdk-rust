@@ -2,7 +2,7 @@
 pub fn ser_update_configuration_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_configuration_definition::UpdateConfigurationDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.local_deployment_administration_role_arn {
         object.key("LocalDeploymentAdministrationRoleArn").string(var_1.as_str());
     }

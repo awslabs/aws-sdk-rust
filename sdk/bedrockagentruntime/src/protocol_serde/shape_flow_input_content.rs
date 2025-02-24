@@ -2,7 +2,7 @@
 pub fn ser_flow_input_content(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FlowInputContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FlowInputContent::Document(inner) => {
             object_3.key("document").document(inner);

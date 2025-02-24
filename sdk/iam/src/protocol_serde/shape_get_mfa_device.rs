@@ -73,7 +73,7 @@ pub fn de_get_mfa_device_http_response(
 pub fn de_get_mfa_device(
     inp: &[u8],
     mut builder: crate::operation::get_mfa_device::builders::GetMfaDeviceOutputBuilder,
-) -> Result<crate::operation::get_mfa_device::builders::GetMfaDeviceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_mfa_device::builders::GetMfaDeviceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

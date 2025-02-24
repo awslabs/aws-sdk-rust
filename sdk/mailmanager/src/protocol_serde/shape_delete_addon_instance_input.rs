@@ -2,7 +2,7 @@
 pub fn ser_delete_addon_instance_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_addon_instance::DeleteAddonInstanceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.addon_instance_id {
         object.key("AddonInstanceId").string(var_1.as_str());
     }

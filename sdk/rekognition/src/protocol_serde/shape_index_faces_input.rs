@@ -2,7 +2,7 @@
 pub fn ser_index_faces_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::index_faces::IndexFacesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.collection_id {
         object.key("CollectionId").string(var_1.as_str());
     }

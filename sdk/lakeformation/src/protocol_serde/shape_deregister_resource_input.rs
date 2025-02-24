@@ -2,7 +2,7 @@
 pub fn ser_deregister_resource_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_resource::DeregisterResourceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceArn").string(var_1.as_str());
     }

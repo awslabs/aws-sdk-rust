@@ -67,7 +67,7 @@ pub fn de_describe_db_cluster_snapshots_http_response(
 pub fn de_describe_db_cluster_snapshots(
     inp: &[u8],
     mut builder: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

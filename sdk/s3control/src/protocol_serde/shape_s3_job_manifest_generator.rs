@@ -2,7 +2,7 @@
 pub fn ser_s3_job_manifest_generator(
     input: &crate::types::S3JobManifestGenerator,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.expected_bucket_owner {
@@ -32,7 +32,7 @@ pub fn ser_s3_job_manifest_generator(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_job_manifest_generator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3JobManifestGenerator, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::S3JobManifestGenerator, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3JobManifestGenerator::builder();
     while let Some(mut tag) = decoder.next_tag() {

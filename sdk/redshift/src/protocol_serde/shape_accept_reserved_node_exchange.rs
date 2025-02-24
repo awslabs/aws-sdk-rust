@@ -177,7 +177,7 @@ pub fn de_accept_reserved_node_exchange_http_response(
 pub fn de_accept_reserved_node_exchange(
     inp: &[u8],
     mut builder: crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

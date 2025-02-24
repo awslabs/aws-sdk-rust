@@ -117,7 +117,7 @@ pub fn de_is_authorized_with_token_http_response(
 
 pub fn ser_is_authorized_with_token_input(
     input: &crate::operation::is_authorized_with_token::IsAuthorizedWithTokenInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_is_authorized_with_token_input::ser_is_authorized_with_token_input_input(&mut object, input)?;
@@ -128,7 +128,7 @@ pub fn ser_is_authorized_with_token_input(
 pub(crate) fn de_is_authorized_with_token(
     value: &[u8],
     mut builder: crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::is_authorized_with_token::builders::IsAuthorizedWithTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -123,7 +123,7 @@ pub fn de_modify_redshift_idc_application_http_response(
 pub fn de_modify_redshift_idc_application(
     inp: &[u8],
     mut builder: crate::operation::modify_redshift_idc_application::builders::ModifyRedshiftIdcApplicationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_redshift_idc_application::builders::ModifyRedshiftIdcApplicationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

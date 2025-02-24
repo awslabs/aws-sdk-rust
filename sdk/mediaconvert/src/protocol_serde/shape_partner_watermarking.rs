@@ -2,7 +2,7 @@
 pub fn ser_partner_watermarking(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PartnerWatermarking,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.nexguard_file_marker_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("nexguardFileMarkerSettings").start_object();
@@ -14,7 +14,7 @@ pub fn ser_partner_watermarking(
 
 pub(crate) fn de_partner_watermarking<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PartnerWatermarking>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PartnerWatermarking>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

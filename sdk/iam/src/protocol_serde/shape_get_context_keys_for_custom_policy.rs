@@ -62,7 +62,7 @@ pub fn de_get_context_keys_for_custom_policy_http_response(
 pub fn de_get_context_keys_for_custom_policy(
     inp: &[u8],
     mut builder: crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

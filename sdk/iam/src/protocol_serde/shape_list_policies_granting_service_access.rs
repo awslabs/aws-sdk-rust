@@ -79,7 +79,7 @@ pub fn de_list_policies_granting_service_access_http_response(
 pub fn de_list_policies_granting_service_access(
     inp: &[u8],
     mut builder: crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

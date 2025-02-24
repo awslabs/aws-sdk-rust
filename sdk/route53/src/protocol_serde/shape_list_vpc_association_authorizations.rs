@@ -96,7 +96,7 @@ pub fn de_list_vpc_association_authorizations_http_response(
 pub fn de_list_vpc_association_authorizations(
     inp: &[u8],
     mut builder: crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

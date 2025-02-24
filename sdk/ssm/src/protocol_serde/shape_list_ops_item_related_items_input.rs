@@ -2,7 +2,7 @@
 pub fn ser_list_ops_item_related_items_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ops_item_id {
         object.key("OpsItemId").string(var_1.as_str());
     }

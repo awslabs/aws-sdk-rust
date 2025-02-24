@@ -3,7 +3,7 @@
 pub fn ser_modify_verified_access_endpoint_port_range(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ModifyVerifiedAccessEndpointPortRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("FromPort");
     if let Some(var_2) = &input.from_port {

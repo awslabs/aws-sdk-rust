@@ -135,7 +135,7 @@ pub fn de_assume_queue_role_for_read_http_response(
 pub(crate) fn de_assume_queue_role_for_read(
     value: &[u8],
     mut builder: crate::operation::assume_queue_role_for_read::builders::AssumeQueueRoleForReadOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::assume_queue_role_for_read::builders::AssumeQueueRoleForReadOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -143,7 +143,7 @@ pub fn de_delete_knowledge_base_documents_http_response(
 
 pub fn ser_delete_knowledge_base_documents_input(
     input: &crate::operation::delete_knowledge_base_documents::DeleteKnowledgeBaseDocumentsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_knowledge_base_documents_input::ser_delete_knowledge_base_documents_input_input(&mut object, input)?;
@@ -154,7 +154,7 @@ pub fn ser_delete_knowledge_base_documents_input(
 pub(crate) fn de_delete_knowledge_base_documents(
     value: &[u8],
     mut builder: crate::operation::delete_knowledge_base_documents::builders::DeleteKnowledgeBaseDocumentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_knowledge_base_documents::builders::DeleteKnowledgeBaseDocumentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

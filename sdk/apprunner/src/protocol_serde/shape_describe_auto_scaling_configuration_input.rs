@@ -2,7 +2,7 @@
 pub fn ser_describe_auto_scaling_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_scaling_configuration_arn {
         object.key("AutoScalingConfigurationArn").string(var_1.as_str());
     }

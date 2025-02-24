@@ -2,7 +2,7 @@
 pub fn ser_quiet_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QuietTime,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end {
         object.key("End").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_quiet_time(
 
 pub(crate) fn de_quiet_time<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::QuietTime>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::QuietTime>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

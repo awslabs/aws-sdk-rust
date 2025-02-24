@@ -2,7 +2,7 @@
 pub fn ser_route_driver_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteDriverOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schedule {
         let mut array_2 = object.key("Schedule").start_array();
         for item_3 in var_1 {

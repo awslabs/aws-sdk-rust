@@ -2,7 +2,7 @@
 pub fn ser_post_comment_reply_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::post_comment_reply::PostCommentReplyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.in_reply_to {
         object.key("inReplyTo").string(var_1.as_str());
     }

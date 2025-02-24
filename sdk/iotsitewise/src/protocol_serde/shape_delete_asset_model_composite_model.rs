@@ -185,7 +185,7 @@ pub fn ser_delete_asset_model_composite_model_headers(
 pub(crate) fn de_delete_asset_model_composite_model(
     value: &[u8],
     mut builder: crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_asset_model_composite_model::builders::DeleteAssetModelCompositeModelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

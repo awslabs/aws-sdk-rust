@@ -3,7 +3,7 @@
 pub fn de_unsupported_db_engine_version_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::UnsupportedDbEngineVersionFaultBuilder,
-) -> Result<crate::types::error::builders::UnsupportedDbEngineVersionFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::UnsupportedDbEngineVersionFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

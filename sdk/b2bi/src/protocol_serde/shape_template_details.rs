@@ -2,7 +2,7 @@
 pub fn ser_template_details(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TemplateDetails::X12(inner) => {
             #[allow(unused_mut)]

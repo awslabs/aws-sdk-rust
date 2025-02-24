@@ -39,7 +39,7 @@ pub fn de_deprovision_public_ipv4_pool_cidr_http_response(
 pub fn de_deprovision_public_ipv4_pool_cidr(
     inp: &[u8],
     mut builder: crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::deprovision_public_ipv4_pool_cidr::builders::DeprovisionPublicIpv4PoolCidrOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

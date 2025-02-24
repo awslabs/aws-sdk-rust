@@ -39,7 +39,7 @@ pub fn de_modify_default_credit_specification_http_response(
 pub fn de_modify_default_credit_specification(
     inp: &[u8],
     mut builder: crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

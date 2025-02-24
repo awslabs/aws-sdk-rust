@@ -2,7 +2,7 @@
 pub fn ser_update_input_device_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_input_device::UpdateInputDeviceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_zone {
         object.key("availabilityZone").string(var_1.as_str());
     }

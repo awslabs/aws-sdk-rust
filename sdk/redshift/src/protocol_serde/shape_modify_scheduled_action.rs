@@ -162,7 +162,10 @@ pub fn de_modify_scheduled_action_http_response(
 pub fn de_modify_scheduled_action(
     inp: &[u8],
     mut builder: crate::operation::modify_scheduled_action::builders::ModifyScheduledActionOutputBuilder,
-) -> Result<crate::operation::modify_scheduled_action::builders::ModifyScheduledActionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_scheduled_action::builders::ModifyScheduledActionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

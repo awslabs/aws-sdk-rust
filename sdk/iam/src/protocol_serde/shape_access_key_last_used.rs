@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_access_key_last_used(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AccessKeyLastUsed, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AccessKeyLastUsed, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AccessKeyLastUsed::builder();
     while let Some(mut tag) = decoder.next_tag() {

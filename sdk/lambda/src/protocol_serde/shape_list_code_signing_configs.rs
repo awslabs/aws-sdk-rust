@@ -85,7 +85,7 @@ pub fn de_list_code_signing_configs_http_response(
 pub(crate) fn de_list_code_signing_configs(
     value: &[u8],
     mut builder: crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_merge_developer_identities_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::merge_developer_identities::MergeDeveloperIdentitiesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_user_identifier {
         object.key("SourceUserIdentifier").string(var_1.as_str());
     }

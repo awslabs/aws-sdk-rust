@@ -2,7 +2,7 @@
 pub fn ser_get_table_auto_scaling_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_table_auto_scaling_settings::GetTableAutoScalingSettingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.keyspace_name {
         object.key("keyspaceName").string(var_1.as_str());
     }

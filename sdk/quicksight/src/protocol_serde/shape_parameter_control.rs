@@ -2,7 +2,7 @@
 pub fn ser_parameter_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParameterControl,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.date_time_picker {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DateTimePicker").start_object();
@@ -44,7 +44,7 @@ pub fn ser_parameter_control(
 
 pub(crate) fn de_parameter_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ParameterControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ParameterControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

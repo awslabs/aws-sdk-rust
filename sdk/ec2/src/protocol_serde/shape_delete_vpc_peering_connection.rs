@@ -41,7 +41,7 @@ pub fn de_delete_vpc_peering_connection_http_response(
 pub fn de_delete_vpc_peering_connection(
     inp: &[u8],
     mut builder: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

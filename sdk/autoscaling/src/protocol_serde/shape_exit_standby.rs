@@ -56,7 +56,7 @@ pub fn de_exit_standby_http_response(
 pub fn de_exit_standby(
     inp: &[u8],
     mut builder: crate::operation::exit_standby::builders::ExitStandbyOutputBuilder,
-) -> Result<crate::operation::exit_standby::builders::ExitStandbyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::exit_standby::builders::ExitStandbyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

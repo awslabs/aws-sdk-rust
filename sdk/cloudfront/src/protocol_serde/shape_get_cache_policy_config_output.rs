@@ -18,7 +18,7 @@ pub(crate) fn de_e_tag_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
-pub fn de_cache_policy_config(inp: &[u8]) -> Result<crate::types::CachePolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_cache_policy_config(inp: &[u8]) -> std::result::Result<crate::types::CachePolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

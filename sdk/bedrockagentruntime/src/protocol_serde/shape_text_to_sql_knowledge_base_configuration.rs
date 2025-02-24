@@ -2,7 +2,7 @@
 pub fn ser_text_to_sql_knowledge_base_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TextToSqlKnowledgeBaseConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("knowledgeBaseArn").string(input.knowledge_base_arn.as_str());
     }

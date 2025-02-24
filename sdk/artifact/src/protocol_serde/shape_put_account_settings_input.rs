@@ -2,7 +2,7 @@
 pub fn ser_put_account_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_account_settings::PutAccountSettingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notification_subscription_status {
         object.key("notificationSubscriptionStatus").string(var_1.as_str());
     }

@@ -171,7 +171,7 @@ pub fn de_delete_account_subscription_http_response(
 pub(crate) fn de_delete_account_subscription(
     value: &[u8],
     mut builder: crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

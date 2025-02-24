@@ -125,7 +125,7 @@ pub fn de_list_queue_limit_associations_http_response(
 pub(crate) fn de_list_queue_limit_associations(
     value: &[u8],
     mut builder: crate::operation::list_queue_limit_associations::builders::ListQueueLimitAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_queue_limit_associations::builders::ListQueueLimitAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_get_property_value_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_property_value::GetPropertyValueInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }

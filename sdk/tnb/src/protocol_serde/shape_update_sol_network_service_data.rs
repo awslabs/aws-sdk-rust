@@ -2,7 +2,7 @@
 pub fn ser_update_sol_network_service_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateSolNetworkServiceData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("nsdInfoId").string(input.nsd_info_id.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_order(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Order,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Column").string(input.column.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_order(
 
 pub(crate) fn de_order<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Order>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Order>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

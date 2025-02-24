@@ -138,7 +138,7 @@ pub fn de_remove_flow_media_stream_http_response(
 pub(crate) fn de_remove_flow_media_stream(
     value: &[u8],
     mut builder: crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

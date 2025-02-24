@@ -2,7 +2,7 @@
 pub fn ser_project_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("type").string(input.r#type.as_str());
     }
@@ -50,7 +50,7 @@ pub fn ser_project_source(
 
 pub(crate) fn de_project_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ProjectSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ProjectSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

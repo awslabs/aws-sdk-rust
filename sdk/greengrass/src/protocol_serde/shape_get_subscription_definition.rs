@@ -65,7 +65,7 @@ pub fn de_get_subscription_definition_http_response(
 pub(crate) fn de_get_subscription_definition(
     value: &[u8],
     mut builder: crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_subscription_definition::builders::GetSubscriptionDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

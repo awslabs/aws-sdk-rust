@@ -84,7 +84,7 @@ pub fn de_list_traffic_policy_instances_http_response(
 pub fn de_list_traffic_policy_instances(
     inp: &[u8],
     mut builder: crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_traffic_policy_instances::builders::ListTrafficPolicyInstancesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

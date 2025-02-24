@@ -80,7 +80,7 @@ pub fn de_describe_account_audit_configuration_http_response(
 pub(crate) fn de_describe_account_audit_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_stopping_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StoppingCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.max_runtime_in_seconds != 86400 {
         object.key("maxRuntimeInSeconds").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_stopping_condition(
 
 pub(crate) fn de_stopping_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StoppingCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StoppingCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

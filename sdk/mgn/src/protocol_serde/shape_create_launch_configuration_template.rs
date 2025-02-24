@@ -101,7 +101,7 @@ pub fn de_create_launch_configuration_template_http_response(
 
 pub fn ser_create_launch_configuration_template_input(
     input: &crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_launch_configuration_template_input::ser_create_launch_configuration_template_input_input(
@@ -115,7 +115,7 @@ pub fn ser_create_launch_configuration_template_input(
 pub(crate) fn de_create_launch_configuration_template(
     value: &[u8],
     mut builder: crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

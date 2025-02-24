@@ -77,7 +77,10 @@ pub fn de_simulate_custom_policy_http_response(
 pub fn de_simulate_custom_policy(
     inp: &[u8],
     mut builder: crate::operation::simulate_custom_policy::builders::SimulateCustomPolicyOutputBuilder,
-) -> Result<crate::operation::simulate_custom_policy::builders::SimulateCustomPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::simulate_custom_policy::builders::SimulateCustomPolicyOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

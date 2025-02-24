@@ -2,7 +2,7 @@
 pub fn ser_hls_manifest_create_or_update_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HlsManifestCreateOrUpdateParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_markers {
         object.key("adMarkers").string(var_1.as_str());
     }

@@ -120,7 +120,7 @@ pub fn de_search_agent_statuses_http_response(
 
 pub fn ser_search_agent_statuses_input(
     input: &crate::operation::search_agent_statuses::SearchAgentStatusesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_search_agent_statuses_input::ser_search_agent_statuses_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_search_agent_statuses_input(
 pub(crate) fn de_search_agent_statuses(
     value: &[u8],
     mut builder: crate::operation::search_agent_statuses::builders::SearchAgentStatusesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::search_agent_statuses::builders::SearchAgentStatusesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

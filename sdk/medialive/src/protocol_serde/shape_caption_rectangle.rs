@@ -2,7 +2,7 @@
 pub fn ser_caption_rectangle(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionRectangle,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.height {
         object.key("height").number(
             #[allow(clippy::useless_conversion)]
@@ -32,7 +32,7 @@ pub fn ser_caption_rectangle(
 
 pub(crate) fn de_caption_rectangle<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CaptionRectangle>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CaptionRectangle>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

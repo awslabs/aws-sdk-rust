@@ -120,7 +120,7 @@ pub fn de_get_schema_analysis_rule_http_response(
 pub(crate) fn de_get_schema_analysis_rule(
     value: &[u8],
     mut builder: crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

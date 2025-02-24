@@ -2,7 +2,7 @@
 pub fn ser_describe_notebook_execution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_notebook_execution::DescribeNotebookExecutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notebook_execution_id {
         object.key("NotebookExecutionId").string(var_1.as_str());
     }

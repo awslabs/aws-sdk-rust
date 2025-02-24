@@ -2,7 +2,7 @@
 pub fn ser_quick_response_data_provider(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QuickResponseDataProvider,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::QuickResponseDataProvider::Content(inner) => {
             object_6.key("content").string(inner.as_str());

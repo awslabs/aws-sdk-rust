@@ -2,7 +2,7 @@
 pub fn ser_add_lf_tags_to_resource_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }

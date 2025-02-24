@@ -2,7 +2,7 @@
 pub fn ser_start_edge_configuration_update_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.edge_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EdgeConfig").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_external_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExternalSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceType").string(input.source_type.as_str());
     }

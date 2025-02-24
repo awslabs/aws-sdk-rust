@@ -2,7 +2,7 @@
 pub fn ser_generate_embed_url_for_anonymous_user_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_domains {
         let mut array_2 = object.key("AllowedDomains").start_array();
         for item_3 in var_1 {

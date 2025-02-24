@@ -146,7 +146,7 @@ pub fn de_register_schema_version_http_response(
 
 pub fn ser_register_schema_version_input(
     input: &crate::operation::register_schema_version::RegisterSchemaVersionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_schema_version_input::ser_register_schema_version_input_input(&mut object, input)?;
@@ -157,7 +157,7 @@ pub fn ser_register_schema_version_input(
 pub(crate) fn de_register_schema_version(
     value: &[u8],
     mut builder: crate::operation::register_schema_version::builders::RegisterSchemaVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::register_schema_version::builders::RegisterSchemaVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -107,7 +107,7 @@ pub fn de_put_email_identity_dkim_signing_attributes_http_response(
 
 pub fn ser_put_email_identity_dkim_signing_attributes_input(
     input: &crate::operation::put_email_identity_dkim_signing_attributes::PutEmailIdentityDkimSigningAttributesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_email_identity_dkim_signing_attributes_input::ser_put_email_identity_dkim_signing_attributes_input_input(
@@ -121,7 +121,7 @@ pub fn ser_put_email_identity_dkim_signing_attributes_input(
 pub(crate) fn de_put_email_identity_dkim_signing_attributes(
     value: &[u8],
     mut builder: crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_email_identity_dkim_signing_attributes::builders::PutEmailIdentityDkimSigningAttributesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

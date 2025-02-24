@@ -2,7 +2,7 @@
 pub fn ser_geocode_query_components(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeocodeQueryComponents,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.country {
         object.key("Country").string(var_1.as_str());
     }

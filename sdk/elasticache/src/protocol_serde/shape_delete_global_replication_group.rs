@@ -104,7 +104,7 @@ pub fn de_delete_global_replication_group_http_response(
 pub fn de_delete_global_replication_group(
     inp: &[u8],
     mut builder: crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

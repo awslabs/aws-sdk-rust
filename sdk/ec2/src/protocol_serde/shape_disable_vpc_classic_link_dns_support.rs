@@ -39,7 +39,7 @@ pub fn de_disable_vpc_classic_link_dns_support_http_response(
 pub fn de_disable_vpc_classic_link_dns_support(
     inp: &[u8],
     mut builder: crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

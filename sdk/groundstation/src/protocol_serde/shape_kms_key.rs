@@ -2,7 +2,7 @@
 pub fn ser_kms_key(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KmsKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::KmsKey::KmsKeyArn(inner) => {
             object_11.key("kmsKeyArn").string(inner.as_str());
@@ -20,7 +20,7 @@ pub fn ser_kms_key(
 
 pub(crate) fn de_kms_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::KmsKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::KmsKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

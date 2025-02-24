@@ -3,7 +3,7 @@
 pub fn ser_policy_attribute(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PolicyAttribute,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AttributeName");
     if let Some(var_2) = &input.attribute_name {

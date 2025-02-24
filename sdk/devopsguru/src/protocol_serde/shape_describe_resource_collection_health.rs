@@ -120,7 +120,7 @@ pub fn de_describe_resource_collection_health_http_response(
 pub(crate) fn de_describe_resource_collection_health(
     value: &[u8],
     mut builder: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

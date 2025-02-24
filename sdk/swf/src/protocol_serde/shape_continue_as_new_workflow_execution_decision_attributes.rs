@@ -2,7 +2,7 @@
 pub fn ser_continue_as_new_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContinueAsNewWorkflowExecutionDecisionAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input {
         object.key("input").string(var_1.as_str());
     }

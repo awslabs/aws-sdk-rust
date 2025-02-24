@@ -41,8 +41,10 @@ pub fn de_get_allowed_images_settings_http_response(
 pub fn de_get_allowed_images_settings(
     inp: &[u8],
     mut builder: crate::operation::get_allowed_images_settings::builders::GetAllowedImagesSettingsOutputBuilder,
-) -> Result<crate::operation::get_allowed_images_settings::builders::GetAllowedImagesSettingsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_allowed_images_settings::builders::GetAllowedImagesSettingsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_update_file_system_ontap_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateFileSystemOntapConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.automatic_backup_retention_days {
         object.key("AutomaticBackupRetentionDays").number(
             #[allow(clippy::useless_conversion)]

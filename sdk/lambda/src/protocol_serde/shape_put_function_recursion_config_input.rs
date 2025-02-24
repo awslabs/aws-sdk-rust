@@ -2,7 +2,7 @@
 pub fn ser_put_function_recursion_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_function_recursion_config::PutFunctionRecursionConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recursive_loop {
         object.key("RecursiveLoop").string(var_1.as_str());
     }

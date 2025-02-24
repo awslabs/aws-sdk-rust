@@ -2,7 +2,7 @@
 pub fn ser_copy_job_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::copy_job_template::CopyJobTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("targetS3Location").start_object();

@@ -3,7 +3,7 @@
 pub fn de_idp_rejected_claim_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::IdpRejectedClaimExceptionBuilder,
-) -> Result<crate::types::error::builders::IdpRejectedClaimExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::IdpRejectedClaimExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

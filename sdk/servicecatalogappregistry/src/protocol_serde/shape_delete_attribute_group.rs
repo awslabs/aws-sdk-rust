@@ -91,7 +91,7 @@ pub fn de_delete_attribute_group_http_response(
 pub(crate) fn de_delete_attribute_group(
     value: &[u8],
     mut builder: crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

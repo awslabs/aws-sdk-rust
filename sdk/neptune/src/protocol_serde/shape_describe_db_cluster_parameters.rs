@@ -67,7 +67,7 @@ pub fn de_describe_db_cluster_parameters_http_response(
 pub fn de_describe_db_cluster_parameters(
     inp: &[u8],
     mut builder: crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_get_campaign_state_batch_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.campaign_ids {
         let mut array_2 = object.key("campaignIds").start_array();
         for item_3 in var_1 {

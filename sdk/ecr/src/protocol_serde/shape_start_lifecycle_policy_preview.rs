@@ -149,7 +149,7 @@ pub fn de_start_lifecycle_policy_preview_http_response(
 
 pub fn ser_start_lifecycle_policy_preview_input(
     input: &crate::operation::start_lifecycle_policy_preview::StartLifecyclePolicyPreviewInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_lifecycle_policy_preview_input::ser_start_lifecycle_policy_preview_input_input(&mut object, input)?;
@@ -160,7 +160,7 @@ pub fn ser_start_lifecycle_policy_preview_input(
 pub(crate) fn de_start_lifecycle_policy_preview(
     value: &[u8],
     mut builder: crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_lifecycle_policy_preview::builders::StartLifecyclePolicyPreviewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

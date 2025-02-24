@@ -157,7 +157,7 @@ pub fn de_regenerate_security_token_http_response(
 pub(crate) fn de_regenerate_security_token(
     value: &[u8],
     mut builder: crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

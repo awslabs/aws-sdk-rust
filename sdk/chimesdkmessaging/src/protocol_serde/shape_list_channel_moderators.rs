@@ -156,7 +156,7 @@ pub fn ser_list_channel_moderators_headers(
 pub(crate) fn de_list_channel_moderators(
     value: &[u8],
     mut builder: crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_channel_moderators::builders::ListChannelModeratorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

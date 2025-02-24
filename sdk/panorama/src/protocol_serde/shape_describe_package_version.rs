@@ -129,7 +129,7 @@ pub fn de_describe_package_version_http_response(
 pub(crate) fn de_describe_package_version(
     value: &[u8],
     mut builder: crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

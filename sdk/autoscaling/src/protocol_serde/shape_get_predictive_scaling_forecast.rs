@@ -62,7 +62,7 @@ pub fn de_get_predictive_scaling_forecast_http_response(
 pub fn de_get_predictive_scaling_forecast(
     inp: &[u8],
     mut builder: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

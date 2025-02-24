@@ -2,7 +2,7 @@
 pub fn ser_veeva_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VeevaConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("username").string(input.username.as_str());
     }

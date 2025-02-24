@@ -44,7 +44,7 @@ pub fn de_list_bucket_intelligent_tiering_configurations_http_response(
 pub fn de_list_bucket_intelligent_tiering_configurations(
     inp: &[u8],
     mut builder: crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_posix_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PosixProfile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uid").number(
             #[allow(clippy::useless_conversion)]
@@ -32,7 +32,7 @@ pub fn ser_posix_profile(
 
 pub(crate) fn de_posix_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PosixProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PosixProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

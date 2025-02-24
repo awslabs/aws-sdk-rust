@@ -57,7 +57,7 @@ pub fn ser_list_access_points_for_object_lambda_headers(
 pub fn de_list_access_points_for_object_lambda(
     inp: &[u8],
     mut builder: crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_access_points_for_object_lambda::builders::ListAccessPointsForObjectLambdaOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

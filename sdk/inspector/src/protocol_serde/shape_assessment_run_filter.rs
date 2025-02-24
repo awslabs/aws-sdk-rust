@@ -2,7 +2,7 @@
 pub fn ser_assessment_run_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssessmentRunFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name_pattern {
         object.key("namePattern").string(var_1.as_str());
     }

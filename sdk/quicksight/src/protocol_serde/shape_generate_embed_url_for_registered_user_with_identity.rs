@@ -199,7 +199,7 @@ pub fn de_generate_embed_url_for_registered_user_with_identity_http_response(
 
 pub fn ser_generate_embed_url_for_registered_user_with_identity_input(
     input: &crate::operation::generate_embed_url_for_registered_user_with_identity::GenerateEmbedUrlForRegisteredUserWithIdentityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_generate_embed_url_for_registered_user_with_identity_input::ser_generate_embed_url_for_registered_user_with_identity_input_input(&mut object, input)?;
@@ -210,7 +210,7 @@ pub fn ser_generate_embed_url_for_registered_user_with_identity_input(
 pub(crate) fn de_generate_embed_url_for_registered_user_with_identity(
     value: &[u8],
     mut builder: crate::operation::generate_embed_url_for_registered_user_with_identity::builders::GenerateEmbedUrlForRegisteredUserWithIdentityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::generate_embed_url_for_registered_user_with_identity::builders::GenerateEmbedUrlForRegisteredUserWithIdentityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_list_data_deletion_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_data_deletion_jobs::ListDataDeletionJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dataset_group_arn {
         object.key("datasetGroupArn").string(var_1.as_str());
     }

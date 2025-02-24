@@ -2,7 +2,7 @@
 pub fn ser_get_user_auth_factors_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_user_auth_factors::GetUserAuthFactorsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_token {
         object.key("AccessToken").string(var_1.as_str());
     }

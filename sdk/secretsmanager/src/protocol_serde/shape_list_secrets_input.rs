@@ -2,7 +2,7 @@
 pub fn ser_list_secrets_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_secrets::ListSecretsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_planned_deletion {
         object.key("IncludePlannedDeletion").boolean(*var_1);
     }

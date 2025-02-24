@@ -144,7 +144,7 @@ pub fn de_delete_global_network_http_response(
 pub(crate) fn de_delete_global_network(
     value: &[u8],
     mut builder: crate::operation::delete_global_network::builders::DeleteGlobalNetworkOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_global_network::builders::DeleteGlobalNetworkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

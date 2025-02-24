@@ -2,7 +2,7 @@
 pub fn ser_lambda_execution_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaExecutionParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_sources {
         let mut array_2 = object.key("eventSources").start_array();
         for item_3 in var_1 {

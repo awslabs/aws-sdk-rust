@@ -2,7 +2,7 @@
 pub fn ser_inference_component_runtime_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceComponentRuntimeConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.copy_count {
         object.key("CopyCount").number(
             #[allow(clippy::useless_conversion)]

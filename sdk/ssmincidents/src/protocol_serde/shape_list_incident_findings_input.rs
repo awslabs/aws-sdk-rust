@@ -2,7 +2,7 @@
 pub fn ser_list_incident_findings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_incident_findings::ListIncidentFindingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.incident_record_arn {
         object.key("incidentRecordArn").string(var_1.as_str());
     }

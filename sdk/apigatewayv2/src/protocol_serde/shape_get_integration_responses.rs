@@ -95,7 +95,7 @@ pub fn de_get_integration_responses_http_response(
 pub(crate) fn de_get_integration_responses(
     value: &[u8],
     mut builder: crate::operation::get_integration_responses::builders::GetIntegrationResponsesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_integration_responses::builders::GetIntegrationResponsesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

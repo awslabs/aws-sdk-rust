@@ -136,7 +136,7 @@ pub fn de_get_read_set_activation_job_http_response(
 pub(crate) fn de_get_read_set_activation_job(
     value: &[u8],
     mut builder: crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

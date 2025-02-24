@@ -2,7 +2,7 @@
 pub fn ser_write_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WriteOperation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.add_object {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AddObject").start_object();

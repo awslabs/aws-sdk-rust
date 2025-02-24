@@ -2,7 +2,7 @@
 pub fn ser_list_input_routings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_input_routings::ListInputRoutingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("inputIdentifier").start_object();

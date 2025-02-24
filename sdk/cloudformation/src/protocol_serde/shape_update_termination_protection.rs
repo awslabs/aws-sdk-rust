@@ -39,7 +39,7 @@ pub fn de_update_termination_protection_http_response(
 pub fn de_update_termination_protection(
     inp: &[u8],
     mut builder: crate::operation::update_termination_protection::builders::UpdateTerminationProtectionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_termination_protection::builders::UpdateTerminationProtectionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

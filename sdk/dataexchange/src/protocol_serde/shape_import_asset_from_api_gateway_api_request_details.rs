@@ -2,7 +2,7 @@
 pub fn ser_import_asset_from_api_gateway_api_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetFromApiGatewayApiRequestDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_description {
         object.key("ApiDescription").string(var_1.as_str());
     }

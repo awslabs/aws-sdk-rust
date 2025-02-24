@@ -170,7 +170,7 @@ pub fn ser_redact_channel_message_headers(
 
 pub fn ser_redact_channel_message_input(
     input: &crate::operation::redact_channel_message::RedactChannelMessageInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_redact_channel_message_input::ser_redact_channel_message_input_input(&mut object, input)?;
@@ -181,7 +181,7 @@ pub fn ser_redact_channel_message_input(
 pub(crate) fn de_redact_channel_message(
     value: &[u8],
     mut builder: crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

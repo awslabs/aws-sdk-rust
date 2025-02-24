@@ -41,7 +41,7 @@ pub fn de_disable_ipam_organization_admin_account_http_response(
 pub fn de_disable_ipam_organization_admin_account(
     inp: &[u8],
     mut builder: crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

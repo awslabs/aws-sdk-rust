@@ -2,7 +2,7 @@
 pub fn ser_byte_content_file(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ByteContentFile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("mediaType").string(input.media_type.as_str());
     }

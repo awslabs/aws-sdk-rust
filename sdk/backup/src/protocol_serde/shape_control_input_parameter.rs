@@ -2,7 +2,7 @@
 pub fn ser_control_input_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ControlInputParameter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parameter_name {
         object.key("ParameterName").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_control_input_parameter(
 
 pub(crate) fn de_control_input_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ControlInputParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ControlInputParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

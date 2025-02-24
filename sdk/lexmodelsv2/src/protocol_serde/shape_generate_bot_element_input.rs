@@ -2,7 +2,7 @@
 pub fn ser_generate_bot_element_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::generate_bot_element::GenerateBotElementInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.intent_id {
         object.key("intentId").string(var_1.as_str());
     }

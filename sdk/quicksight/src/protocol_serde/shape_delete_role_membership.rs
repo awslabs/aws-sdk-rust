@@ -157,7 +157,7 @@ pub fn de_delete_role_membership_http_response(
 pub(crate) fn de_delete_role_membership(
     value: &[u8],
     mut builder: crate::operation::delete_role_membership::builders::DeleteRoleMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_role_membership::builders::DeleteRoleMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

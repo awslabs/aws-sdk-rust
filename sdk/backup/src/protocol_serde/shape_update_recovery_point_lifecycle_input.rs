@@ -2,7 +2,7 @@
 pub fn ser_update_recovery_point_lifecycle_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lifecycle {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Lifecycle").start_object();

@@ -136,7 +136,7 @@ pub fn de_list_project_memberships_http_response(
 pub(crate) fn de_list_project_memberships(
     value: &[u8],
     mut builder: crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_project_memberships::builders::ListProjectMembershipsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

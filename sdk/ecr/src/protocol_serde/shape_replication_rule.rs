@@ -2,7 +2,7 @@
 pub fn ser_replication_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicationRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("destinations").start_array();
         for item_2 in &input.destinations {
@@ -32,7 +32,7 @@ pub fn ser_replication_rule(
 
 pub(crate) fn de_replication_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ReplicationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ReplicationRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -148,7 +148,7 @@ pub fn de_deregister_transit_gateway_http_response(
 pub(crate) fn de_deregister_transit_gateway(
     value: &[u8],
     mut builder: crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

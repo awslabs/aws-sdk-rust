@@ -2,7 +2,7 @@
 pub fn ser_route_matrix_avoidance_area(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteMatrixAvoidanceArea,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.geometry {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Geometry").start_object();

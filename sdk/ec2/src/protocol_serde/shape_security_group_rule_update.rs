@@ -3,7 +3,7 @@
 pub fn ser_security_group_rule_update(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SecurityGroupRuleUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SecurityGroupRuleId");
     if let Some(var_2) = &input.security_group_rule_id {

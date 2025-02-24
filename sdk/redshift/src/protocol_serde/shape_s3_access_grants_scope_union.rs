@@ -3,7 +3,7 @@
 pub fn ser_s3_access_grants_scope_union(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::S3AccessGrantsScopeUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::S3AccessGrantsScopeUnion::ReadWriteAccess(inner) => {
             crate::protocol_serde::shape_read_write_access::ser_read_write_access(writer, inner)?;
@@ -19,7 +19,7 @@ pub fn ser_s3_access_grants_scope_union(
 
 pub fn de_s3_access_grants_scope_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3AccessGrantsScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::S3AccessGrantsScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut base: Option<crate::types::S3AccessGrantsScopeUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

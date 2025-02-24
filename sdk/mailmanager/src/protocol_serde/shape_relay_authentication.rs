@@ -2,7 +2,7 @@
 pub fn ser_relay_authentication(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelayAuthentication,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RelayAuthentication::SecretArn(inner) => {
             object_6.key("SecretArn").string(inner.as_str());
@@ -24,7 +24,7 @@ pub fn ser_relay_authentication(
 
 pub(crate) fn de_relay_authentication<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RelayAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RelayAuthentication>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

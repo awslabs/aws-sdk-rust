@@ -105,7 +105,7 @@ pub fn de_batch_describe_entities_http_response(
 
 pub fn ser_batch_describe_entities_input(
     input: &crate::operation::batch_describe_entities::BatchDescribeEntitiesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_describe_entities_input::ser_batch_describe_entities_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_batch_describe_entities_input(
 pub(crate) fn de_batch_describe_entities(
     value: &[u8],
     mut builder: crate::operation::batch_describe_entities::builders::BatchDescribeEntitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_describe_entities::builders::BatchDescribeEntitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

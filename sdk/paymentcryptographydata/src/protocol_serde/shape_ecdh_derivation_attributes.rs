@@ -2,7 +2,7 @@
 pub fn ser_ecdh_derivation_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcdhDerivationAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("CertificateAuthorityPublicKeyIdentifier")

@@ -102,7 +102,7 @@ pub fn de_list_plugin_type_actions_http_response(
 pub(crate) fn de_list_plugin_type_actions(
     value: &[u8],
     mut builder: crate::operation::list_plugin_type_actions::builders::ListPluginTypeActionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_plugin_type_actions::builders::ListPluginTypeActionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

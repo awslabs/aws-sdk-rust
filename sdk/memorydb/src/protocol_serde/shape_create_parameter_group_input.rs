@@ -2,7 +2,7 @@
 pub fn ser_create_parameter_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_parameter_group::CreateParameterGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parameter_group_name {
         object.key("ParameterGroupName").string(var_1.as_str());
     }

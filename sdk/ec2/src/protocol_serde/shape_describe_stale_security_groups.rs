@@ -39,7 +39,7 @@ pub fn de_describe_stale_security_groups_http_response(
 pub fn de_describe_stale_security_groups(
     inp: &[u8],
     mut builder: crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

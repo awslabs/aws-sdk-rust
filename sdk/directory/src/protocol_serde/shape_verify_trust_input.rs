@@ -2,7 +2,7 @@
 pub fn ser_verify_trust_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::verify_trust::VerifyTrustInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trust_id {
         object.key("TrustId").string(var_1.as_str());
     }

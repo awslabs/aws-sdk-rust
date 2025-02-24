@@ -62,7 +62,7 @@ pub fn de_list_ssh_public_keys_http_response(
 pub fn de_list_ssh_public_keys(
     inp: &[u8],
     mut builder: crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysOutputBuilder,
-) -> Result<crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

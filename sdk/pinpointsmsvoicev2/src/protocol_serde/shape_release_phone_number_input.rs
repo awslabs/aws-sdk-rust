@@ -2,7 +2,7 @@
 pub fn ser_release_phone_number_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::release_phone_number::ReleasePhoneNumberInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.phone_number_id {
         object.key("PhoneNumberId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_load_balancer_source_security_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerSourceSecurityGroup,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_name {
         object.key("GroupName").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_elb_load_balancer_source_security_group(
 
 pub(crate) fn de_aws_elb_load_balancer_source_security_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerSourceSecurityGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -41,8 +41,10 @@ pub fn de_list_snapshots_in_recycle_bin_http_response(
 pub fn de_list_snapshots_in_recycle_bin(
     inp: &[u8],
     mut builder: crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder,
-) -> Result<crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -122,7 +122,7 @@ pub fn de_list_certificates_by_ca_http_response(
 pub(crate) fn de_list_certificates_by_ca(
     value: &[u8],
     mut builder: crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

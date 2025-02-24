@@ -2,7 +2,7 @@
 pub fn ser_default_route_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DefaultRouteInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.activation_state {
         object.key("ActivationState").string(var_1.as_str());
     }

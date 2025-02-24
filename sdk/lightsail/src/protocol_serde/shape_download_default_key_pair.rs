@@ -159,14 +159,14 @@ pub fn de_download_default_key_pair_http_response(
 
 pub fn ser_download_default_key_pair_input(
     _input: &crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_download_default_key_pair(
     value: &[u8],
     mut builder: crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

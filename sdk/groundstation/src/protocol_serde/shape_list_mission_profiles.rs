@@ -91,7 +91,7 @@ pub fn de_list_mission_profiles_http_response(
 pub(crate) fn de_list_mission_profiles(
     value: &[u8],
     mut builder: crate::operation::list_mission_profiles::builders::ListMissionProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_mission_profiles::builders::ListMissionProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

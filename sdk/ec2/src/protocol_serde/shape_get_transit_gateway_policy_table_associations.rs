@@ -44,7 +44,7 @@ pub fn de_get_transit_gateway_policy_table_associations_http_response(
 pub fn de_get_transit_gateway_policy_table_associations(
     inp: &[u8],
     mut builder: crate::operation::get_transit_gateway_policy_table_associations::builders::GetTransitGatewayPolicyTableAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_transit_gateway_policy_table_associations::builders::GetTransitGatewayPolicyTableAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

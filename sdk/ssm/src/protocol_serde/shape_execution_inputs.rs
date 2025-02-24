@@ -2,7 +2,7 @@
 pub fn ser_execution_inputs(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExecutionInputs,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ExecutionInputs::Automation(inner) => {
             #[allow(unused_mut)]

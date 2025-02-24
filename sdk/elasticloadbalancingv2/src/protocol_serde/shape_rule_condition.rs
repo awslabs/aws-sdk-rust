@@ -3,7 +3,7 @@
 pub fn ser_rule_condition(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RuleCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Field");
     if let Some(var_2) = &input.field {
@@ -56,7 +56,7 @@ pub fn ser_rule_condition(
 #[allow(clippy::needless_question_mark)]
 pub fn de_rule_condition(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::RuleCondition, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::RuleCondition, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::RuleCondition::builder();
     while let Some(mut tag) = decoder.next_tag() {

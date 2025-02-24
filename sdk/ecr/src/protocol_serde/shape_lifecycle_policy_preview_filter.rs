@@ -2,7 +2,7 @@
 pub fn ser_lifecycle_policy_preview_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LifecyclePolicyPreviewFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tag_status {
         object.key("tagStatus").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_update_service_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_settings::UpdateServiceSettingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_update {
         object.key("AllowUpdate").boolean(*var_1);
     }

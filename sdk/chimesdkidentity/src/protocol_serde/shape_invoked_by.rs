@@ -2,7 +2,7 @@
 pub fn ser_invoked_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InvokedBy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("StandardMessages").string(input.standard_messages.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_invoked_by(
 
 pub(crate) fn de_invoked_by<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InvokedBy>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InvokedBy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

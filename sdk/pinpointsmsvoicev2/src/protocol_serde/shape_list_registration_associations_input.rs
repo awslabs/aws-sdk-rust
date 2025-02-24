@@ -2,7 +2,7 @@
 pub fn ser_list_registration_associations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_registration_associations::ListRegistrationAssociationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.registration_id {
         object.key("RegistrationId").string(var_1.as_str());
     }

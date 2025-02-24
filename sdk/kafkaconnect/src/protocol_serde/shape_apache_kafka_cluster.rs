@@ -2,7 +2,7 @@
 pub fn ser_apache_kafka_cluster(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApacheKafkaCluster,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("bootstrapServers").string(input.bootstrap_servers.as_str());
     }

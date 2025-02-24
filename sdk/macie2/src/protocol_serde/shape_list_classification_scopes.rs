@@ -110,7 +110,7 @@ pub fn de_list_classification_scopes_http_response(
 pub(crate) fn de_list_classification_scopes(
     value: &[u8],
     mut builder: crate::operation::list_classification_scopes::builders::ListClassificationScopesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_classification_scopes::builders::ListClassificationScopesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

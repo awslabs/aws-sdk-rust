@@ -2,7 +2,7 @@
 pub fn ser_report_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ReportTemplate").string(input.report_template.as_str());
     }
@@ -53,7 +53,7 @@ pub fn ser_report_setting(
 
 pub(crate) fn de_report_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ReportSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ReportSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

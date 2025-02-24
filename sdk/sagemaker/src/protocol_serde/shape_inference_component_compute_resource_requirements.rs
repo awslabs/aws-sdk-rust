@@ -2,7 +2,7 @@
 pub fn ser_inference_component_compute_resource_requirements(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceComponentComputeResourceRequirements,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.number_of_cpu_cores_required {
         object.key("NumberOfCpuCoresRequired").number(
             #[allow(clippy::useless_conversion)]
@@ -32,7 +32,7 @@ pub fn ser_inference_component_compute_resource_requirements(
 
 pub(crate) fn de_inference_component_compute_resource_requirements<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InferenceComponentComputeResourceRequirements>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InferenceComponentComputeResourceRequirements>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

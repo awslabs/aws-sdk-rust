@@ -149,7 +149,7 @@ pub fn de_list_allowed_repositories_for_group_http_response(
 pub(crate) fn de_list_allowed_repositories_for_group(
     value: &[u8],
     mut builder: crate::operation::list_allowed_repositories_for_group::builders::ListAllowedRepositoriesForGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_allowed_repositories_for_group::builders::ListAllowedRepositoriesForGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

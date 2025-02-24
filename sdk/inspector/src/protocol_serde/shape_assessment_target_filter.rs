@@ -2,7 +2,7 @@
 pub fn ser_assessment_target_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssessmentTargetFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assessment_target_name_pattern {
         object.key("assessmentTargetNamePattern").string(var_1.as_str());
     }

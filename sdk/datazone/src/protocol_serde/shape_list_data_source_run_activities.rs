@@ -168,7 +168,7 @@ pub fn de_list_data_source_run_activities_http_response(
 pub(crate) fn de_list_data_source_run_activities(
     value: &[u8],
     mut builder: crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_source_run_activities::builders::ListDataSourceRunActivitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

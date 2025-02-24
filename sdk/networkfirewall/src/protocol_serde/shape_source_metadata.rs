@@ -2,7 +2,7 @@
 pub fn ser_source_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_arn {
         object.key("SourceArn").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_source_metadata(
 
 pub(crate) fn de_source_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SourceMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SourceMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

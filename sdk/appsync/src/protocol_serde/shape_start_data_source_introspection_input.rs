@@ -2,7 +2,7 @@
 pub fn ser_start_data_source_introspection_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_data_source_introspection::StartDataSourceIntrospectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rds_data_api_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("rdsDataApiConfig").start_object();

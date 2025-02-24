@@ -133,7 +133,7 @@ pub fn de_list_storage_profiles_http_response(
 pub(crate) fn de_list_storage_profiles(
     value: &[u8],
     mut builder: crate::operation::list_storage_profiles::builders::ListStorageProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_storage_profiles::builders::ListStorageProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

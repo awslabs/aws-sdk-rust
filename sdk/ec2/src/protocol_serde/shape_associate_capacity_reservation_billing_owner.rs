@@ -44,7 +44,7 @@ pub fn de_associate_capacity_reservation_billing_owner_http_response(
 pub fn de_associate_capacity_reservation_billing_owner(
     inp: &[u8],
     mut builder: crate::operation::associate_capacity_reservation_billing_owner::builders::AssociateCapacityReservationBillingOwnerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_capacity_reservation_billing_owner::builders::AssociateCapacityReservationBillingOwnerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

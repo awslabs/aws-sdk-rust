@@ -124,7 +124,7 @@ pub fn de_delete_serverless_cache_snapshot_http_response(
 pub fn de_delete_serverless_cache_snapshot(
     inp: &[u8],
     mut builder: crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_serverless_cache_snapshot::builders::DeleteServerlessCacheSnapshotOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

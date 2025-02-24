@@ -2,7 +2,7 @@
 pub fn ser_attribute_types_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeTypesSelector,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeMatchingModel").string(input.attribute_matching_model.as_str());
     }
@@ -38,7 +38,7 @@ pub fn ser_attribute_types_selector(
 
 pub(crate) fn de_attribute_types_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AttributeTypesSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AttributeTypesSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

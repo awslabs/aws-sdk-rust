@@ -2,7 +2,7 @@
 pub fn ser_reboot_workspaces_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reboot_workspaces::RebootWorkspacesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.reboot_workspace_requests {
         let mut array_2 = object.key("RebootWorkspaceRequests").start_array();
         for item_3 in var_1 {

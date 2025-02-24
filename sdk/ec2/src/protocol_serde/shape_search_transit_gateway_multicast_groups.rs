@@ -41,7 +41,7 @@ pub fn de_search_transit_gateway_multicast_groups_http_response(
 pub fn de_search_transit_gateway_multicast_groups(
     inp: &[u8],
     mut builder: crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::search_transit_gateway_multicast_groups::builders::SearchTransitGatewayMulticastGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -95,14 +95,14 @@ pub fn de_create_usage_report_subscription_http_response(
 
 pub fn ser_create_usage_report_subscription_input(
     _input: &crate::operation::create_usage_report_subscription::CreateUsageReportSubscriptionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_create_usage_report_subscription(
     value: &[u8],
     mut builder: crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_usage_report_subscription::builders::CreateUsageReportSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

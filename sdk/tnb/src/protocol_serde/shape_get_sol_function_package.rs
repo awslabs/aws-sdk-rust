@@ -118,7 +118,7 @@ pub fn de_get_sol_function_package_http_response(
 pub(crate) fn de_get_sol_function_package(
     value: &[u8],
     mut builder: crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_sol_function_package::builders::GetSolFunctionPackageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

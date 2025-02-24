@@ -119,14 +119,14 @@ pub fn de_delete_voice_message_spend_limit_override_http_response(
 
 pub fn ser_delete_voice_message_spend_limit_override_input(
     _input: &crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_delete_voice_message_spend_limit_override(
     value: &[u8],
     mut builder: crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

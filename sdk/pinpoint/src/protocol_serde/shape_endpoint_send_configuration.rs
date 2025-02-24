@@ -2,7 +2,7 @@
 pub fn ser_endpoint_send_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EndpointSendConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.body_override {
         object.key("BodyOverride").string(var_1.as_str());
     }

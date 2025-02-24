@@ -168,7 +168,7 @@ pub fn de_get_voice_profile_domain_http_response(
 pub(crate) fn de_get_voice_profile_domain(
     value: &[u8],
     mut builder: crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

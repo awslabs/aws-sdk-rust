@@ -2,7 +2,7 @@
 pub fn ser_s3_set_object_retention_operation(
     input: &crate::types::S3SetObjectRetentionOperation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.bypass_governance_retention {
@@ -20,7 +20,7 @@ pub fn ser_s3_set_object_retention_operation(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_set_object_retention_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3SetObjectRetentionOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::S3SetObjectRetentionOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3SetObjectRetentionOperation::builder();
     while let Some(mut tag) = decoder.next_tag() {

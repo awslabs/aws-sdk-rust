@@ -2,7 +2,7 @@
 pub fn ser_time_range_filter_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeRangeFilterValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.static_value {
         object
             .key("StaticValue")
@@ -22,7 +22,7 @@ pub fn ser_time_range_filter_value(
 
 pub(crate) fn de_time_range_filter_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TimeRangeFilterValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TimeRangeFilterValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

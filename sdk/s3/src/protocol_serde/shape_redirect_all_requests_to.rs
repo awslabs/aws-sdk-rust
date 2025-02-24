@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_redirect_all_requests_to(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::RedirectAllRequestsTo, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::RedirectAllRequestsTo, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::RedirectAllRequestsTo::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -45,7 +45,7 @@ pub fn de_redirect_all_requests_to(
 pub fn ser_redirect_all_requests_to(
     input: &crate::types::RedirectAllRequestsTo,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

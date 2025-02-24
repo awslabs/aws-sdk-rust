@@ -134,7 +134,7 @@ pub fn de_describe_global_networks_http_response(
 pub(crate) fn de_describe_global_networks(
     value: &[u8],
     mut builder: crate::operation::describe_global_networks::builders::DescribeGlobalNetworksOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_global_networks::builders::DescribeGlobalNetworksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

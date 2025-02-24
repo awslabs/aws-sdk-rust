@@ -56,7 +56,7 @@ pub fn de_list_type_versions_http_response(
 pub fn de_list_type_versions(
     inp: &[u8],
     mut builder: crate::operation::list_type_versions::builders::ListTypeVersionsOutputBuilder,
-) -> Result<crate::operation::list_type_versions::builders::ListTypeVersionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_type_versions::builders::ListTypeVersionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

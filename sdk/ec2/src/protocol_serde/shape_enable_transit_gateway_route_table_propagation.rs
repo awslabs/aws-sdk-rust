@@ -42,7 +42,7 @@ pub fn de_enable_transit_gateway_route_table_propagation_http_response(
 pub fn de_enable_transit_gateway_route_table_propagation(
     inp: &[u8],
     mut builder: crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

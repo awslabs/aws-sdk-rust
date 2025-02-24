@@ -2,7 +2,7 @@
 pub fn ser_holiday_config_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HolidayConfigAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.country_code {
         object.key("CountryCode").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_holiday_config_attributes(
 
 pub(crate) fn de_holiday_config_attributes<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HolidayConfigAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HolidayConfigAttributes>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

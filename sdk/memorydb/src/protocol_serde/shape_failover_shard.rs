@@ -169,7 +169,7 @@ pub fn de_failover_shard_http_response(
 
 pub fn ser_failover_shard_input(
     input: &crate::operation::failover_shard::FailoverShardInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_failover_shard_input::ser_failover_shard_input_input(&mut object, input)?;
@@ -180,7 +180,10 @@ pub fn ser_failover_shard_input(
 pub(crate) fn de_failover_shard(
     value: &[u8],
     mut builder: crate::operation::failover_shard::builders::FailoverShardOutputBuilder,
-) -> Result<crate::operation::failover_shard::builders::FailoverShardOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::failover_shard::builders::FailoverShardOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

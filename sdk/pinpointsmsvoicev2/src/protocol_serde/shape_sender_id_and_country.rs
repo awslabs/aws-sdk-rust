@@ -2,7 +2,7 @@
 pub fn ser_sender_id_and_country(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SenderIdAndCountry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SenderId").string(input.sender_id.as_str());
     }

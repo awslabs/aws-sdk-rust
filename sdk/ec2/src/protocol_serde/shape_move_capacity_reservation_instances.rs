@@ -39,7 +39,7 @@ pub fn de_move_capacity_reservation_instances_http_response(
 pub fn de_move_capacity_reservation_instances(
     inp: &[u8],
     mut builder: crate::operation::move_capacity_reservation_instances::builders::MoveCapacityReservationInstancesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::move_capacity_reservation_instances::builders::MoveCapacityReservationInstancesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

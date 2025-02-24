@@ -2,7 +2,7 @@
 pub fn ser_start_child_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartChildWorkflowExecutionDecisionAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workflow_type {
         #[allow(unused_mut)]
         let mut object_2 = object.key("workflowType").start_object();

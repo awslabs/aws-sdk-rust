@@ -2,7 +2,7 @@
 pub fn ser_retriever_content_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetrieverContentSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("retrieverId").string(input.retriever_id.as_str());
     }

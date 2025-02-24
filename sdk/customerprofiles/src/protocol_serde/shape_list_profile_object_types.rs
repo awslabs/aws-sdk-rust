@@ -125,7 +125,7 @@ pub fn de_list_profile_object_types_http_response(
 pub(crate) fn de_list_profile_object_types(
     value: &[u8],
     mut builder: crate::operation::list_profile_object_types::builders::ListProfileObjectTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_profile_object_types::builders::ListProfileObjectTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

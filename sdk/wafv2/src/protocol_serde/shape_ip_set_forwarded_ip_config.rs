@@ -2,7 +2,7 @@
 pub fn ser_ip_set_forwarded_ip_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpSetForwardedIpConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HeaderName").string(input.header_name.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_ip_set_forwarded_ip_config(
 
 pub(crate) fn de_ip_set_forwarded_ip_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IpSetForwardedIpConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IpSetForwardedIpConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

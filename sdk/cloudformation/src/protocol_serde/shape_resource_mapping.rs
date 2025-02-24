@@ -3,7 +3,7 @@
 pub fn ser_resource_mapping(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ResourceMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Source");
     if let Some(var_2) = &input.source {
@@ -20,7 +20,7 @@ pub fn ser_resource_mapping(
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_mapping(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResourceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResourceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceMapping::builder();
     while let Some(mut tag) = decoder.next_tag() {

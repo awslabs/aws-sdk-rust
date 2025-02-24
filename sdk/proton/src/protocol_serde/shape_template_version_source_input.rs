@@ -2,7 +2,7 @@
 pub fn ser_template_version_source_input(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateVersionSourceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TemplateVersionSourceInput::S3(inner) => {
             #[allow(unused_mut)]

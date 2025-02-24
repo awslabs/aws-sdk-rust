@@ -2,7 +2,7 @@
 pub fn ser_service_managed_ec2_instance_capabilities(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceManagedEc2InstanceCapabilities,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.v_cpu_count {
         #[allow(unused_mut)]
         let mut object_2 = object.key("vCpuCount").start_object();
@@ -80,7 +80,7 @@ pub fn ser_service_managed_ec2_instance_capabilities(
 
 pub(crate) fn de_service_managed_ec2_instance_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ServiceManagedEc2InstanceCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ServiceManagedEc2InstanceCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

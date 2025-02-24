@@ -61,7 +61,7 @@ pub fn de_get_subscription_definition_version_http_response(
 pub(crate) fn de_get_subscription_definition_version(
     value: &[u8],
     mut builder: crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -45,7 +45,7 @@ pub fn de_get_identity_mail_from_domain_attributes_http_response(
 pub fn de_get_identity_mail_from_domain_attributes(
     inp: &[u8],
     mut builder: crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_identity_mail_from_domain_attributes::builders::GetIdentityMailFromDomainAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

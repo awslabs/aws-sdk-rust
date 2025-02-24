@@ -2,7 +2,7 @@
 pub fn ser_additional_info_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdditionalInfoRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.malaysia_additional_info {
         #[allow(unused_mut)]
         let mut object_2 = object.key("malaysiaAdditionalInfo").start_object();

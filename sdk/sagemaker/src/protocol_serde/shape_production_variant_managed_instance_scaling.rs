@@ -2,7 +2,7 @@
 pub fn ser_production_variant_managed_instance_scaling(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProductionVariantManagedInstanceScaling,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_production_variant_managed_instance_scaling(
 
 pub(crate) fn de_production_variant_managed_instance_scaling<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ProductionVariantManagedInstanceScaling>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ProductionVariantManagedInstanceScaling>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

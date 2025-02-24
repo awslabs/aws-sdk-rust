@@ -2,7 +2,7 @@
 pub fn ser_rescore_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::rescore::RescoreInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rescore_execution_plan_id {
         object.key("RescoreExecutionPlanId").string(var_1.as_str());
     }

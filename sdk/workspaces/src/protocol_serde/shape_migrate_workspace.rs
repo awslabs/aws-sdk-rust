@@ -137,7 +137,7 @@ pub fn de_migrate_workspace_http_response(
 
 pub fn ser_migrate_workspace_input(
     input: &crate::operation::migrate_workspace::MigrateWorkspaceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_migrate_workspace_input::ser_migrate_workspace_input_input(&mut object, input)?;
@@ -148,7 +148,10 @@ pub fn ser_migrate_workspace_input(
 pub(crate) fn de_migrate_workspace(
     value: &[u8],
     mut builder: crate::operation::migrate_workspace::builders::MigrateWorkspaceOutputBuilder,
-) -> Result<crate::operation::migrate_workspace::builders::MigrateWorkspaceOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::migrate_workspace::builders::MigrateWorkspaceOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -41,7 +41,7 @@ pub fn de_get_snapshot_block_public_access_state_http_response(
 pub fn de_get_snapshot_block_public_access_state(
     inp: &[u8],
     mut builder: crate::operation::get_snapshot_block_public_access_state::builders::GetSnapshotBlockPublicAccessStateOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_snapshot_block_public_access_state::builders::GetSnapshotBlockPublicAccessStateOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

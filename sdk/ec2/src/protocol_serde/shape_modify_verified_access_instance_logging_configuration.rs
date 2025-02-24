@@ -43,7 +43,7 @@ pub fn de_modify_verified_access_instance_logging_configuration_http_response(
 pub fn de_modify_verified_access_instance_logging_configuration(
     inp: &[u8],
     mut builder: crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

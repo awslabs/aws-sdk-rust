@@ -120,7 +120,7 @@ pub fn de_list_browser_settings_http_response(
 pub(crate) fn de_list_browser_settings(
     value: &[u8],
     mut builder: crate::operation::list_browser_settings::builders::ListBrowserSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_browser_settings::builders::ListBrowserSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

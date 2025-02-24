@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_identity_mail_from_domain_attributes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::IdentityMailFromDomainAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::IdentityMailFromDomainAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IdentityMailFromDomainAttributes::builder();
     while let Some(mut tag) = decoder.next_tag() {

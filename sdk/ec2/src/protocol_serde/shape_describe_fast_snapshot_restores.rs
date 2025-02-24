@@ -39,7 +39,7 @@ pub fn de_describe_fast_snapshot_restores_http_response(
 pub fn de_describe_fast_snapshot_restores(
     inp: &[u8],
     mut builder: crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_fast_snapshot_restores::builders::DescribeFastSnapshotRestoresOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

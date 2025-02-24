@@ -3,7 +3,7 @@
 pub fn ser_availability_zone_distribution(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AvailabilityZoneDistribution,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityDistributionStrategy");
     if let Some(var_2) = &input.capacity_distribution_strategy {
@@ -15,7 +15,7 @@ pub fn ser_availability_zone_distribution(
 #[allow(clippy::needless_question_mark)]
 pub fn de_availability_zone_distribution(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AvailabilityZoneDistribution, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AvailabilityZoneDistribution, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AvailabilityZoneDistribution::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -95,7 +95,7 @@ pub fn de_get_dataflow_endpoint_group_http_response(
 pub(crate) fn de_get_dataflow_endpoint_group(
     value: &[u8],
     mut builder: crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

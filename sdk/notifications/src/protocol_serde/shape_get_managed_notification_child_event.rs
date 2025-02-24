@@ -136,7 +136,7 @@ pub fn de_get_managed_notification_child_event_http_response(
 pub(crate) fn de_get_managed_notification_child_event(
     value: &[u8],
     mut builder: crate::operation::get_managed_notification_child_event::builders::GetManagedNotificationChildEventOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_managed_notification_child_event::builders::GetManagedNotificationChildEventOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

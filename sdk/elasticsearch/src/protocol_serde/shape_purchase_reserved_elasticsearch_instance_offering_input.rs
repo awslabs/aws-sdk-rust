@@ -2,7 +2,7 @@
 pub fn ser_purchase_reserved_elasticsearch_instance_offering_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]

@@ -139,7 +139,7 @@ pub fn de_get_wireless_device_import_task_http_response(
 pub(crate) fn de_get_wireless_device_import_task(
     value: &[u8],
     mut builder: crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

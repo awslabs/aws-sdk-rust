@@ -2,7 +2,7 @@
 pub fn ser_core_definition_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CoreDefinitionVersion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cores {
         let mut array_2 = object.key("Cores").start_array();
         for item_3 in var_1 {
@@ -20,7 +20,7 @@ pub fn ser_core_definition_version(
 
 pub(crate) fn de_core_definition_version<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CoreDefinitionVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CoreDefinitionVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

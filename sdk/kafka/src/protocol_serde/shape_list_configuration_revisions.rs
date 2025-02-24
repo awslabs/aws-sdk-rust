@@ -144,7 +144,7 @@ pub fn de_list_configuration_revisions_http_response(
 pub(crate) fn de_list_configuration_revisions(
     value: &[u8],
     mut builder: crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

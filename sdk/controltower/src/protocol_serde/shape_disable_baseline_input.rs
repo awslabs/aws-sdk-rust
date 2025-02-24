@@ -2,7 +2,7 @@
 pub fn ser_disable_baseline_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disable_baseline::DisableBaselineInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled_baseline_identifier {
         object.key("enabledBaselineIdentifier").string(var_1.as_str());
     }

@@ -154,7 +154,7 @@ pub fn de_cancel_transaction_http_response(
 
 pub fn ser_cancel_transaction_input(
     input: &crate::operation::cancel_transaction::CancelTransactionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_transaction_input::ser_cancel_transaction_input_input(&mut object, input)?;

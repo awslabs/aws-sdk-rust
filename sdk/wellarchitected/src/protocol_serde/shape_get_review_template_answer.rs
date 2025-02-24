@@ -125,7 +125,7 @@ pub fn de_get_review_template_answer_http_response(
 pub(crate) fn de_get_review_template_answer(
     value: &[u8],
     mut builder: crate::operation::get_review_template_answer::builders::GetReviewTemplateAnswerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_review_template_answer::builders::GetReviewTemplateAnswerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

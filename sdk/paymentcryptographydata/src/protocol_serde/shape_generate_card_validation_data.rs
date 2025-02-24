@@ -121,7 +121,7 @@ pub fn de_generate_card_validation_data_http_response(
 
 pub fn ser_generate_card_validation_data_input(
     input: &crate::operation::generate_card_validation_data::GenerateCardValidationDataInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_generate_card_validation_data_input::ser_generate_card_validation_data_input_input(&mut object, input)?;
@@ -132,7 +132,7 @@ pub fn ser_generate_card_validation_data_input(
 pub(crate) fn de_generate_card_validation_data(
     value: &[u8],
     mut builder: crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::generate_card_validation_data::builders::GenerateCardValidationDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

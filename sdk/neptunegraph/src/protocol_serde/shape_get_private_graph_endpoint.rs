@@ -108,7 +108,7 @@ pub fn de_get_private_graph_endpoint_http_response(
 pub(crate) fn de_get_private_graph_endpoint(
     value: &[u8],
     mut builder: crate::operation::get_private_graph_endpoint::builders::GetPrivateGraphEndpointOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_private_graph_endpoint::builders::GetPrivateGraphEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

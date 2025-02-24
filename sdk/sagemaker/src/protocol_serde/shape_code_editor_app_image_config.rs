@@ -2,7 +2,7 @@
 pub fn ser_code_editor_app_image_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeEditorAppImageConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_system_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("FileSystemConfig").start_object();
@@ -20,7 +20,7 @@ pub fn ser_code_editor_app_image_config(
 
 pub(crate) fn de_code_editor_app_image_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodeEditorAppImageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodeEditorAppImageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

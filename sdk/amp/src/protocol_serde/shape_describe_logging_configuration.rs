@@ -112,7 +112,7 @@ pub fn de_describe_logging_configuration_http_response(
 pub(crate) fn de_describe_logging_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

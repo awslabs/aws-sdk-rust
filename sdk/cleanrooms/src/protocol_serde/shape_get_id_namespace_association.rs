@@ -124,7 +124,7 @@ pub fn de_get_id_namespace_association_http_response(
 pub(crate) fn de_get_id_namespace_association(
     value: &[u8],
     mut builder: crate::operation::get_id_namespace_association::builders::GetIdNamespaceAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_id_namespace_association::builders::GetIdNamespaceAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

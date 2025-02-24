@@ -2,7 +2,7 @@
 pub fn ser_capacity_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacitySpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("throughputMode").string(input.throughput_mode.as_str());
     }

@@ -311,7 +311,7 @@ pub fn de_cancel_open_cypher_query_http_response(
 pub(crate) fn de_cancel_open_cypher_query(
     value: &[u8],
     mut builder: crate::operation::cancel_open_cypher_query::builders::CancelOpenCypherQueryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_open_cypher_query::builders::CancelOpenCypherQueryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

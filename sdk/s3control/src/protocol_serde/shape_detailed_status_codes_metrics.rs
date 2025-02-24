@@ -2,7 +2,7 @@
 pub fn ser_detailed_status_codes_metrics(
     input: &crate::types::DetailedStatusCodesMetrics,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.is_enabled {
@@ -16,7 +16,7 @@ pub fn ser_detailed_status_codes_metrics(
 #[allow(clippy::needless_question_mark)]
 pub fn de_detailed_status_codes_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::DetailedStatusCodesMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::DetailedStatusCodesMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::DetailedStatusCodesMetrics::builder();
     while let Some(mut tag) = decoder.next_tag() {

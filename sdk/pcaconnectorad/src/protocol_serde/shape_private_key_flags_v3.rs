@@ -2,7 +2,7 @@
 pub fn ser_private_key_flags_v3(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateKeyFlagsV3,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exportable_key {
         object.key("ExportableKey").boolean(*var_1);
     }
@@ -20,7 +20,7 @@ pub fn ser_private_key_flags_v3(
 
 pub(crate) fn de_private_key_flags_v3<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PrivateKeyFlagsV3>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PrivateKeyFlagsV3>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

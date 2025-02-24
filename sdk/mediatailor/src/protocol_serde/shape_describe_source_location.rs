@@ -38,7 +38,7 @@ pub fn de_describe_source_location_http_response(
 pub(crate) fn de_describe_source_location(
     value: &[u8],
     mut builder: crate::operation::describe_source_location::builders::DescribeSourceLocationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_source_location::builders::DescribeSourceLocationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

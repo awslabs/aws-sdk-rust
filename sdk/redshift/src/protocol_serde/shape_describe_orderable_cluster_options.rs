@@ -39,7 +39,7 @@ pub fn de_describe_orderable_cluster_options_http_response(
 pub fn de_describe_orderable_cluster_options(
     inp: &[u8],
     mut builder: crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

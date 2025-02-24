@@ -2,7 +2,7 @@
 pub fn ser_splunk_destination_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SplunkDestinationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hec_endpoint {
         object.key("HECEndpoint").string(var_1.as_str());
     }

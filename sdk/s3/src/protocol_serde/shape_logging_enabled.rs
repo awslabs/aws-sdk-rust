@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_logging_enabled(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LoggingEnabled, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LoggingEnabled, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LoggingEnabled::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -64,7 +64,7 @@ pub fn de_logging_enabled(
 pub fn ser_logging_enabled(
     input: &crate::types::LoggingEnabled,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

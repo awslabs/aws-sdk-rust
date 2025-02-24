@@ -2,7 +2,7 @@
 pub fn ser_linked_cluster_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LinkedClusterProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if !input.deletion_protection_enabled {
         object.key("deletionProtectionEnabled").boolean(input.deletion_protection_enabled);
     }

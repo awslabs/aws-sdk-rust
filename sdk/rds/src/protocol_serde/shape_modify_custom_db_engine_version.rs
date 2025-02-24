@@ -84,7 +84,7 @@ pub fn de_modify_custom_db_engine_version_http_response(
 pub fn de_modify_custom_db_engine_version(
     inp: &[u8],
     mut builder: crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

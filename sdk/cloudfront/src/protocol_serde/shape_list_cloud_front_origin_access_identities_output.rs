@@ -15,7 +15,7 @@ pub(crate) fn de_cloud_front_origin_access_identity_list_payload(
 
 pub fn de_cloud_front_origin_access_identity_list(
     inp: &[u8],
-) -> Result<crate::types::CloudFrontOriginAccessIdentityList, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::CloudFrontOriginAccessIdentityList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

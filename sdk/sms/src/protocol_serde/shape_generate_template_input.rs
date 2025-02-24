@@ -2,7 +2,7 @@
 pub fn ser_generate_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::generate_template::GenerateTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_id {
         object.key("appId").string(var_1.as_str());
     }

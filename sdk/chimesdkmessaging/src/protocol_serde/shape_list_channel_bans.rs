@@ -150,7 +150,10 @@ pub fn ser_list_channel_bans_headers(
 pub(crate) fn de_list_channel_bans(
     value: &[u8],
     mut builder: crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder,
-) -> Result<crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::list_channel_bans::builders::ListChannelBansOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

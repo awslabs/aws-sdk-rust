@@ -2,7 +2,7 @@
 pub fn ser_start_monitoring_member_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_monitoring_member::StartMonitoringMemberInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("AccountId").string(var_1.as_str());
     }

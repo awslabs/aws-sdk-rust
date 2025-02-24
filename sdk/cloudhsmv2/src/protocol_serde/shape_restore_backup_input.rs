@@ -2,7 +2,7 @@
 pub fn ser_restore_backup_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::restore_backup::RestoreBackupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_id {
         object.key("BackupId").string(var_1.as_str());
     }

@@ -138,7 +138,7 @@ pub fn de_list_phone_number_orders_http_response(
 pub(crate) fn de_list_phone_number_orders(
     value: &[u8],
     mut builder: crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_phone_number_orders::builders::ListPhoneNumberOrdersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

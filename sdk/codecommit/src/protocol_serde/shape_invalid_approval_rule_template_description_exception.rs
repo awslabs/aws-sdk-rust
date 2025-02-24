@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_approval_rule_template_description_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

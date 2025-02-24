@@ -93,7 +93,7 @@ pub fn de_get_deliverability_test_report_http_response(
 pub(crate) fn de_get_deliverability_test_report(
     value: &[u8],
     mut builder: crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_deliverability_test_report::builders::GetDeliverabilityTestReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

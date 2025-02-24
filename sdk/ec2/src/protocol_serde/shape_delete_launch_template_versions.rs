@@ -39,7 +39,7 @@ pub fn de_delete_launch_template_versions_http_response(
 pub fn de_delete_launch_template_versions(
     inp: &[u8],
     mut builder: crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

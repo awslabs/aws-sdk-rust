@@ -3,7 +3,7 @@
 pub fn ser_source_build_information(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SourceBuildInformation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SourceType");
     {
@@ -25,7 +25,7 @@ pub fn ser_source_build_information(
 #[allow(clippy::needless_question_mark)]
 pub fn de_source_build_information(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SourceBuildInformation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SourceBuildInformation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SourceBuildInformation::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_pause_state_schedule_action_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PauseStateScheduleActionSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pipelines {
         let mut array_2 = object.key("pipelines").start_array();
         for item_3 in var_1 {
@@ -20,7 +20,7 @@ pub fn ser_pause_state_schedule_action_settings(
 
 pub(crate) fn de_pause_state_schedule_action_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PauseStateScheduleActionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PauseStateScheduleActionSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

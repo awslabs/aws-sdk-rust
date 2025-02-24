@@ -2,7 +2,7 @@
 pub fn ser_list_metadata_transfer_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_metadata_transfer_jobs::ListMetadataTransferJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_type {
         object.key("destinationType").string(var_1.as_str());
     }

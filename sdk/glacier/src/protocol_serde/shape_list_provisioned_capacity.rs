@@ -106,7 +106,7 @@ pub fn de_list_provisioned_capacity_http_response(
 pub(crate) fn de_list_provisioned_capacity(
     value: &[u8],
     mut builder: crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_provisioned_capacity::builders::ListProvisionedCapacityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

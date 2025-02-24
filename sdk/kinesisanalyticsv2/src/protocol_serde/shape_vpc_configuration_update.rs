@@ -2,7 +2,7 @@
 pub fn ser_vpc_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcConfigurationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VpcConfigurationId").string(input.vpc_configuration_id.as_str());
     }

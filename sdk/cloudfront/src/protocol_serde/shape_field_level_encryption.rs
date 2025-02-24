@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_field_level_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FieldLevelEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::FieldLevelEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FieldLevelEncryption::builder();
     while let Some(mut tag) = decoder.next_tag() {

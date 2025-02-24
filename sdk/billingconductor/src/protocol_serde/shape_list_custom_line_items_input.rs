@@ -2,7 +2,7 @@
 pub fn ser_list_custom_line_items_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_custom_line_items::ListCustomLineItemsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.billing_period {
         object.key("BillingPeriod").string(var_1.as_str());
     }

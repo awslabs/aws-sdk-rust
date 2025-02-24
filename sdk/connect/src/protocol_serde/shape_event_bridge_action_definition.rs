@@ -2,7 +2,7 @@
 pub fn ser_event_bridge_action_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventBridgeActionDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_event_bridge_action_definition(
 
 pub(crate) fn de_event_bridge_action_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EventBridgeActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EventBridgeActionDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

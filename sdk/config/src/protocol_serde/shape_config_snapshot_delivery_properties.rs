@@ -2,7 +2,7 @@
 pub fn ser_config_snapshot_delivery_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfigSnapshotDeliveryProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_frequency {
         object.key("deliveryFrequency").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_config_snapshot_delivery_properties(
 
 pub(crate) fn de_config_snapshot_delivery_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConfigSnapshotDeliveryProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConfigSnapshotDeliveryProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

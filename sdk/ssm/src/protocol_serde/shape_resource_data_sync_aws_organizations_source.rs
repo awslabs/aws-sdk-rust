@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_aws_organizations_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncAwsOrganizationsSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OrganizationSourceType").string(input.organization_source_type.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_resource_data_sync_aws_organizations_source(
 
 pub(crate) fn de_resource_data_sync_aws_organizations_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResourceDataSyncAwsOrganizationsSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResourceDataSyncAwsOrganizationsSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

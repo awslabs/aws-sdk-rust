@@ -2,7 +2,7 @@
 pub fn ser_disassociate_resource_types_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_resource_types::DisassociateResourceTypesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_recorder_arn {
         object.key("ConfigurationRecorderArn").string(var_1.as_str());
     }

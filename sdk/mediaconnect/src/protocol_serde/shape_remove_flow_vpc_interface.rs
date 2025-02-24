@@ -142,7 +142,7 @@ pub fn de_remove_flow_vpc_interface_http_response(
 pub(crate) fn de_remove_flow_vpc_interface(
     value: &[u8],
     mut builder: crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

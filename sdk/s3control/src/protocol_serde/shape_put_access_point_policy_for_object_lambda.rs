@@ -54,7 +54,7 @@ pub fn ser_put_access_point_policy_for_object_lambda_headers(
 
 pub fn ser_put_access_point_policy_for_object_lambda_op_input(
     input: &crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

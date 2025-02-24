@@ -92,7 +92,7 @@ pub fn de_describe_service_access_policies_http_response(
 pub fn de_describe_service_access_policies(
     inp: &[u8],
     mut builder: crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_service_access_policies::builders::DescribeServiceAccessPoliciesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

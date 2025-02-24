@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_intelligent_tiering_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::IntelligentTieringConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::IntelligentTieringConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IntelligentTieringConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -72,7 +72,7 @@ pub fn de_intelligent_tiering_configuration(
 pub fn ser_intelligent_tiering_configuration(
     input: &crate::types::IntelligentTieringConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

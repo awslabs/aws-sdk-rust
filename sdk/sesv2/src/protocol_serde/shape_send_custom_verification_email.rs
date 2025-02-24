@@ -156,7 +156,7 @@ pub fn de_send_custom_verification_email_http_response(
 
 pub fn ser_send_custom_verification_email_input(
     input: &crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_custom_verification_email_input::ser_send_custom_verification_email_input_input(&mut object, input)?;
@@ -167,7 +167,7 @@ pub fn ser_send_custom_verification_email_input(
 pub(crate) fn de_send_custom_verification_email(
     value: &[u8],
     mut builder: crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

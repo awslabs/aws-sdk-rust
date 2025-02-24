@@ -126,7 +126,7 @@ pub fn de_list_client_devices_associated_with_core_device_http_response(
 pub(crate) fn de_list_client_devices_associated_with_core_device(
     value: &[u8],
     mut builder: crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_create_asset_model_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_asset_model::CreateAssetModelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asset_model_composite_models {
         let mut array_2 = object.key("assetModelCompositeModels").start_array();
         for item_3 in var_1 {

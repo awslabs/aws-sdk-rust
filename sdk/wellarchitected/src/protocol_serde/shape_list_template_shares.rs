@@ -121,8 +121,10 @@ pub fn de_list_template_shares_http_response(
 pub(crate) fn de_list_template_shares(
     value: &[u8],
     mut builder: crate::operation::list_template_shares::builders::ListTemplateSharesOutputBuilder,
-) -> Result<crate::operation::list_template_shares::builders::ListTemplateSharesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::list_template_shares::builders::ListTemplateSharesOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

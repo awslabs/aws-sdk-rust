@@ -2,7 +2,7 @@
 pub(crate) fn de_cannot_delete_approval_rule_from_template_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::CannotDeleteApprovalRuleFromTemplateExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::CannotDeleteApprovalRuleFromTemplateExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

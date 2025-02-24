@@ -135,7 +135,7 @@ pub fn de_delete_contact_method_http_response(
 
 pub fn ser_delete_contact_method_input(
     input: &crate::operation::delete_contact_method::DeleteContactMethodInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_contact_method_input::ser_delete_contact_method_input_input(&mut object, input)?;
@@ -146,7 +146,7 @@ pub fn ser_delete_contact_method_input(
 pub(crate) fn de_delete_contact_method(
     value: &[u8],
     mut builder: crate::operation::delete_contact_method::builders::DeleteContactMethodOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_contact_method::builders::DeleteContactMethodOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

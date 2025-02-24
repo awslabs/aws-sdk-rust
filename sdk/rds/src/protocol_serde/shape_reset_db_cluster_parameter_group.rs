@@ -87,7 +87,7 @@ pub fn de_reset_db_cluster_parameter_group_http_response(
 pub fn de_reset_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

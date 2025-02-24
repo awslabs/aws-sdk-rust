@@ -2,7 +2,7 @@
 pub fn ser_implicit_filter_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImplicitFilterConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("metadataAttributes").start_array();
         for item_2 in &input.metadata_attributes {

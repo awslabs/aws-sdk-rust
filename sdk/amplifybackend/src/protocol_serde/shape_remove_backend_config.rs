@@ -106,7 +106,7 @@ pub fn de_remove_backend_config_http_response(
 pub(crate) fn de_remove_backend_config(
     value: &[u8],
     mut builder: crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -3,7 +3,7 @@
 pub fn de_default_user_associated_to_user_group_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DefaultUserAssociatedToUserGroupFaultBuilder,
-) -> Result<crate::types::error::builders::DefaultUserAssociatedToUserGroupFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::DefaultUserAssociatedToUserGroupFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

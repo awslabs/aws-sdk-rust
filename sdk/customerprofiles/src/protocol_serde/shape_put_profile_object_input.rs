@@ -2,7 +2,7 @@
 pub fn ser_put_profile_object_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_profile_object::PutProfileObjectInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object {
         object.key("Object").string(var_1.as_str());
     }

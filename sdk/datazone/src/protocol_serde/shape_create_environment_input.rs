@@ -2,7 +2,7 @@
 pub fn ser_create_environment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_environment::CreateEnvironmentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deployment_order {
         object.key("deploymentOrder").number(
             #[allow(clippy::useless_conversion)]

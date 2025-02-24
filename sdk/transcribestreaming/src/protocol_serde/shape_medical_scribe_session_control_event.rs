@@ -2,7 +2,7 @@
 pub fn ser_medical_scribe_session_control_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MedicalScribeSessionControlEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Type").string(input.r#type.as_str());
     }

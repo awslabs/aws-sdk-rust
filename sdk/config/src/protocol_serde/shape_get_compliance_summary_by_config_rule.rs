@@ -37,14 +37,14 @@ pub fn de_get_compliance_summary_by_config_rule_http_response(
 
 pub fn ser_get_compliance_summary_by_config_rule_input(
     _input: &crate::operation::get_compliance_summary_by_config_rule::GetComplianceSummaryByConfigRuleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_compliance_summary_by_config_rule(
     value: &[u8],
     mut builder: crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_compliance_summary_by_config_rule::builders::GetComplianceSummaryByConfigRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

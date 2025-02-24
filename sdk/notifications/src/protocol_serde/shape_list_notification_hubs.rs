@@ -111,7 +111,7 @@ pub fn de_list_notification_hubs_http_response(
 pub(crate) fn de_list_notification_hubs(
     value: &[u8],
     mut builder: crate::operation::list_notification_hubs::builders::ListNotificationHubsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_notification_hubs::builders::ListNotificationHubsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

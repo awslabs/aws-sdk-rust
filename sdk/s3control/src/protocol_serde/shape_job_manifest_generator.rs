@@ -2,7 +2,7 @@
 pub fn ser_job_manifest_generator(
     input: &crate::types::JobManifestGenerator,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::JobManifestGenerator::S3JobManifestGenerator(inner) => {
@@ -20,7 +20,7 @@ pub fn ser_job_manifest_generator(
 
 pub fn de_job_manifest_generator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::JobManifestGenerator, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::JobManifestGenerator, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut base: Option<crate::types::JobManifestGenerator> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

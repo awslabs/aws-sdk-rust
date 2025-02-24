@@ -2,7 +2,7 @@
 pub fn ser_job_template_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobTemplateData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("executionRoleArn").string(input.execution_role_arn.as_str());
     }
@@ -49,7 +49,7 @@ pub fn ser_job_template_data(
 
 pub(crate) fn de_job_template_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::JobTemplateData>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::JobTemplateData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -87,7 +87,7 @@ pub fn de_disable_availability_zones_for_load_balancer_http_response(
 pub fn de_disable_availability_zones_for_load_balancer(
     inp: &[u8],
     mut builder: crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

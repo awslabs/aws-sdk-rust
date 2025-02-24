@@ -2,7 +2,7 @@
 pub fn ser_agent_descriptor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentDescriptor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alias_arn {
         object.key("aliasArn").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_agent_descriptor(
 
 pub(crate) fn de_agent_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AgentDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AgentDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

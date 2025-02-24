@@ -2,7 +2,7 @@
 pub fn ser_logging_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.broker_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("brokerLogs").start_object();
@@ -14,7 +14,7 @@ pub fn ser_logging_info(
 
 pub(crate) fn de_logging_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LoggingInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LoggingInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

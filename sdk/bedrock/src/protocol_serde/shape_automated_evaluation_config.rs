@@ -2,7 +2,7 @@
 pub fn ser_automated_evaluation_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutomatedEvaluationConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("datasetMetricConfigs").start_array();
         for item_2 in &input.dataset_metric_configs {
@@ -26,7 +26,7 @@ pub fn ser_automated_evaluation_config(
 
 pub(crate) fn de_automated_evaluation_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AutomatedEvaluationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AutomatedEvaluationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

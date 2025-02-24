@@ -33,7 +33,7 @@ pub fn de_unlock_snapshot_http_response(
 pub fn de_unlock_snapshot(
     inp: &[u8],
     mut builder: crate::operation::unlock_snapshot::builders::UnlockSnapshotOutputBuilder,
-) -> Result<crate::operation::unlock_snapshot::builders::UnlockSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::unlock_snapshot::builders::UnlockSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

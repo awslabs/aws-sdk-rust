@@ -45,7 +45,7 @@ pub fn de_apply_security_groups_to_client_vpn_target_network_http_response(
 pub fn de_apply_security_groups_to_client_vpn_target_network(
     inp: &[u8],
     mut builder: crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::apply_security_groups_to_client_vpn_target_network::builders::ApplySecurityGroupsToClientVpnTargetNetworkOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

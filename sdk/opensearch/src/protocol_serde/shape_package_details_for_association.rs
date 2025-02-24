@@ -2,7 +2,7 @@
 pub fn ser_package_details_for_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PackageDetailsForAssociation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PackageID").string(input.package_id.as_str());
     }

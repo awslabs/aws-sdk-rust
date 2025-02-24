@@ -2,7 +2,7 @@
 pub fn ser_update_backup_plan_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_backup_plan::UpdateBackupPlanInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backup_plan {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BackupPlan").start_object();

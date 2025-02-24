@@ -2,7 +2,7 @@
 pub fn ser_send_workflow_step_state_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_workflow_step_state::SendWorkflowStepStateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workflow_id {
         object.key("WorkflowId").string(var_1.as_str());
     }

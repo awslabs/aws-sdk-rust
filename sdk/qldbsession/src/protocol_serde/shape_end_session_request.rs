@@ -2,6 +2,6 @@
 pub fn ser_end_session_request(
     #[allow(unused_variables)] object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     #[allow(unused_variables)] input: &crate::types::EndSessionRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     Ok(())
 }

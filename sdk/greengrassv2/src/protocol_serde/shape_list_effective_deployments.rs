@@ -134,7 +134,7 @@ pub fn de_list_effective_deployments_http_response(
 pub(crate) fn de_list_effective_deployments(
     value: &[u8],
     mut builder: crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_ssm_external_parameter(
     object_13: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmExternalParameter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SsmExternalParameter::DynamicPath(inner) => {
             object_13.key("dynamicPath").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_ssm_external_parameter(
 
 pub(crate) fn de_ssm_external_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SsmExternalParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SsmExternalParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

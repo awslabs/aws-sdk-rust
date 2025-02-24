@@ -152,7 +152,7 @@ pub fn de_delete_event_source_mapping_http_response(
 pub(crate) fn de_delete_event_source_mapping(
     value: &[u8],
     mut builder: crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

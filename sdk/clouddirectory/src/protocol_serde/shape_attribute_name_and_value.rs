@@ -2,7 +2,7 @@
 pub fn ser_attribute_name_and_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttributeNameAndValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeName").string(input.attribute_name.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_attribute_name_and_value(
 
 pub(crate) fn de_attribute_name_and_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AttributeNameAndValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AttributeNameAndValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

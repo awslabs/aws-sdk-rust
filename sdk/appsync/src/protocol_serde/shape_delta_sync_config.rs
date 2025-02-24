@@ -2,7 +2,7 @@
 pub fn ser_delta_sync_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeltaSyncConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.base_table_ttl != 0 {
         object.key("baseTableTTL").number(
             #[allow(clippy::useless_conversion)]
@@ -23,7 +23,7 @@ pub fn ser_delta_sync_config(
 
 pub(crate) fn de_delta_sync_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DeltaSyncConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DeltaSyncConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

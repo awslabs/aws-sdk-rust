@@ -2,7 +2,7 @@
 pub fn ser_delete_instance_snapshot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_snapshot_name {
         object.key("instanceSnapshotName").string(var_1.as_str());
     }

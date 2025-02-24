@@ -95,7 +95,8 @@ pub fn de_list_tags_for_resource_http_response(
 pub fn de_list_tags_for_resource(
     inp: &[u8],
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
-) -> Result<crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

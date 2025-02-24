@@ -2,7 +2,7 @@
 pub fn ser_shard_configuration_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ShardConfigurationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.shard_count != 0 {
         object.key("ShardCount").number(
             #[allow(clippy::useless_conversion)]

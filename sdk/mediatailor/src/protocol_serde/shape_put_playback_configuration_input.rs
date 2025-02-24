@@ -2,7 +2,7 @@
 pub fn ser_put_playback_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_playback_configuration::PutPlaybackConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_conditioning_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AdConditioningConfiguration").start_object();

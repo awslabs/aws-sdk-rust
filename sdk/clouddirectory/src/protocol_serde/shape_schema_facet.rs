@@ -2,7 +2,7 @@
 pub fn ser_schema_facet(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaFacet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schema_arn {
         object.key("SchemaArn").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_schema_facet(
 
 pub(crate) fn de_schema_facet<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SchemaFacet>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SchemaFacet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

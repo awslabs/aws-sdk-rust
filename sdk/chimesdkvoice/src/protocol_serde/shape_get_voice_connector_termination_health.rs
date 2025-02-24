@@ -169,7 +169,7 @@ pub fn de_get_voice_connector_termination_health_http_response(
 pub(crate) fn de_get_voice_connector_termination_health(
     value: &[u8],
     mut builder: crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

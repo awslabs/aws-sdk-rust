@@ -111,7 +111,10 @@ pub fn de_failover_primary_compute_http_response(
 pub fn de_failover_primary_compute(
     inp: &[u8],
     mut builder: crate::operation::failover_primary_compute::builders::FailoverPrimaryComputeOutputBuilder,
-) -> Result<crate::operation::failover_primary_compute::builders::FailoverPrimaryComputeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::failover_primary_compute::builders::FailoverPrimaryComputeOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

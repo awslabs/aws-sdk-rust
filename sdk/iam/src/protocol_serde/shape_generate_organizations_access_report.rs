@@ -63,7 +63,7 @@ pub fn de_generate_organizations_access_report_http_response(
 pub fn de_generate_organizations_access_report(
     inp: &[u8],
     mut builder: crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

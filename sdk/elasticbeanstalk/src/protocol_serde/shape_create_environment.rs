@@ -77,7 +77,7 @@ pub fn de_create_environment_http_response(
 pub fn de_create_environment(
     inp: &[u8],
     mut builder: crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder,
-) -> Result<crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

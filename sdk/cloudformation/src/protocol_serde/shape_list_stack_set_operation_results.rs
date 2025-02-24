@@ -83,7 +83,7 @@ pub fn de_list_stack_set_operation_results_http_response(
 pub fn de_list_stack_set_operation_results(
     inp: &[u8],
     mut builder: crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_stack_set_operation_results::builders::ListStackSetOperationResultsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

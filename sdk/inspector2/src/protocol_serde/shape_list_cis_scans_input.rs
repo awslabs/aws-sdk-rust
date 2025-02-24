@@ -2,7 +2,7 @@
 pub fn ser_list_cis_scans_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_cis_scans::ListCisScansInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.detail_level {
         object.key("detailLevel").string(var_1.as_str());
     }

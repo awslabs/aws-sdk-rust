@@ -105,7 +105,7 @@ pub fn de_get_evidence_by_evidence_folder_http_response(
 pub(crate) fn de_get_evidence_by_evidence_folder(
     value: &[u8],
     mut builder: crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

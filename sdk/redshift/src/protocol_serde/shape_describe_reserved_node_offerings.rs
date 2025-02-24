@@ -104,7 +104,7 @@ pub fn de_describe_reserved_node_offerings_http_response(
 pub fn de_describe_reserved_node_offerings(
     inp: &[u8],
     mut builder: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_aggregate_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateOperation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Column").start_array();
         for item_2 in &input.column {
@@ -20,7 +20,7 @@ pub fn ser_aggregate_operation(
 
 pub(crate) fn de_aggregate_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AggregateOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AggregateOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

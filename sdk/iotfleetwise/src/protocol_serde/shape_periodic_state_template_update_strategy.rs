@@ -2,7 +2,7 @@
 pub fn ser_periodic_state_template_update_strategy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PeriodicStateTemplateUpdateStrategy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.state_template_update_rate {
         #[allow(unused_mut)]
         let mut object_2 = object.key("stateTemplateUpdateRate").start_object();
@@ -14,7 +14,7 @@ pub fn ser_periodic_state_template_update_strategy(
 
 pub(crate) fn de_periodic_state_template_update_strategy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PeriodicStateTemplateUpdateStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PeriodicStateTemplateUpdateStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

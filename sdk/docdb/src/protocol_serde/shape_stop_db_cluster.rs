@@ -88,7 +88,7 @@ pub fn de_stop_db_cluster_http_response(
 pub fn de_stop_db_cluster(
     inp: &[u8],
     mut builder: crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder,
-) -> Result<crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

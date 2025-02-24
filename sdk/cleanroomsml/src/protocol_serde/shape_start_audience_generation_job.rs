@@ -122,7 +122,7 @@ pub fn de_start_audience_generation_job_http_response(
 
 pub fn ser_start_audience_generation_job_input(
     input: &crate::operation::start_audience_generation_job::StartAudienceGenerationJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_audience_generation_job_input::ser_start_audience_generation_job_input_input(&mut object, input)?;
@@ -133,7 +133,7 @@ pub fn ser_start_audience_generation_job_input(
 pub(crate) fn de_start_audience_generation_job(
     value: &[u8],
     mut builder: crate::operation::start_audience_generation_job::builders::StartAudienceGenerationJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_audience_generation_job::builders::StartAudienceGenerationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

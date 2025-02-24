@@ -2,7 +2,7 @@
 pub fn ser_baidu_channel_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BaiduChannelRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_key {
         object.key("ApiKey").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_metadata_copies(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MetadataCopies,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("copiableAttributes").string(input.copiable_attributes.as_str());
     }

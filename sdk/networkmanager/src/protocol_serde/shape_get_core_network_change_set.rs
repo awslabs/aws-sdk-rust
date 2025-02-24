@@ -134,7 +134,7 @@ pub fn de_get_core_network_change_set_http_response(
 pub(crate) fn de_get_core_network_change_set(
     value: &[u8],
     mut builder: crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

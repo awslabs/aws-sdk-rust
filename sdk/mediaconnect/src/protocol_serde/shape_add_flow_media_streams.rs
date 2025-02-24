@@ -137,7 +137,7 @@ pub fn de_add_flow_media_streams_http_response(
 
 pub fn ser_add_flow_media_streams_input(
     input: &crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_add_flow_media_streams_input::ser_add_flow_media_streams_input_input(&mut object, input)?;
@@ -148,7 +148,7 @@ pub fn ser_add_flow_media_streams_input(
 pub(crate) fn de_add_flow_media_streams(
     value: &[u8],
     mut builder: crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

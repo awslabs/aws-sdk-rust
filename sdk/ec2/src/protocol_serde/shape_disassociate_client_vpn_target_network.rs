@@ -41,7 +41,7 @@ pub fn de_disassociate_client_vpn_target_network_http_response(
 pub fn de_disassociate_client_vpn_target_network(
     inp: &[u8],
     mut builder: crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

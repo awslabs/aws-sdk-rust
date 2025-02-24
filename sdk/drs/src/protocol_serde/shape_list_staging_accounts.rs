@@ -134,7 +134,7 @@ pub fn de_list_staging_accounts_http_response(
 pub(crate) fn de_list_staging_accounts(
     value: &[u8],
     mut builder: crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_staging_accounts::builders::ListStagingAccountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

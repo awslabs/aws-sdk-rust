@@ -2,7 +2,7 @@
 pub fn ser_quick_response_search_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QuickResponseSearchExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.queries {
         let mut array_2 = object.key("queries").start_array();
         for item_3 in var_1 {

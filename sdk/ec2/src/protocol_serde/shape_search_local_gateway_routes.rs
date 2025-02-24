@@ -41,8 +41,10 @@ pub fn de_search_local_gateway_routes_http_response(
 pub fn de_search_local_gateway_routes(
     inp: &[u8],
     mut builder: crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesOutputBuilder,
-) -> Result<crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

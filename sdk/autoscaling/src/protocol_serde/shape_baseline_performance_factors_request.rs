@@ -3,7 +3,7 @@
 pub fn ser_baseline_performance_factors_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::BaselinePerformanceFactorsRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Cpu");
     if let Some(var_2) = &input.cpu {
@@ -15,7 +15,7 @@ pub fn ser_baseline_performance_factors_request(
 #[allow(clippy::needless_question_mark)]
 pub fn de_baseline_performance_factors_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::BaselinePerformanceFactorsRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::BaselinePerformanceFactorsRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::BaselinePerformanceFactorsRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

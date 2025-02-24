@@ -2,7 +2,7 @@
 pub fn ser_hyperband_strategy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HyperbandStrategyConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.min_resource {
         object.key("MinResource").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_hyperband_strategy_config(
 
 pub(crate) fn de_hyperband_strategy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HyperbandStrategyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HyperbandStrategyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

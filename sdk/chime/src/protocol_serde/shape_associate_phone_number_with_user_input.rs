@@ -2,7 +2,7 @@
 pub fn ser_associate_phone_number_with_user_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUserInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.e164_phone_number {
         object.key("E164PhoneNumber").string(var_1.as_str());
     }

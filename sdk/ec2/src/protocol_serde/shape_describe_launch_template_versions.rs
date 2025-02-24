@@ -39,7 +39,7 @@ pub fn de_describe_launch_template_versions_http_response(
 pub fn de_describe_launch_template_versions(
     inp: &[u8],
     mut builder: crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

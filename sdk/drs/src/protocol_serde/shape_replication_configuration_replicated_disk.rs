@@ -2,7 +2,7 @@
 pub fn ser_replication_configuration_replicated_disk(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicationConfigurationReplicatedDisk,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_name {
         object.key("deviceName").string(var_1.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_replication_configuration_replicated_disk(
 
 pub(crate) fn de_replication_configuration_replicated_disk<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ReplicationConfigurationReplicatedDisk>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ReplicationConfigurationReplicatedDisk>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

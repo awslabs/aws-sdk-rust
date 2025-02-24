@@ -91,7 +91,7 @@ pub fn de_retry_data_replication_http_response(
 
 pub fn ser_retry_data_replication_input(
     input: &crate::operation::retry_data_replication::RetryDataReplicationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_retry_data_replication_input::ser_retry_data_replication_input_input(&mut object, input)?;
@@ -102,7 +102,7 @@ pub fn ser_retry_data_replication_input(
 pub(crate) fn de_retry_data_replication(
     value: &[u8],
     mut builder: crate::operation::retry_data_replication::builders::RetryDataReplicationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::retry_data_replication::builders::RetryDataReplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

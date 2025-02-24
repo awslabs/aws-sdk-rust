@@ -91,7 +91,7 @@ pub fn de_list_collaboration_trained_model_export_jobs_http_response(
 pub(crate) fn de_list_collaboration_trained_model_export_jobs(
     value: &[u8],
     mut builder: crate::operation::list_collaboration_trained_model_export_jobs::builders::ListCollaborationTrainedModelExportJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_collaboration_trained_model_export_jobs::builders::ListCollaborationTrainedModelExportJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

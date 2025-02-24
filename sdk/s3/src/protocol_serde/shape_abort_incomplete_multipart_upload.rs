@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_abort_incomplete_multipart_upload(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AbortIncompleteMultipartUpload, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AbortIncompleteMultipartUpload, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AbortIncompleteMultipartUpload::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -31,7 +31,7 @@ pub fn de_abort_incomplete_multipart_upload(
 pub fn ser_abort_incomplete_multipart_upload(
     input: &crate::types::AbortIncompleteMultipartUpload,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_2) = &input.days_after_initiation {

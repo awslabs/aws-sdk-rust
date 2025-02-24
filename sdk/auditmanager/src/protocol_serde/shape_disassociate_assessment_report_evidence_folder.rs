@@ -99,7 +99,7 @@ pub fn de_disassociate_assessment_report_evidence_folder_http_response(
 
 pub fn ser_disassociate_assessment_report_evidence_folder_input(
     input: &crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_assessment_report_evidence_folder_input::ser_disassociate_assessment_report_evidence_folder_input_input(&mut object, input)?;

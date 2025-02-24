@@ -133,7 +133,7 @@ pub fn de_list_metered_products_http_response(
 pub(crate) fn de_list_metered_products(
     value: &[u8],
     mut builder: crate::operation::list_metered_products::builders::ListMeteredProductsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_metered_products::builders::ListMeteredProductsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

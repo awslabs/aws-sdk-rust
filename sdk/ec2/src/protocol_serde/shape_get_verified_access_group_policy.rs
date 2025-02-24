@@ -39,7 +39,7 @@ pub fn de_get_verified_access_group_policy_http_response(
 pub fn de_get_verified_access_group_policy(
     inp: &[u8],
     mut builder: crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_verified_access_group_policy::builders::GetVerifiedAccessGroupPolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

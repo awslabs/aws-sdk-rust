@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_transit_gateway_propagation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TransitGatewayPropagation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TransitGatewayPropagation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TransitGatewayPropagation::builder();
     while let Some(mut tag) = decoder.next_tag() {

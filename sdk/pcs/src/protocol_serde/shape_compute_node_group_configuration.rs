@@ -2,7 +2,7 @@
 pub fn ser_compute_node_group_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComputeNodeGroupConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_node_group_id {
         object.key("computeNodeGroupId").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_compute_node_group_configuration(
 
 pub(crate) fn de_compute_node_group_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ComputeNodeGroupConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ComputeNodeGroupConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

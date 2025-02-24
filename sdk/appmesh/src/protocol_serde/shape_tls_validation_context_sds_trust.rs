@@ -2,7 +2,7 @@
 pub fn ser_tls_validation_context_sds_trust(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TlsValidationContextSdsTrust,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("secretName").string(input.secret_name.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_tls_validation_context_sds_trust(
 
 pub(crate) fn de_tls_validation_context_sds_trust<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TlsValidationContextSdsTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TlsValidationContextSdsTrust>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

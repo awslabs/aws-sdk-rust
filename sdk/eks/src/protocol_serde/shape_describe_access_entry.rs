@@ -91,7 +91,7 @@ pub fn de_describe_access_entry_http_response(
 pub(crate) fn de_describe_access_entry(
     value: &[u8],
     mut builder: crate::operation::describe_access_entry::builders::DescribeAccessEntryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_access_entry::builders::DescribeAccessEntryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

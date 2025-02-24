@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.count {
         object.key("Count").number(
             #[allow(clippy::useless_conversion)]
@@ -17,7 +17,7 @@ pub fn ser_aws_ec2_launch_template_data_elastic_inference_accelerator_set_detail
 
 pub(crate) fn de_aws_ec2_launch_template_data_elastic_inference_accelerator_set_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

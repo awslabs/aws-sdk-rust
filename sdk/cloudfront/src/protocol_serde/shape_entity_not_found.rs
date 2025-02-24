@@ -3,7 +3,7 @@
 pub fn de_entity_not_found_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::EntityNotFoundBuilder,
-) -> Result<crate::types::error::builders::EntityNotFoundBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::EntityNotFoundBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

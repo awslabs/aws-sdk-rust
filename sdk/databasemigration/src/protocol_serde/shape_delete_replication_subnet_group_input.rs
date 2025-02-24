@@ -2,7 +2,7 @@
 pub fn ser_delete_replication_subnet_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_subnet_group_identifier {
         object.key("ReplicationSubnetGroupIdentifier").string(var_1.as_str());
     }

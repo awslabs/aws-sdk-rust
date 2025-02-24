@@ -2,7 +2,7 @@
 pub(crate) fn de_organization_conformance_pack_template_validation_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::OrganizationConformancePackTemplateValidationExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::OrganizationConformancePackTemplateValidationExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

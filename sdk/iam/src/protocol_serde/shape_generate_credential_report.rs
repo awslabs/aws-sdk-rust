@@ -81,7 +81,10 @@ pub fn de_generate_credential_report_http_response(
 pub fn de_generate_credential_report(
     inp: &[u8],
     mut builder: crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder,
-) -> Result<crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::generate_credential_report::builders::GenerateCredentialReportOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

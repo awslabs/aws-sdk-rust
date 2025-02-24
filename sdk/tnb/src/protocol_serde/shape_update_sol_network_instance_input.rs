@@ -2,7 +2,7 @@
 pub fn ser_update_sol_network_instance_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.modify_vnf_info_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("modifyVnfInfoData").start_object();

@@ -135,7 +135,7 @@ pub fn de_list_bill_estimate_input_commitment_modifications_http_response(
 
 pub fn ser_list_bill_estimate_input_commitment_modifications_input(
     input: &crate::operation::list_bill_estimate_input_commitment_modifications::ListBillEstimateInputCommitmentModificationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_bill_estimate_input_commitment_modifications_input::ser_list_bill_estimate_input_commitment_modifications_input_input(&mut object, input)?;
@@ -146,7 +146,7 @@ pub fn ser_list_bill_estimate_input_commitment_modifications_input(
 pub(crate) fn de_list_bill_estimate_input_commitment_modifications(
     value: &[u8],
     mut builder: crate::operation::list_bill_estimate_input_commitment_modifications::builders::ListBillEstimateInputCommitmentModificationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_bill_estimate_input_commitment_modifications::builders::ListBillEstimateInputCommitmentModificationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

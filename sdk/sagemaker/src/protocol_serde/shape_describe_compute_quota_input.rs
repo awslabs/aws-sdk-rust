@@ -2,7 +2,7 @@
 pub fn ser_describe_compute_quota_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_compute_quota::DescribeComputeQuotaInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_quota_id {
         object.key("ComputeQuotaId").string(var_1.as_str());
     }

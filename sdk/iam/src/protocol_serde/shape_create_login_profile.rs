@@ -126,7 +126,8 @@ pub fn de_create_login_profile_http_response(
 pub fn de_create_login_profile(
     inp: &[u8],
     mut builder: crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder,
-) -> Result<crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -108,14 +108,14 @@ pub fn de_delete_registry_policy_http_response(
 
 pub fn ser_delete_registry_policy_input(
     _input: &crate::operation::delete_registry_policy::DeleteRegistryPolicyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_delete_registry_policy(
     value: &[u8],
     mut builder: crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_registry_policy::builders::DeleteRegistryPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

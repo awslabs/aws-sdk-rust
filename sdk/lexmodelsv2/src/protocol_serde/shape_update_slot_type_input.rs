@@ -2,7 +2,7 @@
 pub fn ser_update_slot_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_slot_type::UpdateSlotTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.composite_slot_type_setting {
         #[allow(unused_mut)]
         let mut object_2 = object.key("compositeSlotTypeSetting").start_object();

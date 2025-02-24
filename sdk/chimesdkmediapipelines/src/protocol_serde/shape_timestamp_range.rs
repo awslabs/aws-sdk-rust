@@ -2,7 +2,7 @@
 pub fn ser_timestamp_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimestampRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("StartTimestamp")
@@ -18,7 +18,7 @@ pub fn ser_timestamp_range(
 
 pub(crate) fn de_timestamp_range<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TimestampRange>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TimestampRange>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

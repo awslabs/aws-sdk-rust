@@ -33,7 +33,7 @@ pub fn de_cancel_bundle_task_http_response(
 pub fn de_cancel_bundle_task(
     inp: &[u8],
     mut builder: crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder,
-) -> Result<crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::cancel_bundle_task::builders::CancelBundleTaskOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

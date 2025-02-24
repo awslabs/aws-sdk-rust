@@ -2,7 +2,7 @@
 pub fn ser_field_value_union(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldValueUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FieldValueUnion::StringValue(inner) => {
             object_2.key("stringValue").string(inner.as_str());
@@ -36,7 +36,7 @@ pub fn ser_field_value_union(
 
 pub(crate) fn de_field_value_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FieldValueUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FieldValueUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -175,7 +175,7 @@ pub fn de_associate_source_network_stack_http_response(
 
 pub fn ser_associate_source_network_stack_input(
     input: &crate::operation::associate_source_network_stack::AssociateSourceNetworkStackInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_source_network_stack_input::ser_associate_source_network_stack_input_input(&mut object, input)?;
@@ -186,7 +186,7 @@ pub fn ser_associate_source_network_stack_input(
 pub(crate) fn de_associate_source_network_stack(
     value: &[u8],
     mut builder: crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_source_network_stack::builders::AssociateSourceNetworkStackOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

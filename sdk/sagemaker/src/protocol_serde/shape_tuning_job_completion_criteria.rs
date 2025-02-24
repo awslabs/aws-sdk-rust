@@ -2,7 +2,7 @@
 pub fn ser_tuning_job_completion_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TuningJobCompletionCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_objective_metric_value {
         object.key("TargetObjectiveMetricValue").number(
             #[allow(clippy::useless_conversion)]
@@ -26,7 +26,7 @@ pub fn ser_tuning_job_completion_criteria(
 
 pub(crate) fn de_tuning_job_completion_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TuningJobCompletionCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TuningJobCompletionCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_staging_distribution_dns_names(
     input: &crate::types::StagingDistributionDnsNames,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -25,7 +25,7 @@ pub fn ser_staging_distribution_dns_names(
 #[allow(clippy::needless_question_mark)]
 pub fn de_staging_distribution_dns_names(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::StagingDistributionDnsNames, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::StagingDistributionDnsNames, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::StagingDistributionDnsNames::builder();
     while let Some(mut tag) = decoder.next_tag() {

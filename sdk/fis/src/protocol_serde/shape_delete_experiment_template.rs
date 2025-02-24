@@ -80,7 +80,7 @@ pub fn de_delete_experiment_template_http_response(
 pub(crate) fn de_delete_experiment_template(
     value: &[u8],
     mut builder: crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

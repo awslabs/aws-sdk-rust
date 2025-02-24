@@ -80,7 +80,7 @@ pub fn de_list_audience_export_jobs_http_response(
 pub(crate) fn de_list_audience_export_jobs(
     value: &[u8],
     mut builder: crate::operation::list_audience_export_jobs::builders::ListAudienceExportJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_audience_export_jobs::builders::ListAudienceExportJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

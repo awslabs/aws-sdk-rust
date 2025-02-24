@@ -187,7 +187,7 @@ pub fn ser_get_q_app_session_metadata_headers(
 pub(crate) fn de_get_q_app_session_metadata(
     value: &[u8],
     mut builder: crate::operation::get_q_app_session_metadata::builders::GetQAppSessionMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_q_app_session_metadata::builders::GetQAppSessionMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

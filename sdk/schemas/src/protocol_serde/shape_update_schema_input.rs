@@ -2,7 +2,7 @@
 pub fn ser_update_schema_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_schema::UpdateSchemaInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token_id {
         object.key("ClientTokenId").string(var_1.as_str());
     }

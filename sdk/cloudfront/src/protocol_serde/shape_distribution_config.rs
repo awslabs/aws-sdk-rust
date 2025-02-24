@@ -2,7 +2,7 @@
 pub fn ser_distribution_config(
     input: &crate::types::DistributionConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -92,7 +92,7 @@ pub fn ser_distribution_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_distribution_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::DistributionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::DistributionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::DistributionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

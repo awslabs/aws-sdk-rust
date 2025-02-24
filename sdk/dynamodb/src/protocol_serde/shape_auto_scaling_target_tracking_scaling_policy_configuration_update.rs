@@ -2,7 +2,7 @@
 pub fn ser_auto_scaling_target_tracking_scaling_policy_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.disable_scale_in {
         object.key("DisableScaleIn").boolean(*var_1);
     }

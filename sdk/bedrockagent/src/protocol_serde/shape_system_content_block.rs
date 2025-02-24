@@ -2,7 +2,7 @@
 pub fn ser_system_content_block(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SystemContentBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SystemContentBlock::Text(inner) => {
             object_7.key("text").string(inner.as_str());
@@ -24,7 +24,7 @@ pub fn ser_system_content_block(
 
 pub(crate) fn de_system_content_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SystemContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SystemContentBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

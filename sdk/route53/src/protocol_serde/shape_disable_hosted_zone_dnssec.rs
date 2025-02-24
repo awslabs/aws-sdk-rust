@@ -177,7 +177,10 @@ pub fn de_disable_hosted_zone_dnssec_http_response(
 pub fn de_disable_hosted_zone_dnssec(
     inp: &[u8],
     mut builder: crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecOutputBuilder,
-) -> Result<crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

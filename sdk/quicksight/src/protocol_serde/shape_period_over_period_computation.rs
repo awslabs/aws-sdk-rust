@@ -2,7 +2,7 @@
 pub fn ser_period_over_period_computation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PeriodOverPeriodComputation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ComputationId").string(input.computation_id.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_period_over_period_computation(
 
 pub(crate) fn de_period_over_period_computation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PeriodOverPeriodComputation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PeriodOverPeriodComputation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

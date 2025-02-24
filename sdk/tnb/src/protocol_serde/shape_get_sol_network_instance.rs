@@ -118,7 +118,7 @@ pub fn de_get_sol_network_instance_http_response(
 pub(crate) fn de_get_sol_network_instance(
     value: &[u8],
     mut builder: crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

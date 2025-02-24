@@ -2,7 +2,7 @@
 pub fn ser_turkey_additional_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TurkeyAdditionalInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tax_office {
         object.key("taxOffice").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_turkey_additional_info(
 
 pub(crate) fn de_turkey_additional_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TurkeyAdditionalInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TurkeyAdditionalInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

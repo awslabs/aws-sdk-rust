@@ -85,7 +85,10 @@ pub fn de_delete_db_proxy_endpoint_http_response(
 pub fn de_delete_db_proxy_endpoint(
     inp: &[u8],
     mut builder: crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder,
-) -> Result<crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

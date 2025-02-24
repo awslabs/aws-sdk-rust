@@ -109,7 +109,7 @@ pub fn de_create_cluster_security_group_http_response(
 pub fn de_create_cluster_security_group(
     inp: &[u8],
     mut builder: crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_cluster_security_group::builders::CreateClusterSecurityGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

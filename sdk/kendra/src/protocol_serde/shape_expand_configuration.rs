@@ -2,7 +2,7 @@
 pub fn ser_expand_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExpandConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_result_items_to_expand {
         object.key("MaxResultItemsToExpand").number(
             #[allow(clippy::useless_conversion)]

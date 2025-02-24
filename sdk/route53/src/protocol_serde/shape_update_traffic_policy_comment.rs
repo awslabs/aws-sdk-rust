@@ -90,7 +90,7 @@ pub fn de_update_traffic_policy_comment_http_response(
 
 pub fn ser_update_traffic_policy_comment_op_input(
     input: &crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -107,7 +107,7 @@ pub fn ser_update_traffic_policy_comment_op_input(
 pub fn de_update_traffic_policy_comment(
     inp: &[u8],
     mut builder: crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_traffic_policy_comment::builders::UpdateTrafficPolicyCommentOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

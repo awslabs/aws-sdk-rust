@@ -2,7 +2,7 @@
 pub fn ser_service_action_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceActionAssociation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ServiceActionId").string(input.service_action_id.as_str());
     }

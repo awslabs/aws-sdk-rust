@@ -3,7 +3,7 @@
 pub fn de_kms_access_denied_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::KmsAccessDeniedExceptionBuilder,
-) -> Result<crate::types::error::builders::KmsAccessDeniedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::KmsAccessDeniedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

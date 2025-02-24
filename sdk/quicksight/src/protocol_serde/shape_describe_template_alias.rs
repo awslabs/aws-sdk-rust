@@ -112,7 +112,7 @@ pub fn de_describe_template_alias_http_response(
 pub(crate) fn de_describe_template_alias(
     value: &[u8],
     mut builder: crate::operation::describe_template_alias::builders::DescribeTemplateAliasOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_template_alias::builders::DescribeTemplateAliasOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

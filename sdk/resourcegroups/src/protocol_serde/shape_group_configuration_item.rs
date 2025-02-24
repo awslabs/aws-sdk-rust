@@ -2,7 +2,7 @@
 pub fn ser_group_configuration_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GroupConfigurationItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Type").string(input.r#type.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_group_configuration_item(
 
 pub(crate) fn de_group_configuration_item<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GroupConfigurationItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GroupConfigurationItem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

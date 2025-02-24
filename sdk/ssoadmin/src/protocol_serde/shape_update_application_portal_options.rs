@@ -2,7 +2,7 @@
 pub fn ser_update_application_portal_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateApplicationPortalOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sign_in_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SignInOptions").start_object();

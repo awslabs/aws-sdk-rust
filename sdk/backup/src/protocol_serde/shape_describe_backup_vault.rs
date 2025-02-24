@@ -113,7 +113,7 @@ pub fn de_describe_backup_vault_http_response(
 pub(crate) fn de_describe_backup_vault(
     value: &[u8],
     mut builder: crate::operation::describe_backup_vault::builders::DescribeBackupVaultOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_backup_vault::builders::DescribeBackupVaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

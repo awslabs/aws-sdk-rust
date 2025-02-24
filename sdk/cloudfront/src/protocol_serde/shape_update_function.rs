@@ -152,7 +152,7 @@ pub fn ser_update_function_headers(
 
 pub fn ser_update_function_op_input(
     input: &crate::operation::update_function::UpdateFunctionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

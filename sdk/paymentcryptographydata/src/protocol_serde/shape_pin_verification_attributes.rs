@@ -2,7 +2,7 @@
 pub fn ser_pin_verification_attributes(
     object_11: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PinVerificationAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PinVerificationAttributes::VisaPin(inner) => {
             #[allow(unused_mut)]

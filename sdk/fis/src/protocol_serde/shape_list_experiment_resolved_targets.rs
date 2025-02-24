@@ -79,7 +79,7 @@ pub fn de_list_experiment_resolved_targets_http_response(
 pub(crate) fn de_list_experiment_resolved_targets(
     value: &[u8],
     mut builder: crate::operation::list_experiment_resolved_targets::builders::ListExperimentResolvedTargetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_experiment_resolved_targets::builders::ListExperimentResolvedTargetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_describe_trial_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_trial::DescribeTrialInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trial_name {
         object.key("TrialName").string(var_1.as_str());
     }

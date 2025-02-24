@@ -2,7 +2,7 @@
 pub fn ser_image_static_file(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImageStaticFile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("StaticFileId").string(input.static_file_id.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_image_static_file(
 
 pub(crate) fn de_image_static_file<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ImageStaticFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ImageStaticFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

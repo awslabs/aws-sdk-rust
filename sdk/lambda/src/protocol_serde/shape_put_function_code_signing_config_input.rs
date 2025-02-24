@@ -2,7 +2,7 @@
 pub fn ser_put_function_code_signing_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.code_signing_config_arn {
         object.key("CodeSigningConfigArn").string(var_1.as_str());
     }

@@ -39,7 +39,7 @@ pub fn de_get_flow_logs_integration_template_http_response(
 pub fn de_get_flow_logs_integration_template(
     inp: &[u8],
     mut builder: crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_flow_logs_integration_template::builders::GetFlowLogsIntegrationTemplateOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

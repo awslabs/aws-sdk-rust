@@ -2,7 +2,7 @@
 pub fn ser_create_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_session::CreateSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ai_agent_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("aiAgentConfiguration").start_object();

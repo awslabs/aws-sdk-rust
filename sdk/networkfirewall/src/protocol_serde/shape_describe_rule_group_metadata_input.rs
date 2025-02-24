@@ -2,7 +2,7 @@
 pub fn ser_describe_rule_group_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_group_name {
         object.key("RuleGroupName").string(var_1.as_str());
     }

@@ -149,7 +149,7 @@ pub fn de_get_environment_blueprint_configuration_http_response(
 pub(crate) fn de_get_environment_blueprint_configuration(
     value: &[u8],
     mut builder: crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_environment_blueprint_configuration::builders::GetEnvironmentBlueprintConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

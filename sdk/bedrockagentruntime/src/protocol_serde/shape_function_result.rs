@@ -2,7 +2,7 @@
 pub fn ser_function_result(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionResult,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("actionGroup").string(input.action_group.as_str());
     }
@@ -36,7 +36,7 @@ pub fn ser_function_result(
 
 pub(crate) fn de_function_result<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FunctionResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FunctionResult>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

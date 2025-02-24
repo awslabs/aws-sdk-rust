@@ -2,7 +2,7 @@
 pub fn ser_target_container_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetContainerRepository,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("service").string(input.service.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_target_container_repository(
 
 pub(crate) fn de_target_container_repository<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TargetContainerRepository>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TargetContainerRepository>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

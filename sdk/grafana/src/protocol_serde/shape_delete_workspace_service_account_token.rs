@@ -161,7 +161,7 @@ pub fn de_delete_workspace_service_account_token_http_response(
 pub(crate) fn de_delete_workspace_service_account_token(
     value: &[u8],
     mut builder: crate::operation::delete_workspace_service_account_token::builders::DeleteWorkspaceServiceAccountTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_workspace_service_account_token::builders::DeleteWorkspaceServiceAccountTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -77,7 +77,7 @@ pub fn ser_get_bucket_accelerate_configuration_headers(
 pub fn de_get_bucket_accelerate_configuration(
     inp: &[u8],
     mut builder: crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_bucket_accelerate_configuration::builders::GetBucketAccelerateConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

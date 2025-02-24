@@ -2,7 +2,7 @@
 pub fn ser_aws_backup_backup_plan_rule_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsBackupBackupPlanRuleDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_backup_vault {
         object.key("TargetBackupVault").string(var_1.as_str());
     }
@@ -56,7 +56,7 @@ pub fn ser_aws_backup_backup_plan_rule_details(
 
 pub(crate) fn de_aws_backup_backup_plan_rule_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsBackupBackupPlanRuleDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsBackupBackupPlanRuleDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

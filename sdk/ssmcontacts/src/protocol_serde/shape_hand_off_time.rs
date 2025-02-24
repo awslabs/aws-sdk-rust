@@ -2,7 +2,7 @@
 pub fn ser_hand_off_time(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HandOffTime,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("HourOfDay").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_hand_off_time(
 
 pub(crate) fn de_hand_off_time<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HandOffTime>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HandOffTime>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

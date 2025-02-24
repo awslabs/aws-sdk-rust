@@ -2,7 +2,7 @@
 pub fn ser_apply_guardrail_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::apply_guardrail::ApplyGuardrailInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content {
         let mut array_2 = object.key("content").start_array();
         for item_3 in var_1 {

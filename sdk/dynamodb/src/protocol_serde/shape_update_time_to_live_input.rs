@@ -2,7 +2,7 @@
 pub fn ser_update_time_to_live_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_time_to_live::UpdateTimeToLiveInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.table_name {
         object.key("TableName").string(var_1.as_str());
     }

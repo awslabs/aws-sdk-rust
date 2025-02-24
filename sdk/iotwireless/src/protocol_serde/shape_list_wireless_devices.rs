@@ -106,7 +106,7 @@ pub fn de_list_wireless_devices_http_response(
 pub(crate) fn de_list_wireless_devices(
     value: &[u8],
     mut builder: crate::operation::list_wireless_devices::builders::ListWirelessDevicesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_wireless_devices::builders::ListWirelessDevicesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_respond_to_auth_challenge_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_id {
         object.key("ClientId").string(var_1.as_str());
     }

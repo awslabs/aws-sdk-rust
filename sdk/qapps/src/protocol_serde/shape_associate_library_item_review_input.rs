@@ -2,7 +2,7 @@
 pub fn ser_associate_library_item_review_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_library_item_review::AssociateLibraryItemReviewInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.library_item_id {
         object.key("libraryItemId").string(var_1.as_str());
     }

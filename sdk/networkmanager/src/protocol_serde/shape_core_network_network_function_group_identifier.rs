@@ -2,7 +2,7 @@
 pub fn ser_core_network_network_function_group_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CoreNetworkNetworkFunctionGroupIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.core_network_id {
         object.key("CoreNetworkId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_exchange_code_for_token_request_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExchangeCodeForTokenRequestBody,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("code").string(input.code.as_str());
     }

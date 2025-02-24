@@ -2,7 +2,7 @@
 pub fn ser_create_replication_group_member_action(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateReplicationGroupMemberAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RegionName").string(input.region_name.as_str());
     }

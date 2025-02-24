@@ -2,7 +2,7 @@
 pub fn ser_release_file_system_nfs_v3_locks_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_system_id {
         object.key("FileSystemId").string(var_1.as_str());
     }

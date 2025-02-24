@@ -96,7 +96,7 @@ pub fn de_get_application_component_details_http_response(
 pub(crate) fn de_get_application_component_details(
     value: &[u8],
     mut builder: crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_application_component_details::builders::GetApplicationComponentDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -136,7 +136,7 @@ pub fn de_start_db_instance_automated_backups_replication_http_response(
 pub fn de_start_db_instance_automated_backups_replication(
     inp: &[u8],
     mut builder: crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::start_db_instance_automated_backups_replication::builders::StartDbInstanceAutomatedBackupsReplicationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

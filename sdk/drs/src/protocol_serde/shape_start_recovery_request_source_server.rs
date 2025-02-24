@@ -2,7 +2,7 @@
 pub fn ser_start_recovery_request_source_server(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartRecoveryRequestSourceServer,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sourceServerID").string(input.source_server_id.as_str());
     }

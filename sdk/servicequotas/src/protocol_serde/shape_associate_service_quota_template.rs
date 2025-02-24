@@ -184,6 +184,6 @@ pub fn de_associate_service_quota_template_http_response(
 
 pub fn ser_associate_service_quota_template_input(
     _input: &crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

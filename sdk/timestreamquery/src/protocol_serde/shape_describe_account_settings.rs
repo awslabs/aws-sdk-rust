@@ -109,14 +109,14 @@ pub fn de_describe_account_settings_http_response(
 
 pub fn ser_describe_account_settings_input(
     _input: &crate::operation::describe_account_settings::DescribeAccountSettingsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_account_settings(
     value: &[u8],
     mut builder: crate::operation::describe_account_settings::builders::DescribeAccountSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_account_settings::builders::DescribeAccountSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

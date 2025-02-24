@@ -71,7 +71,7 @@ pub fn de_put_dashboard_http_response(
 pub fn de_put_dashboard(
     inp: &[u8],
     mut builder: crate::operation::put_dashboard::builders::PutDashboardOutputBuilder,
-) -> Result<crate::operation::put_dashboard::builders::PutDashboardOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::put_dashboard::builders::PutDashboardOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

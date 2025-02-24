@@ -2,7 +2,7 @@
 pub fn ser_create_scan_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_scan::CreateScanInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.analysis_type {
         object.key("analysisType").string(var_1.as_str());
     }

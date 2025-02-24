@@ -152,7 +152,7 @@ pub fn de_describe_packaging_configuration_http_response(
 pub(crate) fn de_describe_packaging_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_packaging_configuration::builders::DescribePackagingConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

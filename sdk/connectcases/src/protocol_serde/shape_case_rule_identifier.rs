@@ -2,7 +2,7 @@
 pub fn ser_case_rule_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaseRuleIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("id").string(input.id.as_str());
     }

@@ -124,7 +124,7 @@ pub fn de_batch_get_invoice_profile_http_response(
 
 pub fn ser_batch_get_invoice_profile_input(
     input: &crate::operation::batch_get_invoice_profile::BatchGetInvoiceProfileInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_get_invoice_profile_input::ser_batch_get_invoice_profile_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_batch_get_invoice_profile_input(
 pub(crate) fn de_batch_get_invoice_profile(
     value: &[u8],
     mut builder: crate::operation::batch_get_invoice_profile::builders::BatchGetInvoiceProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_get_invoice_profile::builders::BatchGetInvoiceProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

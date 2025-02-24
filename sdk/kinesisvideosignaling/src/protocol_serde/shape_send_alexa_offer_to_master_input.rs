@@ -2,7 +2,7 @@
 pub fn ser_send_alexa_offer_to_master_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_arn {
         object.key("ChannelARN").string(var_1.as_str());
     }

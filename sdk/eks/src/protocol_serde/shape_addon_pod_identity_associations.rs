@@ -2,7 +2,7 @@
 pub fn ser_addon_pod_identity_associations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddonPodIdentityAssociations,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("serviceAccount").string(input.service_account.as_str());
     }

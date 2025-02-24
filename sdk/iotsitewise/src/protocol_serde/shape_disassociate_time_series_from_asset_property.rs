@@ -113,7 +113,7 @@ pub fn de_disassociate_time_series_from_asset_property_http_response(
 
 pub fn ser_disassociate_time_series_from_asset_property_input(
     input: &crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_time_series_from_asset_property_input::ser_disassociate_time_series_from_asset_property_input_input(

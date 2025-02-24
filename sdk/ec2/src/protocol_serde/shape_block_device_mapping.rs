@@ -3,7 +3,7 @@
 pub fn ser_block_device_mapping(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::BlockDeviceMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Ebs");
     if let Some(var_2) = &input.ebs {
@@ -30,7 +30,7 @@ pub fn ser_block_device_mapping(
 #[allow(clippy::needless_question_mark)]
 pub fn de_block_device_mapping(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::BlockDeviceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::BlockDeviceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::BlockDeviceMapping::builder();
     while let Some(mut tag) = decoder.next_tag() {

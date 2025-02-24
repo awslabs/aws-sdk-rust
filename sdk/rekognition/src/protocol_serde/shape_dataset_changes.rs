@@ -2,7 +2,7 @@
 pub fn ser_dataset_changes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetChanges,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("GroundTruth")

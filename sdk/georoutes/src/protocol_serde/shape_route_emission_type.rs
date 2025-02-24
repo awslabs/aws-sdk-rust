@@ -2,7 +2,7 @@
 pub fn ser_route_emission_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteEmissionType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.co2_emission_class {
         object.key("Co2EmissionClass").string(var_1.as_str());
     }

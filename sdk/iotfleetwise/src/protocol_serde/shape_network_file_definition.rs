@@ -2,7 +2,7 @@
 pub fn ser_network_file_definition(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkFileDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::NetworkFileDefinition::CanDbc(inner) => {
             #[allow(unused_mut)]

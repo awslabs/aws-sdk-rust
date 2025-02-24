@@ -3,7 +3,7 @@
 pub fn ser_transit_gateway_connect_request_bgp_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TransitGatewayConnectRequestBgpOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PeerAsn");
     if let Some(var_2) = &input.peer_asn {

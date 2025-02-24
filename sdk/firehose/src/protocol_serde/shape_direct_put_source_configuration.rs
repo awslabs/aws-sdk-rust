@@ -2,7 +2,7 @@
 pub fn ser_direct_put_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DirectPutSourceConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ThroughputHintInMBs").number(
             #[allow(clippy::useless_conversion)]

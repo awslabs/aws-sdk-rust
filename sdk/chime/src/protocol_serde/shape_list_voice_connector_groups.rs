@@ -142,7 +142,7 @@ pub fn de_list_voice_connector_groups_http_response(
 pub(crate) fn de_list_voice_connector_groups(
     value: &[u8],
     mut builder: crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_voice_connector_groups::builders::ListVoiceConnectorGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

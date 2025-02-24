@@ -2,7 +2,7 @@
 pub fn ser_list_metadata_transfer_jobs_filter(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListMetadataTransferJobsFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ListMetadataTransferJobsFilter::WorkspaceId(inner) => {
             object_5.key("workspaceId").string(inner.as_str());

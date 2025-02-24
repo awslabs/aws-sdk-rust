@@ -2,7 +2,7 @@
 pub fn ser_put_logging_options_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_logging_options::PutLoggingOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_log_delivery {
         #[allow(unused_mut)]
         let mut object_2 = object.key("cloudWatchLogDelivery").start_object();

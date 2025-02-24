@@ -137,7 +137,7 @@ pub fn de_register_task_with_maintenance_window_http_response(
 
 pub fn ser_register_task_with_maintenance_window_input(
     input: &crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_task_with_maintenance_window_input::ser_register_task_with_maintenance_window_input_input(
@@ -151,7 +151,7 @@ pub fn ser_register_task_with_maintenance_window_input(
 pub(crate) fn de_register_task_with_maintenance_window(
     value: &[u8],
     mut builder: crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::register_task_with_maintenance_window::builders::RegisterTaskWithMaintenanceWindowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

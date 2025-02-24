@@ -109,7 +109,7 @@ pub fn de_stop_replication_to_replica_http_response(
 
 pub fn ser_stop_replication_to_replica_input(
     input: &crate::operation::stop_replication_to_replica::StopReplicationToReplicaInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_replication_to_replica_input::ser_stop_replication_to_replica_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_stop_replication_to_replica_input(
 pub(crate) fn de_stop_replication_to_replica(
     value: &[u8],
     mut builder: crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_replication_to_replica::builders::StopReplicationToReplicaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

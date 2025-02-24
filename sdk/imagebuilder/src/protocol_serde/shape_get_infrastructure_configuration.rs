@@ -146,7 +146,7 @@ pub fn de_get_infrastructure_configuration_http_response(
 pub(crate) fn de_get_infrastructure_configuration(
     value: &[u8],
     mut builder: crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_infrastructure_configuration::builders::GetInfrastructureConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

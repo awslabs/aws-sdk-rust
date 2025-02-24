@@ -2,7 +2,7 @@
 pub fn ser_create_observability_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_observability_configuration::CreateObservabilityConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.observability_configuration_name {
         object.key("ObservabilityConfigurationName").string(var_1.as_str());
     }

@@ -166,7 +166,7 @@ pub fn de_list_channels_associated_with_channel_flow_http_response(
 pub(crate) fn de_list_channels_associated_with_channel_flow(
     value: &[u8],
     mut builder: crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -42,7 +42,7 @@ pub fn de_get_vpn_connection_device_sample_configuration_http_response(
 pub fn de_get_vpn_connection_device_sample_configuration(
     inp: &[u8],
     mut builder: crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_vpn_connection_device_sample_configuration::builders::GetVpnConnectionDeviceSampleConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

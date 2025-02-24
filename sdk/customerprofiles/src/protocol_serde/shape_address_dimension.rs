@@ -2,7 +2,7 @@
 pub fn ser_address_dimension(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddressDimension,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.city {
         #[allow(unused_mut)]
         let mut object_2 = object.key("City").start_object();
@@ -44,7 +44,7 @@ pub fn ser_address_dimension(
 
 pub(crate) fn de_address_dimension<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AddressDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AddressDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

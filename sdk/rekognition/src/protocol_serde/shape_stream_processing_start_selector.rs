@@ -2,7 +2,7 @@
 pub fn ser_stream_processing_start_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessingStartSelector,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kvs_stream_start_selector {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KVSStreamStartSelector").start_object();

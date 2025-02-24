@@ -39,7 +39,7 @@ pub fn de_modify_instance_metadata_defaults_http_response(
 pub fn de_modify_instance_metadata_defaults(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_metadata_defaults::builders::ModifyInstanceMetadataDefaultsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_instance_metadata_defaults::builders::ModifyInstanceMetadataDefaultsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

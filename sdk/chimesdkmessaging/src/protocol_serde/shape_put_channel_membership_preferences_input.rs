@@ -2,7 +2,7 @@
 pub fn ser_put_channel_membership_preferences_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.preferences {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Preferences").start_object();

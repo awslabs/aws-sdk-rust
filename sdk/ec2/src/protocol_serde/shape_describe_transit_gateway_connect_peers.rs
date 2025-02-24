@@ -41,7 +41,7 @@ pub fn de_describe_transit_gateway_connect_peers_http_response(
 pub fn de_describe_transit_gateway_connect_peers(
     inp: &[u8],
     mut builder: crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_transit_gateway_connect_peers::builders::DescribeTransitGatewayConnectPeersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

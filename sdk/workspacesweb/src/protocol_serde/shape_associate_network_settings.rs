@@ -156,7 +156,7 @@ pub fn de_associate_network_settings_http_response(
 pub(crate) fn de_associate_network_settings(
     value: &[u8],
     mut builder: crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_network_settings::builders::AssociateNetworkSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

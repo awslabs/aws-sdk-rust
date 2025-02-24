@@ -2,7 +2,7 @@
 pub fn ser_send_bonus_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_bonus::SendBonusInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.worker_id {
         object.key("WorkerId").string(var_1.as_str());
     }

@@ -95,7 +95,7 @@ pub fn de_complete_migration_http_response(
 pub fn de_complete_migration(
     inp: &[u8],
     mut builder: crate::operation::complete_migration::builders::CompleteMigrationOutputBuilder,
-) -> Result<crate::operation::complete_migration::builders::CompleteMigrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::complete_migration::builders::CompleteMigrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

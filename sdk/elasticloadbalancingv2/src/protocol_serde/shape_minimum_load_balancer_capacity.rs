@@ -3,7 +3,7 @@
 pub fn ser_minimum_load_balancer_capacity(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MinimumLoadBalancerCapacity,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityUnits");
     if let Some(var_2) = &input.capacity_units {
@@ -18,7 +18,7 @@ pub fn ser_minimum_load_balancer_capacity(
 #[allow(clippy::needless_question_mark)]
 pub fn de_minimum_load_balancer_capacity(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MinimumLoadBalancerCapacity, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MinimumLoadBalancerCapacity, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MinimumLoadBalancerCapacity::builder();
     while let Some(mut tag) = decoder.next_tag() {

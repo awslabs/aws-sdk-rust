@@ -2,7 +2,7 @@
 pub fn ser_list_test_grid_sessions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_test_grid_sessions::ListTestGridSessionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_arn {
         object.key("projectArn").string(var_1.as_str());
     }

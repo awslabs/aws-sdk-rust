@@ -3,7 +3,7 @@
 pub fn de_trust_store_in_use_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TrustStoreInUseExceptionBuilder,
-) -> Result<crate::types::error::builders::TrustStoreInUseExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TrustStoreInUseExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

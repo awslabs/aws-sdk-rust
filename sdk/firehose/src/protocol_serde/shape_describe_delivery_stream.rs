@@ -64,7 +64,7 @@ pub fn de_describe_delivery_stream_http_response(
 
 pub fn ser_describe_delivery_stream_input(
     input: &crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_delivery_stream_input::ser_describe_delivery_stream_input_input(&mut object, input)?;
@@ -75,7 +75,7 @@ pub fn ser_describe_delivery_stream_input(
 pub(crate) fn de_describe_delivery_stream(
     value: &[u8],
     mut builder: crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

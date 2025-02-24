@@ -2,7 +2,7 @@
 pub fn ser_logger(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Logger,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component {
         object.key("Component").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_logger(
 
 pub(crate) fn de_logger<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Logger>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Logger>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

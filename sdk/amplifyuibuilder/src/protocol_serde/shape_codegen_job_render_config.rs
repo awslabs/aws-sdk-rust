@@ -2,7 +2,7 @@
 pub fn ser_codegen_job_render_config(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenJobRenderConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::CodegenJobRenderConfig::React(inner) => {
             #[allow(unused_mut)]
@@ -21,7 +21,7 @@ pub fn ser_codegen_job_render_config(
 
 pub(crate) fn de_codegen_job_render_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodegenJobRenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodegenJobRenderConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

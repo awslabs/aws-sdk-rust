@@ -82,7 +82,7 @@ pub fn de_promote_read_replica_db_cluster_http_response(
 pub fn de_promote_read_replica_db_cluster(
     inp: &[u8],
     mut builder: crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

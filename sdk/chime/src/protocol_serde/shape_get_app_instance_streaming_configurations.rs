@@ -184,7 +184,7 @@ pub fn de_get_app_instance_streaming_configurations_http_response(
 pub(crate) fn de_get_app_instance_streaming_configurations(
     value: &[u8],
     mut builder: crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_athena_dataset_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AthenaDatasetDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog {
         object.key("Catalog").string(var_1.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_athena_dataset_definition(
 
 pub(crate) fn de_athena_dataset_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AthenaDatasetDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AthenaDatasetDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_project_policy_grant_principal(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProjectPolicyGrantPrincipal,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("projectDesignation").string(input.project_designation.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_project_policy_grant_principal(
 
 pub(crate) fn de_project_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ProjectPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ProjectPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -43,7 +43,7 @@ pub fn de_describe_scheduled_instance_availability_http_response(
 pub fn de_describe_scheduled_instance_availability(
     inp: &[u8],
     mut builder: crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_scheduled_instance_availability::builders::DescribeScheduledInstanceAvailabilityOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

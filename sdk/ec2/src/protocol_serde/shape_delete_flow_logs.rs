@@ -33,7 +33,7 @@ pub fn de_delete_flow_logs_http_response(
 pub fn de_delete_flow_logs(
     inp: &[u8],
     mut builder: crate::operation::delete_flow_logs::builders::DeleteFlowLogsOutputBuilder,
-) -> Result<crate::operation::delete_flow_logs::builders::DeleteFlowLogsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_flow_logs::builders::DeleteFlowLogsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

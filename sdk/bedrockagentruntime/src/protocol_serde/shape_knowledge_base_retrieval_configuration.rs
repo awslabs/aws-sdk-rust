@@ -2,7 +2,7 @@
 pub fn ser_knowledge_base_retrieval_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KnowledgeBaseRetrievalConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vector_search_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("vectorSearchConfiguration").start_object();

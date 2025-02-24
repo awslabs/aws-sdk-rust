@@ -2,7 +2,7 @@
 pub fn ser_medical_scribe_configuration_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MedicalScribeConfigurationEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_1.as_str());
     }

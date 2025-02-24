@@ -2,7 +2,7 @@
 pub fn ser_set_identity_pool_roles_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_identity_pool_roles::SetIdentityPoolRolesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_pool_id {
         object.key("IdentityPoolId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_destination_s3_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DestinationS3Location,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("bucket").string(input.bucket.as_str());
     }

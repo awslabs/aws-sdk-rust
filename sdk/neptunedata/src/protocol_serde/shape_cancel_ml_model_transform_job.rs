@@ -253,7 +253,7 @@ pub fn de_cancel_ml_model_transform_job_http_response(
 pub(crate) fn de_cancel_ml_model_transform_job(
     value: &[u8],
     mut builder: crate::operation::cancel_ml_model_transform_job::builders::CancelMlModelTransformJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_ml_model_transform_job::builders::CancelMlModelTransformJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

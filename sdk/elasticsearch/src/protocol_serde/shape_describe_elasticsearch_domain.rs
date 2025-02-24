@@ -109,7 +109,7 @@ pub fn de_describe_elasticsearch_domain_http_response(
 pub(crate) fn de_describe_elasticsearch_domain(
     value: &[u8],
     mut builder: crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

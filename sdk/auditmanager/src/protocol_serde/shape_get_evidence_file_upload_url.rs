@@ -106,7 +106,7 @@ pub fn de_get_evidence_file_upload_url_http_response(
 pub(crate) fn de_get_evidence_file_upload_url(
     value: &[u8],
     mut builder: crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_evidence_file_upload_url::builders::GetEvidenceFileUploadUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_generate_pin_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::generate_pin_data::GeneratePinDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_key_identifier {
         object.key("EncryptionKeyIdentifier").string(var_1.as_str());
     }

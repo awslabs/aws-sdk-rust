@@ -2,7 +2,7 @@
 pub fn ser_list_labels_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_labels::ListLabelsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.label_group_name {
         object.key("LabelGroupName").string(var_1.as_str());
     }

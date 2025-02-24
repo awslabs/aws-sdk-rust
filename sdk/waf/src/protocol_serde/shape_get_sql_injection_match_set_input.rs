@@ -2,7 +2,7 @@
 pub fn ser_get_sql_injection_match_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sql_injection_match_set_id {
         object.key("SqlInjectionMatchSetId").string(var_1.as_str());
     }

@@ -39,7 +39,7 @@ pub fn de_describe_ipam_resource_discoveries_http_response(
 pub fn de_describe_ipam_resource_discoveries(
     inp: &[u8],
     mut builder: crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

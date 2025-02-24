@@ -2,7 +2,7 @@
 pub fn ser_templated_message_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplatedMessageConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KnowledgeBaseId").string(input.knowledge_base_id.as_str());
     }

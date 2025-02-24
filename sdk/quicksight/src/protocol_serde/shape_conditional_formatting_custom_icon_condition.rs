@@ -2,7 +2,7 @@
 pub fn ser_conditional_formatting_custom_icon_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConditionalFormattingCustomIconCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Expression").string(input.expression.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_conditional_formatting_custom_icon_condition(
 
 pub(crate) fn de_conditional_formatting_custom_icon_condition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConditionalFormattingCustomIconCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConditionalFormattingCustomIconCondition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

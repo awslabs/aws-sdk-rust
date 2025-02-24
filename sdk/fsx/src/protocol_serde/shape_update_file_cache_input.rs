@@ -2,7 +2,7 @@
 pub fn ser_update_file_cache_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_file_cache::UpdateFileCacheInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_cache_id {
         object.key("FileCacheId").string(var_1.as_str());
     }

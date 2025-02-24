@@ -135,7 +135,7 @@ pub fn de_list_sensitivity_inspection_templates_http_response(
 pub(crate) fn de_list_sensitivity_inspection_templates(
     value: &[u8],
     mut builder: crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

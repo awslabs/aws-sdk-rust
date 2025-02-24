@@ -2,7 +2,7 @@
 pub fn ser_speke_key_provider_cmaf(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SpekeKeyProviderCmaf,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("certificateArn").string(var_1.as_str());
     }
@@ -41,7 +41,7 @@ pub fn ser_speke_key_provider_cmaf(
 
 pub(crate) fn de_speke_key_provider_cmaf<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SpekeKeyProviderCmaf>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SpekeKeyProviderCmaf>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

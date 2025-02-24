@@ -76,7 +76,7 @@ pub fn de_list_email_identities_http_response(
 pub(crate) fn de_list_email_identities(
     value: &[u8],
     mut builder: crate::operation::list_email_identities::builders::ListEmailIdentitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_email_identities::builders::ListEmailIdentitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

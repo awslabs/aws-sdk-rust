@@ -177,7 +177,7 @@ pub fn de_describe_analysis_definition_http_response(
 pub(crate) fn de_describe_analysis_definition(
     value: &[u8],
     mut builder: crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

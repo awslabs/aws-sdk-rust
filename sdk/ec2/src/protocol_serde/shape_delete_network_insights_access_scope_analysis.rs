@@ -44,7 +44,7 @@ pub fn de_delete_network_insights_access_scope_analysis_http_response(
 pub fn de_delete_network_insights_access_scope_analysis(
     inp: &[u8],
     mut builder: crate::operation::delete_network_insights_access_scope_analysis::builders::DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_network_insights_access_scope_analysis::builders::DeleteNetworkInsightsAccessScopeAnalysisOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

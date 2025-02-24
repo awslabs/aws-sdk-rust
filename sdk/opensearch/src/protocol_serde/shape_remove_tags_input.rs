@@ -2,7 +2,7 @@
 pub fn ser_remove_tags_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::remove_tags::RemoveTagsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("ARN").string(var_1.as_str());
     }

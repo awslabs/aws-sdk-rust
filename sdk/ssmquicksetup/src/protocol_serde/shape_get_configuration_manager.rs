@@ -141,7 +141,7 @@ pub fn de_get_configuration_manager_http_response(
 pub(crate) fn de_get_configuration_manager(
     value: &[u8],
     mut builder: crate::operation::get_configuration_manager::builders::GetConfigurationManagerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_configuration_manager::builders::GetConfigurationManagerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

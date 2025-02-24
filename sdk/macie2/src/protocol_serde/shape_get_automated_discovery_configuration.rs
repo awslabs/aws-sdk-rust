@@ -115,7 +115,7 @@ pub fn de_get_automated_discovery_configuration_http_response(
 pub(crate) fn de_get_automated_discovery_configuration(
     value: &[u8],
     mut builder: crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_automated_discovery_configuration::builders::GetAutomatedDiscoveryConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_address_field(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddressField,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Identifier").string(input.identifier.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_address_field(
 
 pub(crate) fn de_address_field<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AddressField>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AddressField>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -159,7 +159,7 @@ pub fn de_get_voice_connector_origination_http_response(
 pub(crate) fn de_get_voice_connector_origination(
     value: &[u8],
     mut builder: crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_voice_connector_origination::builders::GetVoiceConnectorOriginationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

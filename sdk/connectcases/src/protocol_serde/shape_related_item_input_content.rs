@@ -2,7 +2,7 @@
 pub fn ser_related_item_input_content(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RelatedItemInputContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RelatedItemInputContent::Contact(inner) => {
             #[allow(unused_mut)]

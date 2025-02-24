@@ -80,7 +80,7 @@ pub fn de_delete_inbound_connection_http_response(
 pub(crate) fn de_delete_inbound_connection(
     value: &[u8],
     mut builder: crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_inbound_connection::builders::DeleteInboundConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

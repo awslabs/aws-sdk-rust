@@ -39,7 +39,7 @@ pub fn de_disable_ebs_encryption_by_default_http_response(
 pub fn de_disable_ebs_encryption_by_default(
     inp: &[u8],
     mut builder: crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

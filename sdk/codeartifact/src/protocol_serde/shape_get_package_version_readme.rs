@@ -127,7 +127,7 @@ pub fn de_get_package_version_readme_http_response(
 pub(crate) fn de_get_package_version_readme(
     value: &[u8],
     mut builder: crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

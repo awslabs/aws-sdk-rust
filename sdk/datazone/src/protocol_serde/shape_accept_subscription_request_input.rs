@@ -2,7 +2,7 @@
 pub fn ser_accept_subscription_request_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_subscription_request::AcceptSubscriptionRequestInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asset_scopes {
         let mut array_2 = object.key("assetScopes").start_array();
         for item_3 in var_1 {

@@ -101,14 +101,14 @@ pub fn de_get_kms_encryption_key_http_response(
 
 pub fn ser_get_kms_encryption_key_input(
     _input: &crate::operation::get_kms_encryption_key::GetKmsEncryptionKeyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_kms_encryption_key(
     value: &[u8],
     mut builder: crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_kms_encryption_key::builders::GetKmsEncryptionKeyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

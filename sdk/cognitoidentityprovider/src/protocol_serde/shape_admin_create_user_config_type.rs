@@ -2,7 +2,7 @@
 pub fn ser_admin_create_user_config_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdminCreateUserConfigType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.allow_admin_create_user_only {
         object.key("AllowAdminCreateUserOnly").boolean(input.allow_admin_create_user_only);
     }
@@ -23,7 +23,7 @@ pub fn ser_admin_create_user_config_type(
 
 pub(crate) fn de_admin_create_user_config_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AdminCreateUserConfigType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AdminCreateUserConfigType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

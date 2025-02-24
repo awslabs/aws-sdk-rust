@@ -2,7 +2,7 @@
 pub fn ser_geospatial_gradient_color(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialGradientColor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("StepColors").start_array();
         for item_2 in &input.step_colors {
@@ -35,7 +35,7 @@ pub fn ser_geospatial_gradient_color(
 
 pub(crate) fn de_geospatial_gradient_color<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GeospatialGradientColor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GeospatialGradientColor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

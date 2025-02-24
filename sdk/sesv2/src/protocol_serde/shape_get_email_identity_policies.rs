@@ -95,7 +95,7 @@ pub fn de_get_email_identity_policies_http_response(
 pub(crate) fn de_get_email_identity_policies(
     value: &[u8],
     mut builder: crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_email_identity_policies::builders::GetEmailIdentityPoliciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

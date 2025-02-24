@@ -2,7 +2,7 @@
 pub fn ser_ingress_boolean_to_evaluate(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressBooleanToEvaluate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IngressBooleanToEvaluate::Analysis(inner) => {
             #[allow(unused_mut)]
@@ -27,7 +27,7 @@ pub fn ser_ingress_boolean_to_evaluate(
 
 pub(crate) fn de_ingress_boolean_to_evaluate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IngressBooleanToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IngressBooleanToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

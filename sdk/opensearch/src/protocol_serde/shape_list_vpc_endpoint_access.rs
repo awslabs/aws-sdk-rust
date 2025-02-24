@@ -108,7 +108,7 @@ pub fn de_list_vpc_endpoint_access_http_response(
 pub(crate) fn de_list_vpc_endpoint_access(
     value: &[u8],
     mut builder: crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

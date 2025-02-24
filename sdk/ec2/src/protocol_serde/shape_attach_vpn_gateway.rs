@@ -33,7 +33,7 @@ pub fn de_attach_vpn_gateway_http_response(
 pub fn de_attach_vpn_gateway(
     inp: &[u8],
     mut builder: crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder,
-) -> Result<crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::attach_vpn_gateway::builders::AttachVpnGatewayOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_s3_glue_parquet_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3GlueParquetTarget,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }
@@ -47,7 +47,7 @@ pub fn ser_s3_glue_parquet_target(
 
 pub(crate) fn de_s3_glue_parquet_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::S3GlueParquetTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::S3GlueParquetTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_local_device_resource_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LocalDeviceResourceData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_owner_setting {
         #[allow(unused_mut)]
         let mut object_2 = object.key("GroupOwnerSetting").start_object();
@@ -17,7 +17,7 @@ pub fn ser_local_device_resource_data(
 
 pub(crate) fn de_local_device_resource_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LocalDeviceResourceData>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LocalDeviceResourceData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_dicom_updates(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DicomUpdates,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.removable_attributes {
         object
             .key("removableAttributes")

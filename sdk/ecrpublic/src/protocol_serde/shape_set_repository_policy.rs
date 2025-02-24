@@ -107,7 +107,7 @@ pub fn de_set_repository_policy_http_response(
 
 pub fn ser_set_repository_policy_input(
     input: &crate::operation::set_repository_policy::SetRepositoryPolicyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_set_repository_policy_input::ser_set_repository_policy_input_input(&mut object, input)?;
@@ -118,7 +118,7 @@ pub fn ser_set_repository_policy_input(
 pub(crate) fn de_set_repository_policy(
     value: &[u8],
     mut builder: crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::set_repository_policy::builders::SetRepositoryPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

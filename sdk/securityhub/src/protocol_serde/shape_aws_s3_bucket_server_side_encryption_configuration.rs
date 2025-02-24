@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_server_side_encryption_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketServerSideEncryptionConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rules {
         let mut array_2 = object.key("Rules").start_array();
         for item_3 in var_1 {
@@ -23,7 +23,7 @@ pub fn ser_aws_s3_bucket_server_side_encryption_configuration(
 
 pub(crate) fn de_aws_s3_bucket_server_side_encryption_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

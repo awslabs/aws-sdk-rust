@@ -156,7 +156,7 @@ pub fn ser_redact_channel_message_headers(
 pub(crate) fn de_redact_channel_message(
     value: &[u8],
     mut builder: crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::redact_channel_message::builders::RedactChannelMessageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

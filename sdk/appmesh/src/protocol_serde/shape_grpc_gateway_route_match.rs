@@ -2,7 +2,7 @@
 pub fn ser_grpc_gateway_route_match(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrpcGatewayRouteMatch,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_name {
         object.key("serviceName").string(var_1.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_grpc_gateway_route_match(
 
 pub(crate) fn de_grpc_gateway_route_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GrpcGatewayRouteMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GrpcGatewayRouteMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

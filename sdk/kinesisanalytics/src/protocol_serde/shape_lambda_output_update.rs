@@ -2,7 +2,7 @@
 pub fn ser_lambda_output_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaOutputUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn_update {
         object.key("ResourceARNUpdate").string(var_1.as_str());
     }

@@ -98,7 +98,10 @@ pub fn de_delete_service_linked_role_http_response(
 pub fn de_delete_service_linked_role(
     inp: &[u8],
     mut builder: crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder,
-) -> Result<crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

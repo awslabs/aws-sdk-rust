@@ -173,7 +173,7 @@ pub fn de_start_dashboard_snapshot_job_schedule_http_response(
 pub(crate) fn de_start_dashboard_snapshot_job_schedule(
     value: &[u8],
     mut builder: crate::operation::start_dashboard_snapshot_job_schedule::builders::StartDashboardSnapshotJobScheduleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_dashboard_snapshot_job_schedule::builders::StartDashboardSnapshotJobScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

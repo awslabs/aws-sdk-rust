@@ -2,7 +2,7 @@
 pub fn ser_model_data_source(
     object_14: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelDataSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ModelDataSource::S3DataSource(inner) => {
             #[allow(unused_mut)]
@@ -21,7 +21,7 @@ pub fn ser_model_data_source(
 
 pub(crate) fn de_model_data_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ModelDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ModelDataSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

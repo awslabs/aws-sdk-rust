@@ -61,7 +61,7 @@ pub fn de_list_device_definition_versions_http_response(
 pub(crate) fn de_list_device_definition_versions(
     value: &[u8],
     mut builder: crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

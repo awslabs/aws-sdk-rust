@@ -2,7 +2,7 @@
 pub fn ser_filter_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.severity {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Severity").start_object();

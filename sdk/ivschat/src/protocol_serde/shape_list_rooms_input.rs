@@ -2,7 +2,7 @@
 pub fn ser_list_rooms_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_rooms::ListRoomsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.logging_configuration_identifier {
         object.key("loggingConfigurationIdentifier").string(var_1.as_str());
     }

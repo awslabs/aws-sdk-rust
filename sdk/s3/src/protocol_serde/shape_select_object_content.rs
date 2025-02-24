@@ -97,7 +97,7 @@ pub fn ser_select_object_content_headers(
 
 pub fn ser_select_object_content_op_input(
     input: &crate::operation::select_object_content::SelectObjectContentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

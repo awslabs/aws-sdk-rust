@@ -111,7 +111,7 @@ pub fn ser_list_parts_headers(
 pub fn de_list_parts(
     inp: &[u8],
     mut builder: crate::operation::list_parts::builders::ListPartsOutputBuilder,
-) -> Result<crate::operation::list_parts::builders::ListPartsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_parts::builders::ListPartsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

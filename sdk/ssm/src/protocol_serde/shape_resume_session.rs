@@ -69,7 +69,7 @@ pub fn de_resume_session_http_response(
 
 pub fn ser_resume_session_input(
     input: &crate::operation::resume_session::ResumeSessionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_resume_session_input::ser_resume_session_input_input(&mut object, input)?;
@@ -80,7 +80,10 @@ pub fn ser_resume_session_input(
 pub(crate) fn de_resume_session(
     value: &[u8],
     mut builder: crate::operation::resume_session::builders::ResumeSessionOutputBuilder,
-) -> Result<crate::operation::resume_session::builders::ResumeSessionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::resume_session::builders::ResumeSessionOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

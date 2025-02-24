@@ -2,7 +2,7 @@
 pub fn ser_model_metadata_search_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelMetadataSearchExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filters {
         let mut array_2 = object.key("Filters").start_array();
         for item_3 in var_1 {

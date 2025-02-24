@@ -113,7 +113,7 @@ pub fn de_get_base_path_mappings_http_response(
 pub(crate) fn de_get_base_path_mappings(
     value: &[u8],
     mut builder: crate::operation::get_base_path_mappings::builders::GetBasePathMappingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_base_path_mappings::builders::GetBasePathMappingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

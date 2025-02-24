@@ -126,7 +126,7 @@ pub fn de_get_media_for_fragment_list_http_error(
 
 pub fn ser_get_media_for_fragment_list_input(
     input: &crate::operation::get_media_for_fragment_list::GetMediaForFragmentListInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_media_for_fragment_list_input::ser_get_media_for_fragment_list_input_input(&mut object, input)?;

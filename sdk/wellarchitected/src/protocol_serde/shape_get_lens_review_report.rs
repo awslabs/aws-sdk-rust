@@ -121,7 +121,7 @@ pub fn de_get_lens_review_report_http_response(
 pub(crate) fn de_get_lens_review_report(
     value: &[u8],
     mut builder: crate::operation::get_lens_review_report::builders::GetLensReviewReportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_lens_review_report::builders::GetLensReviewReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

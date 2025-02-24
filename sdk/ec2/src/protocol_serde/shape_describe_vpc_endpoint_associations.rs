@@ -39,7 +39,7 @@ pub fn de_describe_vpc_endpoint_associations_http_response(
 pub fn de_describe_vpc_endpoint_associations(
     inp: &[u8],
     mut builder: crate::operation::describe_vpc_endpoint_associations::builders::DescribeVpcEndpointAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_vpc_endpoint_associations::builders::DescribeVpcEndpointAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_resource_config_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceConfigForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.keep_alive_period_in_seconds {
         object.key("KeepAlivePeriodInSeconds").number(
             #[allow(clippy::useless_conversion)]

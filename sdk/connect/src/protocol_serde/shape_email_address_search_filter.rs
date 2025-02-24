@@ -2,7 +2,7 @@
 pub fn ser_email_address_search_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailAddressSearchFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tag_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TagFilter").start_object();

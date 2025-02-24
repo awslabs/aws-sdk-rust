@@ -2,7 +2,7 @@
 pub fn ser_instance_type_capacity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceTypeCapacity,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InstanceType").string(input.instance_type.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_instance_type_capacity(
 
 pub(crate) fn de_instance_type_capacity<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InstanceTypeCapacity>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InstanceTypeCapacity>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

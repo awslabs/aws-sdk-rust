@@ -46,7 +46,7 @@ pub fn de_deregister_transit_gateway_multicast_group_sources_http_response(
 pub fn de_deregister_transit_gateway_multicast_group_sources(
     inp: &[u8],
     mut builder: crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

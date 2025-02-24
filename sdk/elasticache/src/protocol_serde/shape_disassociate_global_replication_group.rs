@@ -128,7 +128,7 @@ pub fn de_disassociate_global_replication_group_http_response(
 pub fn de_disassociate_global_replication_group(
     inp: &[u8],
     mut builder: crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

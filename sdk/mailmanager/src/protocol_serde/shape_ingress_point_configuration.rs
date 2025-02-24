@@ -2,7 +2,7 @@
 pub fn ser_ingress_point_configuration(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressPointConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IngressPointConfiguration::SmtpPassword(inner) => {
             object_7.key("SmtpPassword").string(inner.as_str());

@@ -119,7 +119,7 @@ pub fn de_create_domain_http_response(
 pub fn de_create_domain(
     inp: &[u8],
     mut builder: crate::operation::create_domain::builders::CreateDomainOutputBuilder,
-) -> Result<crate::operation::create_domain::builders::CreateDomainOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_domain::builders::CreateDomainOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

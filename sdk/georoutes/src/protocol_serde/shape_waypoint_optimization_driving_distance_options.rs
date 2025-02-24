@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_driving_distance_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationDrivingDistanceOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DrivingDistance").number(
             #[allow(clippy::useless_conversion)]

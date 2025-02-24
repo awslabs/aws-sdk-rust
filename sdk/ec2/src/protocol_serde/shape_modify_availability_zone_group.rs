@@ -39,7 +39,7 @@ pub fn de_modify_availability_zone_group_http_response(
 pub fn de_modify_availability_zone_group(
     inp: &[u8],
     mut builder: crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

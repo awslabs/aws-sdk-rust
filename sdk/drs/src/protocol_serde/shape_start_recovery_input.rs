@@ -2,7 +2,7 @@
 pub fn ser_start_recovery_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_recovery::StartRecoveryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_drill {
         object.key("isDrill").boolean(*var_1);
     }

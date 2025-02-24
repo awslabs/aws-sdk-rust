@@ -2,7 +2,7 @@
 pub fn ser_data_source_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.credential_pair {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CredentialPair").start_object();

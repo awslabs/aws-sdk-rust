@@ -2,7 +2,7 @@
 pub fn ser_enable_io_t_logging_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnableIoTLoggingParams,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("roleArnForLogging").string(input.role_arn_for_logging.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_enable_io_t_logging_params(
 
 pub(crate) fn de_enable_io_t_logging_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EnableIoTLoggingParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EnableIoTLoggingParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

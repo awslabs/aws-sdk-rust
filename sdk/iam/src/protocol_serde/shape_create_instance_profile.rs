@@ -126,7 +126,10 @@ pub fn de_create_instance_profile_http_response(
 pub fn de_create_instance_profile(
     inp: &[u8],
     mut builder: crate::operation::create_instance_profile::builders::CreateInstanceProfileOutputBuilder,
-) -> Result<crate::operation::create_instance_profile::builders::CreateInstanceProfileOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::create_instance_profile::builders::CreateInstanceProfileOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

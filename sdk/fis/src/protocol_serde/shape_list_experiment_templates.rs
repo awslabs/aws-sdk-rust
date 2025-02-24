@@ -65,7 +65,7 @@ pub fn de_list_experiment_templates_http_response(
 pub(crate) fn de_list_experiment_templates(
     value: &[u8],
     mut builder: crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

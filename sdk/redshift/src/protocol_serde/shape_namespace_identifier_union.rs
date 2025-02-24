@@ -3,7 +3,7 @@
 pub fn ser_namespace_identifier_union(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::NamespaceIdentifierUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::NamespaceIdentifierUnion::ServerlessIdentifier(inner) => {
             crate::protocol_serde::shape_serverless_identifier::ser_serverless_identifier(writer, inner)?;

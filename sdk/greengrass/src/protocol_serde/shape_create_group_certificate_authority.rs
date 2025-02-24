@@ -99,7 +99,7 @@ pub fn ser_create_group_certificate_authority_headers(
 pub(crate) fn de_create_group_certificate_authority(
     value: &[u8],
     mut builder: crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

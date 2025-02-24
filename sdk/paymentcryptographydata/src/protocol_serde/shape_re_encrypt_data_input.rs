@@ -2,7 +2,7 @@
 pub fn ser_re_encrypt_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::re_encrypt_data::ReEncryptDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cipher_text {
         object.key("CipherText").string(var_1.as_str());
     }

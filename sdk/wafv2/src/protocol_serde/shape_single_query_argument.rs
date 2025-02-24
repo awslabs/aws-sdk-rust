@@ -2,7 +2,7 @@
 pub fn ser_single_query_argument(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SingleQueryArgument,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_single_query_argument(
 
 pub(crate) fn de_single_query_argument<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SingleQueryArgument>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SingleQueryArgument>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

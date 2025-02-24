@@ -22,7 +22,7 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_cloud_front_origin_access_identity(
     inp: &[u8],
-) -> Result<crate::types::CloudFrontOriginAccessIdentity, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::CloudFrontOriginAccessIdentity, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

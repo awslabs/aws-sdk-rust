@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_job_vpc_connection_override_tags(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportJobVpcConnectionOverrideTags,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("VPCConnectionIds").start_array();
         for item_2 in &input.vpc_connection_ids {
@@ -29,7 +29,7 @@ pub fn ser_asset_bundle_import_job_vpc_connection_override_tags(
 
 pub(crate) fn de_asset_bundle_import_job_vpc_connection_override_tags<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AssetBundleImportJobVpcConnectionOverrideTags>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

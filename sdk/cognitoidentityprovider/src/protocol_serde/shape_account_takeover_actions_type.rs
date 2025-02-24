@@ -2,7 +2,7 @@
 pub fn ser_account_takeover_actions_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountTakeoverActionsType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.low_action {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LowAction").start_object();
@@ -26,7 +26,7 @@ pub fn ser_account_takeover_actions_type(
 
 pub(crate) fn de_account_takeover_actions_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AccountTakeoverActionsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AccountTakeoverActionsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

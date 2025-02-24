@@ -39,7 +39,7 @@ pub fn de_describe_network_insights_paths_http_response(
 pub fn de_describe_network_insights_paths(
     inp: &[u8],
     mut builder: crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

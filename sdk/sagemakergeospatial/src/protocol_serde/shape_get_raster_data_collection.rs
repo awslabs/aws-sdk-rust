@@ -122,7 +122,7 @@ pub fn de_get_raster_data_collection_http_response(
 pub(crate) fn de_get_raster_data_collection(
     value: &[u8],
     mut builder: crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

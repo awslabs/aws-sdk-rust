@@ -2,7 +2,7 @@
 pub fn ser_scaling_configuration_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScalingConfigurationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("minInstanceCount").number(
             #[allow(clippy::useless_conversion)]

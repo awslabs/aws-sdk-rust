@@ -131,7 +131,7 @@ pub fn de_list_client_vpc_connections_http_response(
 pub(crate) fn de_list_client_vpc_connections(
     value: &[u8],
     mut builder: crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_client_vpc_connections::builders::ListClientVpcConnectionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_ecs_task_definition_proxy_configuration_proxy_configuration_prope
 
 pub(crate) fn de_aws_ecs_task_definition_proxy_configuration_proxy_configuration_properties_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

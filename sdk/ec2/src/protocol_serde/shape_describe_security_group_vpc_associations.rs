@@ -43,7 +43,7 @@ pub fn de_describe_security_group_vpc_associations_http_response(
 pub fn de_describe_security_group_vpc_associations(
     inp: &[u8],
     mut builder: crate::operation::describe_security_group_vpc_associations::builders::DescribeSecurityGroupVpcAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_security_group_vpc_associations::builders::DescribeSecurityGroupVpcAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

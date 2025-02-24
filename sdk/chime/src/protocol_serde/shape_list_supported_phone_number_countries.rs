@@ -167,7 +167,7 @@ pub fn de_list_supported_phone_number_countries_http_response(
 pub(crate) fn de_list_supported_phone_number_countries(
     value: &[u8],
     mut builder: crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

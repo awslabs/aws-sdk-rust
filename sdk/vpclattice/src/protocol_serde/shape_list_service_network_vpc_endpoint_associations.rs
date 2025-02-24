@@ -130,7 +130,7 @@ pub fn de_list_service_network_vpc_endpoint_associations_http_response(
 pub(crate) fn de_list_service_network_vpc_endpoint_associations(
     value: &[u8],
     mut builder: crate::operation::list_service_network_vpc_endpoint_associations::builders::ListServiceNetworkVpcEndpointAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_service_network_vpc_endpoint_associations::builders::ListServiceNetworkVpcEndpointAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

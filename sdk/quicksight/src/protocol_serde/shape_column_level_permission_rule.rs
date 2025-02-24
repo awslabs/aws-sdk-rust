@@ -2,7 +2,7 @@
 pub fn ser_column_level_permission_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnLevelPermissionRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.principals {
         let mut array_2 = object.key("Principals").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_column_level_permission_rule(
 
 pub(crate) fn de_column_level_permission_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ColumnLevelPermissionRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ColumnLevelPermissionRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

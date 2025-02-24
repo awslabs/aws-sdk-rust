@@ -2,7 +2,7 @@
 pub fn ser_email_channel_subtype_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailChannelSubtypeConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capacity {
         object.key("capacity").number(
             #[allow(clippy::useless_conversion)]
@@ -26,7 +26,7 @@ pub fn ser_email_channel_subtype_config(
 
 pub(crate) fn de_email_channel_subtype_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EmailChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EmailChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

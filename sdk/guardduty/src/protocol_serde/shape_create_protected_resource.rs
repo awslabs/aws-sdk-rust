@@ -2,7 +2,7 @@
 pub fn ser_create_protected_resource(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateProtectedResource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_bucket {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3Bucket").start_object();
@@ -14,7 +14,7 @@ pub fn ser_create_protected_resource(
 
 pub(crate) fn de_create_protected_resource<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CreateProtectedResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CreateProtectedResource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

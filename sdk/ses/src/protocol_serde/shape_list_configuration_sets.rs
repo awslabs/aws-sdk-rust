@@ -39,7 +39,10 @@ pub fn de_list_configuration_sets_http_response(
 pub fn de_list_configuration_sets(
     inp: &[u8],
     mut builder: crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder,
-) -> Result<crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_configuration_sets::builders::ListConfigurationSetsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -15,7 +15,7 @@ pub(crate) fn de_public_access_block_configuration_payload(
 
 pub fn de_public_access_block_configuration(
     inp: &[u8],
-) -> Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

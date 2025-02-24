@@ -3,7 +3,7 @@
 pub fn de_api_call_rate_for_customer_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ApiCallRateForCustomerExceededFaultBuilder,
-) -> Result<crate::types::error::builders::ApiCallRateForCustomerExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ApiCallRateForCustomerExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

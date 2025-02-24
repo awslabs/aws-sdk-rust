@@ -120,7 +120,7 @@ pub fn de_list_network_settings_http_response(
 pub(crate) fn de_list_network_settings(
     value: &[u8],
     mut builder: crate::operation::list_network_settings::builders::ListNetworkSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_network_settings::builders::ListNetworkSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

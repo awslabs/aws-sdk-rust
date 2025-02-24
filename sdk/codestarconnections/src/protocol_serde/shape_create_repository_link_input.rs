@@ -2,7 +2,7 @@
 pub fn ser_create_repository_link_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_repository_link::CreateRepositoryLinkInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_arn {
         object.key("ConnectionArn").string(var_1.as_str());
     }

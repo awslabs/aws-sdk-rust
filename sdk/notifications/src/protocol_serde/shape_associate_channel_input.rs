@@ -2,7 +2,7 @@
 pub fn ser_associate_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_channel::AssociateChannelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notification_configuration_arn {
         object.key("notificationConfigurationArn").string(var_1.as_str());
     }

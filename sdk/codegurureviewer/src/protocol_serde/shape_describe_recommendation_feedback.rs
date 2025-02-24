@@ -126,7 +126,7 @@ pub fn de_describe_recommendation_feedback_http_response(
 pub(crate) fn de_describe_recommendation_feedback(
     value: &[u8],
     mut builder: crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_recommendation_feedback::builders::DescribeRecommendationFeedbackOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

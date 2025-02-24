@@ -2,7 +2,7 @@
 pub fn ser_participating_gateways_multicast(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipatingGatewaysMulticast,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_list {
         let mut array_2 = object.key("GatewayList").start_array();
         for item_3 in var_1 {
@@ -23,7 +23,7 @@ pub fn ser_participating_gateways_multicast(
 
 pub(crate) fn de_participating_gateways_multicast<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ParticipatingGatewaysMulticast>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ParticipatingGatewaysMulticast>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

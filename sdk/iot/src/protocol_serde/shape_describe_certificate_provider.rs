@@ -142,7 +142,7 @@ pub fn de_describe_certificate_provider_http_response(
 pub(crate) fn de_describe_certificate_provider(
     value: &[u8],
     mut builder: crate::operation::describe_certificate_provider::builders::DescribeCertificateProviderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_certificate_provider::builders::DescribeCertificateProviderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

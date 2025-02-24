@@ -2,7 +2,7 @@
 pub fn ser_create_assessment_framework_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateAssessmentFrameworkControl,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("id").string(input.id.as_str());
     }

@@ -96,8 +96,10 @@ pub fn de_get_reusable_delegation_set_http_response(
 pub fn de_get_reusable_delegation_set(
     inp: &[u8],
     mut builder: crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder,
-) -> Result<crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

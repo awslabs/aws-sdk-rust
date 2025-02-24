@@ -127,7 +127,7 @@ pub fn de_list_package_version_assets_http_response(
 pub(crate) fn de_list_package_version_assets(
     value: &[u8],
     mut builder: crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_package_version_assets::builders::ListPackageVersionAssetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

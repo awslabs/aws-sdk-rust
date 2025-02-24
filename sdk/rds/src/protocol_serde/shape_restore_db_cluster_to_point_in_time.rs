@@ -413,7 +413,7 @@ pub fn de_restore_db_cluster_to_point_in_time_http_response(
 pub fn de_restore_db_cluster_to_point_in_time(
     inp: &[u8],
     mut builder: crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::restore_db_cluster_to_point_in_time::builders::RestoreDbClusterToPointInTimeOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

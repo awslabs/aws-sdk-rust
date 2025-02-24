@@ -2,7 +2,7 @@
 pub fn ser_react_start_codegen_job_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReactStartCodegenJobData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.module {
         object.key("module").string(var_1.as_str());
     }
@@ -39,7 +39,7 @@ pub fn ser_react_start_codegen_job_data(
 
 pub(crate) fn de_react_start_codegen_job_data<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ReactStartCodegenJobData>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ReactStartCodegenJobData>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

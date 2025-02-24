@@ -132,7 +132,7 @@ pub fn de_list_app_authorizations_http_response(
 pub(crate) fn de_list_app_authorizations(
     value: &[u8],
     mut builder: crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_app_authorizations::builders::ListAppAuthorizationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

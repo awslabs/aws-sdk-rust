@@ -2,7 +2,7 @@
 pub fn ser_delete_performance_analysis_report_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_performance_analysis_report::DeletePerformanceAnalysisReportInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_type {
         object.key("ServiceType").string(var_1.as_str());
     }

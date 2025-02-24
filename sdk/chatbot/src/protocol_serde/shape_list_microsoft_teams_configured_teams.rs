@@ -93,7 +93,7 @@ pub fn de_list_microsoft_teams_configured_teams_http_response(
 
 pub fn ser_list_microsoft_teams_configured_teams_input(
     input: &crate::operation::list_microsoft_teams_configured_teams::ListMicrosoftTeamsConfiguredTeamsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_microsoft_teams_configured_teams_input::ser_list_microsoft_teams_configured_teams_input_input(
@@ -107,7 +107,7 @@ pub fn ser_list_microsoft_teams_configured_teams_input(
 pub(crate) fn de_list_microsoft_teams_configured_teams(
     value: &[u8],
     mut builder: crate::operation::list_microsoft_teams_configured_teams::builders::ListMicrosoftTeamsConfiguredTeamsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_microsoft_teams_configured_teams::builders::ListMicrosoftTeamsConfiguredTeamsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

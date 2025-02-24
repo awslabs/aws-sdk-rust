@@ -2,7 +2,7 @@
 pub fn ser_update_discoverer_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_discoverer::UpdateDiscovererInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cross_account {
         object.key("CrossAccount").boolean(*var_1);
     }

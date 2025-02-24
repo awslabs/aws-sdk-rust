@@ -2,7 +2,7 @@
 pub fn ser_s3_output_configurations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3OutputConfigurations,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OutputType").string(input.output_type.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_s3_output_configurations(
 
 pub(crate) fn de_s3_output_configurations<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::S3OutputConfigurations>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::S3OutputConfigurations>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

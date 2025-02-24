@@ -136,7 +136,7 @@ pub fn de_disassociate_repository_http_response(
 pub(crate) fn de_disassociate_repository(
     value: &[u8],
     mut builder: crate::operation::disassociate_repository::builders::DisassociateRepositoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_repository::builders::DisassociateRepositoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

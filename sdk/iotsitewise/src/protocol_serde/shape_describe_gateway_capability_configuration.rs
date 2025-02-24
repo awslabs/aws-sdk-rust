@@ -126,7 +126,7 @@ pub fn de_describe_gateway_capability_configuration_http_response(
 pub(crate) fn de_describe_gateway_capability_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

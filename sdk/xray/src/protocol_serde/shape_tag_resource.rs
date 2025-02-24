@@ -97,7 +97,7 @@ pub fn de_tag_resource_http_response(
 
 pub fn ser_tag_resource_input(
     input: &crate::operation::tag_resource::TagResourceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_tag_resource_input::ser_tag_resource_input_input(&mut object, input)?;

@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_single_select_question_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormSingleSelectQuestionProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Options").start_array();
         for item_2 in &input.options {
@@ -35,7 +35,7 @@ pub fn ser_evaluation_form_single_select_question_properties(
 
 pub(crate) fn de_evaluation_form_single_select_question_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationFormSingleSelectQuestionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationFormSingleSelectQuestionProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_start_test_execution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_test_execution::StartTestExecutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_mode {
         object.key("apiMode").string(var_1.as_str());
     }

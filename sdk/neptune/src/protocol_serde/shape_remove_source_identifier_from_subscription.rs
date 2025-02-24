@@ -91,7 +91,7 @@ pub fn de_remove_source_identifier_from_subscription_http_response(
 pub fn de_remove_source_identifier_from_subscription(
     inp: &[u8],
     mut builder: crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::remove_source_identifier_from_subscription::builders::RemoveSourceIdentifierFromSubscriptionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

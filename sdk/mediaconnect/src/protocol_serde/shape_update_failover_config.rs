@@ -2,7 +2,7 @@
 pub fn ser_update_failover_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateFailoverConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.failover_mode {
         object.key("failoverMode").string(var_1.as_str());
     }

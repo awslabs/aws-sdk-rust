@@ -2,7 +2,7 @@
 pub fn ser_associate_queue_quick_connects_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.quick_connect_ids {
         let mut array_2 = object.key("QuickConnectIds").start_array();
         for item_3 in var_1 {

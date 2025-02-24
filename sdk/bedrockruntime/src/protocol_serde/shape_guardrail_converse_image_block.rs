@@ -2,7 +2,7 @@
 pub fn ser_guardrail_converse_image_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailConverseImageBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("format").string(input.format.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_guardrail_converse_image_block(
 
 pub(crate) fn de_guardrail_converse_image_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GuardrailConverseImageBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GuardrailConverseImageBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

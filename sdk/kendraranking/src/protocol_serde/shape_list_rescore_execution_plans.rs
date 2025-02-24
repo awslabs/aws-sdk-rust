@@ -109,7 +109,7 @@ pub fn de_list_rescore_execution_plans_http_response(
 
 pub fn ser_list_rescore_execution_plans_input(
     input: &crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_rescore_execution_plans_input::ser_list_rescore_execution_plans_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_list_rescore_execution_plans_input(
 pub(crate) fn de_list_rescore_execution_plans(
     value: &[u8],
     mut builder: crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

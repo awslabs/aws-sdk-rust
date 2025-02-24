@@ -41,8 +41,10 @@ pub fn de_enable_serial_console_access_http_response(
 pub fn de_enable_serial_console_access(
     inp: &[u8],
     mut builder: crate::operation::enable_serial_console_access::builders::EnableSerialConsoleAccessOutputBuilder,
-) -> Result<crate::operation::enable_serial_console_access::builders::EnableSerialConsoleAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::enable_serial_console_access::builders::EnableSerialConsoleAccessOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

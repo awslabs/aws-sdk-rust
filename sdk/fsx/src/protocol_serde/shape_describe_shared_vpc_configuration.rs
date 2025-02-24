@@ -75,14 +75,14 @@ pub fn de_describe_shared_vpc_configuration_http_response(
 
 pub fn ser_describe_shared_vpc_configuration_input(
     _input: &crate::operation::describe_shared_vpc_configuration::DescribeSharedVpcConfigurationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_shared_vpc_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_shared_vpc_configuration::builders::DescribeSharedVpcConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_shared_vpc_configuration::builders::DescribeSharedVpcConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

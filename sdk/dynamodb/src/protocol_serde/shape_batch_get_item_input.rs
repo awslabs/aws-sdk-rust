@@ -2,7 +2,7 @@
 pub fn ser_batch_get_item_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_item::BatchGetItemInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.request_items {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RequestItems").start_object();

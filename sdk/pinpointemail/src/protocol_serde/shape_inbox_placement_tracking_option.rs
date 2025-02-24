@@ -2,7 +2,7 @@
 pub fn ser_inbox_placement_tracking_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InboxPlacementTrackingOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.global {
         object.key("Global").boolean(input.global);
     }
@@ -20,7 +20,7 @@ pub fn ser_inbox_placement_tracking_option(
 
 pub(crate) fn de_inbox_placement_tracking_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InboxPlacementTrackingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InboxPlacementTrackingOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

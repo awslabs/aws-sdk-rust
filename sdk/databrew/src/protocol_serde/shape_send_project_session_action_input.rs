@@ -2,7 +2,7 @@
 pub fn ser_send_project_session_action_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_project_session_action::SendProjectSessionActionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_session_id {
         object.key("ClientSessionId").string(var_1.as_str());
     }

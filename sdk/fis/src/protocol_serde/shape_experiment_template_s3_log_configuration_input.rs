@@ -2,7 +2,7 @@
 pub fn ser_experiment_template_s3_log_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExperimentTemplateS3LogConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("bucketName").string(input.bucket_name.as_str());
     }

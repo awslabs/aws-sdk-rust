@@ -3,7 +3,7 @@
 pub fn ser_lake_formation_scope_union(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::LakeFormationScopeUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::LakeFormationScopeUnion::LakeFormationQuery(inner) => {
             crate::protocol_serde::shape_lake_formation_query::ser_lake_formation_query(writer, inner)?;
@@ -19,7 +19,7 @@ pub fn ser_lake_formation_scope_union(
 
 pub fn de_lake_formation_scope_union(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LakeFormationScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LakeFormationScopeUnion, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut base: Option<crate::types::LakeFormationScopeUnion> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

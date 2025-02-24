@@ -2,7 +2,7 @@
 pub fn ser_tag_collection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TagCollection,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AppBoundaryKey").string(input.app_boundary_key.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_tag_collection(
 
 pub(crate) fn de_tag_collection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TagCollection>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TagCollection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

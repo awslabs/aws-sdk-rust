@@ -2,7 +2,7 @@
 pub fn ser_delete_key_request_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeleteKeyRequestListItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Key").string(input.key.as_str());
     }

@@ -179,7 +179,7 @@ pub fn de_update_profile_resource_association_http_response(
 
 pub fn ser_update_profile_resource_association_input(
     input: &crate::operation::update_profile_resource_association::UpdateProfileResourceAssociationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_profile_resource_association_input::ser_update_profile_resource_association_input_input(&mut object, input)?;
@@ -190,7 +190,7 @@ pub fn ser_update_profile_resource_association_input(
 pub(crate) fn de_update_profile_resource_association(
     value: &[u8],
     mut builder: crate::operation::update_profile_resource_association::builders::UpdateProfileResourceAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_profile_resource_association::builders::UpdateProfileResourceAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

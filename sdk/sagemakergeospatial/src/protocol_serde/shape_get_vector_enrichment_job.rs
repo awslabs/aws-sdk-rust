@@ -122,7 +122,7 @@ pub fn de_get_vector_enrichment_job_http_response(
 pub(crate) fn de_get_vector_enrichment_job(
     value: &[u8],
     mut builder: crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_vector_enrichment_job::builders::GetVectorEnrichmentJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

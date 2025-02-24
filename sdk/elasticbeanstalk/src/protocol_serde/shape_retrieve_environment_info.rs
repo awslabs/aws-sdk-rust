@@ -41,7 +41,10 @@ pub fn de_retrieve_environment_info_http_response(
 pub fn de_retrieve_environment_info(
     inp: &[u8],
     mut builder: crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder,
-) -> Result<crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

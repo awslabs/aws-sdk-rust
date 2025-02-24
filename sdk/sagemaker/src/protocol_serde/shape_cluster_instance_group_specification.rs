@@ -2,7 +2,7 @@
 pub fn ser_cluster_instance_group_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClusterInstanceGroupSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_count {
         object.key("InstanceCount").number(
             #[allow(clippy::useless_conversion)]

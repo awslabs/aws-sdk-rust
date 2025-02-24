@@ -2,7 +2,7 @@
 pub fn ser_inference_experiment_data_storage_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceExperimentDataStorageConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination {
         object.key("Destination").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_inference_experiment_data_storage_config(
 
 pub(crate) fn de_inference_experiment_data_storage_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InferenceExperimentDataStorageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InferenceExperimentDataStorageConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

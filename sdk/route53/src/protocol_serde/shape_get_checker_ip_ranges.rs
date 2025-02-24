@@ -41,7 +41,8 @@ pub fn de_get_checker_ip_ranges_http_response(
 pub fn de_get_checker_ip_ranges(
     inp: &[u8],
     mut builder: crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder,
-) -> Result<crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_checker_ip_ranges::builders::GetCheckerIpRangesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

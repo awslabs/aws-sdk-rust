@@ -2,7 +2,7 @@
 pub fn ser_delete_log_anomaly_detector_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_log_anomaly_detector::DeleteLogAnomalyDetectorInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.anomaly_detector_arn {
         object.key("anomalyDetectorArn").string(var_1.as_str());
     }

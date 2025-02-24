@@ -2,7 +2,7 @@
 pub fn ser_create_algorithm_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_algorithm::CreateAlgorithmInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.algorithm_name {
         object.key("AlgorithmName").string(var_1.as_str());
     }

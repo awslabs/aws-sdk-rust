@@ -2,7 +2,7 @@
 pub fn ser_chat_sync_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::chat_sync::ChatSyncInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_execution {
         #[allow(unused_mut)]
         let mut object_2 = object.key("actionExecution").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_line_chart_series_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LineChartSeriesSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.line_style_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LineStyleSettings").start_object();
@@ -20,7 +20,7 @@ pub fn ser_line_chart_series_settings(
 
 pub(crate) fn de_line_chart_series_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LineChartSeriesSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LineChartSeriesSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

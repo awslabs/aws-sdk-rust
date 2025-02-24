@@ -2,7 +2,7 @@
 pub fn ser_sheet_image_tooltip_text(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetImageTooltipText,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.plain_text {
         object.key("PlainText").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_sheet_image_tooltip_text(
 
 pub(crate) fn de_sheet_image_tooltip_text<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SheetImageTooltipText>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SheetImageTooltipText>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

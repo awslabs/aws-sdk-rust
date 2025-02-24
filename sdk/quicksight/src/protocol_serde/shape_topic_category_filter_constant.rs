@@ -2,7 +2,7 @@
 pub fn ser_topic_category_filter_constant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicCategoryFilterConstant,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.constant_type {
         object.key("ConstantType").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_topic_category_filter_constant(
 
 pub(crate) fn de_topic_category_filter_constant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TopicCategoryFilterConstant>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TopicCategoryFilterConstant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

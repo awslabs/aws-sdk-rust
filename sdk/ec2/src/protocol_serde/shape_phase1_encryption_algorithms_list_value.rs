@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_phase1_encryption_algorithms_list_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Phase1EncryptionAlgorithmsListValue, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Phase1EncryptionAlgorithmsListValue, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Phase1EncryptionAlgorithmsListValue::builder();
     while let Some(mut tag) = decoder.next_tag() {

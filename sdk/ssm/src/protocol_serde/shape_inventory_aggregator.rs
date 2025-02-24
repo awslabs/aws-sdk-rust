@@ -2,7 +2,7 @@
 pub fn ser_inventory_aggregator(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InventoryAggregator,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.expression {
         object.key("Expression").string(var_1.as_str());
     }

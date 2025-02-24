@@ -2,7 +2,7 @@
 pub fn ser_http_endpoint_common_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpEndpointCommonAttribute,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeName").string(input.attribute_name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_http_endpoint_common_attribute(
 
 pub(crate) fn de_http_endpoint_common_attribute<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HttpEndpointCommonAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HttpEndpointCommonAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

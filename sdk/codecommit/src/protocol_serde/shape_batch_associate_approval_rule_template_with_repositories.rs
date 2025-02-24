@@ -203,7 +203,7 @@ pub fn de_batch_associate_approval_rule_template_with_repositories_http_response
 
 pub fn ser_batch_associate_approval_rule_template_with_repositories_input(
     input: &crate::operation::batch_associate_approval_rule_template_with_repositories::BatchAssociateApprovalRuleTemplateWithRepositoriesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_associate_approval_rule_template_with_repositories_input::ser_batch_associate_approval_rule_template_with_repositories_input_input(&mut object, input)?;
@@ -211,7 +211,7 @@ pub fn ser_batch_associate_approval_rule_template_with_repositories_input(
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
-pub(crate) fn de_batch_associate_approval_rule_template_with_repositories(value: &[u8], mut builder: crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder) -> Result<crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+pub(crate) fn de_batch_associate_approval_rule_template_with_repositories(value: &[u8], mut builder: crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder) -> ::std::result::Result<crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -2,7 +2,7 @@
 pub fn ser_auth_challenge_response(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AuthChallengeResponse,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         #[allow(unused_mut)]
         let mut object_1 = object.key("responseMap").start_object();

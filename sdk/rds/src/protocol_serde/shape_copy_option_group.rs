@@ -92,7 +92,7 @@ pub fn de_copy_option_group_http_response(
 pub fn de_copy_option_group(
     inp: &[u8],
     mut builder: crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder,
-) -> Result<crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

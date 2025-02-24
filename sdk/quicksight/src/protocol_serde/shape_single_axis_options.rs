@@ -2,7 +2,7 @@
 pub fn ser_single_axis_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SingleAxisOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.y_axis_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("YAxisOptions").start_object();
@@ -14,7 +14,7 @@ pub fn ser_single_axis_options(
 
 pub(crate) fn de_single_axis_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SingleAxisOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SingleAxisOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

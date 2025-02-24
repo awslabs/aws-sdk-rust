@@ -62,7 +62,7 @@ pub fn de_describe_db_snapshot_attributes_http_response(
 pub fn de_describe_db_snapshot_attributes(
     inp: &[u8],
     mut builder: crate::operation::describe_db_snapshot_attributes::builders::DescribeDbSnapshotAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_db_snapshot_attributes::builders::DescribeDbSnapshotAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

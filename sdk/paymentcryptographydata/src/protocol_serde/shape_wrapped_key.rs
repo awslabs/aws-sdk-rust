@@ -2,7 +2,7 @@
 pub fn ser_wrapped_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WrappedKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.wrapped_key_material {
         #[allow(unused_mut)]
         let mut object_2 = object.key("WrappedKeyMaterial").start_object();

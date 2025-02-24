@@ -37,7 +37,7 @@ pub fn de_start_edge_deployment_stage_http_response(
 
 pub fn ser_start_edge_deployment_stage_input(
     input: &crate::operation::start_edge_deployment_stage::StartEdgeDeploymentStageInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_edge_deployment_stage_input::ser_start_edge_deployment_stage_input_input(&mut object, input)?;

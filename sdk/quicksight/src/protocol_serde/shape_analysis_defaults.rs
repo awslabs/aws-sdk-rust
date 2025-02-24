@@ -2,7 +2,7 @@
 pub fn ser_analysis_defaults(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisDefaults,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_new_sheet_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DefaultNewSheetConfiguration").start_object();
@@ -14,7 +14,7 @@ pub fn ser_analysis_defaults(
 
 pub(crate) fn de_analysis_defaults<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AnalysisDefaults>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AnalysisDefaults>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

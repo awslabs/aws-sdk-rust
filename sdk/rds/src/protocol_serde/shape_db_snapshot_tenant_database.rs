@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_db_snapshot_tenant_database(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::DbSnapshotTenantDatabase, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::DbSnapshotTenantDatabase, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::DbSnapshotTenantDatabase::builder();
     while let Some(mut tag) = decoder.next_tag() {

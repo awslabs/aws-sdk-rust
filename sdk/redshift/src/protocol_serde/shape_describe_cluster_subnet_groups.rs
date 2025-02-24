@@ -82,7 +82,7 @@ pub fn de_describe_cluster_subnet_groups_http_response(
 pub fn de_describe_cluster_subnet_groups(
     inp: &[u8],
     mut builder: crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

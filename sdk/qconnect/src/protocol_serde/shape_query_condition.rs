@@ -2,7 +2,7 @@
 pub fn ser_query_condition(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QueryCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::QueryCondition::Single(inner) => {
             #[allow(unused_mut)]

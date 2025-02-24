@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_device_profile(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanDeviceProfile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.supports_class_b {
         object.key("SupportsClassB").boolean(input.supports_class_b);
     }
@@ -107,7 +107,7 @@ pub fn ser_lo_ra_wan_device_profile(
 
 pub(crate) fn de_lo_ra_wan_device_profile<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LoRaWanDeviceProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LoRaWanDeviceProfile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_emergency_contact(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmergencyContact,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EmailAddress").string(input.email_address.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_emergency_contact(
 
 pub(crate) fn de_emergency_contact<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EmergencyContact>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EmergencyContact>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

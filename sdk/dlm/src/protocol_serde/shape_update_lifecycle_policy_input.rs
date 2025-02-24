@@ -2,7 +2,7 @@
 pub fn ser_update_lifecycle_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.copy_tags {
         object.key("CopyTags").boolean(*var_1);
     }

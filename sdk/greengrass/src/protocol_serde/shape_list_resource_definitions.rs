@@ -40,7 +40,7 @@ pub fn de_list_resource_definitions_http_response(
 pub(crate) fn de_list_resource_definitions(
     value: &[u8],
     mut builder: crate::operation::list_resource_definitions::builders::ListResourceDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_resource_definitions::builders::ListResourceDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

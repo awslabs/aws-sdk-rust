@@ -2,7 +2,7 @@
 pub fn ser_duration_since_last_access(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DurationSinceLastAccess,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.unit {
         object.key("Unit").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_duration_since_last_access(
 
 pub(crate) fn de_duration_since_last_access<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DurationSinceLastAccess>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DurationSinceLastAccess>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

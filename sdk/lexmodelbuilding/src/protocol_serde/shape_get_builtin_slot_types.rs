@@ -98,7 +98,7 @@ pub fn de_get_builtin_slot_types_http_response(
 pub(crate) fn de_get_builtin_slot_types(
     value: &[u8],
     mut builder: crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

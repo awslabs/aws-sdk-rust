@@ -2,7 +2,7 @@
 pub fn ser_get_savings_plans_coverage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_period {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TimePeriod").start_object();

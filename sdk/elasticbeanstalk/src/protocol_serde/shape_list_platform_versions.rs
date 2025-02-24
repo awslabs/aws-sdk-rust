@@ -85,7 +85,10 @@ pub fn de_list_platform_versions_http_response(
 pub fn de_list_platform_versions(
     inp: &[u8],
     mut builder: crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder,
-) -> Result<crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_platform_versions::builders::ListPlatformVersionsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

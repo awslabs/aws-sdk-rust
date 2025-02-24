@@ -2,7 +2,7 @@
 pub fn ser_test_alarm_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_alarm::TestAlarmInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alarm_name {
         object.key("alarmName").string(var_1.as_str());
     }

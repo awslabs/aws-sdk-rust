@@ -39,7 +39,8 @@ pub fn de_associate_route_table_http_response(
 pub fn de_associate_route_table(
     inp: &[u8],
     mut builder: crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder,
-) -> Result<crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::associate_route_table::builders::AssociateRouteTableOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

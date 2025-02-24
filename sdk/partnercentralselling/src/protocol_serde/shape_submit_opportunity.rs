@@ -113,7 +113,7 @@ pub fn de_submit_opportunity_http_response(
 
 pub fn ser_submit_opportunity_input(
     input: &crate::operation::submit_opportunity::SubmitOpportunityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_submit_opportunity_input::ser_submit_opportunity_input_input(&mut object, input)?;

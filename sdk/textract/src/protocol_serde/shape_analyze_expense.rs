@@ -176,7 +176,7 @@ pub fn de_analyze_expense_http_response(
 
 pub fn ser_analyze_expense_input(
     input: &crate::operation::analyze_expense::AnalyzeExpenseInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_analyze_expense_input::ser_analyze_expense_input_input(&mut object, input)?;
@@ -187,7 +187,10 @@ pub fn ser_analyze_expense_input(
 pub(crate) fn de_analyze_expense(
     value: &[u8],
     mut builder: crate::operation::analyze_expense::builders::AnalyzeExpenseOutputBuilder,
-) -> Result<crate::operation::analyze_expense::builders::AnalyzeExpenseOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::analyze_expense::builders::AnalyzeExpenseOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

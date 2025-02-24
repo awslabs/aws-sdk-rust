@@ -2,7 +2,7 @@
 pub fn ser_utterance_data_sort_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UtteranceDataSortBy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }

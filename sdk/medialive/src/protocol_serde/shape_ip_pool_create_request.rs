@@ -2,7 +2,7 @@
 pub fn ser_ip_pool_create_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpPoolCreateRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr {
         object.key("cidr").string(var_1.as_str());
     }

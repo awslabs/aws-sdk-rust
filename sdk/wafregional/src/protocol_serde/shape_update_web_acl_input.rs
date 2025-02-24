@@ -2,7 +2,7 @@
 pub fn ser_update_web_acl_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_web_acl::UpdateWebAclInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.web_acl_id {
         object.key("WebACLId").string(var_1.as_str());
     }

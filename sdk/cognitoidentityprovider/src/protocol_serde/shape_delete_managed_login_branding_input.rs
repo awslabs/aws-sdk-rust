@@ -2,7 +2,7 @@
 pub fn ser_delete_managed_login_branding_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_managed_login_branding::DeleteManagedLoginBrandingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.managed_login_branding_id {
         object.key("ManagedLoginBrandingId").string(var_1.as_str());
     }

@@ -84,7 +84,7 @@ pub fn de_list_auto_scaling_configurations_http_response(
 
 pub fn ser_list_auto_scaling_configurations_input(
     input: &crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurationsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_auto_scaling_configurations_input::ser_list_auto_scaling_configurations_input_input(&mut object, input)?;
@@ -95,7 +95,7 @@ pub fn ser_list_auto_scaling_configurations_input(
 pub(crate) fn de_list_auto_scaling_configurations(
     value: &[u8],
     mut builder: crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

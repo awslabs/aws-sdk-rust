@@ -193,7 +193,7 @@ pub fn de_create_custom_routing_endpoint_group_http_response(
 
 pub fn ser_create_custom_routing_endpoint_group_input(
     input: &crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_custom_routing_endpoint_group_input::ser_create_custom_routing_endpoint_group_input_input(
@@ -207,7 +207,7 @@ pub fn ser_create_custom_routing_endpoint_group_input(
 pub(crate) fn de_create_custom_routing_endpoint_group(
     value: &[u8],
     mut builder: crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_custom_routing_endpoint_group::builders::CreateCustomRoutingEndpointGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

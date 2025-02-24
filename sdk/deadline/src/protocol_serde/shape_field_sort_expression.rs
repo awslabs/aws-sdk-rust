@@ -2,7 +2,7 @@
 pub fn ser_field_sort_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldSortExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sortOrder").string(input.sort_order.as_str());
     }

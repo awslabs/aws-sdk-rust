@@ -2,7 +2,7 @@
 pub fn ser_delete_snapshot_copy_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_snapshot_copy_configuration::DeleteSnapshotCopyConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.snapshot_copy_configuration_id {
         object.key("snapshotCopyConfigurationId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_activate_evaluation_form_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::activate_evaluation_form::ActivateEvaluationFormInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evaluation_form_version {
         object.key("EvaluationFormVersion").number(
             #[allow(clippy::useless_conversion)]

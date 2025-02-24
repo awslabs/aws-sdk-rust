@@ -110,7 +110,7 @@ pub fn de_list_resolvers_by_function_http_response(
 pub(crate) fn de_list_resolvers_by_function(
     value: &[u8],
     mut builder: crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_resolvers_by_function::builders::ListResolversByFunctionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

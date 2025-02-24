@@ -121,7 +121,7 @@ pub fn de_apply_archive_rule_http_response(
 
 pub fn ser_apply_archive_rule_input(
     input: &crate::operation::apply_archive_rule::ApplyArchiveRuleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_apply_archive_rule_input::ser_apply_archive_rule_input_input(&mut object, input)?;

@@ -2,7 +2,7 @@
 pub fn ser_whats_app_signup_callback(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WhatsAppSignupCallback,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("accessToken").string(input.access_token.as_str());
     }

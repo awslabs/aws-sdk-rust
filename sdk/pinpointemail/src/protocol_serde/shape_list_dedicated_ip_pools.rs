@@ -76,7 +76,7 @@ pub fn de_list_dedicated_ip_pools_http_response(
 pub(crate) fn de_list_dedicated_ip_pools(
     value: &[u8],
     mut builder: crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

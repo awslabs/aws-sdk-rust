@@ -2,7 +2,7 @@
 pub fn ser_route_matrix_car_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteMatrixCarOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.license_plate {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LicensePlate").start_object();

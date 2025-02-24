@@ -2,7 +2,7 @@
 pub fn ser_translate_pin_data_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::translate_pin_data::TranslatePinDataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encrypted_pin_block {
         object.key("EncryptedPinBlock").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_put_hypervisor_property_mappings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hypervisor_arn {
         object.key("HypervisorArn").string(var_1.as_str());
     }

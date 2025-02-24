@@ -2,7 +2,7 @@
 pub fn ser_test_cases(
     object_17: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestCases,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TestCases::Sequential(inner) => {
             let mut array_1 = object_17.key("sequential").start_array();
@@ -20,7 +20,7 @@ pub fn ser_test_cases(
 
 pub(crate) fn de_test_cases<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TestCases>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TestCases>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

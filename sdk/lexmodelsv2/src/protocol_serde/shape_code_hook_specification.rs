@@ -2,7 +2,7 @@
 pub fn ser_code_hook_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeHookSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lambda_code_hook {
         #[allow(unused_mut)]
         let mut object_2 = object.key("lambdaCodeHook").start_object();
@@ -14,7 +14,7 @@ pub fn ser_code_hook_specification(
 
 pub(crate) fn de_code_hook_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodeHookSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodeHookSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

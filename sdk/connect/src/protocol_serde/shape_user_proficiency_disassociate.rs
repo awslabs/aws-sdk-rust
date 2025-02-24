@@ -2,7 +2,7 @@
 pub fn ser_user_proficiency_disassociate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserProficiencyDisassociate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeName").string(input.attribute_name.as_str());
     }

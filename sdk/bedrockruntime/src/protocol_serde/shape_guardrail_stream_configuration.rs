@@ -2,7 +2,7 @@
 pub fn ser_guardrail_stream_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailStreamConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("guardrailIdentifier").string(input.guardrail_identifier.as_str());
     }

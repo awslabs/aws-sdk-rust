@@ -3,7 +3,7 @@
 pub fn ser_memory_mib(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MemoryMiB,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {
@@ -26,7 +26,7 @@ pub fn ser_memory_mib(
 #[allow(clippy::needless_question_mark)]
 pub fn de_memory_mib(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MemoryMiB, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MemoryMiB, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MemoryMiB::builder();
     while let Some(mut tag) = decoder.next_tag() {

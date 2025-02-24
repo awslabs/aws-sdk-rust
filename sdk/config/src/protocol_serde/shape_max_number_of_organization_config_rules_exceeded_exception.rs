@@ -2,7 +2,7 @@
 pub(crate) fn de_max_number_of_organization_config_rules_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::MaxNumberOfOrganizationConfigRulesExceededExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::MaxNumberOfOrganizationConfigRulesExceededExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

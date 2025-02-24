@@ -2,7 +2,7 @@
 pub fn ser_list_object_parents_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_object_parents::ListObjectParentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.include_all_links_to_each_parent {
         object.key("IncludeAllLinksToEachParent").boolean(*var_1);
     }

@@ -2,7 +2,7 @@
 pub fn ser_reservation_plan_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReservationPlanSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.commitment {
         object.key("commitment").string(var_1.as_str());
     }

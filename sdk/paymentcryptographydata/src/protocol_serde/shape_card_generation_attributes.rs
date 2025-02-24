@@ -2,7 +2,7 @@
 pub fn ser_card_generation_attributes(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CardGenerationAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::CardGenerationAttributes::AmexCardSecurityCodeVersion1(inner) => {
             #[allow(unused_mut)]

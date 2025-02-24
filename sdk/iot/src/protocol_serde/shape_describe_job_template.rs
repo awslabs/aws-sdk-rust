@@ -106,7 +106,7 @@ pub fn de_describe_job_template_http_response(
 pub(crate) fn de_describe_job_template(
     value: &[u8],
     mut builder: crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_job_template::builders::DescribeJobTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

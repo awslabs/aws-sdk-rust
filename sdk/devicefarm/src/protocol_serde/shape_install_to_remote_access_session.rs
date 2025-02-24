@@ -107,7 +107,7 @@ pub fn de_install_to_remote_access_session_http_response(
 
 pub fn ser_install_to_remote_access_session_input(
     input: &crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_install_to_remote_access_session_input::ser_install_to_remote_access_session_input_input(&mut object, input)?;
@@ -118,7 +118,7 @@ pub fn ser_install_to_remote_access_session_input(
 pub(crate) fn de_install_to_remote_access_session(
     value: &[u8],
     mut builder: crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

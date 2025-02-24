@@ -139,7 +139,7 @@ pub fn de_get_data_protection_settings_http_response(
 pub(crate) fn de_get_data_protection_settings(
     value: &[u8],
     mut builder: crate::operation::get_data_protection_settings::builders::GetDataProtectionSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_protection_settings::builders::GetDataProtectionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

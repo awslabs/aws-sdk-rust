@@ -2,7 +2,7 @@
 pub fn ser_file_format_descriptor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileFormatDescriptor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.csv_format_descriptor {
         #[allow(unused_mut)]
         let mut object_2 = object.key("CsvFormatDescriptor").start_object();
@@ -20,7 +20,7 @@ pub fn ser_file_format_descriptor(
 
 pub(crate) fn de_file_format_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FileFormatDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FileFormatDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

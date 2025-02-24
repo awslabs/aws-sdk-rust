@@ -2,7 +2,7 @@
 pub fn ser_replica_global_secondary_index_auto_scaling_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_name {
         object.key("IndexName").string(var_1.as_str());
     }

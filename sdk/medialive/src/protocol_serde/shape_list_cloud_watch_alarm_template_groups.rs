@@ -135,7 +135,7 @@ pub fn de_list_cloud_watch_alarm_template_groups_http_response(
 pub(crate) fn de_list_cloud_watch_alarm_template_groups(
     value: &[u8],
     mut builder: crate::operation::list_cloud_watch_alarm_template_groups::builders::ListCloudWatchAlarmTemplateGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_cloud_watch_alarm_template_groups::builders::ListCloudWatchAlarmTemplateGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

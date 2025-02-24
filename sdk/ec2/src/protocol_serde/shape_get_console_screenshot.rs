@@ -39,7 +39,10 @@ pub fn de_get_console_screenshot_http_response(
 pub fn de_get_console_screenshot(
     inp: &[u8],
     mut builder: crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder,
-) -> Result<crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_console_screenshot::builders::GetConsoleScreenshotOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

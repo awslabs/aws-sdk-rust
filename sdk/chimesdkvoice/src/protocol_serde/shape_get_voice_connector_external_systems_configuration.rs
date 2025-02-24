@@ -170,7 +170,7 @@ pub fn de_get_voice_connector_external_systems_configuration_http_response(
 pub(crate) fn de_get_voice_connector_external_systems_configuration(
     value: &[u8],
     mut builder: crate::operation::get_voice_connector_external_systems_configuration::builders::GetVoiceConnectorExternalSystemsConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_voice_connector_external_systems_configuration::builders::GetVoiceConnectorExternalSystemsConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

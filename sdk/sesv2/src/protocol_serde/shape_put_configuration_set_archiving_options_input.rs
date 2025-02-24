@@ -2,7 +2,7 @@
 pub fn ser_put_configuration_set_archiving_options_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_archiving_options::PutConfigurationSetArchivingOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.archive_arn {
         object.key("ArchiveArn").string(var_1.as_str());
     }

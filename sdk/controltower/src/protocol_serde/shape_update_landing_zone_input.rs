@@ -2,7 +2,7 @@
 pub fn ser_update_landing_zone_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_landing_zone::UpdateLandingZoneInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.landing_zone_identifier {
         object.key("landingZoneIdentifier").string(var_1.as_str());
     }

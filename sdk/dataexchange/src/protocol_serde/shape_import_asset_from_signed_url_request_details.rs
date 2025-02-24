@@ -2,7 +2,7 @@
 pub fn ser_import_asset_from_signed_url_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetFromSignedUrlRequestDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AssetName").string(input.asset_name.as_str());
     }

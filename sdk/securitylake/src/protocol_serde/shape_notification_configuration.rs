@@ -2,7 +2,7 @@
 pub fn ser_notification_configuration(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NotificationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::NotificationConfiguration::SqsNotificationConfiguration(inner) => {
             #[allow(unused_mut)]

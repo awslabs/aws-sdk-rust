@@ -2,7 +2,7 @@
 pub fn ser_recipient_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecipientInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_encryption_algorithm {
         object.key("KeyEncryptionAlgorithm").string(var_1.as_str());
     }

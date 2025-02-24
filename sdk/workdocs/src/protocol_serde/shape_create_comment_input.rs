@@ -2,7 +2,7 @@
 pub fn ser_create_comment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_comment::CreateCommentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notify_collaborators {
         object.key("NotifyCollaborators").boolean(*var_1);
     }

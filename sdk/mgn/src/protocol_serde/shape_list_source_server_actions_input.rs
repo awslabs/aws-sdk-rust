@@ -2,7 +2,7 @@
 pub fn ser_list_source_server_actions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_source_server_actions::ListSourceServerActionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }

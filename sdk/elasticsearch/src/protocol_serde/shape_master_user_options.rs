@@ -2,7 +2,7 @@
 pub fn ser_master_user_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MasterUserOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.master_user_arn {
         object.key("MasterUserARN").string(var_1.as_str());
     }

@@ -140,7 +140,7 @@ pub fn de_delete_practice_run_configuration_http_response(
 pub(crate) fn de_delete_practice_run_configuration(
     value: &[u8],
     mut builder: crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_practice_run_configuration::builders::DeletePracticeRunConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

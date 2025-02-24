@@ -97,7 +97,7 @@ pub fn de_describe_file_systems_http_response(
 pub(crate) fn de_describe_file_systems(
     value: &[u8],
     mut builder: crate::operation::describe_file_systems::builders::DescribeFileSystemsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_file_systems::builders::DescribeFileSystemsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

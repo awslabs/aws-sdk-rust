@@ -2,7 +2,7 @@
 pub fn ser_update_software_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_software_set::UpdateSoftwareSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.validation_status {
         object.key("validationStatus").string(var_1.as_str());
     }

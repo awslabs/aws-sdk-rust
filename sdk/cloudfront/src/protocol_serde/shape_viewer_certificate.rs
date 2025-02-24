@@ -2,7 +2,7 @@
 pub fn ser_viewer_certificate(
     input: &crate::types::ViewerCertificate,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.cloud_front_default_certificate {
@@ -40,7 +40,7 @@ pub fn ser_viewer_certificate(
 #[allow(clippy::needless_question_mark)]
 pub fn de_viewer_certificate(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ViewerCertificate, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ViewerCertificate, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ViewerCertificate::builder();
     while let Some(mut tag) = decoder.next_tag() {

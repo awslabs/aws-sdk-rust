@@ -2,7 +2,7 @@
 pub fn ser_granted_entity_input(
     object_8: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrantedEntityInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::GrantedEntityInput::Listing(inner) => {
             #[allow(unused_mut)]

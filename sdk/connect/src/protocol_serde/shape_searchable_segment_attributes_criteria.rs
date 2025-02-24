@@ -2,7 +2,7 @@
 pub fn ser_searchable_segment_attributes_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchableSegmentAttributesCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Key").string(input.key.as_str());
     }

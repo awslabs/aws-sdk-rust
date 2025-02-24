@@ -2,7 +2,7 @@
 pub fn ser_paths(
     input: &crate::types::Paths,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -23,7 +23,9 @@ pub fn ser_paths(
 }
 
 #[allow(clippy::needless_question_mark)]
-pub fn de_paths(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Paths, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_paths(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::Paths, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Paths::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -3,7 +3,7 @@
 pub fn ser_instance_maintenance_policy(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstanceMaintenancePolicy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MinHealthyPercentage");
     if let Some(var_2) = &input.min_healthy_percentage {
@@ -26,7 +26,7 @@ pub fn ser_instance_maintenance_policy(
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_maintenance_policy(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InstanceMaintenancePolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InstanceMaintenancePolicy, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceMaintenancePolicy::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -92,7 +92,7 @@ pub fn de_describe_inbound_integrations_http_response(
 pub fn de_describe_inbound_integrations(
     inp: &[u8],
     mut builder: crate::operation::describe_inbound_integrations::builders::DescribeInboundIntegrationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_inbound_integrations::builders::DescribeInboundIntegrationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

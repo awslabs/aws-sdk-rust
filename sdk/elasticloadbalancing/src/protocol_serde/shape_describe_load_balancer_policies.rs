@@ -82,7 +82,7 @@ pub fn de_describe_load_balancer_policies_http_response(
 pub fn de_describe_load_balancer_policies(
     inp: &[u8],
     mut builder: crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

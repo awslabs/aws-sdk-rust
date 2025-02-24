@@ -137,7 +137,7 @@ pub fn de_describe_code_binding_http_response(
 pub(crate) fn de_describe_code_binding(
     value: &[u8],
     mut builder: crate::operation::describe_code_binding::builders::DescribeCodeBindingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_code_binding::builders::DescribeCodeBindingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

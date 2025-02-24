@@ -2,7 +2,7 @@
 pub fn ser_value_holder(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValueHolder,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ion_binary {
         object.key("IonBinary").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
@@ -14,7 +14,7 @@ pub fn ser_value_holder(
 
 pub(crate) fn de_value_holder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ValueHolder>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ValueHolder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

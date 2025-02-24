@@ -2,7 +2,7 @@
 pub fn ser_weekly_auto_scaling_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WeeklyAutoScalingSchedule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monday {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Monday").start_object();
@@ -78,7 +78,7 @@ pub fn ser_weekly_auto_scaling_schedule(
 
 pub(crate) fn de_weekly_auto_scaling_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WeeklyAutoScalingSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WeeklyAutoScalingSchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

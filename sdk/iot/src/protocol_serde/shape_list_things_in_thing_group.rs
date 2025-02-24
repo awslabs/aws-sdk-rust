@@ -110,7 +110,7 @@ pub fn de_list_things_in_thing_group_http_response(
 pub(crate) fn de_list_things_in_thing_group(
     value: &[u8],
     mut builder: crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

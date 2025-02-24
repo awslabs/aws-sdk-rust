@@ -2,7 +2,7 @@
 pub fn ser_origin_group_failover_criteria(
     input: &crate::types::OriginGroupFailoverCriteria,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.status_codes {
@@ -16,7 +16,7 @@ pub fn ser_origin_group_failover_criteria(
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin_group_failover_criteria(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::OriginGroupFailoverCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::OriginGroupFailoverCriteria, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginGroupFailoverCriteria::builder();
     while let Some(mut tag) = decoder.next_tag() {

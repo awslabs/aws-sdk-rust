@@ -2,7 +2,7 @@
 pub fn ser_http_path_match(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpPathMatch,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exact {
         object.key("exact").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_http_path_match(
 
 pub(crate) fn de_http_path_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HttpPathMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HttpPathMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

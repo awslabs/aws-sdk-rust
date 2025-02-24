@@ -2,7 +2,7 @@
 pub fn ser_dataset_entity_recognizer_documents(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetEntityRecognizerDocuments,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("S3Uri").string(input.s3_uri.as_str());
     }

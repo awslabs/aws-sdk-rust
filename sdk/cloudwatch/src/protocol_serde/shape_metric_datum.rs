@@ -3,7 +3,7 @@
 pub fn ser_metric_datum(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricDatum,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricName");
     if let Some(var_2) = &input.metric_name {

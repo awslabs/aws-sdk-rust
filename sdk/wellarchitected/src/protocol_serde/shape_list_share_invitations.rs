@@ -106,7 +106,7 @@ pub fn de_list_share_invitations_http_response(
 pub(crate) fn de_list_share_invitations(
     value: &[u8],
     mut builder: crate::operation::list_share_invitations::builders::ListShareInvitationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_share_invitations::builders::ListShareInvitationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

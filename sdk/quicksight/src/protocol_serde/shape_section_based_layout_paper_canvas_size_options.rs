@@ -2,7 +2,7 @@
 pub fn ser_section_based_layout_paper_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SectionBasedLayoutPaperCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.paper_size {
         object.key("PaperSize").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_section_based_layout_paper_canvas_size_options(
 
 pub(crate) fn de_section_based_layout_paper_canvas_size_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SectionBasedLayoutPaperCanvasSizeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

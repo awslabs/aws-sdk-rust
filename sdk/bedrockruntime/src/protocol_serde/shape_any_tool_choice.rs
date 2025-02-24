@@ -2,6 +2,6 @@
 pub fn ser_any_tool_choice(
     #[allow(unused_variables)] object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     #[allow(unused_variables)] input: &crate::types::AnyToolChoice,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     Ok(())
 }

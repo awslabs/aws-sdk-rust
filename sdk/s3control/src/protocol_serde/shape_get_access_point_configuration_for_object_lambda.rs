@@ -60,7 +60,7 @@ pub fn ser_get_access_point_configuration_for_object_lambda_headers(
 pub fn de_get_access_point_configuration_for_object_lambda(
     inp: &[u8],
     mut builder: crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_access_point_configuration_for_object_lambda::builders::GetAccessPointConfigurationForObjectLambdaOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

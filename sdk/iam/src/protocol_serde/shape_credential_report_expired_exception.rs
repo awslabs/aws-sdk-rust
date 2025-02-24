@@ -3,7 +3,7 @@
 pub fn de_credential_report_expired_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::CredentialReportExpiredExceptionBuilder,
-) -> Result<crate::types::error::builders::CredentialReportExpiredExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::CredentialReportExpiredExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

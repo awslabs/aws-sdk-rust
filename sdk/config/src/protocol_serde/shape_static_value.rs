@@ -2,7 +2,7 @@
 pub fn ser_static_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StaticValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Values").start_array();
         for item_2 in &input.values {
@@ -17,7 +17,7 @@ pub fn ser_static_value(
 
 pub(crate) fn de_static_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StaticValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StaticValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

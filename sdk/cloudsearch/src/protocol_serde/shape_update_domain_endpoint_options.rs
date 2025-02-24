@@ -152,7 +152,7 @@ pub fn de_update_domain_endpoint_options_http_response(
 pub fn de_update_domain_endpoint_options(
     inp: &[u8],
     mut builder: crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_domain_endpoint_options::builders::UpdateDomainEndpointOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

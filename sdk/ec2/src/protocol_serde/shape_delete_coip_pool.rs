@@ -33,7 +33,7 @@ pub fn de_delete_coip_pool_http_response(
 pub fn de_delete_coip_pool(
     inp: &[u8],
     mut builder: crate::operation::delete_coip_pool::builders::DeleteCoipPoolOutputBuilder,
-) -> Result<crate::operation::delete_coip_pool::builders::DeleteCoipPoolOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_coip_pool::builders::DeleteCoipPoolOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

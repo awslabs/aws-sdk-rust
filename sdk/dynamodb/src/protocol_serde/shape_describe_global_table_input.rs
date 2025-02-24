@@ -2,7 +2,7 @@
 pub fn ser_describe_global_table_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_global_table::DescribeGlobalTableInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.global_table_name {
         object.key("GlobalTableName").string(var_1.as_str());
     }

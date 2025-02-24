@@ -2,7 +2,7 @@
 pub fn ser_protect_configuration_country_rule_set_information(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtectConfigurationCountryRuleSetInformation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ProtectStatus").string(input.protect_status.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_protect_configuration_country_rule_set_information(
 
 pub(crate) fn de_protect_configuration_country_rule_set_information<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ProtectConfigurationCountryRuleSetInformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ProtectConfigurationCountryRuleSetInformation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

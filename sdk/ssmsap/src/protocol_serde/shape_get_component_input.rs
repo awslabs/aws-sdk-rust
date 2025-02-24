@@ -2,7 +2,7 @@
 pub fn ser_get_component_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_component::GetComponentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_id {
         object.key("ApplicationId").string(var_1.as_str());
     }

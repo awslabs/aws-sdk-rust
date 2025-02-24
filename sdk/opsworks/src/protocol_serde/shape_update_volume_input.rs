@@ -2,7 +2,7 @@
 pub fn ser_update_volume_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_volume::UpdateVolumeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_id {
         object.key("VolumeId").string(var_1.as_str());
     }

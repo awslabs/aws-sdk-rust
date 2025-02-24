@@ -83,7 +83,8 @@ pub fn de_delete_insight_rules_http_response(
 pub fn de_delete_insight_rules(
     inp: &[u8],
     mut builder: crate::operation::delete_insight_rules::builders::DeleteInsightRulesOutputBuilder,
-) -> Result<crate::operation::delete_insight_rules::builders::DeleteInsightRulesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_insight_rules::builders::DeleteInsightRulesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

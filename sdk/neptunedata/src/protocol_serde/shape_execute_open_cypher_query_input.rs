@@ -2,7 +2,7 @@
 pub fn ser_execute_open_cypher_query_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_open_cypher_query::ExecuteOpenCypherQueryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.open_cypher_query {
         object.key("query").string(var_1.as_str());
     }

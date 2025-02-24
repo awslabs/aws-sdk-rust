@@ -2,7 +2,7 @@
 pub fn ser_code_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text_content {
         object.key("TextContent").string(var_1.as_str());
     }

@@ -3,7 +3,7 @@
 pub fn de_cannot_change_immutable_public_key_fields_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::CannotChangeImmutablePublicKeyFieldsBuilder,
-) -> Result<crate::types::error::builders::CannotChangeImmutablePublicKeyFieldsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::CannotChangeImmutablePublicKeyFieldsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

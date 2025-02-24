@@ -76,7 +76,7 @@ pub fn de_list_security_configurations_http_response(
 pub(crate) fn de_list_security_configurations(
     value: &[u8],
     mut builder: crate::operation::list_security_configurations::builders::ListSecurityConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_security_configurations::builders::ListSecurityConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

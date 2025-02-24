@@ -2,7 +2,7 @@
 pub fn ser_chat_mode_configuration(
     object_13: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatModeConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ChatModeConfiguration::PluginConfiguration(inner) => {
             #[allow(unused_mut)]

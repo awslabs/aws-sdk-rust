@@ -2,7 +2,7 @@
 pub fn ser_create_delivery_stream_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_delivery_stream::CreateDeliveryStreamInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delivery_stream_name {
         object.key("DeliveryStreamName").string(var_1.as_str());
     }

@@ -140,7 +140,7 @@ pub fn de_list_contact_flow_modules_http_response(
 pub(crate) fn de_list_contact_flow_modules(
     value: &[u8],
     mut builder: crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

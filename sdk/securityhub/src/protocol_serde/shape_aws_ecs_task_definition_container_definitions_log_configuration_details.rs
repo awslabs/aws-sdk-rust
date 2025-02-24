@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_container_definitions_log_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_driver {
         object.key("LogDriver").string(var_1.as_str());
     }
@@ -33,7 +33,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_log_configuration_detai
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_log_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

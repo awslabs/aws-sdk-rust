@@ -39,7 +39,7 @@ pub fn de_disassociate_nat_gateway_address_http_response(
 pub fn de_disassociate_nat_gateway_address(
     inp: &[u8],
     mut builder: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

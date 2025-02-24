@@ -135,7 +135,7 @@ pub fn de_describe_alert_manager_definition_http_response(
 pub(crate) fn de_describe_alert_manager_definition(
     value: &[u8],
     mut builder: crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

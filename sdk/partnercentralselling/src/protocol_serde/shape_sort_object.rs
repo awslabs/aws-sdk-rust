@@ -2,7 +2,7 @@
 pub fn ser_sort_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SortObject,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sort_by {
         object.key("SortBy").string(var_1.as_str());
     }

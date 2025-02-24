@@ -140,7 +140,7 @@ pub fn de_get_pending_maintenance_action_http_response(
 pub(crate) fn de_get_pending_maintenance_action(
     value: &[u8],
     mut builder: crate::operation::get_pending_maintenance_action::builders::GetPendingMaintenanceActionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_pending_maintenance_action::builders::GetPendingMaintenanceActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

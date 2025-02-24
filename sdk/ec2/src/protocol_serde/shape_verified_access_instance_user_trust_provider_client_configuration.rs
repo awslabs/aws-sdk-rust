@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_instance_user_trust_provider_client_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::VerifiedAccessInstanceUserTrustProviderClientConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::VerifiedAccessInstanceUserTrustProviderClientConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessInstanceUserTrustProviderClientConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

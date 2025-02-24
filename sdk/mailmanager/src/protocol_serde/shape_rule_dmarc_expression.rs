@@ -2,7 +2,7 @@
 pub fn ser_rule_dmarc_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleDmarcExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Operator").string(input.operator.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_rule_dmarc_expression(
 
 pub(crate) fn de_rule_dmarc_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleDmarcExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RuleDmarcExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

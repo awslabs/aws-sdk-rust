@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_cache_nodes_offering(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ReservedCacheNodesOffering, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ReservedCacheNodesOffering, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedCacheNodesOffering::builder();
     while let Some(mut tag) = decoder.next_tag() {

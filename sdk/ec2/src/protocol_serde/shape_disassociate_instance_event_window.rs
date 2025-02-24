@@ -39,7 +39,7 @@ pub fn de_disassociate_instance_event_window_http_response(
 pub fn de_disassociate_instance_event_window(
     inp: &[u8],
     mut builder: crate::operation::disassociate_instance_event_window::builders::DisassociateInstanceEventWindowOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_instance_event_window::builders::DisassociateInstanceEventWindowOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

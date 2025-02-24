@@ -69,7 +69,7 @@ pub fn de_get_trust_store_ca_certificates_bundle_http_response(
 pub fn de_get_trust_store_ca_certificates_bundle(
     inp: &[u8],
     mut builder: crate::operation::get_trust_store_ca_certificates_bundle::builders::GetTrustStoreCaCertificatesBundleOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_trust_store_ca_certificates_bundle::builders::GetTrustStoreCaCertificatesBundleOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

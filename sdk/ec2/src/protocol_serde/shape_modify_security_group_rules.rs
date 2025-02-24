@@ -41,8 +41,10 @@ pub fn de_modify_security_group_rules_http_response(
 pub fn de_modify_security_group_rules(
     inp: &[u8],
     mut builder: crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesOutputBuilder,
-) -> Result<crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

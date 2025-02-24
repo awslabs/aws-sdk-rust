@@ -3,7 +3,7 @@
 pub fn ser_create_verified_access_trust_provider_oidc_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateVerifiedAccessTrustProviderOidcOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Issuer");
     if let Some(var_2) = &input.issuer {

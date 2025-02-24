@@ -156,8 +156,10 @@ pub fn de_update_availability_options_http_response(
 pub fn de_update_availability_options(
     inp: &[u8],
     mut builder: crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsOutputBuilder,
-) -> Result<crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::update_availability_options::builders::UpdateAvailabilityOptionsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

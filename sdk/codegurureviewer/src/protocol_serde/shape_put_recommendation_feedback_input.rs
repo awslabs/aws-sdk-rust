@@ -2,7 +2,7 @@
 pub fn ser_put_recommendation_feedback_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.code_review_arn {
         object.key("CodeReviewArn").string(var_1.as_str());
     }

@@ -110,7 +110,7 @@ pub fn de_describe_evaluation_form_http_response(
 pub(crate) fn de_describe_evaluation_form(
     value: &[u8],
     mut builder: crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

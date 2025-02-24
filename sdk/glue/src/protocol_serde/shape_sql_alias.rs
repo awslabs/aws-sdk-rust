@@ -2,7 +2,7 @@
 pub fn ser_sql_alias(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SqlAlias,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("From").string(input.from.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_sql_alias(
 
 pub(crate) fn de_sql_alias<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SqlAlias>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SqlAlias>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

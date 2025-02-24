@@ -134,7 +134,7 @@ pub fn ser_update_job_status_headers(
 pub fn de_update_job_status(
     inp: &[u8],
     mut builder: crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder,
-) -> Result<crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

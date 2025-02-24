@@ -156,7 +156,7 @@ pub fn de_associate_ip_access_settings_http_response(
 pub(crate) fn de_associate_ip_access_settings(
     value: &[u8],
     mut builder: crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_ip_access_settings::builders::AssociateIpAccessSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

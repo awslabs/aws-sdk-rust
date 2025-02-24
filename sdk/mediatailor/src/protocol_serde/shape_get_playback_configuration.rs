@@ -40,7 +40,7 @@ pub fn de_get_playback_configuration_http_response(
 pub(crate) fn de_get_playback_configuration(
     value: &[u8],
     mut builder: crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_playback_configuration::builders::GetPlaybackConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_account_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountAggregation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.finding_type {
         object.key("findingType").string(var_1.as_str());
     }

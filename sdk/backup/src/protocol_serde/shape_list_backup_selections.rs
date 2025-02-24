@@ -113,7 +113,7 @@ pub fn de_list_backup_selections_http_response(
 pub(crate) fn de_list_backup_selections(
     value: &[u8],
     mut builder: crate::operation::list_backup_selections::builders::ListBackupSelectionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_backup_selections::builders::ListBackupSelectionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

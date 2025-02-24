@@ -132,7 +132,7 @@ pub fn de_get_environment_action_http_response(
 pub(crate) fn de_get_environment_action(
     value: &[u8],
     mut builder: crate::operation::get_environment_action::builders::GetEnvironmentActionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_environment_action::builders::GetEnvironmentActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -137,7 +137,7 @@ pub fn de_describe_ca_certificate_http_response(
 pub(crate) fn de_describe_ca_certificate(
     value: &[u8],
     mut builder: crate::operation::describe_ca_certificate::builders::DescribeCaCertificateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_ca_certificate::builders::DescribeCaCertificateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -39,7 +39,7 @@ pub fn de_create_local_gateway_route_table_http_response(
 pub fn de_create_local_gateway_route_table(
     inp: &[u8],
     mut builder: crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

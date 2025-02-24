@@ -3,7 +3,7 @@
 pub fn ser_metric_stream_filter(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricStreamFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Namespace");
     if let Some(var_2) = &input.namespace {
@@ -26,7 +26,7 @@ pub fn ser_metric_stream_filter(
 #[allow(clippy::needless_question_mark)]
 pub fn de_metric_stream_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MetricStreamFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MetricStreamFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricStreamFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {

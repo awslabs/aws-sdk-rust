@@ -2,7 +2,7 @@
 pub fn ser_forecast_geofence_events_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::forecast_geofence_events::ForecastGeofenceEventsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_state {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DeviceState").start_object();

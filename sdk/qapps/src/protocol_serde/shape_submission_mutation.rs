@@ -2,7 +2,7 @@
 pub fn ser_submission_mutation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubmissionMutation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("submissionId").string(input.submission_id.as_str());
     }

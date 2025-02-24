@@ -2,7 +2,7 @@
 pub fn ser_multiplex_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiplexSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.maximum_video_buffer_delay_milliseconds {
         object.key("maximumVideoBufferDelayMilliseconds").number(
             #[allow(clippy::useless_conversion)]
@@ -32,7 +32,7 @@ pub fn ser_multiplex_settings(
 
 pub(crate) fn de_multiplex_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MultiplexSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MultiplexSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

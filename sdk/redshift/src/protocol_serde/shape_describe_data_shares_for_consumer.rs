@@ -62,7 +62,7 @@ pub fn de_describe_data_shares_for_consumer_http_response(
 pub fn de_describe_data_shares_for_consumer(
     inp: &[u8],
     mut builder: crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

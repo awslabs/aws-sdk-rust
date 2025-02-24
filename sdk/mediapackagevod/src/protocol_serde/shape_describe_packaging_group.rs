@@ -143,7 +143,7 @@ pub fn de_describe_packaging_group_http_response(
 pub(crate) fn de_describe_packaging_group(
     value: &[u8],
     mut builder: crate::operation::describe_packaging_group::builders::DescribePackagingGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_packaging_group::builders::DescribePackagingGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

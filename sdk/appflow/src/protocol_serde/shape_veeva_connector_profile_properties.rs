@@ -2,7 +2,7 @@
 pub fn ser_veeva_connector_profile_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VeevaConnectorProfileProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("instanceUrl").string(input.instance_url.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_veeva_connector_profile_properties(
 
 pub(crate) fn de_veeva_connector_profile_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VeevaConnectorProfileProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VeevaConnectorProfileProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

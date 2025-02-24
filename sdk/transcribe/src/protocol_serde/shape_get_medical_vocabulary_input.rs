@@ -2,7 +2,7 @@
 pub fn ser_get_medical_vocabulary_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_medical_vocabulary::GetMedicalVocabularyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vocabulary_name {
         object.key("VocabularyName").string(var_1.as_str());
     }

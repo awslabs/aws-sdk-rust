@@ -2,7 +2,7 @@
 pub fn ser_start_time_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartTimeRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_time {
         object
             .key("FromTime")

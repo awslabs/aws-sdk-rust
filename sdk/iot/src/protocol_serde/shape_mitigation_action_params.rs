@@ -2,7 +2,7 @@
 pub fn ser_mitigation_action_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MitigationActionParams,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update_device_certificate_params {
         #[allow(unused_mut)]
         let mut object_2 = object.key("updateDeviceCertificateParams").start_object();
@@ -44,7 +44,7 @@ pub fn ser_mitigation_action_params(
 
 pub(crate) fn de_mitigation_action_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MitigationActionParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MitigationActionParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

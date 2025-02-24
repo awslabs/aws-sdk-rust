@@ -2,7 +2,7 @@
 pub fn ser_latest_in_pipeline_execution_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LatestInPipelineExecutionFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("pipelineExecutionId").string(input.pipeline_execution_id.as_str());
     }

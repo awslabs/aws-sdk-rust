@@ -86,7 +86,7 @@ pub fn de_list_vpc_ingress_connections_http_response(
 
 pub fn ser_list_vpc_ingress_connections_input(
     input: &crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_vpc_ingress_connections_input::ser_list_vpc_ingress_connections_input_input(&mut object, input)?;
@@ -97,7 +97,7 @@ pub fn ser_list_vpc_ingress_connections_input(
 pub(crate) fn de_list_vpc_ingress_connections(
     value: &[u8],
     mut builder: crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

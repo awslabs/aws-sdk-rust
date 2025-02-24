@@ -2,7 +2,7 @@
 pub fn ser_iot_twin_maker_destination_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotTwinMakerDestinationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("workspace").string(input.workspace.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_iot_twin_maker_destination_configuration(
 
 pub(crate) fn de_iot_twin_maker_destination_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IotTwinMakerDestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IotTwinMakerDestinationConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

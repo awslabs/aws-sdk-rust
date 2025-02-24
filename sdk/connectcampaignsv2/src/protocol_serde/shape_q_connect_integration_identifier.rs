@@ -2,7 +2,7 @@
 pub fn ser_q_connect_integration_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QConnectIntegrationIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("knowledgeBaseArn").string(input.knowledge_base_arn.as_str());
     }

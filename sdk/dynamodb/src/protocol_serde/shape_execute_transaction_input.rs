@@ -2,7 +2,7 @@
 pub fn ser_execute_transaction_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_transaction::ExecuteTransactionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.transact_statements {
         let mut array_2 = object.key("TransactStatements").start_array();
         for item_3 in var_1 {

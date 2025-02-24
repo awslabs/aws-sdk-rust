@@ -2,7 +2,7 @@
 pub fn ser_put_supplemental_tax_registration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_supplemental_tax_registration::PutSupplementalTaxRegistrationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tax_registration_entry {
         #[allow(unused_mut)]
         let mut object_2 = object.key("taxRegistrationEntry").start_object();

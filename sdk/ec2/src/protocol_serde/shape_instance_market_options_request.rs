@@ -3,7 +3,7 @@
 pub fn ser_instance_market_options_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstanceMarketOptionsRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MarketType");
     if let Some(var_2) = &input.market_type {

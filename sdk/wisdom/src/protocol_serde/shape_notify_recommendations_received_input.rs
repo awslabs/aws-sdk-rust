@@ -2,7 +2,7 @@
 pub fn ser_notify_recommendations_received_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recommendation_ids {
         let mut array_2 = object.key("recommendationIds").start_array();
         for item_3 in var_1 {

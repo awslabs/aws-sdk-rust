@@ -43,7 +43,7 @@ pub fn de_describe_iam_instance_profile_associations_http_response(
 pub fn de_describe_iam_instance_profile_associations(
     inp: &[u8],
     mut builder: crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_iam_instance_profile_associations::builders::DescribeIamInstanceProfileAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

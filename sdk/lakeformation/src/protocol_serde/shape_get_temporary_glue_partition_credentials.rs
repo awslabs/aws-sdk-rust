@@ -159,7 +159,7 @@ pub fn de_get_temporary_glue_partition_credentials_http_response(
 
 pub fn ser_get_temporary_glue_partition_credentials_input(
     input: &crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_temporary_glue_partition_credentials_input::ser_get_temporary_glue_partition_credentials_input_input(
@@ -173,7 +173,7 @@ pub fn ser_get_temporary_glue_partition_credentials_input(
 pub(crate) fn de_get_temporary_glue_partition_credentials(
     value: &[u8],
     mut builder: crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_temporary_glue_partition_credentials::builders::GetTemporaryGluePartitionCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

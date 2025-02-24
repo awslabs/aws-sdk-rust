@@ -33,7 +33,7 @@ pub fn de_delete_coip_cidr_http_response(
 pub fn de_delete_coip_cidr(
     inp: &[u8],
     mut builder: crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder,
-) -> Result<crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_coip_cidr::builders::DeleteCoipCidrOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

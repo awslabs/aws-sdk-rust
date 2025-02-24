@@ -2,7 +2,7 @@
 pub fn ser_typed_attribute_value(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TypedAttributeValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TypedAttributeValue::StringValue(inner) => {
             object_4.key("StringValue").string(inner.as_str());
@@ -32,7 +32,7 @@ pub fn ser_typed_attribute_value(
 
 pub(crate) fn de_typed_attribute_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TypedAttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TypedAttributeValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

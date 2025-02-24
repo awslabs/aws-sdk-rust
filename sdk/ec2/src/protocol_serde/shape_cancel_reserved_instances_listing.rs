@@ -39,7 +39,7 @@ pub fn de_cancel_reserved_instances_listing_http_response(
 pub fn de_cancel_reserved_instances_listing(
     inp: &[u8],
     mut builder: crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::cancel_reserved_instances_listing::builders::CancelReservedInstancesListingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

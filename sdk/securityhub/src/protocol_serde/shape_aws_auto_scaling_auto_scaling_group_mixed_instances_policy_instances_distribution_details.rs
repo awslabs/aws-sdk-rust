@@ -2,7 +2,7 @@
 pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.on_demand_allocation_strategy {
         object.key("OnDemandAllocationStrategy").string(var_1.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_instances_distribution_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

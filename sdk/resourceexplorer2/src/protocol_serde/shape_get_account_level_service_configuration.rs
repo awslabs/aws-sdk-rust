@@ -117,7 +117,7 @@ pub fn de_get_account_level_service_configuration_http_response(
 pub(crate) fn de_get_account_level_service_configuration(
     value: &[u8],
     mut builder: crate::operation::get_account_level_service_configuration::builders::GetAccountLevelServiceConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_account_level_service_configuration::builders::GetAccountLevelServiceConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

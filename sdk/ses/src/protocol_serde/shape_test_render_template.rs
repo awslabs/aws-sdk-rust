@@ -101,7 +101,8 @@ pub fn de_test_render_template_http_response(
 pub fn de_test_render_template(
     inp: &[u8],
     mut builder: crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder,
-) -> Result<crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::test_render_template::builders::TestRenderTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

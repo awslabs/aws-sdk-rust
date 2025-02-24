@@ -2,7 +2,7 @@
 pub fn ser_aws_certificate_manager_certificate_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCertificateManagerCertificateDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_authority_arn {
         object.key("CertificateAuthorityArn").string(var_1.as_str());
     }
@@ -131,7 +131,7 @@ pub fn ser_aws_certificate_manager_certificate_details(
 
 pub(crate) fn de_aws_certificate_manager_certificate_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsCertificateManagerCertificateDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsCertificateManagerCertificateDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

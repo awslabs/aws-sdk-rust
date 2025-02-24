@@ -2,7 +2,7 @@
 pub fn ser_function_schema(
     object_8: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionSchema,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FunctionSchema::Functions(inner) => {
             let mut array_1 = object_8.key("functions").start_array();

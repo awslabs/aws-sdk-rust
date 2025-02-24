@@ -176,7 +176,7 @@ pub fn de_list_topic_refresh_schedules_http_response(
 pub(crate) fn de_list_topic_refresh_schedules(
     value: &[u8],
     mut builder: crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_topic_refresh_schedules::builders::ListTopicRefreshSchedulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

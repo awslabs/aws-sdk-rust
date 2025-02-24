@@ -2,7 +2,7 @@
 pub fn ser_last_modified_date(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LastModifiedDate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.after_last_modified_date {
         object
             .key("AfterLastModifiedDate")

@@ -76,7 +76,7 @@ pub fn de_list_training_datasets_http_response(
 pub(crate) fn de_list_training_datasets(
     value: &[u8],
     mut builder: crate::operation::list_training_datasets::builders::ListTrainingDatasetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_training_datasets::builders::ListTrainingDatasetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

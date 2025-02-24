@@ -2,7 +2,7 @@
 pub fn ser_update_web_app_identity_center_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateWebAppIdentityCenterConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.role {
         object.key("Role").string(var_1.as_str());
     }

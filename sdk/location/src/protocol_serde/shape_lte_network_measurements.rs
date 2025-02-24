@@ -2,7 +2,7 @@
 pub fn ser_lte_network_measurements(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LteNetworkMeasurements,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Earfcn").number(
             #[allow(clippy::useless_conversion)]

@@ -2,7 +2,7 @@
 pub fn ser_get_job_bookmark_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_job_bookmark::GetJobBookmarkInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_name {
         object.key("JobName").string(var_1.as_str());
     }

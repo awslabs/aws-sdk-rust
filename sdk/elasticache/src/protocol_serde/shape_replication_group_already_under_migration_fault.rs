@@ -3,7 +3,7 @@
 pub fn de_replication_group_already_under_migration_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder,
-) -> Result<crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ReplicationGroupAlreadyUnderMigrationFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

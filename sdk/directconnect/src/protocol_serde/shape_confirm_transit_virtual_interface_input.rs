@@ -2,7 +2,7 @@
 pub fn ser_confirm_transit_virtual_interface_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.virtual_interface_id {
         object.key("virtualInterfaceId").string(var_1.as_str());
     }

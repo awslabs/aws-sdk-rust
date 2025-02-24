@@ -106,7 +106,7 @@ pub fn de_list_fargate_profiles_http_response(
 pub(crate) fn de_list_fargate_profiles(
     value: &[u8],
     mut builder: crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_fargate_profiles::builders::ListFargateProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

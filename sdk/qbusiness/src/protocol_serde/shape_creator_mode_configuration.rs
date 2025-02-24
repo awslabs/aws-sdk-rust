@@ -2,7 +2,7 @@
 pub fn ser_creator_mode_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreatorModeConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("creatorModeControl").string(input.creator_mode_control.as_str());
     }

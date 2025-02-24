@@ -2,7 +2,7 @@
 pub fn ser_open_search_resource_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenSearchResourceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_1.as_str());
     }

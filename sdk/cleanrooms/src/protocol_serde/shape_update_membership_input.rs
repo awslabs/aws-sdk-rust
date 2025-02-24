@@ -2,7 +2,7 @@
 pub fn ser_update_membership_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_membership::UpdateMembershipInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_result_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("defaultResultConfiguration").start_object();

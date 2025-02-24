@@ -41,7 +41,10 @@ pub fn de_get_security_groups_for_vpc_http_response(
 pub fn de_get_security_groups_for_vpc(
     inp: &[u8],
     mut builder: crate::operation::get_security_groups_for_vpc::builders::GetSecurityGroupsForVpcOutputBuilder,
-) -> Result<crate::operation::get_security_groups_for_vpc::builders::GetSecurityGroupsForVpcOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_security_groups_for_vpc::builders::GetSecurityGroupsForVpcOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

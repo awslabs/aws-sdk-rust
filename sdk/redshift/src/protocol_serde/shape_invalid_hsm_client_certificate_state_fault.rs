@@ -3,7 +3,7 @@
 pub fn de_invalid_hsm_client_certificate_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidHsmClientCertificateStateFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidHsmClientCertificateStateFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidHsmClientCertificateStateFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

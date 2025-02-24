@@ -2,7 +2,7 @@
 pub fn ser_component_variant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComponentVariant,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.variant_values {
         #[allow(unused_mut)]
         let mut object_2 = object.key("variantValues").start_object();
@@ -35,7 +35,7 @@ pub fn ser_component_variant(
 
 pub(crate) fn de_component_variant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ComponentVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ComponentVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

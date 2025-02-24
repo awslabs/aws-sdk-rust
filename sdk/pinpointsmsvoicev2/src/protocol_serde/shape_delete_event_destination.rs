@@ -124,7 +124,7 @@ pub fn de_delete_event_destination_http_response(
 
 pub fn ser_delete_event_destination_input(
     input: &crate::operation::delete_event_destination::DeleteEventDestinationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_event_destination_input::ser_delete_event_destination_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_delete_event_destination_input(
 pub(crate) fn de_delete_event_destination(
     value: &[u8],
     mut builder: crate::operation::delete_event_destination::builders::DeleteEventDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_event_destination::builders::DeleteEventDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

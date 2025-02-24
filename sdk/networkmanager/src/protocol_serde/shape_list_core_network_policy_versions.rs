@@ -135,7 +135,7 @@ pub fn de_list_core_network_policy_versions_http_response(
 pub(crate) fn de_list_core_network_policy_versions(
     value: &[u8],
     mut builder: crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

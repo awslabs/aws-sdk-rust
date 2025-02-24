@@ -2,7 +2,7 @@
 pub fn ser_input_channel_level(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputChannelLevel,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gain {
         object.key("gain").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_input_channel_level(
 
 pub(crate) fn de_input_channel_level<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InputChannelLevel>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InputChannelLevel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

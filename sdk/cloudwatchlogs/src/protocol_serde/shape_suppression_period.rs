@@ -2,7 +2,7 @@
 pub fn ser_suppression_period(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SuppressionPeriod,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.value != 0 {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]

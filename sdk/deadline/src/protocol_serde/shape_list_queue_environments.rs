@@ -133,7 +133,7 @@ pub fn de_list_queue_environments_http_response(
 pub(crate) fn de_list_queue_environments(
     value: &[u8],
     mut builder: crate::operation::list_queue_environments::builders::ListQueueEnvironmentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_queue_environments::builders::ListQueueEnvironmentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

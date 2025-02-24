@@ -407,7 +407,7 @@ pub fn de_put_repository_triggers_http_response(
 
 pub fn ser_put_repository_triggers_input(
     input: &crate::operation::put_repository_triggers::PutRepositoryTriggersInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_repository_triggers_input::ser_put_repository_triggers_input_input(&mut object, input)?;
@@ -418,7 +418,7 @@ pub fn ser_put_repository_triggers_input(
 pub(crate) fn de_put_repository_triggers(
     value: &[u8],
     mut builder: crate::operation::put_repository_triggers::builders::PutRepositoryTriggersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_repository_triggers::builders::PutRepositoryTriggersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

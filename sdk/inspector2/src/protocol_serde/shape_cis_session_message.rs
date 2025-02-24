@@ -2,7 +2,7 @@
 pub fn ser_cis_session_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CisSessionMessage,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ruleId").string(input.rule_id.as_str());
     }

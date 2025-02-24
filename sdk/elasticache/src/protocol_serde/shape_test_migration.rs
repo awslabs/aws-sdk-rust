@@ -111,7 +111,7 @@ pub fn de_test_migration_http_response(
 pub fn de_test_migration(
     inp: &[u8],
     mut builder: crate::operation::test_migration::builders::TestMigrationOutputBuilder,
-) -> Result<crate::operation::test_migration::builders::TestMigrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::test_migration::builders::TestMigrationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

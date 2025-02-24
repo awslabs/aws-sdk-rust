@@ -144,7 +144,7 @@ pub fn de_delete_firewall_rule_group_http_response(
 
 pub fn ser_delete_firewall_rule_group_input(
     input: &crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_firewall_rule_group_input::ser_delete_firewall_rule_group_input_input(&mut object, input)?;
@@ -155,7 +155,7 @@ pub fn ser_delete_firewall_rule_group_input(
 pub(crate) fn de_delete_firewall_rule_group(
     value: &[u8],
     mut builder: crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

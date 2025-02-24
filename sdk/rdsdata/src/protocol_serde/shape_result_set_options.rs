@@ -2,7 +2,7 @@
 pub fn ser_result_set_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResultSetOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.decimal_return_type {
         object.key("decimalReturnType").string(var_1.as_str());
     }

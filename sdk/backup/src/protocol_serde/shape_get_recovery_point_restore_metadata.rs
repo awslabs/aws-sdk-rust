@@ -122,7 +122,7 @@ pub fn de_get_recovery_point_restore_metadata_http_response(
 pub(crate) fn de_get_recovery_point_restore_metadata(
     value: &[u8],
     mut builder: crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_recovery_point_restore_metadata::builders::GetRecoveryPointRestoreMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

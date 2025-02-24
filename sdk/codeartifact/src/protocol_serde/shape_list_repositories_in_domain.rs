@@ -127,7 +127,7 @@ pub fn de_list_repositories_in_domain_http_response(
 pub(crate) fn de_list_repositories_in_domain(
     value: &[u8],
     mut builder: crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

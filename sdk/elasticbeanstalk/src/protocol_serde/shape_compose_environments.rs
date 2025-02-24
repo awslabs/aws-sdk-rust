@@ -81,7 +81,8 @@ pub fn de_compose_environments_http_response(
 pub fn de_compose_environments(
     inp: &[u8],
     mut builder: crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder,
-) -> Result<crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::compose_environments::builders::ComposeEnvironmentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

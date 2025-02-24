@@ -96,7 +96,7 @@ pub fn de_batch_put_scheduled_update_group_action_http_response(
 pub fn de_batch_put_scheduled_update_group_action(
     inp: &[u8],
     mut builder: crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

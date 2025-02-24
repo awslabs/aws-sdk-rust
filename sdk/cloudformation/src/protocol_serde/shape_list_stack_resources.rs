@@ -39,7 +39,8 @@ pub fn de_list_stack_resources_http_response(
 pub fn de_list_stack_resources(
     inp: &[u8],
     mut builder: crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder,
-) -> Result<crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_stack_resources::builders::ListStackResourcesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

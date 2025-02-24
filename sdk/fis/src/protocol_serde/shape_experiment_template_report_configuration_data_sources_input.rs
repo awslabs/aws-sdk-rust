@@ -2,7 +2,7 @@
 pub fn ser_experiment_template_report_configuration_data_sources_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExperimentTemplateReportConfigurationDataSourcesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloud_watch_dashboards {
         let mut array_2 = object.key("cloudWatchDashboards").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_data_destination_config(
     object_28: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataDestinationConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DataDestinationConfig::S3Config(inner) => {
             #[allow(unused_mut)]
@@ -33,7 +33,7 @@ pub fn ser_data_destination_config(
 
 pub(crate) fn de_data_destination_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DataDestinationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DataDestinationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

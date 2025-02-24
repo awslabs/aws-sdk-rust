@@ -107,7 +107,7 @@ pub fn de_set_cognito_events_http_response(
 
 pub fn ser_set_cognito_events_input(
     input: &crate::operation::set_cognito_events::SetCognitoEventsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_set_cognito_events_input::ser_set_cognito_events_input_input(&mut object, input)?;

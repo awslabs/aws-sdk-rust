@@ -2,7 +2,7 @@
 pub fn ser_sign_in_distribution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SignInDistribution,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Region").string(input.region.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_sign_in_distribution(
 
 pub(crate) fn de_sign_in_distribution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SignInDistribution>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SignInDistribution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

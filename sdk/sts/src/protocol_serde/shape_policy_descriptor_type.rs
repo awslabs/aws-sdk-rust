@@ -3,7 +3,7 @@
 pub fn ser_policy_descriptor_type(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PolicyDescriptorType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("arn");
     if let Some(var_2) = &input.arn {

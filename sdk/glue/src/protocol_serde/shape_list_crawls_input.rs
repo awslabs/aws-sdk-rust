@@ -2,7 +2,7 @@
 pub fn ser_list_crawls_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_crawls::ListCrawlsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.crawler_name {
         object.key("CrawlerName").string(var_1.as_str());
     }

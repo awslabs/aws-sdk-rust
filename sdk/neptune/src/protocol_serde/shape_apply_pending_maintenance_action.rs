@@ -62,7 +62,7 @@ pub fn de_apply_pending_maintenance_action_http_response(
 pub fn de_apply_pending_maintenance_action(
     inp: &[u8],
     mut builder: crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

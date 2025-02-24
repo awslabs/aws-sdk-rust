@@ -165,7 +165,7 @@ pub fn de_list_media_pipeline_kinesis_video_stream_pools_http_response(
 pub(crate) fn de_list_media_pipeline_kinesis_video_stream_pools(
     value: &[u8],
     mut builder: crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_media_pipeline_kinesis_video_stream_pools::builders::ListMediaPipelineKinesisVideoStreamPoolsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

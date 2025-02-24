@@ -57,7 +57,7 @@ pub fn ser_get_multi_region_access_point_policy_headers(
 pub fn de_get_multi_region_access_point_policy(
     inp: &[u8],
     mut builder: crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_multi_region_access_point_policy::builders::GetMultiRegionAccessPointPolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

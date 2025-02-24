@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_export_task_s3_location(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ExportTaskS3Location, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ExportTaskS3Location, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ExportTaskS3Location::builder();
     while let Some(mut tag) = decoder.next_tag() {

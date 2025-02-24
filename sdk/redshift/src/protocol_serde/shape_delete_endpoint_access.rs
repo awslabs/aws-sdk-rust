@@ -123,7 +123,10 @@ pub fn de_delete_endpoint_access_http_response(
 pub fn de_delete_endpoint_access(
     inp: &[u8],
     mut builder: crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder,
-) -> Result<crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::delete_endpoint_access::builders::DeleteEndpointAccessOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

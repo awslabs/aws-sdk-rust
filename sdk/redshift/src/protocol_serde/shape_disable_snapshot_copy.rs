@@ -125,7 +125,8 @@ pub fn de_disable_snapshot_copy_http_response(
 pub fn de_disable_snapshot_copy(
     inp: &[u8],
     mut builder: crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder,
-) -> Result<crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

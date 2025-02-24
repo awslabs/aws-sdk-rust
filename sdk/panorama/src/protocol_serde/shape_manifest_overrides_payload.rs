@@ -2,7 +2,7 @@
 pub fn ser_manifest_overrides_payload(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManifestOverridesPayload,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ManifestOverridesPayload::PayloadData(inner) => {
             object_5.key("PayloadData").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_manifest_overrides_payload(
 
 pub(crate) fn de_manifest_overrides_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ManifestOverridesPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ManifestOverridesPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

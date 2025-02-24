@@ -2,7 +2,7 @@
 pub fn ser_public_endpoint(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PublicEndpoint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address {
         object.key("Address").string(var_1.as_str());
     }

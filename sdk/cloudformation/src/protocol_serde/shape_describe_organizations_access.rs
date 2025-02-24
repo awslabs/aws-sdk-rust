@@ -82,7 +82,7 @@ pub fn de_describe_organizations_access_http_response(
 pub fn de_describe_organizations_access(
     inp: &[u8],
     mut builder: crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_organizations_access::builders::DescribeOrganizationsAccessOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

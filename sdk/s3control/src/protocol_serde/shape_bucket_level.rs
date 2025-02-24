@@ -2,7 +2,7 @@
 pub fn ser_bucket_level(
     input: &crate::types::BucketLevel,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.activity_metrics {
@@ -32,7 +32,7 @@ pub fn ser_bucket_level(
 #[allow(clippy::needless_question_mark)]
 pub fn de_bucket_level(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::BucketLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::BucketLevel, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::BucketLevel::builder();
     while let Some(mut tag) = decoder.next_tag() {

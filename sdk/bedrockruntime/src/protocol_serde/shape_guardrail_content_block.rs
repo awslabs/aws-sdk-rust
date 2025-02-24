@@ -2,7 +2,7 @@
 pub fn ser_guardrail_content_block(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailContentBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::GuardrailContentBlock::Text(inner) => {
             #[allow(unused_mut)]

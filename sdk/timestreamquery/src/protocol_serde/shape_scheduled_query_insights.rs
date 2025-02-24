@@ -2,7 +2,7 @@
 pub fn ser_scheduled_query_insights(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduledQueryInsights,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Mode").string(input.mode.as_str());
     }

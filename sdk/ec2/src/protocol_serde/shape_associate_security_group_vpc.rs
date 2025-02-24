@@ -41,8 +41,10 @@ pub fn de_associate_security_group_vpc_http_response(
 pub fn de_associate_security_group_vpc(
     inp: &[u8],
     mut builder: crate::operation::associate_security_group_vpc::builders::AssociateSecurityGroupVpcOutputBuilder,
-) -> Result<crate::operation::associate_security_group_vpc::builders::AssociateSecurityGroupVpcOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::associate_security_group_vpc::builders::AssociateSecurityGroupVpcOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

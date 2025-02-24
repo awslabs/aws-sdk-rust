@@ -99,7 +99,7 @@ pub fn de_modify_authentication_profile_http_response(
 pub fn de_modify_authentication_profile(
     inp: &[u8],
     mut builder: crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_authentication_profile::builders::ModifyAuthenticationProfileOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_current_pin_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CurrentPinAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CurrentPinPekIdentifier").string(input.current_pin_pek_identifier.as_str());
     }

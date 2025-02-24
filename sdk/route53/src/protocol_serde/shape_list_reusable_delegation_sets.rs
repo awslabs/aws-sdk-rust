@@ -64,7 +64,7 @@ pub fn de_list_reusable_delegation_sets_http_response(
 pub fn de_list_reusable_delegation_sets(
     inp: &[u8],
     mut builder: crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

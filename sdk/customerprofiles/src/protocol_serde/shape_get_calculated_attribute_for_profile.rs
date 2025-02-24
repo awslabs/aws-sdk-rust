@@ -132,7 +132,7 @@ pub fn de_get_calculated_attribute_for_profile_http_response(
 pub(crate) fn de_get_calculated_attribute_for_profile(
     value: &[u8],
     mut builder: crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_calculated_attribute_for_profile::builders::GetCalculatedAttributeForProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

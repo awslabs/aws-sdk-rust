@@ -110,7 +110,7 @@ pub fn de_execute_provisioned_product_service_action_http_response(
 
 pub fn ser_execute_provisioned_product_service_action_input(
     input: &crate::operation::execute_provisioned_product_service_action::ExecuteProvisionedProductServiceActionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_execute_provisioned_product_service_action_input::ser_execute_provisioned_product_service_action_input_input(
@@ -124,7 +124,7 @@ pub fn ser_execute_provisioned_product_service_action_input(
 pub(crate) fn de_execute_provisioned_product_service_action(
     value: &[u8],
     mut builder: crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::execute_provisioned_product_service_action::builders::ExecuteProvisionedProductServiceActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

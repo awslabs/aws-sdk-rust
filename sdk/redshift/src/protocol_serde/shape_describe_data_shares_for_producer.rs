@@ -62,7 +62,7 @@ pub fn de_describe_data_shares_for_producer_http_response(
 pub fn de_describe_data_shares_for_producer(
     inp: &[u8],
     mut builder: crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_data_shares_for_producer::builders::DescribeDataSharesForProducerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -39,7 +39,7 @@ pub fn de_modify_instance_maintenance_options_http_response(
 pub fn de_modify_instance_maintenance_options(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_instance_maintenance_options::builders::ModifyInstanceMaintenanceOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

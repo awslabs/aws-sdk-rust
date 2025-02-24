@@ -125,7 +125,7 @@ pub fn de_describe_hours_of_operation_http_response(
 pub(crate) fn de_describe_hours_of_operation(
     value: &[u8],
     mut builder: crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

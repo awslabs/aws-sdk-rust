@@ -2,7 +2,7 @@
 pub fn ser_aws_dms_replication_instance_vpc_security_groups_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vpc_security_group_id {
         object.key("VpcSecurityGroupId").string(var_1.as_str());
     }
@@ -11,7 +11,10 @@ pub fn ser_aws_dms_replication_instance_vpc_security_groups_details(
 
 pub(crate) fn de_aws_dms_replication_instance_vpc_security_groups_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsDmsReplicationInstanceVpcSecurityGroupsDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

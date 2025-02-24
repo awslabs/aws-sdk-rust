@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_application_metrics(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ApplicationMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ApplicationMetrics, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ApplicationMetrics::builder();
     while let Some(mut tag) = decoder.next_tag() {

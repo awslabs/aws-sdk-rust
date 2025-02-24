@@ -134,7 +134,7 @@ pub fn de_get_transit_gateway_peering_http_response(
 pub(crate) fn de_get_transit_gateway_peering(
     value: &[u8],
     mut builder: crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

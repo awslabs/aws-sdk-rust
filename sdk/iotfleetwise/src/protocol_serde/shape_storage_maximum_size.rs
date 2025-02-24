@@ -2,7 +2,7 @@
 pub fn ser_storage_maximum_size(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StorageMaximumSize,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("unit").string(input.unit.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_storage_maximum_size(
 
 pub(crate) fn de_storage_maximum_size<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StorageMaximumSize>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StorageMaximumSize>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

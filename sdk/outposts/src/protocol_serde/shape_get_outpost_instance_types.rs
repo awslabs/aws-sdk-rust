@@ -110,7 +110,7 @@ pub fn de_get_outpost_instance_types_http_response(
 pub(crate) fn de_get_outpost_instance_types(
     value: &[u8],
     mut builder: crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

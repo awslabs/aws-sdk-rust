@@ -2,7 +2,7 @@
 pub fn ser_field_for_reranking(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldForReranking,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fieldName").string(input.field_name.as_str());
     }

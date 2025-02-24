@@ -111,7 +111,7 @@ pub fn de_import_client_branding_http_response(
 
 pub fn ser_import_client_branding_input(
     input: &crate::operation::import_client_branding::ImportClientBrandingInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_import_client_branding_input::ser_import_client_branding_input_input(&mut object, input)?;
@@ -122,7 +122,7 @@ pub fn ser_import_client_branding_input(
 pub(crate) fn de_import_client_branding(
     value: &[u8],
     mut builder: crate::operation::import_client_branding::builders::ImportClientBrandingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::import_client_branding::builders::ImportClientBrandingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

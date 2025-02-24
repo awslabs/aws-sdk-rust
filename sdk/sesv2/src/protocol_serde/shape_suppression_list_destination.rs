@@ -2,7 +2,7 @@
 pub fn ser_suppression_list_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SuppressionListDestination,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("SuppressionListImportAction")
@@ -13,7 +13,7 @@ pub fn ser_suppression_list_destination(
 
 pub(crate) fn de_suppression_list_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SuppressionListDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SuppressionListDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

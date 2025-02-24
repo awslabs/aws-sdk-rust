@@ -2,7 +2,7 @@
 pub fn ser_deserializer(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Deserializer,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.open_x_json_ser_de {
         #[allow(unused_mut)]
         let mut object_2 = object.key("OpenXJsonSerDe").start_object();
@@ -20,7 +20,7 @@ pub fn ser_deserializer(
 
 pub(crate) fn de_deserializer<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Deserializer>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Deserializer>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

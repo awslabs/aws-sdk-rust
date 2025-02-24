@@ -2,7 +2,7 @@
 pub fn ser_disassociate_analytics_data_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_analytics_data_set::DisassociateAnalyticsDataSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_set_id {
         object.key("DataSetId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_node_configuration_option(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::NodeConfigurationOption, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::NodeConfigurationOption, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::NodeConfigurationOption::builder();
     while let Some(mut tag) = decoder.next_tag() {

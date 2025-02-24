@@ -106,7 +106,7 @@ pub fn de_list_channel_namespaces_http_response(
 pub(crate) fn de_list_channel_namespaces(
     value: &[u8],
     mut builder: crate::operation::list_channel_namespaces::builders::ListChannelNamespacesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_channel_namespaces::builders::ListChannelNamespacesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

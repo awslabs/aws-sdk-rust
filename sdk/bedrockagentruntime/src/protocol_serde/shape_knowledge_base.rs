@@ -2,7 +2,7 @@
 pub fn ser_knowledge_base(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KnowledgeBase,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("knowledgeBaseId").string(input.knowledge_base_id.as_str());
     }

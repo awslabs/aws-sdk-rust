@@ -2,7 +2,7 @@
 pub fn ser_data_automation_project_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataAutomationProjectFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("projectArn").string(input.project_arn.as_str());
     }

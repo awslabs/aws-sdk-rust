@@ -39,7 +39,7 @@ pub fn de_create_verified_access_instance_http_response(
 pub fn de_create_verified_access_instance(
     inp: &[u8],
     mut builder: crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

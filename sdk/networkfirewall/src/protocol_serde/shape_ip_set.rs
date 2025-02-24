@@ -2,7 +2,7 @@
 pub fn ser_ip_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Definition").start_array();
         for item_2 in &input.definition {
@@ -17,7 +17,7 @@ pub fn ser_ip_set(
 
 pub(crate) fn de_ip_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IpSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IpSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

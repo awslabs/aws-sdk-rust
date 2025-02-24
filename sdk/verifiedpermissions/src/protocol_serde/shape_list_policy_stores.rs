@@ -97,7 +97,7 @@ pub fn de_list_policy_stores_http_response(
 
 pub fn ser_list_policy_stores_input(
     input: &crate::operation::list_policy_stores::ListPolicyStoresInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_policy_stores_input::ser_list_policy_stores_input_input(&mut object, input)?;
@@ -108,7 +108,10 @@ pub fn ser_list_policy_stores_input(
 pub(crate) fn de_list_policy_stores(
     value: &[u8],
     mut builder: crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder,
-) -> Result<crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::list_policy_stores::builders::ListPolicyStoresOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

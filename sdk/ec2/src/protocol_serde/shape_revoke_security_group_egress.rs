@@ -41,8 +41,10 @@ pub fn de_revoke_security_group_egress_http_response(
 pub fn de_revoke_security_group_egress(
     inp: &[u8],
     mut builder: crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder,
-) -> Result<crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::revoke_security_group_egress::builders::RevokeSecurityGroupEgressOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

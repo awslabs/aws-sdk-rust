@@ -2,7 +2,7 @@
 pub fn ser_schema_definition(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SchemaDefinition::CedarJson(inner) => {
             object_3.key("cedarJson").string(inner.as_str());

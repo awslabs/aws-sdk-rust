@@ -2,7 +2,7 @@
 pub fn ser_backend_connection_errors(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackendConnectionErrors,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.timeout_count {
         object.key("TimeoutCount").number(
             #[allow(clippy::useless_conversion)]

@@ -20,7 +20,7 @@ pub fn de_create_local_gateway_route_table_virtual_interface_group_association_h
 }
 
 #[allow(unused_mut)]
-pub fn de_create_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::operation::create_local_gateway_route_table_virtual_interface_group_association::builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder) -> Result<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_create_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::operation::create_local_gateway_route_table_virtual_interface_group_association::builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder) -> std::result::Result<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::builders::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

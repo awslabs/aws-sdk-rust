@@ -140,7 +140,7 @@ pub fn de_get_user_access_logging_settings_http_response(
 pub(crate) fn de_get_user_access_logging_settings(
     value: &[u8],
     mut builder: crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

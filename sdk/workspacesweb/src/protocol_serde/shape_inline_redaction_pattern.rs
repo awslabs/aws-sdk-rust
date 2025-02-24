@@ -2,7 +2,7 @@
 pub fn ser_inline_redaction_pattern(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InlineRedactionPattern,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.built_in_pattern_id {
         object.key("builtInPatternId").string(var_1.as_str());
     }
@@ -47,7 +47,7 @@ pub fn ser_inline_redaction_pattern(
 
 pub(crate) fn de_inline_redaction_pattern<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InlineRedactionPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InlineRedactionPattern>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

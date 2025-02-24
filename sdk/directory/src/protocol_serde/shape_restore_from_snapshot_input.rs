@@ -2,7 +2,7 @@
 pub fn ser_restore_from_snapshot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::restore_from_snapshot::RestoreFromSnapshotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.snapshot_id {
         object.key("SnapshotId").string(var_1.as_str());
     }

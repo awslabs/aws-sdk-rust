@@ -2,7 +2,7 @@
 pub fn ser_get_registered_subscription_provider_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_registered_subscription_provider::GetRegisteredSubscriptionProviderInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subscription_provider_arn {
         object.key("SubscriptionProviderArn").string(var_1.as_str());
     }

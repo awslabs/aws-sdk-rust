@@ -2,7 +2,7 @@
 pub fn ser_formatted_vss(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FormattedVss,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FormattedVss::VssJson(inner) => {
             object_4.key("vssJson").string(inner.as_str());

@@ -155,7 +155,7 @@ pub fn de_restore_table_from_backup_http_response(
 
 pub fn ser_restore_table_from_backup_input(
     input: &crate::operation::restore_table_from_backup::RestoreTableFromBackupInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_restore_table_from_backup_input::ser_restore_table_from_backup_input_input(&mut object, input)?;
@@ -166,7 +166,7 @@ pub fn ser_restore_table_from_backup_input(
 pub(crate) fn de_restore_table_from_backup(
     value: &[u8],
     mut builder: crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

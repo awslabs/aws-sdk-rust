@@ -2,7 +2,7 @@
 pub fn ser_recording_mode_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecordingModeOverride,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_recording_mode_override(
 
 pub(crate) fn de_recording_mode_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RecordingModeOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RecordingModeOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

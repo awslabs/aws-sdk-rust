@@ -98,7 +98,8 @@ pub fn de_get_federation_token_http_response(
 pub fn de_get_federation_token(
     inp: &[u8],
     mut builder: crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder,
-) -> Result<crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_federation_token::builders::GetFederationTokenOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

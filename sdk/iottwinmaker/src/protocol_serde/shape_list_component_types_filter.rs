@@ -2,7 +2,7 @@
 pub fn ser_list_component_types_filter(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListComponentTypesFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ListComponentTypesFilter::ExtendsFrom(inner) => {
             object_4.key("extendsFrom").string(inner.as_str());

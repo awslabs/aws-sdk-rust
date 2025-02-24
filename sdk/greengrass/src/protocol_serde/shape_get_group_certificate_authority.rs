@@ -81,7 +81,7 @@ pub fn de_get_group_certificate_authority_http_response(
 pub(crate) fn de_get_group_certificate_authority(
     value: &[u8],
     mut builder: crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_group_certificate_authority::builders::GetGroupCertificateAuthorityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

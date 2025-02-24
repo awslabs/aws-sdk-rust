@@ -107,7 +107,8 @@ pub fn de_update_saml_provider_http_response(
 pub fn de_update_saml_provider(
     inp: &[u8],
     mut builder: crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder,
-) -> Result<crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::update_saml_provider::builders::UpdateSamlProviderOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_corridor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Corridor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("LineString").start_array();
         for item_2 in &input.line_string {

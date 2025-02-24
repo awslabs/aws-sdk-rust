@@ -2,7 +2,7 @@
 pub fn ser_associate_member_to_farm_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_member_to_farm::AssociateMemberToFarmInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_store_id {
         object.key("identityStoreId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_email_mfa_settings_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailMfaSettingsType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.enabled {
         object.key("Enabled").boolean(input.enabled);
     }

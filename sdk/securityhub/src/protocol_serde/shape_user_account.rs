@@ -2,7 +2,7 @@
 pub fn ser_user_account(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserAccount,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.uid {
         object.key("Uid").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_user_account(
 
 pub(crate) fn de_user_account<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UserAccount>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UserAccount>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

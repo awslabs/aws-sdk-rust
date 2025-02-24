@@ -3,7 +3,7 @@
 pub fn ser_certificate_authentication_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CertificateAuthenticationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ClientRootCertificateChainArn");
     if let Some(var_2) = &input.client_root_certificate_chain_arn {

@@ -2,7 +2,7 @@
 pub fn ser_add_policy_statement_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_policy_statement::AddPolicyStatementInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action {
         let mut array_2 = object.key("action").start_array();
         for item_3 in var_1 {

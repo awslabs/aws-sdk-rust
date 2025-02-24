@@ -40,7 +40,7 @@ pub fn de_describe_trunk_interface_associations_http_response(
 pub fn de_describe_trunk_interface_associations(
     inp: &[u8],
     mut builder: crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_trunk_interface_associations::builders::DescribeTrunkInterfaceAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

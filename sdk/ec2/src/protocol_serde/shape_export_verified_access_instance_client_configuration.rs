@@ -43,7 +43,7 @@ pub fn de_export_verified_access_instance_client_configuration_http_response(
 pub fn de_export_verified_access_instance_client_configuration(
     inp: &[u8],
     mut builder: crate::operation::export_verified_access_instance_client_configuration::builders::ExportVerifiedAccessInstanceClientConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::export_verified_access_instance_client_configuration::builders::ExportVerifiedAccessInstanceClientConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

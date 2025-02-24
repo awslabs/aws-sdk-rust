@@ -110,7 +110,7 @@ pub fn de_list_provisioning_templates_http_response(
 pub(crate) fn de_list_provisioning_templates(
     value: &[u8],
     mut builder: crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

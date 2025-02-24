@@ -39,7 +39,7 @@ pub fn de_replace_network_acl_association_http_response(
 pub fn de_replace_network_acl_association(
     inp: &[u8],
     mut builder: crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

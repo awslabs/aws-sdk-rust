@@ -2,7 +2,7 @@
 pub fn ser_predefined_attribute_values(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredefinedAttributeValues,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PredefinedAttributeValues::StringList(inner) => {
             let mut array_1 = object_3.key("StringList").start_array();
@@ -24,7 +24,7 @@ pub fn ser_predefined_attribute_values(
 
 pub(crate) fn de_predefined_attribute_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PredefinedAttributeValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PredefinedAttributeValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

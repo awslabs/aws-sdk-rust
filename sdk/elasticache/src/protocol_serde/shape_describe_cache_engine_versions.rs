@@ -39,7 +39,7 @@ pub fn de_describe_cache_engine_versions_http_response(
 pub fn de_describe_cache_engine_versions(
     inp: &[u8],
     mut builder: crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_cache_engine_versions::builders::DescribeCacheEngineVersionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

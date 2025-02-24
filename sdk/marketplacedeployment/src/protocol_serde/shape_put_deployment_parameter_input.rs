@@ -2,7 +2,7 @@
 pub fn ser_put_deployment_parameter_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_deployment_parameter::PutDeploymentParameterInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.agreement_id {
         object.key("agreementId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_describe_time_based_auto_scaling_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_ids {
         let mut array_2 = object.key("InstanceIds").start_array();
         for item_3 in var_1 {

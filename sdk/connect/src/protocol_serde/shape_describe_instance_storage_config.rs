@@ -131,7 +131,7 @@ pub fn de_describe_instance_storage_config_http_response(
 pub(crate) fn de_describe_instance_storage_config(
     value: &[u8],
     mut builder: crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_instance_storage_config::builders::DescribeInstanceStorageConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

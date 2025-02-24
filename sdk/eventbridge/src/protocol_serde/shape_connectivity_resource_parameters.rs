@@ -2,7 +2,7 @@
 pub fn ser_connectivity_resource_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectivityResourceParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_parameters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ResourceParameters").start_object();

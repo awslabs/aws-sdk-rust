@@ -2,7 +2,7 @@
 pub fn ser_journey_push_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneyPushMessage,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.time_to_live {
         object.key("TimeToLive").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_journey_push_message(
 
 pub(crate) fn de_journey_push_message<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::JourneyPushMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::JourneyPushMessage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

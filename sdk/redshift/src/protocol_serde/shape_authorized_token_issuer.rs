@@ -3,7 +3,7 @@
 pub fn ser_authorized_token_issuer(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AuthorizedTokenIssuer,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TrustedTokenIssuerArn");
     if let Some(var_2) = &input.trusted_token_issuer_arn {
@@ -26,7 +26,7 @@ pub fn ser_authorized_token_issuer(
 #[allow(clippy::needless_question_mark)]
 pub fn de_authorized_token_issuer(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AuthorizedTokenIssuer, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AuthorizedTokenIssuer, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AuthorizedTokenIssuer::builder();
     while let Some(mut tag) = decoder.next_tag() {

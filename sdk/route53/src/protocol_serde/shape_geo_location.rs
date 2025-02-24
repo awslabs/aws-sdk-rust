@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_geo_location(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::GeoLocation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::GeoLocation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::GeoLocation::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -55,7 +55,7 @@ pub fn de_geo_location(
 pub fn ser_geo_location(
     input: &crate::types::GeoLocation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.continent_code {

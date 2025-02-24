@@ -94,7 +94,7 @@ pub fn de_deactivate_device_identifier_http_response(
 
 pub fn ser_deactivate_device_identifier_input(
     input: &crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifierInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deactivate_device_identifier_input::ser_deactivate_device_identifier_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_deactivate_device_identifier_input(
 pub(crate) fn de_deactivate_device_identifier(
     value: &[u8],
     mut builder: crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

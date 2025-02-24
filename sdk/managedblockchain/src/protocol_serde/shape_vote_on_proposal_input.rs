@@ -2,7 +2,7 @@
 pub fn ser_vote_on_proposal_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::vote_on_proposal::VoteOnProposalInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vote {
         object.key("Vote").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_start_workspaces_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_workspaces::StartWorkspacesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.start_workspace_requests {
         let mut array_2 = object.key("StartWorkspaceRequests").start_array();
         for item_3 in var_1 {

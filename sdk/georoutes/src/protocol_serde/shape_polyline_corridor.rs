@@ -2,7 +2,7 @@
 pub fn ser_polyline_corridor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolylineCorridor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Polyline").string(input.polyline.as_str());
     }

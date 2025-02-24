@@ -132,7 +132,7 @@ pub fn de_get_external_data_view_access_details_http_response(
 pub(crate) fn de_get_external_data_view_access_details(
     value: &[u8],
     mut builder: crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

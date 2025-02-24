@@ -137,7 +137,7 @@ pub fn de_disassociate_workspace_application_http_response(
 
 pub fn ser_disassociate_workspace_application_input(
     input: &crate::operation::disassociate_workspace_application::DisassociateWorkspaceApplicationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_workspace_application_input::ser_disassociate_workspace_application_input_input(&mut object, input)?;
@@ -148,7 +148,7 @@ pub fn ser_disassociate_workspace_application_input(
 pub(crate) fn de_disassociate_workspace_application(
     value: &[u8],
     mut builder: crate::operation::disassociate_workspace_application::builders::DisassociateWorkspaceApplicationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_workspace_application::builders::DisassociateWorkspaceApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

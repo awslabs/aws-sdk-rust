@@ -94,7 +94,7 @@ pub fn de_set_ip_address_type_http_response(
 pub fn de_set_ip_address_type(
     inp: &[u8],
     mut builder: crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder,
-) -> Result<crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

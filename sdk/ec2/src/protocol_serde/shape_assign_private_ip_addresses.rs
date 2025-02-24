@@ -41,8 +41,10 @@ pub fn de_assign_private_ip_addresses_http_response(
 pub fn de_assign_private_ip_addresses(
     inp: &[u8],
     mut builder: crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesOutputBuilder,
-) -> Result<crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

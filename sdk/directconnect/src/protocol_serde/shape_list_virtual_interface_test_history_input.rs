@@ -2,7 +2,7 @@
 pub fn ser_list_virtual_interface_test_history_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.test_id {
         object.key("testId").string(var_1.as_str());
     }

@@ -85,7 +85,7 @@ pub fn de_confirm_private_virtual_interface_http_response(
 
 pub fn ser_confirm_private_virtual_interface_input(
     input: &crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_confirm_private_virtual_interface_input::ser_confirm_private_virtual_interface_input_input(&mut object, input)?;
@@ -96,7 +96,7 @@ pub fn ser_confirm_private_virtual_interface_input(
 pub(crate) fn de_confirm_private_virtual_interface(
     value: &[u8],
     mut builder: crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

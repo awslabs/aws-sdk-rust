@@ -122,6 +122,6 @@ pub fn de_enable_proactive_engagement_http_response(
 
 pub fn ser_enable_proactive_engagement_input(
     _input: &crate::operation::enable_proactive_engagement::EnableProactiveEngagementInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

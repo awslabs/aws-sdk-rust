@@ -2,7 +2,7 @@
 pub fn ser_sort_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SortCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }

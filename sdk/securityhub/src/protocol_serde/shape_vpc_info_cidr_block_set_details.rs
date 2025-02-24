@@ -2,7 +2,7 @@
 pub fn ser_vpc_info_cidr_block_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcInfoCidrBlockSetDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr_block {
         object.key("CidrBlock").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_vpc_info_cidr_block_set_details(
 
 pub(crate) fn de_vpc_info_cidr_block_set_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VpcInfoCidrBlockSetDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VpcInfoCidrBlockSetDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_batch_update_recommendation_status_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_recommendation_status::BatchUpdateRecommendationStatusInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_arn {
         object.key("appArn").string(var_1.as_str());
     }

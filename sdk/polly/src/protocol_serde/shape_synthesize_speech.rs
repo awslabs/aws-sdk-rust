@@ -201,7 +201,7 @@ pub fn de_synthesize_speech_http_error(
 
 pub fn ser_synthesize_speech_input(
     input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_synthesize_speech_input::ser_synthesize_speech_input_input(&mut object, input)?;

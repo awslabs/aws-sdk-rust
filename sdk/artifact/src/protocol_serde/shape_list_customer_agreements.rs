@@ -122,7 +122,7 @@ pub fn de_list_customer_agreements_http_response(
 pub(crate) fn de_list_customer_agreements(
     value: &[u8],
     mut builder: crate::operation::list_customer_agreements::builders::ListCustomerAgreementsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_customer_agreements::builders::ListCustomerAgreementsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

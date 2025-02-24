@@ -2,7 +2,7 @@
 pub fn ser_list_partner_event_source_accounts_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_source_name {
         object.key("EventSourceName").string(var_1.as_str());
     }

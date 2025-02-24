@@ -2,7 +2,7 @@
 pub fn ser_object_lock_rule(
     input: &crate::types::ObjectLockRule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.default_retention {
@@ -16,7 +16,7 @@ pub fn ser_object_lock_rule(
 #[allow(clippy::needless_question_mark)]
 pub fn de_object_lock_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ObjectLockRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ObjectLockRule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ObjectLockRule::builder();
     while let Some(mut tag) = decoder.next_tag() {

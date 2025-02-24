@@ -2,7 +2,7 @@
 pub fn ser_register_certificate_without_ca_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_pem {
         object.key("certificatePem").string(var_1.as_str());
     }

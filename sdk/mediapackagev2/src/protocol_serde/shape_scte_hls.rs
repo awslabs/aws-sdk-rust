@@ -2,7 +2,7 @@
 pub fn ser_scte_hls(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScteHls,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ad_marker_hls {
         object.key("AdMarkerHls").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_scte_hls(
 
 pub(crate) fn de_scte_hls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ScteHls>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ScteHls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

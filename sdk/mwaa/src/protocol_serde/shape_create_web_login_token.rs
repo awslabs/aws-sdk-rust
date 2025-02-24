@@ -106,7 +106,7 @@ pub fn de_create_web_login_token_http_response(
 pub(crate) fn de_create_web_login_token(
     value: &[u8],
     mut builder: crate::operation::create_web_login_token::builders::CreateWebLoginTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_web_login_token::builders::CreateWebLoginTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_inventory_schedule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InventorySchedule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InventorySchedule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InventorySchedule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -32,7 +32,7 @@ pub fn de_inventory_schedule(
 pub fn ser_inventory_schedule(
     input: &crate::types::InventorySchedule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

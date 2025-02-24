@@ -2,7 +2,7 @@
 pub fn ser_describe_permissions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_permissions::DescribePermissionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iam_user_arn {
         object.key("IamUserArn").string(var_1.as_str());
     }

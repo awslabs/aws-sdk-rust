@@ -136,7 +136,7 @@ pub fn de_get_access_log_subscription_http_response(
 pub(crate) fn de_get_access_log_subscription(
     value: &[u8],
     mut builder: crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

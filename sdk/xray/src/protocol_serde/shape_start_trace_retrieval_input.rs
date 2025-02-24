@@ -2,7 +2,7 @@
 pub fn ser_start_trace_retrieval_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_trace_retrieval::StartTraceRetrievalInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_time {
         object
             .key("EndTime")

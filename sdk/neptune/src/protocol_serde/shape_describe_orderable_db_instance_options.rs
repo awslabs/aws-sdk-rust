@@ -41,7 +41,7 @@ pub fn de_describe_orderable_db_instance_options_http_response(
 pub fn de_describe_orderable_db_instance_options(
     inp: &[u8],
     mut builder: crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

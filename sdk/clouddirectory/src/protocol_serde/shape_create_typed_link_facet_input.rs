@@ -2,7 +2,7 @@
 pub fn ser_create_typed_link_facet_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_typed_link_facet::CreateTypedLinkFacetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.facet {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Facet").start_object();

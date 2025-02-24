@@ -2,7 +2,7 @@
 pub fn ser_batch_attach_to_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchAttachToIndex,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IndexReference").start_object();

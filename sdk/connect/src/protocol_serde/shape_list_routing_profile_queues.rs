@@ -125,7 +125,7 @@ pub fn de_list_routing_profile_queues_http_response(
 pub(crate) fn de_list_routing_profile_queues(
     value: &[u8],
     mut builder: crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_routing_profile_queues::builders::ListRoutingProfileQueuesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

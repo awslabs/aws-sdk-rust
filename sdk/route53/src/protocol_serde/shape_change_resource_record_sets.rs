@@ -124,7 +124,7 @@ pub fn de_change_resource_record_sets_http_response(
 
 pub fn ser_change_resource_record_sets_op_input(
     input: &crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -141,8 +141,10 @@ pub fn ser_change_resource_record_sets_op_input(
 pub fn de_change_resource_record_sets(
     inp: &[u8],
     mut builder: crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder,
-) -> Result<crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

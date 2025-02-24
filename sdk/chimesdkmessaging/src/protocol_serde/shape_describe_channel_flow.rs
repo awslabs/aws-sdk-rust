@@ -138,7 +138,7 @@ pub fn de_describe_channel_flow_http_response(
 pub(crate) fn de_describe_channel_flow(
     value: &[u8],
     mut builder: crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_channel_flow::builders::DescribeChannelFlowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

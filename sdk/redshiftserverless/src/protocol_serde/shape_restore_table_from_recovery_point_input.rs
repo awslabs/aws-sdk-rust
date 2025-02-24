@@ -2,7 +2,7 @@
 pub fn ser_restore_table_from_recovery_point_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.namespace_name {
         object.key("namespaceName").string(var_1.as_str());
     }

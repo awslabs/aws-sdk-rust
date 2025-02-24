@@ -2,7 +2,7 @@
 pub fn ser_medical_transcription_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MedicalTranscriptionSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.show_speaker_labels {
         object.key("ShowSpeakerLabels").boolean(*var_1);
     }
@@ -32,7 +32,7 @@ pub fn ser_medical_transcription_setting(
 
 pub(crate) fn de_medical_transcription_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MedicalTranscriptionSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MedicalTranscriptionSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

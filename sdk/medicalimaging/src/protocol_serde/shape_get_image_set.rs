@@ -126,7 +126,8 @@ pub fn de_get_image_set_http_response(
 pub(crate) fn de_get_image_set(
     value: &[u8],
     mut builder: crate::operation::get_image_set::builders::GetImageSetOutputBuilder,
-) -> Result<crate::operation::get_image_set::builders::GetImageSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::get_image_set::builders::GetImageSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
+{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -2,7 +2,7 @@
 pub fn ser_update_safety_lever_state_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_safety_lever_state::UpdateSafetyLeverStateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.state {
         #[allow(unused_mut)]
         let mut object_2 = object.key("state").start_object();
@@ -15,7 +15,7 @@ pub fn ser_update_safety_lever_state_input_input(
 pub fn ser_update_safety_lever_state_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateSafetyLeverStateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("status").string(input.status.as_str());
     }

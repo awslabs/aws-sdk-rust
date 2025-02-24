@@ -2,7 +2,7 @@
 pub fn ser_authentication_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AuthenticationConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authentication_type {
         object.key("AuthenticationType").string(var_1.as_str());
     }

@@ -76,7 +76,7 @@ pub fn de_list_managed_endpoints_http_response(
 pub(crate) fn de_list_managed_endpoints(
     value: &[u8],
     mut builder: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_managed_endpoints::builders::ListManagedEndpointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_s3_data_access_asset_source_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3DataAccessAssetSourceEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Bucket").string(input.bucket.as_str());
     }
@@ -41,7 +41,7 @@ pub fn ser_s3_data_access_asset_source_entry(
 
 pub(crate) fn de_s3_data_access_asset_source_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::S3DataAccessAssetSourceEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::S3DataAccessAssetSourceEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

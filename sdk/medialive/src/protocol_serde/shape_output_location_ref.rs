@@ -2,7 +2,7 @@
 pub fn ser_output_location_ref(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputLocationRef,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_ref_id {
         object.key("destinationRefId").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_output_location_ref(
 
 pub(crate) fn de_output_location_ref<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OutputLocationRef>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OutputLocationRef>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

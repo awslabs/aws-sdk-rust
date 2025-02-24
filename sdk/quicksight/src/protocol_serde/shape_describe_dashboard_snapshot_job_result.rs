@@ -178,7 +178,7 @@ pub fn de_describe_dashboard_snapshot_job_result_http_response(
 pub(crate) fn de_describe_dashboard_snapshot_job_result(
     value: &[u8],
     mut builder: crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_dashboard_snapshot_job_result::builders::DescribeDashboardSnapshotJobResultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

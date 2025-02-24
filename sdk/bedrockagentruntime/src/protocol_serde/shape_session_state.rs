@@ -2,7 +2,7 @@
 pub fn ser_session_state(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionState,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.session_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sessionAttributes").start_object();

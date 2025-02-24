@@ -2,7 +2,7 @@
 pub fn ser_override_pull_request_approval_rules_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::override_pull_request_approval_rules::OverridePullRequestApprovalRulesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pull_request_id {
         object.key("pullRequestId").string(var_1.as_str());
     }

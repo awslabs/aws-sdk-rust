@@ -2,7 +2,7 @@
 pub fn ser_create_multi_region_endpoint_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_multi_region_endpoint::CreateMultiRegionEndpointInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.details {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Details").start_object();

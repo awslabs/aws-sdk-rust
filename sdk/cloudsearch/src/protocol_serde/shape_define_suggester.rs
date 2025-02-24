@@ -131,7 +131,7 @@ pub fn de_define_suggester_http_response(
 pub fn de_define_suggester(
     inp: &[u8],
     mut builder: crate::operation::define_suggester::builders::DefineSuggesterOutputBuilder,
-) -> Result<crate::operation::define_suggester::builders::DefineSuggesterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::define_suggester::builders::DefineSuggesterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

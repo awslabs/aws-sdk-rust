@@ -175,7 +175,7 @@ pub fn ser_describe_channel_moderator_headers(
 pub(crate) fn de_describe_channel_moderator(
     value: &[u8],
     mut builder: crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_channel_moderator::builders::DescribeChannelModeratorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

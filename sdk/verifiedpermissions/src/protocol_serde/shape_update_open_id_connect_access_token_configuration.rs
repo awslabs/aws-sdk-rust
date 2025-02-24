@@ -2,7 +2,7 @@
 pub fn ser_update_open_id_connect_access_token_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateOpenIdConnectAccessTokenConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("principalIdClaim").string(input.principal_id_claim.as_str());
     }

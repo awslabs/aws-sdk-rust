@@ -2,7 +2,7 @@
 pub fn ser_verification_message_template_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VerificationMessageTemplateType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sms_message {
         object.key("SmsMessage").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_verification_message_template_type(
 
 pub(crate) fn de_verification_message_template_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VerificationMessageTemplateType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VerificationMessageTemplateType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

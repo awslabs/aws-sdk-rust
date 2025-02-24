@@ -2,7 +2,7 @@
 pub fn ser_email_address_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailAddressInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EmailAddress").string(input.email_address.as_str());
     }

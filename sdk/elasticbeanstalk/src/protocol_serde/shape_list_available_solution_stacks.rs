@@ -39,7 +39,7 @@ pub fn de_list_available_solution_stacks_http_response(
 pub fn de_list_available_solution_stacks(
     inp: &[u8],
     mut builder: crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

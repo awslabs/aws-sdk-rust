@@ -135,7 +135,7 @@ pub fn de_get_backup_plan_from_json_http_response(
 
 pub fn ser_get_backup_plan_from_json_input(
     input: &crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_backup_plan_from_json_input::ser_get_backup_plan_from_json_input_input(&mut object, input)?;
@@ -146,7 +146,7 @@ pub fn ser_get_backup_plan_from_json_input(
 pub(crate) fn de_get_backup_plan_from_json(
     value: &[u8],
     mut builder: crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_backup_plan_from_json::builders::GetBackupPlanFromJsonOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

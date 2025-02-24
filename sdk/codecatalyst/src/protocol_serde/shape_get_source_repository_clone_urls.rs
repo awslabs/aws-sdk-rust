@@ -140,7 +140,7 @@ pub fn de_get_source_repository_clone_urls_http_response(
 pub(crate) fn de_get_source_repository_clone_urls(
     value: &[u8],
     mut builder: crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_update_restore_testing_selection_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_restore_testing_selection::UpdateRestoreTestingSelectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.restore_testing_selection {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RestoreTestingSelection").start_object();

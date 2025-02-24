@@ -2,7 +2,7 @@
 pub(crate) fn de_concurrent_pipeline_executions_limit_exceeded_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::ConcurrentPipelineExecutionsLimitExceededExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::ConcurrentPipelineExecutionsLimitExceededExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

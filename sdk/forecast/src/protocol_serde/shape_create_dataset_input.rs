@@ -2,7 +2,7 @@
 pub fn ser_create_dataset_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_dataset::CreateDatasetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dataset_name {
         object.key("DatasetName").string(var_1.as_str());
     }

@@ -3,7 +3,7 @@
 pub fn ser_configuration_set(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ConfigurationSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     {
@@ -15,7 +15,7 @@ pub fn ser_configuration_set(
 #[allow(clippy::needless_question_mark)]
 pub fn de_configuration_set(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ConfigurationSet, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ConfigurationSet, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ConfigurationSet::builder();
     while let Some(mut tag) = decoder.next_tag() {

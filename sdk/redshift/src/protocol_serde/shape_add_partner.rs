@@ -104,7 +104,7 @@ pub fn de_add_partner_http_response(
 pub fn de_add_partner(
     inp: &[u8],
     mut builder: crate::operation::add_partner::builders::AddPartnerOutputBuilder,
-) -> Result<crate::operation::add_partner::builders::AddPartnerOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::add_partner::builders::AddPartnerOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

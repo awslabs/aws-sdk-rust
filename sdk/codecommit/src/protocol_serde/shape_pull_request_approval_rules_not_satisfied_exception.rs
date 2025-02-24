@@ -2,7 +2,7 @@
 pub(crate) fn de_pull_request_approval_rules_not_satisfied_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::PullRequestApprovalRulesNotSatisfiedExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::PullRequestApprovalRulesNotSatisfiedExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

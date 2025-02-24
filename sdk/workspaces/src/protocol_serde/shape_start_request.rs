@@ -2,7 +2,7 @@
 pub fn ser_start_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workspace_id {
         object.key("WorkspaceId").string(var_1.as_str());
     }

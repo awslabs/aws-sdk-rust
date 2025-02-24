@@ -2,7 +2,7 @@
 pub fn ser_isoline_origin_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IsolineOriginOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.avoid_actions_for_distance != 0 {
         object.key("AvoidActionsForDistance").number(
             #[allow(clippy::useless_conversion)]

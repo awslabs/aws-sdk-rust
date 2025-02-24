@@ -2,7 +2,7 @@
 pub fn ser_model_invocation_job_input_data_config(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelInvocationJobInputDataConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ModelInvocationJobInputDataConfig::S3InputDataConfig(inner) => {
             #[allow(unused_mut)]
@@ -24,7 +24,7 @@ pub fn ser_model_invocation_job_input_data_config(
 
 pub(crate) fn de_model_invocation_job_input_data_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ModelInvocationJobInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ModelInvocationJobInputDataConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

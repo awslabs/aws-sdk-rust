@@ -125,7 +125,7 @@ pub fn de_delete_template_alias_http_response(
 pub(crate) fn de_delete_template_alias(
     value: &[u8],
     mut builder: crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_template_alias::builders::DeleteTemplateAliasOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

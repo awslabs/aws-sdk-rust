@@ -2,7 +2,7 @@
 pub fn ser_start_report_creation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_report_creation::StartReportCreationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_bucket {
         object.key("S3Bucket").string(var_1.as_str());
     }

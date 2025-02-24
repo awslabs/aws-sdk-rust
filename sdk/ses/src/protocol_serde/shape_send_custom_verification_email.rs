@@ -138,7 +138,7 @@ pub fn de_send_custom_verification_email_http_response(
 pub fn de_send_custom_verification_email(
     inp: &[u8],
     mut builder: crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::send_custom_verification_email::builders::SendCustomVerificationEmailOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

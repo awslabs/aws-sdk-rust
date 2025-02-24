@@ -2,7 +2,7 @@
 pub fn ser_search_steps_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_steps::SearchStepsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_expressions {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filterExpressions").start_object();

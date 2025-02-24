@@ -2,7 +2,7 @@
 pub fn ser_standards_control_association_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StandardsControlAssociationId,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.security_control_id {
         object.key("SecurityControlId").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_standards_control_association_id(
 
 pub(crate) fn de_standards_control_association_id<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StandardsControlAssociationId>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StandardsControlAssociationId>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

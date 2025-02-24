@@ -43,7 +43,7 @@ pub fn de_delete_vpc_endpoint_service_configurations_http_response(
 pub fn de_delete_vpc_endpoint_service_configurations(
     inp: &[u8],
     mut builder: crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_vpc_endpoint_service_configurations::builders::DeleteVpcEndpointServiceConfigurationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

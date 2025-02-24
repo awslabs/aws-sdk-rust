@@ -2,7 +2,7 @@
 pub fn ser_update_template_alias_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_template_alias::UpdateTemplateAliasInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.template_version_number {
         object.key("TemplateVersionNumber").number(
             #[allow(clippy::useless_conversion)]

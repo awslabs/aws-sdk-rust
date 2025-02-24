@@ -45,7 +45,7 @@ pub fn de_replace_image_criteria_in_allowed_images_settings_http_response(
 pub fn de_replace_image_criteria_in_allowed_images_settings(
     inp: &[u8],
     mut builder: crate::operation::replace_image_criteria_in_allowed_images_settings::builders::ReplaceImageCriteriaInAllowedImagesSettingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::replace_image_criteria_in_allowed_images_settings::builders::ReplaceImageCriteriaInAllowedImagesSettingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

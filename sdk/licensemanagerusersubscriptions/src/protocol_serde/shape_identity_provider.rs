@@ -2,7 +2,7 @@
 pub fn ser_identity_provider(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdentityProvider,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IdentityProvider::ActiveDirectoryIdentityProvider(inner) => {
             #[allow(unused_mut)]
@@ -21,7 +21,7 @@ pub fn ser_identity_provider(
 
 pub(crate) fn de_identity_provider<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IdentityProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IdentityProvider>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

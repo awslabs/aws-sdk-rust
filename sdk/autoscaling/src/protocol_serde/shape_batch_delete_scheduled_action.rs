@@ -62,7 +62,7 @@ pub fn de_batch_delete_scheduled_action_http_response(
 pub fn de_batch_delete_scheduled_action(
     inp: &[u8],
     mut builder: crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

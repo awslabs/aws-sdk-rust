@@ -128,7 +128,7 @@ pub fn de_cancel_statement_http_response(
 
 pub fn ser_cancel_statement_input(
     input: &crate::operation::cancel_statement::CancelStatementInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_statement_input::ser_cancel_statement_input_input(&mut object, input)?;

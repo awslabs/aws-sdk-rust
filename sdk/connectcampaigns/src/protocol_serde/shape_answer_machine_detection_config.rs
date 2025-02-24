@@ -2,7 +2,7 @@
 pub fn ser_answer_machine_detection_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnswerMachineDetectionConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enableAnswerMachineDetection").boolean(input.enable_answer_machine_detection);
     }
@@ -14,7 +14,7 @@ pub fn ser_answer_machine_detection_config(
 
 pub(crate) fn de_answer_machine_detection_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AnswerMachineDetectionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AnswerMachineDetectionConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

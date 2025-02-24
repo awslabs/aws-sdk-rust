@@ -198,7 +198,7 @@ pub fn de_change_message_visibility_batch_http_response(
 
 pub fn ser_change_message_visibility_batch_input(
     input: &crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_change_message_visibility_batch_input::ser_change_message_visibility_batch_input_input(&mut object, input)?;
@@ -209,7 +209,7 @@ pub fn ser_change_message_visibility_batch_input(
 pub(crate) fn de_change_message_visibility_batch(
     value: &[u8],
     mut builder: crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::change_message_visibility_batch::builders::ChangeMessageVisibilityBatchOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

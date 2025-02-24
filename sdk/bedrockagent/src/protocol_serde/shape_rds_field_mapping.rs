@@ -2,7 +2,7 @@
 pub fn ser_rds_field_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsFieldMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("primaryKeyField").string(input.primary_key_field.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_rds_field_mapping(
 
 pub(crate) fn de_rds_field_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RdsFieldMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RdsFieldMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

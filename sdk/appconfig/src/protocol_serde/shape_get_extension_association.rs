@@ -95,7 +95,7 @@ pub fn de_get_extension_association_http_response(
 pub(crate) fn de_get_extension_association(
     value: &[u8],
     mut builder: crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_extension_association::builders::GetExtensionAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

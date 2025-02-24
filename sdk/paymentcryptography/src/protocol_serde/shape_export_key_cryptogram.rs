@@ -2,7 +2,7 @@
 pub fn ser_export_key_cryptogram(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportKeyCryptogram,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("CertificateAuthorityPublicKeyIdentifier")

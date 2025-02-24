@@ -121,7 +121,7 @@ pub fn de_list_backup_plan_versions_http_response(
 pub(crate) fn de_list_backup_plan_versions(
     value: &[u8],
     mut builder: crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_backup_plan_versions::builders::ListBackupPlanVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

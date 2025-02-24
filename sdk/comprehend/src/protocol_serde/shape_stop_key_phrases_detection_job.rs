@@ -90,7 +90,7 @@ pub fn de_stop_key_phrases_detection_job_http_response(
 
 pub fn ser_stop_key_phrases_detection_job_input(
     input: &crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_key_phrases_detection_job_input::ser_stop_key_phrases_detection_job_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_stop_key_phrases_detection_job_input(
 pub(crate) fn de_stop_key_phrases_detection_job(
     value: &[u8],
     mut builder: crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

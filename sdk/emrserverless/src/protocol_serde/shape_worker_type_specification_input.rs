@@ -2,7 +2,7 @@
 pub fn ser_worker_type_specification_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkerTypeSpecificationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.image_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("imageConfiguration").start_object();

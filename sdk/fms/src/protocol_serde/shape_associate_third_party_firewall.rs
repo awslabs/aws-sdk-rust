@@ -111,7 +111,7 @@ pub fn de_associate_third_party_firewall_http_response(
 
 pub fn ser_associate_third_party_firewall_input(
     input: &crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_third_party_firewall_input::ser_associate_third_party_firewall_input_input(&mut object, input)?;
@@ -122,7 +122,7 @@ pub fn ser_associate_third_party_firewall_input(
 pub(crate) fn de_associate_third_party_firewall(
     value: &[u8],
     mut builder: crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

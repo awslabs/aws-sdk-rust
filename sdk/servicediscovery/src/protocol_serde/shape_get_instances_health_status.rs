@@ -94,7 +94,7 @@ pub fn de_get_instances_health_status_http_response(
 
 pub fn ser_get_instances_health_status_input(
     input: &crate::operation::get_instances_health_status::GetInstancesHealthStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_instances_health_status_input::ser_get_instances_health_status_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_get_instances_health_status_input(
 pub(crate) fn de_get_instances_health_status(
     value: &[u8],
     mut builder: crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

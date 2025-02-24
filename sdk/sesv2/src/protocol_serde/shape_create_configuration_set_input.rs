@@ -2,7 +2,7 @@
 pub fn ser_create_configuration_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_configuration_set::CreateConfigurationSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.archiving_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ArchivingOptions").start_object();

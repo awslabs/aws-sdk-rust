@@ -126,7 +126,10 @@ pub fn de_get_data_protection_policy_http_response(
 pub fn de_get_data_protection_policy(
     inp: &[u8],
     mut builder: crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder,
-) -> Result<crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

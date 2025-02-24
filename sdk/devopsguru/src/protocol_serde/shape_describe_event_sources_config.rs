@@ -116,7 +116,7 @@ pub fn de_describe_event_sources_config_http_response(
 pub(crate) fn de_describe_event_sources_config(
     value: &[u8],
     mut builder: crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_event_sources_config::builders::DescribeEventSourcesConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

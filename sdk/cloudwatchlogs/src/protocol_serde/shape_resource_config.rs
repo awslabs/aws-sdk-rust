@@ -2,7 +2,7 @@
 pub fn ser_resource_config(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ResourceConfig::OpenSearchResourceConfig(inner) => {
             #[allow(unused_mut)]

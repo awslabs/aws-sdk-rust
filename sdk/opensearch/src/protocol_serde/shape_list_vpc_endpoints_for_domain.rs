@@ -111,7 +111,7 @@ pub fn de_list_vpc_endpoints_for_domain_http_response(
 pub(crate) fn de_list_vpc_endpoints_for_domain(
     value: &[u8],
     mut builder: crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

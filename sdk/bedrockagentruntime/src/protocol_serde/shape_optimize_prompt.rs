@@ -136,7 +136,7 @@ pub fn de_optimize_prompt_http_error(
 
 pub fn ser_optimize_prompt_input(
     input: &crate::operation::optimize_prompt::OptimizePromptInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_optimize_prompt_input::ser_optimize_prompt_input_input(&mut object, input)?;

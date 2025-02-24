@@ -125,7 +125,7 @@ pub fn de_list_object_type_attributes_http_response(
 pub(crate) fn de_list_object_type_attributes(
     value: &[u8],
     mut builder: crate::operation::list_object_type_attributes::builders::ListObjectTypeAttributesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_object_type_attributes::builders::ListObjectTypeAttributesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

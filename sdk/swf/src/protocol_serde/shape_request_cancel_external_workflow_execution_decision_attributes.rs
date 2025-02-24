@@ -2,7 +2,7 @@
 pub fn ser_request_cancel_external_workflow_execution_decision_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestCancelExternalWorkflowExecutionDecisionAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("workflowId").string(input.workflow_id.as_str());
     }

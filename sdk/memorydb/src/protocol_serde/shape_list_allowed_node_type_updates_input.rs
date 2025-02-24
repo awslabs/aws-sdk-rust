@@ -2,7 +2,7 @@
 pub fn ser_list_allowed_node_type_updates_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_name {
         object.key("ClusterName").string(var_1.as_str());
     }

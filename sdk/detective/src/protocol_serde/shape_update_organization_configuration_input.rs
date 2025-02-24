@@ -2,7 +2,7 @@
 pub fn ser_update_organization_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_enable {
         object.key("AutoEnable").boolean(*var_1);
     }

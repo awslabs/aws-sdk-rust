@@ -33,7 +33,7 @@ pub fn de_list_change_sets_http_response(
 pub fn de_list_change_sets(
     inp: &[u8],
     mut builder: crate::operation::list_change_sets::builders::ListChangeSetsOutputBuilder,
-) -> Result<crate::operation::list_change_sets::builders::ListChangeSetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_change_sets::builders::ListChangeSetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

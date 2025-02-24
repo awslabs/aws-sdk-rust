@@ -94,7 +94,7 @@ pub fn de_activate_network_site_http_response(
 
 pub fn ser_activate_network_site_input(
     input: &crate::operation::activate_network_site::ActivateNetworkSiteInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_activate_network_site_input::ser_activate_network_site_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_activate_network_site_input(
 pub(crate) fn de_activate_network_site(
     value: &[u8],
     mut builder: crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::activate_network_site::builders::ActivateNetworkSiteOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

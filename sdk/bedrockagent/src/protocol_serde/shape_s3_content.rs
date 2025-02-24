@@ -2,7 +2,7 @@
 pub fn ser_s3_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3Content,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3Location").start_object();

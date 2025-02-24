@@ -2,7 +2,7 @@
 pub fn ser_additional_search_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdditionalSearchKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KeyName").string(input.key_name.as_str());
     }

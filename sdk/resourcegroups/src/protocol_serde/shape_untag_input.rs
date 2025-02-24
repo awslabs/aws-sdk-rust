@@ -2,7 +2,7 @@
 pub fn ser_untag_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::untag::UntagInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.keys {
         let mut array_2 = object.key("Keys").start_array();
         for item_3 in var_1 {

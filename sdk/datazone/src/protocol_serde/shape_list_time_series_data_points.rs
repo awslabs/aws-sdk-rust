@@ -134,7 +134,7 @@ pub fn de_list_time_series_data_points_http_response(
 pub(crate) fn de_list_time_series_data_points(
     value: &[u8],
     mut builder: crate::operation::list_time_series_data_points::builders::ListTimeSeriesDataPointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_time_series_data_points::builders::ListTimeSeriesDataPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

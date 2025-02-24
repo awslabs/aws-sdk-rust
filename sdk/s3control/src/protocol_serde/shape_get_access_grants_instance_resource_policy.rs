@@ -61,7 +61,7 @@ pub fn ser_get_access_grants_instance_resource_policy_headers(
 pub fn de_get_access_grants_instance_resource_policy(
     inp: &[u8],
     mut builder: crate::operation::get_access_grants_instance_resource_policy::builders::GetAccessGrantsInstanceResourcePolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_access_grants_instance_resource_policy::builders::GetAccessGrantsInstanceResourcePolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

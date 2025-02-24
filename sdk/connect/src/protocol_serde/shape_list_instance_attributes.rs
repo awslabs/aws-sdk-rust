@@ -125,7 +125,7 @@ pub fn de_list_instance_attributes_http_response(
 pub(crate) fn de_list_instance_attributes(
     value: &[u8],
     mut builder: crate::operation::list_instance_attributes::builders::ListInstanceAttributesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_instance_attributes::builders::ListInstanceAttributesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

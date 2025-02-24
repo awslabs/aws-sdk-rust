@@ -2,7 +2,7 @@
 pub fn ser_create_email_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_email_contact::CreateEmailContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.email_address {
         object.key("emailAddress").string(var_1.as_str());
     }

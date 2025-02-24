@@ -112,7 +112,7 @@ pub fn de_delete_pod_identity_association_http_response(
 pub(crate) fn de_delete_pod_identity_association(
     value: &[u8],
     mut builder: crate::operation::delete_pod_identity_association::builders::DeletePodIdentityAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_pod_identity_association::builders::DeletePodIdentityAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

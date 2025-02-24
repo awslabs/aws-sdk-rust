@@ -149,7 +149,7 @@ pub fn de_get_sensitive_data_occurrences_http_response(
 pub(crate) fn de_get_sensitive_data_occurrences(
     value: &[u8],
     mut builder: crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

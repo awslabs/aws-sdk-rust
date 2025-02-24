@@ -43,7 +43,7 @@ pub fn de_get_transit_gateway_attachment_propagations_http_response(
 pub fn de_get_transit_gateway_attachment_propagations(
     inp: &[u8],
     mut builder: crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

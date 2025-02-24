@@ -197,7 +197,7 @@ pub fn de_delete_account_customization_http_response(
 pub(crate) fn de_delete_account_customization(
     value: &[u8],
     mut builder: crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

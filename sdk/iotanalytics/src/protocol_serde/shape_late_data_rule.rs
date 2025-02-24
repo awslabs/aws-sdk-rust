@@ -2,7 +2,7 @@
 pub fn ser_late_data_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LateDataRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rule_name {
         object.key("ruleName").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_late_data_rule(
 
 pub(crate) fn de_late_data_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LateDataRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LateDataRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

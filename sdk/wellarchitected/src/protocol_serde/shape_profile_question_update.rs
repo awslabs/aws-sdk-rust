@@ -2,7 +2,7 @@
 pub fn ser_profile_question_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProfileQuestionUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.question_id {
         object.key("QuestionId").string(var_1.as_str());
     }

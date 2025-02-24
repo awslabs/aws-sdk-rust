@@ -2,7 +2,7 @@
 pub fn ser_rds_database_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsDatabaseCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Username").string(input.username.as_str());
     }

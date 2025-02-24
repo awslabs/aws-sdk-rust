@@ -91,7 +91,7 @@ pub fn de_list_enabled_products_for_import_http_response(
 pub(crate) fn de_list_enabled_products_for_import(
     value: &[u8],
     mut builder: crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_enabled_products_for_import::builders::ListEnabledProductsForImportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

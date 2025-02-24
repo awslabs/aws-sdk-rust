@@ -2,7 +2,7 @@
 pub fn ser_detector_debug_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DetectorDebugOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("detectorModelName").string(input.detector_model_name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_detector_debug_option(
 
 pub(crate) fn de_detector_debug_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DetectorDebugOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DetectorDebugOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

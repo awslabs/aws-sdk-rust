@@ -2,7 +2,7 @@
 pub fn ser_definition(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Definition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Definition::S3Location(inner) => {
             object_3.key("s3Location").string(inner.as_str());

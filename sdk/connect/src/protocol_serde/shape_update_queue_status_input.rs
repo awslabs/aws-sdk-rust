@@ -2,7 +2,7 @@
 pub fn ser_update_queue_status_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_queue_status::UpdateQueueStatusInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("Status").string(var_1.as_str());
     }

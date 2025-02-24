@@ -2,7 +2,7 @@
 pub fn ser_sub_domain_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubDomainSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("prefix").string(input.prefix.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_sub_domain_setting(
 
 pub(crate) fn de_sub_domain_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SubDomainSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SubDomainSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

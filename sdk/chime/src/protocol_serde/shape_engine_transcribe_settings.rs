@@ -2,7 +2,7 @@
 pub fn ser_engine_transcribe_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EngineTranscribeSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.language_code {
         object.key("LanguageCode").string(var_1.as_str());
     }

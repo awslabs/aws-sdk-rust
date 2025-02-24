@@ -2,7 +2,7 @@
 pub fn ser_list_application_access_scopes_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_application_access_scopes::ListApplicationAccessScopesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_arn {
         object.key("ApplicationArn").string(var_1.as_str());
     }

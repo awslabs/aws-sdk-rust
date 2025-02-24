@@ -130,7 +130,7 @@ pub fn de_list_identity_provider_configs_http_response(
 pub(crate) fn de_list_identity_provider_configs(
     value: &[u8],
     mut builder: crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

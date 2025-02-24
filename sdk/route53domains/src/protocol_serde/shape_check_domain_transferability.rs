@@ -75,7 +75,7 @@ pub fn de_check_domain_transferability_http_response(
 
 pub fn ser_check_domain_transferability_input(
     input: &crate::operation::check_domain_transferability::CheckDomainTransferabilityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_check_domain_transferability_input::ser_check_domain_transferability_input_input(&mut object, input)?;
@@ -86,7 +86,7 @@ pub fn ser_check_domain_transferability_input(
 pub(crate) fn de_check_domain_transferability(
     value: &[u8],
     mut builder: crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

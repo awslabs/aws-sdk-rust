@@ -2,7 +2,7 @@
 pub fn ser_delete_replication_configuration_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_replication_configuration_template::DeleteReplicationConfigurationTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_configuration_template_id {
         object.key("replicationConfigurationTemplateID").string(var_1.as_str());
     }

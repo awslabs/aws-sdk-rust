@@ -2,7 +2,7 @@
 pub fn ser_schema_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("allColumns").start_array();
         for item_2 in &input.all_columns {
@@ -56,7 +56,7 @@ pub fn ser_schema_definition(
 
 pub(crate) fn de_schema_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SchemaDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

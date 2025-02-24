@@ -132,7 +132,7 @@ pub fn de_list_search_job_backups_http_response(
 pub(crate) fn de_list_search_job_backups(
     value: &[u8],
     mut builder: crate::operation::list_search_job_backups::builders::ListSearchJobBackupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_search_job_backups::builders::ListSearchJobBackupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

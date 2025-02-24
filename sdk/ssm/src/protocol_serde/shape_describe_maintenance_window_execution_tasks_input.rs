@@ -2,7 +2,7 @@
 pub fn ser_describe_maintenance_window_execution_tasks_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasksInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.window_execution_id {
         object.key("WindowExecutionId").string(var_1.as_str());
     }

@@ -543,7 +543,7 @@ pub fn de_post_comment_for_pull_request_http_response(
 
 pub fn ser_post_comment_for_pull_request_input(
     input: &crate::operation::post_comment_for_pull_request::PostCommentForPullRequestInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_post_comment_for_pull_request_input::ser_post_comment_for_pull_request_input_input(&mut object, input)?;
@@ -554,7 +554,7 @@ pub fn ser_post_comment_for_pull_request_input(
 pub(crate) fn de_post_comment_for_pull_request(
     value: &[u8],
     mut builder: crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

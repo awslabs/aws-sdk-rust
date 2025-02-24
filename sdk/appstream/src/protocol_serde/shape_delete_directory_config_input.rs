@@ -2,7 +2,7 @@
 pub fn ser_delete_directory_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_directory_config::DeleteDirectoryConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_name {
         object.key("DirectoryName").string(var_1.as_str());
     }

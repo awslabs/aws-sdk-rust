@@ -3,7 +3,7 @@
 pub fn ser_create_verified_access_endpoint_cidr_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateVerifiedAccessEndpointCidrOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");
     if let Some(var_2) = &input.protocol {

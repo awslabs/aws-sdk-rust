@@ -2,7 +2,7 @@
 pub fn ser_describe_application_provider_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_application_provider::DescribeApplicationProviderInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_provider_arn {
         object.key("ApplicationProviderArn").string(var_1.as_str());
     }

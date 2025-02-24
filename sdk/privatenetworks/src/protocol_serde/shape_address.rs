@@ -2,7 +2,7 @@
 pub fn ser_address(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Address,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("city").string(input.city.as_str());
     }
@@ -41,7 +41,7 @@ pub fn ser_address(
 
 pub(crate) fn de_address<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Address>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Address>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

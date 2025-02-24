@@ -39,7 +39,7 @@ pub fn de_delete_transit_gateway_connect_http_response(
 pub fn de_delete_transit_gateway_connect(
     inp: &[u8],
     mut builder: crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

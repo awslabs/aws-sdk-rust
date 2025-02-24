@@ -2,13 +2,13 @@
 pub fn ser_empty_operand_value(
     #[allow(unused_variables)] object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     #[allow(unused_variables)] input: &crate::types::EmptyOperandValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     Ok(())
 }
 
 pub(crate) fn de_empty_operand_value<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EmptyOperandValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EmptyOperandValue>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_register_marketplace_model_endpoint_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_marketplace_model_endpoint::RegisterMarketplaceModelEndpointInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_source_identifier {
         object.key("modelSourceIdentifier").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_query_string_cache_keys(
     input: &crate::types::QueryStringCacheKeys,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -25,7 +25,7 @@ pub fn ser_query_string_cache_keys(
 #[allow(clippy::needless_question_mark)]
 pub fn de_query_string_cache_keys(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::QueryStringCacheKeys, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::QueryStringCacheKeys, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::QueryStringCacheKeys::builder();
     while let Some(mut tag) = decoder.next_tag() {

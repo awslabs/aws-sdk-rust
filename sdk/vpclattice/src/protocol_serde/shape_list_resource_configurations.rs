@@ -116,7 +116,7 @@ pub fn de_list_resource_configurations_http_response(
 pub(crate) fn de_list_resource_configurations(
     value: &[u8],
     mut builder: crate::operation::list_resource_configurations::builders::ListResourceConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_resource_configurations::builders::ListResourceConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

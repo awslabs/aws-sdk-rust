@@ -3,7 +3,7 @@
 pub fn ser_message_tag(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MessageTag,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Name");
     {

@@ -2,7 +2,7 @@
 pub fn ser_get_microsoft_teams_channel_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_microsoft_teams_channel_configuration::GetMicrosoftTeamsChannelConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.chat_configuration_arn {
         object.key("ChatConfigurationArn").string(var_1.as_str());
     }

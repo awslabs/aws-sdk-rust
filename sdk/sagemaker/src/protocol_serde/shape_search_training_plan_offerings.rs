@@ -60,7 +60,7 @@ pub fn de_search_training_plan_offerings_http_response(
 
 pub fn ser_search_training_plan_offerings_input(
     input: &crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_search_training_plan_offerings_input::ser_search_training_plan_offerings_input_input(&mut object, input)?;
@@ -71,7 +71,7 @@ pub fn ser_search_training_plan_offerings_input(
 pub(crate) fn de_search_training_plan_offerings(
     value: &[u8],
     mut builder: crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

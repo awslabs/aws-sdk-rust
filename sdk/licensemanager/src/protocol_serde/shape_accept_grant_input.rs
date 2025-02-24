@@ -2,7 +2,7 @@
 pub fn ser_accept_grant_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_grant::AcceptGrantInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.grant_arn {
         object.key("GrantArn").string(var_1.as_str());
     }

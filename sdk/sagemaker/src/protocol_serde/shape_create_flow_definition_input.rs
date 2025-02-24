@@ -2,7 +2,7 @@
 pub fn ser_create_flow_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_flow_definition::CreateFlowDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flow_definition_name {
         object.key("FlowDefinitionName").string(var_1.as_str());
     }

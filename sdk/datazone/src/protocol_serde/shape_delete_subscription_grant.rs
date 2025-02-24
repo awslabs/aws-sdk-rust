@@ -150,7 +150,7 @@ pub fn de_delete_subscription_grant_http_response(
 pub(crate) fn de_delete_subscription_grant(
     value: &[u8],
     mut builder: crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_subscription_grant::builders::DeleteSubscriptionGrantOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

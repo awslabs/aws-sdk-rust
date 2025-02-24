@@ -2,7 +2,7 @@
 pub fn ser_update_backend_storage_resource_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateBackendStorageResourceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.permissions {
         #[allow(unused_mut)]
         let mut object_2 = object.key("permissions").start_object();

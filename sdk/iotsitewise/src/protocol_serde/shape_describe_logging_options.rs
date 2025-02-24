@@ -106,7 +106,7 @@ pub fn de_describe_logging_options_http_response(
 pub(crate) fn de_describe_logging_options(
     value: &[u8],
     mut builder: crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_logging_options::builders::DescribeLoggingOptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

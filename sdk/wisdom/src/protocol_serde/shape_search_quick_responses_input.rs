@@ -2,7 +2,7 @@
 pub fn ser_search_quick_responses_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_quick_responses::SearchQuickResponsesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("attributes").start_object();

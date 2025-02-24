@@ -39,7 +39,7 @@ pub fn de_describe_replace_root_volume_tasks_http_response(
 pub fn de_describe_replace_root_volume_tasks(
     inp: &[u8],
     mut builder: crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_replace_root_volume_tasks::builders::DescribeReplaceRootVolumeTasksOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -90,7 +90,7 @@ pub fn de_start_misconfigured_state_recovery_http_response(
 
 pub fn ser_start_misconfigured_state_recovery_input(
     input: &crate::operation::start_misconfigured_state_recovery::StartMisconfiguredStateRecoveryInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_misconfigured_state_recovery_input::ser_start_misconfigured_state_recovery_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_start_misconfigured_state_recovery_input(
 pub(crate) fn de_start_misconfigured_state_recovery(
     value: &[u8],
     mut builder: crate::operation::start_misconfigured_state_recovery::builders::StartMisconfiguredStateRecoveryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_misconfigured_state_recovery::builders::StartMisconfiguredStateRecoveryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

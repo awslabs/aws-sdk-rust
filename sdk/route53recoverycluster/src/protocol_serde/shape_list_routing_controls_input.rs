@@ -2,7 +2,7 @@
 pub fn ser_list_routing_controls_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_routing_controls::ListRoutingControlsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.control_panel_arn {
         object.key("ControlPanelArn").string(var_1.as_str());
     }

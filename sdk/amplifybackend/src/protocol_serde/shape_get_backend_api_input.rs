@@ -2,7 +2,7 @@
 pub fn ser_get_backend_api_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_backend_api::GetBackendApiInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("resourceConfig").start_object();

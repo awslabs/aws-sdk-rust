@@ -2,7 +2,7 @@
 pub fn ser_target_tracking_scaling_policy_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetTrackingScalingPolicyConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.disable_scale_in {
         object.key("disableScaleIn").boolean(input.disable_scale_in);
     }
@@ -29,7 +29,7 @@ pub fn ser_target_tracking_scaling_policy_configuration(
 
 pub(crate) fn de_target_tracking_scaling_policy_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TargetTrackingScalingPolicyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TargetTrackingScalingPolicyConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

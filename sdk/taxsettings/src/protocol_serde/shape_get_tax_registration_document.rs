@@ -73,7 +73,7 @@ pub fn de_get_tax_registration_document_http_response(
 
 pub fn ser_get_tax_registration_document_input(
     input: &crate::operation::get_tax_registration_document::GetTaxRegistrationDocumentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_tax_registration_document_input::ser_get_tax_registration_document_input_input(&mut object, input)?;
@@ -84,7 +84,7 @@ pub fn ser_get_tax_registration_document_input(
 pub(crate) fn de_get_tax_registration_document(
     value: &[u8],
     mut builder: crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_tax_registration_document::builders::GetTaxRegistrationDocumentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -71,7 +71,7 @@ pub fn de_describe_tags_http_response(
 pub fn de_describe_tags(
     inp: &[u8],
     mut builder: crate::operation::describe_tags::builders::DescribeTagsOutputBuilder,
-) -> Result<crate::operation::describe_tags::builders::DescribeTagsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::describe_tags::builders::DescribeTagsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

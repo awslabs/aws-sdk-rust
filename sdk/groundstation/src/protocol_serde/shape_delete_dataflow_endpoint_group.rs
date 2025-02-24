@@ -97,7 +97,7 @@ pub fn de_delete_dataflow_endpoint_group_http_response(
 pub(crate) fn de_delete_dataflow_endpoint_group(
     value: &[u8],
     mut builder: crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_snapshot_file(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnapshotFile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("SheetSelections").start_array();
         for item_2 in &input.sheet_selections {
@@ -23,7 +23,7 @@ pub fn ser_snapshot_file(
 
 pub(crate) fn de_snapshot_file<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SnapshotFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SnapshotFile>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

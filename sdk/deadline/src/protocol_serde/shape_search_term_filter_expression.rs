@@ -2,7 +2,7 @@
 pub fn ser_search_term_filter_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchTermFilterExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("searchTerm").string(input.search_term.as_str());
     }

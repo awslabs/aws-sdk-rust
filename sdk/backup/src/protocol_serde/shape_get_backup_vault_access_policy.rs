@@ -122,7 +122,7 @@ pub fn de_get_backup_vault_access_policy_http_response(
 pub(crate) fn de_get_backup_vault_access_policy(
     value: &[u8],
     mut builder: crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_backup_vault_access_policy::builders::GetBackupVaultAccessPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

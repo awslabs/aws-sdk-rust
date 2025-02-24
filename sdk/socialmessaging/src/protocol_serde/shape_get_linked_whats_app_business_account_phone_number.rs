@@ -170,7 +170,7 @@ pub fn de_get_linked_whats_app_business_account_phone_number_http_response(
 pub(crate) fn de_get_linked_whats_app_business_account_phone_number(
     value: &[u8],
     mut builder: crate::operation::get_linked_whats_app_business_account_phone_number::builders::GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_linked_whats_app_business_account_phone_number::builders::GetLinkedWhatsAppBusinessAccountPhoneNumberOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

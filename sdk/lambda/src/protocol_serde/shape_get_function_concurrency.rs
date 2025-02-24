@@ -122,7 +122,7 @@ pub fn de_get_function_concurrency_http_response(
 pub(crate) fn de_get_function_concurrency(
     value: &[u8],
     mut builder: crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

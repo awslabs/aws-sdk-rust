@@ -2,7 +2,7 @@
 pub fn ser_backend_api_conflict_resolution(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BackendApiConflictResolution,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resolution_strategy {
         object.key("resolutionStrategy").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_backend_api_conflict_resolution(
 
 pub(crate) fn de_backend_api_conflict_resolution<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BackendApiConflictResolution>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BackendApiConflictResolution>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

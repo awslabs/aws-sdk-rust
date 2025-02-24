@@ -152,7 +152,7 @@ pub fn de_list_targets_for_policy_http_response(
 pub(crate) fn de_list_targets_for_policy(
     value: &[u8],
     mut builder: crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

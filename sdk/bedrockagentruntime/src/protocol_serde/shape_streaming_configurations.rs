@@ -2,7 +2,7 @@
 pub fn ser_streaming_configurations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamingConfigurations,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.stream_final_response {
         object.key("streamFinalResponse").boolean(input.stream_final_response);
     }

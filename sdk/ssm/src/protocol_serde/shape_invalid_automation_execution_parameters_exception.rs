@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_automation_execution_parameters_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::InvalidAutomationExecutionParametersExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::InvalidAutomationExecutionParametersExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -3,7 +3,7 @@
 pub fn ser_text_array_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TextArrayOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DefaultValue");
     if let Some(var_2) = &input.default_value {
@@ -35,7 +35,7 @@ pub fn ser_text_array_options(
 #[allow(clippy::needless_question_mark)]
 pub fn de_text_array_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TextArrayOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TextArrayOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TextArrayOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {

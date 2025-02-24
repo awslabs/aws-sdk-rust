@@ -142,7 +142,7 @@ pub fn de_get_query_status_workload_insights_top_contributors_http_response(
 pub(crate) fn de_get_query_status_workload_insights_top_contributors(
     value: &[u8],
     mut builder: crate::operation::get_query_status_workload_insights_top_contributors::builders::GetQueryStatusWorkloadInsightsTopContributorsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_query_status_workload_insights_top_contributors::builders::GetQueryStatusWorkloadInsightsTopContributorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

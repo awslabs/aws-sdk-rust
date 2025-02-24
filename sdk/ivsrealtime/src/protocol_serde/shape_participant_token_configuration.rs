@@ -2,7 +2,7 @@
 pub fn ser_participant_token_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipantTokenConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]

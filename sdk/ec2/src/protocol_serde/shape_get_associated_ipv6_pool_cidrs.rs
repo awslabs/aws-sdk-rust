@@ -39,7 +39,7 @@ pub fn de_get_associated_ipv6_pool_cidrs_http_response(
 pub fn de_get_associated_ipv6_pool_cidrs(
     inp: &[u8],
     mut builder: crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

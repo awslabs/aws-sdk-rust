@@ -2,7 +2,7 @@
 pub fn ser_cis_target_status_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CisTargetStatusFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("comparison").string(input.comparison.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_start_audience_export_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_audience_export_job::StartAudienceExportJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.audience_generation_job_arn {
         object.key("audienceGenerationJobArn").string(var_1.as_str());
     }

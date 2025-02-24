@@ -170,7 +170,7 @@ pub fn de_purchase_reserved_cache_nodes_offering_http_response(
 pub fn de_purchase_reserved_cache_nodes_offering(
     inp: &[u8],
     mut builder: crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::purchase_reserved_cache_nodes_offering::builders::PurchaseReservedCacheNodesOfferingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

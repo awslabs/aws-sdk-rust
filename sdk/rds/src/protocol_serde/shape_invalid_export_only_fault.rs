@@ -3,7 +3,7 @@
 pub fn de_invalid_export_only_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidExportOnlyFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidExportOnlyFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidExportOnlyFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

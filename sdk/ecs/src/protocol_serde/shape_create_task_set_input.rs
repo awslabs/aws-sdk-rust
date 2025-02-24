@@ -2,7 +2,7 @@
 pub fn ser_create_task_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_task_set::CreateTaskSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service {
         object.key("service").string(var_1.as_str());
     }

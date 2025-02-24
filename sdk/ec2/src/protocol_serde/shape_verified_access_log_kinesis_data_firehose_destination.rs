@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_verified_access_log_kinesis_data_firehose_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::VerifiedAccessLogKinesisDataFirehoseDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::VerifiedAccessLogKinesisDataFirehoseDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {

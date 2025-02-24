@@ -106,7 +106,7 @@ pub fn de_get_lifecycle_policies_http_response(
 pub(crate) fn de_get_lifecycle_policies(
     value: &[u8],
     mut builder: crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

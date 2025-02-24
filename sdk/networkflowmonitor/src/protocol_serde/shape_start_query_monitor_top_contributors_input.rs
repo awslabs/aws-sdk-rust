@@ -2,7 +2,7 @@
 pub fn ser_start_query_monitor_top_contributors_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_query_monitor_top_contributors::StartQueryMonitorTopContributorsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_category {
         object.key("destinationCategory").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_start_dev_environment_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.session_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sessionConfiguration").start_object();

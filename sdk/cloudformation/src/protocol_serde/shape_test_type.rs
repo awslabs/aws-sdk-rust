@@ -71,7 +71,7 @@ pub fn de_test_type_http_response(
 pub fn de_test_type(
     inp: &[u8],
     mut builder: crate::operation::test_type::builders::TestTypeOutputBuilder,
-) -> Result<crate::operation::test_type::builders::TestTypeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::test_type::builders::TestTypeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_monitoring_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoringConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ConfigurationType").string(input.configuration_type.as_str());
     }

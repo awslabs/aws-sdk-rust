@@ -2,7 +2,7 @@
 pub fn ser_search_training_plan_offerings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_type {
         object.key("InstanceType").string(var_1.as_str());
     }

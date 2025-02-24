@@ -2,7 +2,7 @@
 pub fn ser_create_model_bias_job_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_definition_name {
         object.key("JobDefinitionName").string(var_1.as_str());
     }

@@ -120,7 +120,7 @@ pub fn de_cancel_flow_executions_http_response(
 
 pub fn ser_cancel_flow_executions_input(
     input: &crate::operation::cancel_flow_executions::CancelFlowExecutionsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_flow_executions_input::ser_cancel_flow_executions_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_cancel_flow_executions_input(
 pub(crate) fn de_cancel_flow_executions(
     value: &[u8],
     mut builder: crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_flow_executions::builders::CancelFlowExecutionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

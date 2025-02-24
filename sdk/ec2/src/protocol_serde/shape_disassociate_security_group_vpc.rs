@@ -39,7 +39,7 @@ pub fn de_disassociate_security_group_vpc_http_response(
 pub fn de_disassociate_security_group_vpc(
     inp: &[u8],
     mut builder: crate::operation::disassociate_security_group_vpc::builders::DisassociateSecurityGroupVpcOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_security_group_vpc::builders::DisassociateSecurityGroupVpcOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_iam(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Iam,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("enabled").boolean(*var_1);
     }
@@ -11,7 +11,7 @@ pub fn ser_iam(
 
 pub(crate) fn de_iam<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Iam>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Iam>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

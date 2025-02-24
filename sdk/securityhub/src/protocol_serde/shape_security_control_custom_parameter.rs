@@ -2,7 +2,7 @@
 pub fn ser_security_control_custom_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SecurityControlCustomParameter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.security_control_id {
         object.key("SecurityControlId").string(var_1.as_str());
     }
@@ -24,7 +24,7 @@ pub fn ser_security_control_custom_parameter(
 
 pub(crate) fn de_security_control_custom_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SecurityControlCustomParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SecurityControlCustomParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

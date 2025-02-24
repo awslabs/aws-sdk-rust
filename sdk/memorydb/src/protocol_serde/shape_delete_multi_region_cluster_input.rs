@@ -2,7 +2,7 @@
 pub fn ser_delete_multi_region_cluster_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_multi_region_cluster::DeleteMultiRegionClusterInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.multi_region_cluster_name {
         object.key("MultiRegionClusterName").string(var_1.as_str());
     }

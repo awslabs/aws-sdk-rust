@@ -129,7 +129,7 @@ pub fn de_start_user_access_tasks_http_response(
 
 pub fn ser_start_user_access_tasks_input(
     input: &crate::operation::start_user_access_tasks::StartUserAccessTasksInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_user_access_tasks_input::ser_start_user_access_tasks_input_input(&mut object, input)?;
@@ -140,7 +140,7 @@ pub fn ser_start_user_access_tasks_input(
 pub(crate) fn de_start_user_access_tasks(
     value: &[u8],
     mut builder: crate::operation::start_user_access_tasks::builders::StartUserAccessTasksOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_user_access_tasks::builders::StartUserAccessTasksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

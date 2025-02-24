@@ -2,7 +2,7 @@
 pub fn ser_data_source_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceGroup,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("GroupId").string(input.group_id.as_str());
     }

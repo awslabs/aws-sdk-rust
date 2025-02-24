@@ -2,7 +2,7 @@
 pub fn ser_stop_launch_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_launch::StopLaunchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.desired_state {
         object.key("desiredState").string(var_1.as_str());
     }

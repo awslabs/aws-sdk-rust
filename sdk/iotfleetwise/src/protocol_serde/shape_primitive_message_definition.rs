@@ -2,7 +2,7 @@
 pub fn ser_primitive_message_definition(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrimitiveMessageDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PrimitiveMessageDefinition::Ros2PrimitiveMessageDefinition(inner) => {
             #[allow(unused_mut)]
@@ -21,7 +21,7 @@ pub fn ser_primitive_message_definition(
 
 pub(crate) fn de_primitive_message_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PrimitiveMessageDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PrimitiveMessageDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_period(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Period,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Unit").string(input.unit.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_period(
 
 pub(crate) fn de_period<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Period>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Period>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

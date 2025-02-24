@@ -10,7 +10,7 @@ pub(crate) fn de_test_result_payload(
         .transpose()
 }
 
-pub fn de_test_result(inp: &[u8]) -> Result<crate::types::TestResult, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_test_result(inp: &[u8]) -> std::result::Result<crate::types::TestResult, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

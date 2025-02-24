@@ -2,7 +2,7 @@
 pub fn ser_additional_instance_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdditionalInstanceConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.systems_manager_agent {
         #[allow(unused_mut)]
         let mut object_2 = object.key("systemsManagerAgent").start_object();
@@ -17,7 +17,7 @@ pub fn ser_additional_instance_configuration(
 
 pub(crate) fn de_additional_instance_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AdditionalInstanceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AdditionalInstanceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

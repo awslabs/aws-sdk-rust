@@ -66,7 +66,7 @@ pub fn de_describe_region_settings_http_response(
 pub(crate) fn de_describe_region_settings(
     value: &[u8],
     mut builder: crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_region_settings::builders::DescribeRegionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

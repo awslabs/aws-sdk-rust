@@ -2,7 +2,7 @@
 pub fn ser_refresh_schemas_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::refresh_schemas::RefreshSchemasInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_arn {
         object.key("EndpointArn").string(var_1.as_str());
     }

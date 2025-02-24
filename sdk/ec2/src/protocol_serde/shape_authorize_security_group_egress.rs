@@ -39,7 +39,7 @@ pub fn de_authorize_security_group_egress_http_response(
 pub fn de_authorize_security_group_egress(
     inp: &[u8],
     mut builder: crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

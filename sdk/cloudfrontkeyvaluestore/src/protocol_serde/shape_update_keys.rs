@@ -156,7 +156,7 @@ pub fn ser_update_keys_headers(
 
 pub fn ser_update_keys_input(
     input: &crate::operation::update_keys::UpdateKeysInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_keys_input::ser_update_keys_input_input(&mut object, input)?;
@@ -167,7 +167,8 @@ pub fn ser_update_keys_input(
 pub(crate) fn de_update_keys(
     value: &[u8],
     mut builder: crate::operation::update_keys::builders::UpdateKeysOutputBuilder,
-) -> Result<crate::operation::update_keys::builders::UpdateKeysOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::update_keys::builders::UpdateKeysOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
+{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

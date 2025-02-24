@@ -2,7 +2,7 @@
 pub fn ser_oidc_identity_provider_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OidcIdentityProviderConfigRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("identityProviderConfigName")

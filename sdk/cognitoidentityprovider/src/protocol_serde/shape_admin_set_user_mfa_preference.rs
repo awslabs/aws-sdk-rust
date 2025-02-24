@@ -153,7 +153,7 @@ pub fn de_admin_set_user_mfa_preference_http_response(
 
 pub fn ser_admin_set_user_mfa_preference_input(
     input: &crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_admin_set_user_mfa_preference_input::ser_admin_set_user_mfa_preference_input_input(&mut object, input)?;

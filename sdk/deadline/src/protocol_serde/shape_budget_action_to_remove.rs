@@ -2,7 +2,7 @@
 pub fn ser_budget_action_to_remove(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BudgetActionToRemove,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("type").string(input.r#type.as_str());
     }

@@ -33,7 +33,7 @@ pub fn de_start_instances_http_response(
 pub fn de_start_instances(
     inp: &[u8],
     mut builder: crate::operation::start_instances::builders::StartInstancesOutputBuilder,
-) -> Result<crate::operation::start_instances::builders::StartInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::start_instances::builders::StartInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

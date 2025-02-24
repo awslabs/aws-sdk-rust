@@ -2,7 +2,7 @@
 pub fn ser_batch_delete_detector_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_delete_detector::BatchDeleteDetectorInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.detectors {
         let mut array_2 = object.key("detectors").start_array();
         for item_3 in var_1 {

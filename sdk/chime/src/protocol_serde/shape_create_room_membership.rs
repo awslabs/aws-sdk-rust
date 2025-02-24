@@ -185,7 +185,7 @@ pub fn de_create_room_membership_http_response(
 
 pub fn ser_create_room_membership_input(
     input: &crate::operation::create_room_membership::CreateRoomMembershipInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_room_membership_input::ser_create_room_membership_input_input(&mut object, input)?;
@@ -196,7 +196,7 @@ pub fn ser_create_room_membership_input(
 pub(crate) fn de_create_room_membership(
     value: &[u8],
     mut builder: crate::operation::create_room_membership::builders::CreateRoomMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_room_membership::builders::CreateRoomMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

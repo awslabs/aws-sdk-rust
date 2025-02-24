@@ -154,7 +154,7 @@ pub fn de_import_documentation_parts_http_response(
 pub(crate) fn de_import_documentation_parts(
     value: &[u8],
     mut builder: crate::operation::import_documentation_parts::builders::ImportDocumentationPartsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::import_documentation_parts::builders::ImportDocumentationPartsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

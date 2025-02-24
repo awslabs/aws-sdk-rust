@@ -2,7 +2,7 @@
 pub fn ser_describe_managed_products_by_vendor_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vendor_name {
         object.key("VendorName").string(var_1.as_str());
     }

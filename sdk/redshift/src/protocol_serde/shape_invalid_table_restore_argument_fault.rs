@@ -3,7 +3,7 @@
 pub fn de_invalid_table_restore_argument_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidTableRestoreArgumentFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidTableRestoreArgumentFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidTableRestoreArgumentFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

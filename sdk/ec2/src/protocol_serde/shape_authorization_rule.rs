@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_authorization_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AuthorizationRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AuthorizationRule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AuthorizationRule::builder();
     while let Some(mut tag) = decoder.next_tag() {

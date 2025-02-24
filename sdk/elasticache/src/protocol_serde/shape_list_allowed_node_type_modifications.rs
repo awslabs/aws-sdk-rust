@@ -126,7 +126,7 @@ pub fn de_list_allowed_node_type_modifications_http_response(
 pub fn de_list_allowed_node_type_modifications(
     inp: &[u8],
     mut builder: crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_allowed_node_type_modifications::builders::ListAllowedNodeTypeModificationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

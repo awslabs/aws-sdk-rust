@@ -2,7 +2,7 @@
 pub fn ser_ibm3624_pin_from_offset(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ibm3624PinFromOffset,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DecimalizationTable").string(input.decimalization_table.as_str());
     }

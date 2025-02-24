@@ -2,7 +2,7 @@
 pub(crate) fn de_directory_service_authentication_failed_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::DirectoryServiceAuthenticationFailedExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

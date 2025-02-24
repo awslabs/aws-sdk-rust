@@ -120,7 +120,7 @@ pub fn de_put_portfolio_preferences_http_response(
 
 pub fn ser_put_portfolio_preferences_input(
     input: &crate::operation::put_portfolio_preferences::PutPortfolioPreferencesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_portfolio_preferences_input::ser_put_portfolio_preferences_input_input(&mut object, input)?;

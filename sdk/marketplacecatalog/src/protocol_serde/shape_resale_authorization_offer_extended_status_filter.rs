@@ -2,7 +2,7 @@
 pub fn ser_resale_authorization_offer_extended_status_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResaleAuthorizationOfferExtendedStatusFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value_list {
         let mut array_2 = object.key("ValueList").start_array();
         for item_3 in var_1 {

@@ -79,7 +79,7 @@ pub fn de_describe_resource_groups_http_response(
 
 pub fn ser_describe_resource_groups_input(
     input: &crate::operation::describe_resource_groups::DescribeResourceGroupsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_resource_groups_input::ser_describe_resource_groups_input_input(&mut object, input)?;
@@ -90,7 +90,7 @@ pub fn ser_describe_resource_groups_input(
 pub(crate) fn de_describe_resource_groups(
     value: &[u8],
     mut builder: crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_resource_groups::builders::DescribeResourceGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

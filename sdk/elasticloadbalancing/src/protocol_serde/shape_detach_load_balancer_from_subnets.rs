@@ -88,7 +88,7 @@ pub fn de_detach_load_balancer_from_subnets_http_response(
 pub fn de_detach_load_balancer_from_subnets(
     inp: &[u8],
     mut builder: crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

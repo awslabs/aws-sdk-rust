@@ -2,7 +2,7 @@
 pub fn ser_ingest_knowledge_base_documents_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::ingest_knowledge_base_documents::IngestKnowledgeBaseDocumentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }

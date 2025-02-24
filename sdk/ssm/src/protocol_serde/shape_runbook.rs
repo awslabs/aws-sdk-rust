@@ -2,7 +2,7 @@
 pub fn ser_runbook(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Runbook,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DocumentName").string(input.document_name.as_str());
     }
@@ -85,7 +85,7 @@ pub fn ser_runbook(
 
 pub(crate) fn de_runbook<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Runbook>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Runbook>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

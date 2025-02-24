@@ -110,7 +110,7 @@ pub fn de_list_instance_type_details_http_response(
 pub(crate) fn de_list_instance_type_details(
     value: &[u8],
     mut builder: crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

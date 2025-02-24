@@ -2,7 +2,7 @@
 pub fn ser_update_profiling_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_profiling_group::UpdateProfilingGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.agent_orchestration_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("agentOrchestrationConfig").start_object();

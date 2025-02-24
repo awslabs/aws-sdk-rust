@@ -2,7 +2,7 @@
 pub fn ser_get_table_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_table_metadata::GetTableMetadataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_name {
         object.key("CatalogName").string(var_1.as_str());
     }

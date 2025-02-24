@@ -33,7 +33,7 @@ pub fn de_associate_address_http_response(
 pub fn de_associate_address(
     inp: &[u8],
     mut builder: crate::operation::associate_address::builders::AssociateAddressOutputBuilder,
-) -> Result<crate::operation::associate_address::builders::AssociateAddressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::associate_address::builders::AssociateAddressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

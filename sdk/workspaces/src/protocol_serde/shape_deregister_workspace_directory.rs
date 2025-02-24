@@ -136,7 +136,7 @@ pub fn de_deregister_workspace_directory_http_response(
 
 pub fn ser_deregister_workspace_directory_input(
     input: &crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deregister_workspace_directory_input::ser_deregister_workspace_directory_input_input(&mut object, input)?;

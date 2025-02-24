@@ -2,7 +2,7 @@
 pub fn ser_create_file_cache_lustre_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateFileCacheLustreConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.per_unit_storage_throughput {
         object.key("PerUnitStorageThroughput").number(
             #[allow(clippy::useless_conversion)]

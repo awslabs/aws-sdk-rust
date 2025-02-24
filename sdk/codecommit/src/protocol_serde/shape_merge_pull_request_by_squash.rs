@@ -742,7 +742,7 @@ pub fn de_merge_pull_request_by_squash_http_response(
 
 pub fn ser_merge_pull_request_by_squash_input(
     input: &crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_merge_pull_request_by_squash_input::ser_merge_pull_request_by_squash_input_input(&mut object, input)?;
@@ -753,7 +753,7 @@ pub fn ser_merge_pull_request_by_squash_input(
 pub(crate) fn de_merge_pull_request_by_squash(
     value: &[u8],
     mut builder: crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_account_grouping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AccountGrouping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("LinkedAccountIds").start_array();
         for item_2 in &input.linked_account_ids {

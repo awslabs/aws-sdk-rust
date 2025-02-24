@@ -41,7 +41,7 @@ pub fn de_disable_image_deregistration_protection_http_response(
 pub fn de_disable_image_deregistration_protection(
     inp: &[u8],
     mut builder: crate::operation::disable_image_deregistration_protection::builders::DisableImageDeregistrationProtectionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_image_deregistration_protection::builders::DisableImageDeregistrationProtectionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

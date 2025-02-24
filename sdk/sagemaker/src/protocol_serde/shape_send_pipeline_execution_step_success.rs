@@ -92,7 +92,7 @@ pub fn de_send_pipeline_execution_step_success_http_response(
 
 pub fn ser_send_pipeline_execution_step_success_input(
     input: &crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_pipeline_execution_step_success_input::ser_send_pipeline_execution_step_success_input_input(
@@ -106,7 +106,7 @@ pub fn ser_send_pipeline_execution_step_success_input(
 pub(crate) fn de_send_pipeline_execution_step_success(
     value: &[u8],
     mut builder: crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

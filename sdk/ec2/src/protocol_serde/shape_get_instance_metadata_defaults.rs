@@ -39,7 +39,7 @@ pub fn de_get_instance_metadata_defaults_http_response(
 pub fn de_get_instance_metadata_defaults(
     inp: &[u8],
     mut builder: crate::operation::get_instance_metadata_defaults::builders::GetInstanceMetadataDefaultsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_instance_metadata_defaults::builders::GetInstanceMetadataDefaultsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

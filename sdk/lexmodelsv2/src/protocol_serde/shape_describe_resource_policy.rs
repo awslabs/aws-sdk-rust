@@ -102,7 +102,7 @@ pub fn de_describe_resource_policy_http_response(
 pub(crate) fn de_describe_resource_policy(
     value: &[u8],
     mut builder: crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

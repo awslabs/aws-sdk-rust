@@ -2,7 +2,7 @@
 pub fn ser_exemption_certificate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExemptionCertificate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("documentName").string(input.document_name.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_amazon_open_search_serverless_destination_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmazonOpenSearchServerlessDestinationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.role_arn {
         object.key("RoleARN").string(var_1.as_str());
     }

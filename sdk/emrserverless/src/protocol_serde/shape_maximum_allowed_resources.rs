@@ -2,7 +2,7 @@
 pub fn ser_maximum_allowed_resources(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaximumAllowedResources,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("cpu").string(input.cpu.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_maximum_allowed_resources(
 
 pub(crate) fn de_maximum_allowed_resources<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MaximumAllowedResources>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MaximumAllowedResources>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

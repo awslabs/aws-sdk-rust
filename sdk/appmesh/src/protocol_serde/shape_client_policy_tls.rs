@@ -2,7 +2,7 @@
 pub fn ser_client_policy_tls(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClientPolicyTls,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enforce {
         object.key("enforce").boolean(*var_1);
     }
@@ -35,7 +35,7 @@ pub fn ser_client_policy_tls(
 
 pub(crate) fn de_client_policy_tls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ClientPolicyTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ClientPolicyTls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

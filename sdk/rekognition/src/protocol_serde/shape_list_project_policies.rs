@@ -154,7 +154,7 @@ pub fn de_list_project_policies_http_response(
 
 pub fn ser_list_project_policies_input(
     input: &crate::operation::list_project_policies::ListProjectPoliciesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_project_policies_input::ser_list_project_policies_input_input(&mut object, input)?;
@@ -165,7 +165,7 @@ pub fn ser_list_project_policies_input(
 pub(crate) fn de_list_project_policies(
     value: &[u8],
     mut builder: crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_project_policies::builders::ListProjectPoliciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

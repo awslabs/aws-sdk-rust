@@ -2,7 +2,7 @@
 pub fn ser_describe_query_definitions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_query_definitions::DescribeQueryDefinitionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_language {
         object.key("queryLanguage").string(var_1.as_str());
     }

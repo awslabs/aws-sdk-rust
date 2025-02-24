@@ -126,7 +126,8 @@ pub fn de_upload_ssh_public_key_http_response(
 pub fn de_upload_ssh_public_key(
     inp: &[u8],
     mut builder: crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder,
-) -> Result<crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::upload_ssh_public_key::builders::UploadSshPublicKeyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_modify_data_provider_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_data_provider::ModifyDataProviderInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_provider_identifier {
         object.key("DataProviderIdentifier").string(var_1.as_str());
     }

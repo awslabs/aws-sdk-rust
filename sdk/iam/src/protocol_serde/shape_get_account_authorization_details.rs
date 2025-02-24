@@ -62,7 +62,7 @@ pub fn de_get_account_authorization_details_http_response(
 pub fn de_get_account_authorization_details(
     inp: &[u8],
     mut builder: crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

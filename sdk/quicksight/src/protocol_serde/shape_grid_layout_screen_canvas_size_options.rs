@@ -2,7 +2,7 @@
 pub fn ser_grid_layout_screen_canvas_size_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GridLayoutScreenCanvasSizeOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResizeOption").string(input.resize_option.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_grid_layout_screen_canvas_size_options(
 
 pub(crate) fn de_grid_layout_screen_canvas_size_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GridLayoutScreenCanvasSizeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GridLayoutScreenCanvasSizeOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

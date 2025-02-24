@@ -2,7 +2,7 @@
 pub fn ser_get_logging_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn {
         object.key("ResourceArn").string(var_1.as_str());
     }

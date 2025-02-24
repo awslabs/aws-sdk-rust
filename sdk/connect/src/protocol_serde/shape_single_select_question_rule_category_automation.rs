@@ -2,7 +2,7 @@
 pub fn ser_single_select_question_rule_category_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SingleSelectQuestionRuleCategoryAutomation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Category").string(input.category.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_single_select_question_rule_category_automation(
 
 pub(crate) fn de_single_select_question_rule_category_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SingleSelectQuestionRuleCategoryAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SingleSelectQuestionRuleCategoryAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

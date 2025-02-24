@@ -125,7 +125,7 @@ pub fn de_list_configuration_policies_http_response(
 pub(crate) fn de_list_configuration_policies(
     value: &[u8],
     mut builder: crate::operation::list_configuration_policies::builders::ListConfigurationPoliciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configuration_policies::builders::ListConfigurationPoliciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

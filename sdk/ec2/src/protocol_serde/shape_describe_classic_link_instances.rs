@@ -39,7 +39,7 @@ pub fn de_describe_classic_link_instances_http_response(
 pub fn de_describe_classic_link_instances(
     inp: &[u8],
     mut builder: crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

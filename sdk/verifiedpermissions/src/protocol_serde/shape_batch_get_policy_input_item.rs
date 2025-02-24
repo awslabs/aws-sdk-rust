@@ -2,7 +2,7 @@
 pub fn ser_batch_get_policy_input_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchGetPolicyInputItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("policyStoreId").string(input.policy_store_id.as_str());
     }

@@ -142,7 +142,7 @@ pub fn de_describe_brand_published_version_http_response(
 pub(crate) fn de_describe_brand_published_version(
     value: &[u8],
     mut builder: crate::operation::describe_brand_published_version::builders::DescribeBrandPublishedVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_brand_published_version::builders::DescribeBrandPublishedVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

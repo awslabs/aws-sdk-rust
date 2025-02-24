@@ -2,7 +2,7 @@
 pub fn ser_ebs_block_device_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EbsBlockDeviceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("VolumeSpecification").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_list_cases_for_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_cases_for_contact::ListCasesForContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_arn {
         object.key("contactArn").string(var_1.as_str());
     }

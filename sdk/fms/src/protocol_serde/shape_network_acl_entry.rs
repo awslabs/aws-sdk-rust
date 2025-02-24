@@ -2,7 +2,7 @@
 pub fn ser_network_acl_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkAclEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.icmp_type_code {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IcmpTypeCode").start_object();
@@ -35,7 +35,7 @@ pub fn ser_network_acl_entry(
 
 pub(crate) fn de_network_acl_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NetworkAclEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NetworkAclEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

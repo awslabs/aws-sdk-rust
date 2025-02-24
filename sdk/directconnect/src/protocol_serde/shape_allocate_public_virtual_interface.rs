@@ -118,7 +118,7 @@ pub fn de_allocate_public_virtual_interface_http_response(
 
 pub fn ser_allocate_public_virtual_interface_input(
     input: &crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_allocate_public_virtual_interface_input::ser_allocate_public_virtual_interface_input_input(&mut object, input)?;
@@ -129,7 +129,7 @@ pub fn ser_allocate_public_virtual_interface_input(
 pub(crate) fn de_allocate_public_virtual_interface(
     value: &[u8],
     mut builder: crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

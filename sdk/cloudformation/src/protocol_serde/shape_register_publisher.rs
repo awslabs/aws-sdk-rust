@@ -58,7 +58,7 @@ pub fn de_register_publisher_http_response(
 pub fn de_register_publisher(
     inp: &[u8],
     mut builder: crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder,
-) -> Result<crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::register_publisher::builders::RegisterPublisherOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

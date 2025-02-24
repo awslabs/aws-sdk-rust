@@ -2,7 +2,7 @@
 pub fn ser_update_image_generation_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.image_generation_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ImageGenerationConfiguration").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_local_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LocalSecondaryIndex,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IndexName").string(input.index_name.as_str());
     }

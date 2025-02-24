@@ -2,7 +2,7 @@
 pub fn ser_update_classification_scope_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_classification_scope::UpdateClassificationScopeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3 {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3").start_object();

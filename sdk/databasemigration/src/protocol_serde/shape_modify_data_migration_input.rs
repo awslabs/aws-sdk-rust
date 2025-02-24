@@ -2,7 +2,7 @@
 pub fn ser_modify_data_migration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::modify_data_migration::ModifyDataMigrationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_migration_identifier {
         object.key("DataMigrationIdentifier").string(var_1.as_str());
     }

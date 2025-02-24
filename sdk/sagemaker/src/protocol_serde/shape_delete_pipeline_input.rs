@@ -2,7 +2,7 @@
 pub fn ser_delete_pipeline_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_pipeline::DeletePipelineInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pipeline_name {
         object.key("PipelineName").string(var_1.as_str());
     }

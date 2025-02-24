@@ -39,7 +39,7 @@ pub fn de_purchase_reserved_instances_offering_http_response(
 pub fn de_purchase_reserved_instances_offering(
     inp: &[u8],
     mut builder: crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

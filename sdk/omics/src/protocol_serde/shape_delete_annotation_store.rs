@@ -132,7 +132,7 @@ pub fn de_delete_annotation_store_http_response(
 pub(crate) fn de_delete_annotation_store(
     value: &[u8],
     mut builder: crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_annotation_store::builders::DeleteAnnotationStoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

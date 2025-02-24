@@ -2,7 +2,7 @@
 pub fn ser_domain_settings_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DomainSettingsForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.r_studio_server_pro_domain_settings_for_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RStudioServerProDomainSettingsForUpdate").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_road_snap_trailer_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoadSnapTrailerOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.trailer_count {
         object.key("TrailerCount").number(
             #[allow(clippy::useless_conversion)]

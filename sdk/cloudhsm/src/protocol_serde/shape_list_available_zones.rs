@@ -90,15 +90,17 @@ pub fn de_list_available_zones_http_response(
 
 pub fn ser_list_available_zones_input(
     _input: &crate::operation::list_available_zones::ListAvailableZonesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_list_available_zones(
     value: &[u8],
     mut builder: crate::operation::list_available_zones::builders::ListAvailableZonesOutputBuilder,
-) -> Result<crate::operation::list_available_zones::builders::ListAvailableZonesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::list_available_zones::builders::ListAvailableZonesOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -103,7 +103,7 @@ pub fn de_list_findings_metrics_http_response(
 pub(crate) fn de_list_findings_metrics(
     value: &[u8],
     mut builder: crate::operation::list_findings_metrics::builders::ListFindingsMetricsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_findings_metrics::builders::ListFindingsMetricsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

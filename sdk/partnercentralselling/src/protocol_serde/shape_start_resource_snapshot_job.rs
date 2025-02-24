@@ -106,7 +106,7 @@ pub fn de_start_resource_snapshot_job_http_response(
 
 pub fn ser_start_resource_snapshot_job_input(
     input: &crate::operation::start_resource_snapshot_job::StartResourceSnapshotJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_resource_snapshot_job_input::ser_start_resource_snapshot_job_input_input(&mut object, input)?;

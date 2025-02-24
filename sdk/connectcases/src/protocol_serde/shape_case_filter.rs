@@ -2,7 +2,7 @@
 pub fn ser_case_filter(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaseFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::CaseFilter::Field(inner) => {
             #[allow(unused_mut)]

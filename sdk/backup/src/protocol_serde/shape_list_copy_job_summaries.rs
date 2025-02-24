@@ -80,7 +80,7 @@ pub fn de_list_copy_job_summaries_http_response(
 pub(crate) fn de_list_copy_job_summaries(
     value: &[u8],
     mut builder: crate::operation::list_copy_job_summaries::builders::ListCopyJobSummariesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_copy_job_summaries::builders::ListCopyJobSummariesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

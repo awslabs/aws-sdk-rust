@@ -2,7 +2,7 @@
 pub fn ser_confluence_space_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfluenceSpaceConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_personal_spaces {
         object.key("CrawlPersonalSpaces").boolean(input.crawl_personal_spaces);
     }
@@ -47,7 +47,7 @@ pub fn ser_confluence_space_configuration(
 
 pub(crate) fn de_confluence_space_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConfluenceSpaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConfluenceSpaceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_backend_defaults(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayBackendDefaults,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_policy {
         #[allow(unused_mut)]
         let mut object_2 = object.key("clientPolicy").start_object();
@@ -14,7 +14,7 @@ pub fn ser_virtual_gateway_backend_defaults(
 
 pub(crate) fn de_virtual_gateway_backend_defaults<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VirtualGatewayBackendDefaults>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VirtualGatewayBackendDefaults>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

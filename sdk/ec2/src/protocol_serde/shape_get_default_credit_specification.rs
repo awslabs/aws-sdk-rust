@@ -39,7 +39,7 @@ pub fn de_get_default_credit_specification_http_response(
 pub fn de_get_default_credit_specification(
     inp: &[u8],
     mut builder: crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_default_credit_specification::builders::GetDefaultCreditSpecificationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

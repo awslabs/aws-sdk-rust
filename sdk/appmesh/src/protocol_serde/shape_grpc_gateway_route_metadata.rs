@@ -2,7 +2,7 @@
 pub fn ser_grpc_gateway_route_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrpcGatewayRouteMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_grpc_gateway_route_metadata(
 
 pub(crate) fn de_grpc_gateway_route_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GrpcGatewayRouteMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GrpcGatewayRouteMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

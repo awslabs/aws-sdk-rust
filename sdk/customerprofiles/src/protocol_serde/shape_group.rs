@@ -2,7 +2,7 @@
 pub fn ser_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Group,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dimensions {
         let mut array_2 = object.key("Dimensions").start_array();
         for item_3 in var_1 {
@@ -38,7 +38,7 @@ pub fn ser_group(
 
 pub(crate) fn de_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Group>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Group>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -153,7 +153,7 @@ pub fn de_put_integration_response_http_response(
 
 pub fn ser_put_integration_response_input(
     input: &crate::operation::put_integration_response::PutIntegrationResponseInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_integration_response_input::ser_put_integration_response_input_input(&mut object, input)?;
@@ -164,7 +164,7 @@ pub fn ser_put_integration_response_input(
 pub(crate) fn de_put_integration_response(
     value: &[u8],
     mut builder: crate::operation::put_integration_response::builders::PutIntegrationResponseOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_integration_response::builders::PutIntegrationResponseOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

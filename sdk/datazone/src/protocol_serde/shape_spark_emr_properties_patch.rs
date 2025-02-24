@@ -2,7 +2,7 @@
 pub fn ser_spark_emr_properties_patch(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkEmrPropertiesPatch,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_arn {
         object.key("computeArn").string(var_1.as_str());
     }

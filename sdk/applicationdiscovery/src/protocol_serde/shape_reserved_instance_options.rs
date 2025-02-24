@@ -2,7 +2,7 @@
 pub fn ser_reserved_instance_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReservedInstanceOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("purchasingOption").string(input.purchasing_option.as_str());
     }

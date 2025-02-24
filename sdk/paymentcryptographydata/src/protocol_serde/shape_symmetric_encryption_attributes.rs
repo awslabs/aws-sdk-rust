@@ -2,7 +2,7 @@
 pub fn ser_symmetric_encryption_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SymmetricEncryptionAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Mode").string(input.mode.as_str());
     }

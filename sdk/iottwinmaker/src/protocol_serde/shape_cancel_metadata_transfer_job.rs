@@ -142,7 +142,7 @@ pub fn de_cancel_metadata_transfer_job_http_response(
 pub(crate) fn de_cancel_metadata_transfer_job(
     value: &[u8],
     mut builder: crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_metadata_transfer_job::builders::CancelMetadataTransferJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_create_file_system_lustre_metadata_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateFileSystemLustreMetadataConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iops {
         object.key("Iops").number(
             #[allow(clippy::useless_conversion)]

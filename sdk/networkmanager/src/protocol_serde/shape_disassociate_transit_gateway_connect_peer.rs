@@ -172,7 +172,7 @@ pub fn de_disassociate_transit_gateway_connect_peer_http_response(
 pub(crate) fn de_disassociate_transit_gateway_connect_peer(
     value: &[u8],
     mut builder: crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

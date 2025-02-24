@@ -2,7 +2,7 @@
 pub fn ser_column_description(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnDescription,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text {
         object.key("Text").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_column_description(
 
 pub(crate) fn de_column_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ColumnDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ColumnDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

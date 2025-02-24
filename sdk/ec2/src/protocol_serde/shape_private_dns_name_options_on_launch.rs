@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_private_dns_name_options_on_launch(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PrivateDnsNameOptionsOnLaunch, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::PrivateDnsNameOptionsOnLaunch, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PrivateDnsNameOptionsOnLaunch::builder();
     while let Some(mut tag) = decoder.next_tag() {

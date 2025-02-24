@@ -2,7 +2,7 @@
 pub fn ser_disable_aws_service_access_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_principal {
         object.key("ServicePrincipal").string(var_1.as_str());
     }

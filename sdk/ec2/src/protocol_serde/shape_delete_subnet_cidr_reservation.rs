@@ -39,7 +39,7 @@ pub fn de_delete_subnet_cidr_reservation_http_response(
 pub fn de_delete_subnet_cidr_reservation(
     inp: &[u8],
     mut builder: crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_subnet_cidr_reservation::builders::DeleteSubnetCidrReservationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

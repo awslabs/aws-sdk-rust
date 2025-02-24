@@ -2,7 +2,7 @@
 pub fn ser_sheet_text_box(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetTextBox,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SheetTextBoxId").string(input.sheet_text_box_id.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_sheet_text_box(
 
 pub(crate) fn de_sheet_text_box<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SheetTextBox>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SheetTextBox>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

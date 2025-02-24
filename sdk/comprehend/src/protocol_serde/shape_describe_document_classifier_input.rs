@@ -2,7 +2,7 @@
 pub fn ser_describe_document_classifier_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_document_classifier::DescribeDocumentClassifierInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_classifier_arn {
         object.key("DocumentClassifierArn").string(var_1.as_str());
     }

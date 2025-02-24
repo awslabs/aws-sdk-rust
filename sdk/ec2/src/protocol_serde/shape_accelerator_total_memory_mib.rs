@@ -3,7 +3,7 @@
 pub fn ser_accelerator_total_memory_mib(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AcceleratorTotalMemoryMiB,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {
@@ -26,7 +26,7 @@ pub fn ser_accelerator_total_memory_mib(
 #[allow(clippy::needless_question_mark)]
 pub fn de_accelerator_total_memory_mib(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AcceleratorTotalMemoryMiB, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AcceleratorTotalMemoryMiB, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AcceleratorTotalMemoryMiB::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_cluster_option_group_membership(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbClusterOptionGroupMembership,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.db_cluster_option_group_name {
         object.key("DbClusterOptionGroupName").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_rds_db_cluster_option_group_membership(
 
 pub(crate) fn de_aws_rds_db_cluster_option_group_membership<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsRdsDbClusterOptionGroupMembership>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsRdsDbClusterOptionGroupMembership>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

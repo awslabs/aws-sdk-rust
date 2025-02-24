@@ -2,7 +2,7 @@
 pub fn ser_batch_get_partition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_partition::BatchGetPartitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.catalog_id {
         object.key("CatalogId").string(var_1.as_str());
     }

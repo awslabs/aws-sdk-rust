@@ -58,7 +58,7 @@ pub fn de_list_users_http_response(
 pub fn de_list_users(
     inp: &[u8],
     mut builder: crate::operation::list_users::builders::ListUsersOutputBuilder,
-) -> Result<crate::operation::list_users::builders::ListUsersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_users::builders::ListUsersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

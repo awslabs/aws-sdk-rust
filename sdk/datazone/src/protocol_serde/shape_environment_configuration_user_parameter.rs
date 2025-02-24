@@ -2,7 +2,7 @@
 pub fn ser_environment_configuration_user_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnvironmentConfigurationUserParameter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.environment_configuration_name {
         object.key("environmentConfigurationName").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_environment_configuration_user_parameter(
 
 pub(crate) fn de_environment_configuration_user_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EnvironmentConfigurationUserParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EnvironmentConfigurationUserParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

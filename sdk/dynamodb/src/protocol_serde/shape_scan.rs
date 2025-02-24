@@ -114,7 +114,7 @@ pub fn de_scan_http_response(
 
 pub fn ser_scan_input(
     input: &crate::operation::scan::ScanInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_scan_input::ser_scan_input_input(&mut object, input)?;
@@ -125,7 +125,7 @@ pub fn ser_scan_input(
 pub(crate) fn de_scan(
     value: &[u8],
     mut builder: crate::operation::scan::builders::ScanOutputBuilder,
-) -> Result<crate::operation::scan::builders::ScanOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::scan::builders::ScanOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

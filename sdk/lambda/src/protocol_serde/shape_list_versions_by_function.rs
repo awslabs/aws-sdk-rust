@@ -122,7 +122,7 @@ pub fn de_list_versions_by_function_http_response(
 pub(crate) fn de_list_versions_by_function(
     value: &[u8],
     mut builder: crate::operation::list_versions_by_function::builders::ListVersionsByFunctionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_versions_by_function::builders::ListVersionsByFunctionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

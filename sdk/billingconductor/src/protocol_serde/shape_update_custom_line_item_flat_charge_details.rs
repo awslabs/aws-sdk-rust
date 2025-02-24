@@ -2,7 +2,7 @@
 pub fn ser_update_custom_line_item_flat_charge_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateCustomLineItemFlatChargeDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ChargeValue").number(
             #[allow(clippy::useless_conversion)]

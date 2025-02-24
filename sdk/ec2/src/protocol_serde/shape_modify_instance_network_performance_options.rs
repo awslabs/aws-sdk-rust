@@ -43,7 +43,7 @@ pub fn de_modify_instance_network_performance_options_http_response(
 pub fn de_modify_instance_network_performance_options(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_network_performance_options::builders::ModifyInstanceNetworkPerformanceOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_instance_network_performance_options::builders::ModifyInstanceNetworkPerformanceOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

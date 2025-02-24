@@ -2,7 +2,7 @@
 pub fn ser_value_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ValueMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.display_value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("displayValue").start_object();
@@ -20,7 +20,7 @@ pub fn ser_value_mapping(
 
 pub(crate) fn de_value_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ValueMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ValueMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -79,7 +79,7 @@ pub fn de_generate_service_last_accessed_details_http_response(
 pub fn de_generate_service_last_accessed_details(
     inp: &[u8],
     mut builder: crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

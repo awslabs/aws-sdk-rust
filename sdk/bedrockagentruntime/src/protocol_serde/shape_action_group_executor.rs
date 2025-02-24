@@ -2,7 +2,7 @@
 pub fn ser_action_group_executor(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionGroupExecutor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ActionGroupExecutor::Lambda(inner) => {
             object_4.key("lambda").string(inner.as_str());

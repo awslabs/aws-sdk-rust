@@ -2,7 +2,7 @@
 pub fn ser_snap_to_roads_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::snap_to_roads::SnapToRoadsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.snap_radius {
         object.key("SnapRadius").number(
             #[allow(clippy::useless_conversion)]

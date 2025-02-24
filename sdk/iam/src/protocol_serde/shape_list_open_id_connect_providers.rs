@@ -62,7 +62,7 @@ pub fn de_list_open_id_connect_providers_http_response(
 pub fn de_list_open_id_connect_providers(
     inp: &[u8],
     mut builder: crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_open_id_connect_providers::builders::ListOpenIdConnectProvidersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

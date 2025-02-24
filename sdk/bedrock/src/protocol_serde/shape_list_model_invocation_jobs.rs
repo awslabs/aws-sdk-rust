@@ -110,7 +110,7 @@ pub fn de_list_model_invocation_jobs_http_response(
 pub(crate) fn de_list_model_invocation_jobs(
     value: &[u8],
     mut builder: crate::operation::list_model_invocation_jobs::builders::ListModelInvocationJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_model_invocation_jobs::builders::ListModelInvocationJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

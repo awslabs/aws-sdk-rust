@@ -2,7 +2,7 @@
 pub fn ser_signing_profile_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SigningProfileParameter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("certificateArn").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_signing_profile_parameter(
 
 pub(crate) fn de_signing_profile_parameter<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SigningProfileParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SigningProfileParameter>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

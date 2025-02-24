@@ -2,7 +2,7 @@
 pub fn ser_aws_rds_db_cluster_member(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRdsDbClusterMember,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_cluster_writer {
         object.key("IsClusterWriter").boolean(*var_1);
     }
@@ -23,7 +23,7 @@ pub fn ser_aws_rds_db_cluster_member(
 
 pub(crate) fn de_aws_rds_db_cluster_member<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsRdsDbClusterMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsRdsDbClusterMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_selected_pillar(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SelectedPillar,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pillar_id {
         object.key("PillarId").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_selected_pillar(
 
 pub(crate) fn de_selected_pillar<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SelectedPillar>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SelectedPillar>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_delete_supplemental_tax_registration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_supplemental_tax_registration::DeleteSupplementalTaxRegistrationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.authority_id {
         object.key("authorityId").string(var_1.as_str());
     }

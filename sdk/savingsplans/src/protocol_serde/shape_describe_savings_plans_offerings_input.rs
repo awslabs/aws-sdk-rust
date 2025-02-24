@@ -2,7 +2,7 @@
 pub fn ser_describe_savings_plans_offerings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.currencies {
         let mut array_2 = object.key("currencies").start_array();
         for item_3 in var_1 {

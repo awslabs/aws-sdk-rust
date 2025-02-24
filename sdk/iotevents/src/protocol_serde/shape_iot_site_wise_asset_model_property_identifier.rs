@@ -2,7 +2,7 @@
 pub fn ser_iot_site_wise_asset_model_property_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseAssetModelPropertyIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("assetModelId").string(input.asset_model_id.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_test_invoke_authorizer_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_invoke_authorizer::TestInvokeAuthorizerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_context {
         #[allow(unused_mut)]
         let mut object_2 = object.key("additionalContext").start_object();

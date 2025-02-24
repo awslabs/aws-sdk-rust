@@ -2,7 +2,7 @@
 pub fn ser_dataset_entity_recognizer_input_data_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DatasetEntityRecognizerInputDataConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.annotations {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Annotations").start_object();

@@ -3,7 +3,7 @@
 pub fn de_invalid_scheduled_action_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidScheduledActionFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidScheduledActionFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidScheduledActionFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

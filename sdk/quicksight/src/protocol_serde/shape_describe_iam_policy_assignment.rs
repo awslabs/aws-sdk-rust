@@ -148,7 +148,7 @@ pub fn de_describe_iam_policy_assignment_http_response(
 pub(crate) fn de_describe_iam_policy_assignment(
     value: &[u8],
     mut builder: crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_update_ip_restriction_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_ip_restriction::UpdateIpRestrictionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("Enabled").boolean(*var_1);
     }

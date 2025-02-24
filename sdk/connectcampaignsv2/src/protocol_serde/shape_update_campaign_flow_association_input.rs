@@ -2,7 +2,7 @@
 pub fn ser_update_campaign_flow_association_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_campaign_flow_association::UpdateCampaignFlowAssociationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connect_campaign_flow_arn {
         object.key("connectCampaignFlowArn").string(var_1.as_str());
     }

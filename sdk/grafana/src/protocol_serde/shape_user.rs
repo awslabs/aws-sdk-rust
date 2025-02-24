@@ -2,7 +2,7 @@
 pub fn ser_user(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::User,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("id").string(input.id.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_user(
 
 pub(crate) fn de_user<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::User>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::User>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

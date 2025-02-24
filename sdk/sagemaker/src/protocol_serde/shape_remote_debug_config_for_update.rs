@@ -2,7 +2,7 @@
 pub fn ser_remote_debug_config_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RemoteDebugConfigForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_remote_debug {
         object.key("EnableRemoteDebug").boolean(*var_1);
     }

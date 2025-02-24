@@ -165,7 +165,7 @@ pub fn de_list_input_device_transfers_http_response(
 pub(crate) fn de_list_input_device_transfers(
     value: &[u8],
     mut builder: crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_input_device_transfers::builders::ListInputDeviceTransfersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

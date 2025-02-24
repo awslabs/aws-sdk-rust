@@ -105,7 +105,7 @@ pub fn de_revoke_db_security_group_ingress_http_response(
 pub fn de_revoke_db_security_group_ingress(
     inp: &[u8],
     mut builder: crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::revoke_db_security_group_ingress::builders::RevokeDbSecurityGroupIngressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -101,7 +101,7 @@ pub fn de_cancel_resize_http_response(
 pub fn de_cancel_resize(
     inp: &[u8],
     mut builder: crate::operation::cancel_resize::builders::CancelResizeOutputBuilder,
-) -> Result<crate::operation::cancel_resize::builders::CancelResizeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::cancel_resize::builders::CancelResizeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

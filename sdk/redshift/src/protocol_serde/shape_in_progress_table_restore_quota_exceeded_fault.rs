@@ -3,7 +3,7 @@
 pub fn de_in_progress_table_restore_quota_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder,
-) -> Result<crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InProgressTableRestoreQuotaExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

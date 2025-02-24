@@ -2,6 +2,6 @@
 pub fn ser_resource_config(
     #[allow(unused_variables)] object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     #[allow(unused_variables)] input: &crate::types::ResourceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     Ok(())
 }

@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_type_not_available_for_organization_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::PolicyTypeNotAvailableForOrganizationExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::PolicyTypeNotAvailableForOrganizationExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

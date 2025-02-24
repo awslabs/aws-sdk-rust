@@ -126,7 +126,7 @@ pub fn de_list_state_machine_aliases_http_response(
 
 pub fn ser_list_state_machine_aliases_input(
     input: &crate::operation::list_state_machine_aliases::ListStateMachineAliasesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_state_machine_aliases_input::ser_list_state_machine_aliases_input_input(&mut object, input)?;
@@ -137,7 +137,7 @@ pub fn ser_list_state_machine_aliases_input(
 pub(crate) fn de_list_state_machine_aliases(
     value: &[u8],
     mut builder: crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_state_machine_aliases::builders::ListStateMachineAliasesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

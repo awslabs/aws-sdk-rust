@@ -2,7 +2,7 @@
 pub fn ser_ingress_string_to_evaluate(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressStringToEvaluate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IngressStringToEvaluate::Attribute(inner) => {
             object_2.key("Attribute").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_ingress_string_to_evaluate(
 
 pub(crate) fn de_ingress_string_to_evaluate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IngressStringToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IngressStringToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

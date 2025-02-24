@@ -2,7 +2,7 @@
 pub fn ser_scan_ec2_instance_with_findings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScanEc2InstanceWithFindings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ebs_volumes {
         object.key("ebsVolumes").boolean(*var_1);
     }

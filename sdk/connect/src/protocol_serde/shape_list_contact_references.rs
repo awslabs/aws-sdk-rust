@@ -121,7 +121,7 @@ pub fn de_list_contact_references_http_response(
 pub(crate) fn de_list_contact_references(
     value: &[u8],
     mut builder: crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -174,14 +174,14 @@ pub fn de_start_continuous_export_http_response(
 
 pub fn ser_start_continuous_export_input(
     _input: &crate::operation::start_continuous_export::StartContinuousExportInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_start_continuous_export(
     value: &[u8],
     mut builder: crate::operation::start_continuous_export::builders::StartContinuousExportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_continuous_export::builders::StartContinuousExportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

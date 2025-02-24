@@ -39,7 +39,7 @@ pub fn de_describe_application_versions_http_response(
 pub fn de_describe_application_versions(
     inp: &[u8],
     mut builder: crate::operation::describe_application_versions::builders::DescribeApplicationVersionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_application_versions::builders::DescribeApplicationVersionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

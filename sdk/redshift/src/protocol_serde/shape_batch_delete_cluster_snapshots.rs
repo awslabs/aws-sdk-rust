@@ -68,7 +68,7 @@ pub fn de_batch_delete_cluster_snapshots_http_response(
 pub fn de_batch_delete_cluster_snapshots(
     inp: &[u8],
     mut builder: crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

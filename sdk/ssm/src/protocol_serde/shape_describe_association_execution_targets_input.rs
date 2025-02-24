@@ -2,7 +2,7 @@
 pub fn ser_describe_association_execution_targets_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_association_execution_targets::DescribeAssociationExecutionTargetsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.association_id {
         object.key("AssociationId").string(var_1.as_str());
     }

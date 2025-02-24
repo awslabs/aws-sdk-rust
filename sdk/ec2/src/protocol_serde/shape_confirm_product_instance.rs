@@ -39,7 +39,10 @@ pub fn de_confirm_product_instance_http_response(
 pub fn de_confirm_product_instance(
     inp: &[u8],
     mut builder: crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder,
-) -> Result<crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

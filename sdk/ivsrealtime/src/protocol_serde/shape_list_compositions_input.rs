@@ -2,7 +2,7 @@
 pub fn ser_list_compositions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_compositions::ListCompositionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_by_encoder_configuration_arn {
         object.key("filterByEncoderConfigurationArn").string(var_1.as_str());
     }

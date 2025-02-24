@@ -2,7 +2,7 @@
 pub fn ser_catalog_schema_change_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CatalogSchemaChangePolicy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_update_catalog {
         object.key("EnableUpdateCatalog").boolean(*var_1);
     }
@@ -14,7 +14,7 @@ pub fn ser_catalog_schema_change_policy(
 
 pub(crate) fn de_catalog_schema_change_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CatalogSchemaChangePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CatalogSchemaChangePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

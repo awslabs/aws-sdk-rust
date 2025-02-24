@@ -2,7 +2,7 @@
 pub fn ser_oidc_jwt_update_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OidcJwtUpdateConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.claim_attribute_path {
         object.key("ClaimAttributePath").string(var_1.as_str());
     }

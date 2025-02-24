@@ -147,7 +147,7 @@ pub fn de_get_table_metadata_location_http_response(
 pub(crate) fn de_get_table_metadata_location(
     value: &[u8],
     mut builder: crate::operation::get_table_metadata_location::builders::GetTableMetadataLocationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_table_metadata_location::builders::GetTableMetadataLocationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

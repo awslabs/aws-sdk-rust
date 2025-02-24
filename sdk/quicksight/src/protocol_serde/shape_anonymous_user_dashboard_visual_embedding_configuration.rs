@@ -2,7 +2,7 @@
 pub fn ser_anonymous_user_dashboard_visual_embedding_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.initial_dashboard_visual_id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("InitialDashboardVisualId").start_object();

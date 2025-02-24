@@ -2,7 +2,7 @@
 pub fn ser_accept_account_link_invitation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_account_link_invitation::AcceptAccountLinkInvitationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.link_id {
         object.key("LinkId").string(var_1.as_str());
     }

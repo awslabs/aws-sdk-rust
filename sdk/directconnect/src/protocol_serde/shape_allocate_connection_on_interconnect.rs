@@ -85,7 +85,7 @@ pub fn de_allocate_connection_on_interconnect_http_response(
 
 pub fn ser_allocate_connection_on_interconnect_input(
     input: &crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_allocate_connection_on_interconnect_input::ser_allocate_connection_on_interconnect_input_input(&mut object, input)?;
@@ -96,7 +96,7 @@ pub fn ser_allocate_connection_on_interconnect_input(
 pub(crate) fn de_allocate_connection_on_interconnect(
     value: &[u8],
     mut builder: crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

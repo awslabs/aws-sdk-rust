@@ -39,7 +39,10 @@ pub fn de_enable_vpc_classic_link_http_response(
 pub fn de_enable_vpc_classic_link(
     inp: &[u8],
     mut builder: crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder,
-) -> Result<crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

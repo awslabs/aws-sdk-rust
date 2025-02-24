@@ -33,7 +33,7 @@ pub fn de_allocate_address_http_response(
 pub fn de_allocate_address(
     inp: &[u8],
     mut builder: crate::operation::allocate_address::builders::AllocateAddressOutputBuilder,
-) -> Result<crate::operation::allocate_address::builders::AllocateAddressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::allocate_address::builders::AllocateAddressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

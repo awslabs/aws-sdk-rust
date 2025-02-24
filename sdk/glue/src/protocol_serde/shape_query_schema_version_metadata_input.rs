@@ -2,7 +2,7 @@
 pub fn ser_query_schema_version_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.schema_id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SchemaId").start_object();

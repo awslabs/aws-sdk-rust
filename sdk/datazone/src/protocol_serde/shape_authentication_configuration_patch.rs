@@ -2,7 +2,7 @@
 pub fn ser_authentication_configuration_patch(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AuthenticationConfigurationPatch,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.secret_arn {
         object.key("secretArn").string(var_1.as_str());
     }

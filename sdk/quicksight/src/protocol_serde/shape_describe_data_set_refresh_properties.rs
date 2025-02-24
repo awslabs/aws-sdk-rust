@@ -173,7 +173,7 @@ pub fn de_describe_data_set_refresh_properties_http_response(
 pub(crate) fn de_describe_data_set_refresh_properties(
     value: &[u8],
     mut builder: crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

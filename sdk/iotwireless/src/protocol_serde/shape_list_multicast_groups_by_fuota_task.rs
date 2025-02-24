@@ -128,7 +128,7 @@ pub fn de_list_multicast_groups_by_fuota_task_http_response(
 pub(crate) fn de_list_multicast_groups_by_fuota_task(
     value: &[u8],
     mut builder: crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_multicast_groups_by_fuota_task::builders::ListMulticastGroupsByFuotaTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

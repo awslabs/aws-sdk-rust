@@ -199,7 +199,7 @@ pub fn ser_describe_document_versions_headers(
 pub(crate) fn de_describe_document_versions(
     value: &[u8],
     mut builder: crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

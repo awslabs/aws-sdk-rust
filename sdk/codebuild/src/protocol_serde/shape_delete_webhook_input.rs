@@ -2,7 +2,7 @@
 pub fn ser_delete_webhook_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_webhook::DeleteWebhookInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_name {
         object.key("projectName").string(var_1.as_str());
     }

@@ -110,7 +110,7 @@ pub fn de_get_programmatic_access_credentials_http_response(
 pub(crate) fn de_get_programmatic_access_credentials(
     value: &[u8],
     mut builder: crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

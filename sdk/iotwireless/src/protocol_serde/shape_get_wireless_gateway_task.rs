@@ -125,7 +125,7 @@ pub fn de_get_wireless_gateway_task_http_response(
 pub(crate) fn de_get_wireless_gateway_task(
     value: &[u8],
     mut builder: crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_wireless_gateway_task::builders::GetWirelessGatewayTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

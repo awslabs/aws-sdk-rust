@@ -2,7 +2,7 @@
 pub fn ser_delete_replication_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_replication_job::DeleteReplicationJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.replication_job_id {
         object.key("replicationJobId").string(var_1.as_str());
     }

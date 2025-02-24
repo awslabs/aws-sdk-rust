@@ -106,7 +106,7 @@ pub fn de_restore_table_from_recovery_point_http_response(
 
 pub fn ser_restore_table_from_recovery_point_input(
     input: &crate::operation::restore_table_from_recovery_point::RestoreTableFromRecoveryPointInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_restore_table_from_recovery_point_input::ser_restore_table_from_recovery_point_input_input(&mut object, input)?;
@@ -117,7 +117,7 @@ pub fn ser_restore_table_from_recovery_point_input(
 pub(crate) fn de_restore_table_from_recovery_point(
     value: &[u8],
     mut builder: crate::operation::restore_table_from_recovery_point::builders::RestoreTableFromRecoveryPointOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::restore_table_from_recovery_point::builders::RestoreTableFromRecoveryPointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

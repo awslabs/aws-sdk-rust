@@ -122,7 +122,7 @@ pub fn de_start_bulk_associate_wireless_device_with_multicast_group_http_respons
 
 pub fn ser_start_bulk_associate_wireless_device_with_multicast_group_input(
     input: &crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_bulk_associate_wireless_device_with_multicast_group_input::ser_start_bulk_associate_wireless_device_with_multicast_group_input_input(&mut object, input)?;

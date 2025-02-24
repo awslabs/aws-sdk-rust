@@ -1091,7 +1091,7 @@ pub fn ser_copy_distribution_headers(
 
 pub fn ser_copy_distribution_op_input(
     input: &crate::operation::copy_distribution::CopyDistributionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

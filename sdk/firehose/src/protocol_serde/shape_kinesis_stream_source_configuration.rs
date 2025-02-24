@@ -2,7 +2,7 @@
 pub fn ser_kinesis_stream_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisStreamSourceConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KinesisStreamARN").string(input.kinesis_stream_arn.as_str());
     }

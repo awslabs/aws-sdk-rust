@@ -77,7 +77,7 @@ pub fn de_deregister_managed_instance_http_response(
 
 pub fn ser_deregister_managed_instance_input(
     input: &crate::operation::deregister_managed_instance::DeregisterManagedInstanceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deregister_managed_instance_input::ser_deregister_managed_instance_input_input(&mut object, input)?;

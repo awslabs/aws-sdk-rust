@@ -2,7 +2,7 @@
 pub fn ser_update_device_fleet_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_device_fleet::UpdateDeviceFleetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_fleet_name {
         object.key("DeviceFleetName").string(var_1.as_str());
     }

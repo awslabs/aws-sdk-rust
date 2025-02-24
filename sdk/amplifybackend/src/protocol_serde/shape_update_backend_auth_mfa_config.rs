@@ -2,7 +2,7 @@
 pub fn ser_update_backend_auth_mfa_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateBackendAuthMfaConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mfa_mode {
         object.key("MFAMode").string(var_1.as_str());
     }

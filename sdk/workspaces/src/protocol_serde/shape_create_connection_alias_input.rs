@@ -2,7 +2,7 @@
 pub fn ser_create_connection_alias_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_connection_alias::CreateConnectionAliasInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_string {
         object.key("ConnectionString").string(var_1.as_str());
     }

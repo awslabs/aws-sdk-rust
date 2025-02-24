@@ -2,7 +2,7 @@
 pub fn ser_cloudwatch_logs_log_destination_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudwatchLogsLogDestinationParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("LogGroupArn").string(input.log_group_arn.as_str());
     }

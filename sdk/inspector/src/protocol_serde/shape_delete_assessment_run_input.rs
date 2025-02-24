@@ -2,7 +2,7 @@
 pub fn ser_delete_assessment_run_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_assessment_run::DeleteAssessmentRunInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.assessment_run_arn {
         object.key("assessmentRunArn").string(var_1.as_str());
     }

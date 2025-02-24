@@ -127,7 +127,7 @@ pub fn de_delete_profile_object_type_http_response(
 pub(crate) fn de_delete_profile_object_type(
     value: &[u8],
     mut builder: crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

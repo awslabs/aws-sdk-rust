@@ -141,7 +141,7 @@ pub fn de_delete_resource_endpoint_association_http_response(
 pub(crate) fn de_delete_resource_endpoint_association(
     value: &[u8],
     mut builder: crate::operation::delete_resource_endpoint_association::builders::DeleteResourceEndpointAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_resource_endpoint_association::builders::DeleteResourceEndpointAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

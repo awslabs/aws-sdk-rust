@@ -2,7 +2,7 @@
 pub fn ser_list_realtime_contact_analysis_segments_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_id {
         object.key("ContactId").string(var_1.as_str());
     }

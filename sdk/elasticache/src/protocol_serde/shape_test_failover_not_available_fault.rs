@@ -3,7 +3,7 @@
 pub fn de_test_failover_not_available_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TestFailoverNotAvailableFaultBuilder,
-) -> Result<crate::types::error::builders::TestFailoverNotAvailableFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TestFailoverNotAvailableFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

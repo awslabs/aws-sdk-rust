@@ -42,7 +42,7 @@ pub fn de_register_instance_event_notification_attributes_http_response(
 pub fn de_register_instance_event_notification_attributes(
     inp: &[u8],
     mut builder: crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

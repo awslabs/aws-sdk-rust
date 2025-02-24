@@ -2,7 +2,7 @@
 pub fn ser_query_compute_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::QueryComputeRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_mode {
         object.key("ComputeMode").string(var_1.as_str());
     }

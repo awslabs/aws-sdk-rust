@@ -110,7 +110,7 @@ pub fn de_describe_standards_controls_http_response(
 pub(crate) fn de_describe_standards_controls(
     value: &[u8],
     mut builder: crate::operation::describe_standards_controls::builders::DescribeStandardsControlsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_standards_controls::builders::DescribeStandardsControlsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

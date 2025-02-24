@@ -137,7 +137,7 @@ pub fn de_disconnect_source_server_http_response(
 
 pub fn ser_disconnect_source_server_input(
     input: &crate::operation::disconnect_source_server::DisconnectSourceServerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disconnect_source_server_input::ser_disconnect_source_server_input_input(&mut object, input)?;
@@ -148,7 +148,7 @@ pub fn ser_disconnect_source_server_input(
 pub(crate) fn de_disconnect_source_server(
     value: &[u8],
     mut builder: crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disconnect_source_server::builders::DisconnectSourceServerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

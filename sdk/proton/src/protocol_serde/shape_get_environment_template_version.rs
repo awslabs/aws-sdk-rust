@@ -120,7 +120,7 @@ pub fn de_get_environment_template_version_http_response(
 
 pub fn ser_get_environment_template_version_input(
     input: &crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_environment_template_version_input::ser_get_environment_template_version_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_get_environment_template_version_input(
 pub(crate) fn de_get_environment_template_version(
     value: &[u8],
     mut builder: crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

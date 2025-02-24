@@ -39,7 +39,7 @@ pub fn de_describe_active_receipt_rule_set_http_response(
 pub fn de_describe_active_receipt_rule_set(
     inp: &[u8],
     mut builder: crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

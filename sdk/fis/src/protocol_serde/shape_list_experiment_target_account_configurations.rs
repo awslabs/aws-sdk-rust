@@ -89,7 +89,7 @@ pub fn de_list_experiment_target_account_configurations_http_response(
 pub(crate) fn de_list_experiment_target_account_configurations(
     value: &[u8],
     mut builder: crate::operation::list_experiment_target_account_configurations::builders::ListExperimentTargetAccountConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_experiment_target_account_configurations::builders::ListExperimentTargetAccountConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

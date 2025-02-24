@@ -2,7 +2,7 @@
 pub fn ser_column_sort(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnSort,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sort_by {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SortBy").start_object();
@@ -23,7 +23,7 @@ pub fn ser_column_sort(
 
 pub(crate) fn de_column_sort<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ColumnSort>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ColumnSort>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_eks_anywhere_subscription_term(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksAnywhereSubscriptionTerm,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.duration != 0 {
         object.key("duration").number(
             #[allow(clippy::useless_conversion)]
@@ -17,7 +17,7 @@ pub fn ser_eks_anywhere_subscription_term(
 
 pub(crate) fn de_eks_anywhere_subscription_term<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EksAnywhereSubscriptionTerm>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EksAnywhereSubscriptionTerm>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

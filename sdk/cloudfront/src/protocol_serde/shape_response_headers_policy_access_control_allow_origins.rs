@@ -2,7 +2,7 @@
 pub fn ser_response_headers_policy_access_control_allow_origins(
     input: &crate::types::ResponseHeadersPolicyAccessControlAllowOrigins,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -25,7 +25,7 @@ pub fn ser_response_headers_policy_access_control_allow_origins(
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_access_control_allow_origins(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowOrigins, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyAccessControlAllowOrigins::builder();
     while let Some(mut tag) = decoder.next_tag() {

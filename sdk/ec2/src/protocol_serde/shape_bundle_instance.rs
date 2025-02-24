@@ -33,7 +33,7 @@ pub fn de_bundle_instance_http_response(
 pub fn de_bundle_instance(
     inp: &[u8],
     mut builder: crate::operation::bundle_instance::builders::BundleInstanceOutputBuilder,
-) -> Result<crate::operation::bundle_instance::builders::BundleInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::bundle_instance::builders::BundleInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

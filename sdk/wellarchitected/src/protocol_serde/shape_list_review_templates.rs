@@ -106,7 +106,7 @@ pub fn de_list_review_templates_http_response(
 pub(crate) fn de_list_review_templates(
     value: &[u8],
     mut builder: crate::operation::list_review_templates::builders::ListReviewTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_review_templates::builders::ListReviewTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

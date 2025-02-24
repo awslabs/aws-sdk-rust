@@ -82,7 +82,7 @@ pub fn de_delete_microsoft_teams_configured_team_http_response(
 
 pub fn ser_delete_microsoft_teams_configured_team_input(
     input: &crate::operation::delete_microsoft_teams_configured_team::DeleteMicrosoftTeamsConfiguredTeamInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_microsoft_teams_configured_team_input::ser_delete_microsoft_teams_configured_team_input_input(

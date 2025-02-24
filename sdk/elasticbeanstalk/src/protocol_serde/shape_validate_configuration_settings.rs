@@ -84,7 +84,7 @@ pub fn de_validate_configuration_settings_http_response(
 pub fn de_validate_configuration_settings(
     inp: &[u8],
     mut builder: crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

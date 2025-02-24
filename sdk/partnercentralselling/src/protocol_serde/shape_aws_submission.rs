@@ -2,7 +2,7 @@
 pub fn ser_aws_submission(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSubmission,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InvolvementType").string(input.involvement_type.as_str());
     }

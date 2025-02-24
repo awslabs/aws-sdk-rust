@@ -2,7 +2,7 @@
 pub fn ser_road_snap_trace_point(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoadSnapTracePoint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.heading != 0.0 {
         object.key("Heading").number(
             #[allow(clippy::useless_conversion)]

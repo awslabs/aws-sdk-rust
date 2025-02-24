@@ -110,7 +110,7 @@ pub fn de_apply_security_groups_to_load_balancer_http_response(
 pub fn de_apply_security_groups_to_load_balancer(
     inp: &[u8],
     mut builder: crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

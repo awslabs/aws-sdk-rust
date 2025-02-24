@@ -2,7 +2,7 @@
 pub fn ser_get_service_sync_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_service_sync_config::GetServiceSyncConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_name {
         object.key("serviceName").string(var_1.as_str());
     }

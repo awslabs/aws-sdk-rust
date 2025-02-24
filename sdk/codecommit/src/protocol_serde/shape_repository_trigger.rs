@@ -2,7 +2,7 @@
 pub fn ser_repository_trigger(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RepositoryTrigger,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_repository_trigger(
 
 pub(crate) fn de_repository_trigger<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RepositoryTrigger>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RepositoryTrigger>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

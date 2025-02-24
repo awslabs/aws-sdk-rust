@@ -2,7 +2,7 @@
 pub fn ser_service_update_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceUpdateRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_update_name_to_apply {
         object.key("ServiceUpdateNameToApply").string(var_1.as_str());
     }

@@ -41,8 +41,10 @@ pub fn de_disassociate_vpc_cidr_block_http_response(
 pub fn de_disassociate_vpc_cidr_block(
     inp: &[u8],
     mut builder: crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockOutputBuilder,
-) -> Result<crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

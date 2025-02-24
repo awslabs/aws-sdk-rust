@@ -61,7 +61,7 @@ pub fn de_get_resource_definition_http_response(
 pub(crate) fn de_get_resource_definition(
     value: &[u8],
     mut builder: crate::operation::get_resource_definition::builders::GetResourceDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_resource_definition::builders::GetResourceDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

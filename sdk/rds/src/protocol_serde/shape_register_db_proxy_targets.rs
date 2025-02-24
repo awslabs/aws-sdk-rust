@@ -200,7 +200,10 @@ pub fn de_register_db_proxy_targets_http_response(
 pub fn de_register_db_proxy_targets(
     inp: &[u8],
     mut builder: crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder,
-) -> Result<crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

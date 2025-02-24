@@ -143,7 +143,7 @@ pub fn de_create_global_replication_group_http_response(
 pub fn de_create_global_replication_group(
     inp: &[u8],
     mut builder: crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_global_replication_group::builders::CreateGlobalReplicationGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

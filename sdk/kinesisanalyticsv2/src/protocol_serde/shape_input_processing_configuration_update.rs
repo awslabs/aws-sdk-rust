@@ -2,7 +2,7 @@
 pub fn ser_input_processing_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputProcessingConfigurationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_lambda_processor_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("InputLambdaProcessorUpdate").start_object();

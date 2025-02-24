@@ -2,7 +2,7 @@
 pub fn ser_update_assistant_ai_agent_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_assistant_ai_agent::UpdateAssistantAiAgentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ai_agent_type {
         object.key("aiAgentType").string(var_1.as_str());
     }

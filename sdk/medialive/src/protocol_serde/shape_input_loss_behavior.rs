@@ -2,7 +2,7 @@
 pub fn ser_input_loss_behavior(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLossBehavior,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.black_frame_msec {
         object.key("blackFrameMsec").number(
             #[allow(clippy::useless_conversion)]
@@ -32,7 +32,7 @@ pub fn ser_input_loss_behavior(
 
 pub(crate) fn de_input_loss_behavior<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InputLossBehavior>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InputLossBehavior>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

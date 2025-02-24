@@ -134,7 +134,7 @@ pub fn de_get_ingestion_destination_http_response(
 pub(crate) fn de_get_ingestion_destination(
     value: &[u8],
     mut builder: crate::operation::get_ingestion_destination::builders::GetIngestionDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_ingestion_destination::builders::GetIngestionDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

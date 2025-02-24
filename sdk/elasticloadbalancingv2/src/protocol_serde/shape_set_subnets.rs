@@ -162,7 +162,7 @@ pub fn de_set_subnets_http_response(
 pub fn de_set_subnets(
     inp: &[u8],
     mut builder: crate::operation::set_subnets::builders::SetSubnetsOutputBuilder,
-) -> Result<crate::operation::set_subnets::builders::SetSubnetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::set_subnets::builders::SetSubnetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

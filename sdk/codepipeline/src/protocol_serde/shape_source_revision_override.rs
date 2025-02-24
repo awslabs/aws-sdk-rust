@@ -2,7 +2,7 @@
 pub fn ser_source_revision_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceRevisionOverride,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("actionName").string(input.action_name.as_str());
     }

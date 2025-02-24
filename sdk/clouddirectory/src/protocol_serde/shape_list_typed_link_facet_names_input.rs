@@ -2,7 +2,7 @@
 pub fn ser_list_typed_link_facet_names_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]

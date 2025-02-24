@@ -68,7 +68,7 @@ pub fn de_archive_findings_http_response(
 
 pub fn ser_archive_findings_input(
     input: &crate::operation::archive_findings::ArchiveFindingsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_archive_findings_input::ser_archive_findings_input_input(&mut object, input)?;

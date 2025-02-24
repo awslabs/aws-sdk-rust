@@ -64,7 +64,7 @@ impl Client {
         &self.handle.conf
     }
 
-    fn validate_config(handle: &Handle) -> Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+    fn validate_config(handle: &Handle) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
         let mut cfg = ::aws_smithy_types::config_bag::ConfigBag::base();
         handle
             .runtime_plugins

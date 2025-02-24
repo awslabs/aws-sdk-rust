@@ -173,7 +173,7 @@ pub fn de_update_regex_match_set_http_response(
 
 pub fn ser_update_regex_match_set_input(
     input: &crate::operation::update_regex_match_set::UpdateRegexMatchSetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_regex_match_set_input::ser_update_regex_match_set_input_input(&mut object, input)?;
@@ -184,7 +184,7 @@ pub fn ser_update_regex_match_set_input(
 pub(crate) fn de_update_regex_match_set(
     value: &[u8],
     mut builder: crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

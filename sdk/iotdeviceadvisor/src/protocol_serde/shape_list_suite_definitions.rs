@@ -76,7 +76,7 @@ pub fn de_list_suite_definitions_http_response(
 pub(crate) fn de_list_suite_definitions(
     value: &[u8],
     mut builder: crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_suite_definitions::builders::ListSuiteDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

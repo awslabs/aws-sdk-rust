@@ -2,7 +2,7 @@
 pub fn ser_update_quick_sight_q_search_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_quick_sight_q_search_configuration::UpdateQuickSightQSearchConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.q_search_status {
         object.key("QSearchStatus").string(var_1.as_str());
     }

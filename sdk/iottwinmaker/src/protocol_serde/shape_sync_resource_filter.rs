@@ -2,7 +2,7 @@
 pub fn ser_sync_resource_filter(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SyncResourceFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SyncResourceFilter::State(inner) => {
             object_4.key("state").string(inner.as_str());

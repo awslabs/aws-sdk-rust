@@ -2,7 +2,7 @@
 pub fn ser_aws_elb_load_balancer_instance(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElbLoadBalancerInstance,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_id {
         object.key("InstanceId").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_aws_elb_load_balancer_instance(
 
 pub(crate) fn de_aws_elb_load_balancer_instance<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsElbLoadBalancerInstance>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsElbLoadBalancerInstance>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

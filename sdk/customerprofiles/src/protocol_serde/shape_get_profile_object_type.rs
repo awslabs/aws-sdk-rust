@@ -123,7 +123,7 @@ pub fn de_get_profile_object_type_http_response(
 pub(crate) fn de_get_profile_object_type(
     value: &[u8],
     mut builder: crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

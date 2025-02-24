@@ -2,7 +2,7 @@
 pub fn ser_create_call_analytics_category_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.category_name {
         object.key("CategoryName").string(var_1.as_str());
     }

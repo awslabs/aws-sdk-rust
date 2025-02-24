@@ -2,7 +2,7 @@
 pub fn ser_association_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssociationFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_policy_id {
         object.key("ConfigurationPolicyId").string(var_1.as_str());
     }

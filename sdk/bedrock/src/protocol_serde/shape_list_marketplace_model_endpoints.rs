@@ -126,7 +126,7 @@ pub fn de_list_marketplace_model_endpoints_http_response(
 pub(crate) fn de_list_marketplace_model_endpoints(
     value: &[u8],
     mut builder: crate::operation::list_marketplace_model_endpoints::builders::ListMarketplaceModelEndpointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_marketplace_model_endpoints::builders::ListMarketplaceModelEndpointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

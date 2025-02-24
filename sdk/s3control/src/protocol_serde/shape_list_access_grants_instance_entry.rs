@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_list_access_grants_instance_entry(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ListAccessGrantsInstanceEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ListAccessGrantsInstanceEntry, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ListAccessGrantsInstanceEntry::builder();
     while let Some(mut tag) = decoder.next_tag() {

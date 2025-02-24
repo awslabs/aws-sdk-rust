@@ -88,7 +88,7 @@ pub fn de_terminate_instance_in_auto_scaling_group_http_response(
 pub fn de_terminate_instance_in_auto_scaling_group(
     inp: &[u8],
     mut builder: crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::terminate_instance_in_auto_scaling_group::builders::TerminateInstanceInAutoScalingGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

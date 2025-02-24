@@ -114,7 +114,7 @@ pub fn de_batch_get_rum_metric_definitions_http_response(
 pub(crate) fn de_batch_get_rum_metric_definitions(
     value: &[u8],
     mut builder: crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

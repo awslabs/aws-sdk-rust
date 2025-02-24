@@ -59,7 +59,7 @@ pub fn ser_list_bucket_metrics_configurations_headers(
 pub fn de_list_bucket_metrics_configurations(
     inp: &[u8],
     mut builder: crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_bucket_metrics_configurations::builders::ListBucketMetricsConfigurationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

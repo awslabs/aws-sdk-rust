@@ -137,7 +137,7 @@ pub fn de_get_subscription_request_details_http_response(
 pub(crate) fn de_get_subscription_request_details(
     value: &[u8],
     mut builder: crate::operation::get_subscription_request_details::builders::GetSubscriptionRequestDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_subscription_request_details::builders::GetSubscriptionRequestDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

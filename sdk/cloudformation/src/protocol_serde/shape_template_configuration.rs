@@ -3,7 +3,7 @@
 pub fn ser_template_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::TemplateConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DeletionPolicy");
     if let Some(var_2) = &input.deletion_policy {
@@ -20,7 +20,7 @@ pub fn ser_template_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_template_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::TemplateConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::TemplateConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::TemplateConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

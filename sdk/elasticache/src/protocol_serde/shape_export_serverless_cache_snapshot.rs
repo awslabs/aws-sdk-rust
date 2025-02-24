@@ -124,7 +124,7 @@ pub fn de_export_serverless_cache_snapshot_http_response(
 pub fn de_export_serverless_cache_snapshot(
     inp: &[u8],
     mut builder: crate::operation::export_serverless_cache_snapshot::builders::ExportServerlessCacheSnapshotOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::export_serverless_cache_snapshot::builders::ExportServerlessCacheSnapshotOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

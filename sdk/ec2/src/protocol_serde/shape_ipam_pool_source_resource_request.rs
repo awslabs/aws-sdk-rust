@@ -3,7 +3,7 @@
 pub fn ser_ipam_pool_source_resource_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IpamPoolSourceResourceRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceId");
     if let Some(var_2) = &input.resource_id {

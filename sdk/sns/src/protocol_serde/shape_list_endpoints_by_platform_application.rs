@@ -116,7 +116,7 @@ pub fn de_list_endpoints_by_platform_application_http_response(
 pub fn de_list_endpoints_by_platform_application(
     inp: &[u8],
     mut builder: crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

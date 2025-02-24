@@ -2,7 +2,7 @@
 pub fn ser_aws_open_search_service_domain_domain_endpoint_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.custom_endpoint_certificate_arn {
         object.key("CustomEndpointCertificateArn").string(var_1.as_str());
     }
@@ -23,7 +23,10 @@ pub fn ser_aws_open_search_service_domain_domain_endpoint_options_details(
 
 pub(crate) fn de_aws_open_search_service_domain_domain_endpoint_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

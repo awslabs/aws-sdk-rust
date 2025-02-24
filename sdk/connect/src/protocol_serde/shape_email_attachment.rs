@@ -2,7 +2,7 @@
 pub fn ser_email_attachment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailAttachment,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FileName").string(input.file_name.as_str());
     }

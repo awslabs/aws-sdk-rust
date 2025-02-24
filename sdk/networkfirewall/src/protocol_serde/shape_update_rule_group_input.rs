@@ -2,7 +2,7 @@
 pub fn ser_update_rule_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_rule_group::UpdateRuleGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update_token {
         object.key("UpdateToken").string(var_1.as_str());
     }

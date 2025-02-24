@@ -2,7 +2,7 @@
 pub fn ser_describe_location_object_storage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.location_arn {
         object.key("LocationArn").string(var_1.as_str());
     }

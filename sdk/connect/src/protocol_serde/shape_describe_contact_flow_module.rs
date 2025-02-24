@@ -140,7 +140,7 @@ pub fn de_describe_contact_flow_module_http_response(
 pub(crate) fn de_describe_contact_flow_module(
     value: &[u8],
     mut builder: crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_contact_flow_module::builders::DescribeContactFlowModuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

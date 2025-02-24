@@ -166,7 +166,7 @@ pub fn de_get_table_bucket_maintenance_configuration_http_response(
 pub(crate) fn de_get_table_bucket_maintenance_configuration(
     value: &[u8],
     mut builder: crate::operation::get_table_bucket_maintenance_configuration::builders::GetTableBucketMaintenanceConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_table_bucket_maintenance_configuration::builders::GetTableBucketMaintenanceConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

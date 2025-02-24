@@ -110,7 +110,7 @@ pub fn de_list_things_in_billing_group_http_response(
 pub(crate) fn de_list_things_in_billing_group(
     value: &[u8],
     mut builder: crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_things_in_billing_group::builders::ListThingsInBillingGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

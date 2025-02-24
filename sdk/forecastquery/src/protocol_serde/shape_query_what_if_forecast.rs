@@ -120,7 +120,7 @@ pub fn de_query_what_if_forecast_http_response(
 
 pub fn ser_query_what_if_forecast_input(
     input: &crate::operation::query_what_if_forecast::QueryWhatIfForecastInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_query_what_if_forecast_input::ser_query_what_if_forecast_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_query_what_if_forecast_input(
 pub(crate) fn de_query_what_if_forecast(
     value: &[u8],
     mut builder: crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::query_what_if_forecast::builders::QueryWhatIfForecastOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

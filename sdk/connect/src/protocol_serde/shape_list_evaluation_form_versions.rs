@@ -108,7 +108,7 @@ pub fn de_list_evaluation_form_versions_http_response(
 pub(crate) fn de_list_evaluation_form_versions(
     value: &[u8],
     mut builder: crate::operation::list_evaluation_form_versions::builders::ListEvaluationFormVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_evaluation_form_versions::builders::ListEvaluationFormVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

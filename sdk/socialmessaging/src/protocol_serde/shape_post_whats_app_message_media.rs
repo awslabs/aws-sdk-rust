@@ -174,7 +174,7 @@ pub fn de_post_whats_app_message_media_http_response(
 
 pub fn ser_post_whats_app_message_media_input(
     input: &crate::operation::post_whats_app_message_media::PostWhatsAppMessageMediaInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_post_whats_app_message_media_input::ser_post_whats_app_message_media_input_input(&mut object, input)?;
@@ -185,7 +185,7 @@ pub fn ser_post_whats_app_message_media_input(
 pub(crate) fn de_post_whats_app_message_media(
     value: &[u8],
     mut builder: crate::operation::post_whats_app_message_media::builders::PostWhatsAppMessageMediaOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::post_whats_app_message_media::builders::PostWhatsAppMessageMediaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -33,7 +33,7 @@ pub fn de_get_send_quota_http_response(
 pub fn de_get_send_quota(
     inp: &[u8],
     mut builder: crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder,
-) -> Result<crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_send_quota::builders::GetSendQuotaOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

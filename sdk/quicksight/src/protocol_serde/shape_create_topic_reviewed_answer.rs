@@ -2,7 +2,7 @@
 pub fn ser_create_topic_reviewed_answer(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateTopicReviewedAnswer,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AnswerId").string(input.answer_id.as_str());
     }

@@ -147,7 +147,7 @@ pub fn ser_validate_sol_function_package_content_headers(
 pub(crate) fn de_validate_sol_function_package_content(
     value: &[u8],
     mut builder: crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

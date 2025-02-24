@@ -119,7 +119,7 @@ pub fn de_get_backup_plan_from_template_http_response(
 pub(crate) fn de_get_backup_plan_from_template(
     value: &[u8],
     mut builder: crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

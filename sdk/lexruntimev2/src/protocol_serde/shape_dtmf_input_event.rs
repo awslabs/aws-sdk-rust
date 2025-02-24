@@ -2,7 +2,7 @@
 pub fn ser_dtmf_input_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DtmfInputEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("inputCharacter").string(input.input_character.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_terminology_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TerminologyData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("File").string_unchecked(&::aws_smithy_types::base64::encode(&input.file));
     }

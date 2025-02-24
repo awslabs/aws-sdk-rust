@@ -41,7 +41,7 @@ pub fn de_describe_client_vpn_endpoints_http_response(
 pub fn de_describe_client_vpn_endpoints(
     inp: &[u8],
     mut builder: crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

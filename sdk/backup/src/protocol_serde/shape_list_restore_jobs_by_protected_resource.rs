@@ -124,7 +124,7 @@ pub fn de_list_restore_jobs_by_protected_resource_http_response(
 pub(crate) fn de_list_restore_jobs_by_protected_resource(
     value: &[u8],
     mut builder: crate::operation::list_restore_jobs_by_protected_resource::builders::ListRestoreJobsByProtectedResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_restore_jobs_by_protected_resource::builders::ListRestoreJobsByProtectedResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

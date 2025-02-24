@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_export_image_task(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ExportImageTask, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ExportImageTask, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ExportImageTask::builder();
     while let Some(mut tag) = decoder.next_tag() {

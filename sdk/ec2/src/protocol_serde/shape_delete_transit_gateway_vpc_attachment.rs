@@ -39,7 +39,7 @@ pub fn de_delete_transit_gateway_vpc_attachment_http_response(
 pub fn de_delete_transit_gateway_vpc_attachment(
     inp: &[u8],
     mut builder: crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_transit_gateway_vpc_attachment::builders::DeleteTransitGatewayVpcAttachmentOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

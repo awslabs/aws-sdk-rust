@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_vpc_peering_connection_vpc_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::VpcPeeringConnectionVpcInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::VpcPeeringConnectionVpcInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::VpcPeeringConnectionVpcInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {

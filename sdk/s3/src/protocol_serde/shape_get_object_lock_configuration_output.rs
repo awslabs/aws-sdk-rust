@@ -13,7 +13,9 @@ pub(crate) fn de_object_lock_configuration_payload(
         .transpose()
 }
 
-pub fn de_object_lock_configuration(inp: &[u8]) -> Result<crate::types::ObjectLockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_object_lock_configuration(
+    inp: &[u8],
+) -> std::result::Result<crate::types::ObjectLockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

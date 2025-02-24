@@ -126,7 +126,7 @@ pub fn de_get_architecture_recommendations_http_response(
 pub(crate) fn de_get_architecture_recommendations(
     value: &[u8],
     mut builder: crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

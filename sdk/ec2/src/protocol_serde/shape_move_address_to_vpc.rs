@@ -35,7 +35,7 @@ pub fn de_move_address_to_vpc_http_response(
 pub fn de_move_address_to_vpc(
     inp: &[u8],
     mut builder: crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder,
-) -> Result<crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

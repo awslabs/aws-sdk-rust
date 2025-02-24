@@ -184,7 +184,7 @@ pub fn de_get_media_insights_pipeline_configuration_http_response(
 pub(crate) fn de_get_media_insights_pipeline_configuration(
     value: &[u8],
     mut builder: crate::operation::get_media_insights_pipeline_configuration::builders::GetMediaInsightsPipelineConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_media_insights_pipeline_configuration::builders::GetMediaInsightsPipelineConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

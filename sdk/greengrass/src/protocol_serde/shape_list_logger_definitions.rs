@@ -38,7 +38,7 @@ pub fn de_list_logger_definitions_http_response(
 pub(crate) fn de_list_logger_definitions(
     value: &[u8],
     mut builder: crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_logger_definitions::builders::ListLoggerDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

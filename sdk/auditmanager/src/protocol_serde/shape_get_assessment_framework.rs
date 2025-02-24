@@ -106,7 +106,7 @@ pub fn de_get_assessment_framework_http_response(
 pub(crate) fn de_get_assessment_framework(
     value: &[u8],
     mut builder: crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

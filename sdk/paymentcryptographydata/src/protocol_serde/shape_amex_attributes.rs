@@ -2,7 +2,7 @@
 pub fn ser_amex_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AmexAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MajorKeyDerivationMode").string(input.major_key_derivation_mode.as_str());
     }

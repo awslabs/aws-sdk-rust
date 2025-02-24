@@ -79,14 +79,14 @@ pub fn de_get_block_public_access_configuration_http_response(
 
 pub fn ser_get_block_public_access_configuration_input(
     _input: &crate::operation::get_block_public_access_configuration::GetBlockPublicAccessConfigurationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_block_public_access_configuration(
     value: &[u8],
     mut builder: crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_block_public_access_configuration::builders::GetBlockPublicAccessConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

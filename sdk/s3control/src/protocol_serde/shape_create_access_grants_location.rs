@@ -57,7 +57,7 @@ pub fn ser_create_access_grants_location_headers(
 
 pub fn ser_create_access_grants_location_op_input(
     input: &crate::operation::create_access_grants_location::CreateAccessGrantsLocationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -74,7 +74,7 @@ pub fn ser_create_access_grants_location_op_input(
 pub fn de_create_access_grants_location(
     inp: &[u8],
     mut builder: crate::operation::create_access_grants_location::builders::CreateAccessGrantsLocationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_access_grants_location::builders::CreateAccessGrantsLocationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

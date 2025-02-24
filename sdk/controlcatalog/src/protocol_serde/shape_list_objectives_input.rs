@@ -2,7 +2,7 @@
 pub fn ser_list_objectives_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_objectives::ListObjectivesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.objective_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ObjectiveFilter").start_object();

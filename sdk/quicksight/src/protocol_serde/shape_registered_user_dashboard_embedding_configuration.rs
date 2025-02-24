@@ -2,7 +2,7 @@
 pub fn ser_registered_user_dashboard_embedding_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegisteredUserDashboardEmbeddingConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("InitialDashboardId").string(input.initial_dashboard_id.as_str());
     }

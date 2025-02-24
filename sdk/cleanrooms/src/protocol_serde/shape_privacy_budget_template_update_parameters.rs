@@ -2,7 +2,7 @@
 pub fn ser_privacy_budget_template_update_parameters(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivacyBudgetTemplateUpdateParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PrivacyBudgetTemplateUpdateParameters::DifferentialPrivacy(inner) => {
             #[allow(unused_mut)]

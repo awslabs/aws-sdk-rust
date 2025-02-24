@@ -91,7 +91,7 @@ pub fn de_disassociate_attribute_group_http_response(
 pub(crate) fn de_disassociate_attribute_group(
     value: &[u8],
     mut builder: crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

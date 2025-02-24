@@ -2,7 +2,7 @@
 pub fn ser_delete_observability_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.observability_configuration_arn {
         object.key("ObservabilityConfigurationArn").string(var_1.as_str());
     }

@@ -46,7 +46,7 @@ pub fn de_disable_aws_network_performance_metric_subscription_http_response(
 pub fn de_disable_aws_network_performance_metric_subscription(
     inp: &[u8],
     mut builder: crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

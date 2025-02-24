@@ -2,7 +2,7 @@
 pub fn ser_update_default_branch_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_default_branch::UpdateDefaultBranchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.repository_name {
         object.key("repositoryName").string(var_1.as_str());
     }

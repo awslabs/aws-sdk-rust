@@ -2,7 +2,7 @@
 pub fn ser_road_snap_travel_mode_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RoadSnapTravelModeOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.truck {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Truck").start_object();

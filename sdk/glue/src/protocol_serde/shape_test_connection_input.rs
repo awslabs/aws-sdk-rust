@@ -2,7 +2,7 @@
 pub fn ser_test_connection_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_connection::TestConnectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_name {
         object.key("ConnectionName").string(var_1.as_str());
     }
@@ -21,7 +21,7 @@ pub fn ser_test_connection_input_input(
 pub fn ser_test_connection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestConnectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ConnectionType").string(input.connection_type.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_start_device_authorization_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_device_authorization::StartDeviceAuthorizationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_id {
         object.key("clientId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_code_gen_configuration_node(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodeGenConfigurationNode,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.athena_connector_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AthenaConnectorSource").start_object();
@@ -434,7 +434,7 @@ pub fn ser_code_gen_configuration_node(
 
 pub(crate) fn de_code_gen_configuration_node<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodeGenConfigurationNode>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodeGenConfigurationNode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_job_entity_identifiers_union(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobEntityIdentifiersUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::JobEntityIdentifiersUnion::JobDetails(inner) => {
             #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_connection_alias_permission(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectionAliasPermission,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SharedAccountId").string(input.shared_account_id.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_connection_alias_permission(
 
 pub(crate) fn de_connection_alias_permission<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConnectionAliasPermission>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConnectionAliasPermission>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_workflow_detail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowDetail,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("WorkflowId").string(input.workflow_id.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_workflow_detail(
 
 pub(crate) fn de_workflow_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WorkflowDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WorkflowDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

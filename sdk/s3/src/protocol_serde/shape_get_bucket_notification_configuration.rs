@@ -60,7 +60,7 @@ pub fn ser_get_bucket_notification_configuration_headers(
 pub fn de_get_bucket_notification_configuration(
     inp: &[u8],
     mut builder: crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_bucket_notification_configuration::builders::GetBucketNotificationConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -111,7 +111,7 @@ pub fn de_import_as_provisioned_product_http_response(
 
 pub fn ser_import_as_provisioned_product_input(
     input: &crate::operation::import_as_provisioned_product::ImportAsProvisionedProductInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_import_as_provisioned_product_input::ser_import_as_provisioned_product_input_input(&mut object, input)?;
@@ -122,7 +122,7 @@ pub fn ser_import_as_provisioned_product_input(
 pub(crate) fn de_import_as_provisioned_product(
     value: &[u8],
     mut builder: crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

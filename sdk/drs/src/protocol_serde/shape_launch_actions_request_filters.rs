@@ -2,7 +2,7 @@
 pub fn ser_launch_actions_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LaunchActionsRequestFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_ids {
         let mut array_2 = object.key("actionIds").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_stream_processor_settings_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessorSettingsForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connected_home_for_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ConnectedHomeForUpdate").start_object();

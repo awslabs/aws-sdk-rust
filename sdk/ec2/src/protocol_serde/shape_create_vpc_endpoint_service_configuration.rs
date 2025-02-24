@@ -43,7 +43,7 @@ pub fn de_create_vpc_endpoint_service_configuration_http_response(
 pub fn de_create_vpc_endpoint_service_configuration(
     inp: &[u8],
     mut builder: crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

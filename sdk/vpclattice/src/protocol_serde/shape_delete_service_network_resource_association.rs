@@ -174,7 +174,7 @@ pub fn de_delete_service_network_resource_association_http_response(
 pub(crate) fn de_delete_service_network_resource_association(
     value: &[u8],
     mut builder: crate::operation::delete_service_network_resource_association::builders::DeleteServiceNetworkResourceAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_service_network_resource_association::builders::DeleteServiceNetworkResourceAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

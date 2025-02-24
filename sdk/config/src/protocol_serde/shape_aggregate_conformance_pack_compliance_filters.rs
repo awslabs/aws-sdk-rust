@@ -2,7 +2,7 @@
 pub fn ser_aggregate_conformance_pack_compliance_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AggregateConformancePackComplianceFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conformance_pack_name {
         object.key("ConformancePackName").string(var_1.as_str());
     }

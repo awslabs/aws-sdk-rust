@@ -39,7 +39,10 @@ pub fn de_estimate_template_cost_http_response(
 pub fn de_estimate_template_cost(
     inp: &[u8],
     mut builder: crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder,
-) -> Result<crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::estimate_template_cost::builders::EstimateTemplateCostOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

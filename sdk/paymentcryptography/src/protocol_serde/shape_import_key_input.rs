@@ -2,7 +2,7 @@
 pub fn ser_import_key_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_key::ImportKeyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_material {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KeyMaterial").start_object();

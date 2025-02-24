@@ -2,7 +2,7 @@
 pub fn ser_aliases(
     input: &crate::types::Aliases,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -23,7 +23,9 @@ pub fn ser_aliases(
 }
 
 #[allow(clippy::needless_question_mark)]
-pub fn de_aliases(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result<crate::types::Aliases, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_aliases(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+) -> ::std::result::Result<crate::types::Aliases, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Aliases::builder();
     while let Some(mut tag) = decoder.next_tag() {

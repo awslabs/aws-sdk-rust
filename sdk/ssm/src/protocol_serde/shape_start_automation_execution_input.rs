@@ -2,7 +2,7 @@
 pub fn ser_start_automation_execution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_automation_execution::StartAutomationExecutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_name {
         object.key("DocumentName").string(var_1.as_str());
     }

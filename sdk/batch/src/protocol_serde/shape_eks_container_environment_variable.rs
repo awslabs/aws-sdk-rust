@@ -2,7 +2,7 @@
 pub fn ser_eks_container_environment_variable(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksContainerEnvironmentVariable,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_eks_container_environment_variable(
 
 pub(crate) fn de_eks_container_environment_variable<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EksContainerEnvironmentVariable>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EksContainerEnvironmentVariable>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

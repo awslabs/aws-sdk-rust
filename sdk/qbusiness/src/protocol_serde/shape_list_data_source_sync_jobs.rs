@@ -134,7 +134,7 @@ pub fn de_list_data_source_sync_jobs_http_response(
 pub(crate) fn de_list_data_source_sync_jobs(
     value: &[u8],
     mut builder: crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

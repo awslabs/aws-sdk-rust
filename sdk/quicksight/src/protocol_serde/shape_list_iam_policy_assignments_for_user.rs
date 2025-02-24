@@ -169,7 +169,7 @@ pub fn de_list_iam_policy_assignments_for_user_http_response(
 pub(crate) fn de_list_iam_policy_assignments_for_user(
     value: &[u8],
     mut builder: crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

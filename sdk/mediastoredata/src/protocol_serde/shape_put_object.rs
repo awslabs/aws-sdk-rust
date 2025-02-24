@@ -122,7 +122,7 @@ pub fn ser_put_object_headers(
 pub(crate) fn de_put_object(
     value: &[u8],
     mut builder: crate::operation::put_object::builders::PutObjectOutputBuilder,
-) -> Result<crate::operation::put_object::builders::PutObjectOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::put_object::builders::PutObjectOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

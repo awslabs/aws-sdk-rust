@@ -2,7 +2,7 @@
 pub fn ser_create_replication_configuration_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.associate_default_security_group {
         object.key("associateDefaultSecurityGroup").boolean(*var_1);
     }

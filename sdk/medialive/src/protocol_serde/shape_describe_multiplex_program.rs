@@ -160,7 +160,7 @@ pub fn de_describe_multiplex_program_http_response(
 pub(crate) fn de_describe_multiplex_program(
     value: &[u8],
     mut builder: crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_multiplex_program::builders::DescribeMultiplexProgramOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

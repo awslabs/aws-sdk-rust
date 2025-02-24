@@ -39,7 +39,7 @@ pub fn de_get_verified_access_endpoint_policy_http_response(
 pub fn de_get_verified_access_endpoint_policy(
     inp: &[u8],
     mut builder: crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_verified_access_endpoint_policy::builders::GetVerifiedAccessEndpointPolicyOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

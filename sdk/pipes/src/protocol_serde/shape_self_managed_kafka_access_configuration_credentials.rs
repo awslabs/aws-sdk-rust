@@ -2,7 +2,7 @@
 pub fn ser_self_managed_kafka_access_configuration_credentials(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SelfManagedKafkaAccessConfigurationCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth(inner) => {
             object_9.key("BasicAuth").string(inner.as_str());
@@ -27,7 +27,10 @@ pub fn ser_self_managed_kafka_access_configuration_credentials(
 
 pub(crate) fn de_self_managed_kafka_access_configuration_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::SelfManagedKafkaAccessConfigurationCredentials>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

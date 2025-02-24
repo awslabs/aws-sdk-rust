@@ -41,7 +41,7 @@ pub fn de_search_transit_gateway_routes_http_response(
 pub fn de_search_transit_gateway_routes(
     inp: &[u8],
     mut builder: crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

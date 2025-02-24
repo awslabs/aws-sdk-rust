@@ -3,7 +3,7 @@
 pub fn ser_spot_fleet_launch_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::SpotFleetLaunchSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AddressingType");
     if let Some(var_2) = &input.addressing_type {
@@ -142,7 +142,7 @@ pub fn ser_spot_fleet_launch_specification(
 #[allow(clippy::needless_question_mark)]
 pub fn de_spot_fleet_launch_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SpotFleetLaunchSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SpotFleetLaunchSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SpotFleetLaunchSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

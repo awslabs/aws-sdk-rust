@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_health_check_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayHealthCheckPolicy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("timeoutMillis").number(
             #[allow(clippy::useless_conversion)]
@@ -44,7 +44,7 @@ pub fn ser_virtual_gateway_health_check_policy(
 
 pub(crate) fn de_virtual_gateway_health_check_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VirtualGatewayHealthCheckPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VirtualGatewayHealthCheckPolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

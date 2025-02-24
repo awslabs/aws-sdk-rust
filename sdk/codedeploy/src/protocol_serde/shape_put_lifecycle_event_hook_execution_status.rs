@@ -163,7 +163,7 @@ pub fn de_put_lifecycle_event_hook_execution_status_http_response(
 
 pub fn ser_put_lifecycle_event_hook_execution_status_input(
     input: &crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_lifecycle_event_hook_execution_status_input::ser_put_lifecycle_event_hook_execution_status_input_input(
@@ -177,7 +177,7 @@ pub fn ser_put_lifecycle_event_hook_execution_status_input(
 pub(crate) fn de_put_lifecycle_event_hook_execution_status(
     value: &[u8],
     mut builder: crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_lifecycle_event_hook_execution_status::builders::PutLifecycleEventHookExecutionStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

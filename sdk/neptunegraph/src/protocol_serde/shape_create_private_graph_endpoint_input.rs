@@ -2,7 +2,7 @@
 pub fn ser_create_private_graph_endpoint_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_private_graph_endpoint::CreatePrivateGraphEndpointInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.subnet_ids {
         let mut array_2 = object.key("subnetIds").start_array();
         for item_3 in var_1 {

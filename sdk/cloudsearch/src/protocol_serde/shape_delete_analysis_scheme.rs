@@ -122,7 +122,10 @@ pub fn de_delete_analysis_scheme_http_response(
 pub fn de_delete_analysis_scheme(
     inp: &[u8],
     mut builder: crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeOutputBuilder,
-) -> Result<crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::delete_analysis_scheme::builders::DeleteAnalysisSchemeOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

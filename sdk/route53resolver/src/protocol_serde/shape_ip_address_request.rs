@@ -2,7 +2,7 @@
 pub fn ser_ip_address_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IpAddressRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SubnetId").string(input.subnet_id.as_str());
     }

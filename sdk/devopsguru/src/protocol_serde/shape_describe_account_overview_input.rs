@@ -2,7 +2,7 @@
 pub fn ser_describe_account_overview_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_account_overview::DescribeAccountOverviewInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_time {
         object
             .key("FromTime")

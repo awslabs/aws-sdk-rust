@@ -2,7 +2,7 @@
 pub fn ser_detect_sentiment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::detect_sentiment::DetectSentimentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text {
         object.key("Text").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_create_model_package_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_model_package::CreateModelPackageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_package_name {
         object.key("ModelPackageName").string(var_1.as_str());
     }

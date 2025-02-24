@@ -2,7 +2,7 @@
 pub fn ser_video_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoSelector,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.alpha_behavior {
         object.key("alphaBehavior").string(var_1.as_str());
     }
@@ -53,7 +53,7 @@ pub fn ser_video_selector(
 
 pub(crate) fn de_video_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VideoSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VideoSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

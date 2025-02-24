@@ -2,7 +2,7 @@
 pub fn ser_start_read_set_import_job_source_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartReadSetImportJobSourceItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_files {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sourceFiles").start_object();

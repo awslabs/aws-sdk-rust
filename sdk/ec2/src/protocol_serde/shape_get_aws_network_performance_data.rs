@@ -39,7 +39,7 @@ pub fn de_get_aws_network_performance_data_http_response(
 pub fn de_get_aws_network_performance_data(
     inp: &[u8],
     mut builder: crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

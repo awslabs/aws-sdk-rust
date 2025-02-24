@@ -2,7 +2,7 @@
 pub fn ser_clip_limits(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClipLimits,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.maximum_rgb_tolerance {
         object.key("maximumRGBTolerance").number(
             #[allow(clippy::useless_conversion)]
@@ -32,7 +32,7 @@ pub fn ser_clip_limits(
 
 pub(crate) fn de_clip_limits<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ClipLimits>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ClipLimits>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

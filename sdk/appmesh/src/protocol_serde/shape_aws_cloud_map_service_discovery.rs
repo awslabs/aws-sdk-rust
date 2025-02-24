@@ -2,7 +2,7 @@
 pub fn ser_aws_cloud_map_service_discovery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsCloudMapServiceDiscovery,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("namespaceName").string(input.namespace_name.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_aws_cloud_map_service_discovery(
 
 pub(crate) fn de_aws_cloud_map_service_discovery<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsCloudMapServiceDiscovery>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsCloudMapServiceDiscovery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

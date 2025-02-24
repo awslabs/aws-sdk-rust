@@ -42,7 +42,7 @@ pub fn de_modify_vpc_endpoint_service_payer_responsibility_http_response(
 pub fn de_modify_vpc_endpoint_service_payer_responsibility(
     inp: &[u8],
     mut builder: crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpc_endpoint_service_payer_responsibility::builders::ModifyVpcEndpointServicePayerResponsibilityOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

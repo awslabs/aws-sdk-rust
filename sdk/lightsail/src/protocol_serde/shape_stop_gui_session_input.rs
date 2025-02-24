@@ -2,7 +2,7 @@
 pub fn ser_stop_gui_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_gui_session::StopGuiSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_name {
         object.key("resourceName").string(var_1.as_str());
     }

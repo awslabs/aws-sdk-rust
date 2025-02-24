@@ -77,7 +77,7 @@ pub fn de_cancel_maintenance_window_execution_http_response(
 
 pub fn ser_cancel_maintenance_window_execution_input(
     input: &crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_maintenance_window_execution_input::ser_cancel_maintenance_window_execution_input_input(&mut object, input)?;
@@ -88,7 +88,7 @@ pub fn ser_cancel_maintenance_window_execution_input(
 pub(crate) fn de_cancel_maintenance_window_execution(
     value: &[u8],
     mut builder: crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

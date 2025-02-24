@@ -2,7 +2,7 @@
 pub fn ser_owner_properties(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OwnerProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::OwnerProperties::User(inner) => {
             #[allow(unused_mut)]

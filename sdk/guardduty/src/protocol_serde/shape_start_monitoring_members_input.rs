@@ -2,7 +2,7 @@
 pub fn ser_start_monitoring_members_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_monitoring_members::StartMonitoringMembersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_ids {
         let mut array_2 = object.key("accountIds").start_array();
         for item_3 in var_1 {

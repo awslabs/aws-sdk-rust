@@ -39,7 +39,7 @@ pub fn de_cancel_capacity_reservation_fleets_http_response(
 pub fn de_cancel_capacity_reservation_fleets(
     inp: &[u8],
     mut builder: crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::cancel_capacity_reservation_fleets::builders::CancelCapacityReservationFleetsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

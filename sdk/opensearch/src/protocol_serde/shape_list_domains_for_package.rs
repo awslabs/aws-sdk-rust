@@ -121,7 +121,7 @@ pub fn de_list_domains_for_package_http_response(
 pub(crate) fn de_list_domains_for_package(
     value: &[u8],
     mut builder: crate::operation::list_domains_for_package::builders::ListDomainsForPackageOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_domains_for_package::builders::ListDomainsForPackageOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -82,14 +82,14 @@ pub fn de_list_cross_account_resource_accounts_http_response(
 
 pub fn ser_list_cross_account_resource_accounts_input(
     _input: &crate::operation::list_cross_account_resource_accounts::ListCrossAccountResourceAccountsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_list_cross_account_resource_accounts(
     value: &[u8],
     mut builder: crate::operation::list_cross_account_resource_accounts::builders::ListCrossAccountResourceAccountsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_cross_account_resource_accounts::builders::ListCrossAccountResourceAccountsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

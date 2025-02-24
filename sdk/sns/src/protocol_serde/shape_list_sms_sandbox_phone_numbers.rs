@@ -124,7 +124,7 @@ pub fn de_list_sms_sandbox_phone_numbers_http_response(
 pub fn de_list_sms_sandbox_phone_numbers(
     inp: &[u8],
     mut builder: crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_sms_sandbox_phone_numbers::builders::ListSmsSandboxPhoneNumbersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

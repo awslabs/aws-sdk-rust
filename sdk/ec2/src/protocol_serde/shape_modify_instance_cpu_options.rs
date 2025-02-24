@@ -41,8 +41,10 @@ pub fn de_modify_instance_cpu_options_http_response(
 pub fn de_modify_instance_cpu_options(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_cpu_options::builders::ModifyInstanceCpuOptionsOutputBuilder,
-) -> Result<crate::operation::modify_instance_cpu_options::builders::ModifyInstanceCpuOptionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::modify_instance_cpu_options::builders::ModifyInstanceCpuOptionsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

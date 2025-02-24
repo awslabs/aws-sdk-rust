@@ -2,7 +2,7 @@
 pub fn ser_update_theme_alias_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_theme_alias::UpdateThemeAliasInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.theme_version_number {
         object.key("ThemeVersionNumber").number(
             #[allow(clippy::useless_conversion)]

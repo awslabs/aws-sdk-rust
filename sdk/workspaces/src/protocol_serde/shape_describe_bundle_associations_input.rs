@@ -2,7 +2,7 @@
 pub fn ser_describe_bundle_associations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_bundle_associations::DescribeBundleAssociationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bundle_id {
         object.key("BundleId").string(var_1.as_str());
     }

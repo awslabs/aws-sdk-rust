@@ -2,7 +2,7 @@
 pub fn ser_custom_file_system(
     object_15: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomFileSystem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::CustomFileSystem::EfsFileSystem(inner) => {
             #[allow(unused_mut)]
@@ -27,7 +27,7 @@ pub fn ser_custom_file_system(
 
 pub(crate) fn de_custom_file_system<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CustomFileSystem>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CustomFileSystem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

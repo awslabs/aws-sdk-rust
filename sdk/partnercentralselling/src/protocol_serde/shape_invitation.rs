@@ -2,7 +2,7 @@
 pub fn ser_invitation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Invitation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Message").string(input.message.as_str());
     }

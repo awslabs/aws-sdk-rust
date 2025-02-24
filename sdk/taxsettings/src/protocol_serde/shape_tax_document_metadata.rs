@@ -2,7 +2,7 @@
 pub fn ser_tax_document_metadata(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaxDocumentMetadata,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("taxDocumentAccessToken").string(input.tax_document_access_token.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_tax_document_metadata(
 
 pub(crate) fn de_tax_document_metadata<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TaxDocumentMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TaxDocumentMetadata>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

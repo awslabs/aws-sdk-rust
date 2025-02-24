@@ -2,7 +2,7 @@
 pub fn ser_send_whats_app_message_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_whats_app_message::SendWhatsAppMessageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.message {
         object.key("message").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

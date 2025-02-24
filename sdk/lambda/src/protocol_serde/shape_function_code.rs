@@ -2,7 +2,7 @@
 pub fn ser_function_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionCode,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.zip_file {
         object.key("ZipFile").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

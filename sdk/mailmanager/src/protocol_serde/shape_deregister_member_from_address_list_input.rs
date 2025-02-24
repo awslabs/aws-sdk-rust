@@ -2,7 +2,7 @@
 pub fn ser_deregister_member_from_address_list_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deregister_member_from_address_list::DeregisterMemberFromAddressListInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address_list_id {
         object.key("AddressListId").string(var_1.as_str());
     }

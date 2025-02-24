@@ -83,7 +83,10 @@ pub fn de_delete_cluster_snapshot_http_response(
 pub fn de_delete_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder,
-) -> Result<crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

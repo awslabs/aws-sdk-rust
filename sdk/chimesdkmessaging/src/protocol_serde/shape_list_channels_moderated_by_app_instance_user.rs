@@ -194,7 +194,7 @@ pub fn ser_list_channels_moderated_by_app_instance_user_headers(
 pub(crate) fn de_list_channels_moderated_by_app_instance_user(
     value: &[u8],
     mut builder: crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

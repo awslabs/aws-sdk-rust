@@ -2,7 +2,7 @@
 pub fn ser_create_scheduled_audit_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_scheduled_audit::CreateScheduledAuditInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.day_of_month {
         object.key("dayOfMonth").string(var_1.as_str());
     }

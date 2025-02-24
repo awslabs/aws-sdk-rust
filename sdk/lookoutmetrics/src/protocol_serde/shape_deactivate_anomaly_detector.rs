@@ -131,7 +131,7 @@ pub fn de_deactivate_anomaly_detector_http_response(
 
 pub fn ser_deactivate_anomaly_detector_input(
     input: &crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deactivate_anomaly_detector_input::ser_deactivate_anomaly_detector_input_input(&mut object, input)?;

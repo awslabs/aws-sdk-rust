@@ -2,7 +2,7 @@
 pub fn ser_update_resource_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_resource_profile::UpdateResourceProfileInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sensitivity_score_override {
         object.key("sensitivityScoreOverride").number(
             #[allow(clippy::useless_conversion)]

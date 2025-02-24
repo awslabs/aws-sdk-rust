@@ -146,7 +146,7 @@ pub fn de_describe_refresh_schedule_http_response(
 pub(crate) fn de_describe_refresh_schedule(
     value: &[u8],
     mut builder: crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_refresh_schedule::builders::DescribeRefreshScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

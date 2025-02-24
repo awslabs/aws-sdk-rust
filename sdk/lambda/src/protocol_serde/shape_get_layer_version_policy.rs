@@ -116,7 +116,7 @@ pub fn de_get_layer_version_policy_http_response(
 pub(crate) fn de_get_layer_version_policy(
     value: &[u8],
     mut builder: crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

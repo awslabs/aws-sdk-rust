@@ -2,7 +2,7 @@
 pub fn ser_subscribed_principal_input(
     object_14: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SubscribedPrincipalInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SubscribedPrincipalInput::Project(inner) => {
             #[allow(unused_mut)]

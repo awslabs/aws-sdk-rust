@@ -104,7 +104,7 @@ pub fn de_list_asset_properties_http_response(
 pub(crate) fn de_list_asset_properties(
     value: &[u8],
     mut builder: crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_asset_properties::builders::ListAssetPropertiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

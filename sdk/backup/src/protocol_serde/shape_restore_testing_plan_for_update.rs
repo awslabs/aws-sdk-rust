@@ -2,7 +2,7 @@
 pub fn ser_restore_testing_plan_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RestoreTestingPlanForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recovery_point_selection {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RecoveryPointSelection").start_object();

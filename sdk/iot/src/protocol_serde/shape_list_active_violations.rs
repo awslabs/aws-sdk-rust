@@ -106,7 +106,7 @@ pub fn de_list_active_violations_http_response(
 pub(crate) fn de_list_active_violations(
     value: &[u8],
     mut builder: crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_retrieve_and_generate_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::retrieve_and_generate::RetrieveAndGenerateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input {
         #[allow(unused_mut)]
         let mut object_2 = object.key("input").start_object();
@@ -33,7 +33,7 @@ pub fn ser_retrieve_and_generate_input_input(
 pub fn ser_retrieve_and_generate_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetrieveAndGenerateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("text").string(input.text.as_str());
     }

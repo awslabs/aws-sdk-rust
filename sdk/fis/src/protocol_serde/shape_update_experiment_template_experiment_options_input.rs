@@ -2,7 +2,7 @@
 pub fn ser_update_experiment_template_experiment_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateExperimentTemplateExperimentOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.empty_target_resolution_mode {
         object.key("emptyTargetResolutionMode").string(var_1.as_str());
     }

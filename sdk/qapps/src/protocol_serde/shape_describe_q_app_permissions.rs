@@ -166,7 +166,7 @@ pub fn ser_describe_q_app_permissions_headers(
 pub(crate) fn de_describe_q_app_permissions(
     value: &[u8],
     mut builder: crate::operation::describe_q_app_permissions::builders::DescribeQAppPermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_q_app_permissions::builders::DescribeQAppPermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

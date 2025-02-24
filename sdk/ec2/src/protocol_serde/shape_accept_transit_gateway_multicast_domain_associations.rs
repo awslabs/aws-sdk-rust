@@ -43,7 +43,7 @@ pub fn de_accept_transit_gateway_multicast_domain_associations_http_response(
 pub fn de_accept_transit_gateway_multicast_domain_associations(
     inp: &[u8],
     mut builder: crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

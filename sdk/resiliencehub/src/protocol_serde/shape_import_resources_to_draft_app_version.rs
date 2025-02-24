@@ -168,7 +168,7 @@ pub fn de_import_resources_to_draft_app_version_http_response(
 
 pub fn ser_import_resources_to_draft_app_version_input(
     input: &crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_import_resources_to_draft_app_version_input::ser_import_resources_to_draft_app_version_input_input(
@@ -182,7 +182,7 @@ pub fn ser_import_resources_to_draft_app_version_input(
 pub(crate) fn de_import_resources_to_draft_app_version(
     value: &[u8],
     mut builder: crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

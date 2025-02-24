@@ -2,7 +2,7 @@
 pub fn ser_create_snapshot_copy_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_snapshot_copy_configuration::CreateSnapshotCopyConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.namespace_name {
         object.key("namespaceName").string(var_1.as_str());
     }

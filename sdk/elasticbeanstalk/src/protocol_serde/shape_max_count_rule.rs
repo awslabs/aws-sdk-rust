@@ -3,7 +3,7 @@
 pub fn ser_max_count_rule(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MaxCountRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     {
@@ -28,7 +28,7 @@ pub fn ser_max_count_rule(
 #[allow(clippy::needless_question_mark)]
 pub fn de_max_count_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MaxCountRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MaxCountRule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MaxCountRule::builder();
     while let Some(mut tag) = decoder.next_tag() {

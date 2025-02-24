@@ -127,7 +127,7 @@ pub fn de_get_collaboration_analysis_template_http_response(
 pub(crate) fn de_get_collaboration_analysis_template(
     value: &[u8],
     mut builder: crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cache_policy_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CachePolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CachePolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CachePolicyList::builder();
     while let Some(mut tag) = decoder.next_tag() {

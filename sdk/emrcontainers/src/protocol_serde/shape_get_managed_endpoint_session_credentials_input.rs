@@ -2,7 +2,7 @@
 pub fn ser_get_managed_endpoint_session_credentials_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }

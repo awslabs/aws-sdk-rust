@@ -97,7 +97,7 @@ pub fn de_cancel_journal_kinesis_stream_http_response(
 pub(crate) fn de_cancel_journal_kinesis_stream(
     value: &[u8],
     mut builder: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_channel_engine_version_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChannelEngineVersionRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version {
         object.key("version").string(var_1.as_str());
     }

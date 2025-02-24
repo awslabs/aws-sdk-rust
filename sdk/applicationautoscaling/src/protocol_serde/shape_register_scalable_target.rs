@@ -109,7 +109,7 @@ pub fn de_register_scalable_target_http_response(
 
 pub fn ser_register_scalable_target_input(
     input: &crate::operation::register_scalable_target::RegisterScalableTargetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_scalable_target_input::ser_register_scalable_target_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_register_scalable_target_input(
 pub(crate) fn de_register_scalable_target(
     value: &[u8],
     mut builder: crate::operation::register_scalable_target::builders::RegisterScalableTargetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::register_scalable_target::builders::RegisterScalableTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

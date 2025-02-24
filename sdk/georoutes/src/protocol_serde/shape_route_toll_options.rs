@@ -2,7 +2,7 @@
 pub fn ser_route_toll_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteTollOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.all_transponders {
         object.key("AllTransponders").boolean(*var_1);
     }

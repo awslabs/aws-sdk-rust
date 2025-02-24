@@ -39,7 +39,7 @@ pub fn de_disassociate_subnet_cidr_block_http_response(
 pub fn de_disassociate_subnet_cidr_block(
     inp: &[u8],
     mut builder: crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

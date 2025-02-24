@@ -2,7 +2,7 @@
 pub fn ser_ssm_controls(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmControls,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.concurrent_execution_rate_percentage {
         object.key("ConcurrentExecutionRatePercentage").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_ssm_controls(
 
 pub(crate) fn de_ssm_controls<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SsmControls>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SsmControls>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

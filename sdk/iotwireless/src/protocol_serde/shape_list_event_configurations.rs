@@ -110,7 +110,7 @@ pub fn de_list_event_configurations_http_response(
 pub(crate) fn de_list_event_configurations(
     value: &[u8],
     mut builder: crate::operation::list_event_configurations::builders::ListEventConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_event_configurations::builders::ListEventConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

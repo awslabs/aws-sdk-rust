@@ -2,7 +2,7 @@
 pub fn ser_guardrail_contextual_grounding_filter_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailContextualGroundingFilterConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("type").string(input.r#type.as_str());
     }

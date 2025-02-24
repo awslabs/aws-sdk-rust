@@ -2,7 +2,7 @@
 pub fn ser_target_instances(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TargetInstances,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tag_filters {
         let mut array_2 = object.key("tagFilters").start_array();
         for item_3 in var_1 {
@@ -35,7 +35,7 @@ pub fn ser_target_instances(
 
 pub(crate) fn de_target_instances<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TargetInstances>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TargetInstances>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

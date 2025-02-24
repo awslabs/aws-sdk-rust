@@ -123,7 +123,7 @@ pub fn de_import_playback_key_pair_http_response(
 
 pub fn ser_import_playback_key_pair_input(
     input: &crate::operation::import_playback_key_pair::ImportPlaybackKeyPairInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_import_playback_key_pair_input::ser_import_playback_key_pair_input_input(&mut object, input)?;
@@ -134,7 +134,7 @@ pub fn ser_import_playback_key_pair_input(
 pub(crate) fn de_import_playback_key_pair(
     value: &[u8],
     mut builder: crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::import_playback_key_pair::builders::ImportPlaybackKeyPairOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

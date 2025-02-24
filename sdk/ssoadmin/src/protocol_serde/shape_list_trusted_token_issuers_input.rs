@@ -2,7 +2,7 @@
 pub fn ser_list_trusted_token_issuers_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_trusted_token_issuers::ListTrustedTokenIssuersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_arn {
         object.key("InstanceArn").string(var_1.as_str());
     }

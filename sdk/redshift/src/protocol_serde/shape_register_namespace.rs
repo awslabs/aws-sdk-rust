@@ -88,7 +88,7 @@ pub fn de_register_namespace_http_response(
 pub fn de_register_namespace(
     inp: &[u8],
     mut builder: crate::operation::register_namespace::builders::RegisterNamespaceOutputBuilder,
-) -> Result<crate::operation::register_namespace::builders::RegisterNamespaceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::register_namespace::builders::RegisterNamespaceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

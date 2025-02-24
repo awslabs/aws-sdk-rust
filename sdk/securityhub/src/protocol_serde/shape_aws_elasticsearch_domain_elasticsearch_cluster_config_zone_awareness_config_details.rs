@@ -2,7 +2,7 @@
 pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_zone_count {
         object.key("AvailabilityZoneCount").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_
 
 pub(crate) fn de_aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

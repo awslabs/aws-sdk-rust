@@ -2,7 +2,7 @@
 pub fn ser_compute_quota_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ComputeQuotaConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compute_quota_resources {
         let mut array_2 = object.key("ComputeQuotaResources").start_array();
         for item_3 in var_1 {
@@ -29,7 +29,7 @@ pub fn ser_compute_quota_config(
 
 pub(crate) fn de_compute_quota_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ComputeQuotaConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ComputeQuotaConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

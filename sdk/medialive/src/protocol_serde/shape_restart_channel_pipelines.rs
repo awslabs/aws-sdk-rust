@@ -170,7 +170,7 @@ pub fn de_restart_channel_pipelines_http_response(
 
 pub fn ser_restart_channel_pipelines_input(
     input: &crate::operation::restart_channel_pipelines::RestartChannelPipelinesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_restart_channel_pipelines_input::ser_restart_channel_pipelines_input_input(&mut object, input)?;
@@ -181,7 +181,7 @@ pub fn ser_restart_channel_pipelines_input(
 pub(crate) fn de_restart_channel_pipelines(
     value: &[u8],
     mut builder: crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

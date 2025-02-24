@@ -2,7 +2,7 @@
 pub fn ser_update_macie_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_macie_session::UpdateMacieSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.finding_publishing_frequency {
         object.key("findingPublishingFrequency").string(var_1.as_str());
     }

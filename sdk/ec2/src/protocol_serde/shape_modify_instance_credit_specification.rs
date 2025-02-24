@@ -39,7 +39,7 @@ pub fn de_modify_instance_credit_specification_http_response(
 pub fn de_modify_instance_credit_specification(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_instance_credit_specification::builders::ModifyInstanceCreditSpecificationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

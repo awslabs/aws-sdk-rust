@@ -130,7 +130,7 @@ pub fn de_delete_backend_environment_http_response(
 pub(crate) fn de_delete_backend_environment(
     value: &[u8],
     mut builder: crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_backend_environment::builders::DeleteBackendEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

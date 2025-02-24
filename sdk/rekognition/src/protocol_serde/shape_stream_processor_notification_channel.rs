@@ -2,7 +2,7 @@
 pub fn ser_stream_processor_notification_channel(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StreamProcessorNotificationChannel,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SNSTopicArn").string(input.sns_topic_arn.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_stream_processor_notification_channel(
 
 pub(crate) fn de_stream_processor_notification_channel<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::StreamProcessorNotificationChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::StreamProcessorNotificationChannel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_cancel_findings_report_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_findings_report::CancelFindingsReportInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.report_id {
         object.key("reportId").string(var_1.as_str());
     }

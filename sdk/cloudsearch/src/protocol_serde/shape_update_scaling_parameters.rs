@@ -141,7 +141,10 @@ pub fn de_update_scaling_parameters_http_response(
 pub fn de_update_scaling_parameters(
     inp: &[u8],
     mut builder: crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder,
-) -> Result<crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::update_scaling_parameters::builders::UpdateScalingParametersOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

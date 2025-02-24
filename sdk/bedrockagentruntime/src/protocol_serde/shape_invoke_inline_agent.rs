@@ -200,7 +200,7 @@ pub fn de_invoke_inline_agent_http_error(
 
 pub fn ser_invoke_inline_agent_input(
     input: &crate::operation::invoke_inline_agent::InvokeInlineAgentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_invoke_inline_agent_input::ser_invoke_inline_agent_input_input(&mut object, input)?;

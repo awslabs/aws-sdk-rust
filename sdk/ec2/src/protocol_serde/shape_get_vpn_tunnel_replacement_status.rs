@@ -39,7 +39,7 @@ pub fn de_get_vpn_tunnel_replacement_status_http_response(
 pub fn de_get_vpn_tunnel_replacement_status(
     inp: &[u8],
     mut builder: crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

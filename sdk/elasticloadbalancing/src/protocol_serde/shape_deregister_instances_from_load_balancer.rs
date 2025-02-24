@@ -86,7 +86,7 @@ pub fn de_deregister_instances_from_load_balancer_http_response(
 pub fn de_deregister_instances_from_load_balancer(
     inp: &[u8],
     mut builder: crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

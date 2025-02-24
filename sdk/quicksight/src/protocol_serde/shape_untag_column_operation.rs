@@ -2,7 +2,7 @@
 pub fn ser_untag_column_operation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UntagColumnOperation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ColumnName").string(input.column_name.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_untag_column_operation(
 
 pub(crate) fn de_untag_column_operation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UntagColumnOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UntagColumnOperation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

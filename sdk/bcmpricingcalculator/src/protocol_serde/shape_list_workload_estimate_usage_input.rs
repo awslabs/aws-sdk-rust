@@ -2,7 +2,7 @@
 pub fn ser_list_workload_estimate_usage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_workload_estimate_usage::ListWorkloadEstimateUsageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.workload_estimate_id {
         object.key("workloadEstimateId").string(var_1.as_str());
     }

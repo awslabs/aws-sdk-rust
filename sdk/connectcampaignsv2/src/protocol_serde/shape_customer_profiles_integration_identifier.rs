@@ -2,7 +2,7 @@
 pub fn ser_customer_profiles_integration_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomerProfilesIntegrationIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("domainArn").string(input.domain_arn.as_str());
     }

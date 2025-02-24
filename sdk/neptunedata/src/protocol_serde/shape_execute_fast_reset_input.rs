@@ -2,7 +2,7 @@
 pub fn ser_execute_fast_reset_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_fast_reset::ExecuteFastResetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action {
         object.key("action").string(var_1.as_str());
     }

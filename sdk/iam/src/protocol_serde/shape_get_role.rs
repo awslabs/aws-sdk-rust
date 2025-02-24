@@ -71,7 +71,7 @@ pub fn de_get_role_http_response(
 pub fn de_get_role(
     inp: &[u8],
     mut builder: crate::operation::get_role::builders::GetRoleOutputBuilder,
-) -> Result<crate::operation::get_role::builders::GetRoleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_role::builders::GetRoleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

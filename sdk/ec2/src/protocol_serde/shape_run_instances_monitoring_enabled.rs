@@ -3,7 +3,7 @@
 pub fn ser_run_instances_monitoring_enabled(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RunInstancesMonitoringEnabled,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     if let Some(var_2) = &input.enabled {
@@ -15,7 +15,7 @@ pub fn ser_run_instances_monitoring_enabled(
 #[allow(clippy::needless_question_mark)]
 pub fn de_run_instances_monitoring_enabled(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::RunInstancesMonitoringEnabled, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::RunInstancesMonitoringEnabled, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::RunInstancesMonitoringEnabled::builder();
     while let Some(mut tag) = decoder.next_tag() {

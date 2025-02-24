@@ -113,7 +113,7 @@ pub fn de_associate_service_action_with_provisioning_artifact_http_response(
 
 pub fn ser_associate_service_action_with_provisioning_artifact_input(
     input: &crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_service_action_with_provisioning_artifact_input::ser_associate_service_action_with_provisioning_artifact_input_input(&mut object, input)?;

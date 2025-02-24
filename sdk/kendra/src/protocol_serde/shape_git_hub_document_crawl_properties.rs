@@ -2,7 +2,7 @@
 pub fn ser_git_hub_document_crawl_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitHubDocumentCrawlProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.crawl_repository_documents {
         object.key("CrawlRepositoryDocuments").boolean(input.crawl_repository_documents);
     }
@@ -31,7 +31,7 @@ pub fn ser_git_hub_document_crawl_properties(
 
 pub(crate) fn de_git_hub_document_crawl_properties<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GitHubDocumentCrawlProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GitHubDocumentCrawlProperties>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

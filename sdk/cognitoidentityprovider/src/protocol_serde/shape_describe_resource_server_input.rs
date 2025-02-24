@@ -2,7 +2,7 @@
 pub fn ser_describe_resource_server_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_resource_server::DescribeResourceServerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_pool_id {
         object.key("UserPoolId").string(var_1.as_str());
     }

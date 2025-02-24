@@ -46,7 +46,7 @@ pub fn de_describe_transit_gateway_route_table_announcements_http_response(
 pub fn de_describe_transit_gateway_route_table_announcements(
     inp: &[u8],
     mut builder: crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

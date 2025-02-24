@@ -172,7 +172,7 @@ pub fn de_restore_table_from_cluster_snapshot_http_response(
 pub fn de_restore_table_from_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::restore_table_from_cluster_snapshot::builders::RestoreTableFromClusterSnapshotOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

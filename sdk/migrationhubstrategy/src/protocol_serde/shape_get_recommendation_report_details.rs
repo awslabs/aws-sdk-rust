@@ -125,7 +125,7 @@ pub fn de_get_recommendation_report_details_http_response(
 pub(crate) fn de_get_recommendation_report_details(
     value: &[u8],
     mut builder: crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

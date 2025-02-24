@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_global_node_group(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::GlobalNodeGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::GlobalNodeGroup, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::GlobalNodeGroup::builder();
     while let Some(mut tag) = decoder.next_tag() {

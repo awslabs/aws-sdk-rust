@@ -33,7 +33,7 @@ pub fn de_detect_stack_drift_http_response(
 pub fn de_detect_stack_drift(
     inp: &[u8],
     mut builder: crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder,
-) -> Result<crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::detect_stack_drift::builders::DetectStackDriftOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

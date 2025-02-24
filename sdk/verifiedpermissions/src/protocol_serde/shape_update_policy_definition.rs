@@ -2,7 +2,7 @@
 pub fn ser_update_policy_definition(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdatePolicyDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::UpdatePolicyDefinition::Static(inner) => {
             #[allow(unused_mut)]

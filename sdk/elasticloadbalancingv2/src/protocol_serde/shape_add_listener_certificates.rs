@@ -98,7 +98,10 @@ pub fn de_add_listener_certificates_http_response(
 pub fn de_add_listener_certificates(
     inp: &[u8],
     mut builder: crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder,
-) -> Result<crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::add_listener_certificates::builders::AddListenerCertificatesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

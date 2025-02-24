@@ -2,7 +2,7 @@
 pub fn ser_chat_streaming_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChatStreamingConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("StreamingEndpointArn").string(input.streaming_endpoint_arn.as_str());
     }

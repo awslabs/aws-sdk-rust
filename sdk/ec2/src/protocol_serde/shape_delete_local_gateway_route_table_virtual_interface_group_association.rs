@@ -20,7 +20,7 @@ pub fn de_delete_local_gateway_route_table_virtual_interface_group_association_h
 }
 
 #[allow(unused_mut)]
-pub fn de_delete_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder) -> Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+pub fn de_delete_local_gateway_route_table_virtual_interface_group_association(inp: &[u8], mut builder: crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder) -> std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::builders::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -130,7 +130,7 @@ pub fn de_get_compatible_elasticsearch_versions_http_response(
 pub(crate) fn de_get_compatible_elasticsearch_versions(
     value: &[u8],
     mut builder: crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_compatible_elasticsearch_versions::builders::GetCompatibleElasticsearchVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

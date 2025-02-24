@@ -2,7 +2,7 @@
 pub fn ser_sse_aws_key_management_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SseAwsKeyManagementParams,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AwsKmsKeyId").string(input.aws_kms_key_id.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_sse_aws_key_management_params(
 
 pub(crate) fn de_sse_aws_key_management_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SseAwsKeyManagementParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SseAwsKeyManagementParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

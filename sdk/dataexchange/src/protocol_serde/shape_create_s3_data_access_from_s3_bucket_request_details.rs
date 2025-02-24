@@ -2,7 +2,7 @@
 pub fn ser_create_s3_data_access_from_s3_bucket_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateS3DataAccessFromS3BucketRequestDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.asset_source {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AssetSource").start_object();

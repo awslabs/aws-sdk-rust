@@ -98,7 +98,7 @@ pub fn de_enable_sharing_with_aws_organization_http_response(
 pub(crate) fn de_enable_sharing_with_aws_organization(
     value: &[u8],
     mut builder: crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

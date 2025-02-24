@@ -2,7 +2,7 @@
 pub fn ser_pivot_table_conditional_formatting_scope(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PivotTableConditionalFormattingScope,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.role {
         object.key("Role").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_pivot_table_conditional_formatting_scope(
 
 pub(crate) fn de_pivot_table_conditional_formatting_scope<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PivotTableConditionalFormattingScope>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PivotTableConditionalFormattingScope>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_task_managed_ebs_volume_termination_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskManagedEbsVolumeTerminationPolicy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("deleteOnTermination").boolean(input.delete_on_termination);
     }

@@ -2,7 +2,7 @@
 pub fn ser_analytics_metadata_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalyticsMetadataType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.analytics_endpoint_id {
         object.key("AnalyticsEndpointId").string(var_1.as_str());
     }

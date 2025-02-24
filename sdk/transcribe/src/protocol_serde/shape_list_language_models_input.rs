@@ -2,7 +2,7 @@
 pub fn ser_list_language_models_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_language_models::ListLanguageModelsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status_equals {
         object.key("StatusEquals").string(var_1.as_str());
     }

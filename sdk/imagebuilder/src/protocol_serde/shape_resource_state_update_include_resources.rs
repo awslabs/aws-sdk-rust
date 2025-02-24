@@ -2,7 +2,7 @@
 pub fn ser_resource_state_update_include_resources(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceStateUpdateIncludeResources,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.amis {
         object.key("amis").boolean(input.amis);
     }

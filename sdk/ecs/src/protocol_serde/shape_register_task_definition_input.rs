@@ -2,7 +2,7 @@
 pub fn ser_register_task_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_task_definition::RegisterTaskDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.family {
         object.key("family").string(var_1.as_str());
     }

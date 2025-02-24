@@ -2,7 +2,7 @@
 pub fn ser_guardrail_content_policy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailContentPolicyConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("filtersConfig").start_array();
         for item_2 in &input.filters_config {

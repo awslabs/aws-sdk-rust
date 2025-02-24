@@ -2,7 +2,7 @@
 pub fn ser_deactivate_message_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deactivate_message_template::DeactivateMessageTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version_number {
         object.key("versionNumber").number(
             #[allow(clippy::useless_conversion)]

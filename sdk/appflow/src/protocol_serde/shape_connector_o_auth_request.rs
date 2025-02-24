@@ -2,7 +2,7 @@
 pub fn ser_connector_o_auth_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectorOAuthRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auth_code {
         object.key("authCode").string(var_1.as_str());
     }

@@ -3,7 +3,7 @@
 pub fn ser_v_cpu_count_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::VCpuCountRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {
@@ -26,7 +26,7 @@ pub fn ser_v_cpu_count_request(
 #[allow(clippy::needless_question_mark)]
 pub fn de_v_cpu_count_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::VCpuCountRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::VCpuCountRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::VCpuCountRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

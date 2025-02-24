@@ -109,7 +109,7 @@ pub fn de_delete_pull_through_cache_rule_http_response(
 
 pub fn ser_delete_pull_through_cache_rule_input(
     input: &crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_pull_through_cache_rule_input::ser_delete_pull_through_cache_rule_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_delete_pull_through_cache_rule_input(
 pub(crate) fn de_delete_pull_through_cache_rule(
     value: &[u8],
     mut builder: crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

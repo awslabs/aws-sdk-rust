@@ -2,7 +2,7 @@
 pub fn ser_delete_protocols_list_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_protocols_list::DeleteProtocolsListInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.list_id {
         object.key("ListId").string(var_1.as_str());
     }

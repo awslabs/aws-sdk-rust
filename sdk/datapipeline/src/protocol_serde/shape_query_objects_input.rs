@@ -2,7 +2,7 @@
 pub fn ser_query_objects_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::query_objects::QueryObjectsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pipeline_id {
         object.key("pipelineId").string(var_1.as_str());
     }

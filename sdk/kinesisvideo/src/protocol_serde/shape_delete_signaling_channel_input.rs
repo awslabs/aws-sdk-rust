@@ -2,7 +2,7 @@
 pub fn ser_delete_signaling_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_signaling_channel::DeleteSignalingChannelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_arn {
         object.key("ChannelARN").string(var_1.as_str());
     }

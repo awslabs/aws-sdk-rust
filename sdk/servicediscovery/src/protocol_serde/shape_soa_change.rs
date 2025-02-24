@@ -2,7 +2,7 @@
 pub fn ser_soa_change(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SoaChange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TTL").number(
             #[allow(clippy::useless_conversion)]

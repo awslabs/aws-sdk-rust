@@ -2,7 +2,7 @@
 pub fn ser_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Filters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.queues {
         let mut array_2 = object.key("Queues").start_array();
         for item_3 in var_1 {

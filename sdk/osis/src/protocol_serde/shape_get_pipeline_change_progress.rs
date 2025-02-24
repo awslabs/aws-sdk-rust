@@ -125,7 +125,7 @@ pub fn de_get_pipeline_change_progress_http_response(
 pub(crate) fn de_get_pipeline_change_progress(
     value: &[u8],
     mut builder: crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_pipeline_change_progress::builders::GetPipelineChangeProgressOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

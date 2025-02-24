@@ -2,7 +2,7 @@
 pub fn ser_key_block_headers(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyBlockHeaders,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_modes_of_use {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KeyModesOfUse").start_object();

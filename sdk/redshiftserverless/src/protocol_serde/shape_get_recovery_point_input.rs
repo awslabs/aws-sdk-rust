@@ -2,7 +2,7 @@
 pub fn ser_get_recovery_point_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_recovery_point::GetRecoveryPointInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recovery_point_id {
         object.key("recoveryPointId").string(var_1.as_str());
     }

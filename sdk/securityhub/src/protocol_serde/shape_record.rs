@@ -2,7 +2,7 @@
 pub fn ser_record(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Record,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.json_path {
         object.key("JsonPath").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_record(
 
 pub(crate) fn de_record<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Record>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Record>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

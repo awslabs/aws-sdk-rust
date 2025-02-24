@@ -2,7 +2,7 @@
 pub fn ser_blue_green_update_policy(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BlueGreenUpdatePolicy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.traffic_routing_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TrafficRoutingConfiguration").start_object();
@@ -26,7 +26,7 @@ pub fn ser_blue_green_update_policy(
 
 pub(crate) fn de_blue_green_update_policy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BlueGreenUpdatePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BlueGreenUpdatePolicy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

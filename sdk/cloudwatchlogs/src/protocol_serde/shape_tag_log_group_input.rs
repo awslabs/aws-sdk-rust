@@ -2,7 +2,7 @@
 pub fn ser_tag_log_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::tag_log_group::TagLogGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }

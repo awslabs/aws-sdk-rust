@@ -39,7 +39,7 @@ pub fn de_describe_instance_type_offerings_http_response(
 pub fn de_describe_instance_type_offerings(
     inp: &[u8],
     mut builder: crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_instance_type_offerings::builders::DescribeInstanceTypeOfferingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

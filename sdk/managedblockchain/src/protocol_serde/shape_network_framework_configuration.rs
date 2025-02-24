@@ -2,7 +2,7 @@
 pub fn ser_network_framework_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkFrameworkConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fabric {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Fabric").start_object();

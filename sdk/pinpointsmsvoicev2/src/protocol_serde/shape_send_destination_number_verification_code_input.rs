@@ -2,7 +2,7 @@
 pub fn ser_send_destination_number_verification_code_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.verified_destination_number_id {
         object.key("VerifiedDestinationNumberId").string(var_1.as_str());
     }

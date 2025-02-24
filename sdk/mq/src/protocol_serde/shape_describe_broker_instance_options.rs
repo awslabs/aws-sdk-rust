@@ -96,7 +96,7 @@ pub fn de_describe_broker_instance_options_http_response(
 pub(crate) fn de_describe_broker_instance_options(
     value: &[u8],
     mut builder: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

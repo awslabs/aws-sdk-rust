@@ -2,7 +2,7 @@
 pub fn ser_update_component_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_component_type::UpdateComponentTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_type_name {
         object.key("componentTypeName").string(var_1.as_str());
     }

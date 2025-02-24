@@ -136,7 +136,7 @@ pub fn de_list_resource_grouping_recommendations_http_response(
 pub(crate) fn de_list_resource_grouping_recommendations(
     value: &[u8],
     mut builder: crate::operation::list_resource_grouping_recommendations::builders::ListResourceGroupingRecommendationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_resource_grouping_recommendations::builders::ListResourceGroupingRecommendationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

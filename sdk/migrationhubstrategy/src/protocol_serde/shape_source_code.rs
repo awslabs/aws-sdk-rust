@@ -2,7 +2,7 @@
 pub fn ser_source_code(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceCode,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.version_control {
         object.key("versionControl").string(var_1.as_str());
     }

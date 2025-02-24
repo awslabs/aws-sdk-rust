@@ -2,7 +2,7 @@
 pub fn ser_ingress_string_expression(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressStringExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evaluate {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Evaluate").start_object();
@@ -26,7 +26,7 @@ pub fn ser_ingress_string_expression(
 
 pub(crate) fn de_ingress_string_expression<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IngressStringExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IngressStringExpression>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

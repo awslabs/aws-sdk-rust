@@ -39,7 +39,7 @@ pub fn de_reject_transit_gateway_vpc_attachment_http_response(
 pub fn de_reject_transit_gateway_vpc_attachment(
     inp: &[u8],
     mut builder: crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

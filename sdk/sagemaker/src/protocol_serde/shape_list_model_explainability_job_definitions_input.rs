@@ -2,7 +2,7 @@
 pub fn ser_list_model_explainability_job_definitions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.endpoint_name {
         object.key("EndpointName").string(var_1.as_str());
     }

@@ -93,7 +93,7 @@ pub fn de_undeprecate_workflow_type_http_response(
 
 pub fn ser_undeprecate_workflow_type_input(
     input: &crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_undeprecate_workflow_type_input::ser_undeprecate_workflow_type_input_input(&mut object, input)?;

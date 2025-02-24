@@ -177,7 +177,7 @@ pub fn de_describe_template_definition_http_response(
 pub(crate) fn de_describe_template_definition(
     value: &[u8],
     mut builder: crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_template_definition::builders::DescribeTemplateDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

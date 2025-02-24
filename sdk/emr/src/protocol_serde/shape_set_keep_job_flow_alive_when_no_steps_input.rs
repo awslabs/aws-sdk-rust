@@ -2,7 +2,7 @@
 pub fn ser_set_keep_job_flow_alive_when_no_steps_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_keep_job_flow_alive_when_no_steps::SetKeepJobFlowAliveWhenNoStepsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_flow_ids {
         let mut array_2 = object.key("JobFlowIds").start_array();
         for item_3 in var_1 {

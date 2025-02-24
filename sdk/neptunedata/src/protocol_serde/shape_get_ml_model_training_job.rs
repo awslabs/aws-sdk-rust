@@ -241,7 +241,7 @@ pub fn de_get_ml_model_training_job_http_response(
 pub(crate) fn de_get_ml_model_training_job(
     value: &[u8],
     mut builder: crate::operation::get_ml_model_training_job::builders::GetMlModelTrainingJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_ml_model_training_job::builders::GetMlModelTrainingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

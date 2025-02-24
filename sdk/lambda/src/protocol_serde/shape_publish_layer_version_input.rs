@@ -2,7 +2,7 @@
 pub fn ser_publish_layer_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::publish_layer_version::PublishLayerVersionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.compatible_architectures {
         let mut array_2 = object.key("CompatibleArchitectures").start_array();
         for item_3 in var_1 {

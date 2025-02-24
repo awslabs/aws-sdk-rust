@@ -127,7 +127,7 @@ pub fn de_get_messaging_session_endpoint_http_response(
 pub(crate) fn de_get_messaging_session_endpoint(
     value: &[u8],
     mut builder: crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

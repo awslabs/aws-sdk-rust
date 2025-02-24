@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_security_group_for_vpc(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::SecurityGroupForVpc, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::SecurityGroupForVpc, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::SecurityGroupForVpc::builder();
     while let Some(mut tag) = decoder.next_tag() {

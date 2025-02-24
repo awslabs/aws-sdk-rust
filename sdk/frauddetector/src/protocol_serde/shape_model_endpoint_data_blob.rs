@@ -2,7 +2,7 @@
 pub fn ser_model_endpoint_data_blob(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ModelEndpointDataBlob,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.byte_buffer {
         object.key("byteBuffer").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

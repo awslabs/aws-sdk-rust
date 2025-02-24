@@ -2,7 +2,7 @@
 pub fn ser_next_steps_history(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NextStepsHistory,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Value").string(input.value.as_str());
     }
@@ -16,7 +16,7 @@ pub fn ser_next_steps_history(
 
 pub(crate) fn de_next_steps_history<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NextStepsHistory>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NextStepsHistory>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

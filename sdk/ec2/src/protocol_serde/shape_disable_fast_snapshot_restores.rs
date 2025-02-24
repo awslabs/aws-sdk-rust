@@ -39,7 +39,7 @@ pub fn de_disable_fast_snapshot_restores_http_response(
 pub fn de_disable_fast_snapshot_restores(
     inp: &[u8],
     mut builder: crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

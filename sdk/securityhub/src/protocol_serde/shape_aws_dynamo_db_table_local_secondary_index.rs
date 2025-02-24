@@ -2,7 +2,7 @@
 pub fn ser_aws_dynamo_db_table_local_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsDynamoDbTableLocalSecondaryIndex,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_arn {
         object.key("IndexArn").string(var_1.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_aws_dynamo_db_table_local_secondary_index(
 
 pub(crate) fn de_aws_dynamo_db_table_local_secondary_index<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsDynamoDbTableLocalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsDynamoDbTableLocalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

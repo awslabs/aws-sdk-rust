@@ -2,7 +2,7 @@
 pub fn ser_create_scene_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_scene::CreateSceneInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capabilities {
         let mut array_2 = object.key("capabilities").start_array();
         for item_3 in var_1 {

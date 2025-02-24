@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.saml_provider_arn {
         object.key("SamlProviderArn").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_ec2_client_vpn_endpoint_authentication_options_federated_authenti
 
 pub(crate) fn de_aws_ec2_client_vpn_endpoint_authentication_options_federated_authentication_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

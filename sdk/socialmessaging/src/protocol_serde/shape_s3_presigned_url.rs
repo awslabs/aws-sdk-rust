@@ -2,7 +2,7 @@
 pub fn ser_s3_presigned_url(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3PresignedUrl,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("url").string(input.url.as_str());
     }

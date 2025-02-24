@@ -124,7 +124,7 @@ pub fn de_get_wireless_device_statistics_http_response(
 pub(crate) fn de_get_wireless_device_statistics(
     value: &[u8],
     mut builder: crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_wireless_device_statistics::builders::GetWirelessDeviceStatisticsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

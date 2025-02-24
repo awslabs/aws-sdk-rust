@@ -151,7 +151,7 @@ pub fn de_describe_dashboards_qa_configuration_http_response(
 pub(crate) fn de_describe_dashboards_qa_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_dashboards_qa_configuration::builders::DescribeDashboardsQaConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_dashboards_qa_configuration::builders::DescribeDashboardsQaConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

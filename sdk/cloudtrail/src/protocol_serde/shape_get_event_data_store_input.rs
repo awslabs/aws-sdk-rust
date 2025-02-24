@@ -2,7 +2,7 @@
 pub fn ser_get_event_data_store_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_event_data_store::GetEventDataStoreInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_data_store {
         object.key("EventDataStore").string(var_1.as_str());
     }

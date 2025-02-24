@@ -2,7 +2,7 @@
 pub fn ser_reset_connector_metadata_cache_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_version {
         object.key("apiVersion").string(var_1.as_str());
     }

@@ -125,7 +125,7 @@ pub fn de_list_queue_fleet_associations_http_response(
 pub(crate) fn de_list_queue_fleet_associations(
     value: &[u8],
     mut builder: crate::operation::list_queue_fleet_associations::builders::ListQueueFleetAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_queue_fleet_associations::builders::ListQueueFleetAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

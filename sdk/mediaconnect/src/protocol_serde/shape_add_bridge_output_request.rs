@@ -2,7 +2,7 @@
 pub fn ser_add_bridge_output_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddBridgeOutputRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.network_output {
         #[allow(unused_mut)]
         let mut object_2 = object.key("networkOutput").start_object();

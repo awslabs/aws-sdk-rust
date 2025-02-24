@@ -41,8 +41,10 @@ pub fn de_get_ebs_encryption_by_default_http_response(
 pub fn de_get_ebs_encryption_by_default(
     inp: &[u8],
     mut builder: crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder,
-) -> Result<crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -139,7 +139,8 @@ pub fn de_start_activity_stream_http_response(
 pub fn de_start_activity_stream(
     inp: &[u8],
     mut builder: crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder,
-) -> Result<crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::start_activity_stream::builders::StartActivityStreamOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

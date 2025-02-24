@@ -2,7 +2,7 @@
 pub fn ser_search_filter_expression(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchFilterExpression,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SearchFilterExpression::DateTimeFilter(inner) => {
             #[allow(unused_mut)]

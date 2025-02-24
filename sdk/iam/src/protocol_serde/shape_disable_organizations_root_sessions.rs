@@ -111,7 +111,7 @@ pub fn de_disable_organizations_root_sessions_http_response(
 pub fn de_disable_organizations_root_sessions(
     inp: &[u8],
     mut builder: crate::operation::disable_organizations_root_sessions::builders::DisableOrganizationsRootSessionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_organizations_root_sessions::builders::DisableOrganizationsRootSessionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

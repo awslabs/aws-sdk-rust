@@ -2,7 +2,7 @@
 pub fn ser_entity_type_sort(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityTypeSort,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EntityTypeSort::DataProductSort(inner) => {
             #[allow(unused_mut)]

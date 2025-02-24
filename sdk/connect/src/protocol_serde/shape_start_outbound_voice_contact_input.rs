@@ -2,7 +2,7 @@
 pub fn ser_start_outbound_voice_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.answer_machine_detection_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AnswerMachineDetectionConfig").start_object();

@@ -73,7 +73,7 @@ pub fn de_test_dns_answer_http_response(
 pub fn de_test_dns_answer(
     inp: &[u8],
     mut builder: crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder,
-) -> Result<crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::test_dns_answer::builders::TestDnsAnswerOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

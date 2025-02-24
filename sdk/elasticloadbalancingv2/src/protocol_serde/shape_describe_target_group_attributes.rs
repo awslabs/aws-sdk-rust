@@ -67,7 +67,7 @@ pub fn de_describe_target_group_attributes_http_response(
 pub fn de_describe_target_group_attributes(
     inp: &[u8],
     mut builder: crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

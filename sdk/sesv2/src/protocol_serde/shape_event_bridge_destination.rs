@@ -2,7 +2,7 @@
 pub fn ser_event_bridge_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventBridgeDestination,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EventBusArn").string(input.event_bus_arn.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_event_bridge_destination(
 
 pub(crate) fn de_event_bridge_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EventBridgeDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EventBridgeDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

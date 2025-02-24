@@ -2,7 +2,7 @@
 pub fn ser_get_revision_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_revision::GetRevisionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block_address {
         #[allow(unused_mut)]
         let mut object_2 = object.key("BlockAddress").start_object();

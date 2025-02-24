@@ -2,7 +2,7 @@
 pub fn ser_snap_start(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SnapStart,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apply_on {
         object.key("ApplyOn").string(var_1.as_str());
     }

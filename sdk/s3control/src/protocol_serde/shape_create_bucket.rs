@@ -171,7 +171,7 @@ pub fn ser_create_bucket_headers(
 pub fn de_create_bucket(
     inp: &[u8],
     mut builder: crate::operation::create_bucket::builders::CreateBucketOutputBuilder,
-) -> Result<crate::operation::create_bucket::builders::CreateBucketOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_bucket::builders::CreateBucketOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

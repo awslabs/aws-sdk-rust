@@ -2,7 +2,7 @@
 pub fn ser_create_cross_account_authorization_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorizationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cross_account_authorization {
         object.key("crossAccountAuthorization").string(var_1.as_str());
     }

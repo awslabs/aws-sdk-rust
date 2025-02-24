@@ -41,7 +41,7 @@ pub fn de_revoke_security_group_ingress_http_response(
 pub fn de_revoke_security_group_ingress(
     inp: &[u8],
     mut builder: crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::revoke_security_group_ingress::builders::RevokeSecurityGroupIngressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

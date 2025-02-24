@@ -155,7 +155,7 @@ pub fn de_decrease_replication_factor_http_response(
 
 pub fn ser_decrease_replication_factor_input(
     input: &crate::operation::decrease_replication_factor::DecreaseReplicationFactorInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_decrease_replication_factor_input::ser_decrease_replication_factor_input_input(&mut object, input)?;
@@ -166,7 +166,7 @@ pub fn ser_decrease_replication_factor_input(
 pub(crate) fn de_decrease_replication_factor(
     value: &[u8],
     mut builder: crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

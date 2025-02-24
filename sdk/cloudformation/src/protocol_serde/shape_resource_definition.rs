@@ -3,7 +3,7 @@
 pub fn ser_resource_definition(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ResourceDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceType");
     if let Some(var_2) = &input.resource_type {

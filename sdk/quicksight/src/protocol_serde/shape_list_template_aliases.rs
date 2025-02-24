@@ -125,7 +125,7 @@ pub fn de_list_template_aliases_http_response(
 pub(crate) fn de_list_template_aliases(
     value: &[u8],
     mut builder: crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_template_aliases::builders::ListTemplateAliasesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

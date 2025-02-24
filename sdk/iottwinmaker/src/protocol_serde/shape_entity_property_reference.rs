@@ -2,7 +2,7 @@
 pub fn ser_entity_property_reference(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityPropertyReference,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_name {
         object.key("componentName").string(var_1.as_str());
     }
@@ -30,7 +30,7 @@ pub fn ser_entity_property_reference(
 
 pub(crate) fn de_entity_property_reference<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EntityPropertyReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EntityPropertyReference>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

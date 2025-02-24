@@ -61,14 +61,14 @@ pub fn de_describe_cross_account_access_role_http_response(
 
 pub fn ser_describe_cross_account_access_role_input(
     _input: &crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRoleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_cross_account_access_role(
     value: &[u8],
     mut builder: crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -164,7 +164,7 @@ pub fn de_delete_iam_policy_assignment_http_response(
 pub(crate) fn de_delete_iam_policy_assignment(
     value: &[u8],
     mut builder: crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

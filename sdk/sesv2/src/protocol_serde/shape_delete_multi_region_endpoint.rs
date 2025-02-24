@@ -115,7 +115,7 @@ pub fn de_delete_multi_region_endpoint_http_response(
 pub(crate) fn de_delete_multi_region_endpoint(
     value: &[u8],
     mut builder: crate::operation::delete_multi_region_endpoint::builders::DeleteMultiRegionEndpointOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_multi_region_endpoint::builders::DeleteMultiRegionEndpointOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

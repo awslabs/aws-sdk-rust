@@ -2,7 +2,7 @@
 pub fn ser_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Body,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Text").start_object();

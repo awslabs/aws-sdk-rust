@@ -113,7 +113,7 @@ pub fn de_get_gateway_responses_http_response(
 pub(crate) fn de_get_gateway_responses(
     value: &[u8],
     mut builder: crate::operation::get_gateway_responses::builders::GetGatewayResponsesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_gateway_responses::builders::GetGatewayResponsesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_tax_registration_doc_file(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaxRegistrationDocFile,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fileName").string(input.file_name.as_str());
     }

@@ -125,7 +125,7 @@ pub fn de_describe_routing_profile_http_response(
 pub(crate) fn de_describe_routing_profile(
     value: &[u8],
     mut builder: crate::operation::describe_routing_profile::builders::DescribeRoutingProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_routing_profile::builders::DescribeRoutingProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

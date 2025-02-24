@@ -2,7 +2,7 @@
 pub fn ser_intent_input_data(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntentInputData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("intentId").string(input.intent_id.as_str());
     }

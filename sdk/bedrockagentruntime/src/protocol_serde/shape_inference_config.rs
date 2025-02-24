@@ -2,7 +2,7 @@
 pub fn ser_inference_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InferenceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text_inference_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("textInferenceConfig").start_object();

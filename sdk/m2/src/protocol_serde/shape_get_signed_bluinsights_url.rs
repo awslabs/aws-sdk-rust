@@ -108,7 +108,7 @@ pub fn de_get_signed_bluinsights_url_http_response(
 pub(crate) fn de_get_signed_bluinsights_url(
     value: &[u8],
     mut builder: crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_signed_bluinsights_url::builders::GetSignedBluinsightsUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

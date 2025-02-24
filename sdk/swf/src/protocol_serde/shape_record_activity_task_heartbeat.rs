@@ -78,7 +78,7 @@ pub fn de_record_activity_task_heartbeat_http_response(
 
 pub fn ser_record_activity_task_heartbeat_input(
     input: &crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_record_activity_task_heartbeat_input::ser_record_activity_task_heartbeat_input_input(&mut object, input)?;
@@ -89,7 +89,7 @@ pub fn ser_record_activity_task_heartbeat_input(
 pub(crate) fn de_record_activity_task_heartbeat(
     value: &[u8],
     mut builder: crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

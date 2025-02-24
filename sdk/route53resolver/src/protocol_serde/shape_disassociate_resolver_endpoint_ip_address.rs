@@ -166,7 +166,7 @@ pub fn de_disassociate_resolver_endpoint_ip_address_http_response(
 
 pub fn ser_disassociate_resolver_endpoint_ip_address_input(
     input: &crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_resolver_endpoint_ip_address_input::ser_disassociate_resolver_endpoint_ip_address_input_input(
@@ -180,7 +180,7 @@ pub fn ser_disassociate_resolver_endpoint_ip_address_input(
 pub(crate) fn de_disassociate_resolver_endpoint_ip_address(
     value: &[u8],
     mut builder: crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

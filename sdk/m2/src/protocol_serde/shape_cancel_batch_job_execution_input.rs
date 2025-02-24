@@ -2,7 +2,7 @@
 pub fn ser_cancel_batch_job_execution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auth_secrets_manager_arn {
         object.key("authSecretsManagerArn").string(var_1.as_str());
     }

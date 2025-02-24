@@ -137,7 +137,7 @@ pub fn de_describe_fleet_metric_http_response(
 pub(crate) fn de_describe_fleet_metric(
     value: &[u8],
     mut builder: crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_fleet_metric::builders::DescribeFleetMetricOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

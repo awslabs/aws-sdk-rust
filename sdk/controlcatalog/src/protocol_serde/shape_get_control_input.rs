@@ -2,7 +2,7 @@
 pub fn ser_get_control_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_control::GetControlInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.control_arn {
         object.key("ControlArn").string(var_1.as_str());
     }

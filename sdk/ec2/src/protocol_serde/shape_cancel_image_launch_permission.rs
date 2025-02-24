@@ -39,7 +39,7 @@ pub fn de_cancel_image_launch_permission_http_response(
 pub fn de_cancel_image_launch_permission(
     inp: &[u8],
     mut builder: crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::cancel_image_launch_permission::builders::CancelImageLaunchPermissionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

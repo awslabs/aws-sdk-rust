@@ -43,7 +43,7 @@ pub fn de_describe_local_gateway_virtual_interfaces_http_response(
 pub fn de_describe_local_gateway_virtual_interfaces(
     inp: &[u8],
     mut builder: crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

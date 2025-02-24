@@ -2,7 +2,7 @@
 pub fn ser_slot_default_value_spec(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SlotDefaultValueSpec,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("defaultValueList").start_array();
         for item_2 in &input.default_value_list {
@@ -20,7 +20,7 @@ pub fn ser_slot_default_value_spec(
 
 pub(crate) fn de_slot_default_value_spec<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SlotDefaultValueSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SlotDefaultValueSpec>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

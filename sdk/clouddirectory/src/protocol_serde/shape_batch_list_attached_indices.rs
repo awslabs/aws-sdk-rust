@@ -2,7 +2,7 @@
 pub fn ser_batch_list_attached_indices(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchListAttachedIndices,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("TargetReference").start_object();

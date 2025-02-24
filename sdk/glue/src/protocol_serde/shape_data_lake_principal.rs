@@ -2,7 +2,7 @@
 pub fn ser_data_lake_principal(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLakePrincipal,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_lake_principal_identifier {
         object.key("DataLakePrincipalIdentifier").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_data_lake_principal(
 
 pub(crate) fn de_data_lake_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DataLakePrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DataLakePrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

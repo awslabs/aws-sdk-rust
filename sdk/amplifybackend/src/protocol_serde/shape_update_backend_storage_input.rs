@@ -2,7 +2,7 @@
 pub fn ser_update_backend_storage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_backend_storage::UpdateBackendStorageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("resourceConfig").start_object();

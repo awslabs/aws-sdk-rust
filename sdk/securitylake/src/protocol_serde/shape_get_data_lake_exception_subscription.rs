@@ -154,7 +154,7 @@ pub fn de_get_data_lake_exception_subscription_http_response(
 pub(crate) fn de_get_data_lake_exception_subscription(
     value: &[u8],
     mut builder: crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_lake_exception_subscription::builders::GetDataLakeExceptionSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

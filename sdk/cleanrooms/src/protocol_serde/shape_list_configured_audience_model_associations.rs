@@ -149,7 +149,7 @@ pub fn de_list_configured_audience_model_associations_http_response(
 pub(crate) fn de_list_configured_audience_model_associations(
     value: &[u8],
     mut builder: crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configured_audience_model_associations::builders::ListConfiguredAudienceModelAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

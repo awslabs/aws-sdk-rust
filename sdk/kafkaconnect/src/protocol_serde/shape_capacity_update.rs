@@ -2,7 +2,7 @@
 pub fn ser_capacity_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CapacityUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_scaling {
         #[allow(unused_mut)]
         let mut object_2 = object.key("autoScaling").start_object();

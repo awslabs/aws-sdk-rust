@@ -2,7 +2,7 @@
 pub fn ser_describe_aggregate_compliance_by_config_rules_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration_aggregator_name {
         object.key("ConfigurationAggregatorName").string(var_1.as_str());
     }

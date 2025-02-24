@@ -166,7 +166,7 @@ pub fn de_get_query_results_monitor_top_contributors_http_response(
 pub(crate) fn de_get_query_results_monitor_top_contributors(
     value: &[u8],
     mut builder: crate::operation::get_query_results_monitor_top_contributors::builders::GetQueryResultsMonitorTopContributorsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_query_results_monitor_top_contributors::builders::GetQueryResultsMonitorTopContributorsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

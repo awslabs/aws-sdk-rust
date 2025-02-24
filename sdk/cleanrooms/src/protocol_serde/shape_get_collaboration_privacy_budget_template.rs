@@ -145,7 +145,7 @@ pub fn de_get_collaboration_privacy_budget_template_http_response(
 pub(crate) fn de_get_collaboration_privacy_budget_template(
     value: &[u8],
     mut builder: crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_collaboration_privacy_budget_template::builders::GetCollaborationPrivacyBudgetTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

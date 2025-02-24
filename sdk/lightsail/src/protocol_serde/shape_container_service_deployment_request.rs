@@ -2,7 +2,7 @@
 pub fn ser_container_service_deployment_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerServiceDeploymentRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.containers {
         #[allow(unused_mut)]
         let mut object_2 = object.key("containers").start_object();

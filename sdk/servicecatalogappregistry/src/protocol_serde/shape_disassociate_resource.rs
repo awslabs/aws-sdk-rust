@@ -105,7 +105,7 @@ pub fn de_disassociate_resource_http_response(
 pub(crate) fn de_disassociate_resource(
     value: &[u8],
     mut builder: crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_resource::builders::DisassociateResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

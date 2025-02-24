@@ -147,7 +147,7 @@ pub fn de_disassociate_customer_gateway_http_response(
 pub(crate) fn de_disassociate_customer_gateway(
     value: &[u8],
     mut builder: crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

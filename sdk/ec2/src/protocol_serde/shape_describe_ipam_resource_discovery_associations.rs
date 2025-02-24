@@ -42,7 +42,7 @@ pub fn de_describe_ipam_resource_discovery_associations_http_response(
 pub fn de_describe_ipam_resource_discovery_associations(
     inp: &[u8],
     mut builder: crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_ipam_resource_discovery_associations::builders::DescribeIpamResourceDiscoveryAssociationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

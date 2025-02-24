@@ -121,7 +121,7 @@ pub fn de_describe_phone_number_http_response(
 pub(crate) fn de_describe_phone_number(
     value: &[u8],
     mut builder: crate::operation::describe_phone_number::builders::DescribePhoneNumberOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_phone_number::builders::DescribePhoneNumberOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

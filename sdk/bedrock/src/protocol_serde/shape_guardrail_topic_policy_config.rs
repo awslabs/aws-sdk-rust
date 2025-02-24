@@ -2,7 +2,7 @@
 pub fn ser_guardrail_topic_policy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GuardrailTopicPolicyConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("topicsConfig").start_array();
         for item_2 in &input.topics_config {

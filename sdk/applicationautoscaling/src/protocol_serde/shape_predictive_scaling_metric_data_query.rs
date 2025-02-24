@@ -2,7 +2,7 @@
 pub fn ser_predictive_scaling_metric_data_query(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredictiveScalingMetricDataQuery,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Id").string(input.id.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_predictive_scaling_metric_data_query(
 
 pub(crate) fn de_predictive_scaling_metric_data_query<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PredictiveScalingMetricDataQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PredictiveScalingMetricDataQuery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -67,7 +67,7 @@ pub fn de_describe_environment_resources_http_response(
 pub fn de_describe_environment_resources(
     inp: &[u8],
     mut builder: crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_environment_resources::builders::DescribeEnvironmentResourcesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

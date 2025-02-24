@@ -157,7 +157,7 @@ pub fn de_describe_app_instance_bot_http_response(
 pub(crate) fn de_describe_app_instance_bot(
     value: &[u8],
     mut builder: crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

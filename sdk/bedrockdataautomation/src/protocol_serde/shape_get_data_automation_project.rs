@@ -124,7 +124,7 @@ pub fn de_get_data_automation_project_http_response(
 
 pub fn ser_get_data_automation_project_input(
     input: &crate::operation::get_data_automation_project::GetDataAutomationProjectInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_data_automation_project_input::ser_get_data_automation_project_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_get_data_automation_project_input(
 pub(crate) fn de_get_data_automation_project(
     value: &[u8],
     mut builder: crate::operation::get_data_automation_project::builders::GetDataAutomationProjectOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_automation_project::builders::GetDataAutomationProjectOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

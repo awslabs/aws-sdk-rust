@@ -160,7 +160,7 @@ pub fn de_describe_project_versions_http_response(
 
 pub fn ser_describe_project_versions_input(
     input: &crate::operation::describe_project_versions::DescribeProjectVersionsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_project_versions_input::ser_describe_project_versions_input_input(&mut object, input)?;
@@ -171,7 +171,7 @@ pub fn ser_describe_project_versions_input(
 pub(crate) fn de_describe_project_versions(
     value: &[u8],
     mut builder: crate::operation::describe_project_versions::builders::DescribeProjectVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_project_versions::builders::DescribeProjectVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

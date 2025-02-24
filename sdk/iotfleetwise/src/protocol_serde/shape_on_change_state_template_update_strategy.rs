@@ -2,13 +2,13 @@
 pub fn ser_on_change_state_template_update_strategy(
     #[allow(unused_variables)] object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     #[allow(unused_variables)] input: &crate::types::OnChangeStateTemplateUpdateStrategy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     Ok(())
 }
 
 pub(crate) fn de_on_change_state_template_update_strategy<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OnChangeStateTemplateUpdateStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OnChangeStateTemplateUpdateStrategy>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

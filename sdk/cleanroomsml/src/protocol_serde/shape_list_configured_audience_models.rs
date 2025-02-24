@@ -76,7 +76,7 @@ pub fn de_list_configured_audience_models_http_response(
 pub(crate) fn de_list_configured_audience_models(
     value: &[u8],
     mut builder: crate::operation::list_configured_audience_models::builders::ListConfiguredAudienceModelsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configured_audience_models::builders::ListConfiguredAudienceModelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

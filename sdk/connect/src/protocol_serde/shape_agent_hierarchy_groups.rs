@@ -2,7 +2,7 @@
 pub fn ser_agent_hierarchy_groups(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentHierarchyGroups,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.l1_ids {
         let mut array_2 = object.key("L1Ids").start_array();
         for item_3 in var_1 {

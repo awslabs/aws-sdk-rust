@@ -177,7 +177,7 @@ pub fn de_start_metadata_model_conversion_http_response(
 
 pub fn ser_start_metadata_model_conversion_input(
     input: &crate::operation::start_metadata_model_conversion::StartMetadataModelConversionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_metadata_model_conversion_input::ser_start_metadata_model_conversion_input_input(&mut object, input)?;
@@ -188,7 +188,7 @@ pub fn ser_start_metadata_model_conversion_input(
 pub(crate) fn de_start_metadata_model_conversion(
     value: &[u8],
     mut builder: crate::operation::start_metadata_model_conversion::builders::StartMetadataModelConversionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_metadata_model_conversion::builders::StartMetadataModelConversionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

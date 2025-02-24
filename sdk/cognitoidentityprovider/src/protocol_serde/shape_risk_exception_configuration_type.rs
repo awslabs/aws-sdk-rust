@@ -2,7 +2,7 @@
 pub fn ser_risk_exception_configuration_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RiskExceptionConfigurationType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blocked_ip_range_list {
         let mut array_2 = object.key("BlockedIPRangeList").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_risk_exception_configuration_type(
 
 pub(crate) fn de_risk_exception_configuration_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RiskExceptionConfigurationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RiskExceptionConfigurationType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

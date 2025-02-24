@@ -153,7 +153,7 @@ pub fn de_update_image_set_metadata_http_response(
 pub(crate) fn de_update_image_set_metadata(
     value: &[u8],
     mut builder: crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_image_set_metadata::builders::UpdateImageSetMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

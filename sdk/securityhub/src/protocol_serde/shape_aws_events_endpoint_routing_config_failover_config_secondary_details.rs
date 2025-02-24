@@ -2,7 +2,7 @@
 pub fn ser_aws_events_endpoint_routing_config_failover_config_secondary_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.route {
         object.key("Route").string(var_1.as_str());
     }
@@ -11,7 +11,10 @@ pub fn ser_aws_events_endpoint_routing_config_failover_config_secondary_details(
 
 pub(crate) fn de_aws_events_endpoint_routing_config_failover_config_secondary_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

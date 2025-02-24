@@ -133,7 +133,7 @@ pub fn de_describe_rule_groups_namespace_http_response(
 pub(crate) fn de_describe_rule_groups_namespace(
     value: &[u8],
     mut builder: crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

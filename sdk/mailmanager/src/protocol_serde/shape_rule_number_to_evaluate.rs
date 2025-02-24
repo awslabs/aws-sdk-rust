@@ -2,7 +2,7 @@
 pub fn ser_rule_number_to_evaluate(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleNumberToEvaluate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RuleNumberToEvaluate::Attribute(inner) => {
             object_2.key("Attribute").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_rule_number_to_evaluate(
 
 pub(crate) fn de_rule_number_to_evaluate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleNumberToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RuleNumberToEvaluate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

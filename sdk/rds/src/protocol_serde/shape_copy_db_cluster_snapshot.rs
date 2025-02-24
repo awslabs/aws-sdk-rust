@@ -153,7 +153,10 @@ pub fn de_copy_db_cluster_snapshot_http_response(
 pub fn de_copy_db_cluster_snapshot(
     inp: &[u8],
     mut builder: crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder,
-) -> Result<crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

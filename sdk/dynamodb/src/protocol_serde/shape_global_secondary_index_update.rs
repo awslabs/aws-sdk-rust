@@ -2,7 +2,7 @@
 pub fn ser_global_secondary_index_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalSecondaryIndexUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Update").start_object();

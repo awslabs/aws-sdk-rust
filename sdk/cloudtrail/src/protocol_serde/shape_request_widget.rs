@@ -2,7 +2,7 @@
 pub fn ser_request_widget(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestWidget,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("QueryStatement").string(input.query_statement.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_response_inspection_body_contains(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResponseInspectionBodyContains,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("SuccessStrings").start_array();
         for item_2 in &input.success_strings {
@@ -26,7 +26,7 @@ pub fn ser_response_inspection_body_contains(
 
 pub(crate) fn de_response_inspection_body_contains<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResponseInspectionBodyContains>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResponseInspectionBodyContains>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

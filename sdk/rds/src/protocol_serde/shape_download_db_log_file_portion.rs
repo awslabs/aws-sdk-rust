@@ -96,8 +96,10 @@ pub fn de_download_db_log_file_portion_http_response(
 pub fn de_download_db_log_file_portion(
     inp: &[u8],
     mut builder: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder,
-) -> Result<crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -64,7 +64,7 @@ pub fn de_update_endpoint_weights_and_capacities_http_response(
 
 pub fn ser_update_endpoint_weights_and_capacities_input(
     input: &crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_endpoint_weights_and_capacities_input::ser_update_endpoint_weights_and_capacities_input_input(
@@ -78,7 +78,7 @@ pub fn ser_update_endpoint_weights_and_capacities_input(
 pub(crate) fn de_update_endpoint_weights_and_capacities(
     value: &[u8],
     mut builder: crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

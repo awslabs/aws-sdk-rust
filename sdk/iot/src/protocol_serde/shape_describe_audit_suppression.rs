@@ -109,7 +109,7 @@ pub fn de_describe_audit_suppression_http_response(
 
 pub fn ser_describe_audit_suppression_input(
     input: &crate::operation::describe_audit_suppression::DescribeAuditSuppressionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_audit_suppression_input::ser_describe_audit_suppression_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_describe_audit_suppression_input(
 pub(crate) fn de_describe_audit_suppression(
     value: &[u8],
     mut builder: crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

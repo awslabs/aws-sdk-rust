@@ -170,7 +170,7 @@ pub fn ser_send_channel_message_headers(
 
 pub fn ser_send_channel_message_input(
     input: &crate::operation::send_channel_message::SendChannelMessageInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_channel_message_input::ser_send_channel_message_input_input(&mut object, input)?;
@@ -181,8 +181,10 @@ pub fn ser_send_channel_message_input(
 pub(crate) fn de_send_channel_message(
     value: &[u8],
     mut builder: crate::operation::send_channel_message::builders::SendChannelMessageOutputBuilder,
-) -> Result<crate::operation::send_channel_message::builders::SendChannelMessageOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::send_channel_message::builders::SendChannelMessageOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

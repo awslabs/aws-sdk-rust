@@ -83,7 +83,10 @@ pub fn de_list_resource_record_sets_http_response(
 pub fn de_list_resource_record_sets(
     inp: &[u8],
     mut builder: crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder,
-) -> Result<crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

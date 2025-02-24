@@ -2,7 +2,7 @@
 pub fn ser_document_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DocumentAttribute,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Key").string(input.key.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_document_attribute(
 
 pub(crate) fn de_document_attribute<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DocumentAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DocumentAttribute>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

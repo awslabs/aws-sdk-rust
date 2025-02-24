@@ -2,7 +2,7 @@
 pub fn ser_put_function_concurrency_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_function_concurrency::PutFunctionConcurrencyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.reserved_concurrent_executions {
         object.key("ReservedConcurrentExecutions").number(
             #[allow(clippy::useless_conversion)]

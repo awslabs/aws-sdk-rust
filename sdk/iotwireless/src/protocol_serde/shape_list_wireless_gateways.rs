@@ -106,7 +106,7 @@ pub fn de_list_wireless_gateways_http_response(
 pub(crate) fn de_list_wireless_gateways(
     value: &[u8],
     mut builder: crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

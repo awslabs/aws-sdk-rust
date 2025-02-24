@@ -2,7 +2,7 @@
 pub fn ser_f_sx_windows_file_server_authorization_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FSxWindowsFileServerAuthorizationConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("credentialsParameter").string(input.credentials_parameter.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_f_sx_windows_file_server_authorization_config(
 
 pub(crate) fn de_f_sx_windows_file_server_authorization_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FSxWindowsFileServerAuthorizationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FSxWindowsFileServerAuthorizationConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

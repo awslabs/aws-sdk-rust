@@ -171,7 +171,7 @@ pub fn de_delete_channel_placement_group_http_response(
 pub(crate) fn de_delete_channel_placement_group(
     value: &[u8],
     mut builder: crate::operation::delete_channel_placement_group::builders::DeleteChannelPlacementGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_channel_placement_group::builders::DeleteChannelPlacementGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

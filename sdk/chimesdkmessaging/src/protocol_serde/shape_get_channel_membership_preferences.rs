@@ -164,7 +164,7 @@ pub fn ser_get_channel_membership_preferences_headers(
 pub(crate) fn de_get_channel_membership_preferences(
     value: &[u8],
     mut builder: crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_channel_membership_preferences::builders::GetChannelMembershipPreferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_import_backend_storage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_backend_storage::ImportBackendStorageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bucket_name {
         object.key("bucketName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_create_trained_model_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_trained_model::CreateTrainedModelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configured_model_algorithm_association_arn {
         object.key("configuredModelAlgorithmAssociationArn").string(var_1.as_str());
     }

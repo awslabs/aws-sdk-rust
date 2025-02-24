@@ -2,7 +2,7 @@
 pub fn ser_identity_center_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IdentityCenterOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled_api_access {
         object.key("EnabledAPIAccess").boolean(*var_1);
     }

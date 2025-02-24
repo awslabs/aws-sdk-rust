@@ -2,7 +2,7 @@
 pub fn ser_batch_put_data_quality_statistic_annotation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_put_data_quality_statistic_annotation::BatchPutDataQualityStatisticAnnotationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inclusion_annotations {
         let mut array_2 = object.key("InclusionAnnotations").start_array();
         for item_3 in var_1 {

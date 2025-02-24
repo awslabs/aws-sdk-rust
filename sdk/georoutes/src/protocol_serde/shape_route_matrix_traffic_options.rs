@@ -2,7 +2,7 @@
 pub fn ser_route_matrix_traffic_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteMatrixTrafficOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.flow_event_threshold_override != 0 {
         object.key("FlowEventThresholdOverride").number(
             #[allow(clippy::useless_conversion)]

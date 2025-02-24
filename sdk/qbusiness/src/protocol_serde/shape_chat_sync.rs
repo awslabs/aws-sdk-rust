@@ -151,7 +151,7 @@ pub fn de_chat_sync_http_response(
 
 pub fn ser_chat_sync_input(
     input: &crate::operation::chat_sync::ChatSyncInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_chat_sync_input::ser_chat_sync_input_input(&mut object, input)?;
@@ -162,7 +162,7 @@ pub fn ser_chat_sync_input(
 pub(crate) fn de_chat_sync(
     value: &[u8],
     mut builder: crate::operation::chat_sync::builders::ChatSyncOutputBuilder,
-) -> Result<crate::operation::chat_sync::builders::ChatSyncOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::chat_sync::builders::ChatSyncOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

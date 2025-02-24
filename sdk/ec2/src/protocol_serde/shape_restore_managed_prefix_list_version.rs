@@ -39,7 +39,7 @@ pub fn de_restore_managed_prefix_list_version_http_response(
 pub fn de_restore_managed_prefix_list_version(
     inp: &[u8],
     mut builder: crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

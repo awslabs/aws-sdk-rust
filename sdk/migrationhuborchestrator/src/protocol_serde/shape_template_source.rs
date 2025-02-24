@@ -2,7 +2,7 @@
 pub fn ser_template_source(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TemplateSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TemplateSource::WorkflowId(inner) => {
             object_9.key("workflowId").string(inner.as_str());

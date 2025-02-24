@@ -76,7 +76,7 @@ pub fn de_get_trace_segment_destination_http_response(
 pub(crate) fn de_get_trace_segment_destination(
     value: &[u8],
     mut builder: crate::operation::get_trace_segment_destination::builders::GetTraceSegmentDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_trace_segment_destination::builders::GetTraceSegmentDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

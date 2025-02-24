@@ -2,7 +2,7 @@
 pub fn ser_create_quantum_task_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_quantum_task::CreateQuantumTaskInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action {
         object.key("action").string(var_1.as_str());
     }

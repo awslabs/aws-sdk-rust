@@ -2,7 +2,7 @@
 pub fn ser_field_value_union(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldValueUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.boolean_value {
         object.key("BooleanValue").boolean(input.boolean_value);
     }
@@ -26,7 +26,7 @@ pub fn ser_field_value_union(
 
 pub(crate) fn de_field_value_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FieldValueUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FieldValueUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

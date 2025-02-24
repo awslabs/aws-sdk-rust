@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_access_hours(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationAccessHours,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from {
         #[allow(unused_mut)]
         let mut object_2 = object.key("From").start_object();

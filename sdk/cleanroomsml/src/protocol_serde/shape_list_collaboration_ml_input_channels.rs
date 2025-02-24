@@ -80,7 +80,7 @@ pub fn de_list_collaboration_ml_input_channels_http_response(
 pub(crate) fn de_list_collaboration_ml_input_channels(
     value: &[u8],
     mut builder: crate::operation::list_collaboration_ml_input_channels::builders::ListCollaborationMlInputChannelsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_collaboration_ml_input_channels::builders::ListCollaborationMlInputChannelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

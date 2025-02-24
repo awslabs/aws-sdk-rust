@@ -33,7 +33,7 @@ pub fn de_allocate_hosts_http_response(
 pub fn de_allocate_hosts(
     inp: &[u8],
     mut builder: crate::operation::allocate_hosts::builders::AllocateHostsOutputBuilder,
-) -> Result<crate::operation::allocate_hosts::builders::AllocateHostsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::allocate_hosts::builders::AllocateHostsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

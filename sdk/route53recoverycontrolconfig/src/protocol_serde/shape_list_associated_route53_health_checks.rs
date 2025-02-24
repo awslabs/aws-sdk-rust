@@ -98,7 +98,7 @@ pub fn de_list_associated_route53_health_checks_http_response(
 pub(crate) fn de_list_associated_route53_health_checks(
     value: &[u8],
     mut builder: crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_associated_route53_health_checks::builders::ListAssociatedRoute53HealthChecksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

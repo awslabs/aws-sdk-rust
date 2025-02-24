@@ -2,7 +2,7 @@
 pub fn ser_sessions_statistics_resources(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionsStatisticsResources,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SessionsStatisticsResources::QueueIds(inner) => {
             let mut array_1 = object_7.key("queueIds").start_array();

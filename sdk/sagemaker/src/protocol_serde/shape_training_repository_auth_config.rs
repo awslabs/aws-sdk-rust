@@ -2,7 +2,7 @@
 pub fn ser_training_repository_auth_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrainingRepositoryAuthConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.training_repository_credentials_provider_arn {
         object.key("TrainingRepositoryCredentialsProviderArn").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_training_repository_auth_config(
 
 pub(crate) fn de_training_repository_auth_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TrainingRepositoryAuthConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TrainingRepositoryAuthConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -41,7 +41,7 @@ pub fn de_describe_security_group_rules_http_response(
 pub fn de_describe_security_group_rules(
     inp: &[u8],
     mut builder: crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

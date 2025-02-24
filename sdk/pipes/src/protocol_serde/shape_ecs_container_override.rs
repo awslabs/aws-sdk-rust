@@ -2,7 +2,7 @@
 pub fn ser_ecs_container_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EcsContainerOverride,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.command {
         let mut array_2 = object.key("Command").start_array();
         for item_3 in var_1 {
@@ -74,7 +74,7 @@ pub fn ser_ecs_container_override(
 
 pub(crate) fn de_ecs_container_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EcsContainerOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EcsContainerOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

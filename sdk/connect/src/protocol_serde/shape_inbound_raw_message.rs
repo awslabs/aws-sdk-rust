@@ -2,7 +2,7 @@
 pub fn ser_inbound_raw_message(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InboundRawMessage,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Subject").string(input.subject.as_str());
     }

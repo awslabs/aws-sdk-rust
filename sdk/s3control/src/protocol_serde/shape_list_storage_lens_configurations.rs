@@ -57,7 +57,7 @@ pub fn ser_list_storage_lens_configurations_headers(
 pub fn de_list_storage_lens_configurations(
     inp: &[u8],
     mut builder: crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_storage_lens_configurations::builders::ListStorageLensConfigurationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

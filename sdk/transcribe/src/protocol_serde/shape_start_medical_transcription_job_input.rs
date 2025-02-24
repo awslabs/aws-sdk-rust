@@ -2,7 +2,7 @@
 pub fn ser_start_medical_transcription_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.medical_transcription_job_name {
         object.key("MedicalTranscriptionJobName").string(var_1.as_str());
     }

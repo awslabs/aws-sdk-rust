@@ -2,7 +2,7 @@
 pub fn ser_name_value_pair(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NameValuePair,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_name_value_pair(
 
 pub(crate) fn de_name_value_pair<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NameValuePair>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NameValuePair>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

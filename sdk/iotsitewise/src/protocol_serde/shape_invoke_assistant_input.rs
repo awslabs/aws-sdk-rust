@@ -2,7 +2,7 @@
 pub fn ser_invoke_assistant_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_assistant::InvokeAssistantInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conversation_id {
         object.key("conversationId").string(var_1.as_str());
     }

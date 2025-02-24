@@ -2,7 +2,7 @@
 pub fn ser_restricted_periods(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RestrictedPeriods,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RestrictedPeriods::RestrictedPeriodList(inner) => {
             let mut array_1 = object_4.key("restrictedPeriodList").start_array();
@@ -27,7 +27,7 @@ pub fn ser_restricted_periods(
 
 pub(crate) fn de_restricted_periods<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RestrictedPeriods>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RestrictedPeriods>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

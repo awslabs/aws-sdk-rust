@@ -2,7 +2,7 @@
 pub fn ser_update_export_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_export::UpdateExportInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_arn {
         object.key("ExportArn").string(var_1.as_str());
     }

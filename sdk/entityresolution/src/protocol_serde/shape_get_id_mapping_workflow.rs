@@ -123,7 +123,7 @@ pub fn de_get_id_mapping_workflow_http_response(
 pub(crate) fn de_get_id_mapping_workflow(
     value: &[u8],
     mut builder: crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_id_mapping_workflow::builders::GetIdMappingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

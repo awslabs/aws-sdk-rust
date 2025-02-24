@@ -39,7 +39,7 @@ pub fn de_create_subnet_cidr_reservation_http_response(
 pub fn de_create_subnet_cidr_reservation(
     inp: &[u8],
     mut builder: crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_subnet_cidr_reservation::builders::CreateSubnetCidrReservationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

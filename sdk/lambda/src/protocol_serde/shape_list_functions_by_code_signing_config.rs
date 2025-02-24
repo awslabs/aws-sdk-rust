@@ -99,7 +99,7 @@ pub fn de_list_functions_by_code_signing_config_http_response(
 pub(crate) fn de_list_functions_by_code_signing_config(
     value: &[u8],
     mut builder: crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

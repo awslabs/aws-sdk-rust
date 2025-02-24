@@ -2,7 +2,7 @@
 pub fn ser_retrieve_and_generate_session_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetrieveAndGenerateSessionConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("kmsKeyArn").string(input.kms_key_arn.as_str());
     }

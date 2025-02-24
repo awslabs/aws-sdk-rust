@@ -2,7 +2,7 @@
 pub fn ser_enabled_baseline_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnabledBaselineFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target_identifiers {
         let mut array_2 = object.key("targetIdentifiers").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_hyper_pod_properties_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HyperPodPropertiesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("clusterName").string(input.cluster_name.as_str());
     }

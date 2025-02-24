@@ -117,7 +117,7 @@ pub fn de_verify_device_position_http_response(
 
 pub fn ser_verify_device_position_input(
     input: &crate::operation::verify_device_position::VerifyDevicePositionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_verify_device_position_input::ser_verify_device_position_input_input(&mut object, input)?;
@@ -128,7 +128,7 @@ pub fn ser_verify_device_position_input(
 pub(crate) fn de_verify_device_position(
     value: &[u8],
     mut builder: crate::operation::verify_device_position::builders::VerifyDevicePositionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::verify_device_position::builders::VerifyDevicePositionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

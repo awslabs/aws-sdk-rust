@@ -123,7 +123,7 @@ pub fn de_delete_user_http_response(
 pub fn de_delete_user(
     inp: &[u8],
     mut builder: crate::operation::delete_user::builders::DeleteUserOutputBuilder,
-) -> Result<crate::operation::delete_user::builders::DeleteUserOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_user::builders::DeleteUserOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

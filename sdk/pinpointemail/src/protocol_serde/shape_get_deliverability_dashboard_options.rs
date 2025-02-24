@@ -98,7 +98,7 @@ pub fn de_get_deliverability_dashboard_options_http_response(
 pub(crate) fn de_get_deliverability_dashboard_options(
     value: &[u8],
     mut builder: crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

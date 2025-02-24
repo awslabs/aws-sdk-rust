@@ -2,7 +2,7 @@
 pub fn ser_global_accelerator_for_work_space(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalAcceleratorForWorkSpace,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Mode").string(input.mode.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_global_accelerator_for_work_space(
 
 pub(crate) fn de_global_accelerator_for_work_space<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GlobalAcceleratorForWorkSpace>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GlobalAcceleratorForWorkSpace>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

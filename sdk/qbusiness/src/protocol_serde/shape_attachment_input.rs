@@ -2,7 +2,7 @@
 pub fn ser_attachment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttachmentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data {
         object.key("data").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

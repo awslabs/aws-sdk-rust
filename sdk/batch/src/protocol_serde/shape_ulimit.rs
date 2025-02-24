@@ -2,7 +2,7 @@
 pub fn ser_ulimit(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ulimit,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hard_limit {
         object.key("hardLimit").number(
             #[allow(clippy::useless_conversion)]
@@ -23,7 +23,7 @@ pub fn ser_ulimit(
 
 pub(crate) fn de_ulimit<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Ulimit>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Ulimit>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -304,7 +304,7 @@ pub fn de_delete_propertygraph_statistics_http_response(
 pub(crate) fn de_delete_propertygraph_statistics(
     value: &[u8],
     mut builder: crate::operation::delete_propertygraph_statistics::builders::DeletePropertygraphStatisticsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_propertygraph_statistics::builders::DeletePropertygraphStatisticsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

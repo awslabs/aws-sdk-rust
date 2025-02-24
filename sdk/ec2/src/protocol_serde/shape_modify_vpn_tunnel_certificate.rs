@@ -41,7 +41,7 @@ pub fn de_modify_vpn_tunnel_certificate_http_response(
 pub fn de_modify_vpn_tunnel_certificate(
     inp: &[u8],
     mut builder: crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

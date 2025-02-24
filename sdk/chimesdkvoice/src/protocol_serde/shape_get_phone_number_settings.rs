@@ -142,7 +142,7 @@ pub fn de_get_phone_number_settings_http_response(
 pub(crate) fn de_get_phone_number_settings(
     value: &[u8],
     mut builder: crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

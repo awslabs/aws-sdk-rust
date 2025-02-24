@@ -489,7 +489,7 @@ pub fn de_restore_db_instance_from_db_snapshot_http_response(
 pub fn de_restore_db_instance_from_db_snapshot(
     inp: &[u8],
     mut builder: crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::restore_db_instance_from_db_snapshot::builders::RestoreDbInstanceFromDbSnapshotOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

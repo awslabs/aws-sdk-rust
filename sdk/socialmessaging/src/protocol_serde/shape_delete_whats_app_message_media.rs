@@ -180,7 +180,7 @@ pub fn de_delete_whats_app_message_media_http_response(
 pub(crate) fn de_delete_whats_app_message_media(
     value: &[u8],
     mut builder: crate::operation::delete_whats_app_message_media::builders::DeleteWhatsAppMessageMediaOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_whats_app_message_media::builders::DeleteWhatsAppMessageMediaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

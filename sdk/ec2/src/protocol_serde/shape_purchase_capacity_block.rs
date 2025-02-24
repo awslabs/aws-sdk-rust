@@ -39,7 +39,10 @@ pub fn de_purchase_capacity_block_http_response(
 pub fn de_purchase_capacity_block(
     inp: &[u8],
     mut builder: crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockOutputBuilder,
-) -> Result<crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

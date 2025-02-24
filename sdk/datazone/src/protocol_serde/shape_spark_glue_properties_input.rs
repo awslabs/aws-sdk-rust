@@ -2,7 +2,7 @@
 pub fn ser_spark_glue_properties_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkGluePropertiesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_args {
         #[allow(unused_mut)]
         let mut object_2 = object.key("additionalArgs").start_object();

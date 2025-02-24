@@ -84,7 +84,7 @@ pub fn de_delete_custom_db_engine_version_http_response(
 pub fn de_delete_custom_db_engine_version(
     inp: &[u8],
     mut builder: crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_table_inline_visualization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableInlineVisualization,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.data_bars {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DataBars").start_object();
@@ -14,7 +14,7 @@ pub fn ser_table_inline_visualization(
 
 pub(crate) fn de_table_inline_visualization<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TableInlineVisualization>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TableInlineVisualization>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

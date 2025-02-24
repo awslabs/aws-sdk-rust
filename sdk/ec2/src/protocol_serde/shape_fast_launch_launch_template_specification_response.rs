@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_fast_launch_launch_template_specification_response(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FastLaunchLaunchTemplateSpecificationResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::FastLaunchLaunchTemplateSpecificationResponse, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FastLaunchLaunchTemplateSpecificationResponse::builder();
     while let Some(mut tag) = decoder.next_tag() {

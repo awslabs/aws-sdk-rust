@@ -2,7 +2,7 @@
 pub fn ser_put_table_bucket_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_table_bucket_policy::PutTableBucketPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_policy {
         object.key("resourcePolicy").string(var_1.as_str());
     }

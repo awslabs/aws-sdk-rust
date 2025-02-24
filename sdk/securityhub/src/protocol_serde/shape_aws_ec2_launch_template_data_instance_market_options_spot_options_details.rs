@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_instance_market_options_spot_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block_duration_minutes {
         object.key("BlockDurationMinutes").number(
             #[allow(clippy::useless_conversion)]
@@ -26,7 +26,7 @@ pub fn ser_aws_ec2_launch_template_data_instance_market_options_spot_options_det
 
 pub(crate) fn de_aws_ec2_launch_template_data_instance_market_options_spot_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

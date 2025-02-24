@@ -2,7 +2,7 @@
 pub fn ser_application_system_rollback_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApplicationSystemRollbackConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RollbackEnabled").boolean(input.rollback_enabled);
     }

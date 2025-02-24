@@ -2,7 +2,7 @@
 pub fn ser_lo_ra_wan_multicast(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoRaWanMulticast,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rf_region {
         object.key("RfRegion").string(var_1.as_str());
     }

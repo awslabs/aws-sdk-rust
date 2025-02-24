@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_geo_location_details(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::GeoLocationDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::GeoLocationDetails, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::GeoLocationDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {

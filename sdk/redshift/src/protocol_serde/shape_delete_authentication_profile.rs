@@ -83,7 +83,7 @@ pub fn de_delete_authentication_profile_http_response(
 pub fn de_delete_authentication_profile(
     inp: &[u8],
     mut builder: crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_authentication_profile::builders::DeleteAuthenticationProfileOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

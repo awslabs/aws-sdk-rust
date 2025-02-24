@@ -111,7 +111,7 @@ pub fn de_batch_put_property_values_http_response(
 
 pub fn ser_batch_put_property_values_input(
     input: &crate::operation::batch_put_property_values::BatchPutPropertyValuesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_put_property_values_input::ser_batch_put_property_values_input_input(&mut object, input)?;
@@ -122,7 +122,7 @@ pub fn ser_batch_put_property_values_input(
 pub(crate) fn de_batch_put_property_values(
     value: &[u8],
     mut builder: crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

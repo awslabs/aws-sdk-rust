@@ -2,7 +2,7 @@
 pub fn ser_describe_task_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_task_definition::DescribeTaskDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.task_definition {
         object.key("taskDefinition").string(var_1.as_str());
     }

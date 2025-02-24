@@ -2,7 +2,7 @@
 pub fn ser_time_alignment_boundary(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TimeAlignmentBoundary,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.month {
         object.key("Month").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_time_alignment_boundary(
 
 pub(crate) fn de_time_alignment_boundary<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TimeAlignmentBoundary>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TimeAlignmentBoundary>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

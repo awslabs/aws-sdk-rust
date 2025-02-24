@@ -90,7 +90,7 @@ pub fn de_query_schema_version_metadata_http_response(
 
 pub fn ser_query_schema_version_metadata_input(
     input: &crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_query_schema_version_metadata_input::ser_query_schema_version_metadata_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_query_schema_version_metadata_input(
 pub(crate) fn de_query_schema_version_metadata(
     value: &[u8],
     mut builder: crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::query_schema_version_metadata::builders::QuerySchemaVersionMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

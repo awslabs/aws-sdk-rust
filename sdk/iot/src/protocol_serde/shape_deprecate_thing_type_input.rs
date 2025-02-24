@@ -2,7 +2,7 @@
 pub fn ser_deprecate_thing_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::deprecate_thing_type::DeprecateThingTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.undo_deprecate {
         object.key("undoDeprecate").boolean(*var_1);
     }

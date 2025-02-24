@@ -2,7 +2,7 @@
 pub fn ser_tax_registration_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaxRegistrationDocument,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("s3Location").start_object();

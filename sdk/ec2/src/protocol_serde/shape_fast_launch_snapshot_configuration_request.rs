@@ -3,7 +3,7 @@
 pub fn ser_fast_launch_snapshot_configuration_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::FastLaunchSnapshotConfigurationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TargetResourceCount");
     if let Some(var_2) = &input.target_resource_count {

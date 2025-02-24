@@ -87,7 +87,7 @@ pub fn de_apply_environment_managed_action_http_response(
 pub fn de_apply_environment_managed_action(
     inp: &[u8],
     mut builder: crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

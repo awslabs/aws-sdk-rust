@@ -2,7 +2,7 @@
 pub fn ser_segmentation_descriptor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SegmentationDescriptor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.segmentation_event_id {
         object.key("SegmentationEventId").number(
             #[allow(clippy::useless_conversion)]
@@ -53,7 +53,7 @@ pub fn ser_segmentation_descriptor(
 
 pub(crate) fn de_segmentation_descriptor<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SegmentationDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SegmentationDescriptor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

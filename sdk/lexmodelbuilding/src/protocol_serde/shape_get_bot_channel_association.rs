@@ -117,7 +117,7 @@ pub fn de_get_bot_channel_association_http_response(
 pub(crate) fn de_get_bot_channel_association(
     value: &[u8],
     mut builder: crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_bot_channel_association::builders::GetBotChannelAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

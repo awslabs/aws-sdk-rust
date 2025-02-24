@@ -144,7 +144,7 @@ pub fn de_list_batch_job_restart_points_http_response(
 pub(crate) fn de_list_batch_job_restart_points(
     value: &[u8],
     mut builder: crate::operation::list_batch_job_restart_points::builders::ListBatchJobRestartPointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_batch_job_restart_points::builders::ListBatchJobRestartPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

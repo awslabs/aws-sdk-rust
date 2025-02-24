@@ -41,7 +41,7 @@ pub fn de_describe_transit_gateway_policy_tables_http_response(
 pub fn de_describe_transit_gateway_policy_tables(
     inp: &[u8],
     mut builder: crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_transit_gateway_policy_tables::builders::DescribeTransitGatewayPolicyTablesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

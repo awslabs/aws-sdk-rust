@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_analytics_s3_bucket_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AnalyticsS3BucketDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AnalyticsS3BucketDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AnalyticsS3BucketDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -71,7 +71,7 @@ pub fn de_analytics_s3_bucket_destination(
 pub fn ser_analytics_s3_bucket_destination(
     input: &crate::types::AnalyticsS3BucketDestination,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

@@ -2,7 +2,7 @@
 pub fn ser_lambda_function_recommendation_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaFunctionRecommendationFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }

@@ -139,7 +139,7 @@ pub fn de_stop_data_collection_by_agent_ids_http_response(
 
 pub fn ser_stop_data_collection_by_agent_ids_input(
     input: &crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_data_collection_by_agent_ids_input::ser_stop_data_collection_by_agent_ids_input_input(&mut object, input)?;
@@ -150,7 +150,7 @@ pub fn ser_stop_data_collection_by_agent_ids_input(
 pub(crate) fn de_stop_data_collection_by_agent_ids(
     value: &[u8],
     mut builder: crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

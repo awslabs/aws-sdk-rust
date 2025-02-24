@@ -167,7 +167,7 @@ pub fn de_create_user_pool_client_http_response(
 
 pub fn ser_create_user_pool_client_input(
     input: &crate::operation::create_user_pool_client::CreateUserPoolClientInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_user_pool_client_input::ser_create_user_pool_client_input_input(&mut object, input)?;
@@ -178,7 +178,7 @@ pub fn ser_create_user_pool_client_input(
 pub(crate) fn de_create_user_pool_client(
     value: &[u8],
     mut builder: crate::operation::create_user_pool_client::builders::CreateUserPoolClientOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_user_pool_client::builders::CreateUserPoolClientOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

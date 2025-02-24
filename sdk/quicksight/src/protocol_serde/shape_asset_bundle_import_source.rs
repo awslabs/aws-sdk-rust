@@ -2,7 +2,7 @@
 pub fn ser_asset_bundle_import_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetBundleImportSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.body {
         object.key("Body").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

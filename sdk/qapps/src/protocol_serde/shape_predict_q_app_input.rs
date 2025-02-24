@@ -2,7 +2,7 @@
 pub fn ser_predict_q_app_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::predict_q_app::PredictQAppInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("options").start_object();

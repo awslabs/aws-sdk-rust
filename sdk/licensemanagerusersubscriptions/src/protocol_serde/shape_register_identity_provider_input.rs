@@ -2,7 +2,7 @@
 pub fn ser_register_identity_provider_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_identity_provider::RegisterIdentityProviderInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.identity_provider {
         #[allow(unused_mut)]
         let mut object_2 = object.key("IdentityProvider").start_object();

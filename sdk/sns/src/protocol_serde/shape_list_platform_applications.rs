@@ -96,7 +96,10 @@ pub fn de_list_platform_applications_http_response(
 pub fn de_list_platform_applications(
     inp: &[u8],
     mut builder: crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder,
-) -> Result<crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_platform_applications::builders::ListPlatformApplicationsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

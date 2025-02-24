@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_launch_template_data_block_device_mapping_set_ebs_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.delete_on_termination {
         object.key("DeleteOnTermination").boolean(*var_1);
     }
@@ -41,7 +41,10 @@ pub fn ser_aws_ec2_launch_template_data_block_device_mapping_set_ebs_details(
 
 pub(crate) fn de_aws_ec2_launch_template_data_block_device_mapping_set_ebs_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

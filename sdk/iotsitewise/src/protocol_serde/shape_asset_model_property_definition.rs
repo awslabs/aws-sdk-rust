@@ -2,7 +2,7 @@
 pub fn ser_asset_model_property_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetModelPropertyDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("id").string(var_1.as_str());
     }

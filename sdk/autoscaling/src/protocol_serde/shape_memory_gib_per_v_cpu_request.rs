@@ -3,7 +3,7 @@
 pub fn ser_memory_gib_per_v_cpu_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MemoryGiBPerVCpuRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Min");
     if let Some(var_2) = &input.min {
@@ -26,7 +26,7 @@ pub fn ser_memory_gib_per_v_cpu_request(
 #[allow(clippy::needless_question_mark)]
 pub fn de_memory_gib_per_v_cpu_request(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MemoryGiBPerVCpuRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MemoryGiBPerVCpuRequest, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MemoryGiBPerVCpuRequest::builder();
     while let Some(mut tag) = decoder.next_tag() {

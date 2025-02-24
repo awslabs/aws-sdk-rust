@@ -153,7 +153,7 @@ pub fn de_batch_delete_rum_metric_definitions_http_response(
 pub(crate) fn de_batch_delete_rum_metric_definitions(
     value: &[u8],
     mut builder: crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

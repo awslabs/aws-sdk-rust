@@ -2,7 +2,7 @@
 pub fn ser_ind_tax_documents(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IndTaxDocuments,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gstin {
         object.key("GSTIN").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_ind_tax_documents(
 
 pub(crate) fn de_ind_tax_documents<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IndTaxDocuments>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IndTaxDocuments>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

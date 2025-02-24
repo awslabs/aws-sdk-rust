@@ -3,7 +3,7 @@
 pub fn de_ec2_image_properties_not_supported_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::Ec2ImagePropertiesNotSupportedFaultBuilder,
-) -> Result<crate::types::error::builders::Ec2ImagePropertiesNotSupportedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::Ec2ImagePropertiesNotSupportedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

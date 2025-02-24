@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_managed_rule_state(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ManagedRuleState, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ManagedRuleState, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ManagedRuleState::builder();
     while let Some(mut tag) = decoder.next_tag() {

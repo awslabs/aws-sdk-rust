@@ -39,7 +39,7 @@ pub fn de_accept_vpc_endpoint_connections_http_response(
 pub fn de_accept_vpc_endpoint_connections(
     inp: &[u8],
     mut builder: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -64,7 +64,7 @@ pub fn de_describe_pending_maintenance_actions_http_response(
 pub fn de_describe_pending_maintenance_actions(
     inp: &[u8],
     mut builder: crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_pending_maintenance_actions::builders::DescribePendingMaintenanceActionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

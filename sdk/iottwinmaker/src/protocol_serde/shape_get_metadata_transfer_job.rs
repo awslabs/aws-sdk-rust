@@ -127,7 +127,7 @@ pub fn de_get_metadata_transfer_job_http_response(
 pub(crate) fn de_get_metadata_transfer_job(
     value: &[u8],
     mut builder: crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_metadata_transfer_job::builders::GetMetadataTransferJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

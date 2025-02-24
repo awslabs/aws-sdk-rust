@@ -2,7 +2,7 @@
 pub fn ser_allocate_static_ip_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::allocate_static_ip::AllocateStaticIpInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.static_ip_name {
         object.key("staticIpName").string(var_1.as_str());
     }

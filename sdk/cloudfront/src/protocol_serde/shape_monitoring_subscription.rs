@@ -2,7 +2,7 @@
 pub fn ser_monitoring_subscription(
     input: &crate::types::MonitoringSubscription,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.realtime_metrics_subscription_config {
@@ -16,7 +16,7 @@ pub fn ser_monitoring_subscription(
 #[allow(clippy::needless_question_mark)]
 pub fn de_monitoring_subscription(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MonitoringSubscription::builder();
     while let Some(mut tag) = decoder.next_tag() {

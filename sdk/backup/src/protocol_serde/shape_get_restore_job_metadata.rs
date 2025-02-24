@@ -113,7 +113,7 @@ pub fn de_get_restore_job_metadata_http_response(
 pub(crate) fn de_get_restore_job_metadata(
     value: &[u8],
     mut builder: crate::operation::get_restore_job_metadata::builders::GetRestoreJobMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_restore_job_metadata::builders::GetRestoreJobMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

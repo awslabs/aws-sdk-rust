@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_destination_data_sharing(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncDestinationDataSharing,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_data_sharing_type {
         object.key("DestinationDataSharingType").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_resource_data_sync_destination_data_sharing(
 
 pub(crate) fn de_resource_data_sync_destination_data_sharing<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResourceDataSyncDestinationDataSharing>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResourceDataSyncDestinationDataSharing>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

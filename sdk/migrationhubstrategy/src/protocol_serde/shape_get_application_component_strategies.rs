@@ -98,7 +98,7 @@ pub fn de_get_application_component_strategies_http_response(
 pub(crate) fn de_get_application_component_strategies(
     value: &[u8],
     mut builder: crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

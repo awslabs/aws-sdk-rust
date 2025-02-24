@@ -2,7 +2,7 @@
 pub fn ser_container_product_entity_id_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerProductEntityIdFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value_list {
         let mut array_2 = object.key("ValueList").start_array();
         for item_3 in var_1 {

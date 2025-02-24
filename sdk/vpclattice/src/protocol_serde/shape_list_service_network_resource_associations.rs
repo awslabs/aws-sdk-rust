@@ -138,7 +138,7 @@ pub fn de_list_service_network_resource_associations_http_response(
 pub(crate) fn de_list_service_network_resource_associations(
     value: &[u8],
     mut builder: crate::operation::list_service_network_resource_associations::builders::ListServiceNetworkResourceAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_service_network_resource_associations::builders::ListServiceNetworkResourceAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

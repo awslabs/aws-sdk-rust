@@ -39,7 +39,7 @@ pub fn de_delete_verified_access_instance_http_response(
 pub fn de_delete_verified_access_instance(
     inp: &[u8],
     mut builder: crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

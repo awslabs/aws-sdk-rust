@@ -2,7 +2,7 @@
 pub fn ser_data_automation_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataAutomationConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("dataAutomationArn").string(input.data_automation_arn.as_str());
     }

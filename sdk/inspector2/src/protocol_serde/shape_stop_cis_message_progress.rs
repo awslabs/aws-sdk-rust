@@ -2,7 +2,7 @@
 pub fn ser_stop_cis_message_progress(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StopCisMessageProgress,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.total_checks != 0 {
         object.key("totalChecks").number(
             #[allow(clippy::useless_conversion)]

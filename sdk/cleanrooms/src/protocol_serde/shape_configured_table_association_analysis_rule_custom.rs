@@ -2,7 +2,7 @@
 pub fn ser_configured_table_association_analysis_rule_custom(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfiguredTableAssociationAnalysisRuleCustom,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_result_receivers {
         let mut array_2 = object.key("allowedResultReceivers").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_configured_table_association_analysis_rule_custom(
 
 pub(crate) fn de_configured_table_association_analysis_rule_custom<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConfiguredTableAssociationAnalysisRuleCustom>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConfiguredTableAssociationAnalysisRuleCustom>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

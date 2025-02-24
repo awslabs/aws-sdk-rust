@@ -2,7 +2,7 @@
 pub fn ser_start_query_planning_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_query_planning::StartQueryPlanningInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.query_planning_context {
         #[allow(unused_mut)]
         let mut object_2 = object.key("QueryPlanningContext").start_object();

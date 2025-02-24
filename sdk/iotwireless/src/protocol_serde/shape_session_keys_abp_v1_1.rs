@@ -2,7 +2,7 @@
 pub fn ser_session_keys_abp_v1_1(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionKeysAbpV11,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.f_nwk_s_int_key {
         object.key("FNwkSIntKey").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_session_keys_abp_v1_1(
 
 pub(crate) fn de_session_keys_abp_v1_1<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SessionKeysAbpV11>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SessionKeysAbpV11>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

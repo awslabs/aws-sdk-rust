@@ -2,7 +2,7 @@
 pub fn ser_evaluator_model_config(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluatorModelConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EvaluatorModelConfig::BedrockEvaluatorModels(inner) => {
             let mut array_1 = object_5.key("bedrockEvaluatorModels").start_array();
@@ -27,7 +27,7 @@ pub fn ser_evaluator_model_config(
 
 pub(crate) fn de_evaluator_model_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluatorModelConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluatorModelConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

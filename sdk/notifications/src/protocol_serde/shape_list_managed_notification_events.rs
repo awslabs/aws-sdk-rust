@@ -113,7 +113,7 @@ pub fn de_list_managed_notification_events_http_response(
 pub(crate) fn de_list_managed_notification_events(
     value: &[u8],
     mut builder: crate::operation::list_managed_notification_events::builders::ListManagedNotificationEventsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_managed_notification_events::builders::ListManagedNotificationEventsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

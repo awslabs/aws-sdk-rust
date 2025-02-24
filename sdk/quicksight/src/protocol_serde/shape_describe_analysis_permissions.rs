@@ -135,7 +135,7 @@ pub fn de_describe_analysis_permissions_http_response(
 pub(crate) fn de_describe_analysis_permissions(
     value: &[u8],
     mut builder: crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

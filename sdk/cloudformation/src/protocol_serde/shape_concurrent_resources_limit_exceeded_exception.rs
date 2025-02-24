@@ -3,7 +3,7 @@
 pub fn de_concurrent_resources_limit_exceeded_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ConcurrentResourcesLimitExceededExceptionBuilder,
-) -> Result<crate::types::error::builders::ConcurrentResourcesLimitExceededExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ConcurrentResourcesLimitExceededExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

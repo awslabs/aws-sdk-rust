@@ -139,7 +139,7 @@ pub fn de_describe_node_configuration_options_http_response(
 pub fn de_describe_node_configuration_options(
     inp: &[u8],
     mut builder: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

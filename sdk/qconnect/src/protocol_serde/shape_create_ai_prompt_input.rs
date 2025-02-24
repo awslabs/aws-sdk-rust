@@ -2,7 +2,7 @@
 pub fn ser_create_ai_prompt_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_ai_prompt::CreateAiPromptInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.api_format {
         object.key("apiFormat").string(var_1.as_str());
     }

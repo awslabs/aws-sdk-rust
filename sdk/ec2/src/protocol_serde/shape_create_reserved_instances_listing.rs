@@ -39,7 +39,7 @@ pub fn de_create_reserved_instances_listing_http_response(
 pub fn de_create_reserved_instances_listing(
     inp: &[u8],
     mut builder: crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_reserved_instances_listing::builders::CreateReservedInstancesListingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

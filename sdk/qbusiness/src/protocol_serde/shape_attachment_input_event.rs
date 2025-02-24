@@ -2,7 +2,7 @@
 pub fn ser_attachment_input_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AttachmentInputEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attachment {
         #[allow(unused_mut)]
         let mut object_2 = object.key("attachment").start_object();

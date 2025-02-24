@@ -63,7 +63,7 @@ pub fn de_exchange_code_for_token_http_response(
 pub(crate) fn de_exchange_code_for_token(
     value: &[u8],
     mut builder: crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

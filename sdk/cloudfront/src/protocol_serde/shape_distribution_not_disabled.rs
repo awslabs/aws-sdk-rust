@@ -3,7 +3,7 @@
 pub fn de_distribution_not_disabled_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::DistributionNotDisabledBuilder,
-) -> Result<crate::types::error::builders::DistributionNotDisabledBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::DistributionNotDisabledBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

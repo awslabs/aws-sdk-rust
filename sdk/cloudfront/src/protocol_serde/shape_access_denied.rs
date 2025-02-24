@@ -3,7 +3,7 @@
 pub fn de_access_denied_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::AccessDeniedBuilder,
-) -> Result<crate::types::error::builders::AccessDeniedBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::AccessDeniedBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

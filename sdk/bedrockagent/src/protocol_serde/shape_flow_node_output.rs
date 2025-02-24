@@ -2,7 +2,7 @@
 pub fn ser_flow_node_output(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FlowNodeOutput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_flow_node_output(
 
 pub(crate) fn de_flow_node_output<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FlowNodeOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FlowNodeOutput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

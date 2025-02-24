@@ -2,7 +2,7 @@
 pub fn ser_complete_read_set_upload_part_list_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CompleteReadSetUploadPartListItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("partNumber").number(
             #[allow(clippy::useless_conversion)]

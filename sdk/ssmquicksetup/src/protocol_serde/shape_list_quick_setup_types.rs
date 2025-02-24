@@ -105,7 +105,7 @@ pub fn de_list_quick_setup_types_http_response(
 pub(crate) fn de_list_quick_setup_types(
     value: &[u8],
     mut builder: crate::operation::list_quick_setup_types::builders::ListQuickSetupTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_quick_setup_types::builders::ListQuickSetupTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

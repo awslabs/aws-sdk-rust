@@ -167,7 +167,7 @@ pub fn de_promote_permission_created_from_policy_http_response(
 
 pub fn ser_promote_permission_created_from_policy_input(
     input: &crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_promote_permission_created_from_policy_input::ser_promote_permission_created_from_policy_input_input(
@@ -181,7 +181,7 @@ pub fn ser_promote_permission_created_from_policy_input(
 pub(crate) fn de_promote_permission_created_from_policy(
     value: &[u8],
     mut builder: crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::promote_permission_created_from_policy::builders::PromotePermissionCreatedFromPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

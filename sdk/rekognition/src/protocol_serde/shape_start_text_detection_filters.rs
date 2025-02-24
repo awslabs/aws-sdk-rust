@@ -2,7 +2,7 @@
 pub fn ser_start_text_detection_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartTextDetectionFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.word_filter {
         #[allow(unused_mut)]
         let mut object_2 = object.key("WordFilter").start_object();

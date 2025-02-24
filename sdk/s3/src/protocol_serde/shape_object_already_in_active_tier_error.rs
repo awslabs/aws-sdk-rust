@@ -3,7 +3,7 @@
 pub fn de_object_already_in_active_tier_error_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ObjectAlreadyInActiveTierErrorBuilder,
-) -> Result<crate::types::error::builders::ObjectAlreadyInActiveTierErrorBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ObjectAlreadyInActiveTierErrorBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

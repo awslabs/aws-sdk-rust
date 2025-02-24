@@ -2,7 +2,7 @@
 pub fn ser_integration_identifier(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IntegrationIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::IntegrationIdentifier::CustomerProfiles(inner) => {
             #[allow(unused_mut)]

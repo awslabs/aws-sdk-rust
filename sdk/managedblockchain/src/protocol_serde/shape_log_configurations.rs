@@ -2,7 +2,7 @@
 pub fn ser_log_configurations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogConfigurations,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cloudwatch {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Cloudwatch").start_object();
@@ -14,7 +14,7 @@ pub fn ser_log_configurations(
 
 pub(crate) fn de_log_configurations<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LogConfigurations>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LogConfigurations>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

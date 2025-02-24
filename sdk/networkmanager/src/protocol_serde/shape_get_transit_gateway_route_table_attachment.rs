@@ -155,7 +155,7 @@ pub fn de_get_transit_gateway_route_table_attachment_http_response(
 pub(crate) fn de_get_transit_gateway_route_table_attachment(
     value: &[u8],
     mut builder: crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

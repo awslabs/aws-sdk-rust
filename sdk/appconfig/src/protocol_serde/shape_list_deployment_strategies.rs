@@ -80,7 +80,7 @@ pub fn de_list_deployment_strategies_http_response(
 pub(crate) fn de_list_deployment_strategies(
     value: &[u8],
     mut builder: crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_deployment_strategies::builders::ListDeploymentStrategiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

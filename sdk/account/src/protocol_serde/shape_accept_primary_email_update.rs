@@ -133,7 +133,7 @@ pub fn de_accept_primary_email_update_http_response(
 
 pub fn ser_accept_primary_email_update_input(
     input: &crate::operation::accept_primary_email_update::AcceptPrimaryEmailUpdateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_accept_primary_email_update_input::ser_accept_primary_email_update_input_input(&mut object, input)?;
@@ -144,7 +144,7 @@ pub fn ser_accept_primary_email_update_input(
 pub(crate) fn de_accept_primary_email_update(
     value: &[u8],
     mut builder: crate::operation::accept_primary_email_update::builders::AcceptPrimaryEmailUpdateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::accept_primary_email_update::builders::AcceptPrimaryEmailUpdateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

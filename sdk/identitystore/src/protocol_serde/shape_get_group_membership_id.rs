@@ -122,7 +122,7 @@ pub fn de_get_group_membership_id_http_response(
 
 pub fn ser_get_group_membership_id_input(
     input: &crate::operation::get_group_membership_id::GetGroupMembershipIdInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_group_membership_id_input::ser_get_group_membership_id_input_input(&mut object, input)?;
@@ -133,7 +133,7 @@ pub fn ser_get_group_membership_id_input(
 pub(crate) fn de_get_group_membership_id(
     value: &[u8],
     mut builder: crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_group_membership_id::builders::GetGroupMembershipIdOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

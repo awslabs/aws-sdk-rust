@@ -2,7 +2,7 @@
 pub fn ser_key_name_constraint(
     input: &crate::types::KeyNameConstraint,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.match_any_prefix {
@@ -39,7 +39,7 @@ pub fn ser_key_name_constraint(
 #[allow(clippy::needless_question_mark)]
 pub fn de_key_name_constraint(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::KeyNameConstraint, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::KeyNameConstraint, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::KeyNameConstraint::builder();
     while let Some(mut tag) = decoder.next_tag() {

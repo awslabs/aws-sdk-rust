@@ -136,7 +136,7 @@ pub fn de_list_data_set_import_history_http_response(
 pub(crate) fn de_list_data_set_import_history(
     value: &[u8],
     mut builder: crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

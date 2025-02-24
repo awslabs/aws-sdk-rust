@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_load_balancer_target_group_state(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LoadBalancerTargetGroupState, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LoadBalancerTargetGroupState, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LoadBalancerTargetGroupState::builder();
     while let Some(mut tag) = decoder.next_tag() {

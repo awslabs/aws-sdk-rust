@@ -139,7 +139,7 @@ pub fn de_get_table_bucket_policy_http_response(
 pub(crate) fn de_get_table_bucket_policy(
     value: &[u8],
     mut builder: crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_table_bucket_policy::builders::GetTableBucketPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

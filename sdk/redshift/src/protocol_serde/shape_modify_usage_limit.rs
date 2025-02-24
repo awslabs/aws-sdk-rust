@@ -86,7 +86,7 @@ pub fn de_modify_usage_limit_http_response(
 pub fn de_modify_usage_limit(
     inp: &[u8],
     mut builder: crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder,
-) -> Result<crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::modify_usage_limit::builders::ModifyUsageLimitOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

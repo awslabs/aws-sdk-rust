@@ -2,7 +2,7 @@
 pub fn ser_rotate_tunnel_access_token_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tunnel_id {
         object.key("tunnelId").string(var_1.as_str());
     }

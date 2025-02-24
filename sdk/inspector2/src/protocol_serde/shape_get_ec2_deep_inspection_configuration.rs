@@ -125,7 +125,7 @@ pub fn de_get_ec2_deep_inspection_configuration_http_response(
 pub(crate) fn de_get_ec2_deep_inspection_configuration(
     value: &[u8],
     mut builder: crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_ec2_deep_inspection_configuration::builders::GetEc2DeepInspectionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

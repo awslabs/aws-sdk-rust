@@ -2,7 +2,7 @@
 pub fn ser_geo_match_constraint(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeoMatchConstraint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Type").string(input.r#type.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_geo_match_constraint(
 
 pub(crate) fn de_geo_match_constraint<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GeoMatchConstraint>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GeoMatchConstraint>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

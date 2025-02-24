@@ -41,8 +41,10 @@ pub fn de_authorize_client_vpn_ingress_http_response(
 pub fn de_authorize_client_vpn_ingress(
     inp: &[u8],
     mut builder: crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressOutputBuilder,
-) -> Result<crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

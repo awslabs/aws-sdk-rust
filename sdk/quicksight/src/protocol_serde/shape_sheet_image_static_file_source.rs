@@ -2,7 +2,7 @@
 pub fn ser_sheet_image_static_file_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SheetImageStaticFileSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("StaticFileId").string(input.static_file_id.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_sheet_image_static_file_source(
 
 pub(crate) fn de_sheet_image_static_file_source<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SheetImageStaticFileSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SheetImageStaticFileSource>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

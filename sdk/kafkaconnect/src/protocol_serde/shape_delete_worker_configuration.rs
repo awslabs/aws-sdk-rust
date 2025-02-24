@@ -163,7 +163,7 @@ pub fn de_delete_worker_configuration_http_response(
 pub(crate) fn de_delete_worker_configuration(
     value: &[u8],
     mut builder: crate::operation::delete_worker_configuration::builders::DeleteWorkerConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_worker_configuration::builders::DeleteWorkerConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

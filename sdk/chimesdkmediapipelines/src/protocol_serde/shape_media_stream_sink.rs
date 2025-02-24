@@ -2,7 +2,7 @@
 pub fn ser_media_stream_sink(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaStreamSink,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SinkArn").string(input.sink_arn.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_media_stream_sink(
 
 pub(crate) fn de_media_stream_sink<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MediaStreamSink>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MediaStreamSink>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -39,7 +39,7 @@ pub fn de_modify_verified_access_trust_provider_http_response(
 pub fn de_modify_verified_access_trust_provider(
     inp: &[u8],
     mut builder: crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_verified_access_trust_provider::builders::ModifyVerifiedAccessTrustProviderOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_sidewalk_create_wireless_device(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SidewalkCreateWirelessDevice,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_profile_id {
         object.key("DeviceProfileId").string(var_1.as_str());
     }

@@ -105,7 +105,7 @@ pub fn de_describe_scaling_plans_http_response(
 
 pub fn ser_describe_scaling_plans_input(
     input: &crate::operation::describe_scaling_plans::DescribeScalingPlansInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_scaling_plans_input::ser_describe_scaling_plans_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_describe_scaling_plans_input(
 pub(crate) fn de_describe_scaling_plans(
     value: &[u8],
     mut builder: crate::operation::describe_scaling_plans::builders::DescribeScalingPlansOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_scaling_plans::builders::DescribeScalingPlansOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

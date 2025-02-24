@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_volume_status_action(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::VolumeStatusAction, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::VolumeStatusAction, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::VolumeStatusAction::builder();
     while let Some(mut tag) = decoder.next_tag() {

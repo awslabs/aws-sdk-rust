@@ -2,7 +2,7 @@
 pub fn ser_entity_persona_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityPersonaConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EntityId").string(input.entity_id.as_str());
     }

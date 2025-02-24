@@ -3,7 +3,7 @@
 pub fn ser_publish_batch_request_entry(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PublishBatchRequestEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Id");
     {

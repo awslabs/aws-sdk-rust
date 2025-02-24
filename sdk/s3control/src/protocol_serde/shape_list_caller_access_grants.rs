@@ -57,7 +57,10 @@ pub fn ser_list_caller_access_grants_headers(
 pub fn de_list_caller_access_grants(
     inp: &[u8],
     mut builder: crate::operation::list_caller_access_grants::builders::ListCallerAccessGrantsOutputBuilder,
-) -> Result<crate::operation::list_caller_access_grants::builders::ListCallerAccessGrantsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_caller_access_grants::builders::ListCallerAccessGrantsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

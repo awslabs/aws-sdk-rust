@@ -2,7 +2,7 @@
 pub fn ser_aws_redshift_cluster_cluster_security_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsRedshiftClusterClusterSecurityGroup,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_security_group_name {
         object.key("ClusterSecurityGroupName").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_redshift_cluster_cluster_security_group(
 
 pub(crate) fn de_aws_redshift_cluster_cluster_security_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsRedshiftClusterClusterSecurityGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsRedshiftClusterClusterSecurityGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

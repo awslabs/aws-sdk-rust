@@ -144,7 +144,7 @@ pub fn de_start_delete_monitor_deployment_http_response(
 pub(crate) fn de_start_delete_monitor_deployment(
     value: &[u8],
     mut builder: crate::operation::start_delete_monitor_deployment::builders::StartDeleteMonitorDeploymentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_delete_monitor_deployment::builders::StartDeleteMonitorDeploymentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

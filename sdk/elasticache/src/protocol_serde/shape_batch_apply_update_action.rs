@@ -85,7 +85,10 @@ pub fn de_batch_apply_update_action_http_response(
 pub fn de_batch_apply_update_action(
     inp: &[u8],
     mut builder: crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionOutputBuilder,
-) -> Result<crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

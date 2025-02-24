@@ -55,7 +55,7 @@ pub fn ser_create_multi_region_access_point_headers(
 
 pub fn ser_create_multi_region_access_point_op_input(
     input: &crate::operation::create_multi_region_access_point::CreateMultiRegionAccessPointInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -72,7 +72,7 @@ pub fn ser_create_multi_region_access_point_op_input(
 pub fn de_create_multi_region_access_point(
     inp: &[u8],
     mut builder: crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_multi_region_access_point::builders::CreateMultiRegionAccessPointOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

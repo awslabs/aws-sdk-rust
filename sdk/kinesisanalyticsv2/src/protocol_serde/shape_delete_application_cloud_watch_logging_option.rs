@@ -150,7 +150,7 @@ pub fn de_delete_application_cloud_watch_logging_option_http_response(
 
 pub fn ser_delete_application_cloud_watch_logging_option_input(
     input: &crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_application_cloud_watch_logging_option_input::ser_delete_application_cloud_watch_logging_option_input_input(
@@ -164,7 +164,7 @@ pub fn ser_delete_application_cloud_watch_logging_option_input(
 pub(crate) fn de_delete_application_cloud_watch_logging_option(
     value: &[u8],
     mut builder: crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

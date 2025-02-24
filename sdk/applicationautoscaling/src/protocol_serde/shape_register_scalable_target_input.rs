@@ -2,7 +2,7 @@
 pub fn ser_register_scalable_target_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_scalable_target::RegisterScalableTargetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_namespace {
         object.key("ServiceNamespace").string(var_1.as_str());
     }

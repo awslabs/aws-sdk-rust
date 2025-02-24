@@ -2,7 +2,7 @@
 pub fn ser_origin_group_members(
     input: &crate::types::OriginGroupMembers,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -25,7 +25,7 @@ pub fn ser_origin_group_members(
 #[allow(clippy::needless_question_mark)]
 pub fn de_origin_group_members(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::OriginGroupMembers, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::OriginGroupMembers, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::OriginGroupMembers::builder();
     while let Some(mut tag) = decoder.next_tag() {

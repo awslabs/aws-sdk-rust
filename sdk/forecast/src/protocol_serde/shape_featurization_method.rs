@@ -2,7 +2,7 @@
 pub fn ser_featurization_method(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FeaturizationMethod,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FeaturizationMethodName").string(input.featurization_method_name.as_str());
     }
@@ -21,7 +21,7 @@ pub fn ser_featurization_method(
 
 pub(crate) fn de_featurization_method<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FeaturizationMethod>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FeaturizationMethod>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

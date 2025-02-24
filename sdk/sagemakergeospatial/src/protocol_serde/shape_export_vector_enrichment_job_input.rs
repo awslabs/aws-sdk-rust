@@ -2,7 +2,7 @@
 pub fn ser_export_vector_enrichment_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("Arn").string(var_1.as_str());
     }

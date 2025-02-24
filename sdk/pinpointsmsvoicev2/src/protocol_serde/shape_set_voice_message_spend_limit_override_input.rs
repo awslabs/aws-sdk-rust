@@ -2,7 +2,7 @@
 pub fn ser_set_voice_message_spend_limit_override_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monthly_limit {
         object.key("MonthlyLimit").number(
             #[allow(clippy::useless_conversion)]

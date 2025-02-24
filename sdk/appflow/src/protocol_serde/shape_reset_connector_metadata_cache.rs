@@ -106,7 +106,7 @@ pub fn de_reset_connector_metadata_cache_http_response(
 
 pub fn ser_reset_connector_metadata_cache_input(
     input: &crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reset_connector_metadata_cache_input::ser_reset_connector_metadata_cache_input_input(&mut object, input)?;

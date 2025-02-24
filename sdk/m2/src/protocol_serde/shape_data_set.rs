@@ -2,7 +2,7 @@
 pub fn ser_data_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.storage_type {
         object.key("storageType").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_list_entities_filter(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListEntitiesFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ListEntitiesFilter::ParentEntityId(inner) => {
             object_4.key("parentEntityId").string(inner.as_str());

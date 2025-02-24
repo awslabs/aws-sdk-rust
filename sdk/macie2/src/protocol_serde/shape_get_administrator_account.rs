@@ -160,7 +160,7 @@ pub fn de_get_administrator_account_http_response(
 pub(crate) fn de_get_administrator_account(
     value: &[u8],
     mut builder: crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

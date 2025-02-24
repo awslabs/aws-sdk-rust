@@ -3,7 +3,7 @@
 pub fn ser_cpu_performance_factor(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CpuPerformanceFactor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ReferenceSet");
     if let Some(var_2) = &input.references {
@@ -23,7 +23,7 @@ pub fn ser_cpu_performance_factor(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cpu_performance_factor(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CpuPerformanceFactor, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CpuPerformanceFactor, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CpuPerformanceFactor::builder();
     while let Some(mut tag) = decoder.next_tag() {

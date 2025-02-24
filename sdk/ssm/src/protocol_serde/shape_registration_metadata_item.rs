@@ -2,7 +2,7 @@
 pub fn ser_registration_metadata_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RegistrationMetadataItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Key").string(input.key.as_str());
     }

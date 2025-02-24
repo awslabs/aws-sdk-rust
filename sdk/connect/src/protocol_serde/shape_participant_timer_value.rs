@@ -2,7 +2,7 @@
 pub fn ser_participant_timer_value(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipantTimerValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ParticipantTimerValue::ParticipantTimerAction(inner) => {
             object_2.key("ParticipantTimerAction").string(inner.as_str());

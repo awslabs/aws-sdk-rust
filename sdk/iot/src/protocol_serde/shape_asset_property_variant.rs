@@ -2,7 +2,7 @@
 pub fn ser_asset_property_variant(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetPropertyVariant,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AssetPropertyVariant::StringValue(inner) => {
             object_2.key("stringValue").string(inner.as_str());
@@ -27,7 +27,7 @@ pub fn ser_asset_property_variant(
 
 pub(crate) fn de_asset_property_variant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AssetPropertyVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AssetPropertyVariant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

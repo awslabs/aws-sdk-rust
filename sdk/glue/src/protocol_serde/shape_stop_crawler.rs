@@ -98,7 +98,7 @@ pub fn de_stop_crawler_http_response(
 
 pub fn ser_stop_crawler_input(
     input: &crate::operation::stop_crawler::StopCrawlerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_crawler_input::ser_stop_crawler_input_input(&mut object, input)?;

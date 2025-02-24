@@ -2,7 +2,7 @@
 pub fn ser_attach_object_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::attach_object::AttachObjectInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.child_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ChildReference").start_object();

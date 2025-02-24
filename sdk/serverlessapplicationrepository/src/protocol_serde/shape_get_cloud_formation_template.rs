@@ -130,7 +130,7 @@ pub fn de_get_cloud_formation_template_http_response(
 pub(crate) fn de_get_cloud_formation_template(
     value: &[u8],
     mut builder: crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_cloud_formation_template::builders::GetCloudFormationTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

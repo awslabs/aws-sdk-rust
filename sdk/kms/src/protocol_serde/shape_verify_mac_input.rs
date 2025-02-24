@@ -2,7 +2,7 @@
 pub fn ser_verify_mac_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::verify_mac::VerifyMacInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.message {
         object.key("Message").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }

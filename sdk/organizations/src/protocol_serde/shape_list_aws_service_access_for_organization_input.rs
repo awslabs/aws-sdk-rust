@@ -2,7 +2,7 @@
 pub fn ser_list_aws_service_access_for_organization_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.next_token {
         object.key("NextToken").string(var_1.as_str());
     }

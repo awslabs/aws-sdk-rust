@@ -2,7 +2,7 @@
 pub fn ser_update_run_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_run_group::UpdateRunGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_cpus {
         object.key("maxCpus").number(
             #[allow(clippy::useless_conversion)]

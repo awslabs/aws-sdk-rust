@@ -93,7 +93,7 @@ pub fn de_get_calculation_execution_code_http_response(
 
 pub fn ser_get_calculation_execution_code_input(
     input: &crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_calculation_execution_code_input::ser_get_calculation_execution_code_input_input(&mut object, input)?;
@@ -104,7 +104,7 @@ pub fn ser_get_calculation_execution_code_input(
 pub(crate) fn de_get_calculation_execution_code(
     value: &[u8],
     mut builder: crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_calculation_execution_code::builders::GetCalculationExecutionCodeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

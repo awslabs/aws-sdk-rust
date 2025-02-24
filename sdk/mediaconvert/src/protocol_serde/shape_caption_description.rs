@@ -2,7 +2,7 @@
 pub fn ser_caption_description(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionDescription,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.caption_selector_name {
         object.key("captionSelectorName").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_caption_description(
 
 pub(crate) fn de_caption_description<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CaptionDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CaptionDescription>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

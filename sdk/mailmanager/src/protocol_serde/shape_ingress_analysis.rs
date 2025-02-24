@@ -2,7 +2,7 @@
 pub fn ser_ingress_analysis(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngressAnalysis,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Analyzer").string(input.analyzer.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_ingress_analysis(
 
 pub(crate) fn de_ingress_analysis<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IngressAnalysis>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IngressAnalysis>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_create_kx_volume_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_kx_volume::CreateKxVolumeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_zone_ids {
         let mut array_2 = object.key("availabilityZoneIds").start_array();
         for item_3 in var_1 {

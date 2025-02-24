@@ -111,7 +111,7 @@ pub fn de_list_aggregate_discovered_resources_http_response(
 
 pub fn ser_list_aggregate_discovered_resources_input(
     input: &crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_aggregate_discovered_resources_input::ser_list_aggregate_discovered_resources_input_input(&mut object, input)?;
@@ -122,7 +122,7 @@ pub fn ser_list_aggregate_discovered_resources_input(
 pub(crate) fn de_list_aggregate_discovered_resources(
     value: &[u8],
     mut builder: crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

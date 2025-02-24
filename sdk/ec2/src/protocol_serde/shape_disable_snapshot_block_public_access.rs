@@ -39,7 +39,7 @@ pub fn de_disable_snapshot_block_public_access_http_response(
 pub fn de_disable_snapshot_block_public_access(
     inp: &[u8],
     mut builder: crate::operation::disable_snapshot_block_public_access::builders::DisableSnapshotBlockPublicAccessOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_snapshot_block_public_access::builders::DisableSnapshotBlockPublicAccessOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_update_bridge_network_output_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateBridgeNetworkOutputRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ip_address {
         object.key("ipAddress").string(var_1.as_str());
     }

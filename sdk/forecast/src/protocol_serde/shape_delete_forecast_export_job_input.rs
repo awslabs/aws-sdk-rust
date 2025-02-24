@@ -2,7 +2,7 @@
 pub fn ser_delete_forecast_export_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_forecast_export_job::DeleteForecastExportJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.forecast_export_job_arn {
         object.key("ForecastExportJobArn").string(var_1.as_str());
     }

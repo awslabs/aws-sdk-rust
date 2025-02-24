@@ -2,7 +2,7 @@
 pub fn ser_tool_use_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ToolUseBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("toolUseId").string(input.tool_use_id.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_tool_use_block(
 
 pub(crate) fn de_tool_use_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ToolUseBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ToolUseBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_create_app_instance_bot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_app_instance_bot::CreateAppInstanceBotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_instance_arn {
         object.key("AppInstanceArn").string(var_1.as_str());
     }

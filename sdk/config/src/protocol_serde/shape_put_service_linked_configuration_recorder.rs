@@ -130,7 +130,7 @@ pub fn de_put_service_linked_configuration_recorder_http_response(
 
 pub fn ser_put_service_linked_configuration_recorder_input(
     input: &crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_service_linked_configuration_recorder_input::ser_put_service_linked_configuration_recorder_input_input(
@@ -144,7 +144,7 @@ pub fn ser_put_service_linked_configuration_recorder_input(
 pub(crate) fn de_put_service_linked_configuration_recorder(
     value: &[u8],
     mut builder: crate::operation::put_service_linked_configuration_recorder::builders::PutServiceLinkedConfigurationRecorderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_service_linked_configuration_recorder::builders::PutServiceLinkedConfigurationRecorderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

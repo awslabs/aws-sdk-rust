@@ -2,7 +2,7 @@
 pub fn ser_route_avoidance_zone_category(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteAvoidanceZoneCategory,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Category").string(input.category.as_str());
     }

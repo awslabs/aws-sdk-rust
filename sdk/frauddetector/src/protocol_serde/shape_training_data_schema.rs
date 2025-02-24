@@ -2,7 +2,7 @@
 pub fn ser_training_data_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrainingDataSchema,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("modelVariables").start_array();
         for item_2 in &input.model_variables {
@@ -23,7 +23,7 @@ pub fn ser_training_data_schema(
 
 pub(crate) fn de_training_data_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TrainingDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TrainingDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

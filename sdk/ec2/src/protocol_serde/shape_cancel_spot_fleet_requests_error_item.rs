@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_cancel_spot_fleet_requests_error_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CancelSpotFleetRequestsErrorItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CancelSpotFleetRequestsErrorItem, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CancelSpotFleetRequestsErrorItem::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_rule_action(
     object_12: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleAction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RuleAction::Drop(inner) => {
             #[allow(unused_mut)]
@@ -65,7 +65,7 @@ pub fn ser_rule_action(
 
 pub(crate) fn de_rule_action<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RuleAction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

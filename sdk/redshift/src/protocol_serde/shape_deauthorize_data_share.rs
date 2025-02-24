@@ -62,7 +62,10 @@ pub fn de_deauthorize_data_share_http_response(
 pub fn de_deauthorize_data_share(
     inp: &[u8],
     mut builder: crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareOutputBuilder,
-) -> Result<crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::deauthorize_data_share::builders::DeauthorizeDataShareOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

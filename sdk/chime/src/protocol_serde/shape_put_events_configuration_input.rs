@@ -2,7 +2,7 @@
 pub fn ser_put_events_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_events_configuration::PutEventsConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lambda_function_arn {
         object.key("LambdaFunctionArn").string(var_1.as_str());
     }

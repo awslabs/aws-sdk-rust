@@ -120,7 +120,7 @@ pub fn de_describe_featured_results_set_http_response(
 
 pub fn ser_describe_featured_results_set_input(
     input: &crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_featured_results_set_input::ser_describe_featured_results_set_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_describe_featured_results_set_input(
 pub(crate) fn de_describe_featured_results_set(
     value: &[u8],
     mut builder: crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

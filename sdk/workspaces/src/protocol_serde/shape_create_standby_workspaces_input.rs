@@ -2,7 +2,7 @@
 pub fn ser_create_standby_workspaces_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_standby_workspaces::CreateStandbyWorkspacesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.primary_region {
         object.key("PrimaryRegion").string(var_1.as_str());
     }

@@ -145,7 +145,7 @@ pub fn de_create_configured_table_analysis_rule_http_response(
 
 pub fn ser_create_configured_table_analysis_rule_input(
     input: &crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_configured_table_analysis_rule_input::ser_create_configured_table_analysis_rule_input_input(
@@ -159,7 +159,7 @@ pub fn ser_create_configured_table_analysis_rule_input(
 pub(crate) fn de_create_configured_table_analysis_rule(
     value: &[u8],
     mut builder: crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_configured_table_analysis_rule::builders::CreateConfiguredTableAnalysisRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

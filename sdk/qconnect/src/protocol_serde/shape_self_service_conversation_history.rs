@@ -2,7 +2,7 @@
 pub fn ser_self_service_conversation_history(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SelfServiceConversationHistory,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("turnNumber").number(
             #[allow(clippy::useless_conversion)]

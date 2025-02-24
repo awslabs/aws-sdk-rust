@@ -39,7 +39,7 @@ pub fn de_get_verified_access_endpoint_targets_http_response(
 pub fn de_get_verified_access_endpoint_targets(
     inp: &[u8],
     mut builder: crate::operation::get_verified_access_endpoint_targets::builders::GetVerifiedAccessEndpointTargetsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_verified_access_endpoint_targets::builders::GetVerifiedAccessEndpointTargetsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

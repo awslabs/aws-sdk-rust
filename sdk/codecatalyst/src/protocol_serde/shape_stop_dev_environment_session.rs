@@ -141,7 +141,7 @@ pub fn de_stop_dev_environment_session_http_response(
 pub(crate) fn de_stop_dev_environment_session(
     value: &[u8],
     mut builder: crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

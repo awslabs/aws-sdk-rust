@@ -2,7 +2,7 @@
 pub fn ser_o_auth2_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OAuth2Credentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_managed_client_application_client_secret {
         object.key("UserManagedClientApplicationClientSecret").string(var_1.as_str());
     }

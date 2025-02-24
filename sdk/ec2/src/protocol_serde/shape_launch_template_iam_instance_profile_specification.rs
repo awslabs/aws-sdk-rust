@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_iam_instance_profile_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LaunchTemplateIamInstanceProfileSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LaunchTemplateIamInstanceProfileSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateIamInstanceProfileSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

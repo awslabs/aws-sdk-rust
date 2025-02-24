@@ -2,7 +2,7 @@
 pub fn ser_instance_fleet_provisioning_specifications(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceFleetProvisioningSpecifications,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.spot_specification {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SpotSpecification").start_object();
@@ -20,7 +20,7 @@ pub fn ser_instance_fleet_provisioning_specifications(
 
 pub(crate) fn de_instance_fleet_provisioning_specifications<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InstanceFleetProvisioningSpecifications>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InstanceFleetProvisioningSpecifications>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

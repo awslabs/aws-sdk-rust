@@ -3,7 +3,7 @@
 pub fn de_invalid_ttl_order_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidTtlOrderBuilder,
-) -> Result<crate::types::error::builders::InvalidTtlOrderBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidTtlOrderBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

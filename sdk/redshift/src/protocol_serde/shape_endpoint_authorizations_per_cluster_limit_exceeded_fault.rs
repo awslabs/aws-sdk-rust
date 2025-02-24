@@ -3,7 +3,10 @@
 pub fn de_endpoint_authorizations_per_cluster_limit_exceeded_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::EndpointAuthorizationsPerClusterLimitExceededFaultBuilder,
-) -> Result<crate::types::error::builders::EndpointAuthorizationsPerClusterLimitExceededFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::types::error::builders::EndpointAuthorizationsPerClusterLimitExceededFaultBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

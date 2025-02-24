@@ -137,7 +137,7 @@ pub fn de_update_service_access_policies_http_response(
 pub fn de_update_service_access_policies(
     inp: &[u8],
     mut builder: crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_describe_client_branding_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_client_branding::DescribeClientBrandingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_id {
         object.key("ResourceId").string(var_1.as_str());
     }

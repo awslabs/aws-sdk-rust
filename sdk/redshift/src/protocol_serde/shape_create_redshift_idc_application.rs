@@ -134,7 +134,7 @@ pub fn de_create_redshift_idc_application_http_response(
 pub fn de_create_redshift_idc_application(
     inp: &[u8],
     mut builder: crate::operation::create_redshift_idc_application::builders::CreateRedshiftIdcApplicationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_redshift_idc_application::builders::CreateRedshiftIdcApplicationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

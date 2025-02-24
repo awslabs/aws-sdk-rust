@@ -2,7 +2,7 @@
 pub fn ser_table_cell_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableCellConditionalFormatting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FieldId").string(input.field_id.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_table_cell_conditional_formatting(
 
 pub(crate) fn de_table_cell_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TableCellConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TableCellConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

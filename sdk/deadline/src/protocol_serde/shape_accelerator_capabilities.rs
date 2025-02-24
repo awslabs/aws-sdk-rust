@@ -2,7 +2,7 @@
 pub fn ser_accelerator_capabilities(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AcceleratorCapabilities,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("selections").start_array();
         for item_2 in &input.selections {
@@ -26,7 +26,7 @@ pub fn ser_accelerator_capabilities(
 
 pub(crate) fn de_accelerator_capabilities<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AcceleratorCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AcceleratorCapabilities>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_input_file_source(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputFileSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::InputFileSource::FileContent(inner) => {
             object_2.key("fileContent").string(inner.as_str());

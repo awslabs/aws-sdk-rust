@@ -2,7 +2,7 @@
 pub fn ser_start_experiment_experiment_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartExperimentExperimentOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.actions_mode {
         object.key("actionsMode").string(var_1.as_str());
     }

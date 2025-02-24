@@ -2,7 +2,7 @@
 pub fn ser_start_monitor_deployment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_monitor_deployment::StartMonitorDeploymentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dry_run {
         object.key("dryRun").boolean(*var_1);
     }

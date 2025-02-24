@@ -2,7 +2,7 @@
 pub fn ser_get_deployment_target_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_deployment_target::GetDeploymentTargetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.deployment_id {
         object.key("deploymentId").string(var_1.as_str());
     }

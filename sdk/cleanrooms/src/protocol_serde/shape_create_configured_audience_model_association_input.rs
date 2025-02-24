@@ -2,7 +2,7 @@
 pub fn ser_create_configured_audience_model_association_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_configured_audience_model_association::CreateConfiguredAudienceModelAssociationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configured_audience_model_arn {
         object.key("configuredAudienceModelArn").string(var_1.as_str());
     }

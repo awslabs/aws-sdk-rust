@@ -2,7 +2,7 @@
 pub fn ser_associate_connect_peer_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_connect_peer::AssociateConnectPeerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connect_peer_id {
         object.key("ConnectPeerId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_scan_sbom_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::scan_sbom::ScanSbomInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.output_format {
         object.key("outputFormat").string(var_1.as_str());
     }

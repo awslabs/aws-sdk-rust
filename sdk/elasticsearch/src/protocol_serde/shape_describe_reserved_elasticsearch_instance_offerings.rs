@@ -122,7 +122,7 @@ pub fn de_describe_reserved_elasticsearch_instance_offerings_http_response(
 pub(crate) fn de_describe_reserved_elasticsearch_instance_offerings(
     value: &[u8],
     mut builder: crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

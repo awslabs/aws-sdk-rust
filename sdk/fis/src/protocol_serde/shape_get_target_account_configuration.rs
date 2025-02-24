@@ -79,7 +79,7 @@ pub fn de_get_target_account_configuration_http_response(
 pub(crate) fn de_get_target_account_configuration(
     value: &[u8],
     mut builder: crate::operation::get_target_account_configuration::builders::GetTargetAccountConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_target_account_configuration::builders::GetTargetAccountConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

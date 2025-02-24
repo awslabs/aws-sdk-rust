@@ -2,7 +2,7 @@
 pub fn ser_command_parameter_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CommandParameterValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s {
         object.key("S").string(var_1.as_str());
     }

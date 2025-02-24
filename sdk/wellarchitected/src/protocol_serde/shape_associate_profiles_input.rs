@@ -2,7 +2,7 @@
 pub fn ser_associate_profiles_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_profiles::AssociateProfilesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.profile_arns {
         let mut array_2 = object.key("ProfileArns").start_array();
         for item_3 in var_1 {

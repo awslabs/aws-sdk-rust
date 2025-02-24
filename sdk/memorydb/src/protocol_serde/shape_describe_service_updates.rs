@@ -90,7 +90,7 @@ pub fn de_describe_service_updates_http_response(
 
 pub fn ser_describe_service_updates_input(
     input: &crate::operation::describe_service_updates::DescribeServiceUpdatesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_service_updates_input::ser_describe_service_updates_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_describe_service_updates_input(
 pub(crate) fn de_describe_service_updates(
     value: &[u8],
     mut builder: crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_service_updates::builders::DescribeServiceUpdatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

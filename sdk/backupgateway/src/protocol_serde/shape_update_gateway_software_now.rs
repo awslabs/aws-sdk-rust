@@ -111,7 +111,7 @@ pub fn de_update_gateway_software_now_http_response(
 
 pub fn ser_update_gateway_software_now_input(
     input: &crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_gateway_software_now_input::ser_update_gateway_software_now_input_input(&mut object, input)?;
@@ -122,7 +122,7 @@ pub fn ser_update_gateway_software_now_input(
 pub(crate) fn de_update_gateway_software_now(
     value: &[u8],
     mut builder: crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

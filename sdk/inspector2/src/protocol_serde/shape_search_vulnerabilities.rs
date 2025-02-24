@@ -117,7 +117,7 @@ pub fn de_search_vulnerabilities_http_response(
 
 pub fn ser_search_vulnerabilities_input(
     input: &crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_search_vulnerabilities_input::ser_search_vulnerabilities_input_input(&mut object, input)?;
@@ -128,7 +128,7 @@ pub fn ser_search_vulnerabilities_input(
 pub(crate) fn de_search_vulnerabilities(
     value: &[u8],
     mut builder: crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::search_vulnerabilities::builders::SearchVulnerabilitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

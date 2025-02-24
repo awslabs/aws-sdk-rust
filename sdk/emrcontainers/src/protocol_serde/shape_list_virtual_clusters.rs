@@ -76,7 +76,7 @@ pub fn de_list_virtual_clusters_http_response(
 pub(crate) fn de_list_virtual_clusters(
     value: &[u8],
     mut builder: crate::operation::list_virtual_clusters::builders::ListVirtualClustersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_virtual_clusters::builders::ListVirtualClustersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

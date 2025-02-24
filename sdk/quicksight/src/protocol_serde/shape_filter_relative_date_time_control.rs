@@ -2,7 +2,7 @@
 pub fn ser_filter_relative_date_time_control(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterRelativeDateTimeControl,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FilterControlId").string(input.filter_control_id.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_filter_relative_date_time_control(
 
 pub(crate) fn de_filter_relative_date_time_control<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FilterRelativeDateTimeControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FilterRelativeDateTimeControl>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

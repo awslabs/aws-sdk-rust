@@ -109,7 +109,7 @@ pub fn de_generate_backend_api_models_http_response(
 
 pub fn ser_generate_backend_api_models_input(
     input: &crate::operation::generate_backend_api_models::GenerateBackendApiModelsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_generate_backend_api_models_input::ser_generate_backend_api_models_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_generate_backend_api_models_input(
 pub(crate) fn de_generate_backend_api_models(
     value: &[u8],
     mut builder: crate::operation::generate_backend_api_models::builders::GenerateBackendApiModelsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::generate_backend_api_models::builders::GenerateBackendApiModelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

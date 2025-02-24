@@ -151,7 +151,7 @@ pub fn de_rotate_channel_credentials_http_response(
 pub(crate) fn de_rotate_channel_credentials(
     value: &[u8],
     mut builder: crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

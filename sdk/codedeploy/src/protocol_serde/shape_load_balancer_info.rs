@@ -2,7 +2,7 @@
 pub fn ser_load_balancer_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoadBalancerInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.elb_info_list {
         let mut array_2 = object.key("elbInfoList").start_array();
         for item_3 in var_1 {
@@ -44,7 +44,7 @@ pub fn ser_load_balancer_info(
 
 pub(crate) fn de_load_balancer_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LoadBalancerInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LoadBalancerInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

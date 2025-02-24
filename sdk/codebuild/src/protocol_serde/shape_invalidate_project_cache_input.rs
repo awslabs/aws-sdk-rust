@@ -2,7 +2,7 @@
 pub fn ser_invalidate_project_cache_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invalidate_project_cache::InvalidateProjectCacheInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_name {
         object.key("projectName").string(var_1.as_str());
     }

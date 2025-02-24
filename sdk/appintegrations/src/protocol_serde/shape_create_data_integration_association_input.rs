@@ -2,7 +2,7 @@
 pub fn ser_create_data_integration_association_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_data_integration_association::CreateDataIntegrationAssociationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_association_metadata {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ClientAssociationMetadata").start_object();

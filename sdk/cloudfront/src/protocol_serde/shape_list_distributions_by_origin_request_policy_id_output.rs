@@ -13,7 +13,7 @@ pub(crate) fn de_distribution_id_list_payload(
         .transpose()
 }
 
-pub fn de_distribution_id_list(inp: &[u8]) -> Result<crate::types::DistributionIdList, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_distribution_id_list(inp: &[u8]) -> std::result::Result<crate::types::DistributionIdList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_filter_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FilterRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::FilterRule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FilterRule::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -43,7 +43,7 @@ pub fn de_filter_rule(
 pub fn ser_filter_rule(
     input: &crate::types::FilterRule,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_3) = &input.name {

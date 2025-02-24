@@ -2,7 +2,7 @@
 pub fn ser_list_global_tables_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_global_tables::ListGlobalTablesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exclusive_start_global_table_name {
         object.key("ExclusiveStartGlobalTableName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_facet(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Facet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_attribute_key {
         object.key("DocumentAttributeKey").string(var_1.as_str());
     }

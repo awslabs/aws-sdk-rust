@@ -2,7 +2,7 @@
 pub fn ser_create_grok_classifier_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateGrokClassifierRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Classification").string(input.classification.as_str());
     }

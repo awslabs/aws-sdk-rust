@@ -131,7 +131,7 @@ pub fn de_get_detector_model_analysis_results_http_response(
 pub(crate) fn de_get_detector_model_analysis_results(
     value: &[u8],
     mut builder: crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_detector_model_analysis_results::builders::GetDetectorModelAnalysisResultsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -163,7 +163,7 @@ pub fn de_remove_draft_app_version_resource_mappings_http_response(
 
 pub fn ser_remove_draft_app_version_resource_mappings_input(
     input: &crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_remove_draft_app_version_resource_mappings_input::ser_remove_draft_app_version_resource_mappings_input_input(
@@ -177,7 +177,7 @@ pub fn ser_remove_draft_app_version_resource_mappings_input(
 pub(crate) fn de_remove_draft_app_version_resource_mappings(
     value: &[u8],
     mut builder: crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

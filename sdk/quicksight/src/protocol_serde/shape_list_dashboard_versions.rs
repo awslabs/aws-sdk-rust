@@ -145,7 +145,7 @@ pub fn de_list_dashboard_versions_http_response(
 pub(crate) fn de_list_dashboard_versions(
     value: &[u8],
     mut builder: crate::operation::list_dashboard_versions::builders::ListDashboardVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_dashboard_versions::builders::ListDashboardVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

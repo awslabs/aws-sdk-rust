@@ -2,7 +2,7 @@
 pub fn ser_threat_actor_ip(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThreatActorIp,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ipAddress").string(input.ip_address.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_threat_actor_ip(
 
 pub(crate) fn de_threat_actor_ip<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ThreatActorIp>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ThreatActorIp>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

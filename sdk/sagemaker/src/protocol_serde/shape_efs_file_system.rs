@@ -2,7 +2,7 @@
 pub fn ser_efs_file_system(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EfsFileSystem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_system_id {
         object.key("FileSystemId").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_efs_file_system(
 
 pub(crate) fn de_efs_file_system<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EfsFileSystem>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EfsFileSystem>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

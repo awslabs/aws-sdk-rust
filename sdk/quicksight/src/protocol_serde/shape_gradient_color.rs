@@ -2,7 +2,7 @@
 pub fn ser_gradient_color(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GradientColor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stops {
         let mut array_2 = object.key("Stops").start_array();
         for item_3 in var_1 {
@@ -20,7 +20,7 @@ pub fn ser_gradient_color(
 
 pub(crate) fn de_gradient_color<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GradientColor>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GradientColor>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

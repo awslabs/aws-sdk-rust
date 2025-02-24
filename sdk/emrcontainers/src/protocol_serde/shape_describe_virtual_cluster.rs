@@ -95,7 +95,7 @@ pub fn de_describe_virtual_cluster_http_response(
 pub(crate) fn de_describe_virtual_cluster(
     value: &[u8],
     mut builder: crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

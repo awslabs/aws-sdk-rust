@@ -41,7 +41,7 @@ pub fn de_list_verified_email_addresses_http_response(
 pub fn de_list_verified_email_addresses(
     inp: &[u8],
     mut builder: crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

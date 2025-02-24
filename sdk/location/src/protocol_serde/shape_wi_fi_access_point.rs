@@ -2,7 +2,7 @@
 pub fn ser_wi_fi_access_point(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WiFiAccessPoint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MacAddress").string(input.mac_address.as_str());
     }

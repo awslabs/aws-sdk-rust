@@ -104,7 +104,7 @@ pub fn de_list_restore_testing_selections_http_response(
 pub(crate) fn de_list_restore_testing_selections(
     value: &[u8],
     mut builder: crate::operation::list_restore_testing_selections::builders::ListRestoreTestingSelectionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_restore_testing_selections::builders::ListRestoreTestingSelectionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

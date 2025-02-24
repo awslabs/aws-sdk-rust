@@ -2,7 +2,7 @@
 pub fn ser_selfservice_permissions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SelfservicePermissions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.restart_workspace {
         object.key("RestartWorkspace").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_selfservice_permissions(
 
 pub(crate) fn de_selfservice_permissions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SelfservicePermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SelfservicePermissions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

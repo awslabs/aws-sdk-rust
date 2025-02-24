@@ -2,7 +2,7 @@
 pub fn ser_ranged_connection_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RangedConnectionDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.socket_address {
         #[allow(unused_mut)]
         let mut object_2 = object.key("socketAddress").start_object();
@@ -20,7 +20,7 @@ pub fn ser_ranged_connection_details(
 
 pub(crate) fn de_ranged_connection_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RangedConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RangedConnectionDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

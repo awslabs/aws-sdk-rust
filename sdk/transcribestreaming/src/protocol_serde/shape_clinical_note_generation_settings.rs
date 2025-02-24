@@ -2,7 +2,7 @@
 pub fn ser_clinical_note_generation_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClinicalNoteGenerationSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("OutputBucketName").string(input.output_bucket_name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_clinical_note_generation_settings(
 
 pub(crate) fn de_clinical_note_generation_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ClinicalNoteGenerationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ClinicalNoteGenerationSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

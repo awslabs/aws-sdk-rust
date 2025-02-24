@@ -339,7 +339,7 @@ pub fn de_create_pull_request_approval_rule_http_response(
 
 pub fn ser_create_pull_request_approval_rule_input(
     input: &crate::operation::create_pull_request_approval_rule::CreatePullRequestApprovalRuleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_pull_request_approval_rule_input::ser_create_pull_request_approval_rule_input_input(&mut object, input)?;
@@ -350,7 +350,7 @@ pub fn ser_create_pull_request_approval_rule_input(
 pub(crate) fn de_create_pull_request_approval_rule(
     value: &[u8],
     mut builder: crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_pull_request_approval_rule::builders::CreatePullRequestApprovalRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

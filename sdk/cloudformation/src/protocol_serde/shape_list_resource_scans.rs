@@ -35,7 +35,7 @@ pub fn de_list_resource_scans_http_response(
 pub fn de_list_resource_scans(
     inp: &[u8],
     mut builder: crate::operation::list_resource_scans::builders::ListResourceScansOutputBuilder,
-) -> Result<crate::operation::list_resource_scans::builders::ListResourceScansOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_resource_scans::builders::ListResourceScansOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

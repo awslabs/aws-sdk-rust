@@ -109,7 +109,7 @@ pub fn de_describe_ec2_instance_limits_http_response(
 
 pub fn ser_describe_ec2_instance_limits_input(
     input: &crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_ec2_instance_limits_input::ser_describe_ec2_instance_limits_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_describe_ec2_instance_limits_input(
 pub(crate) fn de_describe_ec2_instance_limits(
     value: &[u8],
     mut builder: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

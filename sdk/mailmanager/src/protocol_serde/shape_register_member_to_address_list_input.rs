@@ -2,7 +2,7 @@
 pub fn ser_register_member_to_address_list_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_member_to_address_list::RegisterMemberToAddressListInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address_list_id {
         object.key("AddressListId").string(var_1.as_str());
     }

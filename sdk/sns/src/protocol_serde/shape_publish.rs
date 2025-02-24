@@ -271,7 +271,7 @@ pub fn de_publish_http_response(
 pub fn de_publish(
     inp: &[u8],
     mut builder: crate::operation::publish::builders::PublishOutputBuilder,
-) -> Result<crate::operation::publish::builders::PublishOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::publish::builders::PublishOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

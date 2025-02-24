@@ -188,7 +188,10 @@ pub fn de_modify_serverless_cache_http_response(
 pub fn de_modify_serverless_cache(
     inp: &[u8],
     mut builder: crate::operation::modify_serverless_cache::builders::ModifyServerlessCacheOutputBuilder,
-) -> Result<crate::operation::modify_serverless_cache::builders::ModifyServerlessCacheOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_serverless_cache::builders::ModifyServerlessCacheOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

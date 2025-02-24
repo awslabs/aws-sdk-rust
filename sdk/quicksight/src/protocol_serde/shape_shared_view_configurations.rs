@@ -2,7 +2,7 @@
 pub fn ser_shared_view_configurations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SharedViewConfigurations,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Enabled").boolean(input.enabled);
     }

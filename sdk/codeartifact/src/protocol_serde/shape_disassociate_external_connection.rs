@@ -161,7 +161,7 @@ pub fn de_disassociate_external_connection_http_response(
 pub(crate) fn de_disassociate_external_connection(
     value: &[u8],
     mut builder: crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

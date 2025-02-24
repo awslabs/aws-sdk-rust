@@ -2,7 +2,7 @@
 pub fn ser_eks_container_resource_requirements(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EksContainerResourceRequirements,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.limits {
         #[allow(unused_mut)]
         let mut object_2 = object.key("limits").start_object();
@@ -28,7 +28,7 @@ pub fn ser_eks_container_resource_requirements(
 
 pub(crate) fn de_eks_container_resource_requirements<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EksContainerResourceRequirements>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EksContainerResourceRequirements>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

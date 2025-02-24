@@ -103,6 +103,6 @@ pub fn de_disassociate_drt_role_http_response(
 
 pub fn ser_disassociate_drt_role_input(
     _input: &crate::operation::disassociate_drt_role::DisassociateDrtRoleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

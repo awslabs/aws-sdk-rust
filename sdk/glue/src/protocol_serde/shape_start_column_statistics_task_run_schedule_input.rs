@@ -2,7 +2,7 @@
 pub fn ser_start_column_statistics_task_run_schedule_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_column_statistics_task_run_schedule::StartColumnStatisticsTaskRunScheduleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.database_name {
         object.key("DatabaseName").string(var_1.as_str());
     }

@@ -120,7 +120,7 @@ pub fn de_list_blocking_instances_for_capacity_task_http_response(
 pub(crate) fn de_list_blocking_instances_for_capacity_task(
     value: &[u8],
     mut builder: crate::operation::list_blocking_instances_for_capacity_task::builders::ListBlockingInstancesForCapacityTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_blocking_instances_for_capacity_task::builders::ListBlockingInstancesForCapacityTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

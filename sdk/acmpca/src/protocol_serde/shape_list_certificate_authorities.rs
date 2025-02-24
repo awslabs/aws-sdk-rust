@@ -60,7 +60,7 @@ pub fn de_list_certificate_authorities_http_response(
 
 pub fn ser_list_certificate_authorities_input(
     input: &crate::operation::list_certificate_authorities::ListCertificateAuthoritiesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_certificate_authorities_input::ser_list_certificate_authorities_input_input(&mut object, input)?;
@@ -71,7 +71,7 @@ pub fn ser_list_certificate_authorities_input(
 pub(crate) fn de_list_certificate_authorities(
     value: &[u8],
     mut builder: crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

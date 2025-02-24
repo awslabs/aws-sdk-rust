@@ -10,7 +10,7 @@ pub(crate) fn de_policy_status_payload(
         .transpose()
 }
 
-pub fn de_policy_status(inp: &[u8]) -> Result<crate::types::PolicyStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_policy_status(inp: &[u8]) -> std::result::Result<crate::types::PolicyStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

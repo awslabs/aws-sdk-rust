@@ -2,7 +2,7 @@
 pub fn ser_policy_grant_principal(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyGrantPrincipal,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PolicyGrantPrincipal::User(inner) => {
             #[allow(unused_mut)]
@@ -39,7 +39,7 @@ pub fn ser_policy_grant_principal(
 
 pub(crate) fn de_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -89,7 +89,7 @@ pub fn de_create_change_set_http_response(
 pub fn de_create_change_set(
     inp: &[u8],
     mut builder: crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder,
-) -> Result<crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_change_set::builders::CreateChangeSetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

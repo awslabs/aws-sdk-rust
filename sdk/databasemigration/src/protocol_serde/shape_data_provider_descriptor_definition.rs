@@ -2,7 +2,7 @@
 pub fn ser_data_provider_descriptor_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataProviderDescriptorDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataProviderIdentifier").string(input.data_provider_identifier.as_str());
     }

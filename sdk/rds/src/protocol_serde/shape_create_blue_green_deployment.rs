@@ -240,8 +240,10 @@ pub fn de_create_blue_green_deployment_http_response(
 pub fn de_create_blue_green_deployment(
     inp: &[u8],
     mut builder: crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder,
-) -> Result<crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::create_blue_green_deployment::builders::CreateBlueGreenDeploymentOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

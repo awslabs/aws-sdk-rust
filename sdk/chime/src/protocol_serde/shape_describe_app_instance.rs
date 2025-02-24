@@ -138,7 +138,7 @@ pub fn de_describe_app_instance_http_response(
 pub(crate) fn de_describe_app_instance(
     value: &[u8],
     mut builder: crate::operation::describe_app_instance::builders::DescribeAppInstanceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_app_instance::builders::DescribeAppInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

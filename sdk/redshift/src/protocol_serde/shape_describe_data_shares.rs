@@ -62,7 +62,8 @@ pub fn de_describe_data_shares_http_response(
 pub fn de_describe_data_shares(
     inp: &[u8],
     mut builder: crate::operation::describe_data_shares::builders::DescribeDataSharesOutputBuilder,
-) -> Result<crate::operation::describe_data_shares::builders::DescribeDataSharesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::describe_data_shares::builders::DescribeDataSharesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

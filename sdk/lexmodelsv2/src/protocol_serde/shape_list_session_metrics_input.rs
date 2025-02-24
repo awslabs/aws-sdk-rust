@@ -2,7 +2,7 @@
 pub fn ser_list_session_metrics_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_session_metrics::ListSessionMetricsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bin_by {
         let mut array_2 = object.key("binBy").start_array();
         for item_3 in var_1 {

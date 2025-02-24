@@ -92,7 +92,7 @@ pub fn de_get_performance_analysis_report_http_response(
 
 pub fn ser_get_performance_analysis_report_input(
     input: &crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_performance_analysis_report_input::ser_get_performance_analysis_report_input_input(&mut object, input)?;
@@ -103,7 +103,7 @@ pub fn ser_get_performance_analysis_report_input(
 pub(crate) fn de_get_performance_analysis_report(
     value: &[u8],
     mut builder: crate::operation::get_performance_analysis_report::builders::GetPerformanceAnalysisReportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_performance_analysis_report::builders::GetPerformanceAnalysisReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_test_role_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_role::TestRoleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.input_bucket {
         object.key("InputBucket").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_describe_registration_attachments_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_registration_attachments::DescribeRegistrationAttachmentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.registration_attachment_ids {
         let mut array_2 = object.key("RegistrationAttachmentIds").start_array();
         for item_3 in var_1 {

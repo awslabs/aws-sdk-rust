@@ -2,7 +2,7 @@
 pub fn ser_data_point_drill_up_down_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataPointDrillUpDownOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.availability_status {
         object.key("AvailabilityStatus").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_data_point_drill_up_down_option(
 
 pub(crate) fn de_data_point_drill_up_down_option<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DataPointDrillUpDownOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DataPointDrillUpDownOption>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

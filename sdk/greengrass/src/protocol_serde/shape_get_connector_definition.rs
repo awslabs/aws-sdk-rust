@@ -65,7 +65,7 @@ pub fn de_get_connector_definition_http_response(
 pub(crate) fn de_get_connector_definition(
     value: &[u8],
     mut builder: crate::operation::get_connector_definition::builders::GetConnectorDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_connector_definition::builders::GetConnectorDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

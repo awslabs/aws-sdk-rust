@@ -2,7 +2,7 @@
 pub fn ser_file_content(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FileContent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fileArn").string(input.file_arn.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_file_content(
 
 pub(crate) fn de_file_content<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FileContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FileContent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_search_by_attribute_value(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SearchByAttributeValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SearchByAttributeValue::DicomPatientId(inner) => {
             object_3.key("DICOMPatientId").string(inner.as_str());

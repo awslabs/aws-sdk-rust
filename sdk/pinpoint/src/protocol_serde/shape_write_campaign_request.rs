@@ -2,7 +2,7 @@
 pub fn ser_write_campaign_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WriteCampaignRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_treatments {
         let mut array_2 = object.key("AdditionalTreatments").start_array();
         for item_3 in var_1 {

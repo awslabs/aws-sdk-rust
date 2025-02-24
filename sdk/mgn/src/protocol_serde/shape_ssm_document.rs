@@ -2,7 +2,7 @@
 pub fn ser_ssm_document(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SsmDocument,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("actionName").string(input.action_name.as_str());
     }
@@ -55,7 +55,7 @@ pub fn ser_ssm_document(
 
 pub(crate) fn de_ssm_document<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SsmDocument>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SsmDocument>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

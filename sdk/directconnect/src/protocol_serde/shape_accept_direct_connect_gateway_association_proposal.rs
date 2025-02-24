@@ -89,7 +89,7 @@ pub fn de_accept_direct_connect_gateway_association_proposal_http_response(
 
 pub fn ser_accept_direct_connect_gateway_association_proposal_input(
     input: &crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_accept_direct_connect_gateway_association_proposal_input::ser_accept_direct_connect_gateway_association_proposal_input_input(&mut object, input)?;
@@ -100,7 +100,7 @@ pub fn ser_accept_direct_connect_gateway_association_proposal_input(
 pub(crate) fn de_accept_direct_connect_gateway_association_proposal(
     value: &[u8],
     mut builder: crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

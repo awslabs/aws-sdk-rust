@@ -161,7 +161,7 @@ pub fn de_get_voice_tone_analysis_task_http_response(
 pub(crate) fn de_get_voice_tone_analysis_task(
     value: &[u8],
     mut builder: crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

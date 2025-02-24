@@ -89,7 +89,7 @@ pub fn de_list_collaboration_trained_model_inference_jobs_http_response(
 pub(crate) fn de_list_collaboration_trained_model_inference_jobs(
     value: &[u8],
     mut builder: crate::operation::list_collaboration_trained_model_inference_jobs::builders::ListCollaborationTrainedModelInferenceJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_collaboration_trained_model_inference_jobs::builders::ListCollaborationTrainedModelInferenceJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

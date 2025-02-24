@@ -81,7 +81,10 @@ pub fn de_modify_cluster_maintenance_http_response(
 pub fn de_modify_cluster_maintenance(
     inp: &[u8],
     mut builder: crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder,
-) -> Result<crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

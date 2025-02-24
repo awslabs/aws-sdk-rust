@@ -2,7 +2,7 @@
 pub fn ser_update_chat_controls_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.blocked_phrases_configuration_update {
         #[allow(unused_mut)]
         let mut object_2 = object.key("blockedPhrasesConfigurationUpdate").start_object();

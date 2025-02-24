@@ -33,7 +33,7 @@ pub fn de_register_image_http_response(
 pub fn de_register_image(
     inp: &[u8],
     mut builder: crate::operation::register_image::builders::RegisterImageOutputBuilder,
-) -> Result<crate::operation::register_image::builders::RegisterImageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::register_image::builders::RegisterImageOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

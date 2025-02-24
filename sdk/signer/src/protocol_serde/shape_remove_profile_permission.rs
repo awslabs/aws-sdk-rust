@@ -145,7 +145,7 @@ pub fn de_remove_profile_permission_http_response(
 pub(crate) fn de_remove_profile_permission(
     value: &[u8],
     mut builder: crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

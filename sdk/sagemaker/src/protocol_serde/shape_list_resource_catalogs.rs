@@ -37,7 +37,7 @@ pub fn de_list_resource_catalogs_http_response(
 
 pub fn ser_list_resource_catalogs_input(
     input: &crate::operation::list_resource_catalogs::ListResourceCatalogsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_resource_catalogs_input::ser_list_resource_catalogs_input_input(&mut object, input)?;
@@ -48,7 +48,7 @@ pub fn ser_list_resource_catalogs_input(
 pub(crate) fn de_list_resource_catalogs(
     value: &[u8],
     mut builder: crate::operation::list_resource_catalogs::builders::ListResourceCatalogsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_resource_catalogs::builders::ListResourceCatalogsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -80,7 +80,7 @@ pub fn de_update_smb_file_share_visibility_http_response(
 
 pub fn ser_update_smb_file_share_visibility_input(
     input: &crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_smb_file_share_visibility_input::ser_update_smb_file_share_visibility_input_input(&mut object, input)?;
@@ -91,7 +91,7 @@ pub fn ser_update_smb_file_share_visibility_input(
 pub(crate) fn de_update_smb_file_share_visibility(
     value: &[u8],
     mut builder: crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

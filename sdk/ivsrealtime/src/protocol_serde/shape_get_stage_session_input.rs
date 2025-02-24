@@ -2,7 +2,7 @@
 pub fn ser_get_stage_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_stage_session::GetStageSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.session_id {
         object.key("sessionId").string(var_1.as_str());
     }

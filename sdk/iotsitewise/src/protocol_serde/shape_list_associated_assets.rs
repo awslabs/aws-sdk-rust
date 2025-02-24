@@ -104,7 +104,7 @@ pub fn de_list_associated_assets_http_response(
 pub(crate) fn de_list_associated_assets(
     value: &[u8],
     mut builder: crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_associated_assets::builders::ListAssociatedAssetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -134,7 +134,7 @@ pub fn de_get_delegated_admin_account_http_response(
 pub(crate) fn de_get_delegated_admin_account(
     value: &[u8],
     mut builder: crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_delegated_admin_account::builders::GetDelegatedAdminAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

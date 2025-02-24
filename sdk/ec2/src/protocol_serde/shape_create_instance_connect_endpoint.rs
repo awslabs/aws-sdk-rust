@@ -39,7 +39,7 @@ pub fn de_create_instance_connect_endpoint_http_response(
 pub fn de_create_instance_connect_endpoint(
     inp: &[u8],
     mut builder: crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_instance_connect_endpoint::builders::CreateInstanceConnectEndpointOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

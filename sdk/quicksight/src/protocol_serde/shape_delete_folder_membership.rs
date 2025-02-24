@@ -150,7 +150,7 @@ pub fn de_delete_folder_membership_http_response(
 pub(crate) fn de_delete_folder_membership(
     value: &[u8],
     mut builder: crate::operation::delete_folder_membership::builders::DeleteFolderMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_folder_membership::builders::DeleteFolderMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

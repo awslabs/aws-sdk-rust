@@ -2,7 +2,7 @@
 pub fn ser_invoke_flow_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::invoke_flow::InvokeFlowInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enable_trace {
         object.key("enableTrace").boolean(*var_1);
     }

@@ -116,7 +116,7 @@ pub fn de_get_workflow_step_group_http_response(
 pub(crate) fn de_get_workflow_step_group(
     value: &[u8],
     mut builder: crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

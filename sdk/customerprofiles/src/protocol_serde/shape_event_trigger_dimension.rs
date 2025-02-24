@@ -2,7 +2,7 @@
 pub fn ser_event_trigger_dimension(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EventTriggerDimension,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("ObjectAttributes").start_array();
         for item_2 in &input.object_attributes {
@@ -20,7 +20,7 @@ pub fn ser_event_trigger_dimension(
 
 pub(crate) fn de_event_trigger_dimension<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EventTriggerDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EventTriggerDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

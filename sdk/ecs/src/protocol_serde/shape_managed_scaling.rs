@@ -2,7 +2,7 @@
 pub fn ser_managed_scaling(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ManagedScaling,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.status {
         object.key("status").string(var_1.as_str());
     }
@@ -35,7 +35,7 @@ pub fn ser_managed_scaling(
 
 pub(crate) fn de_managed_scaling<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ManagedScaling>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ManagedScaling>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

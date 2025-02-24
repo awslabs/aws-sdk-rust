@@ -2,7 +2,7 @@
 pub fn ser_action_execution_event(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ActionExecutionEvent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("pluginId").string(input.plugin_id.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_desired_weight_and_capacity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DesiredWeightAndCapacity,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.variant_name {
         object.key("VariantName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_truck_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationTruckOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.gross_weight != 0 {
         object.key("GrossWeight").number(
             #[allow(clippy::useless_conversion)]

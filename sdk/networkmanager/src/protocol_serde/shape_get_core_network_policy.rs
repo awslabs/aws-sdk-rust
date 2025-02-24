@@ -130,7 +130,7 @@ pub fn de_get_core_network_policy_http_response(
 pub(crate) fn de_get_core_network_policy(
     value: &[u8],
     mut builder: crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

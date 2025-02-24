@@ -3,7 +3,7 @@
 pub fn de_no_such_health_check_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::NoSuchHealthCheckBuilder,
-) -> Result<crate::types::error::builders::NoSuchHealthCheckBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::NoSuchHealthCheckBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

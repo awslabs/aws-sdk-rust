@@ -2,7 +2,7 @@
 pub fn ser_date_time_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateTimeRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from {
         object.key("from").date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }

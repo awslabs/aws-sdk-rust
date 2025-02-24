@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_create_fleet_instance(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CreateFleetInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CreateFleetInstance, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CreateFleetInstance::builder();
     while let Some(mut tag) = decoder.next_tag() {

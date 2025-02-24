@@ -2,7 +2,7 @@
 pub fn ser_response_headers_policy_access_control_allow_methods(
     input: &crate::types::ResponseHeadersPolicyAccessControlAllowMethods,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -25,7 +25,7 @@ pub fn ser_response_headers_policy_access_control_allow_methods(
 #[allow(clippy::needless_question_mark)]
 pub fn de_response_headers_policy_access_control_allow_methods(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResponseHeadersPolicyAccessControlAllowMethods, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResponseHeadersPolicyAccessControlAllowMethods, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResponseHeadersPolicyAccessControlAllowMethods::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -144,7 +144,7 @@ pub fn de_describe_flow_source_metadata_http_response(
 pub(crate) fn de_describe_flow_source_metadata(
     value: &[u8],
     mut builder: crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

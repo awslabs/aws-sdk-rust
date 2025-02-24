@@ -143,7 +143,7 @@ pub fn de_deregister_notification_hub_http_response(
 pub(crate) fn de_deregister_notification_hub(
     value: &[u8],
     mut builder: crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::deregister_notification_hub::builders::DeregisterNotificationHubOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

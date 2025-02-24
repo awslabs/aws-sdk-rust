@@ -41,7 +41,7 @@ pub fn de_replace_transit_gateway_route_http_response(
 pub fn de_replace_transit_gateway_route(
     inp: &[u8],
     mut builder: crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

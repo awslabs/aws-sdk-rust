@@ -2,7 +2,7 @@
 pub fn ser_delete_host_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_host::DeleteHostInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.host_arn {
         object.key("HostArn").string(var_1.as_str());
     }

@@ -120,7 +120,7 @@ pub fn de_list_received_data_grants_http_response(
 pub(crate) fn de_list_received_data_grants(
     value: &[u8],
     mut builder: crate::operation::list_received_data_grants::builders::ListReceivedDataGrantsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_received_data_grants::builders::ListReceivedDataGrantsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

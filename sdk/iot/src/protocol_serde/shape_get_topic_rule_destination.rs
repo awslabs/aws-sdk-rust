@@ -111,7 +111,7 @@ pub fn de_get_topic_rule_destination_http_response(
 pub(crate) fn de_get_topic_rule_destination(
     value: &[u8],
     mut builder: crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_topic_rule_destination::builders::GetTopicRuleDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

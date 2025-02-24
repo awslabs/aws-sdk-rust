@@ -106,7 +106,7 @@ pub fn de_describe_billing_group_http_response(
 pub(crate) fn de_describe_billing_group(
     value: &[u8],
     mut builder: crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_billing_group::builders::DescribeBillingGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

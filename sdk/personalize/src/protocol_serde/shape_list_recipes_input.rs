@@ -2,7 +2,7 @@
 pub fn ser_list_recipes_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_recipes::ListRecipesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recipe_provider {
         object.key("recipeProvider").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_extensions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Extensions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_policies {
         let mut array_2 = object.key("CertificatePolicies").start_array();
         for item_3 in var_1 {

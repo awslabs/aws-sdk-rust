@@ -2,7 +2,7 @@
 pub fn ser_firehose_log_destination_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FirehoseLogDestinationParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DeliveryStreamArn").string(input.delivery_stream_arn.as_str());
     }

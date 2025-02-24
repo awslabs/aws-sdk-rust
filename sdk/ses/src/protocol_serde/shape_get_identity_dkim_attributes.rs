@@ -43,8 +43,10 @@ pub fn de_get_identity_dkim_attributes_http_response(
 pub fn de_get_identity_dkim_attributes(
     inp: &[u8],
     mut builder: crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder,
-) -> Result<crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

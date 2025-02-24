@@ -2,7 +2,7 @@
 pub fn ser_route_avoidance_area(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteAvoidanceArea,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.except {
         let mut array_2 = object.key("Except").start_array();
         for item_3 in var_1 {

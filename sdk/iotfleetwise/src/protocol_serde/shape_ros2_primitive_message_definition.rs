@@ -2,7 +2,7 @@
 pub fn ser_ros2_primitive_message_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ros2PrimitiveMessageDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("primitiveType").string(input.primitive_type.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_ros2_primitive_message_definition(
 
 pub(crate) fn de_ros2_primitive_message_definition<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Ros2PrimitiveMessageDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Ros2PrimitiveMessageDefinition>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

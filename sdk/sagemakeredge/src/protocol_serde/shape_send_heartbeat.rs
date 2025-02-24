@@ -52,7 +52,7 @@ pub fn de_send_heartbeat_http_response(
 
 pub fn ser_send_heartbeat_input(
     input: &crate::operation::send_heartbeat::SendHeartbeatInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_heartbeat_input::ser_send_heartbeat_input_input(&mut object, input)?;

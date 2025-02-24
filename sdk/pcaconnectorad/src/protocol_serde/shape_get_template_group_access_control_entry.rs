@@ -129,7 +129,7 @@ pub fn de_get_template_group_access_control_entry_http_response(
 pub(crate) fn de_get_template_group_access_control_entry(
     value: &[u8],
     mut builder: crate::operation::get_template_group_access_control_entry::builders::GetTemplateGroupAccessControlEntryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_template_group_access_control_entry::builders::GetTemplateGroupAccessControlEntryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

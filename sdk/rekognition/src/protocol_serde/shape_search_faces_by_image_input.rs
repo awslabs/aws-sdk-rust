@@ -2,7 +2,7 @@
 pub fn ser_search_faces_by_image_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_faces_by_image::SearchFacesByImageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.collection_id {
         object.key("CollectionId").string(var_1.as_str());
     }

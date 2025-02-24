@@ -134,7 +134,7 @@ pub fn de_list_installed_components_http_response(
 pub(crate) fn de_list_installed_components(
     value: &[u8],
     mut builder: crate::operation::list_installed_components::builders::ListInstalledComponentsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_installed_components::builders::ListInstalledComponentsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

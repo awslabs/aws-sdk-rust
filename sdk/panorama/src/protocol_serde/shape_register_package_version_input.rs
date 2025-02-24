@@ -2,7 +2,7 @@
 pub fn ser_register_package_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_package_version::RegisterPackageVersionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.mark_latest {
         object.key("MarkLatest").boolean(*var_1);
     }

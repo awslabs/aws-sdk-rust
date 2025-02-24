@@ -2,7 +2,7 @@
 pub fn ser_data_view_destination_type_params(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataViewDestinationTypeParams,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("destinationType").string(input.destination_type.as_str());
     }
@@ -24,7 +24,7 @@ pub fn ser_data_view_destination_type_params(
 
 pub(crate) fn de_data_view_destination_type_params<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DataViewDestinationTypeParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DataViewDestinationTypeParams>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

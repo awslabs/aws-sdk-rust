@@ -2,7 +2,7 @@
 pub fn ser_topic_rule_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TopicRulePayload,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("sql").string(input.sql.as_str());
     }

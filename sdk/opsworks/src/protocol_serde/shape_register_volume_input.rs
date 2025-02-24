@@ -2,7 +2,7 @@
 pub fn ser_register_volume_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_volume::RegisterVolumeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ec2_volume_id {
         object.key("Ec2VolumeId").string(var_1.as_str());
     }

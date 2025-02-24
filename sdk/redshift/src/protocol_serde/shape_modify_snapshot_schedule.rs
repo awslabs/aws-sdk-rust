@@ -100,7 +100,10 @@ pub fn de_modify_snapshot_schedule_http_response(
 pub fn de_modify_snapshot_schedule(
     inp: &[u8],
     mut builder: crate::operation::modify_snapshot_schedule::builders::ModifySnapshotScheduleOutputBuilder,
-) -> Result<crate::operation::modify_snapshot_schedule::builders::ModifySnapshotScheduleOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::modify_snapshot_schedule::builders::ModifySnapshotScheduleOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

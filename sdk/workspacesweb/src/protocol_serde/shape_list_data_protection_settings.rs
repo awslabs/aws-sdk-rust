@@ -120,7 +120,7 @@ pub fn de_list_data_protection_settings_http_response(
 pub(crate) fn de_list_data_protection_settings(
     value: &[u8],
     mut builder: crate::operation::list_data_protection_settings::builders::ListDataProtectionSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_protection_settings::builders::ListDataProtectionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

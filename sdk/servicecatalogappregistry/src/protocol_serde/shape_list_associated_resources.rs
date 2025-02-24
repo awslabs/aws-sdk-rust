@@ -95,7 +95,7 @@ pub fn de_list_associated_resources_http_response(
 pub(crate) fn de_list_associated_resources(
     value: &[u8],
     mut builder: crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_associated_resources::builders::ListAssociatedResourcesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

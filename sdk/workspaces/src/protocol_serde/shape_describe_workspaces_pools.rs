@@ -99,7 +99,7 @@ pub fn de_describe_workspaces_pools_http_response(
 
 pub fn ser_describe_workspaces_pools_input(
     input: &crate::operation::describe_workspaces_pools::DescribeWorkspacesPoolsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_workspaces_pools_input::ser_describe_workspaces_pools_input_input(&mut object, input)?;
@@ -110,7 +110,7 @@ pub fn ser_describe_workspaces_pools_input(
 pub(crate) fn de_describe_workspaces_pools(
     value: &[u8],
     mut builder: crate::operation::describe_workspaces_pools::builders::DescribeWorkspacesPoolsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_workspaces_pools::builders::DescribeWorkspacesPoolsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

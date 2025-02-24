@@ -2,7 +2,7 @@
 pub fn ser_port_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PortInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.from_port != 0 {
         object.key("fromPort").number(
             #[allow(clippy::useless_conversion)]

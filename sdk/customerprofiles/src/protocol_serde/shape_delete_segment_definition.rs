@@ -125,7 +125,7 @@ pub fn de_delete_segment_definition_http_response(
 pub(crate) fn de_delete_segment_definition(
     value: &[u8],
     mut builder: crate::operation::delete_segment_definition::builders::DeleteSegmentDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_segment_definition::builders::DeleteSegmentDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

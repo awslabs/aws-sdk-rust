@@ -2,7 +2,7 @@
 pub fn ser_get_public_key_certificate_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_public_key_certificate::GetPublicKeyCertificateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_identifier {
         object.key("KeyIdentifier").string(var_1.as_str());
     }

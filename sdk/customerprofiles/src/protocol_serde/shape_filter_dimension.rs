@@ -2,7 +2,7 @@
 pub fn ser_filter_dimension(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterDimension,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         #[allow(unused_mut)]
         let mut object_1 = object.key("Attributes").start_object();
@@ -21,7 +21,7 @@ pub fn ser_filter_dimension(
 
 pub(crate) fn de_filter_dimension<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FilterDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FilterDimension>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

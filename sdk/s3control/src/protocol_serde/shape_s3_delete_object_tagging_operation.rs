@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_delete_object_tagging_operation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3DeleteObjectTaggingOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::S3DeleteObjectTaggingOperation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3DeleteObjectTaggingOperation::builder();
     let _ = decoder;

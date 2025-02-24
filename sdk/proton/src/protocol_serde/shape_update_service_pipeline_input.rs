@@ -2,7 +2,7 @@
 pub fn ser_update_service_pipeline_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_pipeline::UpdateServicePipelineInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_name {
         object.key("serviceName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_create_job_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_job_template::CreateJobTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.acceleration_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accelerationSettings").start_object();

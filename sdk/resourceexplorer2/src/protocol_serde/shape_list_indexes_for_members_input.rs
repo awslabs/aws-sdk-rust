@@ -2,7 +2,7 @@
 pub fn ser_list_indexes_for_members_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_indexes_for_members::ListIndexesForMembersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id_list {
         let mut array_2 = object.key("AccountIdList").start_array();
         for item_3 in var_1 {

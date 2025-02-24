@@ -2,7 +2,7 @@
 pub fn ser_check_no_public_access_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::check_no_public_access::CheckNoPublicAccessInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.policy_document {
         object.key("policyDocument").string(var_1.as_str());
     }

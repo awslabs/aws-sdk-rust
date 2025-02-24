@@ -80,7 +80,7 @@ pub fn de_delete_outbound_connection_http_response(
 pub(crate) fn de_delete_outbound_connection(
     value: &[u8],
     mut builder: crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_outbound_connection::builders::DeleteOutboundConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

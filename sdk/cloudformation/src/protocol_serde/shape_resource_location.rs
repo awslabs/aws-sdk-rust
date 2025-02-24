@@ -3,7 +3,7 @@
 pub fn ser_resource_location(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ResourceLocation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StackName");
     if let Some(var_2) = &input.stack_name {
@@ -20,7 +20,7 @@ pub fn ser_resource_location(
 #[allow(clippy::needless_question_mark)]
 pub fn de_resource_location(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResourceLocation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResourceLocation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResourceLocation::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_update_flow_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_flow::UpdateFlowInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.maintenance {
         #[allow(unused_mut)]
         let mut object_2 = object.key("maintenance").start_object();

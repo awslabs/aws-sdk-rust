@@ -203,7 +203,7 @@ pub fn de_start_export_task_http_response(
 pub fn de_start_export_task(
     inp: &[u8],
     mut builder: crate::operation::start_export_task::builders::StartExportTaskOutputBuilder,
-) -> Result<crate::operation::start_export_task::builders::StartExportTaskOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::start_export_task::builders::StartExportTaskOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

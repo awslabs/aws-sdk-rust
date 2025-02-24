@@ -3,7 +3,7 @@
 pub fn ser_add_ipam_organizational_unit_exclusion(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AddIpamOrganizationalUnitExclusion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("OrganizationsEntityPath");
     if let Some(var_2) = &input.organizations_entity_path {

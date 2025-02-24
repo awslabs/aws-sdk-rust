@@ -122,7 +122,7 @@ pub fn de_list_user_access_logging_settings_http_response(
 pub(crate) fn de_list_user_access_logging_settings(
     value: &[u8],
     mut builder: crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_user_access_logging_settings::builders::ListUserAccessLoggingSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

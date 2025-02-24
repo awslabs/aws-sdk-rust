@@ -3,7 +3,7 @@
 pub fn ser_performance_factor_reference(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PerformanceFactorReference,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceFamily");
     if let Some(var_2) = &input.instance_family {
@@ -15,7 +15,7 @@ pub fn ser_performance_factor_reference(
 #[allow(clippy::needless_question_mark)]
 pub fn de_performance_factor_reference(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PerformanceFactorReference, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::PerformanceFactorReference, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PerformanceFactorReference::builder();
     while let Some(mut tag) = decoder.next_tag() {

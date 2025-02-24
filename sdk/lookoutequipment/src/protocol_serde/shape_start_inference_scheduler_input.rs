@@ -2,7 +2,7 @@
 pub fn ser_start_inference_scheduler_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_inference_scheduler::StartInferenceSchedulerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.inference_scheduler_name {
         object.key("InferenceSchedulerName").string(var_1.as_str());
     }

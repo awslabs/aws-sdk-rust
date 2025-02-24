@@ -77,7 +77,7 @@ pub fn de_get_cluster_credentials_with_iam_http_response(
 pub fn de_get_cluster_credentials_with_iam(
     inp: &[u8],
     mut builder: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

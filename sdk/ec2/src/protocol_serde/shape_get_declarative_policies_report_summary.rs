@@ -41,7 +41,7 @@ pub fn de_get_declarative_policies_report_summary_http_response(
 pub fn de_get_declarative_policies_report_summary(
     inp: &[u8],
     mut builder: crate::operation::get_declarative_policies_report_summary::builders::GetDeclarativePoliciesReportSummaryOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_declarative_policies_report_summary::builders::GetDeclarativePoliciesReportSummaryOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

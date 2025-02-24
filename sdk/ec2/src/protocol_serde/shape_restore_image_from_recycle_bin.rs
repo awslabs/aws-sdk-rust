@@ -39,7 +39,7 @@ pub fn de_restore_image_from_recycle_bin_http_response(
 pub fn de_restore_image_from_recycle_bin(
     inp: &[u8],
     mut builder: crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::restore_image_from_recycle_bin::builders::RestoreImageFromRecycleBinOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

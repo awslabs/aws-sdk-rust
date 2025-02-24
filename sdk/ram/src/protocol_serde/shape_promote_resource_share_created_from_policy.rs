@@ -182,7 +182,7 @@ pub fn de_promote_resource_share_created_from_policy_http_response(
 pub(crate) fn de_promote_resource_share_created_from_policy(
     value: &[u8],
     mut builder: crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

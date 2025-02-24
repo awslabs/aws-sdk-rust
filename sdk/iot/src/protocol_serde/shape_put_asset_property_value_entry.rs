@@ -2,7 +2,7 @@
 pub fn ser_put_asset_property_value_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutAssetPropertyValueEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.entry_id {
         object.key("entryId").string(var_1.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_put_asset_property_value_entry(
 
 pub(crate) fn de_put_asset_property_value_entry<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PutAssetPropertyValueEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PutAssetPropertyValueEntry>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

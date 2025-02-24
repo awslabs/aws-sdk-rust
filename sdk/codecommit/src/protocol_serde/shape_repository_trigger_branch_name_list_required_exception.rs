@@ -2,7 +2,7 @@
 pub(crate) fn de_repository_trigger_branch_name_list_required_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::RepositoryTriggerBranchNameListRequiredExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::RepositoryTriggerBranchNameListRequiredExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

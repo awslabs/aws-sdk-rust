@@ -111,8 +111,10 @@ pub fn de_list_subscriptions_by_topic_http_response(
 pub fn de_list_subscriptions_by_topic(
     inp: &[u8],
     mut builder: crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicOutputBuilder,
-) -> Result<crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

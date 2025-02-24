@@ -2,7 +2,7 @@
 pub fn ser_cancel_domain_config_change_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_domain_config_change::CancelDomainConfigChangeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dry_run {
         object.key("DryRun").boolean(*var_1);
     }

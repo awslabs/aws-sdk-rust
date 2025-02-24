@@ -2,7 +2,7 @@
 pub fn ser_aws_wafv2_custom_request_handling_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsWafv2CustomRequestHandlingDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.insert_headers {
         let mut array_2 = object.key("InsertHeaders").start_array();
         for item_3 in var_1 {
@@ -20,7 +20,7 @@ pub fn ser_aws_wafv2_custom_request_handling_details(
 
 pub(crate) fn de_aws_wafv2_custom_request_handling_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsWafv2CustomRequestHandlingDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsWafv2CustomRequestHandlingDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

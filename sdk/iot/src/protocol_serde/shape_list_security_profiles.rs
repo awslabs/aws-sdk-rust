@@ -106,7 +106,7 @@ pub fn de_list_security_profiles_http_response(
 pub(crate) fn de_list_security_profiles(
     value: &[u8],
     mut builder: crate::operation::list_security_profiles::builders::ListSecurityProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_security_profiles::builders::ListSecurityProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

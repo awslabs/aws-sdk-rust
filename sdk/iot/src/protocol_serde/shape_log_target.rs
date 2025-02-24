@@ -2,7 +2,7 @@
 pub fn ser_log_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogTarget,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("targetType").string(input.target_type.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_log_target(
 
 pub(crate) fn de_log_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LogTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LogTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

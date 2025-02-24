@@ -139,7 +139,7 @@ pub fn de_delete_source_repository_http_response(
 pub(crate) fn de_delete_source_repository(
     value: &[u8],
     mut builder: crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_source_repository::builders::DeleteSourceRepositoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

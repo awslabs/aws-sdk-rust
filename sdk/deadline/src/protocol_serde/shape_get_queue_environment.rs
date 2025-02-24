@@ -133,7 +133,7 @@ pub fn de_get_queue_environment_http_response(
 pub(crate) fn de_get_queue_environment(
     value: &[u8],
     mut builder: crate::operation::get_queue_environment::builders::GetQueueEnvironmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_queue_environment::builders::GetQueueEnvironmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

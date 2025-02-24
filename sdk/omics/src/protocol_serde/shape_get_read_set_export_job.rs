@@ -132,7 +132,7 @@ pub fn de_get_read_set_export_job_http_response(
 pub(crate) fn de_get_read_set_export_job(
     value: &[u8],
     mut builder: crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_read_set_export_job::builders::GetReadSetExportJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

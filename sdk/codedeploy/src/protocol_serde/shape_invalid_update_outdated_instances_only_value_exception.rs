@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_update_outdated_instances_only_value_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::InvalidUpdateOutdatedInstancesOnlyValueExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::InvalidUpdateOutdatedInstancesOnlyValueExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

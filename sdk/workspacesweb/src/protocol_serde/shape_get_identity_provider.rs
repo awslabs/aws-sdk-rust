@@ -135,7 +135,7 @@ pub fn de_get_identity_provider_http_response(
 pub(crate) fn de_get_identity_provider(
     value: &[u8],
     mut builder: crate::operation::get_identity_provider::builders::GetIdentityProviderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_identity_provider::builders::GetIdentityProviderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -122,7 +122,7 @@ pub fn de_list_profile_attribute_values_http_response(
 pub(crate) fn de_list_profile_attribute_values(
     value: &[u8],
     mut builder: crate::operation::list_profile_attribute_values::builders::ListProfileAttributeValuesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_profile_attribute_values::builders::ListProfileAttributeValuesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

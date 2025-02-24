@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_metrics_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MetricsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MetricsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricsConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -41,7 +41,7 @@ pub fn de_metrics_configuration(
 pub fn ser_metrics_configuration(
     input: &crate::types::MetricsConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {

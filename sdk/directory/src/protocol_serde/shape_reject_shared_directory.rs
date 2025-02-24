@@ -126,7 +126,7 @@ pub fn de_reject_shared_directory_http_response(
 
 pub fn ser_reject_shared_directory_input(
     input: &crate::operation::reject_shared_directory::RejectSharedDirectoryInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reject_shared_directory_input::ser_reject_shared_directory_input_input(&mut object, input)?;
@@ -137,7 +137,7 @@ pub fn ser_reject_shared_directory_input(
 pub(crate) fn de_reject_shared_directory(
     value: &[u8],
     mut builder: crate::operation::reject_shared_directory::builders::RejectSharedDirectoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::reject_shared_directory::builders::RejectSharedDirectoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

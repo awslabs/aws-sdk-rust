@@ -79,7 +79,7 @@ pub fn de_delete_target_account_configuration_http_response(
 pub(crate) fn de_delete_target_account_configuration(
     value: &[u8],
     mut builder: crate::operation::delete_target_account_configuration::builders::DeleteTargetAccountConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_target_account_configuration::builders::DeleteTargetAccountConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

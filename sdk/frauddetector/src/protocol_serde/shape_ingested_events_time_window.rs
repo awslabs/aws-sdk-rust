@@ -2,7 +2,7 @@
 pub fn ser_ingested_events_time_window(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IngestedEventsTimeWindow,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("startTime").string(input.start_time.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_ingested_events_time_window(
 
 pub(crate) fn de_ingested_events_time_window<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IngestedEventsTimeWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IngestedEventsTimeWindow>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

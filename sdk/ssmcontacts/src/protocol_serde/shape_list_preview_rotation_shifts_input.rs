@@ -2,7 +2,7 @@
 pub fn ser_list_preview_rotation_shifts_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rotation_start_time {
         object
             .key("RotationStartTime")

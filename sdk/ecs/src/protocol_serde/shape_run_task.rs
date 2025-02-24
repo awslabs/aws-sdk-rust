@@ -191,7 +191,7 @@ pub fn de_run_task_http_response(
 
 pub fn ser_run_task_input(
     input: &crate::operation::run_task::RunTaskInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_run_task_input::ser_run_task_input_input(&mut object, input)?;
@@ -202,7 +202,7 @@ pub fn ser_run_task_input(
 pub(crate) fn de_run_task(
     value: &[u8],
     mut builder: crate::operation::run_task::builders::RunTaskOutputBuilder,
-) -> Result<crate::operation::run_task::builders::RunTaskOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::run_task::builders::RunTaskOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

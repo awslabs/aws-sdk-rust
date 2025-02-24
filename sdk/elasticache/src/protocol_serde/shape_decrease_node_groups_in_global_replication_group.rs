@@ -120,7 +120,7 @@ pub fn de_decrease_node_groups_in_global_replication_group_http_response(
 pub fn de_decrease_node_groups_in_global_replication_group(
     inp: &[u8],
     mut builder: crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -39,7 +39,7 @@ pub fn de_unmonitor_instances_http_response(
 pub fn de_unmonitor_instances(
     inp: &[u8],
     mut builder: crate::operation::unmonitor_instances::builders::UnmonitorInstancesOutputBuilder,
-) -> Result<crate::operation::unmonitor_instances::builders::UnmonitorInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::unmonitor_instances::builders::UnmonitorInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

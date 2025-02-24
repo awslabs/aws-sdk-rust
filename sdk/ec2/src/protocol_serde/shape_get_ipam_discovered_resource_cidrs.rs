@@ -39,7 +39,7 @@ pub fn de_get_ipam_discovered_resource_cidrs_http_response(
 pub fn de_get_ipam_discovered_resource_cidrs(
     inp: &[u8],
     mut builder: crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

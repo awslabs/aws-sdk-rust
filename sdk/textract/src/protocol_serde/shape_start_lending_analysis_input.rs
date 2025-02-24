@@ -2,7 +2,7 @@
 pub fn ser_start_lending_analysis_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_lending_analysis::StartLendingAnalysisInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DocumentLocation").start_object();

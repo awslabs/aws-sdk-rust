@@ -171,7 +171,7 @@ pub fn de_list_multipart_read_set_uploads_http_response(
 pub(crate) fn de_list_multipart_read_set_uploads(
     value: &[u8],
     mut builder: crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_multipart_read_set_uploads::builders::ListMultipartReadSetUploadsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

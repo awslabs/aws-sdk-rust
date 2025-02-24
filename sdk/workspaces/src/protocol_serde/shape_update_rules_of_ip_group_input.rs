@@ -2,7 +2,7 @@
 pub fn ser_update_rules_of_ip_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_id {
         object.key("GroupId").string(var_1.as_str());
     }

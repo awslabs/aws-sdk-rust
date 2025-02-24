@@ -138,7 +138,7 @@ pub fn de_authorize_vpc_endpoint_access_http_response(
 
 pub fn ser_authorize_vpc_endpoint_access_input(
     input: &crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_authorize_vpc_endpoint_access_input::ser_authorize_vpc_endpoint_access_input_input(&mut object, input)?;
@@ -149,7 +149,7 @@ pub fn ser_authorize_vpc_endpoint_access_input(
 pub(crate) fn de_authorize_vpc_endpoint_access(
     value: &[u8],
     mut builder: crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

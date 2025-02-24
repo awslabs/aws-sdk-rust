@@ -179,7 +179,7 @@ pub fn de_get_transit_gateway_connect_peer_associations_http_response(
 pub(crate) fn de_get_transit_gateway_connect_peer_associations(
     value: &[u8],
     mut builder: crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_transit_gateway_connect_peer_associations::builders::GetTransitGatewayConnectPeerAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

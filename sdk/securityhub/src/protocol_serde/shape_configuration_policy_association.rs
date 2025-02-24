@@ -2,7 +2,7 @@
 pub fn ser_configuration_policy_association(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConfigurationPolicyAssociation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.target {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Target").start_object();
@@ -14,7 +14,7 @@ pub fn ser_configuration_policy_association(
 
 pub(crate) fn de_configuration_policy_association<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ConfigurationPolicyAssociation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ConfigurationPolicyAssociation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

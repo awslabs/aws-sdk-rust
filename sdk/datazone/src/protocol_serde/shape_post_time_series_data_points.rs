@@ -166,7 +166,7 @@ pub fn de_post_time_series_data_points_http_response(
 
 pub fn ser_post_time_series_data_points_input(
     input: &crate::operation::post_time_series_data_points::PostTimeSeriesDataPointsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_post_time_series_data_points_input::ser_post_time_series_data_points_input_input(&mut object, input)?;
@@ -177,7 +177,7 @@ pub fn ser_post_time_series_data_points_input(
 pub(crate) fn de_post_time_series_data_points(
     value: &[u8],
     mut builder: crate::operation::post_time_series_data_points::builders::PostTimeSeriesDataPointsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::post_time_series_data_points::builders::PostTimeSeriesDataPointsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

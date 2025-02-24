@@ -3,7 +3,7 @@
 pub fn de_invalid_s3_key_prefix_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidS3KeyPrefixFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidS3KeyPrefixFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidS3KeyPrefixFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

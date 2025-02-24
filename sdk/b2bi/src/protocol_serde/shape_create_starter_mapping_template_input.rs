@@ -2,7 +2,7 @@
 pub fn ser_create_starter_mapping_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_starter_mapping_template::CreateStarterMappingTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.output_sample_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("outputSampleLocation").start_object();

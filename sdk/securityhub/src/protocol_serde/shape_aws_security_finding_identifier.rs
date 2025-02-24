@@ -2,7 +2,7 @@
 pub fn ser_aws_security_finding_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSecurityFindingIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.id {
         object.key("Id").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_security_finding_identifier(
 
 pub(crate) fn de_aws_security_finding_identifier<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsSecurityFindingIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsSecurityFindingIdentifier>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -140,7 +140,7 @@ pub fn de_list_virtual_services_http_response(
 pub(crate) fn de_list_virtual_services(
     value: &[u8],
     mut builder: crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_virtual_services::builders::ListVirtualServicesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

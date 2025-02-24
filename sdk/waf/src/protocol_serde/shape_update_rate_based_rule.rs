@@ -189,7 +189,7 @@ pub fn de_update_rate_based_rule_http_response(
 
 pub fn ser_update_rate_based_rule_input(
     input: &crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_rate_based_rule_input::ser_update_rate_based_rule_input_input(&mut object, input)?;
@@ -200,7 +200,7 @@ pub fn ser_update_rate_based_rule_input(
 pub(crate) fn de_update_rate_based_rule(
     value: &[u8],
     mut builder: crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

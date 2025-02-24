@@ -162,7 +162,7 @@ pub fn de_delete_data_integration_flow_http_response(
 pub(crate) fn de_delete_data_integration_flow(
     value: &[u8],
     mut builder: crate::operation::delete_data_integration_flow::builders::DeleteDataIntegrationFlowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_data_integration_flow::builders::DeleteDataIntegrationFlowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -63,7 +63,7 @@ pub fn de_describe_fleet_advisor_schemas_http_response(
 
 pub fn ser_describe_fleet_advisor_schemas_input(
     input: &crate::operation::describe_fleet_advisor_schemas::DescribeFleetAdvisorSchemasInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_fleet_advisor_schemas_input::ser_describe_fleet_advisor_schemas_input_input(&mut object, input)?;
@@ -74,7 +74,7 @@ pub fn ser_describe_fleet_advisor_schemas_input(
 pub(crate) fn de_describe_fleet_advisor_schemas(
     value: &[u8],
     mut builder: crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_fleet_advisor_schemas::builders::DescribeFleetAdvisorSchemasOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

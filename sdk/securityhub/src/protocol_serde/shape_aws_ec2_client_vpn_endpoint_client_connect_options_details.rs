@@ -2,7 +2,7 @@
 pub fn ser_aws_ec2_client_vpn_endpoint_client_connect_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("Enabled").boolean(*var_1);
     }
@@ -20,7 +20,10 @@ pub fn ser_aws_ec2_client_vpn_endpoint_client_connect_options_details(
 
 pub(crate) fn de_aws_ec2_client_vpn_endpoint_client_connect_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsEc2ClientVpnEndpointClientConnectOptionsDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

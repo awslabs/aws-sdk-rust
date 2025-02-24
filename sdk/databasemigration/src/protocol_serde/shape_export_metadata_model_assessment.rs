@@ -60,7 +60,7 @@ pub fn de_export_metadata_model_assessment_http_response(
 
 pub fn ser_export_metadata_model_assessment_input(
     input: &crate::operation::export_metadata_model_assessment::ExportMetadataModelAssessmentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_export_metadata_model_assessment_input::ser_export_metadata_model_assessment_input_input(&mut object, input)?;
@@ -71,7 +71,7 @@ pub fn ser_export_metadata_model_assessment_input(
 pub(crate) fn de_export_metadata_model_assessment(
     value: &[u8],
     mut builder: crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::export_metadata_model_assessment::builders::ExportMetadataModelAssessmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

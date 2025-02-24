@@ -2,7 +2,7 @@
 pub fn ser_validate_state_machine_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::validate_state_machine_definition::ValidateStateMachineDefinitionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.definition {
         object.key("definition").string(var_1.as_str());
     }

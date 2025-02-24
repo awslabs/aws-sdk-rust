@@ -105,7 +105,7 @@ pub fn de_get_notification_configuration_http_response(
 pub(crate) fn de_get_notification_configuration(
     value: &[u8],
     mut builder: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_notification_configuration::builders::GetNotificationConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.launch_template_id {
         object.key("LaunchTemplateId").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_tem
 
 pub(crate) fn de_aws_auto_scaling_auto_scaling_group_mixed_instances_policy_launch_template_launch_template_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

@@ -157,7 +157,7 @@ pub fn de_search_available_phone_numbers_http_response(
 pub(crate) fn de_search_available_phone_numbers(
     value: &[u8],
     mut builder: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

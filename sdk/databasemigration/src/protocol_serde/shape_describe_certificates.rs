@@ -60,7 +60,7 @@ pub fn de_describe_certificates_http_response(
 
 pub fn ser_describe_certificates_input(
     input: &crate::operation::describe_certificates::DescribeCertificatesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_certificates_input::ser_describe_certificates_input_input(&mut object, input)?;
@@ -71,7 +71,7 @@ pub fn ser_describe_certificates_input(
 pub(crate) fn de_describe_certificates(
     value: &[u8],
     mut builder: crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_certificates::builders::DescribeCertificatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

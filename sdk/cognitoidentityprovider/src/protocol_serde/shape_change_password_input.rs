@@ -2,7 +2,7 @@
 pub fn ser_change_password_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::change_password::ChangePasswordInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.previous_password {
         object.key("PreviousPassword").string(var_1.as_str());
     }

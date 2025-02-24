@@ -2,7 +2,7 @@
 pub fn ser_describe_verified_destination_numbers_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_verified_destination_numbers::DescribeVerifiedDestinationNumbersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.verified_destination_number_ids {
         let mut array_2 = object.key("VerifiedDestinationNumberIds").start_array();
         for item_3 in var_1 {

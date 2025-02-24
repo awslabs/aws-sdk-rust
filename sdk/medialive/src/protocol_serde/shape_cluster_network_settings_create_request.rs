@@ -2,7 +2,7 @@
 pub fn ser_cluster_network_settings_create_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClusterNetworkSettingsCreateRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_route {
         object.key("defaultRoute").string(var_1.as_str());
     }

@@ -111,7 +111,7 @@ pub fn de_delete_eks_anywhere_subscription_http_response(
 pub(crate) fn de_delete_eks_anywhere_subscription(
     value: &[u8],
     mut builder: crate::operation::delete_eks_anywhere_subscription::builders::DeleteEksAnywhereSubscriptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_eks_anywhere_subscription::builders::DeleteEksAnywhereSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

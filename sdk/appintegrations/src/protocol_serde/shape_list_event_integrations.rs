@@ -106,7 +106,7 @@ pub fn de_list_event_integrations_http_response(
 pub(crate) fn de_list_event_integrations(
     value: &[u8],
     mut builder: crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_event_integrations::builders::ListEventIntegrationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

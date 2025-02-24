@@ -2,7 +2,7 @@
 pub fn ser_request_based_service_level_indicator_metric_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestBasedServiceLevelIndicatorMetricConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("KeyAttributes").start_object();

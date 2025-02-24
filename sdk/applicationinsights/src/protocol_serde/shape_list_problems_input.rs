@@ -2,7 +2,7 @@
 pub fn ser_list_problems_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_problems::ListProblemsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_id {
         object.key("AccountId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_conversation_level_test_results_filter_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversationLevelTestResultsFilterBy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_to_end_result {
         object.key("endToEndResult").string(var_1.as_str());
     }

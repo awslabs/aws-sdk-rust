@@ -136,7 +136,7 @@ pub fn de_describe_instance_type_limits_http_response(
 pub(crate) fn de_describe_instance_type_limits(
     value: &[u8],
     mut builder: crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_instance_type_limits::builders::DescribeInstanceTypeLimitsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

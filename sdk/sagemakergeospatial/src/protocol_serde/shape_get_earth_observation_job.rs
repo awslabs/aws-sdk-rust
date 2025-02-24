@@ -122,7 +122,7 @@ pub fn de_get_earth_observation_job_http_response(
 pub(crate) fn de_get_earth_observation_job(
     value: &[u8],
     mut builder: crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_earth_observation_job::builders::GetEarthObservationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

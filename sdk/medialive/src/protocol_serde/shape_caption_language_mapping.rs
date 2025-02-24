@@ -2,7 +2,7 @@
 pub fn ser_caption_language_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CaptionLanguageMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.caption_channel {
         object.key("captionChannel").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_caption_language_mapping(
 
 pub(crate) fn de_caption_language_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CaptionLanguageMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CaptionLanguageMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

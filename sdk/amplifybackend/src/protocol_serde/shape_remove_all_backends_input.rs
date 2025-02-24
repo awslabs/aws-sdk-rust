@@ -2,7 +2,7 @@
 pub fn ser_remove_all_backends_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::remove_all_backends::RemoveAllBackendsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.clean_amplify_app {
         object.key("cleanAmplifyApp").boolean(*var_1);
     }

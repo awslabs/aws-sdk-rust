@@ -159,7 +159,7 @@ pub fn de_create_elasticsearch_domain_http_response(
 
 pub fn ser_create_elasticsearch_domain_input(
     input: &crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_elasticsearch_domain_input::ser_create_elasticsearch_domain_input_input(&mut object, input)?;
@@ -170,7 +170,7 @@ pub fn ser_create_elasticsearch_domain_input(
 pub(crate) fn de_create_elasticsearch_domain(
     value: &[u8],
     mut builder: crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_elasticsearch_domain::builders::CreateElasticsearchDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

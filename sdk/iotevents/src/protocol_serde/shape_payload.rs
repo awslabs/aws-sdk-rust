@@ -2,7 +2,7 @@
 pub fn ser_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Payload,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("contentExpression").string(input.content_expression.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_payload(
 
 pub(crate) fn de_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Payload>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Payload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

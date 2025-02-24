@@ -2,7 +2,7 @@
 pub fn ser_list_applied_schema_arns_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_arn {
         object.key("DirectoryArn").string(var_1.as_str());
     }

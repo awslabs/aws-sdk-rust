@@ -2,7 +2,7 @@
 pub fn ser_update_subscription_grant_status_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_subscription_grant_status::UpdateSubscriptionGrantStatusInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.failure_cause {
         #[allow(unused_mut)]
         let mut object_2 = object.key("failureCause").start_object();

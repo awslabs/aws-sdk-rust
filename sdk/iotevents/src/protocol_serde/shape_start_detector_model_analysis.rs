@@ -123,7 +123,7 @@ pub fn de_start_detector_model_analysis_http_response(
 
 pub fn ser_start_detector_model_analysis_input(
     input: &crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_detector_model_analysis_input::ser_start_detector_model_analysis_input_input(&mut object, input)?;
@@ -134,7 +134,7 @@ pub fn ser_start_detector_model_analysis_input(
 pub(crate) fn de_start_detector_model_analysis(
     value: &[u8],
     mut builder: crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

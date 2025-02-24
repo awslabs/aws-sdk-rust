@@ -3,7 +3,7 @@
 pub fn de_configuration_set_does_not_exist_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ConfigurationSetDoesNotExistExceptionBuilder,
-) -> Result<crate::types::error::builders::ConfigurationSetDoesNotExistExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ConfigurationSetDoesNotExistExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

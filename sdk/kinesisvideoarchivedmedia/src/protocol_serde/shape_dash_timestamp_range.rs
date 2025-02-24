@@ -2,7 +2,7 @@
 pub fn ser_dash_timestamp_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DashTimestampRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.start_timestamp {
         object
             .key("StartTimestamp")

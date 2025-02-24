@@ -2,7 +2,7 @@
 pub fn ser_batch_get_device_position_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_get_device_position::BatchGetDevicePositionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.device_ids {
         let mut array_2 = object.key("DeviceIds").start_array();
         for item_3 in var_1 {

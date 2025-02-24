@@ -39,7 +39,7 @@ pub fn de_describe_stack_drift_detection_status_http_response(
 pub fn de_describe_stack_drift_detection_status(
     inp: &[u8],
     mut builder: crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

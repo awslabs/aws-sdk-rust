@@ -2,7 +2,7 @@
 pub fn ser_delete_provisioning_artifact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accept_language {
         object.key("AcceptLanguage").string(var_1.as_str());
     }

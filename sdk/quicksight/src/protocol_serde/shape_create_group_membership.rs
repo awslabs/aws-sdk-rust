@@ -157,7 +157,7 @@ pub fn de_create_group_membership_http_response(
 pub(crate) fn de_create_group_membership(
     value: &[u8],
     mut builder: crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

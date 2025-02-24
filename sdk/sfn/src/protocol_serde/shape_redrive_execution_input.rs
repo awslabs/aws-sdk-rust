@@ -2,7 +2,7 @@
 pub fn ser_redrive_execution_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::redrive_execution::RedriveExecutionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.execution_arn {
         object.key("executionArn").string(var_1.as_str());
     }

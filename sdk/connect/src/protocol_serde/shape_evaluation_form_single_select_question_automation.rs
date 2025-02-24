@@ -2,7 +2,7 @@
 pub fn ser_evaluation_form_single_select_question_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationFormSingleSelectQuestionAutomation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Options").start_array();
         for item_2 in &input.options {
@@ -23,7 +23,7 @@ pub fn ser_evaluation_form_single_select_question_automation(
 
 pub(crate) fn de_evaluation_form_single_select_question_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

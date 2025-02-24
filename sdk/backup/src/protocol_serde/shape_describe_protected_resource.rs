@@ -123,7 +123,7 @@ pub fn de_describe_protected_resource_http_response(
 pub(crate) fn de_describe_protected_resource(
     value: &[u8],
     mut builder: crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

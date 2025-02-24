@@ -2,7 +2,7 @@
 pub fn ser_list_cluster_scheduler_configs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_cluster_scheduler_configs::ListClusterSchedulerConfigsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.created_after {
         object
             .key("CreatedAfter")

@@ -39,7 +39,7 @@ pub fn de_modify_instance_event_start_time_http_response(
 pub fn de_modify_instance_event_start_time(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_instance_event_start_time::builders::ModifyInstanceEventStartTimeOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

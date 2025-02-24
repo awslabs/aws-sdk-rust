@@ -42,7 +42,7 @@ pub fn de_modify_instance_capacity_reservation_attributes_http_response(
 pub fn de_modify_instance_capacity_reservation_attributes(
     inp: &[u8],
     mut builder: crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_instance_capacity_reservation_attributes::builders::ModifyInstanceCapacityReservationAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

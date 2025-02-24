@@ -127,7 +127,7 @@ pub fn de_describe_predefined_attribute_http_response(
 pub(crate) fn de_describe_predefined_attribute(
     value: &[u8],
     mut builder: crate::operation::describe_predefined_attribute::builders::DescribePredefinedAttributeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_predefined_attribute::builders::DescribePredefinedAttributeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -146,7 +146,7 @@ pub fn de_get_table_maintenance_job_status_http_response(
 pub(crate) fn de_get_table_maintenance_job_status(
     value: &[u8],
     mut builder: crate::operation::get_table_maintenance_job_status::builders::GetTableMaintenanceJobStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_table_maintenance_job_status::builders::GetTableMaintenanceJobStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

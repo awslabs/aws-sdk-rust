@@ -125,7 +125,7 @@ pub fn de_get_traffic_distribution_http_response(
 pub(crate) fn de_get_traffic_distribution(
     value: &[u8],
     mut builder: crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_traffic_distribution::builders::GetTrafficDistributionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

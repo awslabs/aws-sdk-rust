@@ -2,7 +2,7 @@
 pub fn ser_create_experiment_template_experiment_options_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateExperimentTemplateExperimentOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.account_targeting {
         object.key("accountTargeting").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_reserved_instance_reservation_value(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ReservedInstanceReservationValue, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ReservedInstanceReservationValue, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ReservedInstanceReservationValue::builder();
     while let Some(mut tag) = decoder.next_tag() {

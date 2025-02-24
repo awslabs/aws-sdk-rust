@@ -2,7 +2,7 @@
 pub fn ser_accept_choice(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AcceptChoice,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.prediction_target {
         object.key("predictionTarget").string(var_1.as_str());
     }

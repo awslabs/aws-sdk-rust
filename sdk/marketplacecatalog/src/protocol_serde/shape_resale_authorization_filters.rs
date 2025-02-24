@@ -2,7 +2,7 @@
 pub fn ser_resale_authorization_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResaleAuthorizationFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.entity_id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("EntityId").start_object();

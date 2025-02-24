@@ -108,7 +108,7 @@ pub fn de_list_cross_account_authorizations_http_response(
 pub(crate) fn de_list_cross_account_authorizations(
     value: &[u8],
     mut builder: crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_cross_account_authorizations::builders::ListCrossAccountAuthorizationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

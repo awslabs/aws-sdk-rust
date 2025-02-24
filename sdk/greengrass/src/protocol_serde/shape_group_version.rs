@@ -2,7 +2,7 @@
 pub fn ser_group_version(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GroupVersion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connector_definition_version_arn {
         object.key("ConnectorDefinitionVersionArn").string(var_1.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_group_version(
 
 pub(crate) fn de_group_version<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GroupVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GroupVersion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

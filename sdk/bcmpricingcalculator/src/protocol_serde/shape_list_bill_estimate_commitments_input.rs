@@ -2,7 +2,7 @@
 pub fn ser_list_bill_estimate_commitments_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_bill_estimate_commitments::ListBillEstimateCommitmentsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bill_estimate_id {
         object.key("billEstimateId").string(var_1.as_str());
     }

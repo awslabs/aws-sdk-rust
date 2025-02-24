@@ -2,7 +2,7 @@
 pub fn ser_aws_managed_rules_acfp_rule_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsManagedRulesAcfpRuleSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CreationPath").string(input.creation_path.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_aws_managed_rules_acfp_rule_set(
 
 pub(crate) fn de_aws_managed_rules_acfp_rule_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsManagedRulesAcfpRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsManagedRulesAcfpRuleSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

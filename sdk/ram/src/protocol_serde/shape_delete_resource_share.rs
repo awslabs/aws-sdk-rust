@@ -186,7 +186,7 @@ pub fn de_delete_resource_share_http_response(
 pub(crate) fn de_delete_resource_share(
     value: &[u8],
     mut builder: crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_resource_share::builders::DeleteResourceShareOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

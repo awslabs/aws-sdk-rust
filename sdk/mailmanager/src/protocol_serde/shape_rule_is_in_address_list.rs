@@ -2,7 +2,7 @@
 pub fn ser_rule_is_in_address_list(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleIsInAddressList,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Attribute").string(input.attribute.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_rule_is_in_address_list(
 
 pub(crate) fn de_rule_is_in_address_list<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleIsInAddressList>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RuleIsInAddressList>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

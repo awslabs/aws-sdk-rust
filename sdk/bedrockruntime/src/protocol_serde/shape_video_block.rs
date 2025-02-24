@@ -2,7 +2,7 @@
 pub fn ser_video_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VideoBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("format").string(input.format.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_video_block(
 
 pub(crate) fn de_video_block<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VideoBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VideoBlock>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

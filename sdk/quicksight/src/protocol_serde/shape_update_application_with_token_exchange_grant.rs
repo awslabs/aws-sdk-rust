@@ -167,7 +167,7 @@ pub fn de_update_application_with_token_exchange_grant_http_response(
 pub(crate) fn de_update_application_with_token_exchange_grant(
     value: &[u8],
     mut builder: crate::operation::update_application_with_token_exchange_grant::builders::UpdateApplicationWithTokenExchangeGrantOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_application_with_token_exchange_grant::builders::UpdateApplicationWithTokenExchangeGrantOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_conformance_pack_evaluation_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConformancePackEvaluationFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.config_rule_names {
         let mut array_2 = object.key("ConfigRuleNames").start_array();
         for item_3 in var_1 {

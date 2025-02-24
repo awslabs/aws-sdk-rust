@@ -39,7 +39,7 @@ pub fn de_enable_allowed_images_settings_http_response(
 pub fn de_enable_allowed_images_settings(
     inp: &[u8],
     mut builder: crate::operation::enable_allowed_images_settings::builders::EnableAllowedImagesSettingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::enable_allowed_images_settings::builders::EnableAllowedImagesSettingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

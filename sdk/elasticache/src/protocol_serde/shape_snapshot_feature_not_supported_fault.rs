@@ -3,7 +3,7 @@
 pub fn de_snapshot_feature_not_supported_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::SnapshotFeatureNotSupportedFaultBuilder,
-) -> Result<crate::types::error::builders::SnapshotFeatureNotSupportedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::SnapshotFeatureNotSupportedFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

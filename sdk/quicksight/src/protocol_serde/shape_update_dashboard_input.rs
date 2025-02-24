@@ -2,7 +2,7 @@
 pub fn ser_update_dashboard_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_dashboard::UpdateDashboardInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dashboard_publish_options {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DashboardPublishOptions").start_object();

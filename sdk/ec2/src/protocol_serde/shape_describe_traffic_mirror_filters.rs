@@ -39,7 +39,7 @@ pub fn de_describe_traffic_mirror_filters_http_response(
 pub fn de_describe_traffic_mirror_filters(
     inp: &[u8],
     mut builder: crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_traffic_mirror_filters::builders::DescribeTrafficMirrorFiltersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

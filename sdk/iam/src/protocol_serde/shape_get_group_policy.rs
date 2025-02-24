@@ -73,7 +73,7 @@ pub fn de_get_group_policy_http_response(
 pub fn de_get_group_policy(
     inp: &[u8],
     mut builder: crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder,
-) -> Result<crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_group_policy::builders::GetGroupPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

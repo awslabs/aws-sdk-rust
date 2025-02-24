@@ -175,7 +175,7 @@ pub fn de_detect_protective_equipment_http_response(
 
 pub fn ser_detect_protective_equipment_input(
     input: &crate::operation::detect_protective_equipment::DetectProtectiveEquipmentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_detect_protective_equipment_input::ser_detect_protective_equipment_input_input(&mut object, input)?;
@@ -186,7 +186,7 @@ pub fn ser_detect_protective_equipment_input(
 pub(crate) fn de_detect_protective_equipment(
     value: &[u8],
     mut builder: crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

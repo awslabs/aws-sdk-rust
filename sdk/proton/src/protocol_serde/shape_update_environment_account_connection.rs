@@ -141,7 +141,7 @@ pub fn de_update_environment_account_connection_http_response(
 
 pub fn ser_update_environment_account_connection_input(
     input: &crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_environment_account_connection_input::ser_update_environment_account_connection_input_input(
@@ -155,7 +155,7 @@ pub fn ser_update_environment_account_connection_input(
 pub(crate) fn de_update_environment_account_connection(
     value: &[u8],
     mut builder: crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_environment_account_connection::builders::UpdateEnvironmentAccountConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

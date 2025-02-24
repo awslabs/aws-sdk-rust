@@ -2,7 +2,7 @@
 pub fn ser_global_secondary_index(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalSecondaryIndex,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IndexName").string(input.index_name.as_str());
     }
@@ -47,7 +47,7 @@ pub fn ser_global_secondary_index(
 
 pub(crate) fn de_global_secondary_index<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GlobalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GlobalSecondaryIndex>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

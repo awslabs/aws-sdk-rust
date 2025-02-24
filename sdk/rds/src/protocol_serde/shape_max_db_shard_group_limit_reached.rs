@@ -3,7 +3,7 @@
 pub fn de_max_db_shard_group_limit_reached_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::MaxDbShardGroupLimitReachedBuilder,
-) -> Result<crate::types::error::builders::MaxDbShardGroupLimitReachedBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::MaxDbShardGroupLimitReachedBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

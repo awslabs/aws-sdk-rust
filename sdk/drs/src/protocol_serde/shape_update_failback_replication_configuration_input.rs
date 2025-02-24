@@ -2,7 +2,7 @@
 pub fn ser_update_failback_replication_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bandwidth_throttling {
         object.key("bandwidthThrottling").number(
             #[allow(clippy::useless_conversion)]

@@ -2,7 +2,7 @@
 pub fn ser_batch_list_object_parents(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchListObjectParents,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.object_reference {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ObjectReference").start_object();

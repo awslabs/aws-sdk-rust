@@ -91,7 +91,7 @@ pub fn de_list_violation_events_http_response(
 pub(crate) fn de_list_violation_events(
     value: &[u8],
     mut builder: crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

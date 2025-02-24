@@ -2,7 +2,7 @@
 pub fn ser_message_system_attribute_value(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MessageSystemAttributeValue,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.string_value {
         object.key("StringValue").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_revoked_security_group_rule(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::RevokedSecurityGroupRule, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::RevokedSecurityGroupRule, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::RevokedSecurityGroupRule::builder();
     while let Some(mut tag) = decoder.next_tag() {

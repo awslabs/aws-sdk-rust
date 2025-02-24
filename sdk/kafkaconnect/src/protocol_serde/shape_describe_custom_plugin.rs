@@ -153,7 +153,7 @@ pub fn de_describe_custom_plugin_http_response(
 pub(crate) fn de_describe_custom_plugin(
     value: &[u8],
     mut builder: crate::operation::describe_custom_plugin::builders::DescribeCustomPluginOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_custom_plugin::builders::DescribeCustomPluginOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

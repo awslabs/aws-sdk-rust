@@ -182,7 +182,7 @@ pub fn de_upgrade_applied_schema_http_response(
 
 pub fn ser_upgrade_applied_schema_input(
     input: &crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_upgrade_applied_schema_input::ser_upgrade_applied_schema_input_input(&mut object, input)?;
@@ -193,7 +193,7 @@ pub fn ser_upgrade_applied_schema_input(
 pub(crate) fn de_upgrade_applied_schema(
     value: &[u8],
     mut builder: crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

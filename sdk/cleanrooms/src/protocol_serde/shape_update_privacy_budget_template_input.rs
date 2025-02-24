@@ -2,7 +2,7 @@
 pub fn ser_update_privacy_budget_template_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.parameters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("parameters").start_object();

@@ -39,7 +39,7 @@ pub fn de_enable_image_block_public_access_http_response(
 pub fn de_enable_image_block_public_access(
     inp: &[u8],
     mut builder: crate::operation::enable_image_block_public_access::builders::EnableImageBlockPublicAccessOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::enable_image_block_public_access::builders::EnableImageBlockPublicAccessOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

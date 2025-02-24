@@ -109,7 +109,7 @@ pub fn de_describe_model_http_response(
 
 pub fn ser_describe_model_input(
     input: &crate::operation::describe_model::DescribeModelInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_model_input::ser_describe_model_input_input(&mut object, input)?;
@@ -120,7 +120,10 @@ pub fn ser_describe_model_input(
 pub(crate) fn de_describe_model(
     value: &[u8],
     mut builder: crate::operation::describe_model::builders::DescribeModelOutputBuilder,
-) -> Result<crate::operation::describe_model::builders::DescribeModelOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::describe_model::builders::DescribeModelOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

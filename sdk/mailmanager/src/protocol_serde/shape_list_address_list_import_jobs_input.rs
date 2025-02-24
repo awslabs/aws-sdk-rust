@@ -2,7 +2,7 @@
 pub fn ser_list_address_list_import_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_address_list_import_jobs::ListAddressListImportJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.address_list_id {
         object.key("AddressListId").string(var_1.as_str());
     }

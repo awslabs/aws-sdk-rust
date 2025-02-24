@@ -131,7 +131,7 @@ pub fn de_describe_test_execution_http_response(
 pub(crate) fn de_describe_test_execution(
     value: &[u8],
     mut builder: crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_test_execution::builders::DescribeTestExecutionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

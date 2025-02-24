@@ -138,7 +138,7 @@ pub fn de_delete_outpost_resolver_http_response(
 
 pub fn ser_delete_outpost_resolver_input(
     input: &crate::operation::delete_outpost_resolver::DeleteOutpostResolverInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_outpost_resolver_input::ser_delete_outpost_resolver_input_input(&mut object, input)?;
@@ -149,7 +149,7 @@ pub fn ser_delete_outpost_resolver_input(
 pub(crate) fn de_delete_outpost_resolver(
     value: &[u8],
     mut builder: crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_outpost_resolver::builders::DeleteOutpostResolverOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

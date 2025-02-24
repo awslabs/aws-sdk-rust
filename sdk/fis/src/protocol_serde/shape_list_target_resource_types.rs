@@ -65,7 +65,7 @@ pub fn de_list_target_resource_types_http_response(
 pub(crate) fn de_list_target_resource_types(
     value: &[u8],
     mut builder: crate::operation::list_target_resource_types::builders::ListTargetResourceTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_target_resource_types::builders::ListTargetResourceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

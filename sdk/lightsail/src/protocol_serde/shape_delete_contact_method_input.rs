@@ -2,7 +2,7 @@
 pub fn ser_delete_contact_method_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_contact_method::DeleteContactMethodInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.protocol {
         object.key("protocol").string(var_1.as_str());
     }

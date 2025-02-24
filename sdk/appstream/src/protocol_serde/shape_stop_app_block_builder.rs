@@ -96,7 +96,7 @@ pub fn de_stop_app_block_builder_http_response(
 
 pub fn ser_stop_app_block_builder_input(
     input: &crate::operation::stop_app_block_builder::StopAppBlockBuilderInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_app_block_builder_input::ser_stop_app_block_builder_input_input(&mut object, input)?;
@@ -107,7 +107,7 @@ pub fn ser_stop_app_block_builder_input(
 pub(crate) fn de_stop_app_block_builder(
     value: &[u8],
     mut builder: crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_app_block_builder::builders::StopAppBlockBuilderOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

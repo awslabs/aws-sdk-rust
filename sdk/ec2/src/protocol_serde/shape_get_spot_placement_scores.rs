@@ -39,7 +39,10 @@ pub fn de_get_spot_placement_scores_http_response(
 pub fn de_get_spot_placement_scores(
     inp: &[u8],
     mut builder: crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresOutputBuilder,
-) -> Result<crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

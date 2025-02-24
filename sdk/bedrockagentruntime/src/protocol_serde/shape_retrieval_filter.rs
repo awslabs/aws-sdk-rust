@@ -2,7 +2,7 @@
 pub fn ser_retrieval_filter(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RetrievalFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RetrievalFilter::Equals(inner) => {
             #[allow(unused_mut)]

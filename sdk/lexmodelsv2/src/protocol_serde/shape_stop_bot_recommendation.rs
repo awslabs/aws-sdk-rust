@@ -162,7 +162,7 @@ pub fn de_stop_bot_recommendation_http_response(
 pub(crate) fn de_stop_bot_recommendation(
     value: &[u8],
     mut builder: crate::operation::stop_bot_recommendation::builders::StopBotRecommendationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_bot_recommendation::builders::StopBotRecommendationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

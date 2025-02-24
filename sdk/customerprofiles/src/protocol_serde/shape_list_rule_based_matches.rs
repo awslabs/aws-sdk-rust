@@ -121,7 +121,7 @@ pub fn de_list_rule_based_matches_http_response(
 pub(crate) fn de_list_rule_based_matches(
     value: &[u8],
     mut builder: crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_rule_based_matches::builders::ListRuleBasedMatchesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

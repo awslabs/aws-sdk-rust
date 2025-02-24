@@ -2,7 +2,7 @@
 pub fn ser_data_lake_access_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataLakeAccessProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.data_lake_access {
         object.key("DataLakeAccess").boolean(input.data_lake_access);
     }

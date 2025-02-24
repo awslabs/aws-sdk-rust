@@ -2,7 +2,7 @@
 pub fn ser_rule_group_source_stateless_rule_match_attributes_destination_ports(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.from_port {
         object.key("FromPort").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,10 @@ pub fn ser_rule_group_source_stateless_rule_match_attributes_destination_ports(
 
 pub(crate) fn de_rule_group_source_stateless_rule_match_attributes_destination_ports<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_batch_disable_alarm_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_disable_alarm::BatchDisableAlarmInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.disable_action_requests {
         let mut array_2 = object.key("disableActionRequests").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_finding_provider_fields(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FindingProviderFields,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.confidence {
         object.key("Confidence").number(
             #[allow(clippy::useless_conversion)]
@@ -47,7 +47,7 @@ pub fn ser_finding_provider_fields(
 
 pub(crate) fn de_finding_provider_fields<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FindingProviderFields>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FindingProviderFields>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

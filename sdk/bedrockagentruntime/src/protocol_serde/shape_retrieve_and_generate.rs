@@ -185,7 +185,7 @@ pub fn de_retrieve_and_generate_http_response(
 
 pub fn ser_retrieve_and_generate_input(
     input: &crate::operation::retrieve_and_generate::RetrieveAndGenerateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_retrieve_and_generate_input::ser_retrieve_and_generate_input_input(&mut object, input)?;
@@ -196,7 +196,7 @@ pub fn ser_retrieve_and_generate_input(
 pub(crate) fn de_retrieve_and_generate(
     value: &[u8],
     mut builder: crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::retrieve_and_generate::builders::RetrieveAndGenerateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

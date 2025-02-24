@@ -2,7 +2,7 @@
 pub(crate) fn de_provisioned_concurrency_config_not_found_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::ProvisionedConcurrencyConfigNotFoundExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::ProvisionedConcurrencyConfigNotFoundExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

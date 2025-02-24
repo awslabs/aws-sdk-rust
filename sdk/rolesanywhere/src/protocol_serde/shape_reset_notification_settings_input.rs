@@ -2,7 +2,7 @@
 pub fn ser_reset_notification_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reset_notification_settings::ResetNotificationSettingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notification_setting_keys {
         let mut array_2 = object.key("notificationSettingKeys").start_array();
         for item_3 in var_1 {

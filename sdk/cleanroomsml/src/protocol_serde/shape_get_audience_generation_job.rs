@@ -94,7 +94,7 @@ pub fn de_get_audience_generation_job_http_response(
 pub(crate) fn de_get_audience_generation_job(
     value: &[u8],
     mut builder: crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_audience_generation_job::builders::GetAudienceGenerationJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

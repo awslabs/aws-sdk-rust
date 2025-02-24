@@ -2,7 +2,7 @@
 pub fn ser_storage_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StorageConfigRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.block_storage {
         #[allow(unused_mut)]
         let mut object_2 = object.key("blockStorage").start_object();

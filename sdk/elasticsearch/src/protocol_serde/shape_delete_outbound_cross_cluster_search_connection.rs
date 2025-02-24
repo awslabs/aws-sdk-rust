@@ -87,7 +87,7 @@ pub fn de_delete_outbound_cross_cluster_search_connection_http_response(
 pub(crate) fn de_delete_outbound_cross_cluster_search_connection(
     value: &[u8],
     mut builder: crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_outbound_cross_cluster_search_connection::builders::DeleteOutboundCrossClusterSearchConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

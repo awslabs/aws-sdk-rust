@@ -41,7 +41,7 @@ pub fn de_create_transit_gateway_multicast_domain_http_response(
 pub fn de_create_transit_gateway_multicast_domain(
     inp: &[u8],
     mut builder: crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

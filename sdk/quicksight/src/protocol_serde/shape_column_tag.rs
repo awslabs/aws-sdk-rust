@@ -2,7 +2,7 @@
 pub fn ser_column_tag(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColumnTag,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.column_geographic_role {
         object.key("ColumnGeographicRole").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_column_tag(
 
 pub(crate) fn de_column_tag<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ColumnTag>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ColumnTag>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

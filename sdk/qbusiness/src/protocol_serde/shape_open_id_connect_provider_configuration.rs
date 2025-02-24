@@ -2,7 +2,7 @@
 pub fn ser_open_id_connect_provider_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpenIdConnectProviderConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("secretsArn").string(input.secrets_arn.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_open_id_connect_provider_configuration(
 
 pub(crate) fn de_open_id_connect_provider_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OpenIdConnectProviderConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OpenIdConnectProviderConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

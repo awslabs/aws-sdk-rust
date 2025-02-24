@@ -2,7 +2,7 @@
 pub fn ser_update_user_hierarchy_structure_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hierarchy_structure {
         #[allow(unused_mut)]
         let mut object_2 = object.key("HierarchyStructure").start_object();

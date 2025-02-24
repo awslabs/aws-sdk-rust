@@ -64,7 +64,8 @@ pub fn de_list_account_aliases_http_response(
 pub fn de_list_account_aliases(
     inp: &[u8],
     mut builder: crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder,
-) -> Result<crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_account_aliases::builders::ListAccountAliasesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

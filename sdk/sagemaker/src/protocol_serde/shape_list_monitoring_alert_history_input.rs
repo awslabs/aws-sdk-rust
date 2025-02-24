@@ -2,7 +2,7 @@
 pub fn ser_list_monitoring_alert_history_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.monitoring_schedule_name {
         object.key("MonitoringScheduleName").string(var_1.as_str());
     }

@@ -80,7 +80,7 @@ pub fn de_get_collaboration_configured_model_algorithm_association_http_response
     })
 }
 
-pub(crate) fn de_get_collaboration_configured_model_algorithm_association(value: &[u8], mut builder: crate::operation::get_collaboration_configured_model_algorithm_association::builders::GetCollaborationConfiguredModelAlgorithmAssociationOutputBuilder) -> Result<crate::operation::get_collaboration_configured_model_algorithm_association::builders::GetCollaborationConfiguredModelAlgorithmAssociationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+pub(crate) fn de_get_collaboration_configured_model_algorithm_association(value: &[u8], mut builder: crate::operation::get_collaboration_configured_model_algorithm_association::builders::GetCollaborationConfiguredModelAlgorithmAssociationOutputBuilder) -> ::std::result::Result<crate::operation::get_collaboration_configured_model_algorithm_association::builders::GetCollaborationConfiguredModelAlgorithmAssociationOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

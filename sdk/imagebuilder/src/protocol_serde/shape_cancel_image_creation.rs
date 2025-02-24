@@ -175,7 +175,7 @@ pub fn de_cancel_image_creation_http_response(
 
 pub fn ser_cancel_image_creation_input(
     input: &crate::operation::cancel_image_creation::CancelImageCreationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_image_creation_input::ser_cancel_image_creation_input_input(&mut object, input)?;
@@ -186,7 +186,7 @@ pub fn ser_cancel_image_creation_input(
 pub(crate) fn de_cancel_image_creation(
     value: &[u8],
     mut builder: crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_image_creation::builders::CancelImageCreationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

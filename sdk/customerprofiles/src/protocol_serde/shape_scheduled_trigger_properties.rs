@@ -2,7 +2,7 @@
 pub fn ser_scheduled_trigger_properties(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScheduledTriggerProperties,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ScheduleExpression").string(input.schedule_expression.as_str());
     }

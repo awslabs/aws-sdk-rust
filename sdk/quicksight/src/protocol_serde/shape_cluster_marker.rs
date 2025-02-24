@@ -2,7 +2,7 @@
 pub fn ser_cluster_marker(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClusterMarker,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simple_cluster_marker {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SimpleClusterMarker").start_object();
@@ -14,7 +14,7 @@ pub fn ser_cluster_marker(
 
 pub(crate) fn de_cluster_marker<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ClusterMarker>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ClusterMarker>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

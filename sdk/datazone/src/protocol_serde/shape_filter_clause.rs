@@ -2,7 +2,7 @@
 pub fn ser_filter_clause(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FilterClause,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FilterClause::Filter(inner) => {
             #[allow(unused_mut)]

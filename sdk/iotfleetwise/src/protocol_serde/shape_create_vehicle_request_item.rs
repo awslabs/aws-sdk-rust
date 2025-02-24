@@ -2,7 +2,7 @@
 pub fn ser_create_vehicle_request_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CreateVehicleRequestItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("vehicleName").string(input.vehicle_name.as_str());
     }

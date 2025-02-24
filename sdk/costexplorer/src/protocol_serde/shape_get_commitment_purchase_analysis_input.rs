@@ -2,7 +2,7 @@
 pub fn ser_get_commitment_purchase_analysis_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_commitment_purchase_analysis::GetCommitmentPurchaseAnalysisInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.analysis_id {
         object.key("AnalysisId").string(var_1.as_str());
     }

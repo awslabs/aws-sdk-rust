@@ -88,7 +88,7 @@ pub fn de_list_hosted_zones_http_response(
 pub fn de_list_hosted_zones(
     inp: &[u8],
     mut builder: crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder,
-) -> Result<crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_aws_secrets_manager_secret_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSecretsManagerSecretDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rotation_rules {
         #[allow(unused_mut)]
         let mut object_2 = object.key("RotationRules").start_object();
@@ -35,7 +35,7 @@ pub fn ser_aws_secrets_manager_secret_details(
 
 pub(crate) fn de_aws_secrets_manager_secret_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsSecretsManagerSecretDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsSecretsManagerSecretDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

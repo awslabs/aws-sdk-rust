@@ -2,7 +2,7 @@
 pub fn ser_can_dbc_definition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CanDbcDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("networkInterface").string(input.network_interface.as_str());
     }

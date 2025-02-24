@@ -2,7 +2,7 @@
 pub fn ser_probabilistic_rule_value_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProbabilisticRuleValueUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DesiredSamplingPercentage").number(
             #[allow(clippy::useless_conversion)]

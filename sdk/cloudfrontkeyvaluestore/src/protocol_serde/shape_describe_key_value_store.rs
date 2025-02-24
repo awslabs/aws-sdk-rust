@@ -113,7 +113,7 @@ pub fn de_describe_key_value_store_http_response(
 pub(crate) fn de_describe_key_value_store(
     value: &[u8],
     mut builder: crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_key_value_store::builders::DescribeKeyValueStoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

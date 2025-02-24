@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_inventory_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InventoryEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InventoryEncryption, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InventoryEncryption::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -36,7 +36,7 @@ pub fn de_inventory_encryption(
 pub fn ser_inventory_encryption(
     input: &crate::types::InventoryEncryption,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(_var_3) = &input.sses3 {

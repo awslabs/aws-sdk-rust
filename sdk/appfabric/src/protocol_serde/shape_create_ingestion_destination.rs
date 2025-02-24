@@ -148,7 +148,7 @@ pub fn de_create_ingestion_destination_http_response(
 
 pub fn ser_create_ingestion_destination_input(
     input: &crate::operation::create_ingestion_destination::CreateIngestionDestinationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_ingestion_destination_input::ser_create_ingestion_destination_input_input(&mut object, input)?;
@@ -159,7 +159,7 @@ pub fn ser_create_ingestion_destination_input(
 pub(crate) fn de_create_ingestion_destination(
     value: &[u8],
     mut builder: crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_ingestion_destination::builders::CreateIngestionDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

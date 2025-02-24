@@ -109,7 +109,7 @@ pub fn de_list_composition_relationships_http_response(
 pub(crate) fn de_list_composition_relationships(
     value: &[u8],
     mut builder: crate::operation::list_composition_relationships::builders::ListCompositionRelationshipsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_composition_relationships::builders::ListCompositionRelationshipsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

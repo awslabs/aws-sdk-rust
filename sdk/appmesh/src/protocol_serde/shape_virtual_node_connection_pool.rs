@@ -2,7 +2,7 @@
 pub fn ser_virtual_node_connection_pool(
     object_12: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualNodeConnectionPool,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VirtualNodeConnectionPool::Tcp(inner) => {
             #[allow(unused_mut)]
@@ -39,7 +39,7 @@ pub fn ser_virtual_node_connection_pool(
 
 pub(crate) fn de_virtual_node_connection_pool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VirtualNodeConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VirtualNodeConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

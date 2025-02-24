@@ -100,7 +100,7 @@ pub fn de_list_assessment_framework_share_requests_http_response(
 pub(crate) fn de_list_assessment_framework_share_requests(
     value: &[u8],
     mut builder: crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

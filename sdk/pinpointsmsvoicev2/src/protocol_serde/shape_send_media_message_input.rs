@@ -2,7 +2,7 @@
 pub fn ser_send_media_message_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_media_message::SendMediaMessageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.destination_phone_number {
         object.key("DestinationPhoneNumber").string(var_1.as_str());
     }

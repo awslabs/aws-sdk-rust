@@ -2,7 +2,7 @@
 pub fn ser_property_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PropertyRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.definition {
         #[allow(unused_mut)]
         let mut object_2 = object.key("definition").start_object();

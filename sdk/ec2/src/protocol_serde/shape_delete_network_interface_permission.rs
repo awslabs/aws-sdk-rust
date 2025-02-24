@@ -39,7 +39,7 @@ pub fn de_delete_network_interface_permission_http_response(
 pub fn de_delete_network_interface_permission(
     inp: &[u8],
     mut builder: crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

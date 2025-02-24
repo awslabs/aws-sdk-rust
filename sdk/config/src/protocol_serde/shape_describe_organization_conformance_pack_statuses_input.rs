@@ -2,7 +2,7 @@
 pub fn ser_describe_organization_conformance_pack_statuses_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_organization_conformance_pack_statuses::DescribeOrganizationConformancePackStatusesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.organization_conformance_pack_names {
         let mut array_2 = object.key("OrganizationConformancePackNames").start_array();
         for item_3 in var_1 {

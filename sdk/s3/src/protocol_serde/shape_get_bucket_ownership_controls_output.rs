@@ -13,7 +13,7 @@ pub(crate) fn de_ownership_controls_payload(
         .transpose()
 }
 
-pub fn de_ownership_controls(inp: &[u8]) -> Result<crate::types::OwnershipControls, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_ownership_controls(inp: &[u8]) -> std::result::Result<crate::types::OwnershipControls, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -79,7 +79,7 @@ pub fn de_list_cost_allocation_tags_http_response(
 
 pub fn ser_list_cost_allocation_tags_input(
     input: &crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_cost_allocation_tags_input::ser_list_cost_allocation_tags_input_input(&mut object, input)?;
@@ -90,7 +90,7 @@ pub fn ser_list_cost_allocation_tags_input(
 pub(crate) fn de_list_cost_allocation_tags(
     value: &[u8],
     mut builder: crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

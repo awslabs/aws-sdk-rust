@@ -2,7 +2,7 @@
 pub fn ser_protect_configuration_rule_set_number_override_filter_item(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtectConfigurationRuleSetNumberOverrideFilterItem,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Name").string(input.name.as_str());
     }

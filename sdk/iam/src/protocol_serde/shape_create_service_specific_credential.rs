@@ -97,7 +97,7 @@ pub fn de_create_service_specific_credential_http_response(
 pub fn de_create_service_specific_credential(
     inp: &[u8],
     mut builder: crate::operation::create_service_specific_credential::builders::CreateServiceSpecificCredentialOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_service_specific_credential::builders::CreateServiceSpecificCredentialOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

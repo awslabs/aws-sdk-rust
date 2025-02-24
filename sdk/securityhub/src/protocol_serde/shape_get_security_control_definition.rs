@@ -124,7 +124,7 @@ pub fn de_get_security_control_definition_http_response(
 pub(crate) fn de_get_security_control_definition(
     value: &[u8],
     mut builder: crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_security_control_definition::builders::GetSecurityControlDefinitionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

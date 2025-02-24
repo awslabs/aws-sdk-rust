@@ -110,7 +110,7 @@ pub fn de_list_protected_resources_by_backup_vault_http_response(
 pub(crate) fn de_list_protected_resources_by_backup_vault(
     value: &[u8],
     mut builder: crate::operation::list_protected_resources_by_backup_vault::builders::ListProtectedResourcesByBackupVaultOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_protected_resources_by_backup_vault::builders::ListProtectedResourcesByBackupVaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

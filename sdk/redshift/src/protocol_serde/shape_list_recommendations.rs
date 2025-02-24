@@ -77,7 +77,8 @@ pub fn de_list_recommendations_http_response(
 pub fn de_list_recommendations(
     inp: &[u8],
     mut builder: crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder,
-) -> Result<crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_recommendations::builders::ListRecommendationsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

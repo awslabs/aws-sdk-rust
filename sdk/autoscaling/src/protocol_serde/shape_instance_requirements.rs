@@ -3,7 +3,7 @@
 pub fn ser_instance_requirements(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstanceRequirements,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("VCpuCount");
     if let Some(var_2) = &input.v_cpu_count {
@@ -192,7 +192,7 @@ pub fn ser_instance_requirements(
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_requirements(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InstanceRequirements, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InstanceRequirements, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceRequirements::builder();
     while let Some(mut tag) = decoder.next_tag() {

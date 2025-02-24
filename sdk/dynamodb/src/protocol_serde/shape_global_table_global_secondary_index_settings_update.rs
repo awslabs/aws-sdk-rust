@@ -2,7 +2,7 @@
 pub fn ser_global_table_global_secondary_index_settings_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("IndexName").string(input.index_name.as_str());
     }

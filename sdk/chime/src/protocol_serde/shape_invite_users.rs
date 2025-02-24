@@ -146,7 +146,7 @@ pub fn de_invite_users_http_response(
 
 pub fn ser_invite_users_input(
     input: &crate::operation::invite_users::InviteUsersInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_invite_users_input::ser_invite_users_input_input(&mut object, input)?;
@@ -157,7 +157,8 @@ pub fn ser_invite_users_input(
 pub(crate) fn de_invite_users(
     value: &[u8],
     mut builder: crate::operation::invite_users::builders::InviteUsersOutputBuilder,
-) -> Result<crate::operation::invite_users::builders::InviteUsersOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<crate::operation::invite_users::builders::InviteUsersOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
+{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

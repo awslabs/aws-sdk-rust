@@ -132,7 +132,7 @@ pub fn de_get_environment_profile_http_response(
 pub(crate) fn de_get_environment_profile(
     value: &[u8],
     mut builder: crate::operation::get_environment_profile::builders::GetEnvironmentProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_environment_profile::builders::GetEnvironmentProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

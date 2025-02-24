@@ -2,7 +2,7 @@
 pub fn ser_before_entry_conditions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BeforeEntryConditions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("conditions").start_array();
         for item_2 in &input.conditions {
@@ -20,7 +20,7 @@ pub fn ser_before_entry_conditions(
 
 pub(crate) fn de_before_entry_conditions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BeforeEntryConditions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BeforeEntryConditions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

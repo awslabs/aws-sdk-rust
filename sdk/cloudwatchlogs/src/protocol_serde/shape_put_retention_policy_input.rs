@@ -2,7 +2,7 @@
 pub fn ser_put_retention_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_retention_policy::PutRetentionPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }

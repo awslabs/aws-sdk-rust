@@ -179,7 +179,7 @@ pub fn ser_describe_channel_membership_headers(
 pub(crate) fn de_describe_channel_membership(
     value: &[u8],
     mut builder: crate::operation::describe_channel_membership::builders::DescribeChannelMembershipOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_channel_membership::builders::DescribeChannelMembershipOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

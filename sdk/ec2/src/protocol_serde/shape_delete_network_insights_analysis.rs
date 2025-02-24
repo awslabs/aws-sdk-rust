@@ -39,7 +39,7 @@ pub fn de_delete_network_insights_analysis_http_response(
 pub fn de_delete_network_insights_analysis(
     inp: &[u8],
     mut builder: crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

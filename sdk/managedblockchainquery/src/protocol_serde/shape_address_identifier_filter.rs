@@ -2,7 +2,7 @@
 pub fn ser_address_identifier_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AddressIdentifierFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("transactionEventToAddress").start_array();
         for item_2 in &input.transaction_event_to_address {

@@ -110,7 +110,7 @@ pub fn de_describe_contact_evaluation_http_response(
 pub(crate) fn de_describe_contact_evaluation(
     value: &[u8],
     mut builder: crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

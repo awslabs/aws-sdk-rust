@@ -84,7 +84,7 @@ pub fn de_modify_cluster_parameter_group_http_response(
 pub fn de_modify_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_cluster_parameter_group::builders::ModifyClusterParameterGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

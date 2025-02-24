@@ -136,7 +136,7 @@ pub fn de_list_environment_blueprints_http_response(
 pub(crate) fn de_list_environment_blueprints(
     value: &[u8],
     mut builder: crate::operation::list_environment_blueprints::builders::ListEnvironmentBlueprintsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_environment_blueprints::builders::ListEnvironmentBlueprintsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

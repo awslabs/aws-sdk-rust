@@ -2,7 +2,7 @@
 pub fn ser_create_campaign_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_campaign::CreateCampaignInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_subtype_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("channelSubtypeConfig").start_object();

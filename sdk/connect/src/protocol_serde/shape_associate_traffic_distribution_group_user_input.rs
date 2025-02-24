@@ -2,7 +2,7 @@
 pub fn ser_associate_traffic_distribution_group_user_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_traffic_distribution_group_user::AssociateTrafficDistributionGroupUserInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_id {
         object.key("InstanceId").string(var_1.as_str());
     }

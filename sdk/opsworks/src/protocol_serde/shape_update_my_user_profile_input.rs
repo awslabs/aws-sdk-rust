@@ -2,7 +2,7 @@
 pub fn ser_update_my_user_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_my_user_profile::UpdateMyUserProfileInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ssh_public_key {
         object.key("SshPublicKey").string(var_1.as_str());
     }

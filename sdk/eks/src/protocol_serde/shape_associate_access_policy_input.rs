@@ -2,7 +2,7 @@
 pub fn ser_associate_access_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_access_policy::AssociateAccessPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_scope {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accessScope").start_object();

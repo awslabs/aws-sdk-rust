@@ -92,7 +92,7 @@ pub fn de_list_configured_model_algorithm_associations_http_response(
 pub(crate) fn de_list_configured_model_algorithm_associations(
     value: &[u8],
     mut builder: crate::operation::list_configured_model_algorithm_associations::builders::ListConfiguredModelAlgorithmAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_configured_model_algorithm_associations::builders::ListConfiguredModelAlgorithmAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

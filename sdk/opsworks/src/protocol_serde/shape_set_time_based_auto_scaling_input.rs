@@ -2,7 +2,7 @@
 pub fn ser_set_time_based_auto_scaling_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_id {
         object.key("InstanceId").string(var_1.as_str());
     }

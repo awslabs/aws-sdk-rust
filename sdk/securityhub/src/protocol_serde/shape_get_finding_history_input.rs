@@ -2,7 +2,7 @@
 pub fn ser_get_finding_history_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_finding_history::GetFindingHistoryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_time {
         object.key("EndTime").date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }

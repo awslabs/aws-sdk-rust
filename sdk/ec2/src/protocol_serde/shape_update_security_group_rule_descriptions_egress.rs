@@ -42,7 +42,7 @@ pub fn de_update_security_group_rule_descriptions_egress_http_response(
 pub fn de_update_security_group_rule_descriptions_egress(
     inp: &[u8],
     mut builder: crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

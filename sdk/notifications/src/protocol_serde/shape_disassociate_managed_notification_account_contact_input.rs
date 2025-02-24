@@ -2,7 +2,7 @@
 pub fn ser_disassociate_managed_notification_account_contact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_managed_notification_account_contact::DisassociateManagedNotificationAccountContactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.managed_notification_configuration_arn {
         object.key("managedNotificationConfigurationArn").string(var_1.as_str());
     }

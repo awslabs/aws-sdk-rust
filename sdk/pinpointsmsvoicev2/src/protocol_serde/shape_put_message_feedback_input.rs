@@ -2,7 +2,7 @@
 pub fn ser_put_message_feedback_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_message_feedback::PutMessageFeedbackInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.message_id {
         object.key("MessageId").string(var_1.as_str());
     }

@@ -125,7 +125,7 @@ pub fn de_get_cell_readiness_summary_http_response(
 pub(crate) fn de_get_cell_readiness_summary(
     value: &[u8],
     mut builder: crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_cell_readiness_summary::builders::GetCellReadinessSummaryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

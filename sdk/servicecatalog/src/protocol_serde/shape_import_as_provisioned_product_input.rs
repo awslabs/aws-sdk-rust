@@ -2,7 +2,7 @@
 pub fn ser_import_as_provisioned_product_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_as_provisioned_product::ImportAsProvisionedProductInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.accept_language {
         object.key("AcceptLanguage").string(var_1.as_str());
     }

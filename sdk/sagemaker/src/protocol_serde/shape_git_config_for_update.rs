@@ -2,7 +2,7 @@
 pub fn ser_git_config_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitConfigForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.secret_arn {
         object.key("SecretArn").string(var_1.as_str());
     }

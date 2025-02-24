@@ -2,7 +2,7 @@
 pub fn ser_storage_lens_aws_org(
     input: &crate::types::StorageLensAwsOrg,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -16,7 +16,7 @@ pub fn ser_storage_lens_aws_org(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_aws_org(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::StorageLensAwsOrg, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::StorageLensAwsOrg, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensAwsOrg::builder();
     while let Some(mut tag) = decoder.next_tag() {

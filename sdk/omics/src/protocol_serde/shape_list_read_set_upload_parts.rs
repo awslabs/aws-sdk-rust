@@ -171,7 +171,7 @@ pub fn de_list_read_set_upload_parts_http_response(
 
 pub fn ser_list_read_set_upload_parts_input(
     input: &crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_read_set_upload_parts_input::ser_list_read_set_upload_parts_input_input(&mut object, input)?;
@@ -182,7 +182,7 @@ pub fn ser_list_read_set_upload_parts_input(
 pub(crate) fn de_list_read_set_upload_parts(
     value: &[u8],
     mut builder: crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_read_set_upload_parts::builders::ListReadSetUploadPartsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

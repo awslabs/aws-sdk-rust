@@ -41,7 +41,7 @@ pub fn de_delete_traffic_mirror_session_http_response(
 pub fn de_delete_traffic_mirror_session(
     inp: &[u8],
     mut builder: crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_traffic_mirror_session::builders::DeleteTrafficMirrorSessionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_describe_subscription_filters_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.log_group_name {
         object.key("logGroupName").string(var_1.as_str());
     }

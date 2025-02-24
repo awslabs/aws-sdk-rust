@@ -43,7 +43,7 @@ pub fn de_delete_vpc_block_public_access_exclusion_http_response(
 pub fn de_delete_vpc_block_public_access_exclusion(
     inp: &[u8],
     mut builder: crate::operation::delete_vpc_block_public_access_exclusion::builders::DeleteVpcBlockPublicAccessExclusionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_vpc_block_public_access_exclusion::builders::DeleteVpcBlockPublicAccessExclusionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

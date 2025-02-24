@@ -132,7 +132,7 @@ pub fn de_list_test_run_test_cases_http_response(
 pub(crate) fn de_list_test_run_test_cases(
     value: &[u8],
     mut builder: crate::operation::list_test_run_test_cases::builders::ListTestRunTestCasesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_test_run_test_cases::builders::ListTestRunTestCasesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

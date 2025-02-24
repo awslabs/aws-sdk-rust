@@ -106,7 +106,7 @@ pub fn de_describe_audit_finding_http_response(
 pub(crate) fn de_describe_audit_finding(
     value: &[u8],
     mut builder: crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

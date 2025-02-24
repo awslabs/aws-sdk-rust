@@ -2,7 +2,7 @@
 pub(crate) fn de_maximum_rule_templates_associated_with_repository_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::MaximumRuleTemplatesAssociatedWithRepositoryExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

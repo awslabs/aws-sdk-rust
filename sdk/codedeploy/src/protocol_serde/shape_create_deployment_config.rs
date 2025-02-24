@@ -186,7 +186,7 @@ pub fn de_create_deployment_config_http_response(
 
 pub fn ser_create_deployment_config_input(
     input: &crate::operation::create_deployment_config::CreateDeploymentConfigInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_deployment_config_input::ser_create_deployment_config_input_input(&mut object, input)?;
@@ -197,7 +197,7 @@ pub fn ser_create_deployment_config_input(
 pub(crate) fn de_create_deployment_config(
     value: &[u8],
     mut builder: crate::operation::create_deployment_config::builders::CreateDeploymentConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_deployment_config::builders::CreateDeploymentConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

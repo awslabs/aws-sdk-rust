@@ -2,7 +2,7 @@
 pub fn ser_connected_home_settings_for_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectedHomeSettingsForUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.labels {
         let mut array_2 = object.key("Labels").start_array();
         for item_3 in var_1 {

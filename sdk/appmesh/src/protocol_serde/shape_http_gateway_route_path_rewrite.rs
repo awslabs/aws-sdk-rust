@@ -2,7 +2,7 @@
 pub fn ser_http_gateway_route_path_rewrite(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HttpGatewayRoutePathRewrite,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exact {
         object.key("exact").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_http_gateway_route_path_rewrite(
 
 pub(crate) fn de_http_gateway_route_path_rewrite<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HttpGatewayRoutePathRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HttpGatewayRoutePathRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

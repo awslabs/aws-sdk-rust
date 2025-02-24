@@ -130,7 +130,7 @@ pub fn de_list_types_by_association_http_response(
 pub(crate) fn de_list_types_by_association(
     value: &[u8],
     mut builder: crate::operation::list_types_by_association::builders::ListTypesByAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_types_by_association::builders::ListTypesByAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -142,7 +142,7 @@ pub fn de_modify_backup_attributes_http_response(
 
 pub fn ser_modify_backup_attributes_input(
     input: &crate::operation::modify_backup_attributes::ModifyBackupAttributesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_modify_backup_attributes_input::ser_modify_backup_attributes_input_input(&mut object, input)?;
@@ -153,7 +153,7 @@ pub fn ser_modify_backup_attributes_input(
 pub(crate) fn de_modify_backup_attributes(
     value: &[u8],
     mut builder: crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::modify_backup_attributes::builders::ModifyBackupAttributesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

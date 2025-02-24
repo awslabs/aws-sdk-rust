@@ -189,7 +189,7 @@ pub fn ser_start_model_packaging_job_headers(
 
 pub fn ser_start_model_packaging_job_input(
     input: &crate::operation::start_model_packaging_job::StartModelPackagingJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_model_packaging_job_input::ser_start_model_packaging_job_input_input(&mut object, input)?;
@@ -200,7 +200,7 @@ pub fn ser_start_model_packaging_job_input(
 pub(crate) fn de_start_model_packaging_job(
     value: &[u8],
     mut builder: crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_model_packaging_job::builders::StartModelPackagingJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

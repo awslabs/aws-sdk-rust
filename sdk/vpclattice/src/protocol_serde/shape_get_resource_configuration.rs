@@ -134,7 +134,7 @@ pub fn de_get_resource_configuration_http_response(
 pub(crate) fn de_get_resource_configuration(
     value: &[u8],
     mut builder: crate::operation::get_resource_configuration::builders::GetResourceConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_resource_configuration::builders::GetResourceConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

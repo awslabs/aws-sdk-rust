@@ -2,7 +2,7 @@
 pub fn ser_redshift_data_share_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RedshiftDataShareDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Arn").string(input.arn.as_str());
     }

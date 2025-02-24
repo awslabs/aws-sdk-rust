@@ -152,7 +152,7 @@ pub fn de_list_available_voice_connector_regions_http_response(
 pub(crate) fn de_list_available_voice_connector_regions(
     value: &[u8],
     mut builder: crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_available_voice_connector_regions::builders::ListAvailableVoiceConnectorRegionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

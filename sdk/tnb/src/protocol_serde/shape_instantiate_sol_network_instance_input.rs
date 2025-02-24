@@ -2,7 +2,7 @@
 pub fn ser_instantiate_sol_network_instance_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_params_for_ns {
         object.key("additionalParamsForNs").document(var_1);
     }

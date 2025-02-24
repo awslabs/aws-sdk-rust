@@ -2,7 +2,7 @@
 pub fn ser_get_evaluation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_evaluation::GetEvaluationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.evaluation_id {
         object.key("EvaluationId").string(var_1.as_str());
     }

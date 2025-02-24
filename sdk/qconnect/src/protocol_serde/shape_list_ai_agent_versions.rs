@@ -108,7 +108,7 @@ pub fn de_list_ai_agent_versions_http_response(
 pub(crate) fn de_list_ai_agent_versions(
     value: &[u8],
     mut builder: crate::operation::list_ai_agent_versions::builders::ListAiAgentVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_ai_agent_versions::builders::ListAiAgentVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

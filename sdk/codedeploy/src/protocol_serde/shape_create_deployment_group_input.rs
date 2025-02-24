@@ -2,7 +2,7 @@
 pub fn ser_create_deployment_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_deployment_group::CreateDeploymentGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.application_name {
         object.key("applicationName").string(var_1.as_str());
     }

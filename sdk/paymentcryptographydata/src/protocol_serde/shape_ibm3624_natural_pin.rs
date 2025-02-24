@@ -2,7 +2,7 @@
 pub fn ser_ibm3624_natural_pin(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ibm3624NaturalPin,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DecimalizationTable").string(input.decimalization_table.as_str());
     }

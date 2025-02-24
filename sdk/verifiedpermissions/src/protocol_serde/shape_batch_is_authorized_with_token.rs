@@ -120,7 +120,7 @@ pub fn de_batch_is_authorized_with_token_http_response(
 
 pub fn ser_batch_is_authorized_with_token_input(
     input: &crate::operation::batch_is_authorized_with_token::BatchIsAuthorizedWithTokenInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_is_authorized_with_token_input::ser_batch_is_authorized_with_token_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_batch_is_authorized_with_token_input(
 pub(crate) fn de_batch_is_authorized_with_token(
     value: &[u8],
     mut builder: crate::operation::batch_is_authorized_with_token::builders::BatchIsAuthorizedWithTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_is_authorized_with_token::builders::BatchIsAuthorizedWithTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

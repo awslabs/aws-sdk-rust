@@ -2,7 +2,7 @@
 pub fn ser_start_suite_run_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_suite_run::StartSuiteRunInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.suite_definition_version {
         object.key("suiteDefinitionVersion").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_copy_image_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::copy_image::CopyImageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.source_image_name {
         object.key("SourceImageName").string(var_1.as_str());
     }

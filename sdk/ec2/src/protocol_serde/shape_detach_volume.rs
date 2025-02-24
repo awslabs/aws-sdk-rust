@@ -33,7 +33,7 @@ pub fn de_detach_volume_http_response(
 pub fn de_detach_volume(
     inp: &[u8],
     mut builder: crate::operation::detach_volume::builders::DetachVolumeOutputBuilder,
-) -> Result<crate::operation::detach_volume::builders::DetachVolumeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::detach_volume::builders::DetachVolumeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

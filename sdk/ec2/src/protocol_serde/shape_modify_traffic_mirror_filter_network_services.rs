@@ -44,7 +44,7 @@ pub fn de_modify_traffic_mirror_filter_network_services_http_response(
 pub fn de_modify_traffic_mirror_filter_network_services(
     inp: &[u8],
     mut builder: crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

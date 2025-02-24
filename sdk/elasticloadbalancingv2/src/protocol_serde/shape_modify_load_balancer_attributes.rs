@@ -88,7 +88,7 @@ pub fn de_modify_load_balancer_attributes_http_response(
 pub fn de_modify_load_balancer_attributes(
     inp: &[u8],
     mut builder: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

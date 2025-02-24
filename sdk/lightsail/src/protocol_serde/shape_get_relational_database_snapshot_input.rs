@@ -2,7 +2,7 @@
 pub fn ser_get_relational_database_snapshot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.relational_database_snapshot_name {
         object.key("relationalDatabaseSnapshotName").string(var_1.as_str());
     }

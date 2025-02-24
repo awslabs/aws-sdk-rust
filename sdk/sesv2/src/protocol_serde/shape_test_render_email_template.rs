@@ -96,7 +96,7 @@ pub fn de_test_render_email_template_http_response(
 
 pub fn ser_test_render_email_template_input(
     input: &crate::operation::test_render_email_template::TestRenderEmailTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_test_render_email_template_input::ser_test_render_email_template_input_input(&mut object, input)?;
@@ -107,7 +107,7 @@ pub fn ser_test_render_email_template_input(
 pub(crate) fn de_test_render_email_template(
     value: &[u8],
     mut builder: crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

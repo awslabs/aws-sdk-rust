@@ -126,7 +126,7 @@ pub fn de_create_fleet_advisor_collector_http_response(
 
 pub fn ser_create_fleet_advisor_collector_input(
     input: &crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_fleet_advisor_collector_input::ser_create_fleet_advisor_collector_input_input(&mut object, input)?;
@@ -137,7 +137,7 @@ pub fn ser_create_fleet_advisor_collector_input(
 pub(crate) fn de_create_fleet_advisor_collector(
     value: &[u8],
     mut builder: crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_fleet_advisor_collector::builders::CreateFleetAdvisorCollectorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_accept_match_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::accept_match::AcceptMatchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ticket_id {
         object.key("TicketId").string(var_1.as_str());
     }

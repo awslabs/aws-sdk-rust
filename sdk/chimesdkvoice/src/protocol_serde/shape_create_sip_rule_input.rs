@@ -2,7 +2,7 @@
 pub fn ser_create_sip_rule_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_sip_rule::CreateSipRuleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.disabled {
         object.key("Disabled").boolean(*var_1);
     }

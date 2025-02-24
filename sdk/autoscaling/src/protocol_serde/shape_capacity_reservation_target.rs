@@ -3,7 +3,7 @@
 pub fn ser_capacity_reservation_target(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CapacityReservationTarget,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("CapacityReservationIds");
     if let Some(var_2) = &input.capacity_reservation_ids {
@@ -32,7 +32,7 @@ pub fn ser_capacity_reservation_target(
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_reservation_target(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CapacityReservationTarget, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CapacityReservationTarget, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityReservationTarget::builder();
     while let Some(mut tag) = decoder.next_tag() {

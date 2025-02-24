@@ -123,7 +123,7 @@ pub fn de_list_customer_managed_policy_references_in_permission_set_http_respons
 
 pub fn ser_list_customer_managed_policy_references_in_permission_set_input(
     input: &crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_customer_managed_policy_references_in_permission_set_input::ser_list_customer_managed_policy_references_in_permission_set_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_list_customer_managed_policy_references_in_permission_set_input(
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
-pub(crate) fn de_list_customer_managed_policy_references_in_permission_set(value: &[u8], mut builder: crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder) -> Result<crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+pub(crate) fn de_list_customer_managed_policy_references_in_permission_set(value: &[u8], mut builder: crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder) -> ::std::result::Result<crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

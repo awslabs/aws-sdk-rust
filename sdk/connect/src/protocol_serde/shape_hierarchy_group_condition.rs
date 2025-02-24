@@ -2,7 +2,7 @@
 pub fn ser_hierarchy_group_condition(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HierarchyGroupCondition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.value {
         object.key("Value").string(var_1.as_str());
     }

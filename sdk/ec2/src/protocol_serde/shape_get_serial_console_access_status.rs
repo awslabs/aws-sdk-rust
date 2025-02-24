@@ -39,7 +39,7 @@ pub fn de_get_serial_console_access_status_http_response(
 pub fn de_get_serial_console_access_status(
     inp: &[u8],
     mut builder: crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_aws_sage_maker_notebook_instance_metadata_service_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_instance_metadata_service_version {
         object.key("MinimumInstanceMetadataServiceVersion").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_aws_sage_maker_notebook_instance_metadata_service_configuration_detai
 
 pub(crate) fn de_aws_sage_maker_notebook_instance_metadata_service_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

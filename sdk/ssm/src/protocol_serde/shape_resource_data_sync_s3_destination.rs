@@ -2,7 +2,7 @@
 pub fn ser_resource_data_sync_s3_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ResourceDataSyncS3Destination,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BucketName").string(input.bucket_name.as_str());
     }
@@ -32,7 +32,7 @@ pub fn ser_resource_data_sync_s3_destination(
 
 pub(crate) fn de_resource_data_sync_s3_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ResourceDataSyncS3Destination>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ResourceDataSyncS3Destination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

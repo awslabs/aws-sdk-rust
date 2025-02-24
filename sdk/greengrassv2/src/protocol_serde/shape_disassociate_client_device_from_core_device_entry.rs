@@ -2,7 +2,7 @@
 pub fn ser_disassociate_client_device_from_core_device_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DisassociateClientDeviceFromCoreDeviceEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("thingName").string(input.thing_name.as_str());
     }

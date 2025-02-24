@@ -61,7 +61,7 @@ pub fn de_list_logger_definition_versions_http_response(
 pub(crate) fn de_list_logger_definition_versions(
     value: &[u8],
     mut builder: crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

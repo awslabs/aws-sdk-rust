@@ -2,7 +2,7 @@
 pub fn ser_update_log_levels_by_resource_types_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_log_level {
         object.key("DefaultLogLevel").string(var_1.as_str());
     }

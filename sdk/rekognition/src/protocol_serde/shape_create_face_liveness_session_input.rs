@@ -2,7 +2,7 @@
 pub fn ser_create_face_liveness_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.kms_key_id {
         object.key("KmsKeyId").string(var_1.as_str());
     }

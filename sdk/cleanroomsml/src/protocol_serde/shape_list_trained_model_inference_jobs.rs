@@ -76,7 +76,7 @@ pub fn de_list_trained_model_inference_jobs_http_response(
 pub(crate) fn de_list_trained_model_inference_jobs(
     value: &[u8],
     mut builder: crate::operation::list_trained_model_inference_jobs::builders::ListTrainedModelInferenceJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_trained_model_inference_jobs::builders::ListTrainedModelInferenceJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -3,7 +3,7 @@
 pub fn ser_integrate_services(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::IntegrateServices,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AthenaIntegration");
     if let Some(var_2) = &input.athena_integrations {

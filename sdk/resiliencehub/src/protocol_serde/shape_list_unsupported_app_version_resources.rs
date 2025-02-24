@@ -152,7 +152,7 @@ pub fn de_list_unsupported_app_version_resources_http_response(
 
 pub fn ser_list_unsupported_app_version_resources_input(
     input: &crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_unsupported_app_version_resources_input::ser_list_unsupported_app_version_resources_input_input(
@@ -166,7 +166,7 @@ pub fn ser_list_unsupported_app_version_resources_input(
 pub(crate) fn de_list_unsupported_app_version_resources(
     value: &[u8],
     mut builder: crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

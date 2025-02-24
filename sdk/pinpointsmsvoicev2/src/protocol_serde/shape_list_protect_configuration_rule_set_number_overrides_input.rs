@@ -2,7 +2,7 @@
 pub fn ser_list_protect_configuration_rule_set_number_overrides_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.protect_configuration_id {
         object.key("ProtectConfigurationId").string(var_1.as_str());
     }

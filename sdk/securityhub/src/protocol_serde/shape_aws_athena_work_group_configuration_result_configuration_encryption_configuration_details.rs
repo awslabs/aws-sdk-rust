@@ -2,7 +2,7 @@
 pub fn ser_aws_athena_work_group_configuration_result_configuration_encryption_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.encryption_option {
         object.key("EncryptionOption").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_athena_work_group_configuration_result_configuration_encryption_c
 
 pub(crate) fn de_aws_athena_work_group_configuration_result_configuration_encryption_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

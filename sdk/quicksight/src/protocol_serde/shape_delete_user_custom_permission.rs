@@ -182,7 +182,7 @@ pub fn de_delete_user_custom_permission_http_response(
 pub(crate) fn de_delete_user_custom_permission(
     value: &[u8],
     mut builder: crate::operation::delete_user_custom_permission::builders::DeleteUserCustomPermissionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_user_custom_permission::builders::DeleteUserCustomPermissionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

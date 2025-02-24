@@ -2,7 +2,7 @@
 pub fn ser_s3_reference_data_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::S3ReferenceDataSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("BucketARN").string(input.bucket_arn.as_str());
     }

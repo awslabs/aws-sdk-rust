@@ -2,7 +2,7 @@
 pub fn ser_update_custom_line_item_percentage_charge_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateCustomLineItemPercentageChargeDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PercentageValue").number(
             #[allow(clippy::useless_conversion)]

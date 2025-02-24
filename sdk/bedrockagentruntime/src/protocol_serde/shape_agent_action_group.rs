@@ -2,7 +2,7 @@
 pub fn ser_agent_action_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AgentActionGroup,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("actionGroupName").string(input.action_group_name.as_str());
     }

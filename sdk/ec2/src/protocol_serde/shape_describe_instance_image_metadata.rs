@@ -39,7 +39,7 @@ pub fn de_describe_instance_image_metadata_http_response(
 pub fn de_describe_instance_image_metadata(
     inp: &[u8],
     mut builder: crate::operation::describe_instance_image_metadata::builders::DescribeInstanceImageMetadataOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_instance_image_metadata::builders::DescribeInstanceImageMetadataOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

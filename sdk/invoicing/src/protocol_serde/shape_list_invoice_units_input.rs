@@ -2,7 +2,7 @@
 pub fn ser_list_invoice_units_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_invoice_units::ListInvoiceUnitsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filters {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Filters").start_object();

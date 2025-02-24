@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_notification_configuration_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::NotificationConfigurationFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::NotificationConfigurationFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::NotificationConfigurationFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -26,7 +26,7 @@ pub fn de_notification_configuration_filter(
 pub fn ser_notification_configuration_filter(
     input: &crate::types::NotificationConfigurationFilter,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_2) = &input.key {

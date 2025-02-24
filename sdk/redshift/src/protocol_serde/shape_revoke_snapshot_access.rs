@@ -111,7 +111,10 @@ pub fn de_revoke_snapshot_access_http_response(
 pub fn de_revoke_snapshot_access(
     inp: &[u8],
     mut builder: crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder,
-) -> Result<crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::revoke_snapshot_access::builders::RevokeSnapshotAccessOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

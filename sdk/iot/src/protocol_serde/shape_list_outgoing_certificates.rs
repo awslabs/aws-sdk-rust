@@ -126,7 +126,7 @@ pub fn de_list_outgoing_certificates_http_response(
 pub(crate) fn de_list_outgoing_certificates(
     value: &[u8],
     mut builder: crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_update_microsoft_teams_channel_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_microsoft_teams_channel_configuration::UpdateMicrosoftTeamsChannelConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.channel_id {
         object.key("ChannelId").string(var_1.as_str());
     }

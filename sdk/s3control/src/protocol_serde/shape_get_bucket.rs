@@ -51,7 +51,7 @@ pub fn ser_get_bucket_headers(
 pub fn de_get_bucket(
     inp: &[u8],
     mut builder: crate::operation::get_bucket::builders::GetBucketOutputBuilder,
-) -> Result<crate::operation::get_bucket::builders::GetBucketOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_bucket::builders::GetBucketOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

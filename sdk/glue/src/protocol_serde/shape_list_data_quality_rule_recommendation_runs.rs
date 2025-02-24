@@ -109,7 +109,7 @@ pub fn de_list_data_quality_rule_recommendation_runs_http_response(
 
 pub fn ser_list_data_quality_rule_recommendation_runs_input(
     input: &crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_data_quality_rule_recommendation_runs_input::ser_list_data_quality_rule_recommendation_runs_input_input(
@@ -123,7 +123,7 @@ pub fn ser_list_data_quality_rule_recommendation_runs_input(
 pub(crate) fn de_list_data_quality_rule_recommendation_runs(
     value: &[u8],
     mut builder: crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

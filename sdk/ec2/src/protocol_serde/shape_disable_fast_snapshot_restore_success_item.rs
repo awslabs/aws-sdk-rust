@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_disable_fast_snapshot_restore_success_item(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::DisableFastSnapshotRestoreSuccessItem, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::DisableFastSnapshotRestoreSuccessItem, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::DisableFastSnapshotRestoreSuccessItem::builder();
     while let Some(mut tag) = decoder.next_tag() {

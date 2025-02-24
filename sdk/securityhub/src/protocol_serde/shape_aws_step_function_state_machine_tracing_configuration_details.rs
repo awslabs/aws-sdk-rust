@@ -2,7 +2,7 @@
 pub fn ser_aws_step_function_state_machine_tracing_configuration_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.enabled {
         object.key("Enabled").boolean(*var_1);
     }
@@ -11,7 +11,10 @@ pub fn ser_aws_step_function_state_machine_tracing_configuration_details(
 
 pub(crate) fn de_aws_step_function_state_machine_tracing_configuration_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::AwsStepFunctionStateMachineTracingConfigurationDetails>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

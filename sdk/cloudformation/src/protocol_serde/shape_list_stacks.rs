@@ -33,7 +33,7 @@ pub fn de_list_stacks_http_response(
 pub fn de_list_stacks(
     inp: &[u8],
     mut builder: crate::operation::list_stacks::builders::ListStacksOutputBuilder,
-) -> Result<crate::operation::list_stacks::builders::ListStacksOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_stacks::builders::ListStacksOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

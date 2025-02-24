@@ -2,7 +2,7 @@
 pub fn ser_put_resource_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_resource_policy::PutResourcePolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bypass_policy_lockout_check {
         object.key("BypassPolicyLockoutCheck").boolean(*var_1);
     }

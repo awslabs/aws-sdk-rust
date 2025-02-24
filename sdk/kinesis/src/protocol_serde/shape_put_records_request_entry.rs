@@ -2,7 +2,7 @@
 pub fn ser_put_records_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PutRecordsRequestEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Data").string_unchecked(&::aws_smithy_types::base64::encode(&input.data));
     }

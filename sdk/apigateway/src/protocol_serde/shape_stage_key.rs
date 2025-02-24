@@ -2,7 +2,7 @@
 pub fn ser_stage_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StageKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.rest_api_id {
         object.key("restApiId").string(var_1.as_str());
     }

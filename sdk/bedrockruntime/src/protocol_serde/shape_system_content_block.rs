@@ -2,7 +2,7 @@
 pub fn ser_system_content_block(
     object_27: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SystemContentBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::SystemContentBlock::Text(inner) => {
             object_27.key("text").string(inner.as_str());

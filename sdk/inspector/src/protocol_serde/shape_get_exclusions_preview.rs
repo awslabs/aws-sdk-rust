@@ -103,7 +103,7 @@ pub fn de_get_exclusions_preview_http_response(
 
 pub fn ser_get_exclusions_preview_input(
     input: &crate::operation::get_exclusions_preview::GetExclusionsPreviewInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_exclusions_preview_input::ser_get_exclusions_preview_input_input(&mut object, input)?;
@@ -114,7 +114,7 @@ pub fn ser_get_exclusions_preview_input(
 pub(crate) fn de_get_exclusions_preview(
     value: &[u8],
     mut builder: crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

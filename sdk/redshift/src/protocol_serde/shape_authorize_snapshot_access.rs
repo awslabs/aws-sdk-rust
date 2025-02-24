@@ -171,7 +171,10 @@ pub fn de_authorize_snapshot_access_http_response(
 pub fn de_authorize_snapshot_access(
     inp: &[u8],
     mut builder: crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessOutputBuilder,
-) -> Result<crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::authorize_snapshot_access::builders::AuthorizeSnapshotAccessOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

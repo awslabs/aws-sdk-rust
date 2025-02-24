@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_rest_cycles(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationRestCycles,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.long_cycle {
         #[allow(unused_mut)]
         let mut object_2 = object.key("LongCycle").start_object();

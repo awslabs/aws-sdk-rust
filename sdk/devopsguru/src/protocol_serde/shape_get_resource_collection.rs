@@ -130,7 +130,7 @@ pub fn de_get_resource_collection_http_response(
 pub(crate) fn de_get_resource_collection(
     value: &[u8],
     mut builder: crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_resource_collection::builders::GetResourceCollectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

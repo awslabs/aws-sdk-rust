@@ -139,7 +139,7 @@ pub fn de_list_model_packaging_jobs_http_response(
 pub(crate) fn de_list_model_packaging_jobs(
     value: &[u8],
     mut builder: crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

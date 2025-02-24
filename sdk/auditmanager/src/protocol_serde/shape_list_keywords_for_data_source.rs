@@ -88,7 +88,7 @@ pub fn de_list_keywords_for_data_source_http_response(
 pub(crate) fn de_list_keywords_for_data_source(
     value: &[u8],
     mut builder: crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

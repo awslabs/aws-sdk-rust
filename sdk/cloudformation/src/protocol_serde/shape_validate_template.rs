@@ -33,7 +33,7 @@ pub fn de_validate_template_http_response(
 pub fn de_validate_template(
     inp: &[u8],
     mut builder: crate::operation::validate_template::builders::ValidateTemplateOutputBuilder,
-) -> Result<crate::operation::validate_template::builders::ValidateTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::validate_template::builders::ValidateTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

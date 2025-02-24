@@ -62,7 +62,7 @@ pub fn de_describe_listener_certificates_http_response(
 pub fn de_describe_listener_certificates(
     inp: &[u8],
     mut builder: crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_listener_certificates::builders::DescribeListenerCertificatesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -122,7 +122,7 @@ pub fn de_list_source_views_for_billing_view_http_response(
 
 pub fn ser_list_source_views_for_billing_view_input(
     input: &crate::operation::list_source_views_for_billing_view::ListSourceViewsForBillingViewInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_source_views_for_billing_view_input::ser_list_source_views_for_billing_view_input_input(&mut object, input)?;
@@ -133,7 +133,7 @@ pub fn ser_list_source_views_for_billing_view_input(
 pub(crate) fn de_list_source_views_for_billing_view(
     value: &[u8],
     mut builder: crate::operation::list_source_views_for_billing_view::builders::ListSourceViewsForBillingViewOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_source_views_for_billing_view::builders::ListSourceViewsForBillingViewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

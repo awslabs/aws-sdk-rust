@@ -138,7 +138,7 @@ pub fn de_revoke_flow_entitlement_http_response(
 pub(crate) fn de_revoke_flow_entitlement(
     value: &[u8],
     mut builder: crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

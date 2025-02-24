@@ -2,7 +2,7 @@
 pub fn ser_start_flywheel_iteration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_flywheel_iteration::StartFlywheelIterationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.flywheel_arn {
         object.key("FlywheelArn").string(var_1.as_str());
     }

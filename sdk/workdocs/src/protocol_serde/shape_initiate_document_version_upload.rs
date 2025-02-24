@@ -323,7 +323,7 @@ pub fn ser_initiate_document_version_upload_headers(
 
 pub fn ser_initiate_document_version_upload_input(
     input: &crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_initiate_document_version_upload_input::ser_initiate_document_version_upload_input_input(&mut object, input)?;
@@ -334,7 +334,7 @@ pub fn ser_initiate_document_version_upload_input(
 pub(crate) fn de_initiate_document_version_upload(
     value: &[u8],
     mut builder: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

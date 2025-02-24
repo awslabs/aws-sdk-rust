@@ -109,7 +109,7 @@ pub fn de_contains_pii_entities_http_response(
 
 pub fn ser_contains_pii_entities_input(
     input: &crate::operation::contains_pii_entities::ContainsPiiEntitiesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_contains_pii_entities_input::ser_contains_pii_entities_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_contains_pii_entities_input(
 pub(crate) fn de_contains_pii_entities(
     value: &[u8],
     mut builder: crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

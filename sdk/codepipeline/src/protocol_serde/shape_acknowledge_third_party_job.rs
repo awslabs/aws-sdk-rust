@@ -110,7 +110,7 @@ pub fn de_acknowledge_third_party_job_http_response(
 
 pub fn ser_acknowledge_third_party_job_input(
     input: &crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_acknowledge_third_party_job_input::ser_acknowledge_third_party_job_input_input(&mut object, input)?;
@@ -121,7 +121,7 @@ pub fn ser_acknowledge_third_party_job_input(
 pub(crate) fn de_acknowledge_third_party_job(
     value: &[u8],
     mut builder: crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

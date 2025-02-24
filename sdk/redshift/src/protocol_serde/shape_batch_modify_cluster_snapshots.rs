@@ -83,7 +83,7 @@ pub fn de_batch_modify_cluster_snapshots_http_response(
 pub fn de_batch_modify_cluster_snapshots(
     inp: &[u8],
     mut builder: crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::batch_modify_cluster_snapshots::builders::BatchModifyClusterSnapshotsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

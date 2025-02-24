@@ -41,8 +41,10 @@ pub fn de_associate_subnet_cidr_block_http_response(
 pub fn de_associate_subnet_cidr_block(
     inp: &[u8],
     mut builder: crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder,
-) -> Result<crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

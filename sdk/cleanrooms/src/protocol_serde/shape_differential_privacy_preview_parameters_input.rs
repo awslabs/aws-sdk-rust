@@ -2,7 +2,7 @@
 pub fn ser_differential_privacy_preview_parameters_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DifferentialPrivacyPreviewParametersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("epsilon").number(
             #[allow(clippy::useless_conversion)]

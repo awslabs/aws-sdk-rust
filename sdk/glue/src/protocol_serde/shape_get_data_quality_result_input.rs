@@ -2,7 +2,7 @@
 pub fn ser_get_data_quality_result_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_data_quality_result::GetDataQualityResultInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.result_id {
         object.key("ResultId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_internet_measurements_log_delivery(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InternetMeasurementsLogDelivery,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Config").start_object();
@@ -14,7 +14,7 @@ pub fn ser_internet_measurements_log_delivery(
 
 pub(crate) fn de_internet_measurements_log_delivery<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InternetMeasurementsLogDelivery>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InternetMeasurementsLogDelivery>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

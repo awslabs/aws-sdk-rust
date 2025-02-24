@@ -2,7 +2,7 @@
 pub fn ser_describe_instance_patch_states_for_patch_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.patch_group {
         object.key("PatchGroup").string(var_1.as_str());
     }

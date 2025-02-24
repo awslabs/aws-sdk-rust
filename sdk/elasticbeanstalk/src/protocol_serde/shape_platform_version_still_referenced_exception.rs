@@ -3,7 +3,7 @@
 pub fn de_platform_version_still_referenced_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::PlatformVersionStillReferencedExceptionBuilder,
-) -> Result<crate::types::error::builders::PlatformVersionStillReferencedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::PlatformVersionStillReferencedExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

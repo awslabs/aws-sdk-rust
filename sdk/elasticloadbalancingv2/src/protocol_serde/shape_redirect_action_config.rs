@@ -3,7 +3,7 @@
 pub fn ser_redirect_action_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RedirectActionConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Protocol");
     if let Some(var_2) = &input.protocol {
@@ -40,7 +40,7 @@ pub fn ser_redirect_action_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_redirect_action_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::RedirectActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::RedirectActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::RedirectActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

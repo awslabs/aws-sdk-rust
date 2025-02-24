@@ -2,7 +2,7 @@
 pub fn ser_custom_log_source_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomLogSourceConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.crawler_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("crawlerConfiguration").start_object();

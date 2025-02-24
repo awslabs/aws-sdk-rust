@@ -3,7 +3,7 @@
 pub fn ser_customized_metric_specification(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CustomizedMetricSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MetricName");
     if let Some(var_2) = &input.metric_name {
@@ -60,7 +60,7 @@ pub fn ser_customized_metric_specification(
 #[allow(clippy::needless_question_mark)]
 pub fn de_customized_metric_specification(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CustomizedMetricSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CustomizedMetricSpecification, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CustomizedMetricSpecification::builder();
     while let Some(mut tag) = decoder.next_tag() {

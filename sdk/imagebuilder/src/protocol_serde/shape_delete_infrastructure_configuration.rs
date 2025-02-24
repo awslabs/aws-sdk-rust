@@ -164,7 +164,7 @@ pub fn de_delete_infrastructure_configuration_http_response(
 pub(crate) fn de_delete_infrastructure_configuration(
     value: &[u8],
     mut builder: crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_infrastructure_configuration::builders::DeleteInfrastructureConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

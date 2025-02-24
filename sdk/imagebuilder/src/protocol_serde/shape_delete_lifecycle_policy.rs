@@ -156,7 +156,7 @@ pub fn de_delete_lifecycle_policy_http_response(
 pub(crate) fn de_delete_lifecycle_policy(
     value: &[u8],
     mut builder: crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

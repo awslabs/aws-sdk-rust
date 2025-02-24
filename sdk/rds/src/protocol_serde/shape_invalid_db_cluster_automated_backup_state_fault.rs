@@ -3,7 +3,7 @@
 pub fn de_invalid_db_cluster_automated_backup_state_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidDbClusterAutomatedBackupStateFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidDbClusterAutomatedBackupStateFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidDbClusterAutomatedBackupStateFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

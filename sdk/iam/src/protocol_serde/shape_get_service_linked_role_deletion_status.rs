@@ -102,7 +102,7 @@ pub fn de_get_service_linked_role_deletion_status_http_response(
 pub fn de_get_service_linked_role_deletion_status(
     inp: &[u8],
     mut builder: crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_scanned_resource(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ScannedResource, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ScannedResource, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ScannedResource::builder();
     while let Some(mut tag) = decoder.next_tag() {

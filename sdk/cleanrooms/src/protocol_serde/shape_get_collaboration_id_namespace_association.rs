@@ -145,7 +145,7 @@ pub fn de_get_collaboration_id_namespace_association_http_response(
 pub(crate) fn de_get_collaboration_id_namespace_association(
     value: &[u8],
     mut builder: crate::operation::get_collaboration_id_namespace_association::builders::GetCollaborationIdNamespaceAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_collaboration_id_namespace_association::builders::GetCollaborationIdNamespaceAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

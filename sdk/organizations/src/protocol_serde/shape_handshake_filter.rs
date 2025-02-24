@@ -2,7 +2,7 @@
 pub fn ser_handshake_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HandshakeFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_type {
         object.key("ActionType").string(var_1.as_str());
     }

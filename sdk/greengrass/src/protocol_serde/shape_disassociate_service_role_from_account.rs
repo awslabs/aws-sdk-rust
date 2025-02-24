@@ -68,7 +68,7 @@ pub fn de_disassociate_service_role_from_account_http_response(
 pub(crate) fn de_disassociate_service_role_from_account(
     value: &[u8],
     mut builder: crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

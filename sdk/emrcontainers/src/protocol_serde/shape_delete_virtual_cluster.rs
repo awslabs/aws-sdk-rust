@@ -76,7 +76,7 @@ pub fn de_delete_virtual_cluster_http_response(
 pub(crate) fn de_delete_virtual_cluster(
     value: &[u8],
     mut builder: crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub(crate) fn de_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::XksProxyVpcEndpointServiceInvalidConfigurationExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

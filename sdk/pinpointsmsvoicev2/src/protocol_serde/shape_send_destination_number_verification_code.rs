@@ -185,7 +185,7 @@ pub fn de_send_destination_number_verification_code_http_response(
 
 pub fn ser_send_destination_number_verification_code_input(
     input: &crate::operation::send_destination_number_verification_code::SendDestinationNumberVerificationCodeInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_send_destination_number_verification_code_input::ser_send_destination_number_verification_code_input_input(
@@ -199,7 +199,7 @@ pub fn ser_send_destination_number_verification_code_input(
 pub(crate) fn de_send_destination_number_verification_code(
     value: &[u8],
     mut builder: crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::send_destination_number_verification_code::builders::SendDestinationNumberVerificationCodeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

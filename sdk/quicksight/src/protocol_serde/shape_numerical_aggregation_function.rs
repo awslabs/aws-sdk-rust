@@ -2,7 +2,7 @@
 pub fn ser_numerical_aggregation_function(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericalAggregationFunction,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simple_numerical_aggregation {
         object.key("SimpleNumericalAggregation").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_numerical_aggregation_function(
 
 pub(crate) fn de_numerical_aggregation_function<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NumericalAggregationFunction>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NumericalAggregationFunction>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

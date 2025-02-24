@@ -2,7 +2,7 @@
 pub fn ser_reboot_broker_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reboot_broker::RebootBrokerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.broker_ids {
         let mut array_2 = object.key("brokerIds").start_array();
         for item_3 in var_1 {

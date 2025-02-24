@@ -141,7 +141,7 @@ pub fn de_create_provisioning_claim_http_response(
 pub(crate) fn de_create_provisioning_claim(
     value: &[u8],
     mut builder: crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

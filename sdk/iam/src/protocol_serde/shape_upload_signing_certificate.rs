@@ -177,7 +177,10 @@ pub fn de_upload_signing_certificate_http_response(
 pub fn de_upload_signing_certificate(
     inp: &[u8],
     mut builder: crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder,
-) -> Result<crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::upload_signing_certificate::builders::UploadSigningCertificateOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

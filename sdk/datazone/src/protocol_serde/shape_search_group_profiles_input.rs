@@ -2,7 +2,7 @@
 pub fn ser_search_group_profiles_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_group_profiles::SearchGroupProfilesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.group_type {
         object.key("groupType").string(var_1.as_str());
     }

@@ -39,7 +39,7 @@ pub fn de_create_traffic_mirror_filter_rule_http_response(
 pub fn de_create_traffic_mirror_filter_rule(
     inp: &[u8],
     mut builder: crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_traffic_mirror_filter_rule::builders::CreateTrafficMirrorFilterRuleOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

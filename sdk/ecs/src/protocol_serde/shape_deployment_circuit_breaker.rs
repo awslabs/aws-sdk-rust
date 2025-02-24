@@ -2,7 +2,7 @@
 pub fn ser_deployment_circuit_breaker(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DeploymentCircuitBreaker,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("enable").boolean(input.enable);
     }
@@ -14,7 +14,7 @@ pub fn ser_deployment_circuit_breaker(
 
 pub(crate) fn de_deployment_circuit_breaker<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DeploymentCircuitBreaker>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DeploymentCircuitBreaker>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

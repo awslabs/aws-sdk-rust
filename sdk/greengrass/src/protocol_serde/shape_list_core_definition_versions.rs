@@ -61,7 +61,7 @@ pub fn de_list_core_definition_versions_http_response(
 pub(crate) fn de_list_core_definition_versions(
     value: &[u8],
     mut builder: crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

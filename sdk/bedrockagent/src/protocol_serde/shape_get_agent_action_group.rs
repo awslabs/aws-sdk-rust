@@ -121,7 +121,7 @@ pub fn de_get_agent_action_group_http_response(
 pub(crate) fn de_get_agent_action_group(
     value: &[u8],
     mut builder: crate::operation::get_agent_action_group::builders::GetAgentActionGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_agent_action_group::builders::GetAgentActionGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_add_notification_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_notification_channel::AddNotificationChannelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("Config").start_object();

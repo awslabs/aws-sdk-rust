@@ -2,7 +2,7 @@
 pub fn ser_o_auth2_properties_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OAuth2PropertiesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.o_auth2_grant_type {
         object.key("OAuth2GrantType").string(var_1.as_str());
     }

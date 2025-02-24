@@ -156,7 +156,7 @@ pub fn ser_list_channel_messages_headers(
 pub(crate) fn de_list_channel_messages(
     value: &[u8],
     mut builder: crate::operation::list_channel_messages::builders::ListChannelMessagesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_channel_messages::builders::ListChannelMessagesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

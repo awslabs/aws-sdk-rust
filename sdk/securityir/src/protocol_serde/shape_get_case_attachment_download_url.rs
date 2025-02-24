@@ -199,7 +199,7 @@ pub fn de_get_case_attachment_download_url_http_response(
 pub(crate) fn de_get_case_attachment_download_url(
     value: &[u8],
     mut builder: crate::operation::get_case_attachment_download_url::builders::GetCaseAttachmentDownloadUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_case_attachment_download_url::builders::GetCaseAttachmentDownloadUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

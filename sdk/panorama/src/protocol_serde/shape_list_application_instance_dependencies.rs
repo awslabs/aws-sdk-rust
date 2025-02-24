@@ -87,7 +87,7 @@ pub fn de_list_application_instance_dependencies_http_response(
 pub(crate) fn de_list_application_instance_dependencies(
     value: &[u8],
     mut builder: crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_application_instance_dependencies::builders::ListApplicationInstanceDependenciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

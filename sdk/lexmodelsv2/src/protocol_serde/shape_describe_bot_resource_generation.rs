@@ -118,7 +118,7 @@ pub fn de_describe_bot_resource_generation_http_response(
 pub(crate) fn de_describe_bot_resource_generation(
     value: &[u8],
     mut builder: crate::operation::describe_bot_resource_generation::builders::DescribeBotResourceGenerationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_bot_resource_generation::builders::DescribeBotResourceGenerationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

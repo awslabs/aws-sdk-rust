@@ -101,7 +101,7 @@ pub fn de_index_documents_http_response(
 pub fn de_index_documents(
     inp: &[u8],
     mut builder: crate::operation::index_documents::builders::IndexDocumentsOutputBuilder,
-) -> Result<crate::operation::index_documents::builders::IndexDocumentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::index_documents::builders::IndexDocumentsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

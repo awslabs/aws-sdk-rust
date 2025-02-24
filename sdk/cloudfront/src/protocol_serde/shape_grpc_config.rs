@@ -2,7 +2,7 @@
 pub fn ser_grpc_config(
     input: &crate::types::GrpcConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -16,7 +16,7 @@ pub fn ser_grpc_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_grpc_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::GrpcConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::GrpcConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::GrpcConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_gateway_network(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GatewayNetwork,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cidr_block {
         object.key("cidrBlock").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_gateway_network(
 
 pub(crate) fn de_gateway_network<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GatewayNetwork>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GatewayNetwork>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

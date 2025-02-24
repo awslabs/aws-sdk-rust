@@ -38,7 +38,7 @@ pub fn de_list_journal_s3_exports_for_ledger_http_response(
 pub(crate) fn de_list_journal_s3_exports_for_ledger(
     value: &[u8],
     mut builder: crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

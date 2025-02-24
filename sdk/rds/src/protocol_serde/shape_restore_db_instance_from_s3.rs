@@ -363,7 +363,10 @@ pub fn de_restore_db_instance_from_s3_http_response(
 pub fn de_restore_db_instance_from_s3(
     inp: &[u8],
     mut builder: crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder,
-) -> Result<crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3OutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

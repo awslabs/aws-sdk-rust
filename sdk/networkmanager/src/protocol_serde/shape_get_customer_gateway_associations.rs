@@ -149,7 +149,7 @@ pub fn de_get_customer_gateway_associations_http_response(
 pub(crate) fn de_get_customer_gateway_associations(
     value: &[u8],
     mut builder: crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -334,7 +334,7 @@ pub fn de_create_db_instance_http_response(
 pub fn de_create_db_instance(
     inp: &[u8],
     mut builder: crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder,
-) -> Result<crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

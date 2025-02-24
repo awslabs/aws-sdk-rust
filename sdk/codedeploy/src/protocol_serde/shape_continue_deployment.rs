@@ -183,7 +183,7 @@ pub fn de_continue_deployment_http_response(
 
 pub fn ser_continue_deployment_input(
     input: &crate::operation::continue_deployment::ContinueDeploymentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_continue_deployment_input::ser_continue_deployment_input_input(&mut object, input)?;

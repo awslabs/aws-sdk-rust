@@ -2,7 +2,7 @@
 pub fn ser_propagating_vgw_set_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PropagatingVgwSetDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_id {
         object.key("GatewayId").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_propagating_vgw_set_details(
 
 pub(crate) fn de_propagating_vgw_set_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PropagatingVgwSetDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PropagatingVgwSetDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

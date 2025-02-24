@@ -106,7 +106,7 @@ pub fn de_get_assessment_report_url_http_response(
 pub(crate) fn de_get_assessment_report_url(
     value: &[u8],
     mut builder: crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

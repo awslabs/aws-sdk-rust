@@ -110,7 +110,7 @@ pub fn de_list_provisioned_model_throughputs_http_response(
 pub(crate) fn de_list_provisioned_model_throughputs(
     value: &[u8],
     mut builder: crate::operation::list_provisioned_model_throughputs::builders::ListProvisionedModelThroughputsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_provisioned_model_throughputs::builders::ListProvisionedModelThroughputsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

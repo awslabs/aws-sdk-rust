@@ -2,7 +2,7 @@
 pub fn ser_tdscdma_nmr_obj(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TdscdmaNmrObj,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Uarfcn").number(
             #[allow(clippy::useless_conversion)]

@@ -39,7 +39,7 @@ pub fn de_delete_verified_access_endpoint_http_response(
 pub fn de_delete_verified_access_endpoint(
     inp: &[u8],
     mut builder: crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

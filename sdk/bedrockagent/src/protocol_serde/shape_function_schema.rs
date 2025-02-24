@@ -2,7 +2,7 @@
 pub fn ser_function_schema(
     object_10: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FunctionSchema,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FunctionSchema::Functions(inner) => {
             let mut array_1 = object_10.key("functions").start_array();
@@ -27,7 +27,7 @@ pub fn ser_function_schema(
 
 pub(crate) fn de_function_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FunctionSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FunctionSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

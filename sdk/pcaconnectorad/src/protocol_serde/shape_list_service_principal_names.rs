@@ -120,7 +120,7 @@ pub fn de_list_service_principal_names_http_response(
 pub(crate) fn de_list_service_principal_names(
     value: &[u8],
     mut builder: crate::operation::list_service_principal_names::builders::ListServicePrincipalNamesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_service_principal_names::builders::ListServicePrincipalNamesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

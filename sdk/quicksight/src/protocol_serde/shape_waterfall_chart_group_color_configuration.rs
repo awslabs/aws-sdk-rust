@@ -2,7 +2,7 @@
 pub fn ser_waterfall_chart_group_color_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaterfallChartGroupColorConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.positive_bar_color {
         object.key("PositiveBarColor").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_waterfall_chart_group_color_configuration(
 
 pub(crate) fn de_waterfall_chart_group_color_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WaterfallChartGroupColorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WaterfallChartGroupColorConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

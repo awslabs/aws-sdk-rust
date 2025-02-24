@@ -126,7 +126,7 @@ pub fn de_create_keys_and_certificate_http_response(
 pub(crate) fn de_create_keys_and_certificate(
     value: &[u8],
     mut builder: crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_keys_and_certificate::builders::CreateKeysAndCertificateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

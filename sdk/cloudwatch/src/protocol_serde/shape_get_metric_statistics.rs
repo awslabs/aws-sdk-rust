@@ -116,7 +116,8 @@ pub fn de_get_metric_statistics_http_response(
 pub fn de_get_metric_statistics(
     inp: &[u8],
     mut builder: crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder,
-) -> Result<crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -123,7 +123,7 @@ pub fn de_list_package_versions_http_response(
 pub(crate) fn de_list_package_versions(
     value: &[u8],
     mut builder: crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

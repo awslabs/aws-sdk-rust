@@ -2,7 +2,7 @@
 pub fn ser_warm_throughput(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WarmThroughput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.read_units_per_second {
         object.key("ReadUnitsPerSecond").number(
             #[allow(clippy::useless_conversion)]
@@ -20,7 +20,7 @@ pub fn ser_warm_throughput(
 
 pub(crate) fn de_warm_throughput<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WarmThroughput>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WarmThroughput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

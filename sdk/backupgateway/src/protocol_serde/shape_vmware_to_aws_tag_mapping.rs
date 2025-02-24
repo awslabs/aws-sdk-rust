@@ -2,7 +2,7 @@
 pub fn ser_vmware_to_aws_tag_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VmwareToAwsTagMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VmwareCategory").string(input.vmware_category.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_vmware_to_aws_tag_mapping(
 
 pub(crate) fn de_vmware_to_aws_tag_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VmwareToAwsTagMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VmwareToAwsTagMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_output_sample_file_source(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OutputSampleFileSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::OutputSampleFileSource::FileLocation(inner) => {
             #[allow(unused_mut)]

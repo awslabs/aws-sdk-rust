@@ -181,7 +181,7 @@ pub fn de_associate_faces_http_response(
 
 pub fn ser_associate_faces_input(
     input: &crate::operation::associate_faces::AssociateFacesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_faces_input::ser_associate_faces_input_input(&mut object, input)?;
@@ -192,7 +192,10 @@ pub fn ser_associate_faces_input(
 pub(crate) fn de_associate_faces(
     value: &[u8],
     mut builder: crate::operation::associate_faces::builders::AssociateFacesOutputBuilder,
-) -> Result<crate::operation::associate_faces::builders::AssociateFacesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::associate_faces::builders::AssociateFacesOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

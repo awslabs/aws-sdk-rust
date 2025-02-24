@@ -174,7 +174,7 @@ pub fn de_create_inference_profile_http_response(
 
 pub fn ser_create_inference_profile_input(
     input: &crate::operation::create_inference_profile::CreateInferenceProfileInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_inference_profile_input::ser_create_inference_profile_input_input(&mut object, input)?;
@@ -185,7 +185,7 @@ pub fn ser_create_inference_profile_input(
 pub(crate) fn de_create_inference_profile(
     value: &[u8],
     mut builder: crate::operation::create_inference_profile::builders::CreateInferenceProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_inference_profile::builders::CreateInferenceProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

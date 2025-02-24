@@ -121,7 +121,7 @@ pub fn de_list_backup_plan_templates_http_response(
 pub(crate) fn de_list_backup_plan_templates(
     value: &[u8],
     mut builder: crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

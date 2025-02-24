@@ -81,7 +81,7 @@ pub fn de_list_publishing_destinations_http_response(
 pub(crate) fn de_list_publishing_destinations(
     value: &[u8],
     mut builder: crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

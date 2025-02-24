@@ -2,7 +2,7 @@
 pub fn ser_create_geofence_collection_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_geofence_collection::CreateGeofenceCollectionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.collection_name {
         object.key("CollectionName").string(var_1.as_str());
     }

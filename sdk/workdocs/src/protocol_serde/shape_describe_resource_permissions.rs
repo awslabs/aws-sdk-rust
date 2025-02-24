@@ -155,7 +155,7 @@ pub fn ser_describe_resource_permissions_headers(
 pub(crate) fn de_describe_resource_permissions(
     value: &[u8],
     mut builder: crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

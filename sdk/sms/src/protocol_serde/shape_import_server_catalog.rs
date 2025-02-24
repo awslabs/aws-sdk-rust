@@ -132,6 +132,6 @@ pub fn de_import_server_catalog_http_response(
 
 pub fn ser_import_server_catalog_input(
     _input: &crate::operation::import_server_catalog::ImportServerCatalogInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

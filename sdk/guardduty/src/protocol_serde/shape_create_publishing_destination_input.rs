@@ -2,7 +2,7 @@
 pub fn ser_create_publishing_destination_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_publishing_destination::CreatePublishingDestinationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }

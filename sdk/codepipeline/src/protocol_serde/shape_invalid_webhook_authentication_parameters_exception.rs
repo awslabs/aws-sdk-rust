@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_webhook_authentication_parameters_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::InvalidWebhookAuthenticationParametersExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::InvalidWebhookAuthenticationParametersExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

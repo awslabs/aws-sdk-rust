@@ -77,7 +77,7 @@ pub fn de_disassociate_mac_sec_key_http_response(
 
 pub fn ser_disassociate_mac_sec_key_input(
     input: &crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_disassociate_mac_sec_key_input::ser_disassociate_mac_sec_key_input_input(&mut object, input)?;
@@ -88,7 +88,7 @@ pub fn ser_disassociate_mac_sec_key_input(
 pub(crate) fn de_disassociate_mac_sec_key(
     value: &[u8],
     mut builder: crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

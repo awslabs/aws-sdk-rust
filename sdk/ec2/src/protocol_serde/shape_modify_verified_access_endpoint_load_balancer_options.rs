@@ -3,7 +3,7 @@
 pub fn ser_modify_verified_access_endpoint_load_balancer_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SubnetId");
     if let Some(var_2) = &input.subnet_ids {

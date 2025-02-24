@@ -2,7 +2,7 @@
 pub fn ser_describe_hsm_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_hsm::DescribeHsmInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hsm_arn {
         object.key("HsmArn").string(var_1.as_str());
     }

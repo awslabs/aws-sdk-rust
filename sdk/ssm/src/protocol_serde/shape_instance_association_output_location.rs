@@ -2,7 +2,7 @@
 pub fn ser_instance_association_output_location(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceAssociationOutputLocation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_location {
         #[allow(unused_mut)]
         let mut object_2 = object.key("S3Location").start_object();
@@ -14,7 +14,7 @@ pub fn ser_instance_association_output_location(
 
 pub(crate) fn de_instance_association_output_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InstanceAssociationOutputLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InstanceAssociationOutputLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

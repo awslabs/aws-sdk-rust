@@ -85,7 +85,7 @@ pub fn de_describe_direct_connect_gateways_http_response(
 
 pub fn ser_describe_direct_connect_gateways_input(
     input: &crate::operation::describe_direct_connect_gateways::DescribeDirectConnectGatewaysInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_direct_connect_gateways_input::ser_describe_direct_connect_gateways_input_input(&mut object, input)?;
@@ -96,7 +96,7 @@ pub fn ser_describe_direct_connect_gateways_input(
 pub(crate) fn de_describe_direct_connect_gateways(
     value: &[u8],
     mut builder: crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_direct_connect_gateways::builders::DescribeDirectConnectGatewaysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

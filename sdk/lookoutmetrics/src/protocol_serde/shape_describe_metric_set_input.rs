@@ -2,7 +2,7 @@
 pub fn ser_describe_metric_set_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_metric_set::DescribeMetricSetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.metric_set_arn {
         object.key("MetricSetArn").string(var_1.as_str());
     }

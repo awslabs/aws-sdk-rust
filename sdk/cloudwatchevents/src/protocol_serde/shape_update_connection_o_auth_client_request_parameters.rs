@@ -2,7 +2,7 @@
 pub fn ser_update_connection_o_auth_client_request_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateConnectionOAuthClientRequestParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_id {
         object.key("ClientID").string(var_1.as_str());
     }

@@ -107,7 +107,7 @@ pub fn de_describe_default_encryption_configuration_http_response(
 pub(crate) fn de_describe_default_encryption_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_delete_tape_archive_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_tape_archive::DeleteTapeArchiveInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tape_arn {
         object.key("TapeARN").string(var_1.as_str());
     }

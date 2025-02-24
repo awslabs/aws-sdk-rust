@@ -2,7 +2,7 @@
 pub fn ser_batch_create_object(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchCreateObject,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("SchemaFacet").start_array();
         for item_2 in &input.schema_facet {

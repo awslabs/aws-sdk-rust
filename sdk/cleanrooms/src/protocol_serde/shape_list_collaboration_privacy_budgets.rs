@@ -129,7 +129,7 @@ pub fn de_list_collaboration_privacy_budgets_http_response(
 pub(crate) fn de_list_collaboration_privacy_budgets(
     value: &[u8],
     mut builder: crate::operation::list_collaboration_privacy_budgets::builders::ListCollaborationPrivacyBudgetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_collaboration_privacy_budgets::builders::ListCollaborationPrivacyBudgetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

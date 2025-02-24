@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_node_group_member_update_status(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::NodeGroupMemberUpdateStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::NodeGroupMemberUpdateStatus, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::NodeGroupMemberUpdateStatus::builder();
     while let Some(mut tag) = decoder.next_tag() {

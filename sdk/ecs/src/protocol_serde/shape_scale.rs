@@ -2,7 +2,7 @@
 pub fn ser_scale(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scale,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.value != 0.0 {
         object.key("value").number(
             #[allow(clippy::useless_conversion)]
@@ -17,7 +17,7 @@ pub fn ser_scale(
 
 pub(crate) fn de_scale<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Scale>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Scale>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

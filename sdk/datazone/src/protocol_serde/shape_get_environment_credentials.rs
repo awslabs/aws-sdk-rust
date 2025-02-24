@@ -134,7 +134,7 @@ pub fn de_get_environment_credentials_http_response(
 pub(crate) fn de_get_environment_credentials(
     value: &[u8],
     mut builder: crate::operation::get_environment_credentials::builders::GetEnvironmentCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_environment_credentials::builders::GetEnvironmentCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

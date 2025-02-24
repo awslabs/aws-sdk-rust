@@ -37,7 +37,7 @@ pub fn de_create_source_location_http_response(
 
 pub fn ser_create_source_location_input(
     input: &crate::operation::create_source_location::CreateSourceLocationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_source_location_input::ser_create_source_location_input_input(&mut object, input)?;
@@ -48,7 +48,7 @@ pub fn ser_create_source_location_input(
 pub(crate) fn de_create_source_location(
     value: &[u8],
     mut builder: crate::operation::create_source_location::builders::CreateSourceLocationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_source_location::builders::CreateSourceLocationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

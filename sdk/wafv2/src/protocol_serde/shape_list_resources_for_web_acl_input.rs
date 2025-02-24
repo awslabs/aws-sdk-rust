@@ -2,7 +2,7 @@
 pub fn ser_list_resources_for_web_acl_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.web_acl_arn {
         object.key("WebACLArn").string(var_1.as_str());
     }

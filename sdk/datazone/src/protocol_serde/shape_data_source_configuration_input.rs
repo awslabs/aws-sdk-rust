@@ -2,7 +2,7 @@
 pub fn ser_data_source_configuration_input(
     object_7: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::DataSourceConfigurationInput::GlueRunConfiguration(inner) => {
             #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_pipe_target_ecs_task_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PipeTargetEcsTaskParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("TaskDefinitionArn").string(input.task_definition_arn.as_str());
     }
@@ -98,7 +98,7 @@ pub fn ser_pipe_target_ecs_task_parameters(
 
 pub(crate) fn de_pipe_target_ecs_task_parameters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PipeTargetEcsTaskParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PipeTargetEcsTaskParameters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

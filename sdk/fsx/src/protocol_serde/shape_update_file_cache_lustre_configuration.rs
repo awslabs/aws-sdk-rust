@@ -2,7 +2,7 @@
 pub fn ser_update_file_cache_lustre_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateFileCacheLustreConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.weekly_maintenance_start_time {
         object.key("WeeklyMaintenanceStartTime").string(var_1.as_str());
     }

@@ -141,7 +141,7 @@ pub fn de_associate_app_block_builder_app_block_http_response(
 
 pub fn ser_associate_app_block_builder_app_block_input(
     input: &crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_app_block_builder_app_block_input::ser_associate_app_block_builder_app_block_input_input(
@@ -155,7 +155,7 @@ pub fn ser_associate_app_block_builder_app_block_input(
 pub(crate) fn de_associate_app_block_builder_app_block(
     value: &[u8],
     mut builder: crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_custom_connector_profile_credentials(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CustomConnectorProfileCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("authenticationType").string(input.authentication_type.as_str());
     }

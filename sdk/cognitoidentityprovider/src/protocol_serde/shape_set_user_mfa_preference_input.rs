@@ -2,7 +2,7 @@
 pub fn ser_set_user_mfa_preference_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_user_mfa_preference::SetUserMfaPreferenceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sms_mfa_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SMSMfaSettings").start_object();

@@ -2,7 +2,7 @@
 pub fn ser_disassociate_routing_profile_queues_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueuesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.queue_references {
         let mut array_2 = object.key("QueueReferences").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_domain_unit_filter_for_project(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DomainUnitFilterForProject,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("domainUnit").string(input.domain_unit.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_domain_unit_filter_for_project(
 
 pub(crate) fn de_domain_unit_filter_for_project<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DomainUnitFilterForProject>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DomainUnitFilterForProject>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

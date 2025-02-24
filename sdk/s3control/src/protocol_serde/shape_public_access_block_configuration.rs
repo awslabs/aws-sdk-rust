@@ -2,7 +2,7 @@
 pub fn ser_public_access_block_configuration(
     input: &crate::types::PublicAccessBlockConfiguration,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.block_public_acls {
@@ -28,7 +28,7 @@ pub fn ser_public_access_block_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_public_access_block_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::PublicAccessBlockConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PublicAccessBlockConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -39,7 +39,7 @@ pub fn de_delete_egress_only_internet_gateway_http_response(
 pub fn de_delete_egress_only_internet_gateway(
     inp: &[u8],
     mut builder: crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

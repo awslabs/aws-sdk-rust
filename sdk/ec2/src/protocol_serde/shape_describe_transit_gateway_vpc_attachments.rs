@@ -43,7 +43,7 @@ pub fn de_describe_transit_gateway_vpc_attachments_http_response(
 pub fn de_describe_transit_gateway_vpc_attachments(
     inp: &[u8],
     mut builder: crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_transit_gateway_vpc_attachments::builders::DescribeTransitGatewayVpcAttachmentsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

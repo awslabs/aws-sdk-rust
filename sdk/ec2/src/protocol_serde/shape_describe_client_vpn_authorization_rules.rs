@@ -41,7 +41,7 @@ pub fn de_describe_client_vpn_authorization_rules_http_response(
 pub fn de_describe_client_vpn_authorization_rules(
     inp: &[u8],
     mut builder: crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_client_vpn_authorization_rules::builders::DescribeClientVpnAuthorizationRulesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

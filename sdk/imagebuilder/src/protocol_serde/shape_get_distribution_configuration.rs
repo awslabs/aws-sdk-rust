@@ -144,7 +144,7 @@ pub fn de_get_distribution_configuration_http_response(
 pub(crate) fn de_get_distribution_configuration(
     value: &[u8],
     mut builder: crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_distribution_configuration::builders::GetDistributionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

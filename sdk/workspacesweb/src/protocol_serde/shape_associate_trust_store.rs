@@ -152,7 +152,7 @@ pub fn de_associate_trust_store_http_response(
 pub(crate) fn de_associate_trust_store(
     value: &[u8],
     mut builder: crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_trust_store::builders::AssociateTrustStoreOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

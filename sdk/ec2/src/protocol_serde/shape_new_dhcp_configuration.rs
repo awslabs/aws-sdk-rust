@@ -3,7 +3,7 @@
 pub fn ser_new_dhcp_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::NewDhcpConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {

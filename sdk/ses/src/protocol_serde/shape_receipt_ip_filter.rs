@@ -3,7 +3,7 @@
 pub fn ser_receipt_ip_filter(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ReceiptIpFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Policy");
     {
@@ -20,7 +20,7 @@ pub fn ser_receipt_ip_filter(
 #[allow(clippy::needless_question_mark)]
 pub fn de_receipt_ip_filter(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ReceiptIpFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ReceiptIpFilter, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ReceiptIpFilter::builder();
     while let Some(mut tag) = decoder.next_tag() {

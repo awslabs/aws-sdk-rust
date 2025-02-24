@@ -2,7 +2,7 @@
 pub fn ser_telephony_outbound_mode(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TelephonyOutboundMode,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TelephonyOutboundMode::Progressive(inner) => {
             #[allow(unused_mut)]
@@ -33,7 +33,7 @@ pub fn ser_telephony_outbound_mode(
 
 pub(crate) fn de_telephony_outbound_mode<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TelephonyOutboundMode>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TelephonyOutboundMode>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

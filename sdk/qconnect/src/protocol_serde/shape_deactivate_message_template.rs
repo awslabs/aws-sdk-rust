@@ -126,7 +126,7 @@ pub fn de_deactivate_message_template_http_response(
 
 pub fn ser_deactivate_message_template_input(
     input: &crate::operation::deactivate_message_template::DeactivateMessageTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deactivate_message_template_input::ser_deactivate_message_template_input_input(&mut object, input)?;
@@ -137,7 +137,7 @@ pub fn ser_deactivate_message_template_input(
 pub(crate) fn de_deactivate_message_template(
     value: &[u8],
     mut builder: crate::operation::deactivate_message_template::builders::DeactivateMessageTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::deactivate_message_template::builders::DeactivateMessageTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_list_workflow_runs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_workflow_runs::ListWorkflowRunsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sort_by {
         let mut array_2 = object.key("sortBy").start_array();
         for item_3 in var_1 {

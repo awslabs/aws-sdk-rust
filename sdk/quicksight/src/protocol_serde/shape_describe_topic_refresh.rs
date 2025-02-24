@@ -125,7 +125,7 @@ pub fn de_describe_topic_refresh_http_response(
 pub(crate) fn de_describe_topic_refresh(
     value: &[u8],
     mut builder: crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_topic_refresh::builders::DescribeTopicRefreshOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

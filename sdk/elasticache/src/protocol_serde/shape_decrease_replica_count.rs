@@ -262,7 +262,10 @@ pub fn de_decrease_replica_count_http_response(
 pub fn de_decrease_replica_count(
     inp: &[u8],
     mut builder: crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder,
-) -> Result<crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

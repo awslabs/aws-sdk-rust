@@ -118,7 +118,7 @@ pub fn de_restart_simulation_job_http_response(
 
 pub fn ser_restart_simulation_job_input(
     input: &crate::operation::restart_simulation_job::RestartSimulationJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_restart_simulation_job_input::ser_restart_simulation_job_input_input(&mut object, input)?;

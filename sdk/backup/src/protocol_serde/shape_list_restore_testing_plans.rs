@@ -88,7 +88,7 @@ pub fn de_list_restore_testing_plans_http_response(
 pub(crate) fn de_list_restore_testing_plans(
     value: &[u8],
     mut builder: crate::operation::list_restore_testing_plans::builders::ListRestoreTestingPlansOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_restore_testing_plans::builders::ListRestoreTestingPlansOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

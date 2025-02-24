@@ -39,7 +39,7 @@ pub fn de_restore_snapshot_from_recycle_bin_http_response(
 pub fn de_restore_snapshot_from_recycle_bin(
     inp: &[u8],
     mut builder: crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

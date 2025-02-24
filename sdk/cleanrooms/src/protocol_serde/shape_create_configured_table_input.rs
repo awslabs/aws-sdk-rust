@@ -2,7 +2,7 @@
 pub fn ser_create_configured_table_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_configured_table::CreateConfiguredTableInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allowed_columns {
         let mut array_2 = object.key("allowedColumns").start_array();
         for item_3 in var_1 {

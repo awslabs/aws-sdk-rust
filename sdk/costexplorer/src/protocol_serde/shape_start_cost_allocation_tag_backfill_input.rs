@@ -2,7 +2,7 @@
 pub fn ser_start_cost_allocation_tag_backfill_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_cost_allocation_tag_backfill::StartCostAllocationTagBackfillInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.backfill_from {
         object.key("BackfillFrom").string(var_1.as_str());
     }

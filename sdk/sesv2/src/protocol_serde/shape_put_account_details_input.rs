@@ -2,7 +2,7 @@
 pub fn ser_put_account_details_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_account_details::PutAccountDetailsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_contact_email_addresses {
         let mut array_2 = object.key("AdditionalContactEmailAddresses").start_array();
         for item_3 in var_1 {

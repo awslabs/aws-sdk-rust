@@ -3,7 +3,7 @@
 pub fn de_serverless_cache_snapshot_already_exists_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ServerlessCacheSnapshotAlreadyExistsFaultBuilder,
-) -> Result<crate::types::error::builders::ServerlessCacheSnapshotAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ServerlessCacheSnapshotAlreadyExistsFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

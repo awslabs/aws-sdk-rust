@@ -125,7 +125,7 @@ pub fn de_list_app_component_compliances_http_response(
 
 pub fn ser_list_app_component_compliances_input(
     input: &crate::operation::list_app_component_compliances::ListAppComponentCompliancesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_app_component_compliances_input::ser_list_app_component_compliances_input_input(&mut object, input)?;
@@ -136,7 +136,7 @@ pub fn ser_list_app_component_compliances_input(
 pub(crate) fn de_list_app_component_compliances(
     value: &[u8],
     mut builder: crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

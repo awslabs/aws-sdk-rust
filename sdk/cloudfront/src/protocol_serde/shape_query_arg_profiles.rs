@@ -2,7 +2,7 @@
 pub fn ser_query_arg_profiles(
     input: &crate::types::QueryArgProfiles,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -25,7 +25,7 @@ pub fn ser_query_arg_profiles(
 #[allow(clippy::needless_question_mark)]
 pub fn de_query_arg_profiles(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::QueryArgProfiles, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::QueryArgProfiles, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::QueryArgProfiles::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -2,7 +2,7 @@
 pub fn ser_r_studio_server_pro_domain_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RStudioServerProDomainSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_execution_role_arn {
         object.key("DomainExecutionRoleArn").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_r_studio_server_pro_domain_settings(
 
 pub(crate) fn de_r_studio_server_pro_domain_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RStudioServerProDomainSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RStudioServerProDomainSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

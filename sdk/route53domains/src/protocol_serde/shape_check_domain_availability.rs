@@ -79,7 +79,7 @@ pub fn de_check_domain_availability_http_response(
 
 pub fn ser_check_domain_availability_input(
     input: &crate::operation::check_domain_availability::CheckDomainAvailabilityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_check_domain_availability_input::ser_check_domain_availability_input_input(&mut object, input)?;
@@ -90,7 +90,7 @@ pub fn ser_check_domain_availability_input(
 pub(crate) fn de_check_domain_availability(
     value: &[u8],
     mut builder: crate::operation::check_domain_availability::builders::CheckDomainAvailabilityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::check_domain_availability::builders::CheckDomainAvailabilityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

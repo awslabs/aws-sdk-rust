@@ -2,7 +2,7 @@
 pub fn ser_user_policy_grant_principal(
     object_1: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserPolicyGrantPrincipal,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::UserPolicyGrantPrincipal::UserIdentifier(inner) => {
             object_1.key("userIdentifier").string(inner.as_str());
@@ -24,7 +24,7 @@ pub fn ser_user_policy_grant_principal(
 
 pub(crate) fn de_user_policy_grant_principal<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UserPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UserPolicyGrantPrincipal>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_activate_contact_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::activate_contact_channel::ActivateContactChannelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.contact_channel_id {
         object.key("ContactChannelId").string(var_1.as_str());
     }

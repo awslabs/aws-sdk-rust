@@ -122,7 +122,7 @@ pub fn de_list_analysis_templates_http_response(
 pub(crate) fn de_list_analysis_templates(
     value: &[u8],
     mut builder: crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

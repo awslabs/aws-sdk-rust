@@ -2,7 +2,7 @@
 pub fn ser_update_agent_status_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_agent_status::UpdateAgentStatusInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.aggregate_status {
         #[allow(unused_mut)]
         let mut object_2 = object.key("aggregateStatus").start_object();

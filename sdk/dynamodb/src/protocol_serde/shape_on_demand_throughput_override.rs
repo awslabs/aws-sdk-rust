@@ -2,7 +2,7 @@
 pub fn ser_on_demand_throughput_override(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OnDemandThroughputOverride,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_read_request_units {
         object.key("MaxReadRequestUnits").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_on_demand_throughput_override(
 
 pub(crate) fn de_on_demand_throughput_override<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OnDemandThroughputOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OnDemandThroughputOverride>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

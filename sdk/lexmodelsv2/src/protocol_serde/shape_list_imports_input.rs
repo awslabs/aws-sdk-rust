@@ -2,7 +2,7 @@
 pub fn ser_list_imports_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_imports::ListImportsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bot_id {
         object.key("botId").string(var_1.as_str());
     }

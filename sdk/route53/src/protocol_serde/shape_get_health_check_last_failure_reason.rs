@@ -79,7 +79,7 @@ pub fn de_get_health_check_last_failure_reason_http_response(
 pub fn de_get_health_check_last_failure_reason(
     inp: &[u8],
     mut builder: crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_health_check_last_failure_reason::builders::GetHealthCheckLastFailureReasonOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

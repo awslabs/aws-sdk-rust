@@ -128,7 +128,7 @@ pub fn de_get_asset_property_value_history_http_response(
 pub(crate) fn de_get_asset_property_value_history(
     value: &[u8],
     mut builder: crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -172,7 +172,7 @@ pub fn de_delete_topic_refresh_schedule_http_response(
 pub(crate) fn de_delete_topic_refresh_schedule(
     value: &[u8],
     mut builder: crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_topic_refresh_schedule::builders::DeleteTopicRefreshScheduleOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -168,7 +168,7 @@ pub fn de_list_realtime_contact_analysis_segments_v2_http_response(
 
 pub fn ser_list_realtime_contact_analysis_segments_v2_input(
     input: &crate::operation::list_realtime_contact_analysis_segments_v2::ListRealtimeContactAnalysisSegmentsV2Input,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_realtime_contact_analysis_segments_v2_input::ser_list_realtime_contact_analysis_segments_v2_input_input(
@@ -182,7 +182,7 @@ pub fn ser_list_realtime_contact_analysis_segments_v2_input(
 pub(crate) fn de_list_realtime_contact_analysis_segments_v2(
     value: &[u8],
     mut builder: crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_realtime_contact_analysis_segments_v2::builders::ListRealtimeContactAnalysisSegmentsV2OutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

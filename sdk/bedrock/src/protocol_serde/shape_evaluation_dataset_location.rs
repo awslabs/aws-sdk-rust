@@ -2,7 +2,7 @@
 pub fn ser_evaluation_dataset_location(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EvaluationDatasetLocation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EvaluationDatasetLocation::S3Uri(inner) => {
             object_2.key("s3Uri").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_evaluation_dataset_location(
 
 pub(crate) fn de_evaluation_dataset_location<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::EvaluationDatasetLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::EvaluationDatasetLocation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

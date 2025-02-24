@@ -141,7 +141,7 @@ pub fn de_export_table_to_point_in_time_http_response(
 
 pub fn ser_export_table_to_point_in_time_input(
     input: &crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_export_table_to_point_in_time_input::ser_export_table_to_point_in_time_input_input(&mut object, input)?;
@@ -152,7 +152,7 @@ pub fn ser_export_table_to_point_in_time_input(
 pub(crate) fn de_export_table_to_point_in_time(
     value: &[u8],
     mut builder: crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -76,7 +76,7 @@ pub fn de_list_audience_generation_jobs_http_response(
 pub(crate) fn de_list_audience_generation_jobs(
     value: &[u8],
     mut builder: crate::operation::list_audience_generation_jobs::builders::ListAudienceGenerationJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_audience_generation_jobs::builders::ListAudienceGenerationJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -104,7 +104,7 @@ pub fn ser_list_jobs_headers(
 pub fn de_list_jobs(
     inp: &[u8],
     mut builder: crate::operation::list_jobs::builders::ListJobsOutputBuilder,
-) -> Result<crate::operation::list_jobs::builders::ListJobsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_jobs::builders::ListJobsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

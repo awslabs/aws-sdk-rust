@@ -127,7 +127,7 @@ pub fn de_list_asset_bundle_export_jobs_http_response(
 pub(crate) fn de_list_asset_bundle_export_jobs(
     value: &[u8],
     mut builder: crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_asset_bundle_export_jobs::builders::ListAssetBundleExportJobsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

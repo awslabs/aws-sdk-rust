@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_server_side_encryption_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketServerSideEncryptionRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.apply_server_side_encryption_by_default {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ApplyServerSideEncryptionByDefault").start_object();
@@ -17,7 +17,7 @@ pub fn ser_aws_s3_bucket_server_side_encryption_rule(
 
 pub(crate) fn de_aws_s3_bucket_server_side_encryption_rule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsS3BucketServerSideEncryptionRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsS3BucketServerSideEncryptionRule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

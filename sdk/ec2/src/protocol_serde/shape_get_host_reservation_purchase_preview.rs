@@ -39,7 +39,7 @@ pub fn de_get_host_reservation_purchase_preview_http_response(
 pub fn de_get_host_reservation_purchase_preview(
     inp: &[u8],
     mut builder: crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_describe_aggregation_authorizations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.limit {
         object.key("Limit").number(
             #[allow(clippy::useless_conversion)]

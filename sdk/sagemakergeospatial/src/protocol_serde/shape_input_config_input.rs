@@ -2,7 +2,7 @@
 pub fn ser_input_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.previous_earth_observation_job_arn {
         object.key("PreviousEarthObservationJobArn").string(var_1.as_str());
     }

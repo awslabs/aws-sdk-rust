@@ -2,7 +2,7 @@
 pub fn ser_kinesis_streams_input_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisStreamsInputUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResourceARNUpdate").string(input.resource_arn_update.as_str());
     }

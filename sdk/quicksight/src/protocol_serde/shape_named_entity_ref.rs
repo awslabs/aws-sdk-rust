@@ -2,7 +2,7 @@
 pub fn ser_named_entity_ref(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NamedEntityRef,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.named_entity_name {
         object.key("NamedEntityName").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_named_entity_ref(
 
 pub(crate) fn de_named_entity_ref<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NamedEntityRef>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NamedEntityRef>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

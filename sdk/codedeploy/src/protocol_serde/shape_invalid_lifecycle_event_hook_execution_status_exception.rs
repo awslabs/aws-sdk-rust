@@ -2,7 +2,7 @@
 pub(crate) fn de_invalid_lifecycle_event_hook_execution_status_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::InvalidLifecycleEventHookExecutionStatusExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::InvalidLifecycleEventHookExecutionStatusExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

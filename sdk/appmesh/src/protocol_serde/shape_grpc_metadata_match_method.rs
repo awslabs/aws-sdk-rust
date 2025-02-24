@@ -2,7 +2,7 @@
 pub fn ser_grpc_metadata_match_method(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrpcMetadataMatchMethod,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::GrpcMetadataMatchMethod::Exact(inner) => {
             object_3.key("exact").string(inner.as_str());
@@ -33,7 +33,7 @@ pub fn ser_grpc_metadata_match_method(
 
 pub(crate) fn de_grpc_metadata_match_method<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GrpcMetadataMatchMethod>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GrpcMetadataMatchMethod>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

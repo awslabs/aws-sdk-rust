@@ -61,7 +61,7 @@ pub fn ser_describe_multi_region_access_point_operation_headers(
 pub fn de_describe_multi_region_access_point_operation(
     inp: &[u8],
     mut builder: crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_multi_region_access_point_operation::builders::DescribeMultiRegionAccessPointOperationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

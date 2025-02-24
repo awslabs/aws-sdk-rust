@@ -2,7 +2,7 @@
 pub fn ser_put_account_dedicated_ip_warmup_attributes_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_account_dedicated_ip_warmup_attributes::PutAccountDedicatedIpWarmupAttributesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.auto_warmup_enabled {
         object.key("AutoWarmupEnabled").boolean(*var_1);
     }

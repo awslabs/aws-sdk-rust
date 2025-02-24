@@ -2,7 +2,7 @@
 pub fn ser_conversion_target_format_details(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConversionTargetFormatDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ConversionTargetFormatDetails::X12(inner) => {
             #[allow(unused_mut)]

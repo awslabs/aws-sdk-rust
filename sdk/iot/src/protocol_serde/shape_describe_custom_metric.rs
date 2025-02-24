@@ -106,7 +106,7 @@ pub fn de_describe_custom_metric_http_response(
 pub(crate) fn de_describe_custom_metric(
     value: &[u8],
     mut builder: crate::operation::describe_custom_metric::builders::DescribeCustomMetricOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_custom_metric::builders::DescribeCustomMetricOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

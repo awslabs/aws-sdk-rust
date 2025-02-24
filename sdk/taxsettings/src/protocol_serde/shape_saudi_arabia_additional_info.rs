@@ -2,7 +2,7 @@
 pub fn ser_saudi_arabia_additional_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SaudiArabiaAdditionalInfo,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tax_registration_number_type {
         object.key("taxRegistrationNumberType").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_saudi_arabia_additional_info(
 
 pub(crate) fn de_saudi_arabia_additional_info<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SaudiArabiaAdditionalInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SaudiArabiaAdditionalInfo>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

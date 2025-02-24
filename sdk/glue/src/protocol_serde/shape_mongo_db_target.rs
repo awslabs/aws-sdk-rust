@@ -2,7 +2,7 @@
 pub fn ser_mongo_db_target(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MongoDbTarget,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.connection_name {
         object.key("ConnectionName").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_mongo_db_target(
 
 pub(crate) fn de_mongo_db_target<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MongoDbTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MongoDbTarget>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

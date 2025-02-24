@@ -2,7 +2,7 @@
 pub fn ser_create_layout_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_layout::CreateLayoutInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content {
         #[allow(unused_mut)]
         let mut object_2 = object.key("content").start_object();

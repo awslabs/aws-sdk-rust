@@ -141,7 +141,7 @@ pub fn de_delete_app_version_resource_http_response(
 
 pub fn ser_delete_app_version_resource_input(
     input: &crate::operation::delete_app_version_resource::DeleteAppVersionResourceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_delete_app_version_resource_input::ser_delete_app_version_resource_input_input(&mut object, input)?;
@@ -152,7 +152,7 @@ pub fn ser_delete_app_version_resource_input(
 pub(crate) fn de_delete_app_version_resource(
     value: &[u8],
     mut builder: crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

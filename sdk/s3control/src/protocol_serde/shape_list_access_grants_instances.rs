@@ -59,8 +59,10 @@ pub fn ser_list_access_grants_instances_headers(
 pub fn de_list_access_grants_instances(
     inp: &[u8],
     mut builder: crate::operation::list_access_grants_instances::builders::ListAccessGrantsInstancesOutputBuilder,
-) -> Result<crate::operation::list_access_grants_instances::builders::ListAccessGrantsInstancesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::list_access_grants_instances::builders::ListAccessGrantsInstancesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

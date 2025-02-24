@@ -107,7 +107,7 @@ pub fn de_list_v2_logging_levels_http_response(
 pub(crate) fn de_list_v2_logging_levels(
     value: &[u8],
     mut builder: crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

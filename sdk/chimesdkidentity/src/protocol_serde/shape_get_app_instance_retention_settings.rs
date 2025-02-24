@@ -146,7 +146,7 @@ pub fn de_get_app_instance_retention_settings_http_response(
 pub(crate) fn de_get_app_instance_retention_settings(
     value: &[u8],
     mut builder: crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_app_instance_retention_settings::builders::GetAppInstanceRetentionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

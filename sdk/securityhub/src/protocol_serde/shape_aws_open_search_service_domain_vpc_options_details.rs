@@ -2,7 +2,7 @@
 pub fn ser_aws_open_search_service_domain_vpc_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.security_group_ids {
         let mut array_2 = object.key("SecurityGroupIds").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_aws_open_search_service_domain_vpc_options_details(
 
 pub(crate) fn de_aws_open_search_service_domain_vpc_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsOpenSearchServiceDomainVpcOptionsDetails>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_disassociate_custom_domain_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_custom_domain::DisassociateCustomDomainInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_arn {
         object.key("ServiceArn").string(var_1.as_str());
     }

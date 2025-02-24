@@ -184,7 +184,7 @@ pub fn de_get_reserved_node_exchange_configuration_options_http_response(
 pub fn de_get_reserved_node_exchange_configuration_options(
     inp: &[u8],
     mut builder: crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_reserved_node_exchange_configuration_options::builders::GetReservedNodeExchangeConfigurationOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

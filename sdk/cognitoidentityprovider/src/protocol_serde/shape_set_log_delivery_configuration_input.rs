@@ -2,7 +2,7 @@
 pub fn ser_set_log_delivery_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.user_pool_id {
         object.key("UserPoolId").string(var_1.as_str());
     }

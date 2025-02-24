@@ -2,7 +2,7 @@
 pub fn ser_update_backend_auth_identity_pool_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateBackendAuthIdentityPoolConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.unauthenticated_login {
         object.key("unauthenticatedLogin").boolean(*var_1);
     }

@@ -69,7 +69,7 @@ pub fn de_approve_assignment_http_response(
 
 pub fn ser_approve_assignment_input(
     input: &crate::operation::approve_assignment::ApproveAssignmentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_approve_assignment_input::ser_approve_assignment_input_input(&mut object, input)?;

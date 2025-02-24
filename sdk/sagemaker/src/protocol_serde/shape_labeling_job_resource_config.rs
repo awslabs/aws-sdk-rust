@@ -2,7 +2,7 @@
 pub fn ser_labeling_job_resource_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LabelingJobResourceConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.volume_kms_key_id {
         object.key("VolumeKmsKeyId").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_labeling_job_resource_config(
 
 pub(crate) fn de_labeling_job_resource_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LabelingJobResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LabelingJobResourceConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

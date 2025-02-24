@@ -3,7 +3,7 @@
 pub fn ser_rollback_trigger(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::RollbackTrigger,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Arn");
     if let Some(var_2) = &input.arn {
@@ -20,7 +20,7 @@ pub fn ser_rollback_trigger(
 #[allow(clippy::needless_question_mark)]
 pub fn de_rollback_trigger(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::RollbackTrigger, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::RollbackTrigger, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::RollbackTrigger::builder();
     while let Some(mut tag) = decoder.next_tag() {

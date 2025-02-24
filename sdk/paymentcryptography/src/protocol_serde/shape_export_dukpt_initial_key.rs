@@ -2,7 +2,7 @@
 pub fn ser_export_dukpt_initial_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportDukptInitialKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("KeySerialNumber").string(input.key_serial_number.as_str());
     }

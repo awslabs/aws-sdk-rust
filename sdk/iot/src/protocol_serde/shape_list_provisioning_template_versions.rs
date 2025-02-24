@@ -130,7 +130,7 @@ pub fn de_list_provisioning_template_versions_http_response(
 pub(crate) fn de_list_provisioning_template_versions(
     value: &[u8],
     mut builder: crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

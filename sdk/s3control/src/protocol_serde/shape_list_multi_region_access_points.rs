@@ -57,7 +57,7 @@ pub fn ser_list_multi_region_access_points_headers(
 pub fn de_list_multi_region_access_points(
     inp: &[u8],
     mut builder: crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

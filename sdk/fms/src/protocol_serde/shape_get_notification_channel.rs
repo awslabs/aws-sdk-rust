@@ -94,14 +94,14 @@ pub fn de_get_notification_channel_http_response(
 
 pub fn ser_get_notification_channel_input(
     _input: &crate::operation::get_notification_channel::GetNotificationChannelInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_notification_channel(
     value: &[u8],
     mut builder: crate::operation::get_notification_channel::builders::GetNotificationChannelOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_notification_channel::builders::GetNotificationChannelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

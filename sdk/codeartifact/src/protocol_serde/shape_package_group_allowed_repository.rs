@@ -2,7 +2,7 @@
 pub fn ser_package_group_allowed_repository(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PackageGroupAllowedRepository,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.repository_name {
         object.key("repositoryName").string(var_1.as_str());
     }

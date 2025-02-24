@@ -118,7 +118,7 @@ pub fn de_delete_graph_snapshot_http_response(
 pub(crate) fn de_delete_graph_snapshot(
     value: &[u8],
     mut builder: crate::operation::delete_graph_snapshot::builders::DeleteGraphSnapshotOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_graph_snapshot::builders::DeleteGraphSnapshotOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

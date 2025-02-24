@@ -39,7 +39,7 @@ pub fn de_disassociate_iam_instance_profile_http_response(
 pub fn de_disassociate_iam_instance_profile(
     inp: &[u8],
     mut builder: crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

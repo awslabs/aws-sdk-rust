@@ -2,7 +2,7 @@
 pub fn ser_describe_job_definitions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_job_definitions::DescribeJobDefinitionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_definition_name {
         object.key("jobDefinitionName").string(var_1.as_str());
     }

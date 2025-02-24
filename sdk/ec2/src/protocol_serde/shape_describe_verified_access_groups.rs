@@ -39,7 +39,7 @@ pub fn de_describe_verified_access_groups_http_response(
 pub fn de_describe_verified_access_groups(
     inp: &[u8],
     mut builder: crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

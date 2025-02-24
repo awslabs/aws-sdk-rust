@@ -2,7 +2,7 @@
 pub fn ser_create_sync_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_sync_job::CreateSyncJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sync_role {
         object.key("syncRole").string(var_1.as_str());
     }

@@ -102,7 +102,7 @@ pub fn de_put_configuration_set_suppression_options_http_response(
 
 pub fn ser_put_configuration_set_suppression_options_input(
     input: &crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_configuration_set_suppression_options_input::ser_put_configuration_set_suppression_options_input_input(

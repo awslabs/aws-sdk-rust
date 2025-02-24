@@ -2,7 +2,7 @@
 pub fn ser_cryptogram_verification_arpc_method2(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CryptogramVerificationArpcMethod2,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CardStatusUpdate").string(input.card_status_update.as_str());
     }

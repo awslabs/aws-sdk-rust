@@ -57,7 +57,7 @@ pub fn ser_create_access_grants_instance_headers(
 
 pub fn ser_create_access_grants_instance_op_input(
     input: &crate::operation::create_access_grants_instance::CreateAccessGrantsInstanceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -74,7 +74,7 @@ pub fn ser_create_access_grants_instance_op_input(
 pub fn de_create_access_grants_instance(
     inp: &[u8],
     mut builder: crate::operation::create_access_grants_instance::builders::CreateAccessGrantsInstanceOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_access_grants_instance::builders::CreateAccessGrantsInstanceOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

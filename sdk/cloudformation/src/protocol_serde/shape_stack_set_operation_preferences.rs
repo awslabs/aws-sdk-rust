@@ -3,7 +3,7 @@
 pub fn ser_stack_set_operation_preferences(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::StackSetOperationPreferences,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("RegionConcurrencyType");
     if let Some(var_2) = &input.region_concurrency_type {
@@ -63,7 +63,7 @@ pub fn ser_stack_set_operation_preferences(
 #[allow(clippy::needless_question_mark)]
 pub fn de_stack_set_operation_preferences(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::StackSetOperationPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::StackSetOperationPreferences, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::StackSetOperationPreferences::builder();
     while let Some(mut tag) = decoder.next_tag() {

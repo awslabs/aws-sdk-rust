@@ -2,7 +2,7 @@
 pub fn ser_add_instance_fleet_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_instance_fleet::AddInstanceFleetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cluster_id {
         object.key("ClusterId").string(var_1.as_str());
     }

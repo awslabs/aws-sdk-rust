@@ -77,7 +77,7 @@ pub fn de_associate_data_share_consumer_http_response(
 pub fn de_associate_data_share_consumer(
     inp: &[u8],
     mut builder: crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

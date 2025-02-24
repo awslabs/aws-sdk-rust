@@ -2,7 +2,7 @@
 pub fn ser_protective_equipment_summarization_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProtectiveEquipmentSummarizationAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("MinConfidence").number(
             #[allow(clippy::useless_conversion)]

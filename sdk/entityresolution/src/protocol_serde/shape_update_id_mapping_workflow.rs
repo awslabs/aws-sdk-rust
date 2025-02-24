@@ -126,7 +126,7 @@ pub fn de_update_id_mapping_workflow_http_response(
 
 pub fn ser_update_id_mapping_workflow_input(
     input: &crate::operation::update_id_mapping_workflow::UpdateIdMappingWorkflowInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_id_mapping_workflow_input::ser_update_id_mapping_workflow_input_input(&mut object, input)?;
@@ -137,7 +137,7 @@ pub fn ser_update_id_mapping_workflow_input(
 pub(crate) fn de_update_id_mapping_workflow(
     value: &[u8],
     mut builder: crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_id_mapping_workflow::builders::UpdateIdMappingWorkflowOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

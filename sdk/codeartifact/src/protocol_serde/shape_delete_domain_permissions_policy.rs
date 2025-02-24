@@ -142,7 +142,7 @@ pub fn de_delete_domain_permissions_policy_http_response(
 pub(crate) fn de_delete_domain_permissions_policy(
     value: &[u8],
     mut builder: crate::operation::delete_domain_permissions_policy::builders::DeleteDomainPermissionsPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_domain_permissions_policy::builders::DeleteDomainPermissionsPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

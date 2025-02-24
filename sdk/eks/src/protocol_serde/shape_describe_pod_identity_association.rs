@@ -114,7 +114,7 @@ pub fn de_describe_pod_identity_association_http_response(
 pub(crate) fn de_describe_pod_identity_association(
     value: &[u8],
     mut builder: crate::operation::describe_pod_identity_association::builders::DescribePodIdentityAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_pod_identity_association::builders::DescribePodIdentityAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -83,8 +83,10 @@ pub fn de_list_server_certificate_tags_http_response(
 pub fn de_list_server_certificate_tags(
     inp: &[u8],
     mut builder: crate::operation::list_server_certificate_tags::builders::ListServerCertificateTagsOutputBuilder,
-) -> Result<crate::operation::list_server_certificate_tags::builders::ListServerCertificateTagsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::list_server_certificate_tags::builders::ListServerCertificateTagsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_connection_properties_patch(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ConnectionPropertiesPatch,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ConnectionPropertiesPatch::AthenaProperties(inner) => {
             #[allow(unused_mut)]

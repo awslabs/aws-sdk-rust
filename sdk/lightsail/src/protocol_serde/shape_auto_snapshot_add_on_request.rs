@@ -2,7 +2,7 @@
 pub fn ser_auto_snapshot_add_on_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoSnapshotAddOnRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.snapshot_time_of_day {
         object.key("snapshotTimeOfDay").string(var_1.as_str());
     }

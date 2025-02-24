@@ -2,7 +2,7 @@
 pub fn ser_blueprint(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Blueprint,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("blueprintArn").string(input.blueprint_arn.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_telephony_channel_subtype_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TelephonyChannelSubtypeParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("destinationPhoneNumber").string(input.destination_phone_number.as_str());
     }

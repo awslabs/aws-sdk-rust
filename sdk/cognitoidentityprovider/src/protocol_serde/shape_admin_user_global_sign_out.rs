@@ -137,7 +137,7 @@ pub fn de_admin_user_global_sign_out_http_response(
 
 pub fn ser_admin_user_global_sign_out_input(
     input: &crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_admin_user_global_sign_out_input::ser_admin_user_global_sign_out_input_input(&mut object, input)?;

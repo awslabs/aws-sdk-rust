@@ -77,7 +77,7 @@ pub fn de_describe_table_restore_status_http_response(
 pub fn de_describe_table_restore_status(
     inp: &[u8],
     mut builder: crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

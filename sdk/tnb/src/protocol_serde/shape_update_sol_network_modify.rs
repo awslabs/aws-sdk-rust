@@ -2,7 +2,7 @@
 pub fn ser_update_sol_network_modify(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateSolNetworkModify,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("vnfInstanceId").string(input.vnf_instance_id.as_str());
     }

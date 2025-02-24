@@ -139,7 +139,7 @@ pub fn de_create_traffic_policy_instance_http_response(
 
 pub fn ser_create_traffic_policy_instance_op_input(
     input: &crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -156,7 +156,7 @@ pub fn ser_create_traffic_policy_instance_op_input(
 pub fn de_create_traffic_policy_instance(
     inp: &[u8],
     mut builder: crate::operation::create_traffic_policy_instance::builders::CreateTrafficPolicyInstanceOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_traffic_policy_instance::builders::CreateTrafficPolicyInstanceOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

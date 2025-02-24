@@ -75,7 +75,7 @@ pub fn de_describe_event_tracker_http_response(
 
 pub fn ser_describe_event_tracker_input(
     input: &crate::operation::describe_event_tracker::DescribeEventTrackerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_event_tracker_input::ser_describe_event_tracker_input_input(&mut object, input)?;
@@ -86,7 +86,7 @@ pub fn ser_describe_event_tracker_input(
 pub(crate) fn de_describe_event_tracker(
     value: &[u8],
     mut builder: crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

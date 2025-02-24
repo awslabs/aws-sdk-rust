@@ -2,7 +2,7 @@
 pub fn ser_create_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_config::CreateConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.config_data {
         #[allow(unused_mut)]
         let mut object_2 = object.key("configData").start_object();

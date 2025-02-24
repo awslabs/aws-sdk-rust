@@ -134,8 +134,10 @@ pub fn de_delete_flow_version_http_response(
 pub(crate) fn de_delete_flow_version(
     value: &[u8],
     mut builder: crate::operation::delete_flow_version::builders::DeleteFlowVersionOutputBuilder,
-) -> Result<crate::operation::delete_flow_version::builders::DeleteFlowVersionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::delete_flow_version::builders::DeleteFlowVersionOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

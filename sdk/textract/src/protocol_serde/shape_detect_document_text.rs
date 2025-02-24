@@ -182,7 +182,7 @@ pub fn de_detect_document_text_http_response(
 
 pub fn ser_detect_document_text_input(
     input: &crate::operation::detect_document_text::DetectDocumentTextInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_detect_document_text_input::ser_detect_document_text_input_input(&mut object, input)?;
@@ -193,8 +193,10 @@ pub fn ser_detect_document_text_input(
 pub(crate) fn de_detect_document_text(
     value: &[u8],
     mut builder: crate::operation::detect_document_text::builders::DetectDocumentTextOutputBuilder,
-) -> Result<crate::operation::detect_document_text::builders::DetectDocumentTextOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::detect_document_text::builders::DetectDocumentTextOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

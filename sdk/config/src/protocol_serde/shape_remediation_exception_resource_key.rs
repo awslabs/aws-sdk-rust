@@ -2,7 +2,7 @@
 pub fn ser_remediation_exception_resource_key(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RemediationExceptionResourceKey,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_type {
         object.key("ResourceType").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_remediation_exception_resource_key(
 
 pub(crate) fn de_remediation_exception_resource_key<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RemediationExceptionResourceKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RemediationExceptionResourceKey>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

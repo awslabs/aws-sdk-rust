@@ -2,7 +2,7 @@
 pub fn ser_update_target_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_target_group::UpdateTargetGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.health_check {
         #[allow(unused_mut)]
         let mut object_2 = object.key("healthCheck").start_object();

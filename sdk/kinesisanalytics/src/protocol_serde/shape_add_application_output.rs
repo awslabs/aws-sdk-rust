@@ -122,7 +122,7 @@ pub fn de_add_application_output_http_response(
 
 pub fn ser_add_application_output_input(
     input: &crate::operation::add_application_output::AddApplicationOutputInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_add_application_output_input::ser_add_application_output_input_input(&mut object, input)?;

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_instance_ipv4_prefix(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::InstanceIpv4Prefix, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::InstanceIpv4Prefix, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::InstanceIpv4Prefix::builder();
     while let Some(mut tag) = decoder.next_tag() {

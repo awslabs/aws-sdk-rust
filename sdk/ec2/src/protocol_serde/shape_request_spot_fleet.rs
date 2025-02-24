@@ -33,7 +33,7 @@ pub fn de_request_spot_fleet_http_response(
 pub fn de_request_spot_fleet(
     inp: &[u8],
     mut builder: crate::operation::request_spot_fleet::builders::RequestSpotFleetOutputBuilder,
-) -> Result<crate::operation::request_spot_fleet::builders::RequestSpotFleetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::request_spot_fleet::builders::RequestSpotFleetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

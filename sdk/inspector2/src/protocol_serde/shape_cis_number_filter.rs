@@ -2,7 +2,7 @@
 pub fn ser_cis_number_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CisNumberFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.upper_inclusive {
         object.key("upperInclusive").number(
             #[allow(clippy::useless_conversion)]

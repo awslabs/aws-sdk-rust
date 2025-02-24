@@ -126,7 +126,7 @@ pub fn de_list_domain_configurations_http_response(
 pub(crate) fn de_list_domain_configurations(
     value: &[u8],
     mut builder: crate::operation::list_domain_configurations::builders::ListDomainConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_domain_configurations::builders::ListDomainConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

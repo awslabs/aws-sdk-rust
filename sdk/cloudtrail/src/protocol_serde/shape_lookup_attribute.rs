@@ -2,7 +2,7 @@
 pub fn ser_lookup_attribute(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LookupAttribute,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AttributeKey").string(input.attribute_key.as_str());
     }

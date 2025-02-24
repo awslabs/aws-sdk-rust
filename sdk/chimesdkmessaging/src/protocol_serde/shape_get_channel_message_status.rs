@@ -160,7 +160,7 @@ pub fn ser_get_channel_message_status_headers(
 pub(crate) fn de_get_channel_message_status(
     value: &[u8],
     mut builder: crate::operation::get_channel_message_status::builders::GetChannelMessageStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_channel_message_status::builders::GetChannelMessageStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

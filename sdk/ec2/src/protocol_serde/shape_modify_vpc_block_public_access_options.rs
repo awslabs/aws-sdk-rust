@@ -41,7 +41,7 @@ pub fn de_modify_vpc_block_public_access_options_http_response(
 pub fn de_modify_vpc_block_public_access_options(
     inp: &[u8],
     mut builder: crate::operation::modify_vpc_block_public_access_options::builders::ModifyVpcBlockPublicAccessOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpc_block_public_access_options::builders::ModifyVpcBlockPublicAccessOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

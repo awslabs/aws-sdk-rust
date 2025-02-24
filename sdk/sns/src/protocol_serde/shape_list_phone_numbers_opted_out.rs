@@ -111,8 +111,10 @@ pub fn de_list_phone_numbers_opted_out_http_response(
 pub fn de_list_phone_numbers_opted_out(
     inp: &[u8],
     mut builder: crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder,
-) -> Result<crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

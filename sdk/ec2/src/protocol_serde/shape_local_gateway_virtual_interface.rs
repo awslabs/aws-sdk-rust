@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_local_gateway_virtual_interface(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LocalGatewayVirtualInterface, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LocalGatewayVirtualInterface, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LocalGatewayVirtualInterface::builder();
     while let Some(mut tag) = decoder.next_tag() {

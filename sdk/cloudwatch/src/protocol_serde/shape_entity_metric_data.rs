@@ -3,7 +3,7 @@
 pub fn ser_entity_metric_data(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::EntityMetricData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Entity");
     if let Some(var_2) = &input.entity {

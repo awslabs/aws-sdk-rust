@@ -2,7 +2,7 @@
 pub fn ser_copy_destination_image_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CopyDestinationImageSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("imageSetId").string(input.image_set_id.as_str());
     }

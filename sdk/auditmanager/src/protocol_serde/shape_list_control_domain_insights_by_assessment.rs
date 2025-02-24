@@ -124,7 +124,7 @@ pub fn de_list_control_domain_insights_by_assessment_http_response(
 pub(crate) fn de_list_control_domain_insights_by_assessment(
     value: &[u8],
     mut builder: crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_control_domain_insights_by_assessment::builders::ListControlDomainInsightsByAssessmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

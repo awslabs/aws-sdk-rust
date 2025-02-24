@@ -2,7 +2,7 @@
 pub fn ser_journey_schedule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JourneySchedule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.end_time {
         object.key("EndTime").date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
@@ -19,7 +19,7 @@ pub fn ser_journey_schedule(
 
 pub(crate) fn de_journey_schedule<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::JourneySchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::JourneySchedule>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

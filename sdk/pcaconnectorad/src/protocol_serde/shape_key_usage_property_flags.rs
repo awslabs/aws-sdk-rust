@@ -2,7 +2,7 @@
 pub fn ser_key_usage_property_flags(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyUsagePropertyFlags,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.decrypt {
         object.key("Decrypt").boolean(*var_1);
     }
@@ -17,7 +17,7 @@ pub fn ser_key_usage_property_flags(
 
 pub(crate) fn de_key_usage_property_flags<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::KeyUsagePropertyFlags>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::KeyUsagePropertyFlags>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

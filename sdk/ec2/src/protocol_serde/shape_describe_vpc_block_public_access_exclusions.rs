@@ -43,7 +43,7 @@ pub fn de_describe_vpc_block_public_access_exclusions_http_response(
 pub fn de_describe_vpc_block_public_access_exclusions(
     inp: &[u8],
     mut builder: crate::operation::describe_vpc_block_public_access_exclusions::builders::DescribeVpcBlockPublicAccessExclusionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_vpc_block_public_access_exclusions::builders::DescribeVpcBlockPublicAccessExclusionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

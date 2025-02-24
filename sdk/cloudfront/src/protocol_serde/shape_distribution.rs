@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_distribution(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Distribution, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Distribution, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Distribution::builder();
     while let Some(mut tag) = decoder.next_tag() {

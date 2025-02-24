@@ -123,7 +123,7 @@ pub fn de_create_function_http_response(
 
 pub fn ser_create_function_op_input(
     input: &crate::operation::create_function::CreateFunctionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

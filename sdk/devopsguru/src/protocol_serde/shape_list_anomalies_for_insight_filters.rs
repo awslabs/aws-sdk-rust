@@ -2,7 +2,7 @@
 pub fn ser_list_anomalies_for_insight_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListAnomaliesForInsightFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_collection {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ServiceCollection").start_object();

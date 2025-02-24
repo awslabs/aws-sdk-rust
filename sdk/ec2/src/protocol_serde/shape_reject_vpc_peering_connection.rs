@@ -41,7 +41,7 @@ pub fn de_reject_vpc_peering_connection_http_response(
 pub fn de_reject_vpc_peering_connection(
     inp: &[u8],
     mut builder: crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -175,7 +175,7 @@ pub fn de_delete_permission_version_http_response(
 pub(crate) fn de_delete_permission_version(
     value: &[u8],
     mut builder: crate::operation::delete_permission_version::builders::DeletePermissionVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_permission_version::builders::DeletePermissionVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

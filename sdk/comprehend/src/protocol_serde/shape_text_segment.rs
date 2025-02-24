@@ -2,7 +2,7 @@
 pub fn ser_text_segment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TextSegment,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Text").string(input.text.as_str());
     }

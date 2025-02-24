@@ -2,7 +2,7 @@
 pub fn ser_forget_device_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::forget_device::ForgetDeviceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_token {
         object.key("AccessToken").string(var_1.as_str());
     }

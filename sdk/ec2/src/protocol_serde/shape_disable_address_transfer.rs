@@ -39,7 +39,10 @@ pub fn de_disable_address_transfer_http_response(
 pub fn de_disable_address_transfer(
     inp: &[u8],
     mut builder: crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder,
-) -> Result<crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::disable_address_transfer::builders::DisableAddressTransferOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

@@ -129,7 +129,7 @@ pub fn de_describe_backup_policy_http_response(
 pub(crate) fn de_describe_backup_policy(
     value: &[u8],
     mut builder: crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_backup_policy::builders::DescribeBackupPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_remove_thing_from_thing_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.thing_arn {
         object.key("thingArn").string(var_1.as_str());
     }

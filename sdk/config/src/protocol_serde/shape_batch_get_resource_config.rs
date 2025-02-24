@@ -80,7 +80,7 @@ pub fn de_batch_get_resource_config_http_response(
 
 pub fn ser_batch_get_resource_config_input(
     input: &crate::operation::batch_get_resource_config::BatchGetResourceConfigInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_get_resource_config_input::ser_batch_get_resource_config_input_input(&mut object, input)?;
@@ -91,7 +91,7 @@ pub fn ser_batch_get_resource_config_input(
 pub(crate) fn de_batch_get_resource_config(
     value: &[u8],
     mut builder: crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

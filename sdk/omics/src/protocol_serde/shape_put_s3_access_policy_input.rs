@@ -2,7 +2,7 @@
 pub fn ser_put_s3_access_policy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_s3_access_policy::PutS3AccessPolicyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.s3_access_policy {
         object.key("s3AccessPolicy").string(var_1.as_str());
     }

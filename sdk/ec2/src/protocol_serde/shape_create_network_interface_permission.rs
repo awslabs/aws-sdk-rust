@@ -39,7 +39,7 @@ pub fn de_create_network_interface_permission_http_response(
 pub fn de_create_network_interface_permission(
     inp: &[u8],
     mut builder: crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

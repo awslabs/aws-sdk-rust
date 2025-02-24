@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_spot_market_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LaunchTemplateSpotMarketOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LaunchTemplateSpotMarketOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateSpotMarketOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {

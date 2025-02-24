@@ -3,7 +3,7 @@
 pub fn de_invalid_identity_token_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidIdentityTokenExceptionBuilder,
-) -> Result<crate::types::error::builders::InvalidIdentityTokenExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidIdentityTokenExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

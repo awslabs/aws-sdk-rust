@@ -2,7 +2,7 @@
 pub fn ser_geo_restriction(
     input: &crate::types::GeoRestriction,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     {
@@ -29,7 +29,7 @@ pub fn ser_geo_restriction(
 #[allow(clippy::needless_question_mark)]
 pub fn de_geo_restriction(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::GeoRestriction, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::GeoRestriction, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::GeoRestriction::builder();
     while let Some(mut tag) = decoder.next_tag() {

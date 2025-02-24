@@ -2,7 +2,7 @@
 pub fn ser_weighted_target_group(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WeightedTargetGroup,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("targetGroupIdentifier").string(input.target_group_identifier.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_weighted_target_group(
 
 pub(crate) fn de_weighted_target_group<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WeightedTargetGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WeightedTargetGroup>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

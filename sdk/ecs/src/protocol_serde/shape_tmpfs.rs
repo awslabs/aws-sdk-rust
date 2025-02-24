@@ -2,7 +2,7 @@
 pub fn ser_tmpfs(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tmpfs,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("containerPath").string(input.container_path.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_tmpfs(
 
 pub(crate) fn de_tmpfs<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Tmpfs>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Tmpfs>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

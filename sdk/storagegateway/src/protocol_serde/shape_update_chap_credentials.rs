@@ -78,7 +78,7 @@ pub fn de_update_chap_credentials_http_response(
 
 pub fn ser_update_chap_credentials_input(
     input: &crate::operation::update_chap_credentials::UpdateChapCredentialsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_chap_credentials_input::ser_update_chap_credentials_input_input(&mut object, input)?;
@@ -89,7 +89,7 @@ pub fn ser_update_chap_credentials_input(
 pub(crate) fn de_update_chap_credentials(
     value: &[u8],
     mut builder: crate::operation::update_chap_credentials::builders::UpdateChapCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_chap_credentials::builders::UpdateChapCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

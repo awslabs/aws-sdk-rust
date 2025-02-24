@@ -2,7 +2,7 @@
 pub fn ser_codegen_generic_data_enum(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenGenericDataEnum,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("values").start_array();
         for item_2 in &input.values {
@@ -17,7 +17,7 @@ pub fn ser_codegen_generic_data_enum(
 
 pub(crate) fn de_codegen_generic_data_enum<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodegenGenericDataEnum>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodegenGenericDataEnum>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

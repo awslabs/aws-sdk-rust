@@ -2,7 +2,7 @@
 pub fn ser_virtual_gateway_connection_pool(
     object_8: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VirtualGatewayConnectionPool,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::VirtualGatewayConnectionPool::Http(inner) => {
             #[allow(unused_mut)]
@@ -33,7 +33,7 @@ pub fn ser_virtual_gateway_connection_pool(
 
 pub(crate) fn de_virtual_gateway_connection_pool<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::VirtualGatewayConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::VirtualGatewayConnectionPool>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

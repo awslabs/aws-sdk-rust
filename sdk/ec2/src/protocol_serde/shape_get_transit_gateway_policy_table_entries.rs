@@ -43,7 +43,7 @@ pub fn de_get_transit_gateway_policy_table_entries_http_response(
 pub fn de_get_transit_gateway_policy_table_entries(
     inp: &[u8],
     mut builder: crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

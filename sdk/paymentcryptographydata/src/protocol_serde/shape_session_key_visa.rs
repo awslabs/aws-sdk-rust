@@ -2,7 +2,7 @@
 pub fn ser_session_key_visa(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SessionKeyVisa,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PrimaryAccountNumber").string(input.primary_account_number.as_str());
     }

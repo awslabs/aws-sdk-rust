@@ -134,7 +134,7 @@ pub fn de_delete_identity_propagation_config_http_response(
 pub(crate) fn de_delete_identity_propagation_config(
     value: &[u8],
     mut builder: crate::operation::delete_identity_propagation_config::builders::DeleteIdentityPropagationConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_identity_propagation_config::builders::DeleteIdentityPropagationConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

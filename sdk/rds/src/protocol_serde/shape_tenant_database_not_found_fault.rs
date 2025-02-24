@@ -3,7 +3,7 @@
 pub fn de_tenant_database_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::TenantDatabaseNotFoundFaultBuilder,
-) -> Result<crate::types::error::builders::TenantDatabaseNotFoundFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::TenantDatabaseNotFoundFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

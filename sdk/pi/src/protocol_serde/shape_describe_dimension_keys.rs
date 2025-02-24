@@ -90,7 +90,7 @@ pub fn de_describe_dimension_keys_http_response(
 
 pub fn ser_describe_dimension_keys_input(
     input: &crate::operation::describe_dimension_keys::DescribeDimensionKeysInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_dimension_keys_input::ser_describe_dimension_keys_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_describe_dimension_keys_input(
 pub(crate) fn de_describe_dimension_keys(
     value: &[u8],
     mut builder: crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

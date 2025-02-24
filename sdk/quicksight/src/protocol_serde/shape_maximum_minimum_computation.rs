@@ -2,7 +2,7 @@
 pub fn ser_maximum_minimum_computation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MaximumMinimumComputation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ComputationId").string(input.computation_id.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_maximum_minimum_computation(
 
 pub(crate) fn de_maximum_minimum_computation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MaximumMinimumComputation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MaximumMinimumComputation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_waba_phone_number_setup_finalization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WabaPhoneNumberSetupFinalization,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("id").string(input.id.as_str());
     }

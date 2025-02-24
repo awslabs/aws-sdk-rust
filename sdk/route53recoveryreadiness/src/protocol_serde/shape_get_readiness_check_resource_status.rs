@@ -128,7 +128,7 @@ pub fn de_get_readiness_check_resource_status_http_response(
 pub(crate) fn de_get_readiness_check_resource_status(
     value: &[u8],
     mut builder: crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

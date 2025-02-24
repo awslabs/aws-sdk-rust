@@ -2,7 +2,7 @@
 pub fn ser_container_overrides(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContainerOverrides,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.vcpus {
         object.key("vcpus").number(
             #[allow(clippy::useless_conversion)]

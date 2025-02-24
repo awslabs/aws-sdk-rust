@@ -100,7 +100,7 @@ pub fn de_get_custom_verification_email_template_http_response(
 pub(crate) fn de_get_custom_verification_email_template(
     value: &[u8],
     mut builder: crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_custom_verification_email_template::builders::GetCustomVerificationEmailTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

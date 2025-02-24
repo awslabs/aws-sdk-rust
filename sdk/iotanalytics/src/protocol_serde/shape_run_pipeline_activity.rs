@@ -106,7 +106,7 @@ pub fn de_run_pipeline_activity_http_response(
 
 pub fn ser_run_pipeline_activity_input(
     input: &crate::operation::run_pipeline_activity::RunPipelineActivityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_run_pipeline_activity_input::ser_run_pipeline_activity_input_input(&mut object, input)?;
@@ -117,7 +117,7 @@ pub fn ser_run_pipeline_activity_input(
 pub(crate) fn de_run_pipeline_activity(
     value: &[u8],
     mut builder: crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::run_pipeline_activity::builders::RunPipelineActivityOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

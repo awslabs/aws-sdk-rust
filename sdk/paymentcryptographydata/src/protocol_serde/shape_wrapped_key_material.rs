@@ -2,7 +2,7 @@
 pub fn ser_wrapped_key_material(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WrappedKeyMaterial,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::WrappedKeyMaterial::Tr31KeyBlock(inner) => {
             object_2.key("Tr31KeyBlock").string(inner.as_str());

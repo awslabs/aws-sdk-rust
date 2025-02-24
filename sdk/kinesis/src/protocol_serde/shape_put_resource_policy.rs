@@ -114,7 +114,7 @@ pub fn de_put_resource_policy_http_response(
 
 pub fn ser_put_resource_policy_input(
     input: &crate::operation::put_resource_policy::PutResourcePolicyInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_resource_policy_input::ser_put_resource_policy_input_input(&mut object, input)?;

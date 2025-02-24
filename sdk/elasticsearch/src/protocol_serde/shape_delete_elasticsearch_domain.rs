@@ -110,7 +110,7 @@ pub fn de_delete_elasticsearch_domain_http_response(
 pub(crate) fn de_delete_elasticsearch_domain(
     value: &[u8],
     mut builder: crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

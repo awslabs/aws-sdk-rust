@@ -41,7 +41,7 @@ pub fn de_get_identity_verification_attributes_http_response(
 pub fn de_get_identity_verification_attributes(
     inp: &[u8],
     mut builder: crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

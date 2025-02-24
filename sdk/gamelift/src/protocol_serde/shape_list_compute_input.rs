@@ -2,7 +2,7 @@
 pub fn ser_list_compute_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_compute::ListComputeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_id {
         object.key("FleetId").string(var_1.as_str());
     }

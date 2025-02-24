@@ -33,7 +33,7 @@ pub fn de_import_volume_http_response(
 pub fn de_import_volume(
     inp: &[u8],
     mut builder: crate::operation::import_volume::builders::ImportVolumeOutputBuilder,
-) -> Result<crate::operation::import_volume::builders::ImportVolumeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::import_volume::builders::ImportVolumeOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

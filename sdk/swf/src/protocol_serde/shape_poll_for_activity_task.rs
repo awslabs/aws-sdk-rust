@@ -93,7 +93,7 @@ pub fn de_poll_for_activity_task_http_response(
 
 pub fn ser_poll_for_activity_task_input(
     input: &crate::operation::poll_for_activity_task::PollForActivityTaskInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_poll_for_activity_task_input::ser_poll_for_activity_task_input_input(&mut object, input)?;
@@ -104,7 +104,7 @@ pub fn ser_poll_for_activity_task_input(
 pub(crate) fn de_poll_for_activity_task(
     value: &[u8],
     mut builder: crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::poll_for_activity_task::builders::PollForActivityTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -43,7 +43,7 @@ pub fn de_describe_transit_gateway_multicast_domains_http_response(
 pub fn de_describe_transit_gateway_multicast_domains(
     inp: &[u8],
     mut builder: crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_transit_gateway_multicast_domains::builders::DescribeTransitGatewayMulticastDomainsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

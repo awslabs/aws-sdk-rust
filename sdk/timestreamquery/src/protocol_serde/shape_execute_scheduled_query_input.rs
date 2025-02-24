@@ -2,7 +2,7 @@
 pub fn ser_execute_scheduled_query_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_scheduled_query::ExecuteScheduledQueryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scheduled_query_arn {
         object.key("ScheduledQueryArn").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_spark_submit_job_driver(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SparkSubmitJobDriver,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("entryPoint").string(input.entry_point.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_spark_submit_job_driver(
 
 pub(crate) fn de_spark_submit_job_driver<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SparkSubmitJobDriver>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SparkSubmitJobDriver>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

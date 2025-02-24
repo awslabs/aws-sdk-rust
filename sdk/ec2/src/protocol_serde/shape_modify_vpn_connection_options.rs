@@ -41,7 +41,7 @@ pub fn de_modify_vpn_connection_options_http_response(
 pub fn de_modify_vpn_connection_options(
     inp: &[u8],
     mut builder: crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

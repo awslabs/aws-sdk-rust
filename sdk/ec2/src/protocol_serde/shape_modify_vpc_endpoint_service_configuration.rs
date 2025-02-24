@@ -43,7 +43,7 @@ pub fn de_modify_vpc_endpoint_service_configuration_http_response(
 pub fn de_modify_vpc_endpoint_service_configuration(
     inp: &[u8],
     mut builder: crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

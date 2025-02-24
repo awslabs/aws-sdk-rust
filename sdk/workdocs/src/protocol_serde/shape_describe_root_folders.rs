@@ -148,7 +148,7 @@ pub fn ser_describe_root_folders_headers(
 pub(crate) fn de_describe_root_folders(
     value: &[u8],
     mut builder: crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

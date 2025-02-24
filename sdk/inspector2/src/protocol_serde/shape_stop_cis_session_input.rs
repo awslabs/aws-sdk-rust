@@ -2,7 +2,7 @@
 pub fn ser_stop_cis_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_cis_session::StopCisSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.message {
         #[allow(unused_mut)]
         let mut object_2 = object.key("message").start_object();

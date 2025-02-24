@@ -131,7 +131,7 @@ pub fn de_enable_kinesis_streaming_destination_http_response(
 
 pub fn ser_enable_kinesis_streaming_destination_input(
     input: &crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_enable_kinesis_streaming_destination_input::ser_enable_kinesis_streaming_destination_input_input(
@@ -145,7 +145,7 @@ pub fn ser_enable_kinesis_streaming_destination_input(
 pub(crate) fn de_enable_kinesis_streaming_destination(
     value: &[u8],
     mut builder: crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::enable_kinesis_streaming_destination::builders::EnableKinesisStreamingDestinationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

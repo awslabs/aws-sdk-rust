@@ -2,7 +2,7 @@
 pub fn ser_update_typed_link_facet_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_typed_link_facet::UpdateTypedLinkFacetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attribute_updates {
         let mut array_2 = object.key("AttributeUpdates").start_array();
         for item_3 in var_1 {

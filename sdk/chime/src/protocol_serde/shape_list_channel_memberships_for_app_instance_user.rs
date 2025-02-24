@@ -167,7 +167,7 @@ pub fn ser_list_channel_memberships_for_app_instance_user_headers(
 pub(crate) fn de_list_channel_memberships_for_app_instance_user(
     value: &[u8],
     mut builder: crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_channel_memberships_for_app_instance_user::builders::ListChannelMembershipsForAppInstanceUserOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

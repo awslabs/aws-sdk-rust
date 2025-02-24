@@ -2,7 +2,7 @@
 pub fn ser_import_assets_from_lake_formation_tag_policy_request_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("CatalogId").string(input.catalog_id.as_str());
     }

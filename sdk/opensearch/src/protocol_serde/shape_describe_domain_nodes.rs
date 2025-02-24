@@ -136,7 +136,7 @@ pub fn de_describe_domain_nodes_http_response(
 pub(crate) fn de_describe_domain_nodes(
     value: &[u8],
     mut builder: crate::operation::describe_domain_nodes::builders::DescribeDomainNodesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_domain_nodes::builders::DescribeDomainNodesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

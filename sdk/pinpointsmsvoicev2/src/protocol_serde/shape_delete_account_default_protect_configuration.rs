@@ -154,14 +154,14 @@ pub fn de_delete_account_default_protect_configuration_http_response(
 
 pub fn ser_delete_account_default_protect_configuration_input(
     _input: &crate::operation::delete_account_default_protect_configuration::DeleteAccountDefaultProtectConfigurationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_delete_account_default_protect_configuration(
     value: &[u8],
     mut builder: crate::operation::delete_account_default_protect_configuration::builders::DeleteAccountDefaultProtectConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_account_default_protect_configuration::builders::DeleteAccountDefaultProtectConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

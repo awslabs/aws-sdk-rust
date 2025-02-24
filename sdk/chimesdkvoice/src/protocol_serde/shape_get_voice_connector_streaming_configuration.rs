@@ -194,7 +194,7 @@ pub fn de_get_voice_connector_streaming_configuration_http_response(
 pub(crate) fn de_get_voice_connector_streaming_configuration(
     value: &[u8],
     mut builder: crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

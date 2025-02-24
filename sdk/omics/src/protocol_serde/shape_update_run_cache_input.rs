@@ -2,7 +2,7 @@
 pub fn ser_update_run_cache_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_run_cache::UpdateRunCacheInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.cache_behavior {
         object.key("cacheBehavior").string(var_1.as_str());
     }

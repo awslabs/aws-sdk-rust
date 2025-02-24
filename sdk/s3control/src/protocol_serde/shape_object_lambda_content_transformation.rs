@@ -2,7 +2,7 @@
 pub fn ser_object_lambda_content_transformation(
     input: &crate::types::ObjectLambdaContentTransformation,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     let mut scope_writer = writer.finish();
     match input {
         crate::types::ObjectLambdaContentTransformation::AwsLambda(inner) => {
@@ -20,7 +20,7 @@ pub fn ser_object_lambda_content_transformation(
 
 pub fn de_object_lambda_content_transformation(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ObjectLambdaContentTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ObjectLambdaContentTransformation, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut base: Option<crate::types::ObjectLambdaContentTransformation> = None;
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {

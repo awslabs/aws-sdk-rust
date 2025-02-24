@@ -166,7 +166,7 @@ pub fn de_put_rule_groups_namespace_http_response(
 
 pub fn ser_put_rule_groups_namespace_input(
     input: &crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_rule_groups_namespace_input::ser_put_rule_groups_namespace_input_input(&mut object, input)?;
@@ -177,7 +177,7 @@ pub fn ser_put_rule_groups_namespace_input(
 pub(crate) fn de_put_rule_groups_namespace(
     value: &[u8],
     mut builder: crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_rule_groups_namespace::builders::PutRuleGroupsNamespaceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

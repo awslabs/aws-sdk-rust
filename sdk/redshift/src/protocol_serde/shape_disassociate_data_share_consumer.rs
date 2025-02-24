@@ -77,7 +77,7 @@ pub fn de_disassociate_data_share_consumer_http_response(
 pub fn de_disassociate_data_share_consumer(
     inp: &[u8],
     mut builder: crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

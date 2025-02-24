@@ -2,7 +2,7 @@
 pub fn ser_region(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Region,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Region::RegionName(inner) => {
             object_9.key("regionName").string(inner.as_str());
@@ -17,7 +17,7 @@ pub fn ser_region(
 
 pub(crate) fn de_region<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Region>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Region>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

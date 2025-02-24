@@ -39,7 +39,10 @@ pub fn de_get_instance_tpm_ek_pub_http_response(
 pub fn de_get_instance_tpm_ek_pub(
     inp: &[u8],
     mut builder: crate::operation::get_instance_tpm_ek_pub::builders::GetInstanceTpmEkPubOutputBuilder,
-) -> Result<crate::operation::get_instance_tpm_ek_pub::builders::GetInstanceTpmEkPubOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_instance_tpm_ek_pub::builders::GetInstanceTpmEkPubOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

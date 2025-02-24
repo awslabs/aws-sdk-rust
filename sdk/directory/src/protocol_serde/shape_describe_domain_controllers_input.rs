@@ -2,7 +2,7 @@
 pub fn ser_describe_domain_controllers_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_domain_controllers::DescribeDomainControllersInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_id {
         object.key("DirectoryId").string(var_1.as_str());
     }

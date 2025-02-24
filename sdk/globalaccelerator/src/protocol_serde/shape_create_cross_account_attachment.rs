@@ -132,7 +132,7 @@ pub fn de_create_cross_account_attachment_http_response(
 
 pub fn ser_create_cross_account_attachment_input(
     input: &crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_cross_account_attachment_input::ser_create_cross_account_attachment_input_input(&mut object, input)?;
@@ -143,7 +143,7 @@ pub fn ser_create_cross_account_attachment_input(
 pub(crate) fn de_create_cross_account_attachment(
     value: &[u8],
     mut builder: crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

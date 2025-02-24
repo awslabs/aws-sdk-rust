@@ -216,7 +216,7 @@ pub fn de_modify_replication_group_shard_configuration_http_response(
 pub fn de_modify_replication_group_shard_configuration(
     inp: &[u8],
     mut builder: crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

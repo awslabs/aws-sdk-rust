@@ -2,7 +2,7 @@
 pub fn ser_associate_resolver_rule_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_resolver_rule::AssociateResolverRuleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resolver_rule_id {
         object.key("ResolverRuleId").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_scte35_delivery_restrictions(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Scte35DeliveryRestrictions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.archive_allowed_flag {
         object.key("archiveAllowedFlag").string(var_1.as_str());
     }
@@ -20,7 +20,7 @@ pub fn ser_scte35_delivery_restrictions(
 
 pub(crate) fn de_scte35_delivery_restrictions<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Scte35DeliveryRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Scte35DeliveryRestrictions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -73,7 +73,7 @@ pub fn de_remove_storage_system_http_response(
 
 pub fn ser_remove_storage_system_input(
     input: &crate::operation::remove_storage_system::RemoveStorageSystemInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_remove_storage_system_input::ser_remove_storage_system_input_input(&mut object, input)?;

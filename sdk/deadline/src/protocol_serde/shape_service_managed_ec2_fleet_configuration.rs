@@ -2,7 +2,7 @@
 pub fn ser_service_managed_ec2_fleet_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ServiceManagedEc2FleetConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.instance_capabilities {
         #[allow(unused_mut)]
         let mut object_2 = object.key("instanceCapabilities").start_object();
@@ -23,7 +23,7 @@ pub fn ser_service_managed_ec2_fleet_configuration(
 
 pub(crate) fn de_service_managed_ec2_fleet_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ServiceManagedEc2FleetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ServiceManagedEc2FleetConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

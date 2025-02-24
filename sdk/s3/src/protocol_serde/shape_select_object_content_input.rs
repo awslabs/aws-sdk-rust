@@ -2,7 +2,7 @@
 pub fn ser_select_object_content_input_input_input(
     input: &crate::operation::select_object_content::SelectObjectContentInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.expression {

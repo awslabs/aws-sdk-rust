@@ -2,7 +2,7 @@
 pub fn ser_terminate_sol_network_instance_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.tags {
         #[allow(unused_mut)]
         let mut object_2 = object.key("tags").start_object();

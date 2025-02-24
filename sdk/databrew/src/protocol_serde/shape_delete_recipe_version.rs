@@ -93,7 +93,7 @@ pub fn de_delete_recipe_version_http_response(
 pub(crate) fn de_delete_recipe_version(
     value: &[u8],
     mut builder: crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_recipe_version::builders::DeleteRecipeVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

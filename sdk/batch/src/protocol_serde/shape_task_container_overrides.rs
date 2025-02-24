@@ -2,7 +2,7 @@
 pub fn ser_task_container_overrides(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TaskContainerOverrides,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.command {
         let mut array_2 = object.key("command").start_array();
         for item_3 in var_1 {

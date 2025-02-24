@@ -2,7 +2,7 @@
 pub fn ser_import_job_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportJobRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.define_segment {
         object.key("DefineSegment").boolean(*var_1);
     }

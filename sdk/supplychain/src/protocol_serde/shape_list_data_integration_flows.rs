@@ -162,7 +162,7 @@ pub fn de_list_data_integration_flows_http_response(
 pub(crate) fn de_list_data_integration_flows(
     value: &[u8],
     mut builder: crate::operation::list_data_integration_flows::builders::ListDataIntegrationFlowsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_data_integration_flows::builders::ListDataIntegrationFlowsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

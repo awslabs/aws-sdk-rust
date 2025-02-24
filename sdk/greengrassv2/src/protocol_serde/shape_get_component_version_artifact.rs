@@ -153,7 +153,7 @@ pub fn ser_get_component_version_artifact_headers(
 pub(crate) fn de_get_component_version_artifact(
     value: &[u8],
     mut builder: crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -67,7 +67,7 @@ pub fn de_list_stack_set_auto_deployment_targets_http_response(
 pub fn de_list_stack_set_auto_deployment_targets(
     inp: &[u8],
     mut builder: crate::operation::list_stack_set_auto_deployment_targets::builders::ListStackSetAutoDeploymentTargetsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_stack_set_auto_deployment_targets::builders::ListStackSetAutoDeploymentTargetsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

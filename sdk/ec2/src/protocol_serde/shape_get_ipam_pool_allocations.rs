@@ -39,7 +39,10 @@ pub fn de_get_ipam_pool_allocations_http_response(
 pub fn de_get_ipam_pool_allocations(
     inp: &[u8],
     mut builder: crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder,
-) -> Result<crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

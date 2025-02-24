@@ -39,7 +39,7 @@ pub fn de_describe_host_reservation_offerings_http_response(
 pub fn de_describe_host_reservation_offerings(
     inp: &[u8],
     mut builder: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

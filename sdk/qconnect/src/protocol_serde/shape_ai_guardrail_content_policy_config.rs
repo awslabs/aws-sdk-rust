@@ -2,7 +2,7 @@
 pub fn ser_ai_guardrail_content_policy_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AiGuardrailContentPolicyConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("filtersConfig").start_array();
         for item_2 in &input.filters_config {
@@ -20,7 +20,7 @@ pub fn ser_ai_guardrail_content_policy_config(
 
 pub(crate) fn de_ai_guardrail_content_policy_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AiGuardrailContentPolicyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AiGuardrailContentPolicyConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

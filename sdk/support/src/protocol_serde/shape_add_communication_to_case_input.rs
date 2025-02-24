@@ -2,7 +2,7 @@
 pub fn ser_add_communication_to_case_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::add_communication_to_case::AddCommunicationToCaseInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.case_id {
         object.key("caseId").string(var_1.as_str());
     }

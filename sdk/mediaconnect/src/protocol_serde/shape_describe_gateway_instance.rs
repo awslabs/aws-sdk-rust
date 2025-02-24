@@ -157,7 +157,7 @@ pub fn de_describe_gateway_instance_http_response(
 pub(crate) fn de_describe_gateway_instance(
     value: &[u8],
     mut builder: crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -110,7 +110,7 @@ pub fn ser_list_objects_v2_headers(
 pub fn de_list_objects_v2(
     inp: &[u8],
     mut builder: crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder,
-) -> Result<crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

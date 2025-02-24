@@ -57,7 +57,7 @@ pub fn ser_get_access_grants_instance_for_prefix_headers(
 pub fn de_get_access_grants_instance_for_prefix(
     inp: &[u8],
     mut builder: crate::operation::get_access_grants_instance_for_prefix::builders::GetAccessGrantsInstanceForPrefixOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_access_grants_instance_for_prefix::builders::GetAccessGrantsInstanceForPrefixOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

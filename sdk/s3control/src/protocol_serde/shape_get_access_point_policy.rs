@@ -57,7 +57,10 @@ pub fn ser_get_access_point_policy_headers(
 pub fn de_get_access_point_policy(
     inp: &[u8],
     mut builder: crate::operation::get_access_point_policy::builders::GetAccessPointPolicyOutputBuilder,
-) -> Result<crate::operation::get_access_point_policy::builders::GetAccessPointPolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::get_access_point_policy::builders::GetAccessPointPolicyOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

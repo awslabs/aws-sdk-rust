@@ -3,7 +3,10 @@
 pub fn de_account_not_management_or_delegated_administrator_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::AccountNotManagementOrDelegatedAdministratorExceptionBuilder,
-) -> Result<crate::types::error::builders::AccountNotManagementOrDelegatedAdministratorExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::types::error::builders::AccountNotManagementOrDelegatedAdministratorExceptionBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     if inp.is_empty() {
         return Ok(builder);
     }

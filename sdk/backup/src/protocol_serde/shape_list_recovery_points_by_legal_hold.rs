@@ -104,7 +104,7 @@ pub fn de_list_recovery_points_by_legal_hold_http_response(
 pub(crate) fn de_list_recovery_points_by_legal_hold(
     value: &[u8],
     mut builder: crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_recovery_points_by_legal_hold::builders::ListRecoveryPointsByLegalHoldOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

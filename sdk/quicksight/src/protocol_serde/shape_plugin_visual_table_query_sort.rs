@@ -2,7 +2,7 @@
 pub fn ser_plugin_visual_table_query_sort(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PluginVisualTableQuerySort,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.row_sort {
         let mut array_2 = object.key("RowSort").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_plugin_visual_table_query_sort(
 
 pub(crate) fn de_plugin_visual_table_query_sort<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PluginVisualTableQuerySort>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PluginVisualTableQuerySort>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_update_review_template_lens_review_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_review_template_lens_review::UpdateReviewTemplateLensReviewInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lens_notes {
         object.key("LensNotes").string(var_1.as_str());
     }

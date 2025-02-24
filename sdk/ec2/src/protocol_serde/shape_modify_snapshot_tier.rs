@@ -39,7 +39,8 @@ pub fn de_modify_snapshot_tier_http_response(
 pub fn de_modify_snapshot_tier(
     inp: &[u8],
     mut builder: crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder,
-) -> Result<crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::modify_snapshot_tier::builders::ModifySnapshotTierOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

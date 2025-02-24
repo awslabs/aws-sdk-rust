@@ -3,7 +3,7 @@
 pub fn ser_cloud_watch_destination(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CloudWatchDestination,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("DimensionConfigurations");
     {
@@ -21,7 +21,7 @@ pub fn ser_cloud_watch_destination(
 #[allow(clippy::needless_question_mark)]
 pub fn de_cloud_watch_destination(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CloudWatchDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CloudWatchDestination, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CloudWatchDestination::builder();
     while let Some(mut tag) = decoder.next_tag() {

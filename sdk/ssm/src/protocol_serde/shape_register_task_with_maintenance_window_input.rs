@@ -2,7 +2,7 @@
 pub fn ser_register_task_with_maintenance_window_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_task_with_maintenance_window::RegisterTaskWithMaintenanceWindowInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.window_id {
         object.key("WindowId").string(var_1.as_str());
     }

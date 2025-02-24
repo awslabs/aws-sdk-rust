@@ -2,7 +2,7 @@
 pub fn ser_codegen_job_generic_data_schema(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CodegenJobGenericDataSchema,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("dataSourceType").string(input.data_source_type.as_str());
     }
@@ -50,7 +50,7 @@ pub fn ser_codegen_job_generic_data_schema(
 
 pub(crate) fn de_codegen_job_generic_data_schema<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CodegenJobGenericDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CodegenJobGenericDataSchema>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -106,7 +106,7 @@ pub fn de_reject_domain_transfer_from_another_aws_account_http_response(
 
 pub fn ser_reject_domain_transfer_from_another_aws_account_input(
     input: &crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_reject_domain_transfer_from_another_aws_account_input::ser_reject_domain_transfer_from_another_aws_account_input_input(&mut object, input)?;
@@ -117,7 +117,7 @@ pub fn ser_reject_domain_transfer_from_another_aws_account_input(
 pub(crate) fn de_reject_domain_transfer_from_another_aws_account(
     value: &[u8],
     mut builder: crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::reject_domain_transfer_from_another_aws_account::builders::RejectDomainTransferFromAnotherAwsAccountOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

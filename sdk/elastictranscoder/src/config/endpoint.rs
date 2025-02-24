@@ -666,7 +666,7 @@ impl DefaultResolver {
     fn resolve_endpoint(
         &self,
         params: &crate::config::endpoint::Params,
-    ) -> Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
+    ) -> ::std::result::Result<::aws_smithy_types::endpoint::Endpoint, ::aws_smithy_runtime_api::box_error::BoxError> {
         let mut diagnostic_collector = crate::endpoint_lib::diagnostic::DiagnosticCollector::new();
         Ok(
             crate::config::endpoint::internals::resolve_endpoint(params, &mut diagnostic_collector, &self.partition_resolver)

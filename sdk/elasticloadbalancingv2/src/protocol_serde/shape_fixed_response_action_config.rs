@@ -3,7 +3,7 @@
 pub fn ser_fixed_response_action_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::FixedResponseActionConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("MessageBody");
     if let Some(var_2) = &input.message_body {
@@ -25,7 +25,7 @@ pub fn ser_fixed_response_action_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_fixed_response_action_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::FixedResponseActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::FixedResponseActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::FixedResponseActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

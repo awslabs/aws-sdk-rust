@@ -124,7 +124,7 @@ pub fn de_list_provisioned_concurrency_configs_http_response(
 pub(crate) fn de_list_provisioned_concurrency_configs(
     value: &[u8],
     mut builder: crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_provisioned_concurrency_configs::builders::ListProvisionedConcurrencyConfigsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

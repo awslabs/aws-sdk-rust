@@ -2,7 +2,7 @@
 pub fn ser_participant_details_to_add(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ParticipantDetailsToAdd,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.participant_role {
         object.key("ParticipantRole").string(var_1.as_str());
     }

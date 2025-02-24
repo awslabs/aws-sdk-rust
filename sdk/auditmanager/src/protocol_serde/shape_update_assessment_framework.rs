@@ -105,7 +105,7 @@ pub fn de_update_assessment_framework_http_response(
 
 pub fn ser_update_assessment_framework_input(
     input: &crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_assessment_framework_input::ser_update_assessment_framework_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_update_assessment_framework_input(
 pub(crate) fn de_update_assessment_framework(
     value: &[u8],
     mut builder: crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

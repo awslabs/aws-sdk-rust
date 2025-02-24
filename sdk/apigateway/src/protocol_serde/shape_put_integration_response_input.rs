@@ -2,7 +2,7 @@
 pub fn ser_put_integration_response_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_integration_response::PutIntegrationResponseInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content_handling {
         object.key("contentHandling").string(var_1.as_str());
     }

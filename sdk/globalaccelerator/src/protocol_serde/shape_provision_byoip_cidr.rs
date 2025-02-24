@@ -124,7 +124,7 @@ pub fn de_provision_byoip_cidr_http_response(
 
 pub fn ser_provision_byoip_cidr_input(
     input: &crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_provision_byoip_cidr_input::ser_provision_byoip_cidr_input_input(&mut object, input)?;
@@ -135,8 +135,10 @@ pub fn ser_provision_byoip_cidr_input(
 pub(crate) fn de_provision_byoip_cidr(
     value: &[u8],
     mut builder: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrOutputBuilder,
-) -> Result<crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

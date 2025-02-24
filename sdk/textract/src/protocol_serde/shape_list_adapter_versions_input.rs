@@ -2,7 +2,7 @@
 pub fn ser_list_adapter_versions_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_adapter_versions::ListAdapterVersionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.adapter_id {
         object.key("AdapterId").string(var_1.as_str());
     }

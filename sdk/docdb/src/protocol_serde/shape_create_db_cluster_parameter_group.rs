@@ -89,7 +89,7 @@ pub fn de_create_db_cluster_parameter_group_http_response(
 pub fn de_create_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_db_cluster_parameter_group::builders::CreateDbClusterParameterGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

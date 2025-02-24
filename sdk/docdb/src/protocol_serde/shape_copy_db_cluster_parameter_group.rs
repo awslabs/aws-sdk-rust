@@ -109,7 +109,7 @@ pub fn de_copy_db_cluster_parameter_group_http_response(
 pub fn de_copy_db_cluster_parameter_group(
     inp: &[u8],
     mut builder: crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::copy_db_cluster_parameter_group::builders::CopyDbClusterParameterGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

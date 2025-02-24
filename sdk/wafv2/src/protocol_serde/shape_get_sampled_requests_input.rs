@@ -2,7 +2,7 @@
 pub fn ser_get_sampled_requests_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_sampled_requests::GetSampledRequestsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.web_acl_arn {
         object.key("WebAclArn").string(var_1.as_str());
     }

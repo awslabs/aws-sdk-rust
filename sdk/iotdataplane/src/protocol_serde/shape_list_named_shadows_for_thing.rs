@@ -158,7 +158,7 @@ pub fn de_list_named_shadows_for_thing_http_response(
 pub(crate) fn de_list_named_shadows_for_thing(
     value: &[u8],
     mut builder: crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_named_shadows_for_thing::builders::ListNamedShadowsForThingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

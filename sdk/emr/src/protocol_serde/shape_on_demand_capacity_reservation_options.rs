@@ -2,7 +2,7 @@
 pub fn ser_on_demand_capacity_reservation_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OnDemandCapacityReservationOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.usage_strategy {
         object.key("UsageStrategy").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_on_demand_capacity_reservation_options(
 
 pub(crate) fn de_on_demand_capacity_reservation_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::OnDemandCapacityReservationOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::OnDemandCapacityReservationOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

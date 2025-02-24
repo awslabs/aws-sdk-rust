@@ -2,7 +2,7 @@
 pub fn ser_monitored_request_count_metric_data_queries(
     object_12: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MonitoredRequestCountMetricDataQueries,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::MonitoredRequestCountMetricDataQueries::GoodCountMetric(inner) => {
             let mut array_1 = object_12.key("GoodCountMetric").start_array();
@@ -39,7 +39,7 @@ pub fn ser_monitored_request_count_metric_data_queries(
 
 pub(crate) fn de_monitored_request_count_metric_data_queries<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MonitoredRequestCountMetricDataQueries>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MonitoredRequestCountMetricDataQueries>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

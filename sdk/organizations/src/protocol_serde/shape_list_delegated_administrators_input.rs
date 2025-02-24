@@ -2,7 +2,7 @@
 pub fn ser_list_delegated_administrators_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_delegated_administrators::ListDelegatedAdministratorsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.service_principal {
         object.key("ServicePrincipal").string(var_1.as_str());
     }

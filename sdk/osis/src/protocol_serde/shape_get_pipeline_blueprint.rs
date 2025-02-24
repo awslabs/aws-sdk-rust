@@ -121,7 +121,7 @@ pub fn de_get_pipeline_blueprint_http_response(
 pub(crate) fn de_get_pipeline_blueprint(
     value: &[u8],
     mut builder: crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

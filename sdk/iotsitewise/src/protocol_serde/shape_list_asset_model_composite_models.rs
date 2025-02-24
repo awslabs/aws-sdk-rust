@@ -111,7 +111,7 @@ pub fn de_list_asset_model_composite_models_http_response(
 pub(crate) fn de_list_asset_model_composite_models(
     value: &[u8],
     mut builder: crate::operation::list_asset_model_composite_models::builders::ListAssetModelCompositeModelsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_asset_model_composite_models::builders::ListAssetModelCompositeModelsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

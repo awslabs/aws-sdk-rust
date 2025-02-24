@@ -80,7 +80,7 @@ pub fn de_add_source_identifier_to_subscription_http_response(
 pub fn de_add_source_identifier_to_subscription(
     inp: &[u8],
     mut builder: crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::add_source_identifier_to_subscription::builders::AddSourceIdentifierToSubscriptionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

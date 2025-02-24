@@ -2,7 +2,7 @@
 pub fn ser_associate_package_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_package::AssociatePackageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.association_configuration {
         #[allow(unused_mut)]
         let mut object_2 = object.key("AssociationConfiguration").start_object();

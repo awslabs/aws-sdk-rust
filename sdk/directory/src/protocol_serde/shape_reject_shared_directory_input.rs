@@ -2,7 +2,7 @@
 pub fn ser_reject_shared_directory_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reject_shared_directory::RejectSharedDirectoryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.shared_directory_id {
         object.key("SharedDirectoryId").string(var_1.as_str());
     }

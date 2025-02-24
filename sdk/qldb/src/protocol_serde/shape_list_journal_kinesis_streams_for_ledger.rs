@@ -105,7 +105,7 @@ pub fn de_list_journal_kinesis_streams_for_ledger_http_response(
 pub(crate) fn de_list_journal_kinesis_streams_for_ledger(
     value: &[u8],
     mut builder: crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

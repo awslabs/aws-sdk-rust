@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_ipam_external_resource_verification_token(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::IpamExternalResourceVerificationToken, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::IpamExternalResourceVerificationToken, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::IpamExternalResourceVerificationToken::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -106,7 +106,7 @@ pub fn de_list_service_profiles_http_response(
 pub(crate) fn de_list_service_profiles(
     value: &[u8],
     mut builder: crate::operation::list_service_profiles::builders::ListServiceProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_service_profiles::builders::ListServiceProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -60,7 +60,7 @@ pub fn de_describe_event_details_http_response(
 
 pub fn ser_describe_event_details_input(
     input: &crate::operation::describe_event_details::DescribeEventDetailsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_event_details_input::ser_describe_event_details_input_input(&mut object, input)?;
@@ -71,7 +71,7 @@ pub fn ser_describe_event_details_input(
 pub(crate) fn de_describe_event_details(
     value: &[u8],
     mut builder: crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_capacity_reservation_options(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::CapacityReservationOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::CapacityReservationOptions, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::CapacityReservationOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {

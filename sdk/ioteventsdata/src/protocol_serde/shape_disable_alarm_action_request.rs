@@ -2,7 +2,7 @@
 pub fn ser_disable_alarm_action_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DisableAlarmActionRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("requestId").string(input.request_id.as_str());
     }

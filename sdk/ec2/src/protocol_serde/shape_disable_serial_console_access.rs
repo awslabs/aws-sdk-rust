@@ -41,7 +41,7 @@ pub fn de_disable_serial_console_access_http_response(
 pub fn de_disable_serial_console_access(
     inp: &[u8],
     mut builder: crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::disable_serial_console_access::builders::DisableSerialConsoleAccessOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

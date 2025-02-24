@@ -2,7 +2,7 @@
 pub fn ser_converse_stream_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::converse_stream::ConverseStreamInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_model_request_fields {
         object.key("additionalModelRequestFields").document(var_1);
     }

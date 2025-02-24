@@ -2,7 +2,7 @@
 pub fn ser_stop_retraining_scheduler_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_retraining_scheduler::StopRetrainingSchedulerInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_name {
         object.key("ModelName").string(var_1.as_str());
     }

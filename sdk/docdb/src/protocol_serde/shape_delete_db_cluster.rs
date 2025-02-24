@@ -123,7 +123,7 @@ pub fn de_delete_db_cluster_http_response(
 pub fn de_delete_db_cluster(
     inp: &[u8],
     mut builder: crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder,
-) -> Result<crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::delete_db_cluster::builders::DeleteDbClusterOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

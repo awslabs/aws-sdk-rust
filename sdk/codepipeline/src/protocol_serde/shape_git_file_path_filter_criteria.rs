@@ -2,7 +2,7 @@
 pub fn ser_git_file_path_filter_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GitFilePathFilterCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.includes {
         let mut array_2 = object.key("includes").start_array();
         for item_3 in var_1 {
@@ -26,7 +26,7 @@ pub fn ser_git_file_path_filter_criteria(
 
 pub(crate) fn de_git_file_path_filter_criteria<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GitFilePathFilterCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GitFilePathFilterCriteria>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

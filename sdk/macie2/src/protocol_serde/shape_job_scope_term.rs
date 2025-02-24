@@ -2,7 +2,7 @@
 pub fn ser_job_scope_term(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::JobScopeTerm,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.simple_scope_term {
         #[allow(unused_mut)]
         let mut object_2 = object.key("simpleScopeTerm").start_object();
@@ -20,7 +20,7 @@ pub fn ser_job_scope_term(
 
 pub(crate) fn de_job_scope_term<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::JobScopeTerm>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::JobScopeTerm>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

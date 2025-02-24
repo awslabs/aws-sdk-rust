@@ -95,7 +95,7 @@ pub fn de_accept_inbound_connection_http_response(
 pub(crate) fn de_accept_inbound_connection(
     value: &[u8],
     mut builder: crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::accept_inbound_connection::builders::AcceptInboundConnectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

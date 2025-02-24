@@ -2,7 +2,7 @@
 pub fn ser_storage_lens_group_and_operator(
     input: &crate::types::StorageLensGroupAndOperator,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.match_any_prefix {
@@ -47,7 +47,7 @@ pub fn ser_storage_lens_group_and_operator(
 #[allow(clippy::needless_question_mark)]
 pub fn de_storage_lens_group_and_operator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::StorageLensGroupAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::StorageLensGroupAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::StorageLensGroupAndOperator::builder();
     while let Some(mut tag) = decoder.next_tag() {

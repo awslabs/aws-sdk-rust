@@ -2,7 +2,7 @@
 pub fn ser_list_allowed_multi_region_cluster_updates_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.multi_region_cluster_name {
         object.key("MultiRegionClusterName").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_application_snapshot_configuration_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ApplicationSnapshotConfigurationUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SnapshotsEnabledUpdate").boolean(input.snapshots_enabled_update);
     }

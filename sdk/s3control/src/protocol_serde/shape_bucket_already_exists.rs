@@ -3,7 +3,7 @@
 pub fn de_bucket_already_exists_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::BucketAlreadyExistsBuilder,
-) -> Result<crate::types::error::builders::BucketAlreadyExistsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::BucketAlreadyExistsBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

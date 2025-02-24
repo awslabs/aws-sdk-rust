@@ -2,7 +2,7 @@
 pub fn ser_aws_api_gateway_v2_route_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsApiGatewayV2RouteSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.detailed_metrics_enabled {
         object.key("DetailedMetricsEnabled").boolean(*var_1);
     }
@@ -29,7 +29,7 @@ pub fn ser_aws_api_gateway_v2_route_settings(
 
 pub(crate) fn de_aws_api_gateway_v2_route_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AwsApiGatewayV2RouteSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AwsApiGatewayV2RouteSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -79,7 +79,7 @@ pub fn de_describe_load_balancer_target_groups_http_response(
 pub fn de_describe_load_balancer_target_groups(
     inp: &[u8],
     mut builder: crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_load_balancer_target_groups::builders::DescribeLoadBalancerTargetGroupsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

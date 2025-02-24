@@ -123,7 +123,7 @@ pub fn de_get_query_status_workload_insights_top_contributors_data_http_response
     })
 }
 
-pub(crate) fn de_get_query_status_workload_insights_top_contributors_data(value: &[u8], mut builder: crate::operation::get_query_status_workload_insights_top_contributors_data::builders::GetQueryStatusWorkloadInsightsTopContributorsDataOutputBuilder) -> Result<crate::operation::get_query_status_workload_insights_top_contributors_data::builders::GetQueryStatusWorkloadInsightsTopContributorsDataOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
+pub(crate) fn de_get_query_status_workload_insights_top_contributors_data(value: &[u8], mut builder: crate::operation::get_query_status_workload_insights_top_contributors_data::builders::GetQueryStatusWorkloadInsightsTopContributorsDataOutputBuilder) -> ::std::result::Result<crate::operation::get_query_status_workload_insights_top_contributors_data::builders::GetQueryStatusWorkloadInsightsTopContributorsDataOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>{
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

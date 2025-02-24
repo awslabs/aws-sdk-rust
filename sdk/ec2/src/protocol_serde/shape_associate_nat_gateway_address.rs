@@ -41,7 +41,7 @@ pub fn de_associate_nat_gateway_address_http_response(
 pub fn de_associate_nat_gateway_address(
     inp: &[u8],
     mut builder: crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_nat_gateway_address::builders::AssociateNatGatewayAddressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

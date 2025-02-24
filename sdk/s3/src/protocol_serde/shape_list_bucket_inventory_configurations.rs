@@ -59,7 +59,7 @@ pub fn ser_list_bucket_inventory_configurations_headers(
 pub fn de_list_bucket_inventory_configurations(
     inp: &[u8],
     mut builder: crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_bucket_inventory_configurations::builders::ListBucketInventoryConfigurationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

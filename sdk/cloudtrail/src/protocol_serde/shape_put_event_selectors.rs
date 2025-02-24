@@ -235,7 +235,7 @@ pub fn de_put_event_selectors_http_response(
 
 pub fn ser_put_event_selectors_input(
     input: &crate::operation::put_event_selectors::PutEventSelectorsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_event_selectors_input::ser_put_event_selectors_input_input(&mut object, input)?;
@@ -246,8 +246,10 @@ pub fn ser_put_event_selectors_input(
 pub(crate) fn de_put_event_selectors(
     value: &[u8],
     mut builder: crate::operation::put_event_selectors::builders::PutEventSelectorsOutputBuilder,
-) -> Result<crate::operation::put_event_selectors::builders::PutEventSelectorsOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::put_event_selectors::builders::PutEventSelectorsOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -2,7 +2,7 @@
 pub fn ser_s3_access_control_list(
     input: &crate::types::S3AccessControlList,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.owner {
@@ -25,7 +25,7 @@ pub fn ser_s3_access_control_list(
 #[allow(clippy::needless_question_mark)]
 pub fn de_s3_access_control_list(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::S3AccessControlList, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::S3AccessControlList, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::S3AccessControlList::builder();
     while let Some(mut tag) = decoder.next_tag() {

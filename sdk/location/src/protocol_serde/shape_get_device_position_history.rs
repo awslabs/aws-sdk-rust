@@ -121,7 +121,7 @@ pub fn de_get_device_position_history_http_response(
 
 pub fn ser_get_device_position_history_input(
     input: &crate::operation::get_device_position_history::GetDevicePositionHistoryInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_device_position_history_input::ser_get_device_position_history_input_input(&mut object, input)?;
@@ -132,7 +132,7 @@ pub fn ser_get_device_position_history_input(
 pub(crate) fn de_get_device_position_history(
     value: &[u8],
     mut builder: crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_device_position_history::builders::GetDevicePositionHistoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

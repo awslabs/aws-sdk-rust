@@ -108,7 +108,7 @@ pub fn de_list_organization_recommendations_http_response(
 pub(crate) fn de_list_organization_recommendations(
     value: &[u8],
     mut builder: crate::operation::list_organization_recommendations::builders::ListOrganizationRecommendationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_organization_recommendations::builders::ListOrganizationRecommendationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

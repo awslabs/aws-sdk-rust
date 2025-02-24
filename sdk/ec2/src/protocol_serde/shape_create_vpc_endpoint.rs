@@ -35,7 +35,7 @@ pub fn de_create_vpc_endpoint_http_response(
 pub fn de_create_vpc_endpoint(
     inp: &[u8],
     mut builder: crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder,
-) -> Result<crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

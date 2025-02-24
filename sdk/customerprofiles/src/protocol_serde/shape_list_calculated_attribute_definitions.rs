@@ -133,7 +133,7 @@ pub fn de_list_calculated_attribute_definitions_http_response(
 pub(crate) fn de_list_calculated_attribute_definitions(
     value: &[u8],
     mut builder: crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_calculated_attribute_definitions::builders::ListCalculatedAttributeDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

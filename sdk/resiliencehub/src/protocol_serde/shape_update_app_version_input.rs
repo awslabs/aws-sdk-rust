@@ -2,7 +2,7 @@
 pub fn ser_update_app_version_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_app_version::UpdateAppVersionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_info {
         #[allow(unused_mut)]
         let mut object_2 = object.key("additionalInfo").start_object();

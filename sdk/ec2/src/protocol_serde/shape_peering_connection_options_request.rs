@@ -3,7 +3,7 @@
 pub fn ser_peering_connection_options_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::PeeringConnectionOptionsRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("AllowDnsResolutionFromRemoteVpc");
     if let Some(var_2) = &input.allow_dns_resolution_from_remote_vpc {

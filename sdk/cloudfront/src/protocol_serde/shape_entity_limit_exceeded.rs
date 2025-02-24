@@ -3,7 +3,7 @@
 pub fn de_entity_limit_exceeded_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::EntityLimitExceededBuilder,
-) -> Result<crate::types::error::builders::EntityLimitExceededBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::EntityLimitExceededBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

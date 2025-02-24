@@ -2,7 +2,7 @@
 pub fn ser_cloud_watch_log_group_log_destination(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CloudWatchLogGroupLogDestination,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("cloudWatchLogGroupArn").string(input.cloud_watch_log_group_arn.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_cloud_watch_log_group_log_destination(
 
 pub(crate) fn de_cloud_watch_log_group_log_destination<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CloudWatchLogGroupLogDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CloudWatchLogGroupLogDestination>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

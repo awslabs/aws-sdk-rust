@@ -144,7 +144,7 @@ pub fn de_get_distribution_latest_cache_reset_http_response(
 
 pub fn ser_get_distribution_latest_cache_reset_input(
     input: &crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_distribution_latest_cache_reset_input::ser_get_distribution_latest_cache_reset_input_input(&mut object, input)?;
@@ -155,7 +155,7 @@ pub fn ser_get_distribution_latest_cache_reset_input(
 pub(crate) fn de_get_distribution_latest_cache_reset(
     value: &[u8],
     mut builder: crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_distribution_latest_cache_reset::builders::GetDistributionLatestCacheResetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

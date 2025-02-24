@@ -189,7 +189,7 @@ pub fn de_get_license_manager_report_generator_http_response(
 
 pub fn ser_get_license_manager_report_generator_input(
     input: &crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_license_manager_report_generator_input::ser_get_license_manager_report_generator_input_input(
@@ -203,7 +203,7 @@ pub fn ser_get_license_manager_report_generator_input(
 pub(crate) fn de_get_license_manager_report_generator(
     value: &[u8],
     mut builder: crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

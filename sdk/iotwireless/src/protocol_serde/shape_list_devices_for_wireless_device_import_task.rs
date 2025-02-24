@@ -166,7 +166,7 @@ pub fn de_list_devices_for_wireless_device_import_task_http_response(
 pub(crate) fn de_list_devices_for_wireless_device_import_task(
     value: &[u8],
     mut builder: crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -120,7 +120,7 @@ pub fn de_schedule_key_deletion_http_response(
 
 pub fn ser_schedule_key_deletion_input(
     input: &crate::operation::schedule_key_deletion::ScheduleKeyDeletionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_schedule_key_deletion_input::ser_schedule_key_deletion_input_input(&mut object, input)?;
@@ -131,7 +131,7 @@ pub fn ser_schedule_key_deletion_input(
 pub(crate) fn de_schedule_key_deletion(
     value: &[u8],
     mut builder: crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::schedule_key_deletion::builders::ScheduleKeyDeletionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

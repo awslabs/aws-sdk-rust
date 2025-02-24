@@ -2,7 +2,7 @@
 pub fn ser_generate_random_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::generate_random::GenerateRandomInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.number_of_bytes {
         object.key("NumberOfBytes").number(
             #[allow(clippy::useless_conversion)]

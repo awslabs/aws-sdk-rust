@@ -2,7 +2,7 @@
 pub fn ser_translation_iso_formats(
     object_6: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TranslationIsoFormats,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TranslationIsoFormats::IsoFormat0(inner) => {
             #[allow(unused_mut)]

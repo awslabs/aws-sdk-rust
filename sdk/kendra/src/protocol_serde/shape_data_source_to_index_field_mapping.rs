@@ -2,7 +2,7 @@
 pub fn ser_data_source_to_index_field_mapping(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataSourceToIndexFieldMapping,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DataSourceFieldName").string(input.data_source_field_name.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_data_source_to_index_field_mapping(
 
 pub(crate) fn de_data_source_to_index_field_mapping<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DataSourceToIndexFieldMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DataSourceToIndexFieldMapping>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_update_library_item_metadata_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_library_item_metadata::UpdateLibraryItemMetadataInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.is_verified {
         object.key("isVerified").boolean(*var_1);
     }

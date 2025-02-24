@@ -2,7 +2,7 @@
 pub fn ser_summarization(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Summarization,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("GenerateAbstractiveSummary").boolean(input.generate_abstractive_summary);
     }
@@ -11,7 +11,7 @@ pub fn ser_summarization(
 
 pub(crate) fn de_summarization<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Summarization>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Summarization>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

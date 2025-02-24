@@ -2,7 +2,7 @@
 pub fn ser_update_load_balancer_attribute_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.load_balancer_name {
         object.key("loadBalancerName").string(var_1.as_str());
     }

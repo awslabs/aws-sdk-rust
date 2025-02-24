@@ -92,7 +92,7 @@ pub fn de_get_dashboard_for_job_run_http_response(
 pub(crate) fn de_get_dashboard_for_job_run(
     value: &[u8],
     mut builder: crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_dashboard_for_job_run::builders::GetDashboardForJobRunOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

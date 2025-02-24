@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_sses3_encryption(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Sses3Encryption, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Sses3Encryption, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Sses3Encryption::builder();
     let _ = decoder;

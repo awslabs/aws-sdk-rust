@@ -2,7 +2,7 @@
 pub fn ser_get_token_balance_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_token_balance::GetTokenBalanceInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.at_blockchain_instant {
         #[allow(unused_mut)]
         let mut object_2 = object.key("atBlockchainInstant").start_object();

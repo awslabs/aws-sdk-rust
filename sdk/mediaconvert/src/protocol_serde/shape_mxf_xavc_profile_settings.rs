@@ -2,7 +2,7 @@
 pub fn ser_mxf_xavc_profile_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MxfXavcProfileSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.duration_mode {
         object.key("durationMode").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_mxf_xavc_profile_settings(
 
 pub(crate) fn de_mxf_xavc_profile_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MxfXavcProfileSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MxfXavcProfileSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -152,7 +152,7 @@ pub fn de_update_dashboard_published_version_http_response(
 pub(crate) fn de_update_dashboard_published_version(
     value: &[u8],
     mut builder: crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_field_to_match(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FieldToMatch,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.single_header {
         #[allow(unused_mut)]
         let mut object_2 = object.key("SingleHeader").start_object();
@@ -80,7 +80,7 @@ pub fn ser_field_to_match(
 
 pub(crate) fn de_field_to_match<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::FieldToMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::FieldToMatch>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

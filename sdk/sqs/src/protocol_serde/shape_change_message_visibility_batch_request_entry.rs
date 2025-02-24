@@ -2,7 +2,7 @@
 pub fn ser_change_message_visibility_batch_request_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ChangeMessageVisibilityBatchRequestEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Id").string(input.id.as_str());
     }

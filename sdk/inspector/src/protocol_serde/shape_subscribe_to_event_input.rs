@@ -2,7 +2,7 @@
 pub fn ser_subscribe_to_event_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::subscribe_to_event::SubscribeToEventInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.resource_arn {
         object.key("resourceArn").string(var_1.as_str());
     }

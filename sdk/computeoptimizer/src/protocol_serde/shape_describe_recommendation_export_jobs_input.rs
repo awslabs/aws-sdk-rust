@@ -2,7 +2,7 @@
 pub fn ser_describe_recommendation_export_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.job_ids {
         let mut array_2 = object.key("jobIds").start_array();
         for item_3 in var_1 {

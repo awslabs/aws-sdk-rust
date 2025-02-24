@@ -2,7 +2,7 @@
 pub fn ser_update_app_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_app::UpdateAppInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_token {
         object.key("accessToken").string(var_1.as_str());
     }

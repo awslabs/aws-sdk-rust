@@ -83,7 +83,7 @@ pub fn de_describe_authentication_profiles_http_response(
 pub fn de_describe_authentication_profiles(
     inp: &[u8],
     mut builder: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

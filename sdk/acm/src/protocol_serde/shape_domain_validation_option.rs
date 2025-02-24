@@ -2,7 +2,7 @@
 pub fn ser_domain_validation_option(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DomainValidationOption,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DomainName").string(input.domain_name.as_str());
     }

@@ -207,7 +207,7 @@ pub fn de_register_workspace_directory_http_response(
 
 pub fn ser_register_workspace_directory_input(
     input: &crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_register_workspace_directory_input::ser_register_workspace_directory_input_input(&mut object, input)?;
@@ -218,7 +218,7 @@ pub fn ser_register_workspace_directory_input(
 pub(crate) fn de_register_workspace_directory(
     value: &[u8],
     mut builder: crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

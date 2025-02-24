@@ -152,7 +152,7 @@ pub fn de_describe_input_device_http_response(
 pub(crate) fn de_describe_input_device(
     value: &[u8],
     mut builder: crate::operation::describe_input_device::builders::DescribeInputDeviceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_input_device::builders::DescribeInputDeviceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

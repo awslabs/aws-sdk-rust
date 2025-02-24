@@ -3,7 +3,7 @@
 pub fn de_serverless_cache_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ServerlessCacheNotFoundFaultBuilder,
-) -> Result<crate::types::error::builders::ServerlessCacheNotFoundFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ServerlessCacheNotFoundFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

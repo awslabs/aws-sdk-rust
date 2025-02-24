@@ -121,7 +121,7 @@ pub fn de_list_grouping_statuses_http_response(
 
 pub fn ser_list_grouping_statuses_input(
     input: &crate::operation::list_grouping_statuses::ListGroupingStatusesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_grouping_statuses_input::ser_list_grouping_statuses_input_input(&mut object, input)?;
@@ -132,7 +132,7 @@ pub fn ser_list_grouping_statuses_input(
 pub(crate) fn de_list_grouping_statuses(
     value: &[u8],
     mut builder: crate::operation::list_grouping_statuses::builders::ListGroupingStatusesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_grouping_statuses::builders::ListGroupingStatusesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

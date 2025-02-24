@@ -2,7 +2,7 @@
 pub fn ser_list_domains_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_domains::ListDomainsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.next_page_token {
         object.key("nextPageToken").string(var_1.as_str());
     }

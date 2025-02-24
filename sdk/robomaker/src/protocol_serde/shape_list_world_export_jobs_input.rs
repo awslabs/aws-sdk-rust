@@ -2,7 +2,7 @@
 pub fn ser_list_world_export_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_world_export_jobs::ListWorldExportJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filters {
         let mut array_2 = object.key("filters").start_array();
         for item_3 in var_1 {

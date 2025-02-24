@@ -2,7 +2,7 @@
 pub fn ser_register_agent_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_agent::RegisterAgentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.agent_details {
         #[allow(unused_mut)]
         let mut object_2 = object.key("agentDetails").start_object();

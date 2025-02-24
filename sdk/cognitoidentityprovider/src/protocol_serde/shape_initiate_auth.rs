@@ -292,7 +292,7 @@ pub fn de_initiate_auth_http_response(
 
 pub fn ser_initiate_auth_input(
     input: &crate::operation::initiate_auth::InitiateAuthInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_initiate_auth_input::ser_initiate_auth_input_input(&mut object, input)?;
@@ -303,7 +303,10 @@ pub fn ser_initiate_auth_input(
 pub(crate) fn de_initiate_auth(
     value: &[u8],
     mut builder: crate::operation::initiate_auth::builders::InitiateAuthOutputBuilder,
-) -> Result<crate::operation::initiate_auth::builders::InitiateAuthOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::initiate_auth::builders::InitiateAuthOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

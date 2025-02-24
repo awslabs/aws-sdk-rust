@@ -2,7 +2,7 @@
 pub fn ser_convert_recovery_point_to_snapshot_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.recovery_point_id {
         object.key("recoveryPointId").string(var_1.as_str());
     }

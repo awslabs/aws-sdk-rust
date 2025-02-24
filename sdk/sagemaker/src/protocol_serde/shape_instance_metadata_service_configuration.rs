@@ -2,7 +2,7 @@
 pub fn ser_instance_metadata_service_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InstanceMetadataServiceConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.minimum_instance_metadata_service_version {
         object.key("MinimumInstanceMetadataServiceVersion").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_instance_metadata_service_configuration(
 
 pub(crate) fn de_instance_metadata_service_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InstanceMetadataServiceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InstanceMetadataServiceConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

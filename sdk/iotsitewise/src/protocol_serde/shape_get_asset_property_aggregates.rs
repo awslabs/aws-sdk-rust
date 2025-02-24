@@ -121,7 +121,7 @@ pub fn de_get_asset_property_aggregates_http_response(
 pub(crate) fn de_get_asset_property_aggregates(
     value: &[u8],
     mut builder: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

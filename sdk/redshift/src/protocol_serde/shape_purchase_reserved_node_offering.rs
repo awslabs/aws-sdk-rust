@@ -122,7 +122,7 @@ pub fn de_purchase_reserved_node_offering_http_response(
 pub fn de_purchase_reserved_node_offering(
     inp: &[u8],
     mut builder: crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

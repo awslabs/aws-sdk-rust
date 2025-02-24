@@ -2,7 +2,7 @@
 pub fn ser_media_concurrency(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MediaConcurrency,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Channel").string(input.channel.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_media_concurrency(
 
 pub(crate) fn de_media_concurrency<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MediaConcurrency>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MediaConcurrency>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

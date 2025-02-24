@@ -2,7 +2,7 @@
 pub fn ser_cluster_slurm_configuration_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ClusterSlurmConfigurationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scale_down_idle_time_in_seconds {
         object.key("scaleDownIdleTimeInSeconds").number(
             #[allow(clippy::useless_conversion)]

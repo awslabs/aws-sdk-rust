@@ -2,7 +2,7 @@
 pub fn ser_import_source_credentials_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_source_credentials::ImportSourceCredentialsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.username {
         object.key("username").string(var_1.as_str());
     }

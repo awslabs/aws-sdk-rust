@@ -27,7 +27,7 @@ pub(crate) fn de_origin_access_control_payload(
         .transpose()
 }
 
-pub fn de_origin_access_control(inp: &[u8]) -> Result<crate::types::OriginAccessControl, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_origin_access_control(inp: &[u8]) -> std::result::Result<crate::types::OriginAccessControl, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

@@ -2,7 +2,7 @@
 pub fn ser_create_gateway_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_gateway::CreateGatewayInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.egress_cidr_blocks {
         let mut array_2 = object.key("egressCidrBlocks").start_array();
         for item_3 in var_1 {

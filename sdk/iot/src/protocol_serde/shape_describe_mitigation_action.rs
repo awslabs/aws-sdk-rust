@@ -110,7 +110,7 @@ pub fn de_describe_mitigation_action_http_response(
 pub(crate) fn de_describe_mitigation_action(
     value: &[u8],
     mut builder: crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

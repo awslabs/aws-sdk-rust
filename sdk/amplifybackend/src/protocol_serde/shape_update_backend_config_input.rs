@@ -2,7 +2,7 @@
 pub fn ser_update_backend_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_backend_config::UpdateBackendConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.login_auth_config {
         #[allow(unused_mut)]
         let mut object_2 = object.key("loginAuthConfig").start_object();

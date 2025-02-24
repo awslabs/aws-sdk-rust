@@ -2,7 +2,7 @@
 pub fn ser_sender_contact(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SenderContact,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Email").string(input.email.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_sender_contact(
 
 pub(crate) fn de_sender_contact<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SenderContact>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SenderContact>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

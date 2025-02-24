@@ -2,7 +2,7 @@
 pub fn ser_put_outbound_request_batch_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_outbound_request_batch::PutOutboundRequestBatchInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.outbound_requests {
         let mut array_2 = object.key("outboundRequests").start_array();
         for item_3 in var_1 {

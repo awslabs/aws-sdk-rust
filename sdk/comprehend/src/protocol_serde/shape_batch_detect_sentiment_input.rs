@@ -2,7 +2,7 @@
 pub fn ser_batch_detect_sentiment_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_detect_sentiment::BatchDetectSentimentInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.text_list {
         let mut array_2 = object.key("TextList").start_array();
         for item_3 in var_1 {

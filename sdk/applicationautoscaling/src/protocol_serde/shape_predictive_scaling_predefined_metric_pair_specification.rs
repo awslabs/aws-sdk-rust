@@ -2,7 +2,7 @@
 pub fn ser_predictive_scaling_predefined_metric_pair_specification(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PredictiveScalingPredefinedMetricPairSpecification,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("PredefinedMetricType").string(input.predefined_metric_type.as_str());
     }
@@ -14,7 +14,10 @@ pub fn ser_predictive_scaling_predefined_metric_pair_specification(
 
 pub(crate) fn de_predictive_scaling_predefined_metric_pair_specification<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PredictiveScalingPredefinedMetricPairSpecification>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<
+    Option<crate::types::PredictiveScalingPredefinedMetricPairSpecification>,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

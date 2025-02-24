@@ -121,7 +121,7 @@ pub fn de_list_automation_rules_http_response(
 pub(crate) fn de_list_automation_rules(
     value: &[u8],
     mut builder: crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_automation_rules::builders::ListAutomationRulesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

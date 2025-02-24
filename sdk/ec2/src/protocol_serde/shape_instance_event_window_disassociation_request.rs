@@ -3,7 +3,7 @@
 pub fn ser_instance_event_window_disassociation_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::InstanceEventWindowDisassociationRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("InstanceId");
     if let Some(var_2) = &input.instance_ids {

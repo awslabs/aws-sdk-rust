@@ -2,7 +2,7 @@
 pub fn ser_anomaly_group_time_series(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnomalyGroupTimeSeries,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AnomalyGroupId").string(input.anomaly_group_id.as_str());
     }

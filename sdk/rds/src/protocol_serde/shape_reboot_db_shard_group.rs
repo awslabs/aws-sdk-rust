@@ -81,7 +81,8 @@ pub fn de_reboot_db_shard_group_http_response(
 pub fn de_reboot_db_shard_group(
     inp: &[u8],
     mut builder: crate::operation::reboot_db_shard_group::builders::RebootDbShardGroupOutputBuilder,
-) -> Result<crate::operation::reboot_db_shard_group::builders::RebootDbShardGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::reboot_db_shard_group::builders::RebootDbShardGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

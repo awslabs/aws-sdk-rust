@@ -136,7 +136,7 @@ pub fn de_describe_email_address_http_response(
 pub(crate) fn de_describe_email_address(
     value: &[u8],
     mut builder: crate::operation::describe_email_address::builders::DescribeEmailAddressOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_email_address::builders::DescribeEmailAddressOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

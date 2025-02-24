@@ -2,7 +2,7 @@
 pub fn ser_create_custom_routing_endpoint_group_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.listener_arn {
         object.key("ListenerArn").string(var_1.as_str());
     }

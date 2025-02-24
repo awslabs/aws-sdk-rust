@@ -2,7 +2,7 @@
 pub fn ser_saa_s_product_last_modified_date_filter_date_range(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SaaSProductLastModifiedDateFilterDateRange,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.after_value {
         object.key("AfterValue").string(var_1.as_str());
     }

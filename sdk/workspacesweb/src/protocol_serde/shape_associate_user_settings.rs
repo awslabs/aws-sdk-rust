@@ -152,7 +152,7 @@ pub fn de_associate_user_settings_http_response(
 pub(crate) fn de_associate_user_settings(
     value: &[u8],
     mut builder: crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_update_data_lake_exception_subscription_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_data_lake_exception_subscription::UpdateDataLakeExceptionSubscriptionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.exception_time_to_live {
         object.key("exceptionTimeToLive").number(
             #[allow(clippy::useless_conversion)]

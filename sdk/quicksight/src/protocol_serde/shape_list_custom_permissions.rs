@@ -157,7 +157,7 @@ pub fn de_list_custom_permissions_http_response(
 pub(crate) fn de_list_custom_permissions(
     value: &[u8],
     mut builder: crate::operation::list_custom_permissions::builders::ListCustomPermissionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_custom_permissions::builders::ListCustomPermissionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -62,14 +62,14 @@ pub fn de_get_subscription_state_http_response(
 
 pub fn ser_get_subscription_state_input(
     _input: &crate::operation::get_subscription_state::GetSubscriptionStateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_get_subscription_state(
     value: &[u8],
     mut builder: crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_subscription_state::builders::GetSubscriptionStateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

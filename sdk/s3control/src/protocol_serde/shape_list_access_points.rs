@@ -51,7 +51,7 @@ pub fn ser_list_access_points_headers(
 pub fn de_list_access_points(
     inp: &[u8],
     mut builder: crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder,
-) -> Result<crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_access_points::builders::ListAccessPointsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

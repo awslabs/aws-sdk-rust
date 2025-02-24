@@ -187,7 +187,7 @@ pub fn de_list_role_memberships_http_response(
 pub(crate) fn de_list_role_memberships(
     value: &[u8],
     mut builder: crate::operation::list_role_memberships::builders::ListRoleMembershipsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_role_memberships::builders::ListRoleMembershipsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

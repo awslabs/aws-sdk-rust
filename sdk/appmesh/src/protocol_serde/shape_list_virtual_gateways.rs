@@ -140,7 +140,7 @@ pub fn de_list_virtual_gateways_http_response(
 pub(crate) fn de_list_virtual_gateways(
     value: &[u8],
     mut builder: crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

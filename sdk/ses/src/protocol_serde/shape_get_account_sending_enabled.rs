@@ -41,8 +41,10 @@ pub fn de_get_account_sending_enabled_http_response(
 pub fn de_get_account_sending_enabled(
     inp: &[u8],
     mut builder: crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder,
-) -> Result<crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_account_sending_enabled::builders::GetAccountSendingEnabledOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

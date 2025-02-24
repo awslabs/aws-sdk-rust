@@ -142,7 +142,7 @@ pub fn de_describe_domain_configuration_http_response(
 pub(crate) fn de_describe_domain_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

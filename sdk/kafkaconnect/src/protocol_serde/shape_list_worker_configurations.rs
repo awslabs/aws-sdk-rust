@@ -161,7 +161,7 @@ pub fn de_list_worker_configurations_http_response(
 pub(crate) fn de_list_worker_configurations(
     value: &[u8],
     mut builder: crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

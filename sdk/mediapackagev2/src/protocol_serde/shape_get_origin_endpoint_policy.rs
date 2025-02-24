@@ -127,7 +127,7 @@ pub fn de_get_origin_endpoint_policy_http_response(
 pub(crate) fn de_get_origin_endpoint_policy(
     value: &[u8],
     mut builder: crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_origin_endpoint_policy::builders::GetOriginEndpointPolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -35,7 +35,7 @@ pub fn de_get_send_statistics_http_response(
 pub fn de_get_send_statistics(
     inp: &[u8],
     mut builder: crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder,
-) -> Result<crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_send_statistics::builders::GetSendStatisticsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

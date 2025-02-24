@@ -2,7 +2,7 @@
 pub fn ser_update_smb_file_share_visibility_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.gateway_arn {
         object.key("GatewayARN").string(var_1.as_str());
     }

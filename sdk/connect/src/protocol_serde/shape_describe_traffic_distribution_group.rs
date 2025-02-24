@@ -130,7 +130,7 @@ pub fn de_describe_traffic_distribution_group_http_response(
 pub(crate) fn de_describe_traffic_distribution_group(
     value: &[u8],
     mut builder: crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

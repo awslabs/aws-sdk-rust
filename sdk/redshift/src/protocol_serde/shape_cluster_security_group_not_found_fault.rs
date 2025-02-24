@@ -3,7 +3,7 @@
 pub fn de_cluster_security_group_not_found_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ClusterSecurityGroupNotFoundFaultBuilder,
-) -> Result<crate::types::error::builders::ClusterSecurityGroupNotFoundFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ClusterSecurityGroupNotFoundFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

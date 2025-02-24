@@ -3,7 +3,7 @@
 pub fn ser_metric_stream_statistics_configuration(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MetricStreamStatisticsConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("IncludeMetrics");
     if let Some(var_2) = &input.include_metrics {
@@ -32,7 +32,7 @@ pub fn ser_metric_stream_statistics_configuration(
 #[allow(clippy::needless_question_mark)]
 pub fn de_metric_stream_statistics_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MetricStreamStatisticsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MetricStreamStatisticsConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MetricStreamStatisticsConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

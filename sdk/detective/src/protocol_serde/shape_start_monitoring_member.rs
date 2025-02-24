@@ -136,7 +136,7 @@ pub fn de_start_monitoring_member_http_response(
 
 pub fn ser_start_monitoring_member_input(
     input: &crate::operation::start_monitoring_member::StartMonitoringMemberInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_monitoring_member_input::ser_start_monitoring_member_input_input(&mut object, input)?;

@@ -160,7 +160,7 @@ pub fn de_import_signal_catalog_http_response(
 
 pub fn ser_import_signal_catalog_input(
     input: &crate::operation::import_signal_catalog::ImportSignalCatalogInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_import_signal_catalog_input::ser_import_signal_catalog_input_input(&mut object, input)?;
@@ -171,7 +171,7 @@ pub fn ser_import_signal_catalog_input(
 pub(crate) fn de_import_signal_catalog(
     value: &[u8],
     mut builder: crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::import_signal_catalog::builders::ImportSignalCatalogOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

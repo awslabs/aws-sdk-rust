@@ -87,7 +87,10 @@ pub fn de_put_managed_insight_rules_http_response(
 pub fn de_put_managed_insight_rules(
     inp: &[u8],
     mut builder: crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder,
-) -> Result<crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

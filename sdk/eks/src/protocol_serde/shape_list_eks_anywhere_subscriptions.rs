@@ -112,7 +112,7 @@ pub fn de_list_eks_anywhere_subscriptions_http_response(
 pub(crate) fn de_list_eks_anywhere_subscriptions(
     value: &[u8],
     mut builder: crate::operation::list_eks_anywhere_subscriptions::builders::ListEksAnywhereSubscriptionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_eks_anywhere_subscriptions::builders::ListEksAnywhereSubscriptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

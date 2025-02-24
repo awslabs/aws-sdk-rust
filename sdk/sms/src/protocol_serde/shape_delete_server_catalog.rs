@@ -114,6 +114,6 @@ pub fn de_delete_server_catalog_http_response(
 
 pub fn ser_delete_server_catalog_input(
     _input: &crate::operation::delete_server_catalog::DeleteServerCatalogInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }

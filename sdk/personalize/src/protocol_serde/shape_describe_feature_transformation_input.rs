@@ -2,7 +2,7 @@
 pub fn ser_describe_feature_transformation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.feature_transformation_arn {
         object.key("featureTransformationArn").string(var_1.as_str());
     }

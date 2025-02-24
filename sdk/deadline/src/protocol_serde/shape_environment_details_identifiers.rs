@@ -2,7 +2,7 @@
 pub fn ser_environment_details_identifiers(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnvironmentDetailsIdentifiers,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("jobId").string(input.job_id.as_str());
     }

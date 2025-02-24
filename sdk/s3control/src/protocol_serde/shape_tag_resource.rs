@@ -47,7 +47,7 @@ pub fn ser_tag_resource_headers(
 
 pub fn ser_tag_resource_op_input(
     input: &crate::operation::tag_resource::TagResourceInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

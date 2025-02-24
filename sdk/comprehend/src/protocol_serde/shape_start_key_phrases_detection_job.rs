@@ -141,7 +141,7 @@ pub fn de_start_key_phrases_detection_job_http_response(
 
 pub fn ser_start_key_phrases_detection_job_input(
     input: &crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_start_key_phrases_detection_job_input::ser_start_key_phrases_detection_job_input_input(&mut object, input)?;
@@ -152,7 +152,7 @@ pub fn ser_start_key_phrases_detection_job_input(
 pub(crate) fn de_start_key_phrases_detection_job(
     value: &[u8],
     mut builder: crate::operation::start_key_phrases_detection_job::builders::StartKeyPhrasesDetectionJobOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::start_key_phrases_detection_job::builders::StartKeyPhrasesDetectionJobOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -134,7 +134,7 @@ pub fn de_list_collaboration_analysis_templates_http_response(
 pub(crate) fn de_list_collaboration_analysis_templates(
     value: &[u8],
     mut builder: crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_collaboration_analysis_templates::builders::ListCollaborationAnalysisTemplatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

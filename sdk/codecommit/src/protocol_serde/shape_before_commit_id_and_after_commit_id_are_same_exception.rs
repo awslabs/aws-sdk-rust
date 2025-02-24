@@ -2,7 +2,7 @@
 pub(crate) fn de_before_commit_id_and_after_commit_id_are_same_exception_json_err(
     value: &[u8],
     mut builder: crate::types::error::builders::BeforeCommitIdAndAfterCommitIdAreSameExceptionBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::types::error::builders::BeforeCommitIdAndAfterCommitIdAreSameExceptionBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

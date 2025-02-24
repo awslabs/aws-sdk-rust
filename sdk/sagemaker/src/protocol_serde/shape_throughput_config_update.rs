@@ -2,7 +2,7 @@
 pub fn ser_throughput_config_update(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThroughputConfigUpdate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.throughput_mode {
         object.key("ThroughputMode").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_update_thing_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_thing_type::UpdateThingTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.thing_type_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("thingTypeProperties").start_object();

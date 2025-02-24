@@ -3,7 +3,7 @@
 pub fn ser_stack_definition(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::StackDefinition,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("StackName");
     if let Some(var_2) = &input.stack_name {

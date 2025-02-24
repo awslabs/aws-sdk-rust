@@ -130,7 +130,7 @@ pub fn de_list_metadata_generation_runs_http_response(
 pub(crate) fn de_list_metadata_generation_runs(
     value: &[u8],
     mut builder: crate::operation::list_metadata_generation_runs::builders::ListMetadataGenerationRunsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_metadata_generation_runs::builders::ListMetadataGenerationRunsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

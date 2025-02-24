@@ -2,7 +2,7 @@
 pub fn ser_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_ecs_task_definition_container_definitions_log_configuration_secre
 
 pub(crate) fn de_aws_ecs_task_definition_container_definitions_log_configuration_secret_options_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

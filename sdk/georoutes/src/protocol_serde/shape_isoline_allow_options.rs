@@ -2,7 +2,7 @@
 pub fn ser_isoline_allow_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IsolineAllowOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hot {
         object.key("Hot").boolean(*var_1);
     }

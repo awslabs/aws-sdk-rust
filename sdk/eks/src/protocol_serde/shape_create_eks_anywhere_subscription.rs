@@ -131,7 +131,7 @@ pub fn de_create_eks_anywhere_subscription_http_response(
 
 pub fn ser_create_eks_anywhere_subscription_input(
     input: &crate::operation::create_eks_anywhere_subscription::CreateEksAnywhereSubscriptionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_eks_anywhere_subscription_input::ser_create_eks_anywhere_subscription_input_input(&mut object, input)?;
@@ -142,7 +142,7 @@ pub fn ser_create_eks_anywhere_subscription_input(
 pub(crate) fn de_create_eks_anywhere_subscription(
     value: &[u8],
     mut builder: crate::operation::create_eks_anywhere_subscription::builders::CreateEksAnywhereSubscriptionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_eks_anywhere_subscription::builders::CreateEksAnywhereSubscriptionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

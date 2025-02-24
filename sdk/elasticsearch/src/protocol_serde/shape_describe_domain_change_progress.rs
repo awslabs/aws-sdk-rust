@@ -109,7 +109,7 @@ pub fn de_describe_domain_change_progress_http_response(
 pub(crate) fn de_describe_domain_change_progress(
     value: &[u8],
     mut builder: crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

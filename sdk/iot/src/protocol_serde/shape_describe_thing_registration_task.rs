@@ -128,7 +128,7 @@ pub fn de_describe_thing_registration_task_http_response(
 pub(crate) fn de_describe_thing_registration_task(
     value: &[u8],
     mut builder: crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_thing_registration_task::builders::DescribeThingRegistrationTaskOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

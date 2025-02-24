@@ -2,7 +2,7 @@
 pub fn ser_auto_ml_problem_type_config(
     object_9: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AutoMlProblemTypeConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig(inner) => {
             #[allow(unused_mut)]
@@ -45,7 +45,7 @@ pub fn ser_auto_ml_problem_type_config(
 
 pub(crate) fn de_auto_ml_problem_type_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AutoMlProblemTypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AutoMlProblemTypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

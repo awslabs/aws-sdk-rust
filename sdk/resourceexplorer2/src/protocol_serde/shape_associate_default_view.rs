@@ -119,7 +119,7 @@ pub fn de_associate_default_view_http_response(
 
 pub fn ser_associate_default_view_input(
     input: &crate::operation::associate_default_view::AssociateDefaultViewInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_associate_default_view_input::ser_associate_default_view_input_input(&mut object, input)?;
@@ -130,7 +130,7 @@ pub fn ser_associate_default_view_input(
 pub(crate) fn de_associate_default_view(
     value: &[u8],
     mut builder: crate::operation::associate_default_view::builders::AssociateDefaultViewOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::associate_default_view::builders::AssociateDefaultViewOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

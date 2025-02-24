@@ -132,7 +132,7 @@ pub fn de_list_image_set_versions_http_response(
 pub(crate) fn de_list_image_set_versions(
     value: &[u8],
     mut builder: crate::operation::list_image_set_versions::builders::ListImageSetVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_image_set_versions::builders::ListImageSetVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

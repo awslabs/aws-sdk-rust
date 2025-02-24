@@ -125,7 +125,7 @@ pub fn de_get_notification_event_http_response(
 pub(crate) fn de_get_notification_event(
     value: &[u8],
     mut builder: crate::operation::get_notification_event::builders::GetNotificationEventOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_notification_event::builders::GetNotificationEventOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_update_user_hierarchy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_user_hierarchy::UpdateUserHierarchyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hierarchy_group_id {
         object.key("HierarchyGroupId").string(var_1.as_str());
     }

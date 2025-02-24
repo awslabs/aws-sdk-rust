@@ -2,7 +2,7 @@
 pub fn ser_canary_run_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CanaryRunConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.timeout_in_seconds {
         object.key("TimeoutInSeconds").number(
             #[allow(clippy::useless_conversion)]

@@ -122,7 +122,7 @@ pub fn de_list_recovery_points_by_backup_vault_http_response(
 pub(crate) fn de_list_recovery_points_by_backup_vault(
     value: &[u8],
     mut builder: crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

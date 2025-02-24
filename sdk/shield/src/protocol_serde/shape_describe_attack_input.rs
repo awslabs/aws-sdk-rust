@@ -2,7 +2,7 @@
 pub fn ser_describe_attack_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_attack::DescribeAttackInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attack_id {
         object.key("AttackId").string(var_1.as_str());
     }

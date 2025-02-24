@@ -54,7 +54,7 @@ pub fn ser_associate_access_grants_identity_center_headers(
 
 pub fn ser_associate_access_grants_identity_center_op_input(
     input: &crate::operation::associate_access_grants_identity_center::AssociateAccessGrantsIdentityCenterInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

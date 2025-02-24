@@ -128,7 +128,7 @@ pub fn de_list_package_version_dependencies_http_response(
 pub(crate) fn de_list_package_version_dependencies(
     value: &[u8],
     mut builder: crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

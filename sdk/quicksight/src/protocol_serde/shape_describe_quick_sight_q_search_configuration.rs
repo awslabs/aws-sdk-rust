@@ -173,7 +173,7 @@ pub fn de_describe_quick_sight_q_search_configuration_http_response(
 pub(crate) fn de_describe_quick_sight_q_search_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_quick_sight_q_search_configuration::builders::DescribeQuickSightQSearchConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_quick_sight_q_search_configuration::builders::DescribeQuickSightQSearchConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

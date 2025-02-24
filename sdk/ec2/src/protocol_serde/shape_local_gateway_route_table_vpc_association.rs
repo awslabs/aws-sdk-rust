@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_local_gateway_route_table_vpc_association(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LocalGatewayRouteTableVpcAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LocalGatewayRouteTableVpcAssociation, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LocalGatewayRouteTableVpcAssociation::builder();
     while let Some(mut tag) = decoder.next_tag() {

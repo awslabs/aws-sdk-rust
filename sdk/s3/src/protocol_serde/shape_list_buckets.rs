@@ -35,7 +35,7 @@ pub fn de_list_buckets_http_response(
 pub fn de_list_buckets(
     inp: &[u8],
     mut builder: crate::operation::list_buckets::builders::ListBucketsOutputBuilder,
-) -> Result<crate::operation::list_buckets::builders::ListBucketsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_buckets::builders::ListBucketsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

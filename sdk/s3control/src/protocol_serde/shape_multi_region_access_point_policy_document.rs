@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_multi_region_access_point_policy_document(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MultiRegionAccessPointPolicyDocument, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MultiRegionAccessPointPolicyDocument, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MultiRegionAccessPointPolicyDocument::builder();
     while let Some(mut tag) = decoder.next_tag() {

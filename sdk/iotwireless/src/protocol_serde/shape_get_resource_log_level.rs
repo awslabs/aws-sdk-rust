@@ -121,7 +121,7 @@ pub fn de_get_resource_log_level_http_response(
 pub(crate) fn de_get_resource_log_level(
     value: &[u8],
     mut builder: crate::operation::get_resource_log_level::builders::GetResourceLogLevelOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_resource_log_level::builders::GetResourceLogLevelOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

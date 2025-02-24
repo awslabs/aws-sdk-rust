@@ -146,7 +146,7 @@ pub fn de_list_resource_profile_detections_http_response(
 pub(crate) fn de_list_resource_profile_detections(
     value: &[u8],
     mut builder: crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_resource_profile_detections::builders::ListResourceProfileDetectionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

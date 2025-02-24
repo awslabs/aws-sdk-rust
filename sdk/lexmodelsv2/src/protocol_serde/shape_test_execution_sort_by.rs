@@ -2,7 +2,7 @@
 pub fn ser_test_execution_sort_by(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TestExecutionSortBy,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("attribute").string(input.attribute.as_str());
     }

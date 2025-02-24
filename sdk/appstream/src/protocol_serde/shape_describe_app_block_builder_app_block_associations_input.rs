@@ -2,7 +2,7 @@
 pub fn ser_describe_app_block_builder_app_block_associations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.app_block_arn {
         object.key("AppBlockArn").string(var_1.as_str());
     }

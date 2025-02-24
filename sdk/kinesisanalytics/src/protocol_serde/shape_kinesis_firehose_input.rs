@@ -2,7 +2,7 @@
 pub fn ser_kinesis_firehose_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KinesisFirehoseInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResourceARN").string(input.resource_arn.as_str());
     }

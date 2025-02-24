@@ -137,7 +137,7 @@ pub fn de_get_instance_onboarding_job_status_http_response(
 pub(crate) fn de_get_instance_onboarding_job_status(
     value: &[u8],
     mut builder: crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -131,7 +131,7 @@ pub fn de_describe_mount_targets_http_response(
 pub(crate) fn de_describe_mount_targets(
     value: &[u8],
     mut builder: crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_mount_targets::builders::DescribeMountTargetsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

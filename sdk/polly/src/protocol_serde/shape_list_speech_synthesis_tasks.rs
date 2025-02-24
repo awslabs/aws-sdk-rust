@@ -80,7 +80,7 @@ pub fn de_list_speech_synthesis_tasks_http_response(
 pub(crate) fn de_list_speech_synthesis_tasks(
     value: &[u8],
     mut builder: crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_speech_synthesis_tasks::builders::ListSpeechSynthesisTasksOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

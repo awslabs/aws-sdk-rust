@@ -91,7 +91,7 @@ pub fn de_list_scheduled_audits_http_response(
 pub(crate) fn de_list_scheduled_audits(
     value: &[u8],
     mut builder: crate::operation::list_scheduled_audits::builders::ListScheduledAuditsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_scheduled_audits::builders::ListScheduledAuditsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

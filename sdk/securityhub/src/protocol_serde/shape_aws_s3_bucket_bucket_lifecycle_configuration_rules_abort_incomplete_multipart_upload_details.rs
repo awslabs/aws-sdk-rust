@@ -2,7 +2,7 @@
 pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.days_after_initiation {
         object.key("DaysAfterInitiation").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_m
 
 pub(crate) fn de_aws_s3_bucket_bucket_lifecycle_configuration_rules_abort_incomplete_multipart_upload_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

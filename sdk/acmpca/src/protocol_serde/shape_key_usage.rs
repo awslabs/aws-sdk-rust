@@ -2,7 +2,7 @@
 pub fn ser_key_usage(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyUsage,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.digital_signature {
         object.key("DigitalSignature").boolean(input.digital_signature);
     }
@@ -35,7 +35,7 @@ pub fn ser_key_usage(
 
 pub(crate) fn de_key_usage<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::KeyUsage>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::KeyUsage>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

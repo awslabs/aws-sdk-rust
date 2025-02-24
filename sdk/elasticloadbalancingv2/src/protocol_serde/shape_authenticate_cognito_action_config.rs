@@ -3,7 +3,7 @@
 pub fn ser_authenticate_cognito_action_config(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::AuthenticateCognitoActionConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("UserPoolArn");
     if let Some(var_2) = &input.user_pool_arn {
@@ -61,7 +61,7 @@ pub fn ser_authenticate_cognito_action_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_authenticate_cognito_action_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AuthenticateCognitoActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AuthenticateCognitoActionConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AuthenticateCognitoActionConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

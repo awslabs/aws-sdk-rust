@@ -2,7 +2,7 @@
 pub fn ser_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_details(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.in_cluster {
         object.key("InCluster").boolean(*var_1);
     }
@@ -14,7 +14,7 @@ pub fn ser_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_de
 
 pub(crate) fn de_aws_msk_cluster_cluster_info_encryption_info_encryption_in_transit_details<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<
+) -> ::std::result::Result<
     Option<crate::types::AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails>,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 >

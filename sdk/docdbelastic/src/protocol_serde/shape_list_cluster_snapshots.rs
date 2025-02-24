@@ -109,7 +109,7 @@ pub fn de_list_cluster_snapshots_http_response(
 pub(crate) fn de_list_cluster_snapshots(
     value: &[u8],
     mut builder: crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_cluster_snapshots::builders::ListClusterSnapshotsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

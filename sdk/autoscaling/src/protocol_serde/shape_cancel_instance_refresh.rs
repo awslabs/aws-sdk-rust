@@ -98,7 +98,10 @@ pub fn de_cancel_instance_refresh_http_response(
 pub fn de_cancel_instance_refresh(
     inp: &[u8],
     mut builder: crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshOutputBuilder,
-) -> Result<crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

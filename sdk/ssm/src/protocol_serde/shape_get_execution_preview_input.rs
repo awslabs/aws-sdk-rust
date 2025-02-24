@@ -2,7 +2,7 @@
 pub fn ser_get_execution_preview_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_execution_preview::GetExecutionPreviewInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.execution_preview_id {
         object.key("ExecutionPreviewId").string(var_1.as_str());
     }

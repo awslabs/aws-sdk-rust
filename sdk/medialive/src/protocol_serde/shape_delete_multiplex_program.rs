@@ -171,7 +171,7 @@ pub fn de_delete_multiplex_program_http_response(
 pub(crate) fn de_delete_multiplex_program(
     value: &[u8],
     mut builder: crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_multiplex_program::builders::DeleteMultiplexProgramOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

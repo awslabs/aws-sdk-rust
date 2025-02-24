@@ -2,7 +2,7 @@
 pub fn ser_logical_resource_id(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LogicalResourceId,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("identifier").string(input.identifier.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_logical_resource_id(
 
 pub(crate) fn de_logical_resource_id<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LogicalResourceId>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LogicalResourceId>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

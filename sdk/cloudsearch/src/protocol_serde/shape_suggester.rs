@@ -3,7 +3,7 @@
 pub fn ser_suggester(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Suggester,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("SuggesterName");
     {
@@ -20,7 +20,7 @@ pub fn ser_suggester(
 #[allow(clippy::needless_question_mark)]
 pub fn de_suggester(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Suggester, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Suggester, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Suggester::builder();
     while let Some(mut tag) = decoder.next_tag() {

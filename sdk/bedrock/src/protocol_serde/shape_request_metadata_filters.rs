@@ -2,7 +2,7 @@
 pub fn ser_request_metadata_filters(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RequestMetadataFilters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::RequestMetadataFilters::Equals(inner) => {
             #[allow(unused_mut)]
@@ -59,7 +59,7 @@ pub fn ser_request_metadata_filters(
 
 pub(crate) fn de_request_metadata_filters<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RequestMetadataFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RequestMetadataFilters>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

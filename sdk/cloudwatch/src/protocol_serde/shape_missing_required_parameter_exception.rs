@@ -3,7 +3,7 @@
 pub fn de_missing_required_parameter_exception_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::MissingRequiredParameterExceptionBuilder,
-) -> Result<crate::types::error::builders::MissingRequiredParameterExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::MissingRequiredParameterExceptionBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

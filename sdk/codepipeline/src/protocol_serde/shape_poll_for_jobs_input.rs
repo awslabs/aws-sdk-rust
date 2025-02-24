@@ -2,7 +2,7 @@
 pub fn ser_poll_for_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::poll_for_jobs::PollForJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action_type_id {
         #[allow(unused_mut)]
         let mut object_2 = object.key("actionTypeId").start_object();

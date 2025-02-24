@@ -120,7 +120,7 @@ pub fn de_list_ip_access_settings_http_response(
 pub(crate) fn de_list_ip_access_settings(
     value: &[u8],
     mut builder: crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_ip_access_settings::builders::ListIpAccessSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

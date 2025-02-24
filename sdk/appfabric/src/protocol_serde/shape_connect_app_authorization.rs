@@ -133,7 +133,7 @@ pub fn de_connect_app_authorization_http_response(
 
 pub fn ser_connect_app_authorization_input(
     input: &crate::operation::connect_app_authorization::ConnectAppAuthorizationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_connect_app_authorization_input::ser_connect_app_authorization_input_input(&mut object, input)?;
@@ -144,7 +144,7 @@ pub fn ser_connect_app_authorization_input(
 pub(crate) fn de_connect_app_authorization(
     value: &[u8],
     mut builder: crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::connect_app_authorization::builders::ConnectAppAuthorizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

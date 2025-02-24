@@ -109,8 +109,10 @@ pub fn de_describe_signing_job_http_response(
 pub(crate) fn de_describe_signing_job(
     value: &[u8],
     mut builder: crate::operation::describe_signing_job::builders::DescribeSigningJobOutputBuilder,
-) -> Result<crate::operation::describe_signing_job::builders::DescribeSigningJobOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::describe_signing_job::builders::DescribeSigningJobOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

@@ -2,7 +2,7 @@
 pub fn ser_list_export_jobs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_export_jobs::ListExportJobsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_source_type {
         object.key("ExportSourceType").string(var_1.as_str());
     }

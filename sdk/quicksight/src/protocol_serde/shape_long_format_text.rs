@@ -2,7 +2,7 @@
 pub fn ser_long_format_text(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LongFormatText,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.plain_text {
         object.key("PlainText").string(var_1.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_long_format_text(
 
 pub(crate) fn de_long_format_text<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::LongFormatText>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::LongFormatText>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

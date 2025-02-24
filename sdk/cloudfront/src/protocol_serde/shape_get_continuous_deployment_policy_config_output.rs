@@ -22,7 +22,7 @@ pub(crate) fn de_e_tag_header(
 
 pub fn de_continuous_deployment_policy_config(
     inp: &[u8],
-) -> Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::ContinuousDeploymentPolicyConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

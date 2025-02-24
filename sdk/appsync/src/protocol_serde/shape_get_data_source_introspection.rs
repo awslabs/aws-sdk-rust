@@ -91,7 +91,7 @@ pub fn de_get_data_source_introspection_http_response(
 pub(crate) fn de_get_data_source_introspection(
     value: &[u8],
     mut builder: crate::operation::get_data_source_introspection::builders::GetDataSourceIntrospectionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_source_introspection::builders::GetDataSourceIntrospectionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

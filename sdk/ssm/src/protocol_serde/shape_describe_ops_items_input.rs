@@ -2,7 +2,7 @@
 pub fn ser_describe_ops_items_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_ops_items::DescribeOpsItemsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ops_item_filters {
         let mut array_2 = object.key("OpsItemFilters").start_array();
         for item_3 in var_1 {

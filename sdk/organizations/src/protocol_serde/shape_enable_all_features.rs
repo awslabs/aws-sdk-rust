@@ -174,15 +174,17 @@ pub fn de_enable_all_features_http_response(
 
 pub fn ser_enable_all_features_input(
     _input: &crate::operation::enable_all_features::EnableAllFeaturesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_enable_all_features(
     value: &[u8],
     mut builder: crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder,
-) -> Result<crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::enable_all_features::builders::EnableAllFeaturesOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

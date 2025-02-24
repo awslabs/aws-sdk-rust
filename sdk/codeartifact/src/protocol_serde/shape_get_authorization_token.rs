@@ -123,7 +123,7 @@ pub fn de_get_authorization_token_http_response(
 pub(crate) fn de_get_authorization_token(
     value: &[u8],
     mut builder: crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -86,7 +86,7 @@ pub fn de_modify_target_group_attributes_http_response(
 pub fn de_modify_target_group_attributes(
     inp: &[u8],
     mut builder: crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::modify_target_group_attributes::builders::ModifyTargetGroupAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

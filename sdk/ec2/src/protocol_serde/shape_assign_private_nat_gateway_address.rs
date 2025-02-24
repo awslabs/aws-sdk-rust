@@ -39,7 +39,7 @@ pub fn de_assign_private_nat_gateway_address_http_response(
 pub fn de_assign_private_nat_gateway_address(
     inp: &[u8],
     mut builder: crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_inline_archive_rule(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InlineArchiveRule,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ruleName").string(input.rule_name.as_str());
     }

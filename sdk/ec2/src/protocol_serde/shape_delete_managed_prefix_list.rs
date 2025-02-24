@@ -41,7 +41,10 @@ pub fn de_delete_managed_prefix_list_http_response(
 pub fn de_delete_managed_prefix_list(
     inp: &[u8],
     mut builder: crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListOutputBuilder,
-) -> Result<crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

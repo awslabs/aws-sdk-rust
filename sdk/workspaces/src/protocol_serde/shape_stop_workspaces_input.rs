@@ -2,7 +2,7 @@
 pub fn ser_stop_workspaces_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_workspaces::StopWorkspacesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.stop_workspace_requests {
         let mut array_2 = object.key("StopWorkspaceRequests").start_array();
         for item_3 in var_1 {

@@ -2,7 +2,7 @@
 pub fn ser_validity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Validity,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Value").number(
             #[allow(clippy::useless_conversion)]

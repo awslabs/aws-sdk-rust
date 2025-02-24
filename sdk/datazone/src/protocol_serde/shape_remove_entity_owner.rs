@@ -123,7 +123,7 @@ pub fn de_remove_entity_owner_http_response(
 
 pub fn ser_remove_entity_owner_input(
     input: &crate::operation::remove_entity_owner::RemoveEntityOwnerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_remove_entity_owner_input::ser_remove_entity_owner_input_input(&mut object, input)?;

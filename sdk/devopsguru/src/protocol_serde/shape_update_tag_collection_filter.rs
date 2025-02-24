@@ -2,7 +2,7 @@
 pub fn ser_update_tag_collection_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateTagCollectionFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AppBoundaryKey").string(input.app_boundary_key.as_str());
     }

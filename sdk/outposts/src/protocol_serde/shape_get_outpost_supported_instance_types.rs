@@ -112,7 +112,7 @@ pub fn de_get_outpost_supported_instance_types_http_response(
 pub(crate) fn de_get_outpost_supported_instance_types(
     value: &[u8],
     mut builder: crate::operation::get_outpost_supported_instance_types::builders::GetOutpostSupportedInstanceTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_outpost_supported_instance_types::builders::GetOutpostSupportedInstanceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

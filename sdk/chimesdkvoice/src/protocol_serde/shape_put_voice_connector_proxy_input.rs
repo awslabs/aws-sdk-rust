@@ -2,7 +2,7 @@
 pub fn ser_put_voice_connector_proxy_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_voice_connector_proxy::PutVoiceConnectorProxyInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.default_session_expiry_minutes {
         object.key("DefaultSessionExpiryMinutes").number(
             #[allow(clippy::useless_conversion)]

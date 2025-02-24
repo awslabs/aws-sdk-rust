@@ -131,7 +131,7 @@ pub fn de_list_analytics_data_associations_http_response(
 pub(crate) fn de_list_analytics_data_associations(
     value: &[u8],
     mut builder: crate::operation::list_analytics_data_associations::builders::ListAnalyticsDataAssociationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_analytics_data_associations::builders::ListAnalyticsDataAssociationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

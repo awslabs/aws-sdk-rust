@@ -2,7 +2,7 @@
 pub fn ser_analyze_id_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::analyze_id::AnalyzeIdInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.document_pages {
         let mut array_2 = object.key("DocumentPages").start_array();
         for item_3 in var_1 {

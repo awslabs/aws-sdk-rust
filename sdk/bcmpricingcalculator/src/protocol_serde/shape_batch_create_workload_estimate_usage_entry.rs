@@ -2,7 +2,7 @@
 pub fn ser_batch_create_workload_estimate_usage_entry(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BatchCreateWorkloadEstimateUsageEntry,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("serviceCode").string(input.service_code.as_str());
     }

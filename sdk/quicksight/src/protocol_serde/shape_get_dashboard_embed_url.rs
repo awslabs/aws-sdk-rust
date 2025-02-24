@@ -248,7 +248,7 @@ pub fn de_get_dashboard_embed_url_http_response(
 pub(crate) fn de_get_dashboard_embed_url(
     value: &[u8],
     mut builder: crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

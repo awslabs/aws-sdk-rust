@@ -2,7 +2,7 @@
 pub fn ser_waypoint_optimization_rest_cycle_durations(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WaypointOptimizationRestCycleDurations,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("RestDuration").number(
             #[allow(clippy::useless_conversion)]

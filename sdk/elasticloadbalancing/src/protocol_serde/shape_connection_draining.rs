@@ -3,7 +3,7 @@
 pub fn ser_connection_draining(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ConnectionDraining,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Enabled");
     {
@@ -23,7 +23,7 @@ pub fn ser_connection_draining(
 #[allow(clippy::needless_question_mark)]
 pub fn de_connection_draining(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ConnectionDraining, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ConnectionDraining, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ConnectionDraining::builder();
     while let Some(mut tag) = decoder.next_tag() {

@@ -35,7 +35,7 @@ pub fn de_disable_fast_launch_http_response(
 pub fn de_disable_fast_launch(
     inp: &[u8],
     mut builder: crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder,
-) -> Result<crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::disable_fast_launch::builders::DisableFastLaunchOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

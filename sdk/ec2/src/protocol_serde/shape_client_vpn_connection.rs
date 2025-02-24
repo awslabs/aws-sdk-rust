@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_client_vpn_connection(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ClientVpnConnection, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ClientVpnConnection, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ClientVpnConnection::builder();
     while let Some(mut tag) = decoder.next_tag() {

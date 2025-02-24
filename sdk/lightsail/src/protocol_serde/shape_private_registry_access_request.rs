@@ -2,7 +2,7 @@
 pub fn ser_private_registry_access_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PrivateRegistryAccessRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.ecr_image_puller_role {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ecrImagePullerRole").start_object();

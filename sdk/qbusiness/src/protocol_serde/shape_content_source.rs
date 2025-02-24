@@ -2,7 +2,7 @@
 pub fn ser_content_source(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ContentSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ContentSource::Retriever(inner) => {
             #[allow(unused_mut)]

@@ -2,7 +2,7 @@
 pub fn ser_describe_language_model_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_language_model::DescribeLanguageModelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.model_name {
         object.key("ModelName").string(var_1.as_str());
     }

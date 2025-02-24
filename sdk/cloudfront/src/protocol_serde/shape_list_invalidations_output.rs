@@ -10,7 +10,7 @@ pub(crate) fn de_invalidation_list_payload(
         .transpose()
 }
 
-pub fn de_invalidation_list(inp: &[u8]) -> Result<crate::types::InvalidationList, ::aws_smithy_xml::decode::XmlDecodeError> {
+pub fn de_invalidation_list(inp: &[u8]) -> std::result::Result<crate::types::InvalidationList, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;

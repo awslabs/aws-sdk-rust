@@ -2,7 +2,7 @@
 pub fn ser_trusted_token_issuer_update_configuration(
     object_4: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TrustedTokenIssuerUpdateConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::TrustedTokenIssuerUpdateConfiguration::OidcJwtConfiguration(inner) => {
             #[allow(unused_mut)]

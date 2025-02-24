@@ -39,7 +39,7 @@ pub fn de_purchase_capacity_block_extension_http_response(
 pub fn de_purchase_capacity_block_extension(
     inp: &[u8],
     mut builder: crate::operation::purchase_capacity_block_extension::builders::PurchaseCapacityBlockExtensionOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::purchase_capacity_block_extension::builders::PurchaseCapacityBlockExtensionOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

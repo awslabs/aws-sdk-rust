@@ -53,7 +53,7 @@ pub fn ser_get_bucket_tagging_headers(
 pub fn de_get_bucket_tagging(
     inp: &[u8],
     mut builder: crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder,
-) -> Result<crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_bucket_tagging::builders::GetBucketTaggingOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

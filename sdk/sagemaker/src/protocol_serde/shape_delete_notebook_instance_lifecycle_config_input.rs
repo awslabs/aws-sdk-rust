@@ -2,7 +2,7 @@
 pub fn ser_delete_notebook_instance_lifecycle_config_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notebook_instance_lifecycle_config_name {
         object.key("NotebookInstanceLifecycleConfigName").string(var_1.as_str());
     }

@@ -92,7 +92,10 @@ pub fn de_update_role_description_http_response(
 pub fn de_update_role_description(
     inp: &[u8],
     mut builder: crate::operation::update_role_description::builders::UpdateRoleDescriptionOutputBuilder,
-) -> Result<crate::operation::update_role_description::builders::UpdateRoleDescriptionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::update_role_description::builders::UpdateRoleDescriptionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

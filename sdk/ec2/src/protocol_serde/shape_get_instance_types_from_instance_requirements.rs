@@ -44,7 +44,7 @@ pub fn de_get_instance_types_from_instance_requirements_http_response(
 pub fn de_get_instance_types_from_instance_requirements(
     inp: &[u8],
     mut builder: crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

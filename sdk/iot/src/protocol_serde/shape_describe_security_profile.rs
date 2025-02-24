@@ -110,7 +110,7 @@ pub fn de_describe_security_profile_http_response(
 pub(crate) fn de_describe_security_profile(
     value: &[u8],
     mut builder: crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_security_profile::builders::DescribeSecurityProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

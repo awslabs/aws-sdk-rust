@@ -109,7 +109,7 @@ pub fn de_get_portfolio_preferences_http_response(
 pub(crate) fn de_get_portfolio_preferences(
     value: &[u8],
     mut builder: crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

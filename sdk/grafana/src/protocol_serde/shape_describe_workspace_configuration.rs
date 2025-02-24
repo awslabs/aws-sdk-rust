@@ -123,7 +123,7 @@ pub fn de_describe_workspace_configuration_http_response(
 pub(crate) fn de_describe_workspace_configuration(
     value: &[u8],
     mut builder: crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

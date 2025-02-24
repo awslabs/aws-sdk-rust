@@ -135,7 +135,8 @@ pub fn de_create_db_subnet_group_http_response(
 pub fn de_create_db_subnet_group(
     inp: &[u8],
     mut builder: crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder,
-) -> Result<crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

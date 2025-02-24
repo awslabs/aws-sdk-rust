@@ -158,7 +158,7 @@ pub fn de_retire_grant_http_response(
 
 pub fn ser_retire_grant_input(
     input: &crate::operation::retire_grant::RetireGrantInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_retire_grant_input::ser_retire_grant_input_input(&mut object, input)?;

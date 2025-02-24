@@ -152,7 +152,7 @@ pub fn de_rotate_ingest_endpoint_credentials_http_response(
 pub(crate) fn de_rotate_ingest_endpoint_credentials(
     value: &[u8],
     mut builder: crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

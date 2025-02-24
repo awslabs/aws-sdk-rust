@@ -153,7 +153,7 @@ pub fn de_get_retention_settings_http_response(
 pub(crate) fn de_get_retention_settings(
     value: &[u8],
     mut builder: crate::operation::get_retention_settings::builders::GetRetentionSettingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_retention_settings::builders::GetRetentionSettingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

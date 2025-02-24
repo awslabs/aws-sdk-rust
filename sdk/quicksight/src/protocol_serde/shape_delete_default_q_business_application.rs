@@ -131,7 +131,7 @@ pub fn de_delete_default_q_business_application_http_response(
 pub(crate) fn de_delete_default_q_business_application(
     value: &[u8],
     mut builder: crate::operation::delete_default_q_business_application::builders::DeleteDefaultQBusinessApplicationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_default_q_business_application::builders::DeleteDefaultQBusinessApplicationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

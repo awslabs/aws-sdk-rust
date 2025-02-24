@@ -2,7 +2,7 @@
 pub fn ser_tenant(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Tenant,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("tenantIdentifier").string(input.tenant_identifier.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_tenant(
 
 pub(crate) fn de_tenant<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Tenant>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Tenant>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

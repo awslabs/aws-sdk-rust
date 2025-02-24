@@ -2,7 +2,7 @@
 pub fn ser_put_dedicated_ip_warmup_attributes_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.warmup_percentage {
         object.key("WarmupPercentage").number(
             #[allow(clippy::useless_conversion)]

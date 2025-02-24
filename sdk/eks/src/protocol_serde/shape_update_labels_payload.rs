@@ -2,7 +2,7 @@
 pub fn ser_update_labels_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateLabelsPayload,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.add_or_update_labels {
         #[allow(unused_mut)]
         let mut object_2 = object.key("addOrUpdateLabels").start_object();

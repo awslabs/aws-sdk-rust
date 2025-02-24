@@ -3,7 +3,7 @@
 pub fn ser_create_verified_access_trust_provider_device_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateVerifiedAccessTrustProviderDeviceOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TenantId");
     if let Some(var_2) = &input.tenant_id {

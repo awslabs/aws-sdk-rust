@@ -41,7 +41,7 @@ pub fn de_describe_network_insights_access_scopes_http_response(
 pub fn de_describe_network_insights_access_scopes(
     inp: &[u8],
     mut builder: crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

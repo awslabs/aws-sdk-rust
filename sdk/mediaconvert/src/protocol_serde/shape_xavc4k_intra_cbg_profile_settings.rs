@@ -2,7 +2,7 @@
 pub fn ser_xavc4k_intra_cbg_profile_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Xavc4kIntraCbgProfileSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.xavc_class {
         object.key("xavcClass").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_xavc4k_intra_cbg_profile_settings(
 
 pub(crate) fn de_xavc4k_intra_cbg_profile_settings<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Xavc4kIntraCbgProfileSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Xavc4kIntraCbgProfileSettings>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

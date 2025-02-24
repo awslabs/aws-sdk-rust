@@ -88,7 +88,7 @@ pub fn de_switchover_blue_green_deployment_http_response(
 pub fn de_switchover_blue_green_deployment(
     inp: &[u8],
     mut builder: crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::switchover_blue_green_deployment::builders::SwitchoverBlueGreenDeploymentOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

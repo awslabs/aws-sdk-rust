@@ -328,7 +328,7 @@ pub fn de_get_gremlin_query_status_http_response(
 pub(crate) fn de_get_gremlin_query_status(
     value: &[u8],
     mut builder: crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_gremlin_query_status::builders::GetGremlinQueryStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

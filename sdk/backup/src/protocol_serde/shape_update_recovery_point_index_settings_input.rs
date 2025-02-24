@@ -2,7 +2,7 @@
 pub fn ser_update_recovery_point_index_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_recovery_point_index_settings::UpdateRecoveryPointIndexSettingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iam_role_arn {
         object.key("IamRoleArn").string(var_1.as_str());
     }

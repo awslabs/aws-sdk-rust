@@ -2,7 +2,7 @@
 pub fn ser_network_path_component(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NetworkPathComponent,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.component_id {
         object.key("ComponentId").string(var_1.as_str());
     }
@@ -26,7 +26,7 @@ pub fn ser_network_path_component(
 
 pub(crate) fn de_network_path_component<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NetworkPathComponent>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NetworkPathComponent>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -90,7 +90,7 @@ pub fn de_list_game_server_groups_http_response(
 
 pub fn ser_list_game_server_groups_input(
     input: &crate::operation::list_game_server_groups::ListGameServerGroupsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_game_server_groups_input::ser_list_game_server_groups_input_input(&mut object, input)?;
@@ -101,7 +101,7 @@ pub fn ser_list_game_server_groups_input(
 pub(crate) fn de_list_game_server_groups(
     value: &[u8],
     mut builder: crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

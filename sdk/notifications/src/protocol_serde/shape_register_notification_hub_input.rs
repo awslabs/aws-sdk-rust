@@ -2,7 +2,7 @@
 pub fn ser_register_notification_hub_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_notification_hub::RegisterNotificationHubInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.notification_hub_region {
         object.key("notificationHubRegion").string(var_1.as_str());
     }

@@ -2,7 +2,7 @@
 pub fn ser_total_impact_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TotalImpactFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("NumericOperator").string(input.numeric_operator.as_str());
     }

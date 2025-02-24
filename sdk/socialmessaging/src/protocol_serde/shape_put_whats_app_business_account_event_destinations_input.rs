@@ -2,7 +2,7 @@
 pub fn ser_put_whats_app_business_account_event_destinations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.event_destinations {
         let mut array_2 = object.key("eventDestinations").start_array();
         for item_3 in var_1 {

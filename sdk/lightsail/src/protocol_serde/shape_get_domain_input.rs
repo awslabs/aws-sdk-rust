@@ -2,7 +2,7 @@
 pub fn ser_get_domain_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_domain::GetDomainInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.domain_name {
         object.key("domainName").string(var_1.as_str());
     }

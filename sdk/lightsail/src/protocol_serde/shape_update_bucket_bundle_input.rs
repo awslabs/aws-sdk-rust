@@ -2,7 +2,7 @@
 pub fn ser_update_bucket_bundle_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_bucket_bundle::UpdateBucketBundleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.bucket_name {
         object.key("bucketName").string(var_1.as_str());
     }

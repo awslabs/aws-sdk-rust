@@ -82,8 +82,10 @@ pub fn de_get_traffic_policy_instance_http_response(
 pub fn de_get_traffic_policy_instance(
     inp: &[u8],
     mut builder: crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceOutputBuilder,
-) -> Result<crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

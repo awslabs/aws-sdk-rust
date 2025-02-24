@@ -162,7 +162,7 @@ pub fn de_get_reserved_node_exchange_offerings_http_response(
 pub fn de_get_reserved_node_exchange_offerings(
     inp: &[u8],
     mut builder: crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

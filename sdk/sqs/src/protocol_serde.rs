@@ -19,7 +19,7 @@ pub fn parse_http_error_metadata(
     _response_status: u16,
     response_headers: &::aws_smithy_runtime_api::http::Headers,
     response_body: &[u8],
-) -> Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     let mut builder = crate::json_errors::parse_error_metadata(response_body, response_headers)?;
     if let Some((error_code, error_type)) = crate::aws_query_compatible_errors::parse_aws_query_compatible_error(response_headers) {
         builder = builder.code(error_code);

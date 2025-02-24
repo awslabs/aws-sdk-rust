@@ -2,7 +2,7 @@
 pub fn ser_change_resource_record_sets_input_input_input(
     input: &crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_1) = &input.change_batch {

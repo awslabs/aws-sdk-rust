@@ -125,7 +125,7 @@ pub fn de_assume_decorated_role_with_saml_http_response(
 
 pub fn ser_assume_decorated_role_with_saml_input(
     input: &crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_assume_decorated_role_with_saml_input::ser_assume_decorated_role_with_saml_input_input(&mut object, input)?;
@@ -136,7 +136,7 @@ pub fn ser_assume_decorated_role_with_saml_input(
 pub(crate) fn de_assume_decorated_role_with_saml(
     value: &[u8],
     mut builder: crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -133,7 +133,7 @@ pub fn de_get_site_to_site_vpn_attachment_http_response(
 pub(crate) fn de_get_site_to_site_vpn_attachment(
     value: &[u8],
     mut builder: crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_site_to_site_vpn_attachment::builders::GetSiteToSiteVpnAttachmentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

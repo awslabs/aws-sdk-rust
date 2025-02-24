@@ -2,7 +2,7 @@
 pub fn ser_error_handling_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ErrorHandlingConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.fail_on_first_destination_error {
         object.key("failOnFirstDestinationError").boolean(input.fail_on_first_destination_error);
     }
@@ -17,7 +17,7 @@ pub fn ser_error_handling_config(
 
 pub(crate) fn de_error_handling_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ErrorHandlingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ErrorHandlingConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

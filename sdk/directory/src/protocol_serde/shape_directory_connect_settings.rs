@@ -2,7 +2,7 @@
 pub fn ser_directory_connect_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DirectoryConnectSettings,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("VpcId").string(input.vpc_id.as_str());
     }

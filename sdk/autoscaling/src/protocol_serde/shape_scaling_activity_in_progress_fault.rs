@@ -3,7 +3,7 @@
 pub fn de_scaling_activity_in_progress_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::ScalingActivityInProgressFaultBuilder,
-) -> Result<crate::types::error::builders::ScalingActivityInProgressFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::ScalingActivityInProgressFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

@@ -2,7 +2,7 @@
 pub fn ser_tls_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TlsConfigInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.server_name_to_verify {
         object.key("serverNameToVerify").string(var_1.as_str());
     }

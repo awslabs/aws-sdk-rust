@@ -2,7 +2,7 @@
 pub fn ser_disable_policy_type_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disable_policy_type::DisablePolicyTypeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.root_id {
         object.key("RootId").string(var_1.as_str());
     }

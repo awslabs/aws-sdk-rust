@@ -2,7 +2,7 @@
 pub fn ser_color_conversion3_dlut_setting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ColorConversion3DlutSetting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.file_input {
         object.key("fileInput").string(var_1.as_str());
     }
@@ -29,7 +29,7 @@ pub fn ser_color_conversion3_dlut_setting(
 
 pub(crate) fn de_color_conversion3_dlut_setting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ColorConversion3DlutSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ColorConversion3DlutSetting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

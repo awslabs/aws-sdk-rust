@@ -46,7 +46,7 @@ pub fn de_enable_reachability_analyzer_organization_sharing_http_response(
 pub fn de_enable_reachability_analyzer_organization_sharing(
     inp: &[u8],
     mut builder: crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_theme_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ThemeValues,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.key {
         object.key("key").string(var_1.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_theme_values(
 
 pub(crate) fn de_theme_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ThemeValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ThemeValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

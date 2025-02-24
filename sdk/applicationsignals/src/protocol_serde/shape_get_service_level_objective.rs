@@ -93,7 +93,7 @@ pub fn de_get_service_level_objective_http_response(
 pub(crate) fn de_get_service_level_objective(
     value: &[u8],
     mut builder: crate::operation::get_service_level_objective::builders::GetServiceLevelObjectiveOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_service_level_objective::builders::GetServiceLevelObjectiveOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

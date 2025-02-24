@@ -2,7 +2,7 @@
 pub fn ser_fragment_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::FragmentSelector,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("FragmentSelectorType").string(input.fragment_selector_type.as_str());
     }

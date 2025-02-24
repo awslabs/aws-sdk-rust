@@ -57,7 +57,7 @@ pub fn ser_get_multi_region_access_point_routes_headers(
 pub fn de_get_multi_region_access_point_routes(
     inp: &[u8],
     mut builder: crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_multi_region_access_point_routes::builders::GetMultiRegionAccessPointRoutesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

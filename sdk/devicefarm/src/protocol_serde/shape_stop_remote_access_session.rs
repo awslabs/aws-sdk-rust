@@ -109,7 +109,7 @@ pub fn de_stop_remote_access_session_http_response(
 
 pub fn ser_stop_remote_access_session_input(
     input: &crate::operation::stop_remote_access_session::StopRemoteAccessSessionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_stop_remote_access_session_input::ser_stop_remote_access_session_input_input(&mut object, input)?;
@@ -120,7 +120,7 @@ pub fn ser_stop_remote_access_session_input(
 pub(crate) fn de_stop_remote_access_session(
     value: &[u8],
     mut builder: crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

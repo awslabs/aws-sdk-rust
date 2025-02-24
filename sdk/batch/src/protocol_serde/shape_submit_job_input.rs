@@ -2,7 +2,7 @@
 pub fn ser_submit_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::submit_job::SubmitJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.array_properties {
         #[allow(unused_mut)]
         let mut object_2 = object.key("arrayProperties").start_object();

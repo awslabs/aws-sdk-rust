@@ -64,7 +64,7 @@ pub fn de_batch_delete_cluster_nodes_http_response(
 
 pub fn ser_batch_delete_cluster_nodes_input(
     input: &crate::operation::batch_delete_cluster_nodes::BatchDeleteClusterNodesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_batch_delete_cluster_nodes_input::ser_batch_delete_cluster_nodes_input_input(&mut object, input)?;
@@ -75,7 +75,7 @@ pub fn ser_batch_delete_cluster_nodes_input(
 pub(crate) fn de_batch_delete_cluster_nodes(
     value: &[u8],
     mut builder: crate::operation::batch_delete_cluster_nodes::builders::BatchDeleteClusterNodesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::batch_delete_cluster_nodes::builders::BatchDeleteClusterNodesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

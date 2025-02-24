@@ -100,7 +100,7 @@ pub fn de_describe_broker_engine_types_http_response(
 pub(crate) fn de_describe_broker_engine_types(
     value: &[u8],
     mut builder: crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

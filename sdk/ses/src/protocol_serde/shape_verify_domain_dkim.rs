@@ -35,7 +35,7 @@ pub fn de_verify_domain_dkim_http_response(
 pub fn de_verify_domain_dkim(
     inp: &[u8],
     mut builder: crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder,
-) -> Result<crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::verify_domain_dkim::builders::VerifyDomainDkimOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

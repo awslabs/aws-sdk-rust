@@ -2,7 +2,7 @@
 pub fn ser_capacity(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Capacity,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("DesiredUserSessions").number(
             #[allow(clippy::useless_conversion)]

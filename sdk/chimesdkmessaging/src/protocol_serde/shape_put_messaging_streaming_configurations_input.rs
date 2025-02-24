@@ -2,7 +2,7 @@
 pub fn ser_put_messaging_streaming_configurations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.streaming_configurations {
         let mut array_2 = object.key("StreamingConfigurations").start_array();
         for item_3 in var_1 {

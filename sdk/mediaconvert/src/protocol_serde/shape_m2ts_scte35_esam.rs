@@ -2,7 +2,7 @@
 pub fn ser_m2ts_scte35_esam(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::M2tsScte35Esam,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scte35_esam_pid {
         object.key("scte35EsamPid").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_m2ts_scte35_esam(
 
 pub(crate) fn de_m2ts_scte35_esam<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::M2tsScte35Esam>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::M2tsScte35Esam>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

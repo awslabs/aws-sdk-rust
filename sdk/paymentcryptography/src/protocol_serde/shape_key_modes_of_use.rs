@@ -2,7 +2,7 @@
 pub fn ser_key_modes_of_use(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KeyModesOfUse,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.encrypt {
         object.key("Encrypt").boolean(input.encrypt);
     }
@@ -35,7 +35,7 @@ pub fn ser_key_modes_of_use(
 
 pub(crate) fn de_key_modes_of_use<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::KeyModesOfUse>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::KeyModesOfUse>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

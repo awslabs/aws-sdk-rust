@@ -2,7 +2,7 @@
 pub fn ser_import_certificate_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_certificate::ImportCertificateInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.certificate_arn {
         object.key("CertificateArn").string(var_1.as_str());
     }

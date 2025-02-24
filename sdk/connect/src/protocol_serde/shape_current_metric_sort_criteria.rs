@@ -2,7 +2,7 @@
 pub fn ser_current_metric_sort_criteria(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CurrentMetricSortCriteria,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sort_by_metric {
         object.key("SortByMetric").string(var_1.as_str());
     }

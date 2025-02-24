@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_resize_info(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::ResizeInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::ResizeInfo, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::ResizeInfo::builder();
     while let Some(mut tag) = decoder.next_tag() {

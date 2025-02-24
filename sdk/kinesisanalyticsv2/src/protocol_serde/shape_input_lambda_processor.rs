@@ -2,7 +2,7 @@
 pub fn ser_input_lambda_processor(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InputLambdaProcessor,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("ResourceARN").string(input.resource_arn.as_str());
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_analysis_load_balancer_listener(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AnalysisLoadBalancerListener, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AnalysisLoadBalancerListener, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AnalysisLoadBalancerListener::builder();
     while let Some(mut tag) = decoder.next_tag() {

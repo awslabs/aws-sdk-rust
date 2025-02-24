@@ -2,7 +2,7 @@
 pub fn ser_route_matrix_exclusion_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RouteMatrixExclusionOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Countries").start_array();
         for item_2 in &input.countries {

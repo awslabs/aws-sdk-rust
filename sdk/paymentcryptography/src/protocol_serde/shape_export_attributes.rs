@@ -2,7 +2,7 @@
 pub fn ser_export_attributes(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ExportAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.export_dukpt_initial_key {
         #[allow(unused_mut)]
         let mut object_2 = object.key("ExportDukptInitialKey").start_object();

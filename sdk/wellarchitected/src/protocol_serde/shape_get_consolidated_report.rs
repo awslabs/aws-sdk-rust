@@ -121,7 +121,7 @@ pub fn de_get_consolidated_report_http_response(
 pub(crate) fn de_get_consolidated_report(
     value: &[u8],
     mut builder: crate::operation::get_consolidated_report::builders::GetConsolidatedReportOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_consolidated_report::builders::GetConsolidatedReportOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

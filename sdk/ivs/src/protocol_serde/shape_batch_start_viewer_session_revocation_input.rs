@@ -2,7 +2,7 @@
 pub fn ser_batch_start_viewer_session_revocation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.viewer_sessions {
         let mut array_2 = object.key("viewerSessions").start_array();
         for item_3 in var_1 {

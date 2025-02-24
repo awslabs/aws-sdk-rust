@@ -2,7 +2,7 @@
 pub fn ser_update_thing_groups_for_thing_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.override_dynamic_groups {
         object.key("overrideDynamicGroups").boolean(*var_1);
     }

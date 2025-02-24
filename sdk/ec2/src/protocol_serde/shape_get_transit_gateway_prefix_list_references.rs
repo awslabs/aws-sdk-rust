@@ -43,7 +43,7 @@ pub fn de_get_transit_gateway_prefix_list_references_http_response(
 pub fn de_get_transit_gateway_prefix_list_references(
     inp: &[u8],
     mut builder: crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_transit_gateway_prefix_list_references::builders::GetTransitGatewayPrefixListReferencesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_view_representation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ViewRepresentationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dialect {
         object.key("Dialect").string(var_1.as_str());
     }

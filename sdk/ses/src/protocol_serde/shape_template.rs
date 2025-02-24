@@ -3,7 +3,7 @@
 pub fn ser_template(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::Template,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("TemplateName");
     {
@@ -30,7 +30,7 @@ pub fn ser_template(
 #[allow(clippy::needless_question_mark)]
 pub fn de_template(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::Template, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::Template, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::Template::builder();
     while let Some(mut tag) = decoder.next_tag() {

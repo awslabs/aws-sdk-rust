@@ -2,7 +2,7 @@
 pub fn ser_accelerator_selection(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AcceleratorSelection,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("name").string(input.name.as_str());
     }
@@ -14,7 +14,7 @@ pub fn ser_accelerator_selection(
 
 pub(crate) fn de_accelerator_selection<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AcceleratorSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AcceleratorSelection>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_list_project_policies_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_project_policies::ListProjectPoliciesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.project_arn {
         object.key("ProjectArn").string(var_1.as_str());
     }

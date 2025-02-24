@@ -78,7 +78,7 @@ pub fn ser_create_group_version_headers(
 
 pub fn ser_create_group_version_input(
     input: &crate::operation::create_group_version::CreateGroupVersionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_group_version_input::ser_create_group_version_input_input(&mut object, input)?;
@@ -89,8 +89,10 @@ pub fn ser_create_group_version_input(
 pub(crate) fn de_create_group_version(
     value: &[u8],
     mut builder: crate::operation::create_group_version::builders::CreateGroupVersionOutputBuilder,
-) -> Result<crate::operation::create_group_version::builders::CreateGroupVersionOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError>
-{
+) -> ::std::result::Result<
+    crate::operation::create_group_version::builders::CreateGroupVersionOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

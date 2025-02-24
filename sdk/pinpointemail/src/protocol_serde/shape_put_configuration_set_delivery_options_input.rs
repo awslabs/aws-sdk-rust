@@ -2,7 +2,7 @@
 pub fn ser_put_configuration_set_delivery_options_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.sending_pool_name {
         object.key("SendingPoolName").string(var_1.as_str());
     }

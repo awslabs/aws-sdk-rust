@@ -2,7 +2,7 @@
 pub fn ser_user_pool_add_ons_type(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UserPoolAddOnsType,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AdvancedSecurityMode").string(input.advanced_security_mode.as_str());
     }
@@ -17,7 +17,7 @@ pub fn ser_user_pool_add_ons_type(
 
 pub(crate) fn de_user_pool_add_ons_type<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::UserPoolAddOnsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::UserPoolAddOnsType>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

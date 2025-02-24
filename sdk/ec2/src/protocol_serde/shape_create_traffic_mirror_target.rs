@@ -41,8 +41,10 @@ pub fn de_create_traffic_mirror_target_http_response(
 pub fn de_create_traffic_mirror_target(
     inp: &[u8],
     mut builder: crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetOutputBuilder,
-) -> Result<crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

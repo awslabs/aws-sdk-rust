@@ -2,7 +2,7 @@
 pub fn ser_associate_managed_notification_additional_channel_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_managed_notification_additional_channel::AssociateManagedNotificationAdditionalChannelInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.managed_notification_configuration_arn {
         object.key("managedNotificationConfigurationArn").string(var_1.as_str());
     }

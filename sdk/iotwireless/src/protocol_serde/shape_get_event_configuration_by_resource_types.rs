@@ -103,7 +103,7 @@ pub fn de_get_event_configuration_by_resource_types_http_response(
 pub(crate) fn de_get_event_configuration_by_resource_types(
     value: &[u8],
     mut builder: crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_event_configuration_by_resource_types::builders::GetEventConfigurationByResourceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_ibm3624_pin_offset(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Ibm3624PinOffset,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("EncryptedPinBlock").string(input.encrypted_pin_block.as_str());
     }

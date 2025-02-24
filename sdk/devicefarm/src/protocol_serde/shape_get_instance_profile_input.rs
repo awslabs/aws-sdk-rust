@@ -2,7 +2,7 @@
 pub fn ser_get_instance_profile_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_instance_profile::GetInstanceProfileInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }

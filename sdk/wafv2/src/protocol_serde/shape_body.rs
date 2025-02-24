@@ -2,7 +2,7 @@
 pub fn ser_body(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Body,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.oversize_handling {
         object.key("OversizeHandling").string(var_1.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_body(
 
 pub(crate) fn de_body<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Body>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Body>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

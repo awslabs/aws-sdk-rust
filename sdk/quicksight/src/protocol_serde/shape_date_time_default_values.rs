@@ -2,7 +2,7 @@
 pub fn ser_date_time_default_values(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DateTimeDefaultValues,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dynamic_value {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DynamicValue").start_object();
@@ -29,7 +29,7 @@ pub fn ser_date_time_default_values(
 
 pub(crate) fn de_date_time_default_values<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::DateTimeDefaultValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::DateTimeDefaultValues>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

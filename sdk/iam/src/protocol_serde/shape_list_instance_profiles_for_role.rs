@@ -79,7 +79,7 @@ pub fn de_list_instance_profiles_for_role_http_response(
 pub fn de_list_instance_profiles_for_role(
     inp: &[u8],
     mut builder: crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_instance_profiles_for_role::builders::ListInstanceProfilesForRoleOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

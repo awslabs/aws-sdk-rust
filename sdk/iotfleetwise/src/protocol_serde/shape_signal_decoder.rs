@@ -2,7 +2,7 @@
 pub fn ser_signal_decoder(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SignalDecoder,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("fullyQualifiedName").string(input.fully_qualified_name.as_str());
     }
@@ -41,7 +41,7 @@ pub fn ser_signal_decoder(
 
 pub(crate) fn de_signal_decoder<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SignalDecoder>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SignalDecoder>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -116,7 +116,7 @@ pub fn de_create_cidr_collection_http_response(
 
 pub fn ser_create_cidr_collection_op_input(
     input: &crate::operation::create_cidr_collection::CreateCidrCollectionInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);
@@ -133,7 +133,10 @@ pub fn ser_create_cidr_collection_op_input(
 pub fn de_create_cidr_collection(
     inp: &[u8],
     mut builder: crate::operation::create_cidr_collection::builders::CreateCidrCollectionOutputBuilder,
-) -> Result<crate::operation::create_cidr_collection::builders::CreateCidrCollectionOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::create_cidr_collection::builders::CreateCidrCollectionOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

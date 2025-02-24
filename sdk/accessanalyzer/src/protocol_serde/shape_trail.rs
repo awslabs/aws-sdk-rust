@@ -2,7 +2,7 @@
 pub fn ser_trail(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Trail,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("cloudTrailArn").string(input.cloud_trail_arn.as_str());
     }

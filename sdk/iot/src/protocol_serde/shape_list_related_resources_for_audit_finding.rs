@@ -121,7 +121,7 @@ pub fn de_list_related_resources_for_audit_finding_http_response(
 pub(crate) fn de_list_related_resources_for_audit_finding(
     value: &[u8],
     mut builder: crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

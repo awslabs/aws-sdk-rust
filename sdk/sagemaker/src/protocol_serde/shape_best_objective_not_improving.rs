@@ -2,7 +2,7 @@
 pub fn ser_best_objective_not_improving(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::BestObjectiveNotImproving,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_number_of_training_jobs_not_improving {
         object.key("MaxNumberOfTrainingJobsNotImproving").number(
             #[allow(clippy::useless_conversion)]
@@ -14,7 +14,7 @@ pub fn ser_best_objective_not_improving(
 
 pub(crate) fn de_best_objective_not_improving<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::BestObjectiveNotImproving>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::BestObjectiveNotImproving>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_byte_content_doc(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ByteContentDoc,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("identifier").string(input.identifier.as_str());
     }

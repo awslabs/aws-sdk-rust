@@ -2,7 +2,7 @@
 pub fn ser_update_standards_control_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_standards_control::UpdateStandardsControlInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.control_status {
         object.key("ControlStatus").string(var_1.as_str());
     }

@@ -105,7 +105,7 @@ pub fn de_render_message_template_http_response(
 
 pub fn ser_render_message_template_input(
     input: &crate::operation::render_message_template::RenderMessageTemplateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_render_message_template_input::ser_render_message_template_input_input(&mut object, input)?;
@@ -116,7 +116,7 @@ pub fn ser_render_message_template_input(
 pub(crate) fn de_render_message_template(
     value: &[u8],
     mut builder: crate::operation::render_message_template::builders::RenderMessageTemplateOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::render_message_template::builders::RenderMessageTemplateOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

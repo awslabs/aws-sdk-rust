@@ -2,7 +2,7 @@
 pub fn ser_anomaly_detector_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnomalyDetectorConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.anomaly_detector_frequency {
         object.key("AnomalyDetectorFrequency").string(var_1.as_str());
     }

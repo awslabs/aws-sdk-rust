@@ -2,7 +2,7 @@
 pub fn ser_update_resource_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_resource_configuration::UpdateResourceConfigurationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.allow_association_to_shareable_service_network {
         object.key("allowAssociationToShareableServiceNetwork").boolean(*var_1);
     }

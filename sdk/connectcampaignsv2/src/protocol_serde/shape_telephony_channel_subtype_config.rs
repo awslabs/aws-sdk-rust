@@ -2,7 +2,7 @@
 pub fn ser_telephony_channel_subtype_config(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TelephonyChannelSubtypeConfig,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.capacity {
         object.key("capacity").number(
             #[allow(clippy::useless_conversion)]
@@ -29,7 +29,7 @@ pub fn ser_telephony_channel_subtype_config(
 
 pub(crate) fn de_telephony_channel_subtype_config<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TelephonyChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TelephonyChannelSubtypeConfig>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_start_annotation_import_job_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_annotation_import_job::StartAnnotationImportJobInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.annotation_fields {
         #[allow(unused_mut)]
         let mut object_2 = object.key("annotationFields").start_object();

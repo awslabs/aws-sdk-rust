@@ -2,7 +2,7 @@
 pub fn ser_table_conditional_formatting(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TableConditionalFormatting,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.conditional_formatting_options {
         let mut array_2 = object.key("ConditionalFormattingOptions").start_array();
         for item_3 in var_1 {
@@ -20,7 +20,7 @@ pub fn ser_table_conditional_formatting(
 
 pub(crate) fn de_table_conditional_formatting<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TableConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TableConditionalFormatting>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -2,7 +2,7 @@
 pub fn ser_multi_polygon_geometry_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MultiPolygonGeometryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Coordinates").start_array();
         for item_2 in &input.coordinates {
@@ -38,7 +38,7 @@ pub fn ser_multi_polygon_geometry_input(
 
 pub(crate) fn de_multi_polygon_geometry_input<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MultiPolygonGeometryInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MultiPolygonGeometryInput>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

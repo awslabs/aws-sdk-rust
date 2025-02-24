@@ -125,7 +125,7 @@ pub fn de_deprovision_byoip_cidr_http_response(
 
 pub fn ser_deprovision_byoip_cidr_input(
     input: &crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_deprovision_byoip_cidr_input::ser_deprovision_byoip_cidr_input_input(&mut object, input)?;
@@ -136,7 +136,7 @@ pub fn ser_deprovision_byoip_cidr_input(
 pub(crate) fn de_deprovision_byoip_cidr(
     value: &[u8],
     mut builder: crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

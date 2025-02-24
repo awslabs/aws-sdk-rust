@@ -75,7 +75,7 @@ pub fn de_describe_user_profiles_http_response(
 
 pub fn ser_describe_user_profiles_input(
     input: &crate::operation::describe_user_profiles::DescribeUserProfilesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_user_profiles_input::ser_describe_user_profiles_input_input(&mut object, input)?;
@@ -86,7 +86,7 @@ pub fn ser_describe_user_profiles_input(
 pub(crate) fn de_describe_user_profiles(
     value: &[u8],
     mut builder: crate::operation::describe_user_profiles::builders::DescribeUserProfilesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_user_profiles::builders::DescribeUserProfilesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

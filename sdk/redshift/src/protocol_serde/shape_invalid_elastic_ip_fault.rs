@@ -3,7 +3,7 @@
 pub fn de_invalid_elastic_ip_fault_xml_err(
     inp: &[u8],
     mut builder: crate::types::error::builders::InvalidElasticIpFaultBuilder,
-) -> Result<crate::types::error::builders::InvalidElasticIpFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::types::error::builders::InvalidElasticIpFaultBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     if inp.is_empty() {
         return Ok(builder);
     }

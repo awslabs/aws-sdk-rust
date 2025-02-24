@@ -39,7 +39,7 @@ pub fn de_get_groups_for_capacity_reservation_http_response(
 pub fn de_get_groups_for_capacity_reservation(
     inp: &[u8],
     mut builder: crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_create_registry_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_registry::CreateRegistryInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.registry_name {
         object.key("RegistryName").string(var_1.as_str());
     }

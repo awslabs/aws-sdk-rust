@@ -94,7 +94,7 @@ pub fn de_put_account_setting_default_http_response(
 
 pub fn ser_put_account_setting_default_input(
     input: &crate::operation::put_account_setting_default::PutAccountSettingDefaultInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_account_setting_default_input::ser_put_account_setting_default_input_input(&mut object, input)?;
@@ -105,7 +105,7 @@ pub fn ser_put_account_setting_default_input(
 pub(crate) fn de_put_account_setting_default(
     value: &[u8],
     mut builder: crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

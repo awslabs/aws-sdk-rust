@@ -2,7 +2,7 @@
 pub fn ser_geospatial_point_style_options(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GeospatialPointStyleOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.selected_point_style {
         object.key("SelectedPointStyle").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_geospatial_point_style_options(
 
 pub(crate) fn de_geospatial_point_style_options<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GeospatialPointStyleOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GeospatialPointStyleOptions>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

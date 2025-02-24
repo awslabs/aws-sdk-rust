@@ -131,7 +131,7 @@ pub fn de_get_third_party_firewall_association_status_http_response(
 
 pub fn ser_get_third_party_firewall_association_status_input(
     input: &crate::operation::get_third_party_firewall_association_status::GetThirdPartyFirewallAssociationStatusInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_get_third_party_firewall_association_status_input::ser_get_third_party_firewall_association_status_input_input(
@@ -145,7 +145,7 @@ pub fn ser_get_third_party_firewall_association_status_input(
 pub(crate) fn de_get_third_party_firewall_association_status(
     value: &[u8],
     mut builder: crate::operation::get_third_party_firewall_association_status::builders::GetThirdPartyFirewallAssociationStatusOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_third_party_firewall_association_status::builders::GetThirdPartyFirewallAssociationStatusOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

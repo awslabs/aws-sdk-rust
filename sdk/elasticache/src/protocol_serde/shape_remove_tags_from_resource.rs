@@ -328,7 +328,10 @@ pub fn de_remove_tags_from_resource_http_response(
 pub fn de_remove_tags_from_resource(
     inp: &[u8],
     mut builder: crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder,
-) -> Result<crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

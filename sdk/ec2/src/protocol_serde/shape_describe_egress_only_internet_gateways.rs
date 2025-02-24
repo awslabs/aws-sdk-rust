@@ -41,7 +41,7 @@ pub fn de_describe_egress_only_internet_gateways_http_response(
 pub fn de_describe_egress_only_internet_gateways(
     inp: &[u8],
     mut builder: crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -127,7 +127,7 @@ pub fn de_put_package_origin_configuration_http_response(
 
 pub fn ser_put_package_origin_configuration_input(
     input: &crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_put_package_origin_configuration_input::ser_put_package_origin_configuration_input_input(&mut object, input)?;
@@ -138,7 +138,7 @@ pub fn ser_put_package_origin_configuration_input(
 pub(crate) fn de_put_package_origin_configuration(
     value: &[u8],
     mut builder: crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

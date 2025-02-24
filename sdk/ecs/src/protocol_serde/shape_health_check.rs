@@ -2,7 +2,7 @@
 pub fn ser_health_check(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::HealthCheck,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("command").start_array();
         for item_2 in &input.command {
@@ -41,7 +41,7 @@ pub fn ser_health_check(
 
 pub(crate) fn de_health_check<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::HealthCheck>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::HealthCheck>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

@@ -83,7 +83,10 @@ pub fn de_list_instance_profile_tags_http_response(
 pub fn de_list_instance_profile_tags(
     inp: &[u8],
     mut builder: crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsOutputBuilder,
-) -> Result<crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::list_instance_profile_tags::builders::ListInstanceProfileTagsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

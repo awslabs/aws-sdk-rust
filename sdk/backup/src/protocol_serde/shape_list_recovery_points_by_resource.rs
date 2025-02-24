@@ -122,7 +122,7 @@ pub fn de_list_recovery_points_by_resource_http_response(
 pub(crate) fn de_list_recovery_points_by_resource(
     value: &[u8],
     mut builder: crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_recovery_points_by_resource::builders::ListRecoveryPointsByResourceOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

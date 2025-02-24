@@ -2,7 +2,7 @@
 pub fn ser_assume_role_for_pod_identity_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.token {
         object.key("token").string(var_1.as_str());
     }

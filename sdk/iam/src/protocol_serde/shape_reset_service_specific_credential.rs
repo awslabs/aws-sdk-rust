@@ -62,7 +62,7 @@ pub fn de_reset_service_specific_credential_http_response(
 pub fn de_reset_service_specific_credential(
     inp: &[u8],
     mut builder: crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -149,7 +149,7 @@ pub fn de_create_subscription_grant_http_response(
 
 pub fn ser_create_subscription_grant_input(
     input: &crate::operation::create_subscription_grant::CreateSubscriptionGrantInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_subscription_grant_input::ser_create_subscription_grant_input_input(&mut object, input)?;
@@ -160,7 +160,7 @@ pub fn ser_create_subscription_grant_input(
 pub(crate) fn de_create_subscription_grant(
     value: &[u8],
     mut builder: crate::operation::create_subscription_grant::builders::CreateSubscriptionGrantOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_subscription_grant::builders::CreateSubscriptionGrantOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

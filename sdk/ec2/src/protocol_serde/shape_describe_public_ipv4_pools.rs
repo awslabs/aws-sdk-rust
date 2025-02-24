@@ -41,7 +41,10 @@ pub fn de_describe_public_ipv4_pools_http_response(
 pub fn de_describe_public_ipv4_pools(
     inp: &[u8],
     mut builder: crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsOutputBuilder,
-) -> Result<crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

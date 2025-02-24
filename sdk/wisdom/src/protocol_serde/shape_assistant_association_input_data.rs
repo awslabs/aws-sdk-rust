@@ -2,7 +2,7 @@
 pub fn ser_assistant_association_input_data(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssistantAssociationInputData,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::AssistantAssociationInputData::KnowledgeBaseId(inner) => {
             object_2.key("knowledgeBaseId").string(inner.as_str());

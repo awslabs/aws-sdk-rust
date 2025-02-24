@@ -2,7 +2,7 @@
 pub fn ser_asset_target_name_map(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AssetTargetNameMap,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("assetId").string(input.asset_id.as_str());
     }

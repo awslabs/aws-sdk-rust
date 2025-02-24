@@ -153,7 +153,7 @@ pub fn de_list_room_memberships_http_response(
 pub(crate) fn de_list_room_memberships(
     value: &[u8],
     mut builder: crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_room_memberships::builders::ListRoomMembershipsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -39,7 +39,7 @@ pub fn de_get_managed_prefix_list_entries_http_response(
 pub fn de_get_managed_prefix_list_entries(
     inp: &[u8],
     mut builder: crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_managed_prefix_list_entries::builders::GetManagedPrefixListEntriesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

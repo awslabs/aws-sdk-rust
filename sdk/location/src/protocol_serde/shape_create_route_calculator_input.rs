@@ -2,7 +2,7 @@
 pub fn ser_create_route_calculator_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_route_calculator::CreateRouteCalculatorInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.calculator_name {
         object.key("CalculatorName").string(var_1.as_str());
     }

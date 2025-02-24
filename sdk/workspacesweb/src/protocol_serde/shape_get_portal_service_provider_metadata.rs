@@ -148,7 +148,7 @@ pub fn de_get_portal_service_provider_metadata_http_response(
 pub(crate) fn de_get_portal_service_provider_metadata(
     value: &[u8],
     mut builder: crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_portal_service_provider_metadata::builders::GetPortalServiceProviderMetadataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

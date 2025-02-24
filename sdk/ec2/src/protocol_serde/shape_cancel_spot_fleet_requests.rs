@@ -41,7 +41,10 @@ pub fn de_cancel_spot_fleet_requests_http_response(
 pub fn de_cancel_spot_fleet_requests(
     inp: &[u8],
     mut builder: crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsOutputBuilder,
-) -> Result<crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

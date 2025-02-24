@@ -62,7 +62,7 @@ pub fn de_describe_metric_collection_types_http_response(
 pub fn de_describe_metric_collection_types(
     inp: &[u8],
     mut builder: crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_metric_collection_types::builders::DescribeMetricCollectionTypesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

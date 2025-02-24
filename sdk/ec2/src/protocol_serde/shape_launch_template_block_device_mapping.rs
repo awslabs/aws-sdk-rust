@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_launch_template_block_device_mapping(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LaunchTemplateBlockDeviceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LaunchTemplateBlockDeviceMapping, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LaunchTemplateBlockDeviceMapping::builder();
     while let Some(mut tag) = decoder.next_tag() {

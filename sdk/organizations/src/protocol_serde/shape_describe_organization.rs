@@ -128,14 +128,14 @@ pub fn de_describe_organization_http_response(
 
 pub fn ser_describe_organization_input(
     _input: &crate::operation::describe_organization::DescribeOrganizationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     Ok(::aws_smithy_types::body::SdkBody::from("{}"))
 }
 
 pub(crate) fn de_describe_organization(
     value: &[u8],
     mut builder: crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_organization::builders::DescribeOrganizationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

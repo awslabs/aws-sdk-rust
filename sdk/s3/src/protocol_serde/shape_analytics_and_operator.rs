@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_analytics_and_operator(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::AnalyticsAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::AnalyticsAndOperator, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::AnalyticsAndOperator::builder();
     while let Some(mut tag) = decoder.next_tag() {
@@ -46,7 +46,7 @@ pub fn de_analytics_and_operator(
 pub fn ser_analytics_and_operator(
     input: &crate::types::AnalyticsAndOperator,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if let Some(var_4) = &input.prefix {

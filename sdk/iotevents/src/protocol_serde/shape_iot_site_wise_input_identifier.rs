@@ -2,7 +2,7 @@
 pub fn ser_iot_site_wise_input_identifier(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IotSiteWiseInputIdentifier,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.iot_site_wise_asset_model_property_identifier {
         #[allow(unused_mut)]
         let mut object_2 = object.key("iotSiteWiseAssetModelPropertyIdentifier").start_object();

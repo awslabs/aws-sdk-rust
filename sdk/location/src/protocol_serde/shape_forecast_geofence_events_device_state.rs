@@ -2,7 +2,7 @@
 pub fn ser_forecast_geofence_events_device_state(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ForecastGeofenceEventsDeviceState,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("Position").start_array();
         for item_2 in &input.position {

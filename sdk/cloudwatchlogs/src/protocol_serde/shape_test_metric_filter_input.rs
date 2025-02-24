@@ -2,7 +2,7 @@
 pub fn ser_test_metric_filter_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_metric_filter::TestMetricFilterInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_pattern {
         object.key("filterPattern").string(var_1.as_str());
     }

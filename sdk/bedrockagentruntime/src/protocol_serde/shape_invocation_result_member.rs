@@ -2,7 +2,7 @@
 pub fn ser_invocation_result_member(
     object_12: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::InvocationResultMember,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::InvocationResultMember::ApiResult(inner) => {
             #[allow(unused_mut)]
@@ -27,7 +27,7 @@ pub fn ser_invocation_result_member(
 
 pub(crate) fn de_invocation_result_member<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::InvocationResultMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::InvocationResultMember>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

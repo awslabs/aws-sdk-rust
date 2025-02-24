@@ -71,7 +71,7 @@ pub fn de_describe_environment_managed_action_history_http_response(
 pub fn de_describe_environment_managed_action_history(
     inp: &[u8],
     mut builder: crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

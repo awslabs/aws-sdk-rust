@@ -2,7 +2,7 @@
 pub fn ser_entity_reference(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EntityReference,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::EntityReference::Unspecified(inner) => {
             object_2.key("unspecified").boolean(*inner);

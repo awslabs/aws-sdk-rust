@@ -40,7 +40,7 @@ pub fn de_list_connector_definitions_http_response(
 pub(crate) fn de_list_connector_definitions(
     value: &[u8],
     mut builder: crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_connector_definitions::builders::ListConnectorDefinitionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

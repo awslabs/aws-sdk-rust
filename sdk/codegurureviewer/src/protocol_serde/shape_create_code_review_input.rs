@@ -2,7 +2,7 @@
 pub fn ser_create_code_review_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_code_review::CreateCodeReviewInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.client_request_token {
         object.key("ClientRequestToken").string(var_1.as_str());
     }

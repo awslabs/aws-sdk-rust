@@ -2,7 +2,7 @@
 pub fn ser_data_product_last_modified_date_filter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DataProductLastModifiedDateFilter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.date_range {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DateRange").start_object();

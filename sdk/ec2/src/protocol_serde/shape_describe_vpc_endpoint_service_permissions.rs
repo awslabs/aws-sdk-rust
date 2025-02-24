@@ -43,7 +43,7 @@ pub fn de_describe_vpc_endpoint_service_permissions_http_response(
 pub fn de_describe_vpc_endpoint_service_permissions(
     inp: &[u8],
     mut builder: crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

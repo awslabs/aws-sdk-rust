@@ -2,7 +2,7 @@
 pub fn ser_delete_remote_access_session_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.arn {
         object.key("arn").string(var_1.as_str());
     }

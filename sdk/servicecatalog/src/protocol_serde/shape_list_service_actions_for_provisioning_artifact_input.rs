@@ -2,7 +2,7 @@
 pub fn ser_list_service_actions_for_provisioning_artifact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.product_id {
         object.key("ProductId").string(var_1.as_str());
     }

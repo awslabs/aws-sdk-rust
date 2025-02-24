@@ -2,7 +2,7 @@
 pub fn ser_scrape_configuration(
     object_8: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ScrapeConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ScrapeConfiguration::ConfigurationBlob(inner) => {
             object_8
@@ -20,7 +20,7 @@ pub fn ser_scrape_configuration(
 
 pub(crate) fn de_scrape_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::ScrapeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::ScrapeConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

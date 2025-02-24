@@ -59,7 +59,7 @@ pub fn de_get_template_http_response(
 pub fn de_get_template(
     inp: &[u8],
     mut builder: crate::operation::get_template::builders::GetTemplateOutputBuilder,
-) -> Result<crate::operation::get_template::builders::GetTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::get_template::builders::GetTemplateOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

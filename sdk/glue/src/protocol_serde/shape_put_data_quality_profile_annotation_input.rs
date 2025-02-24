@@ -2,7 +2,7 @@
 pub fn ser_put_data_quality_profile_annotation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_data_quality_profile_annotation::PutDataQualityProfileAnnotationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.profile_id {
         object.key("ProfileId").string(var_1.as_str());
     }

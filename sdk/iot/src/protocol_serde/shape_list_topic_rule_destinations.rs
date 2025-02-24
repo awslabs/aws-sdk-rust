@@ -113,7 +113,7 @@ pub fn de_list_topic_rule_destinations_http_response(
 pub(crate) fn de_list_topic_rule_destinations(
     value: &[u8],
     mut builder: crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

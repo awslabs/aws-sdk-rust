@@ -2,7 +2,7 @@
 pub fn ser_opportunity_engagement_invitation_sort(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::OpportunityEngagementInvitationSort,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("SortOrder").string(input.sort_order.as_str());
     }

@@ -3,7 +3,7 @@
 pub fn ser_mutual_authentication_attributes(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::MutualAuthenticationAttributes,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Mode");
     if let Some(var_2) = &input.mode {
@@ -35,7 +35,7 @@ pub fn ser_mutual_authentication_attributes(
 #[allow(clippy::needless_question_mark)]
 pub fn de_mutual_authentication_attributes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::MutualAuthenticationAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::MutualAuthenticationAttributes, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::MutualAuthenticationAttributes::builder();
     while let Some(mut tag) = decoder.next_tag() {

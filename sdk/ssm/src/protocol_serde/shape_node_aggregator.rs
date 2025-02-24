@@ -2,7 +2,7 @@
 pub fn ser_node_aggregator(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NodeAggregator,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("AggregatorType").string(input.aggregator_type.as_str());
     }

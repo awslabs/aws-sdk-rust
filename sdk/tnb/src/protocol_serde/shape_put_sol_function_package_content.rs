@@ -141,7 +141,7 @@ pub fn ser_put_sol_function_package_content_headers(
 pub(crate) fn de_put_sol_function_package_content(
     value: &[u8],
     mut builder: crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

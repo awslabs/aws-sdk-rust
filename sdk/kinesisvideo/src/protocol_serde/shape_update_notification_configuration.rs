@@ -150,7 +150,7 @@ pub fn de_update_notification_configuration_http_response(
 
 pub fn ser_update_notification_configuration_input(
     input: &crate::operation::update_notification_configuration::UpdateNotificationConfigurationInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_update_notification_configuration_input::ser_update_notification_configuration_input_input(&mut object, input)?;

@@ -43,7 +43,7 @@ pub fn de_create_capacity_reservation_by_splitting_http_response(
 pub fn de_create_capacity_reservation_by_splitting(
     inp: &[u8],
     mut builder: crate::operation::create_capacity_reservation_by_splitting::builders::CreateCapacityReservationBySplittingOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_capacity_reservation_by_splitting::builders::CreateCapacityReservationBySplittingOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

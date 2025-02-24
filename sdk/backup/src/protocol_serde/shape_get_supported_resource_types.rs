@@ -68,7 +68,7 @@ pub fn de_get_supported_resource_types_http_response(
 pub(crate) fn de_get_supported_resource_types(
     value: &[u8],
     mut builder: crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_supported_resource_types::builders::GetSupportedResourceTypesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

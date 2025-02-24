@@ -39,7 +39,7 @@ pub fn de_associate_transit_gateway_route_table_http_response(
 pub fn de_associate_transit_gateway_route_table(
     inp: &[u8],
     mut builder: crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_transit_gateway_route_table::builders::AssociateTransitGatewayRouteTableOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

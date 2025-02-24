@@ -181,7 +181,7 @@ pub fn ser_list_q_app_session_data_headers(
 pub(crate) fn de_list_q_app_session_data(
     value: &[u8],
     mut builder: crate::operation::list_q_app_session_data::builders::ListQAppSessionDataOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_q_app_session_data::builders::ListQAppSessionDataOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

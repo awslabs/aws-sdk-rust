@@ -2,7 +2,7 @@
 pub fn ser_describe_directory_data_access_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_directory_data_access::DescribeDirectoryDataAccessInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.directory_id {
         object.key("DirectoryId").string(var_1.as_str());
     }

@@ -160,7 +160,7 @@ pub fn de_list_policies_for_target_http_response(
 
 pub fn ser_list_policies_for_target_input(
     input: &crate::operation::list_policies_for_target::ListPoliciesForTargetInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_policies_for_target_input::ser_list_policies_for_target_input_input(&mut object, input)?;
@@ -171,7 +171,7 @@ pub fn ser_list_policies_for_target_input(
 pub(crate) fn de_list_policies_for_target(
     value: &[u8],
     mut builder: crate::operation::list_policies_for_target::builders::ListPoliciesForTargetOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_policies_for_target::builders::ListPoliciesForTargetOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

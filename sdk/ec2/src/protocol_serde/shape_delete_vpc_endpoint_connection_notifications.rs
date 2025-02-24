@@ -44,7 +44,7 @@ pub fn de_delete_vpc_endpoint_connection_notifications_http_response(
 pub fn de_delete_vpc_endpoint_connection_notifications(
     inp: &[u8],
     mut builder: crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::delete_vpc_endpoint_connection_notifications::builders::DeleteVpcEndpointConnectionNotificationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

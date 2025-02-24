@@ -136,7 +136,7 @@ pub fn de_cancel_service_instance_deployment_http_response(
 
 pub fn ser_cancel_service_instance_deployment_input(
     input: &crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_cancel_service_instance_deployment_input::ser_cancel_service_instance_deployment_input_input(&mut object, input)?;
@@ -147,7 +147,7 @@ pub fn ser_cancel_service_instance_deployment_input(
 pub(crate) fn de_cancel_service_instance_deployment(
     value: &[u8],
     mut builder: crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

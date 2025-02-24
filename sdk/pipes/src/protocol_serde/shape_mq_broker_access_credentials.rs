@@ -2,7 +2,7 @@
 pub fn ser_mq_broker_access_credentials(
     object_2: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MqBrokerAccessCredentials,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::MqBrokerAccessCredentials::BasicAuth(inner) => {
             object_2.key("BasicAuth").string(inner.as_str());
@@ -18,7 +18,7 @@ pub fn ser_mq_broker_access_credentials(
 
 pub(crate) fn de_mq_broker_access_credentials<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::MqBrokerAccessCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::MqBrokerAccessCredentials>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

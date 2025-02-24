@@ -53,7 +53,7 @@ pub fn ser_create_storage_lens_group_headers(
 
 pub fn ser_create_storage_lens_group_op_input(
     input: &crate::operation::create_storage_lens_group::CreateStorageLensGroupInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     {
         let mut writer = ::aws_smithy_xml::encode::XmlWriter::new(&mut out);

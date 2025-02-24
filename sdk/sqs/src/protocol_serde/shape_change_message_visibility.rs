@@ -156,7 +156,7 @@ pub fn de_change_message_visibility_http_response(
 
 pub fn ser_change_message_visibility_input(
     input: &crate::operation::change_message_visibility::ChangeMessageVisibilityInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_change_message_visibility_input::ser_change_message_visibility_input_input(&mut object, input)?;

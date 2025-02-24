@@ -2,7 +2,7 @@
 pub fn ser_rds_db_cluster_snapshot_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RdsDbClusterSnapshotConfiguration,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("attributes").start_object();
@@ -27,7 +27,7 @@ pub fn ser_rds_db_cluster_snapshot_configuration(
 
 pub(crate) fn de_rds_db_cluster_snapshot_configuration<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RdsDbClusterSnapshotConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RdsDbClusterSnapshotConfiguration>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

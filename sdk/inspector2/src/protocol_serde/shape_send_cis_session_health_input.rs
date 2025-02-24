@@ -2,7 +2,7 @@
 pub fn ser_send_cis_session_health_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_cis_session_health::SendCisSessionHealthInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.scan_job_id {
         object.key("scanJobId").string(var_1.as_str());
     }

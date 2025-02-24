@@ -121,7 +121,7 @@ pub fn de_describe_domain_health_http_response(
 pub(crate) fn de_describe_domain_health(
     value: &[u8],
     mut builder: crate::operation::describe_domain_health::builders::DescribeDomainHealthOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_domain_health::builders::DescribeDomainHealthOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

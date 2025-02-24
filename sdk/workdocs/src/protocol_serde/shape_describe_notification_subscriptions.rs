@@ -102,7 +102,7 @@ pub fn de_describe_notification_subscriptions_http_response(
 pub(crate) fn de_describe_notification_subscriptions(
     value: &[u8],
     mut builder: crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_notification_subscriptions::builders::DescribeNotificationSubscriptionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

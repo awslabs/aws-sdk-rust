@@ -2,7 +2,7 @@
 pub fn ser_create_data_protection_settings_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_data_protection_settings::CreateDataProtectionSettingsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_encryption_context {
         #[allow(unused_mut)]
         let mut object_2 = object.key("additionalEncryptionContext").start_object();

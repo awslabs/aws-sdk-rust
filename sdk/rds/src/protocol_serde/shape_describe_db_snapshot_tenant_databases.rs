@@ -64,7 +64,7 @@ pub fn de_describe_db_snapshot_tenant_databases_http_response(
 pub fn de_describe_db_snapshot_tenant_databases(
     inp: &[u8],
     mut builder: crate::operation::describe_db_snapshot_tenant_databases::builders::DescribeDbSnapshotTenantDatabasesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_db_snapshot_tenant_databases::builders::DescribeDbSnapshotTenantDatabasesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

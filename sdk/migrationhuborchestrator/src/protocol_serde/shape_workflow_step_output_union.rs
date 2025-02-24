@@ -2,7 +2,7 @@
 pub fn ser_workflow_step_output_union(
     object_5: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::WorkflowStepOutputUnion,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::WorkflowStepOutputUnion::IntegerValue(inner) => {
             object_5.key("integerValue").number(
@@ -33,7 +33,7 @@ pub fn ser_workflow_step_output_union(
 
 pub(crate) fn de_workflow_step_output_union<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::WorkflowStepOutputUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::WorkflowStepOutputUnion>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

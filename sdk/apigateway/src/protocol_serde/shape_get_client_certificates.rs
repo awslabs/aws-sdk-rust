@@ -113,7 +113,7 @@ pub fn de_get_client_certificates_http_response(
 pub(crate) fn de_get_client_certificates(
     value: &[u8],
     mut builder: crate::operation::get_client_certificates::builders::GetClientCertificatesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_client_certificates::builders::GetClientCertificatesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

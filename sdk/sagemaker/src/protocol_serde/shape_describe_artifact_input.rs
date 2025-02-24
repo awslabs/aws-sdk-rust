@@ -2,7 +2,7 @@
 pub fn ser_describe_artifact_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_artifact::DescribeArtifactInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.artifact_arn {
         object.key("ArtifactArn").string(var_1.as_str());
     }

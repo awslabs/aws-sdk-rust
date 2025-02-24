@@ -39,7 +39,7 @@ pub fn de_describe_capacity_reservations_http_response(
 pub fn de_describe_capacity_reservations(
     inp: &[u8],
     mut builder: crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_capacity_reservations::builders::DescribeCapacityReservationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

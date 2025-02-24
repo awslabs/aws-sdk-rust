@@ -2,7 +2,7 @@
 pub fn ser_isoline_thresholds(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IsolineThresholds,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.distance {
         let mut array_2 = object.key("Distance").start_array();
         for item_3 in var_1 {

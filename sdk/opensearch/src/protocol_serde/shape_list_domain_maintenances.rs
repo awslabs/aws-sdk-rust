@@ -125,7 +125,7 @@ pub fn de_list_domain_maintenances_http_response(
 pub(crate) fn de_list_domain_maintenances(
     value: &[u8],
     mut builder: crate::operation::list_domain_maintenances::builders::ListDomainMaintenancesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_domain_maintenances::builders::ListDomainMaintenancesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

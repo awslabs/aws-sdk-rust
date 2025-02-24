@@ -41,8 +41,10 @@ pub fn de_modify_verified_access_group_http_response(
 pub fn de_modify_verified_access_group(
     inp: &[u8],
     mut builder: crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupOutputBuilder,
-) -> Result<crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
-{
+) -> std::result::Result<
+    crate::operation::modify_verified_access_group::builders::ModifyVerifiedAccessGroupOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

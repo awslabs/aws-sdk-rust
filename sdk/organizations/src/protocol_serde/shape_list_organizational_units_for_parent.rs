@@ -149,7 +149,7 @@ pub fn de_list_organizational_units_for_parent_http_response(
 
 pub fn ser_list_organizational_units_for_parent_input(
     input: &crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_organizational_units_for_parent_input::ser_list_organizational_units_for_parent_input_input(
@@ -163,7 +163,7 @@ pub fn ser_list_organizational_units_for_parent_input(
 pub(crate) fn de_list_organizational_units_for_parent(
     value: &[u8],
     mut builder: crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

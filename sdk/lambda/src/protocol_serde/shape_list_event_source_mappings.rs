@@ -122,7 +122,7 @@ pub fn de_list_event_source_mappings_http_response(
 pub(crate) fn de_list_event_source_mappings(
     value: &[u8],
     mut builder: crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

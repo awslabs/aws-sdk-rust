@@ -2,7 +2,7 @@
 pub fn ser_lambda_function_recipe_source(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LambdaFunctionRecipeSource,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("lambdaArn").string(input.lambda_arn.as_str());
     }

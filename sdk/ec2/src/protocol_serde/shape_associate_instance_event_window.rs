@@ -39,7 +39,7 @@ pub fn de_associate_instance_event_window_http_response(
 pub fn de_associate_instance_event_window(
     inp: &[u8],
     mut builder: crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::associate_instance_event_window::builders::AssociateInstanceEventWindowOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_describe_hub_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_hub::DescribeHubInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hub_name {
         object.key("HubName").string(var_1.as_str());
     }

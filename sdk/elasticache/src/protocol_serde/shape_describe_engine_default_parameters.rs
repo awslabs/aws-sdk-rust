@@ -88,7 +88,7 @@ pub fn de_describe_engine_default_parameters_http_response(
 pub fn de_describe_engine_default_parameters(
     inp: &[u8],
     mut builder: crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_associate_origination_identity_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_origination_identity::AssociateOriginationIdentityInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pool_id {
         object.key("PoolId").string(var_1.as_str());
     }

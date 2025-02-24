@@ -2,7 +2,7 @@
 pub fn ser_severity_level(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SeverityLevel,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.occurrences_threshold {
         object.key("occurrencesThreshold").number(
             #[allow(clippy::useless_conversion)]
@@ -17,7 +17,7 @@ pub fn ser_severity_level(
 
 pub(crate) fn de_severity_level<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::SeverityLevel>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::SeverityLevel>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

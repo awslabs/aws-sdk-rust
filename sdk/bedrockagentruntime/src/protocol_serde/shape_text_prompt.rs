@@ -2,7 +2,7 @@
 pub fn ser_text_prompt(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TextPrompt,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("text").string(input.text.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_text_prompt(
 
 pub(crate) fn de_text_prompt<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::TextPrompt>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::TextPrompt>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

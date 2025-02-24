@@ -2,7 +2,7 @@
 pub fn ser_put_access_control_rule_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_access_control_rule::PutAccessControlRuleInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }

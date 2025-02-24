@@ -41,7 +41,7 @@ pub fn de_get_identity_notification_attributes_http_response(
 pub fn de_get_identity_notification_attributes(
     inp: &[u8],
     mut builder: crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

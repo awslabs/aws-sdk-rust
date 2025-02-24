@@ -41,7 +41,7 @@ pub fn de_export_transit_gateway_routes_http_response(
 pub fn de_export_transit_gateway_routes(
     inp: &[u8],
     mut builder: crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

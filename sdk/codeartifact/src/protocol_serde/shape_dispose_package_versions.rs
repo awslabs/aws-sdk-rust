@@ -140,7 +140,7 @@ pub fn de_dispose_package_versions_http_response(
 
 pub fn ser_dispose_package_versions_input(
     input: &crate::operation::dispose_package_versions::DisposePackageVersionsInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_dispose_package_versions_input::ser_dispose_package_versions_input_input(&mut object, input)?;
@@ -151,7 +151,7 @@ pub fn ser_dispose_package_versions_input(
 pub(crate) fn de_dispose_package_versions(
     value: &[u8],
     mut builder: crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::dispose_package_versions::builders::DisposePackageVersionsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

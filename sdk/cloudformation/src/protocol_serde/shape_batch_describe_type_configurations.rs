@@ -82,7 +82,7 @@ pub fn de_batch_describe_type_configurations_http_response(
 pub fn de_batch_describe_type_configurations(
     inp: &[u8],
     mut builder: crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::batch_describe_type_configurations::builders::BatchDescribeTypeConfigurationsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

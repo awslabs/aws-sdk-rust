@@ -100,7 +100,7 @@ pub fn de_refresh_schemas_http_response(
 
 pub fn ser_refresh_schemas_input(
     input: &crate::operation::refresh_schemas::RefreshSchemasInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_refresh_schemas_input::ser_refresh_schemas_input_input(&mut object, input)?;
@@ -111,7 +111,10 @@ pub fn ser_refresh_schemas_input(
 pub(crate) fn de_refresh_schemas(
     value: &[u8],
     mut builder: crate::operation::refresh_schemas::builders::RefreshSchemasOutputBuilder,
-) -> Result<crate::operation::refresh_schemas::builders::RefreshSchemasOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+) -> ::std::result::Result<
+    crate::operation::refresh_schemas::builders::RefreshSchemasOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
     let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value)).peekable();
     let tokens = &mut tokens_owned;
     ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;

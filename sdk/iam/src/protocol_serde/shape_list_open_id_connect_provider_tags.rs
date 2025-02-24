@@ -94,7 +94,7 @@ pub fn de_list_open_id_connect_provider_tags_http_response(
 pub fn de_list_open_id_connect_provider_tags(
     inp: &[u8],
     mut builder: crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::list_open_id_connect_provider_tags::builders::ListOpenIdConnectProviderTagsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

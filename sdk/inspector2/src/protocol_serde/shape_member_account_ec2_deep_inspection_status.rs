@@ -2,7 +2,7 @@
 pub fn ser_member_account_ec2_deep_inspection_status(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MemberAccountEc2DeepInspectionStatus,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("accountId").string(input.account_id.as_str());
     }

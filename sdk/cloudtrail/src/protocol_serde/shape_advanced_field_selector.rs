@@ -2,7 +2,7 @@
 pub fn ser_advanced_field_selector(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AdvancedFieldSelector,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Field").string(input.field.as_str());
     }
@@ -65,7 +65,7 @@ pub fn ser_advanced_field_selector(
 
 pub(crate) fn de_advanced_field_selector<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AdvancedFieldSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AdvancedFieldSelector>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

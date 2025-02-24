@@ -2,7 +2,7 @@
 pub fn ser_task(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Task,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("sourceFields").start_array();
         for item_2 in &input.source_fields {
@@ -39,7 +39,7 @@ pub fn ser_task(
 
 pub(crate) fn de_task<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::Task>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::Task>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

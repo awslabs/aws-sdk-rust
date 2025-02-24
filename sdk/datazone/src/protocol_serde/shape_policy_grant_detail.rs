@@ -2,7 +2,7 @@
 pub fn ser_policy_grant_detail(
     object_3: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::PolicyGrantDetail,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::PolicyGrantDetail::CreateDomainUnit(inner) => {
             #[allow(unused_mut)]
@@ -105,7 +105,7 @@ pub fn ser_policy_grant_detail(
 
 pub(crate) fn de_policy_grant_detail<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::PolicyGrantDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::PolicyGrantDetail>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

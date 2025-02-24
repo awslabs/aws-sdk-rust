@@ -2,7 +2,7 @@
 pub fn ser_configure_logs_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::configure_logs::ConfigureLogsInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.egress_access_logs {
         #[allow(unused_mut)]
         let mut object_2 = object.key("egressAccessLogs").start_object();

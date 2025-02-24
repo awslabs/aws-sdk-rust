@@ -77,7 +77,8 @@ pub fn de_disable_http_endpoint_http_response(
 pub fn de_disable_http_endpoint(
     inp: &[u8],
     mut builder: crate::operation::disable_http_endpoint::builders::DisableHttpEndpointOutputBuilder,
-) -> Result<crate::operation::disable_http_endpoint::builders::DisableHttpEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::disable_http_endpoint::builders::DisableHttpEndpointOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>
+{
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

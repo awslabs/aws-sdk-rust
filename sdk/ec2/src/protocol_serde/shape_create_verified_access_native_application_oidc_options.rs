@@ -3,7 +3,7 @@
 pub fn ser_create_verified_access_native_application_oidc_options(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::CreateVerifiedAccessNativeApplicationOidcOptions,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("PublicSigningKeyEndpoint");
     if let Some(var_2) = &input.public_signing_key_endpoint {

@@ -2,7 +2,7 @@
 pub fn ser_report_configuration_cloud_watch_dashboard_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ReportConfigurationCloudWatchDashboardInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.dashboard_identifier {
         object.key("dashboardIdentifier").string(var_1.as_str());
     }

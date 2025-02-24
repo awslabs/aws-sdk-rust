@@ -103,7 +103,7 @@ pub fn de_put_resource_policy_http_response(
 pub fn de_put_resource_policy(
     inp: &[u8],
     mut builder: crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder,
-) -> Result<crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::put_resource_policy::builders::PutResourcePolicyOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

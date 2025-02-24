@@ -3,7 +3,7 @@
 pub fn ser_operator_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::OperatorRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Principal");
     if let Some(var_2) = &input.principal {

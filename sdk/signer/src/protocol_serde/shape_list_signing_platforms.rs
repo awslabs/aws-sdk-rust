@@ -109,7 +109,7 @@ pub fn de_list_signing_platforms_http_response(
 pub(crate) fn de_list_signing_platforms(
     value: &[u8],
     mut builder: crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_signing_platforms::builders::ListSigningPlatformsOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

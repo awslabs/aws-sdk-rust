@@ -121,7 +121,7 @@ pub fn de_create_configuration_manager_http_response(
 
 pub fn ser_create_configuration_manager_input(
     input: &crate::operation::create_configuration_manager::CreateConfigurationManagerInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_create_configuration_manager_input::ser_create_configuration_manager_input_input(&mut object, input)?;
@@ -132,7 +132,7 @@ pub fn ser_create_configuration_manager_input(
 pub(crate) fn de_create_configuration_manager(
     value: &[u8],
     mut builder: crate::operation::create_configuration_manager::builders::CreateConfigurationManagerOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::create_configuration_manager::builders::CreateConfigurationManagerOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

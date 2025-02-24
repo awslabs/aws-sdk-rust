@@ -114,7 +114,7 @@ pub fn de_delete_resource_policy_http_response(
 pub(crate) fn de_delete_resource_policy(
     value: &[u8],
     mut builder: crate::operation::delete_resource_policy::builders::DeleteResourcePolicyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_resource_policy::builders::DeleteResourcePolicyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

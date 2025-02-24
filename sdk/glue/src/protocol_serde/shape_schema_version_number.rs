@@ -2,7 +2,7 @@
 pub fn ser_schema_version_number(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SchemaVersionNumber,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if input.latest_version {
         object.key("LatestVersion").boolean(input.latest_version);
     }

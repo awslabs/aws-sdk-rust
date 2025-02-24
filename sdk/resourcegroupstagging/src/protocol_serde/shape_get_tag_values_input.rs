@@ -2,7 +2,7 @@
 pub fn ser_get_tag_values_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_tag_values::GetTagValuesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.pagination_token {
         object.key("PaginationToken").string(var_1.as_str());
     }

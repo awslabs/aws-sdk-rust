@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_user_group_pending_changes(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::UserGroupPendingChanges, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::UserGroupPendingChanges, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::UserGroupPendingChanges::builder();
     while let Some(mut tag) = decoder.next_tag() {

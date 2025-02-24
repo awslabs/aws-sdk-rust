@@ -125,7 +125,7 @@ pub fn de_get_position_configuration_http_response(
 pub(crate) fn de_get_position_configuration(
     value: &[u8],
     mut builder: crate::operation::get_position_configuration::builders::GetPositionConfigurationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_position_configuration::builders::GetPositionConfigurationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

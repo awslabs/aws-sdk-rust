@@ -181,7 +181,7 @@ pub fn de_revoke_certificate_http_response(
 
 pub fn ser_revoke_certificate_input(
     input: &crate::operation::revoke_certificate::RevokeCertificateInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_revoke_certificate_input::ser_revoke_certificate_input_input(&mut object, input)?;

@@ -91,7 +91,7 @@ pub fn de_get_data_lake_principal_http_response(
 pub(crate) fn de_get_data_lake_principal(
     value: &[u8],
     mut builder: crate::operation::get_data_lake_principal::builders::GetDataLakePrincipalOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_data_lake_principal::builders::GetDataLakePrincipalOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -103,7 +103,7 @@ pub fn de_rebalance_slots_in_global_replication_group_http_response(
 pub fn de_rebalance_slots_in_global_replication_group(
     inp: &[u8],
     mut builder: crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

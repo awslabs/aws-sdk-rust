@@ -151,7 +151,7 @@ pub fn de_describe_workspace_authentication_http_response(
 pub(crate) fn de_describe_workspace_authentication(
     value: &[u8],
     mut builder: crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

@@ -98,7 +98,7 @@ pub fn de_create_configuration_template_http_response(
 pub fn de_create_configuration_template(
     inp: &[u8],
     mut builder: crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_configuration_template::builders::CreateConfigurationTemplateOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

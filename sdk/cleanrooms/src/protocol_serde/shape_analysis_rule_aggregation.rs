@@ -2,7 +2,7 @@
 pub fn ser_analysis_rule_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::AnalysisRuleAggregation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         let mut array_1 = object.key("aggregateColumns").start_array();
         for item_2 in &input.aggregate_columns {
@@ -74,7 +74,7 @@ pub fn ser_analysis_rule_aggregation(
 
 pub(crate) fn de_analysis_rule_aggregation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::AnalysisRuleAggregation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::AnalysisRuleAggregation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

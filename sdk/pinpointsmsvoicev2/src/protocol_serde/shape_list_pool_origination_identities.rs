@@ -125,7 +125,7 @@ pub fn de_list_pool_origination_identities_http_response(
 
 pub fn ser_list_pool_origination_identities_input(
     input: &crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_list_pool_origination_identities_input::ser_list_pool_origination_identities_input_input(&mut object, input)?;
@@ -136,7 +136,7 @@ pub fn ser_list_pool_origination_identities_input(
 pub(crate) fn de_list_pool_origination_identities(
     value: &[u8],
     mut builder: crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

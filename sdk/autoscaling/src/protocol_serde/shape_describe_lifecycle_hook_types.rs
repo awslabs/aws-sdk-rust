@@ -62,7 +62,7 @@ pub fn de_describe_lifecycle_hook_types_http_response(
 pub fn de_describe_lifecycle_hook_types(
     inp: &[u8],
     mut builder: crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::describe_lifecycle_hook_types::builders::DescribeLifecycleHookTypesOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

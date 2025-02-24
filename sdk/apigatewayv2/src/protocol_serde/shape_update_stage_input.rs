@@ -2,7 +2,7 @@
 pub fn ser_update_stage_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_stage::UpdateStageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.access_log_settings {
         #[allow(unused_mut)]
         let mut object_2 = object.key("accessLogSettings").start_object();

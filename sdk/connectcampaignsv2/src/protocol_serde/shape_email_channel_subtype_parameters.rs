@@ -2,7 +2,7 @@
 pub fn ser_email_channel_subtype_parameters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EmailChannelSubtypeParameters,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("destinationEmailAddress").string(input.destination_email_address.as_str());
     }

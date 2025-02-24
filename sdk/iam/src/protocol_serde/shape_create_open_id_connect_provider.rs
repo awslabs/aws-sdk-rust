@@ -149,7 +149,7 @@ pub fn de_create_open_id_connect_provider_http_response(
 pub fn de_create_open_id_connect_provider(
     inp: &[u8],
     mut builder: crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::create_open_id_connect_provider::builders::CreateOpenIdConnectProviderOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

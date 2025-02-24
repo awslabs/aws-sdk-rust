@@ -57,7 +57,7 @@ pub fn ser_get_bucket_lifecycle_configuration_headers(
 pub fn de_get_bucket_lifecycle_configuration(
     inp: &[u8],
     mut builder: crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLifecycleConfigurationOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

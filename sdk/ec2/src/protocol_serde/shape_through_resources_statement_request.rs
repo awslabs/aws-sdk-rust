@@ -3,7 +3,7 @@
 pub fn ser_through_resources_statement_request(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::ThroughResourcesStatementRequest,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("ResourceStatement");
     if let Some(var_2) = &input.resource_statement {

@@ -68,7 +68,7 @@ pub fn de_update_application_resource_lifecycle_http_response(
 pub fn de_update_application_resource_lifecycle(
     inp: &[u8],
     mut builder: crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

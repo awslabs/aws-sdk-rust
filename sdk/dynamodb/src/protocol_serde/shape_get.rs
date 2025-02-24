@@ -2,7 +2,7 @@
 pub fn ser_get(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Get,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         #[allow(unused_mut)]
         let mut object_1 = object.key("Key").start_object();

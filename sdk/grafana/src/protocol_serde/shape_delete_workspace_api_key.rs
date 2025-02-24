@@ -146,7 +146,7 @@ pub fn de_delete_workspace_api_key_http_response(
 pub(crate) fn de_delete_workspace_api_key(
     value: &[u8],
     mut builder: crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_workspace_api_key::builders::DeleteWorkspaceApiKeyOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

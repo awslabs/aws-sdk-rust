@@ -39,7 +39,10 @@ pub fn de_allocate_ipam_pool_cidr_http_response(
 pub fn de_allocate_ipam_pool_cidr(
     inp: &[u8],
     mut builder: crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder,
-) -> Result<crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<
+    crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder,
+    ::aws_smithy_xml::decode::XmlDecodeError,
+> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

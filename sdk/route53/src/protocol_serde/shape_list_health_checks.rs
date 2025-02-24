@@ -73,7 +73,7 @@ pub fn de_list_health_checks_http_response(
 pub fn de_list_health_checks(
     inp: &[u8],
     mut builder: crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder,
-) -> Result<crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

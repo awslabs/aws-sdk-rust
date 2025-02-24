@@ -2,7 +2,7 @@
 pub fn ser_create_container_fleet_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_container_fleet::CreateContainerFleetInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.fleet_role_arn {
         object.key("FleetRoleArn").string(var_1.as_str());
     }

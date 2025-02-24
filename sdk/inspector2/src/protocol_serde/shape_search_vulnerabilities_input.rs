@@ -2,7 +2,7 @@
 pub fn ser_search_vulnerabilities_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::search_vulnerabilities::SearchVulnerabilitiesInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter_criteria {
         #[allow(unused_mut)]
         let mut object_2 = object.key("filterCriteria").start_object();

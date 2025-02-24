@@ -72,7 +72,7 @@ pub fn de_reboot_db_instance_http_response(
 pub fn de_reboot_db_instance(
     inp: &[u8],
     mut builder: crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder,
-) -> Result<crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> std::result::Result<crate::operation::reboot_db_instance::builders::RebootDbInstanceOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]

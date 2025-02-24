@@ -2,7 +2,7 @@
 pub fn ser_import_tr34_key_block(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ImportTr34KeyBlock,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object
             .key("CertificateAuthorityPublicKeyIdentifier")

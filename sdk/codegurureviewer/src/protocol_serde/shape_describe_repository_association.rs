@@ -123,7 +123,7 @@ pub fn de_describe_repository_association_http_response(
 pub(crate) fn de_describe_repository_association(
     value: &[u8],
     mut builder: crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_repository_association::builders::DescribeRepositoryAssociationOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

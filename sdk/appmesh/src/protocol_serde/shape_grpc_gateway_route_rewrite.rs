@@ -2,7 +2,7 @@
 pub fn ser_grpc_gateway_route_rewrite(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::GrpcGatewayRouteRewrite,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.hostname {
         #[allow(unused_mut)]
         let mut object_2 = object.key("hostname").start_object();
@@ -14,7 +14,7 @@ pub fn ser_grpc_gateway_route_rewrite(
 
 pub(crate) fn de_grpc_gateway_route_rewrite<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::GrpcGatewayRouteRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::GrpcGatewayRouteRewrite>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

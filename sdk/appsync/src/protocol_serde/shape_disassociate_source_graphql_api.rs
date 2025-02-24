@@ -128,7 +128,7 @@ pub fn de_disassociate_source_graphql_api_http_response(
 pub(crate) fn de_disassociate_source_graphql_api(
     value: &[u8],
     mut builder: crate::operation::disassociate_source_graphql_api::builders::DisassociateSourceGraphqlApiOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::disassociate_source_graphql_api::builders::DisassociateSourceGraphqlApiOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

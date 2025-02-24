@@ -39,7 +39,7 @@ pub fn de_terminate_client_vpn_connections_http_response(
 pub fn de_terminate_client_vpn_connections(
     inp: &[u8],
     mut builder: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

@@ -2,7 +2,7 @@
 pub fn ser_generate_mac_emv_pin_change_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::generate_mac_emv_pin_change::GenerateMacEmvPinChangeInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.derivation_method_attributes {
         #[allow(unused_mut)]
         let mut object_2 = object.key("DerivationMethodAttributes").start_object();

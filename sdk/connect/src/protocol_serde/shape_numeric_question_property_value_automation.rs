@@ -2,7 +2,7 @@
 pub fn ser_numeric_question_property_value_automation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::NumericQuestionPropertyValueAutomation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("Label").string(input.label.as_str());
     }
@@ -11,7 +11,7 @@ pub fn ser_numeric_question_property_value_automation(
 
 pub(crate) fn de_numeric_question_property_value_automation<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::NumericQuestionPropertyValueAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::NumericQuestionPropertyValueAutomation>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

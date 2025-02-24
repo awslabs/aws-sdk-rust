@@ -124,7 +124,7 @@ pub fn de_describe_opted_out_numbers_http_response(
 
 pub fn ser_describe_opted_out_numbers_input(
     input: &crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput,
-) -> Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
     let mut out = String::new();
     let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::protocol_serde::shape_describe_opted_out_numbers_input::ser_describe_opted_out_numbers_input_input(&mut object, input)?;
@@ -135,7 +135,7 @@ pub fn ser_describe_opted_out_numbers_input(
 pub(crate) fn de_describe_opted_out_numbers(
     value: &[u8],
     mut builder: crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

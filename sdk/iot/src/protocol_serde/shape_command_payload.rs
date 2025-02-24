@@ -2,7 +2,7 @@
 pub fn ser_command_payload(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CommandPayload,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.content {
         object.key("content").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
@@ -14,7 +14,7 @@ pub fn ser_command_payload(
 
 pub(crate) fn de_command_payload<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::CommandPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::CommandPayload>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

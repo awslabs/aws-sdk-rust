@@ -76,7 +76,7 @@ pub fn de_get_encryption_config_http_response(
 pub(crate) fn de_get_encryption_config(
     value: &[u8],
     mut builder: crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

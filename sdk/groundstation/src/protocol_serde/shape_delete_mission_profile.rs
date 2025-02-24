@@ -91,7 +91,7 @@ pub fn de_delete_mission_profile_http_response(
 pub(crate) fn de_delete_mission_profile(
     value: &[u8],
     mut builder: crate::operation::delete_mission_profile::builders::DeleteMissionProfileOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::delete_mission_profile::builders::DeleteMissionProfileOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

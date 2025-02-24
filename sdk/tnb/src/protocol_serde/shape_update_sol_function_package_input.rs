@@ -2,7 +2,7 @@
 pub fn ser_update_sol_function_package_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_sol_function_package::UpdateSolFunctionPackageInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.operational_state {
         object.key("operationalState").string(var_1.as_str());
     }

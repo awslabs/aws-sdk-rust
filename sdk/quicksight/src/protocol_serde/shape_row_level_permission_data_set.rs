@@ -2,7 +2,7 @@
 pub fn ser_row_level_permission_data_set(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RowLevelPermissionDataSet,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.namespace {
         object.key("Namespace").string(var_1.as_str());
     }
@@ -23,7 +23,7 @@ pub fn ser_row_level_permission_data_set(
 
 pub(crate) fn de_row_level_permission_data_set<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::RowLevelPermissionDataSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::RowLevelPermissionDataSet>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

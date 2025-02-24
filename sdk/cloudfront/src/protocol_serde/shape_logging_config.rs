@@ -2,7 +2,7 @@
 pub fn ser_logging_config(
     input: &crate::types::LoggingConfig,
     writer: ::aws_smithy_xml::encode::ElWriter,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
     if input.enabled {
@@ -28,7 +28,7 @@ pub fn ser_logging_config(
 #[allow(clippy::needless_question_mark)]
 pub fn de_logging_config(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::LoggingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::LoggingConfig, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::LoggingConfig::builder();
     while let Some(mut tag) = decoder.next_tag() {

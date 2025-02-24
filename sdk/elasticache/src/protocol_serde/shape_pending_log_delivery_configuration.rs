@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_pending_log_delivery_configuration(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::PendingLogDeliveryConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::PendingLogDeliveryConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::PendingLogDeliveryConfiguration::builder();
     while let Some(mut tag) = decoder.next_tag() {

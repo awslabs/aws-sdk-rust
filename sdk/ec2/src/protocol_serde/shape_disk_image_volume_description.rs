@@ -2,7 +2,7 @@
 #[allow(clippy::needless_question_mark)]
 pub fn de_disk_image_volume_description(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::DiskImageVolumeDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::DiskImageVolumeDescription, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::DiskImageVolumeDescription::builder();
     while let Some(mut tag) = decoder.next_tag() {

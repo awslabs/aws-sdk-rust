@@ -39,7 +39,7 @@ pub fn de_get_reserved_instances_exchange_quote_http_response(
 pub fn de_get_reserved_instances_exchange_quote(
     inp: &[u8],
     mut builder: crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteOutputBuilder,
-) -> Result<
+) -> std::result::Result<
     crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteOutputBuilder,
     ::aws_smithy_xml::decode::XmlDecodeError,
 > {

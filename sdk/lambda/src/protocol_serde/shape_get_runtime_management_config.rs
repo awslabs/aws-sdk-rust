@@ -118,7 +118,7 @@ pub fn de_get_runtime_management_config_http_response(
 pub(crate) fn de_get_runtime_management_config(
     value: &[u8],
     mut builder: crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigOutputBuilder,
-) -> Result<
+) -> ::std::result::Result<
     crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigOutputBuilder,
     ::aws_smithy_json::deserialize::error::DeserializeError,
 > {

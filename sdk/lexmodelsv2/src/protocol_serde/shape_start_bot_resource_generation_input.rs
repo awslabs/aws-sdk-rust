@@ -2,7 +2,7 @@
 pub fn ser_start_bot_resource_generation_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_bot_resource_generation::StartBotResourceGenerationInput,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.generation_input_prompt {
         object.key("generationInputPrompt").string(var_1.as_str());
     }

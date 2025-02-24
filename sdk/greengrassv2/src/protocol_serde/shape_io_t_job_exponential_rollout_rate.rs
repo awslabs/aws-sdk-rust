@@ -2,7 +2,7 @@
 pub fn ser_io_t_job_exponential_rollout_rate(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::IoTJobExponentialRolloutRate,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("baseRatePerMinute").number(
             #[allow(clippy::useless_conversion)]
@@ -26,7 +26,7 @@ pub fn ser_io_t_job_exponential_rollout_rate(
 
 pub(crate) fn de_io_t_job_exponential_rollout_rate<'a, I>(
     tokens: &mut ::std::iter::Peekable<I>,
-) -> Result<Option<crate::types::IoTJobExponentialRolloutRate>, ::aws_smithy_json::deserialize::error::DeserializeError>
+) -> ::std::result::Result<Option<crate::types::IoTJobExponentialRolloutRate>, ::aws_smithy_json::deserialize::error::DeserializeError>
 where
     I: Iterator<Item = Result<::aws_smithy_json::deserialize::Token<'a>, ::aws_smithy_json::deserialize::error::DeserializeError>>,
 {

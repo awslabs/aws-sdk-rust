@@ -3,7 +3,7 @@
 pub fn ser_query_string_key_value_pair(
     mut writer: ::aws_smithy_query::QueryValueWriter,
     input: &crate::types::QueryStringKeyValuePair,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope_1 = writer.prefix("Key");
     if let Some(var_2) = &input.key {
@@ -20,7 +20,7 @@ pub fn ser_query_string_key_value_pair(
 #[allow(clippy::needless_question_mark)]
 pub fn de_query_string_key_value_pair(
     decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
-) -> Result<crate::types::QueryStringKeyValuePair, ::aws_smithy_xml::decode::XmlDecodeError> {
+) -> ::std::result::Result<crate::types::QueryStringKeyValuePair, ::aws_smithy_xml::decode::XmlDecodeError> {
     #[allow(unused_mut)]
     let mut builder = crate::types::QueryStringKeyValuePair::builder();
     while let Some(mut tag) = decoder.next_tag() {

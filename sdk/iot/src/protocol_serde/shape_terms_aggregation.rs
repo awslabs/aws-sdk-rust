@@ -2,7 +2,7 @@
 pub fn ser_terms_aggregation(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TermsAggregation,
-) -> Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.max_buckets {
         object.key("maxBuckets").number(
             #[allow(clippy::useless_conversion)]
