@@ -1,4 +1,4 @@
-smithy_rs_revision = '77e80622b6a1b14c78b8f81c98fc2a1610746c20'
+smithy_rs_revision = '61f4ed039e56baa6d595ead71c5afbb60c42c25b'
 aws_doc_sdk_examples_revision = '103927a3358876ab04cc02e75e8c7c91fbbc51de'
 
 [manual_interventions]
@@ -2529,6 +2529,16 @@ category = 'SmithyRuntime'
 version = '0.2.3'
 source_hash = '6f940a267a9e8d3101ba64155f7b9bec842ca92c724dd4e14de5effc9a6a467a'
 
+[crates.aws-smithy-observability]
+category = 'SmithyRuntime'
+version = '0.1.0'
+source_hash = 'f5b6614005ee520dc4ddd8f99addc1eaa7f01780a1e8abf34fcfc12168360b90'
+
+[crates.aws-smithy-observability-otel]
+category = 'SmithyRuntime'
+version = '0.1.0'
+source_hash = '213ad534000f3e117e6b4598b8e646f0f972f021c06297ba31870e2a25b7fc64'
+
 [crates.aws-smithy-protocol-test]
 category = 'SmithyRuntime'
 version = '0.63.0'
@@ -2986,3 +2996,5 @@ aws-sdk-workspacesthinclient = '1.62.0'
 aws-sdk-workspacesweb = '1.65.0'
 aws-sdk-xray = '1.61.0'
 aws-smithy-mocks-experimental = '0.2.3'
+aws-smithy-observability = '0.1.0'
+aws-smithy-observability-otel = '0.1.0'
