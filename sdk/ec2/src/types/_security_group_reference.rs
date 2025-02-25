@@ -10,9 +10,6 @@ pub struct SecurityGroupReference {
     pub referencing_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC peering connection (if applicable). For more information about security group referencing for peering connections, see <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.</p>
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
-    /// <note>
-    /// <p>This parameter is in preview and may not be available for your account.</p>
-    /// </note>
     /// <p>The ID of the transit gateway (if applicable).</p>
     pub transit_gateway_id: ::std::option::Option<::std::string::String>,
 }
@@ -29,9 +26,6 @@ impl SecurityGroupReference {
     pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
-    /// <note>
-    /// <p>This parameter is in preview and may not be available for your account.</p>
-    /// </note>
     /// <p>The ID of the transit gateway (if applicable).</p>
     pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
@@ -96,25 +90,16 @@ impl SecurityGroupReferenceBuilder {
     pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_peering_connection_id
     }
-    /// <note>
-    /// <p>This parameter is in preview and may not be available for your account.</p>
-    /// </note>
     /// <p>The ID of the transit gateway (if applicable).</p>
     pub fn transit_gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <note>
-    /// <p>This parameter is in preview and may not be available for your account.</p>
-    /// </note>
     /// <p>The ID of the transit gateway (if applicable).</p>
     pub fn set_transit_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transit_gateway_id = input;
         self
     }
-    /// <note>
-    /// <p>This parameter is in preview and may not be available for your account.</p>
-    /// </note>
     /// <p>The ID of the transit gateway (if applicable).</p>
     pub fn get_transit_gateway_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_id

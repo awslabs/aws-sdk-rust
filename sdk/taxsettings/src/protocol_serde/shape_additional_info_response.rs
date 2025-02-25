@@ -85,6 +85,19 @@ where
                             builder = builder
                                 .set_india_additional_info(crate::protocol_serde::shape_india_additional_info::de_india_additional_info(tokens)?);
                         }
+                        "vietnamAdditionalInfo" => {
+                            builder = builder.set_vietnam_additional_info(
+                                crate::protocol_serde::shape_vietnam_additional_info::de_vietnam_additional_info(tokens)?,
+                            );
+                        }
+                        "egyptAdditionalInfo" => {
+                            builder = builder
+                                .set_egypt_additional_info(crate::protocol_serde::shape_egypt_additional_info::de_egypt_additional_info(tokens)?);
+                        }
+                        "greeceAdditionalInfo" => {
+                            builder = builder
+                                .set_greece_additional_info(crate::protocol_serde::shape_greece_additional_info::de_greece_additional_info(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -8,6 +8,8 @@ pub struct CreateRemoteAccessSessionConfiguration {
     pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
     pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The device proxy to be configured on the device for the remote access session.</p>
+    pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
 }
 impl CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
@@ -19,6 +21,10 @@ impl CreateRemoteAccessSessionConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpce_configuration_arns.is_none()`.
     pub fn vpce_configuration_arns(&self) -> &[::std::string::String] {
         self.vpce_configuration_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The device proxy to be configured on the device for the remote access session.</p>
+    pub fn device_proxy(&self) -> ::std::option::Option<&crate::types::DeviceProxy> {
+        self.device_proxy.as_ref()
     }
 }
 impl CreateRemoteAccessSessionConfiguration {
@@ -34,6 +40,7 @@ impl CreateRemoteAccessSessionConfiguration {
 pub struct CreateRemoteAccessSessionConfigurationBuilder {
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
 }
 impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>The billing method for the remote access session.</p>
@@ -70,11 +77,26 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     pub fn get_vpce_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpce_configuration_arns
     }
+    /// <p>The device proxy to be configured on the device for the remote access session.</p>
+    pub fn device_proxy(mut self, input: crate::types::DeviceProxy) -> Self {
+        self.device_proxy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device proxy to be configured on the device for the remote access session.</p>
+    pub fn set_device_proxy(mut self, input: ::std::option::Option<crate::types::DeviceProxy>) -> Self {
+        self.device_proxy = input;
+        self
+    }
+    /// <p>The device proxy to be configured on the device for the remote access session.</p>
+    pub fn get_device_proxy(&self) -> &::std::option::Option<crate::types::DeviceProxy> {
+        &self.device_proxy
+    }
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
     pub fn build(self) -> crate::types::CreateRemoteAccessSessionConfiguration {
         crate::types::CreateRemoteAccessSessionConfiguration {
             billing_method: self.billing_method,
             vpce_configuration_arns: self.vpce_configuration_arns,
+            device_proxy: self.device_proxy,
         }
     }
 }

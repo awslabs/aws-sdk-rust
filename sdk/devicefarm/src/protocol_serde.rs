@@ -479,6 +479,8 @@ pub(crate) mod shape_device_minutes;
 
 pub(crate) mod shape_device_pool_compatibility_result;
 
+pub(crate) mod shape_device_proxy;
+
 pub(crate) mod shape_device_selection_result;
 
 pub(crate) mod shape_instance_labels;

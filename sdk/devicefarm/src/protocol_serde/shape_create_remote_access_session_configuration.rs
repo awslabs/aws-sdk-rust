@@ -15,5 +15,11 @@ pub fn ser_create_remote_access_session_configuration(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.device_proxy {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("deviceProxy").start_object();
+        crate::protocol_serde::shape_device_proxy::ser_device_proxy(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

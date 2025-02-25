@@ -111,6 +111,9 @@ where
                         "networkProfile" => {
                             builder = builder.set_network_profile(crate::protocol_serde::shape_network_profile::de_network_profile(tokens)?);
                         }
+                        "deviceProxy" => {
+                            builder = builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens)?);
+                        }
                         "parsingResultUrl" => {
                             builder = builder.set_parsing_result_url(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

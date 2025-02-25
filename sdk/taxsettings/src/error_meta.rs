@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>The access is denied for the Amazon Web Services Support API.</p>
+    /// <p>The access is denied for the Amazon Web ServicesSupport API.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Failed to upload the tax exemption document to Amazon Web Services Support case.</p>
+    /// <p>Failed to upload the tax exemption document to Amazon Web ServicesSupport case.</p>
     AttachmentUploadException(crate::types::error::AttachmentUploadException),
-    /// <p>You've exceeded the Amazon Web Services Support case creation limit for your account.</p>
+    /// <p>You've exceeded the Amazon Web ServicesSupport case creation limit for your account.</p>
     CaseCreationLimitExceededException(crate::types::error::CaseCreationLimitExceededException),
     /// <p>The exception when the input is creating conflict with the given state.</p>
     ConflictException(crate::types::error::ConflictException),

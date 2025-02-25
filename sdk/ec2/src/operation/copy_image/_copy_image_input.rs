@@ -55,6 +55,10 @@ pub struct CopyImageInput {
     /// <p>If you specify other values for <code>ResourceType</code>, the request fails.</p>
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    pub snapshot_copy_completion_duration_minutes: ::std::option::Option<i64>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -132,6 +136,12 @@ impl CopyImageInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    pub fn snapshot_copy_completion_duration_minutes(&self) -> ::std::option::Option<i64> {
+        self.snapshot_copy_completion_duration_minutes
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
@@ -158,6 +168,7 @@ pub struct CopyImageInputBuilder {
     pub(crate) destination_outpost_arn: ::std::option::Option<::std::string::String>,
     pub(crate) copy_image_tags: ::std::option::Option<bool>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) snapshot_copy_completion_duration_minutes: ::std::option::Option<i64>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CopyImageInputBuilder {
@@ -403,6 +414,26 @@ impl CopyImageInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    pub fn snapshot_copy_completion_duration_minutes(mut self, input: i64) -> Self {
+        self.snapshot_copy_completion_duration_minutes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    pub fn set_snapshot_copy_completion_duration_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.snapshot_copy_completion_duration_minutes = input;
+        self
+    }
+    /// <p>Specify a completion duration, in 15 minute increments, to initiate a time-based AMI copy. The specified completion duration applies to each of the snapshots associated with the AMI. Each snapshot associated with the AMI will be completed within the specified completion duration, regardless of their size.</p>
+    /// <p>If you do not specify a value, the AMI copy operation is completed on a best-effort basis.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/time-based-copies.html"> Time-based copies</a>.</p>
+    pub fn get_snapshot_copy_completion_duration_minutes(&self) -> &::std::option::Option<i64> {
+        &self.snapshot_copy_completion_duration_minutes
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -430,6 +461,7 @@ impl CopyImageInputBuilder {
             destination_outpost_arn: self.destination_outpost_arn,
             copy_image_tags: self.copy_image_tags,
             tag_specifications: self.tag_specifications,
+            snapshot_copy_completion_duration_minutes: self.snapshot_copy_completion_duration_minutes,
             dry_run: self.dry_run,
         })
     }

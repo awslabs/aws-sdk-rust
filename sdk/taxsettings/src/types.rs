@@ -17,6 +17,12 @@ pub use crate::types::_source_s3_location::SourceS3Location;
 
 pub use crate::types::_additional_info_request::AdditionalInfoRequest;
 
+pub use crate::types::_greece_additional_info::GreeceAdditionalInfo;
+
+pub use crate::types::_egypt_additional_info::EgyptAdditionalInfo;
+
+pub use crate::types::_vietnam_additional_info::VietnamAdditionalInfo;
+
 pub use crate::types::_saudi_arabia_additional_info::SaudiArabiaAdditionalInfo;
 
 pub use crate::types::_saudi_arabia_tax_registration_number_type::SaudiArabiaTaxRegistrationNumberType;
@@ -141,6 +147,8 @@ mod _canada_additional_info;
 
 mod _destination_s3_location;
 
+mod _egypt_additional_info;
+
 mod _entity_exemption_account_status;
 
 mod _estonia_additional_info;
@@ -148,6 +156,8 @@ mod _estonia_additional_info;
 mod _exemption_certificate;
 
 mod _georgia_additional_info;
+
+mod _greece_additional_info;
 
 mod _heritage_status;
 
@@ -234,6 +244,8 @@ mod _validation_exception_error_code;
 mod _validation_exception_field;
 
 mod _verification_details;
+
+mod _vietnam_additional_info;
 
 /// Builders
 pub mod builders;

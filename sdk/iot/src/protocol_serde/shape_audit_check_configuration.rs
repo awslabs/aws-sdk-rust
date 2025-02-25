@@ -6,6 +6,16 @@ pub fn ser_audit_check_configuration(
     if input.enabled {
         object.key("enabled").boolean(input.enabled);
     }
+    if let Some(var_1) = &input.configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("configuration").start_object();
+        for (key_3, value_4) in var_1 {
+            {
+                object_2.key(key_3.as_str()).string(value_4.as_str());
+            }
+        }
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -26,6 +36,11 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "configuration" => {
+                            builder = builder.set_configuration(
+                                crate::protocol_serde::shape_check_custom_configuration::de_check_custom_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -175,6 +175,8 @@ pub use crate::types::_policy_version_identifier::PolicyVersionIdentifier;
 
 pub use crate::types::_audit_check_configuration::AuditCheckConfiguration;
 
+pub use crate::types::_config_name::ConfigName;
+
 pub use crate::types::_audit_notification_target::AuditNotificationTarget;
 
 pub use crate::types::_audit_notification_type::AuditNotificationType;
@@ -798,6 +800,8 @@ mod _command_summary;
 mod _comparison_operator;
 
 mod _confidence_level;
+
+mod _config_name;
 
 mod _configuration;
 

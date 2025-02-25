@@ -97,6 +97,8 @@ pub struct RemoteAccessSession {
     pub skip_app_resign: ::std::option::Option<bool>,
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    /// <p>The device proxy configured for the remote access session.</p>
+    pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
 }
 impl RemoteAccessSession {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -236,6 +238,10 @@ impl RemoteAccessSession {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The device proxy configured for the remote access session.</p>
+    pub fn device_proxy(&self) -> ::std::option::Option<&crate::types::DeviceProxy> {
+        self.device_proxy.as_ref()
+    }
 }
 impl RemoteAccessSession {
     /// Creates a new builder-style object to manufacture [`RemoteAccessSession`](crate::types::RemoteAccessSession).
@@ -270,6 +276,7 @@ pub struct RemoteAccessSessionBuilder {
     pub(crate) interaction_mode: ::std::option::Option<crate::types::InteractionMode>,
     pub(crate) skip_app_resign: ::std::option::Option<bool>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
 }
 impl RemoteAccessSessionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the remote access session.</p>
@@ -727,6 +734,20 @@ impl RemoteAccessSessionBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::VpcConfig> {
         &self.vpc_config
     }
+    /// <p>The device proxy configured for the remote access session.</p>
+    pub fn device_proxy(mut self, input: crate::types::DeviceProxy) -> Self {
+        self.device_proxy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device proxy configured for the remote access session.</p>
+    pub fn set_device_proxy(mut self, input: ::std::option::Option<crate::types::DeviceProxy>) -> Self {
+        self.device_proxy = input;
+        self
+    }
+    /// <p>The device proxy configured for the remote access session.</p>
+    pub fn get_device_proxy(&self) -> &::std::option::Option<crate::types::DeviceProxy> {
+        &self.device_proxy
+    }
     /// Consumes the builder and constructs a [`RemoteAccessSession`](crate::types::RemoteAccessSession).
     pub fn build(self) -> crate::types::RemoteAccessSession {
         crate::types::RemoteAccessSession {
@@ -752,6 +773,7 @@ impl RemoteAccessSessionBuilder {
             interaction_mode: self.interaction_mode,
             skip_app_resign: self.skip_app_resign,
             vpc_config: self.vpc_config,
+            device_proxy: self.device_proxy,
         }
     }
 }

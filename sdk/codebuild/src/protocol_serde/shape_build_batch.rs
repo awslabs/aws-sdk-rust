@@ -169,6 +169,9 @@ where
                         "debugSessionEnabled" => {
                             builder = builder.set_debug_session_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "reportArns" => {
+                            builder = builder.set_report_arns(crate::protocol_serde::shape_build_report_arns::de_build_report_arns(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

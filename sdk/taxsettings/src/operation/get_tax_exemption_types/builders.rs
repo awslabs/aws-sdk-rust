@@ -22,7 +22,7 @@ impl crate::operation::get_tax_exemption_types::builders::GetTaxExemptionTypesIn
 }
 /// Fluent builder constructing a request to `GetTaxExemptionTypes`.
 ///
-/// <p>Get supported tax exemption types.</p>
+/// <p>Get supported tax exemption types. The IAM action is <code>tax:GetExemptions</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTaxExemptionTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

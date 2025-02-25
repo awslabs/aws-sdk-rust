@@ -114,6 +114,8 @@ pub struct Run {
     pub device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
     /// <p>The network profile being used for a test run.</p>
     pub network_profile: ::std::option::Option<crate::types::NetworkProfile>,
+    /// <p>The device proxy configured for the devices in the run.</p>
+    pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub parsing_result_url: ::std::option::Option<::std::string::String>,
     /// <p>Supporting field for the result field. Set only if <code>result</code> is <code>SKIPPED</code>. <code>PARSING_FAILED</code> if the result is skipped because of test package parsing failure.</p>
@@ -291,6 +293,10 @@ impl Run {
     pub fn network_profile(&self) -> ::std::option::Option<&crate::types::NetworkProfile> {
         self.network_profile.as_ref()
     }
+    /// <p>The device proxy configured for the devices in the run.</p>
+    pub fn device_proxy(&self) -> ::std::option::Option<&crate::types::DeviceProxy> {
+        self.device_proxy.as_ref()
+    }
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub fn parsing_result_url(&self) -> ::std::option::Option<&str> {
         self.parsing_result_url.as_deref()
@@ -384,6 +390,7 @@ pub struct RunBuilder {
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
     pub(crate) network_profile: ::std::option::Option<crate::types::NetworkProfile>,
+    pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
     pub(crate) parsing_result_url: ::std::option::Option<::std::string::String>,
     pub(crate) result_code: ::std::option::Option<crate::types::ExecutionResultCode>,
     pub(crate) seed: ::std::option::Option<i32>,
@@ -860,6 +867,20 @@ impl RunBuilder {
     pub fn get_network_profile(&self) -> &::std::option::Option<crate::types::NetworkProfile> {
         &self.network_profile
     }
+    /// <p>The device proxy configured for the devices in the run.</p>
+    pub fn device_proxy(mut self, input: crate::types::DeviceProxy) -> Self {
+        self.device_proxy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device proxy configured for the devices in the run.</p>
+    pub fn set_device_proxy(mut self, input: ::std::option::Option<crate::types::DeviceProxy>) -> Self {
+        self.device_proxy = input;
+        self
+    }
+    /// <p>The device proxy configured for the devices in the run.</p>
+    pub fn get_device_proxy(&self) -> &::std::option::Option<crate::types::DeviceProxy> {
+        &self.device_proxy
+    }
     /// <p>Read-only URL for an object in an S3 bucket where you can get the parsing results of the test package. If the test package doesn't parse, the reason why it doesn't parse appears in the file that this URL points to.</p>
     pub fn parsing_result_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parsing_result_url = ::std::option::Option::Some(input.into());
@@ -1106,6 +1127,7 @@ impl RunBuilder {
             billing_method: self.billing_method,
             device_minutes: self.device_minutes,
             network_profile: self.network_profile,
+            device_proxy: self.device_proxy,
             parsing_result_url: self.parsing_result_url,
             result_code: self.result_code,
             seed: self.seed,

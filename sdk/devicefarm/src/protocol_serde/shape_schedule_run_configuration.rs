@@ -27,29 +27,35 @@ pub fn ser_schedule_run_configuration(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.customer_artifact_paths {
+    if let Some(var_9) = &input.device_proxy {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("customerArtifactPaths").start_object();
-        crate::protocol_serde::shape_customer_artifact_paths::ser_customer_artifact_paths(&mut object_10, var_9)?;
+        let mut object_10 = object.key("deviceProxy").start_object();
+        crate::protocol_serde::shape_device_proxy::ser_device_proxy(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.radios {
+    if let Some(var_11) = &input.customer_artifact_paths {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("radios").start_object();
-        crate::protocol_serde::shape_radios::ser_radios(&mut object_12, var_11)?;
+        let mut object_12 = object.key("customerArtifactPaths").start_object();
+        crate::protocol_serde::shape_customer_artifact_paths::ser_customer_artifact_paths(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.auxiliary_apps {
-        let mut array_14 = object.key("auxiliaryApps").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.radios {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("radios").start_object();
+        crate::protocol_serde::shape_radios::ser_radios(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.auxiliary_apps {
+        let mut array_16 = object.key("auxiliaryApps").start_array();
+        for item_17 in var_15 {
             {
-                array_14.value().string(item_15.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.billing_method {
-        object.key("billingMethod").string(var_16.as_str());
+    if let Some(var_18) = &input.billing_method {
+        object.key("billingMethod").string(var_18.as_str());
     }
     Ok(())
 }

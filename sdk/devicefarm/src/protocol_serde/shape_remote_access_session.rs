@@ -141,6 +141,9 @@ where
                         "vpcConfig" => {
                             builder = builder.set_vpc_config(crate::protocol_serde::shape_vpc_config::de_vpc_config(tokens)?);
                         }
+                        "deviceProxy" => {
+                            builder = builder.set_device_proxy(crate::protocol_serde::shape_device_proxy::de_device_proxy(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

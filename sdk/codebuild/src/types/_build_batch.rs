@@ -93,6 +93,8 @@ pub struct BuildBatch {
     pub build_groups: ::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>>,
     /// <p>Specifies if session debugging is enabled for this batch build. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
     pub debug_session_enabled: ::std::option::Option<bool>,
+    /// <p>An array that contains the ARNs of reports created by merging reports from builds associated with this batch build.</p>
+    pub report_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BuildBatch {
     /// <p>The identifier of the batch build.</p>
@@ -256,6 +258,12 @@ impl BuildBatch {
     pub fn debug_session_enabled(&self) -> ::std::option::Option<bool> {
         self.debug_session_enabled
     }
+    /// <p>An array that contains the ARNs of reports created by merging reports from builds associated with this batch build.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.report_arns.is_none()`.
+    pub fn report_arns(&self) -> &[::std::string::String] {
+        self.report_arns.as_deref().unwrap_or_default()
+    }
 }
 impl BuildBatch {
     /// Creates a new builder-style object to manufacture [`BuildBatch`](crate::types::BuildBatch).
@@ -298,6 +306,7 @@ pub struct BuildBatchBuilder {
     pub(crate) build_batch_config: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     pub(crate) build_groups: ::std::option::Option<::std::vec::Vec<crate::types::BuildGroup>>,
     pub(crate) debug_session_enabled: ::std::option::Option<bool>,
+    pub(crate) report_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BuildBatchBuilder {
     /// <p>The identifier of the batch build.</p>
@@ -843,6 +852,26 @@ impl BuildBatchBuilder {
     pub fn get_debug_session_enabled(&self) -> &::std::option::Option<bool> {
         &self.debug_session_enabled
     }
+    /// Appends an item to `report_arns`.
+    ///
+    /// To override the contents of this collection use [`set_report_arns`](Self::set_report_arns).
+    ///
+    /// <p>An array that contains the ARNs of reports created by merging reports from builds associated with this batch build.</p>
+    pub fn report_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.report_arns.unwrap_or_default();
+        v.push(input.into());
+        self.report_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array that contains the ARNs of reports created by merging reports from builds associated with this batch build.</p>
+    pub fn set_report_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.report_arns = input;
+        self
+    }
+    /// <p>An array that contains the ARNs of reports created by merging reports from builds associated with this batch build.</p>
+    pub fn get_report_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.report_arns
+    }
     /// Consumes the builder and constructs a [`BuildBatch`](crate::types::BuildBatch).
     pub fn build(self) -> crate::types::BuildBatch {
         crate::types::BuildBatch {
@@ -876,6 +905,7 @@ impl BuildBatchBuilder {
             build_batch_config: self.build_batch_config,
             build_groups: self.build_groups,
             debug_session_enabled: self.debug_session_enabled,
+            report_arns: self.report_arns,
         }
     }
 }

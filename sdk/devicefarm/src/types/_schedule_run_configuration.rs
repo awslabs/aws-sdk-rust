@@ -14,6 +14,8 @@ pub struct ScheduleRunConfiguration {
     pub location: ::std::option::Option<crate::types::Location>,
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
     pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The device proxy to be configured on the device for the run.</p>
+    pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub customer_artifact_paths: ::std::option::Option<crate::types::CustomerArtifactPaths>,
     /// <p>Information about the radio states for the run.</p>
@@ -47,6 +49,10 @@ impl ScheduleRunConfiguration {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpce_configuration_arns.is_none()`.
     pub fn vpce_configuration_arns(&self) -> &[::std::string::String] {
         self.vpce_configuration_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The device proxy to be configured on the device for the run.</p>
+    pub fn device_proxy(&self) -> ::std::option::Option<&crate::types::DeviceProxy> {
+        self.device_proxy.as_ref()
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(&self) -> ::std::option::Option<&crate::types::CustomerArtifactPaths> {
@@ -85,6 +91,7 @@ pub struct ScheduleRunConfigurationBuilder {
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) location: ::std::option::Option<crate::types::Location>,
     pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
     pub(crate) customer_artifact_paths: ::std::option::Option<crate::types::CustomerArtifactPaths>,
     pub(crate) radios: ::std::option::Option<crate::types::Radios>,
     pub(crate) auxiliary_apps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -167,6 +174,20 @@ impl ScheduleRunConfigurationBuilder {
     pub fn get_vpce_configuration_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpce_configuration_arns
     }
+    /// <p>The device proxy to be configured on the device for the run.</p>
+    pub fn device_proxy(mut self, input: crate::types::DeviceProxy) -> Self {
+        self.device_proxy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The device proxy to be configured on the device for the run.</p>
+    pub fn set_device_proxy(mut self, input: ::std::option::Option<crate::types::DeviceProxy>) -> Self {
+        self.device_proxy = input;
+        self
+    }
+    /// <p>The device proxy to be configured on the device for the run.</p>
+    pub fn get_device_proxy(&self) -> &::std::option::Option<crate::types::DeviceProxy> {
+        &self.device_proxy
+    }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(mut self, input: crate::types::CustomerArtifactPaths) -> Self {
         self.customer_artifact_paths = ::std::option::Option::Some(input);
@@ -243,6 +264,7 @@ impl ScheduleRunConfigurationBuilder {
             locale: self.locale,
             location: self.location,
             vpce_configuration_arns: self.vpce_configuration_arns,
+            device_proxy: self.device_proxy,
             customer_artifact_paths: self.customer_artifact_paths,
             radios: self.radios,
             auxiliary_apps: self.auxiliary_apps,

@@ -10,7 +10,7 @@ pub struct CreateVerifiedAccessEndpointLoadBalancerOptions {
     pub port: ::std::option::Option<i32>,
     /// <p>The ARN of the load balancer.</p>
     pub load_balancer_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The IDs of the subnets.</p>
+    /// <p>The IDs of the subnets. You can specify only one subnet per Availability Zone.</p>
     pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The port ranges.</p>
     pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::CreateVerifiedAccessEndpointPortRange>>,
@@ -28,7 +28,7 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptions {
     pub fn load_balancer_arn(&self) -> ::std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
-    /// <p>The IDs of the subnets.</p>
+    /// <p>The IDs of the subnets. You can specify only one subnet per Availability Zone.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_ids.is_none()`.
     pub fn subnet_ids(&self) -> &[::std::string::String] {
@@ -105,19 +105,19 @@ impl CreateVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
-    /// <p>The IDs of the subnets.</p>
+    /// <p>The IDs of the subnets. You can specify only one subnet per Availability Zone.</p>
     pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
         self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IDs of the subnets.</p>
+    /// <p>The IDs of the subnets. You can specify only one subnet per Availability Zone.</p>
     pub fn set_subnet_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.subnet_ids = input;
         self
     }
-    /// <p>The IDs of the subnets.</p>
+    /// <p>The IDs of the subnets. You can specify only one subnet per Availability Zone.</p>
     pub fn get_subnet_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.subnet_ids
     }

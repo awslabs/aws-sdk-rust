@@ -22,7 +22,7 @@ impl crate::operation::batch_get_tax_exemptions::builders::BatchGetTaxExemptions
 }
 /// Fluent builder constructing a request to `BatchGetTaxExemptions`.
 ///
-/// <p>Get the active tax exemptions for a given list of accounts.</p>
+/// <p>Get the active tax exemptions for a given list of accounts. The IAM action is <code>tax:GetExemptions</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetTaxExemptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

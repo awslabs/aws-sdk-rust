@@ -87,5 +87,23 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_saudi_arabia_additional_info::ser_saudi_arabia_additional_info(&mut object_28, var_27)?;
         object_28.finish();
     }
+    if let Some(var_29) = &input.vietnam_additional_info {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("vietnamAdditionalInfo").start_object();
+        crate::protocol_serde::shape_vietnam_additional_info::ser_vietnam_additional_info(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.egypt_additional_info {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("egyptAdditionalInfo").start_object();
+        crate::protocol_serde::shape_egypt_additional_info::ser_egypt_additional_info(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.greece_additional_info {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("greeceAdditionalInfo").start_object();
+        crate::protocol_serde::shape_greece_additional_info::ser_greece_additional_info(&mut object_34, var_33)?;
+        object_34.finish();
+    }
     Ok(())
 }

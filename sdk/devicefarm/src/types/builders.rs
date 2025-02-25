@@ -35,6 +35,8 @@ pub use crate::types::_location::LocationBuilder;
 
 pub use crate::types::_radios::RadiosBuilder;
 
+pub use crate::types::_device_proxy::DeviceProxyBuilder;
+
 pub use crate::types::_device_minutes::DeviceMinutesBuilder;
 
 pub use crate::types::_counters::CountersBuilder;

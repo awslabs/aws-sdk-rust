@@ -55,6 +55,8 @@ pub use crate::types::_radios::Radios;
 
 pub use crate::types::_execution_result_code::ExecutionResultCode;
 
+pub use crate::types::_device_proxy::DeviceProxy;
+
 pub use crate::types::_device_minutes::DeviceMinutes;
 
 pub use crate::types::_billing_method::BillingMethod;
@@ -198,6 +200,8 @@ mod _device_pool;
 mod _device_pool_compatibility_result;
 
 mod _device_pool_type;
+
+mod _device_proxy;
 
 mod _device_selection_configuration;
 

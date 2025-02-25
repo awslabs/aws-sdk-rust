@@ -6,11 +6,17 @@
 pub struct AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
     pub enabled: bool,
+    /// <p>A structure containing the configName and corresponding configValue for configuring audit checks.</p>
+    pub configuration: ::std::option::Option<::std::collections::HashMap<crate::types::ConfigName, ::std::string::String>>,
 }
 impl AuditCheckConfiguration {
     /// <p>True if this audit check is enabled for this account.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
+    }
+    /// <p>A structure containing the configName and corresponding configValue for configuring audit checks.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::ConfigName, ::std::string::String>> {
+        self.configuration.as_ref()
     }
 }
 impl AuditCheckConfiguration {
@@ -25,6 +31,7 @@ impl AuditCheckConfiguration {
 #[non_exhaustive]
 pub struct AuditCheckConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) configuration: ::std::option::Option<::std::collections::HashMap<crate::types::ConfigName, ::std::string::String>>,
 }
 impl AuditCheckConfigurationBuilder {
     /// <p>True if this audit check is enabled for this account.</p>
@@ -41,10 +48,34 @@ impl AuditCheckConfigurationBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// Adds a key-value pair to `configuration`.
+    ///
+    /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
+    ///
+    /// <p>A structure containing the configName and corresponding configValue for configuring audit checks.</p>
+    pub fn configuration(mut self, k: crate::types::ConfigName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.configuration.unwrap_or_default();
+        hash_map.insert(k, v.into());
+        self.configuration = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A structure containing the configName and corresponding configValue for configuring audit checks.</p>
+    pub fn set_configuration(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::ConfigName, ::std::string::String>>,
+    ) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>A structure containing the configName and corresponding configValue for configuring audit checks.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::ConfigName, ::std::string::String>> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`AuditCheckConfiguration`](crate::types::AuditCheckConfiguration).
     pub fn build(self) -> crate::types::AuditCheckConfiguration {
         crate::types::AuditCheckConfiguration {
             enabled: self.enabled.unwrap_or_default(),
+            configuration: self.configuration,
         }
     }
 }

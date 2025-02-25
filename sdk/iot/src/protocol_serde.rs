@@ -1403,6 +1403,8 @@ pub(crate) mod shape_allowed;
 
 pub(crate) mod shape_aws_job_rate_increase_criteria;
 
+pub(crate) mod shape_check_custom_configuration;
+
 pub(crate) mod shape_cloudwatch_alarm_action;
 
 pub(crate) mod shape_cloudwatch_logs_action;

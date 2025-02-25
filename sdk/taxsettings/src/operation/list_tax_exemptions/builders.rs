@@ -22,7 +22,7 @@ impl crate::operation::list_tax_exemptions::builders::ListTaxExemptionsInputBuil
 }
 /// Fluent builder constructing a request to `ListTaxExemptions`.
 ///
-/// <p>Retrieves the tax exemption of accounts listed in a consolidated billing family.</p>
+/// <p>Retrieves the tax exemption of accounts listed in a consolidated billing family. The IAM action is <code>tax:GetExemptions</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTaxExemptionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

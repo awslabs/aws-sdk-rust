@@ -64,9 +64,17 @@ pub fn ser_copy_image_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_24 = writer.prefix("DryRun");
-    if let Some(var_25) = &input.dry_run {
-        scope_24.boolean(*var_25);
+    let mut scope_24 = writer.prefix("SnapshotCopyCompletionDurationMinutes");
+    if let Some(var_25) = &input.snapshot_copy_completion_duration_minutes {
+        scope_24.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_25).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_26 = writer.prefix("DryRun");
+    if let Some(var_27) = &input.dry_run {
+        scope_26.boolean(*var_27);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

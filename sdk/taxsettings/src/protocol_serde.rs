@@ -167,9 +167,13 @@ pub(crate) mod shape_brazil_additional_info;
 
 pub(crate) mod shape_canada_additional_info;
 
+pub(crate) mod shape_egypt_additional_info;
+
 pub(crate) mod shape_estonia_additional_info;
 
 pub(crate) mod shape_georgia_additional_info;
+
+pub(crate) mod shape_greece_additional_info;
 
 pub(crate) mod shape_india_additional_info;
 
@@ -202,6 +206,8 @@ pub(crate) mod shape_tax_registration_with_jurisdiction;
 pub(crate) mod shape_turkey_additional_info;
 
 pub(crate) mod shape_ukraine_additional_info;
+
+pub(crate) mod shape_vietnam_additional_info;
 
 pub(crate) mod shape_address_role_map;
 

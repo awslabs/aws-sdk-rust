@@ -22,7 +22,7 @@ impl crate::operation::put_tax_exemption::builders::PutTaxExemptionInputBuilder 
 }
 /// Fluent builder constructing a request to `PutTaxExemption`.
 ///
-/// <p>Adds the tax exemption for a single account or all accounts listed in a consolidated billing family.</p>
+/// <p>Adds the tax exemption for a single account or all accounts listed in a consolidated billing family. The IAM action is <code>tax:UpdateExemptions</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutTaxExemptionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
