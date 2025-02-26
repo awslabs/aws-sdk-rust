@@ -199,4 +199,18 @@ impl ListVehiclesFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(mut self, input: crate::types::ListResponseScope) -> Self {
+        self.inner = self.inner.list_response_scope(input);
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn set_list_response_scope(mut self, input: ::std::option::Option<crate::types::ListResponseScope>) -> Self {
+        self.inner = self.inner.set_list_response_scope(input);
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn get_list_response_scope(&self) -> &::std::option::Option<crate::types::ListResponseScope> {
+        self.inner.get_list_response_scope()
+    }
 }

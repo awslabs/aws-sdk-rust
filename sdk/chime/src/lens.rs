@@ -9,138 +9,8 @@ pub(crate) fn reflens_list_accounts_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_app_instance_admins_output_output_next_token(
-    input: &crate::operation::list_app_instance_admins::ListAppInstanceAdminsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_app_instance_users_output_output_next_token(
-    input: &crate::operation::list_app_instance_users::ListAppInstanceUsersOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_app_instances_output_output_next_token(
-    input: &crate::operation::list_app_instances::ListAppInstancesOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_attendees_output_output_next_token(
-    input: &crate::operation::list_attendees::ListAttendeesOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
 pub(crate) fn reflens_list_bots_output_output_next_token(
     input: &crate::operation::list_bots::ListBotsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channel_bans_output_output_next_token(
-    input: &crate::operation::list_channel_bans::ListChannelBansOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channel_memberships_output_output_next_token(
-    input: &crate::operation::list_channel_memberships::ListChannelMembershipsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channel_memberships_for_app_instance_user_output_output_next_token(
-    input: &crate::operation::list_channel_memberships_for_app_instance_user::ListChannelMembershipsForAppInstanceUserOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channel_messages_output_output_next_token(
-    input: &crate::operation::list_channel_messages::ListChannelMessagesOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channel_moderators_output_output_next_token(
-    input: &crate::operation::list_channel_moderators::ListChannelModeratorsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channels_output_output_next_token(
-    input: &crate::operation::list_channels::ListChannelsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_channels_moderated_by_app_instance_user_output_output_next_token(
-    input: &crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_media_capture_pipelines_output_output_next_token(
-    input: &crate::operation::list_media_capture_pipelines::ListMediaCapturePipelinesOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_meetings_output_output_next_token(
-    input: &crate::operation::list_meetings::ListMeetingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -169,16 +39,6 @@ pub(crate) fn reflens_list_phone_numbers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_proxy_sessions_output_output_next_token(
-    input: &crate::operation::list_proxy_sessions::ListProxySessionsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
 pub(crate) fn reflens_list_room_memberships_output_output_next_token(
     input: &crate::operation::list_room_memberships::ListRoomMembershipsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -199,48 +59,8 @@ pub(crate) fn reflens_list_rooms_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
-pub(crate) fn reflens_list_sip_media_applications_output_output_next_token(
-    input: &crate::operation::list_sip_media_applications::ListSipMediaApplicationsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_sip_rules_output_output_next_token(
-    input: &crate::operation::list_sip_rules::ListSipRulesOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
 pub(crate) fn reflens_list_users_output_output_next_token(
     input: &crate::operation::list_users::ListUsersOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_voice_connector_groups_output_output_next_token(
-    input: &crate::operation::list_voice_connector_groups::ListVoiceConnectorGroupsOutput,
-) -> ::std::option::Option<&::std::string::String> {
-    let input = match &input.next_token {
-        ::std::option::Option::None => return ::std::option::Option::None,
-        ::std::option::Option::Some(t) => t,
-    };
-    ::std::option::Option::Some(input)
-}
-
-pub(crate) fn reflens_list_voice_connectors_output_output_next_token(
-    input: &crate::operation::list_voice_connectors::ListVoiceConnectorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,

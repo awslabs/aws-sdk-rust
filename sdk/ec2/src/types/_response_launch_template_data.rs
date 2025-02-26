@@ -24,7 +24,7 @@ pub struct ResponseLaunchTemplateData {
     /// <li>
     /// <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
@@ -64,7 +64,7 @@ pub struct ResponseLaunchTemplateData {
     pub instance_market_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptions>,
     /// <p>The credit option for CPU usage of the instance.</p>
     pub credit_specification: ::std::option::Option<crate::types::CreditSpecification>,
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub cpu_options: ::std::option::Option<crate::types::LaunchTemplateCpuOptions>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationResponse>,
@@ -72,7 +72,7 @@ pub struct ResponseLaunchTemplateData {
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfiguration>>,
     /// <p>Indicates whether an instance is configured for hibernation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub hibernation_options: ::std::option::Option<crate::types::LaunchTemplateHibernationOptions>,
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub metadata_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptions>,
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub enclave_options: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptions>,
@@ -83,7 +83,7 @@ pub struct ResponseLaunchTemplateData {
     pub private_dns_name_options: ::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptions>,
     /// <p>The maintenance options for your instance.</p>
     pub maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptions>,
-    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub disable_api_stop: ::std::option::Option<bool>,
     /// <p>The entity that manages the launch template.</p>
     pub operator: ::std::option::Option<crate::types::OperatorResponse>,
@@ -125,7 +125,7 @@ impl ResponseLaunchTemplateData {
     /// <li>
     /// <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
@@ -207,7 +207,7 @@ impl ResponseLaunchTemplateData {
     pub fn credit_specification(&self) -> ::std::option::Option<&crate::types::CreditSpecification> {
         self.credit_specification.as_ref()
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateCpuOptions> {
         self.cpu_options.as_ref()
     }
@@ -225,7 +225,7 @@ impl ResponseLaunchTemplateData {
     pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateHibernationOptions> {
         self.hibernation_options.as_ref()
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMetadataOptions> {
         self.metadata_options.as_ref()
     }
@@ -246,7 +246,7 @@ impl ResponseLaunchTemplateData {
     pub fn maintenance_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMaintenanceOptions> {
         self.maintenance_options.as_ref()
     }
-    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn disable_api_stop(&self) -> ::std::option::Option<bool> {
         self.disable_api_stop
     }
@@ -445,7 +445,7 @@ impl ResponseLaunchTemplateDataBuilder {
     /// <li>
     /// <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
         self
@@ -460,7 +460,7 @@ impl ResponseLaunchTemplateDataBuilder {
     /// <li>
     /// <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
@@ -475,7 +475,7 @@ impl ResponseLaunchTemplateDataBuilder {
     /// <li>
     /// <p>If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code> was configured as <code>false</code>, then this is the parameter value.</p></li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html#use-an-ssm-parameter-instead-of-an-ami-id">Use a Systems Manager parameter instead of an AMI ID</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
@@ -751,17 +751,17 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn get_credit_specification(&self) -> &::std::option::Option<crate::types::CreditSpecification> {
         &self.credit_specification
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn cpu_options(mut self, input: crate::types::LaunchTemplateCpuOptions) -> Self {
         self.cpu_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateCpuOptions>) -> Self {
         self.cpu_options = input;
         self
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateCpuOptions> {
         &self.cpu_options
     }
@@ -821,17 +821,17 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateHibernationOptions> {
         &self.hibernation_options
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn metadata_options(mut self, input: crate::types::LaunchTemplateInstanceMetadataOptions) -> Self {
         self.metadata_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptions>) -> Self {
         self.metadata_options = input;
         self
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptions> {
         &self.metadata_options
     }
@@ -894,17 +894,17 @@ impl ResponseLaunchTemplateDataBuilder {
     pub fn get_maintenance_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptions> {
         &self.maintenance_options
     }
-    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn disable_api_stop(mut self, input: bool) -> Self {
         self.disable_api_stop = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_disable_api_stop(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_api_stop = input;
         self
     }
-    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
         &self.disable_api_stop
     }

@@ -6,7 +6,12 @@ pub struct BatchDeleteClusterNodesInput {
     /// <p>The name of the SageMaker HyperPod cluster from which to delete the specified nodes.</p>
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub node_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -16,7 +21,12 @@ impl BatchDeleteClusterNodesInput {
         self.cluster_name.as_deref()
     }
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.node_ids.is_none()`.
@@ -59,7 +69,12 @@ impl BatchDeleteClusterNodesInputBuilder {
     /// To override the contents of this collection use [`set_node_ids`](Self::set_node_ids).
     ///
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub fn node_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.node_ids.unwrap_or_default();
@@ -68,14 +83,24 @@ impl BatchDeleteClusterNodesInputBuilder {
         self
     }
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.node_ids = input;
         self
     }
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.node_ids

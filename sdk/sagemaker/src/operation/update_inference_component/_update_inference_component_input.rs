@@ -9,6 +9,8 @@ pub struct UpdateInferenceComponentInput {
     pub specification: ::std::option::Option<crate::types::InferenceComponentSpecification>,
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>,
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub deployment_config: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>,
 }
 impl UpdateInferenceComponentInput {
     /// <p>The name of the inference component.</p>
@@ -22,6 +24,10 @@ impl UpdateInferenceComponentInput {
     /// <p>Runtime settings for a model that is deployed with an inference component.</p>
     pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentRuntimeConfig> {
         self.runtime_config.as_ref()
+    }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentDeploymentConfig> {
+        self.deployment_config.as_ref()
     }
 }
 impl UpdateInferenceComponentInput {
@@ -38,6 +44,7 @@ pub struct UpdateInferenceComponentInputBuilder {
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) specification: ::std::option::Option<crate::types::InferenceComponentSpecification>,
     pub(crate) runtime_config: ::std::option::Option<crate::types::InferenceComponentRuntimeConfig>,
+    pub(crate) deployment_config: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>,
 }
 impl UpdateInferenceComponentInputBuilder {
     /// <p>The name of the inference component.</p>
@@ -83,6 +90,20 @@ impl UpdateInferenceComponentInputBuilder {
     pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::InferenceComponentRuntimeConfig> {
         &self.runtime_config
     }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn deployment_config(mut self, input: crate::types::InferenceComponentDeploymentConfig) -> Self {
+        self.deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>) -> Self {
+        self.deployment_config = input;
+        self
+    }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::InferenceComponentDeploymentConfig> {
+        &self.deployment_config
+    }
     /// Consumes the builder and constructs a [`UpdateInferenceComponentInput`](crate::operation::update_inference_component::UpdateInferenceComponentInput).
     pub fn build(
         self,
@@ -94,6 +115,7 @@ impl UpdateInferenceComponentInputBuilder {
             inference_component_name: self.inference_component_name,
             specification: self.specification,
             runtime_config: self.runtime_config,
+            deployment_config: self.deployment_config,
         })
     }
 }

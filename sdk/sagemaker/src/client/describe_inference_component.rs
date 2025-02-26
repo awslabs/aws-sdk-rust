@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_inference_component::DescribeInferenceComponentOutput::creation_time): <p>The time when the inference component was created.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_inference_component::DescribeInferenceComponentOutput::last_modified_time): <p>The time when the inference component was last updated.</p>
     ///   - [`inference_component_status(Option<InferenceComponentStatus>)`](crate::operation::describe_inference_component::DescribeInferenceComponentOutput::inference_component_status): <p>The status of the inference component.</p>
+    ///   - [`last_deployment_config(Option<InferenceComponentDeploymentConfig>)`](crate::operation::describe_inference_component::DescribeInferenceComponentOutput::last_deployment_config): <p>The deployment and rollback settings that you assigned to the inference component.</p>
     /// - On failure, responds with [`SdkError<DescribeInferenceComponentError>`](crate::operation::describe_inference_component::DescribeInferenceComponentError)
     pub fn describe_inference_component(&self) -> crate::operation::describe_inference_component::builders::DescribeInferenceComponentFluentBuilder {
         crate::operation::describe_inference_component::builders::DescribeInferenceComponentFluentBuilder::new(self.handle.clone())

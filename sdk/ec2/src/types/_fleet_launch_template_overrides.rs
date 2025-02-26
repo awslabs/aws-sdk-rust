@@ -11,6 +11,7 @@ pub struct FleetLaunchTemplateOverrides {
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// <p>If you specify a maximum price, it must be more than USD $0.001. Specifying a value below USD $0.001 will result in an <code>InvalidParameterValue</code> error message.</p>
     /// </important>
     pub max_price: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which to launch the instances.</p>
@@ -62,6 +63,8 @@ pub struct FleetLaunchTemplateOverrides {
     /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
     /// </note>
     pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>,
 }
 impl FleetLaunchTemplateOverrides {
     /// <p>The instance type.</p>
@@ -73,6 +76,7 @@ impl FleetLaunchTemplateOverrides {
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// <p>If you specify a maximum price, it must be more than USD $0.001. Specifying a value below USD $0.001 will result in an <code>InvalidParameterValue</code> error message.</p>
     /// </important>
     pub fn max_price(&self) -> ::std::option::Option<&str> {
         self.max_price.as_deref()
@@ -140,6 +144,12 @@ impl FleetLaunchTemplateOverrides {
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
+    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
+    pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMappingResponse] {
+        self.block_device_mappings.as_deref().unwrap_or_default()
+    }
 }
 impl FleetLaunchTemplateOverrides {
     /// Creates a new builder-style object to manufacture [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
@@ -161,6 +171,7 @@ pub struct FleetLaunchTemplateOverridesBuilder {
     pub(crate) placement: ::std::option::Option<crate::types::PlacementResponse>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirements>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>,
 }
 impl FleetLaunchTemplateOverridesBuilder {
     /// <p>The instance type.</p>
@@ -188,6 +199,7 @@ impl FleetLaunchTemplateOverridesBuilder {
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// <p>If you specify a maximum price, it must be more than USD $0.001. Specifying a value below USD $0.001 will result in an <code>InvalidParameterValue</code> error message.</p>
     /// </important>
     pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.max_price = ::std::option::Option::Some(input.into());
@@ -195,6 +207,7 @@ impl FleetLaunchTemplateOverridesBuilder {
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// <p>If you specify a maximum price, it must be more than USD $0.001. Specifying a value below USD $0.001 will result in an <code>InvalidParameterValue</code> error message.</p>
     /// </important>
     pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_price = input;
@@ -202,6 +215,7 @@ impl FleetLaunchTemplateOverridesBuilder {
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p><important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
+    /// <p>If you specify a maximum price, it must be more than USD $0.001. Specifying a value below USD $0.001 will result in an <code>InvalidParameterValue</code> error message.</p>
     /// </important>
     pub fn get_max_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_price
@@ -409,6 +423,26 @@ impl FleetLaunchTemplateOverridesBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
+    /// Appends an item to `block_device_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+    ///
+    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMappingResponse) -> Self {
+        let mut v = self.block_device_mappings.unwrap_or_default();
+        v.push(input);
+        self.block_device_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>) -> Self {
+        self.block_device_mappings = input;
+        self
+    }
+    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>> {
+        &self.block_device_mappings
+    }
     /// Consumes the builder and constructs a [`FleetLaunchTemplateOverrides`](crate::types::FleetLaunchTemplateOverrides).
     pub fn build(self) -> crate::types::FleetLaunchTemplateOverrides {
         crate::types::FleetLaunchTemplateOverrides {
@@ -421,6 +455,7 @@ impl FleetLaunchTemplateOverridesBuilder {
             placement: self.placement,
             instance_requirements: self.instance_requirements,
             image_id: self.image_id,
+            block_device_mappings: self.block_device_mappings,
         }
     }
 }

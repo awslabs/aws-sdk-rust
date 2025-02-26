@@ -29,6 +29,10 @@ pub use crate::types::_cr_update_allocation_strategy::CrUpdateAllocationStrategy
 
 pub use crate::types::_ce_state::CeState;
 
+pub use crate::types::_consumable_resource_properties::ConsumableResourceProperties;
+
+pub use crate::types::_consumable_resource_requirement::ConsumableResourceRequirement;
+
 pub use crate::types::_ecs_properties_override::EcsPropertiesOverride;
 
 pub use crate::types::_task_properties_override::TaskPropertiesOverride;
@@ -157,6 +161,10 @@ pub use crate::types::_job_definition_type::JobDefinitionType;
 
 pub use crate::types::_scheduling_policy_listing_detail::SchedulingPolicyListingDetail;
 
+pub use crate::types::_list_jobs_by_consumable_resource_summary::ListJobsByConsumableResourceSummary;
+
+pub use crate::types::_key_values_pair::KeyValuesPair;
+
 pub use crate::types::_job_summary::JobSummary;
 
 pub use crate::types::_node_properties_summary::NodePropertiesSummary;
@@ -167,7 +175,7 @@ pub use crate::types::_container_summary::ContainerSummary;
 
 pub use crate::types::_job_status::JobStatus;
 
-pub use crate::types::_key_values_pair::KeyValuesPair;
+pub use crate::types::_consumable_resource_summary::ConsumableResourceSummary;
 
 pub use crate::types::_front_of_queue_detail::FrontOfQueueDetail;
 
@@ -260,6 +268,12 @@ mod _compute_environment_order;
 mod _compute_resource;
 
 mod _compute_resource_update;
+
+mod _consumable_resource_properties;
+
+mod _consumable_resource_requirement;
+
+mod _consumable_resource_summary;
 
 mod _container_detail;
 
@@ -394,6 +408,8 @@ mod _launch_template_specification;
 mod _launch_template_specification_override;
 
 mod _linux_parameters;
+
+mod _list_jobs_by_consumable_resource_summary;
 
 mod _log_configuration;
 

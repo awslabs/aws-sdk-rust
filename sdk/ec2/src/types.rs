@@ -979,6 +979,10 @@ pub use crate::types::_memory_mib_request::MemoryMiBRequest;
 
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequest;
 
+pub use crate::types::_fleet_block_device_mapping_request::FleetBlockDeviceMappingRequest;
+
+pub use crate::types::_fleet_ebs_block_device_request::FleetEbsBlockDeviceRequest;
+
 pub use crate::types::_fleet_launch_template_specification_request::FleetLaunchTemplateSpecificationRequest;
 
 pub use crate::types::_fleet_excess_capacity_termination_policy::FleetExcessCapacityTerminationPolicy;
@@ -1927,6 +1931,10 @@ pub use crate::types::_launch_template_and_overrides_response::LaunchTemplateAnd
 
 pub use crate::types::_fleet_launch_template_overrides::FleetLaunchTemplateOverrides;
 
+pub use crate::types::_block_device_mapping_response::BlockDeviceMappingResponse;
+
+pub use crate::types::_ebs_block_device_response::EbsBlockDeviceResponse;
+
 pub use crate::types::_placement_response::PlacementResponse;
 
 pub use crate::types::_describe_fleet_error::DescribeFleetError;
@@ -2473,6 +2481,8 @@ mod _blob_attribute_value;
 
 mod _block_device_mapping;
 
+mod _block_device_mapping_response;
+
 mod _block_public_access_mode;
 
 mod _block_public_access_states;
@@ -2823,6 +2833,8 @@ mod _dynamic_routing_value;
 
 mod _ebs_block_device;
 
+mod _ebs_block_device_response;
+
 mod _ebs_encryption_support;
 
 mod _ebs_info;
@@ -2957,6 +2969,8 @@ mod _firewall_stateless_rule;
 
 mod _fleet_activity_status;
 
+mod _fleet_block_device_mapping_request;
+
 mod _fleet_capacity_reservation;
 
 mod _fleet_capacity_reservation_tenancy;
@@ -2964,6 +2978,8 @@ mod _fleet_capacity_reservation_tenancy;
 mod _fleet_capacity_reservation_usage_strategy;
 
 mod _fleet_data;
+
+mod _fleet_ebs_block_device_request;
 
 mod _fleet_event_type;
 

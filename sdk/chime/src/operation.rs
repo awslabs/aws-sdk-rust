@@ -4,20 +4,8 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociatePhoneNumberWithUser` operation.
 pub mod associate_phone_number_with_user;
 
-/// Types for the `AssociatePhoneNumbersWithVoiceConnector` operation.
-pub mod associate_phone_numbers_with_voice_connector;
-
-/// Types for the `AssociatePhoneNumbersWithVoiceConnectorGroup` operation.
-pub mod associate_phone_numbers_with_voice_connector_group;
-
 /// Types for the `AssociateSigninDelegateGroupsWithAccount` operation.
 pub mod associate_signin_delegate_groups_with_account;
-
-/// Types for the `BatchCreateAttendee` operation.
-pub mod batch_create_attendee;
-
-/// Types for the `BatchCreateChannelMembership` operation.
-pub mod batch_create_channel_membership;
 
 /// Types for the `BatchCreateRoomMembership` operation.
 pub mod batch_create_room_membership;
@@ -40,50 +28,14 @@ pub mod batch_update_user;
 /// Types for the `CreateAccount` operation.
 pub mod create_account;
 
-/// Types for the `CreateAppInstance` operation.
-pub mod create_app_instance;
-
-/// Types for the `CreateAppInstanceAdmin` operation.
-pub mod create_app_instance_admin;
-
-/// Types for the `CreateAppInstanceUser` operation.
-pub mod create_app_instance_user;
-
-/// Types for the `CreateAttendee` operation.
-pub mod create_attendee;
-
 /// Types for the `CreateBot` operation.
 pub mod create_bot;
-
-/// Types for the `CreateChannel` operation.
-pub mod create_channel;
-
-/// Types for the `CreateChannelBan` operation.
-pub mod create_channel_ban;
-
-/// Types for the `CreateChannelMembership` operation.
-pub mod create_channel_membership;
-
-/// Types for the `CreateChannelModerator` operation.
-pub mod create_channel_moderator;
-
-/// Types for the `CreateMediaCapturePipeline` operation.
-pub mod create_media_capture_pipeline;
-
-/// Types for the `CreateMeeting` operation.
-pub mod create_meeting;
 
 /// Types for the `CreateMeetingDialOut` operation.
 pub mod create_meeting_dial_out;
 
-/// Types for the `CreateMeetingWithAttendees` operation.
-pub mod create_meeting_with_attendees;
-
 /// Types for the `CreatePhoneNumberOrder` operation.
 pub mod create_phone_number_order;
-
-/// Types for the `CreateProxySession` operation.
-pub mod create_proxy_session;
 
 /// Types for the `CreateRoom` operation.
 pub mod create_room;
@@ -91,71 +43,17 @@ pub mod create_room;
 /// Types for the `CreateRoomMembership` operation.
 pub mod create_room_membership;
 
-/// Types for the `CreateSipMediaApplication` operation.
-pub mod create_sip_media_application;
-
-/// Types for the `CreateSipMediaApplicationCall` operation.
-pub mod create_sip_media_application_call;
-
-/// Types for the `CreateSipRule` operation.
-pub mod create_sip_rule;
-
 /// Types for the `CreateUser` operation.
 pub mod create_user;
-
-/// Types for the `CreateVoiceConnector` operation.
-pub mod create_voice_connector;
-
-/// Types for the `CreateVoiceConnectorGroup` operation.
-pub mod create_voice_connector_group;
 
 /// Types for the `DeleteAccount` operation.
 pub mod delete_account;
 
-/// Types for the `DeleteAppInstance` operation.
-pub mod delete_app_instance;
-
-/// Types for the `DeleteAppInstanceAdmin` operation.
-pub mod delete_app_instance_admin;
-
-/// Types for the `DeleteAppInstanceStreamingConfigurations` operation.
-pub mod delete_app_instance_streaming_configurations;
-
-/// Types for the `DeleteAppInstanceUser` operation.
-pub mod delete_app_instance_user;
-
-/// Types for the `DeleteAttendee` operation.
-pub mod delete_attendee;
-
-/// Types for the `DeleteChannel` operation.
-pub mod delete_channel;
-
-/// Types for the `DeleteChannelBan` operation.
-pub mod delete_channel_ban;
-
-/// Types for the `DeleteChannelMembership` operation.
-pub mod delete_channel_membership;
-
-/// Types for the `DeleteChannelMessage` operation.
-pub mod delete_channel_message;
-
-/// Types for the `DeleteChannelModerator` operation.
-pub mod delete_channel_moderator;
-
 /// Types for the `DeleteEventsConfiguration` operation.
 pub mod delete_events_configuration;
 
-/// Types for the `DeleteMediaCapturePipeline` operation.
-pub mod delete_media_capture_pipeline;
-
-/// Types for the `DeleteMeeting` operation.
-pub mod delete_meeting;
-
 /// Types for the `DeletePhoneNumber` operation.
 pub mod delete_phone_number;
-
-/// Types for the `DeleteProxySession` operation.
-pub mod delete_proxy_session;
 
 /// Types for the `DeleteRoom` operation.
 pub mod delete_room;
@@ -163,71 +61,8 @@ pub mod delete_room;
 /// Types for the `DeleteRoomMembership` operation.
 pub mod delete_room_membership;
 
-/// Types for the `DeleteSipMediaApplication` operation.
-pub mod delete_sip_media_application;
-
-/// Types for the `DeleteSipRule` operation.
-pub mod delete_sip_rule;
-
-/// Types for the `DeleteVoiceConnector` operation.
-pub mod delete_voice_connector;
-
-/// Types for the `DeleteVoiceConnectorEmergencyCallingConfiguration` operation.
-pub mod delete_voice_connector_emergency_calling_configuration;
-
-/// Types for the `DeleteVoiceConnectorGroup` operation.
-pub mod delete_voice_connector_group;
-
-/// Types for the `DeleteVoiceConnectorOrigination` operation.
-pub mod delete_voice_connector_origination;
-
-/// Types for the `DeleteVoiceConnectorProxy` operation.
-pub mod delete_voice_connector_proxy;
-
-/// Types for the `DeleteVoiceConnectorStreamingConfiguration` operation.
-pub mod delete_voice_connector_streaming_configuration;
-
-/// Types for the `DeleteVoiceConnectorTermination` operation.
-pub mod delete_voice_connector_termination;
-
-/// Types for the `DeleteVoiceConnectorTerminationCredentials` operation.
-pub mod delete_voice_connector_termination_credentials;
-
-/// Types for the `DescribeAppInstance` operation.
-pub mod describe_app_instance;
-
-/// Types for the `DescribeAppInstanceAdmin` operation.
-pub mod describe_app_instance_admin;
-
-/// Types for the `DescribeAppInstanceUser` operation.
-pub mod describe_app_instance_user;
-
-/// Types for the `DescribeChannel` operation.
-pub mod describe_channel;
-
-/// Types for the `DescribeChannelBan` operation.
-pub mod describe_channel_ban;
-
-/// Types for the `DescribeChannelMembership` operation.
-pub mod describe_channel_membership;
-
-/// Types for the `DescribeChannelMembershipForAppInstanceUser` operation.
-pub mod describe_channel_membership_for_app_instance_user;
-
-/// Types for the `DescribeChannelModeratedByAppInstanceUser` operation.
-pub mod describe_channel_moderated_by_app_instance_user;
-
-/// Types for the `DescribeChannelModerator` operation.
-pub mod describe_channel_moderator;
-
 /// Types for the `DisassociatePhoneNumberFromUser` operation.
 pub mod disassociate_phone_number_from_user;
-
-/// Types for the `DisassociatePhoneNumbersFromVoiceConnector` operation.
-pub mod disassociate_phone_numbers_from_voice_connector;
-
-/// Types for the `DisassociatePhoneNumbersFromVoiceConnectorGroup` operation.
-pub mod disassociate_phone_numbers_from_voice_connector_group;
 
 /// Types for the `DisassociateSigninDelegateGroupsFromAccount` operation.
 pub mod disassociate_signin_delegate_groups_from_account;
@@ -238,35 +73,14 @@ pub mod get_account;
 /// Types for the `GetAccountSettings` operation.
 pub mod get_account_settings;
 
-/// Types for the `GetAppInstanceRetentionSettings` operation.
-pub mod get_app_instance_retention_settings;
-
-/// Types for the `GetAppInstanceStreamingConfigurations` operation.
-pub mod get_app_instance_streaming_configurations;
-
-/// Types for the `GetAttendee` operation.
-pub mod get_attendee;
-
 /// Types for the `GetBot` operation.
 pub mod get_bot;
-
-/// Types for the `GetChannelMessage` operation.
-pub mod get_channel_message;
 
 /// Types for the `GetEventsConfiguration` operation.
 pub mod get_events_configuration;
 
 /// Types for the `GetGlobalSettings` operation.
 pub mod get_global_settings;
-
-/// Types for the `GetMediaCapturePipeline` operation.
-pub mod get_media_capture_pipeline;
-
-/// Types for the `GetMeeting` operation.
-pub mod get_meeting;
-
-/// Types for the `GetMessagingSessionEndpoint` operation.
-pub mod get_messaging_session_endpoint;
 
 /// Types for the `GetPhoneNumber` operation.
 pub mod get_phone_number;
@@ -277,23 +91,11 @@ pub mod get_phone_number_order;
 /// Types for the `GetPhoneNumberSettings` operation.
 pub mod get_phone_number_settings;
 
-/// Types for the `GetProxySession` operation.
-pub mod get_proxy_session;
-
 /// Types for the `GetRetentionSettings` operation.
 pub mod get_retention_settings;
 
 /// Types for the `GetRoom` operation.
 pub mod get_room;
-
-/// Types for the `GetSipMediaApplication` operation.
-pub mod get_sip_media_application;
-
-/// Types for the `GetSipMediaApplicationLoggingConfiguration` operation.
-pub mod get_sip_media_application_logging_configuration;
-
-/// Types for the `GetSipRule` operation.
-pub mod get_sip_rule;
 
 /// Types for the `GetUser` operation.
 pub mod get_user;
@@ -301,86 +103,14 @@ pub mod get_user;
 /// Types for the `GetUserSettings` operation.
 pub mod get_user_settings;
 
-/// Types for the `GetVoiceConnector` operation.
-pub mod get_voice_connector;
-
-/// Types for the `GetVoiceConnectorEmergencyCallingConfiguration` operation.
-pub mod get_voice_connector_emergency_calling_configuration;
-
-/// Types for the `GetVoiceConnectorGroup` operation.
-pub mod get_voice_connector_group;
-
-/// Types for the `GetVoiceConnectorLoggingConfiguration` operation.
-pub mod get_voice_connector_logging_configuration;
-
-/// Types for the `GetVoiceConnectorOrigination` operation.
-pub mod get_voice_connector_origination;
-
-/// Types for the `GetVoiceConnectorProxy` operation.
-pub mod get_voice_connector_proxy;
-
-/// Types for the `GetVoiceConnectorStreamingConfiguration` operation.
-pub mod get_voice_connector_streaming_configuration;
-
-/// Types for the `GetVoiceConnectorTermination` operation.
-pub mod get_voice_connector_termination;
-
-/// Types for the `GetVoiceConnectorTerminationHealth` operation.
-pub mod get_voice_connector_termination_health;
-
 /// Types for the `InviteUsers` operation.
 pub mod invite_users;
 
 /// Types for the `ListAccounts` operation.
 pub mod list_accounts;
 
-/// Types for the `ListAppInstanceAdmins` operation.
-pub mod list_app_instance_admins;
-
-/// Types for the `ListAppInstanceUsers` operation.
-pub mod list_app_instance_users;
-
-/// Types for the `ListAppInstances` operation.
-pub mod list_app_instances;
-
-/// Types for the `ListAttendeeTags` operation.
-pub mod list_attendee_tags;
-
-/// Types for the `ListAttendees` operation.
-pub mod list_attendees;
-
 /// Types for the `ListBots` operation.
 pub mod list_bots;
-
-/// Types for the `ListChannelBans` operation.
-pub mod list_channel_bans;
-
-/// Types for the `ListChannelMemberships` operation.
-pub mod list_channel_memberships;
-
-/// Types for the `ListChannelMembershipsForAppInstanceUser` operation.
-pub mod list_channel_memberships_for_app_instance_user;
-
-/// Types for the `ListChannelMessages` operation.
-pub mod list_channel_messages;
-
-/// Types for the `ListChannelModerators` operation.
-pub mod list_channel_moderators;
-
-/// Types for the `ListChannels` operation.
-pub mod list_channels;
-
-/// Types for the `ListChannelsModeratedByAppInstanceUser` operation.
-pub mod list_channels_moderated_by_app_instance_user;
-
-/// Types for the `ListMediaCapturePipelines` operation.
-pub mod list_media_capture_pipelines;
-
-/// Types for the `ListMeetingTags` operation.
-pub mod list_meeting_tags;
-
-/// Types for the `ListMeetings` operation.
-pub mod list_meetings;
 
 /// Types for the `ListPhoneNumberOrders` operation.
 pub mod list_phone_number_orders;
@@ -388,80 +118,26 @@ pub mod list_phone_number_orders;
 /// Types for the `ListPhoneNumbers` operation.
 pub mod list_phone_numbers;
 
-/// Types for the `ListProxySessions` operation.
-pub mod list_proxy_sessions;
-
 /// Types for the `ListRoomMemberships` operation.
 pub mod list_room_memberships;
 
 /// Types for the `ListRooms` operation.
 pub mod list_rooms;
 
-/// Types for the `ListSipMediaApplications` operation.
-pub mod list_sip_media_applications;
-
-/// Types for the `ListSipRules` operation.
-pub mod list_sip_rules;
-
 /// Types for the `ListSupportedPhoneNumberCountries` operation.
 pub mod list_supported_phone_number_countries;
-
-/// Types for the `ListTagsForResource` operation.
-pub mod list_tags_for_resource;
 
 /// Types for the `ListUsers` operation.
 pub mod list_users;
 
-/// Types for the `ListVoiceConnectorGroups` operation.
-pub mod list_voice_connector_groups;
-
-/// Types for the `ListVoiceConnectorTerminationCredentials` operation.
-pub mod list_voice_connector_termination_credentials;
-
-/// Types for the `ListVoiceConnectors` operation.
-pub mod list_voice_connectors;
-
 /// Types for the `LogoutUser` operation.
 pub mod logout_user;
-
-/// Types for the `PutAppInstanceRetentionSettings` operation.
-pub mod put_app_instance_retention_settings;
-
-/// Types for the `PutAppInstanceStreamingConfigurations` operation.
-pub mod put_app_instance_streaming_configurations;
 
 /// Types for the `PutEventsConfiguration` operation.
 pub mod put_events_configuration;
 
 /// Types for the `PutRetentionSettings` operation.
 pub mod put_retention_settings;
-
-/// Types for the `PutSipMediaApplicationLoggingConfiguration` operation.
-pub mod put_sip_media_application_logging_configuration;
-
-/// Types for the `PutVoiceConnectorEmergencyCallingConfiguration` operation.
-pub mod put_voice_connector_emergency_calling_configuration;
-
-/// Types for the `PutVoiceConnectorLoggingConfiguration` operation.
-pub mod put_voice_connector_logging_configuration;
-
-/// Types for the `PutVoiceConnectorOrigination` operation.
-pub mod put_voice_connector_origination;
-
-/// Types for the `PutVoiceConnectorProxy` operation.
-pub mod put_voice_connector_proxy;
-
-/// Types for the `PutVoiceConnectorStreamingConfiguration` operation.
-pub mod put_voice_connector_streaming_configuration;
-
-/// Types for the `PutVoiceConnectorTermination` operation.
-pub mod put_voice_connector_termination;
-
-/// Types for the `PutVoiceConnectorTerminationCredentials` operation.
-pub mod put_voice_connector_termination_credentials;
-
-/// Types for the `RedactChannelMessage` operation.
-pub mod redact_channel_message;
 
 /// Types for the `RedactConversationMessage` operation.
 pub mod redact_conversation_message;
@@ -481,56 +157,14 @@ pub mod restore_phone_number;
 /// Types for the `SearchAvailablePhoneNumbers` operation.
 pub mod search_available_phone_numbers;
 
-/// Types for the `SendChannelMessage` operation.
-pub mod send_channel_message;
-
-/// Types for the `StartMeetingTranscription` operation.
-pub mod start_meeting_transcription;
-
-/// Types for the `StopMeetingTranscription` operation.
-pub mod stop_meeting_transcription;
-
-/// Types for the `TagAttendee` operation.
-pub mod tag_attendee;
-
-/// Types for the `TagMeeting` operation.
-pub mod tag_meeting;
-
-/// Types for the `TagResource` operation.
-pub mod tag_resource;
-
-/// Types for the `UntagAttendee` operation.
-pub mod untag_attendee;
-
-/// Types for the `UntagMeeting` operation.
-pub mod untag_meeting;
-
-/// Types for the `UntagResource` operation.
-pub mod untag_resource;
-
 /// Types for the `UpdateAccount` operation.
 pub mod update_account;
 
 /// Types for the `UpdateAccountSettings` operation.
 pub mod update_account_settings;
 
-/// Types for the `UpdateAppInstance` operation.
-pub mod update_app_instance;
-
-/// Types for the `UpdateAppInstanceUser` operation.
-pub mod update_app_instance_user;
-
 /// Types for the `UpdateBot` operation.
 pub mod update_bot;
-
-/// Types for the `UpdateChannel` operation.
-pub mod update_channel;
-
-/// Types for the `UpdateChannelMessage` operation.
-pub mod update_channel_message;
-
-/// Types for the `UpdateChannelReadMarker` operation.
-pub mod update_channel_read_marker;
 
 /// Types for the `UpdateGlobalSettings` operation.
 pub mod update_global_settings;
@@ -541,35 +175,14 @@ pub mod update_phone_number;
 /// Types for the `UpdatePhoneNumberSettings` operation.
 pub mod update_phone_number_settings;
 
-/// Types for the `UpdateProxySession` operation.
-pub mod update_proxy_session;
-
 /// Types for the `UpdateRoom` operation.
 pub mod update_room;
 
 /// Types for the `UpdateRoomMembership` operation.
 pub mod update_room_membership;
 
-/// Types for the `UpdateSipMediaApplication` operation.
-pub mod update_sip_media_application;
-
-/// Types for the `UpdateSipMediaApplicationCall` operation.
-pub mod update_sip_media_application_call;
-
-/// Types for the `UpdateSipRule` operation.
-pub mod update_sip_rule;
-
 /// Types for the `UpdateUser` operation.
 pub mod update_user;
 
 /// Types for the `UpdateUserSettings` operation.
 pub mod update_user_settings;
-
-/// Types for the `UpdateVoiceConnector` operation.
-pub mod update_voice_connector;
-
-/// Types for the `UpdateVoiceConnectorGroup` operation.
-pub mod update_voice_connector_group;
-
-/// Types for the `ValidateE911Address` operation.
-pub mod validate_e911_address;

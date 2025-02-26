@@ -123,6 +123,16 @@ pub fn de_fleet_launch_template_overrides(
                 builder = builder.set_image_id(var_9);
             }
             ,
+            s if s.matches("blockDeviceMappingSet") /* BlockDeviceMappings com.amazonaws.ec2#FleetLaunchTemplateOverrides$BlockDeviceMappings */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_block_device_mapping_response_list::de_block_device_mapping_response_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_block_device_mappings(var_10);
+            }
+            ,
             _ => {}
         }
     }

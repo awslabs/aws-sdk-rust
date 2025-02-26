@@ -18,7 +18,7 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS key to use for EBS encryption.</p>
@@ -64,7 +64,7 @@ impl LaunchTemplateEbsBlockDeviceRequest {
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
@@ -162,7 +162,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
@@ -178,7 +178,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
@@ -194,7 +194,7 @@ impl LaunchTemplateEbsBlockDeviceRequestBuilder {
     /// <li>
     /// <p><code>io2</code>: 100 - 256,000 IOPS</p></li>
     /// </ul>
-    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
+    /// <p>For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances built on the Nitro System</a>. On other instances, you can achieve performance up to 32,000 IOPS.</p>
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops

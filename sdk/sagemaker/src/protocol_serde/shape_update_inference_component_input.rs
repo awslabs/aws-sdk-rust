@@ -18,5 +18,11 @@ pub fn ser_update_inference_component_input_input(
         crate::protocol_serde::shape_inference_component_runtime_config::ser_inference_component_runtime_config(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.deployment_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("DeploymentConfig").start_object();
+        crate::protocol_serde::shape_inference_component_deployment_config::ser_inference_component_deployment_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

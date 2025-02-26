@@ -223,6 +223,16 @@ pub use crate::types::_inference_experiment_schedule::InferenceExperimentSchedul
 
 pub use crate::types::_inference_component_runtime_config::InferenceComponentRuntimeConfigBuilder;
 
+pub use crate::types::_inference_component_deployment_config::InferenceComponentDeploymentConfigBuilder;
+
+pub use crate::types::_auto_rollback_config::AutoRollbackConfigBuilder;
+
+pub use crate::types::_alarm::AlarmBuilder;
+
+pub use crate::types::_inference_component_rolling_update_policy::InferenceComponentRollingUpdatePolicyBuilder;
+
+pub use crate::types::_inference_component_capacity_size::InferenceComponentCapacitySizeBuilder;
+
 pub use crate::types::_inference_component_specification::InferenceComponentSpecificationBuilder;
 
 pub use crate::types::_inference_component_compute_resource_requirements::InferenceComponentComputeResourceRequirementsBuilder;
@@ -248,10 +258,6 @@ pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacityBuil
 pub use crate::types::_production_variant_serverless_update_config::ProductionVariantServerlessUpdateConfigBuilder;
 
 pub use crate::types::_deployment_config::DeploymentConfigBuilder;
-
-pub use crate::types::_auto_rollback_config::AutoRollbackConfigBuilder;
-
-pub use crate::types::_alarm::AlarmBuilder;
 
 pub use crate::types::_rolling_update_policy::RollingUpdatePolicyBuilder;
 

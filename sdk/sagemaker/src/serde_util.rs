@@ -3010,6 +3010,18 @@ pub(crate) fn hyper_parameter_tuning_job_warm_start_config_correct_errors(
     builder
 }
 
+pub(crate) fn inference_component_deployment_config_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentDeploymentConfigBuilder,
+) -> crate::types::builders::InferenceComponentDeploymentConfigBuilder {
+    if builder.rolling_update_policy.is_none() {
+        builder.rolling_update_policy = {
+            let builder = crate::types::builders::InferenceComponentRollingUpdatePolicyBuilder::default();
+            Some(crate::serde_util::inference_component_rolling_update_policy_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn inference_execution_config_correct_errors(
     mut builder: crate::types::builders::InferenceExecutionConfigBuilder,
 ) -> crate::types::builders::InferenceExecutionConfigBuilder {
@@ -4301,6 +4313,21 @@ pub(crate) fn inference_component_compute_resource_requirements_correct_errors(
     builder
 }
 
+pub(crate) fn inference_component_rolling_update_policy_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentRollingUpdatePolicyBuilder,
+) -> crate::types::builders::InferenceComponentRollingUpdatePolicyBuilder {
+    if builder.maximum_batch_size.is_none() {
+        builder.maximum_batch_size = {
+            let builder = crate::types::builders::InferenceComponentCapacitySizeBuilder::default();
+            Some(crate::serde_util::inference_component_capacity_size_correct_errors(builder).build())
+        }
+    }
+    if builder.wait_interval_in_seconds.is_none() {
+        builder.wait_interval_in_seconds = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inference_component_summary_correct_errors(
     mut builder: crate::types::builders::InferenceComponentSummaryBuilder,
 ) -> crate::types::builders::InferenceComponentSummaryBuilder {
@@ -5431,6 +5458,18 @@ pub(crate) fn hyper_parameter_specification_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ParameterType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn inference_component_capacity_size_correct_errors(
+    mut builder: crate::types::builders::InferenceComponentCapacitySizeBuilder,
+) -> crate::types::builders::InferenceComponentCapacitySizeBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InferenceComponentCapacitySizeType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

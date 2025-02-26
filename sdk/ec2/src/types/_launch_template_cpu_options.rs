@@ -8,7 +8,7 @@ pub struct LaunchTemplateCpuOptions {
     pub core_count: ::std::option::Option<i32>,
     /// <p>The number of threads per CPU core.</p>
     pub threads_per_core: ::std::option::Option<i32>,
-    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP for Amazon EC2 instances</a>.</p>
     pub amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpSpecification>,
 }
 impl LaunchTemplateCpuOptions {
@@ -20,7 +20,7 @@ impl LaunchTemplateCpuOptions {
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
     }
-    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP for Amazon EC2 instances</a>.</p>
     pub fn amd_sev_snp(&self) -> ::std::option::Option<&crate::types::AmdSevSnpSpecification> {
         self.amd_sev_snp.as_ref()
     }
@@ -69,17 +69,17 @@ impl LaunchTemplateCpuOptionsBuilder {
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         &self.threads_per_core
     }
-    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP for Amazon EC2 instances</a>.</p>
     pub fn amd_sev_snp(mut self, input: crate::types::AmdSevSnpSpecification) -> Self {
         self.amd_sev_snp = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP for Amazon EC2 instances</a>.</p>
     pub fn set_amd_sev_snp(mut self, input: ::std::option::Option<crate::types::AmdSevSnpSpecification>) -> Self {
         self.amd_sev_snp = input;
         self
     }
-    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP</a>.</p>
+    /// <p>Indicates whether the instance is enabled for AMD SEV-SNP. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD SEV-SNP for Amazon EC2 instances</a>.</p>
     pub fn get_amd_sev_snp(&self) -> &::std::option::Option<crate::types::AmdSevSnpSpecification> {
         &self.amd_sev_snp
     }

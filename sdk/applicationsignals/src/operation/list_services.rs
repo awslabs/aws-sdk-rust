@@ -208,6 +208,16 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListServices
                         query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.include_linked_accounts {
+                    {
+                        query.push_kv("IncludeLinkedAccounts", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.aws_account_id {
+                    {
+                        query.push_kv("AwsAccountId", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

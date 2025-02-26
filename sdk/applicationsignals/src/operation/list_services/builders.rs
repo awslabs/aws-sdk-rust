@@ -176,4 +176,32 @@ impl ListServicesFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_linked_accounts(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_linked_accounts(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_linked_accounts()
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.aws_account_id(input.into());
+        self
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_aws_account_id(input);
+        self
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_aws_account_id()
+    }
 }

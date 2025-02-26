@@ -9,94 +9,100 @@ pub fn ser_submit_job_input_input(
         crate::protocol_serde::shape_array_properties::ser_array_properties(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.container_overrides {
+    if let Some(var_3) = &input.consumable_resource_properties_override {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("containerOverrides").start_object();
-        crate::protocol_serde::shape_container_overrides::ser_container_overrides(&mut object_4, var_3)?;
+        let mut object_4 = object.key("consumableResourcePropertiesOverride").start_object();
+        crate::protocol_serde::shape_consumable_resource_properties::ser_consumable_resource_properties(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.depends_on {
-        let mut array_6 = object.key("dependsOn").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.container_overrides {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("containerOverrides").start_object();
+        crate::protocol_serde::shape_container_overrides::ser_container_overrides(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.depends_on {
+        let mut array_8 = object.key("dependsOn").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_job_dependency::ser_job_dependency(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_job_dependency::ser_job_dependency(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.ecs_properties_override {
+    if let Some(var_11) = &input.ecs_properties_override {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("ecsPropertiesOverride").start_object();
-        crate::protocol_serde::shape_ecs_properties_override::ser_ecs_properties_override(&mut object_10, var_9)?;
-        object_10.finish();
-    }
-    if let Some(var_11) = &input.eks_properties_override {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("eksPropertiesOverride").start_object();
-        crate::protocol_serde::shape_eks_properties_override::ser_eks_properties_override(&mut object_12, var_11)?;
+        let mut object_12 = object.key("ecsPropertiesOverride").start_object();
+        crate::protocol_serde::shape_ecs_properties_override::ser_ecs_properties_override(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.job_definition {
-        object.key("jobDefinition").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.job_name {
-        object.key("jobName").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.job_queue {
-        object.key("jobQueue").string(var_15.as_str());
-    }
-    if let Some(var_16) = &input.node_overrides {
+    if let Some(var_13) = &input.eks_properties_override {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("nodeOverrides").start_object();
-        crate::protocol_serde::shape_node_overrides::ser_node_overrides(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_14 = object.key("eksPropertiesOverride").start_object();
+        crate::protocol_serde::shape_eks_properties_override::ser_eks_properties_override(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_18) = &input.parameters {
+    if let Some(var_15) = &input.job_definition {
+        object.key("jobDefinition").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.job_name {
+        object.key("jobName").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.job_queue {
+        object.key("jobQueue").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.node_overrides {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("parameters").start_object();
-        for (key_20, value_21) in var_18 {
-            {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
-            }
-        }
+        let mut object_19 = object.key("nodeOverrides").start_object();
+        crate::protocol_serde::shape_node_overrides::ser_node_overrides(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_22) = &input.propagate_tags {
-        object.key("propagateTags").boolean(*var_22);
-    }
-    if let Some(var_23) = &input.retry_strategy {
+    if let Some(var_20) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("retryStrategy").start_object();
-        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_24, var_23)?;
-        object_24.finish();
-    }
-    if let Some(var_25) = &input.scheduling_priority_override {
-        object.key("schedulingPriorityOverride").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_25).into()),
-        );
-    }
-    if let Some(var_26) = &input.share_identifier {
-        object.key("shareIdentifier").string(var_26.as_str());
-    }
-    if let Some(var_27) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_28 = object.key("tags").start_object();
-        for (key_29, value_30) in var_27 {
+        let mut object_21 = object.key("parameters").start_object();
+        for (key_22, value_23) in var_20 {
             {
-                object_28.key(key_29.as_str()).string(value_30.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
-        object_28.finish();
+        object_21.finish();
     }
-    if let Some(var_31) = &input.timeout {
+    if let Some(var_24) = &input.propagate_tags {
+        object.key("propagateTags").boolean(*var_24);
+    }
+    if let Some(var_25) = &input.retry_strategy {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("timeout").start_object();
-        crate::protocol_serde::shape_job_timeout::ser_job_timeout(&mut object_32, var_31)?;
-        object_32.finish();
+        let mut object_26 = object.key("retryStrategy").start_object();
+        crate::protocol_serde::shape_retry_strategy::ser_retry_strategy(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.scheduling_priority_override {
+        object.key("schedulingPriorityOverride").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_27).into()),
+        );
+    }
+    if let Some(var_28) = &input.share_identifier {
+        object.key("shareIdentifier").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("tags").start_object();
+        for (key_31, value_32) in var_29 {
+            {
+                object_30.key(key_31.as_str()).string(value_32.as_str());
+            }
+        }
+        object_30.finish();
+    }
+    if let Some(var_33) = &input.timeout {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("timeout").start_object();
+        crate::protocol_serde::shape_job_timeout::ser_job_timeout(&mut object_34, var_33)?;
+        object_34.finish();
     }
     Ok(())
 }

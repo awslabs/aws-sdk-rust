@@ -97,6 +97,32 @@ impl From<crate::operation::create_compute_environment::CreateComputeEnvironment
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_consumable_resource::CreateConsumableResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_consumable_resource::CreateConsumableResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_consumable_resource::CreateConsumableResourceError> for Error {
+    fn from(err: crate::operation::create_consumable_resource::CreateConsumableResourceError) -> Self {
+        match err {
+            crate::operation::create_consumable_resource::CreateConsumableResourceError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_consumable_resource::CreateConsumableResourceError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_consumable_resource::CreateConsumableResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_job_queue::CreateJobQueueError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -168,6 +194,32 @@ impl From<crate::operation::delete_compute_environment::DeleteComputeEnvironment
             crate::operation::delete_compute_environment::DeleteComputeEnvironmentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::delete_compute_environment::DeleteComputeEnvironmentError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_compute_environment::DeleteComputeEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_consumable_resource::DeleteConsumableResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_consumable_resource::DeleteConsumableResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_consumable_resource::DeleteConsumableResourceError> for Error {
+    fn from(err: crate::operation::delete_consumable_resource::DeleteConsumableResourceError) -> Self {
+        match err {
+            crate::operation::delete_consumable_resource::DeleteConsumableResourceError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::delete_consumable_resource::DeleteConsumableResourceError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_consumable_resource::DeleteConsumableResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -272,6 +324,32 @@ impl From<crate::operation::describe_compute_environments::DescribeComputeEnviro
                 Error::ServerException(inner)
             }
             crate::operation::describe_compute_environments::DescribeComputeEnvironmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_consumable_resource::DescribeConsumableResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_consumable_resource::DescribeConsumableResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_consumable_resource::DescribeConsumableResourceError> for Error {
+    fn from(err: crate::operation::describe_consumable_resource::DescribeConsumableResourceError) -> Self {
+        match err {
+            crate::operation::describe_consumable_resource::DescribeConsumableResourceError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::describe_consumable_resource::DescribeConsumableResourceError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::describe_consumable_resource::DescribeConsumableResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -395,6 +473,32 @@ impl From<crate::operation::get_job_queue_snapshot::GetJobQueueSnapshotError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_consumable_resources::ListConsumableResourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_consumable_resources::ListConsumableResourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_consumable_resources::ListConsumableResourcesError> for Error {
+    fn from(err: crate::operation::list_consumable_resources::ListConsumableResourcesError) -> Self {
+        match err {
+            crate::operation::list_consumable_resources::ListConsumableResourcesError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::list_consumable_resources::ListConsumableResourcesError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_consumable_resources::ListConsumableResourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -415,6 +519,40 @@ impl From<crate::operation::list_jobs::ListJobsError> for Error {
             crate::operation::list_jobs::ListJobsError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::list_jobs::ListJobsError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_jobs::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError> for Error {
+    fn from(err: crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError) -> Self {
+        match err {
+            crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError::ClientException(inner) => {
+                Error::ClientException(inner)
+            }
+            crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -606,6 +744,32 @@ impl From<crate::operation::update_compute_environment::UpdateComputeEnvironment
             crate::operation::update_compute_environment::UpdateComputeEnvironmentError::ClientException(inner) => Error::ClientException(inner),
             crate::operation::update_compute_environment::UpdateComputeEnvironmentError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::update_compute_environment::UpdateComputeEnvironmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_consumable_resource::UpdateConsumableResourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_consumable_resource::UpdateConsumableResourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_consumable_resource::UpdateConsumableResourceError> for Error {
+    fn from(err: crate::operation::update_consumable_resource::UpdateConsumableResourceError) -> Self {
+        match err {
+            crate::operation::update_consumable_resource::UpdateConsumableResourceError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::update_consumable_resource::UpdateConsumableResourceError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_consumable_resource::UpdateConsumableResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

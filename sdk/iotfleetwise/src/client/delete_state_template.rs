@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStateTemplate`](crate::operation::delete_state_template::builders::DeleteStateTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_state_template::builders::DeleteStateTemplateFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_state_template::builders::DeleteStateTemplateFluentBuilder::set_identifier):<br>required: **true**<br><p>A unique, service-generated identifier.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_state_template::builders::DeleteStateTemplateFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_state_template::builders::DeleteStateTemplateFluentBuilder::set_identifier):<br>required: **true**<br><p>The unique ID of the state template.</p><br>
     /// - On success, responds with [`DeleteStateTemplateOutput`](crate::operation::delete_state_template::DeleteStateTemplateOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_state_template::DeleteStateTemplateOutput::name): <p>The name of the state template.</p>
     ///   - [`arn(Option<String>)`](crate::operation::delete_state_template::DeleteStateTemplateOutput::arn): <p>The Amazon Resource Name (ARN) of the state template.</p>

@@ -23,6 +23,8 @@ pub use crate::types::_vehicle_association_behavior::VehicleAssociationBehavior;
 
 pub use crate::types::_vehicle_summary::VehicleSummary;
 
+pub use crate::types::_list_response_scope::ListResponseScope;
+
 pub use crate::types::_invalid_signal::InvalidSignal;
 
 pub use crate::types::_state_template_summary::StateTemplateSummary;
@@ -278,6 +280,8 @@ mod _invalid_network_interface;
 mod _invalid_signal;
 
 mod _invalid_signal_decoder;
+
+mod _list_response_scope;
 
 mod _log_type;
 

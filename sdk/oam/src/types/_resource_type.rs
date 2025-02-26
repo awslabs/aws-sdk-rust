@@ -13,6 +13,8 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::AwsApplicationinsightsApplication => { /* ... */ },
+///     ResourceType::AwsApplicationSignalsService => { /* ... */ },
+///     ResourceType::AwsApplicationSignalsSlo => { /* ... */ },
 ///     ResourceType::AwsCloudwatchMetric => { /* ... */ },
 ///     ResourceType::AwsInternetmonitorMonitor => { /* ... */ },
 ///     ResourceType::AwsLogsLoggroup => { /* ... */ },
@@ -48,6 +50,10 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsApplicationinsightsApplication,
     #[allow(missing_docs)] // documentation missing in model
+    AwsApplicationSignalsService,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsApplicationSignalsSlo,
+    #[allow(missing_docs)] // documentation missing in model
     AwsCloudwatchMetric,
     #[allow(missing_docs)] // documentation missing in model
     AwsInternetmonitorMonitor,
@@ -63,6 +69,8 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "AWS::ApplicationInsights::Application" => ResourceType::AwsApplicationinsightsApplication,
+            "AWS::ApplicationSignals::Service" => ResourceType::AwsApplicationSignalsService,
+            "AWS::ApplicationSignals::ServiceLevelObjective" => ResourceType::AwsApplicationSignalsSlo,
             "AWS::CloudWatch::Metric" => ResourceType::AwsCloudwatchMetric,
             "AWS::InternetMonitor::Monitor" => ResourceType::AwsInternetmonitorMonitor,
             "AWS::Logs::LogGroup" => ResourceType::AwsLogsLoggroup,
@@ -83,6 +91,8 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::AwsApplicationinsightsApplication => "AWS::ApplicationInsights::Application",
+            ResourceType::AwsApplicationSignalsService => "AWS::ApplicationSignals::Service",
+            ResourceType::AwsApplicationSignalsSlo => "AWS::ApplicationSignals::ServiceLevelObjective",
             ResourceType::AwsCloudwatchMetric => "AWS::CloudWatch::Metric",
             ResourceType::AwsInternetmonitorMonitor => "AWS::InternetMonitor::Monitor",
             ResourceType::AwsLogsLoggroup => "AWS::Logs::LogGroup",
@@ -94,6 +104,8 @@ impl ResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AWS::ApplicationInsights::Application",
+            "AWS::ApplicationSignals::Service",
+            "AWS::ApplicationSignals::ServiceLevelObjective",
             "AWS::CloudWatch::Metric",
             "AWS::InternetMonitor::Monitor",
             "AWS::Logs::LogGroup",
@@ -122,6 +134,8 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::AwsApplicationinsightsApplication => write!(f, "AWS::ApplicationInsights::Application"),
+            ResourceType::AwsApplicationSignalsService => write!(f, "AWS::ApplicationSignals::Service"),
+            ResourceType::AwsApplicationSignalsSlo => write!(f, "AWS::ApplicationSignals::ServiceLevelObjective"),
             ResourceType::AwsCloudwatchMetric => write!(f, "AWS::CloudWatch::Metric"),
             ResourceType::AwsInternetmonitorMonitor => write!(f, "AWS::InternetMonitor::Monitor"),
             ResourceType::AwsLogsLoggroup => write!(f, "AWS::Logs::LogGroup"),

@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStateTemplateInput {
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetStateTemplateInput {
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetStateTemplateInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetStateTemplateInputBuilder {
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

@@ -10,6 +10,8 @@ pub struct ListCampaignsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>An optional parameter to filter the results by the status of each created campaign in your account. The status can be one of: <code>CREATING</code>, <code>WAITING_FOR_APPROVAL</code>, <code>RUNNING</code>, or <code>SUSPENDED</code>.</p>
     pub status: ::std::option::Option<::std::string::String>,
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: campaign name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListCampaignsInput {
     /// <p>A pagination token for the next set of results.</p>
@@ -24,6 +26,10 @@ impl ListCampaignsInput {
     /// <p>An optional parameter to filter the results by the status of each created campaign in your account. The status can be one of: <code>CREATING</code>, <code>WAITING_FOR_APPROVAL</code>, <code>RUNNING</code>, or <code>SUSPENDED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: campaign name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(&self) -> ::std::option::Option<&crate::types::ListResponseScope> {
+        self.list_response_scope.as_ref()
     }
 }
 impl ListCampaignsInput {
@@ -40,6 +46,7 @@ pub struct ListCampaignsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListCampaignsInputBuilder {
     /// <p>A pagination token for the next set of results.</p>
@@ -87,6 +94,20 @@ impl ListCampaignsInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: campaign name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(mut self, input: crate::types::ListResponseScope) -> Self {
+        self.list_response_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: campaign name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn set_list_response_scope(mut self, input: ::std::option::Option<crate::types::ListResponseScope>) -> Self {
+        self.list_response_scope = input;
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: campaign name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn get_list_response_scope(&self) -> &::std::option::Option<crate::types::ListResponseScope> {
+        &self.list_response_scope
+    }
     /// Consumes the builder and constructs a [`ListCampaignsInput`](crate::operation::list_campaigns::ListCampaignsInput).
     pub fn build(
         self,
@@ -95,6 +116,7 @@ impl ListCampaignsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             status: self.status,
+            list_response_scope: self.list_response_scope,
         })
     }
 }

@@ -12,5 +12,8 @@ pub fn ser_list_fleets_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
+    if let Some(var_3) = &input.list_response_scope {
+        object.key("listResponseScope").string(var_3.as_str());
+    }
     Ok(())
 }

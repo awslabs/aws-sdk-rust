@@ -27,11 +27,15 @@ pub(crate) mod shape_cancel_job;
 
 pub(crate) mod shape_create_compute_environment;
 
+pub(crate) mod shape_create_consumable_resource;
+
 pub(crate) mod shape_create_job_queue;
 
 pub(crate) mod shape_create_scheduling_policy;
 
 pub(crate) mod shape_delete_compute_environment;
+
+pub(crate) mod shape_delete_consumable_resource;
 
 pub(crate) mod shape_delete_job_queue;
 
@@ -40,6 +44,8 @@ pub(crate) mod shape_delete_scheduling_policy;
 pub(crate) mod shape_deregister_job_definition;
 
 pub(crate) mod shape_describe_compute_environments;
+
+pub(crate) mod shape_describe_consumable_resource;
 
 pub(crate) mod shape_describe_job_definitions;
 
@@ -51,7 +57,11 @@ pub(crate) mod shape_describe_scheduling_policies;
 
 pub(crate) mod shape_get_job_queue_snapshot;
 
+pub(crate) mod shape_list_consumable_resources;
+
 pub(crate) mod shape_list_jobs;
+
+pub(crate) mod shape_list_jobs_by_consumable_resource;
 
 pub(crate) mod shape_list_scheduling_policies;
 
@@ -68,6 +78,8 @@ pub(crate) mod shape_terminate_job;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_compute_environment;
+
+pub(crate) mod shape_update_consumable_resource;
 
 pub(crate) mod shape_update_job_queue;
 
@@ -87,11 +99,15 @@ pub(crate) mod shape_client_exception;
 
 pub(crate) mod shape_create_compute_environment_input;
 
+pub(crate) mod shape_create_consumable_resource_input;
+
 pub(crate) mod shape_create_job_queue_input;
 
 pub(crate) mod shape_create_scheduling_policy_input;
 
 pub(crate) mod shape_delete_compute_environment_input;
+
+pub(crate) mod shape_delete_consumable_resource_input;
 
 pub(crate) mod shape_delete_job_queue_input;
 
@@ -100,6 +116,8 @@ pub(crate) mod shape_delete_scheduling_policy_input;
 pub(crate) mod shape_deregister_job_definition_input;
 
 pub(crate) mod shape_describe_compute_environments_input;
+
+pub(crate) mod shape_describe_consumable_resource_input;
 
 pub(crate) mod shape_describe_job_definitions_input;
 
@@ -110,6 +128,10 @@ pub(crate) mod shape_describe_jobs_input;
 pub(crate) mod shape_describe_scheduling_policies_input;
 
 pub(crate) mod shape_get_job_queue_snapshot_input;
+
+pub(crate) mod shape_list_consumable_resources_input;
+
+pub(crate) mod shape_list_jobs_by_consumable_resource_input;
 
 pub(crate) mod shape_list_jobs_input;
 
@@ -127,6 +149,8 @@ pub(crate) mod shape_terminate_job_input;
 
 pub(crate) mod shape_update_compute_environment_input;
 
+pub(crate) mod shape_update_consumable_resource_input;
+
 pub(crate) mod shape_update_job_queue_input;
 
 pub(crate) mod shape_update_scheduling_policy_input;
@@ -140,6 +164,10 @@ pub(crate) mod shape_compute_environment_order;
 pub(crate) mod shape_compute_resource;
 
 pub(crate) mod shape_compute_resource_update;
+
+pub(crate) mod shape_consumable_resource_properties;
+
+pub(crate) mod shape_consumable_resource_summary_list;
 
 pub(crate) mod shape_container_overrides;
 
@@ -175,6 +203,8 @@ pub(crate) mod shape_job_timeout;
 
 pub(crate) mod shape_key_values_pair;
 
+pub(crate) mod shape_list_jobs_by_consumable_resource_summary_list;
+
 pub(crate) mod shape_node_overrides;
 
 pub(crate) mod shape_node_properties;
@@ -190,6 +220,10 @@ pub(crate) mod shape_tagris_tags_map;
 pub(crate) mod shape_update_policy;
 
 pub(crate) mod shape_compute_environment_detail;
+
+pub(crate) mod shape_consumable_resource_requirement;
+
+pub(crate) mod shape_consumable_resource_summary;
 
 pub(crate) mod shape_ec2_configuration;
 
@@ -220,6 +254,8 @@ pub(crate) mod shape_key_value_pair;
 pub(crate) mod shape_launch_template_specification;
 
 pub(crate) mod shape_linux_parameters;
+
+pub(crate) mod shape_list_jobs_by_consumable_resource_summary;
 
 pub(crate) mod shape_log_configuration;
 
@@ -310,6 +346,8 @@ pub(crate) mod shape_tmpfs;
 pub(crate) mod shape_array_job_status_summary;
 
 pub(crate) mod shape_attempt_detail;
+
+pub(crate) mod shape_consumable_resource_list;
 
 pub(crate) mod shape_ec2_configuration_list;
 

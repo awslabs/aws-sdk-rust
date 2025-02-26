@@ -15,5 +15,8 @@ pub fn ser_list_campaigns_input_input(
     if let Some(var_3) = &input.status {
         object.key("status").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.list_response_scope {
+        object.key("listResponseScope").string(var_4.as_str());
+    }
     Ok(())
 }

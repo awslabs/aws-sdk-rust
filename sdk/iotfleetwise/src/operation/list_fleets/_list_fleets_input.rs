@@ -8,6 +8,8 @@ pub struct ListFleetsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: fleet ID, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListFleetsInput {
     /// <p>A pagination token for the next set of results.</p>
@@ -18,6 +20,10 @@ impl ListFleetsInput {
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: fleet ID, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(&self) -> ::std::option::Option<&crate::types::ListResponseScope> {
+        self.list_response_scope.as_ref()
     }
 }
 impl ListFleetsInput {
@@ -33,6 +39,7 @@ impl ListFleetsInput {
 pub struct ListFleetsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListFleetsInputBuilder {
     /// <p>A pagination token for the next set of results.</p>
@@ -66,11 +73,26 @@ impl ListFleetsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: fleet ID, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(mut self, input: crate::types::ListResponseScope) -> Self {
+        self.list_response_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: fleet ID, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn set_list_response_scope(mut self, input: ::std::option::Option<crate::types::ListResponseScope>) -> Self {
+        self.list_response_scope = input;
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: fleet ID, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn get_list_response_scope(&self) -> &::std::option::Option<crate::types::ListResponseScope> {
+        &self.list_response_scope
+    }
     /// Consumes the builder and constructs a [`ListFleetsInput`](crate::operation::list_fleets::ListFleetsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_fleets::ListFleetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fleets::ListFleetsInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            list_response_scope: self.list_response_scope,
         })
     }
 }

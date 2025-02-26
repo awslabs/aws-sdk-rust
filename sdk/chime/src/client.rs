@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociatePhoneNumbersWithVoiceConnector`](crate::operation::associate_phone_numbers_with_voice_connector) operation has
-/// a [`Client::associate_phone_numbers_with_voice_connector`], function which returns a builder for that operation.
+/// For example, the [`AssociatePhoneNumberWithUser`](crate::operation::associate_phone_number_with_user) operation has
+/// a [`Client::associate_phone_number_with_user`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_phone_numbers_with_voice_connector()
-///     .voice_connector_id("example")
+/// let result = client.associate_phone_number_with_user()
+///     .account_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -138,15 +138,7 @@ impl Client {
 
 mod associate_phone_number_with_user;
 
-mod associate_phone_numbers_with_voice_connector;
-
-mod associate_phone_numbers_with_voice_connector_group;
-
 mod associate_signin_delegate_groups_with_account;
-
-mod batch_create_attendee;
-
-mod batch_create_channel_membership;
 
 mod batch_create_room_membership;
 
@@ -162,51 +154,17 @@ mod batch_update_user;
 
 mod create_account;
 
-mod create_app_instance;
-
-mod create_app_instance_admin;
-
-mod create_app_instance_user;
-
-mod create_attendee;
-
 mod create_bot;
-
-mod create_channel;
-
-mod create_channel_ban;
-
-mod create_channel_membership;
-
-mod create_channel_moderator;
-
-mod create_media_capture_pipeline;
-
-mod create_meeting;
 
 mod create_meeting_dial_out;
 
-mod create_meeting_with_attendees;
-
 mod create_phone_number_order;
-
-mod create_proxy_session;
 
 mod create_room;
 
 mod create_room_membership;
 
-mod create_sip_media_application;
-
-mod create_sip_media_application_call;
-
-mod create_sip_rule;
-
 mod create_user;
-
-mod create_voice_connector;
-
-mod create_voice_connector_group;
 
 /// Operation customization and supporting types.
 ///
@@ -219,7 +177,7 @@ mod create_voice_connector_group;
 /// # let client: aws_sdk_chime::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_phone_numbers_with_voice_connector()
+/// let result = client.associate_phone_number_with_user()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -237,83 +195,15 @@ pub mod customize;
 
 mod delete_account;
 
-mod delete_app_instance;
-
-mod delete_app_instance_admin;
-
-mod delete_app_instance_streaming_configurations;
-
-mod delete_app_instance_user;
-
-mod delete_attendee;
-
-mod delete_channel;
-
-mod delete_channel_ban;
-
-mod delete_channel_membership;
-
-mod delete_channel_message;
-
-mod delete_channel_moderator;
-
 mod delete_events_configuration;
 
-mod delete_media_capture_pipeline;
-
-mod delete_meeting;
-
 mod delete_phone_number;
-
-mod delete_proxy_session;
 
 mod delete_room;
 
 mod delete_room_membership;
 
-mod delete_sip_media_application;
-
-mod delete_sip_rule;
-
-mod delete_voice_connector;
-
-mod delete_voice_connector_emergency_calling_configuration;
-
-mod delete_voice_connector_group;
-
-mod delete_voice_connector_origination;
-
-mod delete_voice_connector_proxy;
-
-mod delete_voice_connector_streaming_configuration;
-
-mod delete_voice_connector_termination;
-
-mod delete_voice_connector_termination_credentials;
-
-mod describe_app_instance;
-
-mod describe_app_instance_admin;
-
-mod describe_app_instance_user;
-
-mod describe_channel;
-
-mod describe_channel_ban;
-
-mod describe_channel_membership;
-
-mod describe_channel_membership_for_app_instance_user;
-
-mod describe_channel_moderated_by_app_instance_user;
-
-mod describe_channel_moderator;
-
 mod disassociate_phone_number_from_user;
-
-mod disassociate_phone_numbers_from_voice_connector;
-
-mod disassociate_phone_numbers_from_voice_connector_group;
 
 mod disassociate_signin_delegate_groups_from_account;
 
@@ -321,25 +211,11 @@ mod get_account;
 
 mod get_account_settings;
 
-mod get_app_instance_retention_settings;
-
-mod get_app_instance_streaming_configurations;
-
-mod get_attendee;
-
 mod get_bot;
-
-mod get_channel_message;
 
 mod get_events_configuration;
 
 mod get_global_settings;
-
-mod get_media_capture_pipeline;
-
-mod get_meeting;
-
-mod get_messaging_session_endpoint;
 
 mod get_phone_number;
 
@@ -347,129 +223,37 @@ mod get_phone_number_order;
 
 mod get_phone_number_settings;
 
-mod get_proxy_session;
-
 mod get_retention_settings;
 
 mod get_room;
-
-mod get_sip_media_application;
-
-mod get_sip_media_application_logging_configuration;
-
-mod get_sip_rule;
 
 mod get_user;
 
 mod get_user_settings;
 
-mod get_voice_connector;
-
-mod get_voice_connector_emergency_calling_configuration;
-
-mod get_voice_connector_group;
-
-mod get_voice_connector_logging_configuration;
-
-mod get_voice_connector_origination;
-
-mod get_voice_connector_proxy;
-
-mod get_voice_connector_streaming_configuration;
-
-mod get_voice_connector_termination;
-
-mod get_voice_connector_termination_health;
-
 mod invite_users;
 
 mod list_accounts;
 
-mod list_app_instance_admins;
-
-mod list_app_instance_users;
-
-mod list_app_instances;
-
-mod list_attendee_tags;
-
-mod list_attendees;
-
 mod list_bots;
-
-mod list_channel_bans;
-
-mod list_channel_memberships;
-
-mod list_channel_memberships_for_app_instance_user;
-
-mod list_channel_messages;
-
-mod list_channel_moderators;
-
-mod list_channels;
-
-mod list_channels_moderated_by_app_instance_user;
-
-mod list_media_capture_pipelines;
-
-mod list_meeting_tags;
-
-mod list_meetings;
 
 mod list_phone_number_orders;
 
 mod list_phone_numbers;
 
-mod list_proxy_sessions;
-
 mod list_room_memberships;
 
 mod list_rooms;
 
-mod list_sip_media_applications;
-
-mod list_sip_rules;
-
 mod list_supported_phone_number_countries;
-
-mod list_tags_for_resource;
 
 mod list_users;
 
-mod list_voice_connector_groups;
-
-mod list_voice_connector_termination_credentials;
-
-mod list_voice_connectors;
-
 mod logout_user;
-
-mod put_app_instance_retention_settings;
-
-mod put_app_instance_streaming_configurations;
 
 mod put_events_configuration;
 
 mod put_retention_settings;
-
-mod put_sip_media_application_logging_configuration;
-
-mod put_voice_connector_emergency_calling_configuration;
-
-mod put_voice_connector_logging_configuration;
-
-mod put_voice_connector_origination;
-
-mod put_voice_connector_proxy;
-
-mod put_voice_connector_streaming_configuration;
-
-mod put_voice_connector_termination;
-
-mod put_voice_connector_termination_credentials;
-
-mod redact_channel_message;
 
 mod redact_conversation_message;
 
@@ -483,39 +267,11 @@ mod restore_phone_number;
 
 mod search_available_phone_numbers;
 
-mod send_channel_message;
-
-mod start_meeting_transcription;
-
-mod stop_meeting_transcription;
-
-mod tag_attendee;
-
-mod tag_meeting;
-
-mod tag_resource;
-
-mod untag_attendee;
-
-mod untag_meeting;
-
-mod untag_resource;
-
 mod update_account;
 
 mod update_account_settings;
 
-mod update_app_instance;
-
-mod update_app_instance_user;
-
 mod update_bot;
-
-mod update_channel;
-
-mod update_channel_message;
-
-mod update_channel_read_marker;
 
 mod update_global_settings;
 
@@ -523,24 +279,10 @@ mod update_phone_number;
 
 mod update_phone_number_settings;
 
-mod update_proxy_session;
-
 mod update_room;
 
 mod update_room_membership;
 
-mod update_sip_media_application;
-
-mod update_sip_media_application_call;
-
-mod update_sip_rule;
-
 mod update_user;
 
 mod update_user_settings;
-
-mod update_voice_connector;
-
-mod update_voice_connector_group;
-
-mod validate_e911_address;

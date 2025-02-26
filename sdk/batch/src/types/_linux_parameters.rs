@@ -19,7 +19,7 @@ pub struct LinuxParameters {
     /// </note>
     pub tmpfs: ::std::option::Option<::std::vec::Vec<crate::types::Tmpfs>>,
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance on which it runs. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub max_swap: ::std::option::Option<i32>,
@@ -67,7 +67,7 @@ impl LinuxParameters {
         self.tmpfs.as_deref().unwrap_or_default()
     }
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance on which it runs. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn max_swap(&self) -> ::std::option::Option<i32> {
@@ -197,7 +197,7 @@ impl LinuxParametersBuilder {
         &self.tmpfs
     }
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance on which it runs. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn max_swap(mut self, input: i32) -> Self {
@@ -205,7 +205,7 @@ impl LinuxParametersBuilder {
         self
     }
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance on which it runs. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn set_max_swap(mut self, input: ::std::option::Option<i32>) -> Self {
@@ -213,7 +213,7 @@ impl LinuxParametersBuilder {
         self
     }
     /// <p>The total amount of swap memory (in MiB) a container can use. This parameter is translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where the value is the sum of the container memory plus the <code>maxSwap</code> value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"> <code>--memory-swap</code> details</a> in the Docker documentation.</p>
-    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance on which it runs. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
+    /// <p>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container doesn't use the swap configuration for the container instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn get_max_swap(&self) -> &::std::option::Option<i32> {

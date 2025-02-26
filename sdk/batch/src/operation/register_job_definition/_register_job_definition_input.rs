@@ -18,7 +18,7 @@ pub struct RegisterJobDefinitionInput {
     pub r#type: ::std::option::Option<crate::types::JobDefinitionType>,
     /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's <code>type</code> parameter is <code>container</code>, then you must specify either <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based job definitions.</p><note>
@@ -49,6 +49,8 @@ pub struct RegisterJobDefinitionInput {
     pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
     /// <p>An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon EKS-based job definitions.</p>
     pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub consumable_resource_properties: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl RegisterJobDefinitionInput {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -71,7 +73,7 @@ impl RegisterJobDefinitionInput {
     pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.parameters.as_ref()
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority(&self) -> ::std::option::Option<i32> {
         self.scheduling_priority
@@ -124,6 +126,10 @@ impl RegisterJobDefinitionInput {
     pub fn ecs_properties(&self) -> ::std::option::Option<&crate::types::EcsProperties> {
         self.ecs_properties.as_ref()
     }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn consumable_resource_properties(&self) -> ::std::option::Option<&crate::types::ConsumableResourceProperties> {
+        self.consumable_resource_properties.as_ref()
+    }
 }
 impl RegisterJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`RegisterJobDefinitionInput`](crate::operation::register_job_definition::RegisterJobDefinitionInput).
@@ -149,6 +155,7 @@ pub struct RegisterJobDefinitionInputBuilder {
     pub(crate) platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksProperties>,
     pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
+    pub(crate) consumable_resource_properties: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl RegisterJobDefinitionInputBuilder {
     /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -225,19 +232,19 @@ impl RegisterJobDefinitionInputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.parameters
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
         self.scheduling_priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_priority = input;
         self
     }
-    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority for jobs that are submitted with this job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
         &self.scheduling_priority
@@ -410,6 +417,20 @@ impl RegisterJobDefinitionInputBuilder {
     pub fn get_ecs_properties(&self) -> &::std::option::Option<crate::types::EcsProperties> {
         &self.ecs_properties
     }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn consumable_resource_properties(mut self, input: crate::types::ConsumableResourceProperties) -> Self {
+        self.consumable_resource_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn set_consumable_resource_properties(mut self, input: ::std::option::Option<crate::types::ConsumableResourceProperties>) -> Self {
+        self.consumable_resource_properties = input;
+        self
+    }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn get_consumable_resource_properties(&self) -> &::std::option::Option<crate::types::ConsumableResourceProperties> {
+        &self.consumable_resource_properties
+    }
     /// Consumes the builder and constructs a [`RegisterJobDefinitionInput`](crate::operation::register_job_definition::RegisterJobDefinitionInput).
     pub fn build(
         self,
@@ -429,6 +450,7 @@ impl RegisterJobDefinitionInputBuilder {
             platform_capabilities: self.platform_capabilities,
             eks_properties: self.eks_properties,
             ecs_properties: self.ecs_properties,
+            consumable_resource_properties: self.consumable_resource_properties,
         })
     }
 }

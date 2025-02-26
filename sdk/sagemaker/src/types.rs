@@ -295,6 +295,18 @@ pub use crate::types::_inference_experiment_schedule::InferenceExperimentSchedul
 
 pub use crate::types::_inference_component_runtime_config::InferenceComponentRuntimeConfig;
 
+pub use crate::types::_inference_component_deployment_config::InferenceComponentDeploymentConfig;
+
+pub use crate::types::_auto_rollback_config::AutoRollbackConfig;
+
+pub use crate::types::_alarm::Alarm;
+
+pub use crate::types::_inference_component_rolling_update_policy::InferenceComponentRollingUpdatePolicy;
+
+pub use crate::types::_inference_component_capacity_size::InferenceComponentCapacitySize;
+
+pub use crate::types::_inference_component_capacity_size_type::InferenceComponentCapacitySizeType;
+
 pub use crate::types::_inference_component_specification::InferenceComponentSpecification;
 
 pub use crate::types::_inference_component_compute_resource_requirements::InferenceComponentComputeResourceRequirements;
@@ -336,10 +348,6 @@ pub use crate::types::_desired_weight_and_capacity::DesiredWeightAndCapacity;
 pub use crate::types::_production_variant_serverless_update_config::ProductionVariantServerlessUpdateConfig;
 
 pub use crate::types::_deployment_config::DeploymentConfig;
-
-pub use crate::types::_auto_rollback_config::AutoRollbackConfig;
-
-pub use crate::types::_alarm::Alarm;
 
 pub use crate::types::_rolling_update_policy::RollingUpdatePolicy;
 
@@ -2591,11 +2599,19 @@ mod _image_version_sort_order;
 
 mod _image_version_status;
 
+mod _inference_component_capacity_size;
+
+mod _inference_component_capacity_size_type;
+
 mod _inference_component_compute_resource_requirements;
 
 mod _inference_component_container_specification;
 
 mod _inference_component_container_specification_summary;
+
+mod _inference_component_deployment_config;
+
+mod _inference_component_rolling_update_policy;
 
 mod _inference_component_runtime_config;
 

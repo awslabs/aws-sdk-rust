@@ -6,7 +6,7 @@
 pub struct EksPodPropertiesOverride {
     /// <p>The overrides for the container that's used on the Amazon EKS pod.</p>
     pub containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
-    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always run to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub init_containers: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>,
     /// <p>Metadata about the overrides for the container that's used on the Amazon EKS pod.</p>
     pub metadata: ::std::option::Option<crate::types::EksMetadata>,
@@ -18,7 +18,7 @@ impl EksPodPropertiesOverride {
     pub fn containers(&self) -> &[crate::types::EksContainerOverride] {
         self.containers.as_deref().unwrap_or_default()
     }
-    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always run to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.init_containers.is_none()`.
     pub fn init_containers(&self) -> &[crate::types::EksContainerOverride] {
@@ -69,19 +69,19 @@ impl EksPodPropertiesOverrideBuilder {
     ///
     /// To override the contents of this collection use [`set_init_containers`](Self::set_init_containers).
     ///
-    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always run to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn init_containers(mut self, input: crate::types::EksContainerOverride) -> Self {
         let mut v = self.init_containers.unwrap_or_default();
         v.push(input);
         self.init_containers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always run to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_init_containers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>>) -> Self {
         self.init_containers = input;
         self
     }
-    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always run to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
+    /// <p>The overrides for the <code>initContainers</code> defined in the Amazon EKS pod. These containers run before application containers, always runs to completion, and must complete successfully before the next container starts. These containers are registered with the Amazon EKS Connector agent and persists the registration information in the Kubernetes backend data store. For more information, see <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">Init Containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn get_init_containers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EksContainerOverride>> {
         &self.init_containers
     }

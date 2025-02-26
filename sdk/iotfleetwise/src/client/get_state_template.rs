@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStateTemplate`](crate::operation::get_state_template::builders::GetStateTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_state_template::builders::GetStateTemplateFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_state_template::builders::GetStateTemplateFluentBuilder::set_identifier):<br>required: **true**<br><p>A unique, service-generated identifier.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::get_state_template::builders::GetStateTemplateFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_state_template::builders::GetStateTemplateFluentBuilder::set_identifier):<br>required: **true**<br><p>The unique ID of the state template.</p><br>
     /// - On success, responds with [`GetStateTemplateOutput`](crate::operation::get_state_template::GetStateTemplateOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_state_template::GetStateTemplateOutput::name): <p>The name of the state template.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_state_template::GetStateTemplateOutput::arn): <p>The Amazon Resource Name (ARN) of the state template.</p>

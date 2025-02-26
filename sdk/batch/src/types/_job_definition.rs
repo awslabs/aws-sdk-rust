@@ -14,7 +14,7 @@ pub struct JobDefinition {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The type of job definition. It's either <code>container</code> or <code>multinode</code>. If the job is run on Fargate resources, then <code>multinode</code> isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>Default parameters or parameter substitution placeholders that are set in the job definition. Parameters are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code> request override any corresponding parameter defaults from the job definition. For more information about specifying parameters, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_definition_parameters.html">Job definition parameters</a> in the <i>Batch User Guide</i>.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -40,6 +40,8 @@ pub struct JobDefinition {
     pub eks_properties: ::std::option::Option<crate::types::EksProperties>,
     /// <p>The orchestration type of the compute environment. The valid values are <code>ECS</code> (default) or <code>EKS</code>.</p>
     pub container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub consumable_resource_properties: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl JobDefinition {
     /// <p>The name of the job definition.</p>
@@ -62,7 +64,7 @@ impl JobDefinition {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(&self) -> ::std::option::Option<i32> {
         self.scheduling_priority
     }
@@ -114,6 +116,10 @@ impl JobDefinition {
     pub fn container_orchestration_type(&self) -> ::std::option::Option<&crate::types::OrchestrationType> {
         self.container_orchestration_type.as_ref()
     }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn consumable_resource_properties(&self) -> ::std::option::Option<&crate::types::ConsumableResourceProperties> {
+        self.consumable_resource_properties.as_ref()
+    }
 }
 impl JobDefinition {
     /// Creates a new builder-style object to manufacture [`JobDefinition`](crate::types::JobDefinition).
@@ -143,6 +149,7 @@ pub struct JobDefinitionBuilder {
     pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
     pub(crate) eks_properties: ::std::option::Option<crate::types::EksProperties>,
     pub(crate) container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
+    pub(crate) consumable_resource_properties: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl JobDefinitionBuilder {
     /// <p>The name of the job definition.</p>
@@ -219,17 +226,17 @@ impl JobDefinitionBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
         self.scheduling_priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_priority = input;
         self
     }
-    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling priority of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
         &self.scheduling_priority
     }
@@ -411,6 +418,20 @@ impl JobDefinitionBuilder {
     pub fn get_container_orchestration_type(&self) -> &::std::option::Option<crate::types::OrchestrationType> {
         &self.container_orchestration_type
     }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn consumable_resource_properties(mut self, input: crate::types::ConsumableResourceProperties) -> Self {
+        self.consumable_resource_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn set_consumable_resource_properties(mut self, input: ::std::option::Option<crate::types::ConsumableResourceProperties>) -> Self {
+        self.consumable_resource_properties = input;
+        self
+    }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn get_consumable_resource_properties(&self) -> &::std::option::Option<crate::types::ConsumableResourceProperties> {
+        &self.consumable_resource_properties
+    }
     /// Consumes the builder and constructs a [`JobDefinition`](crate::types::JobDefinition).
     pub fn build(self) -> crate::types::JobDefinition {
         crate::types::JobDefinition {
@@ -431,6 +452,7 @@ impl JobDefinitionBuilder {
             ecs_properties: self.ecs_properties,
             eks_properties: self.eks_properties,
             container_orchestration_type: self.container_orchestration_type,
+            consumable_resource_properties: self.consumable_resource_properties,
         }
     }
 }

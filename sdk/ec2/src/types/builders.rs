@@ -641,6 +641,10 @@ pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
 
 pub use crate::types::_v_cpu_count_range_request::VCpuCountRangeRequestBuilder;
 
+pub use crate::types::_fleet_block_device_mapping_request::FleetBlockDeviceMappingRequestBuilder;
+
+pub use crate::types::_fleet_ebs_block_device_request::FleetEbsBlockDeviceRequestBuilder;
+
 pub use crate::types::_fleet_launch_template_specification_request::FleetLaunchTemplateSpecificationRequestBuilder;
 
 pub use crate::types::_instance_family_credit_specification::InstanceFamilyCreditSpecificationBuilder;
@@ -1296,6 +1300,10 @@ pub use crate::types::_describe_fleets_instances::DescribeFleetsInstancesBuilder
 pub use crate::types::_launch_template_and_overrides_response::LaunchTemplateAndOverridesResponseBuilder;
 
 pub use crate::types::_fleet_launch_template_overrides::FleetLaunchTemplateOverridesBuilder;
+
+pub use crate::types::_block_device_mapping_response::BlockDeviceMappingResponseBuilder;
+
+pub use crate::types::_ebs_block_device_response::EbsBlockDeviceResponseBuilder;
 
 pub use crate::types::_placement_response::PlacementResponseBuilder;
 

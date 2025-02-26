@@ -12,6 +12,8 @@ pub struct MetricReference {
     pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The name of the metric.</p>
     pub metric_name: ::std::string::String,
+    /// <p>Amazon Web Services account ID.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl MetricReference {
     /// <p>The namespace of the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">CloudWatchNamespaces</a>.</p>
@@ -35,6 +37,10 @@ impl MetricReference {
         use std::ops::Deref;
         self.metric_name.deref()
     }
+    /// <p>Amazon Web Services account ID.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
 }
 impl MetricReference {
     /// Creates a new builder-style object to manufacture [`MetricReference`](crate::types::MetricReference).
@@ -51,6 +57,7 @@ pub struct MetricReferenceBuilder {
     pub(crate) metric_type: ::std::option::Option<::std::string::String>,
     pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl MetricReferenceBuilder {
     /// <p>The namespace of the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">CloudWatchNamespaces</a>.</p>
@@ -118,6 +125,20 @@ impl MetricReferenceBuilder {
     pub fn get_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metric_name
     }
+    /// <p>Amazon Web Services account ID.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Web Services account ID.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>Amazon Web Services account ID.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// Consumes the builder and constructs a [`MetricReference`](crate::types::MetricReference).
     /// This method will fail if any of the following fields are not set:
     /// - [`namespace`](crate::types::builders::MetricReferenceBuilder::namespace)
@@ -144,6 +165,7 @@ impl MetricReferenceBuilder {
                     "metric_name was not specified but it is required when building MetricReference",
                 )
             })?,
+            account_id: self.account_id,
         })
     }
 }

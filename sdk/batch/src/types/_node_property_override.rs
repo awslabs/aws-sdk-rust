@@ -14,6 +14,8 @@ pub struct NodePropertyOverride {
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An object that contains the properties that you want to replace for the existing Amazon EKS resources of a job.</p>
     pub eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub consumable_resource_properties_override: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
@@ -38,6 +40,10 @@ impl NodePropertyOverride {
     pub fn eks_properties_override(&self) -> ::std::option::Option<&crate::types::EksPropertiesOverride> {
         self.eks_properties_override.as_ref()
     }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn consumable_resource_properties_override(&self) -> ::std::option::Option<&crate::types::ConsumableResourceProperties> {
+        self.consumable_resource_properties_override.as_ref()
+    }
 }
 impl NodePropertyOverride {
     /// Creates a new builder-style object to manufacture [`NodePropertyOverride`](crate::types::NodePropertyOverride).
@@ -55,6 +61,7 @@ pub struct NodePropertyOverrideBuilder {
     pub(crate) ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
     pub(crate) instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
+    pub(crate) consumable_resource_properties_override: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl NodePropertyOverrideBuilder {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
@@ -134,6 +141,20 @@ impl NodePropertyOverrideBuilder {
     pub fn get_eks_properties_override(&self) -> &::std::option::Option<crate::types::EksPropertiesOverride> {
         &self.eks_properties_override
     }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn consumable_resource_properties_override(mut self, input: crate::types::ConsumableResourceProperties) -> Self {
+        self.consumable_resource_properties_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn set_consumable_resource_properties_override(mut self, input: ::std::option::Option<crate::types::ConsumableResourceProperties>) -> Self {
+        self.consumable_resource_properties_override = input;
+        self
+    }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn get_consumable_resource_properties_override(&self) -> &::std::option::Option<crate::types::ConsumableResourceProperties> {
+        &self.consumable_resource_properties_override
+    }
     /// Consumes the builder and constructs a [`NodePropertyOverride`](crate::types::NodePropertyOverride).
     pub fn build(self) -> crate::types::NodePropertyOverride {
         crate::types::NodePropertyOverride {
@@ -142,6 +163,7 @@ impl NodePropertyOverrideBuilder {
             ecs_properties_override: self.ecs_properties_override,
             instance_types: self.instance_types,
             eks_properties_override: self.eks_properties_override,
+            consumable_resource_properties_override: self.consumable_resource_properties_override,
         }
     }
 }

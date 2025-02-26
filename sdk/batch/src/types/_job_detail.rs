@@ -18,7 +18,7 @@ pub struct JobDetail {
     pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The share identifier for the job.</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub scheduling_priority: ::std::option::Option<i32>,
     /// <p>A list of job attempts that are associated with this job.</p>
     pub attempts: ::std::option::Option<::std::vec::Vec<crate::types::AttemptDetail>>,
@@ -76,6 +76,8 @@ pub struct JobDetail {
     pub is_cancelled: ::std::option::Option<bool>,
     /// <p>Indicates whether the job is terminated.</p>
     pub is_terminated: ::std::option::Option<bool>,
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub consumable_resource_properties: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl JobDetail {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -104,7 +106,7 @@ impl JobDetail {
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(&self) -> ::std::option::Option<i32> {
         self.scheduling_priority
     }
@@ -216,6 +218,10 @@ impl JobDetail {
     pub fn is_terminated(&self) -> ::std::option::Option<bool> {
         self.is_terminated
     }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn consumable_resource_properties(&self) -> ::std::option::Option<&crate::types::ConsumableResourceProperties> {
+        self.consumable_resource_properties.as_ref()
+    }
 }
 impl JobDetail {
     /// Creates a new builder-style object to manufacture [`JobDetail`](crate::types::JobDetail).
@@ -257,6 +263,7 @@ pub struct JobDetailBuilder {
     pub(crate) ecs_properties: ::std::option::Option<crate::types::EcsPropertiesDetail>,
     pub(crate) is_cancelled: ::std::option::Option<bool>,
     pub(crate) is_terminated: ::std::option::Option<bool>,
+    pub(crate) consumable_resource_properties: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl JobDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -353,17 +360,17 @@ impl JobDetailBuilder {
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn scheduling_priority(mut self, input: i32) -> Self {
         self.scheduling_priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn set_scheduling_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_priority = input;
         self
     }
-    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
+    /// <p>The scheduling policy of the job definition. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority.</p>
     pub fn get_scheduling_priority(&self) -> &::std::option::Option<i32> {
         &self.scheduling_priority
     }
@@ -749,6 +756,20 @@ impl JobDetailBuilder {
     pub fn get_is_terminated(&self) -> &::std::option::Option<bool> {
         &self.is_terminated
     }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn consumable_resource_properties(mut self, input: crate::types::ConsumableResourceProperties) -> Self {
+        self.consumable_resource_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn set_consumable_resource_properties(mut self, input: ::std::option::Option<crate::types::ConsumableResourceProperties>) -> Self {
+        self.consumable_resource_properties = input;
+        self
+    }
+    /// <p>Contains a list of consumable resources required by the job.</p>
+    pub fn get_consumable_resource_properties(&self) -> &::std::option::Option<crate::types::ConsumableResourceProperties> {
+        &self.consumable_resource_properties
+    }
     /// Consumes the builder and constructs a [`JobDetail`](crate::types::JobDetail).
     pub fn build(self) -> crate::types::JobDetail {
         crate::types::JobDetail {
@@ -781,6 +802,7 @@ impl JobDetailBuilder {
             ecs_properties: self.ecs_properties,
             is_cancelled: self.is_cancelled,
             is_terminated: self.is_terminated,
+            consumable_resource_properties: self.consumable_resource_properties,
         }
     }
 }

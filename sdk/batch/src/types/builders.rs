@@ -17,6 +17,10 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 
 pub use crate::types::_launch_template_specification_override::LaunchTemplateSpecificationOverrideBuilder;
 
+pub use crate::types::_consumable_resource_properties::ConsumableResourcePropertiesBuilder;
+
+pub use crate::types::_consumable_resource_requirement::ConsumableResourceRequirementBuilder;
+
 pub use crate::types::_ecs_properties_override::EcsPropertiesOverrideBuilder;
 
 pub use crate::types::_task_properties_override::TaskPropertiesOverrideBuilder;
@@ -125,6 +129,10 @@ pub use crate::types::_fargate_platform_configuration::FargatePlatformConfigurat
 
 pub use crate::types::_scheduling_policy_listing_detail::SchedulingPolicyListingDetailBuilder;
 
+pub use crate::types::_list_jobs_by_consumable_resource_summary::ListJobsByConsumableResourceSummaryBuilder;
+
+pub use crate::types::_key_values_pair::KeyValuesPairBuilder;
+
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_node_properties_summary::NodePropertiesSummaryBuilder;
@@ -133,7 +141,7 @@ pub use crate::types::_array_properties_summary::ArrayPropertiesSummaryBuilder;
 
 pub use crate::types::_container_summary::ContainerSummaryBuilder;
 
-pub use crate::types::_key_values_pair::KeyValuesPairBuilder;
+pub use crate::types::_consumable_resource_summary::ConsumableResourceSummaryBuilder;
 
 pub use crate::types::_front_of_queue_detail::FrontOfQueueDetailBuilder;
 

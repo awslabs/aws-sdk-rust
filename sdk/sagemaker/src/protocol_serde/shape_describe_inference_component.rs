@@ -134,6 +134,11 @@ pub(crate) fn de_describe_inference_component(
                             .transpose()?,
                     );
                 }
+                "LastDeploymentConfig" => {
+                    builder = builder.set_last_deployment_config(
+                        crate::protocol_serde::shape_inference_component_deployment_config::de_inference_component_deployment_config(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

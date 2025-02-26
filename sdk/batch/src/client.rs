@@ -140,6 +140,8 @@ mod cancel_job;
 
 mod create_compute_environment;
 
+mod create_consumable_resource;
+
 mod create_job_queue;
 
 mod create_scheduling_policy;
@@ -173,6 +175,8 @@ pub mod customize;
 
 mod delete_compute_environment;
 
+mod delete_consumable_resource;
+
 mod delete_job_queue;
 
 mod delete_scheduling_policy;
@@ -180,6 +184,8 @@ mod delete_scheduling_policy;
 mod deregister_job_definition;
 
 mod describe_compute_environments;
+
+mod describe_consumable_resource;
 
 mod describe_job_definitions;
 
@@ -191,7 +197,11 @@ mod describe_scheduling_policies;
 
 mod get_job_queue_snapshot;
 
+mod list_consumable_resources;
+
 mod list_jobs;
+
+mod list_jobs_by_consumable_resource;
 
 mod list_scheduling_policies;
 
@@ -208,6 +218,8 @@ mod terminate_job;
 mod untag_resource;
 
 mod update_compute_environment;
+
+mod update_consumable_resource;
 
 mod update_job_queue;
 

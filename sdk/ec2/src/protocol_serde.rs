@@ -3947,6 +3947,8 @@ pub(crate) mod shape_failed_capacity_reservation_fleet_cancellation_result;
 
 pub(crate) mod shape_failed_queued_purchase_deletion;
 
+pub(crate) mod shape_fleet_block_device_mapping_request;
+
 pub(crate) mod shape_fleet_capacity_reservation;
 
 pub(crate) mod shape_fleet_data;
@@ -4477,6 +4479,8 @@ pub(crate) mod shape_explanation;
 
 pub(crate) mod shape_filter_port_range;
 
+pub(crate) mod shape_fleet_ebs_block_device_request;
+
 pub(crate) mod shape_fleet_launch_template_config_list;
 
 pub(crate) mod shape_fpga_image_state;
@@ -4927,6 +4931,8 @@ pub(crate) mod shape_volume_status_event;
 
 pub(crate) mod shape_additional_detail;
 
+pub(crate) mod shape_block_device_mapping_response_list;
+
 pub(crate) mod shape_certificate_authentication;
 
 pub(crate) mod shape_connection_tracking_specification_response;
@@ -5019,6 +5025,8 @@ pub(crate) mod shape_volume_status_details;
 
 pub(crate) mod shape_vpn_tunnel_log_options;
 
+pub(crate) mod shape_block_device_mapping_response;
+
 pub(crate) mod shape_classic_load_balancers;
 
 pub(crate) mod shape_cloud_watch_log_options;
@@ -5076,6 +5084,8 @@ pub(crate) mod shape_security_group_id_string_list;
 pub(crate) mod shape_spot_fleet_tag_specification_list;
 
 pub(crate) mod shape_target_groups;
+
+pub(crate) mod shape_ebs_block_device_response;
 
 pub(crate) mod shape_instance_attachment_ena_srd_udp_specification;
 

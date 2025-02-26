@@ -8,10 +8,10 @@ pub struct SubmitJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
     pub job_queue: ::std::option::Option<::std::string::String>,
-    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub share_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub scheduling_priority_override: ::std::option::Option<i32>,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the <i>Batch User Guide</i>.</p>
@@ -41,6 +41,8 @@ pub struct SubmitJobInput {
     pub eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
     /// <p>An object, with properties that override defaults for the job definition, can only be specified for jobs that are run on Amazon ECS resources.</p>
     pub ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub consumable_resource_properties_override: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl SubmitJobInput {
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -51,12 +53,12 @@ impl SubmitJobInput {
     pub fn job_queue(&self) -> ::std::option::Option<&str> {
         self.job_queue.as_deref()
     }
-    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(&self) -> ::std::option::Option<&str> {
         self.share_identifier.as_deref()
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority_override(&self) -> ::std::option::Option<i32> {
         self.scheduling_priority_override
@@ -114,6 +116,10 @@ impl SubmitJobInput {
     pub fn ecs_properties_override(&self) -> ::std::option::Option<&crate::types::EcsPropertiesOverride> {
         self.ecs_properties_override.as_ref()
     }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn consumable_resource_properties_override(&self) -> ::std::option::Option<&crate::types::ConsumableResourceProperties> {
+        self.consumable_resource_properties_override.as_ref()
+    }
 }
 impl SubmitJobInput {
     /// Creates a new builder-style object to manufacture [`SubmitJobInput`](crate::operation::submit_job::SubmitJobInput).
@@ -142,6 +148,7 @@ pub struct SubmitJobInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) eks_properties_override: ::std::option::Option<crate::types::EksPropertiesOverride>,
     pub(crate) ecs_properties_override: ::std::option::Option<crate::types::EcsPropertiesOverride>,
+    pub(crate) consumable_resource_properties_override: ::std::option::Option<crate::types::ConsumableResourceProperties>,
 }
 impl SubmitJobInputBuilder {
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -174,36 +181,36 @@ impl SubmitJobInputBuilder {
     pub fn get_job_queue(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_queue
     }
-    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn set_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_identifier = input;
         self
     }
-    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a fair-share scheduling policy. If the job queue has a fair-share scheduling policy, then this parameter must be specified.</p>
+    /// <p>The share identifier for the job. Don't specify this parameter if the job queue doesn't have a scheduling policy. If the job queue has a scheduling policy, then this parameter must be specified.</p>
     /// <p>This string is limited to 255 alphanumeric characters, and can be followed by an asterisk (*).</p>
     pub fn get_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.share_identifier
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn scheduling_priority_override(mut self, input: i32) -> Self {
         self.scheduling_priority_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn set_scheduling_priority_override(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_priority_override = input;
         self
     }
-    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair-share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
+    /// <p>The scheduling priority for the job. This only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling priority are scheduled before jobs with a lower scheduling priority. This overrides any scheduling priority in the job definition and works only within a single share identifier.</p>
     /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
     pub fn get_scheduling_priority_override(&self) -> &::std::option::Option<i32> {
         &self.scheduling_priority_override
@@ -404,6 +411,20 @@ impl SubmitJobInputBuilder {
     pub fn get_ecs_properties_override(&self) -> &::std::option::Option<crate::types::EcsPropertiesOverride> {
         &self.ecs_properties_override
     }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn consumable_resource_properties_override(mut self, input: crate::types::ConsumableResourceProperties) -> Self {
+        self.consumable_resource_properties_override = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn set_consumable_resource_properties_override(mut self, input: ::std::option::Option<crate::types::ConsumableResourceProperties>) -> Self {
+        self.consumable_resource_properties_override = input;
+        self
+    }
+    /// <p>An object that contains overrides for the consumable resources of a job.</p>
+    pub fn get_consumable_resource_properties_override(&self) -> &::std::option::Option<crate::types::ConsumableResourceProperties> {
+        &self.consumable_resource_properties_override
+    }
     /// Consumes the builder and constructs a [`SubmitJobInput`](crate::operation::submit_job::SubmitJobInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::submit_job::SubmitJobInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::submit_job::SubmitJobInput {
@@ -423,6 +444,7 @@ impl SubmitJobInputBuilder {
             tags: self.tags,
             eks_properties_override: self.eks_properties_override,
             ecs_properties_override: self.ecs_properties_override,
+            consumable_resource_properties_override: self.consumable_resource_properties_override,
         })
     }
 }

@@ -13,6 +13,10 @@ pub struct ListServicesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of services.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub include_linked_accounts: ::std::option::Option<bool>,
+    /// <p>Amazon Web Services Account ID.</p>
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServicesInput {
     /// <p>The start of the time period to retrieve information about. When used in a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code></p>
@@ -33,6 +37,14 @@ impl ListServicesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
+        self.include_linked_accounts
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
+        self.aws_account_id.as_deref()
+    }
 }
 impl ListServicesInput {
     /// Creates a new builder-style object to manufacture [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
@@ -49,6 +61,8 @@ pub struct ListServicesInputBuilder {
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_linked_accounts: ::std::option::Option<bool>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServicesInputBuilder {
     /// <p>The start of the time period to retrieve information about. When used in a raw HTTP Query API, it is formatted as be epoch time in seconds. For example: <code>1698778057</code></p>
@@ -115,6 +129,34 @@ impl ListServicesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.include_linked_accounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_linked_accounts = input;
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include services from source accounts in the returned data.</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_linked_accounts
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.aws_account_id = input;
+        self
+    }
+    /// <p>Amazon Web Services Account ID.</p>
+    pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.aws_account_id
+    }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
     pub fn build(
         self,
@@ -124,6 +166,8 @@ impl ListServicesInputBuilder {
             end_time: self.end_time,
             max_results: self.max_results,
             next_token: self.next_token,
+            include_linked_accounts: self.include_linked_accounts,
+            aws_account_id: self.aws_account_id,
         })
     }
 }

@@ -7,7 +7,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RequestLaunchTemplateData {
     /// <p>The ID of the kernel.</p><important>
-    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.</p>
     /// </important>
     pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal Amazon EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
@@ -73,8 +73,8 @@ pub struct RequestLaunchTemplateData {
     /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     /// <p>Default: <code>stop</code></p>
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::ShutdownBehavior>,
-    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands when you launch an EC2 instance with user data input</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub user_data: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the resources that are created during instance launch. These tags are not applied to the launch template.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateTagSpecificationRequest>>,
@@ -100,7 +100,7 @@ pub struct RequestLaunchTemplateData {
     pub instance_market_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMarketOptionsRequest>,
     /// <p>The credit option for CPU usage of the instance. Valid only for T instances.</p>
     pub credit_specification: ::std::option::Option<crate::types::CreditSpecificationRequest>,
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub cpu_options: ::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest>,
     /// <p>The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).</p>
     pub capacity_reservation_specification: ::std::option::Option<crate::types::LaunchTemplateCapacityReservationSpecificationRequest>,
@@ -108,9 +108,9 @@ pub struct RequestLaunchTemplateData {
     pub license_specifications: ::std::option::Option<::std::vec::Vec<crate::types::LaunchTemplateLicenseConfigurationRequest>>,
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your Amazon EC2 instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub hibernation_options: ::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest>,
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub metadata_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest>,
-    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub enclave_options: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptionsRequest>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with these attributes.</p>
@@ -132,7 +132,7 @@ pub struct RequestLaunchTemplateData {
     pub private_dns_name_options: ::std::option::Option<crate::types::LaunchTemplatePrivateDnsNameOptionsRequest>,
     /// <p>The maintenance options for the instance.</p>
     pub maintenance_options: ::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest>,
-    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub disable_api_stop: ::std::option::Option<bool>,
     /// <p>The entity that manages the launch template.</p>
     pub operator: ::std::option::Option<crate::types::OperatorRequest>,
@@ -141,7 +141,7 @@ pub struct RequestLaunchTemplateData {
 }
 impl RequestLaunchTemplateData {
     /// <p>The ID of the kernel.</p><important>
-    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.</p>
     /// </important>
     pub fn kernel_id(&self) -> ::std::option::Option<&str> {
         self.kernel_id.as_deref()
@@ -237,8 +237,8 @@ impl RequestLaunchTemplateData {
     pub fn instance_initiated_shutdown_behavior(&self) -> ::std::option::Option<&crate::types::ShutdownBehavior> {
         self.instance_initiated_shutdown_behavior.as_ref()
     }
-    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands when you launch an EC2 instance with user data input</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
     }
@@ -290,7 +290,7 @@ impl RequestLaunchTemplateData {
     pub fn credit_specification(&self) -> ::std::option::Option<&crate::types::CreditSpecificationRequest> {
         self.credit_specification.as_ref()
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateCpuOptionsRequest> {
         self.cpu_options.as_ref()
     }
@@ -308,11 +308,11 @@ impl RequestLaunchTemplateData {
     pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateHibernationOptionsRequest> {
         self.hibernation_options.as_ref()
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn metadata_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMetadataOptionsRequest> {
         self.metadata_options.as_ref()
     }
-    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub fn enclave_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateEnclaveOptionsRequest> {
         self.enclave_options.as_ref()
@@ -342,7 +342,7 @@ impl RequestLaunchTemplateData {
     pub fn maintenance_options(&self) -> ::std::option::Option<&crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest> {
         self.maintenance_options.as_ref()
     }
-    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn disable_api_stop(&self) -> ::std::option::Option<bool> {
         self.disable_api_stop
     }
@@ -441,21 +441,21 @@ pub struct RequestLaunchTemplateDataBuilder {
 }
 impl RequestLaunchTemplateDataBuilder {
     /// <p>The ID of the kernel.</p><important>
-    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.</p>
     /// </important>
     pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kernel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the kernel.</p><important>
-    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.</p>
     /// </important>
     pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kernel_id = input;
         self
     }
     /// <p>The ID of the kernel.</p><important>
-    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">User provided kernels</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/linux/al2/ug/UserProvidedKernels.html">User provided kernels</a> in the <i>Amazon Linux 2 User Guide</i>.</p>
     /// </important>
     pub fn get_kernel_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kernel_id
@@ -768,20 +768,20 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_instance_initiated_shutdown_behavior(&self) -> &::std::option::Option<crate::types::ShutdownBehavior> {
         &self.instance_initiated_shutdown_behavior
     }
-    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands when you launch an EC2 instance with user data input</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands when you launch an EC2 instance with user data input</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
     }
-    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands on your Amazon EC2 instance at launch</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The user data to make available to the instance. You must provide base64-encoded text. User data is limited to 16 KB. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Run commands when you launch an EC2 instance with user data input</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>If you are creating the launch template for use with Batch, the user data must be provided in the <a href="https://cloudinit.readthedocs.io/en/latest/topics/format.html#mime-multi-part-archive">MIME multi-part archive format</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html#lt-user-data">Amazon EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.</p>
     pub fn get_user_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_data
     }
@@ -951,17 +951,17 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_credit_specification(&self) -> &::std::option::Option<crate::types::CreditSpecificationRequest> {
         &self.credit_specification
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn cpu_options(mut self, input: crate::types::LaunchTemplateCpuOptionsRequest) -> Self {
         self.cpu_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest>) -> Self {
         self.cpu_options = input;
         self
     }
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">CPU options for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateCpuOptionsRequest> {
         &self.cpu_options
     }
@@ -1021,33 +1021,33 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_hibernation_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateHibernationOptionsRequest> {
         &self.hibernation_options
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn metadata_options(mut self, input: crate::types::LaunchTemplateInstanceMetadataOptionsRequest) -> Self {
         self.metadata_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_metadata_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest>) -> Self {
         self.metadata_options = input;
         self
     }
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure the Instance Metadata Service options</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_metadata_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMetadataOptionsRequest> {
         &self.metadata_options
     }
-    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub fn enclave_options(mut self, input: crate::types::LaunchTemplateEnclaveOptionsRequest) -> Self {
         self.enclave_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub fn set_enclave_options(mut self, input: ::std::option::Option<crate::types::LaunchTemplateEnclaveOptionsRequest>) -> Self {
         self.enclave_options = input;
         self
     }
-    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
     /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub fn get_enclave_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateEnclaveOptionsRequest> {
         &self.enclave_options
@@ -1133,17 +1133,17 @@ impl RequestLaunchTemplateDataBuilder {
     pub fn get_maintenance_options(&self) -> &::std::option::Option<crate::types::LaunchTemplateInstanceMaintenanceOptionsRequest> {
         &self.maintenance_options
     }
-    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn disable_api_stop(mut self, input: bool) -> Self {
         self.disable_api_stop = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_disable_api_stop(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_api_stop = input;
         self
     }
-    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>Indicates whether to enable the instance for stop protection. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-stop-protection.html">Enable stop protection for your EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_disable_api_stop(&self) -> &::std::option::Option<bool> {
         &self.disable_api_stop
     }

@@ -14,6 +14,8 @@ pub struct ListVehiclesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListVehiclesInput {
     /// <p>The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model.</p>
@@ -41,6 +43,10 @@ impl ListVehiclesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(&self) -> ::std::option::Option<&crate::types::ListResponseScope> {
+        self.list_response_scope.as_ref()
+    }
 }
 impl ListVehiclesInput {
     /// Creates a new builder-style object to manufacture [`ListVehiclesInput`](crate::operation::list_vehicles::ListVehiclesInput).
@@ -58,6 +64,7 @@ pub struct ListVehiclesInputBuilder {
     pub(crate) attribute_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListVehiclesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of a vehicle model (model manifest). You can use this optional parameter to list only the vehicles created from a certain vehicle model.</p>
@@ -145,6 +152,20 @@ impl ListVehiclesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(mut self, input: crate::types::ListResponseScope) -> Self {
+        self.list_response_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn set_list_response_scope(mut self, input: ::std::option::Option<crate::types::ListResponseScope>) -> Self {
+        self.list_response_scope = input;
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: vehicle name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn get_list_response_scope(&self) -> &::std::option::Option<crate::types::ListResponseScope> {
+        &self.list_response_scope
+    }
     /// Consumes the builder and constructs a [`ListVehiclesInput`](crate::operation::list_vehicles::ListVehiclesInput).
     pub fn build(
         self,
@@ -155,6 +176,7 @@ impl ListVehiclesInputBuilder {
             attribute_values: self.attribute_values,
             next_token: self.next_token,
             max_results: self.max_results,
+            list_response_scope: self.list_response_scope,
         })
     }
 }

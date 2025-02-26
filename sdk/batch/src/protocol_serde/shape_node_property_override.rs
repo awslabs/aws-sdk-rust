@@ -33,5 +33,11 @@ pub fn ser_node_property_override(
         crate::protocol_serde::shape_eks_properties_override::ser_eks_properties_override(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.consumable_resource_properties_override {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("consumableResourcePropertiesOverride").start_object();
+        crate::protocol_serde::shape_consumable_resource_properties::ser_consumable_resource_properties(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

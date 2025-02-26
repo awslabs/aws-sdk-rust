@@ -6,7 +6,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StateTemplateAssociation {
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub identifier: ::std::string::String,
     /// <p>The update strategy for the state template. Vehicles associated with the state template can stream telemetry data with either an <code>onChange</code> or <code>periodic</code> update strategy.</p><important>
     /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
@@ -14,7 +14,7 @@ pub struct StateTemplateAssociation {
     pub state_template_update_strategy: ::std::option::Option<crate::types::StateTemplateUpdateStrategy>,
 }
 impl StateTemplateAssociation {
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn identifier(&self) -> &str {
         use std::ops::Deref;
         self.identifier.deref()
@@ -41,18 +41,18 @@ pub struct StateTemplateAssociationBuilder {
     pub(crate) state_template_update_strategy: ::std::option::Option<crate::types::StateTemplateUpdateStrategy>,
 }
 impl StateTemplateAssociationBuilder {
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

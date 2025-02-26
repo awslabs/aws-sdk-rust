@@ -108,17 +108,17 @@ impl DeleteStateTemplateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>A unique, service-generated identifier.</p>
+    /// <p>The unique ID of the state template.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

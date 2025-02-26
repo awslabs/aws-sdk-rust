@@ -25,6 +25,8 @@ pub struct DescribeInferenceComponentOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the inference component.</p>
     pub inference_component_status: ::std::option::Option<crate::types::InferenceComponentStatus>,
+    /// <p>The deployment and rollback settings that you assigned to the inference component.</p>
+    pub last_deployment_config: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>,
     _request_id: Option<String>,
 }
 impl DescribeInferenceComponentOutput {
@@ -72,6 +74,10 @@ impl DescribeInferenceComponentOutput {
     pub fn inference_component_status(&self) -> ::std::option::Option<&crate::types::InferenceComponentStatus> {
         self.inference_component_status.as_ref()
     }
+    /// <p>The deployment and rollback settings that you assigned to the inference component.</p>
+    pub fn last_deployment_config(&self) -> ::std::option::Option<&crate::types::InferenceComponentDeploymentConfig> {
+        self.last_deployment_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInferenceComponentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -100,6 +106,7 @@ pub struct DescribeInferenceComponentOutputBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) inference_component_status: ::std::option::Option<crate::types::InferenceComponentStatus>,
+    pub(crate) last_deployment_config: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>,
     _request_id: Option<String>,
 }
 impl DescribeInferenceComponentOutputBuilder {
@@ -263,6 +270,20 @@ impl DescribeInferenceComponentOutputBuilder {
     pub fn get_inference_component_status(&self) -> &::std::option::Option<crate::types::InferenceComponentStatus> {
         &self.inference_component_status
     }
+    /// <p>The deployment and rollback settings that you assigned to the inference component.</p>
+    pub fn last_deployment_config(mut self, input: crate::types::InferenceComponentDeploymentConfig) -> Self {
+        self.last_deployment_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment and rollback settings that you assigned to the inference component.</p>
+    pub fn set_last_deployment_config(mut self, input: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>) -> Self {
+        self.last_deployment_config = input;
+        self
+    }
+    /// <p>The deployment and rollback settings that you assigned to the inference component.</p>
+    pub fn get_last_deployment_config(&self) -> &::std::option::Option<crate::types::InferenceComponentDeploymentConfig> {
+        &self.last_deployment_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -286,6 +307,7 @@ impl DescribeInferenceComponentOutputBuilder {
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
             inference_component_status: self.inference_component_status,
+            last_deployment_config: self.last_deployment_config,
             _request_id: self._request_id,
         }
     }

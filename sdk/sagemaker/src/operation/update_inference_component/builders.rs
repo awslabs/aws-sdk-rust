@@ -150,4 +150,18 @@ impl UpdateInferenceComponentFluentBuilder {
     pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::InferenceComponentRuntimeConfig> {
         self.inner.get_runtime_config()
     }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn deployment_config(mut self, input: crate::types::InferenceComponentDeploymentConfig) -> Self {
+        self.inner = self.inner.deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn set_deployment_config(mut self, input: ::std::option::Option<crate::types::InferenceComponentDeploymentConfig>) -> Self {
+        self.inner = self.inner.set_deployment_config(input);
+        self
+    }
+    /// <p>The deployment configuration for the inference component. The configuration contains the desired deployment strategy and rollback settings.</p>
+    pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::InferenceComponentDeploymentConfig> {
+        self.inner.get_deployment_config()
+    }
 }

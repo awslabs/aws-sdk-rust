@@ -46,14 +46,27 @@ pub fn ser_fleet_launch_template_overrides_request(
         crate::protocol_serde::shape_placement::ser_placement(scope_13, var_14)?;
     }
     #[allow(unused_mut)]
-    let mut scope_15 = writer.prefix("InstanceRequirements");
-    if let Some(var_16) = &input.instance_requirements {
-        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(scope_15, var_16)?;
+    let mut scope_15 = writer.prefix("BlockDeviceMapping");
+    if let Some(var_16) = &input.block_device_mappings {
+        if !var_16.is_empty() {
+            let mut list_18 = scope_15.start_list(true, Some("BlockDeviceMapping"));
+            for item_17 in var_16 {
+                #[allow(unused_mut)]
+                let mut entry_19 = list_18.entry();
+                crate::protocol_serde::shape_fleet_block_device_mapping_request::ser_fleet_block_device_mapping_request(entry_19, item_17)?;
+            }
+            list_18.finish();
+        }
     }
     #[allow(unused_mut)]
-    let mut scope_17 = writer.prefix("ImageId");
-    if let Some(var_18) = &input.image_id {
-        scope_17.string(var_18);
+    let mut scope_20 = writer.prefix("InstanceRequirements");
+    if let Some(var_21) = &input.instance_requirements {
+        crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(scope_20, var_21)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("ImageId");
+    if let Some(var_23) = &input.image_id {
+        scope_22.string(var_23);
     }
     Ok(())
 }

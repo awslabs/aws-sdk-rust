@@ -172,7 +172,7 @@ impl ::std::fmt::Debug for GetCampaignOutput {
         formatter.field("last_modification_time", &self.last_modification_time);
         formatter.field("data_destination_configs", &self.data_destination_configs);
         formatter.field("data_partitions", &self.data_partitions);
-        formatter.field("signals_to_fetch", &self.signals_to_fetch);
+        formatter.field("signals_to_fetch", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -610,7 +610,7 @@ impl ::std::fmt::Debug for GetCampaignOutputBuilder {
         formatter.field("last_modification_time", &self.last_modification_time);
         formatter.field("data_destination_configs", &self.data_destination_configs);
         formatter.field("data_partitions", &self.data_partitions);
-        formatter.field("signals_to_fetch", &self.signals_to_fetch);
+        formatter.field("signals_to_fetch", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

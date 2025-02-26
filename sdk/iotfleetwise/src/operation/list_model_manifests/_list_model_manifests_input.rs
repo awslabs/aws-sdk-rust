@@ -10,6 +10,8 @@ pub struct ListModelManifestsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: model manifest name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListModelManifestsInput {
     /// <p>The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
@@ -24,6 +26,10 @@ impl ListModelManifestsInput {
     /// <p>The maximum number of items to return, between 1 and 100, inclusive.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: model manifest name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(&self) -> ::std::option::Option<&crate::types::ListResponseScope> {
+        self.list_response_scope.as_ref()
     }
 }
 impl ListModelManifestsInput {
@@ -40,6 +46,7 @@ pub struct ListModelManifestsInputBuilder {
     pub(crate) signal_catalog_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) list_response_scope: ::std::option::Option<crate::types::ListResponseScope>,
 }
 impl ListModelManifestsInputBuilder {
     /// <p>The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
@@ -87,6 +94,20 @@ impl ListModelManifestsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: model manifest name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn list_response_scope(mut self, input: crate::types::ListResponseScope) -> Self {
+        self.list_response_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: model manifest name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn set_list_response_scope(mut self, input: ::std::option::Option<crate::types::ListResponseScope>) -> Self {
+        self.list_response_scope = input;
+        self
+    }
+    /// <p>When you set the <code>listResponseScope</code> parameter to <code>METADATA_ONLY</code>, the list response includes: model manifest name, Amazon Resource Name (ARN), creation time, and last modification time.</p>
+    pub fn get_list_response_scope(&self) -> &::std::option::Option<crate::types::ListResponseScope> {
+        &self.list_response_scope
+    }
     /// Consumes the builder and constructs a [`ListModelManifestsInput`](crate::operation::list_model_manifests::ListModelManifestsInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl ListModelManifestsInputBuilder {
             signal_catalog_arn: self.signal_catalog_arn,
             next_token: self.next_token,
             max_results: self.max_results,
+            list_response_scope: self.list_response_scope,
         })
     }
 }

@@ -29,8 +29,28 @@ pub(crate) fn reflens_describe_job_queues_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_consumable_resources_output_output_next_token(
+    input: &crate::operation::list_consumable_resources::ListConsumableResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_jobs_output_output_next_token(
     input: &crate::operation::list_jobs::ListJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_jobs_by_consumable_resource_output_output_next_token(
+    input: &crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -79,10 +99,30 @@ pub(crate) fn lens_describe_job_queues_output_output_job_queues(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_consumable_resources_output_output_consumable_resources(
+    input: crate::operation::list_consumable_resources::ListConsumableResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConsumableResourceSummary>> {
+    let input = match input.consumable_resources {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_jobs_output_output_job_summary_list(
     input: crate::operation::list_jobs::ListJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>> {
     let input = match input.job_summary_list {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_jobs_by_consumable_resource_output_output_jobs(
+    input: crate::operation::list_jobs_by_consumable_resource::ListJobsByConsumableResourceOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListJobsByConsumableResourceSummary>> {
+    let input = match input.jobs {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

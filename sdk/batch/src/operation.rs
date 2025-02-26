@@ -7,6 +7,9 @@ pub mod cancel_job;
 /// Types for the `CreateComputeEnvironment` operation.
 pub mod create_compute_environment;
 
+/// Types for the `CreateConsumableResource` operation.
+pub mod create_consumable_resource;
+
 /// Types for the `CreateJobQueue` operation.
 pub mod create_job_queue;
 
@@ -15,6 +18,9 @@ pub mod create_scheduling_policy;
 
 /// Types for the `DeleteComputeEnvironment` operation.
 pub mod delete_compute_environment;
+
+/// Types for the `DeleteConsumableResource` operation.
+pub mod delete_consumable_resource;
 
 /// Types for the `DeleteJobQueue` operation.
 pub mod delete_job_queue;
@@ -27,6 +33,9 @@ pub mod deregister_job_definition;
 
 /// Types for the `DescribeComputeEnvironments` operation.
 pub mod describe_compute_environments;
+
+/// Types for the `DescribeConsumableResource` operation.
+pub mod describe_consumable_resource;
 
 /// Types for the `DescribeJobDefinitions` operation.
 pub mod describe_job_definitions;
@@ -43,8 +52,14 @@ pub mod describe_scheduling_policies;
 /// Types for the `GetJobQueueSnapshot` operation.
 pub mod get_job_queue_snapshot;
 
+/// Types for the `ListConsumableResources` operation.
+pub mod list_consumable_resources;
+
 /// Types for the `ListJobs` operation.
 pub mod list_jobs;
+
+/// Types for the `ListJobsByConsumableResource` operation.
+pub mod list_jobs_by_consumable_resource;
 
 /// Types for the `ListSchedulingPolicies` operation.
 pub mod list_scheduling_policies;
@@ -69,6 +84,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateComputeEnvironment` operation.
 pub mod update_compute_environment;
+
+/// Types for the `UpdateConsumableResource` operation.
+pub mod update_consumable_resource;
 
 /// Types for the `UpdateJobQueue` operation.
 pub mod update_job_queue;

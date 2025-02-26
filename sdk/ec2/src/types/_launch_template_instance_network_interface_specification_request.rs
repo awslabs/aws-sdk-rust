@@ -18,7 +18,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub device_index: ::std::option::Option<i32>,
     /// <p>The IDs of one or more security groups.</p>
     pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter for AI/ML and HPC workloads on Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>efa-only</code></p>
@@ -83,7 +83,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     pub fn groups(&self) -> &[::std::string::String] {
         self.groups.as_deref().unwrap_or_default()
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter for AI/ML and HPC workloads on Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>efa-only</code></p>
@@ -290,7 +290,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
     pub fn get_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.groups
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter for AI/ML and HPC workloads on Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>efa-only</code></p>
@@ -298,7 +298,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self.interface_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter for AI/ML and HPC workloads on Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>efa-only</code></p>
@@ -306,7 +306,7 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecificationRequestBuilder {
         self.interface_type = input;
         self
     }
-    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code> or <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric Adapter for AI/ML and HPC workloads on Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.</p>
     /// <p>If you are not creating an EFA, specify <code>interface</code> or omit this parameter.</p>
     /// <p>If you specify <code>efa-only</code>, do not assign any IP addresses to the network interface. EFA-only network interfaces do not support IP addresses.</p>
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>efa-only</code></p>

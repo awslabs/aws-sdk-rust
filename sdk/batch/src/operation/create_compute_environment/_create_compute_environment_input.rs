@@ -15,7 +15,7 @@ pub struct CreateComputeEnvironmentInput {
     /// </note>
     /// <p>When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code> instance.</p>
     pub state: ::std::option::Option<crate::types::CeState>,
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair-share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.</p><note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p><note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</p>
     /// </note>
     pub unmanagedv_cpus: ::std::option::Option<i32>,
@@ -54,7 +54,7 @@ impl CreateComputeEnvironmentInput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::CeState> {
         self.state.as_ref()
     }
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair-share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.</p><note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p><note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</p>
     /// </note>
     pub fn unmanagedv_cpus(&self) -> ::std::option::Option<i32> {
@@ -168,21 +168,21 @@ impl CreateComputeEnvironmentInputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CeState> {
         &self.state
     }
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair-share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.</p><note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p><note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</p>
     /// </note>
     pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
         self.unmanagedv_cpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair-share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.</p><note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p><note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</p>
     /// </note>
     pub fn set_unmanagedv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unmanagedv_cpus = input;
         self
     }
-    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair-share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.</p><note>
+    /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p><note>
     /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</p>
     /// </note>
     pub fn get_unmanagedv_cpus(&self) -> &::std::option::Option<i32> {

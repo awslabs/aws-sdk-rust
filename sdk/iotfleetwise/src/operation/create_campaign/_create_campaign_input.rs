@@ -176,7 +176,7 @@ impl ::std::fmt::Debug for CreateCampaignInput {
         formatter.field("tags", &self.tags);
         formatter.field("data_destination_configs", &self.data_destination_configs);
         formatter.field("data_partitions", &self.data_partitions);
-        formatter.field("signals_to_fetch", &self.signals_to_fetch);
+        formatter.field("signals_to_fetch", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -594,7 +594,7 @@ impl ::std::fmt::Debug for CreateCampaignInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("data_destination_configs", &self.data_destination_configs);
         formatter.field("data_partitions", &self.data_partitions);
-        formatter.field("signals_to_fetch", &self.signals_to_fetch);
+        formatter.field("signals_to_fetch", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

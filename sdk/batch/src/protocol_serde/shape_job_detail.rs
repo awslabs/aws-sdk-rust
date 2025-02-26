@@ -154,6 +154,11 @@ where
                         "isTerminated" => {
                             builder = builder.set_is_terminated(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "consumableResourceProperties" => {
+                            builder = builder.set_consumable_resource_properties(
+                                crate::protocol_serde::shape_consumable_resource_properties::de_consumable_resource_properties(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

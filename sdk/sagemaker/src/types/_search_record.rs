@@ -14,9 +14,16 @@ pub struct SearchRecord {
     pub trial_component: ::std::option::Option<crate::types::TrialComponent>,
     /// <p>A hosted endpoint for real-time inference.</p>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
-    /// <p>A versioned model that can be deployed for SageMaker inference.</p>
+    /// <p>A container for your trained model that can be deployed for SageMaker inference. This can include inference code, artifacts, and metadata. The model package type can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Versioned model: A part of a model package group in Model Registry.</p></li>
+    /// <li>
+    /// <p>Unversioned model: Not part of a model package group and used in Amazon Web Services Marketplace.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html"> <code>CreateModelPackage</code> </a>.</p>
     pub model_package: ::std::option::Option<crate::types::ModelPackage>,
-    /// <p>A group of versioned models in the model registry.</p>
+    /// <p>A group of versioned models in the Model Registry.</p>
     pub model_package_group: ::std::option::Option<crate::types::ModelPackageGroup>,
     /// <p>A SageMaker Model Building Pipeline instance.</p>
     pub pipeline: ::std::option::Option<crate::types::Pipeline>,
@@ -56,11 +63,18 @@ impl SearchRecord {
     pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.endpoint.as_ref()
     }
-    /// <p>A versioned model that can be deployed for SageMaker inference.</p>
+    /// <p>A container for your trained model that can be deployed for SageMaker inference. This can include inference code, artifacts, and metadata. The model package type can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Versioned model: A part of a model package group in Model Registry.</p></li>
+    /// <li>
+    /// <p>Unversioned model: Not part of a model package group and used in Amazon Web Services Marketplace.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html"> <code>CreateModelPackage</code> </a>.</p>
     pub fn model_package(&self) -> ::std::option::Option<&crate::types::ModelPackage> {
         self.model_package.as_ref()
     }
-    /// <p>A group of versioned models in the model registry.</p>
+    /// <p>A group of versioned models in the Model Registry.</p>
     pub fn model_package_group(&self) -> ::std::option::Option<&crate::types::ModelPackageGroup> {
         self.model_package_group.as_ref()
     }
@@ -195,31 +209,52 @@ impl SearchRecordBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.endpoint
     }
-    /// <p>A versioned model that can be deployed for SageMaker inference.</p>
+    /// <p>A container for your trained model that can be deployed for SageMaker inference. This can include inference code, artifacts, and metadata. The model package type can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Versioned model: A part of a model package group in Model Registry.</p></li>
+    /// <li>
+    /// <p>Unversioned model: Not part of a model package group and used in Amazon Web Services Marketplace.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html"> <code>CreateModelPackage</code> </a>.</p>
     pub fn model_package(mut self, input: crate::types::ModelPackage) -> Self {
         self.model_package = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A versioned model that can be deployed for SageMaker inference.</p>
+    /// <p>A container for your trained model that can be deployed for SageMaker inference. This can include inference code, artifacts, and metadata. The model package type can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Versioned model: A part of a model package group in Model Registry.</p></li>
+    /// <li>
+    /// <p>Unversioned model: Not part of a model package group and used in Amazon Web Services Marketplace.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html"> <code>CreateModelPackage</code> </a>.</p>
     pub fn set_model_package(mut self, input: ::std::option::Option<crate::types::ModelPackage>) -> Self {
         self.model_package = input;
         self
     }
-    /// <p>A versioned model that can be deployed for SageMaker inference.</p>
+    /// <p>A container for your trained model that can be deployed for SageMaker inference. This can include inference code, artifacts, and metadata. The model package type can be one of the following.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Versioned model: A part of a model package group in Model Registry.</p></li>
+    /// <li>
+    /// <p>Unversioned model: Not part of a model package group and used in Amazon Web Services Marketplace.</p></li>
+    /// </ul>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModelPackage.html"> <code>CreateModelPackage</code> </a>.</p>
     pub fn get_model_package(&self) -> &::std::option::Option<crate::types::ModelPackage> {
         &self.model_package
     }
-    /// <p>A group of versioned models in the model registry.</p>
+    /// <p>A group of versioned models in the Model Registry.</p>
     pub fn model_package_group(mut self, input: crate::types::ModelPackageGroup) -> Self {
         self.model_package_group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A group of versioned models in the model registry.</p>
+    /// <p>A group of versioned models in the Model Registry.</p>
     pub fn set_model_package_group(mut self, input: ::std::option::Option<crate::types::ModelPackageGroup>) -> Self {
         self.model_package_group = input;
         self
     }
-    /// <p>A group of versioned models in the model registry.</p>
+    /// <p>A group of versioned models in the Model Registry.</p>
     pub fn get_model_package_group(&self) -> &::std::option::Option<crate::types::ModelPackageGroup> {
         &self.model_package_group
     }

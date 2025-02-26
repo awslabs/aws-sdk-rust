@@ -135,21 +135,36 @@ impl BatchDeleteClusterNodesFluentBuilder {
     /// To override the contents of this collection use [`set_node_ids`](Self::set_node_ids).
     ///
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub fn node_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_ids(input.into());
         self
     }
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_node_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_node_ids(input);
         self
     }
     /// <p>A list of node IDs to be deleted from the specified cluster.</p><note>
-    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>For SageMaker HyperPod clusters using the Slurm workload manager, you cannot remove instances that are configured as Slurm controller nodes.</p></li>
+    /// <li>
+    /// <p>If you need to delete more than 99 instances, contact <a href="http://aws.amazon.com/contact-us/">Support</a> for assistance.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_node_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_node_ids()

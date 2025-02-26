@@ -52,7 +52,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-chime = "1.60.0"
+//! aws-sdk-chime = "1.61.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -169,14 +169,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociatePhoneNumbersWithVoiceConnector`](crate::operation::associate_phone_numbers_with_voice_connector) operation has
-/// a [`Client::associate_phone_numbers_with_voice_connector`], function which returns a builder for that operation.
+/// For example, the [`AssociatePhoneNumberWithUser`](crate::operation::associate_phone_number_with_user) operation has
+/// a [`Client::associate_phone_number_with_user`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_phone_numbers_with_voice_connector()
-///     .voice_connector_id("example")
+/// let result = client.associate_phone_number_with_user()
+///     .account_id("example")
 ///     .send()
 ///     .await;
 /// ```

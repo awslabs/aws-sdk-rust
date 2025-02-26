@@ -33,5 +33,8 @@ pub fn ser_list_vehicles_input_input(
             ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
+    if let Some(var_10) = &input.list_response_scope {
+        object.key("listResponseScope").string(var_10.as_str());
+    }
     Ok(())
 }

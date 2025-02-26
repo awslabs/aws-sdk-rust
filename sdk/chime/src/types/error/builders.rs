@@ -15,8 +15,8 @@ pub use crate::types::error::_bad_request_exception::BadRequestExceptionBuilder;
 
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_unprocessable_entity_exception::UnprocessableEntityExceptionBuilder;
-
-pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;

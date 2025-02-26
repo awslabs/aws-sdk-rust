@@ -1733,6 +1733,8 @@ pub(crate) mod shape_image_versions;
 
 pub(crate) mod shape_images;
 
+pub(crate) mod shape_inference_component_deployment_config;
+
 pub(crate) mod shape_inference_component_runtime_config;
 
 pub(crate) mod shape_inference_component_runtime_config_summary;
@@ -2449,6 +2451,8 @@ pub(crate) mod shape_inference_component_container_specification;
 
 pub(crate) mod shape_inference_component_container_specification_summary;
 
+pub(crate) mod shape_inference_component_rolling_update_policy;
+
 pub(crate) mod shape_inference_component_startup_parameters;
 
 pub(crate) mod shape_inference_component_summary;
@@ -2936,6 +2940,8 @@ pub(crate) mod shape_iam_policy_constraints;
 pub(crate) mod shape_identity_provider_o_auth_setting;
 
 pub(crate) mod shape_identity_provider_o_auth_settings;
+
+pub(crate) mod shape_inference_component_capacity_size;
 
 pub(crate) mod shape_inference_metrics;
 

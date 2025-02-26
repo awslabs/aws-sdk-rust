@@ -24,6 +24,11 @@ pub struct ListServiceLevelObjectivesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of service level objectives.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
+    /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>
+    pub include_linked_accounts: ::std::option::Option<bool>,
+    /// <p>SLO's Amazon Web Services account ID.</p>
+    pub slo_owner_aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceLevelObjectivesInput {
     /// <p>You can use this optional field to specify which services you want to retrieve SLO information for.</p>
@@ -55,6 +60,15 @@ impl ListServiceLevelObjectivesInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
+    /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>
+    pub fn include_linked_accounts(&self) -> ::std::option::Option<bool> {
+        self.include_linked_accounts
+    }
+    /// <p>SLO's Amazon Web Services account ID.</p>
+    pub fn slo_owner_aws_account_id(&self) -> ::std::option::Option<&str> {
+        self.slo_owner_aws_account_id.as_deref()
+    }
 }
 impl ListServiceLevelObjectivesInput {
     /// Creates a new builder-style object to manufacture [`ListServiceLevelObjectivesInput`](crate::operation::list_service_level_objectives::ListServiceLevelObjectivesInput).
@@ -71,6 +85,8 @@ pub struct ListServiceLevelObjectivesInputBuilder {
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_linked_accounts: ::std::option::Option<bool>,
+    pub(crate) slo_owner_aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceLevelObjectivesInputBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -181,6 +197,37 @@ impl ListServiceLevelObjectivesInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
+    /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>
+    pub fn include_linked_accounts(mut self, input: bool) -> Self {
+        self.include_linked_accounts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
+    /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>
+    pub fn set_include_linked_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_linked_accounts = input;
+        self
+    }
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
+    /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>
+    pub fn get_include_linked_accounts(&self) -> &::std::option::Option<bool> {
+        &self.include_linked_accounts
+    }
+    /// <p>SLO's Amazon Web Services account ID.</p>
+    pub fn slo_owner_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.slo_owner_aws_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>SLO's Amazon Web Services account ID.</p>
+    pub fn set_slo_owner_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.slo_owner_aws_account_id = input;
+        self
+    }
+    /// <p>SLO's Amazon Web Services account ID.</p>
+    pub fn get_slo_owner_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.slo_owner_aws_account_id
+    }
     /// Consumes the builder and constructs a [`ListServiceLevelObjectivesInput`](crate::operation::list_service_level_objectives::ListServiceLevelObjectivesInput).
     pub fn build(
         self,
@@ -193,6 +240,8 @@ impl ListServiceLevelObjectivesInputBuilder {
             operation_name: self.operation_name,
             max_results: self.max_results,
             next_token: self.next_token,
+            include_linked_accounts: self.include_linked_accounts,
+            slo_owner_aws_account_id: self.slo_owner_aws_account_id,
         })
     }
 }
