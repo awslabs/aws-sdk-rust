@@ -2225,6 +2225,30 @@ pub(crate) fn update_hub_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_hub_content_output_output_correct_errors(
+    mut builder: crate::operation::update_hub_content::builders::UpdateHubContentOutputBuilder,
+) -> crate::operation::update_hub_content::builders::UpdateHubContentOutputBuilder {
+    if builder.hub_arn.is_none() {
+        builder.hub_arn = Some(Default::default())
+    }
+    if builder.hub_content_arn.is_none() {
+        builder.hub_content_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_hub_content_reference_output_output_correct_errors(
+    mut builder: crate::operation::update_hub_content_reference::builders::UpdateHubContentReferenceOutputBuilder,
+) -> crate::operation::update_hub_content_reference::builders::UpdateHubContentReferenceOutputBuilder {
+    if builder.hub_arn.is_none() {
+        builder.hub_arn = Some(Default::default())
+    }
+    if builder.hub_content_arn.is_none() {
+        builder.hub_content_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_inference_component_output_output_correct_errors(
     mut builder: crate::operation::update_inference_component::builders::UpdateInferenceComponentOutputBuilder,
 ) -> crate::operation::update_inference_component::builders::UpdateInferenceComponentOutputBuilder {
@@ -6277,6 +6301,15 @@ pub(crate) fn environment_parameter_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn hub_access_config_correct_errors(
+    mut builder: crate::types::builders::HubAccessConfigBuilder,
+) -> crate::types::builders::HubAccessConfigBuilder {
+    if builder.hub_content_arn.is_none() {
+        builder.hub_content_arn = Some(Default::default())
     }
     builder
 }

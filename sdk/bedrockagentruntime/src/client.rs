@@ -118,15 +118,27 @@ impl Client {
     }
 }
 
+mod create_invocation;
+
+mod create_session;
+
 /// Operation customization and supporting types.
 ///
 pub mod customize;
 
 mod delete_agent_memory;
 
+mod delete_session;
+
+mod end_session;
+
 mod generate_query;
 
 mod get_agent_memory;
+
+mod get_invocation_step;
+
+mod get_session;
 
 mod invoke_agent;
 
@@ -134,7 +146,17 @@ mod invoke_flow;
 
 mod invoke_inline_agent;
 
+mod list_invocation_steps;
+
+mod list_invocations;
+
+mod list_sessions;
+
+mod list_tags_for_resource;
+
 mod optimize_prompt;
+
+mod put_invocation_step;
 
 mod rerank;
 
@@ -143,3 +165,9 @@ mod retrieve;
 mod retrieve_and_generate;
 
 mod retrieve_and_generate_stream;
+
+mod tag_resource;
+
+mod untag_resource;
+
+mod update_session;

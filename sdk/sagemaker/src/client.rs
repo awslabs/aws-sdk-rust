@@ -930,6 +930,10 @@ mod update_feature_metadata;
 
 mod update_hub;
 
+mod update_hub_content;
+
+mod update_hub_content_reference;
+
 mod update_image;
 
 mod update_image_version;

@@ -133,6 +133,8 @@ pub(crate) mod shape_disable_gateway;
 
 pub(crate) mod shape_disassociate_file_system;
 
+pub(crate) mod shape_evict_files_failing_upload;
+
 pub(crate) mod shape_join_domain;
 
 pub(crate) mod shape_list_automatic_tape_creation_policies;
@@ -330,6 +332,8 @@ pub(crate) mod shape_detach_volume_input;
 pub(crate) mod shape_disable_gateway_input;
 
 pub(crate) mod shape_disassociate_file_system_input;
+
+pub(crate) mod shape_evict_files_failing_upload_input;
 
 pub(crate) mod shape_internal_server_error;
 

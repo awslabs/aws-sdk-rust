@@ -89,6 +89,16 @@ pub(crate) fn reflens_list_table_restore_status_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_tracks_output_output_next_token(
+    input: &crate::operation::list_tracks::ListTracksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_usage_limits_output_output_next_token(
     input: &crate::operation::list_usage_limits::ListUsageLimitsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -184,6 +194,16 @@ pub(crate) fn lens_list_table_restore_status_output_output_table_restore_statuse
     input: crate::operation::list_table_restore_status::ListTableRestoreStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TableRestoreStatus>> {
     let input = match input.table_restore_statuses {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tracks_output_output_tracks(
+    input: crate::operation::list_tracks::ListTracksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ServerlessTrack>> {
+    let input = match input.tracks {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

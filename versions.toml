@@ -286,9 +286,9 @@ model_hash = 'c3cba1516a4939648f5605a4108b79a83ee846adfa8af8f3d4b9fb0a5fcc0fe8'
 
 [crates.aws-sdk-bedrockagentruntime]
 category = 'AwsSdk'
-version = '1.80.0'
-source_hash = '1673f4e54b1431e8746895404c5e03b4ae7f51393d09160c3bfcedec8e1d5cc5'
-model_hash = '250c69732684ecca05146d3c5dd305e06a72150de6766a3c06c13d0c3a6cd987'
+version = '1.81.0'
+source_hash = 'bc51ef1a0bb12a4855f78723457791d607a8b9db9f78688d95b3f0d0598ef644'
+model_hash = '346caed9daabe7577c5492f57641ff75b1c85820be40dccef9dd3dd7b68d67e9'
 
 [crates.aws-sdk-bedrockdataautomation]
 category = 'AwsSdk'
@@ -880,9 +880,9 @@ model_hash = '6c1c1db4ee5d4030b2cbf681db8bf4cccdfdae9a32cac73ee86fb7329c167049'
 
 [crates.aws-sdk-emr]
 category = 'AwsSdk'
-version = '1.66.0'
-source_hash = '82d910881225f1838cee033abce6218c29b13f7e4a40d344e0628e2df8c4d5c4'
-model_hash = '5336a58f8d5ffb866e72dbdd012601369f43eb18af2bcae341299a0b18ecc768'
+version = '1.66.1'
+source_hash = '9c3a87c7099292417a9f1fb10685a24e6bcbde4d8a24bd25fe1efacfaf9603eb'
+model_hash = '3757bc02bed7388bb879edd057a5a84c6d00a4140d55f6a7f6239c82620a280b'
 
 [crates.aws-sdk-emrcontainers]
 category = 'AwsSdk'
@@ -1822,9 +1822,9 @@ model_hash = '4bd2edc09378bd9e8ef92cab901028113ec7feb54f270f86c3764629d5f66d1b'
 
 [crates.aws-sdk-qbusiness]
 category = 'AwsSdk'
-version = '1.68.0'
-source_hash = '3f1421300cb72061516a95ed322cee960d31e4de338a93e7786d69ce8b93a24c'
-model_hash = 'e31f82ed9453e36a1bd4bc4910a4be89efe2053101d0c3940872825adb718270'
+version = '1.69.0'
+source_hash = '2e9d2f3aced764f6ab9dab49c102068a43cbea7875940f1890f4fdb3ca118be4'
+model_hash = '366a9bd277c110ef17a24fe018811cf80eecf6fce9d8e5ef5b37625b011dcc84'
 
 [crates.aws-sdk-qconnect]
 category = 'AwsSdk'
@@ -1888,9 +1888,9 @@ model_hash = 'fd9b5ef1a71ea3b08d0966a6fa3d91aff3a98175585e82287048a2d267f17938'
 
 [crates.aws-sdk-redshiftserverless]
 category = 'AwsSdk'
-version = '1.63.0'
-source_hash = '62c67562f0a27169f6e39ee01a2fbb81894708ddf8725cdcc7ee7f3a894274a8'
-model_hash = 'f30ef9956fe31ac985700295d545e46904d3b1b32bcf8977fd6b290b670b8346'
+version = '1.64.0'
+source_hash = 'dacb340faff41a8027f2f24fb03b6b557be6bfd3ab7171154f05332d1f45fea5'
+model_hash = 'eea5a13d224cc2f1f2c30db587264ad01fa7966dffb704387bee75f75a4cc7d3'
 
 [crates.aws-sdk-rekognition]
 category = 'AwsSdk'
@@ -2014,9 +2014,9 @@ model_hash = '172361c4c7238894cc08fad9fc6840cf9edea43668b91b066350da9e3c2d96a4'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.107.0'
-source_hash = 'd651ca7776ff5b6d793de9977799b7ad792737e1bd147c4ca20d178e2fd837cd'
-model_hash = '521510b2c7463cafbe93e5d24a564ff55bbabb24e0a41ee169f40a5e8aa29d62'
+version = '1.108.0'
+source_hash = '7c7688c70780441d889d648679dcab99b501f39aef047414df4d93951822a9cb'
+model_hash = '01fa4e6c420acd1fa2a5db215e16f5211b43ec044ddcca18b3d9dc8df1905e9f'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2248,9 +2248,9 @@ model_hash = '072480deee96cc724c065960c9947743b6ca40039afc5e17e6563b3de7397a8e'
 
 [crates.aws-sdk-storagegateway]
 category = 'AwsSdk'
-version = '1.64.0'
-source_hash = 'a906c2eb389add93dba4efa11e40b71f42ffdced768a6f232761b810cfd5d299'
-model_hash = 'ddc2dd2a4f43f5866901788bdb11f12f91301fc4738de4bf095df54711ebc899'
+version = '1.65.0'
+source_hash = '22711e9849daf399d20d542c0715b6ebf39051c6afdab198ed9f80f9b677ae41'
+model_hash = 'b09c36a2305878c8d7452545345efd76c86251b9996bb700f8b0ba60d2f666d2'
 
 [crates.aws-sdk-sts]
 category = 'AwsSdk'
@@ -2593,16 +2593,10 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '22b2f052857ca4b9855344727bccbf827b80b29acf584bdf74f057bccb32d6d2'
-
-[release]
-tag = 'release-2025-02-26'
-
 [release.crates]
-aws-sdk-applicationsignals = '1.34.0'
-aws-sdk-batch = '1.70.0'
-aws-sdk-chime = '1.61.0'
-aws-sdk-cloudfront = '1.66.1'
-aws-sdk-ec2 = '1.113.0'
-aws-sdk-iotfleetwise = '1.65.0'
-aws-sdk-oam = '1.63.0'
-aws-sdk-sagemaker = '1.107.0'
+aws-sdk-bedrockagentruntime = '1.81.0'
+aws-sdk-emr = '1.66.1'
+aws-sdk-qbusiness = '1.69.0'
+aws-sdk-redshiftserverless = '1.64.0'
+aws-sdk-sagemaker = '1.108.0'
+aws-sdk-storagegateway = '1.65.0'

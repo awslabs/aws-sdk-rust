@@ -84,5 +84,8 @@ pub fn ser_create_workgroup_input_input(
     if let Some(var_24) = &input.ip_address_type {
         object.key("ipAddressType").string(var_24.as_str());
     }
+    if let Some(var_25) = &input.track_name {
+        object.key("trackName").string(var_25.as_str());
+    }
     Ok(())
 }

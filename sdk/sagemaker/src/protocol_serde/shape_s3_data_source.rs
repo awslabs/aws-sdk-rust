@@ -30,6 +30,18 @@ pub fn ser_s3_data_source(
         }
         array_8.finish();
     }
+    if let Some(var_10) = &input.model_access_config {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("ModelAccessConfig").start_object();
+        crate::protocol_serde::shape_model_access_config::ser_model_access_config(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.hub_access_config {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("HubAccessConfig").start_object();
+        crate::protocol_serde::shape_hub_access_config::ser_hub_access_config(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }
 
@@ -75,6 +87,13 @@ where
                         "InstanceGroupNames" => {
                             builder =
                                 builder.set_instance_group_names(crate::protocol_serde::shape_instance_group_names::de_instance_group_names(tokens)?);
+                        }
+                        "ModelAccessConfig" => {
+                            builder =
+                                builder.set_model_access_config(crate::protocol_serde::shape_model_access_config::de_model_access_config(tokens)?);
+                        }
+                        "HubAccessConfig" => {
+                            builder = builder.set_hub_access_config(crate::protocol_serde::shape_hub_access_config::de_hub_access_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -55,6 +55,8 @@ pub(crate) mod shape_create_web_experience;
 
 pub(crate) mod shape_delete_application;
 
+pub(crate) mod shape_delete_attachment;
+
 pub(crate) mod shape_delete_chat_controls_configuration;
 
 pub(crate) mod shape_delete_conversation;

@@ -437,6 +437,8 @@ pub use crate::types::_file_system_data_source::FileSystemDataSourceBuilder;
 
 pub use crate::types::_s3_data_source::S3DataSourceBuilder;
 
+pub use crate::types::_hub_access_config::HubAccessConfigBuilder;
+
 pub use crate::types::_hyper_parameter_algorithm_specification::HyperParameterAlgorithmSpecificationBuilder;
 
 pub use crate::types::_metric_definition::MetricDefinitionBuilder;

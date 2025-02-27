@@ -287,4 +287,18 @@ impl UpdateWorkgroupFluentBuilder {
     pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
         self.inner.get_price_performance_target()
     }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.track_name(input.into());
+        self
+    }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn set_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_track_name(input);
+        self
+    }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn get_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_track_name()
+    }
 }

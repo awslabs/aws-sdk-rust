@@ -82,6 +82,9 @@ pub mod get_snapshot;
 /// Types for the `GetTableRestoreStatus` operation.
 pub mod get_table_restore_status;
 
+/// Types for the `GetTrack` operation.
+pub mod get_track;
+
 /// Types for the `GetUsageLimit` operation.
 pub mod get_usage_limit;
 
@@ -117,6 +120,9 @@ pub mod list_table_restore_status;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListTracks` operation.
+pub mod list_tracks;
 
 /// Types for the `ListUsageLimits` operation.
 pub mod list_usage_limits;

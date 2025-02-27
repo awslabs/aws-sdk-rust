@@ -41,6 +41,8 @@ pub struct DescribeHubContentOutput {
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that hub content was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The last modified time of the hub content.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeHubContentOutput {
@@ -124,6 +126,10 @@ impl DescribeHubContentOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The last modified time of the hub content.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeHubContentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -160,6 +166,7 @@ pub struct DescribeHubContentOutputBuilder {
     pub(crate) hub_content_status: ::std::option::Option<crate::types::HubContentStatus>,
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeHubContentOutputBuilder {
@@ -451,6 +458,20 @@ impl DescribeHubContentOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>The last modified time of the hub content.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The last modified time of the hub content.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The last modified time of the hub content.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -482,6 +503,7 @@ impl DescribeHubContentOutputBuilder {
             hub_content_status: self.hub_content_status,
             failure_reason: self.failure_reason,
             creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
             _request_id: self._request_id,
         }
     }

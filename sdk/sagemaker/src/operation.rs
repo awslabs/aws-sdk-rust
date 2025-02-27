@@ -1000,6 +1000,12 @@ pub mod update_feature_metadata;
 /// Types for the `UpdateHub` operation.
 pub mod update_hub;
 
+/// Types for the `UpdateHubContent` operation.
+pub mod update_hub_content;
+
+/// Types for the `UpdateHubContentReference` operation.
+pub mod update_hub_content_reference;
+
 /// Types for the `UpdateImage` operation.
 pub mod update_image;
 

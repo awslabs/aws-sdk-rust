@@ -21,6 +21,8 @@ pub struct ImportHubContentInput {
     pub hub_content_markdown: ::std::option::Option<::std::string::String>,
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
     pub hub_content_document: ::std::option::Option<::std::string::String>,
+    /// <p>The status of the hub content resource.</p>
+    pub support_status: ::std::option::Option<crate::types::HubContentSupportStatus>,
     /// <p>The searchable keywords of the hub content.</p>
     pub hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Any tags associated with the hub content.</p>
@@ -63,6 +65,10 @@ impl ImportHubContentInput {
     pub fn hub_content_document(&self) -> ::std::option::Option<&str> {
         self.hub_content_document.as_deref()
     }
+    /// <p>The status of the hub content resource.</p>
+    pub fn support_status(&self) -> ::std::option::Option<&crate::types::HubContentSupportStatus> {
+        self.support_status.as_ref()
+    }
     /// <p>The searchable keywords of the hub content.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hub_content_search_keywords.is_none()`.
@@ -96,6 +102,7 @@ pub struct ImportHubContentInputBuilder {
     pub(crate) hub_content_description: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_markdown: ::std::option::Option<::std::string::String>,
     pub(crate) hub_content_document: ::std::option::Option<::std::string::String>,
+    pub(crate) support_status: ::std::option::Option<crate::types::HubContentSupportStatus>,
     pub(crate) hub_content_search_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -231,6 +238,20 @@ impl ImportHubContentInputBuilder {
     pub fn get_hub_content_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.hub_content_document
     }
+    /// <p>The status of the hub content resource.</p>
+    pub fn support_status(mut self, input: crate::types::HubContentSupportStatus) -> Self {
+        self.support_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of the hub content resource.</p>
+    pub fn set_support_status(mut self, input: ::std::option::Option<crate::types::HubContentSupportStatus>) -> Self {
+        self.support_status = input;
+        self
+    }
+    /// <p>The status of the hub content resource.</p>
+    pub fn get_support_status(&self) -> &::std::option::Option<crate::types::HubContentSupportStatus> {
+        &self.support_status
+    }
     /// Appends an item to `hub_content_search_keywords`.
     ///
     /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
@@ -285,6 +306,7 @@ impl ImportHubContentInputBuilder {
             hub_content_description: self.hub_content_description,
             hub_content_markdown: self.hub_content_markdown,
             hub_content_document: self.hub_content_document,
+            support_status: self.support_status,
             hub_content_search_keywords: self.hub_content_search_keywords,
             tags: self.tags,
         })

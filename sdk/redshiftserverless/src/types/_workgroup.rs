@@ -50,6 +50,10 @@ pub struct Workgroup {
     pub ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the price performance target settings for the workgroup.</p>
     pub price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
+    /// <p>The name of the track for the workgroup.</p>
+    pub track_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name for the track that you want to assign to the workgroup. When the track changes, the workgroup is switched to the latest workgroup release available for the track. At this point, the track name is applied.</p>
+    pub pending_track_name: ::std::option::Option<::std::string::String>,
 }
 impl Workgroup {
     /// <p>The unique identifier of the workgroup.</p>
@@ -152,6 +156,14 @@ impl Workgroup {
     pub fn price_performance_target(&self) -> ::std::option::Option<&crate::types::PerformanceTarget> {
         self.price_performance_target.as_ref()
     }
+    /// <p>The name of the track for the workgroup.</p>
+    pub fn track_name(&self) -> ::std::option::Option<&str> {
+        self.track_name.as_deref()
+    }
+    /// <p>The name for the track that you want to assign to the workgroup. When the track changes, the workgroup is switched to the latest workgroup release available for the track. At this point, the track name is applied.</p>
+    pub fn pending_track_name(&self) -> ::std::option::Option<&str> {
+        self.pending_track_name.as_deref()
+    }
 }
 impl Workgroup {
     /// Creates a new builder-style object to manufacture [`Workgroup`](crate::types::Workgroup).
@@ -187,6 +199,8 @@ pub struct WorkgroupBuilder {
     pub(crate) cross_account_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
+    pub(crate) track_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pending_track_name: ::std::option::Option<::std::string::String>,
 }
 impl WorkgroupBuilder {
     /// <p>The unique identifier of the workgroup.</p>
@@ -535,6 +549,34 @@ impl WorkgroupBuilder {
     pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
         &self.price_performance_target
     }
+    /// <p>The name of the track for the workgroup.</p>
+    pub fn track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.track_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the track for the workgroup.</p>
+    pub fn set_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.track_name = input;
+        self
+    }
+    /// <p>The name of the track for the workgroup.</p>
+    pub fn get_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.track_name
+    }
+    /// <p>The name for the track that you want to assign to the workgroup. When the track changes, the workgroup is switched to the latest workgroup release available for the track. At this point, the track name is applied.</p>
+    pub fn pending_track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pending_track_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name for the track that you want to assign to the workgroup. When the track changes, the workgroup is switched to the latest workgroup release available for the track. At this point, the track name is applied.</p>
+    pub fn set_pending_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pending_track_name = input;
+        self
+    }
+    /// <p>The name for the track that you want to assign to the workgroup. When the track changes, the workgroup is switched to the latest workgroup release available for the track. At this point, the track name is applied.</p>
+    pub fn get_pending_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pending_track_name
+    }
     /// Consumes the builder and constructs a [`Workgroup`](crate::types::Workgroup).
     pub fn build(self) -> crate::types::Workgroup {
         crate::types::Workgroup {
@@ -561,6 +603,8 @@ impl WorkgroupBuilder {
             cross_account_vpcs: self.cross_account_vpcs,
             ip_address_type: self.ip_address_type,
             price_performance_target: self.price_performance_target,
+            track_name: self.track_name,
+            pending_track_name: self.pending_track_name,
         }
     }
 }

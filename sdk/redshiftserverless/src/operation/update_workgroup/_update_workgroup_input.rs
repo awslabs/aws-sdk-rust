@@ -25,6 +25,8 @@ pub struct UpdateWorkgroupInput {
     pub ip_address_type: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the price performance target settings for the workgroup.</p>
     pub price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub track_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkgroupInput {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
@@ -77,6 +79,10 @@ impl UpdateWorkgroupInput {
     pub fn price_performance_target(&self) -> ::std::option::Option<&crate::types::PerformanceTarget> {
         self.price_performance_target.as_ref()
     }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn track_name(&self) -> ::std::option::Option<&str> {
+        self.track_name.as_deref()
+    }
 }
 impl UpdateWorkgroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
@@ -100,6 +106,7 @@ pub struct UpdateWorkgroupInputBuilder {
     pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) ip_address_type: ::std::option::Option<::std::string::String>,
     pub(crate) price_performance_target: ::std::option::Option<crate::types::PerformanceTarget>,
+    pub(crate) track_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWorkgroupInputBuilder {
     /// <p>The name of the workgroup to update. You can't update the name of a workgroup once it is created.</p>
@@ -275,6 +282,20 @@ impl UpdateWorkgroupInputBuilder {
     pub fn get_price_performance_target(&self) -> &::std::option::Option<crate::types::PerformanceTarget> {
         &self.price_performance_target
     }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn track_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.track_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn set_track_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.track_name = input;
+        self
+    }
+    /// <p>An optional parameter for the name of the track for the workgroup. If you don't provide a track name, the workgroup is assigned to the <code>current</code> track.</p>
+    pub fn get_track_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.track_name
+    }
     /// Consumes the builder and constructs a [`UpdateWorkgroupInput`](crate::operation::update_workgroup::UpdateWorkgroupInput).
     pub fn build(
         self,
@@ -291,6 +312,7 @@ impl UpdateWorkgroupInputBuilder {
             max_capacity: self.max_capacity,
             ip_address_type: self.ip_address_type,
             price_performance_target: self.price_performance_target,
+            track_name: self.track_name,
         })
     }
 }

@@ -77,6 +77,8 @@ pub(crate) mod shape_get_snapshot;
 
 pub(crate) mod shape_get_table_restore_status;
 
+pub(crate) mod shape_get_track;
+
 pub(crate) mod shape_get_usage_limit;
 
 pub(crate) mod shape_get_workgroup;
@@ -100,6 +102,8 @@ pub(crate) mod shape_list_snapshots;
 pub(crate) mod shape_list_table_restore_status;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_tracks;
 
 pub(crate) mod shape_list_usage_limits;
 
@@ -201,6 +205,8 @@ pub(crate) mod shape_get_snapshot_input;
 
 pub(crate) mod shape_get_table_restore_status_input;
 
+pub(crate) mod shape_get_track_input;
+
 pub(crate) mod shape_get_usage_limit_input;
 
 pub(crate) mod shape_get_workgroup_input;
@@ -232,6 +238,8 @@ pub(crate) mod shape_list_snapshots_input;
 pub(crate) mod shape_list_table_restore_status_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
+
+pub(crate) mod shape_list_tracks_input;
 
 pub(crate) mod shape_list_usage_limits_input;
 
@@ -305,6 +313,8 @@ pub(crate) mod shape_scheduled_action_response;
 
 pub(crate) mod shape_scheduled_actions_list;
 
+pub(crate) mod shape_serverless_track;
+
 pub(crate) mod shape_snapshot;
 
 pub(crate) mod shape_snapshot_copy_configuration;
@@ -322,6 +332,8 @@ pub(crate) mod shape_tag;
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_target_action;
+
+pub(crate) mod shape_track_list;
 
 pub(crate) mod shape_usage_limit;
 
@@ -355,6 +367,8 @@ pub(crate) mod shape_security_group_id_list;
 
 pub(crate) mod shape_subnet_id_list;
 
+pub(crate) mod shape_update_targets_list;
+
 pub(crate) mod shape_vpc_endpoint;
 
 pub(crate) mod shape_vpc_ids;
@@ -362,6 +376,8 @@ pub(crate) mod shape_vpc_ids;
 pub(crate) mod shape_vpc_security_group_membership_list;
 
 pub(crate) mod shape_network_interface_list;
+
+pub(crate) mod shape_update_target;
 
 pub(crate) mod shape_vpc_endpoint_list;
 

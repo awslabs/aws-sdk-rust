@@ -195,6 +195,8 @@ pub mod customize;
 
 mod delete_application;
 
+mod delete_attachment;
+
 mod delete_chat_controls_configuration;
 
 mod delete_conversation;

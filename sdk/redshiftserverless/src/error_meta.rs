@@ -935,6 +935,33 @@ impl From<crate::operation::get_table_restore_status::GetTableRestoreStatusError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_track::GetTrackError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_track::GetTrackError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_track::GetTrackError> for Error {
+    fn from(err: crate::operation::get_track::GetTrackError) -> Self {
+        match err {
+            crate::operation::get_track::GetTrackError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_track::GetTrackError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_track::GetTrackError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_track::GetTrackError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_track::GetTrackError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_track::GetTrackError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_track::GetTrackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_usage_limit::GetUsageLimitError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1288,6 +1315,32 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tracks::ListTracksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tracks::ListTracksError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tracks::ListTracksError> for Error {
+    fn from(err: crate::operation::list_tracks::ListTracksError) -> Self {
+        match err {
+            crate::operation::list_tracks::ListTracksError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tracks::ListTracksError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tracks::ListTracksError::InvalidPaginationException(inner) => Error::InvalidPaginationException(inner),
+            crate::operation::list_tracks::ListTracksError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tracks::ListTracksError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tracks::ListTracksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

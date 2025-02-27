@@ -39,4 +39,8 @@ pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership
 
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
 
+pub use crate::types::_serverless_track::ServerlessTrackBuilder;
+
+pub use crate::types::_update_target::UpdateTargetBuilder;
+
 pub use crate::types::_association::AssociationBuilder;

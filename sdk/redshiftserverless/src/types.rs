@@ -63,6 +63,10 @@ pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership
 
 pub use crate::types::_resource_policy::ResourcePolicy;
 
+pub use crate::types::_serverless_track::ServerlessTrack;
+
+pub use crate::types::_update_target::UpdateTarget;
+
 pub use crate::types::_association::Association;
 
 mod _association;
@@ -101,6 +105,8 @@ mod _scheduled_action_association;
 
 mod _scheduled_action_response;
 
+mod _serverless_track;
+
 mod _snapshot;
 
 mod _snapshot_copy_configuration;
@@ -114,6 +120,8 @@ mod _table_restore_status;
 mod _tag;
 
 mod _target_action;
+
+mod _update_target;
 
 mod _usage_limit;
 

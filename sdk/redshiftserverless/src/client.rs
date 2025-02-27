@@ -217,6 +217,8 @@ mod get_snapshot;
 
 mod get_table_restore_status;
 
+mod get_track;
+
 mod get_usage_limit;
 
 mod get_workgroup;
@@ -240,6 +242,8 @@ mod list_snapshots;
 mod list_table_restore_status;
 
 mod list_tags_for_resource;
+
+mod list_tracks;
 
 mod list_usage_limits;
 

@@ -234,6 +234,20 @@ impl ImportHubContentFluentBuilder {
     pub fn get_hub_content_document(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_hub_content_document()
     }
+    /// <p>The status of the hub content resource.</p>
+    pub fn support_status(mut self, input: crate::types::HubContentSupportStatus) -> Self {
+        self.inner = self.inner.support_status(input);
+        self
+    }
+    /// <p>The status of the hub content resource.</p>
+    pub fn set_support_status(mut self, input: ::std::option::Option<crate::types::HubContentSupportStatus>) -> Self {
+        self.inner = self.inner.set_support_status(input);
+        self
+    }
+    /// <p>The status of the hub content resource.</p>
+    pub fn get_support_status(&self) -> &::std::option::Option<crate::types::HubContentSupportStatus> {
+        self.inner.get_support_status()
+    }
     ///
     /// Appends an item to `HubContentSearchKeywords`.
     ///

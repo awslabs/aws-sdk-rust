@@ -166,6 +166,9 @@ pub mod disable_gateway;
 /// Types for the `DisassociateFileSystem` operation.
 pub mod disassociate_file_system;
 
+/// Types for the `EvictFilesFailingUpload` operation.
+pub mod evict_files_failing_upload;
+
 /// Types for the `JoinDomain` operation.
 pub mod join_domain;
 

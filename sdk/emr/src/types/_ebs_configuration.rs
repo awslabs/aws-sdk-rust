@@ -6,7 +6,7 @@
 pub struct EbsConfiguration {
     /// <p>An array of Amazon EBS volume specifications attached to a cluster instance.</p>
     pub ebs_block_device_configs: ::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>>,
-    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized. The default is false. You should explicitly set this value to true to enable the Amazon EBS-optimized setting for an EC2 instance.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
 }
 impl EbsConfiguration {
@@ -16,7 +16,7 @@ impl EbsConfiguration {
     pub fn ebs_block_device_configs(&self) -> &[crate::types::EbsBlockDeviceConfig] {
         self.ebs_block_device_configs.as_deref().unwrap_or_default()
     }
-    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized. The default is false. You should explicitly set this value to true to enable the Amazon EBS-optimized setting for an EC2 instance.</p>
     pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
@@ -56,17 +56,17 @@ impl EbsConfigurationBuilder {
     pub fn get_ebs_block_device_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EbsBlockDeviceConfig>> {
         &self.ebs_block_device_configs
     }
-    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized. The default is false. You should explicitly set this value to true to enable the Amazon EBS-optimized setting for an EC2 instance.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized. The default is false. You should explicitly set this value to true to enable the Amazon EBS-optimized setting for an EC2 instance.</p>
     pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
     }
-    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized.</p>
+    /// <p>Indicates whether an Amazon EBS volume is EBS-optimized. The default is false. You should explicitly set this value to true to enable the Amazon EBS-optimized setting for an EC2 instance.</p>
     pub fn get_ebs_optimized(&self) -> &::std::option::Option<bool> {
         &self.ebs_optimized
     }

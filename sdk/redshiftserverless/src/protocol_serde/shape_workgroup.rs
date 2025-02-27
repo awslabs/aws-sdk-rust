@@ -145,6 +145,20 @@ where
                             builder =
                                 builder.set_price_performance_target(crate::protocol_serde::shape_performance_target::de_performance_target(tokens)?);
                         }
+                        "trackName" => {
+                            builder = builder.set_track_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "pendingTrackName" => {
+                            builder = builder.set_pending_track_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -69,5 +69,8 @@ pub fn ser_update_workgroup_input_input(
         crate::protocol_serde::shape_performance_target::ser_performance_target(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.track_name {
+        object.key("trackName").string(var_20.as_str());
+    }
     Ok(())
 }

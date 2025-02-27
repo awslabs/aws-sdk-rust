@@ -13,6 +13,7 @@
 /// # let hubcontentsupportstatus = unimplemented!();
 /// match hubcontentsupportstatus {
 ///     HubContentSupportStatus::Deprecated => { /* ... */ },
+///     HubContentSupportStatus::Restricted => { /* ... */ },
 ///     HubContentSupportStatus::Supported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum HubContentSupportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     #[allow(missing_docs)] // documentation missing in model
+    Restricted,
+    #[allow(missing_docs)] // documentation missing in model
     Supported,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for HubContentSupportStatus {
     fn from(s: &str) -> Self {
         match s {
             "Deprecated" => HubContentSupportStatus::Deprecated,
+            "Restricted" => HubContentSupportStatus::Restricted,
             "Supported" => HubContentSupportStatus::Supported,
             other => HubContentSupportStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl HubContentSupportStatus {
     pub fn as_str(&self) -> &str {
         match self {
             HubContentSupportStatus::Deprecated => "Deprecated",
+            HubContentSupportStatus::Restricted => "Restricted",
             HubContentSupportStatus::Supported => "Supported",
             HubContentSupportStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Deprecated", "Supported"]
+        &["Deprecated", "Restricted", "Supported"]
     }
 }
 impl ::std::convert::AsRef<str> for HubContentSupportStatus {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for HubContentSupportStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             HubContentSupportStatus::Deprecated => write!(f, "Deprecated"),
+            HubContentSupportStatus::Restricted => write!(f, "Restricted"),
             HubContentSupportStatus::Supported => write!(f, "Supported"),
             HubContentSupportStatus::Unknown(value) => write!(f, "{}", value),
         }

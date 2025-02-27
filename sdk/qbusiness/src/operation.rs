@@ -49,6 +49,9 @@ pub mod create_web_experience;
 /// Types for the `DeleteApplication` operation.
 pub mod delete_application;
 
+/// Types for the `DeleteAttachment` operation.
+pub mod delete_attachment;
+
 /// Types for the `DeleteChatControlsConfiguration` operation.
 pub mod delete_chat_controls_configuration;
 

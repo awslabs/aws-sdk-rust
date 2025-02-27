@@ -41,6 +41,16 @@ pub struct S3DataSource {
     pub attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of names of instance groups that get data from the S3 data source.</p>
     pub instance_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are a Jumpstart user, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a> section for more details on accepting the EULA.</p></li>
+    /// <li>
+    /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
+    /// </ul>
+    pub model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
+    /// <p>The configuration for a private hub model reference that points to a SageMaker JumpStart public hub model.</p>
+    pub hub_access_config: ::std::option::Option<crate::types::HubAccessConfig>,
 }
 impl S3DataSource {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training.</p>
@@ -93,6 +103,20 @@ impl S3DataSource {
     pub fn instance_group_names(&self) -> &[::std::string::String] {
         self.instance_group_names.as_deref().unwrap_or_default()
     }
+    /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are a Jumpstart user, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a> section for more details on accepting the EULA.</p></li>
+    /// <li>
+    /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
+    /// </ul>
+    pub fn model_access_config(&self) -> ::std::option::Option<&crate::types::ModelAccessConfig> {
+        self.model_access_config.as_ref()
+    }
+    /// <p>The configuration for a private hub model reference that points to a SageMaker JumpStart public hub model.</p>
+    pub fn hub_access_config(&self) -> ::std::option::Option<&crate::types::HubAccessConfig> {
+        self.hub_access_config.as_ref()
+    }
 }
 impl S3DataSource {
     /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::types::S3DataSource).
@@ -110,6 +134,8 @@ pub struct S3DataSourceBuilder {
     pub(crate) s3_data_distribution_type: ::std::option::Option<crate::types::S3DataDistribution>,
     pub(crate) attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) model_access_config: ::std::option::Option<crate::types::ModelAccessConfig>,
+    pub(crate) hub_access_config: ::std::option::Option<crate::types::HubAccessConfig>,
 }
 impl S3DataSourceBuilder {
     /// <p>If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix. SageMaker uses all objects that match the specified key name prefix for model training.</p>
@@ -274,6 +300,52 @@ impl S3DataSourceBuilder {
     pub fn get_instance_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_group_names
     }
+    /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are a Jumpstart user, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a> section for more details on accepting the EULA.</p></li>
+    /// <li>
+    /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
+    /// </ul>
+    pub fn model_access_config(mut self, input: crate::types::ModelAccessConfig) -> Self {
+        self.model_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are a Jumpstart user, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a> section for more details on accepting the EULA.</p></li>
+    /// <li>
+    /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
+    /// </ul>
+    pub fn set_model_access_config(mut self, input: ::std::option::Option<crate::types::ModelAccessConfig>) -> Self {
+        self.model_access_config = input;
+        self
+    }
+    /// <p>The access configuration file to control access to the ML model. You can explicitly accept the model end-user license agreement (EULA) within the <code>ModelAccessConfig</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are a Jumpstart user, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user license agreements</a> section for more details on accepting the EULA.</p></li>
+    /// <li>
+    /// <p>If you are an AutoML user, see the <i>Optional Parameters</i> section of <i>Create an AutoML job to fine-tune text generation models using the API</i> for details on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-create-experiment-finetune-llms.html#autopilot-llms-finetuning-api-optional-params">How to set the EULA acceptance when fine-tuning a model using the AutoML API</a>.</p></li>
+    /// </ul>
+    pub fn get_model_access_config(&self) -> &::std::option::Option<crate::types::ModelAccessConfig> {
+        &self.model_access_config
+    }
+    /// <p>The configuration for a private hub model reference that points to a SageMaker JumpStart public hub model.</p>
+    pub fn hub_access_config(mut self, input: crate::types::HubAccessConfig) -> Self {
+        self.hub_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a private hub model reference that points to a SageMaker JumpStart public hub model.</p>
+    pub fn set_hub_access_config(mut self, input: ::std::option::Option<crate::types::HubAccessConfig>) -> Self {
+        self.hub_access_config = input;
+        self
+    }
+    /// <p>The configuration for a private hub model reference that points to a SageMaker JumpStart public hub model.</p>
+    pub fn get_hub_access_config(&self) -> &::std::option::Option<crate::types::HubAccessConfig> {
+        &self.hub_access_config
+    }
     /// Consumes the builder and constructs a [`S3DataSource`](crate::types::S3DataSource).
     pub fn build(self) -> crate::types::S3DataSource {
         crate::types::S3DataSource {
@@ -282,6 +354,8 @@ impl S3DataSourceBuilder {
             s3_data_distribution_type: self.s3_data_distribution_type,
             attribute_names: self.attribute_names,
             instance_group_names: self.instance_group_names,
+            model_access_config: self.model_access_config,
+            hub_access_config: self.hub_access_config,
         }
     }
 }

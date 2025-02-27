@@ -689,6 +689,10 @@ pub(crate) mod shape_update_feature_metadata;
 
 pub(crate) mod shape_update_hub;
 
+pub(crate) mod shape_update_hub_content;
+
+pub(crate) mod shape_update_hub_content_reference;
+
 pub(crate) mod shape_update_image;
 
 pub(crate) mod shape_update_image_version;
@@ -1408,6 +1412,10 @@ pub(crate) mod shape_update_experiment_input;
 pub(crate) mod shape_update_feature_group_input;
 
 pub(crate) mod shape_update_feature_metadata_input;
+
+pub(crate) mod shape_update_hub_content_input;
+
+pub(crate) mod shape_update_hub_content_reference_input;
 
 pub(crate) mod shape_update_hub_input;
 
@@ -3164,6 +3172,8 @@ pub(crate) mod shape_fail_step_metadata;
 pub(crate) mod shape_filling_transformations;
 
 pub(crate) mod shape_grouping_attribute_names;
+
+pub(crate) mod shape_hub_access_config;
 
 pub(crate) mod shape_idle_settings;
 

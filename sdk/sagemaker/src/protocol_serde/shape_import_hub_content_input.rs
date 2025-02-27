@@ -30,26 +30,29 @@ pub fn ser_import_hub_content_input_input(
     if let Some(var_9) = &input.hub_content_document {
         object.key("HubContentDocument").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.hub_content_search_keywords {
-        let mut array_11 = object.key("HubContentSearchKeywords").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.support_status {
+        object.key("SupportStatus").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.hub_content_search_keywords {
+        let mut array_12 = object.key("HubContentSearchKeywords").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("Tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

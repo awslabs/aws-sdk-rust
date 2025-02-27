@@ -273,6 +273,8 @@ mod disable_gateway;
 
 mod disassociate_file_system;
 
+mod evict_files_failing_upload;
+
 mod join_domain;
 
 mod list_automatic_tape_creation_policies;

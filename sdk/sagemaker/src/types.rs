@@ -321,6 +321,10 @@ pub use crate::types::_job_type::JobType;
 
 pub use crate::types::_vendor_guidance::VendorGuidance;
 
+pub use crate::types::_hub_content_type::HubContentType;
+
+pub use crate::types::_hub_content_support_status::HubContentSupportStatus;
+
 pub use crate::types::_feature_parameter::FeatureParameter;
 
 pub use crate::types::_throughput_config_update::ThroughputConfigUpdate;
@@ -622,6 +626,8 @@ pub use crate::types::_file_system_type::FileSystemType;
 pub use crate::types::_file_system_access_mode::FileSystemAccessMode;
 
 pub use crate::types::_s3_data_source::S3DataSource;
+
+pub use crate::types::_hub_access_config::HubAccessConfig;
 
 pub use crate::types::_s3_data_distribution::S3DataDistribution;
 
@@ -1254,10 +1260,6 @@ pub use crate::types::_hub_sort_by::HubSortBy;
 pub use crate::types::_hub_content_info::HubContentInfo;
 
 pub use crate::types::_hub_content_status::HubContentStatus;
-
-pub use crate::types::_hub_content_support_status::HubContentSupportStatus;
-
-pub use crate::types::_hub_content_type::HubContentType;
 
 pub use crate::types::_hub_content_sort_by::HubContentSortBy;
 
@@ -2492,6 +2494,8 @@ mod _git_config_for_update;
 mod _hidden_sage_maker_image;
 
 mod _holiday_config_attributes;
+
+mod _hub_access_config;
 
 mod _hub_content_dependency;
 

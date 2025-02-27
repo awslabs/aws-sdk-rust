@@ -9,6 +9,36 @@ pub(crate) fn reflens_get_agent_memory_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_invocation_steps_output_output_next_token(
+    input: &crate::operation::list_invocation_steps::ListInvocationStepsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_invocations_output_output_next_token(
+    input: &crate::operation::list_invocations::ListInvocationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_sessions_output_output_next_token(
+    input: &crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_rerank_output_output_next_token(
     input: &crate::operation::rerank::RerankOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -36,6 +66,27 @@ pub(crate) fn lens_get_agent_memory_output_output_memory_contents(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_invocation_steps_output_output_invocation_step_summaries(
+    input: crate::operation::list_invocation_steps::ListInvocationStepsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InvocationStepSummary>> {
+    let input = input.invocation_step_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_invocations_output_output_invocation_summaries(
+    input: crate::operation::list_invocations::ListInvocationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InvocationSummary>> {
+    let input = input.invocation_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sessions_output_output_session_summaries(
+    input: crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SessionSummary>> {
+    let input = input.session_summaries;
     ::std::option::Option::Some(input)
 }
 
