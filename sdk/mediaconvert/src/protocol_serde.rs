@@ -69,6 +69,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_versions;
 
+pub(crate) mod shape_probe;
+
 pub(crate) mod shape_put_policy;
 
 pub(crate) mod shape_search_jobs;
@@ -113,6 +115,8 @@ pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_not_found_exception;
 
+pub(crate) mod shape_probe_input;
+
 pub(crate) mod shape_put_policy_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -149,6 +153,8 @@ pub(crate) mod shape_list_of_job_template;
 
 pub(crate) mod shape_list_of_preset;
 
+pub(crate) mod shape_list_of_probe_result;
+
 pub(crate) mod shape_list_of_queue;
 
 pub(crate) mod shape_policy;
@@ -156,6 +162,8 @@ pub(crate) mod shape_policy;
 pub(crate) mod shape_preset;
 
 pub(crate) mod shape_preset_settings;
+
+pub(crate) mod shape_probe_input_file;
 
 pub(crate) mod shape_queue;
 
@@ -209,6 +217,8 @@ pub(crate) mod shape_nielsen_non_linear_watermark_settings;
 
 pub(crate) mod shape_output_group;
 
+pub(crate) mod shape_probe_result;
+
 pub(crate) mod shape_reservation_plan;
 
 pub(crate) mod shape_timecode_config;
@@ -238,6 +248,8 @@ pub(crate) mod shape_caption_destination_settings;
 pub(crate) mod shape_caption_selector;
 
 pub(crate) mod shape_cmfc_settings;
+
+pub(crate) mod shape_container;
 
 pub(crate) mod shape_dynamic_audio_selector;
 
@@ -271,9 +283,13 @@ pub(crate) mod shape_list_of_output_group;
 
 pub(crate) mod shape_list_of_string;
 
+pub(crate) mod shape_list_of_track_mapping;
+
 pub(crate) mod shape_m2ts_settings;
 
 pub(crate) mod shape_m3u8_settings;
+
+pub(crate) mod shape_metadata;
 
 pub(crate) mod shape_motion_image_insertion_framerate;
 
@@ -383,6 +399,8 @@ pub(crate) mod shape_list_of_id3_insertion;
 
 pub(crate) mod shape_list_of_output_detail;
 
+pub(crate) mod shape_list_of_track;
+
 pub(crate) mod shape_m2ts_scte35_esam;
 
 pub(crate) mod shape_mp2_settings;
@@ -412,6 +430,8 @@ pub(crate) mod shape_srt_destination_settings;
 pub(crate) mod shape_teletext_destination_settings;
 
 pub(crate) mod shape_timecode_burnin;
+
+pub(crate) mod shape_track_mapping;
 
 pub(crate) mod shape_ttml_destination_settings;
 
@@ -487,6 +507,8 @@ pub(crate) mod shape_hls_settings;
 
 pub(crate) mod shape_list_of_input_clipping;
 
+pub(crate) mod shape_list_of_integer;
+
 pub(crate) mod shape_list_of_integer_min32_max8182;
 
 pub(crate) mod shape_list_of_output;
@@ -521,6 +543,8 @@ pub(crate) mod shape_output_detail;
 
 pub(crate) mod shape_teletext_source_settings;
 
+pub(crate) mod shape_track;
+
 pub(crate) mod shape_track_source_settings;
 
 pub(crate) mod shape_video_overlay_input_clipping;
@@ -539,7 +563,11 @@ pub(crate) mod shape_xavc_hd_profile_settings;
 
 pub(crate) mod shape_allowed_rendition_size;
 
+pub(crate) mod shape_audio_properties;
+
 pub(crate) mod shape_caption_source_framerate;
+
+pub(crate) mod shape_data_properties;
 
 pub(crate) mod shape_force_include_rendition_size;
 
@@ -561,7 +589,11 @@ pub(crate) mod shape_static_key_provider;
 
 pub(crate) mod shape_video_detail;
 
+pub(crate) mod shape_video_properties;
+
 pub(crate) mod shape_encryption_contract_configuration;
+
+pub(crate) mod shape_frame_rate;
 
 pub(crate) mod shape_list_of_automated_abr_rule;
 

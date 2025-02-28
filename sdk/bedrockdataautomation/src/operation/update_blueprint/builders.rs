@@ -150,4 +150,18 @@ impl UpdateBlueprintFluentBuilder {
     pub fn get_blueprint_stage(&self) -> &::std::option::Option<crate::types::BlueprintStage> {
         self.inner.get_blueprint_stage()
     }
+    /// KMS Encryption Configuration
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.inner = self.inner.encryption_configuration(input);
+        self
+    }
+    /// KMS Encryption Configuration
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_encryption_configuration(input);
+        self
+    }
+    /// KMS Encryption Configuration
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
 }

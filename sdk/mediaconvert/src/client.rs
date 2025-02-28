@@ -209,6 +209,8 @@ mod list_tags_for_resource;
 
 mod list_versions;
 
+mod probe;
+
 mod put_policy;
 
 mod search_jobs;

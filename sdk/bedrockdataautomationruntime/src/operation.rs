@@ -6,3 +6,12 @@ pub mod get_data_automation_status;
 
 /// Types for the `InvokeDataAutomationAsync` operation.
 pub mod invoke_data_automation_async;
+
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;

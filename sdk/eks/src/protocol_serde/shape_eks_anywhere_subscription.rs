@@ -80,6 +80,9 @@ where
                         "licenseArns" => {
                             builder = builder.set_license_arns(crate::protocol_serde::shape_string_list::de_string_list(tokens)?);
                         }
+                        "licenses" => {
+                            builder = builder.set_licenses(crate::protocol_serde::shape_license_list::de_license_list(tokens)?);
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                         }

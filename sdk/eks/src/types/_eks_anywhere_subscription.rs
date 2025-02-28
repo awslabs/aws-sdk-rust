@@ -26,6 +26,8 @@ pub struct EksAnywhereSubscription {
     pub auto_renew: bool,
     /// <p>Amazon Web Services License Manager ARN associated with the subscription.</p>
     pub license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Includes all of the claims in the license token necessary to validate the license for extended support.</p>
+    pub licenses: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -76,6 +78,12 @@ impl EksAnywhereSubscription {
     pub fn license_arns(&self) -> &[::std::string::String] {
         self.license_arns.as_deref().unwrap_or_default()
     }
+    /// <p>Includes all of the claims in the license token necessary to validate the license for extended support.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.licenses.is_none()`.
+    pub fn licenses(&self) -> &[crate::types::License] {
+        self.licenses.as_deref().unwrap_or_default()
+    }
     /// <p>The metadata for a subscription to assist with categorization and organization. Each tag consists of a key and an optional value. Subscription tags do not propagate to any other resources associated with the subscription.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -103,6 +111,7 @@ pub struct EksAnywhereSubscriptionBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) auto_renew: ::std::option::Option<bool>,
     pub(crate) license_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) licenses: ::std::option::Option<::std::vec::Vec<crate::types::License>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EksAnywhereSubscriptionBuilder {
@@ -266,6 +275,26 @@ impl EksAnywhereSubscriptionBuilder {
     pub fn get_license_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.license_arns
     }
+    /// Appends an item to `licenses`.
+    ///
+    /// To override the contents of this collection use [`set_licenses`](Self::set_licenses).
+    ///
+    /// <p>Includes all of the claims in the license token necessary to validate the license for extended support.</p>
+    pub fn licenses(mut self, input: crate::types::License) -> Self {
+        let mut v = self.licenses.unwrap_or_default();
+        v.push(input);
+        self.licenses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Includes all of the claims in the license token necessary to validate the license for extended support.</p>
+    pub fn set_licenses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::License>>) -> Self {
+        self.licenses = input;
+        self
+    }
+    /// <p>Includes all of the claims in the license token necessary to validate the license for extended support.</p>
+    pub fn get_licenses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::License>> {
+        &self.licenses
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -300,6 +329,7 @@ impl EksAnywhereSubscriptionBuilder {
             status: self.status,
             auto_renew: self.auto_renew.unwrap_or_default(),
             license_arns: self.license_arns,
+            licenses: self.licenses,
             tags: self.tags,
         }
     }

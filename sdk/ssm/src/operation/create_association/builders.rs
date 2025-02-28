@@ -347,17 +347,23 @@ impl CreateAssociationFluentBuilder {
     pub fn get_sync_compliance(&self) -> &::std::option::Option<crate::types::AssociationSyncCompliance> {
         self.inner.get_sync_compliance()
     }
-    /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified and when target changes are detected. Specify <code>true</code> for <code>ApplyOnlyAtCronInterval</code>if you want the association to run only according to the schedule you specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#state-manager-about-scheduling">Understanding when associations are applied to resources</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#runbook-target-updates">&gt;About target updates with Automation runbooks</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>This parameter isn't supported for rate expressions.</p>
     pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
         self.inner = self.inner.apply_only_at_cron_interval(input);
         self
     }
-    /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified and when target changes are detected. Specify <code>true</code> for <code>ApplyOnlyAtCronInterval</code>if you want the association to run only according to the schedule you specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#state-manager-about-scheduling">Understanding when associations are applied to resources</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#runbook-target-updates">&gt;About target updates with Automation runbooks</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>This parameter isn't supported for rate expressions.</p>
     pub fn set_apply_only_at_cron_interval(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_only_at_cron_interval(input);
         self
     }
-    /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter isn't supported for rate expressions.</p>
+    /// <p>By default, when you create a new association, the system runs it immediately after it is created and then according to the schedule you specified and when target changes are detected. Specify <code>true</code> for <code>ApplyOnlyAtCronInterval</code>if you want the association to run only according to the schedule you specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#state-manager-about-scheduling">Understanding when associations are applied to resources</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-about.html#runbook-target-updates">&gt;About target updates with Automation runbooks</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+    /// <p>This parameter isn't supported for rate expressions.</p>
     pub fn get_apply_only_at_cron_interval(&self) -> &::std::option::Option<bool> {
         self.inner.get_apply_only_at_cron_interval()
     }
@@ -366,17 +372,17 @@ impl CreateAssociationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
     ///
-    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calendar_names(input.into());
         self
     }
-    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_calendar_names(input);
         self
     }
-    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a>.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Change Calendar type documents you want to gate your associations under. The associations only run when that change calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_calendar_names()
     }

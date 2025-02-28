@@ -16,6 +16,8 @@ pub struct UpdateDataAutomationProjectInput {
     pub custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     /// Override configuration
     pub override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
+    /// KMS Encryption Configuration
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateDataAutomationProjectInput {
     /// ARN generated at the server side when a DataAutomationProject is created
@@ -42,6 +44,10 @@ impl UpdateDataAutomationProjectInput {
     pub fn override_configuration(&self) -> ::std::option::Option<&crate::types::OverrideConfiguration> {
         self.override_configuration.as_ref()
     }
+    /// KMS Encryption Configuration
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateDataAutomationProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -52,6 +58,7 @@ impl ::std::fmt::Debug for UpdateDataAutomationProjectInput {
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }
@@ -72,6 +79,7 @@ pub struct UpdateDataAutomationProjectInputBuilder {
     pub(crate) standard_output_configuration: ::std::option::Option<crate::types::StandardOutputConfiguration>,
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     pub(crate) override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateDataAutomationProjectInputBuilder {
     /// ARN generated at the server side when a DataAutomationProject is created
@@ -160,6 +168,20 @@ impl UpdateDataAutomationProjectInputBuilder {
     pub fn get_override_configuration(&self) -> &::std::option::Option<crate::types::OverrideConfiguration> {
         &self.override_configuration
     }
+    /// KMS Encryption Configuration
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// KMS Encryption Configuration
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// KMS Encryption Configuration
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateDataAutomationProjectInput`](crate::operation::update_data_automation_project::UpdateDataAutomationProjectInput).
     pub fn build(
         self,
@@ -174,6 +196,7 @@ impl UpdateDataAutomationProjectInputBuilder {
             standard_output_configuration: self.standard_output_configuration,
             custom_output_configuration: self.custom_output_configuration,
             override_configuration: self.override_configuration,
+            encryption_configuration: self.encryption_configuration,
         })
     }
 }
@@ -186,6 +209,7 @@ impl ::std::fmt::Debug for UpdateDataAutomationProjectInputBuilder {
         formatter.field("standard_output_configuration", &self.standard_output_configuration);
         formatter.field("custom_output_configuration", &self.custom_output_configuration);
         formatter.field("override_configuration", &self.override_configuration);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }

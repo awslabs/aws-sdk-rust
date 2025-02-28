@@ -28,6 +28,15 @@ pub mod list_blueprints;
 /// Types for the `ListDataAutomationProjects` operation.
 pub mod list_data_automation_projects;
 
+/// Types for the `ListTagsForResource` operation.
+pub mod list_tags_for_resource;
+
+/// Types for the `TagResource` operation.
+pub mod tag_resource;
+
+/// Types for the `UntagResource` operation.
+pub mod untag_resource;
+
 /// Types for the `UpdateBlueprint` operation.
 pub mod update_blueprint;
 

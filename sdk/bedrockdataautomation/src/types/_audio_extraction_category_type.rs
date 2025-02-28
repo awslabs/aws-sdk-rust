@@ -13,7 +13,7 @@
 /// # let audioextractioncategorytype = unimplemented!();
 /// match audioextractioncategorytype {
 ///     AudioExtractionCategoryType::AudioContentModeration => { /* ... */ },
-///     AudioExtractionCategoryType::ChapterContentModeration => { /* ... */ },
+///     AudioExtractionCategoryType::TopicContentModeration => { /* ... */ },
 ///     AudioExtractionCategoryType::Transcript => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -46,7 +46,7 @@ pub enum AudioExtractionCategoryType {
     #[allow(missing_docs)] // documentation missing in model
     AudioContentModeration,
     #[allow(missing_docs)] // documentation missing in model
-    ChapterContentModeration,
+    TopicContentModeration,
     #[allow(missing_docs)] // documentation missing in model
     Transcript,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -57,7 +57,7 @@ impl ::std::convert::From<&str> for AudioExtractionCategoryType {
     fn from(s: &str) -> Self {
         match s {
             "AUDIO_CONTENT_MODERATION" => AudioExtractionCategoryType::AudioContentModeration,
-            "CHAPTER_CONTENT_MODERATION" => AudioExtractionCategoryType::ChapterContentModeration,
+            "TOPIC_CONTENT_MODERATION" => AudioExtractionCategoryType::TopicContentModeration,
             "TRANSCRIPT" => AudioExtractionCategoryType::Transcript,
             other => AudioExtractionCategoryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -75,14 +75,14 @@ impl AudioExtractionCategoryType {
     pub fn as_str(&self) -> &str {
         match self {
             AudioExtractionCategoryType::AudioContentModeration => "AUDIO_CONTENT_MODERATION",
-            AudioExtractionCategoryType::ChapterContentModeration => "CHAPTER_CONTENT_MODERATION",
+            AudioExtractionCategoryType::TopicContentModeration => "TOPIC_CONTENT_MODERATION",
             AudioExtractionCategoryType::Transcript => "TRANSCRIPT",
             AudioExtractionCategoryType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUDIO_CONTENT_MODERATION", "CHAPTER_CONTENT_MODERATION", "TRANSCRIPT"]
+        &["AUDIO_CONTENT_MODERATION", "TOPIC_CONTENT_MODERATION", "TRANSCRIPT"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioExtractionCategoryType {
@@ -106,7 +106,7 @@ impl ::std::fmt::Display for AudioExtractionCategoryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AudioExtractionCategoryType::AudioContentModeration => write!(f, "AUDIO_CONTENT_MODERATION"),
-            AudioExtractionCategoryType::ChapterContentModeration => write!(f, "CHAPTER_CONTENT_MODERATION"),
+            AudioExtractionCategoryType::TopicContentModeration => write!(f, "TOPIC_CONTENT_MODERATION"),
             AudioExtractionCategoryType::Transcript => write!(f, "TRANSCRIPT"),
             AudioExtractionCategoryType::Unknown(value) => write!(f, "{}", value),
         }

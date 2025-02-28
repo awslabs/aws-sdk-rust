@@ -12,8 +12,8 @@
 /// ```text
 /// # let videostandardgenerativefieldtype = unimplemented!();
 /// match videostandardgenerativefieldtype {
+///     VideoStandardGenerativeFieldType::ChapterSummary => { /* ... */ },
 ///     VideoStandardGenerativeFieldType::Iab => { /* ... */ },
-///     VideoStandardGenerativeFieldType::SceneSummary => { /* ... */ },
 ///     VideoStandardGenerativeFieldType::VideoSummary => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,9 +44,9 @@
 )]
 pub enum VideoStandardGenerativeFieldType {
     #[allow(missing_docs)] // documentation missing in model
-    Iab,
+    ChapterSummary,
     #[allow(missing_docs)] // documentation missing in model
-    SceneSummary,
+    Iab,
     #[allow(missing_docs)] // documentation missing in model
     VideoSummary,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -56,8 +56,8 @@ pub enum VideoStandardGenerativeFieldType {
 impl ::std::convert::From<&str> for VideoStandardGenerativeFieldType {
     fn from(s: &str) -> Self {
         match s {
+            "CHAPTER_SUMMARY" => VideoStandardGenerativeFieldType::ChapterSummary,
             "IAB" => VideoStandardGenerativeFieldType::Iab,
-            "SCENE_SUMMARY" => VideoStandardGenerativeFieldType::SceneSummary,
             "VIDEO_SUMMARY" => VideoStandardGenerativeFieldType::VideoSummary,
             other => VideoStandardGenerativeFieldType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -74,15 +74,15 @@ impl VideoStandardGenerativeFieldType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            VideoStandardGenerativeFieldType::ChapterSummary => "CHAPTER_SUMMARY",
             VideoStandardGenerativeFieldType::Iab => "IAB",
-            VideoStandardGenerativeFieldType::SceneSummary => "SCENE_SUMMARY",
             VideoStandardGenerativeFieldType::VideoSummary => "VIDEO_SUMMARY",
             VideoStandardGenerativeFieldType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IAB", "SCENE_SUMMARY", "VIDEO_SUMMARY"]
+        &["CHAPTER_SUMMARY", "IAB", "VIDEO_SUMMARY"]
     }
 }
 impl ::std::convert::AsRef<str> for VideoStandardGenerativeFieldType {
@@ -105,8 +105,8 @@ impl VideoStandardGenerativeFieldType {
 impl ::std::fmt::Display for VideoStandardGenerativeFieldType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            VideoStandardGenerativeFieldType::ChapterSummary => write!(f, "CHAPTER_SUMMARY"),
             VideoStandardGenerativeFieldType::Iab => write!(f, "IAB"),
-            VideoStandardGenerativeFieldType::SceneSummary => write!(f, "SCENE_SUMMARY"),
             VideoStandardGenerativeFieldType::VideoSummary => write!(f, "VIDEO_SUMMARY"),
             VideoStandardGenerativeFieldType::Unknown(value) => write!(f, "{}", value),
         }

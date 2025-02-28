@@ -369,6 +369,26 @@ pub use crate::types::_job_messages::JobMessagesBuilder;
 
 pub use crate::types::_policy::PolicyBuilder;
 
+pub use crate::types::_probe_result::ProbeResultBuilder;
+
+pub use crate::types::_track_mapping::TrackMappingBuilder;
+
+pub use crate::types::_metadata::MetadataBuilder;
+
+pub use crate::types::_container::ContainerBuilder;
+
+pub use crate::types::_track::TrackBuilder;
+
+pub use crate::types::_video_properties::VideoPropertiesBuilder;
+
+pub use crate::types::_frame_rate::FrameRateBuilder;
+
+pub use crate::types::_data_properties::DataPropertiesBuilder;
+
+pub use crate::types::_audio_properties::AudioPropertiesBuilder;
+
+pub use crate::types::_probe_input_file::ProbeInputFileBuilder;
+
 pub use crate::types::_job_engine_version::JobEngineVersionBuilder;
 
 pub use crate::types::_resource_tags::ResourceTagsBuilder;

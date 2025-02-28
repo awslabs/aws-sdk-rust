@@ -251,7 +251,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for LabelParamete
 pub enum LabelParameterVersionError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The parameter couldn't be found. Verify the name and try again.</p>
+    /// <p>The parameter couldn't be found. Verify the name and try again.</p><note>
+    /// <p>For the <code>DeleteParameter</code> and <code>GetParameter</code> actions, if the specified parameter doesn't exist, the <code>ParameterNotFound</code> exception is <i>not</i> recorded in CloudTrail event logs.</p>
+    /// </note>
     ParameterNotFound(crate::types::error::ParameterNotFound),
     /// <p>A parameter version can have a maximum of ten labels.</p>
     ParameterVersionLabelLimitExceeded(crate::types::error::ParameterVersionLabelLimitExceeded),

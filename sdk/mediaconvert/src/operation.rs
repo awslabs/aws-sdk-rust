@@ -70,6 +70,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListVersions` operation.
 pub mod list_versions;
 
+/// Types for the `Probe` operation.
+pub mod probe;
+
 /// Types for the `PutPolicy` operation.
 pub mod put_policy;
 

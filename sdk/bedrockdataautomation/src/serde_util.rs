@@ -171,6 +171,16 @@ pub(crate) fn data_automation_project_summary_correct_errors(
     builder
 }
 
+pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {

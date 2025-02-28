@@ -35,6 +35,8 @@ pub use crate::types::_update_labels_payload::UpdateLabelsPayload;
 
 pub use crate::types::_eks_anywhere_subscription::EksAnywhereSubscription;
 
+pub use crate::types::_license::License;
+
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTerm;
 
 pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscriptionTermUnit;
@@ -380,6 +382,8 @@ mod _kubernetes_network_config_request;
 mod _kubernetes_network_config_response;
 
 mod _launch_template_specification;
+
+mod _license;
 
 mod _log_setup;
 

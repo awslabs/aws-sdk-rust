@@ -3,7 +3,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListNodesInput {
-    /// <p>The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configurations. Optional for single account/single-Region configurations.</p>
+    /// <p>The name of the Amazon Web Services managed resource data sync to retrieve information about.</p>
+    /// <p>For cross-account/cross-Region configurations, this parameter is required, and the name of the supported resource data sync is <code>AWS-QuickSetup-ManagedNode</code>.</p>
+    /// <p>For single account/single-Region configurations, the parameter is not required.</p>
     pub sync_name: ::std::option::Option<::std::string::String>,
     /// <p>One or more filters. Use a filter to return a more specific list of managed nodes.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::NodeFilter>>,
@@ -13,7 +15,9 @@ pub struct ListNodesInput {
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListNodesInput {
-    /// <p>The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configurations. Optional for single account/single-Region configurations.</p>
+    /// <p>The name of the Amazon Web Services managed resource data sync to retrieve information about.</p>
+    /// <p>For cross-account/cross-Region configurations, this parameter is required, and the name of the supported resource data sync is <code>AWS-QuickSetup-ManagedNode</code>.</p>
+    /// <p>For single account/single-Region configurations, the parameter is not required.</p>
     pub fn sync_name(&self) -> ::std::option::Option<&str> {
         self.sync_name.as_deref()
     }
@@ -49,17 +53,23 @@ pub struct ListNodesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListNodesInputBuilder {
-    /// <p>The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configurations. Optional for single account/single-Region configurations.</p>
+    /// <p>The name of the Amazon Web Services managed resource data sync to retrieve information about.</p>
+    /// <p>For cross-account/cross-Region configurations, this parameter is required, and the name of the supported resource data sync is <code>AWS-QuickSetup-ManagedNode</code>.</p>
+    /// <p>For single account/single-Region configurations, the parameter is not required.</p>
     pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sync_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configurations. Optional for single account/single-Region configurations.</p>
+    /// <p>The name of the Amazon Web Services managed resource data sync to retrieve information about.</p>
+    /// <p>For cross-account/cross-Region configurations, this parameter is required, and the name of the supported resource data sync is <code>AWS-QuickSetup-ManagedNode</code>.</p>
+    /// <p>For single account/single-Region configurations, the parameter is not required.</p>
     pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_name = input;
         self
     }
-    /// <p>The name of the resource data sync to retrieve information about. Required for cross-account/cross-Region configurations. Optional for single account/single-Region configurations.</p>
+    /// <p>The name of the Amazon Web Services managed resource data sync to retrieve information about.</p>
+    /// <p>For cross-account/cross-Region configurations, this parameter is required, and the name of the supported resource data sync is <code>AWS-QuickSetup-ManagedNode</code>.</p>
+    /// <p>For single account/single-Region configurations, the parameter is not required.</p>
     pub fn get_sync_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.sync_name
     }

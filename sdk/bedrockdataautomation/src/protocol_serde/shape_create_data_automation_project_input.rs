@@ -39,5 +39,17 @@ pub fn ser_create_data_automation_project_input_input(
         crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.tags {
+        let mut array_14 = object.key("tags").start_array();
+        for item_15 in var_13 {
+            {
+                #[allow(unused_mut)]
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
+                object_16.finish();
+            }
+        }
+        array_14.finish();
+    }
     Ok(())
 }

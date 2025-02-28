@@ -1231,6 +1231,38 @@ pub use crate::types::_policy::Policy;
 
 pub use crate::types::_input_policy::InputPolicy;
 
+pub use crate::types::_probe_result::ProbeResult;
+
+pub use crate::types::_track_mapping::TrackMapping;
+
+pub use crate::types::_metadata::Metadata;
+
+pub use crate::types::_container::Container;
+
+pub use crate::types::_track::Track;
+
+pub use crate::types::_video_properties::VideoProperties;
+
+pub use crate::types::_transfer_characteristics::TransferCharacteristics;
+
+pub use crate::types::_matrix_coefficients::MatrixCoefficients;
+
+pub use crate::types::_frame_rate::FrameRate;
+
+pub use crate::types::_color_primaries::ColorPrimaries;
+
+pub use crate::types::_track_type::TrackType;
+
+pub use crate::types::_data_properties::DataProperties;
+
+pub use crate::types::_codec::Codec;
+
+pub use crate::types::_audio_properties::AudioProperties;
+
+pub use crate::types::_format::Format;
+
+pub use crate::types::_probe_input_file::ProbeInputFile;
+
 pub use crate::types::_job_engine_version::JobEngineVersion;
 
 pub use crate::types::_resource_tags::ResourceTags;
@@ -1332,6 +1364,8 @@ mod _audio_normalization_loudness_logging;
 mod _audio_normalization_peak_calculation;
 
 mod _audio_normalization_settings;
+
+mod _audio_properties;
 
 mod _audio_selector;
 
@@ -1511,11 +1545,15 @@ mod _cmfc_timed_metadata;
 
 mod _cmfc_timed_metadata_box_version;
 
+mod _codec;
+
 mod _color_conversion3_dlut_setting;
 
 mod _color_corrector;
 
 mod _color_metadata;
+
+mod _color_primaries;
 
 mod _color_space;
 
@@ -1524,6 +1562,8 @@ mod _color_space_conversion;
 mod _color_space_usage;
 
 mod _commitment;
+
+mod _container;
 
 mod _container_settings;
 
@@ -1564,6 +1604,8 @@ mod _dash_iso_video_composition_offsets;
 mod _dash_iso_write_segment_timeline_in_representation;
 
 mod _dash_manifest_style;
+
+mod _data_properties;
 
 mod _decryption_mode;
 
@@ -1719,7 +1761,11 @@ mod _font_script;
 
 mod _force_include_rendition_size;
 
+mod _format;
+
 mod _frame_capture_settings;
+
+mod _frame_rate;
 
 mod _gif_framerate_control;
 
@@ -2029,6 +2075,10 @@ mod _m3u8_scte35_source;
 
 mod _m3u8_settings;
 
+mod _matrix_coefficients;
+
+mod _metadata;
+
 mod _min_bottom_rendition_size;
 
 mod _min_top_rendition_size;
@@ -2217,6 +2267,10 @@ mod _preset_speke20_video;
 
 mod _pricing_plan;
 
+mod _probe_input_file;
+
+mod _probe_result;
+
 mod _prores_chroma_sampling;
 
 mod _prores_codec_profile;
@@ -2325,7 +2379,15 @@ mod _timed_metadata_insertion;
 
 mod _timing;
 
+mod _track;
+
+mod _track_mapping;
+
 mod _track_source_settings;
+
+mod _track_type;
+
+mod _transfer_characteristics;
 
 mod _ts_pts_offset;
 
@@ -2392,6 +2454,8 @@ mod _video_overlay_transition;
 mod _video_overlay_unit;
 
 mod _video_preprocessor;
+
+mod _video_properties;
 
 mod _video_selector;
 

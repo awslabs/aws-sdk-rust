@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutParameterInput {
-    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>The fully qualified name of the parameter that you want to create or update.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
@@ -35,7 +35,7 @@ pub struct PutParameterInput {
     /// <p>Parameters can't be referenced or nested in the values of other parameters. You can't include values wrapped in double brackets <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p>
     /// </note>
     pub value: ::std::option::Option<::std::string::String>,
-    /// <p>The type of parameter that you want to add to the system.</p><note>
+    /// <p>The type of parameter that you want to create.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
@@ -43,7 +43,7 @@ pub struct PutParameterInput {
     /// </important>
     pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
-    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account, which is not as secure as using a custom key.</p>
     /// <ul>
     /// <li>
     /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
@@ -114,7 +114,7 @@ pub struct PutParameterInput {
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl PutParameterInput {
-    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>The fully qualified name of the parameter that you want to create or update.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
@@ -152,7 +152,7 @@ impl PutParameterInput {
     pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
-    /// <p>The type of parameter that you want to add to the system.</p><note>
+    /// <p>The type of parameter that you want to create.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
@@ -162,7 +162,7 @@ impl PutParameterInput {
         self.r#type.as_ref()
     }
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
-    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account, which is not as secure as using a custom key.</p>
     /// <ul>
     /// <li>
     /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
@@ -289,7 +289,7 @@ pub struct PutParameterInputBuilder {
     pub(crate) data_type: ::std::option::Option<::std::string::String>,
 }
 impl PutParameterInputBuilder {
-    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>The fully qualified name of the parameter that you want to create or update.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
@@ -317,7 +317,7 @@ impl PutParameterInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>The fully qualified name of the parameter that you want to create or update.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
@@ -344,7 +344,7 @@ impl PutParameterInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The fully qualified name of the parameter that you want to add to the system.</p><note>
+    /// <p>The fully qualified name of the parameter that you want to create or update.</p><note>
     /// <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p>
     /// </note>
     /// <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code></p>
@@ -411,7 +411,7 @@ impl PutParameterInputBuilder {
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value
     }
-    /// <p>The type of parameter that you want to add to the system.</p><note>
+    /// <p>The type of parameter that you want to create.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
@@ -421,7 +421,7 @@ impl PutParameterInputBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of parameter that you want to add to the system.</p><note>
+    /// <p>The type of parameter that you want to create.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
@@ -431,7 +431,7 @@ impl PutParameterInputBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The type of parameter that you want to add to the system.</p><note>
+    /// <p>The type of parameter that you want to create.</p><note>
     /// <p><code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p><important>
@@ -441,7 +441,7 @@ impl PutParameterInputBuilder {
         &self.r#type
     }
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
-    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account, which is not as secure as using a custom key.</p>
     /// <ul>
     /// <li>
     /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
@@ -451,7 +451,7 @@ impl PutParameterInputBuilder {
         self
     }
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
-    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account, which is not as secure as using a custom key.</p>
     /// <ul>
     /// <li>
     /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>
@@ -461,7 +461,7 @@ impl PutParameterInputBuilder {
         self
     }
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better security. Required for parameters that use the <code>SecureString</code> data type.</p>
-    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account which is not as secure as using a custom key.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account, which is not as secure as using a custom key.</p>
     /// <ul>
     /// <li>
     /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p></li>

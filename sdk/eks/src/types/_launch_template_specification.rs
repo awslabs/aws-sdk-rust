@@ -6,26 +6,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both. After node group creation, you cannot use a different name.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used. You can use a different version for node group updates.</p>
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both. After node group creation, you cannot use a different ID.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateSpecification {
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both. After node group creation, you cannot use a different name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used. You can use a different version for node group updates.</p>
     pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both. After node group creation, you cannot use a different ID.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -47,50 +47,50 @@ pub struct LaunchTemplateSpecificationBuilder {
 }
 impl LaunchTemplateSpecificationBuilder {
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both. After node group creation, you cannot use a different name.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both. After node group creation, you cannot use a different name.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the launch template.</p>
-    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both.</p>
+    /// <p>You must specify either the launch template name or the launch template ID in the request, but not both. After node group creation, you cannot use a different name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used. You can use a different version for node group updates.</p>
     pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used. You can use a different version for node group updates.</p>
     pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
-    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used.</p>
+    /// <p>The version number of the launch template to use. If no version is specified, then the template's default version is used. You can use a different version for node group updates.</p>
     pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.version
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both. After node group creation, you cannot use a different ID.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both. After node group creation, you cannot use a different ID.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ID of the launch template.</p>
-    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both.</p>
+    /// <p>You must specify either the launch template ID or the launch template name in the request, but not both. After node group creation, you cannot use a different ID.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

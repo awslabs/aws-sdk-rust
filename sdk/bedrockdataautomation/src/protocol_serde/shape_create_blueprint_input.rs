@@ -21,8 +21,20 @@ pub fn ser_create_blueprint_input_input(
     if let Some(var_6) = &input.schema {
         object.key("schema").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.r#type {
-        object.key("type").string(var_7.as_str());
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("tags").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.r#type {
+        object.key("type").string(var_11.as_str());
     }
     Ok(())
 }

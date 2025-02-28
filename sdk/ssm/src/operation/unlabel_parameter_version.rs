@@ -251,7 +251,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UnlabelParame
 pub enum UnlabelParameterVersionError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The parameter couldn't be found. Verify the name and try again.</p>
+    /// <p>The parameter couldn't be found. Verify the name and try again.</p><note>
+    /// <p>For the <code>DeleteParameter</code> and <code>GetParameter</code> actions, if the specified parameter doesn't exist, the <code>ParameterNotFound</code> exception is <i>not</i> recorded in CloudTrail event logs.</p>
+    /// </note>
     ParameterNotFound(crate::types::error::ParameterNotFound),
     /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
     ParameterVersionNotFound(crate::types::error::ParameterVersionNotFound),

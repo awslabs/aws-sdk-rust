@@ -192,4 +192,23 @@ impl CreateBlueprintFluentBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
+    ///
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// List of tags
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// List of tags
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// List of tags
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

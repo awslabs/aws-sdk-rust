@@ -23,7 +23,8 @@ impl crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersio
 /// Fluent builder constructing a request to `UpdateNodegroupVersion`.
 ///
 /// <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.</p>
-/// <p>You can update a node group using a launch template only if the node group was originally deployed with a launch template. If you need to update a custom AMI in a node group that was deployed with a launch template, then update your custom AMI, specify the new ID in a new version of the launch template, and then update the node group to the new version of the launch template.</p>
+/// <p>You can update a node group using a launch template only if the node group was originally deployed with a launch template. Additionally, the launch template ID or name must match what was used when the node group was created. You can update the launch template version with necessary changes.</p>
+/// <p>If you need to update a custom AMI in a node group that was deployed with a launch template, then update your custom AMI, specify the new ID in a new version of the launch template, and then update the node group to the new version of the launch template.</p>
 /// <p>If you update without a launch template, then you can update to the latest available AMI version of a node group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version in the request. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
 /// <p>You cannot roll back a node group to an earlier Kubernetes version or AMI version.</p>
 /// <p>When a node in a managed node group is terminated due to a scaling action or update, every <code>Pod</code> on that node is drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable to do so. You can <code>force</code> the update if Amazon EKS is unable to drain the nodes as a result of a <code>Pod</code> disruption budget issue.</p>
@@ -171,17 +172,17 @@ impl UpdateNodegroupVersionFluentBuilder {
     pub fn get_release_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_release_version()
     }
-    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
+    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template. When updating, you must specify the same launch template ID or name that was used to create the node group.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.inner = self.inner.launch_template(input);
         self
     }
-    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
+    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template. When updating, you must specify the same launch template ID or name that was used to create the node group.</p>
     pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
-    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template.</p>
+    /// <p>An object representing a node group's launch template specification. You can only update a node group using a launch template if the node group was originally deployed with a launch template. When updating, you must specify the same launch template ID or name that was used to create the node group.</p>
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         self.inner.get_launch_template()
     }

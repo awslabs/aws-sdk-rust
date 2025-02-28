@@ -115,17 +115,17 @@ impl GetCalendarStateFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
     ///
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.calendar_names(input.into());
         self
     }
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_calendar_names(input);
         self
     }
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_calendar_names()
     }

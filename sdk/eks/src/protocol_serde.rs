@@ -367,6 +367,8 @@ pub(crate) mod shape_kubernetes_network_config_response;
 
 pub(crate) mod shape_labels_map;
 
+pub(crate) mod shape_license_list;
+
 pub(crate) mod shape_log_setup;
 
 pub(crate) mod shape_marketplace_information;
@@ -422,6 +424,8 @@ pub(crate) mod shape_fargate_profile_issue_list;
 pub(crate) mod shape_insight_resource_detail;
 
 pub(crate) mod shape_issue_list;
+
+pub(crate) mod shape_license;
 
 pub(crate) mod shape_log_setups;
 

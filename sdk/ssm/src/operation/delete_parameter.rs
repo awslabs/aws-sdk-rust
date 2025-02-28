@@ -246,7 +246,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteParamet
 pub enum DeleteParameterError {
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The parameter couldn't be found. Verify the name and try again.</p>
+    /// <p>The parameter couldn't be found. Verify the name and try again.</p><note>
+    /// <p>For the <code>DeleteParameter</code> and <code>GetParameter</code> actions, if the specified parameter doesn't exist, the <code>ParameterNotFound</code> exception is <i>not</i> recorded in CloudTrail event logs.</p>
+    /// </note>
     ParameterNotFound(crate::types::error::ParameterNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

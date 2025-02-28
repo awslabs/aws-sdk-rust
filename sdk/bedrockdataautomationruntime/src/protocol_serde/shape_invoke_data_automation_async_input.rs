@@ -48,5 +48,20 @@ pub fn ser_invoke_data_automation_async_input_input(
         }
         array_13.finish();
     }
+    if let Some(var_16) = &input.data_automation_profile_arn {
+        object.key("dataAutomationProfileArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.tags {
+        let mut array_18 = object.key("tags").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
     Ok(())
 }

@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfiguration {
-    /// KMS key id.
+    /// Customer KMS key used for encryption
     pub kms_key_id: ::std::string::String,
     /// KMS encryption context.
     pub kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EncryptionConfiguration {
-    /// KMS key id.
+    /// Customer KMS key used for encryption
     pub fn kms_key_id(&self) -> &str {
         use std::ops::Deref;
         self.kms_key_id.deref()
@@ -35,18 +35,18 @@ pub struct EncryptionConfigurationBuilder {
     pub(crate) kms_encryption_context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl EncryptionConfigurationBuilder {
-    /// KMS key id.
+    /// Customer KMS key used for encryption
     /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// KMS key id.
+    /// Customer KMS key used for encryption
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// KMS key id.
+    /// Customer KMS key used for encryption
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

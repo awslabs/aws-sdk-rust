@@ -10,6 +10,8 @@ pub struct UpdateBlueprintInput {
     pub schema: ::std::option::Option<::std::string::String>,
     /// Stage of the Blueprint
     pub blueprint_stage: ::std::option::Option<crate::types::BlueprintStage>,
+    /// KMS Encryption Configuration
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateBlueprintInput {
     /// ARN generated at the server side when a Blueprint is created
@@ -24,6 +26,10 @@ impl UpdateBlueprintInput {
     pub fn blueprint_stage(&self) -> ::std::option::Option<&crate::types::BlueprintStage> {
         self.blueprint_stage.as_ref()
     }
+    /// KMS Encryption Configuration
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateBlueprintInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for UpdateBlueprintInput {
         formatter.field("blueprint_arn", &self.blueprint_arn);
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
         formatter.field("blueprint_stage", &self.blueprint_stage);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }
@@ -48,6 +55,7 @@ pub struct UpdateBlueprintInputBuilder {
     pub(crate) blueprint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schema: ::std::option::Option<::std::string::String>,
     pub(crate) blueprint_stage: ::std::option::Option<crate::types::BlueprintStage>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateBlueprintInputBuilder {
     /// ARN generated at the server side when a Blueprint is created
@@ -94,6 +102,20 @@ impl UpdateBlueprintInputBuilder {
     pub fn get_blueprint_stage(&self) -> &::std::option::Option<crate::types::BlueprintStage> {
         &self.blueprint_stage
     }
+    /// KMS Encryption Configuration
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// KMS Encryption Configuration
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// KMS Encryption Configuration
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateBlueprintInput`](crate::operation::update_blueprint::UpdateBlueprintInput).
     pub fn build(
         self,
@@ -102,6 +124,7 @@ impl UpdateBlueprintInputBuilder {
             blueprint_arn: self.blueprint_arn,
             schema: self.schema,
             blueprint_stage: self.blueprint_stage,
+            encryption_configuration: self.encryption_configuration,
         })
     }
 }
@@ -111,6 +134,7 @@ impl ::std::fmt::Debug for UpdateBlueprintInputBuilder {
         formatter.field("blueprint_arn", &self.blueprint_arn);
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
         formatter.field("blueprint_stage", &self.blueprint_stage);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.finish()
     }
 }

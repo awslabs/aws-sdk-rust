@@ -5,6 +5,8 @@ pub use crate::types::_data_automation_project_status::DataAutomationProjectStat
 
 pub use crate::types::_data_automation_project_stage::DataAutomationProjectStage;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
 pub use crate::types::_override_configuration::OverrideConfiguration;
 
 pub use crate::types::_document_override_configuration::DocumentOverrideConfiguration;
@@ -83,7 +85,7 @@ pub use crate::types::_document_extraction_granularity_type::DocumentExtractionG
 
 pub use crate::types::_data_automation_project::DataAutomationProject;
 
-pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+pub use crate::types::_tag::Tag;
 
 pub use crate::types::_data_automation_project_summary::DataAutomationProjectSummary;
 
@@ -188,6 +190,8 @@ mod _splitter_configuration;
 mod _standard_output_configuration;
 
 mod _state;
+
+mod _tag;
 
 mod _type_;
 

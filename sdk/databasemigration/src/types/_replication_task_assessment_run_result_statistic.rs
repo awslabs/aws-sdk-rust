@@ -14,6 +14,8 @@ pub struct ReplicationTaskAssessmentRunResultStatistic {
     pub warning: i32,
     /// <p>The number of individual assessments that were cancelled during the assessment run.</p>
     pub cancelled: i32,
+    /// <p>The number of individual assessments that were skipped during the assessment run.</p>
+    pub skipped: i32,
 }
 impl ReplicationTaskAssessmentRunResultStatistic {
     /// <p>The number of individual assessments that successfully passed all checks in the assessment run.</p>
@@ -36,6 +38,10 @@ impl ReplicationTaskAssessmentRunResultStatistic {
     pub fn cancelled(&self) -> i32 {
         self.cancelled
     }
+    /// <p>The number of individual assessments that were skipped during the assessment run.</p>
+    pub fn skipped(&self) -> i32 {
+        self.skipped
+    }
 }
 impl ReplicationTaskAssessmentRunResultStatistic {
     /// Creates a new builder-style object to manufacture [`ReplicationTaskAssessmentRunResultStatistic`](crate::types::ReplicationTaskAssessmentRunResultStatistic).
@@ -53,6 +59,7 @@ pub struct ReplicationTaskAssessmentRunResultStatisticBuilder {
     pub(crate) error: ::std::option::Option<i32>,
     pub(crate) warning: ::std::option::Option<i32>,
     pub(crate) cancelled: ::std::option::Option<i32>,
+    pub(crate) skipped: ::std::option::Option<i32>,
 }
 impl ReplicationTaskAssessmentRunResultStatisticBuilder {
     /// <p>The number of individual assessments that successfully passed all checks in the assessment run.</p>
@@ -125,6 +132,20 @@ impl ReplicationTaskAssessmentRunResultStatisticBuilder {
     pub fn get_cancelled(&self) -> &::std::option::Option<i32> {
         &self.cancelled
     }
+    /// <p>The number of individual assessments that were skipped during the assessment run.</p>
+    pub fn skipped(mut self, input: i32) -> Self {
+        self.skipped = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of individual assessments that were skipped during the assessment run.</p>
+    pub fn set_skipped(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.skipped = input;
+        self
+    }
+    /// <p>The number of individual assessments that were skipped during the assessment run.</p>
+    pub fn get_skipped(&self) -> &::std::option::Option<i32> {
+        &self.skipped
+    }
     /// Consumes the builder and constructs a [`ReplicationTaskAssessmentRunResultStatistic`](crate::types::ReplicationTaskAssessmentRunResultStatistic).
     pub fn build(self) -> crate::types::ReplicationTaskAssessmentRunResultStatistic {
         crate::types::ReplicationTaskAssessmentRunResultStatistic {
@@ -133,6 +154,7 @@ impl ReplicationTaskAssessmentRunResultStatisticBuilder {
             error: self.error.unwrap_or_default(),
             warning: self.warning.unwrap_or_default(),
             cancelled: self.cancelled.unwrap_or_default(),
+            skipped: self.skipped.unwrap_or_default(),
         }
     }
 }

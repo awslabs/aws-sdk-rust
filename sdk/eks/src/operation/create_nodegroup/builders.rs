@@ -23,7 +23,8 @@ impl crate::operation::create_nodegroup::builders::CreateNodegroupInputBuilder {
 /// Fluent builder constructing a request to `CreateNodegroup`.
 ///
 /// <p>Creates a managed node group for an Amazon EKS cluster.</p>
-/// <p>You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a>.</p>
+/// <p>You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch template.</p>
+/// <p>For later updates, you will only be able to update a node group using a launch template only if it was originally deployed with a launch template. Additionally, the launch template ID or name must match what was used when the node group was created. You can update the launch template version with necessary changes. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a>.</p>
 /// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the <i>Amazon EKS User Guide</i>.</p><note>
 /// <p>Windows AMI types are only supported for commercial Amazon Web Services Regions that support Windows on Amazon EKS.</p>
 /// </note>
@@ -319,17 +320,20 @@ impl CreateNodegroupFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.inner = self.inner.launch_template(input);
         self
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         self.inner.get_launch_template()
     }

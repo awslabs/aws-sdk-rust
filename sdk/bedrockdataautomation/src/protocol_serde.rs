@@ -41,6 +41,12 @@ pub(crate) mod shape_list_blueprints;
 
 pub(crate) mod shape_list_data_automation_projects;
 
+pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_untag_resource;
+
 pub(crate) mod shape_update_blueprint;
 
 pub(crate) mod shape_update_data_automation_project;
@@ -73,11 +79,17 @@ pub(crate) mod shape_list_blueprints_input;
 
 pub(crate) mod shape_list_data_automation_projects_input;
 
+pub(crate) mod shape_list_tags_for_resource_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_tag_resource_input;
+
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_blueprint_input;
 
@@ -104,6 +116,10 @@ pub(crate) mod shape_encryption_configuration;
 pub(crate) mod shape_override_configuration;
 
 pub(crate) mod shape_standard_output_configuration;
+
+pub(crate) mod shape_tag;
+
+pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 

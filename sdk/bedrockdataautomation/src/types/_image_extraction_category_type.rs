@@ -13,6 +13,7 @@
 /// # let imageextractioncategorytype = unimplemented!();
 /// match imageextractioncategorytype {
 ///     ImageExtractionCategoryType::ContentModeration => { /* ... */ },
+///     ImageExtractionCategoryType::Logos => { /* ... */ },
 ///     ImageExtractionCategoryType::TextDetection => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum ImageExtractionCategoryType {
     #[allow(missing_docs)] // documentation missing in model
     ContentModeration,
     #[allow(missing_docs)] // documentation missing in model
+    Logos,
+    #[allow(missing_docs)] // documentation missing in model
     TextDetection,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for ImageExtractionCategoryType {
     fn from(s: &str) -> Self {
         match s {
             "CONTENT_MODERATION" => ImageExtractionCategoryType::ContentModeration,
+            "LOGOS" => ImageExtractionCategoryType::Logos,
             "TEXT_DETECTION" => ImageExtractionCategoryType::TextDetection,
             other => ImageExtractionCategoryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl ImageExtractionCategoryType {
     pub fn as_str(&self) -> &str {
         match self {
             ImageExtractionCategoryType::ContentModeration => "CONTENT_MODERATION",
+            ImageExtractionCategoryType::Logos => "LOGOS",
             ImageExtractionCategoryType::TextDetection => "TEXT_DETECTION",
             ImageExtractionCategoryType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTENT_MODERATION", "TEXT_DETECTION"]
+        &["CONTENT_MODERATION", "LOGOS", "TEXT_DETECTION"]
     }
 }
 impl ::std::convert::AsRef<str> for ImageExtractionCategoryType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for ImageExtractionCategoryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ImageExtractionCategoryType::ContentModeration => write!(f, "CONTENT_MODERATION"),
+            ImageExtractionCategoryType::Logos => write!(f, "LOGOS"),
             ImageExtractionCategoryType::TextDetection => write!(f, "TEXT_DETECTION"),
             ImageExtractionCategoryType::Unknown(value) => write!(f, "{}", value),
         }

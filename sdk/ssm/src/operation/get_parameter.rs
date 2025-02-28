@@ -249,7 +249,9 @@ pub enum GetParameterError {
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>The query key ID isn't valid.</p>
     InvalidKeyId(crate::types::error::InvalidKeyId),
-    /// <p>The parameter couldn't be found. Verify the name and try again.</p>
+    /// <p>The parameter couldn't be found. Verify the name and try again.</p><note>
+    /// <p>For the <code>DeleteParameter</code> and <code>GetParameter</code> actions, if the specified parameter doesn't exist, the <code>ParameterNotFound</code> exception is <i>not</i> recorded in CloudTrail event logs.</p>
+    /// </note>
     ParameterNotFound(crate::types::error::ParameterNotFound),
     /// <p>The specified parameter version wasn't found. Verify the parameter name and version, and try again.</p>
     ParameterVersionNotFound(crate::types::error::ParameterVersionNotFound),

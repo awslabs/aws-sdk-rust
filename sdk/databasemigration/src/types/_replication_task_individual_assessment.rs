@@ -24,6 +24,8 @@ pub struct ReplicationTaskIndividualAssessment {
     /// <li>
     /// <p><code>"pending"</code></p></li>
     /// <li>
+    /// <p><code>"skipped"</code></p></li>
+    /// <li>
     /// <p><code>"running"</code></p></li>
     /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
@@ -56,6 +58,8 @@ impl ReplicationTaskIndividualAssessment {
     /// <p><code>"passed"</code></p></li>
     /// <li>
     /// <p><code>"pending"</code></p></li>
+    /// <li>
+    /// <p><code>"skipped"</code></p></li>
     /// <li>
     /// <p><code>"running"</code></p></li>
     /// </ul>
@@ -141,6 +145,8 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <li>
     /// <p><code>"pending"</code></p></li>
     /// <li>
+    /// <p><code>"skipped"</code></p></li>
+    /// <li>
     /// <p><code>"running"</code></p></li>
     /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +167,8 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <li>
     /// <p><code>"pending"</code></p></li>
     /// <li>
+    /// <p><code>"skipped"</code></p></li>
+    /// <li>
     /// <p><code>"running"</code></p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -180,6 +188,8 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <p><code>"passed"</code></p></li>
     /// <li>
     /// <p><code>"pending"</code></p></li>
+    /// <li>
+    /// <p><code>"skipped"</code></p></li>
     /// <li>
     /// <p><code>"running"</code></p></li>
     /// </ul>

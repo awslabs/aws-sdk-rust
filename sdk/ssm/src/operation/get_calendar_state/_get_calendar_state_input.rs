@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCalendarStateInput {
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub calendar_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a value or <code>AtTime</code>, the current time is used.</p>
     pub at_time: ::std::option::Option<::std::string::String>,
 }
 impl GetCalendarStateInput {
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.calendar_names.is_none()`.
     pub fn calendar_names(&self) -> &[::std::string::String] {
@@ -39,19 +39,19 @@ impl GetCalendarStateInputBuilder {
     ///
     /// To override the contents of this collection use [`set_calendar_names`](Self::set_calendar_names).
     ///
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub fn calendar_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.calendar_names.unwrap_or_default();
         v.push(input.into());
         self.calendar_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub fn set_calendar_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.calendar_names = input;
         self
     }
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
+    /// <p>The names of Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that represent the calendar entries for which you want to get the state.</p>
     pub fn get_calendar_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.calendar_names
     }

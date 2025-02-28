@@ -29,7 +29,8 @@ pub struct CreateNodegroupInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     /// <p>The node group update configuration.</p>
     pub update_config: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
@@ -102,7 +103,8 @@ impl CreateNodegroupInput {
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn launch_template(&self) -> ::std::option::Option<&crate::types::LaunchTemplateSpecification> {
         self.launch_template.as_ref()
     }
@@ -375,17 +377,20 @@ impl CreateNodegroupInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn launch_template(mut self, input: crate::types::LaunchTemplateSpecification) -> Self {
         self.launch_template = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_launch_template(mut self, input: ::std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
         self.launch_template = input;
         self
     }
-    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
+    /// <p>An object representing a node group's launch template specification. When using this object, don't directly specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>. You cannot later specify a different launch template ID or name than what was used to create the node group.</p>
+    /// <p>Make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>. Also refer to <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Customizing managed nodes with launch templates</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn get_launch_template(&self) -> &::std::option::Option<crate::types::LaunchTemplateSpecification> {
         &self.launch_template
     }

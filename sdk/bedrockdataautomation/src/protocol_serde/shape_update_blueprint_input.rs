@@ -6,8 +6,14 @@ pub fn ser_update_blueprint_input_input(
     if let Some(var_1) = &input.blueprint_stage {
         object.key("blueprintStage").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.schema {
-        object.key("schema").string(var_2.as_str());
+    if let Some(var_2) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.schema {
+        object.key("schema").string(var_4.as_str());
     }
     Ok(())
 }

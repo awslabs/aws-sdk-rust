@@ -18,6 +18,10 @@ pub struct InvokeDataAutomationAsyncInput {
     pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     /// Blueprint list.
     pub blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
+    /// Data automation profile ARN
+    pub data_automation_profile_arn: ::std::option::Option<::std::string::String>,
+    /// List of tags.
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InvokeDataAutomationAsyncInput {
     /// Idempotency token.
@@ -50,6 +54,16 @@ impl InvokeDataAutomationAsyncInput {
     pub fn blueprints(&self) -> &[crate::types::Blueprint] {
         self.blueprints.as_deref().unwrap_or_default()
     }
+    /// Data automation profile ARN
+    pub fn data_automation_profile_arn(&self) -> ::std::option::Option<&str> {
+        self.data_automation_profile_arn.as_deref()
+    }
+    /// List of tags.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl InvokeDataAutomationAsyncInput {
     /// Creates a new builder-style object to manufacture [`InvokeDataAutomationAsyncInput`](crate::operation::invoke_data_automation_async::InvokeDataAutomationAsyncInput).
@@ -69,6 +83,8 @@ pub struct InvokeDataAutomationAsyncInputBuilder {
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     pub(crate) blueprints: ::std::option::Option<::std::vec::Vec<crate::types::Blueprint>>,
+    pub(crate) data_automation_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InvokeDataAutomationAsyncInputBuilder {
     /// Idempotency token.
@@ -177,6 +193,41 @@ impl InvokeDataAutomationAsyncInputBuilder {
     pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Blueprint>> {
         &self.blueprints
     }
+    /// Data automation profile ARN
+    /// This field is required.
+    pub fn data_automation_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_automation_profile_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Data automation profile ARN
+    pub fn set_data_automation_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_automation_profile_arn = input;
+        self
+    }
+    /// Data automation profile ARN
+    pub fn get_data_automation_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_automation_profile_arn
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// List of tags.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// List of tags.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// List of tags.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`InvokeDataAutomationAsyncInput`](crate::operation::invoke_data_automation_async::InvokeDataAutomationAsyncInput).
     pub fn build(
         self,
@@ -192,6 +243,8 @@ impl InvokeDataAutomationAsyncInputBuilder {
             encryption_configuration: self.encryption_configuration,
             notification_configuration: self.notification_configuration,
             blueprints: self.blueprints,
+            data_automation_profile_arn: self.data_automation_profile_arn,
+            tags: self.tags,
         })
     }
 }

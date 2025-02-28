@@ -13,6 +13,7 @@
 /// # let videoextractioncategorytype = unimplemented!();
 /// match videoextractioncategorytype {
 ///     VideoExtractionCategoryType::ContentModeration => { /* ... */ },
+///     VideoExtractionCategoryType::Logos => { /* ... */ },
 ///     VideoExtractionCategoryType::TextDetection => { /* ... */ },
 ///     VideoExtractionCategoryType::Transcript => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum VideoExtractionCategoryType {
     #[allow(missing_docs)] // documentation missing in model
     ContentModeration,
     #[allow(missing_docs)] // documentation missing in model
+    Logos,
+    #[allow(missing_docs)] // documentation missing in model
     TextDetection,
     #[allow(missing_docs)] // documentation missing in model
     Transcript,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for VideoExtractionCategoryType {
     fn from(s: &str) -> Self {
         match s {
             "CONTENT_MODERATION" => VideoExtractionCategoryType::ContentModeration,
+            "LOGOS" => VideoExtractionCategoryType::Logos,
             "TEXT_DETECTION" => VideoExtractionCategoryType::TextDetection,
             "TRANSCRIPT" => VideoExtractionCategoryType::Transcript,
             other => VideoExtractionCategoryType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl VideoExtractionCategoryType {
     pub fn as_str(&self) -> &str {
         match self {
             VideoExtractionCategoryType::ContentModeration => "CONTENT_MODERATION",
+            VideoExtractionCategoryType::Logos => "LOGOS",
             VideoExtractionCategoryType::TextDetection => "TEXT_DETECTION",
             VideoExtractionCategoryType::Transcript => "TRANSCRIPT",
             VideoExtractionCategoryType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl VideoExtractionCategoryType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTENT_MODERATION", "TEXT_DETECTION", "TRANSCRIPT"]
+        &["CONTENT_MODERATION", "LOGOS", "TEXT_DETECTION", "TRANSCRIPT"]
     }
 }
 impl ::std::convert::AsRef<str> for VideoExtractionCategoryType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for VideoExtractionCategoryType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VideoExtractionCategoryType::ContentModeration => write!(f, "CONTENT_MODERATION"),
+            VideoExtractionCategoryType::Logos => write!(f, "LOGOS"),
             VideoExtractionCategoryType::TextDetection => write!(f, "TEXT_DETECTION"),
             VideoExtractionCategoryType::Transcript => write!(f, "TRANSCRIPT"),
             VideoExtractionCategoryType::Unknown(value) => write!(f, "{}", value),

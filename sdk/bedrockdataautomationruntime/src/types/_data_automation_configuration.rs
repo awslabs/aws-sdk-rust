@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataAutomationConfiguration {
-    /// Data automation arn.
-    pub data_automation_arn: ::std::string::String,
+    /// Data automation project arn.
+    pub data_automation_project_arn: ::std::string::String,
     /// Data automation stage.
     pub stage: ::std::option::Option<crate::types::DataAutomationStage>,
 }
 impl DataAutomationConfiguration {
-    /// Data automation arn.
-    pub fn data_automation_arn(&self) -> &str {
+    /// Data automation project arn.
+    pub fn data_automation_project_arn(&self) -> &str {
         use std::ops::Deref;
-        self.data_automation_arn.deref()
+        self.data_automation_project_arn.deref()
     }
     /// Data automation stage.
     pub fn stage(&self) -> ::std::option::Option<&crate::types::DataAutomationStage> {
@@ -31,24 +31,24 @@ impl DataAutomationConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct DataAutomationConfigurationBuilder {
-    pub(crate) data_automation_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) data_automation_project_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stage: ::std::option::Option<crate::types::DataAutomationStage>,
 }
 impl DataAutomationConfigurationBuilder {
-    /// Data automation arn.
+    /// Data automation project arn.
     /// This field is required.
-    pub fn data_automation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.data_automation_arn = ::std::option::Option::Some(input.into());
+    pub fn data_automation_project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_automation_project_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// Data automation arn.
-    pub fn set_data_automation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.data_automation_arn = input;
+    /// Data automation project arn.
+    pub fn set_data_automation_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_automation_project_arn = input;
         self
     }
-    /// Data automation arn.
-    pub fn get_data_automation_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.data_automation_arn
+    /// Data automation project arn.
+    pub fn get_data_automation_project_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_automation_project_arn
     }
     /// Data automation stage.
     pub fn stage(mut self, input: crate::types::DataAutomationStage) -> Self {
@@ -66,13 +66,13 @@ impl DataAutomationConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`DataAutomationConfiguration`](crate::types::DataAutomationConfiguration).
     /// This method will fail if any of the following fields are not set:
-    /// - [`data_automation_arn`](crate::types::builders::DataAutomationConfigurationBuilder::data_automation_arn)
+    /// - [`data_automation_project_arn`](crate::types::builders::DataAutomationConfigurationBuilder::data_automation_project_arn)
     pub fn build(self) -> ::std::result::Result<crate::types::DataAutomationConfiguration, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::DataAutomationConfiguration {
-            data_automation_arn: self.data_automation_arn.ok_or_else(|| {
+            data_automation_project_arn: self.data_automation_project_arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_automation_arn",
-                    "data_automation_arn was not specified but it is required when building DataAutomationConfiguration",
+                    "data_automation_project_arn",
+                    "data_automation_project_arn was not specified but it is required when building DataAutomationConfiguration",
                 )
             })?,
             stage: self.stage,

@@ -23,6 +23,8 @@ pub use crate::types::_update_labels_payload::UpdateLabelsPayloadBuilder;
 
 pub use crate::types::_eks_anywhere_subscription::EksAnywhereSubscriptionBuilder;
 
+pub use crate::types::_license::LicenseBuilder;
+
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTermBuilder;
 
 pub use crate::types::_storage_config_request::StorageConfigRequestBuilder;

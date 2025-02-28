@@ -3,6 +3,8 @@ pub use crate::types::_output_configuration::OutputConfiguration;
 
 pub use crate::types::_automation_job_status::AutomationJobStatus;
 
+pub use crate::types::_tag::Tag;
+
 pub use crate::types::_blueprint::Blueprint;
 
 pub use crate::types::_blueprint_stage::BlueprintStage;
@@ -38,6 +40,8 @@ mod _input_configuration;
 mod _notification_configuration;
 
 mod _output_configuration;
+
+mod _tag;
 
 /// Builders
 pub mod builders;

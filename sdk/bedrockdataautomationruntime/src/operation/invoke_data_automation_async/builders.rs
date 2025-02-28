@@ -211,4 +211,37 @@ impl InvokeDataAutomationAsyncFluentBuilder {
     pub fn get_blueprints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Blueprint>> {
         self.inner.get_blueprints()
     }
+    /// Data automation profile ARN
+    pub fn data_automation_profile_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.data_automation_profile_arn(input.into());
+        self
+    }
+    /// Data automation profile ARN
+    pub fn set_data_automation_profile_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_data_automation_profile_arn(input);
+        self
+    }
+    /// Data automation profile ARN
+    pub fn get_data_automation_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_automation_profile_arn()
+    }
+    ///
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// List of tags.
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// List of tags.
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// List of tags.
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
 }

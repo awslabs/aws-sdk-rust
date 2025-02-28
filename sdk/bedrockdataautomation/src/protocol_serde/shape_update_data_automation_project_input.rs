@@ -9,23 +9,29 @@ pub fn ser_update_data_automation_project_input_input(
         crate::protocol_serde::shape_custom_output_configuration::ser_custom_output_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.override_configuration {
+    if let Some(var_3) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("overrideConfiguration").start_object();
-        crate::protocol_serde::shape_override_configuration::ser_override_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.project_description {
-        object.key("projectDescription").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.project_stage {
-        object.key("projectStage").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.standard_output_configuration {
+    if let Some(var_5) = &input.override_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("standardOutputConfiguration").start_object();
-        crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_6 = object.key("overrideConfiguration").start_object();
+        crate::protocol_serde::shape_override_configuration::ser_override_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.project_description {
+        object.key("projectDescription").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.project_stage {
+        object.key("projectStage").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.standard_output_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("standardOutputConfiguration").start_object();
+        crate::protocol_serde::shape_standard_output_configuration::ser_standard_output_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

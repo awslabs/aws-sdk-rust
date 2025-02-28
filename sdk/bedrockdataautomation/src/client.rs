@@ -181,6 +181,12 @@ mod list_blueprints;
 
 mod list_data_automation_projects;
 
+mod list_tags_for_resource;
+
+mod tag_resource;
+
+mod untag_resource;
+
 mod update_blueprint;
 
 mod update_data_automation_project;

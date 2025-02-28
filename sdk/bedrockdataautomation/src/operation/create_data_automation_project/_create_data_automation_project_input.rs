@@ -20,6 +20,8 @@ pub struct CreateDataAutomationProjectInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// KMS Encryption Configuration
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// List of tags
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataAutomationProjectInput {
     /// Name of the DataAutomationProject
@@ -54,6 +56,12 @@ impl CreateDataAutomationProjectInput {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// List of tags
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateDataAutomationProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -66,6 +74,7 @@ impl ::std::fmt::Debug for CreateDataAutomationProjectInput {
         formatter.field("override_configuration", &self.override_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
@@ -88,6 +97,7 @@ pub struct CreateDataAutomationProjectInputBuilder {
     pub(crate) override_configuration: ::std::option::Option<crate::types::OverrideConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDataAutomationProjectInputBuilder {
     /// Name of the DataAutomationProject
@@ -204,6 +214,26 @@ impl CreateDataAutomationProjectInputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// List of tags
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// List of tags
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// List of tags
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateDataAutomationProjectInput`](crate::operation::create_data_automation_project::CreateDataAutomationProjectInput).
     pub fn build(
         self,
@@ -220,6 +250,7 @@ impl CreateDataAutomationProjectInputBuilder {
             override_configuration: self.override_configuration,
             client_token: self.client_token,
             encryption_configuration: self.encryption_configuration,
+            tags: self.tags,
         })
     }
 }
@@ -234,6 +265,7 @@ impl ::std::fmt::Debug for CreateDataAutomationProjectInputBuilder {
         formatter.field("override_configuration", &self.override_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("encryption_configuration", &self.encryption_configuration);
+        formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }

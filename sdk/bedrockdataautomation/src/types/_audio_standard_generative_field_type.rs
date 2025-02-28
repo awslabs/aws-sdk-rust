@@ -13,8 +13,8 @@
 /// # let audiostandardgenerativefieldtype = unimplemented!();
 /// match audiostandardgenerativefieldtype {
 ///     AudioStandardGenerativeFieldType::AudioSummary => { /* ... */ },
-///     AudioStandardGenerativeFieldType::ChapterSummary => { /* ... */ },
 ///     AudioStandardGenerativeFieldType::Iab => { /* ... */ },
+///     AudioStandardGenerativeFieldType::TopicSummary => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,9 +46,9 @@ pub enum AudioStandardGenerativeFieldType {
     #[allow(missing_docs)] // documentation missing in model
     AudioSummary,
     #[allow(missing_docs)] // documentation missing in model
-    ChapterSummary,
-    #[allow(missing_docs)] // documentation missing in model
     Iab,
+    #[allow(missing_docs)] // documentation missing in model
+    TopicSummary,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -57,8 +57,8 @@ impl ::std::convert::From<&str> for AudioStandardGenerativeFieldType {
     fn from(s: &str) -> Self {
         match s {
             "AUDIO_SUMMARY" => AudioStandardGenerativeFieldType::AudioSummary,
-            "CHAPTER_SUMMARY" => AudioStandardGenerativeFieldType::ChapterSummary,
             "IAB" => AudioStandardGenerativeFieldType::Iab,
+            "TOPIC_SUMMARY" => AudioStandardGenerativeFieldType::TopicSummary,
             other => AudioStandardGenerativeFieldType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -75,14 +75,14 @@ impl AudioStandardGenerativeFieldType {
     pub fn as_str(&self) -> &str {
         match self {
             AudioStandardGenerativeFieldType::AudioSummary => "AUDIO_SUMMARY",
-            AudioStandardGenerativeFieldType::ChapterSummary => "CHAPTER_SUMMARY",
             AudioStandardGenerativeFieldType::Iab => "IAB",
+            AudioStandardGenerativeFieldType::TopicSummary => "TOPIC_SUMMARY",
             AudioStandardGenerativeFieldType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUDIO_SUMMARY", "CHAPTER_SUMMARY", "IAB"]
+        &["AUDIO_SUMMARY", "IAB", "TOPIC_SUMMARY"]
     }
 }
 impl ::std::convert::AsRef<str> for AudioStandardGenerativeFieldType {
@@ -106,8 +106,8 @@ impl ::std::fmt::Display for AudioStandardGenerativeFieldType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AudioStandardGenerativeFieldType::AudioSummary => write!(f, "AUDIO_SUMMARY"),
-            AudioStandardGenerativeFieldType::ChapterSummary => write!(f, "CHAPTER_SUMMARY"),
             AudioStandardGenerativeFieldType::Iab => write!(f, "IAB"),
+            AudioStandardGenerativeFieldType::TopicSummary => write!(f, "TOPIC_SUMMARY"),
             AudioStandardGenerativeFieldType::Unknown(value) => write!(f, "{}", value),
         }
     }

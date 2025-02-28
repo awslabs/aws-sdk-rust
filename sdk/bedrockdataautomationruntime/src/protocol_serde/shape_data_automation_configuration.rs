@@ -4,7 +4,7 @@ pub fn ser_data_automation_configuration(
     input: &crate::types::DataAutomationConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
-        object.key("dataAutomationArn").string(input.data_automation_arn.as_str());
+        object.key("dataAutomationProjectArn").string(input.data_automation_project_arn.as_str());
     }
     if let Some(var_1) = &input.stage {
         object.key("stage").string(var_1.as_str());
