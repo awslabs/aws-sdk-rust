@@ -12,3 +12,11 @@ pub use crate::types::error::_internal_server_exception::InternalServerException
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
+pub use crate::types::error::_policy_size_limit_exceeded_exception::PolicySizeLimitExceededExceptionBuilder;
+
+pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentExceptionBuilder;
+
+pub use crate::types::error::_invalid_policy_revision_id_exception::InvalidPolicyRevisionIdExceptionBuilder;
+
+pub use crate::types::error::_policy_not_found_exception::PolicyNotFoundExceptionBuilder;

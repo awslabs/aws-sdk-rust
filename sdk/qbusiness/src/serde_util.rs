@@ -233,6 +233,15 @@ pub(crate) fn action_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn audio_extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::AudioExtractionConfigurationBuilder,
+) -> crate::types::builders::AudioExtractionConfigurationBuilder {
+    if builder.audio_extraction_status.is_none() {
+        builder.audio_extraction_status = "no value was set".parse::<crate::types::AudioExtractionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn basic_auth_configuration_correct_errors(
     mut builder: crate::types::builders::BasicAuthConfigurationBuilder,
 ) -> crate::types::builders::BasicAuthConfigurationBuilder {
@@ -369,6 +378,15 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn video_extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::VideoExtractionConfigurationBuilder,
+) -> crate::types::builders::VideoExtractionConfigurationBuilder {
+    if builder.video_extraction_status.is_none() {
+        builder.video_extraction_status = "no value was set".parse::<crate::types::VideoExtractionStatus>().ok()
     }
     builder
 }

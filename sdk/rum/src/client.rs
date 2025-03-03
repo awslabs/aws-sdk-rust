@@ -173,17 +173,23 @@ pub mod customize;
 
 mod delete_app_monitor;
 
+mod delete_resource_policy;
+
 mod delete_rum_metrics_destination;
 
 mod get_app_monitor;
 
 mod get_app_monitor_data;
 
+mod get_resource_policy;
+
 mod list_app_monitors;
 
 mod list_rum_metrics_destinations;
 
 mod list_tags_for_resource;
+
+mod put_resource_policy;
 
 mod put_rum_events;
 

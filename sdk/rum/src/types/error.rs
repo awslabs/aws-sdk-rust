@@ -13,11 +13,27 @@ pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_access_denied_exception::AccessDeniedException;
 
+pub use crate::types::error::_policy_size_limit_exceeded_exception::PolicySizeLimitExceededException;
+
+pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentException;
+
+pub use crate::types::error::_invalid_policy_revision_id_exception::InvalidPolicyRevisionIdException;
+
+pub use crate::types::error::_policy_not_found_exception::PolicyNotFoundException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
 
 mod _internal_server_exception;
+
+mod _invalid_policy_revision_id_exception;
+
+mod _malformed_policy_document_exception;
+
+mod _policy_not_found_exception;
+
+mod _policy_size_limit_exceeded_exception;
 
 mod _resource_not_found_exception;
 

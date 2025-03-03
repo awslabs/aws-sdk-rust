@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateDeviceStatusInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>The device key.</p>
+    /// <p>The device key of the device you want to update, for example <code>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub device_key: ::std::option::Option<::std::string::String>,
-    /// <p>The status of whether a device is remembered.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub device_remembered_status: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl UpdateDeviceStatusInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The device key.</p>
+    /// <p>The device key of the device you want to update, for example <code>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn device_key(&self) -> ::std::option::Option<&str> {
         self.device_key.as_deref()
     }
-    /// <p>The status of whether a device is remembered.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn device_remembered_status(&self) -> ::std::option::Option<&crate::types::DeviceRememberedStatusType> {
         self.device_remembered_status.as_ref()
     }
@@ -50,47 +50,47 @@ pub struct UpdateDeviceStatusInputBuilder {
     pub(crate) device_remembered_status: ::std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl UpdateDeviceStatusInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>The device key.</p>
+    /// <p>The device key of the device you want to update, for example <code>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The device key of the device you want to update, for example <code>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The device key of the device you want to update, for example <code>us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_key
     }
-    /// <p>The status of whether a device is remembered.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn device_remembered_status(mut self, input: crate::types::DeviceRememberedStatusType) -> Self {
         self.device_remembered_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of whether a device is remembered.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn set_device_remembered_status(mut self, input: ::std::option::Option<crate::types::DeviceRememberedStatusType>) -> Self {
         self.device_remembered_status = input;
         self
     }
-    /// <p>The status of whether a device is remembered.</p>
+    /// <p>To enable device authentication with the specified device, set to <code>remembered</code>.To disable, set to <code>not_remembered</code>.</p>
     pub fn get_device_remembered_status(&self) -> &::std::option::Option<crate::types::DeviceRememberedStatusType> {
         &self.device_remembered_status
     }

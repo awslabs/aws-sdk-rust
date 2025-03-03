@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUICustomization`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool.</p><br>
-    ///   - [`client_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_client_id):<br>required: **false**<br><p>The client ID for the client app.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool that you want to query for branding settings.</p><br>
+    ///   - [`client_id(impl Into<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::set_client_id):<br>required: **false**<br><p>The ID of the app client that you want to query for branding settings.</p><br>
     /// - On success, responds with [`GetUiCustomizationOutput`](crate::operation::get_ui_customization::GetUiCustomizationOutput) with field(s):
-    ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::operation::get_ui_customization::GetUiCustomizationOutput::ui_customization): <p>The UI customization information.</p>
+    ///   - [`ui_customization(Option<UiCustomizationType>)`](crate::operation::get_ui_customization::GetUiCustomizationOutput::ui_customization): <p>Information about the classic hosted UI custom CSS and logo-image branding that you applied to the user pool or app client.</p>
     /// - On failure, responds with [`SdkError<GetUICustomizationError>`](crate::operation::get_ui_customization::GetUICustomizationError)
     pub fn get_ui_customization(&self) -> crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder {
         crate::operation::get_ui_customization::builders::GetUICustomizationFluentBuilder::new(self.handle.clone())

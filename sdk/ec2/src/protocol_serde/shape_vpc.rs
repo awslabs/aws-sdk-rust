@@ -69,28 +69,38 @@ pub fn de_vpc(
                 builder = builder.set_is_default(var_5);
             }
             ,
-            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Vpc$Tags */ =>  {
+            s if s.matches("encryptionControl") /* EncryptionControl com.amazonaws.ec2#Vpc$EncryptionControl */ =>  {
                 let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_encryption_control::de_vpc_encryption_control(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_encryption_control(var_6);
+            }
+            ,
+            s if s.matches("tagSet") /* Tags com.amazonaws.ec2#Vpc$Tags */ =>  {
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_6);
+                builder = builder.set_tags(var_7);
             }
             ,
             s if s.matches("blockPublicAccessStates") /* BlockPublicAccessStates com.amazonaws.ec2#Vpc$BlockPublicAccessStates */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_block_public_access_states::de_block_public_access_states(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_block_public_access_states(var_7);
+                builder = builder.set_block_public_access_states(var_8);
             }
             ,
             s if s.matches("vpcId") /* VpcId com.amazonaws.ec2#Vpc$VpcId */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -99,11 +109,11 @@ pub fn de_vpc(
                         ?
                     )
                 ;
-                builder = builder.set_vpc_id(var_8);
+                builder = builder.set_vpc_id(var_9);
             }
             ,
             s if s.matches("state") /* State com.amazonaws.ec2#Vpc$State */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         Result::<crate::types::VpcState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::VpcState::from(
@@ -113,23 +123,10 @@ pub fn de_vpc(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_9);
+                builder = builder.set_state(var_10);
             }
             ,
             s if s.matches("cidrBlock") /* CidrBlock com.amazonaws.ec2#Vpc$CidrBlock */ =>  {
-                let var_10 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_cidr_block(var_10);
-            }
-            ,
-            s if s.matches("dhcpOptionsId") /* DhcpOptionsId com.amazonaws.ec2#Vpc$DhcpOptionsId */ =>  {
                 let var_11 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -139,7 +136,20 @@ pub fn de_vpc(
                         ?
                     )
                 ;
-                builder = builder.set_dhcp_options_id(var_11);
+                builder = builder.set_cidr_block(var_11);
+            }
+            ,
+            s if s.matches("dhcpOptionsId") /* DhcpOptionsId com.amazonaws.ec2#Vpc$DhcpOptionsId */ =>  {
+                let var_12 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_dhcp_options_id(var_12);
             }
             ,
             _ => {}

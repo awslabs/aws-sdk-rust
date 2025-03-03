@@ -4,27 +4,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserOutput {
-    /// <p>The username of the user that you requested.</p>
+    /// <p>The name of the user that you requested.</p>
     pub username: ::std::string::String,
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>Custom attributes are prepended with the <code>custom:</code> prefix.</p>
     pub user_attributes: ::std::vec::Vec<crate::types::AttributeType>,
     /// <p><i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations. It doesn't provide information about time-based one-time password (TOTP) software token MFA configurations. To look up information about either type of MFA configuration, use UserMFASettingList instead.</p>
     pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetUserOutput {
-    /// <p>The username of the user that you requested.</p>
+    /// <p>The name of the user that you requested.</p>
     pub fn username(&self) -> &str {
         use std::ops::Deref;
         self.username.deref()
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>Custom attributes are prepended with the <code>custom:</code> prefix.</p>
     pub fn user_attributes(&self) -> &[crate::types::AttributeType] {
         use std::ops::Deref;
         self.user_attributes.deref()
@@ -35,7 +35,7 @@ impl GetUserOutput {
     pub fn mfa_options(&self) -> &[crate::types::MfaOptionType] {
         self.mfa_options.as_deref().unwrap_or_default()
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn preferred_mfa_setting(&self) -> ::std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
@@ -82,18 +82,18 @@ pub struct GetUserOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUserOutputBuilder {
-    /// <p>The username of the user that you requested.</p>
+    /// <p>The name of the user that you requested.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The username of the user that you requested.</p>
+    /// <p>The name of the user that you requested.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The username of the user that you requested.</p>
+    /// <p>The name of the user that you requested.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
@@ -102,7 +102,7 @@ impl GetUserOutputBuilder {
     /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
     ///
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>Custom attributes are prepended with the <code>custom:</code> prefix.</p>
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
         v.push(input);
@@ -110,13 +110,13 @@ impl GetUserOutputBuilder {
         self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>Custom attributes are prepended with the <code>custom:</code> prefix.</p>
     pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
         self.user_attributes = input;
         self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
-    /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
+    /// <p>Custom attributes are prepended with the <code>custom:</code> prefix.</p>
     pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {
         &self.user_attributes
     }
@@ -140,17 +140,17 @@ impl GetUserOutputBuilder {
     pub fn get_mfa_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>> {
         &self.mfa_options
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn preferred_mfa_setting(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_mfa_setting = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn set_preferred_mfa_setting(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_mfa_setting = input;
         self
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The user's preferred MFA. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn get_preferred_mfa_setting(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_mfa_setting
     }

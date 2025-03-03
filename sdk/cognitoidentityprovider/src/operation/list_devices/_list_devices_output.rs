@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesOutput {
-    /// <p>The devices returned in the list devices response.</p>
+    /// <p>An array of devices and their details. Each entry that's returned includes device information, last-accessed and created dates, and the device key.</p>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
     /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicesOutput {
-    /// <p>The devices returned in the list devices response.</p>
+    /// <p>An array of devices and their details. Each entry that's returned includes device information, last-accessed and created dates, and the device key.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.devices.is_none()`.
     pub fn devices(&self) -> &[crate::types::DeviceType] {
@@ -47,19 +47,19 @@ impl ListDevicesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
     ///
-    /// <p>The devices returned in the list devices response.</p>
+    /// <p>An array of devices and their details. Each entry that's returned includes device information, last-accessed and created dates, and the device key.</p>
     pub fn devices(mut self, input: crate::types::DeviceType) -> Self {
         let mut v = self.devices.unwrap_or_default();
         v.push(input);
         self.devices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The devices returned in the list devices response.</p>
+    /// <p>An array of devices and their details. Each entry that's returned includes device information, last-accessed and created dates, and the device key.</p>
     pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>) -> Self {
         self.devices = input;
         self
     }
-    /// <p>The devices returned in the list devices response.</p>
+    /// <p>An array of devices and their details. Each entry that's returned includes device information, last-accessed and created dates, and the device key.</p>
     pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceType>> {
         &self.devices
     }

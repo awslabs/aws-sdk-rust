@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ForgetDeviceInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that the user wants to forget.</p>
     pub device_key: ::std::option::Option<::std::string::String>,
 }
 impl ForgetDeviceInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that the user wants to forget.</p>
     pub fn device_key(&self) -> ::std::option::Option<&str> {
         self.device_key.as_deref()
     }
@@ -42,32 +42,32 @@ pub struct ForgetDeviceInputBuilder {
     pub(crate) device_key: ::std::option::Option<::std::string::String>,
 }
 impl ForgetDeviceInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose registered device you want to forget.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that the user wants to forget.</p>
     /// This field is required.
     pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.device_key = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that the user wants to forget.</p>
     pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
     }
-    /// <p>The device key.</p>
+    /// <p>The unique identifier, or device key, of the device that the user wants to forget.</p>
     pub fn get_device_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_key
     }

@@ -91,6 +91,8 @@ pub use crate::types::error::_group_exists_exception::GroupExistsException;
 
 pub use crate::types::error::_too_many_failed_attempts_exception::TooManyFailedAttemptsException;
 
+pub use crate::types::error::_device_key_exists_exception::DeviceKeyExistsException;
+
 pub use crate::types::error::_web_authn_relying_party_mismatch_exception::WebAuthnRelyingPartyMismatchException;
 
 pub use crate::types::error::_web_authn_origin_not_allowed_exception::WebAuthnOriginNotAllowedException;
@@ -110,6 +112,8 @@ mod _code_delivery_failure_exception;
 mod _code_mismatch_exception;
 
 mod _concurrent_modification_exception;
+
+mod _device_key_exists_exception;
 
 mod _duplicate_provider_exception;
 

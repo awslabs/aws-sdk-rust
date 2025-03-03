@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmDeviceOutput {
-    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer. You must then make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a> request that sets the device to <code>remembered</code> or <code>not_remembered</code>.</p>
+    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer.</p>
     /// <p>When <code>false</code>, immediately sets the device as remembered and eligible for device authentication.</p>
-    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool. You can also configure this option with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a> parameter of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a> request.</p>
+    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
     pub user_confirmation_necessary: bool,
     _request_id: Option<String>,
 }
 impl ConfirmDeviceOutput {
-    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer. You must then make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a> request that sets the device to <code>remembered</code> or <code>not_remembered</code>.</p>
+    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer.</p>
     /// <p>When <code>false</code>, immediately sets the device as remembered and eligible for device authentication.</p>
-    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool. You can also configure this option with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a> parameter of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a> request.</p>
+    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
     pub fn user_confirmation_necessary(&self) -> bool {
         self.user_confirmation_necessary
     }
@@ -38,23 +38,23 @@ pub struct ConfirmDeviceOutputBuilder {
     _request_id: Option<String>,
 }
 impl ConfirmDeviceOutputBuilder {
-    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer. You must then make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a> request that sets the device to <code>remembered</code> or <code>not_remembered</code>.</p>
+    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer.</p>
     /// <p>When <code>false</code>, immediately sets the device as remembered and eligible for device authentication.</p>
-    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool. You can also configure this option with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a> parameter of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a> request.</p>
+    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
     pub fn user_confirmation_necessary(mut self, input: bool) -> Self {
         self.user_confirmation_necessary = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer. You must then make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a> request that sets the device to <code>remembered</code> or <code>not_remembered</code>.</p>
+    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer.</p>
     /// <p>When <code>false</code>, immediately sets the device as remembered and eligible for device authentication.</p>
-    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool. You can also configure this option with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a> parameter of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a> request.</p>
+    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
     pub fn set_user_confirmation_necessary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_confirmation_necessary = input;
         self
     }
-    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer. You must then make an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateUserDevice</a> request that sets the device to <code>remembered</code> or <code>not_remembered</code>.</p>
+    /// <p>When <code>true</code>, your user must confirm that they want to remember the device. Prompt the user for an answer.</p>
     /// <p>When <code>false</code>, immediately sets the device as remembered and eligible for device authentication.</p>
-    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool. You can also configure this option with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html#CognitoUserPools-CreateUserPool-request-DeviceConfiguration">DeviceConfiguration</a> parameter of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a> or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a> request.</p>
+    /// <p>You can configure your user pool to always remember devices, in which case this response is <code>false</code>, or to allow users to opt in, in which case this response is <code>true</code>. Configure this option under <i>Device tracking</i> in the <i>Sign-in</i> menu of your user pool.</p>
     pub fn get_user_confirmation_necessary(&self) -> &::std::option::Option<bool> {
         &self.user_confirmation_necessary
     }

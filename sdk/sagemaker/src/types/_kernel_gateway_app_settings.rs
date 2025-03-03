@@ -9,6 +9,15 @@ pub struct KernelGatewayAppSettings {
     /// </note>
     pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
     /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
+    /// <p>The maximum number of custom images are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>On a domain level: 200</p></li>
+    /// <li>
+    /// <p>On a space level: 5</p></li>
+    /// <li>
+    /// <p>On a user profile level: 5</p></li>
+    /// </ul>
     pub custom_images: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>,
     /// <p>The Amazon Resource Name (ARN) of the Lifecycle Configurations attached to the the user profile or domain.</p><note>
     /// <p>To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an empty list.</p>
@@ -23,6 +32,15 @@ impl KernelGatewayAppSettings {
         self.default_resource_spec.as_ref()
     }
     /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
+    /// <p>The maximum number of custom images are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>On a domain level: 200</p></li>
+    /// <li>
+    /// <p>On a space level: 5</p></li>
+    /// <li>
+    /// <p>On a user profile level: 5</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_images.is_none()`.
     pub fn custom_images(&self) -> &[crate::types::CustomImage] {
@@ -78,6 +96,15 @@ impl KernelGatewayAppSettingsBuilder {
     /// To override the contents of this collection use [`set_custom_images`](Self::set_custom_images).
     ///
     /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
+    /// <p>The maximum number of custom images are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>On a domain level: 200</p></li>
+    /// <li>
+    /// <p>On a space level: 5</p></li>
+    /// <li>
+    /// <p>On a user profile level: 5</p></li>
+    /// </ul>
     pub fn custom_images(mut self, input: crate::types::CustomImage) -> Self {
         let mut v = self.custom_images.unwrap_or_default();
         v.push(input);
@@ -85,11 +112,29 @@ impl KernelGatewayAppSettingsBuilder {
         self
     }
     /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
+    /// <p>The maximum number of custom images are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>On a domain level: 200</p></li>
+    /// <li>
+    /// <p>On a space level: 5</p></li>
+    /// <li>
+    /// <p>On a user profile level: 5</p></li>
+    /// </ul>
     pub fn set_custom_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomImage>>) -> Self {
         self.custom_images = input;
         self
     }
     /// <p>A list of custom SageMaker AI images that are configured to run as a KernelGateway app.</p>
+    /// <p>The maximum number of custom images are as follows.</p>
+    /// <ul>
+    /// <li>
+    /// <p>On a domain level: 200</p></li>
+    /// <li>
+    /// <p>On a space level: 5</p></li>
+    /// <li>
+    /// <p>On a user profile level: 5</p></li>
+    /// </ul>
     pub fn get_custom_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomImage>> {
         &self.custom_images
     }

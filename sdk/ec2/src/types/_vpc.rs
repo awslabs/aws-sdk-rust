@@ -14,6 +14,8 @@ pub struct Vpc {
     pub cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     /// <p>Indicates whether the VPC is the default VPC.</p>
     pub is_default: ::std::option::Option<bool>,
+    #[allow(missing_docs)] // documentation missing in model
+    pub encryption_control: ::std::option::Option<crate::types::VpcEncryptionControl>,
     /// <p>Any tags assigned to the VPC.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The state of VPC Block Public Access (BPA).</p>
@@ -51,6 +53,10 @@ impl Vpc {
     /// <p>Indicates whether the VPC is the default VPC.</p>
     pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn encryption_control(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControl> {
+        self.encryption_control.as_ref()
     }
     /// <p>Any tags assigned to the VPC.</p>
     ///
@@ -95,6 +101,7 @@ pub struct VpcBuilder {
     pub(crate) ipv6_cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcIpv6CidrBlockAssociation>>,
     pub(crate) cidr_block_association_set: ::std::option::Option<::std::vec::Vec<crate::types::VpcCidrBlockAssociation>>,
     pub(crate) is_default: ::std::option::Option<bool>,
+    pub(crate) encryption_control: ::std::option::Option<crate::types::VpcEncryptionControl>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -187,6 +194,20 @@ impl VpcBuilder {
     /// <p>Indicates whether the VPC is the default VPC.</p>
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn encryption_control(mut self, input: crate::types::VpcEncryptionControl) -> Self {
+        self.encryption_control = ::std::option::Option::Some(input);
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn set_encryption_control(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControl>) -> Self {
+        self.encryption_control = input;
+        self
+    }
+    #[allow(missing_docs)] // documentation missing in model
+    pub fn get_encryption_control(&self) -> &::std::option::Option<crate::types::VpcEncryptionControl> {
+        &self.encryption_control
     }
     /// Appends an item to `tags`.
     ///
@@ -286,6 +307,7 @@ impl VpcBuilder {
             ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set,
             cidr_block_association_set: self.cidr_block_association_set,
             is_default: self.is_default,
+            encryption_control: self.encryption_control,
             tags: self.tags,
             block_public_access_states: self.block_public_access_states,
             vpc_id: self.vpc_id,

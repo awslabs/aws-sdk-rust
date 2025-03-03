@@ -11,6 +11,8 @@ pub enum Error {
     CodeMismatchException(crate::types::error::CodeMismatchException),
     /// <p>This exception is thrown if two or more modifications are happening concurrently.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>This exception is thrown when a user attempts to confirm a device with a device key that already exists.</p>
+    DeviceKeyExistsException(crate::types::error::DeviceKeyExistsException),
     /// <p>This exception is thrown when the provider is already supported by the user pool.</p>
     DuplicateProviderException(crate::types::error::DuplicateProviderException),
     /// <p>This exception is thrown when there is a code mismatch and the service fails to configure the software token TOTP multi-factor authentication (MFA).</p>
@@ -123,6 +125,7 @@ impl ::std::fmt::Display for Error {
             Error::CodeDeliveryFailureException(inner) => inner.fmt(f),
             Error::CodeMismatchException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
+            Error::DeviceKeyExistsException(inner) => inner.fmt(f),
             Error::DuplicateProviderException(inner) => inner.fmt(f),
             Error::EnableSoftwareTokenMfaException(inner) => inner.fmt(f),
             Error::ExpiredCodeException(inner) => inner.fmt(f),
@@ -196,6 +199,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CodeDeliveryFailureException(inner) => inner.meta(),
             Self::CodeMismatchException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
+            Self::DeviceKeyExistsException(inner) => inner.meta(),
             Self::DuplicateProviderException(inner) => inner.meta(),
             Self::EnableSoftwareTokenMfaException(inner) => inner.meta(),
             Self::ExpiredCodeException(inner) => inner.meta(),
@@ -1588,6 +1592,7 @@ where
 impl From<crate::operation::confirm_device::ConfirmDeviceError> for Error {
     fn from(err: crate::operation::confirm_device::ConfirmDeviceError) -> Self {
         match err {
+            crate::operation::confirm_device::ConfirmDeviceError::DeviceKeyExistsException(inner) => Error::DeviceKeyExistsException(inner),
             crate::operation::confirm_device::ConfirmDeviceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::confirm_device::ConfirmDeviceError::InternalErrorException(inner) => Error::InternalErrorException(inner),
             crate::operation::confirm_device::ConfirmDeviceError::InvalidLambdaResponseException(inner) => {
@@ -4834,6 +4839,7 @@ impl ::std::error::Error for Error {
             Error::CodeDeliveryFailureException(inner) => inner.source(),
             Error::CodeMismatchException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
+            Error::DeviceKeyExistsException(inner) => inner.source(),
             Error::DuplicateProviderException(inner) => inner.source(),
             Error::EnableSoftwareTokenMfaException(inner) => inner.source(),
             Error::ExpiredCodeException(inner) => inner.source(),
@@ -4893,6 +4899,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CodeDeliveryFailureException(e) => e.request_id(),
             Self::CodeMismatchException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::DeviceKeyExistsException(e) => e.request_id(),
             Self::DuplicateProviderException(e) => e.request_id(),
             Self::EnableSoftwareTokenMfaException(e) => e.request_id(),
             Self::ExpiredCodeException(e) => e.request_id(),

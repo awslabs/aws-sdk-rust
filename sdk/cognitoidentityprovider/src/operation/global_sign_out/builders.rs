@@ -121,17 +121,17 @@ impl GlobalSignOutFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }

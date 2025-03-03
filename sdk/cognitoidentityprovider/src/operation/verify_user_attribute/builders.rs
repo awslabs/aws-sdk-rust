@@ -22,8 +22,8 @@ impl crate::operation::verify_user_attribute::builders::VerifyUserAttributeInput
 }
 /// Fluent builder constructing a request to `VerifyUserAttribute`.
 ///
-/// <p>Verifies the specified user attributes in the user pool.</p>
-/// <p>If your user pool requires verification before Amazon Cognito updates the attribute value, VerifyUserAttribute updates the affected attribute to its pending value. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html"> UserAttributeUpdateSettingsType</a>.</p>
+/// <p>Submits a verification code for a signed-in user who has added or changed a value of an auto-verified attribute. When successful, the user's attribute becomes verified and the attribute <code>email_verified</code> or <code>phone_number_verified</code> becomes <code>true</code>.</p>
+/// <p>If your user pool requires verification before Amazon Cognito updates the attribute value, this operation updates the affected attribute to its pending value.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>
@@ -112,45 +112,45 @@ impl VerifyUserAttributeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attribute_name(input.into());
         self
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attribute_name(input);
         self
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attribute_name()
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code(input.into());
         self
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code(input);
         self
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_code()
     }

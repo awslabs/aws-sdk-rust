@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceServersOutput {
-    /// <p>The resource servers.</p>
+    /// <p>An array of resource servers and the details of their configuration. For each, the response includes names, identifiers, and custom scopes.</p>
     pub resource_servers: ::std::vec::Vec<crate::types::ResourceServerType>,
-    /// <p>A pagination token.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListResourceServersOutput {
-    /// <p>The resource servers.</p>
+    /// <p>An array of resource servers and the details of their configuration. For each, the response includes names, identifiers, and custom scopes.</p>
     pub fn resource_servers(&self) -> &[crate::types::ResourceServerType] {
         use std::ops::Deref;
         self.resource_servers.deref()
     }
-    /// <p>A pagination token.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -45,33 +45,33 @@ impl ListResourceServersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_servers`](Self::set_resource_servers).
     ///
-    /// <p>The resource servers.</p>
+    /// <p>An array of resource servers and the details of their configuration. For each, the response includes names, identifiers, and custom scopes.</p>
     pub fn resource_servers(mut self, input: crate::types::ResourceServerType) -> Self {
         let mut v = self.resource_servers.unwrap_or_default();
         v.push(input);
         self.resource_servers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The resource servers.</p>
+    /// <p>An array of resource servers and the details of their configuration. For each, the response includes names, identifiers, and custom scopes.</p>
     pub fn set_resource_servers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>>) -> Self {
         self.resource_servers = input;
         self
     }
-    /// <p>The resource servers.</p>
+    /// <p>An array of resource servers and the details of their configuration. For each, the response includes names, identifiers, and custom scopes.</p>
     pub fn get_resource_servers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerType>> {
         &self.resource_servers
     }
-    /// <p>A pagination token.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A pagination token.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A pagination token.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -22,7 +22,7 @@ impl crate::operation::get_ui_customization::builders::GetUiCustomizationInputBu
 }
 /// Fluent builder constructing a request to `GetUICustomization`.
 ///
-/// <p>Gets the user interface (UI) Customization information for a particular app client's app UI, if any such information exists for the client. If nothing is set for the particular client, but there is an existing pool level customization (the app <code>clientId</code> is <code>ALL</code>), then that information is returned. If nothing is present, then an empty shape is returned.</p>
+/// <p>Given a user pool ID or app client, returns information about classic hosted UI branding that you applied, if any. Returns user-pool level branding information if no app client branding is applied, or if you don't specify an app client ID. Returns an empty object if you haven't applied hosted UI branding to either the client or the user pool. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/hosted-ui-classic-branding.html">Hosted UI (classic) branding</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetUICustomizationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetUICustomizationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }

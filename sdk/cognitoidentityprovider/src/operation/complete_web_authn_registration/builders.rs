@@ -22,7 +22,7 @@ impl crate::operation::complete_web_authn_registration::builders::CompleteWebAut
 }
 /// Fluent builder constructing a request to `CompleteWebAuthnRegistration`.
 ///
-/// <p>Completes registration of a passkey authenticator for the current user. Your application provides data from a successful registration request with the data from the output of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartWebAuthnRegistration.html"> StartWebAuthnRegistration</a>.</p>
+/// <p>Completes registration of a passkey authenticator for the currently signed-in user.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompleteWebAuthnRegistrationFluentBuilder {
@@ -109,31 +109,31 @@ impl CompleteWebAuthnRegistrationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey registration you want to complete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>A <a href="https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
+    /// <p>A <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
     pub fn credential(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.credential(input);
         self
     }
-    /// <p>A <a href="https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
+    /// <p>A <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
     pub fn set_credential(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_credential(input);
         self
     }
-    /// <p>A <a href="https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
+    /// <p>A <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-registrationresponsejson">RegistrationResponseJSON</a> public-key credential response from the user's passkey provider.</p>
     pub fn get_credential(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_credential()
     }

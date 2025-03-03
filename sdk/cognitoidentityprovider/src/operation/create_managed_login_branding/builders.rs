@@ -24,8 +24,7 @@ impl crate::operation::create_managed_login_branding::builders::CreateManagedLog
 ///
 /// <p>Creates a new set of branding settings for a user pool style and associates it with an app client. This operation is the programmatic option for the creation of a new style in the branding designer.</p>
 /// <p>Provides values for UI customization in a <code>Settings</code> JSON object and image files in an <code>Assets</code> array. To send the JSON object <code>Document</code> type parameter in <code>Settings</code>, you might need to update to the most recent version of your Amazon Web Services SDK. To create a new style with default settings, set <code>UseCognitoProvidedValues</code> to <code>true</code> and don't provide values for any other options.</p>
-/// <p>This operation has a 2-megabyte request-size limit and include the CSS settings and image assets for your app client. Your branding settings might exceed 2MB in size. Amazon Cognito doesn't require that you pass all parameters in one request and preserves existing style settings that you don't specify. If your request is larger than 2MB, separate it into multiple requests, each with a size smaller than the limit.</p>
-/// <p>As a best practice, modify the output of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBrandingByClient.html">DescribeManagedLoginBrandingByClient</a> into the request parameters for this operation. To get all settings, set <code>ReturnMergedResources</code> to <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API and SDK operations for managed login branding</a>.</p><note>
+/// <p>This operation has a 2-megabyte request-size limit and include the CSS settings and image assets for your app client. Your branding settings might exceed 2MB in size. Amazon Cognito doesn't require that you pass all parameters in one request and preserves existing style settings that you don't specify. If your request is larger than 2MB, separate it into multiple requests, each with a size smaller than the limit.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -134,17 +133,17 @@ impl CreateManagedLoginBrandingFluentBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }
@@ -184,17 +183,17 @@ impl CreateManagedLoginBrandingFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_assets`](Self::set_assets).
     ///
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub fn assets(mut self, input: crate::types::AssetType) -> Self {
         self.inner = self.inner.assets(input);
         self
     }
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>) -> Self {
         self.inner = self.inner.set_assets(input);
         self
     }
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetType>> {
         self.inner.get_assets()
     }

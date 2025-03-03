@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifyUserAttributeInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub attribute_name: ::std::option::Option<::std::string::String>,
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub code: ::std::option::Option<::std::string::String>,
 }
 impl VerifyUserAttributeInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
@@ -50,48 +50,48 @@ pub struct VerifyUserAttributeInputBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
 }
 impl VerifyUserAttributeInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     /// This field is required.
     pub fn attribute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub fn set_attribute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute_name = input;
         self
     }
-    /// <p>The attribute name in the request to verify user attributes.</p>
+    /// <p>The name of the attribute that you want to verify.</p>
     pub fn get_attribute_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute_name
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     /// This field is required.
     pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
-    /// <p>The verification code in the request to verify user attributes.</p>
+    /// <p>The verification code that your user pool sent to the added or changed attribute, for example the user's email address.</p>
     pub fn get_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.code
     }

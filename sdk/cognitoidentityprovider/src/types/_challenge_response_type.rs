@@ -14,7 +14,7 @@
 /// <ul>
 /// <li>
 /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN", "USERNAME": "\[username\]", "CREDENTIAL": "\[AuthenticationResponseJSON\]"}</code></p>
-/// <p>See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson"> AuthenticationResponseJSON</a>.</p></li>
+/// <p>See <a href="https://www.w3.org/TR/WebAuthn-3/#dictdef-authenticationresponsejson"> AuthenticationResponseJSON</a>.</p></li>
 /// <li>
 /// <p><code>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME": "\[username\]", "PASSWORD": "\[password\]"}</code></p></li>
 /// <li>
@@ -67,7 +67,7 @@
 /// <dd>
 /// <p><code>"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "\[new_password\]", "USERNAME": "\[username\]"}</code></p>
 /// <p>To set any required attributes that <code>InitiateAuth</code> returned in an <code>requiredAttributes</code> parameter, add <code>"userAttributes.\[attribute_name\]": "\[attribute_value\]"</code>. This parameter can also set values for writable attributes that aren't required by your user pool.</p><note>
-/// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+/// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
 /// </note>
 /// </dd>
 /// <dt>
@@ -102,7 +102,6 @@
 /// </dd>
 /// </dl>
 /// <p>For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working with user devices in your user pool</a>.</p>
-/// <p>This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html">RespondToAuthChallenge</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChallengeResponseType {

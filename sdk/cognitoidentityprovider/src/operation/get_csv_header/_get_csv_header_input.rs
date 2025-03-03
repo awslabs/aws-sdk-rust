@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCsvHeaderInput {
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCsvHeaderInput {
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct GetCsvHeaderInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCsvHeaderInputBuilder {
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the user pool that you want to import users into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

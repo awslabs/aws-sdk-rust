@@ -5,6 +5,8 @@
 pub struct CreateDomainOutput {
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
     pub domain_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the created domain.</p>
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the created domain.</p>
     pub url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -13,6 +15,10 @@ impl CreateDomainOutput {
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
     pub fn domain_arn(&self) -> ::std::option::Option<&str> {
         self.domain_arn.as_deref()
+    }
+    /// <p>The ID of the created domain.</p>
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The URL to the created domain.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
@@ -36,6 +42,7 @@ impl CreateDomainOutput {
 #[non_exhaustive]
 pub struct CreateDomainOutputBuilder {
     pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_id: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,6 +60,20 @@ impl CreateDomainOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
     pub fn get_domain_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_arn
+    }
+    /// <p>The ID of the created domain.</p>
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the created domain.</p>
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_id = input;
+        self
+    }
+    /// <p>The ID of the created domain.</p>
+    pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_id
     }
     /// <p>The URL to the created domain.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -81,6 +102,7 @@ impl CreateDomainOutputBuilder {
     pub fn build(self) -> crate::operation::create_domain::CreateDomainOutput {
         crate::operation::create_domain::CreateDomainOutput {
             domain_arn: self.domain_arn,
+            domain_id: self.domain_id,
             url: self.url,
             _request_id: self._request_id,
         }

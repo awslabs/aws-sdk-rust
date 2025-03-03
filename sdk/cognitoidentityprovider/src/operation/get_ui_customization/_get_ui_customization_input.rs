@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUiCustomizationInput {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUiCustomizationInput {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -41,32 +41,32 @@ pub struct GetUiCustomizationInputBuilder {
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl GetUiCustomizationInputBuilder {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that you want to query for branding settings.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to query for branding settings.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }

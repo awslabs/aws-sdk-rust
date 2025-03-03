@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUsersInput {
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON array of user attribute names, for example <code>given_name</code>, that you want Amazon Cognito to include in the response for each user. When you don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for each user.</p>
     /// <p>Use <code>AttributesToGet</code> with required attributes in your user pool, or in conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an <code>AttributesToGet</code> parameter returns results.</p>
     pub attributes_to_get: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
@@ -54,7 +54,7 @@ pub struct ListUsersInput {
     pub filter: ::std::option::Option<::std::string::String>,
 }
 impl ListUsersInput {
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -65,7 +65,7 @@ impl ListUsersInput {
     pub fn attributes_to_get(&self) -> &[::std::string::String] {
         self.attributes_to_get.as_deref().unwrap_or_default()
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -133,18 +133,18 @@ pub struct ListUsersInputBuilder {
     pub(crate) filter: ::std::option::Option<::std::string::String>,
 }
 impl ListUsersInputBuilder {
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -171,17 +171,17 @@ impl ListUsersInputBuilder {
     pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.attributes_to_get
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

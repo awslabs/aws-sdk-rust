@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserAuthFactorsOutput {
-    /// <p>The username of the currently sign-in user.</p>
+    /// <p>The name of the user who is eligible for the authentication factors in the response.</p>
     pub username: ::std::string::String,
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The challenge method that Amazon Cognito returns to the user in response to sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub preferred_mfa_setting: ::std::option::Option<::std::string::String>,
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in.</p>
+    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
     pub configured_user_auth_factors: ::std::option::Option<::std::vec::Vec<crate::types::AuthFactorType>>,
     _request_id: Option<String>,
 }
 impl GetUserAuthFactorsOutput {
-    /// <p>The username of the currently sign-in user.</p>
+    /// <p>The name of the user who is eligible for the authentication factors in the response.</p>
     pub fn username(&self) -> &str {
         use std::ops::Deref;
         self.username.deref()
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The challenge method that Amazon Cognito returns to the user in response to sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn preferred_mfa_setting(&self) -> ::std::option::Option<&str> {
         self.preferred_mfa_setting.as_deref()
     }
@@ -29,7 +29,7 @@ impl GetUserAuthFactorsOutput {
     pub fn user_mfa_setting_list(&self) -> &[::std::string::String] {
         self.user_mfa_setting_list.as_deref().unwrap_or_default()
     }
-    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in.</p>
+    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configured_user_auth_factors.is_none()`.
     pub fn configured_user_auth_factors(&self) -> &[crate::types::AuthFactorType] {
@@ -70,32 +70,32 @@ pub struct GetUserAuthFactorsOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUserAuthFactorsOutputBuilder {
-    /// <p>The username of the currently sign-in user.</p>
+    /// <p>The name of the user who is eligible for the authentication factors in the response.</p>
     /// This field is required.
     pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.username = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The username of the currently sign-in user.</p>
+    /// <p>The name of the user who is eligible for the authentication factors in the response.</p>
     pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
-    /// <p>The username of the currently sign-in user.</p>
+    /// <p>The name of the user who is eligible for the authentication factors in the response.</p>
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The challenge method that Amazon Cognito returns to the user in response to sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn preferred_mfa_setting(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.preferred_mfa_setting = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The challenge method that Amazon Cognito returns to the user in response to sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn set_preferred_mfa_setting(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.preferred_mfa_setting = input;
         self
     }
-    /// <p>The user's preferred MFA setting.</p>
+    /// <p>The challenge method that Amazon Cognito returns to the user in response to sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
     pub fn get_preferred_mfa_setting(&self) -> &::std::option::Option<::std::string::String> {
         &self.preferred_mfa_setting
     }
@@ -123,19 +123,19 @@ impl GetUserAuthFactorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_configured_user_auth_factors`](Self::set_configured_user_auth_factors).
     ///
-    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in.</p>
+    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
     pub fn configured_user_auth_factors(mut self, input: crate::types::AuthFactorType) -> Self {
         let mut v = self.configured_user_auth_factors.unwrap_or_default();
         v.push(input);
         self.configured_user_auth_factors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in.</p>
+    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
     pub fn set_configured_user_auth_factors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthFactorType>>) -> Self {
         self.configured_user_auth_factors = input;
         self
     }
-    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in.</p>
+    /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
     pub fn get_configured_user_auth_factors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthFactorType>> {
         &self.configured_user_auth_factors
     }

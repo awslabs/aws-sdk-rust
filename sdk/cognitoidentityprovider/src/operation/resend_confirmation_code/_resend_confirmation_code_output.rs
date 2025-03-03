@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResendConfirmationCodeOutput {
-    /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    /// <p>Information about the phone number or email address that Amazon Cognito sent the confirmation code to.</p>
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
 }
 impl ResendConfirmationCodeOutput {
-    /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    /// <p>Information about the phone number or email address that Amazon Cognito sent the confirmation code to.</p>
     pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ResendConfirmationCodeOutputBuilder {
     _request_id: Option<String>,
 }
 impl ResendConfirmationCodeOutputBuilder {
-    /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    /// <p>Information about the phone number or email address that Amazon Cognito sent the confirmation code to.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
         self.code_delivery_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    /// <p>Information about the phone number or email address that Amazon Cognito sent the confirmation code to.</p>
     pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
         self.code_delivery_details = input;
         self
     }
-    /// <p>The code delivery details returned by the server in response to the request to resend the confirmation code.</p>
+    /// <p>Information about the phone number or email address that Amazon Cognito sent the confirmation code to.</p>
     pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }

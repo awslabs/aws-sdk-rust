@@ -346,6 +346,11 @@ pub(crate) fn de_admin_initiate_auth(
                         crate::protocol_serde::shape_authentication_result_type::de_authentication_result_type(tokens)?,
                     );
                 }
+                "AvailableChallenges" => {
+                    builder = builder.set_available_challenges(
+                        crate::protocol_serde::shape_available_challenge_list_type::de_available_challenge_list_type(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

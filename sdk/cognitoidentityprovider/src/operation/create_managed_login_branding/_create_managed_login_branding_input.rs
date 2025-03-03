@@ -5,14 +5,14 @@
 pub struct CreateManagedLoginBrandingInput {
     /// <p>The ID of the user pool where you want to create a new branding style.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>When true, applies the default branding style options. These default options are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub use_cognito_provided_values: ::std::option::Option<bool>,
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
     pub settings: ::std::option::Option<::aws_smithy_types::Document>,
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub assets: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>,
 }
 impl CreateManagedLoginBrandingInput {
@@ -20,7 +20,7 @@ impl CreateManagedLoginBrandingInput {
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
@@ -33,7 +33,7 @@ impl CreateManagedLoginBrandingInput {
     pub fn settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.settings.as_ref()
     }
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.assets.is_none()`.
     pub fn assets(&self) -> &[crate::types::AssetType] {
@@ -84,18 +84,18 @@ impl CreateManagedLoginBrandingInputBuilder {
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     /// This field is required.
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
-    /// <p>The app client that you want to create the branding style for. Each style is permanently linked to an app client. To change the style for an app client, delete the existing style with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteManagedLoginBranding.html">DeleteManagedLoginBranding</a> and create a new one.</p>
+    /// <p>The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
@@ -134,19 +134,19 @@ impl CreateManagedLoginBrandingInputBuilder {
     ///
     /// To override the contents of this collection use [`set_assets`](Self::set_assets).
     ///
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub fn assets(mut self, input: crate::types::AssetType) -> Self {
         let mut v = self.assets.unwrap_or_default();
         v.push(input);
         self.assets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub fn set_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetType>>) -> Self {
         self.assets = input;
         self
     }
-    /// <p>An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
+    /// <p>An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.</p>
     pub fn get_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetType>> {
         &self.assets
     }

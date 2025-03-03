@@ -22,7 +22,7 @@ impl crate::operation::list_users::builders::ListUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUsers`.
 ///
-/// <p>Lists users and their basic details in a user pool.</p><note>
+/// <p>Given a user pool ID, returns a list of users and their basic details in a user pool.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,17 +117,17 @@ impl ListUsersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_users::paginator::ListUsersPaginator {
         crate::operation::list_users::paginator::ListUsersPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool on which the search should be performed.</p>
+    /// <p>The ID of the user pool where you want to display or search for users.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
@@ -153,17 +153,17 @@ impl ListUsersFluentBuilder {
     pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attributes_to_get()
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>Maximum number of users to be returned.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }

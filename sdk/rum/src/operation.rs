@@ -16,6 +16,9 @@ pub mod create_app_monitor;
 /// Types for the `DeleteAppMonitor` operation.
 pub mod delete_app_monitor;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `DeleteRumMetricsDestination` operation.
 pub mod delete_rum_metrics_destination;
 
@@ -25,6 +28,9 @@ pub mod get_app_monitor;
 /// Types for the `GetAppMonitorData` operation.
 pub mod get_app_monitor_data;
 
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
+
 /// Types for the `ListAppMonitors` operation.
 pub mod list_app_monitors;
 
@@ -33,6 +39,9 @@ pub mod list_rum_metrics_destinations;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `PutRumEvents` operation.
 pub mod put_rum_events;

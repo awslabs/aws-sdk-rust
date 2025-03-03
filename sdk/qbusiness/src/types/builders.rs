@@ -73,6 +73,10 @@ pub use crate::types::_index::IndexBuilder;
 
 pub use crate::types::_media_extraction_configuration::MediaExtractionConfigurationBuilder;
 
+pub use crate::types::_video_extraction_configuration::VideoExtractionConfigurationBuilder;
+
+pub use crate::types::_audio_extraction_configuration::AudioExtractionConfigurationBuilder;
+
 pub use crate::types::_image_extraction_configuration::ImageExtractionConfigurationBuilder;
 
 pub use crate::types::_document_enrichment_configuration::DocumentEnrichmentConfigurationBuilder;
@@ -156,6 +160,12 @@ pub use crate::types::_action_review_payload_field_allowed_value::ActionReviewPa
 pub use crate::types::_source_attribution::SourceAttributionBuilder;
 
 pub use crate::types::_text_segment::TextSegmentBuilder;
+
+pub use crate::types::_video_source_details::VideoSourceDetailsBuilder;
+
+pub use crate::types::_audio_source_details::AudioSourceDetailsBuilder;
+
+pub use crate::types::_image_source_details::ImageSourceDetailsBuilder;
 
 pub use crate::types::_snippet_excerpt::SnippetExcerptBuilder;
 

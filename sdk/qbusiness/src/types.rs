@@ -135,6 +135,14 @@ pub use crate::types::_index::Index;
 
 pub use crate::types::_media_extraction_configuration::MediaExtractionConfiguration;
 
+pub use crate::types::_video_extraction_configuration::VideoExtractionConfiguration;
+
+pub use crate::types::_video_extraction_status::VideoExtractionStatus;
+
+pub use crate::types::_audio_extraction_configuration::AudioExtractionConfiguration;
+
+pub use crate::types::_audio_extraction_status::AudioExtractionStatus;
+
 pub use crate::types::_image_extraction_configuration::ImageExtractionConfiguration;
 
 pub use crate::types::_image_extraction_status::ImageExtractionStatus;
@@ -256,6 +264,18 @@ pub use crate::types::_action_payload_field_type::ActionPayloadFieldType;
 pub use crate::types::_source_attribution::SourceAttribution;
 
 pub use crate::types::_text_segment::TextSegment;
+
+pub use crate::types::_source_details::SourceDetails;
+
+pub use crate::types::_video_source_details::VideoSourceDetails;
+
+pub use crate::types::_video_extraction_type::VideoExtractionType;
+
+pub use crate::types::_audio_source_details::AudioSourceDetails;
+
+pub use crate::types::_audio_extraction_type::AudioExtractionType;
+
+pub use crate::types::_image_source_details::ImageSourceDetails;
 
 pub use crate::types::_snippet_excerpt::SnippetExcerpt;
 
@@ -417,6 +437,14 @@ mod _attribute_type;
 
 mod _attribute_value_operator;
 
+mod _audio_extraction_configuration;
+
+mod _audio_extraction_status;
+
+mod _audio_extraction_type;
+
+mod _audio_source_details;
+
 mod _auth_challenge_request;
 
 mod _auth_challenge_request_event;
@@ -551,6 +579,8 @@ mod _image_extraction_configuration;
 
 mod _image_extraction_status;
 
+mod _image_source_details;
+
 mod _index;
 
 mod _index_capacity_configuration;
@@ -671,6 +701,8 @@ mod _snippet_excerpt;
 
 mod _source_attribution;
 
+mod _source_details;
+
 mod _status;
 
 mod _string_attribute_boosting_configuration;
@@ -706,6 +738,14 @@ mod _users_and_groups;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _video_extraction_configuration;
+
+mod _video_extraction_status;
+
+mod _video_extraction_type;
+
+mod _video_source_details;
 
 mod _web_experience;
 

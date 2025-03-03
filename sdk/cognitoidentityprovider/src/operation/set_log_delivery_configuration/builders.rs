@@ -22,7 +22,7 @@ impl crate::operation::set_log_delivery_configuration::builders::SetLogDeliveryC
 }
 /// Fluent builder constructing a request to `SetLogDeliveryConfiguration`.
 ///
-/// <p>Sets up or modifies the logging configuration of a user pool. User pools can export user notification logs and advanced security features user activity logs.</p>
+/// <p>Sets up or modifies the logging configuration of a user pool. User pools can export user notification logs and, when threat protection is active, user-activity logs. For more information, see <a href="cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting user pool logs</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetLogDeliveryConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSigningCertificateOutput {
-    /// <p>The signing certificate.</p>
+    /// <p>The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSigningCertificateOutput {
-    /// <p>The signing certificate.</p>
+    /// <p>The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.</p>
     pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct GetSigningCertificateOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetSigningCertificateOutputBuilder {
-    /// <p>The signing certificate.</p>
+    /// <p>The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.</p>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.certificate = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The signing certificate.</p>
+    /// <p>The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.</p>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
     }
-    /// <p>The signing certificate.</p>
+    /// <p>The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.</p>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate
     }

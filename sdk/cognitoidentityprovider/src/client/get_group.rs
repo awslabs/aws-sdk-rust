@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGroup`](crate::operation::get_group::builders::GetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_name(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_name):<br>required: **true**<br><p>The name of the group.</p><br>
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool.</p><br>
+    ///   - [`group_name(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_name):<br>required: **true**<br><p>The name of the group that you want to get information about.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool that contains the group that you want to query.</p><br>
     /// - On success, responds with [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput) with field(s):
-    ///   - [`group(Option<GroupType>)`](crate::operation::get_group::GetGroupOutput::group): <p>The group object for the group.</p>
+    ///   - [`group(Option<GroupType>)`](crate::operation::get_group::GetGroupOutput::group): <p>A container for the requested group. Includes description, precedence, and IAM role values.</p>
     /// - On failure, responds with [`SdkError<GetGroupError>`](crate::operation::get_group::GetGroupError)
     pub fn get_group(&self) -> crate::operation::get_group::builders::GetGroupFluentBuilder {
         crate::operation::get_group::builders::GetGroupFluentBuilder::new(self.handle.clone())

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSigningCertificateInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to view the signing certificate.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSigningCertificateInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to view the signing certificate.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -27,18 +27,18 @@ pub struct GetSigningCertificateInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSigningCertificateInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to view the signing certificate.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to view the signing certificate.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to view the signing certificate.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }

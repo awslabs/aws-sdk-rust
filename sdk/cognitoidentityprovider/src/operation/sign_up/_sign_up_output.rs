@@ -4,26 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SignUpOutput {
-    /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    /// <p>Indicates whether the user was automatically confirmed. You can auto-confirm users with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a>.</p>
     pub user_confirmed: bool,
-    /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    /// <p>In user pools that automatically verify and confirm new users, Amazon Cognito sends users a message with a code or link that confirms ownership of the phone number or email address that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code.</p>
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The unique identifier of the new user, for example <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub user_sub: ::std::string::String,
     /// <p>A session Id that you can pass to <code>ConfirmSignUp</code> when you want to immediately sign in your user with the <code>USER_AUTH</code> flow after they complete sign-up.</p>
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SignUpOutput {
-    /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    /// <p>Indicates whether the user was automatically confirmed. You can auto-confirm users with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a>.</p>
     pub fn user_confirmed(&self) -> bool {
         self.user_confirmed
     }
-    /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    /// <p>In user pools that automatically verify and confirm new users, Amazon Cognito sends users a message with a code or link that confirms ownership of the phone number or email address that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code.</p>
     pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
-    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The unique identifier of the new user, for example <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn user_sub(&self) -> &str {
         use std::ops::Deref;
         self.user_sub.deref()
@@ -67,47 +67,47 @@ pub struct SignUpOutputBuilder {
     _request_id: Option<String>,
 }
 impl SignUpOutputBuilder {
-    /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    /// <p>Indicates whether the user was automatically confirmed. You can auto-confirm users with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a>.</p>
     /// This field is required.
     pub fn user_confirmed(mut self, input: bool) -> Self {
         self.user_confirmed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    /// <p>Indicates whether the user was automatically confirmed. You can auto-confirm users with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a>.</p>
     pub fn set_user_confirmed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_confirmed = input;
         self
     }
-    /// <p>A response from the server indicating that a user registration has been confirmed.</p>
+    /// <p>Indicates whether the user was automatically confirmed. You can auto-confirm users with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html">pre sign-up Lambda trigger</a>.</p>
     pub fn get_user_confirmed(&self) -> &::std::option::Option<bool> {
         &self.user_confirmed
     }
-    /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    /// <p>In user pools that automatically verify and confirm new users, Amazon Cognito sends users a message with a code or link that confirms ownership of the phone number or email address that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
         self.code_delivery_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    /// <p>In user pools that automatically verify and confirm new users, Amazon Cognito sends users a message with a code or link that confirms ownership of the phone number or email address that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code.</p>
     pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
         self.code_delivery_details = input;
         self
     }
-    /// <p>The code delivery details returned by the server response to the user registration request.</p>
+    /// <p>In user pools that automatically verify and confirm new users, Amazon Cognito sends users a message with a code or link that confirms ownership of the phone number or email address that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code.</p>
     pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }
-    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The unique identifier of the new user, for example <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     /// This field is required.
     pub fn user_sub(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_sub = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The unique identifier of the new user, for example <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn set_user_sub(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_sub = input;
         self
     }
-    /// <p>The 128-bit ID of the authenticated user. This isn't the same as <code>username</code>.</p>
+    /// <p>The unique identifier of the new user, for example <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.</p>
     pub fn get_user_sub(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_sub
     }

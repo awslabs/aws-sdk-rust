@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupOutput {
-    /// <p>The group object for the group.</p>
+    /// <p>A container for the requested group. Includes description, precedence, and IAM role values.</p>
     pub group: ::std::option::Option<crate::types::GroupType>,
     _request_id: Option<String>,
 }
 impl GetGroupOutput {
-    /// <p>The group object for the group.</p>
+    /// <p>A container for the requested group. Includes description, precedence, and IAM role values.</p>
     pub fn group(&self) -> ::std::option::Option<&crate::types::GroupType> {
         self.group.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetGroupOutputBuilder {
-    /// <p>The group object for the group.</p>
+    /// <p>A container for the requested group. Includes description, precedence, and IAM role values.</p>
     pub fn group(mut self, input: crate::types::GroupType) -> Self {
         self.group = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The group object for the group.</p>
+    /// <p>A container for the requested group. Includes description, precedence, and IAM role values.</p>
     pub fn set_group(mut self, input: ::std::option::Option<crate::types::GroupType>) -> Self {
         self.group = input;
         self
     }
-    /// <p>The group object for the group.</p>
+    /// <p>A container for the requested group. Includes description, precedence, and IAM role values.</p>
     pub fn get_group(&self) -> &::std::option::Option<crate::types::GroupType> {
         &self.group
     }

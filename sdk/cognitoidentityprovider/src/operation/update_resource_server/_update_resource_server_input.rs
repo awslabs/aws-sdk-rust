@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceServerInput {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique resource server identifier for the resource server. The identifier can be an API friendly name like <code>solar-system-data</code>. You can also set an API URL like <code>https://solar-system-data-api.example.com</code> as your identifier.</p>
     /// <p>Amazon Cognito represents scopes in the access token in the format <code>$resource-server-identifier/$scope</code>. Longer scope-identifier strings increase the size of your access tokens.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl UpdateResourceServerInput {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
@@ -23,11 +23,11 @@ impl UpdateResourceServerInput {
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scopes.is_none()`.
     pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
@@ -51,18 +51,18 @@ pub struct UpdateResourceServerInputBuilder {
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
 }
 impl UpdateResourceServerInputBuilder {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -84,18 +84,18 @@ impl UpdateResourceServerInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -103,19 +103,19 @@ impl UpdateResourceServerInputBuilder {
     ///
     /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
     ///
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub fn scopes(mut self, input: crate::types::ResourceServerScopeType) -> Self {
         let mut v = self.scopes.unwrap_or_default();
         v.push(input);
         self.scopes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
         self.scopes = input;
         self
     }
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         &self.scopes
     }

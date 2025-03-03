@@ -22,9 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// <p>Lists the tags that are assigned to an Amazon Cognito user pool.</p>
-/// <p>A tag is a label that you can apply to user pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-/// <p>You can use this action up to 10 times per second, per account.</p>
+/// <p>Lists the tags that are assigned to an Amazon Cognito user pool. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/tagging.html">Tagging resources</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

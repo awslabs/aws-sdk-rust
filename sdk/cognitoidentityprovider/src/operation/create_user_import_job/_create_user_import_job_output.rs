@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUserImportJobOutput {
-    /// <p>The details of the user import job.</p>
+    /// <p>The details of the user import job. Includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub user_import_job: ::std::option::Option<crate::types::UserImportJobType>,
     _request_id: Option<String>,
 }
 impl CreateUserImportJobOutput {
-    /// <p>The details of the user import job.</p>
+    /// <p>The details of the user import job. Includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn user_import_job(&self) -> ::std::option::Option<&crate::types::UserImportJobType> {
         self.user_import_job.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct CreateUserImportJobOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateUserImportJobOutputBuilder {
-    /// <p>The details of the user import job.</p>
+    /// <p>The details of the user import job. Includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn user_import_job(mut self, input: crate::types::UserImportJobType) -> Self {
         self.user_import_job = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The details of the user import job.</p>
+    /// <p>The details of the user import job. Includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn set_user_import_job(mut self, input: ::std::option::Option<crate::types::UserImportJobType>) -> Self {
         self.user_import_job = input;
         self
     }
-    /// <p>The details of the user import job.</p>
+    /// <p>The details of the user import job. Includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn get_user_import_job(&self) -> &::std::option::Option<crate::types::UserImportJobType> {
         &self.user_import_job
     }

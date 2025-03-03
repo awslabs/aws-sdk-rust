@@ -124,31 +124,31 @@ impl RevokeTokenFluentBuilder {
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token()
     }
-    /// <p>The client ID for the token that you want to revoke.</p>
+    /// <p>The ID of the app client where the token that you want to revoke was issued.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The client ID for the token that you want to revoke.</p>
+    /// <p>The ID of the app client where the token that you want to revoke was issued.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The client ID for the token that you want to revoke.</p>
+    /// <p>The ID of the app client where the token that you want to revoke was issued.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }
-    /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    /// <p>The client secret of the requested app client, if the client has a secret.</p>
     pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_secret(input.into());
         self
     }
-    /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    /// <p>The client secret of the requested app client, if the client has a secret.</p>
     pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_secret(input);
         self
     }
-    /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    /// <p>The client secret of the requested app client, if the client has a secret.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_secret()
     }

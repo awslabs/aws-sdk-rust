@@ -1373,6 +1373,18 @@ pub use crate::types::_block_public_access_states::BlockPublicAccessStates;
 
 pub use crate::types::_block_public_access_mode::BlockPublicAccessMode;
 
+pub use crate::types::_vpc_encryption_control::VpcEncryptionControl;
+
+pub use crate::types::_vpc_encryption_control_exclusions::VpcEncryptionControlExclusions;
+
+pub use crate::types::_vpc_encryption_control_exclusion::VpcEncryptionControlExclusion;
+
+pub use crate::types::_vpc_encryption_control_exclusion_state::VpcEncryptionControlExclusionState;
+
+pub use crate::types::_vpc_encryption_control_state::VpcEncryptionControlState;
+
+pub use crate::types::_vpc_encryption_control_mode::VpcEncryptionControlMode;
+
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnection;
 
 pub use crate::types::_vpc_peering_connection_state_reason::VpcPeeringConnectionStateReason;
@@ -4578,6 +4590,18 @@ mod _vpc_cidr_block_state;
 mod _vpc_cidr_block_state_code;
 
 mod _vpc_classic_link;
+
+mod _vpc_encryption_control;
+
+mod _vpc_encryption_control_exclusion;
+
+mod _vpc_encryption_control_exclusion_state;
+
+mod _vpc_encryption_control_exclusions;
+
+mod _vpc_encryption_control_mode;
+
+mod _vpc_encryption_control_state;
 
 mod _vpc_endpoint;
 

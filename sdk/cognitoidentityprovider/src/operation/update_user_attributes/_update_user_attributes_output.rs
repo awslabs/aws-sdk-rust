@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserAttributesOutput {
-    /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    /// <p>When the attribute-update request includes an email address or phone number attribute, Amazon Cognito sends a message to users with a code that confirms ownership of the new value that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code. This behavior happens in user pools configured to automatically verify changes to those attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying when users change their email or phone number</a>.</p>
     pub code_delivery_details_list: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,
 }
 impl UpdateUserAttributesOutput {
-    /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    /// <p>When the attribute-update request includes an email address or phone number attribute, Amazon Cognito sends a message to users with a code that confirms ownership of the new value that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code. This behavior happens in user pools configured to automatically verify changes to those attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying when users change their email or phone number</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.code_delivery_details_list.is_none()`.
     pub fn code_delivery_details_list(&self) -> &[crate::types::CodeDeliveryDetailsType] {
@@ -40,19 +40,19 @@ impl UpdateUserAttributesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_code_delivery_details_list`](Self::set_code_delivery_details_list).
     ///
-    /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    /// <p>When the attribute-update request includes an email address or phone number attribute, Amazon Cognito sends a message to users with a code that confirms ownership of the new value that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code. This behavior happens in user pools configured to automatically verify changes to those attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying when users change their email or phone number</a>.</p>
     pub fn code_delivery_details_list(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
         let mut v = self.code_delivery_details_list.unwrap_or_default();
         v.push(input);
         self.code_delivery_details_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    /// <p>When the attribute-update request includes an email address or phone number attribute, Amazon Cognito sends a message to users with a code that confirms ownership of the new value that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code. This behavior happens in user pools configured to automatically verify changes to those attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying when users change their email or phone number</a>.</p>
     pub fn set_code_delivery_details_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>) -> Self {
         self.code_delivery_details_list = input;
         self
     }
-    /// <p>The code delivery details list from the server for the request to update user attributes.</p>
+    /// <p>When the attribute-update request includes an email address or phone number attribute, Amazon Cognito sends a message to users with a code that confirms ownership of the new value that they entered. The <code>CodeDeliveryDetails</code> object is information about the delivery destination for that link or code. This behavior happens in user pools configured to automatically verify changes to those attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#verifying-when-users-change-their-email-or-phone-number">Verifying when users change their email or phone number</a>.</p>
     pub fn get_code_delivery_details_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>> {
         &self.code_delivery_details_list
     }

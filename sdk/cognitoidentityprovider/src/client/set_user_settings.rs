@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetUserSettings`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_token(impl Into<String>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::set_access_token):<br>required: **true**<br><p>A valid access token that Amazon Cognito issued to the user whose user settings you want to configure.</p><br>
+    ///   - [`access_token(impl Into<String>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::set_access_token):<br>required: **true**<br><p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p><br>
     ///   - [`mfa_options(MfaOptionType)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::mfa_options) / [`set_mfa_options(Option<Vec::<MfaOptionType>>)`](crate::operation::set_user_settings::builders::SetUserSettingsFluentBuilder::set_mfa_options):<br>required: **true**<br><p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p><br>
     /// - On success, responds with [`SetUserSettingsOutput`](crate::operation::set_user_settings::SetUserSettingsOutput)
     /// - On failure, responds with [`SdkError<SetUserSettingsError>`](crate::operation::set_user_settings::SetUserSettingsError)

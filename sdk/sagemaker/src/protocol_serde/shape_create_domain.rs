@@ -98,6 +98,13 @@ pub(crate) fn de_create_domain(
                             .transpose()?,
                     );
                 }
+                "DomainId" => {
+                    builder = builder.set_domain_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Url" => {
                     builder = builder.set_url(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

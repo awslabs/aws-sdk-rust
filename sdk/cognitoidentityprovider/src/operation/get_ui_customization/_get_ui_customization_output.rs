@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUiCustomizationOutput {
-    /// <p>The UI customization information.</p>
+    /// <p>Information about the classic hosted UI custom CSS and logo-image branding that you applied to the user pool or app client.</p>
     pub ui_customization: ::std::option::Option<crate::types::UiCustomizationType>,
     _request_id: Option<String>,
 }
 impl GetUiCustomizationOutput {
-    /// <p>The UI customization information.</p>
+    /// <p>Information about the classic hosted UI custom CSS and logo-image branding that you applied to the user pool or app client.</p>
     pub fn ui_customization(&self) -> ::std::option::Option<&crate::types::UiCustomizationType> {
         self.ui_customization.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetUiCustomizationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUiCustomizationOutputBuilder {
-    /// <p>The UI customization information.</p>
+    /// <p>Information about the classic hosted UI custom CSS and logo-image branding that you applied to the user pool or app client.</p>
     /// This field is required.
     pub fn ui_customization(mut self, input: crate::types::UiCustomizationType) -> Self {
         self.ui_customization = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The UI customization information.</p>
+    /// <p>Information about the classic hosted UI custom CSS and logo-image branding that you applied to the user pool or app client.</p>
     pub fn set_ui_customization(mut self, input: ::std::option::Option<crate::types::UiCustomizationType>) -> Self {
         self.ui_customization = input;
         self
     }
-    /// <p>The UI customization information.</p>
+    /// <p>Information about the classic hosted UI custom CSS and logo-image branding that you applied to the user pool or app client.</p>
     pub fn get_ui_customization(&self) -> &::std::option::Option<crate::types::UiCustomizationType> {
         &self.ui_customization
     }

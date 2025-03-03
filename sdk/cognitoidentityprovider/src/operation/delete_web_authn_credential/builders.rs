@@ -22,7 +22,7 @@ impl crate::operation::delete_web_authn_credential::builders::DeleteWebAuthnCred
 }
 /// Fluent builder constructing a request to `DeleteWebAuthnCredential`.
 ///
-/// <p>Deletes a registered passkey, or webauthN, authenticator for the currently signed-in user.</p>
+/// <p>Deletes a registered passkey, or WebAuthn, authenticator for the currently signed-in user.</p>
 /// <p>Authorize this action with a signed-in user's access token. It must include the scope <code>aws.cognito.signin.user.admin</code>.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>
@@ -111,31 +111,31 @@ impl DeleteWebAuthnCredentialFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose passkey credential you want to delete.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete.</p>
     pub fn credential_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.credential_id(input.into());
         self
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete.</p>
     pub fn set_credential_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_credential_id(input);
         self
     }
-    /// <p>The unique identifier of the passkey that you want to delete. Look up registered devices with <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListWebAuthnCredentials.html">ListWebAuthnCredentials</a>.</p>
+    /// <p>The unique identifier of the passkey that you want to delete.</p>
     pub fn get_credential_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_credential_id()
     }

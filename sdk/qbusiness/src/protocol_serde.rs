@@ -447,6 +447,8 @@ pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_attachment_output;
 
+pub(crate) mod shape_audio_extraction_configuration;
+
 pub(crate) mod shape_auth_challenge_request_event;
 
 pub(crate) mod shape_basic_auth_configuration;
@@ -541,6 +543,8 @@ pub(crate) mod shape_text_output_event;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_video_extraction_configuration;
+
 pub(crate) mod shape_web_experience;
 
 pub(crate) mod shape_access_control;
@@ -609,10 +613,18 @@ pub(crate) mod shape_principal_user;
 
 pub(crate) mod shape_snippet_excerpt;
 
+pub(crate) mod shape_source_details;
+
+pub(crate) mod shape_audio_source_details;
+
+pub(crate) mod shape_image_source_details;
+
 pub(crate) mod shape_string_attribute_value_boosting;
 
 pub(crate) mod shape_user_groups;
 
 pub(crate) mod shape_user_ids;
+
+pub(crate) mod shape_video_source_details;
 
 pub(crate) mod shape_eligible_data_sources;

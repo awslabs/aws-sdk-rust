@@ -22,7 +22,7 @@ impl crate::operation::update_resource_server::builders::UpdateResourceServerInp
 }
 /// Fluent builder constructing a request to `UpdateResourceServer`.
 ///
-/// <p>Updates the name and scopes of resource server. All other fields are read-only.</p><important>
+/// <p>Updates the name and scopes of a resource server. All other fields are read-only. For more information about resource servers, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Access control with resource servers</a>.</p><important>
 /// <p>If you don't provide a value for an attribute, it is set to the default value.</p>
 /// </important> <note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
@@ -119,17 +119,17 @@ impl UpdateResourceServerFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the resource server that you want to update.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
@@ -150,17 +150,17 @@ impl UpdateResourceServerFluentBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the resource server.</p>
+    /// <p>The updated name of the resource server.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -169,17 +169,17 @@ impl UpdateResourceServerFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_scopes`](Self::set_scopes).
     ///
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub fn scopes(mut self, input: crate::types::ResourceServerScopeType) -> Self {
         self.inner = self.inner.scopes(input);
         self
     }
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub fn set_scopes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
         self.inner = self.inner.set_scopes(input);
         self
     }
-    /// <p>The scope values to be set for the resource server.</p>
+    /// <p>An array of updated custom scope names and descriptions that you want to associate with your resource server.</p>
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         self.inner.get_scopes()
     }

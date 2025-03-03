@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartUserImportJobInput {
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to start importing users into.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a user import job that you previously created.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StartUserImportJobInput {
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to start importing users into.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a user import job that you previously created.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
@@ -34,33 +34,33 @@ pub struct StartUserImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl StartUserImportJobInputBuilder {
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to start importing users into.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to start importing users into.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to start importing users into.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a user import job that you previously created.</p>
     /// This field is required.
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.job_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a user import job that you previously created.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a user import job that you previously created.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }

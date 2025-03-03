@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserPoolClientsOutput {
-    /// <p>The user pool clients in the response that lists user pool clients.</p>
+    /// <p>An array of app clients and their details. Includes app client ID and name.</p>
     pub user_pool_clients: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>,
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUserPoolClientsOutput {
-    /// <p>The user pool clients in the response that lists user pool clients.</p>
+    /// <p>An array of app clients and their details. Includes app client ID and name.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_pool_clients.is_none()`.
     pub fn user_pool_clients(&self) -> &[crate::types::UserPoolClientDescription] {
         self.user_pool_clients.as_deref().unwrap_or_default()
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -47,33 +47,33 @@ impl ListUserPoolClientsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_pool_clients`](Self::set_user_pool_clients).
     ///
-    /// <p>The user pool clients in the response that lists user pool clients.</p>
+    /// <p>An array of app clients and their details. Includes app client ID and name.</p>
     pub fn user_pool_clients(mut self, input: crate::types::UserPoolClientDescription) -> Self {
         let mut v = self.user_pool_clients.unwrap_or_default();
         v.push(input);
         self.user_pool_clients = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The user pool clients in the response that lists user pool clients.</p>
+    /// <p>An array of app clients and their details. Includes app client ID and name.</p>
     pub fn set_user_pool_clients(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>>) -> Self {
         self.user_pool_clients = input;
         self
     }
-    /// <p>The user pool clients in the response that lists user pool clients.</p>
+    /// <p>An array of app clients and their details. Includes app client ID and name.</p>
     pub fn get_user_pool_clients(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserPoolClientDescription>> {
         &self.user_pool_clients
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

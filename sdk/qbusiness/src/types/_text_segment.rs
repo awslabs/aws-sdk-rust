@@ -11,9 +11,19 @@ pub struct TextSegment {
     /// <p>The relevant text excerpt from a source that was used to generate a citation text segment in an Amazon Q Business chat response.</p>
     pub snippet_excerpt: ::std::option::Option<crate::types::SnippetExcerpt>,
     /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaId within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub media_id: ::std::option::Option<::std::string::String>,
     /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaMimeType within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub media_mime_type: ::std::option::Option<::std::string::String>,
+    /// <p>Source information for a segment of extracted text, including its media type.</p>
+    pub source_details: ::std::option::Option<crate::types::SourceDetails>,
 }
 impl TextSegment {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
@@ -29,12 +39,24 @@ impl TextSegment {
         self.snippet_excerpt.as_ref()
     }
     /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaId within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn media_id(&self) -> ::std::option::Option<&str> {
         self.media_id.as_deref()
     }
     /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaMimeType within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn media_mime_type(&self) -> ::std::option::Option<&str> {
         self.media_mime_type.as_deref()
+    }
+    /// <p>Source information for a segment of extracted text, including its media type.</p>
+    pub fn source_details(&self) -> ::std::option::Option<&crate::types::SourceDetails> {
+        self.source_details.as_ref()
     }
 }
 impl TextSegment {
@@ -53,6 +75,7 @@ pub struct TextSegmentBuilder {
     pub(crate) snippet_excerpt: ::std::option::Option<crate::types::SnippetExcerpt>,
     pub(crate) media_id: ::std::option::Option<::std::string::String>,
     pub(crate) media_mime_type: ::std::option::Option<::std::string::String>,
+    pub(crate) source_details: ::std::option::Option<crate::types::SourceDetails>,
 }
 impl TextSegmentBuilder {
     /// <p>The zero-based location in the response string where the source attribution starts.</p>
@@ -98,32 +121,70 @@ impl TextSegmentBuilder {
         &self.snippet_excerpt
     }
     /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaId within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn media_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaId within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn set_media_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_id = input;
         self
     }
     /// <p>The identifier of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaId within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn get_media_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_id
     }
     /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaMimeType within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn media_mime_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.media_mime_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaMimeType within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn set_media_mime_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.media_mime_type = input;
         self
     }
     /// <p>The MIME type (image/png) of the media object associated with the text segment in the source attribution.</p>
+    #[deprecated(
+        note = "Deprecated in favor of using mediaMimeType within the respective sourceDetails field.",
+        since = "2025-02-28"
+    )]
     pub fn get_media_mime_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.media_mime_type
+    }
+    /// <p>Source information for a segment of extracted text, including its media type.</p>
+    pub fn source_details(mut self, input: crate::types::SourceDetails) -> Self {
+        self.source_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Source information for a segment of extracted text, including its media type.</p>
+    pub fn set_source_details(mut self, input: ::std::option::Option<crate::types::SourceDetails>) -> Self {
+        self.source_details = input;
+        self
+    }
+    /// <p>Source information for a segment of extracted text, including its media type.</p>
+    pub fn get_source_details(&self) -> &::std::option::Option<crate::types::SourceDetails> {
+        &self.source_details
     }
     /// Consumes the builder and constructs a [`TextSegment`](crate::types::TextSegment).
     pub fn build(self) -> crate::types::TextSegment {
@@ -133,6 +194,7 @@ impl TextSegmentBuilder {
             snippet_excerpt: self.snippet_excerpt,
             media_id: self.media_id,
             media_mime_type: self.media_mime_type,
+            source_details: self.source_details,
         }
     }
 }

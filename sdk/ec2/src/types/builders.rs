@@ -927,6 +927,12 @@ pub use crate::types::_vpc::VpcBuilder;
 
 pub use crate::types::_block_public_access_states::BlockPublicAccessStatesBuilder;
 
+pub use crate::types::_vpc_encryption_control::VpcEncryptionControlBuilder;
+
+pub use crate::types::_vpc_encryption_control_exclusions::VpcEncryptionControlExclusionsBuilder;
+
+pub use crate::types::_vpc_encryption_control_exclusion::VpcEncryptionControlExclusionBuilder;
+
 pub use crate::types::_vpc_peering_connection::VpcPeeringConnectionBuilder;
 
 pub use crate::types::_vpc_peering_connection_state_reason::VpcPeeringConnectionStateReasonBuilder;

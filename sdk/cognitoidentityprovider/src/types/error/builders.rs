@@ -91,6 +91,8 @@ pub use crate::types::error::_group_exists_exception::GroupExistsExceptionBuilde
 
 pub use crate::types::error::_too_many_failed_attempts_exception::TooManyFailedAttemptsExceptionBuilder;
 
+pub use crate::types::error::_device_key_exists_exception::DeviceKeyExistsExceptionBuilder;
+
 pub use crate::types::error::_web_authn_relying_party_mismatch_exception::WebAuthnRelyingPartyMismatchExceptionBuilder;
 
 pub use crate::types::error::_web_authn_origin_not_allowed_exception::WebAuthnOriginNotAllowedExceptionBuilder;

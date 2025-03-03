@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetUiCustomizationInput {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool where you want to apply branding to the classic hosted UI.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to <code>ALL</code>.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>The CSS values in the UI customization.</p>
+    /// <p>A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool <i>App clients</i> tab, select <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link to <code>CSS template.css</code>.</p>
     pub css: ::std::option::Option<::std::string::String>,
-    /// <p>The uploaded logo image for the UI customization.</p>
+    /// <p>The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.</p>
     pub image_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl SetUiCustomizationInput {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool where you want to apply branding to the classic hosted UI.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to <code>ALL</code>.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
-    /// <p>The CSS values in the UI customization.</p>
+    /// <p>A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool <i>App clients</i> tab, select <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link to <code>CSS template.css</code>.</p>
     pub fn css(&self) -> ::std::option::Option<&str> {
         self.css.as_deref()
     }
-    /// <p>The uploaded logo image for the UI customization.</p>
+    /// <p>The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.</p>
     pub fn image_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.image_file.as_ref()
     }
@@ -57,60 +57,60 @@ pub struct SetUiCustomizationInputBuilder {
     pub(crate) image_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl SetUiCustomizationInputBuilder {
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool where you want to apply branding to the classic hosted UI.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool where you want to apply branding to the classic hosted UI.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool where you want to apply branding to the classic hosted UI.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to <code>ALL</code>.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to <code>ALL</code>.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
-    /// <p>The client ID for the client app.</p>
+    /// <p>The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to <code>ALL</code>.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
     }
-    /// <p>The CSS values in the UI customization.</p>
+    /// <p>A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool <i>App clients</i> tab, select <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link to <code>CSS template.css</code>.</p>
     pub fn css(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.css = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The CSS values in the UI customization.</p>
+    /// <p>A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool <i>App clients</i> tab, select <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link to <code>CSS template.css</code>.</p>
     pub fn set_css(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.css = input;
         self
     }
-    /// <p>The CSS values in the UI customization.</p>
+    /// <p>A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool <i>App clients</i> tab, select <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link to <code>CSS template.css</code>.</p>
     pub fn get_css(&self) -> &::std::option::Option<::std::string::String> {
         &self.css
     }
-    /// <p>The uploaded logo image for the UI customization.</p>
+    /// <p>The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.</p>
     pub fn image_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.image_file = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The uploaded logo image for the UI customization.</p>
+    /// <p>The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.</p>
     pub fn set_image_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.image_file = input;
         self
     }
-    /// <p>The uploaded logo image for the UI customization.</p>
+    /// <p>The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.</p>
     pub fn get_image_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.image_file
     }

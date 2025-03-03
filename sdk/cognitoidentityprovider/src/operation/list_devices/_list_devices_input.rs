@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListDevicesInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub access_token: ::std::option::Option<::std::string::String>,
-    /// <p>The limit of the device request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicesInput {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
-    /// <p>The limit of the device request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -50,32 +50,32 @@ pub struct ListDevicesInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicesInputBuilder {
-    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose list of devices you want to view.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
-    /// <p>The limit of the device request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The limit of the device request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The limit of the device request.</p>
+    /// <p>The maximum number of devices that you want Amazon Cognito to return in the response.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

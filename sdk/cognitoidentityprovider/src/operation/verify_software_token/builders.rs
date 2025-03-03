@@ -22,7 +22,7 @@ impl crate::operation::verify_software_token::builders::VerifySoftwareTokenInput
 }
 /// Fluent builder constructing a request to `VerifySoftwareToken`.
 ///
-/// <p>Use this API to register a user's entered time-based one-time password (TOTP) code and mark the user's software token MFA status as "verified" if successful. The request takes an access token or a session string, but not both.</p><note>
+/// <p>Registers the current user's time-based one-time password (TOTP) authenticator with a code generated in their authenticator app from a private key that's supplied by your user pool. Marks the user's software token MFA status as "verified" if successful. The request takes an access token or a session string, but not both.</p><note>
 /// <p>Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -110,59 +110,59 @@ impl VerifySoftwareTokenFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
         self
     }
-    /// <p>A valid access token that Amazon Cognito issued to the user whose software token you want to verify.</p>
+    /// <p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p>
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_token()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>The session ID from an <code>AssociateSoftwareToken</code> request.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>The session ID from an <code>AssociateSoftwareToken</code> request.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session(input);
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>The session ID from an <code>AssociateSoftwareToken</code> request.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_session()
     }
-    /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+    /// <p>A TOTP that the user generated in their configured authenticator app.</p>
     pub fn user_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_code(input.into());
         self
     }
-    /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+    /// <p>A TOTP that the user generated in their configured authenticator app.</p>
     pub fn set_user_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_code(input);
         self
     }
-    /// <p>The one- time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken</a>.</p>
+    /// <p>A TOTP that the user generated in their configured authenticator app.</p>
     pub fn get_user_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_code()
     }
-    /// <p>The friendly device name.</p>
+    /// <p>A friendly name for the device that's running the TOTP authenticator.</p>
     pub fn friendly_device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.friendly_device_name(input.into());
         self
     }
-    /// <p>The friendly device name.</p>
+    /// <p>A friendly name for the device that's running the TOTP authenticator.</p>
     pub fn set_friendly_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_friendly_device_name(input);
         self
     }
-    /// <p>The friendly device name.</p>
+    /// <p>A friendly name for the device that's running the TOTP authenticator.</p>
     pub fn get_friendly_device_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_friendly_device_name()
     }

@@ -4,12 +4,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUserAttributeVerificationCodeOutput {
-    /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    /// <p>Information about the delivery destination of the user attribute verification code.</p>
     pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
 }
 impl GetUserAttributeVerificationCodeOutput {
-    /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    /// <p>Information about the delivery destination of the user attribute verification code.</p>
     pub fn code_delivery_details(&self) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct GetUserAttributeVerificationCodeOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetUserAttributeVerificationCodeOutputBuilder {
-    /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    /// <p>Information about the delivery destination of the user attribute verification code.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
         self.code_delivery_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    /// <p>Information about the delivery destination of the user attribute verification code.</p>
     pub fn set_code_delivery_details(mut self, input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
         self.code_delivery_details = input;
         self
     }
-    /// <p>The code delivery details returned by the server in response to the request to get the user attribute verification code.</p>
+    /// <p>Information about the delivery destination of the user attribute verification code.</p>
     pub fn get_code_delivery_details(&self) -> &::std::option::Option<crate::types::CodeDeliveryDetailsType> {
         &self.code_delivery_details
     }

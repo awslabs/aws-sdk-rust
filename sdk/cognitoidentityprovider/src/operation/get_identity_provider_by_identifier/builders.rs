@@ -22,7 +22,7 @@ impl crate::operation::get_identity_provider_by_identifier::builders::GetIdentit
 }
 /// Fluent builder constructing a request to `GetIdentityProviderByIdentifier`.
 ///
-/// <p>Gets the specified IdP.</p>
+/// <p>Given the identifier of an identity provider (IdP), for example <code>examplecorp</code>, returns information about the user pool configuration for that IdP. For more information about IdPs, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">Third-party IdP sign-in</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub fn idp_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idp_identifier(input.into());
         self
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub fn set_idp_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_idp_identifier(input);
         self
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub fn get_idp_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_idp_identifier()
     }

@@ -24,8 +24,7 @@ impl crate::operation::update_managed_login_branding::builders::UpdateManagedLog
 ///
 /// <p>Configures the branding settings for a user pool style. This operation is the programmatic option for the configuration of a style in the branding designer.</p>
 /// <p>Provides values for UI customization in a <code>Settings</code> JSON object and image files in an <code>Assets</code> array.</p>
-/// <p>This operation has a 2-megabyte request-size limit and include the CSS settings and image assets for your app client. Your branding settings might exceed 2MB in size. Amazon Cognito doesn't require that you pass all parameters in one request and preserves existing style settings that you don't specify. If your request is larger than 2MB, separate it into multiple requests, each with a size smaller than the limit.</p>
-/// <p>As a best practice, modify the output of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBrandingByClient.html">DescribeManagedLoginBrandingByClient</a> into the request parameters for this operation. To get all settings, set <code>ReturnMergedResources</code> to <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API and SDK operations for managed login branding</a></p><note>
+/// <p>This operation has a 2-megabyte request-size limit and include the CSS settings and image assets for your app client. Your branding settings might exceed 2MB in size. Amazon Cognito doesn't require that you pass all parameters in one request and preserves existing style settings that you don't specify. If your request is larger than 2MB, separate it into multiple requests, each with a size smaller than the limit.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -148,19 +147,19 @@ impl UpdateManagedLoginBrandingFluentBuilder {
     pub fn get_managed_login_branding_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_managed_login_branding_id()
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn use_cognito_provided_values(mut self, input: bool) -> Self {
         self.inner = self.inner.use_cognito_provided_values(input);
         self
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn set_use_cognito_provided_values(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_cognito_provided_values(input);
         self
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn get_use_cognito_provided_values(&self) -> &::std::option::Option<bool> {
         self.inner.get_use_cognito_provided_values()

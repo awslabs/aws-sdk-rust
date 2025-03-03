@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceServerOutput {
-    /// <p>The resource server.</p>
+    /// <p>The updated details of the requested resource server.</p>
     pub resource_server: ::std::option::Option<crate::types::ResourceServerType>,
     _request_id: Option<String>,
 }
 impl UpdateResourceServerOutput {
-    /// <p>The resource server.</p>
+    /// <p>The updated details of the requested resource server.</p>
     pub fn resource_server(&self) -> ::std::option::Option<&crate::types::ResourceServerType> {
         self.resource_server.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct UpdateResourceServerOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateResourceServerOutputBuilder {
-    /// <p>The resource server.</p>
+    /// <p>The updated details of the requested resource server.</p>
     /// This field is required.
     pub fn resource_server(mut self, input: crate::types::ResourceServerType) -> Self {
         self.resource_server = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource server.</p>
+    /// <p>The updated details of the requested resource server.</p>
     pub fn set_resource_server(mut self, input: ::std::option::Option<crate::types::ResourceServerType>) -> Self {
         self.resource_server = input;
         self
     }
-    /// <p>The resource server.</p>
+    /// <p>The updated details of the requested resource server.</p>
     pub fn get_resource_server(&self) -> &::std::option::Option<crate::types::ResourceServerType> {
         &self.resource_server
     }

@@ -2,7 +2,6 @@
 
 /// <p>A recovery option for a user. The <code>AccountRecoverySettingType</code> data type is an array of this object. Each <code>RecoveryOptionType</code> has a priority property that determines whether it is a primary or secondary option.</p>
 /// <p>For example, if <code>verified_email</code> has a priority of <code>1</code> and <code>verified_phone_number</code> has a priority of <code>2</code>, your user pool sends account-recovery messages to a verified email address but falls back to an SMS message if the user has a verified phone number. The <code>admin_only</code> option prevents self-service account recovery.</p>
-/// <p>This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a> and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>, and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryOptionType {

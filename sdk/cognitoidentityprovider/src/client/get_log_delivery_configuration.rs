@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_log_delivery_configuration::builders::GetLogDeliveryConfigurationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_log_delivery_configuration::builders::GetLogDeliveryConfigurationFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool that has the logging configuration that you want to view.</p><br>
     /// - On success, responds with [`GetLogDeliveryConfigurationOutput`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput) with field(s):
-    ///   - [`log_delivery_configuration(Option<LogDeliveryConfigurationType>)`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput::log_delivery_configuration): <p>The logging configuration of the requested user pool.</p>
+    ///   - [`log_delivery_configuration(Option<LogDeliveryConfigurationType>)`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationOutput::log_delivery_configuration): <p>The logging configuration of the requested user pool. Includes types of logs configured and their destinations.</p>
     /// - On failure, responds with [`SdkError<GetLogDeliveryConfigurationError>`](crate::operation::get_log_delivery_configuration::GetLogDeliveryConfigurationError)
     pub fn get_log_delivery_configuration(
         &self,

@@ -22,7 +22,16 @@ impl crate::operation::get_log_delivery_configuration::builders::GetLogDeliveryC
 }
 /// Fluent builder constructing a request to `GetLogDeliveryConfiguration`.
 ///
-/// <p>Gets the logging configuration of a user pool.</p>
+/// <p>Given a user pool ID, returns the logging configuration. User pools can export message-delivery error and threat-protection activity logs to external Amazon Web Services services. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html">Exporting user pool logs</a>.</p><note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"><b>Learn more</b></p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLogDeliveryConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

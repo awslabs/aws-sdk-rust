@@ -5,7 +5,7 @@
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The tags to assign to the user pool.</p>
+    /// <p>An array of tag keys and values that you want to assign to the user pool.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
@@ -13,7 +13,7 @@ impl TagResourceInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tags to assign to the user pool.</p>
+    /// <p>An array of tag keys and values that you want to assign to the user pool.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -52,19 +52,19 @@ impl TagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to assign to the user pool.</p>
+    /// <p>An array of tag keys and values that you want to assign to the user pool.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The tags to assign to the user pool.</p>
+    /// <p>An array of tag keys and values that you want to assign to the user pool.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The tags to assign to the user pool.</p>
+    /// <p>An array of tag keys and values that you want to assign to the user pool.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

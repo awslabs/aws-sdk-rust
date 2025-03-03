@@ -22,7 +22,7 @@ impl crate::operation::stop_user_import_job::builders::StopUserImportJobInputBui
 }
 /// Fluent builder constructing a request to `StopUserImportJob`.
 ///
-/// <p>Stops the user import job.</p>
+/// <p>Instructs your user pool to stop a running job that's importing users from a CSV file that contains their usernames and attributes. For more information about importing users from a CSV file, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing users from a CSV file</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopUserImportJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl StopUserImportJobFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to stop.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to stop.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool that you want to stop.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a running user import job.</p>
     pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a running user import job.</p>
     pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
-    /// <p>The job ID for the user import job.</p>
+    /// <p>The ID of a running user import job.</p>
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_job_id()
     }

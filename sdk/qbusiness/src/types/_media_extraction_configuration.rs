@@ -6,11 +6,23 @@
 pub struct MediaExtractionConfiguration {
     /// <p>The configuration for extracting semantic meaning from images in documents. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting semantic meaning from images and visuals</a>.</p>
     pub image_extraction_configuration: ::std::option::Option<crate::types::ImageExtractionConfiguration>,
+    /// <p>Configuration settings for extracting and processing audio content from media files.</p>
+    pub audio_extraction_configuration: ::std::option::Option<crate::types::AudioExtractionConfiguration>,
+    /// <p>Configuration settings for extracting and processing video content from media files.</p>
+    pub video_extraction_configuration: ::std::option::Option<crate::types::VideoExtractionConfiguration>,
 }
 impl MediaExtractionConfiguration {
     /// <p>The configuration for extracting semantic meaning from images in documents. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting semantic meaning from images and visuals</a>.</p>
     pub fn image_extraction_configuration(&self) -> ::std::option::Option<&crate::types::ImageExtractionConfiguration> {
         self.image_extraction_configuration.as_ref()
+    }
+    /// <p>Configuration settings for extracting and processing audio content from media files.</p>
+    pub fn audio_extraction_configuration(&self) -> ::std::option::Option<&crate::types::AudioExtractionConfiguration> {
+        self.audio_extraction_configuration.as_ref()
+    }
+    /// <p>Configuration settings for extracting and processing video content from media files.</p>
+    pub fn video_extraction_configuration(&self) -> ::std::option::Option<&crate::types::VideoExtractionConfiguration> {
+        self.video_extraction_configuration.as_ref()
     }
 }
 impl MediaExtractionConfiguration {
@@ -25,6 +37,8 @@ impl MediaExtractionConfiguration {
 #[non_exhaustive]
 pub struct MediaExtractionConfigurationBuilder {
     pub(crate) image_extraction_configuration: ::std::option::Option<crate::types::ImageExtractionConfiguration>,
+    pub(crate) audio_extraction_configuration: ::std::option::Option<crate::types::AudioExtractionConfiguration>,
+    pub(crate) video_extraction_configuration: ::std::option::Option<crate::types::VideoExtractionConfiguration>,
 }
 impl MediaExtractionConfigurationBuilder {
     /// <p>The configuration for extracting semantic meaning from images in documents. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting semantic meaning from images and visuals</a>.</p>
@@ -41,10 +55,40 @@ impl MediaExtractionConfigurationBuilder {
     pub fn get_image_extraction_configuration(&self) -> &::std::option::Option<crate::types::ImageExtractionConfiguration> {
         &self.image_extraction_configuration
     }
+    /// <p>Configuration settings for extracting and processing audio content from media files.</p>
+    pub fn audio_extraction_configuration(mut self, input: crate::types::AudioExtractionConfiguration) -> Self {
+        self.audio_extraction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for extracting and processing audio content from media files.</p>
+    pub fn set_audio_extraction_configuration(mut self, input: ::std::option::Option<crate::types::AudioExtractionConfiguration>) -> Self {
+        self.audio_extraction_configuration = input;
+        self
+    }
+    /// <p>Configuration settings for extracting and processing audio content from media files.</p>
+    pub fn get_audio_extraction_configuration(&self) -> &::std::option::Option<crate::types::AudioExtractionConfiguration> {
+        &self.audio_extraction_configuration
+    }
+    /// <p>Configuration settings for extracting and processing video content from media files.</p>
+    pub fn video_extraction_configuration(mut self, input: crate::types::VideoExtractionConfiguration) -> Self {
+        self.video_extraction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for extracting and processing video content from media files.</p>
+    pub fn set_video_extraction_configuration(mut self, input: ::std::option::Option<crate::types::VideoExtractionConfiguration>) -> Self {
+        self.video_extraction_configuration = input;
+        self
+    }
+    /// <p>Configuration settings for extracting and processing video content from media files.</p>
+    pub fn get_video_extraction_configuration(&self) -> &::std::option::Option<crate::types::VideoExtractionConfiguration> {
+        &self.video_extraction_configuration
+    }
     /// Consumes the builder and constructs a [`MediaExtractionConfiguration`](crate::types::MediaExtractionConfiguration).
     pub fn build(self) -> crate::types::MediaExtractionConfiguration {
         crate::types::MediaExtractionConfiguration {
             image_extraction_configuration: self.image_extraction_configuration,
+            audio_extraction_configuration: self.audio_extraction_configuration,
+            video_extraction_configuration: self.video_extraction_configuration,
         }
     }
 }

@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCsvHeaderOutput {
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the requested user pool.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The header information of the CSV file for the user import job.</p>
+    /// <p>A comma-separated list of attributes from your user pool. Save this output to a <code>.csv</code> file and populate it with the attributes of the users that you want to import.</p>
     pub csv_header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetCsvHeaderOutput {
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the requested user pool.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The header information of the CSV file for the user import job.</p>
+    /// <p>A comma-separated list of attributes from your user pool. Save this output to a <code>.csv</code> file and populate it with the attributes of the users that you want to import.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.csv_header.is_none()`.
     pub fn csv_header(&self) -> &[::std::string::String] {
@@ -43,17 +43,17 @@ pub struct GetCsvHeaderOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetCsvHeaderOutputBuilder {
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the requested user pool.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the requested user pool.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool that the users are to be imported into.</p>
+    /// <p>The ID of the requested user pool.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
@@ -61,19 +61,19 @@ impl GetCsvHeaderOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_csv_header`](Self::set_csv_header).
     ///
-    /// <p>The header information of the CSV file for the user import job.</p>
+    /// <p>A comma-separated list of attributes from your user pool. Save this output to a <code>.csv</code> file and populate it with the attributes of the users that you want to import.</p>
     pub fn csv_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.csv_header.unwrap_or_default();
         v.push(input.into());
         self.csv_header = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The header information of the CSV file for the user import job.</p>
+    /// <p>A comma-separated list of attributes from your user pool. Save this output to a <code>.csv</code> file and populate it with the attributes of the users that you want to import.</p>
     pub fn set_csv_header(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.csv_header = input;
         self
     }
-    /// <p>The header information of the CSV file for the user import job.</p>
+    /// <p>A comma-separated list of attributes from your user pool. Save this output to a <code>.csv</code> file and populate it with the attributes of the users that you want to import.</p>
     pub fn get_csv_header(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.csv_header
     }

@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub idp_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetIdentityProviderByIdentifierInput {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub fn idp_identifier(&self) -> ::std::option::Option<&str> {
         self.idp_identifier.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct GetIdentityProviderByIdentifierInputBuilder {
     pub(crate) idp_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetIdentityProviderByIdentifierInputBuilder {
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to get information about the IdP.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     /// This field is required.
     pub fn idp_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idp_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub fn set_idp_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.idp_identifier = input;
         self
     }
-    /// <p>The IdP identifier.</p>
+    /// <p>The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of <code>MyIdP</code> might have an identifier of the email domain <code>example.com</code>.</p>
     pub fn get_idp_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.idp_identifier
     }

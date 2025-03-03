@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLogDeliveryConfigurationOutput {
-    /// <p>The logging configuration of the requested user pool.</p>
+    /// <p>The logging configuration of the requested user pool. Includes types of logs configured and their destinations.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfigurationType>,
     _request_id: Option<String>,
 }
 impl GetLogDeliveryConfigurationOutput {
-    /// <p>The logging configuration of the requested user pool.</p>
+    /// <p>The logging configuration of the requested user pool. Includes types of logs configured and their destinations.</p>
     pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfigurationType> {
         self.log_delivery_configuration.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct GetLogDeliveryConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLogDeliveryConfigurationOutputBuilder {
-    /// <p>The logging configuration of the requested user pool.</p>
+    /// <p>The logging configuration of the requested user pool. Includes types of logs configured and their destinations.</p>
     pub fn log_delivery_configuration(mut self, input: crate::types::LogDeliveryConfigurationType) -> Self {
         self.log_delivery_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The logging configuration of the requested user pool.</p>
+    /// <p>The logging configuration of the requested user pool. Includes types of logs configured and their destinations.</p>
     pub fn set_log_delivery_configuration(mut self, input: ::std::option::Option<crate::types::LogDeliveryConfigurationType>) -> Self {
         self.log_delivery_configuration = input;
         self
     }
-    /// <p>The logging configuration of the requested user pool.</p>
+    /// <p>The logging configuration of the requested user pool. Includes types of logs configured and their destinations.</p>
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfigurationType> {
         &self.log_delivery_configuration
     }

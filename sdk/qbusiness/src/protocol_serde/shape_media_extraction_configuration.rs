@@ -9,6 +9,18 @@ pub fn ser_media_extraction_configuration(
         crate::protocol_serde::shape_image_extraction_configuration::ser_image_extraction_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.audio_extraction_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("audioExtractionConfiguration").start_object();
+        crate::protocol_serde::shape_audio_extraction_configuration::ser_audio_extraction_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.video_extraction_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("videoExtractionConfiguration").start_object();
+        crate::protocol_serde::shape_video_extraction_configuration::ser_video_extraction_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +42,16 @@ where
                         "imageExtractionConfiguration" => {
                             builder = builder.set_image_extraction_configuration(
                                 crate::protocol_serde::shape_image_extraction_configuration::de_image_extraction_configuration(tokens)?,
+                            );
+                        }
+                        "audioExtractionConfiguration" => {
+                            builder = builder.set_audio_extraction_configuration(
+                                crate::protocol_serde::shape_audio_extraction_configuration::de_audio_extraction_configuration(tokens)?,
+                            );
+                        }
+                        "videoExtractionConfiguration" => {
+                            builder = builder.set_video_extraction_configuration(
+                                crate::protocol_serde::shape_video_extraction_configuration::de_video_extraction_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

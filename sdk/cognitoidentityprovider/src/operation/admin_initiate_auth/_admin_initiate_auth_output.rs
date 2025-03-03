@@ -5,9 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminInitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>Possible challenges include the following:</p><note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
     /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -15,48 +18,48 @@ pub struct AdminInitiateAuthOutput {
     /// <li>
     /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
     /// <li>
-    /// <p><code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message MFA, <code>EMAIL_OTP</code> for email message MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
+    /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p></li>
+    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p></li>
-    /// <li>
-    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p></li>
-    /// <li>
-    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
-    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
-    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.</p><note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
-    /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
+    /// <p>To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Then, use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> or <code>AdminRespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in.</p>
+    /// <p>To set up SMS or email MFA, collect a <code>phone_number</code> or <code>email</code> attribute for the user. Then restart the authentication flow with an <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request.</p></li>
     /// </ul>
     pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
-    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in another authentication challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session ID in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub session: ::std::option::Option<::std::string::String>,
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
+    /// <p>The parameters of an authentication challenge. Amazon Cognito returns challenge parameters as a guide to the responses your user or application must provide for the returned <code>ChallengeName</code>. Calculate responses to the challenge parameters and pass them in the <code>ChallengeParameters</code> of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>All challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code>.</p>
+    /// <p>In SRP challenges, Amazon Cognito returns the <code>username</code> attribute in <code>USER_ID_FOR_SRP</code> instead of any email address, preferred username, or phone number alias that you might have specified in your <code>AdminInitiateAuth</code> request. You must use the username and not an alias in the <code>ChallengeResponses</code> of your challenge response.</p>
     pub challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub available_challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>,
     _request_id: Option<String>,
 }
 impl AdminInitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>Possible challenges include the following:</p><note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
     /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -64,48 +67,49 @@ impl AdminInitiateAuthOutput {
     /// <li>
     /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
     /// <li>
-    /// <p><code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message MFA, <code>EMAIL_OTP</code> for email message MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
+    /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p></li>
+    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p></li>
-    /// <li>
-    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p></li>
-    /// <li>
-    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
-    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
-    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.</p><note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
-    /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
+    /// <p>To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Then, use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> or <code>AdminRespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in.</p>
+    /// <p>To set up SMS or email MFA, collect a <code>phone_number</code> or <code>email</code> attribute for the user. Then restart the authentication flow with an <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request.</p></li>
     /// </ul>
     pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
-    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in another authentication challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session ID in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
+    /// <p>The parameters of an authentication challenge. Amazon Cognito returns challenge parameters as a guide to the responses your user or application must provide for the returned <code>ChallengeName</code>. Calculate responses to the challenge parameters and pass them in the <code>ChallengeParameters</code> of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>All challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code>.</p>
+    /// <p>In SRP challenges, Amazon Cognito returns the <code>username</code> attribute in <code>USER_ID_FOR_SRP</code> instead of any email address, preferred username, or phone number alias that you might have specified in your <code>AdminInitiateAuth</code> request. You must use the username and not an alias in the <code>ChallengeResponses</code> of your challenge response.</p>
     pub fn challenge_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.challenge_parameters.as_ref()
     }
     /// <p>The outcome of successful authentication. This is only returned if the user pool has no additional challenges to return. If Amazon Cognito returns another challenge, the response includes <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> so that your user can answer the challenge.</p>
     pub fn authentication_result(&self) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
+    }
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_challenges.is_none()`.
+    pub fn available_challenges(&self) -> &[crate::types::ChallengeNameType] {
+        self.available_challenges.as_deref().unwrap_or_default()
     }
 }
 impl ::std::fmt::Debug for AdminInitiateAuthOutput {
@@ -115,6 +119,7 @@ impl ::std::fmt::Debug for AdminInitiateAuthOutput {
         formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_parameters", &self.challenge_parameters);
         formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("available_challenges", &self.available_challenges);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -139,13 +144,17 @@ pub struct AdminInitiateAuthOutputBuilder {
     pub(crate) session: ::std::option::Option<::std::string::String>,
     pub(crate) challenge_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
+    pub(crate) available_challenges: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>,
     _request_id: Option<String>,
 }
 impl AdminInitiateAuthOutputBuilder {
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>Possible challenges include the following:</p><note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
     /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -153,40 +162,38 @@ impl AdminInitiateAuthOutputBuilder {
     /// <li>
     /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
     /// <li>
-    /// <p><code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message MFA, <code>EMAIL_OTP</code> for email message MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
+    /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p></li>
+    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p></li>
-    /// <li>
-    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p></li>
-    /// <li>
-    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
-    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
-    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.</p><note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
-    /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
+    /// <p>To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Then, use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> or <code>AdminRespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in.</p>
+    /// <p>To set up SMS or email MFA, collect a <code>phone_number</code> or <code>email</code> attribute for the user. Then restart the authentication flow with an <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request.</p></li>
     /// </ul>
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
         self.challenge_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>Possible challenges include the following:</p><note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
     /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -194,40 +201,38 @@ impl AdminInitiateAuthOutputBuilder {
     /// <li>
     /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
     /// <li>
-    /// <p><code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message MFA, <code>EMAIL_OTP</code> for email message MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
+    /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p></li>
+    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p></li>
-    /// <li>
-    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p></li>
-    /// <li>
-    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
-    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
-    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.</p><note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
-    /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
+    /// <p>To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Then, use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> or <code>AdminRespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in.</p>
+    /// <p>To set up SMS or email MFA, collect a <code>phone_number</code> or <code>email</code> attribute for the user. Then restart the authentication flow with an <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request.</p></li>
     /// </ul>
     pub fn set_challenge_name(mut self, input: ::std::option::Option<crate::types::ChallengeNameType>) -> Self {
         self.challenge_name = input;
         self
     }
     /// <p>The name of the challenge that you're responding to with this call. This is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+    /// <p>Possible challenges include the following:</p><note>
+    /// <p>All of the following challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code> in the parameters.</p>
+    /// </note>
     /// <ul>
     /// <li>
-    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a passkey, or webauthN, factor. These are typically biometric devices or security keys.</p></li>
+    /// <p><code>WEB_AUTHN</code>: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey. Examples of WebAuthn authenticators include biometric devices and security keys.</p></li>
     /// <li>
     /// <p><code>PASSWORD</code>: Respond with <code>USER_PASSWORD_AUTH</code> parameters: <code>USERNAME</code> (required), <code>PASSWORD</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p></li>
     /// <li>
@@ -235,46 +240,41 @@ impl AdminInitiateAuthOutputBuilder {
     /// <li>
     /// <p><code>SELECT_CHALLENGE</code>: Respond to the challenge with <code>USERNAME</code> and an <code>ANSWER</code> that matches one of the challenge types in the <code>AvailableChallenges</code> response parameter.</p></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: If MFA is required, users who don't have at least one of the MFA methods set up are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to authenticate.</p></li>
+    /// <p><code>SMS_MFA</code>: Respond with an <code>SMS_MFA_CODE</code> that your user pool delivered in an SMS message.</p></li>
     /// <li>
-    /// <p><code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for SMS message MFA, <code>EMAIL_OTP</code> for email message MFA, and <code>SOFTWARE_TOKEN_MFA</code> for time-based one-time password (TOTP) software token MFA.</p></li>
+    /// <p><code>EMAIL_OTP</code>: Respond with an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
     /// <li>
-    /// <p><code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>that your user pool delivered in an SMS message.</p></li>
+    /// <p><code>PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations.</p></li>
     /// <li>
-    /// <p><code>EMAIL_OTP</code>: Next challenge is to supply an <code>EMAIL_OTP_CODE</code> that your user pool delivered in an email message.</p></li>
+    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function.</p></li>
     /// <li>
-    /// <p><code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p></li>
+    /// <p><code>DEVICE_SRP_AUTH</code>: Respond with the initial parameters of device SRP authentication. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p></li>
+    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Respond with <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after client-side SRP calculations. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device">Signing in with a device</a>.</p></li>
     /// <li>
-    /// <p><code>DEVICE_SRP_AUTH</code>: If device tracking was activated in your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p></li>
-    /// <li>
-    /// <p><code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p></li>
-    /// <li>
-    /// <p><code>ADMIN_NO_SRP_AUTH</code>: This is returned if you must authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p></li>
-    /// <li>
-    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html">AdminRespondToAuthChallenge</a>.</p>
-    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. Because of this, and because in some cases you can create users who don't have values for required attributes, take care to collect and submit required-attribute values for all users who don't have passwords. You can create a user in the Amazon Cognito console without, for example, a required <code>birthdate</code> attribute. The API response from Amazon Cognito won't prompt you to submit a birthdate for the user if they don't have a password.</p><note>
-    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
+    /// <p><code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first login. Respond to this challenge with <code>NEW_PASSWORD</code> and any required attributes that Amazon Cognito returned in the <code>requiredAttributes</code> parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.</p>
+    /// <p>Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.</p><note>
+    /// <p>In a <code>NEW_PASSWORD_REQUIRED</code> challenge response, you can't modify a required attribute that already has a value. In <code>AdminRespondToAuthChallenge</code> or <code>RespondToAuthChallenge</code>, set a value for any keys that Amazon Cognito returned in the <code>requiredAttributes</code> parameter, then use the <code>AdminUpdateUserAttributes</code> or <code>UpdateUserAttributes</code> API operation to modify the value of any additional attributes.</p>
     /// </note></li>
     /// <li>
-    /// <p><code>MFA_SETUP</code>: For users who are required to set up an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
-    /// <p>To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, users will need help from an administrator to add a phone number to their account and then call <code>InitiateAuth</code> again to restart sign-in.</p></li>
+    /// <p><code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.</p>
+    /// <p>To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Then, use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> or <code>AdminRespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in.</p>
+    /// <p>To set up SMS or email MFA, collect a <code>phone_number</code> or <code>email</code> attribute for the user. Then restart the authentication flow with an <code>InitiateAuth</code> or <code>AdminInitiateAuth</code> request.</p></li>
     /// </ul>
     pub fn get_challenge_name(&self) -> &::std::option::Option<crate::types::ChallengeNameType> {
         &self.challenge_name
     }
-    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in another authentication challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session ID in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in another authentication challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session ID in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request determines that the caller must pass another challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session Id in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>The session that must be passed to challenge-response requests. If an <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API request results in another authentication challenge, Amazon Cognito returns a session ID and the parameters of the next challenge. Pass this session ID in the <code>Session</code> parameter of <code>AdminRespondToAuthChallenge</code>.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }
@@ -282,9 +282,9 @@ impl AdminInitiateAuthOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_challenge_parameters`](Self::set_challenge_parameters).
     ///
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
+    /// <p>The parameters of an authentication challenge. Amazon Cognito returns challenge parameters as a guide to the responses your user or application must provide for the returned <code>ChallengeName</code>. Calculate responses to the challenge parameters and pass them in the <code>ChallengeParameters</code> of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>All challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code>.</p>
+    /// <p>In SRP challenges, Amazon Cognito returns the <code>username</code> attribute in <code>USER_ID_FOR_SRP</code> instead of any email address, preferred username, or phone number alias that you might have specified in your <code>AdminInitiateAuth</code> request. You must use the username and not an alias in the <code>ChallengeResponses</code> of your challenge response.</p>
     pub fn challenge_parameters(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -295,9 +295,9 @@ impl AdminInitiateAuthOutputBuilder {
         self.challenge_parameters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
+    /// <p>The parameters of an authentication challenge. Amazon Cognito returns challenge parameters as a guide to the responses your user or application must provide for the returned <code>ChallengeName</code>. Calculate responses to the challenge parameters and pass them in the <code>ChallengeParameters</code> of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>All challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code>.</p>
+    /// <p>In SRP challenges, Amazon Cognito returns the <code>username</code> attribute in <code>USER_ID_FOR_SRP</code> instead of any email address, preferred username, or phone number alias that you might have specified in your <code>AdminInitiateAuth</code> request. You must use the username and not an alias in the <code>ChallengeResponses</code> of your challenge response.</p>
     pub fn set_challenge_parameters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -305,9 +305,9 @@ impl AdminInitiateAuthOutputBuilder {
         self.challenge_parameters = input;
         self
     }
-    /// <p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p>
-    /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
-    /// <p>The value of the <code>USER_ID_FOR_SRP</code> attribute is the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This happens because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute can't be an alias.</p>
+    /// <p>The parameters of an authentication challenge. Amazon Cognito returns challenge parameters as a guide to the responses your user or application must provide for the returned <code>ChallengeName</code>. Calculate responses to the challenge parameters and pass them in the <code>ChallengeParameters</code> of <code>AdminRespondToAuthChallenge</code>.</p>
+    /// <p>All challenges require <code>USERNAME</code> and, when the app client has a client secret, <code>SECRET_HASH</code>.</p>
+    /// <p>In SRP challenges, Amazon Cognito returns the <code>username</code> attribute in <code>USER_ID_FOR_SRP</code> instead of any email address, preferred username, or phone number alias that you might have specified in your <code>AdminInitiateAuth</code> request. You must use the username and not an alias in the <code>ChallengeResponses</code> of your challenge response.</p>
     pub fn get_challenge_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.challenge_parameters
     }
@@ -325,6 +325,26 @@ impl AdminInitiateAuthOutputBuilder {
     pub fn get_authentication_result(&self) -> &::std::option::Option<crate::types::AuthenticationResultType> {
         &self.authentication_result
     }
+    /// Appends an item to `available_challenges`.
+    ///
+    /// To override the contents of this collection use [`set_available_challenges`](Self::set_available_challenges).
+    ///
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub fn available_challenges(mut self, input: crate::types::ChallengeNameType) -> Self {
+        let mut v = self.available_challenges.unwrap_or_default();
+        v.push(input);
+        self.available_challenges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub fn set_available_challenges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>>) -> Self {
+        self.available_challenges = input;
+        self
+    }
+    /// <p>This response parameter lists the available authentication challenges that users can select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based authentication</a>. For example, they might be able to choose between passkey authentication, a one-time password from an SMS message, and a traditional password.</p>
+    pub fn get_available_challenges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChallengeNameType>> {
+        &self.available_challenges
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -341,6 +361,7 @@ impl AdminInitiateAuthOutputBuilder {
             session: self.session,
             challenge_parameters: self.challenge_parameters,
             authentication_result: self.authentication_result,
+            available_challenges: self.available_challenges,
             _request_id: self._request_id,
         }
     }
@@ -352,6 +373,7 @@ impl ::std::fmt::Debug for AdminInitiateAuthOutputBuilder {
         formatter.field("session", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_parameters", &self.challenge_parameters);
         formatter.field("authentication_result", &self.authentication_result);
+        formatter.field("available_challenges", &self.available_challenges);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

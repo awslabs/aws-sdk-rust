@@ -45,6 +45,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sourceDetails" => {
+                            builder = builder.set_source_details(crate::protocol_serde::shape_source_details::de_source_details(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

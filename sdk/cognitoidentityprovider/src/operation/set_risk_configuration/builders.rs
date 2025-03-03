@@ -22,8 +22,18 @@ impl crate::operation::set_risk_configuration::builders::SetRiskConfigurationInp
 }
 /// Fluent builder constructing a request to `SetRiskConfiguration`.
 ///
-/// <p>Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four configuration types.</p>
-/// <p>To activate Amazon Cognito advanced security features, update the user pool to include the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.</p>
+/// <p>Configures threat protection for a user pool or app client. Sets configuration for the following.</p>
+/// <ul>
+/// <li>
+/// <p>Responses to risks with adaptive authentication</p></li>
+/// <li>
+/// <p>Responses to vulnerable passwords with compromised-credentials detection</p></li>
+/// <li>
+/// <p>Notifications to users who have had risky activity detected</p></li>
+/// <li>
+/// <p>IP-address denylist and allowlist</p></li>
+/// </ul>
+/// <p>To set the risk configuration for the user pool to defaults, send this request with only the <code>UserPoolId</code> parameter. To reset the threat protection settings of an app client to be inherited from the user pool, send <code>UserPoolId</code> and <code>ClientId</code> parameters only. To change threat protection to audit-only or off, update the value of <code>UserPoolAddOns</code> in an <code>UpdateUserPool</code> request. To activate this setting, your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html"> Plus tier</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetRiskConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -109,43 +119,43 @@ impl SetRiskConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to set a risk configuration. If you include <code>UserPoolId</code> in your request, don't include <code>ClientId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool. When you include both <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client only.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to set a risk configuration. If you include <code>UserPoolId</code> in your request, don't include <code>ClientId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool. When you include both <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client only.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The user pool ID.</p>
+    /// <p>The ID of the user pool where you want to set a risk configuration. If you include <code>UserPoolId</code> in your request, don't include <code>ClientId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool. When you include both <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client only.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
-    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
+    /// <p>The ID of the app client where you want to set a risk configuration. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>UserPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+    /// <p>When you include a <code>ClientId</code> parameter, Amazon Cognito maps the configuration to the app client. When you include both <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client only.</p>
     pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
-    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
-    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
+    /// <p>The ID of the app client where you want to set a risk configuration. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>UserPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+    /// <p>When you include a <code>ClientId</code> parameter, Amazon Cognito maps the configuration to the app client. When you include both <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client only.</p>
     pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
-    /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
-    /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
+    /// <p>The ID of the app client where you want to set a risk configuration. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>UserPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
+    /// <p>When you include a <code>ClientId</code> parameter, Amazon Cognito maps the configuration to the app client. When you include both <code>ClientId</code> and <code>UserPoolId</code>, Amazon Cognito maps the configuration to the app client only.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_id()
     }
-    /// <p>The compromised credentials risk configuration.</p>
+    /// <p>The configuration of automated reactions to detected compromised credentials. Includes settings for blocking future sign-in requests and for the types of password-submission events you want to monitor.</p>
     pub fn compromised_credentials_risk_configuration(mut self, input: crate::types::CompromisedCredentialsRiskConfigurationType) -> Self {
         self.inner = self.inner.compromised_credentials_risk_configuration(input);
         self
     }
-    /// <p>The compromised credentials risk configuration.</p>
+    /// <p>The configuration of automated reactions to detected compromised credentials. Includes settings for blocking future sign-in requests and for the types of password-submission events you want to monitor.</p>
     pub fn set_compromised_credentials_risk_configuration(
         mut self,
         input: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
@@ -153,18 +163,18 @@ impl SetRiskConfigurationFluentBuilder {
         self.inner = self.inner.set_compromised_credentials_risk_configuration(input);
         self
     }
-    /// <p>The compromised credentials risk configuration.</p>
+    /// <p>The configuration of automated reactions to detected compromised credentials. Includes settings for blocking future sign-in requests and for the types of password-submission events you want to monitor.</p>
     pub fn get_compromised_credentials_risk_configuration(
         &self,
     ) -> &::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType> {
         self.inner.get_compromised_credentials_risk_configuration()
     }
-    /// <p>The account takeover risk configuration.</p>
+    /// <p>The settings for automated responses and notification templates for adaptive authentication with threat protection.</p>
     pub fn account_takeover_risk_configuration(mut self, input: crate::types::AccountTakeoverRiskConfigurationType) -> Self {
         self.inner = self.inner.account_takeover_risk_configuration(input);
         self
     }
-    /// <p>The account takeover risk configuration.</p>
+    /// <p>The settings for automated responses and notification templates for adaptive authentication with threat protection.</p>
     pub fn set_account_takeover_risk_configuration(
         mut self,
         input: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
@@ -172,21 +182,21 @@ impl SetRiskConfigurationFluentBuilder {
         self.inner = self.inner.set_account_takeover_risk_configuration(input);
         self
     }
-    /// <p>The account takeover risk configuration.</p>
+    /// <p>The settings for automated responses and notification templates for adaptive authentication with threat protection.</p>
     pub fn get_account_takeover_risk_configuration(&self) -> &::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType> {
         self.inner.get_account_takeover_risk_configuration()
     }
-    /// <p>The configuration to override the risk decision.</p>
+    /// <p>A set of IP-address overrides to threat protection. You can set up IP-address always-block and always-allow lists.</p>
     pub fn risk_exception_configuration(mut self, input: crate::types::RiskExceptionConfigurationType) -> Self {
         self.inner = self.inner.risk_exception_configuration(input);
         self
     }
-    /// <p>The configuration to override the risk decision.</p>
+    /// <p>A set of IP-address overrides to threat protection. You can set up IP-address always-block and always-allow lists.</p>
     pub fn set_risk_exception_configuration(mut self, input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>) -> Self {
         self.inner = self.inner.set_risk_exception_configuration(input);
         self
     }
-    /// <p>The configuration to override the risk decision.</p>
+    /// <p>A set of IP-address overrides to threat protection. You can set up IP-address always-block and always-allow lists.</p>
     pub fn get_risk_exception_configuration(&self) -> &::std::option::Option<crate::types::RiskExceptionConfigurationType> {
         self.inner.get_risk_exception_configuration()
     }

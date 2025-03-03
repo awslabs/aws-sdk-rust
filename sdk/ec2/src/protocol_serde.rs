@@ -4355,6 +4355,8 @@ pub(crate) mod shape_vpc_cidr_block_state;
 
 pub(crate) mod shape_vpc_classic_link;
 
+pub(crate) mod shape_vpc_encryption_control;
+
 pub(crate) mod shape_vpc_endpoint_association;
 
 pub(crate) mod shape_vpc_endpoint_connection;
@@ -4735,6 +4737,8 @@ pub(crate) mod shape_volume_status_events_list;
 
 pub(crate) mod shape_volume_status_info;
 
+pub(crate) mod shape_vpc_encryption_control_exclusions;
+
 pub(crate) mod shape_vpc_peering_connection_options_description;
 
 pub(crate) mod shape_vpn_static_route;
@@ -4928,6 +4932,8 @@ pub(crate) mod shape_volume_status_attachment_status;
 pub(crate) mod shape_volume_status_details_list;
 
 pub(crate) mod shape_volume_status_event;
+
+pub(crate) mod shape_vpc_encryption_control_exclusion;
 
 pub(crate) mod shape_additional_detail;
 

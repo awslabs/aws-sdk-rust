@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GlobalSignOut`](crate::operation::global_sign_out::builders::GlobalSignOutFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_token(impl Into<String>)`](crate::operation::global_sign_out::builders::GlobalSignOutFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::global_sign_out::builders::GlobalSignOutFluentBuilder::set_access_token):<br>required: **true**<br><p>A valid access token that Amazon Cognito issued to the user who you want to sign out.</p><br>
+    ///   - [`access_token(impl Into<String>)`](crate::operation::global_sign_out::builders::GlobalSignOutFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::global_sign_out::builders::GlobalSignOutFluentBuilder::set_access_token):<br>required: **true**<br><p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p><br>
     /// - On success, responds with [`GlobalSignOutOutput`](crate::operation::global_sign_out::GlobalSignOutOutput)
     /// - On failure, responds with [`SdkError<GlobalSignOutError>`](crate::operation::global_sign_out::GlobalSignOutError)
     pub fn global_sign_out(&self) -> crate::operation::global_sign_out::builders::GlobalSignOutFluentBuilder {

@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifySoftwareTokenOutput {
-    /// <p>The status of the verify software token.</p>
+    /// <p>Amazon Cognito can accept or reject the code that you provide. This response parameter indicates the success of TOTP verification. Some reasons that this operation might return an error are clock skew on the user's device and excessive retries.</p>
     pub status: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>,
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the session ID in your challenge response.</p>
     pub session: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl VerifySoftwareTokenOutput {
-    /// <p>The status of the verify software token.</p>
+    /// <p>Amazon Cognito can accept or reject the code that you provide. This response parameter indicates the success of TOTP verification. Some reasons that this operation might return an error are clock skew on the user's device and excessive retries.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::VerifySoftwareTokenResponseType> {
         self.status.as_ref()
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the session ID in your challenge response.</p>
     pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
@@ -49,31 +49,31 @@ pub struct VerifySoftwareTokenOutputBuilder {
     _request_id: Option<String>,
 }
 impl VerifySoftwareTokenOutputBuilder {
-    /// <p>The status of the verify software token.</p>
+    /// <p>Amazon Cognito can accept or reject the code that you provide. This response parameter indicates the success of TOTP verification. Some reasons that this operation might return an error are clock skew on the user's device and excessive retries.</p>
     pub fn status(mut self, input: crate::types::VerifySoftwareTokenResponseType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the verify software token.</p>
+    /// <p>Amazon Cognito can accept or reject the code that you provide. This response parameter indicates the success of TOTP verification. Some reasons that this operation might return an error are clock skew on the user's device and excessive retries.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::VerifySoftwareTokenResponseType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the verify software token.</p>
+    /// <p>Amazon Cognito can accept or reject the code that you provide. This response parameter indicates the success of TOTP verification. Some reasons that this operation might return an error are clock skew on the user's device and excessive retries.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::VerifySoftwareTokenResponseType> {
         &self.status
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the session ID in your challenge response.</p>
     pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.session = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the session ID in your challenge response.</p>
     pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
-    /// <p>The session that should be passed both ways in challenge-response calls to the service.</p>
+    /// <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the session ID in your challenge response.</p>
     pub fn get_session(&self) -> &::std::option::Option<::std::string::String> {
         &self.session
     }

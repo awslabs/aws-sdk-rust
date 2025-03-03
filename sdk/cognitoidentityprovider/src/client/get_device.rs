@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDevice`](crate::operation::get_device::builders::GetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_key(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_key):<br>required: **true**<br><p>The device key.</p><br>
-    ///   - [`access_token(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_access_token):<br>required: **false**<br><p>A valid access token that Amazon Cognito issued to the user whose device information you want to request.</p><br>
+    ///   - [`device_key(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_key) / [`set_device_key(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_key):<br>required: **true**<br><p>The key of the device that you want to get information about.</p><br>
+    ///   - [`access_token(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_access_token):<br>required: **false**<br><p>A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for <code>aws.cognito.signin.user.admin</code>.</p><br>
     /// - On success, responds with [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput) with field(s):
-    ///   - [`device(Option<DeviceType>)`](crate::operation::get_device::GetDeviceOutput::device): <p>The device.</p>
+    ///   - [`device(Option<DeviceType>)`](crate::operation::get_device::GetDeviceOutput::device): <p>Details of the requested device. Includes device information, last-accessed and created dates, and the device key.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)
     pub fn get_device(&self) -> crate::operation::get_device::builders::GetDeviceFluentBuilder {
         crate::operation::get_device::builders::GetDeviceFluentBuilder::new(self.handle.clone())

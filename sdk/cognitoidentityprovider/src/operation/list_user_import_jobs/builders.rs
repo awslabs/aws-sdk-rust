@@ -22,7 +22,7 @@ impl crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputB
 }
 /// Fluent builder constructing a request to `ListUserImportJobs`.
 ///
-/// <p>Lists user import jobs for a user pool.</p><note>
+/// <p>Given a user pool ID, returns user import jobs and their details. Import jobs are retained in user pool configuration so that you can stage, stop, start, review, and delete them. For more information about user import, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html">Importing users from a CSV file</a>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -117,31 +117,31 @@ impl ListUserImportJobsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

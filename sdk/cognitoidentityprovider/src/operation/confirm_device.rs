@@ -244,6 +244,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ConfirmDevice
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ConfirmDeviceError {
+    /// <p>This exception is thrown when a user attempts to confirm a device with a device key that already exists.</p>
+    DeviceKeyExistsException(crate::types::error::DeviceKeyExistsException),
     /// <p>This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with your user pool.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
@@ -303,6 +305,7 @@ impl ConfirmDeviceError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DeviceKeyExistsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidLambdaResponseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -318,6 +321,10 @@ impl ConfirmDeviceError {
             Self::UserNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ConfirmDeviceError::DeviceKeyExistsException`.
+    pub fn is_device_key_exists_exception(&self) -> bool {
+        matches!(self, Self::DeviceKeyExistsException(_))
     }
     /// Returns `true` if the error kind is `ConfirmDeviceError::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -375,6 +382,7 @@ impl ConfirmDeviceError {
 impl ::std::error::Error for ConfirmDeviceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::DeviceKeyExistsException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLambdaResponseException(_inner) => ::std::option::Option::Some(_inner),
@@ -395,6 +403,7 @@ impl ::std::error::Error for ConfirmDeviceError {
 impl ::std::fmt::Display for ConfirmDeviceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::DeviceKeyExistsException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::InternalErrorException(_inner) => _inner.fmt(f),
             Self::InvalidLambdaResponseException(_inner) => _inner.fmt(f),
@@ -429,6 +438,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ConfirmDeviceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConfirmDeviceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::DeviceKeyExistsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidLambdaResponseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -86,6 +86,24 @@ pub(crate) fn batch_delete_rum_metric_definitions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invalid_policy_revision_id_exception_correct_errors(
+    mut builder: crate::types::error::builders::InvalidPolicyRevisionIdExceptionBuilder,
+) -> crate::types::error::builders::InvalidPolicyRevisionIdExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn policy_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::PolicyNotFoundExceptionBuilder,
+) -> crate::types::error::builders::PolicyNotFoundExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     mut builder: crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder,
 ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceOutputBuilder {
@@ -94,6 +112,24 @@ pub(crate) fn list_tags_for_resource_output_output_correct_errors(
     }
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn malformed_policy_document_exception_correct_errors(
+    mut builder: crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder,
+) -> crate::types::error::builders::MalformedPolicyDocumentExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn policy_size_limit_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::PolicySizeLimitExceededExceptionBuilder,
+) -> crate::types::error::builders::PolicySizeLimitExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
     }
     builder
 }

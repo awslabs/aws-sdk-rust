@@ -22,8 +22,17 @@ impl crate::operation::get_group::builders::GetGroupInputBuilder {
 }
 /// Fluent builder constructing a request to `GetGroup`.
 ///
-/// <p>Gets a group.</p>
-/// <p>Calling this action requires developer credentials.</p>
+/// <p>Given a user pool ID and a group name, returns information about the user group.</p>
+/// <p>For more information about user pool groups, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html">Adding groups to a user pool</a>.</p><note>
+/// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
+/// <p class="title"><b>Learn more</b></p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing Amazon Web Services API Requests</a></p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using the Amazon Cognito user pools API and user pool endpoints</a></p></li>
+/// </ul>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -100,31 +109,31 @@ impl GetGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to get information about.</p>
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to get information about.</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
-    /// <p>The name of the group.</p>
+    /// <p>The name of the group that you want to get information about.</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_group_name()
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the group that you want to query.</p>
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the group that you want to query.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
-    /// <p>The ID of the user pool.</p>
+    /// <p>The ID of the user pool that contains the group that you want to query.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_pool_id()
     }

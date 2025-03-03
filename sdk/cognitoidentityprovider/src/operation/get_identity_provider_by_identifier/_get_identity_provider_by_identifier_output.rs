@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityProviderByIdentifierOutput {
-    /// <p>The identity provider details.</p>
+    /// <p>The configuration of the IdP in your user pool. Includes additional identifiers, the IdP name and type, and trust-relationship details like the issuer URL.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProviderType>,
     _request_id: Option<String>,
 }
 impl GetIdentityProviderByIdentifierOutput {
-    /// <p>The identity provider details.</p>
+    /// <p>The configuration of the IdP in your user pool. Includes additional identifiers, the IdP name and type, and trust-relationship details like the issuer URL.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProviderType> {
         self.identity_provider.as_ref()
     }
@@ -33,18 +33,18 @@ pub struct GetIdentityProviderByIdentifierOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetIdentityProviderByIdentifierOutputBuilder {
-    /// <p>The identity provider details.</p>
+    /// <p>The configuration of the IdP in your user pool. Includes additional identifiers, the IdP name and type, and trust-relationship details like the issuer URL.</p>
     /// This field is required.
     pub fn identity_provider(mut self, input: crate::types::IdentityProviderType) -> Self {
         self.identity_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The identity provider details.</p>
+    /// <p>The configuration of the IdP in your user pool. Includes additional identifiers, the IdP name and type, and trust-relationship details like the issuer URL.</p>
     pub fn set_identity_provider(mut self, input: ::std::option::Option<crate::types::IdentityProviderType>) -> Self {
         self.identity_provider = input;
         self
     }
-    /// <p>The identity provider details.</p>
+    /// <p>The configuration of the IdP in your user pool. Includes additional identifiers, the IdP name and type, and trust-relationship details like the issuer URL.</p>
     pub fn get_identity_provider(&self) -> &::std::option::Option<crate::types::IdentityProviderType> {
         &self.identity_provider
     }

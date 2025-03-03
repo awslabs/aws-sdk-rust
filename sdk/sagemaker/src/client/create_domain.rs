@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`default_space_settings(DefaultSpaceSettings)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::default_space_settings) / [`set_default_space_settings(Option<DefaultSpaceSettings>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_default_space_settings):<br>required: **false**<br><p>The default settings for shared spaces that users create in the domain.</p><br>
     /// - On success, responds with [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput) with field(s):
     ///   - [`domain_arn(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) of the created domain.</p>
+    ///   - [`domain_id(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::domain_id): <p>The ID of the created domain.</p>
     ///   - [`url(Option<String>)`](crate::operation::create_domain::CreateDomainOutput::url): <p>The URL to the created domain.</p>
     /// - On failure, responds with [`SdkError<CreateDomainError>`](crate::operation::create_domain::CreateDomainError)
     pub fn create_domain(&self) -> crate::operation::create_domain::builders::CreateDomainFluentBuilder {

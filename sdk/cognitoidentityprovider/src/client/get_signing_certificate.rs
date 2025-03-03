@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSigningCertificate`](crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The user pool ID.</p><br>
+    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::set_user_pool_id):<br>required: **true**<br><p>The ID of the user pool where you want to view the signing certificate.</p><br>
     /// - On success, responds with [`GetSigningCertificateOutput`](crate::operation::get_signing_certificate::GetSigningCertificateOutput) with field(s):
-    ///   - [`certificate(Option<String>)`](crate::operation::get_signing_certificate::GetSigningCertificateOutput::certificate): <p>The signing certificate.</p>
+    ///   - [`certificate(Option<String>)`](crate::operation::get_signing_certificate::GetSigningCertificateOutput::certificate): <p>The x.509 certificate that signs SAML 2.0 authentication requests for your user pool.</p>
     /// - On failure, responds with [`SdkError<GetSigningCertificateError>`](crate::operation::get_signing_certificate::GetSigningCertificateError)
     pub fn get_signing_certificate(&self) -> crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder {
         crate::operation::get_signing_certificate::builders::GetSigningCertificateFluentBuilder::new(self.handle.clone())

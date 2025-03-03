@@ -13,6 +13,8 @@ pub struct PutRumEventsInput {
     pub user_details: ::std::option::Option<crate::types::UserDetails>,
     /// <p>An array of structures that contain the telemetry event data.</p>
     pub rum_events: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
+    /// <p>If the app monitor uses a resource-based policy that requires <code>PutRumEvents</code> requests to specify a certain alias, specify that alias here. This alias will be compared to the <code>rum:alias</code> context key in the resource-based policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using resource-based policies with CloudWatch RUM</a>.</p>
+    pub alias: ::std::option::Option<::std::string::String>,
 }
 impl PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
@@ -37,6 +39,10 @@ impl PutRumEventsInput {
     pub fn rum_events(&self) -> &[crate::types::RumEvent] {
         self.rum_events.as_deref().unwrap_or_default()
     }
+    /// <p>If the app monitor uses a resource-based policy that requires <code>PutRumEvents</code> requests to specify a certain alias, specify that alias here. This alias will be compared to the <code>rum:alias</code> context key in the resource-based policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using resource-based policies with CloudWatch RUM</a>.</p>
+    pub fn alias(&self) -> ::std::option::Option<&str> {
+        self.alias.as_deref()
+    }
 }
 impl PutRumEventsInput {
     /// Creates a new builder-style object to manufacture [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
@@ -54,6 +60,7 @@ pub struct PutRumEventsInputBuilder {
     pub(crate) app_monitor_details: ::std::option::Option<crate::types::AppMonitorDetails>,
     pub(crate) user_details: ::std::option::Option<crate::types::UserDetails>,
     pub(crate) rum_events: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
+    pub(crate) alias: ::std::option::Option<::std::string::String>,
 }
 impl PutRumEventsInputBuilder {
     /// <p>The ID of the app monitor that is sending this data.</p>
@@ -136,6 +143,20 @@ impl PutRumEventsInputBuilder {
     pub fn get_rum_events(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RumEvent>> {
         &self.rum_events
     }
+    /// <p>If the app monitor uses a resource-based policy that requires <code>PutRumEvents</code> requests to specify a certain alias, specify that alias here. This alias will be compared to the <code>rum:alias</code> context key in the resource-based policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using resource-based policies with CloudWatch RUM</a>.</p>
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>If the app monitor uses a resource-based policy that requires <code>PutRumEvents</code> requests to specify a certain alias, specify that alias here. This alias will be compared to the <code>rum:alias</code> context key in the resource-based policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using resource-based policies with CloudWatch RUM</a>.</p>
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias = input;
+        self
+    }
+    /// <p>If the app monitor uses a resource-based policy that requires <code>PutRumEvents</code> requests to specify a certain alias, specify that alias here. This alias will be compared to the <code>rum:alias</code> context key in the resource-based policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using resource-based policies with CloudWatch RUM</a>.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
     pub fn build(
         self,
@@ -146,6 +167,7 @@ impl PutRumEventsInputBuilder {
             app_monitor_details: self.app_monitor_details,
             user_details: self.user_details,
             rum_events: self.rum_events,
+            alias: self.alias,
         })
     }
 }

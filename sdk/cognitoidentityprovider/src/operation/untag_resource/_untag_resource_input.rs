@@ -5,7 +5,7 @@
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The keys of the tags to remove from the user pool.</p>
+    /// <p>An array of tag keys that you want to remove from the user pool.</p>
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {
@@ -13,7 +13,7 @@ impl UntagResourceInput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The keys of the tags to remove from the user pool.</p>
+    /// <p>An array of tag keys that you want to remove from the user pool.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
     pub fn tag_keys(&self) -> &[::std::string::String] {
@@ -54,19 +54,19 @@ impl UntagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// <p>The keys of the tags to remove from the user pool.</p>
+    /// <p>An array of tag keys that you want to remove from the user pool.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
         v.push(input.into());
         self.tag_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The keys of the tags to remove from the user pool.</p>
+    /// <p>An array of tag keys that you want to remove from the user pool.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
-    /// <p>The keys of the tags to remove from the user pool.</p>
+    /// <p>An array of tag keys that you want to remove from the user pool.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_keys
     }

@@ -385,6 +385,8 @@ pub(crate) mod shape_describe_user_pool_domain_input;
 
 pub(crate) mod shape_describe_user_pool_input;
 
+pub(crate) mod shape_device_key_exists_exception;
+
 pub(crate) mod shape_duplicate_provider_exception;
 
 pub(crate) mod shape_enable_software_token_mfa_exception;

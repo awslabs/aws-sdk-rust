@@ -17,6 +17,21 @@ pub fn de_confirm_device_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "DeviceKeyExistsException" => crate::operation::confirm_device::ConfirmDeviceError::DeviceKeyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DeviceKeyExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_device_key_exists_exception::de_device_key_exists_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::confirm_device::ConfirmDeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ForbiddenException" => crate::operation::confirm_device::ConfirmDeviceError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp = {

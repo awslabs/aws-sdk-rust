@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserImportJobsOutput {
-    /// <p>The user import jobs.</p>
+    /// <p>An array of user import jobs from the requested user pool. For each, the response includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub user_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>,
     /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUserImportJobsOutput {
-    /// <p>The user import jobs.</p>
+    /// <p>An array of user import jobs from the requested user pool. For each, the response includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_import_jobs.is_none()`.
     pub fn user_import_jobs(&self) -> &[crate::types::UserImportJobType] {
@@ -47,19 +47,19 @@ impl ListUserImportJobsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_user_import_jobs`](Self::set_user_import_jobs).
     ///
-    /// <p>The user import jobs.</p>
+    /// <p>An array of user import jobs from the requested user pool. For each, the response includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn user_import_jobs(mut self, input: crate::types::UserImportJobType) -> Self {
         let mut v = self.user_import_jobs.unwrap_or_default();
         v.push(input);
         self.user_import_jobs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The user import jobs.</p>
+    /// <p>An array of user import jobs from the requested user pool. For each, the response includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn set_user_import_jobs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>) -> Self {
         self.user_import_jobs = input;
         self
     }
-    /// <p>The user import jobs.</p>
+    /// <p>An array of user import jobs from the requested user pool. For each, the response includes logging destination, status, and the Amazon S3 pre-signed URL for CSV upload.</p>
     pub fn get_user_import_jobs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>> {
         &self.user_import_jobs
     }

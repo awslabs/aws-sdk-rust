@@ -3,32 +3,35 @@ pub fn ser_put_rum_events_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_rum_events::PutRumEventsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.app_monitor_details {
+    if let Some(var_1) = &input.alias {
+        object.key("Alias").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.app_monitor_details {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("AppMonitorDetails").start_object();
-        crate::protocol_serde::shape_app_monitor_details::ser_app_monitor_details(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("AppMonitorDetails").start_object();
+        crate::protocol_serde::shape_app_monitor_details::ser_app_monitor_details(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.batch_id {
-        object.key("BatchId").string(var_3.as_str());
+    if let Some(var_4) = &input.batch_id {
+        object.key("BatchId").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.rum_events {
-        let mut array_5 = object.key("RumEvents").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.rum_events {
+        let mut array_6 = object.key("RumEvents").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_rum_event::ser_rum_event(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_rum_event::ser_rum_event(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_8) = &input.user_details {
+    if let Some(var_9) = &input.user_details {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("UserDetails").start_object();
-        crate::protocol_serde::shape_user_details::ser_user_details(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("UserDetails").start_object();
+        crate::protocol_serde::shape_user_details::ser_user_details(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

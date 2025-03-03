@@ -33,17 +33,23 @@ pub(crate) mod shape_create_app_monitor;
 
 pub(crate) mod shape_delete_app_monitor;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_delete_rum_metrics_destination;
 
 pub(crate) mod shape_get_app_monitor;
 
 pub(crate) mod shape_get_app_monitor_data;
 
+pub(crate) mod shape_get_resource_policy;
+
 pub(crate) mod shape_list_app_monitors;
 
 pub(crate) mod shape_list_rum_metrics_destinations;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_put_rum_events;
 
@@ -76,6 +82,16 @@ pub(crate) mod shape_create_app_monitor_input;
 pub(crate) mod shape_get_app_monitor_data_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_invalid_policy_revision_id_exception;
+
+pub(crate) mod shape_malformed_policy_document_exception;
+
+pub(crate) mod shape_policy_not_found_exception;
+
+pub(crate) mod shape_policy_size_limit_exceeded_exception;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_put_rum_events_input;
 

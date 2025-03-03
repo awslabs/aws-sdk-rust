@@ -7,7 +7,7 @@ pub struct UpdateManagedLoginBrandingInput {
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed login branding style that you want to update.</p>
     pub managed_login_branding_id: ::std::option::Option<::std::string::String>,
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub use_cognito_provided_values: ::std::option::Option<bool>,
     /// <p>A JSON file, encoded as a <code>Document</code> type, with the the settings that you want to apply to your style.</p>
@@ -24,7 +24,7 @@ impl UpdateManagedLoginBrandingInput {
     pub fn managed_login_branding_id(&self) -> ::std::option::Option<&str> {
         self.managed_login_branding_id.as_deref()
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn use_cognito_provided_values(&self) -> ::std::option::Option<bool> {
         self.use_cognito_provided_values
@@ -86,19 +86,19 @@ impl UpdateManagedLoginBrandingInputBuilder {
     pub fn get_managed_login_branding_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_login_branding_id
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn use_cognito_provided_values(mut self, input: bool) -> Self {
         self.use_cognito_provided_values = ::std::option::Option::Some(input);
         self
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn set_use_cognito_provided_values(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_cognito_provided_values = input;
         self
     }
-    /// <p>When true, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
+    /// <p>When <code>true</code>, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding designer.</p>
     /// <p>When you specify <code>true</code> for this option, you must also omit values for <code>Settings</code> and <code>Assets</code> in the request.</p>
     pub fn get_use_cognito_provided_values(&self) -> &::std::option::Option<bool> {
         &self.use_cognito_provided_values

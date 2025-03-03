@@ -7,9 +7,9 @@ pub struct ClinicalNoteGenerationSettings {
     /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
-    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
     /// </ul>
     pub note_template: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>,
 }
@@ -17,9 +17,9 @@ impl ClinicalNoteGenerationSettings {
     /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
-    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
     /// </ul>
     pub fn note_template(&self) -> ::std::option::Option<&crate::types::MedicalScribeNoteTemplate> {
         self.note_template.as_ref()
@@ -42,9 +42,9 @@ impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
-    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
     /// </ul>
     pub fn note_template(mut self, input: crate::types::MedicalScribeNoteTemplate) -> Self {
         self.note_template = ::std::option::Option::Some(input);
@@ -53,9 +53,9 @@ impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
-    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
     /// </ul>
     pub fn set_note_template(mut self, input: ::std::option::Option<crate::types::MedicalScribeNoteTemplate>) -> Self {
         self.note_template = input;
@@ -64,9 +64,9 @@ impl ClinicalNoteGenerationSettingsBuilder {
     /// <p>Specify one of the following templates to use for the clinical note summary. The default is <code>HISTORY_AND_PHYSICAL</code>.</p>
     /// <ul>
     /// <li>
-    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
+    /// <p>HISTORY_AND_PHYSICAL: Provides summaries for key sections of the clinical documentation. Examples of sections include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Assessment, and Plan.</p></li>
     /// <li>
-    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
+    /// <p>GIRPP: Provides summaries based on the patients progress toward goals. Examples of sections include Goal, Intervention, Response, Progress, and Plan.</p></li>
     /// </ul>
     pub fn get_note_template(&self) -> &::std::option::Option<crate::types::MedicalScribeNoteTemplate> {
         &self.note_template

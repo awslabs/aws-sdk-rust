@@ -5,7 +5,7 @@
 pub struct ListWebAuthnCredentialsOutput {
     /// <p>A list of registered passkeys for a user.</p>
     pub credentials: ::std::vec::Vec<crate::types::WebAuthnCredentialDescription>,
-    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListWebAuthnCredentialsOutput {
         use std::ops::Deref;
         self.credentials.deref()
     }
-    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListWebAuthnCredentialsOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WebAuthnCredentialDescription>> {
         &self.credentials
     }
-    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
+    /// <p>The identifier that Amazon Cognito returned with the previous request to this operation. When you include a pagination token in your request, Amazon Cognito returns the next set of items in the list. By use of this token, you can paginate through the full list of items.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

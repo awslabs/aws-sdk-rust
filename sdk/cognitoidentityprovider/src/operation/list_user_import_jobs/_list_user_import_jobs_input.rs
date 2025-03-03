@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserImportJobsInput {
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserImportJobsInput {
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -41,33 +41,33 @@ pub struct ListUserImportJobsInputBuilder {
     pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserImportJobsInputBuilder {
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     /// This field is required.
     pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
-    /// <p>The ID of the user pool that the users are being imported into.</p>
+    /// <p>The ID of the user pool where you want to list import jobs.</p>
     pub fn get_user_pool_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_pool_id
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     /// This field is required.
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of import jobs you want the request to return.</p>
+    /// <p>The maximum number of import jobs that you want Amazon Cognito to return in the response.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
