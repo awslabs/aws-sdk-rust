@@ -2143,7 +2143,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
@@ -2152,7 +2152,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
@@ -2161,7 +2161,7 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_storage_type()
     }
@@ -2706,17 +2706,17 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enable_cloudwatch_logs_exports(input.into());
@@ -2733,17 +2733,17 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
@@ -2760,17 +2760,17 @@ impl CreateDBInstanceFluentBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_enable_cloudwatch_logs_exports()

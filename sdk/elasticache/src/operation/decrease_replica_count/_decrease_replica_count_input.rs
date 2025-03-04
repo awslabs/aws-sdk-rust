@@ -20,7 +20,7 @@ pub struct DecreaseReplicaCountInput {
     /// <p>Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p></li>
     /// </ul>
     pub new_replica_count: ::std::option::Option<i32>,
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub replica_configuration: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>,
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
     pub replicas_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -49,7 +49,7 @@ impl DecreaseReplicaCountInput {
     pub fn new_replica_count(&self) -> ::std::option::Option<i32> {
         self.new_replica_count
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_configuration.is_none()`.
     pub fn replica_configuration(&self) -> &[crate::types::ConfigureShard] {
@@ -156,19 +156,19 @@ impl DecreaseReplicaCountInputBuilder {
     ///
     /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
     ///
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn replica_configuration(mut self, input: crate::types::ConfigureShard) -> Self {
         let mut v = self.replica_configuration.unwrap_or_default();
         v.push(input);
         self.replica_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn set_replica_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>) -> Self {
         self.replica_configuration = input;
         self
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         &self.replica_configuration
     }

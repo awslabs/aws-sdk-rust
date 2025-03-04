@@ -10,6 +10,8 @@ pub struct GatewaySummary {
     pub gateway_name: ::std::string::String,
     /// <p>Contains a gateway's platform information.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
+    /// <p>The version of the gateway. A value of <code>3</code> indicates an MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2 gateway.</p>
+    pub gateway_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     pub gateway_capability_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
@@ -31,6 +33,10 @@ impl GatewaySummary {
     /// <p>Contains a gateway's platform information.</p>
     pub fn gateway_platform(&self) -> ::std::option::Option<&crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
+    }
+    /// <p>The version of the gateway. A value of <code>3</code> indicates an MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2 gateway.</p>
+    pub fn gateway_version(&self) -> ::std::option::Option<&str> {
+        self.gateway_version.as_deref()
     }
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     ///
@@ -61,6 +67,7 @@ pub struct GatewaySummaryBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
+    pub(crate) gateway_version: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_capability_summaries: ::std::option::Option<::std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -109,6 +116,20 @@ impl GatewaySummaryBuilder {
     /// <p>Contains a gateway's platform information.</p>
     pub fn get_gateway_platform(&self) -> &::std::option::Option<crate::types::GatewayPlatform> {
         &self.gateway_platform
+    }
+    /// <p>The version of the gateway. A value of <code>3</code> indicates an MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2 gateway.</p>
+    pub fn gateway_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the gateway. A value of <code>3</code> indicates an MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2 gateway.</p>
+    pub fn set_gateway_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.gateway_version = input;
+        self
+    }
+    /// <p>The version of the gateway. A value of <code>3</code> indicates an MQTT-enabled, V3 gateway, while <code>2</code> indicates a Classic streams, V2 gateway.</p>
+    pub fn get_gateway_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_version
     }
     /// Appends an item to `gateway_capability_summaries`.
     ///
@@ -181,6 +202,7 @@ impl GatewaySummaryBuilder {
                 )
             })?,
             gateway_platform: self.gateway_platform,
+            gateway_version: self.gateway_version,
             gateway_capability_summaries: self.gateway_capability_summaries,
             creation_date: self.creation_date.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

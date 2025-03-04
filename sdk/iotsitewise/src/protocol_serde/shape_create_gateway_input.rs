@@ -12,15 +12,18 @@ pub fn ser_create_gateway_input_input(
         crate::protocol_serde::shape_gateway_platform::ser_gateway_platform(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_4) = &input.gateway_version {
+        object.key("gatewayVersion").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

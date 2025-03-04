@@ -176,7 +176,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -546,7 +546,7 @@ impl RestoreDbInstanceToPointInTimeInput {
     }
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -1491,7 +1491,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     }
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -1503,7 +1503,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     }
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -1515,7 +1515,7 @@ impl RestoreDbInstanceToPointInTimeInputBuilder {
     }
     /// <p>The storage type to associate with the DB instance.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>

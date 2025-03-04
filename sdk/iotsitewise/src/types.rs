@@ -159,6 +159,8 @@ pub use crate::types::_siemens_ie::SiemensIe;
 
 pub use crate::types::_greengrass_v2::GreengrassV2;
 
+pub use crate::types::_core_device_operating_system::CoreDeviceOperatingSystem;
+
 pub use crate::types::_greengrass::Greengrass;
 
 pub use crate::types::_dataset_summary::DatasetSummary;
@@ -520,6 +522,8 @@ mod _configuration_state;
 mod _configuration_status;
 
 mod _content;
+
+mod _core_device_operating_system;
 
 mod _csv;
 

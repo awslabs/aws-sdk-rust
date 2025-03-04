@@ -6,12 +6,18 @@
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub core_device_thing_name: ::std::string::String,
+    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    pub core_device_operating_system: ::std::option::Option<crate::types::CoreDeviceOperatingSystem>,
 }
 impl GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub fn core_device_thing_name(&self) -> &str {
         use std::ops::Deref;
         self.core_device_thing_name.deref()
+    }
+    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    pub fn core_device_operating_system(&self) -> ::std::option::Option<&crate::types::CoreDeviceOperatingSystem> {
+        self.core_device_operating_system.as_ref()
     }
 }
 impl GreengrassV2 {
@@ -26,6 +32,7 @@ impl GreengrassV2 {
 #[non_exhaustive]
 pub struct GreengrassV2Builder {
     pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) core_device_operating_system: ::std::option::Option<crate::types::CoreDeviceOperatingSystem>,
 }
 impl GreengrassV2Builder {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
@@ -43,6 +50,20 @@ impl GreengrassV2Builder {
     pub fn get_core_device_thing_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_device_thing_name
     }
+    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    pub fn core_device_operating_system(mut self, input: crate::types::CoreDeviceOperatingSystem) -> Self {
+        self.core_device_operating_system = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    pub fn set_core_device_operating_system(mut self, input: ::std::option::Option<crate::types::CoreDeviceOperatingSystem>) -> Self {
+        self.core_device_operating_system = input;
+        self
+    }
+    /// <p>The operating system of the core device in IoT Greengrass V2.</p>
+    pub fn get_core_device_operating_system(&self) -> &::std::option::Option<crate::types::CoreDeviceOperatingSystem> {
+        &self.core_device_operating_system
+    }
     /// Consumes the builder and constructs a [`GreengrassV2`](crate::types::GreengrassV2).
     /// This method will fail if any of the following fields are not set:
     /// - [`core_device_thing_name`](crate::types::builders::GreengrassV2Builder::core_device_thing_name)
@@ -54,6 +75,7 @@ impl GreengrassV2Builder {
                     "core_device_thing_name was not specified but it is required when building GreengrassV2",
                 )
             })?,
+            core_device_operating_system: self.core_device_operating_system,
         })
     }
 }

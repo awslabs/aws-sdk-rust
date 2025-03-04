@@ -97,7 +97,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// <p>The storage type to associate with the read replica.</p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to copy all tags from the read replica to snapshots of the read replica. By default, tags aren't copied.</p>
     pub copy_tags_to_snapshot: ::std::option::Option<bool>,
@@ -410,7 +410,7 @@ impl CreateDbInstanceReadReplicaInput {
     /// <p>The storage type to associate with the read replica.</p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -1126,7 +1126,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The storage type to associate with the read replica.</p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
@@ -1134,7 +1134,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The storage type to associate with the read replica.</p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
@@ -1142,7 +1142,7 @@ impl CreateDbInstanceReadReplicaInputBuilder {
     /// <p>The storage type to associate with the read replica.</p>
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }

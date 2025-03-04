@@ -384,13 +384,13 @@ pub struct ModifyDbInstanceInput {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>postgresql | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -987,13 +987,13 @@ impl ModifyDbInstanceInput {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>postgresql | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -2716,13 +2716,13 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>postgresql | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -2736,13 +2736,13 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>postgresql | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
@@ -2756,13 +2756,13 @@ impl ModifyDbInstanceInputBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>Aurora MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>Aurora MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>Aurora PostgreSQL - <code>postgresql</code></p></li>
+    /// <p>Aurora PostgreSQL - <code>postgresql | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     /// <p>For more information about exporting CloudWatch Logs for Amazon RDS, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"> Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>

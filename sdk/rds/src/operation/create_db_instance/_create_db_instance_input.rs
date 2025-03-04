@@ -607,7 +607,7 @@ pub struct CreateDbInstanceInput {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     /// <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.</p>
@@ -740,17 +740,17 @@ pub struct CreateDbInstanceInput {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub enable_cloudwatch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>
@@ -1511,7 +1511,7 @@ impl CreateDbInstanceInput {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
@@ -1688,17 +1688,17 @@ impl CreateDbInstanceInput {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enable_cloudwatch_logs_exports.is_none()`.
@@ -3946,7 +3946,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
         self
@@ -3955,7 +3955,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
@@ -3964,7 +3964,7 @@ impl CreateDbInstanceInputBuilder {
     /// <p>If you specify <code>io1</code>, <code>io2</code>, or <code>gp3</code>, you must also include a value for the <code>Iops</code> parameter.</p>
     /// <p>This setting doesn't apply to Amazon Aurora DB instances. Storage is managed by the DB cluster.</p>
     /// <p>Valid Values: <code>gp2 | gp3 | io1 | io2 | standard</code></p>
-    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp2</code>.</p>
+    /// <p>Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise, <code>gp3</code>.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
@@ -4509,17 +4509,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub fn enable_cloudwatch_logs_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.enable_cloudwatch_logs_exports.unwrap_or_default();
@@ -4538,17 +4538,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub fn set_enable_cloudwatch_logs_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.enable_cloudwatch_logs_exports = input;
@@ -4565,17 +4565,17 @@ impl CreateDbInstanceInputBuilder {
     /// <p>The following values are valid for each DB engine:</p>
     /// <ul>
     /// <li>
-    /// <p>RDS for Db2 - <code>diag.log | notify.log</code></p></li>
+    /// <p>RDS for Db2 - <code>diag.log | notify.log | iam-db-auth-error</code></p></li>
     /// <li>
-    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MariaDB - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Microsoft SQL Server - <code>agent | error</code></p></li>
     /// <li>
-    /// <p>RDS for MySQL - <code>audit | error | general | slowquery</code></p></li>
+    /// <p>RDS for MySQL - <code>audit | error | general | slowquery | iam-db-auth-error</code></p></li>
     /// <li>
     /// <p>RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code></p></li>
     /// <li>
-    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade</code></p></li>
+    /// <p>RDS for PostgreSQL - <code>postgresql | upgrade | iam-db-auth-error</code></p></li>
     /// </ul>
     pub fn get_enable_cloudwatch_logs_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.enable_cloudwatch_logs_exports

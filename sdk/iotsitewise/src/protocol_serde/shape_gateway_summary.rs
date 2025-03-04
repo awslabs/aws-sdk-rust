@@ -31,6 +31,13 @@ where
                         "gatewayPlatform" => {
                             builder = builder.set_gateway_platform(crate::protocol_serde::shape_gateway_platform::de_gateway_platform(tokens)?);
                         }
+                        "gatewayVersion" => {
+                            builder = builder.set_gateway_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "gatewayCapabilitySummaries" => {
                             builder = builder.set_gateway_capability_summaries(
                                 crate::protocol_serde::shape_gateway_capability_summaries::de_gateway_capability_summaries(tokens)?,

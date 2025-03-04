@@ -6,6 +6,9 @@ pub fn ser_greengrass_v2(
     {
         object.key("coreDeviceThingName").string(input.core_device_thing_name.as_str());
     }
+    if let Some(var_1) = &input.core_device_operating_system {
+        object.key("coreDeviceOperatingSystem").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -28,6 +31,13 @@ where
                             builder = builder.set_core_device_thing_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "coreDeviceOperatingSystem" => {
+                            builder = builder.set_core_device_operating_system(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CoreDeviceOperatingSystem::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -180,17 +180,17 @@ impl DecreaseReplicaCountFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
     ///
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn replica_configuration(mut self, input: crate::types::ConfigureShard) -> Self {
         self.inner = self.inner.replica_configuration(input);
         self
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn set_replica_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>>) -> Self {
         self.inner = self.inner.set_replica_configuration(input);
         self
     }
-    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
+    /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard in a Valkey or Redis OSS replication group. The <code>ConfigureShard</code> has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub fn get_replica_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureShard>> {
         self.inner.get_replica_configuration()
     }

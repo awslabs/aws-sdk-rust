@@ -7,6 +7,9 @@ pub struct CreateGatewayInput {
     pub gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
+    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    pub gateway_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -18,6 +21,11 @@ impl CreateGatewayInput {
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub fn gateway_platform(&self) -> ::std::option::Option<&crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
+    }
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
+    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    pub fn gateway_version(&self) -> ::std::option::Option<&str> {
+        self.gateway_version.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -37,6 +45,7 @@ impl CreateGatewayInput {
 pub struct CreateGatewayInputBuilder {
     pub(crate) gateway_name: ::std::option::Option<::std::string::String>,
     pub(crate) gateway_platform: ::std::option::Option<crate::types::GatewayPlatform>,
+    pub(crate) gateway_version: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateGatewayInputBuilder {
@@ -70,6 +79,23 @@ impl CreateGatewayInputBuilder {
     pub fn get_gateway_platform(&self) -> &::std::option::Option<crate::types::GatewayPlatform> {
         &self.gateway_platform
     }
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
+    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    pub fn gateway_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
+    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    pub fn set_gateway_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.gateway_version = input;
+        self
+    }
+    /// <p>The version of the gateway to create. Specify <code>3</code> to create an MQTT-enabled, V3 gateway and <code>2</code> To create a Classic streams, V2 gateway. If the version isn't specified, a Classic streams, V2 gateway is created by default.</p>
+    /// <p>We recommend creating an MQTT-enabled, V3 gateway for self-hosted gateways. SiteWise Edge gateways on Siemens Industrial Edge should use gateway version <code>2</code>. For more information on gateway versions, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gw-self-host-gg2.html"> Self-host a SiteWise Edge gateway with IoT Greengrass V2</a>.</p>
+    pub fn get_gateway_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gateway_version
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -97,6 +123,7 @@ impl CreateGatewayInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayInput {
             gateway_name: self.gateway_name,
             gateway_platform: self.gateway_platform,
+            gateway_version: self.gateway_version,
             tags: self.tags,
         })
     }

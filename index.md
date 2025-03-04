@@ -383,6 +383,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | MailManager | [aws-sdk-mailmanager](https://crates.io/crates/aws-sdk-mailmanager) ([docs](https://docs.rs/aws-sdk-mailmanager)) |
 | Managed Streaming for Kafka | [aws-sdk-kafka](https://crates.io/crates/aws-sdk-kafka) ([docs](https://docs.rs/aws-sdk-kafka)) |
 | Managed Streaming for Kafka Connect | [aws-sdk-kafkaconnect](https://crates.io/crates/aws-sdk-kafkaconnect) ([docs](https://docs.rs/aws-sdk-kafkaconnect)) |
+| Managed integrations for AWS IoT Device Management | [aws-sdk-iotmanagedintegrations](https://crates.io/crates/aws-sdk-iotmanagedintegrations) ([docs](https://docs.rs/aws-sdk-iotmanagedintegrations)) |
 | Migration Hub Strategy Recommendations | [aws-sdk-migrationhubstrategy](https://crates.io/crates/aws-sdk-migrationhubstrategy) ([docs](https://docs.rs/aws-sdk-migrationhubstrategy)) |
 | Network Flow Monitor | [aws-sdk-networkflowmonitor](https://crates.io/crates/aws-sdk-networkflowmonitor) ([docs](https://docs.rs/aws-sdk-networkflowmonitor)) |
 | OpenSearch Service Serverless | [aws-sdk-opensearchserverless](https://crates.io/crates/aws-sdk-opensearchserverless) ([docs](https://docs.rs/aws-sdk-opensearchserverless)) |
