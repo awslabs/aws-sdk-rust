@@ -2599,6 +2599,10 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '22b2f052857ca4b9855344727bccbf827b80b29acf584bdf74f057bccb32d6d2'
+
+[release]
+tag = 'release-2025-03-04'
+
 [release.crates]
 aws-sdk-elasticache = '1.65.1'
 aws-sdk-iotmanagedintegrations = '1.0.0'
