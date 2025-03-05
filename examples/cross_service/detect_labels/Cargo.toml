@@ -7,7 +7,7 @@ publish = false
 
 [dependencies]
 kamadak-exif = "0.5.4"
-aws-config= { version = "1.5.17", path = "../../../sdk/aws-config" }
+aws-config= { version = "1.5.18", path = "../../../sdk/aws-config" }
 aws-sdk-dynamodb= { version = "1.67.0", path = "../../../sdk/dynamodb" }
 aws-sdk-rekognition= { version = "1.64.0", path = "../../../sdk/rekognition" }
 aws-sdk-s3= { version = "1.78.0", path = "../../../sdk/s3" }

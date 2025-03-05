@@ -732,6 +732,36 @@ mod loader {
             self
         }
 
+        /// Set the checksum calculation strategy to use when making requests.
+        /// # Examples
+        /// ```
+        /// use aws_types::SdkConfig;
+        /// use aws_smithy_types::checksum_config::RequestChecksumCalculation;
+        /// let config = SdkConfig::builder().request_checksum_calculation(RequestChecksumCalculation::WhenSupported).build();
+        /// ```
+        pub fn request_checksum_calculation(
+            mut self,
+            request_checksum_calculation: RequestChecksumCalculation,
+        ) -> Self {
+            self.request_checksum_calculation = Some(request_checksum_calculation);
+            self
+        }
+
+        /// Set the checksum calculation strategy to use for responses.
+        /// # Examples
+        /// ```
+        /// use aws_types::SdkConfig;
+        /// use aws_smithy_types::checksum_config::ResponseChecksumValidation;
+        /// let config = SdkConfig::builder().response_checksum_validation(ResponseChecksumValidation::WhenSupported).build();
+        /// ```
+        pub fn response_checksum_validation(
+            mut self,
+            response_checksum_validation: ResponseChecksumValidation,
+        ) -> Self {
+            self.response_checksum_validation = Some(response_checksum_validation);
+            self
+        }
+
         /// Load the default configuration chain
         ///
         /// If fields have been overridden during builder construction, the override values will be used.
@@ -980,6 +1010,7 @@ mod loader {
         use aws_types::app_name::AppName;
         use aws_types::origin::Origin;
         use aws_types::os_shim_internal::{Env, Fs};
+        use aws_types::sdk_config::{RequestChecksumCalculation, ResponseChecksumValidation};
         use std::sync::atomic::{AtomicUsize, Ordering};
         use std::sync::Arc;
 
@@ -1158,6 +1189,30 @@ mod loader {
             let app_name = AppName::new("my-app-name").unwrap();
             let conf = base_conf().app_name(app_name.clone()).load().await;
             assert_eq!(Some(&app_name), conf.app_name());
+        }
+
+        #[tokio::test]
+        async fn request_checksum_calculation() {
+            let conf = base_conf()
+                .request_checksum_calculation(RequestChecksumCalculation::WhenRequired)
+                .load()
+                .await;
+            assert_eq!(
+                Some(RequestChecksumCalculation::WhenRequired),
+                conf.request_checksum_calculation()
+            );
+        }
+
+        #[tokio::test]
+        async fn response_checksum_validation() {
+            let conf = base_conf()
+                .response_checksum_validation(ResponseChecksumValidation::WhenRequired)
+                .load()
+                .await;
+            assert_eq!(
+                Some(ResponseChecksumValidation::WhenRequired),
+                conf.response_checksum_validation()
+            );
         }
 
         #[cfg(feature = "rustls")]
