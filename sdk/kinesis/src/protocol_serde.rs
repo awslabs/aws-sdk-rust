@@ -81,6 +81,8 @@ pub(crate) mod shape_start_stream_encryption;
 
 pub(crate) mod shape_stop_stream_encryption;
 
+pub(crate) mod shape_subscribe_to_shard;
+
 pub(crate) mod shape_update_shard_count;
 
 pub(crate) mod shape_update_stream_mode;
@@ -128,6 +130,8 @@ pub(crate) mod shape_get_resource_policy_input;
 pub(crate) mod shape_get_shard_iterator_input;
 
 pub(crate) mod shape_increase_stream_retention_period_input;
+
+pub(crate) mod shape_internal_failure_exception;
 
 pub(crate) mod shape_invalid_argument_exception;
 
@@ -177,11 +181,21 @@ pub(crate) mod shape_start_stream_encryption_input;
 
 pub(crate) mod shape_stop_stream_encryption_input;
 
+pub(crate) mod shape_subscribe_to_shard_input;
+
+pub(crate) mod shape_subscribe_to_shard_output;
+
 pub(crate) mod shape_update_shard_count_input;
 
 pub(crate) mod shape_update_stream_mode_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
 
 pub(crate) mod shape_child_shard_list;
 
@@ -202,6 +216,8 @@ pub(crate) mod shape_record_list;
 pub(crate) mod shape_shard_filter;
 
 pub(crate) mod shape_shard_list;
+
+pub(crate) mod shape_starting_position;
 
 pub(crate) mod shape_stream_description;
 
@@ -226,6 +242,8 @@ pub(crate) mod shape_record;
 pub(crate) mod shape_shard;
 
 pub(crate) mod shape_stream_summary;
+
+pub(crate) mod shape_subscribe_to_shard_event;
 
 pub(crate) mod shape_tag;
 

@@ -23,6 +23,123 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_malformed_query_exception::MalformedQueryException;
 
+pub use crate::types::error::_session_streaming_exception::SessionStreamingException;
+
+pub use crate::types::error::_session_timeout_exception::SessionTimeoutException;
+
+/// Error type for the `StartLiveTailResponseStreamError` operation.
+#[non_exhaustive]
+#[derive(::std::fmt::Debug)]
+pub enum StartLiveTailResponseStreamError {
+    /// <p>This exception is returned in a Live Tail stream when the Live Tail session times out. Live Tail sessions time out after three hours.</p>
+    SessionTimeoutException(crate::types::error::SessionTimeoutException),
+    /// <p>This exception is returned if an unknown error occurs during a Live Tail session.</p>
+    SessionStreamingException(crate::types::error::SessionStreamingException),
+    /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
+    #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
+    variable wildcard pattern and check `.code()`:
+     \
+    &nbsp;&nbsp;&nbsp;`err if err.code() == Some(\"SpecificExceptionCode\") => { /* handle the error */ }`
+     \
+    See [`ProvideErrorMetadata`](#impl-ProvideErrorMetadata-for-StartLiveTailResponseStreamError) for what information is available for the error.")]
+    Unhandled(crate::error::sealed_unhandled::Unhandled),
+}
+impl StartLiveTailResponseStreamError {
+    /// Creates the `StartLiveTailResponseStreamError::Unhandled` variant from any error type.
+    pub fn unhandled(
+        err: impl ::std::convert::Into<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.into(),
+            meta: ::std::default::Default::default(),
+        })
+    }
+
+    /// Creates the `StartLiveTailResponseStreamError::Unhandled` variant from an [`ErrorMetadata`](::aws_smithy_types::error::ErrorMetadata).
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source: err.clone().into(),
+            meta: err,
+        })
+    }
+    ///
+    /// Returns error metadata, which includes the error code, message,
+    /// request ID, and potentially additional information.
+    ///
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::SessionTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SessionStreamingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::Unhandled(e) => &e.meta,
+        }
+    }
+    /// Returns `true` if the error kind is `StartLiveTailResponseStreamError::SessionTimeoutException`.
+    pub fn is_session_timeout_exception(&self) -> bool {
+        matches!(self, Self::SessionTimeoutException(_))
+    }
+    /// Returns `true` if the error kind is `StartLiveTailResponseStreamError::SessionStreamingException`.
+    pub fn is_session_streaming_exception(&self) -> bool {
+        matches!(self, Self::SessionStreamingException(_))
+    }
+}
+impl ::std::error::Error for StartLiveTailResponseStreamError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
+        match self {
+            Self::SessionTimeoutException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SessionStreamingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
+        }
+    }
+}
+impl ::std::fmt::Display for StartLiveTailResponseStreamError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            Self::SessionTimeoutException(_inner) => _inner.fmt(f),
+            Self::SessionStreamingException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => {
+                if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
+                    write!(f, "unhandled error ({code})")
+                } else {
+                    f.write_str("unhandled error")
+                }
+            }
+        }
+    }
+}
+impl ::aws_smithy_types::retry::ProvideErrorKind for StartLiveTailResponseStreamError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+    }
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
+    }
+}
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartLiveTailResponseStreamError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        match self {
+            Self::SessionTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SessionStreamingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::Unhandled(_inner) => &_inner.meta,
+        }
+    }
+}
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartLiveTailResponseStreamError {
+    fn create_unhandled_error(
+        source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
+        Self::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            source,
+            meta: meta.unwrap_or_default(),
+        })
+    }
+}
+impl ::aws_types::request_id::RequestId for crate::types::error::StartLiveTailResponseStreamError {
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
+
 pub use crate::types::error::_data_already_accepted_exception::DataAlreadyAcceptedException;
 
 pub use crate::types::error::_invalid_sequence_token_exception::InvalidSequenceTokenException;
@@ -58,6 +175,10 @@ mod _resource_not_found_exception;
 mod _service_quota_exceeded_exception;
 
 mod _service_unavailable_exception;
+
+mod _session_streaming_exception;
+
+mod _session_timeout_exception;
 
 mod _throttling_exception;
 

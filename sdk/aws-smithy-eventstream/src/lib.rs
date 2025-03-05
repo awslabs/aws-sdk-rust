@@ -22,3 +22,5 @@ mod buf;
 pub mod error;
 pub mod frame;
 pub mod smithy;
+#[cfg(feature = "test-util")]
+pub mod test_util;

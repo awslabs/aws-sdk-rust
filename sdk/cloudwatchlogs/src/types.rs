@@ -83,6 +83,16 @@ pub use crate::types::_query_compile_error_location::QueryCompileErrorLocation;
 
 pub use crate::types::_query_language::QueryLanguage;
 
+pub use crate::types::_start_live_tail_response_stream::StartLiveTailResponseStream;
+
+pub use crate::types::_live_tail_session_update::LiveTailSessionUpdate;
+
+pub use crate::types::_live_tail_session_log_event::LiveTailSessionLogEvent;
+
+pub use crate::types::_live_tail_session_metadata::LiveTailSessionMetadata;
+
+pub use crate::types::_live_tail_session_start::LiveTailSessionStart;
+
 pub use crate::types::_distribution::Distribution;
 
 pub use crate::types::_resource_policy::ResourcePolicy;
@@ -307,6 +317,14 @@ mod _integration_type;
 
 mod _list_to_map;
 
+mod _live_tail_session_log_event;
+
+mod _live_tail_session_metadata;
+
+mod _live_tail_session_start;
+
+mod _live_tail_session_update;
+
 mod _log_event;
 
 mod _log_group;
@@ -422,6 +440,8 @@ mod _split_string;
 mod _split_string_entry;
 
 mod _standard_unit;
+
+mod _start_live_tail_response_stream;
 
 mod _state;
 

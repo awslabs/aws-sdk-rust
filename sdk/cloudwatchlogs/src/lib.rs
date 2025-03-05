@@ -194,6 +194,8 @@ mod auth_plugin;
 
 pub(crate) mod client_idempotency_token;
 
+mod event_receiver;
+
 mod idempotency_token;
 
 pub(crate) mod protocol_serde;
@@ -205,6 +207,8 @@ mod serialization_settings;
 mod endpoint_lib;
 
 mod lens;
+
+mod event_stream_serde;
 
 mod json_errors;
 

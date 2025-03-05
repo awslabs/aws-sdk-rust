@@ -317,6 +317,8 @@ mod put_subscription_filter;
 
 mod put_transformer;
 
+mod start_live_tail;
+
 mod start_query;
 
 mod stop_query;

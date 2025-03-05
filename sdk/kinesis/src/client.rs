@@ -255,6 +255,8 @@ mod start_stream_encryption;
 
 mod stop_stream_encryption;
 
+mod subscribe_to_shard;
+
 mod update_shard_count;
 
 mod update_stream_mode;

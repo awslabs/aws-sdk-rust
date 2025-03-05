@@ -201,6 +201,8 @@ pub mod types;
 
 mod auth_plugin;
 
+mod event_receiver;
+
 pub(crate) mod protocol_serde;
 
 mod sdk_feature_tracker;
@@ -217,6 +219,8 @@ mod serde_util;
 ///
 /// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
 pub mod waiters;
+
+mod event_stream_serde;
 
 mod json_errors;
 

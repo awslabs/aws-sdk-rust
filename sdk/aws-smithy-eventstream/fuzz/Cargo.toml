@@ -53,7 +53,7 @@ version = "1.2.13"
 [dependencies.aws-smithy-eventstream]
 features = ["derive-arbitrary"]
 path = ".."
-version = "0.60.6"
+version = "0.60.7"
 
 [workspace]
 members = ["."]

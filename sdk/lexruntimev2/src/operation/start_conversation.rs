@@ -116,7 +116,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartCo
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartConversation")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
             .with_interceptor(StartConversationEndpointParamsInterceptor)
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::start_conversation::StartConversationError,
@@ -261,9 +260,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartConvers
             let marshaller = crate::event_stream_serde::StartConversationRequestEventStreamMarshaller::new();
             let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
             _cfg.interceptor_state().store_put(signer_sender);
-            let adapter: ::aws_smithy_http::event_stream::MessageStreamAdapter<_, _> =
-                input.request_event_stream.into_body_stream(marshaller, error_marshaller, signer);
-            ::aws_smithy_types::body::SdkBody::from_body_0_4(::hyper::Body::wrap_stream(adapter))
+            ::aws_smithy_types::body::SdkBody::from_body_0_4(::hyper::Body::wrap_stream(input.request_event_stream.into_body_stream(
+                marshaller,
+                error_marshaller,
+                signer,
+            )))
         });
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();

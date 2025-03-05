@@ -123,6 +123,23 @@ pub struct Receiver<T, E> {
     _phantom: PhantomData<E>,
 }
 
+// Used by `Receiver::try_recv_initial`, hence this enum is also doc hidden
+#[doc(hidden)]
+#[non_exhaustive]
+pub enum InitialMessageType {
+    Request,
+    Response,
+}
+
+impl InitialMessageType {
+    fn as_str(&self) -> &'static str {
+        match self {
+            InitialMessageType::Request => "initial-request",
+            InitialMessageType::Response => "initial-response",
+        }
+    }
+}
+
 impl<T, E> Receiver<T, E> {
     /// Creates a new `Receiver` with the given message unmarshaller and SDK body.
     pub fn new(
@@ -205,10 +222,13 @@ impl<T, E> Receiver<T, E> {
         Ok(None)
     }
 
-    /// Tries to receive the initial response message that has `:event-type` of `initial-response`.
+    /// Tries to receive the initial response message that has `:event-type` of a given `message_type`.
     /// If a different event type is received, then it is buffered and `Ok(None)` is returned.
     #[doc(hidden)]
-    pub async fn try_recv_initial(&mut self) -> Result<Option<Message>, SdkError<E, RawMessage>> {
+    pub async fn try_recv_initial(
+        &mut self,
+        message_type: InitialMessageType,
+    ) -> Result<Option<Message>, SdkError<E, RawMessage>> {
         if let Some(message) = self.next_message().await? {
             if let Some(event_type) = message
                 .headers()
@@ -218,15 +238,14 @@ impl<T, E> Receiver<T, E> {
                 if event_type
                     .value()
                     .as_string()
-                    .map(|s| s.as_str() == "initial-response")
+                    .map(|s| s.as_str() == message_type.as_str())
                     .unwrap_or(false)
                 {
                     return Ok(Some(message));
                 }
-            } else {
-                // Buffer the message so that it can be returned by the next call to `recv()`
-                self.buffered_message = Some(message);
             }
+            // Buffer the message so that it can be returned by the next call to `recv()`
+            self.buffered_message = Some(message);
         }
         Ok(None)
     }
@@ -261,7 +280,7 @@ impl<T, E> Receiver<T, E> {
 
 #[cfg(test)]
 mod tests {
-    use super::{Receiver, UnmarshallMessage};
+    use super::{InitialMessageType, Receiver, UnmarshallMessage};
     use aws_smithy_eventstream::error::Error as EventStreamError;
     use aws_smithy_eventstream::frame::{write_message_to, UnmarshalledMessage};
     use aws_smithy_runtime_api::client::result::SdkError;
@@ -508,7 +527,11 @@ mod tests {
         let chunk_stream = futures_util::stream::iter(chunks);
         let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
-        assert!(receiver.try_recv_initial().await.unwrap().is_some());
+        assert!(receiver
+            .try_recv_initial(InitialMessageType::Response)
+            .await
+            .unwrap()
+            .is_some());
         assert_eq!(
             TestMessage("one".into()),
             receiver.recv().await.unwrap().unwrap()
@@ -522,7 +545,11 @@ mod tests {
         let chunk_stream = futures_util::stream::iter(chunks);
         let body = SdkBody::from_body_0_4(Body::wrap_stream(chunk_stream));
         let mut receiver = Receiver::<TestMessage, EventStreamError>::new(Unmarshaller, body);
-        assert!(receiver.try_recv_initial().await.unwrap().is_none());
+        assert!(receiver
+            .try_recv_initial(InitialMessageType::Response)
+            .await
+            .unwrap()
+            .is_none());
         assert_eq!(
             TestMessage("one".into()),
             receiver.recv().await.unwrap().unwrap()

@@ -319,3 +319,18 @@ pub(crate) fn sequence_number_range_correct_errors(
     }
     builder
 }
+
+pub(crate) fn subscribe_to_shard_event_correct_errors(
+    mut builder: crate::types::builders::SubscribeToShardEventBuilder,
+) -> crate::types::builders::SubscribeToShardEventBuilder {
+    if builder.records.is_none() {
+        builder.records = Some(Default::default())
+    }
+    if builder.continuation_sequence_number.is_none() {
+        builder.continuation_sequence_number = Some(Default::default())
+    }
+    if builder.millis_behind_latest.is_none() {
+        builder.millis_behind_latest = Some(Default::default())
+    }
+    builder
+}

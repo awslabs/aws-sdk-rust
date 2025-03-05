@@ -71,6 +71,14 @@ pub use crate::types::_query_compile_error::QueryCompileErrorBuilder;
 
 pub use crate::types::_query_compile_error_location::QueryCompileErrorLocationBuilder;
 
+pub use crate::types::_live_tail_session_update::LiveTailSessionUpdateBuilder;
+
+pub use crate::types::_live_tail_session_log_event::LiveTailSessionLogEventBuilder;
+
+pub use crate::types::_live_tail_session_metadata::LiveTailSessionMetadataBuilder;
+
+pub use crate::types::_live_tail_session_start::LiveTailSessionStartBuilder;
+
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
 
 pub use crate::types::_metric_transformation::MetricTransformationBuilder;

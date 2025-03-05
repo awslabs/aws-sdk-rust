@@ -88,6 +88,9 @@ pub mod start_stream_encryption;
 /// Types for the `StopStreamEncryption` operation.
 pub mod stop_stream_encryption;
 
+/// Types for the `SubscribeToShard` operation.
+pub mod subscribe_to_shard;
+
 /// Types for the `UpdateShardCount` operation.
 pub mod update_shard_count;
 

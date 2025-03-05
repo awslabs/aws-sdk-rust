@@ -23,6 +23,10 @@ pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBu
 
 pub use crate::types::error::_malformed_query_exception::MalformedQueryExceptionBuilder;
 
+pub use crate::types::error::_session_streaming_exception::SessionStreamingExceptionBuilder;
+
+pub use crate::types::error::_session_timeout_exception::SessionTimeoutExceptionBuilder;
+
 pub use crate::types::error::_data_already_accepted_exception::DataAlreadyAcceptedExceptionBuilder;
 
 pub use crate::types::error::_invalid_sequence_token_exception::InvalidSequenceTokenExceptionBuilder;

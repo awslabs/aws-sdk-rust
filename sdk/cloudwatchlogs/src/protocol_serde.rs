@@ -177,6 +177,8 @@ pub(crate) mod shape_put_subscription_filter;
 
 pub(crate) mod shape_put_transformer;
 
+pub(crate) mod shape_start_live_tail;
+
 pub(crate) mod shape_start_query;
 
 pub(crate) mod shape_stop_query;
@@ -387,6 +389,14 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
 
+pub(crate) mod shape_session_streaming_exception;
+
+pub(crate) mod shape_session_timeout_exception;
+
+pub(crate) mod shape_start_live_tail_input;
+
+pub(crate) mod shape_start_live_tail_output;
+
 pub(crate) mod shape_start_query_input;
 
 pub(crate) mod shape_stop_query_input;
@@ -416,6 +426,12 @@ pub(crate) mod shape_update_delivery_configuration_input;
 pub(crate) mod shape_update_log_anomaly_detector_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub fn parse_event_stream_error_metadata(
+    payload: &::bytes::Bytes,
+) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
+    crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
+}
 
 pub(crate) mod shape_account_policies;
 
@@ -549,6 +565,10 @@ pub(crate) mod shape_integration_summary;
 
 pub(crate) mod shape_list_to_map;
 
+pub(crate) mod shape_live_tail_session_start;
+
+pub(crate) mod shape_live_tail_session_update;
+
 pub(crate) mod shape_log_group;
 
 pub(crate) mod shape_log_group_field;
@@ -679,6 +699,12 @@ pub(crate) mod shape_copy_value_entries;
 
 pub(crate) mod shape_delete_with_keys;
 
+pub(crate) mod shape_input_log_stream_names;
+
+pub(crate) mod shape_live_tail_session_metadata;
+
+pub(crate) mod shape_live_tail_session_results;
+
 pub(crate) mod shape_log_event;
 
 pub(crate) mod shape_lower_case_string_with_keys;
@@ -697,6 +723,8 @@ pub(crate) mod shape_rename_key_entries;
 
 pub(crate) mod shape_split_string_entries;
 
+pub(crate) mod shape_start_live_tail_log_group_identifiers;
+
 pub(crate) mod shape_substitute_string_entries;
 
 pub(crate) mod shape_trim_string_with_keys;
@@ -708,3 +736,5 @@ pub(crate) mod shape_upper_case_string_with_keys;
 pub(crate) mod shape_dimensions;
 
 pub(crate) mod shape_enumerations;
+
+pub(crate) mod shape_live_tail_session_log_event;

@@ -9,6 +9,8 @@ pub enum Error {
     ExpiredIteratorException(crate::types::error::ExpiredIteratorException),
     /// <p>The pagination token passed to the operation is expired.</p>
     ExpiredNextTokenException(crate::types::error::ExpiredNextTokenException),
+    /// <p>The processing of the request failed because of an unknown error, exception, or failure.</p>
+    InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The ciphertext references a key that doesn't exist or that you don't have access to.</p>
@@ -48,6 +50,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ExpiredIteratorException(inner) => inner.fmt(f),
             Error::ExpiredNextTokenException(inner) => inner.fmt(f),
+            Error::InternalFailureException(inner) => inner.fmt(f),
             Error::InvalidArgumentException(inner) => inner.fmt(f),
             Error::KmsAccessDeniedException(inner) => inner.fmt(f),
             Error::KmsDisabledException(inner) => inner.fmt(f),
@@ -84,6 +87,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ExpiredIteratorException(inner) => inner.meta(),
             Self::ExpiredNextTokenException(inner) => inner.meta(),
+            Self::InternalFailureException(inner) => inner.meta(),
             Self::InvalidArgumentException(inner) => inner.meta(),
             Self::KmsAccessDeniedException(inner) => inner.meta(),
             Self::KmsDisabledException(inner) => inner.meta(),
@@ -1025,6 +1029,39 @@ impl From<crate::operation::stop_stream_encryption::StopStreamEncryptionError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::subscribe_to_shard::SubscribeToShardError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::subscribe_to_shard::SubscribeToShardError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::subscribe_to_shard::SubscribeToShardError> for Error {
+    fn from(err: crate::operation::subscribe_to_shard::SubscribeToShardError) -> Self {
+        match err {
+            crate::operation::subscribe_to_shard::SubscribeToShardError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_shard_count::UpdateShardCountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1089,12 +1126,43 @@ where
         })
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::SubscribeToShardEventStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::SubscribeToShardEventStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::SubscribeToShardEventStreamError> for Error {
+    fn from(err: crate::types::error::SubscribeToShardEventStreamError) -> Self {
+        match err {
+            crate::types::error::SubscribeToShardEventStreamError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::types::error::SubscribeToShardEventStreamError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::types::error::SubscribeToShardEventStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ExpiredIteratorException(inner) => inner.source(),
             Error::ExpiredNextTokenException(inner) => inner.source(),
+            Error::InternalFailureException(inner) => inner.source(),
             Error::InvalidArgumentException(inner) => inner.source(),
             Error::KmsAccessDeniedException(inner) => inner.source(),
             Error::KmsDisabledException(inner) => inner.source(),
@@ -1117,6 +1185,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ExpiredIteratorException(e) => e.request_id(),
             Self::ExpiredNextTokenException(e) => e.request_id(),
+            Self::InternalFailureException(e) => e.request_id(),
             Self::InvalidArgumentException(e) => e.request_id(),
             Self::KmsAccessDeniedException(e) => e.request_id(),
             Self::KmsDisabledException(e) => e.request_id(),

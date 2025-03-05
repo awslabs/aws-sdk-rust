@@ -34,6 +34,10 @@ pub enum Error {
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The service cannot complete the request.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>This exception is returned if an unknown error occurs during a Live Tail session.</p>
+    SessionStreamingException(crate::types::error::SessionStreamingException),
+    /// <p>This exception is returned in a Live Tail stream when the Live Tail session times out. Live Tail sessions time out after three hours.</p>
+    SessionTimeoutException(crate::types::error::SessionTimeoutException),
     /// <p>The request was throttled because of quota limits.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>A resource can have no more than 50 tags.</p>
@@ -67,6 +71,8 @@ impl ::std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::SessionStreamingException(inner) => inner.fmt(f),
+            Error::SessionTimeoutException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
             Error::UnrecognizedClientException(inner) => inner.fmt(f),
@@ -105,6 +111,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::SessionStreamingException(inner) => inner.meta(),
+            Self::SessionTimeoutException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
             Self::UnrecognizedClientException(inner) => inner.meta(),
@@ -2515,6 +2523,34 @@ impl From<crate::operation::put_transformer::PutTransformerError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_live_tail::StartLiveTailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_live_tail::StartLiveTailError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_live_tail::StartLiveTailError> for Error {
+    fn from(err: crate::operation::start_live_tail::StartLiveTailError) -> Self {
+        match err {
+            crate::operation::start_live_tail::StartLiveTailError::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::SessionTimeoutException(inner) => Error::SessionTimeoutException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::SessionStreamingException(inner) => Error::SessionStreamingException(inner),
+            crate::operation::start_live_tail::StartLiveTailError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_query::StartQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2811,6 +2847,29 @@ impl From<crate::operation::update_log_anomaly_detector::UpdateLogAnomalyDetecto
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartLiveTailResponseStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartLiveTailResponseStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::StartLiveTailResponseStreamError> for Error {
+    fn from(err: crate::types::error::StartLiveTailResponseStreamError) -> Self {
+        match err {
+            crate::types::error::StartLiveTailResponseStreamError::SessionTimeoutException(inner) => Error::SessionTimeoutException(inner),
+            crate::types::error::StartLiveTailResponseStreamError::SessionStreamingException(inner) => Error::SessionStreamingException(inner),
+            crate::types::error::StartLiveTailResponseStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
@@ -2827,6 +2886,8 @@ impl ::std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::SessionStreamingException(inner) => inner.source(),
+            Error::SessionTimeoutException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
             Error::UnrecognizedClientException(inner) => inner.source(),
@@ -2851,6 +2912,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::SessionStreamingException(e) => e.request_id(),
+            Self::SessionTimeoutException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
             Self::UnrecognizedClientException(e) => e.request_id(),

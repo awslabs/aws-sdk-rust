@@ -5,7 +5,21 @@ pub use crate::types::_stream_mode::StreamMode;
 
 pub use crate::types::_scaling_type::ScalingType;
 
+pub use crate::types::_subscribe_to_shard_event_stream::SubscribeToShardEventStream;
+
+pub use crate::types::_subscribe_to_shard_event::SubscribeToShardEvent;
+
+pub use crate::types::_child_shard::ChildShard;
+
+pub use crate::types::_hash_key_range::HashKeyRange;
+
+pub use crate::types::_record::Record;
+
 pub use crate::types::_encryption_type::EncryptionType;
+
+pub use crate::types::_starting_position::StartingPosition;
+
+pub use crate::types::_shard_iterator_type::ShardIteratorType;
 
 pub use crate::types::_consumer::Consumer;
 
@@ -25,17 +39,9 @@ pub use crate::types::_shard::Shard;
 
 pub use crate::types::_sequence_number_range::SequenceNumberRange;
 
-pub use crate::types::_hash_key_range::HashKeyRange;
-
 pub use crate::types::_shard_filter::ShardFilter;
 
 pub use crate::types::_shard_filter_type::ShardFilterType;
-
-pub use crate::types::_shard_iterator_type::ShardIteratorType;
-
-pub use crate::types::_child_shard::ChildShard;
-
-pub use crate::types::_record::Record;
 
 pub use crate::types::_metrics_name::MetricsName;
 
@@ -81,6 +87,8 @@ mod _shard_filter_type;
 
 mod _shard_iterator_type;
 
+mod _starting_position;
+
 mod _stream_description;
 
 mod _stream_description_summary;
@@ -92,6 +100,10 @@ mod _stream_mode_details;
 mod _stream_status;
 
 mod _stream_summary;
+
+mod _subscribe_to_shard_event;
+
+mod _subscribe_to_shard_event_stream;
 
 mod _tag;
 

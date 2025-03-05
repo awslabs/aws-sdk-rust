@@ -111,7 +111,6 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Chat {
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("Chat")
-            .with_interceptor(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default())
             .with_interceptor(ChatEndpointParamsInterceptor)
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
                 crate::operation::chat::ChatError,
@@ -248,9 +247,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ChatRequestS
             let marshaller = crate::event_stream_serde::ChatInputStreamMarshaller::new();
             let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
             _cfg.interceptor_state().store_put(signer_sender);
-            let adapter: ::aws_smithy_http::event_stream::MessageStreamAdapter<_, _> =
-                input.input_stream.into_body_stream(marshaller, error_marshaller, signer);
-            ::aws_smithy_types::body::SdkBody::from_body_0_4(::hyper::Body::wrap_stream(adapter))
+            ::aws_smithy_types::body::SdkBody::from_body_0_4(::hyper::Body::wrap_stream(input.input_stream.into_body_stream(
+                marshaller,
+                error_marshaller,
+                signer,
+            )))
         });
         if let Some(content_length) = body.content_length() {
             let content_length = content_length.to_string();

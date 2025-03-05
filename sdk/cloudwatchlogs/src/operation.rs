@@ -232,6 +232,9 @@ pub mod put_subscription_filter;
 /// Types for the `PutTransformer` operation.
 pub mod put_transformer;
 
+/// Types for the `StartLiveTail` operation.
+pub mod start_live_tail;
+
 /// Types for the `StartQuery` operation.
 pub mod start_query;
 

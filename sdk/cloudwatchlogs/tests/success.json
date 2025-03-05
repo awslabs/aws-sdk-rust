@@ -1,0 +1,108 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://streaming-logs.us-west-2.amazonaws.com/",
+            "headers": {
+              "content-type": [
+                "application/x-amz-json-1.1"
+              ],
+              "x-amz-target": [
+                "Logs_20140328.StartLiveTail"
+              ],
+              "content-length": [
+                "129"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.123.test ua/0.1 api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0 m/E md/http#replaying-client"
+              ],
+              "x-amz-date": [
+                "20090213T233130Z"
+              ],
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-west-2/logs/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-target;x-amz-user-agent, Signature=6c7b4139449c4c6ae6391f46eb572f1070bcce6adedfecb51e2ed70f04714a81"
+              ],
+              "amz-sdk-request": [
+                "attempt=1; max=1"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "{\"logGroupIdentifiers\":[\"arn:aws:logs:us-west-2:123456789123:log-group:/aws/codebuild/CodeBuildS3PublisherProject-aBCdEfGHIjkO\"]}"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "headers": {
+                "x-amzn-requestid": [
+                  "629c2b67-0741-48ba-9e8d-4cd9cca8cbc5"
+                ],
+                "date": [
+                  "Fri, 07 Feb 2025 22:41:14 GMT"
+                ],
+                "content-type": [
+                  "application/vnd.amazon.eventstream"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Base64": "AAAAcgAAAGCrgg2eCzpldmVudC10eXBlBwAQaW5pdGlhbC1yZXNwb25zZQ06Y29udGVudC10eXBlBwAaYXBwbGljYXRpb24veC1hbXotanNvbi0xLjENOm1lc3NhZ2UtdHlwZQcABWV2ZW50e32srmt9"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Base64": "AAAApgAAAF2Pn5gWCzpldmVudC10eXBlBwANc2Vzc2lvblVwZGF0ZQ06Y29udGVudC10eXBlBwAaYXBwbGljYXRpb24veC1hbXotanNvbi0xLjENOm1lc3NhZ2UtdHlwZQcABWV2ZW50eyJzZXNzaW9uTWV0YWRhdGEiOnsic2FtcGxlZCI6ZmFsc2V9LCJzZXNzaW9uUmVzdWx0cyI6W119dg+Kdw=="
+          },
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "traffic recording of the StartLiveTail API to verify an event stream operation, removing message for SessionStart event for security reason",
+  "version": "V0"
+}
