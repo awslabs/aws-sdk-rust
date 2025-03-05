@@ -256,6 +256,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Forecast Service | [aws-sdk-forecast](https://crates.io/crates/aws-sdk-forecast) ([docs](https://docs.rs/aws-sdk-forecast)) |
 | Amazon Fraud Detector | [aws-sdk-frauddetector](https://crates.io/crates/aws-sdk-frauddetector) ([docs](https://docs.rs/aws-sdk-frauddetector)) |
 | Amazon GameLift | [aws-sdk-gamelift](https://crates.io/crates/aws-sdk-gamelift) ([docs](https://docs.rs/aws-sdk-gamelift)) |
+| Amazon GameLift Streams | [aws-sdk-gameliftstreams](https://crates.io/crates/aws-sdk-gameliftstreams) ([docs](https://docs.rs/aws-sdk-gameliftstreams)) |
 | Amazon Glacier | [aws-sdk-glacier](https://crates.io/crates/aws-sdk-glacier) ([docs](https://docs.rs/aws-sdk-glacier)) |
 | Amazon GuardDuty | [aws-sdk-guardduty](https://crates.io/crates/aws-sdk-guardduty) ([docs](https://docs.rs/aws-sdk-guardduty)) |
 | Amazon HealthLake | [aws-sdk-healthlake](https://crates.io/crates/aws-sdk-healthlake) ([docs](https://docs.rs/aws-sdk-healthlake)) |

@@ -22,6 +22,10 @@ pub struct ObdSignal {
     pub bit_right_shift: i32,
     /// <p>The number of bits to mask in a message.</p>
     pub bit_mask_length: ::std::option::Option<i32>,
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type. The default value is <code>false</code>.</p>
+    pub is_signed: ::std::option::Option<bool>,
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub signal_value_type: ::std::option::Option<crate::types::SignalValueType>,
 }
 impl ObdSignal {
     /// <p>The length of the requested data.</p>
@@ -60,6 +64,14 @@ impl ObdSignal {
     pub fn bit_mask_length(&self) -> ::std::option::Option<i32> {
         self.bit_mask_length
     }
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type. The default value is <code>false</code>.</p>
+    pub fn is_signed(&self) -> ::std::option::Option<bool> {
+        self.is_signed
+    }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn signal_value_type(&self) -> ::std::option::Option<&crate::types::SignalValueType> {
+        self.signal_value_type.as_ref()
+    }
 }
 impl ObdSignal {
     /// Creates a new builder-style object to manufacture [`ObdSignal`](crate::types::ObdSignal).
@@ -81,6 +93,8 @@ pub struct ObdSignalBuilder {
     pub(crate) byte_length: ::std::option::Option<i32>,
     pub(crate) bit_right_shift: ::std::option::Option<i32>,
     pub(crate) bit_mask_length: ::std::option::Option<i32>,
+    pub(crate) is_signed: ::std::option::Option<bool>,
+    pub(crate) signal_value_type: ::std::option::Option<crate::types::SignalValueType>,
 }
 impl ObdSignalBuilder {
     /// <p>The length of the requested data.</p>
@@ -216,6 +230,34 @@ impl ObdSignalBuilder {
     pub fn get_bit_mask_length(&self) -> &::std::option::Option<i32> {
         &self.bit_mask_length
     }
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type. The default value is <code>false</code>.</p>
+    pub fn is_signed(mut self, input: bool) -> Self {
+        self.is_signed = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type. The default value is <code>false</code>.</p>
+    pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_signed = input;
+        self
+    }
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type. The default value is <code>false</code>.</p>
+    pub fn get_is_signed(&self) -> &::std::option::Option<bool> {
+        &self.is_signed
+    }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn signal_value_type(mut self, input: crate::types::SignalValueType) -> Self {
+        self.signal_value_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn set_signal_value_type(mut self, input: ::std::option::Option<crate::types::SignalValueType>) -> Self {
+        self.signal_value_type = input;
+        self
+    }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn get_signal_value_type(&self) -> &::std::option::Option<crate::types::SignalValueType> {
+        &self.signal_value_type
+    }
     /// Consumes the builder and constructs a [`ObdSignal`](crate::types::ObdSignal).
     /// This method will fail if any of the following fields are not set:
     /// - [`pid_response_length`](crate::types::builders::ObdSignalBuilder::pid_response_length)
@@ -253,6 +295,8 @@ impl ObdSignalBuilder {
             })?,
             bit_right_shift: self.bit_right_shift.unwrap_or_default(),
             bit_mask_length: self.bit_mask_length,
+            is_signed: self.is_signed,
+            signal_value_type: self.signal_value_type,
         })
     }
 }

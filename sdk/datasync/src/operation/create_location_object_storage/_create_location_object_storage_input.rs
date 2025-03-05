@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateLocationObjectStorageInput {
-    /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub server_port: ::std::option::Option<i32>,
@@ -38,7 +38,7 @@ pub struct CreateLocationObjectStorageInput {
     pub server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CreateLocationObjectStorageInput {
-    /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
     pub fn server_hostname(&self) -> ::std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
@@ -134,18 +134,18 @@ pub struct CreateLocationObjectStorageInputBuilder {
     pub(crate) server_certificate: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl CreateLocationObjectStorageInputBuilder {
-    /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
     /// This field is required.
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network.</p>
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_hostname
     }

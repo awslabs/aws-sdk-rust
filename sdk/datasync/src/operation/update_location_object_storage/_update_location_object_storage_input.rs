@@ -11,6 +11,8 @@ pub struct UpdateLocationObjectStorageInput {
     pub server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub access_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server.</p>
@@ -49,6 +51,10 @@ impl UpdateLocationObjectStorageInput {
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
+    }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn server_hostname(&self) -> ::std::option::Option<&str> {
+        self.server_hostname.as_deref()
     }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub fn access_key(&self) -> ::std::option::Option<&str> {
@@ -89,6 +95,7 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInput {
         formatter.field("server_port", &self.server_port);
         formatter.field("server_protocol", &self.server_protocol);
         formatter.field("subdirectory", &self.subdirectory);
+        formatter.field("server_hostname", &self.server_hostname);
         formatter.field("access_key", &self.access_key);
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_arns", &self.agent_arns);
@@ -111,6 +118,7 @@ pub struct UpdateLocationObjectStorageInputBuilder {
     pub(crate) server_port: ::std::option::Option<i32>,
     pub(crate) server_protocol: ::std::option::Option<crate::types::ObjectStorageServerProtocol>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
+    pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) access_key: ::std::option::Option<::std::string::String>,
     pub(crate) secret_key: ::std::option::Option<::std::string::String>,
     pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -173,6 +181,20 @@ impl UpdateLocationObjectStorageInputBuilder {
     /// <p>Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix.</p>
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
+    }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_hostname = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.server_hostname = input;
+        self
+    }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_hostname
     }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub fn access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -287,6 +309,7 @@ impl UpdateLocationObjectStorageInputBuilder {
             server_port: self.server_port,
             server_protocol: self.server_protocol,
             subdirectory: self.subdirectory,
+            server_hostname: self.server_hostname,
             access_key: self.access_key,
             secret_key: self.secret_key,
             agent_arns: self.agent_arns,
@@ -301,6 +324,7 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInputBuilder {
         formatter.field("server_port", &self.server_port);
         formatter.field("server_protocol", &self.server_protocol);
         formatter.field("subdirectory", &self.subdirectory);
+        formatter.field("server_hostname", &self.server_hostname);
         formatter.field("access_key", &self.access_key);
         formatter.field("secret_key", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_arns", &self.agent_arns);

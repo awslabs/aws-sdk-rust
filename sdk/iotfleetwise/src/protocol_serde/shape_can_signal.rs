@@ -42,6 +42,9 @@ pub fn ser_can_signal(
     if let Some(var_1) = &input.name {
         object.key("name").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.signal_value_type {
+        object.key("signalValueType").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -99,6 +102,13 @@ where
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "signalValueType" => {
+                            builder = builder.set_signal_value_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SignalValueType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

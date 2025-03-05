@@ -83,6 +83,8 @@ pub use crate::types::_ros2_primitive_type::Ros2PrimitiveType;
 
 pub use crate::types::_obd_signal::ObdSignal;
 
+pub use crate::types::_signal_value_type::SignalValueType;
+
 pub use crate::types::_can_signal::CanSignal;
 
 pub use crate::types::_signal_decoder_type::SignalDecoderType;
@@ -344,6 +346,8 @@ mod _signal_fetch_information;
 mod _signal_information;
 
 mod _signal_node_type;
+
+mod _signal_value_type;
 
 mod _spooling_mode;
 

@@ -8,6 +8,8 @@ pub struct UpdateLocationNfsInput {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that your DataSync agent connects to.</p>
+    pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
     /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
@@ -22,6 +24,10 @@ impl UpdateLocationNfsInput {
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
+    }
+    /// <p>Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that your DataSync agent connects to.</p>
+    pub fn server_hostname(&self) -> ::std::option::Option<&str> {
+        self.server_hostname.as_deref()
     }
     /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(&self) -> ::std::option::Option<&crate::types::OnPremConfig> {
@@ -45,6 +51,7 @@ impl UpdateLocationNfsInput {
 pub struct UpdateLocationNfsInputBuilder {
     pub(crate) location_arn: ::std::option::Option<::std::string::String>,
     pub(crate) subdirectory: ::std::option::Option<::std::string::String>,
+    pub(crate) server_hostname: ::std::option::Option<::std::string::String>,
     pub(crate) on_prem_config: ::std::option::Option<crate::types::OnPremConfig>,
     pub(crate) mount_options: ::std::option::Option<crate::types::NfsMountOptions>,
 }
@@ -81,6 +88,20 @@ impl UpdateLocationNfsInputBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
+    /// <p>Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that your DataSync agent connects to.</p>
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_hostname = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that your DataSync agent connects to.</p>
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.server_hostname = input;
+        self
+    }
+    /// <p>Specifies the DNS name or IP version 4 (IPv4) address of the NFS file server that your DataSync agent connects to.</p>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        &self.server_hostname
+    }
     /// <p>The DataSync agents that can connect to your Network File System (NFS) file server.</p>
     pub fn on_prem_config(mut self, input: crate::types::OnPremConfig) -> Self {
         self.on_prem_config = ::std::option::Option::Some(input);
@@ -116,6 +137,7 @@ impl UpdateLocationNfsInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_location_nfs::UpdateLocationNfsInput {
             location_arn: self.location_arn,
             subdirectory: self.subdirectory,
+            server_hostname: self.server_hostname,
             on_prem_config: self.on_prem_config,
             mount_options: self.mount_options,
         })

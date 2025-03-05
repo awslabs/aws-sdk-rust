@@ -9,52 +9,55 @@ pub fn ser_update_location_smb_input_input(
     if let Some(var_2) = &input.subdirectory {
         object.key("Subdirectory").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.user {
-        object.key("User").string(var_3.as_str());
+    if let Some(var_3) = &input.server_hostname {
+        object.key("ServerHostname").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.domain {
-        object.key("Domain").string(var_4.as_str());
+    if let Some(var_4) = &input.user {
+        object.key("User").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.password {
-        object.key("Password").string(var_5.as_str());
+    if let Some(var_5) = &input.domain {
+        object.key("Domain").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.agent_arns {
-        let mut array_7 = object.key("AgentArns").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.password {
+        object.key("Password").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.agent_arns {
+        let mut array_8 = object.key("AgentArns").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.mount_options {
+    if let Some(var_10) = &input.mount_options {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("MountOptions").start_object();
-        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("MountOptions").start_object();
+        crate::protocol_serde::shape_smb_mount_options::ser_smb_mount_options(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.authentication_type {
-        object.key("AuthenticationType").string(var_11.as_str());
+    if let Some(var_12) = &input.authentication_type {
+        object.key("AuthenticationType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.dns_ip_addresses {
-        let mut array_13 = object.key("DnsIpAddresses").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.dns_ip_addresses {
+        let mut array_14 = object.key("DnsIpAddresses").start_array();
+        for item_15 in var_13 {
             {
-                array_13.value().string(item_14.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.kerberos_principal {
-        object.key("KerberosPrincipal").string(var_15.as_str());
+    if let Some(var_16) = &input.kerberos_principal {
+        object.key("KerberosPrincipal").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.kerberos_keytab {
-        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_16));
+    if let Some(var_17) = &input.kerberos_keytab {
+        object.key("KerberosKeytab").string_unchecked(&::aws_smithy_types::base64::encode(var_17));
     }
-    if let Some(var_17) = &input.kerberos_krb5_conf {
+    if let Some(var_18) = &input.kerberos_krb5_conf {
         object
             .key("KerberosKrb5Conf")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_17));
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_18));
     }
     Ok(())
 }

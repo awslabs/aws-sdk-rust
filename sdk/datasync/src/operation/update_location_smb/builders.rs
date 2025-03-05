@@ -140,6 +140,41 @@ impl UpdateLocationSmbFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
+    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
+    /// <p>Remember the following when configuring this parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
+    /// <li>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
+    /// </ul>
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.server_hostname(input.into());
+        self
+    }
+    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
+    /// <p>Remember the following when configuring this parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
+    /// <li>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
+    /// </ul>
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_server_hostname(input);
+        self
+    }
+    /// <p>Specifies the domain name or IP address of the SMB file server that your DataSync agent connects to.</p>
+    /// <p>Remember the following when configuring this parameter:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can't specify an IP version 6 (IPv6) address.</p></li>
+    /// <li>
+    /// <p>If you're using Kerberos authentication, you must specify a domain name.</p></li>
+    /// </ul>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_hostname()
+    }
     /// <p>Specifies the user name that can mount your SMB file server and has permission to access the files and folders involved in your transfer. This parameter applies only if <code>AuthenticationType</code> is set to <code>NTLM</code>.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -222,16 +257,19 @@ impl UpdateLocationSmbFluentBuilder {
         self.inner.get_mount_options()
     }
     /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn authentication_type(mut self, input: crate::types::SmbAuthenticationType) -> Self {
         self.inner = self.inner.authentication_type(input);
         self
     }
     /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn set_authentication_type(mut self, input: ::std::option::Option<crate::types::SmbAuthenticationType>) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
     }
     /// <p>Specifies the authentication protocol that DataSync uses to connect to your SMB file server. DataSync supports <code>NTLM</code> (default) and <code>KERBEROS</code> authentication.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing DataSync access to SMB file servers</a>.</p>
     pub fn get_authentication_type(&self) -> &::std::option::Option<crate::types::SmbAuthenticationType> {
         self.inner.get_authentication_type()
     }
@@ -258,21 +296,21 @@ impl UpdateLocationSmbFluentBuilder {
         self.inner.get_dns_ip_addresses()
     }
     /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn kerberos_principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kerberos_principal(input.into());
         self
     }
     /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn set_kerberos_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kerberos_principal(input);
         self
     }
     /// <p>Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has permission to access the files, folders, and file metadata in your SMB file server.</p>
-    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@EXAMPLE.COM</code>.</p>
+    /// <p>A Kerberos principal might look like <code>HOST/kerberosuser@MYDOMAIN.ORG</code>.</p>
     /// <p>Principal names are case sensitive. Your DataSync task execution will fail if the principal that you specify for this parameter doesn’t exactly match the principal that you use to create the keytab file.</p>
     pub fn get_kerberos_principal(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kerberos_principal()

@@ -199,6 +199,7 @@ members = [
     "sdk/freetier",
     "sdk/fsx",
     "sdk/gamelift",
+    "sdk/gameliftstreams",
     "sdk/geomaps",
     "sdk/geoplaces",
     "sdk/georoutes",

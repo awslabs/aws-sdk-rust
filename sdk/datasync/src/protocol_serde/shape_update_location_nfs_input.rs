@@ -9,17 +9,20 @@ pub fn ser_update_location_nfs_input_input(
     if let Some(var_2) = &input.subdirectory {
         object.key("Subdirectory").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.on_prem_config {
-        #[allow(unused_mut)]
-        let mut object_4 = object.key("OnPremConfig").start_object();
-        crate::protocol_serde::shape_on_prem_config::ser_on_prem_config(&mut object_4, var_3)?;
-        object_4.finish();
+    if let Some(var_3) = &input.server_hostname {
+        object.key("ServerHostname").string(var_3.as_str());
     }
-    if let Some(var_5) = &input.mount_options {
+    if let Some(var_4) = &input.on_prem_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("MountOptions").start_object();
-        crate::protocol_serde::shape_nfs_mount_options::ser_nfs_mount_options(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_5 = object.key("OnPremConfig").start_object();
+        crate::protocol_serde::shape_on_prem_config::ser_on_prem_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.mount_options {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("MountOptions").start_object();
+        crate::protocol_serde::shape_nfs_mount_options::ser_nfs_mount_options(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

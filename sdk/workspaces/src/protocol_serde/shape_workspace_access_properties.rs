@@ -27,6 +27,9 @@ pub fn ser_workspace_access_properties(
     if let Some(var_8) = &input.device_type_linux {
         object.key("DeviceTypeLinux").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.device_type_work_spaces_thin_client {
+        object.key("DeviceTypeWorkSpacesThinClient").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -96,6 +99,13 @@ where
                         }
                         "DeviceTypeLinux" => {
                             builder = builder.set_device_type_linux(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AccessPropertyValue::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DeviceTypeWorkSpacesThinClient" => {
+                            builder = builder.set_device_type_work_spaces_thin_client(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AccessPropertyValue::from(u.as_ref())))
                                     .transpose()?,

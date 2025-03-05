@@ -8,7 +8,7 @@ pub struct CanSignal {
     pub message_id: i32,
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
     pub is_big_endian: bool,
-    /// <p>Whether the message data is specified as a signed value.</p>
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type.</p>
     pub is_signed: bool,
     /// <p>Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
     /// <p>This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.</p>
@@ -21,6 +21,8 @@ pub struct CanSignal {
     pub length: i32,
     /// <p>The name of the signal.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub signal_value_type: ::std::option::Option<crate::types::SignalValueType>,
 }
 impl CanSignal {
     /// <p>The ID of the message.</p>
@@ -31,7 +33,7 @@ impl CanSignal {
     pub fn is_big_endian(&self) -> bool {
         self.is_big_endian
     }
-    /// <p>Whether the message data is specified as a signed value.</p>
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type.</p>
     pub fn is_signed(&self) -> bool {
         self.is_signed
     }
@@ -56,6 +58,10 @@ impl CanSignal {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn signal_value_type(&self) -> ::std::option::Option<&crate::types::SignalValueType> {
+        self.signal_value_type.as_ref()
+    }
 }
 impl CanSignal {
     /// Creates a new builder-style object to manufacture [`CanSignal`](crate::types::CanSignal).
@@ -76,6 +82,7 @@ pub struct CanSignalBuilder {
     pub(crate) factor: ::std::option::Option<f64>,
     pub(crate) length: ::std::option::Option<i32>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) signal_value_type: ::std::option::Option<crate::types::SignalValueType>,
 }
 impl CanSignalBuilder {
     /// <p>The ID of the message.</p>
@@ -108,18 +115,18 @@ impl CanSignalBuilder {
     pub fn get_is_big_endian(&self) -> &::std::option::Option<bool> {
         &self.is_big_endian
     }
-    /// <p>Whether the message data is specified as a signed value.</p>
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type.</p>
     /// This field is required.
     pub fn is_signed(mut self, input: bool) -> Self {
         self.is_signed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the message data is specified as a signed value.</p>
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type.</p>
     pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_signed = input;
         self
     }
-    /// <p>Whether the message data is specified as a signed value.</p>
+    /// <p>Determines whether the message is signed (<code>true</code>) or not (<code>false</code>). If it's signed, the message can represent both positive and negative numbers. The <code>isSigned</code> parameter only applies to the <code>INTEGER</code> raw signal type, and it doesn't affect the <code>FLOATING_POINT</code> raw signal type.</p>
     pub fn get_is_signed(&self) -> &::std::option::Option<bool> {
         &self.is_signed
     }
@@ -200,6 +207,20 @@ impl CanSignalBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn signal_value_type(mut self, input: crate::types::SignalValueType) -> Self {
+        self.signal_value_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn set_signal_value_type(mut self, input: ::std::option::Option<crate::types::SignalValueType>) -> Self {
+        self.signal_value_type = input;
+        self
+    }
+    /// <p>The value type of the signal. The default value is <code>INTEGER</code>.</p>
+    pub fn get_signal_value_type(&self) -> &::std::option::Option<crate::types::SignalValueType> {
+        &self.signal_value_type
+    }
     /// Consumes the builder and constructs a [`CanSignal`](crate::types::CanSignal).
     /// This method will fail if any of the following fields are not set:
     /// - [`offset`](crate::types::builders::CanSignalBuilder::offset)
@@ -224,6 +245,7 @@ impl CanSignalBuilder {
             })?,
             length: self.length.unwrap_or_default(),
             name: self.name,
+            signal_value_type: self.signal_value_type,
         })
     }
 }

@@ -57,6 +57,12 @@ pub fn ser_obd_signal(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.is_signed {
+        object.key("isSigned").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.signal_value_type {
+        object.key("signalValueType").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -129,6 +135,16 @@ where
                             builder = builder.set_bit_mask_length(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "isSigned" => {
+                            builder = builder.set_is_signed(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "signalValueType" => {
+                            builder = builder.set_signal_value_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SignalValueType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -1,4 +1,4 @@
-smithy_rs_revision = '64144f4024f71b092facd40d4635d4011ea0b7e5'
+smithy_rs_revision = '13dbb74619f461bf3eae4096c4e7964083605bd7'
 aws_doc_sdk_examples_revision = '60dcd5ddc37395a47c7a717bd1966e3a389fc00c'
 
 [manual_interventions]
@@ -306,7 +306,7 @@ model_hash = '37b1fb0dee22ba1679bb3a440150963980f0065761e9542f052f5a271ecc32aa'
 category = 'AwsSdk'
 version = '1.76.0'
 source_hash = 'ad2ced0128284fd819572d7913d3a00c6e9329a6f58e9b722870e3235d677053'
-model_hash = '95241fcc4c22c793e7f165b3d8e764f8e837eeb1d9f99227673b98d14a1c9c61'
+model_hash = '65b39222a55dfc1c8c29ea6d65614adfb909659e10c51a44925bb6d92bad7372'
 
 [crates.aws-sdk-billing]
 category = 'AwsSdk'
@@ -689,8 +689,8 @@ model_hash = '481a634abb604c1cff5824bd15503ce726661dec63a755e44575bb41e20190d6'
 [crates.aws-sdk-datasync]
 category = 'AwsSdk'
 version = '1.67.0'
-source_hash = 'e365ceb0f97f540acd6dad9dcfe7293f4ec613bdbf42a9b724affc8c41ddaebe'
-model_hash = 'cec67dd71937fd215692929971a36f41ebf9e0f1a217fa9274c33816184ef4dd'
+source_hash = '8010eb9a07084a9a4e67f1d163bf2a7325eb797e837184bc372ee30f4c35aca8'
+model_hash = '3e064bd8276492ad364cfd48c8ad19c692010b5457124d7a7f0cc299208d2d12'
 
 [crates.aws-sdk-datazone]
 category = 'AwsSdk'
@@ -980,6 +980,12 @@ version = '1.67.0'
 source_hash = '38eef77574fee0535974cc220f4d8d997f8dd556a7a39a92a00914153e4fcc25'
 model_hash = 'df7c3b978a45a2c4c3c95cbde28deb0b99225db9834b118881b441fc8a48008d'
 
+[crates.aws-sdk-gameliftstreams]
+category = 'AwsSdk'
+version = '1.0.0'
+source_hash = 'ecc62e4082bf0cf3112457c0ce7ab0438aec3a21d2a655345c272e42ee128410'
+model_hash = '68f2c9f764a3460eea30d2da244aad74eac3a05d52258afd273497a12b745fa7'
+
 [crates.aws-sdk-geomaps]
 category = 'AwsSdk'
 version = '1.14.0'
@@ -1151,8 +1157,8 @@ model_hash = '445ebd849fd5c7031c93b5e6f57b120d23bcb3ea42ac713b4ebd321203611c2c'
 [crates.aws-sdk-iotfleetwise]
 category = 'AwsSdk'
 version = '1.66.0'
-source_hash = '141f23ee48960f0dd87d3ce2c3d31073b95cc387e296382f76761b2783840962'
-model_hash = 'ae9227ef06cd8a9ca93107bf567a3836fb36b43d769ca863053d59629c12eeda'
+source_hash = 'e6f5b7051e934ace0ff55f99dd99a9bf8341787bfc47f4eeaa72eb5a33edc63c'
+model_hash = '4a876ddb3c7ef347147b4efe90ecfb27cbba1197cecf348dc3e8a04c33ee18c3'
 
 [crates.aws-sdk-iotjobsdataplane]
 category = 'AwsSdk'
@@ -2429,8 +2435,8 @@ model_hash = 'eab0659c4890363f26af020432f7d7c661fd228f3baeef3a52d77f80a1c13287'
 [crates.aws-sdk-workspaces]
 category = 'AwsSdk'
 version = '1.72.0'
-source_hash = 'de0e88cd4f8a8e8f522f8c3676e4b505c7c77b1919a7c4227e90e3d3c32f9125'
-model_hash = 'c31cdb5e4a3d046c132321cba431366628b2a149231d8a72abccaacb1c8588cb'
+source_hash = 'b4225206587accb6a0a6b1b2495856f8cda6845098fcfdd9fae73f9aa0a7a0f0'
+model_hash = '8fc852dd40c946114a634a01268c6a2f148ea4a07332105b2e359e9ff30ba6d3'
 
 [crates.aws-sdk-workspacesthinclient]
 category = 'AwsSdk'
@@ -2758,6 +2764,7 @@ aws-sdk-frauddetector = '1.61.0'
 aws-sdk-freetier = '1.59.0'
 aws-sdk-fsx = '1.68.0'
 aws-sdk-gamelift = '1.67.0'
+aws-sdk-gameliftstreams = '1.0.0'
 aws-sdk-geomaps = '1.14.0'
 aws-sdk-geoplaces = '1.14.0'
 aws-sdk-georoutes = '1.15.0'

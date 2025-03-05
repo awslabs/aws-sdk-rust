@@ -18,25 +18,28 @@ pub fn ser_update_location_object_storage_input_input(
     if let Some(var_4) = &input.subdirectory {
         object.key("Subdirectory").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.access_key {
-        object.key("AccessKey").string(var_5.as_str());
+    if let Some(var_5) = &input.server_hostname {
+        object.key("ServerHostname").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.secret_key {
-        object.key("SecretKey").string(var_6.as_str());
+    if let Some(var_6) = &input.access_key {
+        object.key("AccessKey").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.agent_arns {
-        let mut array_8 = object.key("AgentArns").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.secret_key {
+        object.key("SecretKey").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.agent_arns {
+        let mut array_9 = object.key("AgentArns").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.server_certificate {
+    if let Some(var_11) = &input.server_certificate {
         object
             .key("ServerCertificate")
-            .string_unchecked(&::aws_smithy_types::base64::encode(var_10));
+            .string_unchecked(&::aws_smithy_types::base64::encode(var_11));
     }
     Ok(())
 }

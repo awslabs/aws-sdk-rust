@@ -20,6 +20,8 @@ pub struct WorkspaceAccessProperties {
     pub device_type_zero_client: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
     pub device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
+    /// <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.</p>
+    pub device_type_work_spaces_thin_client: ::std::option::Option<crate::types::AccessPropertyValue>,
 }
 impl WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
@@ -54,6 +56,10 @@ impl WorkspaceAccessProperties {
     pub fn device_type_linux(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_linux.as_ref()
     }
+    /// <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.</p>
+    pub fn device_type_work_spaces_thin_client(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
+        self.device_type_work_spaces_thin_client.as_ref()
+    }
 }
 impl WorkspaceAccessProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
@@ -74,6 +80,7 @@ pub struct WorkspaceAccessPropertiesBuilder {
     pub(crate) device_type_chrome_os: ::std::option::Option<crate::types::AccessPropertyValue>,
     pub(crate) device_type_zero_client: ::std::option::Option<crate::types::AccessPropertyValue>,
     pub(crate) device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_work_spaces_thin_client: ::std::option::Option<crate::types::AccessPropertyValue>,
 }
 impl WorkspaceAccessPropertiesBuilder {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
@@ -188,6 +195,20 @@ impl WorkspaceAccessPropertiesBuilder {
     pub fn get_device_type_linux(&self) -> &::std::option::Option<crate::types::AccessPropertyValue> {
         &self.device_type_linux
     }
+    /// <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.</p>
+    pub fn device_type_work_spaces_thin_client(mut self, input: crate::types::AccessPropertyValue) -> Self {
+        self.device_type_work_spaces_thin_client = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.</p>
+    pub fn set_device_type_work_spaces_thin_client(mut self, input: ::std::option::Option<crate::types::AccessPropertyValue>) -> Self {
+        self.device_type_work_spaces_thin_client = input;
+        self
+    }
+    /// <p>Indicates whether users can access their WorkSpaces through a WorkSpaces Thin Client.</p>
+    pub fn get_device_type_work_spaces_thin_client(&self) -> &::std::option::Option<crate::types::AccessPropertyValue> {
+        &self.device_type_work_spaces_thin_client
+    }
     /// Consumes the builder and constructs a [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
     pub fn build(self) -> crate::types::WorkspaceAccessProperties {
         crate::types::WorkspaceAccessProperties {
@@ -199,6 +220,7 @@ impl WorkspaceAccessPropertiesBuilder {
             device_type_chrome_os: self.device_type_chrome_os,
             device_type_zero_client: self.device_type_zero_client,
             device_type_linux: self.device_type_linux,
+            device_type_work_spaces_thin_client: self.device_type_work_spaces_thin_client,
         }
     }
 }

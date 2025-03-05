@@ -165,6 +165,20 @@ impl UpdateLocationObjectStorageFluentBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subdirectory()
     }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.server_hostname(input.into());
+        self
+    }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_server_hostname(input);
+        self
+    }
+    /// <p>Specifies the domain name or IP version 4 (IPv4) address of the object storage server that your DataSync agent connects to.</p>
+    pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_server_hostname()
+    }
     /// <p>Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server.</p>
     pub fn access_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_key(input.into());

@@ -7,7 +7,7 @@ pub struct CreateLocationNfsInput {
     /// <p>Specifies the export path in your NFS file server that you want DataSync to mount.</p>
     /// <p>This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS file servers</a>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
+    /// <p>Specifies the DNS name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub server_hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to your NFS file server.</p>
     /// <p>You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using multiple DataSync agents</a>.</p>
@@ -23,7 +23,7 @@ impl CreateLocationNfsInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
+    /// <p>Specifies the DNS name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn server_hostname(&self) -> ::std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
@@ -79,18 +79,18 @@ impl CreateLocationNfsInputBuilder {
     pub fn get_subdirectory(&self) -> &::std::option::Option<::std::string::String> {
         &self.subdirectory
     }
-    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
+    /// <p>Specifies the DNS name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     /// This field is required.
     pub fn server_hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.server_hostname = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
+    /// <p>Specifies the DNS name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn set_server_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_hostname = input;
         self
     }
-    /// <p>Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
+    /// <p>Specifies the DNS name or IP version 4 address of the NFS file server that your DataSync agent connects to.</p>
     pub fn get_server_hostname(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_hostname
     }
