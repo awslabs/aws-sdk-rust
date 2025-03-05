@@ -2605,6 +2605,10 @@ source_hash = 'c1fd15db2a57131469db99cae813e9cc63942e27efcd15faa6daf60e1159fd9f'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '93f229bf03fdc7ea29d04749553827afd572bc4c9595e73d426a9ceaa6619f40'
+
+[release]
+tag = 'release-2025-03-05'
+
 [release.crates]
 aws-config = '1.5.18'
 aws-sdk-accessanalyzer = '1.66.0'
