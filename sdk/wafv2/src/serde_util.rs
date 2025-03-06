@@ -330,6 +330,15 @@ pub(crate) fn ja3_fingerprint_correct_errors(
     builder
 }
 
+pub(crate) fn ja4_fingerprint_correct_errors(
+    mut builder: crate::types::builders::Ja4FingerprintBuilder,
+) -> crate::types::builders::Ja4FingerprintBuilder {
+    if builder.fallback_behavior.is_none() {
+        builder.fallback_behavior = "no value was set".parse::<crate::types::FallbackBehavior>().ok()
+    }
+    builder
+}
+
 pub(crate) fn json_body_correct_errors(mut builder: crate::types::builders::JsonBodyBuilder) -> crate::types::builders::JsonBodyBuilder {
     if builder.match_pattern.is_none() {
         builder.match_pattern = {
@@ -726,6 +735,24 @@ pub(crate) fn rate_limit_header_correct_errors(
     }
     if builder.text_transformations.is_none() {
         builder.text_transformations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rate_limit_ja3_fingerprint_correct_errors(
+    mut builder: crate::types::builders::RateLimitJa3FingerprintBuilder,
+) -> crate::types::builders::RateLimitJa3FingerprintBuilder {
+    if builder.fallback_behavior.is_none() {
+        builder.fallback_behavior = "no value was set".parse::<crate::types::FallbackBehavior>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rate_limit_ja4_fingerprint_correct_errors(
+    mut builder: crate::types::builders::RateLimitJa4FingerprintBuilder,
+) -> crate::types::builders::RateLimitJa4FingerprintBuilder {
+    if builder.fallback_behavior.is_none() {
+        builder.fallback_behavior = "no value was set".parse::<crate::types::FallbackBehavior>().ok()
     }
     builder
 }

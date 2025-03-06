@@ -353,7 +353,7 @@ pub(crate) fn get_prompt_router_output_output_correct_errors(
     if builder.fallback_model.is_none() {
         builder.fallback_model = {
             let builder = crate::types::builders::PromptRouterTargetModelBuilder::default();
-            Some(builder.build())
+            Some(crate::serde_util::prompt_router_target_model_correct_errors(builder).build())
         }
     }
     if builder.status.is_none() {
@@ -508,6 +508,15 @@ pub(crate) fn routing_criteria_correct_errors(
 ) -> crate::types::builders::RoutingCriteriaBuilder {
     if builder.response_quality_difference.is_none() {
         builder.response_quality_difference = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn prompt_router_target_model_correct_errors(
+    mut builder: crate::types::builders::PromptRouterTargetModelBuilder,
+) -> crate::types::builders::PromptRouterTargetModelBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
     }
     builder
 }
@@ -906,7 +915,7 @@ pub(crate) fn prompt_router_summary_correct_errors(
     if builder.fallback_model.is_none() {
         builder.fallback_model = {
             let builder = crate::types::builders::PromptRouterTargetModelBuilder::default();
-            Some(builder.build())
+            Some(crate::serde_util::prompt_router_target_model_correct_errors(builder).build())
         }
     }
     if builder.status.is_none() {

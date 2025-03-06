@@ -472,6 +472,39 @@ impl From<crate::operation::create_model_invocation_job::CreateModelInvocationJo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_prompt_router::CreatePromptRouterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_prompt_router::CreatePromptRouterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_prompt_router::CreatePromptRouterError> for Error {
+    fn from(err: crate::operation::create_prompt_router::CreatePromptRouterError) -> Self {
+        match err {
+            crate::operation::create_prompt_router::CreatePromptRouterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_prompt_router::CreatePromptRouterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_prompt_router::CreatePromptRouterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_prompt_router::CreatePromptRouterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_prompt_router::CreatePromptRouterError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_prompt_router::CreatePromptRouterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_prompt_router::CreatePromptRouterError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_prompt_router::CreatePromptRouterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_prompt_router::CreatePromptRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -726,6 +759,34 @@ impl From<crate::operation::delete_model_invocation_logging_configuration::Delet
             crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_model_invocation_logging_configuration::DeleteModelInvocationLoggingConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_prompt_router::DeletePromptRouterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_prompt_router::DeletePromptRouterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_prompt_router::DeletePromptRouterError> for Error {
+    fn from(err: crate::operation::delete_prompt_router::DeletePromptRouterError) -> Self {
+        match err {
+            crate::operation::delete_prompt_router::DeletePromptRouterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_prompt_router::DeletePromptRouterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_prompt_router::DeletePromptRouterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_prompt_router::DeletePromptRouterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_prompt_router::DeletePromptRouterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_prompt_router::DeletePromptRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

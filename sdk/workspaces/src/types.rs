@@ -111,6 +111,8 @@ pub use crate::types::_saml_properties::SamlProperties;
 
 pub use crate::types::_saml_status_enum::SamlStatusEnum;
 
+pub use crate::types::_endpoint_encryption_mode::EndpointEncryptionMode;
+
 pub use crate::types::_client_properties::ClientProperties;
 
 pub use crate::types::_log_upload_enum::LogUploadEnum;
@@ -388,6 +390,8 @@ mod _describe_workspaces_pools_filter;
 mod _describe_workspaces_pools_filter_name;
 
 mod _describe_workspaces_pools_filter_operator;
+
+mod _endpoint_encryption_mode;
 
 mod _error_details;
 

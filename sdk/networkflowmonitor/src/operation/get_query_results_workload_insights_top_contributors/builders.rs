@@ -22,7 +22,8 @@ impl crate::operation::get_query_results_workload_insights_top_contributors::bui
 }
 /// Fluent builder constructing a request to `GetQueryResultsWorkloadInsightsTopContributors`.
 ///
-/// <p>Return the data for a query with the Network Flow Monitor query interface. You specify the query that you want to return results for by providing a query ID and a monitor name. This query returns the top contributors for a specific monitor.</p>
+/// <p>Return the data for a query with the Network Flow Monitor query interface. You specify the query that you want to return results for by providing a query ID and a monitor name.</p>
+/// <p>This query returns the top contributors for a scope for workload insights. Workload insights provide a high level view of network flow performance data collected by agents. To return the data for the top contributors, see <code>GetQueryResultsWorkloadInsightsTopContributorsData</code>.</p>
 /// <p>Create a query ID for this call by calling the corresponding API call to start the query, <code>StartQueryWorkloadInsightsTopContributors</code>. Use the scope ID that was returned for your account by <code>CreateScope</code>.</p>
 /// <p>Top contributors in Network Flow Monitor are network flows with the highest values for a specific metric type, related to a scope (for workload insights) or a monitor.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

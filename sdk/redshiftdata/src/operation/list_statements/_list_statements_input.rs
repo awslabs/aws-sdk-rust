@@ -29,6 +29,12 @@ pub struct ListStatementsInput {
     pub status: ::std::option::Option<crate::types::StatusString>,
     /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.</p>
     pub role_level: ::std::option::Option<bool>,
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub database: ::std::option::Option<::std::string::String>,
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
 impl ListStatementsInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
@@ -67,6 +73,18 @@ impl ListStatementsInput {
     pub fn role_level(&self) -> ::std::option::Option<bool> {
         self.role_level
     }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn database(&self) -> ::std::option::Option<&str> {
+        self.database.as_deref()
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
+        self.cluster_identifier.as_deref()
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn workgroup_name(&self) -> ::std::option::Option<&str> {
+        self.workgroup_name.as_deref()
+    }
 }
 impl ListStatementsInput {
     /// Creates a new builder-style object to manufacture [`ListStatementsInput`](crate::operation::list_statements::ListStatementsInput).
@@ -84,6 +102,9 @@ pub struct ListStatementsInputBuilder {
     pub(crate) statement_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::StatusString>,
     pub(crate) role_level: ::std::option::Option<bool>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) workgroup_name: ::std::option::Option<::std::string::String>,
 }
 impl ListStatementsInputBuilder {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.</p>
@@ -204,6 +225,48 @@ impl ListStatementsInputBuilder {
     pub fn get_role_level(&self) -> &::std::option::Option<bool> {
         &self.role_level
     }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database = input;
+        self
+    }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cluster_identifier = input;
+        self
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cluster_identifier
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workgroup_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workgroup_name = input;
+        self
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workgroup_name
+    }
     /// Consumes the builder and constructs a [`ListStatementsInput`](crate::operation::list_statements::ListStatementsInput).
     pub fn build(
         self,
@@ -214,6 +277,9 @@ impl ListStatementsInputBuilder {
             statement_name: self.statement_name,
             status: self.status,
             role_level: self.role_level,
+            database: self.database,
+            cluster_identifier: self.cluster_identifier,
+            workgroup_name: self.workgroup_name,
         })
     }
 }

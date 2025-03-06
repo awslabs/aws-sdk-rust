@@ -287,6 +287,8 @@ mod modify_certificate_based_auth_properties;
 
 mod modify_client_properties;
 
+mod modify_endpoint_encryption_mode;
+
 mod modify_saml_properties;
 
 mod modify_selfservice_permissions;

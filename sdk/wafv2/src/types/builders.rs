@@ -53,6 +53,8 @@ pub use crate::types::_text_transformation::TextTransformationBuilder;
 
 pub use crate::types::_field_to_match::FieldToMatchBuilder;
 
+pub use crate::types::_ja4_fingerprint::Ja4FingerprintBuilder;
+
 pub use crate::types::_ja3_fingerprint::Ja3FingerprintBuilder;
 
 pub use crate::types::_header_order::HeaderOrderBuilder;
@@ -134,6 +136,10 @@ pub use crate::types::_and_statement::AndStatementBuilder;
 pub use crate::types::_rate_based_statement::RateBasedStatementBuilder;
 
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKeyBuilder;
+
+pub use crate::types::_rate_limit_ja4_fingerprint::RateLimitJa4FingerprintBuilder;
+
+pub use crate::types::_rate_limit_ja3_fingerprint::RateLimitJa3FingerprintBuilder;
 
 pub use crate::types::_rate_limit_uri_path::RateLimitUriPathBuilder;
 

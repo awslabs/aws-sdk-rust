@@ -14,10 +14,10 @@ pub struct DataProtection {
     /// <p>Substitution example: <code>REDACTED</code></p></li>
     /// </ul>
     pub action: crate::types::DataProtectionAction,
-    /// <p>Specifies whether to also protect any rule match details from the web ACL logs when applying data protection this field type and keys. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rule match details from the data protection you have enabled for a given field. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub exclude_rule_match_details: bool,
-    /// <p>Specifies whether to also protect any rate-based rule details from the web ACL logs when applying data protection for this field type and keys. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rate-based rule details from the data protection you have enabled for a given field. If you specify this exception, RateBasedDetails will show the value of the field. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub exclude_rate_based_details: bool,
 }
@@ -36,12 +36,12 @@ impl DataProtection {
     pub fn action(&self) -> &crate::types::DataProtectionAction {
         &self.action
     }
-    /// <p>Specifies whether to also protect any rule match details from the web ACL logs when applying data protection this field type and keys. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rule match details from the data protection you have enabled for a given field. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn exclude_rule_match_details(&self) -> bool {
         self.exclude_rule_match_details
     }
-    /// <p>Specifies whether to also protect any rate-based rule details from the web ACL logs when applying data protection for this field type and keys. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rate-based rule details from the data protection you have enabled for a given field. If you specify this exception, RateBasedDetails will show the value of the field. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn exclude_rate_based_details(&self) -> bool {
         self.exclude_rate_based_details
@@ -112,36 +112,36 @@ impl DataProtectionBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::DataProtectionAction> {
         &self.action
     }
-    /// <p>Specifies whether to also protect any rule match details from the web ACL logs when applying data protection this field type and keys. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rule match details from the data protection you have enabled for a given field. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn exclude_rule_match_details(mut self, input: bool) -> Self {
         self.exclude_rule_match_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to also protect any rule match details from the web ACL logs when applying data protection this field type and keys. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rule match details from the data protection you have enabled for a given field. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn set_exclude_rule_match_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_rule_match_details = input;
         self
     }
-    /// <p>Specifies whether to also protect any rule match details from the web ACL logs when applying data protection this field type and keys. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rule match details from the data protection you have enabled for a given field. WAF logs these details for non-terminating matching rules and for the terminating matching rule. For additional information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn get_exclude_rule_match_details(&self) -> &::std::option::Option<bool> {
         &self.exclude_rule_match_details
     }
-    /// <p>Specifies whether to also protect any rate-based rule details from the web ACL logs when applying data protection for this field type and keys. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rate-based rule details from the data protection you have enabled for a given field. If you specify this exception, RateBasedDetails will show the value of the field. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn exclude_rate_based_details(mut self, input: bool) -> Self {
         self.exclude_rate_based_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether to also protect any rate-based rule details from the web ACL logs when applying data protection for this field type and keys. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rate-based rule details from the data protection you have enabled for a given field. If you specify this exception, RateBasedDetails will show the value of the field. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn set_exclude_rate_based_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_rate_based_details = input;
         self
     }
-    /// <p>Specifies whether to also protect any rate-based rule details from the web ACL logs when applying data protection for this field type and keys. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
+    /// <p>Specifies whether to also exclude any rate-based rule details from the data protection you have enabled for a given field. If you specify this exception, RateBasedDetails will show the value of the field. For additional information, see the log field <code>rateBasedRuleList</code> at <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields for web ACL traffic</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Default: <code>FALSE</code></p>
     pub fn get_exclude_rate_based_details(&self) -> &::std::option::Option<bool> {
         &self.exclude_rate_based_details

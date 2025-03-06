@@ -21,6 +21,12 @@ pub fn ser_auto_participant_recording_configuration(
         crate::protocol_serde::shape_participant_thumbnail_configuration::ser_participant_thumbnail_configuration(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if input.recording_reconnect_window_seconds != 0 {
+        object.key("recordingReconnectWindowSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.recording_reconnect_window_seconds).into()),
+        );
+    }
     Ok(())
 }
 
@@ -54,6 +60,13 @@ where
                         "thumbnailConfiguration" => {
                             builder = builder.set_thumbnail_configuration(
                                 crate::protocol_serde::shape_participant_thumbnail_configuration::de_participant_thumbnail_configuration(tokens)?,
+                            );
+                        }
+                        "recordingReconnectWindowSeconds" => {
+                            builder = builder.set_recording_reconnect_window_seconds(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

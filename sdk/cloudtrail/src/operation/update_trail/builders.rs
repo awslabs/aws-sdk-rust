@@ -192,17 +192,17 @@ impl UpdateTrailFluentBuilder {
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_key_prefix()
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn sns_topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sns_topic_name(input.into());
         self
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn set_sns_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sns_topic_name(input);
         self
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn get_sns_topic_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sns_topic_name()
     }

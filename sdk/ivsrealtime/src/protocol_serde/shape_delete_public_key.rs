@@ -24,6 +24,64 @@ pub fn de_delete_public_key_http_error(
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
                 output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_public_key::DeletePublicKeyError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_access_denied_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_access_denied_exception::de_access_control_expose_headers_header(_response_headers).map_err(
+                        |_| {
+                            crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                                "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                            )
+                        },
+                    )?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_access_denied_exception::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_access_denied_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_access_denied_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_access_denied_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };
@@ -39,6 +97,62 @@ pub fn de_delete_public_key_http_error(
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
                 output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_public_key::DeletePublicKeyError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_conflict_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_conflict_exception::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                        )
+                    })?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_conflict_exception::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_conflict_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_conflict_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_conflict_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_conflict_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_conflict_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };
@@ -54,6 +168,62 @@ pub fn de_delete_public_key_http_error(
                 let mut output = crate::types::error::builders::PendingVerificationBuilder::default();
                 output = crate::protocol_serde::shape_pending_verification::de_pending_verification_json_err(_response_body, output)
                     .map_err(crate::operation::delete_public_key::DeletePublicKeyError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_pending_verification::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_pending_verification::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                        )
+                    })?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_pending_verification::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_pending_verification::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_pending_verification::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_pending_verification::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_pending_verification::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_pending_verification::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };
@@ -69,6 +239,70 @@ pub fn de_delete_public_key_http_error(
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                 output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_public_key::DeletePublicKeyError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_access_control_allow_origin_header(_response_headers).map_err(
+                        |_| {
+                            crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                                "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                            )
+                        },
+                    )?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_access_control_expose_headers_header(_response_headers).map_err(
+                        |_| {
+                            crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                                "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                            )
+                        },
+                    )?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_content_security_policy_header(_response_headers).map_err(
+                        |_| {
+                            crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                                "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                            )
+                        },
+                    )?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_strict_transport_security_header(_response_headers).map_err(
+                        |_| {
+                            crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                                "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                            )
+                        },
+                    )?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_resource_not_found_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };
@@ -84,6 +318,62 @@ pub fn de_delete_public_key_http_error(
                 let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
                 output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_public_key::DeletePublicKeyError::unhandled)?;
+                output = output.set_access_control_allow_origin(
+                    crate::protocol_serde::shape_validation_exception::de_access_control_allow_origin_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlAllowOrigin from header `Access-Control-Allow-Origin",
+                        )
+                    })?,
+                );
+                output = output.set_access_control_expose_headers(
+                    crate::protocol_serde::shape_validation_exception::de_access_control_expose_headers_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse accessControlExposeHeaders from header `Access-Control-Expose-Headers",
+                        )
+                    })?,
+                );
+                output = output.set_cache_control(
+                    crate::protocol_serde::shape_validation_exception::de_cache_control_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse cacheControl from header `Cache-Control",
+                        )
+                    })?,
+                );
+                output = output.set_content_security_policy(
+                    crate::protocol_serde::shape_validation_exception::de_content_security_policy_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse contentSecurityPolicy from header `Content-Security-Policy",
+                        )
+                    })?,
+                );
+                output = output.set_strict_transport_security(
+                    crate::protocol_serde::shape_validation_exception::de_strict_transport_security_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse strictTransportSecurity from header `Strict-Transport-Security",
+                        )
+                    })?,
+                );
+                output = output.set_x_amzn_error_type(
+                    crate::protocol_serde::shape_validation_exception::de_x_amzn_error_type_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xAmznErrorType from header `x-amzn-ErrorType",
+                        )
+                    })?,
+                );
+                output = output.set_x_content_type_options(
+                    crate::protocol_serde::shape_validation_exception::de_x_content_type_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xContentTypeOptions from header `X-Content-Type-Options",
+                        )
+                    })?,
+                );
+                output = output.set_x_frame_options(
+                    crate::protocol_serde::shape_validation_exception::de_x_frame_options_header(_response_headers).map_err(|_| {
+                        crate::operation::delete_public_key::DeletePublicKeyError::unhandled(
+                            "Failed to parse xFrameOptions from header `X-Frame-Options",
+                        )
+                    })?,
+                );
                 let output = output.meta(generic);
                 output.build()
             };

@@ -7,6 +7,8 @@ pub struct ListPromptRoutersInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub r#type: ::std::option::Option<crate::types::PromptRouterType>,
 }
 impl ListPromptRoutersInput {
     /// <p>The maximum number of prompt routers to return in one page of results.</p>
@@ -16,6 +18,10 @@ impl ListPromptRoutersInput {
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PromptRouterType> {
+        self.r#type.as_ref()
     }
 }
 impl ListPromptRoutersInput {
@@ -31,6 +37,7 @@ impl ListPromptRoutersInput {
 pub struct ListPromptRoutersInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PromptRouterType>,
 }
 impl ListPromptRoutersInputBuilder {
     /// <p>The maximum number of prompt routers to return in one page of results.</p>
@@ -61,6 +68,20 @@ impl ListPromptRoutersInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn r#type(mut self, input: crate::types::PromptRouterType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PromptRouterType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PromptRouterType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ListPromptRoutersInput`](crate::operation::list_prompt_routers::ListPromptRoutersInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListPromptRoutersInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_prompt_routers::ListPromptRoutersInput {
             max_results: self.max_results,
             next_token: self.next_token,
+            r#type: self.r#type,
         })
     }
 }

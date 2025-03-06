@@ -23,7 +23,7 @@ impl crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputB
 /// Fluent builder constructing a request to `TerminateWorkspaces`.
 ///
 /// <p>Terminates the specified WorkSpaces.</p><important>
-/// <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services Support before terminating the WorkSpace.</p>
+/// <p>Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web ServicesSupport before terminating the WorkSpace.</p>
 /// </important>
 /// <p>You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p>
 /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html"> DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.</p><note>

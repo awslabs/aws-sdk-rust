@@ -23,6 +23,7 @@ impl crate::operation::list_statements::builders::ListStatementsInputBuilder {
 /// Fluent builder constructing a request to `ListStatements`.
 ///
 /// <p>List of SQL statements. By default, only finished statements are shown. A token is returned to page through the statement list.</p>
+/// <p>When you use identity-enhanced role sessions to list statements, you must provide either the <code>cluster-identifier</code> or <code>workgroup-name</code> parameter. This ensures that the IdC user can only access the Amazon Redshift IdC applications they are assigned. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html"> Trusted identity propagation overview</a>.</p>
 /// <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStatementsFluentBuilder {
@@ -232,5 +233,47 @@ impl ListStatementsFluentBuilder {
     /// <p>A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.</p>
     pub fn get_role_level(&self) -> &::std::option::Option<bool> {
         self.inner.get_role_level()
+    }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.database(input.into());
+        self
+    }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_database(input);
+        self
+    }
+    /// <p>The name of the database when listing statements run against a <code>ClusterIdentifier</code> or <code>WorkgroupName</code>.</p>
+    pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_database()
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.cluster_identifier(input.into());
+        self
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn set_cluster_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_cluster_identifier(input);
+        self
+    }
+    /// <p>The cluster identifier. Only statements that ran on this cluster are returned. When providing <code>ClusterIdentifier</code>, then <code>WorkgroupName</code> can't be specified.</p>
+    pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_cluster_identifier()
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn workgroup_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workgroup_name(input.into());
+        self
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn set_workgroup_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workgroup_name(input);
+        self
+    }
+    /// <p>The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing <code>WorkgroupName</code>, then <code>ClusterIdentifier</code> can't be specified.</p>
+    pub fn get_workgroup_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workgroup_name()
     }
 }

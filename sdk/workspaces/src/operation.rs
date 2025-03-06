@@ -187,6 +187,9 @@ pub mod modify_certificate_based_auth_properties;
 /// Types for the `ModifyClientProperties` operation.
 pub mod modify_client_properties;
 
+/// Types for the `ModifyEndpointEncryptionMode` operation.
+pub mod modify_endpoint_encryption_mode;
+
 /// Types for the `ModifySamlProperties` operation.
 pub mod modify_saml_properties;
 

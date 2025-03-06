@@ -174,7 +174,9 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
-    /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
+    /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
+    /// <li>
+    /// <p><code>AMAZON_DYNAMODB</code>: Top contributor network flows to or from Amazon Dynamo DB</p></li>
     /// <li>
     /// <p><code>UNCLASSIFIED</code>: Top contributor network flows that do not have a bucket classification</p></li>
     /// </ul>
@@ -191,7 +193,9 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
-    /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
+    /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
+    /// <li>
+    /// <p><code>AMAZON_DYNAMODB</code>: Top contributor network flows to or from Amazon Dynamo DB</p></li>
     /// <li>
     /// <p><code>UNCLASSIFIED</code>: Top contributor network flows that do not have a bucket classification</p></li>
     /// </ul>
@@ -208,7 +212,9 @@ impl StartQueryMonitorTopContributorsFluentBuilder {
     /// <li>
     /// <p><code>INTER_VPC</code>: Top contributor network flows between VPCs</p></li>
     /// <li>
-    /// <p><code>AWS_SERVICES</code>: Top contributor network flows to or from Amazon Web Services services</p></li>
+    /// <p><code>AMAZON_S3</code>: Top contributor network flows to or from Amazon S3</p></li>
+    /// <li>
+    /// <p><code>AMAZON_DYNAMODB</code>: Top contributor network flows to or from Amazon Dynamo DB</p></li>
     /// <li>
     /// <p><code>UNCLASSIFIED</code>: Top contributor network flows that do not have a bucket classification</p></li>
     /// </ul>

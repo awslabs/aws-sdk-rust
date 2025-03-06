@@ -75,6 +75,12 @@ pub fn ser_field_to_match(
         crate::protocol_serde::shape_ja3_fingerprint::ser_ja3_fingerprint(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.ja4_fingerprint {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("JA4Fingerprint").start_object();
+        crate::protocol_serde::shape_ja4_fingerprint::ser_ja4_fingerprint(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }
 
@@ -130,6 +136,9 @@ where
                         }
                         "JA3Fingerprint" => {
                             builder = builder.set_ja3_fingerprint(crate::protocol_serde::shape_ja3_fingerprint::de_ja3_fingerprint(tokens)?);
+                        }
+                        "JA4Fingerprint" => {
+                            builder = builder.set_ja4_fingerprint(crate::protocol_serde::shape_ja4_fingerprint::de_ja4_fingerprint(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

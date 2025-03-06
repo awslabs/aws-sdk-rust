@@ -57,6 +57,18 @@ pub fn ser_rate_based_statement_custom_key(
         crate::protocol_serde::shape_rate_limit_uri_path::ser_rate_limit_uri_path(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.ja3_fingerprint {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("JA3Fingerprint").start_object();
+        crate::protocol_serde::shape_rate_limit_ja3_fingerprint::ser_rate_limit_ja3_fingerprint(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.ja4_fingerprint {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("JA4Fingerprint").start_object();
+        crate::protocol_serde::shape_rate_limit_ja4_fingerprint::ser_rate_limit_ja4_fingerprint(&mut object_22, var_21)?;
+        object_22.finish();
+    }
     Ok(())
 }
 
@@ -108,6 +120,16 @@ where
                         }
                         "UriPath" => {
                             builder = builder.set_uri_path(crate::protocol_serde::shape_rate_limit_uri_path::de_rate_limit_uri_path(tokens)?);
+                        }
+                        "JA3Fingerprint" => {
+                            builder = builder.set_ja3_fingerprint(
+                                crate::protocol_serde::shape_rate_limit_ja3_fingerprint::de_rate_limit_ja3_fingerprint(tokens)?,
+                            );
+                        }
+                        "JA4Fingerprint" => {
+                            builder = builder.set_ja4_fingerprint(
+                                crate::protocol_serde::shape_rate_limit_ja4_fingerprint::de_rate_limit_ja4_fingerprint(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

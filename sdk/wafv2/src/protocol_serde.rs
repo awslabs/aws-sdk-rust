@@ -473,6 +473,8 @@ pub(crate) mod shape_ip_set_reference_statement;
 
 pub(crate) mod shape_ja3_fingerprint;
 
+pub(crate) mod shape_ja4_fingerprint;
+
 pub(crate) mod shape_json_body;
 
 pub(crate) mod shape_label_match_statement;
@@ -570,6 +572,10 @@ pub(crate) mod shape_rate_limit_header;
 pub(crate) mod shape_rate_limit_http_method;
 
 pub(crate) mod shape_rate_limit_ip;
+
+pub(crate) mod shape_rate_limit_ja3_fingerprint;
+
+pub(crate) mod shape_rate_limit_ja4_fingerprint;
 
 pub(crate) mod shape_rate_limit_label_namespace;
 

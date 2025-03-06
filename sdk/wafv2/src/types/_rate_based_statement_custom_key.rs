@@ -29,6 +29,10 @@ pub struct RateBasedStatementCustomKey {
     pub label_namespace: ::std::option::Option<crate::types::RateLimitLabelNamespace>,
     /// <p>Use the request's URI path as an aggregate key. Each distinct URI path contributes to the aggregation instance. If you use just the URI path as your custom key, then each URI path fully defines an aggregation instance.</p>
     pub uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
+    /// <p>Use the request's JA3 fingerprint as an aggregate key. If you use a single JA3 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub ja3_fingerprint: ::std::option::Option<crate::types::RateLimitJa3Fingerprint>,
+    /// <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub ja4_fingerprint: ::std::option::Option<crate::types::RateLimitJa4Fingerprint>,
 }
 impl RateBasedStatementCustomKey {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
@@ -72,6 +76,14 @@ impl RateBasedStatementCustomKey {
     pub fn uri_path(&self) -> ::std::option::Option<&crate::types::RateLimitUriPath> {
         self.uri_path.as_ref()
     }
+    /// <p>Use the request's JA3 fingerprint as an aggregate key. If you use a single JA3 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn ja3_fingerprint(&self) -> ::std::option::Option<&crate::types::RateLimitJa3Fingerprint> {
+        self.ja3_fingerprint.as_ref()
+    }
+    /// <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn ja4_fingerprint(&self) -> ::std::option::Option<&crate::types::RateLimitJa4Fingerprint> {
+        self.ja4_fingerprint.as_ref()
+    }
 }
 impl RateBasedStatementCustomKey {
     /// Creates a new builder-style object to manufacture [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
@@ -93,6 +105,8 @@ pub struct RateBasedStatementCustomKeyBuilder {
     pub(crate) ip: ::std::option::Option<crate::types::RateLimitIp>,
     pub(crate) label_namespace: ::std::option::Option<crate::types::RateLimitLabelNamespace>,
     pub(crate) uri_path: ::std::option::Option<crate::types::RateLimitUriPath>,
+    pub(crate) ja3_fingerprint: ::std::option::Option<crate::types::RateLimitJa3Fingerprint>,
+    pub(crate) ja4_fingerprint: ::std::option::Option<crate::types::RateLimitJa4Fingerprint>,
 }
 impl RateBasedStatementCustomKeyBuilder {
     /// <p>Use the value of a header in the request as an aggregate key. Each distinct value in the header contributes to the aggregation instance. If you use a single header as your custom key, then each value fully defines an aggregation instance.</p>
@@ -236,6 +250,34 @@ impl RateBasedStatementCustomKeyBuilder {
     pub fn get_uri_path(&self) -> &::std::option::Option<crate::types::RateLimitUriPath> {
         &self.uri_path
     }
+    /// <p>Use the request's JA3 fingerprint as an aggregate key. If you use a single JA3 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn ja3_fingerprint(mut self, input: crate::types::RateLimitJa3Fingerprint) -> Self {
+        self.ja3_fingerprint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use the request's JA3 fingerprint as an aggregate key. If you use a single JA3 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn set_ja3_fingerprint(mut self, input: ::std::option::Option<crate::types::RateLimitJa3Fingerprint>) -> Self {
+        self.ja3_fingerprint = input;
+        self
+    }
+    /// <p>Use the request's JA3 fingerprint as an aggregate key. If you use a single JA3 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn get_ja3_fingerprint(&self) -> &::std::option::Option<crate::types::RateLimitJa3Fingerprint> {
+        &self.ja3_fingerprint
+    }
+    /// <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn ja4_fingerprint(mut self, input: crate::types::RateLimitJa4Fingerprint) -> Self {
+        self.ja4_fingerprint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn set_ja4_fingerprint(mut self, input: ::std::option::Option<crate::types::RateLimitJa4Fingerprint>) -> Self {
+        self.ja4_fingerprint = input;
+        self
+    }
+    /// <p>Use the request's JA4 fingerprint as an aggregate key. If you use a single JA4 fingerprint as your custom key, then each value fully defines an aggregation instance.</p>
+    pub fn get_ja4_fingerprint(&self) -> &::std::option::Option<crate::types::RateLimitJa4Fingerprint> {
+        &self.ja4_fingerprint
+    }
     /// Consumes the builder and constructs a [`RateBasedStatementCustomKey`](crate::types::RateBasedStatementCustomKey).
     pub fn build(self) -> crate::types::RateBasedStatementCustomKey {
         crate::types::RateBasedStatementCustomKey {
@@ -248,6 +290,8 @@ impl RateBasedStatementCustomKeyBuilder {
             ip: self.ip,
             label_namespace: self.label_namespace,
             uri_path: self.uri_path,
+            ja3_fingerprint: self.ja3_fingerprint,
+            ja4_fingerprint: self.ja4_fingerprint,
         }
     }
 }

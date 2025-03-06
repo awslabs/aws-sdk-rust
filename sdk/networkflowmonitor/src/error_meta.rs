@@ -167,6 +167,7 @@ impl From<crate::operation::delete_scope::DeleteScopeError> for Error {
         match err {
             crate::operation::delete_scope::DeleteScopeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_scope::DeleteScopeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_scope::DeleteScopeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_scope::DeleteScopeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::delete_scope::DeleteScopeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_scope::DeleteScopeError::ValidationException(inner) => Error::ValidationException(inner),
@@ -466,6 +467,7 @@ impl From<crate::operation::get_scope::GetScopeError> for Error {
         match err {
             crate::operation::get_scope::GetScopeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_scope::GetScopeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_scope::GetScopeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_scope::GetScopeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_scope::GetScopeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_scope::GetScopeError::ValidationException(inner) => Error::ValidationException(inner),
@@ -898,6 +900,7 @@ impl From<crate::operation::update_scope::UpdateScopeError> for Error {
         match err {
             crate::operation::update_scope::UpdateScopeError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_scope::UpdateScopeError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_scope::UpdateScopeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_scope::UpdateScopeError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::update_scope::UpdateScopeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_scope::UpdateScopeError::ValidationException(inner) => Error::ValidationException(inner),

@@ -40,6 +40,8 @@ pub struct WorkspaceDirectory {
     pub saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
     pub certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    /// <p>Endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.</p>
+    pub endpoint_encryption_mode: ::std::option::Option<crate::types::EndpointEncryptionMode>,
     /// <p>Specifies details about Microsoft Entra configurations.</p>
     pub microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     /// <p>The name fo the WorkSpace directory.</p>
@@ -138,6 +140,10 @@ impl WorkspaceDirectory {
     pub fn certificate_based_auth_properties(&self) -> ::std::option::Option<&crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
+    /// <p>Endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.</p>
+    pub fn endpoint_encryption_mode(&self) -> ::std::option::Option<&crate::types::EndpointEncryptionMode> {
+        self.endpoint_encryption_mode.as_ref()
+    }
     /// <p>Specifies details about Microsoft Entra configurations.</p>
     pub fn microsoft_entra_config(&self) -> ::std::option::Option<&crate::types::MicrosoftEntraConfig> {
         self.microsoft_entra_config.as_ref()
@@ -204,6 +210,7 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) selfservice_permissions: ::std::option::Option<crate::types::SelfservicePermissions>,
     pub(crate) saml_properties: ::std::option::Option<crate::types::SamlProperties>,
     pub(crate) certificate_based_auth_properties: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) endpoint_encryption_mode: ::std::option::Option<crate::types::EndpointEncryptionMode>,
     pub(crate) microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     pub(crate) workspace_directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_directory_description: ::std::option::Option<::std::string::String>,
@@ -485,6 +492,20 @@ impl WorkspaceDirectoryBuilder {
     pub fn get_certificate_based_auth_properties(&self) -> &::std::option::Option<crate::types::CertificateBasedAuthProperties> {
         &self.certificate_based_auth_properties
     }
+    /// <p>Endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.</p>
+    pub fn endpoint_encryption_mode(mut self, input: crate::types::EndpointEncryptionMode) -> Self {
+        self.endpoint_encryption_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.</p>
+    pub fn set_endpoint_encryption_mode(mut self, input: ::std::option::Option<crate::types::EndpointEncryptionMode>) -> Self {
+        self.endpoint_encryption_mode = input;
+        self
+    }
+    /// <p>Endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.</p>
+    pub fn get_endpoint_encryption_mode(&self) -> &::std::option::Option<crate::types::EndpointEncryptionMode> {
+        &self.endpoint_encryption_mode
+    }
     /// <p>Specifies details about Microsoft Entra configurations.</p>
     pub fn microsoft_entra_config(mut self, input: crate::types::MicrosoftEntraConfig) -> Self {
         self.microsoft_entra_config = ::std::option::Option::Some(input);
@@ -632,6 +653,7 @@ impl WorkspaceDirectoryBuilder {
             selfservice_permissions: self.selfservice_permissions,
             saml_properties: self.saml_properties,
             certificate_based_auth_properties: self.certificate_based_auth_properties,
+            endpoint_encryption_mode: self.endpoint_encryption_mode,
             microsoft_entra_config: self.microsoft_entra_config,
             workspace_directory_name: self.workspace_directory_name,
             workspace_directory_description: self.workspace_directory_description,

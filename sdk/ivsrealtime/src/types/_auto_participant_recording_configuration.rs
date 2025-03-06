@@ -4,15 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoParticipantRecordingConfiguration {
-    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
+    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
     pub storage_configuration_arn: ::std::string::String,
     /// <p>Types of media to be recorded. Default: <code>AUDIO_VIDEO</code>.</p>
     pub media_types: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>>,
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
     pub thumbnail_configuration: ::std::option::Option<crate::types::ParticipantThumbnailConfiguration>,
+    /// <p>If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together.</p>
+    /// <p>The default value is 0, which disables merging.</p>
+    pub recording_reconnect_window_seconds: i32,
 }
 impl AutoParticipantRecordingConfiguration {
-    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
+    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
     pub fn storage_configuration_arn(&self) -> &str {
         use std::ops::Deref;
         self.storage_configuration_arn.deref()
@@ -26,6 +29,11 @@ impl AutoParticipantRecordingConfiguration {
     /// <p>A complex type that allows you to enable/disable the recording of thumbnails for individual participant recording and modify the interval at which thumbnails are generated for the live session.</p>
     pub fn thumbnail_configuration(&self) -> ::std::option::Option<&crate::types::ParticipantThumbnailConfiguration> {
         self.thumbnail_configuration.as_ref()
+    }
+    /// <p>If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together.</p>
+    /// <p>The default value is 0, which disables merging.</p>
+    pub fn recording_reconnect_window_seconds(&self) -> i32 {
+        self.recording_reconnect_window_seconds
     }
 }
 impl AutoParticipantRecordingConfiguration {
@@ -42,20 +50,21 @@ pub struct AutoParticipantRecordingConfigurationBuilder {
     pub(crate) storage_configuration_arn: ::std::option::Option<::std::string::String>,
     pub(crate) media_types: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>>,
     pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ParticipantThumbnailConfiguration>,
+    pub(crate) recording_reconnect_window_seconds: ::std::option::Option<i32>,
 }
 impl AutoParticipantRecordingConfigurationBuilder {
-    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
+    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
     /// This field is required.
     pub fn storage_configuration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
+    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
     pub fn set_storage_configuration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_configuration_arn = input;
         self
     }
-    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated.</p>
+    /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
     pub fn get_storage_configuration_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_configuration_arn
     }
@@ -93,6 +102,23 @@ impl AutoParticipantRecordingConfigurationBuilder {
     pub fn get_thumbnail_configuration(&self) -> &::std::option::Option<crate::types::ParticipantThumbnailConfiguration> {
         &self.thumbnail_configuration
     }
+    /// <p>If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together.</p>
+    /// <p>The default value is 0, which disables merging.</p>
+    pub fn recording_reconnect_window_seconds(mut self, input: i32) -> Self {
+        self.recording_reconnect_window_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together.</p>
+    /// <p>The default value is 0, which disables merging.</p>
+    pub fn set_recording_reconnect_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.recording_reconnect_window_seconds = input;
+        self
+    }
+    /// <p>If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together.</p>
+    /// <p>The default value is 0, which disables merging.</p>
+    pub fn get_recording_reconnect_window_seconds(&self) -> &::std::option::Option<i32> {
+        &self.recording_reconnect_window_seconds
+    }
     /// Consumes the builder and constructs a [`AutoParticipantRecordingConfiguration`](crate::types::AutoParticipantRecordingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_configuration_arn`](crate::types::builders::AutoParticipantRecordingConfigurationBuilder::storage_configuration_arn)
@@ -108,6 +134,7 @@ impl AutoParticipantRecordingConfigurationBuilder {
             })?,
             media_types: self.media_types,
             thumbnail_configuration: self.thumbnail_configuration,
+            recording_reconnect_window_seconds: self.recording_reconnect_window_seconds.unwrap_or_default(),
         })
     }
 }

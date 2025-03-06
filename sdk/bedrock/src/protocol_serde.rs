@@ -43,6 +43,8 @@ pub(crate) mod shape_create_model_import_job;
 
 pub(crate) mod shape_create_model_invocation_job;
 
+pub(crate) mod shape_create_prompt_router;
+
 pub(crate) mod shape_create_provisioned_model_throughput;
 
 pub(crate) mod shape_delete_custom_model;
@@ -56,6 +58,8 @@ pub(crate) mod shape_delete_inference_profile;
 pub(crate) mod shape_delete_marketplace_model_endpoint;
 
 pub(crate) mod shape_delete_model_invocation_logging_configuration;
+
+pub(crate) mod shape_delete_prompt_router;
 
 pub(crate) mod shape_delete_provisioned_model_throughput;
 
@@ -168,6 +172,8 @@ pub(crate) mod shape_create_model_customization_job_input;
 pub(crate) mod shape_create_model_import_job_input;
 
 pub(crate) mod shape_create_model_invocation_job_input;
+
+pub(crate) mod shape_create_prompt_router_input;
 
 pub(crate) mod shape_create_provisioned_model_throughput_input;
 

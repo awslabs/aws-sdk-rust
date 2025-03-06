@@ -147,6 +147,8 @@ pub(crate) mod shape_modify_certificate_based_auth_properties;
 
 pub(crate) mod shape_modify_client_properties;
 
+pub(crate) mod shape_modify_endpoint_encryption_mode;
+
 pub(crate) mod shape_modify_saml_properties;
 
 pub(crate) mod shape_modify_selfservice_permissions;
@@ -344,6 +346,8 @@ pub(crate) mod shape_modify_account_input;
 pub(crate) mod shape_modify_certificate_based_auth_properties_input;
 
 pub(crate) mod shape_modify_client_properties_input;
+
+pub(crate) mod shape_modify_endpoint_encryption_mode_input;
 
 pub(crate) mod shape_modify_saml_properties_input;
 

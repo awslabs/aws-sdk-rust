@@ -138,6 +138,8 @@ mod create_model_import_job;
 
 mod create_model_invocation_job;
 
+mod create_prompt_router;
+
 mod create_provisioned_model_throughput;
 
 /// Operation customization and supporting types.
@@ -155,6 +157,8 @@ mod delete_inference_profile;
 mod delete_marketplace_model_endpoint;
 
 mod delete_model_invocation_logging_configuration;
+
+mod delete_prompt_router;
 
 mod delete_provisioned_model_throughput;
 

@@ -136,17 +136,17 @@ impl DescribeWorkspacesPoolSessionsFluentBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_user_id()
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }

@@ -7,7 +7,7 @@ pub struct DescribeWorkspacesPoolSessionsInput {
     pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the user.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl DescribeWorkspacesPoolSessionsInput {
     pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -76,17 +76,17 @@ impl DescribeWorkspacesPoolSessionsInputBuilder {
     pub fn get_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_id
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
-    /// <p>The maximum number of items to return.</p>
+    /// <p>The maximum size of each page of results. The default value is 20 and the maximum value is 50.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

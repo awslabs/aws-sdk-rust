@@ -10,6 +10,62 @@ pub(crate) fn de_internal_server_exception_json_err(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "accessControlAllowOrigin" => {
+                    builder = builder.set_access_control_allow_origin(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "accessControlExposeHeaders" => {
+                    builder = builder.set_access_control_expose_headers(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "cacheControl" => {
+                    builder = builder.set_cache_control(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "contentSecurityPolicy" => {
+                    builder = builder.set_content_security_policy(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "strictTransportSecurity" => {
+                    builder = builder.set_strict_transport_security(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "xContentTypeOptions" => {
+                    builder = builder.set_x_content_type_options(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "xFrameOptions" => {
+                    builder = builder.set_x_frame_options(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "xAmznErrorType" => {
+                    builder = builder.set_x_amzn_error_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "exceptionMessage" => {
                     builder = builder.set_exception_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -40,4 +96,60 @@ pub(crate) fn de_internal_server_exception_json_err(
         ));
     }
     Ok(builder)
+}
+
+pub(crate) fn de_access_control_allow_origin_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Access-Control-Allow-Origin");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_access_control_expose_headers_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Access-Control-Expose-Headers");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_cache_control_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Cache-Control");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_content_security_policy_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Content-Security-Policy");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_strict_transport_security_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("Strict-Transport-Security");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_x_amzn_error_type_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-ErrorType");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_x_content_type_options_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("X-Content-Type-Options");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
+pub(crate) fn de_x_frame_options_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("X-Frame-Options");
+    ::aws_smithy_http::header::one_or_none(headers)
 }

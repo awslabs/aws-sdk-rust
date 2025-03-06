@@ -67,9 +67,11 @@ pub use crate::types::_text_transformation_type::TextTransformationType;
 
 pub use crate::types::_field_to_match::FieldToMatch;
 
-pub use crate::types::_ja3_fingerprint::Ja3Fingerprint;
+pub use crate::types::_ja4_fingerprint::Ja4Fingerprint;
 
 pub use crate::types::_fallback_behavior::FallbackBehavior;
+
+pub use crate::types::_ja3_fingerprint::Ja3Fingerprint;
 
 pub use crate::types::_header_order::HeaderOrder;
 
@@ -164,6 +166,10 @@ pub use crate::types::_and_statement::AndStatement;
 pub use crate::types::_rate_based_statement::RateBasedStatement;
 
 pub use crate::types::_rate_based_statement_custom_key::RateBasedStatementCustomKey;
+
+pub use crate::types::_rate_limit_ja4_fingerprint::RateLimitJa4Fingerprint;
+
+pub use crate::types::_rate_limit_ja3_fingerprint::RateLimitJa3Fingerprint;
 
 pub use crate::types::_rate_limit_uri_path::RateLimitUriPath;
 
@@ -443,6 +449,8 @@ mod _ip_set_summary;
 
 mod _ja3_fingerprint;
 
+mod _ja4_fingerprint;
+
 mod _json_body;
 
 mod _json_match_pattern;
@@ -530,6 +538,10 @@ mod _rate_limit_header;
 mod _rate_limit_http_method;
 
 mod _rate_limit_ip;
+
+mod _rate_limit_ja3_fingerprint;
+
+mod _rate_limit_ja4_fingerprint;
 
 mod _rate_limit_label_namespace;
 

@@ -23,7 +23,7 @@ impl crate::operation::get_query_status_monitor_top_contributors::builders::GetQ
 /// Fluent builder constructing a request to `GetQueryStatusMonitorTopContributors`.
 ///
 /// <p>Returns the current status of a query for the Network Flow Monitor query interface, for a specified query ID and monitor. This call returns the query status for the top contributors for a monitor.</p>
-/// <p>When you start a query, use this call to check the status of the query to make sure that it has has <code>SUCCEEDED</code> before you review the results. Use the same query ID that you used for the corresponding API call to start the query, <code>StartQueryMonitorTopContributors</code>.</p>
+/// <p>When you start a query, use this call to check the status of the query to make sure that it has has <code>SUCCEEDED</code> before you reviewStartQueryWorkloadInsightsTopContributorsData the results. Use the same query ID that you used for the corresponding API call to start the query, <code>StartQueryMonitorTopContributors</code>.</p>
 /// <p>When you run a query, use this call to check the status of the query to make sure that the query has <code>SUCCEEDED</code> before you review the results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueryStatusMonitorTopContributorsFluentBuilder {

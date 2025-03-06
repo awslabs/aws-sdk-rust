@@ -21,5 +21,14 @@ pub fn ser_list_statements_input_input(
     if let Some(var_5) = &input.role_level {
         object.key("RoleLevel").boolean(*var_5);
     }
+    if let Some(var_6) = &input.database {
+        object.key("Database").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_8.as_str());
+    }
     Ok(())
 }

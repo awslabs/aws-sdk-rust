@@ -24,7 +24,7 @@ pub struct UpdateTrailInput {
     pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/get-and-view-cloudtrail-log-files.html#cloudtrail-find-log-files">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub sns_topic_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
     pub include_global_service_events: ::std::option::Option<bool>,
@@ -85,7 +85,7 @@ impl UpdateTrailInput {
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn sns_topic_name(&self) -> ::std::option::Option<&str> {
         self.sns_topic_name.as_deref()
     }
@@ -244,17 +244,17 @@ impl UpdateTrailInputBuilder {
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key_prefix
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn sns_topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn set_sns_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_name = input;
         self
     }
-    /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
+    /// <p>Specifies the name or ARN of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
     pub fn get_sns_topic_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_topic_name
     }

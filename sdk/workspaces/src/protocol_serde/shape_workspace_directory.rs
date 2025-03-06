@@ -116,6 +116,13 @@ where
                                 crate::protocol_serde::shape_certificate_based_auth_properties::de_certificate_based_auth_properties(tokens)?,
                             );
                         }
+                        "EndpointEncryptionMode" => {
+                            builder = builder.set_endpoint_encryption_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EndpointEncryptionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "MicrosoftEntraConfig" => {
                             builder = builder
                                 .set_microsoft_entra_config(crate::protocol_serde::shape_microsoft_entra_config::de_microsoft_entra_config(tokens)?);

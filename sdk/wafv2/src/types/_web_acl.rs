@@ -18,8 +18,8 @@ pub struct WebAcl {
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.</p>
     pub visibility_config: ::std::option::Option<crate::types::VisibilityConfig>,
-    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
-    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    /// <p>Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including your WAF logging destinations, web ACL request sampling, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
     pub data_protection_config: ::std::option::Option<crate::types::DataProtectionConfig>,
     /// <p>The web ACL capacity units (WCUs) currently being used by this web ACL.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.</p>
@@ -100,8 +100,8 @@ impl WebAcl {
     pub fn visibility_config(&self) -> ::std::option::Option<&crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
-    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
-    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    /// <p>Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including your WAF logging destinations, web ACL request sampling, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
     pub fn data_protection_config(&self) -> ::std::option::Option<&crate::types::DataProtectionConfig> {
         self.data_protection_config.as_ref()
     }
@@ -321,20 +321,20 @@ impl WebAclBuilder {
     pub fn get_visibility_config(&self) -> &::std::option::Option<crate::types::VisibilityConfig> {
         &self.visibility_config
     }
-    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
-    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    /// <p>Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including your WAF logging destinations, web ACL request sampling, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
     pub fn data_protection_config(mut self, input: crate::types::DataProtectionConfig) -> Self {
         self.data_protection_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
-    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    /// <p>Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including your WAF logging destinations, web ACL request sampling, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
     pub fn set_data_protection_config(mut self, input: ::std::option::Option<crate::types::DataProtectionConfig>) -> Self {
         self.data_protection_config = input;
         self
     }
-    /// <p>Specifies data protection to apply to the web request data that WAF stores for the web ACL. This is a web ACL level data protection option.</p>
-    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including WAF logging, web ACL request sampling, Amazon Web Services Managed Rules, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
+    /// <p>Specifies data protection to apply to the web request data for the web ACL. This is a web ACL level data protection option.</p>
+    /// <p>The data protection that you configure for the web ACL alters the data that's available for any other data collection activity, including your WAF logging destinations, web ACL request sampling, and Amazon Security Lake data collection and management. Your other option for data protection is in the logging configuration, which only affects logging.</p>
     pub fn get_data_protection_config(&self) -> &::std::option::Option<crate::types::DataProtectionConfig> {
         &self.data_protection_config
     }

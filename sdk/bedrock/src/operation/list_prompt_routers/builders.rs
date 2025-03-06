@@ -142,4 +142,18 @@ impl ListPromptRoutersFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn r#type(mut self, input: crate::types::PromptRouterType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PromptRouterType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The type of the prompt routers, such as whether it's default or custom.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::PromptRouterType> {
+        self.inner.get_type()
+    }
 }

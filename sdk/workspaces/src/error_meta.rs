@@ -2312,6 +2312,43 @@ impl From<crate::operation::modify_client_properties::ModifyClientPropertiesErro
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError> for Error {
+    fn from(err: crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError) -> Self {
+        match err {
+            crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError::OperationNotSupportedException(inner) => {
+                Error::OperationNotSupportedException(inner)
+            }
+            crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::modify_endpoint_encryption_mode::ModifyEndpointEncryptionModeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_saml_properties::ModifySamlPropertiesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

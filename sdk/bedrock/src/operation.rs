@@ -31,6 +31,9 @@ pub mod create_model_import_job;
 /// Types for the `CreateModelInvocationJob` operation.
 pub mod create_model_invocation_job;
 
+/// Types for the `CreatePromptRouter` operation.
+pub mod create_prompt_router;
+
 /// Types for the `CreateProvisionedModelThroughput` operation.
 pub mod create_provisioned_model_throughput;
 
@@ -51,6 +54,9 @@ pub mod delete_marketplace_model_endpoint;
 
 /// Types for the `DeleteModelInvocationLoggingConfiguration` operation.
 pub mod delete_model_invocation_logging_configuration;
+
+/// Types for the `DeletePromptRouter` operation.
+pub mod delete_prompt_router;
 
 /// Types for the `DeleteProvisionedModelThroughput` operation.
 pub mod delete_provisioned_model_throughput;
