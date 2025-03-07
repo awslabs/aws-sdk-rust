@@ -61,6 +61,8 @@ pub use crate::types::_listener::ListenerBuilder;
 
 pub use crate::types::_mutual_authentication_attributes::MutualAuthenticationAttributesBuilder;
 
+pub use crate::types::_ipam_pools::IpamPoolsBuilder;
+
 pub use crate::types::_zonal_capacity_reservation_state::ZonalCapacityReservationStateBuilder;
 
 pub use crate::types::_capacity_reservation_status::CapacityReservationStatusBuilder;

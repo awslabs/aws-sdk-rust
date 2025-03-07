@@ -371,9 +371,15 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPart;
 
 pub use crate::types::_attribution::Attribution;
 
-pub use crate::types::_streaming_configurations::StreamingConfigurations;
-
 pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurations;
+
+pub use crate::types::_collaborator::Collaborator;
+
+pub use crate::types::_collaborator_configuration::CollaboratorConfiguration;
+
+pub use crate::types::_relay_conversation_history::RelayConversationHistory;
+
+pub use crate::types::_agent_collaboration::AgentCollaboration;
 
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfiguration;
 
@@ -409,6 +415,14 @@ pub use crate::types::_action_group_signature::ActionGroupSignature;
 
 pub use crate::types::_inline_session_state::InlineSessionState;
 
+pub use crate::types::_conversation_history::ConversationHistory;
+
+pub use crate::types::_message::Message;
+
+pub use crate::types::_content_block::ContentBlock;
+
+pub use crate::types::_conversation_role::ConversationRole;
+
 pub use crate::types::_input_file::InputFile;
 
 pub use crate::types::_file_use_case::FileUseCase;
@@ -420,6 +434,8 @@ pub use crate::types::_byte_content_file::ByteContentFile;
 pub use crate::types::_s3_object_file::S3ObjectFile;
 
 pub use crate::types::_file_source_type::FileSourceType;
+
+pub use crate::types::_streaming_configurations::StreamingConfigurations;
 
 pub use crate::types::_response_stream::ResponseStream;
 
@@ -434,14 +450,6 @@ pub use crate::types::_payload_part::PayloadPart;
 pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurations;
 
 pub use crate::types::_session_state::SessionState;
-
-pub use crate::types::_conversation_history::ConversationHistory;
-
-pub use crate::types::_message::Message;
-
-pub use crate::types::_content_block::ContentBlock;
-
-pub use crate::types::_conversation_role::ConversationRole;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfiguration;
 
@@ -517,6 +525,8 @@ mod _action_invocation_type;
 
 mod _agent_action_group;
 
+mod _agent_collaboration;
+
 mod _agent_collaborator_input_payload;
 
 mod _agent_collaborator_invocation_input;
@@ -562,6 +572,10 @@ mod _citation_event;
 mod _code_interpreter_invocation_input;
 
 mod _code_interpreter_invocation_output;
+
+mod _collaborator;
+
+mod _collaborator_configuration;
 
 mod _confirmation_state;
 
@@ -870,6 +884,8 @@ mod _raw_response;
 mod _reasoning_content_block;
 
 mod _reasoning_text_block;
+
+mod _relay_conversation_history;
 
 mod _reprompt_response;
 

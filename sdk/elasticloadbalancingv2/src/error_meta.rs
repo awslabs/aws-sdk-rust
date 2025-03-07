@@ -1362,6 +1362,30 @@ impl From<crate::operation::modify_capacity_reservation::ModifyCapacityReservati
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ip_pools::ModifyIpPoolsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_ip_pools::ModifyIpPoolsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ip_pools::ModifyIpPoolsError> for Error {
+    fn from(err: crate::operation::modify_ip_pools::ModifyIpPoolsError) -> Self {
+        match err {
+            crate::operation::modify_ip_pools::ModifyIpPoolsError::LoadBalancerNotFoundException(inner) => {
+                Error::LoadBalancerNotFoundException(inner)
+            }
+            crate::operation::modify_ip_pools::ModifyIpPoolsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_listener::ModifyListenerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

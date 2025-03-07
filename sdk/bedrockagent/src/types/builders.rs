@@ -51,6 +51,10 @@ pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
 
 pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
+pub use crate::types::_neptune_analytics_configuration::NeptuneAnalyticsConfigurationBuilder;
+
+pub use crate::types::_neptune_analytics_field_mapping::NeptuneAnalyticsFieldMappingBuilder;
+
 pub use crate::types::_mongo_db_atlas_configuration::MongoDbAtlasConfigurationBuilder;
 
 pub use crate::types::_mongo_db_atlas_field_mapping::MongoDbAtlasFieldMappingBuilder;
@@ -276,6 +280,12 @@ pub use crate::types::_flow_alias_summary::FlowAliasSummaryBuilder;
 pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfigurationBuilder;
+
+pub use crate::types::_context_enrichment_configuration::ContextEnrichmentConfigurationBuilder;
+
+pub use crate::types::_bedrock_foundation_model_context_enrichment_configuration::BedrockFoundationModelContextEnrichmentConfigurationBuilder;
+
+pub use crate::types::_enrichment_strategy_configuration::EnrichmentStrategyConfigurationBuilder;
 
 pub use crate::types::_parsing_configuration::ParsingConfigurationBuilder;
 

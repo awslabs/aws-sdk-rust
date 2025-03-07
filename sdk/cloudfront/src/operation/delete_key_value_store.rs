@@ -261,7 +261,7 @@ pub enum DeleteKeyValueStoreError {
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
     PreconditionFailed(crate::types::error::PreconditionFailed),
-    /// <p>This operation is not supported in this region.</p>
+    /// <p>This operation is not supported in this Amazon Web Services Region.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -163,6 +163,10 @@ pub(crate) mod shape_modify_capacity_reservation;
 
 pub(crate) mod shape_modify_capacity_reservation_input;
 
+pub(crate) mod shape_modify_ip_pools;
+
+pub(crate) mod shape_modify_ip_pools_input;
+
 pub(crate) mod shape_modify_listener;
 
 pub(crate) mod shape_modify_listener_attributes;
@@ -276,6 +280,8 @@ pub(crate) mod shape_invalid_security_group_exception;
 pub(crate) mod shape_invalid_subnet_exception;
 
 pub(crate) mod shape_invalid_target_exception;
+
+pub(crate) mod shape_ipam_pools;
 
 pub(crate) mod shape_listener_attribute;
 

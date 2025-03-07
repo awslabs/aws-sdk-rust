@@ -87,6 +87,10 @@ pub use crate::types::_advertise_trust_store_ca_names_enum::AdvertiseTrustStoreC
 
 pub use crate::types::_trust_store_association_status_enum::TrustStoreAssociationStatusEnum;
 
+pub use crate::types::_ipam_pools::IpamPools;
+
+pub use crate::types::_remove_ipam_pool_enum::RemoveIpamPoolEnum;
+
 pub use crate::types::_zonal_capacity_reservation_state::ZonalCapacityReservationState;
 
 pub use crate::types::_capacity_reservation_status::CapacityReservationStatus;
@@ -197,6 +201,8 @@ mod _http_request_method_condition_config;
 
 mod _ip_address_type;
 
+mod _ipam_pools;
+
 mod _limit;
 
 mod _listener;
@@ -236,6 +242,8 @@ mod _query_string_key_value_pair;
 mod _redirect_action_config;
 
 mod _redirect_action_status_code_enum;
+
+mod _remove_ipam_pool_enum;
 
 mod _revocation_content;
 

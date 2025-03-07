@@ -16,6 +16,8 @@ pub struct InlineSessionState {
     pub invocation_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the files used by code interpreter.</p>
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>,
+    /// <p>Contains the conversation history that persist across sessions.</p>
+    pub conversation_history: ::std::option::Option<crate::types::ConversationHistory>,
 }
 impl InlineSessionState {
     /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
@@ -44,6 +46,10 @@ impl InlineSessionState {
     pub fn files(&self) -> &[crate::types::InputFile] {
         self.files.as_deref().unwrap_or_default()
     }
+    /// <p>Contains the conversation history that persist across sessions.</p>
+    pub fn conversation_history(&self) -> ::std::option::Option<&crate::types::ConversationHistory> {
+        self.conversation_history.as_ref()
+    }
 }
 impl InlineSessionState {
     /// Creates a new builder-style object to manufacture [`InlineSessionState`](crate::types::InlineSessionState).
@@ -61,6 +67,7 @@ pub struct InlineSessionStateBuilder {
     pub(crate) return_control_invocation_results: ::std::option::Option<::std::vec::Vec<crate::types::InvocationResultMember>>,
     pub(crate) invocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::InputFile>>,
+    pub(crate) conversation_history: ::std::option::Option<crate::types::ConversationHistory>,
 }
 impl InlineSessionStateBuilder {
     /// Adds a key-value pair to `session_attributes`.
@@ -180,6 +187,20 @@ impl InlineSessionStateBuilder {
     pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputFile>> {
         &self.files
     }
+    /// <p>Contains the conversation history that persist across sessions.</p>
+    pub fn conversation_history(mut self, input: crate::types::ConversationHistory) -> Self {
+        self.conversation_history = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the conversation history that persist across sessions.</p>
+    pub fn set_conversation_history(mut self, input: ::std::option::Option<crate::types::ConversationHistory>) -> Self {
+        self.conversation_history = input;
+        self
+    }
+    /// <p>Contains the conversation history that persist across sessions.</p>
+    pub fn get_conversation_history(&self) -> &::std::option::Option<crate::types::ConversationHistory> {
+        &self.conversation_history
+    }
     /// Consumes the builder and constructs a [`InlineSessionState`](crate::types::InlineSessionState).
     pub fn build(self) -> crate::types::InlineSessionState {
         crate::types::InlineSessionState {
@@ -188,6 +209,7 @@ impl InlineSessionStateBuilder {
             return_control_invocation_results: self.return_control_invocation_results,
             invocation_id: self.invocation_id,
             files: self.files,
+            conversation_history: self.conversation_history,
         }
     }
 }

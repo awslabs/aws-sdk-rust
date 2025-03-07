@@ -6,7 +6,7 @@ pub struct CreateGraphOutput {
     /// <p>The ID of the graph.</p>
     pub id: ::std::string::String,
     /// <p>The graph name. For example: <code>my-graph-1</code>.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub name: ::std::string::String,
     /// <p>The ARN of the graph.</p>
     pub arn: ::std::string::String,
@@ -17,7 +17,7 @@ pub struct CreateGraphOutput {
     /// <p>The time when the graph was created.</p>
     pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub provisioned_memory: ::std::option::Option<i32>,
     /// <p>The graph endpoint.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
@@ -47,7 +47,7 @@ impl CreateGraphOutput {
         self.id.deref()
     }
     /// <p>The graph name. For example: <code>my-graph-1</code>.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -70,7 +70,7 @@ impl CreateGraphOutput {
         self.create_time.as_ref()
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
     }
@@ -160,20 +160,20 @@ impl CreateGraphOutputBuilder {
         &self.id
     }
     /// <p>The graph name. For example: <code>my-graph-1</code>.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The graph name. For example: <code>my-graph-1</code>.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The graph name. For example: <code>my-graph-1</code>.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -235,19 +235,19 @@ impl CreateGraphOutputBuilder {
         &self.create_time
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
     }

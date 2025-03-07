@@ -267,7 +267,7 @@ pub enum GetMonitoringSubscriptionError {
     NoSuchDistribution(crate::types::error::NoSuchDistribution),
     /// <p>A monitoring subscription does not exist for the specified distribution.</p>
     NoSuchMonitoringSubscription(crate::types::error::NoSuchMonitoringSubscription),
-    /// <p>This operation is not supported in this region.</p>
+    /// <p>This operation is not supported in this Amazon Web Services Region.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

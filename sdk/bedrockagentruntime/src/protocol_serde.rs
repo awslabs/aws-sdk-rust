@@ -155,6 +155,10 @@ pub(crate) mod shape_bedrock_model_configurations;
 
 pub(crate) mod shape_citations;
 
+pub(crate) mod shape_collaborator;
+
+pub(crate) mod shape_collaborator_configuration;
+
 pub(crate) mod shape_flow_input;
 
 pub(crate) mod shape_generated_queries;

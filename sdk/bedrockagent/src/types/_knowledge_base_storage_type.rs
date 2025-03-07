@@ -13,6 +13,7 @@
 /// # let knowledgebasestoragetype = unimplemented!();
 /// match knowledgebasestoragetype {
 ///     KnowledgeBaseStorageType::MongoDbAtlas => { /* ... */ },
+///     KnowledgeBaseStorageType::NeptuneAnalytics => { /* ... */ },
 ///     KnowledgeBaseStorageType::OpensearchServerless => { /* ... */ },
 ///     KnowledgeBaseStorageType::Pinecone => { /* ... */ },
 ///     KnowledgeBaseStorageType::Rds => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum KnowledgeBaseStorageType {
     #[allow(missing_docs)] // documentation missing in model
     MongoDbAtlas,
     #[allow(missing_docs)] // documentation missing in model
+    NeptuneAnalytics,
+    #[allow(missing_docs)] // documentation missing in model
     OpensearchServerless,
     #[allow(missing_docs)] // documentation missing in model
     Pinecone,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseStorageType {
     fn from(s: &str) -> Self {
         match s {
             "MONGO_DB_ATLAS" => KnowledgeBaseStorageType::MongoDbAtlas,
+            "NEPTUNE_ANALYTICS" => KnowledgeBaseStorageType::NeptuneAnalytics,
             "OPENSEARCH_SERVERLESS" => KnowledgeBaseStorageType::OpensearchServerless,
             "PINECONE" => KnowledgeBaseStorageType::Pinecone,
             "RDS" => KnowledgeBaseStorageType::Rds,
@@ -83,6 +87,7 @@ impl KnowledgeBaseStorageType {
     pub fn as_str(&self) -> &str {
         match self {
             KnowledgeBaseStorageType::MongoDbAtlas => "MONGO_DB_ATLAS",
+            KnowledgeBaseStorageType::NeptuneAnalytics => "NEPTUNE_ANALYTICS",
             KnowledgeBaseStorageType::OpensearchServerless => "OPENSEARCH_SERVERLESS",
             KnowledgeBaseStorageType::Pinecone => "PINECONE",
             KnowledgeBaseStorageType::Rds => "RDS",
@@ -92,7 +97,14 @@ impl KnowledgeBaseStorageType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MONGO_DB_ATLAS", "OPENSEARCH_SERVERLESS", "PINECONE", "RDS", "REDIS_ENTERPRISE_CLOUD"]
+        &[
+            "MONGO_DB_ATLAS",
+            "NEPTUNE_ANALYTICS",
+            "OPENSEARCH_SERVERLESS",
+            "PINECONE",
+            "RDS",
+            "REDIS_ENTERPRISE_CLOUD",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for KnowledgeBaseStorageType {
@@ -116,6 +128,7 @@ impl ::std::fmt::Display for KnowledgeBaseStorageType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             KnowledgeBaseStorageType::MongoDbAtlas => write!(f, "MONGO_DB_ATLAS"),
+            KnowledgeBaseStorageType::NeptuneAnalytics => write!(f, "NEPTUNE_ANALYTICS"),
             KnowledgeBaseStorageType::OpensearchServerless => write!(f, "OPENSEARCH_SERVERLESS"),
             KnowledgeBaseStorageType::Pinecone => write!(f, "PINECONE"),
             KnowledgeBaseStorageType::Rds => write!(f, "RDS"),

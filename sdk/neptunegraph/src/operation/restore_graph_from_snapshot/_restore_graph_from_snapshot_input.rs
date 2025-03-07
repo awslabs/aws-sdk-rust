@@ -6,10 +6,10 @@ pub struct RestoreGraphFromSnapshotInput {
     /// <p>The ID of the snapshot in question.</p>
     pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A name for the new Neptune Analytics graph to be created from the snapshot.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub graph_name: ::std::option::Option<::std::string::String>,
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub provisioned_memory: ::std::option::Option<i32>,
     /// <p>A value that indicates whether the graph has deletion protection enabled. The graph can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -28,12 +28,12 @@ impl RestoreGraphFromSnapshotInput {
         self.snapshot_identifier.as_deref()
     }
     /// <p>A name for the new Neptune Analytics graph to be created from the snapshot.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn graph_name(&self) -> ::std::option::Option<&str> {
         self.graph_name.as_deref()
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.provisioned_memory
     }
@@ -92,37 +92,37 @@ impl RestoreGraphFromSnapshotInputBuilder {
         &self.snapshot_identifier
     }
     /// <p>A name for the new Neptune Analytics graph to be created from the snapshot.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     /// This field is required.
     pub fn graph_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created from the snapshot.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn set_graph_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_name = input;
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created from the snapshot.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn get_graph_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_name
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn provisioned_memory(mut self, input: i32) -> Self {
         self.provisioned_memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn set_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_memory = input;
         self
     }
     /// <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.</p>
-    /// <p>Min = 128</p>
+    /// <p>Min = 16</p>
     pub fn get_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.provisioned_memory
     }

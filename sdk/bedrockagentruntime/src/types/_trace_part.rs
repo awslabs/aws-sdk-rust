@@ -16,6 +16,8 @@ pub struct TracePart {
     pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The part's caller chain.</p>
     pub caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
+    /// <p>The time of the trace.</p>
+    pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The part's collaborator name.</p>
     pub collaborator_name: ::std::option::Option<::std::string::String>,
 }
@@ -46,6 +48,10 @@ impl TracePart {
     pub fn caller_chain(&self) -> &[crate::types::Caller] {
         self.caller_chain.as_deref().unwrap_or_default()
     }
+    /// <p>The time of the trace.</p>
+    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.event_time.as_ref()
+    }
     /// <p>The part's collaborator name.</p>
     pub fn collaborator_name(&self) -> ::std::option::Option<&str> {
         self.collaborator_name.as_deref()
@@ -60,6 +66,7 @@ impl ::std::fmt::Debug for TracePart {
         formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_time", &"*** Sensitive Data Redacted ***");
         formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -81,6 +88,7 @@ pub struct TracePartBuilder {
     pub(crate) agent_alias_id: ::std::option::Option<::std::string::String>,
     pub(crate) agent_version: ::std::option::Option<::std::string::String>,
     pub(crate) caller_chain: ::std::option::Option<::std::vec::Vec<crate::types::Caller>>,
+    pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) collaborator_name: ::std::option::Option<::std::string::String>,
 }
 impl TracePartBuilder {
@@ -174,6 +182,20 @@ impl TracePartBuilder {
     pub fn get_caller_chain(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Caller>> {
         &self.caller_chain
     }
+    /// <p>The time of the trace.</p>
+    pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time of the trace.</p>
+    pub fn set_event_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.event_time = input;
+        self
+    }
+    /// <p>The time of the trace.</p>
+    pub fn get_event_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.event_time
+    }
     /// <p>The part's collaborator name.</p>
     pub fn collaborator_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.collaborator_name = ::std::option::Option::Some(input.into());
@@ -197,6 +219,7 @@ impl TracePartBuilder {
             agent_alias_id: self.agent_alias_id,
             agent_version: self.agent_version,
             caller_chain: self.caller_chain,
+            event_time: self.event_time,
             collaborator_name: self.collaborator_name,
         }
     }
@@ -210,6 +233,7 @@ impl ::std::fmt::Debug for TracePartBuilder {
         formatter.field("agent_alias_id", &"*** Sensitive Data Redacted ***");
         formatter.field("agent_version", &"*** Sensitive Data Redacted ***");
         formatter.field("caller_chain", &"*** Sensitive Data Redacted ***");
+        formatter.field("event_time", &"*** Sensitive Data Redacted ***");
         formatter.field("collaborator_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

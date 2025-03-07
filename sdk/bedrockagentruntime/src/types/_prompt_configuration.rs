@@ -26,6 +26,8 @@ pub struct PromptConfiguration {
     pub inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     /// <p>Specifies whether to override the default parser Lambda function when parsing the raw foundation model output in the part of the agent sequence defined by the <code>promptType</code>. If you set the field as <code>OVERRIDDEN</code>, the <code>overrideLambda</code> field in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a> must be specified with the ARN of a Lambda function.</p>
     pub parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    /// <p>The foundation model to use.</p>
+    pub foundation_model: ::std::option::Option<::std::string::String>,
     /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
     /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
     pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
@@ -65,6 +67,10 @@ impl PromptConfiguration {
     pub fn parser_mode(&self) -> ::std::option::Option<&crate::types::CreationMode> {
         self.parser_mode.as_ref()
     }
+    /// <p>The foundation model to use.</p>
+    pub fn foundation_model(&self) -> ::std::option::Option<&str> {
+        self.foundation_model.as_deref()
+    }
     /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
     /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
     pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
@@ -80,6 +86,7 @@ impl ::std::fmt::Debug for PromptConfiguration {
         formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
+        formatter.field("foundation_model", &self.foundation_model);
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.finish()
     }
@@ -101,6 +108,7 @@ pub struct PromptConfigurationBuilder {
     pub(crate) base_prompt_template: ::std::option::Option<::std::string::String>,
     pub(crate) inference_configuration: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) parser_mode: ::std::option::Option<crate::types::CreationMode>,
+    pub(crate) foundation_model: ::std::option::Option<::std::string::String>,
     pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl PromptConfigurationBuilder {
@@ -218,6 +226,20 @@ impl PromptConfigurationBuilder {
     pub fn get_parser_mode(&self) -> &::std::option::Option<crate::types::CreationMode> {
         &self.parser_mode
     }
+    /// <p>The foundation model to use.</p>
+    pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.foundation_model = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The foundation model to use.</p>
+    pub fn set_foundation_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.foundation_model = input;
+        self
+    }
+    /// <p>The foundation model to use.</p>
+    pub fn get_foundation_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.foundation_model
+    }
     /// <p>If the Converse or ConverseStream operations support the model, <code>additionalModelRequestFields</code> contains additional inference parameters, beyond the base set of inference parameters in the <code>inferenceConfiguration</code> field.</p>
     /// <p>For more information, see <i>Inference request parameters and response fields for foundation models</i> in the Amazon Bedrock user guide.</p>
     pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -244,6 +266,7 @@ impl PromptConfigurationBuilder {
             base_prompt_template: self.base_prompt_template,
             inference_configuration: self.inference_configuration,
             parser_mode: self.parser_mode,
+            foundation_model: self.foundation_model,
             additional_model_request_fields: self.additional_model_request_fields,
         }
     }
@@ -257,6 +280,7 @@ impl ::std::fmt::Debug for PromptConfigurationBuilder {
         formatter.field("base_prompt_template", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_configuration", &self.inference_configuration);
         formatter.field("parser_mode", &self.parser_mode);
+        formatter.field("foundation_model", &self.foundation_model);
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.finish()
     }

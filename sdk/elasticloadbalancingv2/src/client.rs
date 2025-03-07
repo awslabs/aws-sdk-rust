@@ -282,6 +282,8 @@ mod get_trust_store_revocation_content;
 
 mod modify_capacity_reservation;
 
+mod modify_ip_pools;
+
 mod modify_listener;
 
 mod modify_listener_attributes;

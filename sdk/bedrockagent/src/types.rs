@@ -87,6 +87,10 @@ pub use crate::types::_knowledge_base_status::KnowledgeBaseStatus;
 
 pub use crate::types::_storage_configuration::StorageConfiguration;
 
+pub use crate::types::_neptune_analytics_configuration::NeptuneAnalyticsConfiguration;
+
+pub use crate::types::_neptune_analytics_field_mapping::NeptuneAnalyticsFieldMapping;
+
 pub use crate::types::_mongo_db_atlas_configuration::MongoDbAtlasConfiguration;
 
 pub use crate::types::_mongo_db_atlas_field_mapping::MongoDbAtlasFieldMapping;
@@ -383,6 +387,16 @@ pub use crate::types::_data_deletion_policy::DataDeletionPolicy;
 
 pub use crate::types::_vector_ingestion_configuration::VectorIngestionConfiguration;
 
+pub use crate::types::_context_enrichment_configuration::ContextEnrichmentConfiguration;
+
+pub use crate::types::_bedrock_foundation_model_context_enrichment_configuration::BedrockFoundationModelContextEnrichmentConfiguration;
+
+pub use crate::types::_enrichment_strategy_configuration::EnrichmentStrategyConfiguration;
+
+pub use crate::types::_enrichment_strategy_method::EnrichmentStrategyMethod;
+
+pub use crate::types::_context_enrichment_type::ContextEnrichmentType;
+
 pub use crate::types::_parsing_configuration::ParsingConfiguration;
 
 pub use crate::types::_bedrock_data_automation_configuration::BedrockDataAutomationConfiguration;
@@ -591,6 +605,8 @@ mod _bedrock_embedding_model_configuration;
 
 mod _bedrock_foundation_model_configuration;
 
+mod _bedrock_foundation_model_context_enrichment_configuration;
+
 mod _byte_content_doc;
 
 mod _cache_point_block;
@@ -620,6 +636,10 @@ mod _confluence_source_configuration;
 mod _content_block;
 
 mod _content_data_source_type;
+
+mod _context_enrichment_configuration;
+
+mod _context_enrichment_type;
 
 mod _conversation_role;
 
@@ -674,6 +694,10 @@ mod _duplicate_connections_flow_validation_details;
 mod _embedding_data_type;
 
 mod _embedding_model_configuration;
+
+mod _enrichment_strategy_configuration;
+
+mod _enrichment_strategy_method;
 
 mod _fixed_size_chunking_configuration;
 
@@ -832,6 +856,10 @@ mod _mongo_db_atlas_configuration;
 mod _mongo_db_atlas_field_mapping;
 
 mod _multiple_node_input_connections_flow_validation_details;
+
+mod _neptune_analytics_configuration;
+
+mod _neptune_analytics_field_mapping;
 
 mod _open_search_serverless_configuration;
 

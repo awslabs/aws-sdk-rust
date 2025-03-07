@@ -323,4 +323,18 @@ impl CreateLoadBalancerFluentBuilder {
     pub fn get_enable_prefix_for_ipv6_source_nat(&self) -> &::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum> {
         self.inner.get_enable_prefix_for_ipv6_source_nat()
     }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn ipam_pools(mut self, input: crate::types::IpamPools) -> Self {
+        self.inner = self.inner.ipam_pools(input);
+        self
+    }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn set_ipam_pools(mut self, input: ::std::option::Option<crate::types::IpamPools>) -> Self {
+        self.inner = self.inner.set_ipam_pools(input);
+        self
+    }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn get_ipam_pools(&self) -> &::std::option::Option<crate::types::IpamPools> {
+        self.inner.get_ipam_pools()
+    }
 }

@@ -110,19 +110,19 @@ impl CreateGraphUsingImportTaskFluentBuilder {
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn graph_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.graph_name(input.into());
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn set_graph_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_graph_name(input);
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn get_graph_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_graph_name()
     }
@@ -252,17 +252,17 @@ impl CreateGraphUsingImportTaskFluentBuilder {
     pub fn get_max_provisioned_memory(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_provisioned_memory()
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn min_provisioned_memory(mut self, input: i32) -> Self {
         self.inner = self.inner.min_provisioned_memory(input);
         self
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn set_min_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_provisioned_memory(input);
         self
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn get_min_provisioned_memory(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_provisioned_memory()
     }

@@ -16,6 +16,8 @@ pub struct StorageConfiguration {
     pub rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
     /// <p>Contains the storage configuration of the knowledge base in MongoDB Atlas.</p>
     pub mongo_db_atlas_configuration: ::std::option::Option<crate::types::MongoDbAtlasConfiguration>,
+    /// <p>Contains details about the Neptune Analytics configuration of the knowledge base in Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create a vector index in Amazon Neptune Analytics.</a>.</p>
+    pub neptune_analytics_configuration: ::std::option::Option<crate::types::NeptuneAnalyticsConfiguration>,
 }
 impl StorageConfiguration {
     /// <p>The vector store service in which the knowledge base is stored.</p>
@@ -42,6 +44,10 @@ impl StorageConfiguration {
     pub fn mongo_db_atlas_configuration(&self) -> ::std::option::Option<&crate::types::MongoDbAtlasConfiguration> {
         self.mongo_db_atlas_configuration.as_ref()
     }
+    /// <p>Contains details about the Neptune Analytics configuration of the knowledge base in Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create a vector index in Amazon Neptune Analytics.</a>.</p>
+    pub fn neptune_analytics_configuration(&self) -> ::std::option::Option<&crate::types::NeptuneAnalyticsConfiguration> {
+        self.neptune_analytics_configuration.as_ref()
+    }
 }
 impl StorageConfiguration {
     /// Creates a new builder-style object to manufacture [`StorageConfiguration`](crate::types::StorageConfiguration).
@@ -60,6 +66,7 @@ pub struct StorageConfigurationBuilder {
     pub(crate) redis_enterprise_cloud_configuration: ::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration>,
     pub(crate) rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
     pub(crate) mongo_db_atlas_configuration: ::std::option::Option<crate::types::MongoDbAtlasConfiguration>,
+    pub(crate) neptune_analytics_configuration: ::std::option::Option<crate::types::NeptuneAnalyticsConfiguration>,
 }
 impl StorageConfigurationBuilder {
     /// <p>The vector store service in which the knowledge base is stored.</p>
@@ -147,6 +154,20 @@ impl StorageConfigurationBuilder {
     pub fn get_mongo_db_atlas_configuration(&self) -> &::std::option::Option<crate::types::MongoDbAtlasConfiguration> {
         &self.mongo_db_atlas_configuration
     }
+    /// <p>Contains details about the Neptune Analytics configuration of the knowledge base in Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create a vector index in Amazon Neptune Analytics.</a>.</p>
+    pub fn neptune_analytics_configuration(mut self, input: crate::types::NeptuneAnalyticsConfiguration) -> Self {
+        self.neptune_analytics_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the Neptune Analytics configuration of the knowledge base in Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create a vector index in Amazon Neptune Analytics.</a>.</p>
+    pub fn set_neptune_analytics_configuration(mut self, input: ::std::option::Option<crate::types::NeptuneAnalyticsConfiguration>) -> Self {
+        self.neptune_analytics_configuration = input;
+        self
+    }
+    /// <p>Contains details about the Neptune Analytics configuration of the knowledge base in Amazon Neptune. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-neptune.html">Create a vector index in Amazon Neptune Analytics.</a>.</p>
+    pub fn get_neptune_analytics_configuration(&self) -> &::std::option::Option<crate::types::NeptuneAnalyticsConfiguration> {
+        &self.neptune_analytics_configuration
+    }
     /// Consumes the builder and constructs a [`StorageConfiguration`](crate::types::StorageConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::StorageConfigurationBuilder::type)
@@ -163,6 +184,7 @@ impl StorageConfigurationBuilder {
             redis_enterprise_cloud_configuration: self.redis_enterprise_cloud_configuration,
             rds_configuration: self.rds_configuration,
             mongo_db_atlas_configuration: self.mongo_db_atlas_configuration,
+            neptune_analytics_configuration: self.neptune_analytics_configuration,
         })
     }
 }

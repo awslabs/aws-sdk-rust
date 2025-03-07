@@ -308,7 +308,7 @@ pub enum Error {
     TrustedKeyGroupDoesNotExist(crate::types::error::TrustedKeyGroupDoesNotExist),
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::types::error::TrustedSignerDoesNotExist),
-    /// <p>This operation is not supported in this region.</p>
+    /// <p>This operation is not supported in this Amazon Web Services Region.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

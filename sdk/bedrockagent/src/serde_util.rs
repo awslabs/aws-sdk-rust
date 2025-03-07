@@ -1569,6 +1569,15 @@ pub(crate) fn confluence_data_source_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn context_enrichment_configuration_correct_errors(
+    mut builder: crate::types::builders::ContextEnrichmentConfigurationBuilder,
+) -> crate::types::builders::ContextEnrichmentConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ContextEnrichmentType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn custom_transformation_configuration_correct_errors(
     mut builder: crate::types::builders::CustomTransformationConfigurationBuilder,
 ) -> crate::types::builders::CustomTransformationConfigurationBuilder {
@@ -1652,6 +1661,21 @@ pub(crate) fn mongo_db_atlas_configuration_correct_errors(
         builder.field_mapping = {
             let builder = crate::types::builders::MongoDbAtlasFieldMappingBuilder::default();
             crate::serde_util::mongo_db_atlas_field_mapping_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn neptune_analytics_configuration_correct_errors(
+    mut builder: crate::types::builders::NeptuneAnalyticsConfigurationBuilder,
+) -> crate::types::builders::NeptuneAnalyticsConfigurationBuilder {
+    if builder.graph_arn.is_none() {
+        builder.graph_arn = Some(Default::default())
+    }
+    if builder.field_mapping.is_none() {
+        builder.field_mapping = {
+            let builder = crate::types::builders::NeptuneAnalyticsFieldMappingBuilder::default();
+            crate::serde_util::neptune_analytics_field_mapping_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -1817,6 +1841,21 @@ pub(crate) fn web_data_source_configuration_correct_errors(
 pub(crate) fn bedrock_foundation_model_configuration_correct_errors(
     mut builder: crate::types::builders::BedrockFoundationModelConfigurationBuilder,
 ) -> crate::types::builders::BedrockFoundationModelConfigurationBuilder {
+    if builder.model_arn.is_none() {
+        builder.model_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bedrock_foundation_model_context_enrichment_configuration_correct_errors(
+    mut builder: crate::types::builders::BedrockFoundationModelContextEnrichmentConfigurationBuilder,
+) -> crate::types::builders::BedrockFoundationModelContextEnrichmentConfigurationBuilder {
+    if builder.enrichment_strategy_configuration.is_none() {
+        builder.enrichment_strategy_configuration = {
+            let builder = crate::types::builders::EnrichmentStrategyConfigurationBuilder::default();
+            crate::serde_util::enrichment_strategy_configuration_correct_errors(builder).build().ok()
+        }
+    }
     if builder.model_arn.is_none() {
         builder.model_arn = Some(Default::default())
     }
@@ -2078,6 +2117,18 @@ pub(crate) fn multiple_node_input_connections_flow_validation_details_correct_er
     }
     if builder.input.is_none() {
         builder.input = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn neptune_analytics_field_mapping_correct_errors(
+    mut builder: crate::types::builders::NeptuneAnalyticsFieldMappingBuilder,
+) -> crate::types::builders::NeptuneAnalyticsFieldMappingBuilder {
+    if builder.text_field.is_none() {
+        builder.text_field = Some(Default::default())
+    }
+    if builder.metadata_field.is_none() {
+        builder.metadata_field = Some(Default::default())
     }
     builder
 }
@@ -2399,6 +2450,15 @@ pub(crate) fn crawl_filter_configuration_correct_errors(
 ) -> crate::types::builders::CrawlFilterConfigurationBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::CrawlFilterConfigurationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn enrichment_strategy_configuration_correct_errors(
+    mut builder: crate::types::builders::EnrichmentStrategyConfigurationBuilder,
+) -> crate::types::builders::EnrichmentStrategyConfigurationBuilder {
+    if builder.method.is_none() {
+        builder.method = "no value was set".parse::<crate::types::EnrichmentStrategyMethod>().ok()
     }
     builder
 }

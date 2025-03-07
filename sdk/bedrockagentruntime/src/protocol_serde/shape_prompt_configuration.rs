@@ -24,8 +24,11 @@ pub fn ser_prompt_configuration(
     if let Some(var_7) = &input.parser_mode {
         object.key("parserMode").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.additional_model_request_fields {
-        object.key("additionalModelRequestFields").document(var_8);
+    if let Some(var_8) = &input.foundation_model {
+        object.key("foundationModel").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.additional_model_request_fields {
+        object.key("additionalModelRequestFields").document(var_9);
     }
     Ok(())
 }

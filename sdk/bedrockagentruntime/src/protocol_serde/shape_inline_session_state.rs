@@ -50,5 +50,11 @@ pub fn ser_inline_session_state(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.conversation_history {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("conversationHistory").start_object();
+        crate::protocol_serde::shape_conversation_history::ser_conversation_history(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

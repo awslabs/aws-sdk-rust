@@ -37,6 +37,8 @@ pub struct LoadBalancer {
     pub enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
     /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
     pub enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
+    /// <p>\[Application Load Balancers\] The IPAM pool in use by the load balancer, if configured.</p>
+    pub ipam_pools: ::std::option::Option<crate::types::IpamPools>,
 }
 impl LoadBalancer {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -106,6 +108,10 @@ impl LoadBalancer {
     pub fn enable_prefix_for_ipv6_source_nat(&self) -> ::std::option::Option<&crate::types::EnablePrefixForIpv6SourceNatEnum> {
         self.enable_prefix_for_ipv6_source_nat.as_ref()
     }
+    /// <p>\[Application Load Balancers\] The IPAM pool in use by the load balancer, if configured.</p>
+    pub fn ipam_pools(&self) -> ::std::option::Option<&crate::types::IpamPools> {
+        self.ipam_pools.as_ref()
+    }
 }
 impl LoadBalancer {
     /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::types::LoadBalancer).
@@ -133,6 +139,7 @@ pub struct LoadBalancerBuilder {
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) enforce_security_group_inbound_rules_on_private_link_traffic: ::std::option::Option<::std::string::String>,
     pub(crate) enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
+    pub(crate) ipam_pools: ::std::option::Option<crate::types::IpamPools>,
 }
 impl LoadBalancerBuilder {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
@@ -366,6 +373,20 @@ impl LoadBalancerBuilder {
     pub fn get_enable_prefix_for_ipv6_source_nat(&self) -> &::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum> {
         &self.enable_prefix_for_ipv6_source_nat
     }
+    /// <p>\[Application Load Balancers\] The IPAM pool in use by the load balancer, if configured.</p>
+    pub fn ipam_pools(mut self, input: crate::types::IpamPools) -> Self {
+        self.ipam_pools = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>\[Application Load Balancers\] The IPAM pool in use by the load balancer, if configured.</p>
+    pub fn set_ipam_pools(mut self, input: ::std::option::Option<crate::types::IpamPools>) -> Self {
+        self.ipam_pools = input;
+        self
+    }
+    /// <p>\[Application Load Balancers\] The IPAM pool in use by the load balancer, if configured.</p>
+    pub fn get_ipam_pools(&self) -> &::std::option::Option<crate::types::IpamPools> {
+        &self.ipam_pools
+    }
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {
         crate::types::LoadBalancer {
@@ -384,6 +405,7 @@ impl LoadBalancerBuilder {
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             enforce_security_group_inbound_rules_on_private_link_traffic: self.enforce_security_group_inbound_rules_on_private_link_traffic,
             enable_prefix_for_ipv6_source_nat: self.enable_prefix_for_ipv6_source_nat,
+            ipam_pools: self.ipam_pools,
         }
     }
 }

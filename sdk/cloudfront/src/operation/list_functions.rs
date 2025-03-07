@@ -263,7 +263,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListFunctions
 pub enum ListFunctionsError {
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
-    /// <p>This operation is not supported in this region.</p>
+    /// <p>This operation is not supported in this Amazon Web Services Region.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -21,6 +21,12 @@ pub fn ser_vector_ingestion_configuration(
         crate::protocol_serde::shape_parsing_configuration::ser_parsing_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.context_enrichment_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("contextEnrichmentConfiguration").start_object();
+        crate::protocol_serde::shape_context_enrichment_configuration::ser_context_enrichment_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -51,6 +57,11 @@ where
                         "parsingConfiguration" => {
                             builder = builder
                                 .set_parsing_configuration(crate::protocol_serde::shape_parsing_configuration::de_parsing_configuration(tokens)?);
+                        }
+                        "contextEnrichmentConfiguration" => {
+                            builder = builder.set_context_enrichment_configuration(
+                                crate::protocol_serde::shape_context_enrichment_configuration::de_context_enrichment_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

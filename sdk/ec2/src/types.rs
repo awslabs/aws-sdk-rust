@@ -2119,6 +2119,8 @@ pub use crate::types::_availability_zone_opt_in_status::AvailabilityZoneOptInSta
 
 pub use crate::types::_address::Address;
 
+pub use crate::types::_service_managed::ServiceManaged;
+
 pub use crate::types::_domain_type::DomainType;
 
 pub use crate::types::_account_attribute::AccountAttribute;
@@ -4092,6 +4094,8 @@ mod _service_configuration;
 mod _service_connectivity_type;
 
 mod _service_detail;
+
+mod _service_managed;
 
 mod _service_state;
 

@@ -7,11 +7,11 @@
 pub struct AliasIcpRecordal {
     /// <p>A domain name associated with a distribution.</p>
     pub cname: ::std::option::Option<::std::string::String>,
-    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
+    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in Amazon Web Services Regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p></li>
+    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with the China Regions, a CNAME must have one ICP recordal number associated with it.</p></li>
     /// <li>
     /// <p><b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p></li>
     /// <li>
@@ -24,11 +24,11 @@ impl AliasIcpRecordal {
     pub fn cname(&self) -> ::std::option::Option<&str> {
         self.cname.as_deref()
     }
-    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
+    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in Amazon Web Services Regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p></li>
+    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with the China Regions, a CNAME must have one ICP recordal number associated with it.</p></li>
     /// <li>
     /// <p><b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p></li>
     /// <li>
@@ -67,11 +67,11 @@ impl AliasIcpRecordalBuilder {
     pub fn get_cname(&self) -> &::std::option::Option<::std::string::String> {
         &self.cname
     }
-    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
+    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in Amazon Web Services Regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p></li>
+    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with the China Regions, a CNAME must have one ICP recordal number associated with it.</p></li>
     /// <li>
     /// <p><b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p></li>
     /// <li>
@@ -81,11 +81,11 @@ impl AliasIcpRecordalBuilder {
         self.icp_recordal_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
+    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in Amazon Web Services Regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p></li>
+    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with the China Regions, a CNAME must have one ICP recordal number associated with it.</p></li>
     /// <li>
     /// <p><b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p></li>
     /// <li>
@@ -95,11 +95,11 @@ impl AliasIcpRecordalBuilder {
         self.icp_recordal_status = input;
         self
     }
-    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in regions outside of China.</p>
+    /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED for all CNAMEs (aliases) in Amazon Web Services Regions outside of China.</p>
     /// <p>The status values returned are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p></li>
+    /// <p><b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number. Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as APPROVED, that is, valid to use with the China Regions, a CNAME must have one ICP recordal number associated with it.</p></li>
     /// <li>
     /// <p><b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal number.</p></li>
     /// <li>

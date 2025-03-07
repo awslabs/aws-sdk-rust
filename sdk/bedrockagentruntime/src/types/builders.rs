@@ -255,9 +255,11 @@ pub use crate::types::_inline_agent_payload_part::InlineAgentPayloadPartBuilder;
 
 pub use crate::types::_attribution::AttributionBuilder;
 
-pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
-
 pub use crate::types::_inline_bedrock_model_configurations::InlineBedrockModelConfigurationsBuilder;
+
+pub use crate::types::_collaborator::CollaboratorBuilder;
+
+pub use crate::types::_collaborator_configuration::CollaboratorConfigurationBuilder;
 
 pub use crate::types::_prompt_override_configuration::PromptOverrideConfigurationBuilder;
 
@@ -277,6 +279,10 @@ pub use crate::types::_s3_identifier::S3IdentifierBuilder;
 
 pub use crate::types::_inline_session_state::InlineSessionStateBuilder;
 
+pub use crate::types::_conversation_history::ConversationHistoryBuilder;
+
+pub use crate::types::_message::MessageBuilder;
+
 pub use crate::types::_input_file::InputFileBuilder;
 
 pub use crate::types::_file_source::FileSourceBuilder;
@@ -284,6 +290,8 @@ pub use crate::types::_file_source::FileSourceBuilder;
 pub use crate::types::_byte_content_file::ByteContentFileBuilder;
 
 pub use crate::types::_s3_object_file::S3ObjectFileBuilder;
+
+pub use crate::types::_streaming_configurations::StreamingConfigurationsBuilder;
 
 pub use crate::types::_file_part::FilePartBuilder;
 
@@ -294,10 +302,6 @@ pub use crate::types::_payload_part::PayloadPartBuilder;
 pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurationsBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
-
-pub use crate::types::_conversation_history::ConversationHistoryBuilder;
-
-pub use crate::types::_message::MessageBuilder;
 
 pub use crate::types::_knowledge_base_configuration::KnowledgeBaseConfigurationBuilder;
 

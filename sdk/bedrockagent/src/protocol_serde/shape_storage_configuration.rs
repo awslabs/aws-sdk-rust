@@ -36,6 +36,12 @@ pub fn ser_storage_configuration(
         crate::protocol_serde::shape_mongo_db_atlas_configuration::ser_mongo_db_atlas_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.neptune_analytics_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("neptuneAnalyticsConfiguration").start_object();
+        crate::protocol_serde::shape_neptune_analytics_configuration::ser_neptune_analytics_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -81,6 +87,11 @@ where
                         "mongoDbAtlasConfiguration" => {
                             builder = builder.set_mongo_db_atlas_configuration(
                                 crate::protocol_serde::shape_mongo_db_atlas_configuration::de_mongo_db_atlas_configuration(tokens)?,
+                            );
+                        }
+                        "neptuneAnalyticsConfiguration" => {
+                            builder = builder.set_neptune_analytics_configuration(
+                                crate::protocol_serde::shape_neptune_analytics_configuration::de_neptune_analytics_configuration(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

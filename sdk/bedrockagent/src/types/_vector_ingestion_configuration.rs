@@ -10,6 +10,8 @@ pub struct VectorIngestionConfiguration {
     pub custom_transformation_configuration: ::std::option::Option<crate::types::CustomTransformationConfiguration>,
     /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub parsing_configuration: ::std::option::Option<crate::types::ParsingConfiguration>,
+    /// <p>The context enrichment configuration used for ingestion of the data into the vector store.</p>
+    pub context_enrichment_configuration: ::std::option::Option<crate::types::ContextEnrichmentConfiguration>,
 }
 impl VectorIngestionConfiguration {
     /// <p>Details about how to chunk the documents in the data source. A <i>chunk</i> refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried.</p>
@@ -23,6 +25,10 @@ impl VectorIngestionConfiguration {
     /// <p>Configurations for a parser to use for parsing documents in your data source. If you exclude this field, the default parser will be used.</p>
     pub fn parsing_configuration(&self) -> ::std::option::Option<&crate::types::ParsingConfiguration> {
         self.parsing_configuration.as_ref()
+    }
+    /// <p>The context enrichment configuration used for ingestion of the data into the vector store.</p>
+    pub fn context_enrichment_configuration(&self) -> ::std::option::Option<&crate::types::ContextEnrichmentConfiguration> {
+        self.context_enrichment_configuration.as_ref()
     }
 }
 impl VectorIngestionConfiguration {
@@ -39,6 +45,7 @@ pub struct VectorIngestionConfigurationBuilder {
     pub(crate) chunking_configuration: ::std::option::Option<crate::types::ChunkingConfiguration>,
     pub(crate) custom_transformation_configuration: ::std::option::Option<crate::types::CustomTransformationConfiguration>,
     pub(crate) parsing_configuration: ::std::option::Option<crate::types::ParsingConfiguration>,
+    pub(crate) context_enrichment_configuration: ::std::option::Option<crate::types::ContextEnrichmentConfiguration>,
 }
 impl VectorIngestionConfigurationBuilder {
     /// <p>Details about how to chunk the documents in the data source. A <i>chunk</i> refers to an excerpt from a data source that is returned when the knowledge base that it belongs to is queried.</p>
@@ -83,12 +90,27 @@ impl VectorIngestionConfigurationBuilder {
     pub fn get_parsing_configuration(&self) -> &::std::option::Option<crate::types::ParsingConfiguration> {
         &self.parsing_configuration
     }
+    /// <p>The context enrichment configuration used for ingestion of the data into the vector store.</p>
+    pub fn context_enrichment_configuration(mut self, input: crate::types::ContextEnrichmentConfiguration) -> Self {
+        self.context_enrichment_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The context enrichment configuration used for ingestion of the data into the vector store.</p>
+    pub fn set_context_enrichment_configuration(mut self, input: ::std::option::Option<crate::types::ContextEnrichmentConfiguration>) -> Self {
+        self.context_enrichment_configuration = input;
+        self
+    }
+    /// <p>The context enrichment configuration used for ingestion of the data into the vector store.</p>
+    pub fn get_context_enrichment_configuration(&self) -> &::std::option::Option<crate::types::ContextEnrichmentConfiguration> {
+        &self.context_enrichment_configuration
+    }
     /// Consumes the builder and constructs a [`VectorIngestionConfiguration`](crate::types::VectorIngestionConfiguration).
     pub fn build(self) -> crate::types::VectorIngestionConfiguration {
         crate::types::VectorIngestionConfiguration {
             chunking_configuration: self.chunking_configuration,
             custom_transformation_configuration: self.custom_transformation_configuration,
             parsing_configuration: self.parsing_configuration,
+            context_enrichment_configuration: self.context_enrichment_configuration,
         }
     }
 }

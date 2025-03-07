@@ -123,20 +123,6 @@ impl InvokeInlineAgentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
-    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.session_id(input.into());
-        self
-    }
-    /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
-    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_session_id(input);
-        self
-    }
-    /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
-    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_session_id()
-    }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to encrypt your inline agent.</p>
     pub fn customer_encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_encryption_key_arn(input.into());
@@ -150,74 +136,6 @@ impl InvokeInlineAgentFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services KMS key to use to encrypt your inline agent.</p>
     pub fn get_customer_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_customer_encryption_key_arn()
-    }
-    /// <p>Specifies whether to end the session with the inline agent or not.</p>
-    pub fn end_session(mut self, input: bool) -> Self {
-        self.inner = self.inner.end_session(input);
-        self
-    }
-    /// <p>Specifies whether to end the session with the inline agent or not.</p>
-    pub fn set_end_session(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_end_session(input);
-        self
-    }
-    /// <p>Specifies whether to end the session with the inline agent or not.</p>
-    pub fn get_end_session(&self) -> &::std::option::Option<bool> {
-        self.inner.get_end_session()
-    }
-    /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using trace</a>.</p>
-    pub fn enable_trace(mut self, input: bool) -> Self {
-        self.inner = self.inner.enable_trace(input);
-        self
-    }
-    /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using trace</a>.</p>
-    pub fn set_enable_trace(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_enable_trace(input);
-        self
-    }
-    /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using trace</a>.</p>
-    pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
-        self.inner.get_enable_trace()
-    }
-    /// <p>The prompt text to send to the agent.</p><note>
-    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
-    /// </note>
-    pub fn input_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.input_text(input.into());
-        self
-    }
-    /// <p>The prompt text to send to the agent.</p><note>
-    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
-    /// </note>
-    pub fn set_input_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_input_text(input);
-        self
-    }
-    /// <p>The prompt text to send to the agent.</p><note>
-    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
-    /// </note>
-    pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_input_text()
-    }
-    /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
-    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
-    /// </note>
-    pub fn inline_session_state(mut self, input: crate::types::InlineSessionState) -> Self {
-        self.inner = self.inner.inline_session_state(input);
-        self
-    }
-    /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
-    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
-    /// </note>
-    pub fn set_inline_session_state(mut self, input: ::std::option::Option<crate::types::InlineSessionState>) -> Self {
-        self.inner = self.inner.set_inline_session_state(input);
-        self
-    }
-    /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
-    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
-    /// </note>
-    pub fn get_inline_session_state(&self) -> &::std::option::Option<crate::types::InlineSessionState> {
-        self.inner.get_inline_session_state()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids.html#model-ids-arns">model identifier (ID)</a> of the model to use for orchestration by the inline agent. For example, <code>meta.llama3-1-70b-instruct-v1:0</code>.</p>
     pub fn foundation_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -330,19 +248,100 @@ impl InvokeInlineAgentFluentBuilder {
     pub fn get_prompt_override_configuration(&self) -> &::std::option::Option<crate::types::PromptOverrideConfiguration> {
         self.inner.get_prompt_override_configuration()
     }
-    /// <p>Model settings for the request.</p>
-    pub fn bedrock_model_configurations(mut self, input: crate::types::InlineBedrockModelConfigurations) -> Self {
-        self.inner = self.inner.bedrock_model_configurations(input);
+    /// <p>Defines how the inline collaborator agent handles information across multiple collaborator agents to coordinate a final response. The inline collaborator agent can also be the supervisor.</p>
+    pub fn agent_collaboration(mut self, input: crate::types::AgentCollaboration) -> Self {
+        self.inner = self.inner.agent_collaboration(input);
         self
     }
-    /// <p>Model settings for the request.</p>
-    pub fn set_bedrock_model_configurations(mut self, input: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>) -> Self {
-        self.inner = self.inner.set_bedrock_model_configurations(input);
+    /// <p>Defines how the inline collaborator agent handles information across multiple collaborator agents to coordinate a final response. The inline collaborator agent can also be the supervisor.</p>
+    pub fn set_agent_collaboration(mut self, input: ::std::option::Option<crate::types::AgentCollaboration>) -> Self {
+        self.inner = self.inner.set_agent_collaboration(input);
         self
     }
-    /// <p>Model settings for the request.</p>
-    pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
-        self.inner.get_bedrock_model_configurations()
+    /// <p>Defines how the inline collaborator agent handles information across multiple collaborator agents to coordinate a final response. The inline collaborator agent can also be the supervisor.</p>
+    pub fn get_agent_collaboration(&self) -> &::std::option::Option<crate::types::AgentCollaboration> {
+        self.inner.get_agent_collaboration()
+    }
+    ///
+    /// Appends an item to `collaboratorConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_collaborator_configurations`](Self::set_collaborator_configurations).
+    ///
+    /// <p>Settings for an inline agent collaborator called with <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.</p>
+    pub fn collaborator_configurations(mut self, input: crate::types::CollaboratorConfiguration) -> Self {
+        self.inner = self.inner.collaborator_configurations(input);
+        self
+    }
+    /// <p>Settings for an inline agent collaborator called with <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.</p>
+    pub fn set_collaborator_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CollaboratorConfiguration>>) -> Self {
+        self.inner = self.inner.set_collaborator_configurations(input);
+        self
+    }
+    /// <p>Settings for an inline agent collaborator called with <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeInlineAgent.html">InvokeInlineAgent</a>.</p>
+    pub fn get_collaborator_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CollaboratorConfiguration>> {
+        self.inner.get_collaborator_configurations()
+    }
+    /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_id(input);
+        self
+    }
+    /// <p>The unique identifier of the session. Use the same value across requests to continue the same conversation.</p>
+    pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_id()
+    }
+    /// <p>Specifies whether to end the session with the inline agent or not.</p>
+    pub fn end_session(mut self, input: bool) -> Self {
+        self.inner = self.inner.end_session(input);
+        self
+    }
+    /// <p>Specifies whether to end the session with the inline agent or not.</p>
+    pub fn set_end_session(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_end_session(input);
+        self
+    }
+    /// <p>Specifies whether to end the session with the inline agent or not.</p>
+    pub fn get_end_session(&self) -> &::std::option::Option<bool> {
+        self.inner.get_end_session()
+    }
+    /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using trace</a>.</p>
+    pub fn enable_trace(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_trace(input);
+        self
+    }
+    /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using trace</a>.</p>
+    pub fn set_enable_trace(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_trace(input);
+        self
+    }
+    /// <p>Specifies whether to turn on the trace or not to track the agent's reasoning process. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/trace-events.html">Using trace</a>.</p>
+    pub fn get_enable_trace(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_trace()
+    }
+    /// <p>The prompt text to send to the agent.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
+    pub fn input_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.input_text(input.into());
+        self
+    }
+    /// <p>The prompt text to send to the agent.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
+    pub fn set_input_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_input_text(input);
+        self
+    }
+    /// <p>The prompt text to send to the agent.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
+    pub fn get_input_text(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_input_text()
     }
     /// <p>Specifies the configurations for streaming.</p><note>
     /// <p>To use agent streaming, you need permissions to perform the <code>bedrock:InvokeModelWithResponseStream</code> action.</p>
@@ -363,5 +362,58 @@ impl InvokeInlineAgentFluentBuilder {
     /// </note>
     pub fn get_streaming_configurations(&self) -> &::std::option::Option<crate::types::StreamingConfigurations> {
         self.inner.get_streaming_configurations()
+    }
+    /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
+    pub fn inline_session_state(mut self, input: crate::types::InlineSessionState) -> Self {
+        self.inner = self.inner.inline_session_state(input);
+        self
+    }
+    /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
+    pub fn set_inline_session_state(mut self, input: ::std::option::Option<crate::types::InlineSessionState>) -> Self {
+        self.inner = self.inner.set_inline_session_state(input);
+        self
+    }
+    /// <p>Parameters that specify the various attributes of a sessions. You can include attributes for the session or prompt or, if you configured an action group to return control, results from invocation of the action group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
+    /// <p>If you include <code>returnControlInvocationResults</code> in the <code>sessionState</code> field, the <code>inputText</code> field will be ignored.</p>
+    /// </note>
+    pub fn get_inline_session_state(&self) -> &::std::option::Option<crate::types::InlineSessionState> {
+        self.inner.get_inline_session_state()
+    }
+    ///
+    /// Appends an item to `collaborators`.
+    ///
+    /// To override the contents of this collection use [`set_collaborators`](Self::set_collaborators).
+    ///
+    /// <p>List of collaborator inline agents.</p>
+    pub fn collaborators(mut self, input: crate::types::Collaborator) -> Self {
+        self.inner = self.inner.collaborators(input);
+        self
+    }
+    /// <p>List of collaborator inline agents.</p>
+    pub fn set_collaborators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Collaborator>>) -> Self {
+        self.inner = self.inner.set_collaborators(input);
+        self
+    }
+    /// <p>List of collaborator inline agents.</p>
+    pub fn get_collaborators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Collaborator>> {
+        self.inner.get_collaborators()
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn bedrock_model_configurations(mut self, input: crate::types::InlineBedrockModelConfigurations) -> Self {
+        self.inner = self.inner.bedrock_model_configurations(input);
+        self
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn set_bedrock_model_configurations(mut self, input: ::std::option::Option<crate::types::InlineBedrockModelConfigurations>) -> Self {
+        self.inner = self.inner.set_bedrock_model_configurations(input);
+        self
+    }
+    /// <p>Model settings for the request.</p>
+    pub fn get_bedrock_model_configurations(&self) -> &::std::option::Option<crate::types::InlineBedrockModelConfigurations> {
+        self.inner.get_bedrock_model_configurations()
     }
 }

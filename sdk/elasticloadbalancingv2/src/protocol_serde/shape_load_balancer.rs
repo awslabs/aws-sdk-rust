@@ -198,6 +198,16 @@ pub fn de_load_balancer(
                 builder = builder.set_enable_prefix_for_ipv6_source_nat(var_15);
             }
             ,
+            s if s.matches("IpamPools") /* IpamPools com.amazonaws.elasticloadbalancingv2#LoadBalancer$IpamPools */ =>  {
+                let var_16 =
+                    Some(
+                        crate::protocol_serde::shape_ipam_pools::de_ipam_pools(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_pools(var_16);
+            }
+            ,
             _ => {}
         }
     }

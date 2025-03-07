@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGraphUsingImportTaskInput {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub graph_name: ::std::option::Option<::std::string::String>,
     /// <p>Adds metadata tags to the new graph. These tags can also be used with cost allocation reporting, or used in a Condition statement in an IAM policy.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -25,7 +25,7 @@ pub struct CreateGraphUsingImportTaskInput {
     /// <p>The maximum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 1024, or the approved upper limit for your account.</p>
     /// <p>If both the minimum and maximum values are specified, the final <code>provisioned-memory</code> will be chosen per the actual size of your imported data. If neither value is specified, 128 m-NCUs are used.</p>
     pub max_provisioned_memory: ::std::option::Option<i32>,
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub min_provisioned_memory: ::std::option::Option<i32>,
     /// <p>If set to <code>true</code>, the task halts when an import error is encountered. If set to <code>false</code>, the task skips the data that caused the error and continues if possible.</p>
     pub fail_on_error: ::std::option::Option<bool>,
@@ -42,7 +42,7 @@ pub struct CreateGraphUsingImportTaskInput {
 }
 impl CreateGraphUsingImportTaskInput {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn graph_name(&self) -> ::std::option::Option<&str> {
         self.graph_name.as_deref()
     }
@@ -81,7 +81,7 @@ impl CreateGraphUsingImportTaskInput {
     pub fn max_provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.max_provisioned_memory
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn min_provisioned_memory(&self) -> ::std::option::Option<i32> {
         self.min_provisioned_memory
     }
@@ -140,20 +140,20 @@ pub struct CreateGraphUsingImportTaskInputBuilder {
 }
 impl CreateGraphUsingImportTaskInputBuilder {
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     /// This field is required.
     pub fn graph_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.graph_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn set_graph_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.graph_name = input;
         self
     }
     /// <p>A name for the new Neptune Analytics graph to be created.</p>
-    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens.</p>
+    /// <p>The name must contain from 1 to 63 letters, numbers, or hyphens, and its first character must be a letter. It cannot end with a hyphen or contain two consecutive hyphens. Only lowercase letters are allowed.</p>
     pub fn get_graph_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.graph_name
     }
@@ -284,17 +284,17 @@ impl CreateGraphUsingImportTaskInputBuilder {
     pub fn get_max_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.max_provisioned_memory
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn min_provisioned_memory(mut self, input: i32) -> Self {
         self.min_provisioned_memory = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn set_min_provisioned_memory(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_provisioned_memory = input;
         self
     }
-    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 128</p>
+    /// <p>The minimum provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph. Default: 16</p>
     pub fn get_min_provisioned_memory(&self) -> &::std::option::Option<i32> {
         &self.min_provisioned_memory
     }

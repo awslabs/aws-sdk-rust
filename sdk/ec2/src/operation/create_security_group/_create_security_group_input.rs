@@ -7,8 +7,8 @@ pub struct CreateSecurityGroupInput {
     /// <p>Constraints: Up to 255 characters in length</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the security group.</p>
-    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>The name of the security group. Names are case-insensitive and must be unique within the VPC.</p>
+    /// <p>Constraints: Up to 255 characters in length. Can't start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC. Required for a nondefault VPC.</p>
@@ -25,8 +25,8 @@ impl CreateSecurityGroupInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The name of the security group.</p>
-    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>The name of the security group. Names are case-insensitive and must be unique within the VPC.</p>
+    /// <p>Constraints: Up to 255 characters in length. Can't start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
@@ -85,23 +85,23 @@ impl CreateSecurityGroupInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The name of the security group.</p>
-    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>The name of the security group. Names are case-insensitive and must be unique within the VPC.</p>
+    /// <p>Constraints: Up to 255 characters in length. Can't start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     /// This field is required.
     pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the security group.</p>
-    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>The name of the security group. Names are case-insensitive and must be unique within the VPC.</p>
+    /// <p>Constraints: Up to 255 characters in length. Can't start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
-    /// <p>The name of the security group.</p>
-    /// <p>Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.</p>
+    /// <p>The name of the security group. Names are case-insensitive and must be unique within the VPC.</p>
+    /// <p>Constraints: Up to 255 characters in length. Can't start with <code>sg-</code>.</p>
     /// <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@\[\]+=&amp;;{}!$*</p>
     pub fn get_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_name

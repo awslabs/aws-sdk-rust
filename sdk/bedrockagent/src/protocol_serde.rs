@@ -383,6 +383,8 @@ pub(crate) mod shape_chunking_configuration;
 
 pub(crate) mod shape_confluence_data_source_configuration;
 
+pub(crate) mod shape_context_enrichment_configuration;
+
 pub(crate) mod shape_custom_document_identifier;
 
 pub(crate) mod shape_custom_transformation_configuration;
@@ -424,6 +426,8 @@ pub(crate) mod shape_knowledge_base_document_detail;
 pub(crate) mod shape_knowledge_base_summary;
 
 pub(crate) mod shape_mongo_db_atlas_configuration;
+
+pub(crate) mod shape_neptune_analytics_configuration;
 
 pub(crate) mod shape_open_search_serverless_configuration;
 
@@ -477,6 +481,8 @@ pub(crate) mod shape_bedrock_data_automation_configuration;
 
 pub(crate) mod shape_bedrock_foundation_model_configuration;
 
+pub(crate) mod shape_bedrock_foundation_model_context_enrichment_configuration;
+
 pub(crate) mod shape_chat_prompt_template_configuration;
 
 pub(crate) mod shape_confluence_crawler_configuration;
@@ -514,6 +520,8 @@ pub(crate) mod shape_intermediate_storage;
 pub(crate) mod shape_metadata_attribute;
 
 pub(crate) mod shape_mongo_db_atlas_field_mapping;
+
+pub(crate) mod shape_neptune_analytics_field_mapping;
 
 pub(crate) mod shape_open_search_serverless_field_mapping;
 
@@ -574,6 +582,8 @@ pub(crate) mod shape_cyclic_connection_flow_validation_details;
 pub(crate) mod shape_duplicate_condition_expression_flow_validation_details;
 
 pub(crate) mod shape_duplicate_connections_flow_validation_details;
+
+pub(crate) mod shape_enrichment_strategy_configuration;
 
 pub(crate) mod shape_flow_conditional_connection_configuration;
 

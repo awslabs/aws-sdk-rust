@@ -63,6 +63,12 @@ where
                         "callerChain" => {
                             builder = builder.set_caller_chain(crate::protocol_serde::shape_caller_chain::de_caller_chain(tokens)?);
                         }
+                        "eventTime" => {
+                            builder = builder.set_event_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
                         "collaboratorName" => {
                             builder = builder.set_collaborator_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

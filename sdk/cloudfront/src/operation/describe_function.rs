@@ -264,7 +264,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeFunct
 pub enum DescribeFunctionError {
     /// <p>The function does not exist.</p>
     NoSuchFunctionExists(crate::types::error::NoSuchFunctionExists),
-    /// <p>This operation is not supported in this region.</p>
+    /// <p>This operation is not supported in this Amazon Web Services Region.</p>
     UnsupportedOperation(crate::types::error::UnsupportedOperation),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

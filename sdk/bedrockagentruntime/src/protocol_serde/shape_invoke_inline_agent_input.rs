@@ -15,71 +15,98 @@ pub fn ser_invoke_inline_agent_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.bedrock_model_configurations {
+    if let Some(var_5) = &input.agent_collaboration {
+        object.key("agentCollaboration").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.bedrock_model_configurations {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("bedrockModelConfigurations").start_object();
-        crate::protocol_serde::shape_inline_bedrock_model_configurations::ser_inline_bedrock_model_configurations(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("bedrockModelConfigurations").start_object();
+        crate::protocol_serde::shape_inline_bedrock_model_configurations::ser_inline_bedrock_model_configurations(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.customer_encryption_key_arn {
-        object.key("customerEncryptionKeyArn").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.enable_trace {
-        object.key("enableTrace").boolean(*var_8);
-    }
-    if let Some(var_9) = &input.end_session {
-        object.key("endSession").boolean(*var_9);
-    }
-    if let Some(var_10) = &input.foundation_model {
-        object.key("foundationModel").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.guardrail_configuration {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("guardrailConfiguration").start_object();
-        crate::protocol_serde::shape_guardrail_configuration_with_arn::ser_guardrail_configuration_with_arn(&mut object_12, var_11)?;
-        object_12.finish();
-    }
-    if let Some(var_13) = &input.idle_session_ttl_in_seconds {
-        object.key("idleSessionTTLInSeconds").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
-        );
-    }
-    if let Some(var_14) = &input.inline_session_state {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("inlineSessionState").start_object();
-        crate::protocol_serde::shape_inline_session_state::ser_inline_session_state(&mut object_15, var_14)?;
-        object_15.finish();
-    }
-    if let Some(var_16) = &input.input_text {
-        object.key("inputText").string(var_16.as_str());
-    }
-    if let Some(var_17) = &input.instruction {
-        object.key("instruction").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.knowledge_bases {
-        let mut array_19 = object.key("knowledgeBases").start_array();
-        for item_20 in var_18 {
+    if let Some(var_8) = &input.collaborator_configurations {
+        let mut array_9 = object.key("collaboratorConfigurations").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_knowledge_base::ser_knowledge_base(&mut object_21, item_20)?;
-                object_21.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_collaborator_configuration::ser_collaborator_configuration(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_19.finish();
+        array_9.finish();
     }
-    if let Some(var_22) = &input.prompt_override_configuration {
-        #[allow(unused_mut)]
-        let mut object_23 = object.key("promptOverrideConfiguration").start_object();
-        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_23, var_22)?;
-        object_23.finish();
+    if let Some(var_12) = &input.collaborators {
+        let mut array_13 = object.key("collaborators").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_collaborator::ser_collaborator(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
     }
-    if let Some(var_24) = &input.streaming_configurations {
+    if let Some(var_16) = &input.customer_encryption_key_arn {
+        object.key("customerEncryptionKeyArn").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.enable_trace {
+        object.key("enableTrace").boolean(*var_17);
+    }
+    if let Some(var_18) = &input.end_session {
+        object.key("endSession").boolean(*var_18);
+    }
+    if let Some(var_19) = &input.foundation_model {
+        object.key("foundationModel").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.guardrail_configuration {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("streamingConfigurations").start_object();
-        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_21 = object.key("guardrailConfiguration").start_object();
+        crate::protocol_serde::shape_guardrail_configuration_with_arn::ser_guardrail_configuration_with_arn(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.idle_session_ttl_in_seconds {
+        object.key("idleSessionTTLInSeconds").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
+        );
+    }
+    if let Some(var_23) = &input.inline_session_state {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("inlineSessionState").start_object();
+        crate::protocol_serde::shape_inline_session_state::ser_inline_session_state(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.input_text {
+        object.key("inputText").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.instruction {
+        object.key("instruction").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.knowledge_bases {
+        let mut array_28 = object.key("knowledgeBases").start_array();
+        for item_29 in var_27 {
+            {
+                #[allow(unused_mut)]
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_knowledge_base::ser_knowledge_base(&mut object_30, item_29)?;
+                object_30.finish();
+            }
+        }
+        array_28.finish();
+    }
+    if let Some(var_31) = &input.prompt_override_configuration {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("promptOverrideConfiguration").start_object();
+        crate::protocol_serde::shape_prompt_override_configuration::ser_prompt_override_configuration(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.streaming_configurations {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("streamingConfigurations").start_object();
+        crate::protocol_serde::shape_streaming_configurations::ser_streaming_configurations(&mut object_34, var_33)?;
+        object_34.finish();
     }
     Ok(())
 }

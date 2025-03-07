@@ -79,6 +79,11 @@ pub fn ser_create_load_balancer_input_input_input(
     if let Some(var_32) = &input.enable_prefix_for_ipv6_source_nat {
         scope_31.string(var_32.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_33 = writer.prefix("IpamPools");
+    if let Some(var_34) = &input.ipam_pools {
+        crate::protocol_serde::shape_ipam_pools::ser_ipam_pools(scope_33, var_34)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

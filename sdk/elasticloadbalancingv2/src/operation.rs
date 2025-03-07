@@ -106,6 +106,9 @@ pub mod get_trust_store_revocation_content;
 /// Types for the `ModifyCapacityReservation` operation.
 pub mod modify_capacity_reservation;
 
+/// Types for the `ModifyIpPools` operation.
+pub mod modify_ip_pools;
+
 /// Types for the `ModifyListener` operation.
 pub mod modify_listener;
 

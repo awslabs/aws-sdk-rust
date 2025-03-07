@@ -38,6 +38,8 @@ pub struct CreateLoadBalancerInput {
     pub customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     /// <p>\[Network Load Balancers with UDP listeners\] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be dualstack. The default value is off.</p>
     pub enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub ipam_pools: ::std::option::Option<crate::types::IpamPools>,
 }
 impl CreateLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
@@ -103,6 +105,10 @@ impl CreateLoadBalancerInput {
     pub fn enable_prefix_for_ipv6_source_nat(&self) -> ::std::option::Option<&crate::types::EnablePrefixForIpv6SourceNatEnum> {
         self.enable_prefix_for_ipv6_source_nat.as_ref()
     }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn ipam_pools(&self) -> ::std::option::Option<&crate::types::IpamPools> {
+        self.ipam_pools.as_ref()
+    }
 }
 impl CreateLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
@@ -125,6 +131,7 @@ pub struct CreateLoadBalancerInputBuilder {
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) customer_owned_ipv4_pool: ::std::option::Option<::std::string::String>,
     pub(crate) enable_prefix_for_ipv6_source_nat: ::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum>,
+    pub(crate) ipam_pools: ::std::option::Option<crate::types::IpamPools>,
 }
 impl CreateLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
@@ -337,6 +344,20 @@ impl CreateLoadBalancerInputBuilder {
     pub fn get_enable_prefix_for_ipv6_source_nat(&self) -> &::std::option::Option<crate::types::EnablePrefixForIpv6SourceNatEnum> {
         &self.enable_prefix_for_ipv6_source_nat
     }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn ipam_pools(mut self, input: crate::types::IpamPools) -> Self {
+        self.ipam_pools = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn set_ipam_pools(mut self, input: ::std::option::Option<crate::types::IpamPools>) -> Self {
+        self.ipam_pools = input;
+        self
+    }
+    /// <p>\[Application Load Balancers\] The IPAM pools to use with the load balancer.</p>
+    pub fn get_ipam_pools(&self) -> &::std::option::Option<crate::types::IpamPools> {
+        &self.ipam_pools
+    }
     /// Consumes the builder and constructs a [`CreateLoadBalancerInput`](crate::operation::create_load_balancer::CreateLoadBalancerInput).
     pub fn build(
         self,
@@ -353,6 +374,7 @@ impl CreateLoadBalancerInputBuilder {
             ip_address_type: self.ip_address_type,
             customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             enable_prefix_for_ipv6_source_nat: self.enable_prefix_for_ipv6_source_nat,
+            ipam_pools: self.ipam_pools,
         })
     }
 }
