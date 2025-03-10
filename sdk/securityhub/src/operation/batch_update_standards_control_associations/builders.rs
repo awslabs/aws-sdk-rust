@@ -118,11 +118,13 @@ impl BatchUpdateStandardsControlAssociationsFluentBuilder {
     /// To override the contents of this collection use [`set_standards_control_association_updates`](Self::set_standards_control_association_updates).
     ///
     /// <p>Updates the enablement status of a security control in a specified standard.</p>
+    /// <p>Calls to this operation return a <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the standard subscription for the control has <code>StandardsControlsUpdatable</code> value <code>NOT_READY_FOR_UPDATES</code>.</p>
     pub fn standards_control_association_updates(mut self, input: crate::types::StandardsControlAssociationUpdate) -> Self {
         self.inner = self.inner.standards_control_association_updates(input);
         self
     }
     /// <p>Updates the enablement status of a security control in a specified standard.</p>
+    /// <p>Calls to this operation return a <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the standard subscription for the control has <code>StandardsControlsUpdatable</code> value <code>NOT_READY_FOR_UPDATES</code>.</p>
     pub fn set_standards_control_association_updates(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>>,
@@ -131,6 +133,7 @@ impl BatchUpdateStandardsControlAssociationsFluentBuilder {
         self
     }
     /// <p>Updates the enablement status of a security control in a specified standard.</p>
+    /// <p>Calls to this operation return a <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the standard subscription for the control has <code>StandardsControlsUpdatable</code> value <code>NOT_READY_FOR_UPDATES</code>.</p>
     pub fn get_standards_control_association_updates(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsControlAssociationUpdate>> {

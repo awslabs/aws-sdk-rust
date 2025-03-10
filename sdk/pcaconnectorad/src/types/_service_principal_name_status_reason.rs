@@ -17,6 +17,7 @@
 ///     ServicePrincipalNameStatusReason::DirectoryResourceNotFound => { /* ... */ },
 ///     ServicePrincipalNameStatusReason::InternalFailure => { /* ... */ },
 ///     ServicePrincipalNameStatusReason::SpnExistsOnDifferentAdObject => { /* ... */ },
+///     ServicePrincipalNameStatusReason::SpnLimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +56,8 @@ pub enum ServicePrincipalNameStatusReason {
     InternalFailure,
     #[allow(missing_docs)] // documentation missing in model
     SpnExistsOnDifferentAdObject,
+    #[allow(missing_docs)] // documentation missing in model
+    SpnLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for ServicePrincipalNameStatusReason {
             "DIRECTORY_RESOURCE_NOT_FOUND" => ServicePrincipalNameStatusReason::DirectoryResourceNotFound,
             "INTERNAL_FAILURE" => ServicePrincipalNameStatusReason::InternalFailure,
             "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT" => ServicePrincipalNameStatusReason::SpnExistsOnDifferentAdObject,
+            "SPN_LIMIT_EXCEEDED" => ServicePrincipalNameStatusReason::SpnLimitExceeded,
             other => ServicePrincipalNameStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,6 +91,7 @@ impl ServicePrincipalNameStatusReason {
             ServicePrincipalNameStatusReason::DirectoryResourceNotFound => "DIRECTORY_RESOURCE_NOT_FOUND",
             ServicePrincipalNameStatusReason::InternalFailure => "INTERNAL_FAILURE",
             ServicePrincipalNameStatusReason::SpnExistsOnDifferentAdObject => "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT",
+            ServicePrincipalNameStatusReason::SpnLimitExceeded => "SPN_LIMIT_EXCEEDED",
             ServicePrincipalNameStatusReason::Unknown(value) => value.as_str(),
         }
     }
@@ -98,6 +103,7 @@ impl ServicePrincipalNameStatusReason {
             "DIRECTORY_RESOURCE_NOT_FOUND",
             "INTERNAL_FAILURE",
             "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT",
+            "SPN_LIMIT_EXCEEDED",
         ]
     }
 }
@@ -126,6 +132,7 @@ impl ::std::fmt::Display for ServicePrincipalNameStatusReason {
             ServicePrincipalNameStatusReason::DirectoryResourceNotFound => write!(f, "DIRECTORY_RESOURCE_NOT_FOUND"),
             ServicePrincipalNameStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             ServicePrincipalNameStatusReason::SpnExistsOnDifferentAdObject => write!(f, "SPN_EXISTS_ON_DIFFERENT_AD_OBJECT"),
+            ServicePrincipalNameStatusReason::SpnLimitExceeded => write!(f, "SPN_LIMIT_EXCEEDED"),
             ServicePrincipalNameStatusReason::Unknown(value) => write!(f, "{}", value),
         }
     }

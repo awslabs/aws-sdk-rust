@@ -3,14 +3,17 @@ pub fn ser_vpc_information(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::VpcInformation,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.ip_address_type {
+        object.key("IpAddressType").string(var_1.as_str());
+    }
     {
-        let mut array_1 = object.key("SecurityGroupIds").start_array();
-        for item_2 in &input.security_group_ids {
+        let mut array_2 = object.key("SecurityGroupIds").start_array();
+        for item_3 in &input.security_group_ids {
             {
-                array_1.value().string(item_2.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
     Ok(())
 }
@@ -30,6 +33,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "IpAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "SecurityGroupIds" => {
                             builder = builder
                                 .set_security_group_ids(crate::protocol_serde::shape_security_group_id_list::de_security_group_id_list(tokens)?);

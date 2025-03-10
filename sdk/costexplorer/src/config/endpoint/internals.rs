@@ -76,6 +76,82 @@ pub(super) fn resolve_endpoint(
                     }
                 }
             }
+            if (partition_result.name()) == ("aws-iso") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://ce.us-iso-east-1.c2s.ic.gov".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "ce".to_string().into());
+                                    out.insert("signingRegion".to_string(), "us-iso-east-1".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
+            if (partition_result.name()) == ("aws-iso-b") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://ce.us-isob-east-1.sc2s.sgov.gov".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "ce".to_string().into());
+                                    out.insert("signingRegion".to_string(), "us-isob-east-1".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
+            if (partition_result.name()) == ("aws-iso-e") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://ce.eu-isoe-west-1.cloud.adc-e.uk".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "ce".to_string().into());
+                                    out.insert("signingRegion".to_string(), "eu-isoe-west-1".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
+            if (partition_result.name()) == ("aws-iso-f") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://ce.us-isof-south-1.csp.hci.ic.gov".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "ce".to_string().into());
+                                    out.insert("signingRegion".to_string(), "us-isof-south-1".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {

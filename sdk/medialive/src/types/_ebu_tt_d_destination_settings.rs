@@ -6,29 +6,41 @@
 pub struct EbuTtDDestinationSettings {
     /// Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata.
     pub copyright_holder: ::std::option::Option<::std::string::String>,
-    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). ENABLED: Fill with the captions background color (as specified in the input captions). DISABLED: Leave the gap unfilled
     pub fill_line_gap: ::std::option::Option<crate::types::EbuTtDFillLineGapControl>,
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if style_control is set to include. (If style_control is set to exclude, the font family is always set to monospaced.) Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as Arial), or a generic font family (such as serif), or default (to let the downstream player choose the font). Or leave blank to set the family to monospace. Note that you can specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
     pub font_family: ::std::option::Option<::std::string::String>,
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information to include in the font data that is attached to the EBU-TT captions. INCLUDE: Take the style information from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. EXCLUDE: Set the font family to monospaced. Do not include any other style information.
     pub style_control: ::std::option::Option<crate::types::EbuTtDDestinationStyleControl>,
+    /// Specifies the default font size as a percentage of the computed cell size. Valid only if the defaultLineHeight is also set. If you leave this field empty, the default font size is 80% of the cell size.
+    pub default_font_size: ::std::option::Option<i32>,
+    /// Documentation update needed
+    pub default_line_height: ::std::option::Option<i32>,
 }
 impl EbuTtDDestinationSettings {
     /// Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata.
     pub fn copyright_holder(&self) -> ::std::option::Option<&str> {
         self.copyright_holder.as_deref()
     }
-    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). ENABLED: Fill with the captions background color (as specified in the input captions). DISABLED: Leave the gap unfilled
     pub fn fill_line_gap(&self) -> ::std::option::Option<&crate::types::EbuTtDFillLineGapControl> {
         self.fill_line_gap.as_ref()
     }
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if style_control is set to include. (If style_control is set to exclude, the font family is always set to monospaced.) Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as Arial), or a generic font family (such as serif), or default (to let the downstream player choose the font). Or leave blank to set the family to monospace. Note that you can specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
     pub fn font_family(&self) -> ::std::option::Option<&str> {
         self.font_family.as_deref()
     }
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information to include in the font data that is attached to the EBU-TT captions. INCLUDE: Take the style information from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. EXCLUDE: Set the font family to monospaced. Do not include any other style information.
     pub fn style_control(&self) -> ::std::option::Option<&crate::types::EbuTtDDestinationStyleControl> {
         self.style_control.as_ref()
+    }
+    /// Specifies the default font size as a percentage of the computed cell size. Valid only if the defaultLineHeight is also set. If you leave this field empty, the default font size is 80% of the cell size.
+    pub fn default_font_size(&self) -> ::std::option::Option<i32> {
+        self.default_font_size
+    }
+    /// Documentation update needed
+    pub fn default_line_height(&self) -> ::std::option::Option<i32> {
+        self.default_line_height
     }
 }
 impl EbuTtDDestinationSettings {
@@ -46,6 +58,8 @@ pub struct EbuTtDDestinationSettingsBuilder {
     pub(crate) fill_line_gap: ::std::option::Option<crate::types::EbuTtDFillLineGapControl>,
     pub(crate) font_family: ::std::option::Option<::std::string::String>,
     pub(crate) style_control: ::std::option::Option<crate::types::EbuTtDDestinationStyleControl>,
+    pub(crate) default_font_size: ::std::option::Option<i32>,
+    pub(crate) default_line_height: ::std::option::Option<i32>,
 }
 impl EbuTtDDestinationSettingsBuilder {
     /// Complete this field if you want to include the name of the copyright holder in the copyright tag in the captions metadata.
@@ -62,47 +76,75 @@ impl EbuTtDDestinationSettingsBuilder {
     pub fn get_copyright_holder(&self) -> &::std::option::Option<::std::string::String> {
         &self.copyright_holder
     }
-    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). ENABLED: Fill with the captions background color (as specified in the input captions). DISABLED: Leave the gap unfilled
     pub fn fill_line_gap(mut self, input: crate::types::EbuTtDFillLineGapControl) -> Self {
         self.fill_line_gap = ::std::option::Option::Some(input);
         self
     }
-    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). ENABLED: Fill with the captions background color (as specified in the input captions). DISABLED: Leave the gap unfilled
     pub fn set_fill_line_gap(mut self, input: ::std::option::Option<crate::types::EbuTtDFillLineGapControl>) -> Self {
         self.fill_line_gap = input;
         self
     }
-    /// Specifies how to handle the gap between the lines (in multi-line captions). - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the gap unfilled.
+    /// Specifies how to handle the gap between the lines (in multi-line captions). ENABLED: Fill with the captions background color (as specified in the input captions). DISABLED: Leave the gap unfilled
     pub fn get_fill_line_gap(&self) -> &::std::option::Option<crate::types::EbuTtDFillLineGapControl> {
         &self.fill_line_gap
     }
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if style_control is set to include. (If style_control is set to exclude, the font family is always set to monospaced.) Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as Arial), or a generic font family (such as serif), or default (to let the downstream player choose the font). Or leave blank to set the family to monospace. Note that you can specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
     pub fn font_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.font_family = ::std::option::Option::Some(input.into());
         self
     }
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if style_control is set to include. (If style_control is set to exclude, the font family is always set to monospaced.) Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as Arial), or a generic font family (such as serif), or default (to let the downstream player choose the font). Or leave blank to set the family to monospace. Note that you can specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
     pub fn set_font_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.font_family = input;
         self
     }
-    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to "monospaced". (If styleControl is set to exclude, the font family is always set to "monospaced".) You specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size. - Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font). - Leave blank to set the family to “monospace”.
+    /// Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if style_control is set to include. (If style_control is set to exclude, the font family is always set to monospaced.) Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as Arial), or a generic font family (such as serif), or default (to let the downstream player choose the font). Or leave blank to set the family to monospace. Note that you can specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.
     pub fn get_font_family(&self) -> &::std::option::Option<::std::string::String> {
         &self.font_family
     }
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information to include in the font data that is attached to the EBU-TT captions. INCLUDE: Take the style information from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. EXCLUDE: Set the font family to monospaced. Do not include any other style information.
     pub fn style_control(mut self, input: crate::types::EbuTtDDestinationStyleControl) -> Self {
         self.style_control = ::std::option::Option::Some(input);
         self
     }
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information to include in the font data that is attached to the EBU-TT captions. INCLUDE: Take the style information from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. EXCLUDE: Set the font family to monospaced. Do not include any other style information.
     pub fn set_style_control(mut self, input: ::std::option::Option<crate::types::EbuTtDDestinationStyleControl>) -> Self {
         self.style_control = input;
         self
     }
-    /// Specifies the style information (font color, font position, and so on) to include in the font data that is attached to the EBU-TT captions. - include: Take the style information (font color, font position, and so on) from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. - exclude: In the font data attached to the EBU-TT captions, set the font family to "monospaced". Do not include any other style information.
+    /// Specifies the style information to include in the font data that is attached to the EBU-TT captions. INCLUDE: Take the style information from the source captions and include that information in the font data attached to the EBU-TT captions. This option is valid only if the source captions are Embedded or Teletext. EXCLUDE: Set the font family to monospaced. Do not include any other style information.
     pub fn get_style_control(&self) -> &::std::option::Option<crate::types::EbuTtDDestinationStyleControl> {
         &self.style_control
+    }
+    /// Specifies the default font size as a percentage of the computed cell size. Valid only if the defaultLineHeight is also set. If you leave this field empty, the default font size is 80% of the cell size.
+    pub fn default_font_size(mut self, input: i32) -> Self {
+        self.default_font_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specifies the default font size as a percentage of the computed cell size. Valid only if the defaultLineHeight is also set. If you leave this field empty, the default font size is 80% of the cell size.
+    pub fn set_default_font_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.default_font_size = input;
+        self
+    }
+    /// Specifies the default font size as a percentage of the computed cell size. Valid only if the defaultLineHeight is also set. If you leave this field empty, the default font size is 80% of the cell size.
+    pub fn get_default_font_size(&self) -> &::std::option::Option<i32> {
+        &self.default_font_size
+    }
+    /// Documentation update needed
+    pub fn default_line_height(mut self, input: i32) -> Self {
+        self.default_line_height = ::std::option::Option::Some(input);
+        self
+    }
+    /// Documentation update needed
+    pub fn set_default_line_height(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.default_line_height = input;
+        self
+    }
+    /// Documentation update needed
+    pub fn get_default_line_height(&self) -> &::std::option::Option<i32> {
+        &self.default_line_height
     }
     /// Consumes the builder and constructs a [`EbuTtDDestinationSettings`](crate::types::EbuTtDDestinationSettings).
     pub fn build(self) -> crate::types::EbuTtDDestinationSettings {
@@ -111,6 +153,8 @@ impl EbuTtDDestinationSettingsBuilder {
             fill_line_gap: self.fill_line_gap,
             font_family: self.font_family,
             style_control: self.style_control,
+            default_font_size: self.default_font_size,
+            default_line_height: self.default_line_height,
         }
     }
 }

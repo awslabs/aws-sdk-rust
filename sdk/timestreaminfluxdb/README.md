@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-timestreaminfluxdb = "1.48.0"
+aws-sdk-timestreaminfluxdb = "1.48.1"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -40,40 +40,43 @@ pub fn ser_create_contact_input_input(
     if let Some(var_12) = &input.name {
         object.key("Name").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.references {
+    if let Some(var_13) = &input.previous_contact_id {
+        object.key("PreviousContactId").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.references {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("References").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("References").start_object();
+        for (key_16, value_17) in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = object_14.key(key_15.as_str()).start_object();
-                crate::protocol_serde::shape_reference::ser_reference(&mut object_17, value_16)?;
-                object_17.finish();
+                let mut object_18 = object_15.key(key_16.as_str()).start_object();
+                crate::protocol_serde::shape_reference::ser_reference(&mut object_18, value_17)?;
+                object_18.finish();
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
-    if let Some(var_18) = &input.related_contact_id {
-        object.key("RelatedContactId").string(var_18.as_str());
+    if let Some(var_19) = &input.related_contact_id {
+        object.key("RelatedContactId").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.segment_attributes {
+    if let Some(var_20) = &input.segment_attributes {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("SegmentAttributes").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_21 = object.key("SegmentAttributes").start_object();
+        for (key_22, value_23) in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_23 = object_20.key(key_21.as_str()).start_object();
-                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_23, value_22)?;
-                object_23.finish();
+                let mut object_24 = object_21.key(key_22.as_str()).start_object();
+                crate::protocol_serde::shape_segment_attribute_value::ser_segment_attribute_value(&mut object_24, value_23)?;
+                object_24.finish();
             }
         }
-        object_20.finish();
+        object_21.finish();
     }
-    if let Some(var_24) = &input.user_info {
+    if let Some(var_25) = &input.user_info {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("UserInfo").start_object();
-        crate::protocol_serde::shape_user_info::ser_user_info(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("UserInfo").start_object();
+        crate::protocol_serde::shape_user_info::ser_user_info(&mut object_26, var_25)?;
+        object_26.finish();
     }
     Ok(())
 }

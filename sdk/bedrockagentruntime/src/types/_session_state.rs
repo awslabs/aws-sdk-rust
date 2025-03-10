@@ -4,9 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionState {
-    /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
+    /// <p>Contains attributes that persist across a session and the values of those attributes. If <code>sessionAttributes</code> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, it will be forwarded to all agent collaborators.</p>
     pub session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Contains attributes that persist across a prompt and the values of those attributes. These attributes replace the $prompt_session_attributes$ placeholder variable in the orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
+    /// <p>Contains attributes that persist across a prompt and the values of those attributes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>In orchestration prompt template, these attributes replace the $prompt_session_attributes$ placeholder variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p></li>
+    /// <li>
+    /// <p>In <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, the <code>promptSessionAttributes</code> will only be used by supervisor agent when $prompt_session_attributes$ is present in prompt template.</p></li>
+    /// </ul>
     pub prompt_session_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Contains information about the results from the action group invocation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return control to the agent developer</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control session context</a>.</p><note>
     /// <p>If you include this field, the <code>inputText</code> field will be ignored.</p>
@@ -22,11 +28,17 @@ pub struct SessionState {
     pub conversation_history: ::std::option::Option<crate::types::ConversationHistory>,
 }
 impl SessionState {
-    /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
+    /// <p>Contains attributes that persist across a session and the values of those attributes. If <code>sessionAttributes</code> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, it will be forwarded to all agent collaborators.</p>
     pub fn session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.session_attributes.as_ref()
     }
-    /// <p>Contains attributes that persist across a prompt and the values of those attributes. These attributes replace the $prompt_session_attributes$ placeholder variable in the orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
+    /// <p>Contains attributes that persist across a prompt and the values of those attributes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>In orchestration prompt template, these attributes replace the $prompt_session_attributes$ placeholder variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p></li>
+    /// <li>
+    /// <p>In <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, the <code>promptSessionAttributes</code> will only be used by supervisor agent when $prompt_session_attributes$ is present in prompt template.</p></li>
+    /// </ul>
     pub fn prompt_session_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.prompt_session_attributes.as_ref()
     }
@@ -83,7 +95,7 @@ impl SessionStateBuilder {
     ///
     /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
     ///
-    /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
+    /// <p>Contains attributes that persist across a session and the values of those attributes. If <code>sessionAttributes</code> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, it will be forwarded to all agent collaborators.</p>
     pub fn session_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -94,7 +106,7 @@ impl SessionStateBuilder {
         self.session_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
+    /// <p>Contains attributes that persist across a session and the values of those attributes. If <code>sessionAttributes</code> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, it will be forwarded to all agent collaborators.</p>
     pub fn set_session_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -102,7 +114,7 @@ impl SessionStateBuilder {
         self.session_attributes = input;
         self
     }
-    /// <p>Contains attributes that persist across a session and the values of those attributes.</p>
+    /// <p>Contains attributes that persist across a session and the values of those attributes. If <code>sessionAttributes</code> are passed to a supervisor agent in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, it will be forwarded to all agent collaborators.</p>
     pub fn get_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.session_attributes
     }
@@ -110,7 +122,13 @@ impl SessionStateBuilder {
     ///
     /// To override the contents of this collection use [`set_prompt_session_attributes`](Self::set_prompt_session_attributes).
     ///
-    /// <p>Contains attributes that persist across a prompt and the values of those attributes. These attributes replace the $prompt_session_attributes$ placeholder variable in the orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
+    /// <p>Contains attributes that persist across a prompt and the values of those attributes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>In orchestration prompt template, these attributes replace the $prompt_session_attributes$ placeholder variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p></li>
+    /// <li>
+    /// <p>In <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, the <code>promptSessionAttributes</code> will only be used by supervisor agent when $prompt_session_attributes$ is present in prompt template.</p></li>
+    /// </ul>
     pub fn prompt_session_attributes(
         mut self,
         k: impl ::std::convert::Into<::std::string::String>,
@@ -121,7 +139,13 @@ impl SessionStateBuilder {
         self.prompt_session_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Contains attributes that persist across a prompt and the values of those attributes. These attributes replace the $prompt_session_attributes$ placeholder variable in the orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
+    /// <p>Contains attributes that persist across a prompt and the values of those attributes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>In orchestration prompt template, these attributes replace the $prompt_session_attributes$ placeholder variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p></li>
+    /// <li>
+    /// <p>In <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, the <code>promptSessionAttributes</code> will only be used by supervisor agent when $prompt_session_attributes$ is present in prompt template.</p></li>
+    /// </ul>
     pub fn set_prompt_session_attributes(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -129,7 +153,13 @@ impl SessionStateBuilder {
         self.prompt_session_attributes = input;
         self
     }
-    /// <p>Contains attributes that persist across a prompt and the values of those attributes. These attributes replace the $prompt_session_attributes$ placeholder variable in the orchestration prompt template. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p>
+    /// <p>Contains attributes that persist across a prompt and the values of those attributes.</p>
+    /// <ul>
+    /// <li>
+    /// <p>In orchestration prompt template, these attributes replace the $prompt_session_attributes$ placeholder variable. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt template placeholder variables</a>.</p></li>
+    /// <li>
+    /// <p>In <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-multi-agent-collaboration.html">multi-agent collaboration</a>, the <code>promptSessionAttributes</code> will only be used by supervisor agent when $prompt_session_attributes$ is present in prompt template.</p></li>
+    /// </ul>
     pub fn get_prompt_session_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.prompt_session_attributes
     }

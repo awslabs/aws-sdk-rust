@@ -119,6 +119,8 @@ pub use crate::types::_connector_status::ConnectorStatus;
 
 pub use crate::types::_vpc_information::VpcInformation;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_connector_summary::ConnectorSummary;
 
 mod _access_control_entry;
@@ -178,6 +180,8 @@ mod _general_flags_v3;
 mod _general_flags_v4;
 
 mod _hash_algorithm;
+
+mod _ip_address_type;
 
 mod _key_spec;
 

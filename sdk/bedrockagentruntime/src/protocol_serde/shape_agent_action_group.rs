@@ -30,5 +30,15 @@ pub fn ser_agent_action_group(
         crate::protocol_serde::shape_function_schema::ser_function_schema(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.parent_action_group_signature_params {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("parentActionGroupSignatureParams").start_object();
+        for (key_11, value_12) in var_9 {
+            {
+                object_10.key(key_11.as_str()).string(value_12.as_str());
+            }
+        }
+        object_10.finish();
+    }
     Ok(())
 }

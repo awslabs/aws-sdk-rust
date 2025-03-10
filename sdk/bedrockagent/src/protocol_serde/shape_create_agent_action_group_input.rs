@@ -36,5 +36,15 @@ pub fn ser_create_agent_action_group_input_input(
     if let Some(var_11) = &input.parent_action_group_signature {
         object.key("parentActionGroupSignature").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.parent_action_group_signature_params {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("parentActionGroupSignatureParams").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                object_13.key(key_14.as_str()).string(value_15.as_str());
+            }
+        }
+        object_13.finish();
+    }
     Ok(())
 }

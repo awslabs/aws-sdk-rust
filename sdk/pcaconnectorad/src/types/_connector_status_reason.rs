@@ -12,8 +12,11 @@
 /// ```text
 /// # let connectorstatusreason = unimplemented!();
 /// match connectorstatusreason {
+///     ConnectorStatusReason::CaCertificateRegistrationFailed => { /* ... */ },
 ///     ConnectorStatusReason::DirectoryAccessDenied => { /* ... */ },
+///     ConnectorStatusReason::InsufficientFreeAddresses => { /* ... */ },
 ///     ConnectorStatusReason::InternalFailure => { /* ... */ },
+///     ConnectorStatusReason::InvalidSubnetIpProtocol => { /* ... */ },
 ///     ConnectorStatusReason::PrivatecaAccessDenied => { /* ... */ },
 ///     ConnectorStatusReason::PrivatecaResourceNotFound => { /* ... */ },
 ///     ConnectorStatusReason::SecurityGroupNotInVpc => { /* ... */ },
@@ -49,9 +52,15 @@
 )]
 pub enum ConnectorStatusReason {
     #[allow(missing_docs)] // documentation missing in model
+    CaCertificateRegistrationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DirectoryAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
+    InsufficientFreeAddresses,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidSubnetIpProtocol,
     #[allow(missing_docs)] // documentation missing in model
     PrivatecaAccessDenied,
     #[allow(missing_docs)] // documentation missing in model
@@ -71,8 +80,11 @@ pub enum ConnectorStatusReason {
 impl ::std::convert::From<&str> for ConnectorStatusReason {
     fn from(s: &str) -> Self {
         match s {
+            "CA_CERTIFICATE_REGISTRATION_FAILED" => ConnectorStatusReason::CaCertificateRegistrationFailed,
             "DIRECTORY_ACCESS_DENIED" => ConnectorStatusReason::DirectoryAccessDenied,
+            "INSUFFICIENT_FREE_ADDRESSES" => ConnectorStatusReason::InsufficientFreeAddresses,
             "INTERNAL_FAILURE" => ConnectorStatusReason::InternalFailure,
+            "INVALID_SUBNET_IP_PROTOCOL" => ConnectorStatusReason::InvalidSubnetIpProtocol,
             "PRIVATECA_ACCESS_DENIED" => ConnectorStatusReason::PrivatecaAccessDenied,
             "PRIVATECA_RESOURCE_NOT_FOUND" => ConnectorStatusReason::PrivatecaResourceNotFound,
             "SECURITY_GROUP_NOT_IN_VPC" => ConnectorStatusReason::SecurityGroupNotInVpc,
@@ -94,8 +106,11 @@ impl ConnectorStatusReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectorStatusReason::CaCertificateRegistrationFailed => "CA_CERTIFICATE_REGISTRATION_FAILED",
             ConnectorStatusReason::DirectoryAccessDenied => "DIRECTORY_ACCESS_DENIED",
+            ConnectorStatusReason::InsufficientFreeAddresses => "INSUFFICIENT_FREE_ADDRESSES",
             ConnectorStatusReason::InternalFailure => "INTERNAL_FAILURE",
+            ConnectorStatusReason::InvalidSubnetIpProtocol => "INVALID_SUBNET_IP_PROTOCOL",
             ConnectorStatusReason::PrivatecaAccessDenied => "PRIVATECA_ACCESS_DENIED",
             ConnectorStatusReason::PrivatecaResourceNotFound => "PRIVATECA_RESOURCE_NOT_FOUND",
             ConnectorStatusReason::SecurityGroupNotInVpc => "SECURITY_GROUP_NOT_IN_VPC",
@@ -108,8 +123,11 @@ impl ConnectorStatusReason {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CA_CERTIFICATE_REGISTRATION_FAILED",
             "DIRECTORY_ACCESS_DENIED",
+            "INSUFFICIENT_FREE_ADDRESSES",
             "INTERNAL_FAILURE",
+            "INVALID_SUBNET_IP_PROTOCOL",
             "PRIVATECA_ACCESS_DENIED",
             "PRIVATECA_RESOURCE_NOT_FOUND",
             "SECURITY_GROUP_NOT_IN_VPC",
@@ -139,8 +157,11 @@ impl ConnectorStatusReason {
 impl ::std::fmt::Display for ConnectorStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectorStatusReason::CaCertificateRegistrationFailed => write!(f, "CA_CERTIFICATE_REGISTRATION_FAILED"),
             ConnectorStatusReason::DirectoryAccessDenied => write!(f, "DIRECTORY_ACCESS_DENIED"),
+            ConnectorStatusReason::InsufficientFreeAddresses => write!(f, "INSUFFICIENT_FREE_ADDRESSES"),
             ConnectorStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
+            ConnectorStatusReason::InvalidSubnetIpProtocol => write!(f, "INVALID_SUBNET_IP_PROTOCOL"),
             ConnectorStatusReason::PrivatecaAccessDenied => write!(f, "PRIVATECA_ACCESS_DENIED"),
             ConnectorStatusReason::PrivatecaResourceNotFound => write!(f, "PRIVATECA_RESOURCE_NOT_FOUND"),
             ConnectorStatusReason::SecurityGroupNotInVpc => write!(f, "SECURITY_GROUP_NOT_IN_VPC"),

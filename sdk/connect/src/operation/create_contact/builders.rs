@@ -139,17 +139,17 @@ impl CreateContactFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.related_contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_related_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_related_contact_id()
     }
@@ -342,5 +342,19 @@ impl CreateContactFluentBuilder {
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.inner.get_segment_attributes()
+    }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn previous_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.previous_contact_id(input.into());
+        self
+    }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_previous_contact_id(input);
+        self
+    }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_previous_contact_id()
     }
 }

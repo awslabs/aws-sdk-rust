@@ -15,7 +15,7 @@ pub struct FunctionResult {
     pub confirmation_state: ::std::option::Option<crate::types::ConfirmationState>,
     /// <p>The name of the function that was called.</p>
     pub function: ::std::option::Option<::std::string::String>,
-    /// <p>The response from the function call using the parameters. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response from the function call using the parameters. The response might be returned directly or from the Lambda function. Specify <code>TEXT</code> or <code>IMAGES</code>. The key of the object is the content type. You can only specify one type. If you specify <code>IMAGES</code>, you can specify only one image. You can specify images only when the function in the <code>returnControlInvocationResults</code> is a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     pub response_body: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
     /// <p>Controls the final response state returned to end user when API/Function execution failed. When this state is FAILURE, the request would fail with dependency failure exception. When this state is REPROMPT, the API/function response will be sent to model for re-prompt</p>
     pub response_state: ::std::option::Option<crate::types::ResponseState>,
@@ -36,7 +36,7 @@ impl FunctionResult {
     pub fn function(&self) -> ::std::option::Option<&str> {
         self.function.as_deref()
     }
-    /// <p>The response from the function call using the parameters. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response from the function call using the parameters. The response might be returned directly or from the Lambda function. Specify <code>TEXT</code> or <code>IMAGES</code>. The key of the object is the content type. You can only specify one type. If you specify <code>IMAGES</code>, you can specify only one image. You can specify images only when the function in the <code>returnControlInvocationResults</code> is a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     pub fn response_body(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContentBody>> {
         self.response_body.as_ref()
     }
@@ -115,14 +115,14 @@ impl FunctionResultBuilder {
     ///
     /// To override the contents of this collection use [`set_response_body`](Self::set_response_body).
     ///
-    /// <p>The response from the function call using the parameters. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response from the function call using the parameters. The response might be returned directly or from the Lambda function. Specify <code>TEXT</code> or <code>IMAGES</code>. The key of the object is the content type. You can only specify one type. If you specify <code>IMAGES</code>, you can specify only one image. You can specify images only when the function in the <code>returnControlInvocationResults</code> is a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     pub fn response_body(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ContentBody) -> Self {
         let mut hash_map = self.response_body.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.response_body = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The response from the function call using the parameters. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response from the function call using the parameters. The response might be returned directly or from the Lambda function. Specify <code>TEXT</code> or <code>IMAGES</code>. The key of the object is the content type. You can only specify one type. If you specify <code>IMAGES</code>, you can specify only one image. You can specify images only when the function in the <code>returnControlInvocationResults</code> is a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     pub fn set_response_body(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>>,
@@ -130,7 +130,7 @@ impl FunctionResultBuilder {
         self.response_body = input;
         self
     }
-    /// <p>The response from the function call using the parameters. The key of the object is the content type (currently, only <code>TEXT</code> is supported). The response may be returned directly or from the Lambda function.</p>
+    /// <p>The response from the function call using the parameters. The response might be returned directly or from the Lambda function. Specify <code>TEXT</code> or <code>IMAGES</code>. The key of the object is the content type. You can only specify one type. If you specify <code>IMAGES</code>, you can specify only one image. You can specify images only when the function in the <code>returnControlInvocationResults</code> is a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     pub fn get_response_body(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContentBody>> {
         &self.response_body
     }

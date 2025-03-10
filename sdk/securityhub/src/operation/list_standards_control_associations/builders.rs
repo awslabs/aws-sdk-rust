@@ -23,6 +23,7 @@ impl crate::operation::list_standards_control_associations::builders::ListStanda
 /// Fluent builder constructing a request to `ListStandardsControlAssociations`.
 ///
 /// <p>Specifies whether a control is currently enabled or disabled in each enabled standard in the calling account.</p>
+/// <p>This operation omits standards control associations for standard subscriptions where <code>StandardsControlsUpdatable</code> has value <code>NOT_READY_FOR_UPDATES</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStandardsControlAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -40,6 +40,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "StandardsControlsUpdatable" => {
+                            builder = builder.set_standards_controls_updatable(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::StandardsControlsUpdatable::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "StandardsStatusReason" => {
                             builder = builder.set_standards_status_reason(
                                 crate::protocol_serde::shape_standards_status_reason::de_standards_status_reason(tokens)?,

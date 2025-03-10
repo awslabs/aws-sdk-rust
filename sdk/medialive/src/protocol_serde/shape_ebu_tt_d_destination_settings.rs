@@ -15,6 +15,18 @@ pub fn ser_ebu_tt_d_destination_settings(
     if let Some(var_4) = &input.style_control {
         object.key("styleControl").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.default_font_size {
+        object.key("defaultFontSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.default_line_height {
+        object.key("defaultLineHeight").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
     Ok(())
 }
 
@@ -58,6 +70,20 @@ where
                             builder = builder.set_style_control(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::EbuTtDDestinationStyleControl::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "defaultFontSize" => {
+                            builder = builder.set_default_font_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "defaultLineHeight" => {
+                            builder = builder.set_default_line_height(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
                                     .transpose()?,
                             );
                         }

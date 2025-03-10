@@ -9,8 +9,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetrieveAndGenerateConfiguration {
-    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p>
+    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p><note>
     /// <p>If you choose to use <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet models for knowledge bases are supported.</p>
+    /// </note>
     pub r#type: crate::types::RetrieveAndGenerateType,
     /// <p>Contains details about the knowledge base for retrieving information and generating responses.</p>
     pub knowledge_base_configuration: ::std::option::Option<crate::types::KnowledgeBaseRetrieveAndGenerateConfiguration>,
@@ -18,8 +19,9 @@ pub struct RetrieveAndGenerateConfiguration {
     pub external_sources_configuration: ::std::option::Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration>,
 }
 impl RetrieveAndGenerateConfiguration {
-    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p>
+    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p><note>
     /// <p>If you choose to use <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet models for knowledge bases are supported.</p>
+    /// </note>
     pub fn r#type(&self) -> &crate::types::RetrieveAndGenerateType {
         &self.r#type
     }
@@ -48,21 +50,24 @@ pub struct RetrieveAndGenerateConfigurationBuilder {
     pub(crate) external_sources_configuration: ::std::option::Option<crate::types::ExternalSourcesRetrieveAndGenerateConfiguration>,
 }
 impl RetrieveAndGenerateConfigurationBuilder {
-    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p>
+    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p><note>
     /// <p>If you choose to use <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet models for knowledge bases are supported.</p>
+    /// </note>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::RetrieveAndGenerateType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p>
+    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p><note>
     /// <p>If you choose to use <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet models for knowledge bases are supported.</p>
+    /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RetrieveAndGenerateType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p>
+    /// <p>The type of resource that contains your data for retrieving information and generating responses.</p><note>
     /// <p>If you choose to use <code>EXTERNAL_SOURCES</code>, then currently only Anthropic Claude 3 Sonnet models for knowledge bases are supported.</p>
+    /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateType> {
         &self.r#type
     }

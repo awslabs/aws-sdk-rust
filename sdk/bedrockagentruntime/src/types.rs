@@ -285,6 +285,12 @@ pub use crate::types::_response_state::ResponseState;
 
 pub use crate::types::_content_body::ContentBody;
 
+pub use crate::types::_image_input::ImageInput;
+
+pub use crate::types::_image_input_source::ImageInputSource;
+
+pub use crate::types::_image_input_format::ImageInputFormat;
+
 pub use crate::types::_confirmation_state::ConfirmationState;
 
 pub use crate::types::_api_result::ApiResult;
@@ -732,6 +738,12 @@ mod _guardrail_word_policy_assessment;
 mod _image_block;
 
 mod _image_format;
+
+mod _image_input;
+
+mod _image_input_format;
+
+mod _image_input_source;
 
 mod _image_source;
 

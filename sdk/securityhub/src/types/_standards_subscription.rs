@@ -25,6 +25,15 @@ pub struct StandardsSubscription {
     /// <p><code>FAILED</code> - Standard could not be disabled.</p></li>
     /// </ul>
     pub standards_status: ::std::option::Option<crate::types::StandardsStatus>,
+    /// <p>Indicates whether the controls associated with this standards subscription can be viewed and updated.</p>
+    /// <p>The values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>READY_FOR_UPDATES</code> - Controls associated with this standards subscription can be viewed and updated.</p></li>
+    /// <li>
+    /// <p><code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards subscription cannot be retrieved or updated yet. Security Hub is still processing a request to create the controls.</p></li>
+    /// </ul>
+    pub standards_controls_updatable: ::std::option::Option<crate::types::StandardsControlsUpdatable>,
     /// <p>The reason for the current status.</p>
     pub standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
 }
@@ -58,6 +67,17 @@ impl StandardsSubscription {
     pub fn standards_status(&self) -> ::std::option::Option<&crate::types::StandardsStatus> {
         self.standards_status.as_ref()
     }
+    /// <p>Indicates whether the controls associated with this standards subscription can be viewed and updated.</p>
+    /// <p>The values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>READY_FOR_UPDATES</code> - Controls associated with this standards subscription can be viewed and updated.</p></li>
+    /// <li>
+    /// <p><code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards subscription cannot be retrieved or updated yet. Security Hub is still processing a request to create the controls.</p></li>
+    /// </ul>
+    pub fn standards_controls_updatable(&self) -> ::std::option::Option<&crate::types::StandardsControlsUpdatable> {
+        self.standards_controls_updatable.as_ref()
+    }
     /// <p>The reason for the current status.</p>
     pub fn standards_status_reason(&self) -> ::std::option::Option<&crate::types::StandardsStatusReason> {
         self.standards_status_reason.as_ref()
@@ -78,6 +98,7 @@ pub struct StandardsSubscriptionBuilder {
     pub(crate) standards_arn: ::std::option::Option<::std::string::String>,
     pub(crate) standards_input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) standards_status: ::std::option::Option<crate::types::StandardsStatus>,
+    pub(crate) standards_controls_updatable: ::std::option::Option<crate::types::StandardsControlsUpdatable>,
     pub(crate) standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
 }
 impl StandardsSubscriptionBuilder {
@@ -192,6 +213,41 @@ impl StandardsSubscriptionBuilder {
     pub fn get_standards_status(&self) -> &::std::option::Option<crate::types::StandardsStatus> {
         &self.standards_status
     }
+    /// <p>Indicates whether the controls associated with this standards subscription can be viewed and updated.</p>
+    /// <p>The values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>READY_FOR_UPDATES</code> - Controls associated with this standards subscription can be viewed and updated.</p></li>
+    /// <li>
+    /// <p><code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards subscription cannot be retrieved or updated yet. Security Hub is still processing a request to create the controls.</p></li>
+    /// </ul>
+    pub fn standards_controls_updatable(mut self, input: crate::types::StandardsControlsUpdatable) -> Self {
+        self.standards_controls_updatable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the controls associated with this standards subscription can be viewed and updated.</p>
+    /// <p>The values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>READY_FOR_UPDATES</code> - Controls associated with this standards subscription can be viewed and updated.</p></li>
+    /// <li>
+    /// <p><code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards subscription cannot be retrieved or updated yet. Security Hub is still processing a request to create the controls.</p></li>
+    /// </ul>
+    pub fn set_standards_controls_updatable(mut self, input: ::std::option::Option<crate::types::StandardsControlsUpdatable>) -> Self {
+        self.standards_controls_updatable = input;
+        self
+    }
+    /// <p>Indicates whether the controls associated with this standards subscription can be viewed and updated.</p>
+    /// <p>The values are as follows:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>READY_FOR_UPDATES</code> - Controls associated with this standards subscription can be viewed and updated.</p></li>
+    /// <li>
+    /// <p><code>NOT_READY_FOR_UPDATES</code> - Controls associated with this standards subscription cannot be retrieved or updated yet. Security Hub is still processing a request to create the controls.</p></li>
+    /// </ul>
+    pub fn get_standards_controls_updatable(&self) -> &::std::option::Option<crate::types::StandardsControlsUpdatable> {
+        &self.standards_controls_updatable
+    }
     /// <p>The reason for the current status.</p>
     pub fn standards_status_reason(mut self, input: crate::types::StandardsStatusReason) -> Self {
         self.standards_status_reason = ::std::option::Option::Some(input);
@@ -213,6 +269,7 @@ impl StandardsSubscriptionBuilder {
             standards_arn: self.standards_arn,
             standards_input: self.standards_input,
             standards_status: self.standards_status,
+            standards_controls_updatable: self.standards_controls_updatable,
             standards_status_reason: self.standards_status_reason,
         }
     }

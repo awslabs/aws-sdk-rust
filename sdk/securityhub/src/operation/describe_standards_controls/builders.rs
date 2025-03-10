@@ -24,6 +24,7 @@ impl crate::operation::describe_standards_controls::builders::DescribeStandardsC
 ///
 /// <p>Returns a list of security standards controls.</p>
 /// <p>For each control, the results include information about whether it is currently enabled, the severity, and a link to remediation information.</p>
+/// <p>This operation returns an empty list for standard subscriptions where <code>StandardsControlsUpdatable</code> has value <code>NOT_READY_FOR_UPDATES</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStandardsControlsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

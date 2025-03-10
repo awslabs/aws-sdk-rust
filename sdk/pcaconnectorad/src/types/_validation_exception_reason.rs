@@ -13,6 +13,7 @@
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
+///     ValidationExceptionReason::InvalidCaSubject => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPermission => { /* ... */ },
 ///     ValidationExceptionReason::InvalidState => { /* ... */ },
 ///     ValidationExceptionReason::MismatchedConnector => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidCaSubject,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPermission,
     #[allow(missing_docs)] // documentation missing in model
     InvalidState,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+            "INVALID_CA_SUBJECT" => ValidationExceptionReason::InvalidCaSubject,
             "INVALID_PERMISSION" => ValidationExceptionReason::InvalidPermission,
             "INVALID_STATE" => ValidationExceptionReason::InvalidState,
             "MISMATCHED_CONNECTOR" => ValidationExceptionReason::MismatchedConnector,
@@ -95,6 +99,7 @@ impl ValidationExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+            ValidationExceptionReason::InvalidCaSubject => "INVALID_CA_SUBJECT",
             ValidationExceptionReason::InvalidPermission => "INVALID_PERMISSION",
             ValidationExceptionReason::InvalidState => "INVALID_STATE",
             ValidationExceptionReason::MismatchedConnector => "MISMATCHED_CONNECTOR",
@@ -109,6 +114,7 @@ impl ValidationExceptionReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "FIELD_VALIDATION_FAILED",
+            "INVALID_CA_SUBJECT",
             "INVALID_PERMISSION",
             "INVALID_STATE",
             "MISMATCHED_CONNECTOR",
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FIELD_VALIDATION_FAILED"),
+            ValidationExceptionReason::InvalidCaSubject => write!(f, "INVALID_CA_SUBJECT"),
             ValidationExceptionReason::InvalidPermission => write!(f, "INVALID_PERMISSION"),
             ValidationExceptionReason::InvalidState => write!(f, "INVALID_STATE"),
             ValidationExceptionReason::MismatchedConnector => write!(f, "MISMATCHED_CONNECTOR"),

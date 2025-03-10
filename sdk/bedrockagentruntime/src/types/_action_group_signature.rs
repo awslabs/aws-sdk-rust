@@ -14,6 +14,9 @@
 /// match actiongroupsignature {
 ///     ActionGroupSignature::AmazonCodeinterpreter => { /* ... */ },
 ///     ActionGroupSignature::AmazonUserinput => { /* ... */ },
+///     ActionGroupSignature::AnthropicBash => { /* ... */ },
+///     ActionGroupSignature::AnthropicComputer => { /* ... */ },
+///     ActionGroupSignature::AnthropicTexteditor => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +49,12 @@ pub enum ActionGroupSignature {
     AmazonCodeinterpreter,
     #[allow(missing_docs)] // documentation missing in model
     AmazonUserinput,
+    #[allow(missing_docs)] // documentation missing in model
+    AnthropicBash,
+    #[allow(missing_docs)] // documentation missing in model
+    AnthropicComputer,
+    #[allow(missing_docs)] // documentation missing in model
+    AnthropicTexteditor,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +64,9 @@ impl ::std::convert::From<&str> for ActionGroupSignature {
         match s {
             "AMAZON.CodeInterpreter" => ActionGroupSignature::AmazonCodeinterpreter,
             "AMAZON.UserInput" => ActionGroupSignature::AmazonUserinput,
+            "ANTHROPIC.Bash" => ActionGroupSignature::AnthropicBash,
+            "ANTHROPIC.Computer" => ActionGroupSignature::AnthropicComputer,
+            "ANTHROPIC.TextEditor" => ActionGroupSignature::AnthropicTexteditor,
             other => ActionGroupSignature::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +84,21 @@ impl ActionGroupSignature {
         match self {
             ActionGroupSignature::AmazonCodeinterpreter => "AMAZON.CodeInterpreter",
             ActionGroupSignature::AmazonUserinput => "AMAZON.UserInput",
+            ActionGroupSignature::AnthropicBash => "ANTHROPIC.Bash",
+            ActionGroupSignature::AnthropicComputer => "ANTHROPIC.Computer",
+            ActionGroupSignature::AnthropicTexteditor => "ANTHROPIC.TextEditor",
             ActionGroupSignature::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AMAZON.CodeInterpreter", "AMAZON.UserInput"]
+        &[
+            "AMAZON.CodeInterpreter",
+            "AMAZON.UserInput",
+            "ANTHROPIC.Bash",
+            "ANTHROPIC.Computer",
+            "ANTHROPIC.TextEditor",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ActionGroupSignature {
@@ -102,6 +123,9 @@ impl ::std::fmt::Display for ActionGroupSignature {
         match self {
             ActionGroupSignature::AmazonCodeinterpreter => write!(f, "AMAZON.CodeInterpreter"),
             ActionGroupSignature::AmazonUserinput => write!(f, "AMAZON.UserInput"),
+            ActionGroupSignature::AnthropicBash => write!(f, "ANTHROPIC.Bash"),
+            ActionGroupSignature::AnthropicComputer => write!(f, "ANTHROPIC.Computer"),
+            ActionGroupSignature::AnthropicTexteditor => write!(f, "ANTHROPIC.TextEditor"),
             ActionGroupSignature::Unknown(value) => write!(f, "{}", value),
         }
     }

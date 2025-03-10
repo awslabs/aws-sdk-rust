@@ -23,6 +23,10 @@ pub struct AgentActionGroup {
     /// <p>If this field is set as <code>AMAZON.UserInput</code>, the agent can request the user for additional information when trying to complete a task. The <code>description</code>, <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields must be blank for this action group.</p>
     /// <p>During orchestration, if the agent determines that it needs to invoke an API in an action group, but doesn't have enough information to complete the API request, it will invoke this action group instead and return an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a> reprompting the user for more information.</p>
     pub parent_action_signature: ::std::option::Option<crate::types::ActionGroupSignature>,
+    /// <p>The configuration settings for a computer use action.</p><important>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// </important>
+    pub parent_action_group_signature_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action or the custom control method for handling the information elicited from the user.</p>
     pub action_group_executor: ::std::option::Option<crate::types::ActionGroupExecutor>,
     /// <p>Contains either details about the S3 object containing the OpenAPI schema for the action group or the JSON or YAML-formatted payload defining the schema. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action group OpenAPI schemas</a>.</p>
@@ -74,6 +78,14 @@ impl AgentActionGroup {
     pub fn parent_action_signature(&self) -> ::std::option::Option<&crate::types::ActionGroupSignature> {
         self.parent_action_signature.as_ref()
     }
+    /// <p>The configuration settings for a computer use action.</p><important>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// </important>
+    pub fn parent_action_group_signature_params(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.parent_action_group_signature_params.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action or the custom control method for handling the information elicited from the user.</p>
     pub fn action_group_executor(&self) -> ::std::option::Option<&crate::types::ActionGroupExecutor> {
         self.action_group_executor.as_ref()
@@ -111,6 +123,7 @@ pub struct AgentActionGroupBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) parent_action_signature: ::std::option::Option<crate::types::ActionGroupSignature>,
+    pub(crate) parent_action_group_signature_params: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) action_group_executor: ::std::option::Option<crate::types::ActionGroupExecutor>,
     pub(crate) api_schema: ::std::option::Option<crate::types::ApiSchema>,
     pub(crate) function_schema: ::std::option::Option<crate::types::FunctionSchema>,
@@ -252,6 +265,41 @@ impl AgentActionGroupBuilder {
     pub fn get_parent_action_signature(&self) -> &::std::option::Option<crate::types::ActionGroupSignature> {
         &self.parent_action_signature
     }
+    /// Adds a key-value pair to `parent_action_group_signature_params`.
+    ///
+    /// To override the contents of this collection use [`set_parent_action_group_signature_params`](Self::set_parent_action_group_signature_params).
+    ///
+    /// <p>The configuration settings for a computer use action.</p><important>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// </important>
+    pub fn parent_action_group_signature_params(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.parent_action_group_signature_params.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.parent_action_group_signature_params = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The configuration settings for a computer use action.</p><important>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// </important>
+    pub fn set_parent_action_group_signature_params(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.parent_action_group_signature_params = input;
+        self
+    }
+    /// <p>The configuration settings for a computer use action.</p><important>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// </important>
+    pub fn get_parent_action_group_signature_params(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.parent_action_group_signature_params
+    }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function containing the business logic that is carried out upon invoking the action or the custom control method for handling the information elicited from the user.</p>
     pub fn action_group_executor(mut self, input: crate::types::ActionGroupExecutor) -> Self {
         self.action_group_executor = ::std::option::Option::Some(input);
@@ -359,6 +407,7 @@ impl AgentActionGroupBuilder {
                 )
             })?,
             parent_action_signature: self.parent_action_signature,
+            parent_action_group_signature_params: self.parent_action_group_signature_params,
             action_group_executor: self.action_group_executor,
             api_schema: self.api_schema,
             function_schema: self.function_schema,

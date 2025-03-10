@@ -6,7 +6,7 @@
 pub struct DbInstanceSummary {
     /// <p>The service-generated unique identifier of the DB instance.</p>
     pub id: ::std::string::String,
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     pub name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the DB instance.</p>
     pub arn: ::std::string::String,
@@ -33,7 +33,7 @@ impl DbInstanceSummary {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -115,18 +115,18 @@ impl DbInstanceSummaryBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and Amazon Web Services CLI commands.</p>
+    /// <p>This customer-supplied name uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

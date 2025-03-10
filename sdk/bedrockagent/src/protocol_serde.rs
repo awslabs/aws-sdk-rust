@@ -363,6 +363,8 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_vector_ingestion_configuration;
 
+pub(crate) mod shape_action_group_signature_params;
+
 pub(crate) mod shape_action_group_summary;
 
 pub(crate) mod shape_agent_alias_history_events;

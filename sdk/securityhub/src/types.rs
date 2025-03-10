@@ -1393,6 +1393,8 @@ pub use crate::types::_standards_status_reason::StandardsStatusReason;
 
 pub use crate::types::_status_reason_code::StatusReasonCode;
 
+pub use crate::types::_standards_controls_updatable::StandardsControlsUpdatable;
+
 pub use crate::types::_standards_status::StandardsStatus;
 
 pub use crate::types::_standards_control::StandardsControl;
@@ -2818,6 +2820,8 @@ mod _standards_control_association_id;
 mod _standards_control_association_summary;
 
 mod _standards_control_association_update;
+
+mod _standards_controls_updatable;
 
 mod _standards_managed_by;
 

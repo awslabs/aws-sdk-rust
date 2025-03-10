@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcInformation {
+    /// <p>The VPC IP address type.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
     pub security_group_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl VpcInformation {
+    /// <p>The VPC IP address type.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The security groups used with the connector. You can use a maximum of 4 security groups with a connector.</p>
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
@@ -25,9 +31,24 @@ impl VpcInformation {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct VpcInformationBuilder {
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl VpcInformationBuilder {
+    /// <p>The VPC IP address type.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC IP address type.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The VPC IP address type.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// Appends an item to `security_group_ids`.
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
@@ -53,6 +74,7 @@ impl VpcInformationBuilder {
     /// - [`security_group_ids`](crate::types::builders::VpcInformationBuilder::security_group_ids)
     pub fn build(self) -> ::std::result::Result<crate::types::VpcInformation, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::VpcInformation {
+            ip_address_type: self.ip_address_type,
             security_group_ids: self.security_group_ids.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "security_group_ids",

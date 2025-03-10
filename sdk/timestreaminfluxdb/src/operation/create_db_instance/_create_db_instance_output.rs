@@ -39,7 +39,7 @@ pub struct CreateDbInstanceOutput {
     pub secondary_availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub influx_auth_parameters_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DbCluster to which this DbInstance belongs to.</p>
     pub db_cluster_id: ::std::option::Option<::std::string::String>,
@@ -126,7 +126,7 @@ impl CreateDbInstanceOutput {
     pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub fn influx_auth_parameters_secret_arn(&self) -> ::std::option::Option<&str> {
         self.influx_auth_parameters_secret_arn.as_deref()
     }
@@ -446,17 +446,17 @@ impl CreateDbInstanceOutputBuilder {
     pub fn get_log_delivery_configuration(&self) -> &::std::option::Option<crate::types::LogDeliveryConfiguration> {
         &self.log_delivery_configuration
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub fn influx_auth_parameters_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.influx_auth_parameters_secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub fn set_influx_auth_parameters_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.influx_auth_parameters_secret_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret containing the initial InfluxDB authorization parameters. The secret value is a JSON formatted key-value pair holding InfluxDB authorization values: organization, bucket, username, and password.</p>
     pub fn get_influx_auth_parameters_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.influx_auth_parameters_secret_arn
     }

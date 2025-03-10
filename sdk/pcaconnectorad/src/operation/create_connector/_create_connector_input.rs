@@ -7,7 +7,7 @@ pub struct CreateConnectorInput {
     pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the certificate authority being used.</p>
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub vpc_information: ::std::option::Option<crate::types::VpcInformation>,
     /// <p>Idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl CreateConnectorInput {
     pub fn certificate_authority_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_authority_arn.as_deref()
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub fn vpc_information(&self) -> ::std::option::Option<&crate::types::VpcInformation> {
         self.vpc_information.as_ref()
     }
@@ -84,18 +84,18 @@ impl CreateConnectorInputBuilder {
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_authority_arn
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     /// This field is required.
     pub fn vpc_information(mut self, input: crate::types::VpcInformation) -> Self {
         self.vpc_information = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub fn set_vpc_information(mut self, input: ::std::option::Option<crate::types::VpcInformation>) -> Self {
         self.vpc_information = input;
         self
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub fn get_vpc_information(&self) -> &::std::option::Option<crate::types::VpcInformation> {
         &self.vpc_information
     }

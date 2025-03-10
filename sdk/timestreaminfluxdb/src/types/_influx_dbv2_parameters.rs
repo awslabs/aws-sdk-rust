@@ -46,7 +46,7 @@ pub struct InfluxDBv2Parameters {
     /// <p>Default: 0</p>
     pub influxql_max_select_series: ::std::option::Option<i64>,
     /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
-    /// <p>Default: false</p>
+    /// <p>Default: true</p>
     pub pprof_disabled: ::std::option::Option<bool>,
     /// <p>Initial bytes of memory allocated for a query.</p>
     /// <p>Default: 0</p>
@@ -177,7 +177,7 @@ impl InfluxDBv2Parameters {
         self.influxql_max_select_series
     }
     /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
-    /// <p>Default: false</p>
+    /// <p>Default: true</p>
     pub fn pprof_disabled(&self) -> ::std::option::Option<bool> {
         self.pprof_disabled
     }
@@ -560,19 +560,19 @@ impl InfluxDBv2ParametersBuilder {
         &self.influxql_max_select_series
     }
     /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
-    /// <p>Default: false</p>
+    /// <p>Default: true</p>
     pub fn pprof_disabled(mut self, input: bool) -> Self {
         self.pprof_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
-    /// <p>Default: false</p>
+    /// <p>Default: true</p>
     pub fn set_pprof_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pprof_disabled = input;
         self
     }
     /// <p>Disable the /debug/pprof HTTP endpoint. This endpoint provides runtime profiling data and can be helpful when debugging.</p>
-    /// <p>Default: false</p>
+    /// <p>Default: true</p>
     pub fn get_pprof_disabled(&self) -> &::std::option::Option<bool> {
         &self.pprof_disabled
     }

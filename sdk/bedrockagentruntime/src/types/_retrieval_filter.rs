@@ -41,7 +41,13 @@ pub enum RetrievalFilter {
     /// <p>The following example would return data sources with an <code>animals</code> attribute that is a list containing a <code>cat</code> member (for example <code>\["dog", "cat"\]</code>).</p>
     /// <p><code>"listContains": { "key": "animals", "value": "cat" }</code></p>
     ListContains(crate::types::FilterAttribute),
-    /// <p>Knowledge base data sources that contain a metadata attribute whose name matches the <code>key</code> and whose value doesn't match the <code>value</code> in this object are returned.</p>
+    /// <p>Knowledge base data sources are returned when:</p>
+    /// <ul>
+    /// <li>
+    /// <p>It contains a metadata attribute whose name matches the <code>key</code> and whose value doesn't match the <code>value</code> in this object.</p></li>
+    /// <li>
+    /// <p>The key is not present in the document.</p></li>
+    /// </ul>
     /// <p>The following example would return data sources that don't contain an <code>animal</code> attribute whose value is <code>cat</code>.</p>
     /// <p><code>"notEquals": { "key": "animal", "value": "cat" }</code></p>
     NotEquals(crate::types::FilterAttribute),

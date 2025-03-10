@@ -11,11 +11,19 @@
 pub struct ContentBody {
     /// <p>The body of the API response.</p>
     pub body: ::std::option::Option<::std::string::String>,
+    /// <p>Lists details, including format and source, for the image in the response from the function call. You can specify only one image and the function in the <code>returnControlInvocationResults</code> must be a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    pub images: ::std::option::Option<::std::vec::Vec<crate::types::ImageInput>>,
 }
 impl ContentBody {
     /// <p>The body of the API response.</p>
     pub fn body(&self) -> ::std::option::Option<&str> {
         self.body.as_deref()
+    }
+    /// <p>Lists details, including format and source, for the image in the response from the function call. You can specify only one image and the function in the <code>returnControlInvocationResults</code> must be a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.images.is_none()`.
+    pub fn images(&self) -> &[crate::types::ImageInput] {
+        self.images.as_deref().unwrap_or_default()
     }
 }
 impl ContentBody {
@@ -30,6 +38,7 @@ impl ContentBody {
 #[non_exhaustive]
 pub struct ContentBodyBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
+    pub(crate) images: ::std::option::Option<::std::vec::Vec<crate::types::ImageInput>>,
 }
 impl ContentBodyBuilder {
     /// <p>The body of the API response.</p>
@@ -46,8 +55,31 @@ impl ContentBodyBuilder {
     pub fn get_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.body
     }
+    /// Appends an item to `images`.
+    ///
+    /// To override the contents of this collection use [`set_images`](Self::set_images).
+    ///
+    /// <p>Lists details, including format and source, for the image in the response from the function call. You can specify only one image and the function in the <code>returnControlInvocationResults</code> must be a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    pub fn images(mut self, input: crate::types::ImageInput) -> Self {
+        let mut v = self.images.unwrap_or_default();
+        v.push(input);
+        self.images = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Lists details, including format and source, for the image in the response from the function call. You can specify only one image and the function in the <code>returnControlInvocationResults</code> must be a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    pub fn set_images(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ImageInput>>) -> Self {
+        self.images = input;
+        self
+    }
+    /// <p>Lists details, including format and source, for the image in the response from the function call. You can specify only one image and the function in the <code>returnControlInvocationResults</code> must be a computer use action. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    pub fn get_images(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageInput>> {
+        &self.images
+    }
     /// Consumes the builder and constructs a [`ContentBody`](crate::types::ContentBody).
     pub fn build(self) -> crate::types::ContentBody {
-        crate::types::ContentBody { body: self.body }
+        crate::types::ContentBody {
+            body: self.body,
+            images: self.images,
+        }
     }
 }

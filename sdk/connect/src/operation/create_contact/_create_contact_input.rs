@@ -7,7 +7,7 @@ pub struct CreateContactInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
@@ -38,6 +38,8 @@ pub struct CreateContactInput {
     /// <p>To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with <code>SegmentAttributes</code> like { <code> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger": 135}}}}</code>.</p>
     /// </note>
     pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub previous_contact_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateContactInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -48,7 +50,7 @@ impl CreateContactInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(&self) -> ::std::option::Option<&str> {
         self.related_contact_id.as_deref()
     }
@@ -103,6 +105,10 @@ impl CreateContactInput {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         self.segment_attributes.as_ref()
     }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn previous_contact_id(&self) -> ::std::option::Option<&str> {
+        self.previous_contact_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -120,6 +126,7 @@ impl ::std::fmt::Debug for CreateContactInput {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("previous_contact_id", &self.previous_contact_id);
         formatter.finish()
     }
 }
@@ -147,6 +154,7 @@ pub struct CreateContactInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    pub(crate) previous_contact_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateContactInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -178,17 +186,17 @@ impl CreateContactInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn related_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.related_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn set_related_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.related_contact_id = input;
         self
     }
-    /// <p>The identifier of the contact in this instance of Amazon Connect.</p>
+    /// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the contact starting.</p>
     pub fn get_related_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.related_contact_id
     }
@@ -387,6 +395,20 @@ impl CreateContactInputBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
         &self.segment_attributes
     }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn previous_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.previous_contact_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn set_previous_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.previous_contact_id = input;
+        self
+    }
+    /// <p>The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Integrate Amazon Connect Contact Lens with external voice systems</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+    pub fn get_previous_contact_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_contact_id
+    }
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
     pub fn build(
         self,
@@ -405,6 +427,7 @@ impl CreateContactInputBuilder {
             name: self.name,
             description: self.description,
             segment_attributes: self.segment_attributes,
+            previous_contact_id: self.previous_contact_id,
         })
     }
 }
@@ -424,6 +447,7 @@ impl ::std::fmt::Debug for CreateContactInputBuilder {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("segment_attributes", &self.segment_attributes);
+        formatter.field("previous_contact_id", &self.previous_contact_id);
         formatter.finish()
     }
 }

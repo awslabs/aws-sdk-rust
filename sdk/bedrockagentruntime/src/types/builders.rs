@@ -203,6 +203,8 @@ pub use crate::types::_function_result::FunctionResultBuilder;
 
 pub use crate::types::_content_body::ContentBodyBuilder;
 
+pub use crate::types::_image_input::ImageInputBuilder;
+
 pub use crate::types::_api_result::ApiResultBuilder;
 
 pub use crate::types::_code_interpreter_invocation_input::CodeInterpreterInvocationInputBuilder;

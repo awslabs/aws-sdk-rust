@@ -528,3 +528,13 @@ pub(crate) fn function_result_correct_errors(
     }
     builder
 }
+
+pub(crate) fn image_input_correct_errors(mut builder: crate::types::builders::ImageInputBuilder) -> crate::types::builders::ImageInputBuilder {
+    if builder.format.is_none() {
+        builder.format = "no value was set".parse::<crate::types::ImageInputFormat>().ok()
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::ImageInputSource::Unknown)
+    }
+    builder
+}

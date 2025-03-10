@@ -136,17 +136,17 @@ impl CreateConnectorFluentBuilder {
     pub fn get_certificate_authority_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_authority_arn()
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub fn vpc_information(mut self, input: crate::types::VpcInformation) -> Self {
         self.inner = self.inner.vpc_information(input);
         self
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub fn set_vpc_information(mut self, input: ::std::option::Option<crate::types::VpcInformation>) -> Self {
         self.inner = self.inner.set_vpc_information(input);
         self
     }
-    /// <p>Security group IDs that describe the inbound and outbound rules.</p>
+    /// <p>Information about your VPC and security groups used with the connector.</p>
     pub fn get_vpc_information(&self) -> &::std::option::Option<crate::types::VpcInformation> {
         self.inner.get_vpc_information()
     }

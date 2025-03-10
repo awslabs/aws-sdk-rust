@@ -75,6 +75,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "parentActionGroupSignatureParams" => {
+                            builder = builder.set_parent_action_group_signature_params(
+                                crate::protocol_serde::shape_action_group_signature_params::de_action_group_signature_params(tokens)?,
+                            );
+                        }
                         "actionGroupExecutor" => {
                             builder = builder
                                 .set_action_group_executor(crate::protocol_serde::shape_action_group_executor::de_action_group_executor(tokens)?);

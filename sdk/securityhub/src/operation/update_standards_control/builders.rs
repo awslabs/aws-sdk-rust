@@ -23,6 +23,7 @@ impl crate::operation::update_standards_control::builders::UpdateStandardsContro
 /// Fluent builder constructing a request to `UpdateStandardsControl`.
 ///
 /// <p>Used to control whether an individual security standard control is enabled or disabled.</p>
+/// <p>Calls to this operation return a <code>RESOURCE_NOT_FOUND_EXCEPTION</code> error when the standard subscription for the control has <code>StandardsControlsUpdatable</code> value <code>NOT_READY_FOR_UPDATES</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStandardsControlFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

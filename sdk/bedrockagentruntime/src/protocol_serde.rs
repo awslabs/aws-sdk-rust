@@ -441,6 +441,8 @@ pub(crate) mod shape_flow_trace_node_output_event;
 
 pub(crate) mod shape_guardrail_trace;
 
+pub(crate) mod shape_image_input;
+
 pub(crate) mod shape_invocation_input_member;
 
 pub(crate) mod shape_metadata_configuration_for_reranking;
@@ -478,6 +480,8 @@ pub(crate) mod shape_flow_trace_node_output_fields;
 pub(crate) mod shape_function_invocation_input;
 
 pub(crate) mod shape_guardrail_assessment_list;
+
+pub(crate) mod shape_image_input_source;
 
 pub(crate) mod shape_invocation_input;
 
@@ -614,3 +618,5 @@ pub(crate) mod shape_parameter_list;
 pub(crate) mod shape_return_control_invocation_results;
 
 pub(crate) mod shape_response_body;
+
+pub(crate) mod shape_image_inputs;
