@@ -33,6 +33,8 @@ pub struct AvailabilityZone {
     pub parent_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
     pub parent_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
+    pub group_long_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
     pub state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
@@ -88,6 +90,10 @@ impl AvailabilityZone {
     pub fn parent_zone_id(&self) -> ::std::option::Option<&str> {
         self.parent_zone_id.as_deref()
     }
+    /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
+    pub fn group_long_name(&self) -> ::std::option::Option<&str> {
+        self.group_long_name.as_deref()
+    }
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneState> {
         self.state.as_ref()
@@ -114,6 +120,7 @@ pub struct AvailabilityZoneBuilder {
     pub(crate) zone_type: ::std::option::Option<::std::string::String>,
     pub(crate) parent_zone_name: ::std::option::Option<::std::string::String>,
     pub(crate) parent_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_long_name: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
 impl AvailabilityZoneBuilder {
@@ -290,6 +297,20 @@ impl AvailabilityZoneBuilder {
     pub fn get_parent_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_zone_id
     }
+    /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
+    pub fn group_long_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_long_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
+    pub fn set_group_long_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.group_long_name = input;
+        self
+    }
+    /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
+    pub fn get_group_long_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.group_long_name
+    }
     /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
     pub fn state(mut self, input: crate::types::AvailabilityZoneState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -317,6 +338,7 @@ impl AvailabilityZoneBuilder {
             zone_type: self.zone_type,
             parent_zone_name: self.parent_zone_name,
             parent_zone_id: self.parent_zone_id,
+            group_long_name: self.group_long_name,
             state: self.state,
         }
     }

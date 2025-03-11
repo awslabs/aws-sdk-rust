@@ -257,6 +257,7 @@ pub enum CreateCapacityProviderError {
     /// </ul>
     ClientException(crate::types::error::ClientException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
+    /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The limit for the resource was exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),

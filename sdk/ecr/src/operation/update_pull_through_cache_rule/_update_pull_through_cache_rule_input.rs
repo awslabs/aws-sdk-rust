@@ -9,6 +9,8 @@ pub struct UpdatePullThroughCacheRuleInput {
     pub ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
     pub credential_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub custom_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePullThroughCacheRuleInput {
     /// <p>The Amazon Web Services account ID associated with the registry associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
@@ -22,6 +24,10 @@ impl UpdatePullThroughCacheRuleInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
     pub fn credential_arn(&self) -> ::std::option::Option<&str> {
         self.credential_arn.as_deref()
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn custom_role_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_role_arn.as_deref()
     }
 }
 impl UpdatePullThroughCacheRuleInput {
@@ -38,6 +44,7 @@ pub struct UpdatePullThroughCacheRuleInputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) ecr_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePullThroughCacheRuleInputBuilder {
     /// <p>The Amazon Web Services account ID associated with the registry associated with the pull through cache rule. If you do not specify a registry, the default registry is assumed.</p>
@@ -70,7 +77,6 @@ impl UpdatePullThroughCacheRuleInputBuilder {
         &self.ecr_repository_prefix
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
-    /// This field is required.
     pub fn credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credential_arn = ::std::option::Option::Some(input.into());
         self
@@ -84,6 +90,20 @@ impl UpdatePullThroughCacheRuleInputBuilder {
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_arn
     }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_role_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_role_arn
+    }
     /// Consumes the builder and constructs a [`UpdatePullThroughCacheRuleInput`](crate::operation::update_pull_through_cache_rule::UpdatePullThroughCacheRuleInput).
     pub fn build(
         self,
@@ -95,6 +115,7 @@ impl UpdatePullThroughCacheRuleInputBuilder {
             registry_id: self.registry_id,
             ecr_repository_prefix: self.ecr_repository_prefix,
             credential_arn: self.credential_arn,
+            custom_role_arn: self.custom_role_arn,
         })
     }
 }

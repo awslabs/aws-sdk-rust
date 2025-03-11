@@ -108,36 +108,48 @@ impl CreatePullThroughCacheRuleFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The repository name prefix to use when caching images from the source registry.</p>
+    /// <p>The repository name prefix to use when caching images from the source registry.</p><important>
+    /// <p>There is always an assumed <code>/</code> applied to the end of the prefix. If you specify <code>ecr-public</code> as the prefix, Amazon ECR treats that as <code>ecr-public/</code>.</p>
+    /// </important>
     pub fn ecr_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ecr_repository_prefix(input.into());
         self
     }
-    /// <p>The repository name prefix to use when caching images from the source registry.</p>
+    /// <p>The repository name prefix to use when caching images from the source registry.</p><important>
+    /// <p>There is always an assumed <code>/</code> applied to the end of the prefix. If you specify <code>ecr-public</code> as the prefix, Amazon ECR treats that as <code>ecr-public/</code>.</p>
+    /// </important>
     pub fn set_ecr_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ecr_repository_prefix(input);
         self
     }
-    /// <p>The repository name prefix to use when caching images from the source registry.</p>
+    /// <p>The repository name prefix to use when caching images from the source registry.</p><important>
+    /// <p>There is always an assumed <code>/</code> applied to the end of the prefix. If you specify <code>ecr-public</code> as the prefix, Amazon ECR treats that as <code>ecr-public/</code>.</p>
+    /// </important>
     pub fn get_ecr_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ecr_repository_prefix()
     }
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <p>Amazon ECR (<code>ecr</code>) – <code>dkr.ecr.<region>
+    /// .amazonaws.com
+    /// </region></code></p></li>
     /// <li>
-    /// <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <p>Amazon ECR Public (<code>ecr-public</code>) – <code>public.ecr.aws</code></p></li>
     /// <li>
-    /// <p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <p>Docker Hub (<code>docker-hub</code>) – <code>registry-1.docker.io</code></p></li>
     /// <li>
-    /// <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <p>GitHub Container Registry (<code>github-container-registry</code>) – <code>ghcr.io</code></p></li>
     /// <li>
-    /// <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) – <code>registry.gitlab.com</code></p></li>
     /// <li>
-    /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
+    /// <p>Kubernetes (<code>k8s</code>) – <code>registry.k8s.io</code></p></li>
+    /// <li>
+    /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) – <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
+    /// <li>
+    /// <p>Quay (<code>quay</code>) – <code>quay.io</code></p></li>
     /// </ul>
     pub fn upstream_registry_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.upstream_registry_url(input.into());
@@ -146,19 +158,25 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <p>Amazon ECR (<code>ecr</code>) – <code>dkr.ecr.<region>
+    /// .amazonaws.com
+    /// </region></code></p></li>
     /// <li>
-    /// <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <p>Amazon ECR Public (<code>ecr-public</code>) – <code>public.ecr.aws</code></p></li>
     /// <li>
-    /// <p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <p>Docker Hub (<code>docker-hub</code>) – <code>registry-1.docker.io</code></p></li>
     /// <li>
-    /// <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <p>GitHub Container Registry (<code>github-container-registry</code>) – <code>ghcr.io</code></p></li>
     /// <li>
-    /// <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) – <code>registry.gitlab.com</code></p></li>
     /// <li>
-    /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
+    /// <p>Kubernetes (<code>k8s</code>) – <code>registry.k8s.io</code></p></li>
+    /// <li>
+    /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) – <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
+    /// <li>
+    /// <p>Quay (<code>quay</code>) – <code>quay.io</code></p></li>
     /// </ul>
     pub fn set_upstream_registry_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_upstream_registry_url(input);
@@ -167,19 +185,25 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The registry URL of the upstream public registry to use as the source for the pull through cache rule. The following is the syntax to use for each supported upstream registry.</p>
     /// <ul>
     /// <li>
-    /// <p>Amazon ECR Public (<code>ecr-public</code>) - <code>public.ecr.aws</code></p></li>
+    /// <p>Amazon ECR (<code>ecr</code>) – <code>dkr.ecr.<region>
+    /// .amazonaws.com
+    /// </region></code></p></li>
     /// <li>
-    /// <p>Docker Hub (<code>docker-hub</code>) - <code>registry-1.docker.io</code></p></li>
+    /// <p>Amazon ECR Public (<code>ecr-public</code>) – <code>public.ecr.aws</code></p></li>
     /// <li>
-    /// <p>Quay (<code>quay</code>) - <code>quay.io</code></p></li>
+    /// <p>Docker Hub (<code>docker-hub</code>) – <code>registry-1.docker.io</code></p></li>
     /// <li>
-    /// <p>Kubernetes (<code>k8s</code>) - <code>registry.k8s.io</code></p></li>
+    /// <p>GitHub Container Registry (<code>github-container-registry</code>) – <code>ghcr.io</code></p></li>
     /// <li>
-    /// <p>GitHub Container Registry (<code>github-container-registry</code>) - <code>ghcr.io</code></p></li>
+    /// <p>GitLab Container Registry (<code>gitlab-container-registry</code>) – <code>registry.gitlab.com</code></p></li>
     /// <li>
-    /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) - <code><custom>
+    /// <p>Kubernetes (<code>k8s</code>) – <code>registry.k8s.io</code></p></li>
+    /// <li>
+    /// <p>Microsoft Azure Container Registry (<code>azure-container-registry</code>) – <code><custom>
     /// .azurecr.io
     /// </custom></code></p></li>
+    /// <li>
+    /// <p>Quay (<code>quay</code>) – <code>quay.io</code></p></li>
     /// </ul>
     pub fn get_upstream_registry_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_upstream_registry_url()
@@ -225,5 +249,33 @@ impl CreatePullThroughCacheRuleFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that identifies the credentials to authenticate to the upstream registry.</p>
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_credential_arn()
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_role_arn(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_role_arn(input);
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_role_arn()
+    }
+    /// <p>The repository name prefix of the upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the <code>ROOT</code>.</p>
+    pub fn upstream_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.upstream_repository_prefix(input.into());
+        self
+    }
+    /// <p>The repository name prefix of the upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the <code>ROOT</code>.</p>
+    pub fn set_upstream_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_upstream_repository_prefix(input);
+        self
+    }
+    /// <p>The repository name prefix of the upstream registry to match with the upstream repository name. When this field isn't specified, Amazon ECR will use the <code>ROOT</code>.</p>
+    pub fn get_upstream_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_upstream_repository_prefix()
     }
 }

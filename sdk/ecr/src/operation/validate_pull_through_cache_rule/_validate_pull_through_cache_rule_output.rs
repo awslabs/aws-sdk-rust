@@ -11,6 +11,10 @@ pub struct ValidatePullThroughCacheRuleOutput {
     pub upstream_registry_url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
     pub credential_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub custom_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the pull through cache rule was validated. If <code>true</code>, Amazon ECR was able to reach the upstream registry and authentication was successful. If <code>false</code>, there was an issue and validation failed. The <code>failure</code> reason indicates the cause.</p>
     pub is_valid: bool,
     /// <p>The reason the validation failed. For more details about possible causes and how to address them, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using pull through cache rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
@@ -33,6 +37,14 @@ impl ValidatePullThroughCacheRuleOutput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
     pub fn credential_arn(&self) -> ::std::option::Option<&str> {
         self.credential_arn.as_deref()
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn custom_role_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_role_arn.as_deref()
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn upstream_repository_prefix(&self) -> ::std::option::Option<&str> {
+        self.upstream_repository_prefix.as_deref()
     }
     /// <p>Whether or not the pull through cache rule was validated. If <code>true</code>, Amazon ECR was able to reach the upstream registry and authentication was successful. If <code>false</code>, there was an issue and validation failed. The <code>failure</code> reason indicates the cause.</p>
     pub fn is_valid(&self) -> bool {
@@ -63,6 +75,8 @@ pub struct ValidatePullThroughCacheRuleOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry_url: ::std::option::Option<::std::string::String>,
     pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) is_valid: ::std::option::Option<bool>,
     pub(crate) failure: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -124,6 +138,34 @@ impl ValidatePullThroughCacheRuleOutputBuilder {
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_arn
     }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_role_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_role_arn
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn upstream_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upstream_repository_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn set_upstream_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.upstream_repository_prefix = input;
+        self
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn get_upstream_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upstream_repository_prefix
+    }
     /// <p>Whether or not the pull through cache rule was validated. If <code>true</code>, Amazon ECR was able to reach the upstream registry and authentication was successful. If <code>false</code>, there was an issue and validation failed. The <code>failure</code> reason indicates the cause.</p>
     pub fn is_valid(mut self, input: bool) -> Self {
         self.is_valid = ::std::option::Option::Some(input);
@@ -168,6 +210,8 @@ impl ValidatePullThroughCacheRuleOutputBuilder {
             registry_id: self.registry_id,
             upstream_registry_url: self.upstream_registry_url,
             credential_arn: self.credential_arn,
+            custom_role_arn: self.custom_role_arn,
+            upstream_repository_prefix: self.upstream_repository_prefix,
             is_valid: self.is_valid.unwrap_or_default(),
             failure: self.failure,
             _request_id: self._request_id,

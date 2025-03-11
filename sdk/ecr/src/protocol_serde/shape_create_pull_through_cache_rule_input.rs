@@ -18,5 +18,11 @@ pub fn ser_create_pull_through_cache_rule_input_input(
     if let Some(var_5) = &input.credential_arn {
         object.key("credentialArn").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.custom_role_arn {
+        object.key("customRoleArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.upstream_repository_prefix {
+        object.key("upstreamRepositoryPrefix").string(var_7.as_str());
+    }
     Ok(())
 }

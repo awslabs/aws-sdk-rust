@@ -14,6 +14,10 @@ pub struct PullThroughCacheRule {
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Secrets Manager secret associated with the pull through cache rule.</p>
     pub credential_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub custom_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The name of the upstream source registry associated with the pull through cache rule.</p>
     pub upstream_registry: ::std::option::Option<crate::types::UpstreamRegistry>,
     /// <p>The date and time, in JavaScript date format, when the pull through cache rule was last updated.</p>
@@ -40,6 +44,14 @@ impl PullThroughCacheRule {
     pub fn credential_arn(&self) -> ::std::option::Option<&str> {
         self.credential_arn.as_deref()
     }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn custom_role_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_role_arn.as_deref()
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn upstream_repository_prefix(&self) -> ::std::option::Option<&str> {
+        self.upstream_repository_prefix.as_deref()
+    }
     /// <p>The name of the upstream source registry associated with the pull through cache rule.</p>
     pub fn upstream_registry(&self) -> ::std::option::Option<&crate::types::UpstreamRegistry> {
         self.upstream_registry.as_ref()
@@ -65,6 +77,8 @@ pub struct PullThroughCacheRuleBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry: ::std::option::Option<crate::types::UpstreamRegistry>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -139,6 +153,34 @@ impl PullThroughCacheRuleBuilder {
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_arn
     }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_role_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_role_arn
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn upstream_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upstream_repository_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn set_upstream_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.upstream_repository_prefix = input;
+        self
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn get_upstream_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upstream_repository_prefix
+    }
     /// <p>The name of the upstream source registry associated with the pull through cache rule.</p>
     pub fn upstream_registry(mut self, input: crate::types::UpstreamRegistry) -> Self {
         self.upstream_registry = ::std::option::Option::Some(input);
@@ -175,6 +217,8 @@ impl PullThroughCacheRuleBuilder {
             created_at: self.created_at,
             registry_id: self.registry_id,
             credential_arn: self.credential_arn,
+            custom_role_arn: self.custom_role_arn,
+            upstream_repository_prefix: self.upstream_repository_prefix,
             upstream_registry: self.upstream_registry,
             updated_at: self.updated_at,
         }

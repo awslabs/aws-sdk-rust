@@ -270,6 +270,7 @@ pub enum RunTaskError {
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The specified parameter isn't valid. Review the available parameters for the API request.</p>
+    /// <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>.</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
     PlatformTaskDefinitionIncompatibilityException(crate::types::error::PlatformTaskDefinitionIncompatibilityException),

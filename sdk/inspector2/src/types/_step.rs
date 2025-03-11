@@ -8,6 +8,8 @@ pub struct Step {
     pub component_id: ::std::string::String,
     /// <p>The component type.</p>
     pub component_type: ::std::string::String,
+    /// <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web Services console.</p>
+    pub component_arn: ::std::option::Option<::std::string::String>,
 }
 impl Step {
     /// <p>The component ID.</p>
@@ -19,6 +21,10 @@ impl Step {
     pub fn component_type(&self) -> &str {
         use std::ops::Deref;
         self.component_type.deref()
+    }
+    /// <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web Services console.</p>
+    pub fn component_arn(&self) -> ::std::option::Option<&str> {
+        self.component_arn.as_deref()
     }
 }
 impl Step {
@@ -34,6 +40,7 @@ impl Step {
 pub struct StepBuilder {
     pub(crate) component_id: ::std::option::Option<::std::string::String>,
     pub(crate) component_type: ::std::option::Option<::std::string::String>,
+    pub(crate) component_arn: ::std::option::Option<::std::string::String>,
 }
 impl StepBuilder {
     /// <p>The component ID.</p>
@@ -66,6 +73,20 @@ impl StepBuilder {
     pub fn get_component_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_type
     }
+    /// <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web Services console.</p>
+    pub fn component_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web Services console.</p>
+    pub fn set_component_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.component_arn = input;
+        self
+    }
+    /// <p>The component ARN. The ARN can be null and is not displayed in the Amazon Web Services console.</p>
+    pub fn get_component_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.component_arn
+    }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     /// This method will fail if any of the following fields are not set:
     /// - [`component_id`](crate::types::builders::StepBuilder::component_id)
@@ -84,6 +105,7 @@ impl StepBuilder {
                     "component_type was not specified but it is required when building Step",
                 )
             })?,
+            component_arn: self.component_arn,
         })
     }
 }

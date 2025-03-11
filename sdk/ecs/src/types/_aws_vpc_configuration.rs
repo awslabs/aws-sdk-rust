@@ -19,8 +19,6 @@ pub struct AwsVpcConfiguration {
     /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
     /// </ul>
     pub assign_public_ip: ::std::option::Option<crate::types::AssignPublicIp>,
 }
@@ -47,8 +45,6 @@ impl AwsVpcConfiguration {
     /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn assign_public_ip(&self) -> ::std::option::Option<&crate::types::AssignPublicIp> {
         self.assign_public_ip.as_ref()
@@ -129,8 +125,6 @@ impl AwsVpcConfigurationBuilder {
     /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn assign_public_ip(mut self, input: crate::types::AssignPublicIp) -> Self {
         self.assign_public_ip = ::std::option::Option::Some(input);
@@ -143,8 +137,6 @@ impl AwsVpcConfigurationBuilder {
     /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn set_assign_public_ip(mut self, input: ::std::option::Option<crate::types::AssignPublicIp>) -> Self {
         self.assign_public_ip = input;
@@ -157,8 +149,6 @@ impl AwsVpcConfigurationBuilder {
     /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>DISABLED</code>.</p></li>
     /// <li>
     /// <p>When the service <code>deploymentController</code> is <code>ECS</code>, the value must be <code>DISABLED</code>.</p></li>
-    /// <li>
-    /// <p>When you use <code>create-service</code> or <code>update-service</code>, the default is <code>ENABLED</code>.</p></li>
     /// </ul>
     pub fn get_assign_public_ip(&self) -> &::std::option::Option<crate::types::AssignPublicIp> {
         &self.assign_public_ip

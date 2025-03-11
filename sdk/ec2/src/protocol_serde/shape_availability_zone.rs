@@ -135,8 +135,21 @@ pub fn de_availability_zone(
                 builder = builder.set_parent_zone_id(var_10);
             }
             ,
-            s if s.matches("zoneState") /* State com.amazonaws.ec2#AvailabilityZone$State */ =>  {
+            s if s.matches("groupLongName") /* GroupLongName com.amazonaws.ec2#AvailabilityZone$GroupLongName */ =>  {
                 let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_group_long_name(var_11);
+            }
+            ,
+            s if s.matches("zoneState") /* State com.amazonaws.ec2#AvailabilityZone$State */ =>  {
+                let var_12 =
                     Some(
                         Result::<crate::types::AvailabilityZoneState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AvailabilityZoneState::from(
@@ -146,7 +159,7 @@ pub fn de_availability_zone(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_11);
+                builder = builder.set_state(var_12);
             }
             ,
             _ => {}

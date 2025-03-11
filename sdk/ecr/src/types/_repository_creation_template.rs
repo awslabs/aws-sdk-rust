@@ -14,7 +14,7 @@ pub struct RepositoryCreationTemplate {
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of MUTABLE will be used which will allow image tags to be overwritten. If IMMUTABLE is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub image_tag_mutability: ::std::option::Option<crate::types::ImageTagMutability>,
-    /// <p>he repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
+    /// <p>The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub repository_policy: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle policy to use for repositories created using the template.</p>
     pub lifecycle_policy: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl RepositoryCreationTemplate {
     pub fn image_tag_mutability(&self) -> ::std::option::Option<&crate::types::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
-    /// <p>he repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
+    /// <p>The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub fn repository_policy(&self) -> ::std::option::Option<&str> {
         self.repository_policy.as_deref()
     }
@@ -180,17 +180,17 @@ impl RepositoryCreationTemplateBuilder {
     pub fn get_image_tag_mutability(&self) -> &::std::option::Option<crate::types::ImageTagMutability> {
         &self.image_tag_mutability
     }
-    /// <p>he repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
+    /// <p>The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub fn repository_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repository_policy = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>he repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
+    /// <p>The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub fn set_repository_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository_policy = input;
         self
     }
-    /// <p>he repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
+    /// <p>The repository policy to apply to repositories created using the template. A repository policy is a permissions policy associated with a repository to control access permissions.</p>
     pub fn get_repository_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.repository_policy
     }

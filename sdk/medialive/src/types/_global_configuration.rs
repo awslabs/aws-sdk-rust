@@ -10,7 +10,7 @@ pub struct GlobalConfiguration {
     pub input_end_action: ::std::option::Option<crate::types::GlobalConfigurationInputEndAction>,
     /// Settings for system actions when input is lost.
     pub input_loss_behavior: ::std::option::Option<crate::types::InputLossBehavior>,
-    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch. DISABLED - MediaLive will not attempt to synchronize the output of pipelines. We advise against disabling output locking because it has negative side effects in most workflows. For more information, see the section about output locking (pipeline locking) in the Medialive user guide.
     pub output_locking_mode: ::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode>,
     /// Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.
     pub output_timing_source: ::std::option::Option<crate::types::GlobalConfigurationOutputTimingSource>,
@@ -32,7 +32,7 @@ impl GlobalConfiguration {
     pub fn input_loss_behavior(&self) -> ::std::option::Option<&crate::types::InputLossBehavior> {
         self.input_loss_behavior.as_ref()
     }
-    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch. DISABLED - MediaLive will not attempt to synchronize the output of pipelines. We advise against disabling output locking because it has negative side effects in most workflows. For more information, see the section about output locking (pipeline locking) in the Medialive user guide.
     pub fn output_locking_mode(&self) -> ::std::option::Option<&crate::types::GlobalConfigurationOutputLockingMode> {
         self.output_locking_mode.as_ref()
     }
@@ -111,17 +111,17 @@ impl GlobalConfigurationBuilder {
     pub fn get_input_loss_behavior(&self) -> &::std::option::Option<crate::types::InputLossBehavior> {
         &self.input_loss_behavior
     }
-    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch. DISABLED - MediaLive will not attempt to synchronize the output of pipelines. We advise against disabling output locking because it has negative side effects in most workflows. For more information, see the section about output locking (pipeline locking) in the Medialive user guide.
     pub fn output_locking_mode(mut self, input: crate::types::GlobalConfigurationOutputLockingMode) -> Self {
         self.output_locking_mode = ::std::option::Option::Some(input);
         self
     }
-    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch. DISABLED - MediaLive will not attempt to synchronize the output of pipelines. We advise against disabling output locking because it has negative side effects in most workflows. For more information, see the section about output locking (pipeline locking) in the Medialive user guide.
     pub fn set_output_locking_mode(mut self, input: ::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode>) -> Self {
         self.output_locking_mode = input;
         self
     }
-    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch.
+    /// Indicates how MediaLive pipelines are synchronized. PIPELINE_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the other. EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each pipeline to the Unix epoch. DISABLED - MediaLive will not attempt to synchronize the output of pipelines. We advise against disabling output locking because it has negative side effects in most workflows. For more information, see the section about output locking (pipeline locking) in the Medialive user guide.
     pub fn get_output_locking_mode(&self) -> &::std::option::Option<crate::types::GlobalConfigurationOutputLockingMode> {
         &self.output_locking_mode
     }

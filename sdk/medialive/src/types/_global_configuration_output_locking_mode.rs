@@ -12,6 +12,7 @@
 /// ```text
 /// # let globalconfigurationoutputlockingmode = unimplemented!();
 /// match globalconfigurationoutputlockingmode {
+///     GlobalConfigurationOutputLockingMode::Disabled => { /* ... */ },
 ///     GlobalConfigurationOutputLockingMode::EpochLocking => { /* ... */ },
 ///     GlobalConfigurationOutputLockingMode::PipelineLocking => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum GlobalConfigurationOutputLockingMode {
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     EpochLocking,
     #[allow(missing_docs)] // documentation missing in model
     PipelineLocking,
@@ -53,6 +56,7 @@ pub enum GlobalConfigurationOutputLockingMode {
 impl ::std::convert::From<&str> for GlobalConfigurationOutputLockingMode {
     fn from(s: &str) -> Self {
         match s {
+            "DISABLED" => GlobalConfigurationOutputLockingMode::Disabled,
             "EPOCH_LOCKING" => GlobalConfigurationOutputLockingMode::EpochLocking,
             "PIPELINE_LOCKING" => GlobalConfigurationOutputLockingMode::PipelineLocking,
             other => GlobalConfigurationOutputLockingMode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl GlobalConfigurationOutputLockingMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            GlobalConfigurationOutputLockingMode::Disabled => "DISABLED",
             GlobalConfigurationOutputLockingMode::EpochLocking => "EPOCH_LOCKING",
             GlobalConfigurationOutputLockingMode::PipelineLocking => "PIPELINE_LOCKING",
             GlobalConfigurationOutputLockingMode::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl GlobalConfigurationOutputLockingMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EPOCH_LOCKING", "PIPELINE_LOCKING"]
+        &["DISABLED", "EPOCH_LOCKING", "PIPELINE_LOCKING"]
     }
 }
 impl ::std::convert::AsRef<str> for GlobalConfigurationOutputLockingMode {
@@ -100,6 +105,7 @@ impl GlobalConfigurationOutputLockingMode {
 impl ::std::fmt::Display for GlobalConfigurationOutputLockingMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            GlobalConfigurationOutputLockingMode::Disabled => write!(f, "DISABLED"),
             GlobalConfigurationOutputLockingMode::EpochLocking => write!(f, "EPOCH_LOCKING"),
             GlobalConfigurationOutputLockingMode::PipelineLocking => write!(f, "PIPELINE_LOCKING"),
             GlobalConfigurationOutputLockingMode::Unknown(value) => write!(f, "{}", value),

@@ -15,6 +15,10 @@ pub struct CreatePullThroughCacheRuleOutput {
     pub upstream_registry: ::std::option::Option<crate::types::UpstreamRegistry>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret associated with the pull through cache rule.</p>
     pub credential_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub custom_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePullThroughCacheRuleOutput {
@@ -42,6 +46,14 @@ impl CreatePullThroughCacheRuleOutput {
     pub fn credential_arn(&self) -> ::std::option::Option<&str> {
         self.credential_arn.as_deref()
     }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn custom_role_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_role_arn.as_deref()
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn upstream_repository_prefix(&self) -> ::std::option::Option<&str> {
+        self.upstream_repository_prefix.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreatePullThroughCacheRuleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +77,8 @@ pub struct CreatePullThroughCacheRuleOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) upstream_registry: ::std::option::Option<crate::types::UpstreamRegistry>,
     pub(crate) credential_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) upstream_repository_prefix: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePullThroughCacheRuleOutputBuilder {
@@ -152,6 +166,34 @@ impl CreatePullThroughCacheRuleOutputBuilder {
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.credential_arn
     }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_role_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role associated with the pull through cache rule.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_role_arn
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn upstream_repository_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upstream_repository_prefix = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn set_upstream_repository_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.upstream_repository_prefix = input;
+        self
+    }
+    /// <p>The upstream repository prefix associated with the pull through cache rule.</p>
+    pub fn get_upstream_repository_prefix(&self) -> &::std::option::Option<::std::string::String> {
+        &self.upstream_repository_prefix
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -170,6 +212,8 @@ impl CreatePullThroughCacheRuleOutputBuilder {
             registry_id: self.registry_id,
             upstream_registry: self.upstream_registry,
             credential_arn: self.credential_arn,
+            custom_role_arn: self.custom_role_arn,
+            upstream_repository_prefix: self.upstream_repository_prefix,
             _request_id: self._request_id,
         }
     }

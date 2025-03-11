@@ -14,6 +14,7 @@
 /// match upstreamregistry {
 ///     UpstreamRegistry::AzureContainerRegistry => { /* ... */ },
 ///     UpstreamRegistry::DockerHub => { /* ... */ },
+///     UpstreamRegistry::Ecr => { /* ... */ },
 ///     UpstreamRegistry::EcrPublic => { /* ... */ },
 ///     UpstreamRegistry::GitHubContainerRegistry => { /* ... */ },
 ///     UpstreamRegistry::GitLabContainerRegistry => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum UpstreamRegistry {
     #[allow(missing_docs)] // documentation missing in model
     DockerHub,
     #[allow(missing_docs)] // documentation missing in model
+    Ecr,
+    #[allow(missing_docs)] // documentation missing in model
     EcrPublic,
     #[allow(missing_docs)] // documentation missing in model
     GitHubContainerRegistry,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for UpstreamRegistry {
         match s {
             "azure-container-registry" => UpstreamRegistry::AzureContainerRegistry,
             "docker-hub" => UpstreamRegistry::DockerHub,
+            "ecr" => UpstreamRegistry::Ecr,
             "ecr-public" => UpstreamRegistry::EcrPublic,
             "github-container-registry" => UpstreamRegistry::GitHubContainerRegistry,
             "gitlab-container-registry" => UpstreamRegistry::GitLabContainerRegistry,
@@ -92,6 +96,7 @@ impl UpstreamRegistry {
         match self {
             UpstreamRegistry::AzureContainerRegistry => "azure-container-registry",
             UpstreamRegistry::DockerHub => "docker-hub",
+            UpstreamRegistry::Ecr => "ecr",
             UpstreamRegistry::EcrPublic => "ecr-public",
             UpstreamRegistry::GitHubContainerRegistry => "github-container-registry",
             UpstreamRegistry::GitLabContainerRegistry => "gitlab-container-registry",
@@ -105,6 +110,7 @@ impl UpstreamRegistry {
         &[
             "azure-container-registry",
             "docker-hub",
+            "ecr",
             "ecr-public",
             "github-container-registry",
             "gitlab-container-registry",
@@ -135,6 +141,7 @@ impl ::std::fmt::Display for UpstreamRegistry {
         match self {
             UpstreamRegistry::AzureContainerRegistry => write!(f, "azure-container-registry"),
             UpstreamRegistry::DockerHub => write!(f, "docker-hub"),
+            UpstreamRegistry::Ecr => write!(f, "ecr"),
             UpstreamRegistry::EcrPublic => write!(f, "ecr-public"),
             UpstreamRegistry::GitHubContainerRegistry => write!(f, "github-container-registry"),
             UpstreamRegistry::GitLabContainerRegistry => write!(f, "gitlab-container-registry"),

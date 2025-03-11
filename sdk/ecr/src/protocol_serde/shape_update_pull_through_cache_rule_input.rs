@@ -12,5 +12,8 @@ pub fn ser_update_pull_through_cache_rule_input_input(
     if let Some(var_3) = &input.credential_arn {
         object.key("credentialArn").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.custom_role_arn {
+        object.key("customRoleArn").string(var_4.as_str());
+    }
     Ok(())
 }

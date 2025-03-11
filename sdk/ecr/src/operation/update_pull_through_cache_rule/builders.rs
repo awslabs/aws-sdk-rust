@@ -150,4 +150,18 @@ impl UpdatePullThroughCacheRuleFluentBuilder {
     pub fn get_credential_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_credential_arn()
     }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn custom_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.custom_role_arn(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn set_custom_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_custom_role_arn(input);
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) of the IAM role to be assumed by Amazon ECR to authenticate to the ECR upstream registry. This role must be in the same account as the registry that you are configuring.</p>
+    pub fn get_custom_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_custom_role_arn()
+    }
 }
