@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-notificationscontacts = "1.12.0"
+aws-sdk-notificationscontacts = "1.13.0"
 tokio = { version = "1", features = ["full"] }
 ```
 
