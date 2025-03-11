@@ -4,7 +4,7 @@
  */
 
 use aws_sdk_sts::config::{Credentials, Region};
-use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_http_client::test_util::capture_request;
 
 #[tokio::test]
 async fn assume_role_signed() {

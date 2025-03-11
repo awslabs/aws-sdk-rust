@@ -12,7 +12,7 @@
 //! respond with a given response, then capture request can also be useful since
 //! you can optionally give it a response to return.
 #![cfg_attr(
-    feature = "connector-hyper-0-14-x",
+    feature = "default-client",
     doc = "- [`dvr`]: If you want to record real-world traffic and then replay it later, then DVR's"
 )]
 //! [`RecordingClient`](dvr::RecordingClient) and [`ReplayingClient`](dvr::ReplayingClient)
@@ -29,17 +29,20 @@
 //! - [`NeverClient`]: Useful for testing timeouts, where you want the client to never respond.
 //!
 #![cfg_attr(
-    feature = "connector-hyper-0-14-x",
+    any(feature = "hyper-014", feature = "default-client"),
     doc = "
 There is also the [`NeverTcpConnector`], which makes it easy to test connect/read timeouts.
 
 Finally, for socket-level mocking, see the [`wire`] module.
 "
 )]
+
 mod capture_request;
 pub use capture_request::{capture_request, CaptureRequestHandler, CaptureRequestReceiver};
 
-#[cfg(feature = "connector-hyper-0-14-x")]
+#[cfg(feature = "legacy-test-util")]
+pub use capture_request::legacy_capture_request;
+
 pub mod dvr;
 
 mod replay;
@@ -48,11 +51,17 @@ pub use replay::{ReplayEvent, StaticReplayClient};
 mod infallible;
 pub use infallible::infallible_client_fn;
 
+// infallible based on http_02x stack had to be duplicated to avoid breaking API changes
+#[allow(missing_docs)]
+#[cfg(feature = "legacy-test-util")]
+pub mod legacy_infallible;
+
 mod never;
 pub use never::NeverClient;
 
-#[cfg(feature = "connector-hyper-0-14-x")]
+#[cfg(any(feature = "hyper-014", feature = "default-client"))]
 pub use never::NeverTcpConnector;
 
-#[cfg(all(feature = "connector-hyper-0-14-x", feature = "wire-mock"))]
+mod body;
+#[cfg(all(feature = "default-client", feature = "wire-mock"))]
 pub mod wire;

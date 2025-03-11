@@ -62,11 +62,11 @@ impl HttpClient for NeverClient {
 
 /// A TCP connector that never connects.
 // In the future, this can be available for multiple hyper version feature flags, with the impls gated between individual features
-#[cfg(feature = "connector-hyper-0-14-x")]
+#[cfg(any(feature = "hyper-014", feature = "default-client"))]
 #[derive(Clone, Debug, Default)]
 pub struct NeverTcpConnector;
 
-#[cfg(feature = "connector-hyper-0-14-x")]
+#[cfg(any(feature = "hyper-014", feature = "default-client"))]
 impl NeverTcpConnector {
     /// Creates a new `NeverTcpConnector`.
     pub fn new() -> Self {
@@ -74,9 +74,9 @@ impl NeverTcpConnector {
     }
 }
 
-#[cfg(feature = "connector-hyper-0-14-x")]
+#[cfg(feature = "hyper-014")]
 impl hyper_0_14::service::Service<http_02x::Uri> for NeverTcpConnector {
-    type Response = connection::NeverTcpConnection;
+    type Response = hyper_014_support::NeverTcpConnection;
     type Error = aws_smithy_runtime_api::box_error::BoxError;
     type Future = std::pin::Pin<
         Box<dyn std::future::Future<Output = Result<Self::Response, Self::Error>> + Send + Sync>,
@@ -97,8 +97,47 @@ impl hyper_0_14::service::Service<http_02x::Uri> for NeverTcpConnector {
     }
 }
 
-#[cfg(feature = "connector-hyper-0-14-x")]
-mod connection {
+#[cfg(feature = "default-client")]
+mod hyper1_support {
+    use super::NeverTcpConnector;
+    use aws_smithy_async::future::never::Never;
+    use aws_smithy_runtime_api::client::http::SharedHttpClient;
+    use aws_smithy_runtime_api::client::result::ConnectorError;
+    use http_1x::Uri;
+    use hyper_util::rt::TokioIo;
+    use std::future::Future;
+    use std::pin::Pin;
+    use std::task::{Context, Poll};
+    use tokio::net::TcpStream;
+
+    impl tower::Service<Uri> for NeverTcpConnector {
+        type Response = TokioIo<TcpStream>;
+        type Error = ConnectorError;
+        type Future = Pin<Box<dyn Future<Output = Result<Self::Response, Self::Error>> + Send>>;
+
+        fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+            Poll::Ready(Ok(()))
+        }
+
+        fn call(&mut self, _uri: Uri) -> Self::Future {
+            Box::pin(async move {
+                Never::new().await;
+                unreachable!()
+            })
+        }
+    }
+
+    impl NeverTcpConnector {
+        /// Convert this connector into a usable HTTP client for testing
+        #[doc(hidden)]
+        pub fn into_client(self) -> SharedHttpClient {
+            crate::client::build_with_tcp_conn_fn(None, NeverTcpConnector::new)
+        }
+    }
+}
+
+#[cfg(feature = "hyper-014")]
+mod hyper_014_support {
     use hyper_0_14::client::connect::{Connected, Connection};
     use std::io::Error;
     use std::pin::Pin;
@@ -145,32 +184,63 @@ mod connection {
     }
 }
 
-#[cfg(all(test, feature = "connector-hyper-0-14-x"))]
-#[tokio::test]
-async fn never_tcp_connector_plugs_into_hyper_014() {
-    use crate::client::http::hyper_014::HyperClientBuilder;
+#[cfg(test)]
+mod test {
     use aws_smithy_async::rt::sleep::TokioSleep;
     use aws_smithy_async::time::SystemTimeSource;
+    use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnector, HttpConnectorSettings};
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use std::time::Duration;
 
-    // it should compile
-    let client = HyperClientBuilder::new().build(NeverTcpConnector::new());
-    let components = RuntimeComponentsBuilder::for_tests()
-        .with_sleep_impl(Some(TokioSleep::new()))
-        .with_time_source(Some(SystemTimeSource::new()))
-        .build()
-        .unwrap();
-    let http_connector = client.http_connector(
-        &HttpConnectorSettings::builder()
-            .connect_timeout(Duration::from_millis(100))
-            .build(),
-        &components,
-    );
+    #[cfg(feature = "hyper-014")]
+    #[tokio::test]
+    async fn never_tcp_connector_plugs_into_hyper_014() {
+        use super::NeverTcpConnector;
+        use crate::hyper_014::HyperClientBuilder;
 
-    let err = http_connector
-        .call(HttpRequest::get("http://fakeuri.com").unwrap())
-        .await
-        .expect_err("it should time out");
-    assert!(dbg!(err).is_timeout());
+        // it should compile
+        let client = HyperClientBuilder::new().build(NeverTcpConnector::new());
+        let components = RuntimeComponentsBuilder::for_tests()
+            .with_sleep_impl(Some(TokioSleep::new()))
+            .with_time_source(Some(SystemTimeSource::new()))
+            .build()
+            .unwrap();
+        let http_connector = client.http_connector(
+            &HttpConnectorSettings::builder()
+                .connect_timeout(Duration::from_millis(100))
+                .build(),
+            &components,
+        );
+
+        let err = http_connector
+            .call(HttpRequest::get("http://fakeuri.com").unwrap())
+            .await
+            .expect_err("it should time out");
+        assert!(dbg!(err).is_timeout());
+    }
+
+    #[cfg(feature = "default-client")]
+    #[tokio::test]
+    async fn never_tcp_connector_plugs_into_hyper_1() {
+        use super::NeverTcpConnector;
+        let client = NeverTcpConnector::new().into_client();
+        let components = RuntimeComponentsBuilder::for_tests()
+            .with_sleep_impl(Some(TokioSleep::new()))
+            .with_time_source(Some(SystemTimeSource::new()))
+            .build()
+            .unwrap();
+        let http_connector = client.http_connector(
+            &HttpConnectorSettings::builder()
+                .connect_timeout(Duration::from_millis(100))
+                .build(),
+            &components,
+        );
+
+        let err = http_connector
+            .call(HttpRequest::get("http://fakeuri.com").unwrap())
+            .await
+            .expect_err("it should time out");
+        assert!(dbg!(err).is_timeout());
+    }
 }

@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#![cfg(all(feature = "client", feature = "test-util"))]
+#![cfg(all(
+    feature = "client",
+    any(feature = "test-util", feature = "legacy-test-util")
+))]
 
 use std::time::Duration;
 use tokio::sync::mpsc::channel;

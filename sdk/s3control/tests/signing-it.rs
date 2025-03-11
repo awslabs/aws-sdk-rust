@@ -6,14 +6,14 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3control::config::{Credentials, Region};
 use aws_sdk_s3control::{Client, Config};
-use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_types::body::SdkBody;
-use http::header::AUTHORIZATION;
+use http_1x::header::AUTHORIZATION;
 
 #[tokio::test]
 async fn test_signer() {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
+        http_1x::Request::builder()
         .header("authorization",
                     "AWS4-HMAC-SHA256 Credential=ANOTREAL/20090213/us-east-1/s3/aws4_request, \
                     SignedHeaders=host;x-amz-account-id;x-amz-content-sha256;x-amz-date;x-amz-user-agent, \
@@ -21,7 +21,7 @@ async fn test_signer() {
             .uri("https://test-bucket.s3-control.us-east-1.amazonaws.com/v20180820/accesspoint")
             .body(SdkBody::empty())
             .unwrap(),
-        http::Response::builder().status(200).body(SdkBody::empty()).unwrap(),
+        http_1x::Response::builder().status(200).body(SdkBody::empty()).unwrap(),
     )]);
     let config = Config::builder()
         .credentials_provider(SharedCredentialsProvider::new(

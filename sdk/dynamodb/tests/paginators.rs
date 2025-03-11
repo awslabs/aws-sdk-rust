@@ -9,10 +9,8 @@ use std::iter::FromIterator;
 use aws_credential_types::Credentials;
 use aws_sdk_dynamodb::types::AttributeValue;
 use aws_sdk_dynamodb::{Client, Config};
+use aws_smithy_http_client::test_util::{capture_request, ReplayEvent, StaticReplayClient};
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
-use aws_smithy_runtime::client::http::test_util::{
-    capture_request, ReplayEvent, StaticReplayClient,
-};
 use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_types::body::SdkBody;
 use aws_types::region::Region;
@@ -46,15 +44,17 @@ async fn paginators_pass_args() {
     ));
 }
 
-fn mk_request(body: &'static str) -> http::Request<SdkBody> {
-    http::Request::builder()
+fn mk_request(body: &'static str) -> http_1x::Request<SdkBody> {
+    http_1x::Request::builder()
         .uri("https://dynamodb.us-east-1.amazonaws.com/")
         .body(SdkBody::from(body))
         .unwrap()
 }
 
-fn mk_response(body: &'static str) -> http::Response<SdkBody> {
-    http::Response::builder().body(SdkBody::from(body)).unwrap()
+fn mk_response(body: &'static str) -> http_1x::Response<SdkBody> {
+    http_1x::Response::builder()
+        .body(SdkBody::from(body))
+        .unwrap()
 }
 
 #[tokio::test(flavor = "current_thread")]

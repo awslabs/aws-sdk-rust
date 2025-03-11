@@ -3,11 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#![cfg(all(
-    feature = "client",
-    feature = "wire-mock",
-    feature = "connector-hyper-0-14-x",
-))]
+#![cfg(all(feature = "client", feature = "wire-mock",))]
 
 use ::aws_smithy_runtime::client::retries::classifiers::{
     HttpStatusCodeClassifier, TransientErrorClassifier,

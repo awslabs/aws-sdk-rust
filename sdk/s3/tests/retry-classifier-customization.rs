@@ -7,7 +7,7 @@ use aws_sdk_s3::config::interceptors::InterceptorContext;
 use aws_sdk_s3::config::retry::{ClassifyRetry, RetryAction, RetryConfig};
 use aws_sdk_s3::config::SharedAsyncSleep;
 use aws_smithy_async::rt::sleep::TokioSleep;
-use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_runtime_api::client::retries::classifiers::RetryClassifierPriority;
 use aws_smithy_types::body::SdkBody;
 use std::sync::{Arc, Mutex};
@@ -51,21 +51,21 @@ impl ClassifyRetry for CustomizationTestClassifier {
     }
 }
 
-fn req() -> http::Request<SdkBody> {
-    http::Request::builder()
+fn req() -> http_1x::Request<SdkBody> {
+    http_1x::Request::builder()
         .body(SdkBody::from("request body"))
         .unwrap()
 }
 
-fn ok() -> http::Response<SdkBody> {
-    http::Response::builder()
+fn ok() -> http_1x::Response<SdkBody> {
+    http_1x::Response::builder()
         .status(200)
         .body(SdkBody::from("Hello!"))
         .unwrap()
 }
 
-fn err() -> http::Response<SdkBody> {
-    http::Response::builder()
+fn err() -> http_1x::Response<SdkBody> {
+    http_1x::Response::builder()
         .status(500)
         .body(SdkBody::from("This was an error"))
         .unwrap()

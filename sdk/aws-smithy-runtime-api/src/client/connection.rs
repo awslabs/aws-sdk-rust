@@ -5,9 +5,10 @@
 
 //! Types related to connection monitoring and management.
 
-use std::fmt::{Debug, Formatter};
+use aws_smithy_types::config_bag::{Storable, StoreReplace};
+use std::fmt;
 use std::net::SocketAddr;
-use std::sync::Arc;
+use std::sync::{Arc, Mutex};
 
 /// Metadata that tracks the state of an active connection.
 #[derive(Clone)]
@@ -63,8 +64,8 @@ impl ConnectionMetadata {
     }
 }
 
-impl Debug for ConnectionMetadata {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+impl fmt::Debug for ConnectionMetadata {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("SmithyConnection")
             .field("is_proxied", &self.is_proxied)
             .field("remote_addr", &self.remote_addr)
@@ -82,8 +83,8 @@ pub struct ConnectionMetadataBuilder {
     poison_fn: Option<Arc<dyn Fn() + Send + Sync>>,
 }
 
-impl Debug for ConnectionMetadataBuilder {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+impl fmt::Debug for ConnectionMetadataBuilder {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ConnectionMetadataBuilder")
             .field("is_proxied", &self.is_proxied)
             .field("remote_addr", &self.remote_addr)
@@ -173,6 +174,52 @@ impl ConnectionMetadataBuilder {
     }
 }
 
+type LoaderFn = dyn Fn() -> Option<ConnectionMetadata> + Send + Sync;
+
+/// State for a middleware that will monitor and manage connections.
+#[derive(Clone, Default)]
+pub struct CaptureSmithyConnection {
+    loader: Arc<Mutex<Option<Box<LoaderFn>>>>,
+}
+
+impl CaptureSmithyConnection {
+    /// Create a new connection monitor.
+    pub fn new() -> Self {
+        Self {
+            loader: Default::default(),
+        }
+    }
+
+    /// Set the retriever that will capture the `hyper` connection.
+    pub fn set_connection_retriever<F>(&self, f: F)
+    where
+        F: Fn() -> Option<ConnectionMetadata> + Send + Sync + 'static,
+    {
+        *self.loader.lock().unwrap() = Some(Box::new(f));
+    }
+
+    /// Get the associated connection metadata.
+    pub fn get(&self) -> Option<ConnectionMetadata> {
+        match self.loader.lock().unwrap().as_ref() {
+            Some(loader) => loader(),
+            None => {
+                tracing::debug!("no loader was set on the CaptureSmithyConnection");
+                None
+            }
+        }
+    }
+}
+
+impl fmt::Debug for CaptureSmithyConnection {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "CaptureSmithyConnection")
+    }
+}
+
+impl Storable for CaptureSmithyConnection {
+    type Storer = StoreReplace<Self>;
+}
+
 #[cfg(test)]
 mod tests {
     use std::{
@@ -256,5 +303,24 @@ mod tests {
 
         assert_eq!(metadata3.local_addr(), None);
         assert_eq!(metadata3.remote_addr(), Some(TEST_SOCKET_ADDR));
+    }
+
+    #[test]
+    #[allow(clippy::redundant_clone)]
+    fn retrieve_connection_metadata() {
+        let retriever = CaptureSmithyConnection::new();
+        let retriever_clone = retriever.clone();
+        assert!(retriever.get().is_none());
+        retriever.set_connection_retriever(|| {
+            Some(
+                ConnectionMetadata::builder()
+                    .proxied(true)
+                    .poison_fn(|| {})
+                    .build(),
+            )
+        });
+
+        assert!(retriever.get().is_some());
+        assert!(retriever_clone.get().is_some());
     }
 }

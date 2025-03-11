@@ -208,12 +208,12 @@ impl ImdsCredentialsProvider {
 
     async fn retrieve_credentials(&self) -> provider::Result {
         if self.imds_disabled() {
-            tracing::debug!(
-                "IMDS disabled because AWS_EC2_METADATA_DISABLED env var was set to `true`"
+            let err = format!(
+                "IMDS disabled by {} env var set to `true`",
+                super::env::EC2_METADATA_DISABLED
             );
-            return Err(CredentialsError::not_loaded(
-                "IMDS disabled by AWS_ECS_METADATA_DISABLED env var",
-            ));
+            tracing::debug!(err);
+            return Err(CredentialsError::not_loaded(err));
         }
         tracing::debug!("loading credentials from IMDS");
         let profile: Cow<'_, str> = match &self.profile {
@@ -289,7 +289,7 @@ mod test {
     use crate::provider_config::ProviderConfig;
     use aws_credential_types::provider::ProvideCredentials;
     use aws_smithy_async::test_util::instant_time_and_sleep;
-    use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+    use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
     use aws_smithy_types::body::SdkBody;
     use std::time::{Duration, UNIX_EPOCH};
     use tracing_test::traced_test;
@@ -322,6 +322,7 @@ mod test {
         ]);
         let client = ImdsCredentialsProvider::builder()
             .imds_client(make_imds_client(&http_client))
+            .configure(&ProviderConfig::no_configuration())
             .build();
         let creds1 = client.provide_credentials().await.expect("valid creds");
         let creds2 = client.provide_credentials().await.expect("valid creds");
@@ -417,7 +418,7 @@ mod test {
     }
 
     #[tokio::test]
-    #[cfg(feature = "rustls")]
+    #[cfg(feature = "default-https-client")]
     async fn read_timeout_during_credentials_refresh_should_yield_last_retrieved_credentials() {
         let client = crate::imds::Client::builder()
             // 240.* can never be resolved
@@ -435,7 +436,7 @@ mod test {
     }
 
     #[tokio::test]
-    #[cfg(feature = "rustls")]
+    #[cfg(feature = "default-https-client")]
     async fn read_timeout_during_credentials_refresh_should_error_without_last_retrieved_credentials(
     ) {
         let client = crate::imds::Client::builder()
@@ -457,7 +458,7 @@ mod test {
     // TODO(https://github.com/awslabs/aws-sdk-rust/issues/1117) This test is ignored on Windows because it uses Unix-style paths
     #[cfg_attr(windows, ignore)]
     #[tokio::test]
-    #[cfg(feature = "rustls")]
+    #[cfg(feature = "default-https-client")]
     async fn external_timeout_during_credentials_refresh_should_yield_last_retrieved_credentials() {
         use aws_smithy_async::rt::sleep::AsyncSleep;
         let client = crate::imds::Client::builder()
@@ -468,6 +469,7 @@ mod test {
         let expected = aws_credential_types::Credentials::for_tests();
         let provider = ImdsCredentialsProvider::builder()
             .imds_client(client)
+            .configure(&ProviderConfig::no_configuration())
             // seed fallback credentials for testing
             .last_retrieved_credentials(expected.clone())
             .build();
@@ -515,6 +517,7 @@ mod test {
             ]);
         let provider = ImdsCredentialsProvider::builder()
             .imds_client(make_imds_client(&http_client))
+            .configure(&ProviderConfig::no_configuration())
             .build();
         let creds1 = provider.provide_credentials().await.expect("valid creds");
         assert_eq!(creds1.access_key_id(), "ASIARTEST");

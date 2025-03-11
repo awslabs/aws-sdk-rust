@@ -379,7 +379,7 @@ async fn try_attempt(
         trace!(request = ?request, "transmitting request");
         let http_client = halt_on_err!([ctx] => runtime_components.http_client().ok_or_else(||
             OrchestratorError::other("No HTTP client was available to send this request. \
-                Enable the `rustls` crate feature or configure a HTTP client to fix this.")
+                Enable the `default-https-client` crate feature or configure an HTTP client to fix this.")
         ));
         let timeout_config = cfg.load::<TimeoutConfig>().expect("timeout config must be set");
         let settings = {
@@ -462,16 +462,16 @@ async fn finally_op(
     });
 }
 
-#[cfg(all(test, feature = "test-util"))]
+#[cfg(all(test, any(feature = "test-util", feature = "legacy-test-util")))]
 mod tests {
     use crate::client::auth::no_auth::{NoAuthRuntimePlugin, NO_AUTH_SCHEME_ID};
-    use crate::client::http::test_util::NeverClient;
     use crate::client::orchestrator::endpoints::StaticUriEndpointResolver;
     use crate::client::orchestrator::{invoke, invoke_with_stop_point, StopPoint};
     use crate::client::retries::strategy::NeverRetryStrategy;
     use crate::client::test_util::{
         deserializer::CannedResponseDeserializer, serializer::CannedRequestSerializer,
     };
+    use aws_smithy_http_client::test_util::NeverClient;
     use aws_smithy_runtime_api::box_error::BoxError;
     use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
     use aws_smithy_runtime_api::client::auth::{

@@ -13,6 +13,10 @@ use std::str::FromStr;
 /// Apply `endpoint` to `uri`
 ///
 /// This method mutates `uri` by setting the `endpoint` on it
+#[deprecated(
+    since = "1.8.0",
+    note = "Depends on pre 1.x http types. May be removed or feature gated in a future minor version."
+)]
 pub fn apply_endpoint(
     uri: &mut http_02x::Uri,
     endpoint: &http_02x::Uri,

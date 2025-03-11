@@ -4,7 +4,7 @@
  */
 
 use super::{Action, ConnectionId, Direction, Event, NetworkTraffic};
-use crate::client::http::test_util::replay::DEFAULT_RELAXED_HEADERS;
+use crate::test_util::replay::DEFAULT_RELAXED_HEADERS;
 use aws_smithy_protocol_test::MediaType;
 use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::client::http::{
@@ -55,9 +55,9 @@ impl<T> Waitable<T> {
 #[derive(Clone)]
 pub struct ReplayingClient {
     live_events: Arc<Mutex<HashMap<ConnectionId, VecDeque<Event>>>>,
-    verifiable_events: Arc<HashMap<ConnectionId, http_02x::Request<Bytes>>>,
+    verifiable_events: Arc<HashMap<ConnectionId, http_1x::Request<Bytes>>>,
     num_events: Arc<AtomicUsize>,
-    recorded_requests: Arc<Mutex<HashMap<ConnectionId, Waitable<http_02x::Request<Bytes>>>>>,
+    recorded_requests: Arc<Mutex<HashMap<ConnectionId, Waitable<http_1x::Request<Bytes>>>>>,
 }
 
 // Ideally, this would just derive Debug, but that makes the tests in aws-config think they found AWS secrets
@@ -207,6 +207,7 @@ impl ReplayingClient {
     }
 
     /// Return all the recorded requests for further analysis
+    #[cfg(feature = "legacy-test-util")]
     pub async fn take_requests(self) -> Vec<http_02x::Request<Bytes>> {
         let mut recorded_requests =
             std::mem::take(self.recorded_requests.lock().unwrap().deref_mut());
@@ -220,7 +221,17 @@ impl ReplayingClient {
                     .await,
             )
         }
-        out
+        out.into_iter()
+            .map(|v1r| {
+                let mut builder = http_02x::Request::builder()
+                    .uri(v1r.uri().to_string())
+                    .method(v1r.method().as_str());
+                for (k, v) in v1r.headers().iter() {
+                    builder = builder.header(k.as_str(), v.as_bytes())
+                }
+                builder.body(v1r.into_body()).expect("valid conversion")
+            })
+            .collect()
     }
 
     /// Build a replay connection from a JSON file
@@ -253,7 +264,7 @@ impl ReplayingClient {
                 let initial_request = events.iter().next().expect("must have one event");
                 let request = match &initial_request.action {
                     Action::Request { request } => {
-                        http_02x::Request::from(request).map(|_| Bytes::from(body))
+                        http_1x::Request::from(request).map(|_| Bytes::from(body))
                     }
                     _ => panic!("invalid first event"),
                 };
@@ -271,7 +282,7 @@ impl ReplayingClient {
     }
 }
 
-async fn replay_body(events: VecDeque<Event>, mut sender: hyper_0_14::body::Sender) {
+async fn replay_body(events: VecDeque<Event>, mut sender: crate::test_util::body::Sender) {
     for event in events {
         match event.action {
             Action::Request { .. } => panic!(),
@@ -315,8 +326,6 @@ async fn replay_body(events: VecDeque<Event>, mut sender: hyper_0_14::body::Send
 
 impl HttpConnector for ReplayingClient {
     fn call(&self, mut request: HttpRequest) -> HttpConnectorFuture {
-        use http_body_04x::Body;
-
         let event_id = self.next_id();
         tracing::debug!("received event {}: {request:?}", event_id.0);
         let mut events = match self.live_events.lock().unwrap().remove(&event_id) {
@@ -330,17 +339,17 @@ impl HttpConnector for ReplayingClient {
         };
 
         let _initial_request = events.pop_front().unwrap();
-        let (sender, response_body) = hyper_0_14::Body::channel();
-        let body = SdkBody::from_body_0_4(response_body);
+        let (sender, body) = crate::test_util::body::channel_body();
         let recording = self.recorded_requests.clone();
         let recorded_request = tokio::spawn(async move {
             let mut data_read = vec![];
-            while let Some(data) = request.body_mut().data().await {
+            while let Some(data) = crate::test_util::body::next_data_frame(request.body_mut()).await
+            {
                 data_read
                     .extend_from_slice(data.expect("in memory request should not fail").as_ref())
             }
             request
-                .try_into_http02x()
+                .try_into_http1x()
                 .unwrap()
                 .map(|_body| Bytes::from(data_read))
         });
@@ -366,7 +375,7 @@ impl HttpConnector for ReplayingClient {
                     Action::Response {
                         response: Ok(response),
                     } => {
-                        let mut builder = http_02x::Response::builder().status(response.status);
+                        let mut builder = http_1x::Response::builder().status(response.status);
                         for (name, values) in response.headers {
                             for value in values {
                                 builder = builder.header(&name, &value);

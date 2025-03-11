@@ -16,7 +16,7 @@ use aws_sdk_transcribestreaming::types::{
 };
 use aws_sdk_transcribestreaming::{Client, Config};
 use aws_smithy_eventstream::test_util::validate_body;
-use aws_smithy_runtime::client::http::test_util::dvr::{Event, ReplayingClient};
+use aws_smithy_http_client::test_util::dvr::{Event, ReplayingClient};
 use bytes::BufMut;
 use futures_core::Stream;
 use std::error::Error as StdError;

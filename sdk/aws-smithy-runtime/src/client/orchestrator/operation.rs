@@ -400,7 +400,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
 
             assert!(
                 components.http_client().is_some(),
-                "a http_client is required. Enable the `rustls` crate feature or configure a HTTP client to fix this."
+                "a http_client is required. Enable the `default-https-client` crate feature or configure an HTTP client to fix this."
             );
             assert!(
                 components.endpoint_resolver().is_some(),
@@ -437,12 +437,12 @@ impl<I, O, E> OperationBuilder<I, O, E> {
     }
 }
 
-#[cfg(all(test, feature = "test-util"))]
+#[cfg(all(test, any(feature = "test-util", feature = "legacy-test-util")))]
 mod tests {
     use super::*;
-    use crate::client::http::test_util::{capture_request, ReplayEvent, StaticReplayClient};
     use crate::client::retries::classifiers::HttpStatusCodeClassifier;
     use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
+    use aws_smithy_http_client::test_util::{capture_request, ReplayEvent, StaticReplayClient};
     use aws_smithy_runtime_api::client::result::ConnectorError;
     use aws_smithy_types::body::SdkBody;
     use std::convert::Infallible;
@@ -450,7 +450,7 @@ mod tests {
     #[tokio::test]
     async fn operation() {
         let (connector, request_rx) = capture_request(Some(
-            http_02x::Response::builder()
+            http_1x::Response::builder()
                 .status(418)
                 .body(SdkBody::from(&b"I'm a teapot!"[..]))
                 .unwrap(),
@@ -487,21 +487,21 @@ mod tests {
     async fn operation_retries() {
         let connector = StaticReplayClient::new(vec![
             ReplayEvent::new(
-                http_02x::Request::builder()
+                http_1x::Request::builder()
                     .uri("http://localhost:1234/")
                     .body(SdkBody::from(&b"what are you?"[..]))
                     .unwrap(),
-                http_02x::Response::builder()
+                http_1x::Response::builder()
                     .status(503)
                     .body(SdkBody::from(&b""[..]))
                     .unwrap(),
             ),
             ReplayEvent::new(
-                http_02x::Request::builder()
+                http_1x::Request::builder()
                     .uri("http://localhost:1234/")
                     .body(SdkBody::from(&b"what are you?"[..]))
                     .unwrap(),
-                http_02x::Response::builder()
+                http_1x::Response::builder()
                     .status(418)
                     .body(SdkBody::from(&b"I'm a teapot!"[..]))
                     .unwrap(),

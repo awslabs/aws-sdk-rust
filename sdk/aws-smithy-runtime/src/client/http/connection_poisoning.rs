@@ -5,18 +5,18 @@
 
 use crate::client::retries::classifiers::run_classifiers_on_ctx;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::connection::ConnectionMetadata;
 use aws_smithy_runtime_api::client::interceptors::context::{
     AfterDeserializationInterceptorContextRef, BeforeTransmitInterceptorContextMut,
 };
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::retries::classifiers::RetryAction;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
-use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
+use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::retry::{ReconnectMode, RetryConfig};
-use std::fmt;
-use std::sync::{Arc, Mutex};
 use tracing::{debug, error};
+
+// re-export relocated struct that used to live here
+pub use aws_smithy_runtime_api::client::connection::CaptureSmithyConnection;
 
 /// An interceptor for poisoning connections in response to certain events.
 ///
@@ -94,75 +94,5 @@ impl Intercept for ConnectionPoisoningInterceptor {
         }
 
         Ok(())
-    }
-}
-
-type LoaderFn = dyn Fn() -> Option<ConnectionMetadata> + Send + Sync;
-
-/// State for a middleware that will monitor and manage connections.
-#[derive(Clone, Default)]
-pub struct CaptureSmithyConnection {
-    loader: Arc<Mutex<Option<Box<LoaderFn>>>>,
-}
-
-impl CaptureSmithyConnection {
-    /// Create a new connection monitor.
-    pub fn new() -> Self {
-        Self {
-            loader: Default::default(),
-        }
-    }
-
-    /// Set the retriever that will capture the `hyper` connection.
-    pub fn set_connection_retriever<F>(&self, f: F)
-    where
-        F: Fn() -> Option<ConnectionMetadata> + Send + Sync + 'static,
-    {
-        *self.loader.lock().unwrap() = Some(Box::new(f));
-    }
-
-    /// Get the associated connection metadata.
-    pub fn get(&self) -> Option<ConnectionMetadata> {
-        match self.loader.lock().unwrap().as_ref() {
-            Some(loader) => loader(),
-            None => {
-                tracing::debug!("no loader was set on the CaptureSmithyConnection");
-                None
-            }
-        }
-    }
-}
-
-impl fmt::Debug for CaptureSmithyConnection {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "CaptureSmithyConnection")
-    }
-}
-
-impl Storable for CaptureSmithyConnection {
-    type Storer = StoreReplace<Self>;
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    #[allow(clippy::redundant_clone)]
-    fn retrieve_connection_metadata() {
-        let retriever = CaptureSmithyConnection::new();
-        let retriever_clone = retriever.clone();
-        assert!(retriever.get().is_none());
-        retriever.set_connection_retriever(|| {
-            Some(
-                ConnectionMetadata::builder()
-                    .proxied(true)
-                    .poison_fn(|| {})
-                    .build(),
-            )
-        });
-
-        assert!(retriever.get().is_some());
-        assert!(retriever_clone.get().is_some());
     }
 }

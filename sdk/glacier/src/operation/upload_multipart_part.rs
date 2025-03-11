@@ -292,7 +292,7 @@ mod upload_multipart_part_test {
     #[::tokio::test]
     #[::tracing_test::traced_test]
     async fn glacier_multipart_checksums_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder().with_test_defaults().endpoint_url("https://example.com");
         let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
         let mut config_builder = config_builder;

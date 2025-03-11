@@ -73,7 +73,7 @@ impl CredentialsProviderChain {
     }
 
     /// Add a fallback to the default provider chain
-    #[cfg(feature = "rustls")]
+    #[cfg(any(feature = "default-https-client", feature = "rustls"))]
     pub async fn or_default_provider(self) -> Self {
         self.or_else(
             "DefaultProviderChain",
@@ -82,7 +82,7 @@ impl CredentialsProviderChain {
     }
 
     /// Creates a credential provider chain that starts with the default provider
-    #[cfg(feature = "rustls")]
+    #[cfg(any(feature = "default-https-client", feature = "rustls"))]
     pub async fn default_provider() -> Self {
         Self::first_try(
             "DefaultProviderChain",

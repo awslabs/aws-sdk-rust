@@ -32,5 +32,13 @@ pub mod expiring_cache;
 pub mod static_partition_map;
 
 /// General testing utilities.
-#[cfg(feature = "test-util")]
+#[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
 pub mod test_util;
+
+// legacy test-util, re-export of macros
+#[cfg(feature = "wire-mock")]
+pub use aws_smithy_http_client::test_util::wire::ev;
+#[cfg(feature = "wire-mock")]
+pub use aws_smithy_http_client::test_util::wire::match_events;
+#[cfg(feature = "wire-mock")]
+pub use aws_smithy_http_client::test_util::wire::matcher;

@@ -11,8 +11,8 @@ use aws_sdk_s3::types::{
     OutputSerialization, SelectObjectContentEventStream,
 };
 use aws_sdk_s3::Client;
+use aws_smithy_http_client::test_util::dvr::{Event, ReplayingClient};
 use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
-use aws_smithy_runtime::client::http::test_util::dvr::{Event, ReplayingClient};
 use std::error::Error;
 
 #[tokio::test]

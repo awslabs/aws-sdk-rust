@@ -23,6 +23,11 @@ allowed_external_types = [
     "hyper::client::connect::Connection",
     "tokio::io::async_read::AsyncRead",
     "tokio::io::async_write::AsyncWrite",
+    "aws_smithy_http_client::hyper_014",
+    "aws_smithy_http_client::test_util::*",
+    "aws_smithy_http_client::ev",
+    "aws_smithy_http_client::match_events",
+    "aws_smithy_http_client::matcher",
 
     # TODO(https://github.com/smithy-lang/smithy-rs/issues/1193): Once tooling permits it, only allow the following types in the `http-0-x` feature
     "http_body::Body"

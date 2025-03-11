@@ -11,12 +11,11 @@ publish = false
 
 [dev-dependencies]
 futures = "0.3.25"
-http = "0.2.9"
 
 [dev-dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-version = "1.5.18"
+version = "1.6.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"
@@ -25,17 +24,22 @@ version = "1.79.0"
 
 [dev-dependencies.aws-smithy-async]
 path = "../../sdk/aws-smithy-async"
-version = "1.2.4"
+version = "1.2.5"
 
 [dev-dependencies.aws-smithy-runtime]
 path = "../../sdk/aws-smithy-runtime"
 features = ["test-util"]
-version = "1.7.8"
+version = "1.8.0"
+
+[dev-dependencies.aws-smithy-http-client]
+path = "../../sdk/aws-smithy-http-client"
+features = ["test-util"]
+version = "1.0.0"
 
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
 features = ["test-util"]
-version = "1.2.1"
+version = "1.2.2"
 
 [dev-dependencies.tokio]
 version = "1.23.1"
@@ -44,3 +48,7 @@ features = ["full", "test-util"]
 [dev-dependencies.tracing-subscriber]
 version = "0.3.15"
 features = ["env-filter"]
+
+[dev-dependencies.http-1x]
+package = "http"
+version = "1"

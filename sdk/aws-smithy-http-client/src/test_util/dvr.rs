@@ -128,9 +128,22 @@ pub struct Response {
     headers: IndexMap<String, Vec<String>>,
 }
 
+#[cfg(feature = "legacy-test-util")]
 impl From<&Request> for http_02x::Request<()> {
     fn from(request: &Request) -> Self {
         let mut builder = http_02x::Request::builder().uri(request.uri.as_str());
+        for (k, values) in request.headers.iter() {
+            for v in values {
+                builder = builder.header(k, v);
+            }
+        }
+        builder.method(request.method.as_str()).body(()).unwrap()
+    }
+}
+
+impl From<&Request> for http_1x::Request<()> {
+    fn from(request: &Request) -> Self {
+        let mut builder = http_1x::Request::builder().uri(request.uri.as_str());
         for (k, values) in request.headers.iter() {
             for v in values {
                 builder = builder.header(k, v);
@@ -162,19 +175,6 @@ fn headers_to_map_http(headers: &Headers) -> IndexMap<String, Vec<String>> {
     out
 }
 
-fn headers_to_map_02x(headers: &http_02x::HeaderMap) -> IndexMap<String, Vec<String>> {
-    let mut out: IndexMap<_, Vec<_>> = IndexMap::new();
-    for (header_name, header_value) in headers.iter() {
-        let entry = out.entry(header_name.to_string()).or_default();
-        entry.push(
-            std::str::from_utf8(header_value.as_ref())
-                .unwrap()
-                .to_string(),
-        );
-    }
-    out
-}
-
 fn headers_to_map(headers: &Headers) -> IndexMap<String, Vec<String>> {
     let mut out: IndexMap<_, Vec<_>> = IndexMap::new();
     for (header_name, header_value) in headers.iter() {
@@ -188,10 +188,46 @@ fn headers_to_map(headers: &Headers) -> IndexMap<String, Vec<String>> {
     out
 }
 
+#[cfg(feature = "legacy-test-util")]
+fn headers_to_map_02x(headers: &http_02x::HeaderMap) -> IndexMap<String, Vec<String>> {
+    let mut out: IndexMap<_, Vec<_>> = IndexMap::new();
+    for (header_name, header_value) in headers.iter() {
+        let entry = out.entry(header_name.to_string()).or_default();
+        entry.push(
+            std::str::from_utf8(header_value.as_ref())
+                .unwrap()
+                .to_string(),
+        );
+    }
+    out
+}
+
+#[cfg(feature = "legacy-test-util")]
 impl<'a, B> From<&'a http_02x::Response<B>> for Response {
     fn from(resp: &'a http_02x::Response<B>) -> Self {
         let status = resp.status().as_u16();
         let headers = headers_to_map_02x(resp.headers());
+        Self { status, headers }
+    }
+}
+
+fn headers_to_map_1x(headers: &http_1x::HeaderMap) -> IndexMap<String, Vec<String>> {
+    let mut out: IndexMap<_, Vec<_>> = IndexMap::new();
+    for (header_name, header_value) in headers.iter() {
+        let entry = out.entry(header_name.to_string()).or_default();
+        entry.push(
+            std::str::from_utf8(header_value.as_ref())
+                .unwrap()
+                .to_string(),
+        );
+    }
+    out
+}
+
+impl<'a, B> From<&'a http_1x::Response<B>> for Response {
+    fn from(resp: &'a http_1x::Response<B>) -> Self {
+        let status = resp.status().as_u16();
+        let headers = headers_to_map_1x(resp.headers());
         Self { status, headers }
     }
 }
@@ -343,6 +379,7 @@ mod tests {
         Ok(())
     }
 
+    #[cfg(feature = "legacy-test-util")]
     #[tokio::test]
     async fn turtles_all_the_way_down() -> Result<(), Box<dyn Error>> {
         // create a replaying connection from a recording, wrap a recording connection around it,

@@ -9,7 +9,7 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::Builder;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::{Client, Config};
-use aws_smithy_runtime::client::http::test_util::{capture_request, CaptureRequestReceiver};
+use aws_smithy_http_client::test_util::{capture_request, CaptureRequestReceiver};
 
 fn test_client(update_builder: fn(Builder) -> Builder) -> (CaptureRequestReceiver, Client) {
     let (http_client, captured_request) = capture_request(None);

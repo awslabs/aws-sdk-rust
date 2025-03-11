@@ -12,15 +12,19 @@ use aws_credential_types::{
     Credentials,
 };
 use aws_sdk_s3::Client;
-use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
+use aws_smithy_http_client::test_util::infallible_client_fn;
 
 // NOTE: These tests are _not_ S3 specific and would apply to any AWS SDK but due to the need to consume `aws-config`
 // (which depends on relocated runtime crates) we can't make this an `awsSdkIntegrationTest(..)`.
 
 #[tokio::test]
 async fn test_identity_cache_reused_by_default() {
-    let http_client =
-        infallible_client_fn(|_req| http::Response::builder().status(200).body("OK!").unwrap());
+    let http_client = infallible_client_fn(|_req| {
+        http_1x::Response::builder()
+            .status(200)
+            .body("OK!")
+            .unwrap()
+    });
 
     let provider = TestCredProvider::new();
     let config = aws_config::defaults(BehaviorVersion::latest())
@@ -42,8 +46,12 @@ async fn test_identity_cache_reused_by_default() {
 #[allow(deprecated)] // intentionally testing an old behavior version
 #[tokio::test]
 async fn test_identity_cache_ga_behavior_version() {
-    let http_client =
-        infallible_client_fn(|_req| http::Response::builder().status(200).body("OK!").unwrap());
+    let http_client = infallible_client_fn(|_req| {
+        http_1x::Response::builder()
+            .status(200)
+            .body("OK!")
+            .unwrap()
+    });
 
     let provider = TestCredProvider::new();
 

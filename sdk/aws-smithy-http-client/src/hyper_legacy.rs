@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::client::http::connection_poisoning::CaptureSmithyConnection;
-use crate::client::http::hyper_014::timeout_middleware::HttpTimeoutError;
+use crate::hyper_legacy::timeout_middleware::HttpTimeoutError;
 use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::connection::CaptureSmithyConnection;
 use aws_smithy_runtime_api::client::connection::ConnectionMetadata;
 use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::client::http::{
@@ -34,16 +34,19 @@ use std::sync::RwLock;
 use std::time::Duration;
 use tokio::io::{AsyncRead, AsyncWrite};
 
-#[cfg(feature = "tls-rustls")]
+#[cfg(feature = "legacy-rustls-ring")]
 mod default_connector {
     use aws_smithy_async::rt::sleep::SharedAsyncSleep;
     use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
+    use legacy_hyper_rustls as hyper_rustls;
+    use legacy_rustls as rustls;
+    use std::sync::LazyLock;
 
     // Creating a `with_native_roots` HTTP client takes 300ms on OS X. Cache this so that we
     // don't need to repeatedly incur that cost.
-    pub(crate) static HTTPS_NATIVE_ROOTS: once_cell::sync::Lazy<
+    pub(crate) static HTTPS_NATIVE_ROOTS: LazyLock<
         hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector>,
-    > = once_cell::sync::Lazy::new(default_tls);
+    > = LazyLock::new(default_tls);
 
     fn default_tls() -> hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector> {
         use hyper_rustls::ConfigBuilderExt;
@@ -98,13 +101,13 @@ pub fn default_connector(
     settings: &HttpConnectorSettings,
     sleep: Option<SharedAsyncSleep>,
 ) -> Option<SharedHttpConnector> {
-    #[cfg(feature = "tls-rustls")]
+    #[cfg(feature = "legacy-rustls-ring")]
     {
         tracing::trace!(settings = ?settings, sleep = ?sleep, "creating a new default connector");
         let hyper = default_connector::base(settings, sleep).build_https();
         Some(SharedHttpConnector::new(hyper))
     }
-    #[cfg(not(feature = "tls-rustls"))]
+    #[cfg(not(feature = "legacy-rustls-ring"))]
     {
         tracing::trace!(settings = ?settings, sleep = ?sleep, "no default connector available");
         None
@@ -113,12 +116,12 @@ pub fn default_connector(
 
 /// Creates a hyper-backed HTTPS client from defaults depending on what cargo features are activated.
 pub fn default_client() -> Option<SharedHttpClient> {
-    #[cfg(feature = "tls-rustls")]
+    #[cfg(feature = "legacy-rustls-ring")]
     {
         tracing::trace!("creating a new default hyper 0.14.x client");
         Some(HyperClientBuilder::new().build_https())
     }
-    #[cfg(not(feature = "tls-rustls"))]
+    #[cfg(not(feature = "legacy-rustls-ring"))]
     {
         tracing::trace!("no default connector available");
         None
@@ -202,7 +205,7 @@ impl HyperConnectorBuilder {
     }
 
     /// Create a [`HyperConnector`] with the default rustls HTTPS implementation.
-    #[cfg(feature = "tls-rustls")]
+    #[cfg(feature = "legacy-rustls-ring")]
     pub fn build_https(self) -> HyperConnector {
         self.build(default_connector::https())
     }
@@ -505,7 +508,7 @@ where
 /// generated Smithy clients.
 ///
 /// ```no_run,ignore
-/// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
+/// use aws_smithy_http_client::hyper_014::HyperClientBuilder;
 ///
 /// let http_client = HyperClientBuilder::new().build_https();
 ///
@@ -529,7 +532,7 @@ where
 /// - CA trust root certificates (illustrated using WebPKI below)
 ///
 /// ```no_run,ignore
-/// use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
+/// use aws_smithy_http_client::hyper_014::HyperClientBuilder;
 ///
 /// let https_connector = hyper_rustls::HttpsConnectorBuilder::new()
 ///     .with_webpki_roots()
@@ -580,7 +583,7 @@ impl HyperClientBuilder {
     ///
     /// The trusted certificates will be loaded later when this becomes the selected
     /// HTTP client for a Smithy client.
-    #[cfg(feature = "tls-rustls")]
+    #[cfg(feature = "legacy-rustls-ring")]
     pub fn build_https(self) -> SharedHttpClient {
         self.build_with_fn(default_connector::https)
     }
@@ -588,7 +591,7 @@ impl HyperClientBuilder {
     /// Create a [`SharedHttpClient`] from this builder and a given connector.
     ///
     #[cfg_attr(
-        feature = "tls-rustls",
+        feature = "legacy-rustls-ring",
         doc = "Use [`build_https`](HyperClientBuilder::build_https) if you don't want to provide a custom TCP connector."
     )]
     pub fn build<C>(self, tcp_connector: C) -> SharedHttpClient
@@ -819,8 +822,8 @@ mod timeout_middleware {
     }
 
     #[cfg(test)]
-    mod test {
-        use crate::client::http::hyper_014::HyperConnector;
+    pub(crate) mod test {
+        use crate::hyper_014::HyperConnector;
         use aws_smithy_async::assert_elapsed;
         use aws_smithy_async::future::never::Never;
         use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
@@ -851,7 +854,7 @@ mod timeout_middleware {
         /// Returned futures will return Pending forever
         #[non_exhaustive]
         #[derive(Clone, Default, Debug)]
-        struct NeverConnects;
+        pub(crate) struct NeverConnects;
         impl hyper_0_14::service::Service<http_02x::Uri> for NeverConnects {
             type Response = TcpStream;
             type Error = ConnectorError;
@@ -993,10 +996,10 @@ mod timeout_middleware {
     }
 }
 
-#[cfg(all(test, feature = "test-util"))]
+#[cfg(test)]
 mod test {
-    use crate::client::http::hyper_014::{HyperClientBuilder, HyperConnector};
-    use crate::client::http::test_util::NeverTcpConnector;
+    use crate::hyper_legacy::timeout_middleware::test::NeverConnects;
+    use crate::hyper_legacy::{HyperClientBuilder, HyperConnector};
     use aws_smithy_async::time::SystemTimeSource;
     use aws_smithy_runtime_api::box_error::BoxError;
     use aws_smithy_runtime_api::client::http::{HttpClient, HttpConnectorSettings};
@@ -1019,7 +1022,7 @@ mod test {
             let count = creation_count.clone();
             move || {
                 count.fetch_add(1, Ordering::Relaxed);
-                NeverTcpConnector::new()
+                NeverConnects::default()
             }
         });
 

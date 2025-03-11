@@ -5,19 +5,19 @@
 
 #![cfg(feature = "test-util")]
 use aws_sdk_s3::{config::Region, Client, Config};
-use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::date_time::{DateTime, Format};
 
 fn make_client(expires_val: &str) -> Client {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
-            .uri(http::Uri::from_static(
+        http_1x::Request::builder()
+            .uri(http_1x::Uri::from_static(
                 "https://some-test-bucket.s3.us-east-1.amazonaws.com/test.txt?attributes",
             ))
             .body(SdkBody::empty())
             .unwrap(),
-        http::Response::builder()
+        http_1x::Response::builder()
             .header("Expires", expires_val)
             .status(200)
             .body(SdkBody::empty())

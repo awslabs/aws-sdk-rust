@@ -7,7 +7,7 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
-use aws_smithy_runtime::client::http::test_util::NeverClient;
+use aws_smithy_http_client::test_util::NeverClient;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::result::SdkError;

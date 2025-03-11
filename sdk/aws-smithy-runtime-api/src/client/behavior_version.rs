@@ -20,6 +20,7 @@ enum Inner {
     // IMPORTANT: Order matters here for the `Ord` derive. Newer versions go to the bottom.
     V2023_11_09,
     V2024_03_28,
+    V2025_01_17,
 }
 
 impl BehaviorVersion {
@@ -32,9 +33,26 @@ impl BehaviorVersion {
     /// If, however, you're writing a service that is very latency sensitive, or that has written
     /// code to tune Rust SDK behaviors, consider pinning to a specific major version.
     ///
-    /// The latest version is currently [`BehaviorVersion::v2024_03_28`]
+    /// The latest version is currently [`BehaviorVersion::v2025_01_17`]
     pub fn latest() -> Self {
-        Self::v2024_03_28()
+        Self::v2025_01_17()
+    }
+
+    /// Behavior version for January 17th, 2025
+    ///
+    /// This version updates the default HTTP client and TLS stack. SDKs shipped with
+    /// a pre 1.x version of hyper and rustls originally. This behavior version updates
+    /// the HTTP+TLS stack to maintained versions.
+    ///
+    /// <div class="warning">
+    /// NOTE: In a future release behavior versions prior to this will require enabling
+    /// feature flags manually to keep the legacy Hyper stack as the default. Specifically the
+    /// `aws-smithy-runtime/tls-rustls` feature flag combined with an older behavior version.
+    /// </div>
+    pub fn v2025_01_17() -> Self {
+        Self {
+            inner: Inner::V2025_01_17,
+        }
     }
 
     /// Behavior version for March 28th, 2024.
@@ -42,6 +60,10 @@ impl BehaviorVersion {
     /// This version enables stalled stream protection for uploads (request bodies) by default.
     ///
     /// When a new behavior major version is released, this method will be deprecated.
+    #[deprecated(
+        since = "1.8.0",
+        note = "Superseded by v2025_01_17, which updates the default HTTPS client stack."
+    )]
     pub fn v2024_03_28() -> Self {
         Self {
             inner: Inner::V2024_03_28,
@@ -51,7 +73,7 @@ impl BehaviorVersion {
     /// Behavior version for November 9th, 2023.
     #[deprecated(
         since = "1.4.0",
-        note = "Superceded by v2024_03_28, which enabled stalled stream protection for uploads (request bodies) by default."
+        note = "Superseded by v2024_03_28, which enabled stalled stream protection for uploads (request bodies) by default."
     )]
     pub fn v2023_11_09() -> Self {
         Self {
@@ -81,11 +103,14 @@ mod tests {
         assert!(BehaviorVersion::latest() == BehaviorVersion::latest());
         assert!(BehaviorVersion::v2023_11_09() == BehaviorVersion::v2023_11_09());
         assert!(BehaviorVersion::v2024_03_28() != BehaviorVersion::v2023_11_09());
+        assert!(BehaviorVersion::v2025_01_17() != BehaviorVersion::v2024_03_28());
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::latest()));
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2023_11_09()));
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2024_03_28()));
+        assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2025_01_17()));
         assert!(!BehaviorVersion::v2023_11_09().is_at_least(BehaviorVersion::v2024_03_28()));
         assert!(Inner::V2024_03_28 > Inner::V2023_11_09);
         assert!(Inner::V2023_11_09 < Inner::V2024_03_28);
+        assert!(Inner::V2024_03_28 < Inner::V2025_01_17);
     }
 }

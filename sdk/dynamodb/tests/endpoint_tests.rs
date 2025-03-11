@@ -8,7 +8,7 @@ async fn operation_input_test_list_tables_1() {
         "AWS::Auth::AccountId": "012345678901"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -36,7 +36,7 @@ async fn operation_input_test_list_tables_2() {
         "AWS::Auth::AccountId": ""
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -64,7 +64,7 @@ async fn operation_input_test_list_tables_3() {
         "AWS::Auth::AccountId": "012345678901"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -91,7 +91,7 @@ async fn operation_input_test_list_tables_4() {
         "AWS::Auth::AccountId": ""
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -118,7 +118,7 @@ async fn operation_input_test_list_tables_5() {
         "AWS::Auth::AccountIdEndpointMode": "required"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -147,7 +147,7 @@ async fn operation_input_test_list_tables_6() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -177,7 +177,7 @@ async fn operation_input_test_list_tables_7() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -207,7 +207,7 @@ async fn operation_input_test_list_tables_8() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -238,7 +238,7 @@ async fn operation_input_test_list_tables_9() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -268,7 +268,7 @@ async fn operation_input_test_list_tables_10() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -297,7 +297,7 @@ async fn operation_input_test_list_tables_11() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -326,7 +326,7 @@ async fn operation_input_test_list_tables_12() {
         "AWS::Auth::AccountIdEndpointMode": "preferred"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -355,7 +355,7 @@ async fn operation_input_test_list_tables_13() {
         "AWS::Auth::AccountIdEndpointMode": "required"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -384,7 +384,7 @@ async fn operation_input_test_list_tables_14() {
         "AWS::Auth::AccountIdEndpointMode": "disabled"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -412,7 +412,7 @@ async fn operation_input_test_list_tables_15() {
         "AWS::Auth::AccountId": " "
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -441,7 +441,7 @@ async fn operation_input_test_list_tables_16() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -471,7 +471,7 @@ async fn operation_input_test_list_tables_17() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -500,7 +500,7 @@ async fn operation_input_test_list_tables_18() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -528,7 +528,7 @@ async fn operation_input_test_list_tables_19() {
         "AWS::Auth::AccountId": "012345678901"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -555,7 +555,7 @@ async fn operation_input_test_list_tables_20() {
         "AWS::Auth::AccountId": ""
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -583,7 +583,7 @@ async fn operation_input_test_list_tables_21() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -611,7 +611,7 @@ async fn operation_input_test_list_tables_22() {
         "AWS::Auth::AccountId": "012345678901"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -638,7 +638,7 @@ async fn operation_input_test_list_tables_23() {
         "AWS::Auth::AccountId": "012345678901"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -665,7 +665,7 @@ async fn operation_input_test_list_tables_24() {
         "AWS::Auth::AccountId": "012345678901"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
@@ -692,7 +692,7 @@ async fn operation_input_test_list_tables_25() {
         "AWS::Auth::AccountId": ""
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);

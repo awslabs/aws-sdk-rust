@@ -7,7 +7,7 @@ use aws_sdk_codecatalyst::config::Token;
 
 #[tokio::test]
 async fn sso_bearer_auth() {
-    let replay = aws_smithy_runtime::client::http::test_util::dvr::ReplayingClient::from_file(
+    let replay = aws_smithy_http_client::test_util::dvr::ReplayingClient::from_file(
         "tests/sso_bearer_auth.json",
     )
     .unwrap();

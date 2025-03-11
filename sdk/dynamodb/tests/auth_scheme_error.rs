@@ -6,8 +6,8 @@
 use aws_sdk_dynamodb::config::Region;
 use aws_sdk_dynamodb::error::DisplayErrorContext;
 use aws_sdk_dynamodb::{Client, Config};
+use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_runtime::assert_str_contains;
-use aws_smithy_runtime::client::http::test_util::capture_request;
 
 #[tokio::test]
 async fn auth_scheme_error() {

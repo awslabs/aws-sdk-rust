@@ -33,6 +33,7 @@ mod tests {
     use crate::byte_stream::Inner;
     use bytes::Bytes;
 
+    #[cfg(feature = "hyper-0-14-x")]
     #[tokio::test]
     async fn read_from_channel_body() {
         let (mut sender, body) = hyper_0_14::Body::channel();

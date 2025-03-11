@@ -8,8 +8,8 @@
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::Config;
 use aws_sdk_s3::{config::Credentials, config::Region, primitives::ByteStream, Client};
-use aws_smithy_runtime::client::http::test_util::capture_request;
-use http::HeaderValue;
+use aws_smithy_http_client::test_util::capture_request;
+use http_1x::HeaderValue;
 
 const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 

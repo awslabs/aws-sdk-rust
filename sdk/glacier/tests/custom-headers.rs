@@ -5,8 +5,8 @@
 
 use aws_sdk_glacier::config::{Credentials, Region};
 use aws_sdk_glacier::primitives::ByteStream;
+use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_protocol_test::{assert_ok, validate_headers};
-use aws_smithy_runtime::client::http::test_util::capture_request;
 
 #[tokio::test]
 async fn set_correct_headers() {

@@ -7,11 +7,11 @@ use aws_sdk_lambda::config::{Credentials, Region};
 use aws_sdk_lambda::operation::list_functions::ListFunctionsError;
 use aws_sdk_lambda::operation::RequestId;
 use aws_sdk_lambda::{Client, Config};
-use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
+use aws_smithy_http_client::test_util::infallible_client_fn;
 
 #[allow(deprecated)]
 async fn run_test(
-    response: impl Fn() -> http::Response<&'static str> + Send + Sync + 'static,
+    response: impl Fn() -> http_1x::Response<&'static str> + Send + Sync + 'static,
     expect_error: bool,
 ) {
     let http_client = infallible_client_fn(move |_| response());
@@ -37,7 +37,7 @@ async fn run_test(
 async fn get_request_id_from_unmodeled_error() {
     run_test(
         || {
-            http::Response::builder()
+            http_1x::Response::builder()
                 .header("x-amzn-RequestId", "correct-request-id")
                 .header("X-Amzn-Errortype", "ListFunctions")
                 .status(500)
@@ -53,7 +53,7 @@ async fn get_request_id_from_unmodeled_error() {
 async fn get_request_id_from_successful_response() {
     run_test(
         || {
-            http::Response::builder()
+            http_1x::Response::builder()
                 .header("x-amzn-RequestId", "correct-request-id")
                 .status(200)
                 .body(r#"{"Functions":[],"NextMarker":null}"#)

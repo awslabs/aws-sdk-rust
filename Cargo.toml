@@ -60,6 +60,7 @@ members = [
     "sdk/aws-smithy-experimental",
     "sdk/aws-smithy-http",
     "sdk/aws-smithy-http-auth",
+    "sdk/aws-smithy-http-client",
     "sdk/aws-smithy-http-tower",
     "sdk/aws-smithy-json",
     "sdk/aws-smithy-mocks-experimental",

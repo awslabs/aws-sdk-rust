@@ -14,7 +14,7 @@ use crate::meta::credentials::CredentialsProviderChain;
 use crate::meta::region::ProvideRegion;
 use crate::provider_config::ProviderConfig;
 
-#[cfg(feature = "rustls")]
+#[cfg(any(feature = "default-https-client", feature = "rustls"))]
 /// Default Credentials Provider chain
 ///
 /// The region from the default region provider will be used
@@ -170,7 +170,7 @@ impl Builder {
     /// Creates a `DefaultCredentialsChain`
     ///
     /// ## Panics
-    /// This function will panic if no connector has been set or the `rustls`
+    /// This function will panic if no connector has been set or the `default-https-client`
     /// feature has been disabled.
     pub async fn build(self) -> DefaultCredentialsChain {
         let region = match self.region_override {
@@ -347,17 +347,15 @@ mod test {
     }
 
     #[tokio::test]
-    #[cfg(feature = "client-hyper")]
     async fn no_providers_configured_err() {
         use crate::provider_config::ProviderConfig;
         use aws_credential_types::provider::error::CredentialsError;
         use aws_smithy_async::rt::sleep::TokioSleep;
-        use aws_smithy_runtime::client::http::hyper_014::HyperClientBuilder;
-        use aws_smithy_runtime::client::http::test_util::NeverTcpConnector;
+        use aws_smithy_http_client::test_util::NeverTcpConnector;
 
         tokio::time::pause();
         let conf = ProviderConfig::no_configuration()
-            .with_http_client(HyperClientBuilder::new().build(NeverTcpConnector::new()))
+            .with_http_client(NeverTcpConnector::new().into_client())
             .with_time_source(StaticTimeSource::new(UNIX_EPOCH))
             .with_sleep_impl(TokioSleep::new());
         let provider = DefaultCredentialsChain::builder()

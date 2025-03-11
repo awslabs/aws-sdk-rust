@@ -7,7 +7,7 @@ async fn operation_input_test_get_object_1() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -42,7 +42,7 @@ async fn operation_input_test_get_object_2() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -76,7 +76,7 @@ async fn operation_input_test_get_object_3() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -107,7 +107,7 @@ async fn operation_input_test_get_object_4() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -141,7 +141,7 @@ async fn operation_input_test_get_object_5() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -175,7 +175,7 @@ async fn operation_input_test_get_object_6() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -210,7 +210,7 @@ async fn operation_input_test_get_object_7() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -245,7 +245,7 @@ async fn operation_input_test_get_object_8() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -279,7 +279,7 @@ async fn operation_input_test_create_bucket_9() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -312,7 +312,7 @@ async fn operation_input_test_get_object_10() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -346,7 +346,7 @@ async fn operation_input_test_get_object_11() {
         "SDK::Endpoint": "https://beta.example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -386,7 +386,7 @@ async fn operation_input_test_get_object_12() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -423,7 +423,7 @@ async fn operation_input_test_get_object_13() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -458,7 +458,7 @@ async fn operation_input_test_get_object_14() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -493,7 +493,7 @@ async fn operation_input_test_get_object_15() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -529,7 +529,7 @@ async fn operation_input_test_get_object_16() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -565,7 +565,7 @@ async fn operation_input_test_get_object_17() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -601,7 +601,7 @@ async fn operation_input_test_get_object_18() {
         "AWS::S3::DisableMultiRegionAccessPoints": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -638,7 +638,7 @@ async fn operation_input_test_get_object_19() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -675,7 +675,7 @@ async fn operation_input_test_get_object_20() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -712,7 +712,7 @@ async fn operation_input_test_get_object_21() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -748,7 +748,7 @@ async fn operation_input_test_get_object_22() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -783,7 +783,7 @@ async fn operation_input_test_get_object_23() {
         "SDK::Endpoint": "http://abc.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -818,7 +818,7 @@ async fn operation_input_test_get_object_24() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -850,7 +850,7 @@ async fn operation_input_test_get_object_25() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -883,7 +883,7 @@ async fn operation_input_test_get_object_26() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -917,7 +917,7 @@ async fn operation_input_test_get_object_27() {
         "SDK::Endpoint": "https://123.123.0.1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -951,7 +951,7 @@ async fn operation_input_test_get_object_28() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -985,7 +985,7 @@ async fn operation_input_test_get_object_29() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1020,7 +1020,7 @@ async fn operation_input_test_get_object_30() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1055,7 +1055,7 @@ async fn operation_input_test_get_object_31() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1087,7 +1087,7 @@ async fn operation_input_test_get_object_32() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1119,7 +1119,7 @@ async fn operation_input_test_get_object_33() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1151,7 +1151,7 @@ async fn operation_input_test_get_object_34() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1184,7 +1184,7 @@ async fn operation_input_test_get_object_35() {
         "SDK::Endpoint": "http://example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1217,7 +1217,7 @@ async fn operation_input_test_list_buckets_36() {
         "AWS::Region": "aws-global"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1243,7 +1243,7 @@ async fn operation_input_test_list_buckets_37() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1270,7 +1270,7 @@ async fn operation_input_test_list_buckets_38() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1298,7 +1298,7 @@ async fn operation_input_test_list_buckets_39() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1326,7 +1326,7 @@ async fn operation_input_test_list_buckets_40() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1353,7 +1353,7 @@ async fn operation_input_test_list_buckets_41() {
         "SDK::Endpoint": "https://example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1379,7 +1379,7 @@ async fn operation_input_test_get_object_42() {
         "AWS::Region": "aws-global"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1411,7 +1411,7 @@ async fn operation_input_test_list_objects_43() {
         "AWS::Region": "aws-global"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1444,7 +1444,7 @@ async fn operation_input_test_get_object_44() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1478,7 +1478,7 @@ async fn operation_input_test_get_object_45() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1513,7 +1513,7 @@ async fn operation_input_test_get_object_46() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1548,7 +1548,7 @@ async fn operation_input_test_get_object_47() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1582,7 +1582,7 @@ async fn operation_input_test_get_object_48() {
         "SDK::Endpoint": "https://example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1616,7 +1616,7 @@ async fn operation_input_test_get_object_49() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1651,7 +1651,7 @@ async fn operation_input_test_get_object_50() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1687,7 +1687,7 @@ async fn operation_input_test_get_object_51() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1722,7 +1722,7 @@ async fn operation_input_test_get_object_52() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1757,7 +1757,7 @@ async fn operation_input_test_get_object_53() {
         "AWS::Region": "us-west-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1794,7 +1794,7 @@ async fn operation_input_test_get_object_54() {
         "SDK::Endpoint": "http://beta.example.com:1234"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1829,7 +1829,7 @@ async fn operation_input_test_get_object_55() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1862,7 +1862,7 @@ async fn operation_input_test_get_object_56() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1897,7 +1897,7 @@ async fn operation_input_test_get_object_57() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1932,7 +1932,7 @@ async fn operation_input_test_get_object_58() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -1966,7 +1966,7 @@ async fn operation_input_test_get_object_59() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2001,7 +2001,7 @@ async fn operation_input_test_get_object_60() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2037,7 +2037,7 @@ async fn operation_input_test_get_object_61() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2071,7 +2071,7 @@ async fn operation_input_test_get_object_62() {
         "AWS::Region": "cn-north-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2104,7 +2104,7 @@ async fn operation_input_test_get_object_63() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2137,7 +2137,7 @@ async fn operation_input_test_get_object_64() {
         "AWS::Region": "af-south-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2170,7 +2170,7 @@ async fn operation_input_test_get_object_65() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2205,7 +2205,7 @@ async fn operation_input_test_get_object_66() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2240,7 +2240,7 @@ async fn operation_input_test_get_object_67() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2274,7 +2274,7 @@ async fn operation_input_test_get_object_68() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2309,7 +2309,7 @@ async fn operation_input_test_get_object_69() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2345,7 +2345,7 @@ async fn operation_input_test_get_object_70() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2380,7 +2380,7 @@ async fn operation_input_test_get_object_71() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2415,7 +2415,7 @@ async fn operation_input_test_get_object_72() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2451,7 +2451,7 @@ async fn operation_input_test_get_object_73() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2488,7 +2488,7 @@ async fn operation_input_test_get_object_74() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2523,7 +2523,7 @@ async fn operation_input_test_get_object_75() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2559,7 +2559,7 @@ async fn operation_input_test_get_object_76() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2592,7 +2592,7 @@ async fn operation_input_test_get_object_77() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2625,7 +2625,7 @@ async fn operation_input_test_get_object_78() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2660,7 +2660,7 @@ async fn operation_input_test_get_object_79() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2696,7 +2696,7 @@ async fn operation_input_test_get_object_80() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2733,7 +2733,7 @@ async fn operation_input_test_get_object_81() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2768,7 +2768,7 @@ async fn operation_input_test_get_object_82() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2804,7 +2804,7 @@ async fn operation_input_test_get_object_83() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2837,7 +2837,7 @@ async fn operation_input_test_get_object_84() {
         "AWS::Region": "cn-north-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2870,7 +2870,7 @@ async fn operation_input_test_get_object_85() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2905,7 +2905,7 @@ async fn operation_input_test_get_object_86() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2941,7 +2941,7 @@ async fn operation_input_test_get_object_87() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -2978,7 +2978,7 @@ async fn operation_input_test_get_object_88() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3013,7 +3013,7 @@ async fn operation_input_test_get_object_89() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3049,7 +3049,7 @@ async fn operation_input_test_get_object_90() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3082,7 +3082,7 @@ async fn operation_input_test_get_object_91() {
         "AWS::Region": "af-south-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3115,7 +3115,7 @@ async fn operation_input_test_get_object_92() {
         "SDK::Endpoint": "http://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3150,7 +3150,7 @@ async fn operation_input_test_get_object_93() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3186,7 +3186,7 @@ async fn operation_input_test_get_object_94() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3222,7 +3222,7 @@ async fn operation_input_test_get_object_95() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3258,7 +3258,7 @@ async fn operation_input_test_get_object_96() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3293,7 +3293,7 @@ async fn operation_input_test_get_object_97() {
         "SDK::Endpoint": "https://beta.example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3329,7 +3329,7 @@ async fn operation_input_test_get_object_98() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3364,7 +3364,7 @@ async fn operation_input_test_get_object_99() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3400,7 +3400,7 @@ async fn operation_input_test_get_object_100() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3435,7 +3435,7 @@ async fn operation_input_test_get_object_101() {
         "SDK::Endpoint": "https://beta.example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3471,7 +3471,7 @@ async fn operation_input_test_get_object_102() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3506,7 +3506,7 @@ async fn operation_input_test_get_object_103() {
         "AWS::S3::ForcePathStyle": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3542,7 +3542,7 @@ async fn operation_input_test_get_object_104() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3578,7 +3578,7 @@ async fn operation_input_test_get_object_105() {
         "SDK::Endpoint": "https://control.vpce-1a2b3c4d-5e6f.s3.us-west-2.vpce.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3614,7 +3614,7 @@ async fn operation_input_test_get_object_106() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3649,7 +3649,7 @@ async fn operation_input_test_get_object_107() {
         "SDK::Endpoint": "https://beta.example.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3684,7 +3684,7 @@ async fn operation_input_test_get_object_108() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3719,7 +3719,7 @@ async fn operation_input_test_get_object_109() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3755,7 +3755,7 @@ async fn operation_input_test_get_object_110() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3792,7 +3792,7 @@ async fn operation_input_test_get_object_111() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3828,7 +3828,7 @@ async fn operation_input_test_get_object_112() {
         "AWS::Region": "cn-north-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3863,7 +3863,7 @@ async fn operation_input_test_get_object_113() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3898,7 +3898,7 @@ async fn operation_input_test_get_object_114() {
         "AWS::Region": "af-south-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3933,7 +3933,7 @@ async fn operation_input_test_get_object_115() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -3969,7 +3969,7 @@ async fn operation_input_test_get_object_116() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4006,7 +4006,7 @@ async fn operation_input_test_get_object_117() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4042,7 +4042,7 @@ async fn operation_input_test_get_object_118() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4077,7 +4077,7 @@ async fn operation_input_test_get_object_119() {
         "SDK::Endpoint": "https://example.amazonaws.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4113,7 +4113,7 @@ async fn operation_input_test_get_object_120() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4149,7 +4149,7 @@ async fn operation_input_test_get_object_121() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4185,7 +4185,7 @@ async fn operation_input_test_get_object_122() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4220,7 +4220,7 @@ async fn operation_input_test_get_object_123() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4255,7 +4255,7 @@ async fn operation_input_test_get_object_124() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4290,7 +4290,7 @@ async fn operation_input_test_get_object_125() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4326,7 +4326,7 @@ async fn operation_input_test_get_object_126() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4362,7 +4362,7 @@ async fn operation_input_test_get_object_127() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4398,7 +4398,7 @@ async fn operation_input_test_get_object_128() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4434,7 +4434,7 @@ async fn operation_input_test_get_object_129() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4470,7 +4470,7 @@ async fn operation_input_test_get_object_130() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4505,7 +4505,7 @@ async fn operation_input_test_get_object_131() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4541,7 +4541,7 @@ async fn operation_input_test_get_object_132() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4576,7 +4576,7 @@ async fn operation_input_test_get_object_133() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4612,7 +4612,7 @@ async fn operation_input_test_get_object_134() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4650,7 +4650,7 @@ async fn operation_input_test_get_object_135() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4687,7 +4687,7 @@ async fn operation_input_test_get_object_136() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4720,7 +4720,7 @@ async fn operation_input_test_get_object_137() {
         "AWS::S3::UseArnRegion": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4757,7 +4757,7 @@ async fn operation_input_test_get_object_138() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4794,7 +4794,7 @@ async fn operation_input_test_get_object_139() {
         "AWS::S3::UseArnRegion": false
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4828,7 +4828,7 @@ async fn operation_input_test_get_object_140() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4860,7 +4860,7 @@ async fn operation_input_test_get_object_141() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4892,7 +4892,7 @@ async fn operation_input_test_get_object_142() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4924,7 +4924,7 @@ async fn operation_input_test_get_object_143() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4953,7 +4953,7 @@ async fn operation_input_test_get_object_144() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -4987,7 +4987,7 @@ async fn operation_input_test_get_object_145() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5021,7 +5021,7 @@ async fn operation_input_test_get_object_146() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5055,7 +5055,7 @@ async fn operation_input_test_get_object_147() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5084,7 +5084,7 @@ async fn operation_input_test_get_object_148() {
         "AWS::Region": "us-west-2"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5117,7 +5117,7 @@ async fn operation_input_test_get_object_149() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5150,7 +5150,7 @@ async fn operation_input_test_create_bucket_150() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5182,7 +5182,7 @@ async fn operation_input_test_create_bucket_151() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5214,7 +5214,7 @@ async fn operation_input_test_list_directory_buckets_152() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5240,7 +5240,7 @@ async fn operation_input_test_list_directory_buckets_153() {
         "AWS::UseFIPS": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5267,7 +5267,7 @@ async fn operation_input_test_get_object_154() {
         "SDK::Endpoint": "https://10.0.0.1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5301,7 +5301,7 @@ async fn operation_input_test_get_object_155() {
         "SDK::Endpoint": "https://custom.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5334,7 +5334,7 @@ async fn operation_input_test_get_object_156() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5366,7 +5366,7 @@ async fn operation_input_test_get_object_157() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5399,7 +5399,7 @@ async fn operation_input_test_get_object_158() {
         "AWS::UseDualStack": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5433,7 +5433,7 @@ async fn operation_input_test_get_object_159() {
         "AWS::S3::Accelerate": true
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5466,7 +5466,7 @@ async fn operation_input_test_get_object_160() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
@@ -5499,7 +5499,7 @@ async fn operation_input_test_get_object_161() {
         "SDK::Endpoint": "https://custom.com"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);

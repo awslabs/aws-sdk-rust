@@ -6,8 +6,7 @@
 use aws_sdk_s3::config::retry::{ReconnectMode, RetryConfig};
 use aws_sdk_s3::config::{Credentials, Region, SharedAsyncSleep};
 use aws_smithy_async::rt::sleep::TokioSleep;
-use aws_smithy_runtime::client::http::test_util::wire::{ReplayedEvent, WireMockServer};
-use aws_smithy_runtime::{ev, match_events};
+use aws_smithy_http_client::test_util::wire::{ev, match_events, ReplayedEvent, WireMockServer};
 
 #[tokio::test]
 async fn test_disable_reconnect_on_503() {

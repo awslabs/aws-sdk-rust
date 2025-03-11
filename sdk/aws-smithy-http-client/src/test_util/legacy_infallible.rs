@@ -21,7 +21,7 @@ use std::sync::Arc;
 /// # Examples
 ///
 /// ```rust
-/// use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
+/// use aws_smithy_http_client::test_util::legacy_infallible::infallible_client_fn;
 /// let http_client = infallible_client_fn(|_req| http_02x::Response::builder().status(200).body("OK!").unwrap());
 /// ```
 pub fn infallible_client_fn<B>(

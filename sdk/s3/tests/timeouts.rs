@@ -12,7 +12,7 @@ use aws_sdk_s3::types::{
 };
 use aws_sdk_s3::{Client, Config};
 use aws_smithy_async::assert_elapsed;
-use aws_smithy_runtime::client::http::test_util::NeverClient;
+use aws_smithy_http_client::test_util::NeverClient;
 use std::future::Future;
 use std::net::SocketAddr;
 use std::time::Duration;
@@ -194,7 +194,7 @@ async fn test_connect_timeout() {
             Err(err) => {
                 let message = format!("{}", DisplayErrorContext(&err));
                 let expected =
-                    "timeout: error trying to connect: HTTP connect timeout occurred after 300ms";
+                    "timeout: client error (Connect): HTTP connect timeout occurred after 300ms";
                 assert!(
                     message.contains(expected),
                     "expected '{message}' to contain '{expected}'"

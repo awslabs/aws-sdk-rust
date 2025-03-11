@@ -8,15 +8,15 @@
 use aws_sdk_qldbsession::config::{Config, Credentials, Region};
 use aws_sdk_qldbsession::types::StartSessionRequest;
 use aws_sdk_qldbsession::Client;
-use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_types::body::SdkBody;
-use http::Uri;
+use http_1x::Uri;
 
 #[cfg(feature = "test-util")]
 #[tokio::test]
 async fn signv4_use_correct_service_name() {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
+        http_1x::Request::builder()
             .header("content-type", "application/x-amz-json-1.0")
             .header("x-amz-target", "QLDBSession.SendCommand")
             .header("content-length", "49")
@@ -26,8 +26,8 @@ async fn signv4_use_correct_service_name() {
             .header("user-agent", "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
             .uri(Uri::from_static("https://session.qldb.us-east-1.amazonaws.com/"))
             .body(SdkBody::from(r#"{"StartSession":{"LedgerName":"not-real-ledger"}}"#)).unwrap(),
-        http::Response::builder()
-            .status(http::StatusCode::from_u16(200).unwrap())
+        http_1x::Response::builder()
+            .status(http_1x::StatusCode::from_u16(200).unwrap())
             .body(SdkBody::from(r#"{}"#)).unwrap()),
     ]);
     let conf = Config::builder()

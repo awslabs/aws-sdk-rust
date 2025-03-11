@@ -4,7 +4,7 @@
  */
 
 use aws_sdk_s3::{config::Region, error::DisplayErrorContext, Client, Config};
-use aws_smithy_runtime::client::http::test_util::dvr::ReplayingClient;
+use aws_smithy_http_client::test_util::dvr::ReplayingClient;
 
 #[tokio::test]
 async fn test_content_length_enforcement_is_not_applied_to_head_request() {

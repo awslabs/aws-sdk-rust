@@ -288,7 +288,7 @@ mod delete_object_tagging_test {
     #[::tokio::test]
     #[::tracing_test::traced_test]
     async fn s3_escape_object_key_in_uri_label_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_url("https://s3.us-west-2.amazonaws.com");
@@ -325,7 +325,7 @@ mod delete_object_tagging_test {
     #[::tokio::test]
     #[::tracing_test::traced_test]
     async fn s3_escape_path_object_key_in_uri_label_request() {
-        let (http_client, request_receiver) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+        let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
         let config_builder = crate::config::Config::builder()
             .with_test_defaults()
             .endpoint_url("https://s3.us-west-2.amazonaws.com");

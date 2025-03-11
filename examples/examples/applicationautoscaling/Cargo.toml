@@ -7,7 +7,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-aws-config= { version = "1.5.18", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
+aws-config= { version = "1.6.0", path = "../../../sdk/aws-config", features = ["behavior-version-latest"] }
 aws-sdk-applicationautoscaling= { version = "1.67.0", path = "../../../sdk/applicationautoscaling" }
 
 [dependencies.tokio]

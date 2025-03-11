@@ -12,7 +12,7 @@ use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::result::ConnectorError;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
-use http_02x::header::CONTENT_TYPE;
+use http_1x::header::CONTENT_TYPE;
 use std::ops::Deref;
 use std::sync::{Arc, Mutex, MutexGuard};
 
@@ -119,7 +119,8 @@ impl ValidateRequest {
 /// # Example
 ///
 /// ```no_run
-/// use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+/// # use http_1x as http;
+/// use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 /// use aws_smithy_types::body::SdkBody;
 ///
 /// let http_client = StaticReplayClient::new(vec![
@@ -127,9 +128,9 @@ impl ValidateRequest {
 ///     ReplayEvent::new(
 ///         // If `assert_requests_match` is called later, then this request will be matched
 ///         // against the actual request that was made.
-///         http_02x::Request::builder().uri("http://localhost:1234/foo").body(SdkBody::empty()).unwrap(),
+///         http::Request::builder().uri("http://localhost:1234/foo").body(SdkBody::empty()).unwrap(),
 ///         // This response will be given to the first request regardless of whether it matches the request above.
-///         http_02x::Response::builder().status(200).body(SdkBody::empty()).unwrap(),
+///         http::Response::builder().status(200).body(SdkBody::empty()).unwrap(),
 ///     ),
 ///     // The next ReplayEvent covers the second request/response pair...
 /// ]);
@@ -148,7 +149,7 @@ impl ValidateRequest {
 /// ```
 ///
 /// [`assert_requests_match`]: StaticReplayClient::assert_requests_match
-/// [DVR]: crate::client::http::test_util::dvr
+/// [DVR]: crate::test_util::dvr
 #[derive(Clone, Debug)]
 pub struct StaticReplayClient {
     data: Arc<Mutex<ReplayEvents>>,
@@ -281,17 +282,17 @@ impl HttpClient for StaticReplayClient {
 
 #[cfg(test)]
 mod test {
-    use crate::client::http::test_util::{ReplayEvent, StaticReplayClient};
+    use crate::test_util::{ReplayEvent, StaticReplayClient};
     use aws_smithy_types::body::SdkBody;
 
     #[test]
     fn create_from_either_http_type() {
         let _client = StaticReplayClient::new(vec![ReplayEvent::new(
-            http1::Request::builder()
+            http_1x::Request::builder()
                 .uri("test")
                 .body(SdkBody::from("hello"))
                 .unwrap(),
-            http1::Response::builder()
+            http_1x::Response::builder()
                 .status(200)
                 .body(SdkBody::from("hello"))
                 .unwrap(),

@@ -7,7 +7,7 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::primitives::ByteStream;
 use aws_sdk_s3::Config;
 use aws_sdk_s3::{config::Credentials, config::Region, Client};
-use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_http_client::test_util::capture_request;
 
 #[tokio::test]
 async fn test_operation_should_not_normalize_uri_path() {

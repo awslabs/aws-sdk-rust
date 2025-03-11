@@ -12,7 +12,7 @@ use aws_sdk_s3::{
     primitives::ByteStream,
     Client, Config,
 };
-use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_http_client::test_util::capture_request;
 
 #[derive(Debug)]
 struct TransferManagerFeatureInterceptor;

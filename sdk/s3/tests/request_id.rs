@@ -6,13 +6,13 @@
 use aws_sdk_s3::operation::get_object::GetObjectError;
 use aws_sdk_s3::operation::{RequestId, RequestIdExt};
 use aws_sdk_s3::{config::Credentials, config::Region, Client, Config};
-use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_types::body::SdkBody;
 
 #[tokio::test]
 async fn get_request_id_from_modeled_error() {
     let (http_client, request) = capture_request(Some(
-        http::Response::builder()
+        http_1x::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
             .status(404)
@@ -62,7 +62,7 @@ async fn get_request_id_from_modeled_error() {
 #[allow(deprecated)]
 async fn get_request_id_from_unmodeled_error() {
     let (http_client, request) = capture_request(Some(
-        http::Response::builder()
+        http_1x::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
             .status(500)
@@ -108,7 +108,7 @@ async fn get_request_id_from_unmodeled_error() {
 #[tokio::test]
 async fn get_request_id_from_successful_nonstreaming_response() {
     let (http_client, request) = capture_request(Some(
-        http::Response::builder()
+        http_1x::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
             .status(200)
@@ -143,7 +143,7 @@ async fn get_request_id_from_successful_nonstreaming_response() {
 #[tokio::test]
 async fn get_request_id_from_successful_streaming_response() {
     let (http_client, request) = capture_request(Some(
-        http::Response::builder()
+        http_1x::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
             .status(200)
@@ -175,7 +175,7 @@ async fn get_request_id_from_successful_streaming_response() {
 #[tokio::test]
 async fn conversion_to_service_error_maintains_request_id() {
     let (http_client, request) = capture_request(Some(
-        http::Response::builder()
+        http_1x::Response::builder()
             .header("x-amz-request-id", "correct-request-id")
             .header("x-amz-id-2", "correct-extended-request-id")
             .status(404)

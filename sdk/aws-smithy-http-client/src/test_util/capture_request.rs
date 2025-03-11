@@ -7,8 +7,9 @@ use aws_smithy_runtime_api::client::connector_metadata::ConnectorMetadata;
 use aws_smithy_runtime_api::client::http::{
     HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpConnector,
 };
-use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+use aws_smithy_runtime_api::http::HttpError;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::body::SdkBody;
 use std::fmt::Debug;
@@ -17,7 +18,7 @@ use tokio::sync::oneshot;
 
 #[derive(Debug)]
 struct Inner {
-    response: Option<http_02x::Response<SdkBody>>,
+    response: Option<HttpResponse>,
     sender: Option<oneshot::Sender<HttpRequest>>,
 }
 
@@ -34,9 +35,7 @@ impl HttpConnector for CaptureRequestHandler {
         HttpConnectorFuture::ready(Ok(inner
             .response
             .take()
-            .expect("could not handle second request")
-            .try_into()
-            .unwrap()))
+            .expect("could not handle second request")))
     }
 }
 
@@ -101,19 +100,73 @@ impl CaptureRequestReceiver {
 /// );
 /// ```
 pub fn capture_request(
-    response: Option<http_02x::Response<SdkBody>>,
+    response: Option<http_1x::Response<SdkBody>>,
+) -> (CaptureRequestHandler, CaptureRequestReceiver) {
+    capture_request_inner(response)
+}
+
+fn capture_request_inner(
+    response: Option<impl TryInto<HttpResponse, Error = HttpError>>,
 ) -> (CaptureRequestHandler, CaptureRequestReceiver) {
     let (tx, rx) = oneshot::channel();
+    let http_resp: HttpResponse = match response {
+        Some(resp) => resp.try_into().expect("valid HttpResponse"),
+        None => http_1x::Response::builder()
+            .status(200)
+            .body(SdkBody::empty())
+            .expect("unreachable")
+            .try_into()
+            .expect("unreachable"),
+    };
     (
         CaptureRequestHandler(Arc::new(Mutex::new(Inner {
-            response: Some(response.unwrap_or_else(|| {
-                http_02x::Response::builder()
-                    .status(200)
-                    .body(SdkBody::empty())
-                    .expect("unreachable")
-            })),
+            response: Some(http_resp),
             sender: Some(tx),
         }))),
         CaptureRequestReceiver { receiver: rx },
     )
+}
+
+#[allow(missing_docs)]
+#[cfg(feature = "legacy-test-util")]
+pub fn legacy_capture_request(
+    response: Option<http_02x::Response<SdkBody>>,
+) -> (CaptureRequestHandler, CaptureRequestReceiver) {
+    capture_request_inner(response)
+}
+
+#[cfg(test)]
+mod test {
+    use aws_smithy_runtime_api::client::http::HttpConnector;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+    use aws_smithy_types::body::SdkBody;
+
+    #[cfg(feature = "legacy-test-util")]
+    #[tokio::test]
+    async fn test_can_plug_in_http_02x() {
+        use super::legacy_capture_request;
+        let (capture_client, _request) = legacy_capture_request(Some(
+            http_02x::Response::builder()
+                .status(202)
+                .body(SdkBody::empty())
+                .expect("unreachable"),
+        ));
+
+        let resp = capture_client.call(HttpRequest::empty()).await.unwrap();
+        assert_eq!(202, resp.status().as_u16());
+    }
+
+    #[tokio::test]
+    async fn test_can_plug_in_http_1x() {
+        use super::capture_request;
+        let (capture_client, _request) = capture_request(Some(
+            http_1x::Response::builder()
+                .status(202)
+                .body(SdkBody::empty())
+                .expect("unreachable"),
+        ));
+
+        let resp = capture_client.call(HttpRequest::empty()).await.unwrap();
+        assert_eq!(202, resp.status().as_u16());
+    }
 }

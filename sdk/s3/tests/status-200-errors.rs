@@ -7,8 +7,8 @@ use aws_config::retry::{RetryConfigBuilder, RetryMode};
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_credential_types::Credentials;
 use aws_sdk_s3::Client;
+use aws_smithy_http_client::test_util::infallible_client_fn;
 use aws_smithy_runtime::assert_str_contains;
-use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::metadata::ProvideErrorMetadata;
 use aws_types::region::Region;
@@ -26,7 +26,7 @@ const ERROR_RESPONSE: &str = r#"<?xml version="1.0" encoding="UTF-8"?>
 #[tokio::test]
 async fn status_200_errors() {
     let http_client =
-        infallible_client_fn(|_req| http::Response::new(SdkBody::from(ERROR_RESPONSE)));
+        infallible_client_fn(|_req| http_1x::Response::new(SdkBody::from(ERROR_RESPONSE)));
     let sdk_config = SdkConfig::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-west-4"))
@@ -47,7 +47,7 @@ async fn status_200_errors() {
 #[tokio::test]
 async fn retry_200_internal_error() {
     let http_client = infallible_client_fn(|_req| {
-        http::Response::new(SdkBody::from(
+        http_1x::Response::new(SdkBody::from(
             r#"<?xml version="1.0" encoding="UTF-8"?>
             <Error>
                 <Type>Server</Type>

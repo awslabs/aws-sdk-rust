@@ -321,6 +321,42 @@ mod sealed {
             Ok(self)
         }
     }
+
+    #[cfg(feature = "http-1x")]
+    impl AsHeaderComponent for http_1x::HeaderName {
+        fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
+            Ok(self.to_string().into())
+        }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            Ok(self.as_ref())
+        }
+    }
+
+    #[cfg(feature = "http-1x")]
+    impl AsHeaderComponent for http_1x::HeaderValue {
+        fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
+            Ok(Cow::Owned(
+                std::str::from_utf8(self.as_bytes())
+                    .map_err(|err| {
+                        HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                            self.as_bytes().to_vec(),
+                            err,
+                        ))
+                    })?
+                    .to_string(),
+            ))
+        }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            std::str::from_utf8(self.as_bytes()).map_err(|err| {
+                HttpError::non_utf8_header(NonUtf8Header::new_missing_name(
+                    self.as_bytes().to_vec(),
+                    err,
+                ))
+            })
+        }
+    }
 }
 
 mod header_value {

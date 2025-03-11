@@ -32,7 +32,7 @@ async fn test_presigning() {
         .await
         .expect("success");
 
-    let uri = presigned.uri().parse::<http::Uri>().unwrap();
+    let uri = presigned.uri().parse::<http_1x::Uri>().unwrap();
     let pq = uri.path_and_query().unwrap();
     let path = pq.path();
     let query = pq.query().unwrap();
@@ -85,7 +85,7 @@ async fn test_presigning_customized() {
         .await
         .expect("success");
 
-    let uri = presigned.uri().parse::<http::Uri>().unwrap();
+    let uri = presigned.uri().parse::<http_1x::Uri>().unwrap();
     let pq = uri.path_and_query().unwrap();
     let path = pq.path();
     let query = pq.query().unwrap();

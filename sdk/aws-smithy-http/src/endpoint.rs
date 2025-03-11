@@ -5,10 +5,7 @@
 
 //! Code for resolving an endpoint (URI) that a request should be sent to
 
-#![allow(deprecated)]
-
-use crate::endpoint::error::InvalidEndpointError;
-use http_02x::uri::{Authority, Uri};
+use aws_smithy_runtime_api::client::endpoint::{error::InvalidEndpointError, EndpointPrefix};
 use std::borrow::Cow;
 use std::result::Result as StdResult;
 use std::str::FromStr;
@@ -20,23 +17,12 @@ pub use error::ResolveEndpointError;
 #[deprecated(since = "0.60.1", note = "Was never used.")]
 pub type Result = std::result::Result<aws_smithy_types::endpoint::Endpoint, ResolveEndpointError>;
 
-/// A special type that adds support for services that have special URL-prefixing rules.
-#[deprecated(
-    since = "0.60.1",
-    note = "Use aws_smithy_runtime_api::client::endpoint::EndpointPrefix instead."
-)]
-pub type EndpointPrefix = aws_smithy_runtime_api::client::endpoint::EndpointPrefix;
-
 /// Apply `endpoint` to `uri`
 ///
 /// This method mutates `uri` by setting the `endpoint` on it
-#[deprecated(
-    since = "0.60.1",
-    note = "Use aws_smithy_runtime::client::endpoint::apply_endpoint instead."
-)]
 pub fn apply_endpoint(
-    uri: &mut Uri,
-    endpoint: &Uri,
+    uri: &mut http_1x::Uri,
+    endpoint: &http_1x::Uri,
     prefix: Option<&EndpointPrefix>,
 ) -> StdResult<(), InvalidEndpointError> {
     let prefix = prefix.map(EndpointPrefix::as_str).unwrap_or("");
@@ -50,14 +36,14 @@ pub fn apply_endpoint(
     } else {
         Cow::Borrowed(authority)
     };
-    let authority = Authority::from_str(&authority).map_err(|err| {
+    let authority = http_1x::uri::Authority::from_str(&authority).map_err(|err| {
         InvalidEndpointError::failed_to_construct_authority(authority.into_owned(), err)
     })?;
     let scheme = *endpoint
         .scheme()
         .as_ref()
         .ok_or_else(InvalidEndpointError::endpoint_must_have_scheme)?;
-    let new_uri = Uri::builder()
+    let new_uri = http_1x::Uri::builder()
         .authority(authority)
         .scheme(scheme.clone())
         .path_and_query(merge_paths(endpoint, uri).as_ref())
@@ -67,7 +53,7 @@ pub fn apply_endpoint(
     Ok(())
 }
 
-fn merge_paths<'a>(endpoint: &'a Uri, uri: &'a Uri) -> Cow<'a, str> {
+fn merge_paths<'a>(endpoint: &'a http_1x::Uri, uri: &'a http_1x::Uri) -> Cow<'a, str> {
     if let Some(query) = endpoint.path_and_query().and_then(|pq| pq.query()) {
         tracing::warn!(query = %query, "query specified in endpoint will be ignored during endpoint resolution");
     }

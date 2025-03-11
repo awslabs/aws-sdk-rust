@@ -6,13 +6,13 @@
 use aws_sdk_s3::config::interceptors::BeforeTransmitInterceptorContextMut;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::Client;
-use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
-use http::header::USER_AGENT;
-use http::HeaderValue;
+use http_1x::header::USER_AGENT;
+use http_1x::HeaderValue;
 
 #[tokio::test]
 async fn interceptor_priority() {

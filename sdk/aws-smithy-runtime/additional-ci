@@ -9,4 +9,5 @@
 set -e
 
 echo "### Testing every combination of features (excluding --all-features)"
-cargo hack test --feature-powerset --exclude-all-features
+# Skip deprecated features that are re-exported from `aws-smithy-http-client` (and tested there already)
+cargo hack test --feature-powerset --exclude-all-features --exclude-features legacy-test-util,wire-mock,connector-hyper-0-14-x,tls-rustls

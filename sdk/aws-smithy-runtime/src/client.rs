@@ -33,7 +33,7 @@ pub mod retries;
 /// Utilities for testing orchestrators. An orchestrator missing required components will panic when
 /// run. This module contains stub components that can be used when you only care about testing some
 /// specific aspect of the orchestrator.
-#[cfg(feature = "test-util")]
+#[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
 pub mod test_util;
 
 mod timeout;

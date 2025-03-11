@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime::client::http::test_util::dvr::ReplayingClient;
+use aws_smithy_http_client::test_util::dvr::ReplayingClient;
 
 #[tokio::test]
 async fn do_endpoint_discovery() {

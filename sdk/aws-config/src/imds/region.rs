@@ -120,7 +120,7 @@ mod test {
     use crate::imds::region::ImdsRegionProvider;
     use crate::provider_config::ProviderConfig;
     use aws_smithy_async::rt::sleep::TokioSleep;
-    use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+    use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
     use aws_smithy_types::body::SdkBody;
     use aws_types::region::Region;
     use tracing_test::traced_test;

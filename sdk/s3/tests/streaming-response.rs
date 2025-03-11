@@ -8,11 +8,11 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::error::DisplayErrorContext;
 use aws_sdk_s3::Client;
+use aws_smithy_http_client::test_util::infallible_client_fn;
 use aws_smithy_runtime::assert_str_contains;
-use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
 use aws_smithy_types::body::SdkBody;
 use bytes::BytesMut;
-use http::header::CONTENT_LENGTH;
+use http_1x::header::CONTENT_LENGTH;
 use std::future::Future;
 use std::net::SocketAddr;
 use std::time::Duration;
@@ -24,7 +24,7 @@ async fn test_too_short_body_causes_an_error() {
     // in its own async runtime. But there's no reason a customer couldn't run their _own_ HttpClient
     // that was more poorly behaved, so we'll do that here.
     let http_client = infallible_client_fn(|_req| {
-        http::Response::builder()
+        http_1x::Response::builder()
             .header(CONTENT_LENGTH, 5000)
             .body(SdkBody::from("definitely not 5000 characters"))
             .unwrap()

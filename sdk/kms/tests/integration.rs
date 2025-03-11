@@ -5,10 +5,10 @@
 
 use aws_sdk_kms as kms;
 use aws_sdk_kms::operation::RequestId;
-use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::body::SdkBody;
-use http::Uri;
+use http_1x::Uri;
 use kms::config::{Config, Credentials, Region};
 
 // TODO(DVR): having the full HTTP requests right in the code is a bit gross, consider something
@@ -19,11 +19,11 @@ use kms::config::{Config, Credentials, Region};
 #[tokio::test]
 async fn generate_random_cn() {
     let http_client= StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
+        http_1x::Request::builder()
             .uri(Uri::from_static("https://kms.cn-north-1.amazonaws.com.cn/"))
             .body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
-        http::Response::builder()
-            .status(http::StatusCode::from_u16(200).unwrap())
+        http_1x::Response::builder()
+            .status(http_1x::StatusCode::from_u16(200).unwrap())
             .body(SdkBody::from(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#)).unwrap())
     ]);
     let conf = Config::builder()
@@ -47,7 +47,7 @@ async fn generate_random_cn() {
 #[tokio::test]
 async fn generate_random() {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
+        http_1x::Request::builder()
             .header("content-type", "application/x-amz-json-1.1")
             .header("x-amz-target", "TrentService.GenerateRandom")
             .header("content-length", "20")
@@ -57,8 +57,8 @@ async fn generate_random() {
             .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
             .uri(Uri::from_static("https://kms.us-east-1.amazonaws.com/"))
             .body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
-        http::Response::builder()
-            .status(http::StatusCode::from_u16(200).unwrap())
+        http_1x::Response::builder()
+            .status(http_1x::StatusCode::from_u16(200).unwrap())
             .body(SdkBody::from(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA=="}"#)).unwrap())
     ]);
     let conf = Config::builder()
@@ -95,9 +95,9 @@ async fn generate_random() {
 #[tokio::test]
 async fn generate_random_malformed_response() {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder().body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
-        http::Response::builder()
-            .status(http::StatusCode::from_u16(200).unwrap())
+        http_1x::Request::builder().body(SdkBody::from(r#"{"NumberOfBytes":64}"#)).unwrap(),
+        http_1x::Response::builder()
+            .status(http_1x::StatusCode::from_u16(200).unwrap())
             // last `}` replaced with a space, invalid JSON
             .body(SdkBody::from(r#"{"Plaintext":"6CG0fbzzhg5G2VcFCPmJMJ8Njv3voYCgrGlp3+BZe7eDweCXgiyDH9BnkKvLmS7gQhnYDUlyES3fZVGwv5+CxA==" "#)).unwrap())
     ]);
@@ -119,7 +119,7 @@ async fn generate_random_malformed_response() {
 #[tokio::test]
 async fn generate_random_keystore_not_found() {
     let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
-        http::Request::builder()
+        http_1x::Request::builder()
             .header("content-type", "application/x-amz-json-1.1")
             .header("x-amz-target", "TrentService.GenerateRandom")
             .header("content-length", "56")
@@ -129,8 +129,8 @@ async fn generate_random_keystore_not_found() {
             .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
             .uri(Uri::from_static("https://kms.us-east-1.amazonaws.com/"))
             .body(SdkBody::from(r#"{"NumberOfBytes":64,"CustomKeyStoreId":"does not exist"}"#)).unwrap(),
-        http::Response::builder()
-            .status(http::StatusCode::from_u16(400).unwrap())
+        http_1x::Response::builder()
+            .status(http_1x::StatusCode::from_u16(400).unwrap())
             .header("x-amzn-requestid", "bfe81a0a-9a08-4e71-9910-cdb5ab6ea3b6")
             .header("cache-control", "no-cache, no-store, must-revalidate, private")
             .header("expires", "0")

@@ -196,7 +196,7 @@ impl<AcceptorFn, OperationFn> WaiterOrchestratorBuilder<AcceptorFn, OperationFn>
         self
     }
 
-    #[cfg(all(test, feature = "test-util"))]
+    #[cfg(all(test, any(feature = "test-util", feature = "legacy-test-util")))]
     fn random(mut self, random_fn: impl Fn(u64, u64) -> u64 + Send + Sync + 'static) -> Self {
         self.random_fn = RandomImpl::Override(Box::new(random_fn));
         self
@@ -281,7 +281,7 @@ pub fn attach_waiter_tracing_span<O, E>(
     future.instrument(span)
 }
 
-#[cfg(all(test, feature = "test-util"))]
+#[cfg(all(test, any(feature = "test-util", feature = "legacy-test-util")))]
 mod tests {
     use super::*;
     use crate::test_util::capture_test_logs::show_test_logs;

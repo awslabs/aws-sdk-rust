@@ -5,7 +5,7 @@
 
 use aws_sdk_dynamodb as dynamodb;
 use aws_smithy_async::assert_elapsed;
-use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_types::body::SdkBody;
 use dynamodb::config::{Credentials, Region};
 use dynamodb::operation::query::QueryOutput;
@@ -14,8 +14,8 @@ use dynamodb::types::{
     ScalarAttributeType, TableStatus,
 };
 use dynamodb::Client;
-use http::header::AUTHORIZATION;
-use http::Uri;
+use http_1x::header::AUTHORIZATION;
+use http_1x::Uri;
 use serde_json::Value;
 use std::collections::HashMap;
 use std::time::Duration;
@@ -196,7 +196,7 @@ async fn movies_it() {
 fn movies_it_test_connection() -> StaticReplayClient {
     StaticReplayClient::new(vec![
         ReplayEvent::new(
-         http::Request::builder()
+         http_1x::Request::builder()
                  .header("content-type", "application/x-amz-json-1.0")
                  .header("x-amz-target", "DynamoDB_20120810.CreateTable")
                  .header("content-length", "313")
@@ -204,7 +204,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
                  .header("x-amz-date", "20210308T155118Z")
                  .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
                  .body(SdkBody::from(r#"{"AttributeDefinitions":[{"AttributeName":"year","AttributeType":"N"},{"AttributeName":"title","AttributeType":"S"}],"TableName":"Movies-5","KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"ReadCapacityUnits":10,"WriteCapacityUnits":10}}"#)).unwrap(),
-         http::Response::builder()
+         http_1x::Response::builder()
                  .header("server", "Server")
                  .header("date", "Mon, 08 Mar 2021 15:51:18 GMT")
                  .header("content-type", "application/x-amz-json-1.0")
@@ -212,9 +212,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
                  .header("connection", "keep-alive")
                  .header("x-amzn-requestid", "RCII0AALE00UALC7LJ9AD600B7VV4KQNSO5AEMVJF66Q9ASUAAJG")
                  .header("x-amz-crc32", "3715137447")
-                 .status(http::StatusCode::from_u16(200).unwrap())
+                 .status(http_1x::StatusCode::from_u16(200).unwrap())
                  .body(SdkBody::from(r#"{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"title","AttributeType":"S"},{"AttributeName":"year","AttributeType":"N"}],"CreationDateTime":1.615218678973E9,"ItemCount":0,"KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":10,"WriteCapacityUnits":10},"TableArn":"arn:aws:dynamodb:us-east-1:134095065856:table/Movies-5","TableId":"b08c406a-7dbc-4f7d-b7c6-672a43ec21cd","TableName":"Movies-5","TableSizeBytes":0,"TableStatus":"CREATING"}}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
                   .header("content-type", "application/x-amz-json-1.0")
                   .header("x-amz-target", "DynamoDB_20120810.DescribeTable")
                   .header("content-length", "24")
@@ -222,7 +222,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
                   .header("x-amz-date", "20210308T155119Z")
                   .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
                   .body(SdkBody::from(r#"{"TableName":"Movies-5"}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:18 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -230,16 +230,16 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "O1C6QKCG8GT7D2K922T4QRL9N3VV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "46742265")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Table":{"AttributeDefinitions":[{"AttributeName":"title","AttributeType":"S"},{"AttributeName":"year","AttributeType":"N"}],"CreationDateTime":1.615218678973E9,"ItemCount":0,"KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":10,"WriteCapacityUnits":10},"TableArn":"arn:aws:dynamodb:us-east-1:134095065856:table/Movies-5","TableId":"b08c406a-7dbc-4f7d-b7c6-672a43ec21cd","TableName":"Movies-5","TableSizeBytes":0,"TableStatus":"CREATING"}}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.DescribeTable")
               .header("content-length", "24")
               .header("authorization", "AWS4-HMAC-SHA256 Credential=ASIAR6OFQKMAFQIIYZ5T/20210308/us-east-1/dynamodb/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-target, Signature=7f3a743bb460f26296640ae775d282f0153eda750855ec00ace1815becfd2de5")
               .header("x-amz-date", "20210308T155120Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/")).body(SdkBody::from(r#"{"TableName":"Movies-5"}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:20 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -247,9 +247,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "EN5N26BO1FAOEMUUSD7B7SUPPVVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "46742265")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Table":{"AttributeDefinitions":[{"AttributeName":"title","AttributeType":"S"},{"AttributeName":"year","AttributeType":"N"}],"CreationDateTime":1.615218678973E9,"ItemCount":0,"KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":10,"WriteCapacityUnits":10},"TableArn":"arn:aws:dynamodb:us-east-1:134095065856:table/Movies-5","TableId":"b08c406a-7dbc-4f7d-b7c6-672a43ec21cd","TableName":"Movies-5","TableSizeBytes":0,"TableStatus":"CREATING"}}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.DescribeTable")
               .header("content-length", "24")
@@ -257,7 +257,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155121Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r#"{"TableName":"Movies-5"}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:21 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -265,9 +265,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "PHCMGEVI6JLN9JNMKSSA3M76H3VV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "46742265")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Table":{"AttributeDefinitions":[{"AttributeName":"title","AttributeType":"S"},{"AttributeName":"year","AttributeType":"N"}],"CreationDateTime":1.615218678973E9,"ItemCount":0,"KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":10,"WriteCapacityUnits":10},"TableArn":"arn:aws:dynamodb:us-east-1:134095065856:table/Movies-5","TableId":"b08c406a-7dbc-4f7d-b7c6-672a43ec21cd","TableName":"Movies-5","TableSizeBytes":0,"TableStatus":"CREATING"}}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.DescribeTable")
               .header("content-length", "24")
@@ -275,7 +275,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155122Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r#"{"TableName":"Movies-5"}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:22 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -283,9 +283,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "1Q22O983HD3511TN6Q5RRTP0MFVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "46742265")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Table":{"AttributeDefinitions":[{"AttributeName":"title","AttributeType":"S"},{"AttributeName":"year","AttributeType":"N"}],"CreationDateTime":1.615218678973E9,"ItemCount":0,"KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":10,"WriteCapacityUnits":10},"TableArn":"arn:aws:dynamodb:us-east-1:134095065856:table/Movies-5","TableId":"b08c406a-7dbc-4f7d-b7c6-672a43ec21cd","TableName":"Movies-5","TableSizeBytes":0,"TableStatus":"CREATING"}}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.DescribeTable")
               .header("content-length", "24")
@@ -293,7 +293,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155123Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r#"{"TableName":"Movies-5"}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:23 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -301,9 +301,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "ONJBNV2A9GBNUT34KH73JLL23BVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "24113616")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Table":{"AttributeDefinitions":[{"AttributeName":"title","AttributeType":"S"},{"AttributeName":"year","AttributeType":"N"}],"CreationDateTime":1.615218678973E9,"ItemCount":0,"KeySchema":[{"AttributeName":"year","KeyType":"HASH"},{"AttributeName":"title","KeyType":"RANGE"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":10,"WriteCapacityUnits":10},"TableArn":"arn:aws:dynamodb:us-east-1:134095065856:table/Movies-5","TableId":"b08c406a-7dbc-4f7d-b7c6-672a43ec21cd","TableName":"Movies-5","TableSizeBytes":0,"TableStatus":"ACTIVE"}}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.PutItem")
               .header("content-length", "619")
@@ -311,7 +311,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155123Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r#"{"TableName":"Movies-5","Item":{"info":{"M":{"rating":{"N":"6.2"},"genres":{"L":[{"S":"Comedy"},{"S":"Drama"}]},"image_url":{"S":"http://ia.media-imdb.com/images/N/O9ERWAU7FS797AJ7LU8HN09AMUP908RLlo5JF90EWR7LJKQ7@@._V1_SX400_.jpg"},"release_date":{"S":"2013-01-18T00:00:00Z"},"actors":{"L":[{"S":"David Matthewman"},{"S":"Ann Thomas"},{"S":"Jonathan G. Neff"}]},"plot":{"S":"A rock band plays their music at high volumes, annoying the neighbors."},"running_time_secs":{"N":"5215"},"rank":{"N":"11"},"directors":{"L":[{"S":"Alice Smith"},{"S":"Bob Jones"}]}}},"title":{"S":"Turn It Down, Or Else!"},"year":{"N":"2013"}}}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:23 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -319,9 +319,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "E6TGS5HKHHV08HSQA31IO1IDMFVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "2745614147")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.PutItem")
               .header("content-length", "636")
@@ -329,7 +329,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155123Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r#"{"TableName":"Movies-5","Item":{"info":{"M":{"plot":{"S":"A re-creation of the merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda."},"rating":{"N":"8.3"},"rank":{"N":"2"},"release_date":{"S":"2013-09-02T00:00:00Z"},"directors":{"L":[{"S":"Ron Howard"}]},"image_url":{"S":"http://ia.media-imdb.com/images/M/MV5BMTQyMDE0MTY0OV5BMl5BanBnXkFtZTcwMjI2OTI0OQ@@._V1_SX400_.jpg"},"actors":{"L":[{"S":"Daniel Bruhl"},{"S":"Chris Hemsworth"},{"S":"Olivia Wilde"}]},"running_time_secs":{"N":"7380"},"genres":{"L":[{"S":"Action"},{"S":"Biography"},{"S":"Drama"},{"S":"Sport"}]}}},"title":{"S":"Rush"},"year":{"N":"2013"}}}"#)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:23 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -337,9 +337,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "B63D54LP2FOGQK9JE5KLJT49HJVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "2745614147")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.Query")
               .header("content-length", "156")
@@ -347,7 +347,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155123Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r##"{"TableName":"Movies-5","KeyConditionExpression":"#yr = :yyyy","ExpressionAttributeNames":{"#yr":"year"},"ExpressionAttributeValues":{":yyyy":{"N":"2222"}}}"##)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:23 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -355,9 +355,9 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "AUAS9KJ0TK9BSR986TRPC2RGTRVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "3413411624")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Count":0,"Items":[],"ScannedCount":0}"#)).unwrap()),
-         ReplayEvent::new(http::Request::builder()
+         ReplayEvent::new(http_1x::Request::builder()
               .header("content-type", "application/x-amz-json-1.0")
               .header("x-amz-target", "DynamoDB_20120810.Query")
               .header("content-length", "156")
@@ -365,7 +365,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("x-amz-date", "20210308T155123Z")
               .uri(Uri::from_static("https://dynamodb.us-east-1.amazonaws.com/"))
               .body(SdkBody::from(r##"{"TableName":"Movies-5","KeyConditionExpression":"#yr = :yyyy","ExpressionAttributeNames":{"#yr":"year"},"ExpressionAttributeValues":{":yyyy":{"N":"2013"}}}"##)).unwrap(),
-          http::Response::builder()
+          http_1x::Response::builder()
               .header("server", "Server")
               .header("date", "Mon, 08 Mar 2021 15:51:23 GMT")
               .header("content-type", "application/x-amz-json-1.0")
@@ -373,7 +373,7 @@ fn movies_it_test_connection() -> StaticReplayClient {
               .header("connection", "keep-alive")
               .header("x-amzn-requestid", "A5FGSJ9ET4OKB8183S9M47RQQBVV4KQNSO5AEMVJF66Q9ASUAAJG")
               .header("x-amz-crc32", "624725176")
-              .status(http::StatusCode::from_u16(200).unwrap())
+              .status(http_1x::StatusCode::from_u16(200).unwrap())
               .body(SdkBody::from(r#"{"Count":2,"Items":[{"year":{"N":"2013"},"info":{"M":{"actors":{"L":[{"S":"Daniel Bruhl"},{"S":"Chris Hemsworth"},{"S":"Olivia Wilde"}]},"plot":{"S":"A re-creation of the merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda."},"release_date":{"S":"2013-09-02T00:00:00Z"},"image_url":{"S":"http://ia.media-imdb.com/images/M/MV5BMTQyMDE0MTY0OV5BMl5BanBnXkFtZTcwMjI2OTI0OQ@@._V1_SX400_.jpg"},"genres":{"L":[{"S":"Action"},{"S":"Biography"},{"S":"Drama"},{"S":"Sport"}]},"directors":{"L":[{"S":"Ron Howard"}]},"rating":{"N":"8.3"},"rank":{"N":"2"},"running_time_secs":{"N":"7380"}}},"title":{"S":"Rush"}},{"year":{"N":"2013"},"info":{"M":{"actors":{"L":[{"S":"David Matthewman"},{"S":"Ann Thomas"},{"S":"Jonathan G. Neff"}]},"release_date":{"S":"2013-01-18T00:00:00Z"},"plot":{"S":"A rock band plays their music at high volumes, annoying the neighbors."},"genres":{"L":[{"S":"Comedy"},{"S":"Drama"}]},"image_url":{"S":"http://ia.media-imdb.com/images/N/O9ERWAU7FS797AJ7LU8HN09AMUP908RLlo5JF90EWR7LJKQ7@@._V1_SX400_.jpg"},"directors":{"L":[{"S":"Alice Smith"},{"S":"Bob Jones"}]},"rating":{"N":"6.2"},"rank":{"N":"11"},"running_time_secs":{"N":"5215"}}},"title":{"S":"Turn It Down, Or Else!"}}],"ScannedCount":2}"#)).unwrap())
     ])
 }

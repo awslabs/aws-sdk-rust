@@ -540,7 +540,7 @@ mod tests {
         retry_actions: Mutex<Vec<RetryAction>>,
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     impl PresetReasonRetryClassifier {
         fn new(mut retry_reasons: Vec<RetryAction>) -> Self {
             // We'll pop the retry_reasons in reverse order, so we reverse the list to fix that.
@@ -574,7 +574,7 @@ mod tests {
         }
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     fn setup_test(
         retry_reasons: Vec<RetryAction>,
         retry_config: RetryConfig,
@@ -595,7 +595,7 @@ mod tests {
         (cfg, rc, ctx)
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn eventual_success() {
         let (mut cfg, rc, mut ctx) = setup_test(
@@ -628,7 +628,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 495);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn no_more_attempts() {
         let (mut cfg, rc, ctx) = setup_test(
@@ -659,7 +659,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 490);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn successful_request_and_deser_should_be_retryable() {
         #[derive(Clone, Copy, Debug)]
@@ -751,7 +751,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 5);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn no_quota() {
         let (mut cfg, rc, ctx) = setup_test(
@@ -776,7 +776,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 0);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn quota_replenishes_on_success() {
         let (mut cfg, rc, mut ctx) = setup_test(
@@ -816,7 +816,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 90);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn quota_replenishes_on_first_try_success() {
         const PERMIT_COUNT: usize = 20;
@@ -870,7 +870,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), PERMIT_COUNT);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn backoff_timing() {
         let (mut cfg, rc, ctx) = setup_test(
@@ -913,7 +913,7 @@ mod tests {
         assert_eq!(token_bucket.available_permits(), 480);
     }
 
-    #[cfg(feature = "test-util")]
+    #[cfg(any(feature = "test-util", feature = "legacy-test-util"))]
     #[test]
     fn max_backoff_time() {
         let (mut cfg, rc, ctx) = setup_test(

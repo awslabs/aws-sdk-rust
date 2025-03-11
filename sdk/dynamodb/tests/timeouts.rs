@@ -9,7 +9,7 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_dynamodb::config::{Credentials, Region, StalledStreamProtectionConfig};
 use aws_sdk_dynamodb::error::SdkError;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
-use aws_smithy_runtime::client::http::test_util::NeverClient;
+use aws_smithy_http_client::test_util::NeverClient;
 use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::SdkConfig;

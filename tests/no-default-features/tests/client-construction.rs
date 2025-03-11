@@ -10,11 +10,11 @@ use aws_sdk_s3::config::{
     SharedAsyncSleep, Sleep, StalledStreamProtectionConfig,
 };
 use aws_sdk_s3::primitives::SdkBody;
-use aws_smithy_runtime::client::http::test_util::infallible_client_fn;
+use aws_smithy_http_client::test_util::infallible_client_fn;
 
 use aws_sdk_s3::error::DisplayErrorContext;
 use aws_smithy_async::rt::sleep::AsyncSleep;
-use aws_smithy_runtime::client::http::test_util::capture_request;
+use aws_smithy_http_client::test_util::capture_request;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
 use std::time::Duration;
 
@@ -23,7 +23,7 @@ use std::time::Duration;
 // the connector being enabled transitively
 #[tokio::test]
 #[should_panic(
-    expected = "Enable the `rustls` crate feature or configure a HTTP client to fix this."
+    expected = "Enable the `default-https-client` crate feature or configure an HTTP client to fix this."
 )]
 async fn test_clients_from_sdk_config() {
     aws_config::load_defaults(BehaviorVersion::latest()).await;
@@ -58,8 +58,8 @@ async fn test_clients_from_service_config() {
         .expect_err("it should fail to send a request because there is no HTTP client");
     let msg = format!("{}", DisplayErrorContext(err));
     assert!(
-        msg.contains("No HTTP client was available to send this request. Enable the `rustls` crate feature or configure a HTTP client to fix this."),
-        "expected '{msg}' to contain 'No HTTP client was available to send this request. Enable the `rustls` crate feature or set a HTTP client to fix this.'"
+        msg.contains("No HTTP client was available to send this request. Enable the `default-https-client` crate feature or configure an HTTP client to fix this."),
+        "expected '{msg}' to contain 'No HTTP client was available to send this request. Enable the `default-https-client` crate feature or set an HTTP client to fix this.'"
     );
 }
 
@@ -68,7 +68,7 @@ async fn test_clients_from_service_config() {
 async fn test_missing_behavior_version() {
     use aws_sdk_s3::config::Region;
     let http_client =
-        infallible_client_fn(|_req| http::Response::builder().body(SdkBody::empty()).unwrap());
+        infallible_client_fn(|_req| http_1x::Response::builder().body(SdkBody::empty()).unwrap());
 
     let config = Config::builder()
         .region(Region::new("us-east-1"))

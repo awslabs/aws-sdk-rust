@@ -220,7 +220,7 @@ impl ClassifyRetry for HttpCredentialRetryClassifier {
 mod test {
     use super::*;
     use aws_credential_types::provider::error::CredentialsError;
-    use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+    use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
     use aws_smithy_types::body::SdkBody;
     use http::{Request, Response, Uri};
     use std::time::SystemTime;

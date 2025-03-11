@@ -7,8 +7,8 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::presigning::PresigningConfig;
 use aws_sdk_s3::{Client, Config};
-use aws_smithy_runtime::client::http::test_util::capture_request;
-use http::HeaderValue;
+use aws_smithy_http_client::test_util::capture_request;
+use http_1x::HeaderValue;
 use std::time::{Duration, SystemTime};
 
 #[tokio::test]

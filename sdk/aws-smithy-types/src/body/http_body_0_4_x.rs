@@ -76,6 +76,7 @@ mod tests {
         assert_eq!(new_body.bytes(), Some(b"hello!".as_slice()));
     }
 
+    #[cfg(feature = "hyper-0-14-x")]
     #[test]
     fn sdkbody_debug_dyn() {
         let hyper_body = hyper_0_14::Body::channel().1;

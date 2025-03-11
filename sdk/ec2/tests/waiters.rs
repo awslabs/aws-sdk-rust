@@ -8,9 +8,8 @@ use aws_sdk_ec2::{client::Waiters, config::Region, error::DisplayErrorContext, C
 use aws_smithy_async::test_util::tick_advance_sleep::{
     tick_advance_time_and_sleep, TickAdvanceTime,
 };
-use aws_smithy_runtime::{
-    client::http::test_util::dvr::ReplayingClient, test_util::capture_test_logs::show_test_logs,
-};
+use aws_smithy_http_client::test_util::dvr::ReplayingClient;
+use aws_smithy_runtime::test_util::capture_test_logs::show_test_logs;
 use aws_smithy_runtime_api::client::waiters::error::WaiterError;
 use aws_smithy_types::retry::RetryConfig;
 use std::time::Duration;

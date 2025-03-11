@@ -7,4 +7,8 @@
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 /* End of automatically managed default lints */
 
-pub mod hyper_1_0;
+#[deprecated(
+    since = "0.2.0",
+    note = "support for hyper-1.x is now enabled by the `aws-smithy-http-client` crate"
+)]
+pub mod hyper_1_0 {}

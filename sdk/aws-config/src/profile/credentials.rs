@@ -91,7 +91,7 @@ pub(crate) mod repr;
 ///         future::ProvideCredentials::new(self.load_credentials())
 ///     }
 /// }
-/// # if cfg!(feature = "rustls") {
+/// # if cfg!(feature = "default-https-client") {
 /// let provider = ProfileFileCredentialsProvider::builder()
 ///     .with_custom_provider("Custom", MyCustomProvider)
 ///     .build();

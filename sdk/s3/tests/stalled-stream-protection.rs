@@ -13,7 +13,7 @@ use aws_sdk_s3::{Client, Config};
 use aws_smithy_runtime::{assert_str_contains, test_util::capture_test_logs::capture_test_logs};
 use aws_smithy_types::body::SdkBody;
 use bytes::{Bytes, BytesMut};
-use http_body::Body;
+use http_body_1x::Body;
 use std::error::Error;
 use std::time::Duration;
 use std::{future::Future, task::Poll};
@@ -46,10 +46,10 @@ impl Body for SlowBody {
     type Data = Bytes;
     type Error = BoxError;
 
-    fn poll_data(
+    fn poll_frame(
         mut self: Pin<&mut Self>,
         cx: &mut Context<'_>,
-    ) -> Poll<Option<Result<Self::Data, Self::Error>>> {
+    ) -> Poll<Option<Result<http_body_1x::Frame<Self::Data>, Self::Error>>> {
         loop {
             let mut state = SlowBodyState::Taken;
             std::mem::swap(&mut state, &mut self.state);
@@ -63,23 +63,16 @@ impl Body for SlowBody {
                 },
                 SlowBodyState::Send => {
                     self.state = SlowBodyState::Wait(Box::pin(sleep(Duration::from_micros(100))));
-                    return Poll::Ready(Some(Ok(Bytes::from_static(
+                    return Poll::Ready(Some(Ok(http_body_1x::Frame::data(Bytes::from_static(
                         b"data_data_data_data_data_data_data_data_data_data_data_data_\
                           data_data_data_data_data_data_data_data_data_data_data_data_\
                           data_data_data_data_data_data_data_data_data_data_data_data_\
                           data_data_data_data_data_data_data_data_data_data_data_data_",
-                    ))));
+                    )))));
                 }
                 SlowBodyState::Taken => unreachable!(),
             }
         }
-    }
-
-    fn poll_trailers(
-        self: Pin<&mut Self>,
-        _cx: &mut Context<'_>,
-    ) -> Poll<Result<Option<http::HeaderMap>, Self::Error>> {
-        Poll::Ready(Ok(None))
     }
 }
 
@@ -106,7 +99,7 @@ async fn test_stalled_stream_protection_defaults_for_upload() {
         .put_object()
         .bucket("a-test-bucket")
         .key("stalled-stream-test.txt")
-        .body(ByteStream::new(SdkBody::from_body_0_4(SlowBody::new())))
+        .body(ByteStream::new(SdkBody::from_body_1_x(SlowBody::new())))
         .send()
         .await
         .expect_err("upload stream stalled out");

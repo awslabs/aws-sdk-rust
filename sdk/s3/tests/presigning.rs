@@ -8,8 +8,8 @@ use std::collections::HashMap;
 
 use futures_util::future::FutureExt;
 use futures_util::Future;
-use http::header::{CONTENT_LENGTH, CONTENT_TYPE};
-use http::Uri;
+use http_1x::header::{CONTENT_LENGTH, CONTENT_TYPE};
+use http_1x::Uri;
 use s3::config::{Credentials, Region};
 use s3::operation::get_object::builders::GetObjectFluentBuilder;
 use s3::operation::head_object::builders::HeadObjectFluentBuilder;

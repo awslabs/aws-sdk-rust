@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// use http::HeaderValue;
+// use http_1x::HeaderValue;
 
 const NAUGHTY_STRINGS: &str = include_str!("blns/blns.txt");
 

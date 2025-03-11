@@ -7,7 +7,7 @@ async fn operation_input_test_put_events_1() {
         "AWS::Region": "us-east-1"
     } */
     /* clientParams: {} */
-    let (http_client, rcvr) = ::aws_smithy_runtime::client::http::test_util::capture_request(None);
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
     let conf = {
         #[allow(unused_mut)]
         let mut builder = aws_sdk_eventbridge::Config::builder().with_test_defaults().http_client(http_client);
