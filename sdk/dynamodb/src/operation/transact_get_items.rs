@@ -232,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TransactGetIt
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
             .set_account_id(cfg.load::<crate::config::AccountId>().map(|ty| ty.0.clone()))
             .set_account_id_endpoint_mode(cfg.load::<crate::config::AccountIdEndpointMode>().map(|ty| ty.0.clone()))
+            .set_resource_arn_list(get_resource_arn_list(_input).map(|v| v.into_iter().cloned().collect::<Vec<_>>()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -244,6 +245,24 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TransactGetIt
 
 // The get_* functions below are generated from JMESPath expressions in the
 // operationContextParams trait. They target the operation's input shape.
+
+// Generated from JMESPath Expression: TransactItems[*].Get.TableName
+fn get_resource_arn_list(input: &crate::operation::transact_get_items::TransactGetItemsInput) -> Option<::std::vec::Vec<&::std::string::String>> {
+    let _fld_1 = input.transact_items.as_ref()?;
+    let _prj_4 = _fld_1
+        .iter()
+        .flat_map(|v| {
+            #[allow(clippy::let_and_return)]
+            fn map(_v: &crate::types::TransactGetItem) -> ::std::option::Option<&::std::string::String> {
+                let _fld_2 = _v.get.as_ref();
+                let _fld_3 = _fld_2.map(|v| &v.table_name);
+                _fld_3
+            }
+            map(v)
+        })
+        .collect::<::std::vec::Vec<_>>();
+    Some(_prj_4)
+}
 
 /// Error type for the `TransactGetItemsError` operation.
 #[non_exhaustive]

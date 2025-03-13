@@ -241,6 +241,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeContr
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
             .set_account_id(cfg.load::<crate::config::AccountId>().map(|ty| ty.0.clone()))
             .set_account_id_endpoint_mode(cfg.load::<crate::config::AccountIdEndpointMode>().map(|ty| ty.0.clone()))
+            .set_resource_arn(Some(
+                _input
+                    .table_name
+                    .clone()
+                    .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("table_name", "A required field was not set"))?,
+            ))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

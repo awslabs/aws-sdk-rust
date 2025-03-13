@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
-    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code> and <code>not-opted-in</code>.</p>
     pub opt_in_status: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>,
     /// <p>Any messages about the Availability Zone, Local Zone, or Wavelength Zone.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMessage>>,
@@ -27,7 +27,8 @@ pub struct AvailabilityZone {
     pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network border group.</p>
     pub network_border_group: ::std::option::Option<::std::string::String>,
-    /// <p>The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
+    /// <p>The type of zone.</p>
+    /// <p>Valid values: <code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code></p>
     pub zone_type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API calls.</p>
     pub parent_zone_name: ::std::option::Option<::std::string::String>,
@@ -35,12 +36,12 @@ pub struct AvailabilityZone {
     pub parent_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>The long name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
     pub group_long_name: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub state: ::std::option::Option<crate::types::AvailabilityZoneState>,
 }
 impl AvailabilityZone {
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
-    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code> and <code>not-opted-in</code>.</p>
     pub fn opt_in_status(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneOptInStatus> {
         self.opt_in_status.as_ref()
     }
@@ -78,7 +79,8 @@ impl AvailabilityZone {
     pub fn network_border_group(&self) -> ::std::option::Option<&str> {
         self.network_border_group.as_deref()
     }
-    /// <p>The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
+    /// <p>The type of zone.</p>
+    /// <p>Valid values: <code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code></p>
     pub fn zone_type(&self) -> ::std::option::Option<&str> {
         self.zone_type.as_deref()
     }
@@ -94,7 +96,7 @@ impl AvailabilityZone {
     pub fn group_long_name(&self) -> ::std::option::Option<&str> {
         self.group_long_name.as_deref()
     }
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::AvailabilityZoneState> {
         self.state.as_ref()
     }
@@ -125,19 +127,19 @@ pub struct AvailabilityZoneBuilder {
 }
 impl AvailabilityZoneBuilder {
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
-    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code> and <code>not-opted-in</code>.</p>
     pub fn opt_in_status(mut self, input: crate::types::AvailabilityZoneOptInStatus) -> Self {
         self.opt_in_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
-    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code> and <code>not-opted-in</code>.</p>
     pub fn set_opt_in_status(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneOptInStatus>) -> Self {
         self.opt_in_status = input;
         self
     }
     /// <p>For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
-    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code>, and <code>not-opted-in</code>.</p>
+    /// <p>For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are <code>opted-in</code> and <code>not-opted-in</code>.</p>
     pub fn get_opt_in_status(&self) -> &::std::option::Option<crate::types::AvailabilityZoneOptInStatus> {
         &self.opt_in_status
     }
@@ -255,17 +257,20 @@ impl AvailabilityZoneBuilder {
     pub fn get_network_border_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_border_group
     }
-    /// <p>The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
+    /// <p>The type of zone.</p>
+    /// <p>Valid values: <code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code></p>
     pub fn zone_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.zone_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
+    /// <p>The type of zone.</p>
+    /// <p>Valid values: <code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code></p>
     pub fn set_zone_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zone_type = input;
         self
     }
-    /// <p>The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and <code>wavelength-zone</code>.</p>
+    /// <p>The type of zone.</p>
+    /// <p>Valid values: <code>availability-zone</code> | <code>local-zone</code> | <code>wavelength-zone</code></p>
     pub fn get_zone_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.zone_type
     }
@@ -311,17 +316,17 @@ impl AvailabilityZoneBuilder {
     pub fn get_group_long_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.group_long_name
     }
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub fn state(mut self, input: crate::types::AvailabilityZoneState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::AvailabilityZoneState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is always <code>available</code>.</p>
+    /// <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are <code>available</code>, <code>unavailable</code>, and <code>constrained</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::AvailabilityZoneState> {
         &self.state
     }

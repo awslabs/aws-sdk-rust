@@ -31,6 +31,22 @@ pub struct FleetLaunchTemplateOverridesRequest {
     /// <p>The location where the instance launched, if applicable.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>To override a block device mapping specified in the launch template:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify the exact same <code>DeviceName</code> here as specified in the launch template.</p></li>
+    /// <li>
+    /// <p>Only specify the parameters you want to change.</p></li>
+    /// <li>
+    /// <p>Any parameters you don't specify here will keep their original launch template values.</p></li>
+    /// </ul>
+    /// <p>To add a new block device mapping:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify a <code>DeviceName</code> that doesn't exist in the launch template.</p></li>
+    /// <li>
+    /// <p>Specify all desired parameters here.</p></li>
+    /// </ul>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::FleetBlockDeviceMappingRequest>>,
     /// <p>The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify instance types with those attributes.</p><note>
     /// <p>If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.</p>
@@ -108,6 +124,22 @@ impl FleetLaunchTemplateOverridesRequest {
         self.placement.as_ref()
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>To override a block device mapping specified in the launch template:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify the exact same <code>DeviceName</code> here as specified in the launch template.</p></li>
+    /// <li>
+    /// <p>Only specify the parameters you want to change.</p></li>
+    /// <li>
+    /// <p>Any parameters you don't specify here will keep their original launch template values.</p></li>
+    /// </ul>
+    /// <p>To add a new block device mapping:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify a <code>DeviceName</code> that doesn't exist in the launch template.</p></li>
+    /// <li>
+    /// <p>Specify all desired parameters here.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
     pub fn block_device_mappings(&self) -> &[crate::types::FleetBlockDeviceMappingRequest] {
@@ -313,6 +345,22 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>To override a block device mapping specified in the launch template:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify the exact same <code>DeviceName</code> here as specified in the launch template.</p></li>
+    /// <li>
+    /// <p>Only specify the parameters you want to change.</p></li>
+    /// <li>
+    /// <p>Any parameters you don't specify here will keep their original launch template values.</p></li>
+    /// </ul>
+    /// <p>To add a new block device mapping:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify a <code>DeviceName</code> that doesn't exist in the launch template.</p></li>
+    /// <li>
+    /// <p>Specify all desired parameters here.</p></li>
+    /// </ul>
     pub fn block_device_mappings(mut self, input: crate::types::FleetBlockDeviceMappingRequest) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
@@ -320,11 +368,43 @@ impl FleetLaunchTemplateOverridesRequestBuilder {
         self
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>To override a block device mapping specified in the launch template:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify the exact same <code>DeviceName</code> here as specified in the launch template.</p></li>
+    /// <li>
+    /// <p>Only specify the parameters you want to change.</p></li>
+    /// <li>
+    /// <p>Any parameters you don't specify here will keep their original launch template values.</p></li>
+    /// </ul>
+    /// <p>To add a new block device mapping:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify a <code>DeviceName</code> that doesn't exist in the launch template.</p></li>
+    /// <li>
+    /// <p>Specify all desired parameters here.</p></li>
+    /// </ul>
     pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FleetBlockDeviceMappingRequest>>) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>To override a block device mapping specified in the launch template:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify the exact same <code>DeviceName</code> here as specified in the launch template.</p></li>
+    /// <li>
+    /// <p>Only specify the parameters you want to change.</p></li>
+    /// <li>
+    /// <p>Any parameters you don't specify here will keep their original launch template values.</p></li>
+    /// </ul>
+    /// <p>To add a new block device mapping:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Specify a <code>DeviceName</code> that doesn't exist in the launch template.</p></li>
+    /// <li>
+    /// <p>Specify all desired parameters here.</p></li>
+    /// </ul>
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FleetBlockDeviceMappingRequest>> {
         &self.block_device_mappings
     }

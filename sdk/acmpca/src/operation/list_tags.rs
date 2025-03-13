@@ -242,6 +242,8 @@ pub enum ListTagsError {
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>The state of the private CA does not allow this action to occur.</p>
     InvalidStateException(crate::types::error::InvalidStateException),
+    /// <p>The request has failed for an unspecified reason.</p>
+    RequestFailedException(crate::types::error::RequestFailedException),
     /// <p>A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -279,6 +281,7 @@ impl ListTagsError {
         match self {
             Self::InvalidArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RequestFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -291,6 +294,10 @@ impl ListTagsError {
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(self, Self::InvalidStateException(_))
     }
+    /// Returns `true` if the error kind is `ListTagsError::RequestFailedException`.
+    pub fn is_request_failed_exception(&self) -> bool {
+        matches!(self, Self::RequestFailedException(_))
+    }
     /// Returns `true` if the error kind is `ListTagsError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -301,6 +308,7 @@ impl ::std::error::Error for ListTagsError {
         match self {
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestFailedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -311,6 +319,7 @@ impl ::std::fmt::Display for ListTagsError {
         match self {
             Self::InvalidArnException(_inner) => _inner.fmt(f),
             Self::InvalidStateException(_inner) => _inner.fmt(f),
+            Self::RequestFailedException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -335,6 +344,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsError
         match self {
             Self::InvalidArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RequestFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

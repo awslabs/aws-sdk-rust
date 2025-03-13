@@ -229,6 +229,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListBackupsEn
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
             .set_account_id(cfg.load::<crate::config::AccountId>().map(|ty| ty.0.clone()))
             .set_account_id_endpoint_mode(cfg.load::<crate::config::AccountIdEndpointMode>().map(|ty| ty.0.clone()))
+            .set_resource_arn(_input.table_name.clone())
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

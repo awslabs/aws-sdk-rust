@@ -3,20 +3,23 @@ pub fn ser_environment_configuration_user_parameter(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::EnvironmentConfigurationUserParameter,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.environment_configuration_name {
-        object.key("environmentConfigurationName").string(var_1.as_str());
+    if let Some(var_1) = &input.environment_id {
+        object.key("environmentId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.environment_parameters {
-        let mut array_3 = object.key("environmentParameters").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.environment_configuration_name {
+        object.key("environmentConfigurationName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.environment_parameters {
+        let mut array_4 = object.key("environmentParameters").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }
@@ -36,6 +39,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "environmentId" => {
+                            builder = builder.set_environment_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "environmentConfigurationName" => {
                             builder = builder.set_environment_configuration_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

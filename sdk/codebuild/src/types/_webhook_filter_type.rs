@@ -18,6 +18,7 @@
 ///     WebhookFilterType::Event => { /* ... */ },
 ///     WebhookFilterType::FilePath => { /* ... */ },
 ///     WebhookFilterType::HeadRef => { /* ... */ },
+///     WebhookFilterType::OrganizationName => { /* ... */ },
 ///     WebhookFilterType::ReleaseName => { /* ... */ },
 ///     WebhookFilterType::RepositoryName => { /* ... */ },
 ///     WebhookFilterType::TagName => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum WebhookFilterType {
     #[allow(missing_docs)] // documentation missing in model
     HeadRef,
     #[allow(missing_docs)] // documentation missing in model
+    OrganizationName,
+    #[allow(missing_docs)] // documentation missing in model
     ReleaseName,
     #[allow(missing_docs)] // documentation missing in model
     RepositoryName,
@@ -83,6 +86,7 @@ impl ::std::convert::From<&str> for WebhookFilterType {
             "EVENT" => WebhookFilterType::Event,
             "FILE_PATH" => WebhookFilterType::FilePath,
             "HEAD_REF" => WebhookFilterType::HeadRef,
+            "ORGANIZATION_NAME" => WebhookFilterType::OrganizationName,
             "RELEASE_NAME" => WebhookFilterType::ReleaseName,
             "REPOSITORY_NAME" => WebhookFilterType::RepositoryName,
             "TAG_NAME" => WebhookFilterType::TagName,
@@ -108,6 +112,7 @@ impl WebhookFilterType {
             WebhookFilterType::Event => "EVENT",
             WebhookFilterType::FilePath => "FILE_PATH",
             WebhookFilterType::HeadRef => "HEAD_REF",
+            WebhookFilterType::OrganizationName => "ORGANIZATION_NAME",
             WebhookFilterType::ReleaseName => "RELEASE_NAME",
             WebhookFilterType::RepositoryName => "REPOSITORY_NAME",
             WebhookFilterType::TagName => "TAG_NAME",
@@ -124,6 +129,7 @@ impl WebhookFilterType {
             "EVENT",
             "FILE_PATH",
             "HEAD_REF",
+            "ORGANIZATION_NAME",
             "RELEASE_NAME",
             "REPOSITORY_NAME",
             "TAG_NAME",
@@ -157,6 +163,7 @@ impl ::std::fmt::Display for WebhookFilterType {
             WebhookFilterType::Event => write!(f, "EVENT"),
             WebhookFilterType::FilePath => write!(f, "FILE_PATH"),
             WebhookFilterType::HeadRef => write!(f, "HEAD_REF"),
+            WebhookFilterType::OrganizationName => write!(f, "ORGANIZATION_NAME"),
             WebhookFilterType::ReleaseName => write!(f, "RELEASE_NAME"),
             WebhookFilterType::RepositoryName => write!(f, "REPOSITORY_NAME"),
             WebhookFilterType::TagName => write!(f, "TAG_NAME"),

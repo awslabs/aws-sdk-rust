@@ -70,6 +70,12 @@ pub mod put_channel_policy;
 /// Types for the `PutOriginEndpointPolicy` operation.
 pub mod put_origin_endpoint_policy;
 
+/// Types for the `ResetChannelState` operation.
+pub mod reset_channel_state;
+
+/// Types for the `ResetOriginEndpointState` operation.
+pub mod reset_origin_endpoint_state;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

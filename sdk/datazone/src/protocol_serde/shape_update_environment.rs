@@ -222,6 +222,13 @@ pub(crate) fn de_update_environment(
                             .transpose()?,
                     );
                 }
+                "environmentConfigurationId" => {
+                    builder = builder.set_environment_configuration_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "environmentProfileId" => {
                     builder = builder.set_environment_profile_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

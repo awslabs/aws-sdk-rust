@@ -14,7 +14,9 @@
 /// match keyalgorithm {
 ///     KeyAlgorithm::EcPrime256v1 => { /* ... */ },
 ///     KeyAlgorithm::EcSecp384r1 => { /* ... */ },
+///     KeyAlgorithm::EcSecp521r1 => { /* ... */ },
 ///     KeyAlgorithm::Rsa2048 => { /* ... */ },
+///     KeyAlgorithm::Rsa3072 => { /* ... */ },
 ///     KeyAlgorithm::Rsa4096 => { /* ... */ },
 ///     KeyAlgorithm::Sm2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -50,7 +52,11 @@ pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     EcSecp384r1,
     #[allow(missing_docs)] // documentation missing in model
+    EcSecp521r1,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
+    #[allow(missing_docs)] // documentation missing in model
+    Rsa3072,
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
     #[allow(missing_docs)] // documentation missing in model
@@ -64,7 +70,9 @@ impl ::std::convert::From<&str> for KeyAlgorithm {
         match s {
             "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
             "EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
+            "EC_secp521r1" => KeyAlgorithm::EcSecp521r1,
             "RSA_2048" => KeyAlgorithm::Rsa2048,
+            "RSA_3072" => KeyAlgorithm::Rsa3072,
             "RSA_4096" => KeyAlgorithm::Rsa4096,
             "SM2" => KeyAlgorithm::Sm2,
             other => KeyAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -84,7 +92,9 @@ impl KeyAlgorithm {
         match self {
             KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
             KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
+            KeyAlgorithm::EcSecp521r1 => "EC_secp521r1",
             KeyAlgorithm::Rsa2048 => "RSA_2048",
+            KeyAlgorithm::Rsa3072 => "RSA_3072",
             KeyAlgorithm::Rsa4096 => "RSA_4096",
             KeyAlgorithm::Sm2 => "SM2",
             KeyAlgorithm::Unknown(value) => value.as_str(),
@@ -92,7 +102,7 @@ impl KeyAlgorithm {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096", "SM2"]
+        &["EC_prime256v1", "EC_secp384r1", "EC_secp521r1", "RSA_2048", "RSA_3072", "RSA_4096", "SM2"]
     }
 }
 impl ::std::convert::AsRef<str> for KeyAlgorithm {
@@ -117,7 +127,9 @@ impl ::std::fmt::Display for KeyAlgorithm {
         match self {
             KeyAlgorithm::EcPrime256v1 => write!(f, "EC_prime256v1"),
             KeyAlgorithm::EcSecp384r1 => write!(f, "EC_secp384r1"),
+            KeyAlgorithm::EcSecp521r1 => write!(f, "EC_secp521r1"),
             KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
+            KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),
             KeyAlgorithm::Sm2 => write!(f, "SM2"),
             KeyAlgorithm::Unknown(value) => write!(f, "{}", value),

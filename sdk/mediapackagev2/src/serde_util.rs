@@ -278,6 +278,45 @@ pub(crate) fn get_origin_endpoint_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn reset_channel_state_output_output_correct_errors(
+    mut builder: crate::operation::reset_channel_state::builders::ResetChannelStateOutputBuilder,
+) -> crate::operation::reset_channel_state::builders::ResetChannelStateOutputBuilder {
+    if builder.channel_group_name.is_none() {
+        builder.channel_group_name = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.reset_at.is_none() {
+        builder.reset_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn reset_origin_endpoint_state_output_output_correct_errors(
+    mut builder: crate::operation::reset_origin_endpoint_state::builders::ResetOriginEndpointStateOutputBuilder,
+) -> crate::operation::reset_origin_endpoint_state::builders::ResetOriginEndpointStateOutputBuilder {
+    if builder.channel_group_name.is_none() {
+        builder.channel_group_name = Some(Default::default())
+    }
+    if builder.channel_name.is_none() {
+        builder.channel_name = Some(Default::default())
+    }
+    if builder.origin_endpoint_name.is_none() {
+        builder.origin_endpoint_name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.reset_at.is_none() {
+        builder.reset_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn update_channel_output_output_correct_errors(
     mut builder: crate::operation::update_channel::builders::UpdateChannelOutputBuilder,
 ) -> crate::operation::update_channel::builders::UpdateChannelOutputBuilder {

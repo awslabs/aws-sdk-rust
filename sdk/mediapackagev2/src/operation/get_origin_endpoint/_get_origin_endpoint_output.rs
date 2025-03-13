@@ -19,6 +19,8 @@ pub struct GetOriginEndpointOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the origin endpoint was modified.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
+    /// <p>The time that the origin endpoint was last reset.</p>
+    pub reset_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for your origin endpoint.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window.</p>
@@ -73,6 +75,10 @@ impl GetOriginEndpointOutput {
     /// <p>The date and time the origin endpoint was modified.</p>
     pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
         &self.modified_at
+    }
+    /// <p>The time that the origin endpoint was last reset.</p>
+    pub fn reset_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.reset_at.as_ref()
     }
     /// <p>The description for your origin endpoint.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -137,6 +143,7 @@ pub struct GetOriginEndpointOutputBuilder {
     pub(crate) segment: ::std::option::Option<crate::types::Segment>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) reset_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) startover_window_seconds: ::std::option::Option<i32>,
     pub(crate) hls_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetHlsManifestConfiguration>>,
@@ -267,6 +274,20 @@ impl GetOriginEndpointOutputBuilder {
     /// <p>The date and time the origin endpoint was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
+    }
+    /// <p>The time that the origin endpoint was last reset.</p>
+    pub fn reset_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.reset_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that the origin endpoint was last reset.</p>
+    pub fn set_reset_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.reset_at = input;
+        self
+    }
+    /// <p>The time that the origin endpoint was last reset.</p>
+    pub fn get_reset_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.reset_at
     }
     /// <p>The description for your origin endpoint.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -472,6 +493,7 @@ impl GetOriginEndpointOutputBuilder {
                     "modified_at was not specified but it is required when building GetOriginEndpointOutput",
                 )
             })?,
+            reset_at: self.reset_at,
             description: self.description,
             startover_window_seconds: self.startover_window_seconds,
             hls_manifests: self.hls_manifests,

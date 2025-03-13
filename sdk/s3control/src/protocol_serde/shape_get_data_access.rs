@@ -79,14 +79,24 @@ pub fn de_get_data_access(
                 builder = builder.set_matched_grant_target(var_3);
             }
             ,
-            s if s.matches("Credentials") /* Credentials com.amazonaws.s3control.synthetic#GetDataAccessOutput$Credentials */ =>  {
+            s if s.matches("Grantee") /* Grantee com.amazonaws.s3control.synthetic#GetDataAccessOutput$Grantee */ =>  {
                 let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_grantee::de_grantee(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_grantee(var_4);
+            }
+            ,
+            s if s.matches("Credentials") /* Credentials com.amazonaws.s3control.synthetic#GetDataAccessOutput$Credentials */ =>  {
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_credentials::de_credentials(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_credentials(var_4);
+                builder = builder.set_credentials(var_5);
             }
             ,
             _ => {}

@@ -193,6 +193,12 @@ pub(crate) fn de_get_channel(
                         crate::protocol_serde::shape_output_header_configuration::de_output_header_configuration(tokens)?,
                     );
                 }
+                "ResetAt" => {
+                    builder = builder.set_reset_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                 }

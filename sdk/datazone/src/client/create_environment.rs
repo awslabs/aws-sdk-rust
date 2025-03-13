@@ -37,6 +37,7 @@ impl super::Client {
     ///   - [`provisioning_properties(Option<ProvisioningProperties>)`](crate::operation::create_environment::CreateEnvironmentOutput::provisioning_properties): <p>The provisioning properties of this Amazon DataZone environment.</p>
     ///   - [`deployment_properties(Option<DeploymentProperties>)`](crate::operation::create_environment::CreateEnvironmentOutput::deployment_properties): <p>The deployment properties of this Amazon DataZone environment.</p>
     ///   - [`environment_blueprint_id(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_blueprint_id): <p>The ID of the blueprint with which this Amazon DataZone environment was created.</p>
+    ///   - [`environment_configuration_id(Option<String>)`](crate::operation::create_environment::CreateEnvironmentOutput::environment_configuration_id): <p>The configuration ID of the environment.</p>
     /// - On failure, responds with [`SdkError<CreateEnvironmentError>`](crate::operation::create_environment::CreateEnvironmentError)
     pub fn create_environment(&self) -> crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentFluentBuilder::new(self.handle.clone())

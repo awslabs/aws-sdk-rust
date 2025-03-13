@@ -21,6 +21,8 @@ pub struct GetHlsManifestConfiguration {
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     /// <p>To insert an EXT-X-START tag in your HLS playlist, specify a StartTag configuration object with a valid TimeOffset. When you do, you can also optionally specify whether to include a PRECISE value in the EXT-X-START tag.</p>
     pub start_tag: ::std::option::Option<crate::types::StartTag>,
+    /// <p>When enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>
+    pub url_encode_child_manifest: ::std::option::Option<bool>,
 }
 impl GetHlsManifestConfiguration {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
@@ -58,6 +60,10 @@ impl GetHlsManifestConfiguration {
     pub fn start_tag(&self) -> ::std::option::Option<&crate::types::StartTag> {
         self.start_tag.as_ref()
     }
+    /// <p>When enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>
+    pub fn url_encode_child_manifest(&self) -> ::std::option::Option<bool> {
+        self.url_encode_child_manifest
+    }
 }
 impl GetHlsManifestConfiguration {
     /// Creates a new builder-style object to manufacture [`GetHlsManifestConfiguration`](crate::types::GetHlsManifestConfiguration).
@@ -78,6 +84,7 @@ pub struct GetHlsManifestConfigurationBuilder {
     pub(crate) scte_hls: ::std::option::Option<crate::types::ScteHls>,
     pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
     pub(crate) start_tag: ::std::option::Option<crate::types::StartTag>,
+    pub(crate) url_encode_child_manifest: ::std::option::Option<bool>,
 }
 impl GetHlsManifestConfigurationBuilder {
     /// <p>A short short string that's appended to the endpoint URL. The manifest name creates a unique path to this endpoint. If you don't enter a value, MediaPackage uses the default manifest name, index. MediaPackage automatically inserts the format extension, such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency HLS manifest. The manifestName on the HLSManifest object overrides the manifestName you provided on the originEndpoint object.</p>
@@ -197,6 +204,20 @@ impl GetHlsManifestConfigurationBuilder {
     pub fn get_start_tag(&self) -> &::std::option::Option<crate::types::StartTag> {
         &self.start_tag
     }
+    /// <p>When enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>
+    pub fn url_encode_child_manifest(mut self, input: bool) -> Self {
+        self.url_encode_child_manifest = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>When enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>
+    pub fn set_url_encode_child_manifest(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.url_encode_child_manifest = input;
+        self
+    }
+    /// <p>When enabled, MediaPackage URL-encodes the query string for API requests for HLS child manifests to comply with Amazon Web Services Signature Version 4 (SigV4) signature signing protocol. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html">Amazon Web Services Signature Version 4 for API requests</a> in <i>Identity and Access Management User Guide</i>.</p>
+    pub fn get_url_encode_child_manifest(&self) -> &::std::option::Option<bool> {
+        &self.url_encode_child_manifest
+    }
     /// Consumes the builder and constructs a [`GetHlsManifestConfiguration`](crate::types::GetHlsManifestConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`manifest_name`](crate::types::builders::GetHlsManifestConfigurationBuilder::manifest_name)
@@ -221,6 +242,7 @@ impl GetHlsManifestConfigurationBuilder {
             scte_hls: self.scte_hls,
             filter_configuration: self.filter_configuration,
             start_tag: self.start_tag,
+            url_encode_child_manifest: self.url_encode_child_manifest,
         })
     }
 }

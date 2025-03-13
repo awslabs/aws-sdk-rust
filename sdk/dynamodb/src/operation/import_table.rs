@@ -238,6 +238,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportTableEn
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
             .set_account_id(cfg.load::<crate::config::AccountId>().map(|ty| ty.0.clone()))
             .set_account_id_endpoint_mode(cfg.load::<crate::config::AccountIdEndpointMode>().map(|ty| ty.0.clone()))
+            .set_resource_arn(get_resource_arn(_input).cloned())
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -250,6 +251,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportTableEn
 
 // The get_* functions below are generated from JMESPath expressions in the
 // operationContextParams trait. They target the operation's input shape.
+
+// Generated from JMESPath Expression: TableCreationParameters.TableName
+fn get_resource_arn(input: &crate::operation::import_table::ImportTableInput) -> Option<&::std::string::String> {
+    let _fld_1 = input.table_creation_parameters.as_ref()?;
+    let _fld_2 = &_fld_1.table_name;
+    Some(_fld_2)
+}
 
 /// Error type for the `ImportTableError` operation.
 #[non_exhaustive]

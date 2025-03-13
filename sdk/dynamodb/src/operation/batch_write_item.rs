@@ -232,6 +232,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchWriteIte
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
             .set_account_id(cfg.load::<crate::config::AccountId>().map(|ty| ty.0.clone()))
             .set_account_id_endpoint_mode(cfg.load::<crate::config::AccountIdEndpointMode>().map(|ty| ty.0.clone()))
+            .set_resource_arn_list(get_resource_arn_list(_input))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -244,6 +245,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchWriteIte
 
 // The get_* functions below are generated from JMESPath expressions in the
 // operationContextParams trait. They target the operation's input shape.
+
+// Generated from JMESPath Expression: keys(RequestItems)
+fn get_resource_arn_list(input: &crate::operation::batch_write_item::BatchWriteItemInput) -> Option<::std::vec::Vec<::std::string::String>> {
+    let _fld_2 = input.request_items.as_ref()?;
+    let _ret_1 = _fld_2.keys().map(Clone::clone).collect::<Vec<String>>();
+    Some(_ret_1)
+}
 
 /// Error type for the `BatchWriteItemError` operation.
 #[non_exhaustive]

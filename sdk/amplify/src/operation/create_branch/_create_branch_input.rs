@@ -18,6 +18,9 @@ pub struct CreateBranchInput {
     pub enable_notification: ::std::option::Option<bool>,
     /// <p>Enables auto building for the branch.</p>
     pub enable_auto_build: ::std::option::Option<bool>,
+    /// <p>Specifies whether the skew protection feature is enabled for the branch.</p>
+    /// <p>Deployment skew protection is available to Amplify applications to eliminate version skew issues between client and servers in web applications. When you apply skew protection to a branch, you can ensure that your clients always interact with the correct version of server-side assets, regardless of when a deployment occurs. For more information about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+    pub enable_skew_protection: ::std::option::Option<bool>,
     /// <p>The environment variables for the branch.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
@@ -45,7 +48,7 @@ pub struct CreateBranchInput {
     /// <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.</p>
     /// <p>This field is available to Amplify Gen 2 apps only. When you deploy an application with Amplify Gen 2, you provision the app's backend infrastructure using Typescript code.</p>
     pub backend: ::std::option::Option<crate::types::Backend>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
     pub compute_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateBranchInput {
@@ -76,6 +79,11 @@ impl CreateBranchInput {
     /// <p>Enables auto building for the branch.</p>
     pub fn enable_auto_build(&self) -> ::std::option::Option<bool> {
         self.enable_auto_build
+    }
+    /// <p>Specifies whether the skew protection feature is enabled for the branch.</p>
+    /// <p>Deployment skew protection is available to Amplify applications to eliminate version skew issues between client and servers in web applications. When you apply skew protection to a branch, you can ensure that your clients always interact with the correct version of server-side assets, regardless of when a deployment occurs. For more information about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn enable_skew_protection(&self) -> ::std::option::Option<bool> {
+        self.enable_skew_protection
     }
     /// <p>The environment variables for the branch.</p>
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -128,7 +136,7 @@ impl CreateBranchInput {
     pub fn backend(&self) -> ::std::option::Option<&crate::types::Backend> {
         self.backend.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
     pub fn compute_role_arn(&self) -> ::std::option::Option<&str> {
         self.compute_role_arn.as_deref()
     }
@@ -143,6 +151,7 @@ impl ::std::fmt::Debug for CreateBranchInput {
         formatter.field("framework", &self.framework);
         formatter.field("enable_notification", &self.enable_notification);
         formatter.field("enable_auto_build", &self.enable_auto_build);
+        formatter.field("enable_skew_protection", &self.enable_skew_protection);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
@@ -177,6 +186,7 @@ pub struct CreateBranchInputBuilder {
     pub(crate) framework: ::std::option::Option<::std::string::String>,
     pub(crate) enable_notification: ::std::option::Option<bool>,
     pub(crate) enable_auto_build: ::std::option::Option<bool>,
+    pub(crate) enable_skew_protection: ::std::option::Option<bool>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) basic_auth_credentials: ::std::option::Option<::std::string::String>,
     pub(crate) enable_basic_auth: ::std::option::Option<bool>,
@@ -291,6 +301,23 @@ impl CreateBranchInputBuilder {
     /// <p>Enables auto building for the branch.</p>
     pub fn get_enable_auto_build(&self) -> &::std::option::Option<bool> {
         &self.enable_auto_build
+    }
+    /// <p>Specifies whether the skew protection feature is enabled for the branch.</p>
+    /// <p>Deployment skew protection is available to Amplify applications to eliminate version skew issues between client and servers in web applications. When you apply skew protection to a branch, you can ensure that your clients always interact with the correct version of server-side assets, regardless of when a deployment occurs. For more information about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn enable_skew_protection(mut self, input: bool) -> Self {
+        self.enable_skew_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the skew protection feature is enabled for the branch.</p>
+    /// <p>Deployment skew protection is available to Amplify applications to eliminate version skew issues between client and servers in web applications. When you apply skew protection to a branch, you can ensure that your clients always interact with the correct version of server-side assets, regardless of when a deployment occurs. For more information about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn set_enable_skew_protection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_skew_protection = input;
+        self
+    }
+    /// <p>Specifies whether the skew protection feature is enabled for the branch.</p>
+    /// <p>Deployment skew protection is available to Amplify applications to eliminate version skew issues between client and servers in web applications. When you apply skew protection to a branch, you can ensure that your clients always interact with the correct version of server-side assets, regardless of when a deployment occurs. For more information about skew protection, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+    pub fn get_enable_skew_protection(&self) -> &::std::option::Option<bool> {
+        &self.enable_skew_protection
     }
     /// Adds a key-value pair to `environment_variables`.
     ///
@@ -488,17 +515,17 @@ impl CreateBranchInputBuilder {
     pub fn get_backend(&self) -> &::std::option::Option<crate::types::Backend> {
         &self.backend
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
     pub fn compute_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.compute_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
     pub fn set_compute_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.compute_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to assign to a branch of an SSR app. The SSR Compute role allows the Amplify Hosting compute service to securely access specific Amazon Web Services resources based on the role's permissions. For more information about the SSR Compute role, see <a href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
     pub fn get_compute_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.compute_role_arn
     }
@@ -514,6 +541,7 @@ impl CreateBranchInputBuilder {
             framework: self.framework,
             enable_notification: self.enable_notification,
             enable_auto_build: self.enable_auto_build,
+            enable_skew_protection: self.enable_skew_protection,
             environment_variables: self.environment_variables,
             basic_auth_credentials: self.basic_auth_credentials,
             enable_basic_auth: self.enable_basic_auth,
@@ -540,6 +568,7 @@ impl ::std::fmt::Debug for CreateBranchInputBuilder {
         formatter.field("framework", &self.framework);
         formatter.field("enable_notification", &self.enable_notification);
         formatter.field("enable_auto_build", &self.enable_auto_build);
+        formatter.field("enable_skew_protection", &self.enable_skew_protection);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("enable_basic_auth", &self.enable_basic_auth);

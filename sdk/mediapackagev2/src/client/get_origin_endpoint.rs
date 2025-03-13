@@ -15,6 +15,7 @@ impl super::Client {
     ///   - [`segment(Option<Segment>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::segment): <p>The segment configuration, including the segment name, duration, and other configuration values.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::created_at): <p>The date and time the origin endpoint was created.</p>
     ///   - [`modified_at(DateTime)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::modified_at): <p>The date and time the origin endpoint was modified.</p>
+    ///   - [`reset_at(Option<DateTime>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::reset_at): <p>The time that the origin endpoint was last reset.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::description): <p>The description for your origin endpoint.</p>
     ///   - [`startover_window_seconds(Option<i32>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::startover_window_seconds): <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window.</p>
     ///   - [`hls_manifests(Option<Vec::<GetHlsManifestConfiguration>>)`](crate::operation::get_origin_endpoint::GetOriginEndpointOutput::hls_manifests): <p>An HTTP live streaming (HLS) manifest configuration.</p>

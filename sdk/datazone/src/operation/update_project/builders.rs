@@ -197,4 +197,37 @@ impl UpdateProjectFluentBuilder {
     pub fn get_environment_deployment_details(&self) -> &::std::option::Option<crate::types::EnvironmentDeploymentDetails> {
         self.inner.get_environment_deployment_details()
     }
+    ///
+    /// Appends an item to `userParameters`.
+    ///
+    /// To override the contents of this collection use [`set_user_parameters`](Self::set_user_parameters).
+    ///
+    /// <p>The user parameters of the project.</p>
+    pub fn user_parameters(mut self, input: crate::types::EnvironmentConfigurationUserParameter) -> Self {
+        self.inner = self.inner.user_parameters(input);
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>) -> Self {
+        self.inner = self.inner.set_user_parameters(input);
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
+        self.inner.get_user_parameters()
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn project_profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_profile_version(input.into());
+        self
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn set_project_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_profile_version(input);
+        self
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn get_project_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_profile_version()
+    }
 }

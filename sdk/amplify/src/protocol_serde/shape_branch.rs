@@ -74,6 +74,9 @@ where
                         "enableAutoBuild" => {
                             builder = builder.set_enable_auto_build(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "enableSkewProtection" => {
+                            builder = builder.set_enable_skew_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "customDomains" => {
                             builder = builder.set_custom_domains(crate::protocol_serde::shape_custom_domains::de_custom_domains(tokens)?);
                         }

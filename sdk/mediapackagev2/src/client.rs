@@ -238,6 +238,10 @@ mod put_channel_policy;
 
 mod put_origin_endpoint_policy;
 
+mod reset_channel_state;
+
+mod reset_origin_endpoint_state;
+
 mod tag_resource;
 
 mod untag_resource;

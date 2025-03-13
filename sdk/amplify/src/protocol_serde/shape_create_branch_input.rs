@@ -45,37 +45,40 @@ pub fn ser_create_branch_input_input(
     if let Some(var_14) = &input.enable_pull_request_preview {
         object.key("enablePullRequestPreview").boolean(*var_14);
     }
-    if let Some(var_15) = &input.environment_variables {
+    if let Some(var_15) = &input.enable_skew_protection {
+        object.key("enableSkewProtection").boolean(*var_15);
+    }
+    if let Some(var_16) = &input.environment_variables {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("environmentVariables").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("environmentVariables").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.framework {
-        object.key("framework").string(var_19.as_str());
+    if let Some(var_20) = &input.framework {
+        object.key("framework").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_20.as_str());
+    if let Some(var_21) = &input.pull_request_environment_name {
+        object.key("pullRequestEnvironmentName").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.stage {
-        object.key("stage").string(var_21.as_str());
+    if let Some(var_22) = &input.stage {
+        object.key("stage").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_23) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_24 = object.key("tags").start_object();
+        for (key_25, value_26) in var_23 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_24.key(key_25.as_str()).string(value_26.as_str());
             }
         }
-        object_23.finish();
+        object_24.finish();
     }
-    if let Some(var_26) = &input.ttl {
-        object.key("ttl").string(var_26.as_str());
+    if let Some(var_27) = &input.ttl {
+        object.key("ttl").string(var_27.as_str());
     }
     Ok(())
 }

@@ -18,7 +18,7 @@ impl super::Client {
     /// - On success, responds with [`FilterLogEventsOutput`](crate::operation::filter_log_events::FilterLogEventsOutput) with field(s):
     ///   - [`events(Option<Vec::<FilteredLogEvent>>)`](crate::operation::filter_log_events::FilterLogEventsOutput::events): <p>The matched events.</p>
     ///   - [`searched_log_streams(Option<Vec::<SearchedLogStream>>)`](crate::operation::filter_log_events::FilterLogEventsOutput::searched_log_streams): <p><b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.</p> <p>Indicates which log streams have been searched and whether each has been searched completely.</p>
-    ///   - [`next_token(Option<String>)`](crate::operation::filter_log_events::FilterLogEventsOutput::next_token): <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p>
+    ///   - [`next_token(Option<String>)`](crate::operation::filter_log_events::FilterLogEventsOutput::next_token): <p>The token to use when requesting the next set of items. The token expires after 24 hours.</p> <p>If the results don't include a <code>nextToken</code>, then pagination is finished.</p>
     /// - On failure, responds with [`SdkError<FilterLogEventsError>`](crate::operation::filter_log_events::FilterLogEventsError)
     pub fn filter_log_events(&self) -> crate::operation::filter_log_events::builders::FilterLogEventsFluentBuilder {
         crate::operation::filter_log_events::builders::FilterLogEventsFluentBuilder::new(self.handle.clone())

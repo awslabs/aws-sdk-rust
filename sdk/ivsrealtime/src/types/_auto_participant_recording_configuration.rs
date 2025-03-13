@@ -13,6 +13,8 @@ pub struct AutoParticipantRecordingConfiguration {
     /// <p>If a stage publisher disconnects and then reconnects within the specified interval, the multiple recordings will be considered a single recording and merged together.</p>
     /// <p>The default value is 0, which disables merging.</p>
     pub recording_reconnect_window_seconds: i32,
+    /// <p>HLS configuration object for individual participant recording.</p>
+    pub hls_configuration: ::std::option::Option<crate::types::ParticipantRecordingHlsConfiguration>,
 }
 impl AutoParticipantRecordingConfiguration {
     /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
@@ -35,6 +37,10 @@ impl AutoParticipantRecordingConfiguration {
     pub fn recording_reconnect_window_seconds(&self) -> i32 {
         self.recording_reconnect_window_seconds
     }
+    /// <p>HLS configuration object for individual participant recording.</p>
+    pub fn hls_configuration(&self) -> ::std::option::Option<&crate::types::ParticipantRecordingHlsConfiguration> {
+        self.hls_configuration.as_ref()
+    }
 }
 impl AutoParticipantRecordingConfiguration {
     /// Creates a new builder-style object to manufacture [`AutoParticipantRecordingConfiguration`](crate::types::AutoParticipantRecordingConfiguration).
@@ -51,6 +57,7 @@ pub struct AutoParticipantRecordingConfigurationBuilder {
     pub(crate) media_types: ::std::option::Option<::std::vec::Vec<crate::types::ParticipantRecordingMediaType>>,
     pub(crate) thumbnail_configuration: ::std::option::Option<crate::types::ParticipantThumbnailConfiguration>,
     pub(crate) recording_reconnect_window_seconds: ::std::option::Option<i32>,
+    pub(crate) hls_configuration: ::std::option::Option<crate::types::ParticipantRecordingHlsConfiguration>,
 }
 impl AutoParticipantRecordingConfigurationBuilder {
     /// <p>ARN of the <code>StorageConfiguration</code> resource to use for individual participant recording. Default: <code>""</code> (empty string, no storage configuration is specified). Individual participant recording cannot be started unless a storage configuration is specified, when a <code>Stage</code> is created or updated. To disable individual participant recording, set this to <code>""</code>; other fields in this object will get reset to their defaults when sending <code>""</code>.</p>
@@ -119,6 +126,20 @@ impl AutoParticipantRecordingConfigurationBuilder {
     pub fn get_recording_reconnect_window_seconds(&self) -> &::std::option::Option<i32> {
         &self.recording_reconnect_window_seconds
     }
+    /// <p>HLS configuration object for individual participant recording.</p>
+    pub fn hls_configuration(mut self, input: crate::types::ParticipantRecordingHlsConfiguration) -> Self {
+        self.hls_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>HLS configuration object for individual participant recording.</p>
+    pub fn set_hls_configuration(mut self, input: ::std::option::Option<crate::types::ParticipantRecordingHlsConfiguration>) -> Self {
+        self.hls_configuration = input;
+        self
+    }
+    /// <p>HLS configuration object for individual participant recording.</p>
+    pub fn get_hls_configuration(&self) -> &::std::option::Option<crate::types::ParticipantRecordingHlsConfiguration> {
+        &self.hls_configuration
+    }
     /// Consumes the builder and constructs a [`AutoParticipantRecordingConfiguration`](crate::types::AutoParticipantRecordingConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`storage_configuration_arn`](crate::types::builders::AutoParticipantRecordingConfigurationBuilder::storage_configuration_arn)
@@ -135,6 +156,7 @@ impl AutoParticipantRecordingConfigurationBuilder {
             media_types: self.media_types,
             thumbnail_configuration: self.thumbnail_configuration,
             recording_reconnect_window_seconds: self.recording_reconnect_window_seconds.unwrap_or_default(),
+            hls_configuration: self.hls_configuration,
         })
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::list_channel_groups::builders::ListChannelGroupsInputBuil
 }
 /// Fluent builder constructing a request to `ListChannelGroups`.
 ///
-/// <p>Retrieves all channel groups that are configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it.</p>
+/// <p>Retrieves all channel groups that are configured in Elemental MediaPackage.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChannelGroupsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -47,6 +47,21 @@ pub fn de_list_tags_http_error(
             }
             tmp
         }),
+        "RequestFailedException" => crate::operation::list_tags::ListTagsError::RequestFailedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::RequestFailedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_request_failed_exception::de_request_failed_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_tags::ListTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::list_tags::ListTagsError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

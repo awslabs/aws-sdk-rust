@@ -3,8 +3,14 @@ pub fn ser_recording_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::RecordingConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.format {
-        object.key("format").string(var_1.as_str());
+    if let Some(var_1) = &input.hls_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("hlsConfiguration").start_object();
+        crate::protocol_serde::shape_composition_recording_hls_configuration::ser_composition_recording_hls_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.format {
+        object.key("format").string(var_3.as_str());
     }
     Ok(())
 }
@@ -24,6 +30,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "hlsConfiguration" => {
+                            builder = builder.set_hls_configuration(
+                                crate::protocol_serde::shape_composition_recording_hls_configuration::de_composition_recording_hls_configuration(
+                                    tokens,
+                                )?,
+                            );
+                        }
                         "format" => {
                             builder = builder.set_format(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

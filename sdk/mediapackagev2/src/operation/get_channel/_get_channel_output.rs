@@ -13,6 +13,8 @@ pub struct GetChannelOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the channel was modified.</p>
     pub modified_at: ::aws_smithy_types::DateTime,
+    /// <p>The time that the channel was last reset.</p>
+    pub reset_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description for your channel.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The list of ingest endpoints.</p>
@@ -59,6 +61,10 @@ impl GetChannelOutput {
     /// <p>The date and time the channel was modified.</p>
     pub fn modified_at(&self) -> &::aws_smithy_types::DateTime {
         &self.modified_at
+    }
+    /// <p>The time that the channel was last reset.</p>
+    pub fn reset_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.reset_at.as_ref()
     }
     /// <p>The description for your channel.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -119,6 +125,7 @@ pub struct GetChannelOutputBuilder {
     pub(crate) channel_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) reset_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) ingest_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::IngestEndpoint>>,
     pub(crate) input_type: ::std::option::Option<crate::types::InputType>,
@@ -203,6 +210,20 @@ impl GetChannelOutputBuilder {
     /// <p>The date and time the channel was modified.</p>
     pub fn get_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.modified_at
+    }
+    /// <p>The time that the channel was last reset.</p>
+    pub fn reset_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.reset_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that the channel was last reset.</p>
+    pub fn set_reset_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.reset_at = input;
+        self
+    }
+    /// <p>The time that the channel was last reset.</p>
+    pub fn get_reset_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.reset_at
     }
     /// <p>The description for your channel.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -383,6 +404,7 @@ impl GetChannelOutputBuilder {
                     "modified_at was not specified but it is required when building GetChannelOutput",
                 )
             })?,
+            reset_at: self.reset_at,
             description: self.description,
             ingest_endpoints: self.ingest_endpoints,
             input_type: self.input_type,

@@ -5,6 +5,8 @@ pub use crate::types::_stage_endpoints::StageEndpoints;
 
 pub use crate::types::_auto_participant_recording_configuration::AutoParticipantRecordingConfiguration;
 
+pub use crate::types::_participant_recording_hls_configuration::ParticipantRecordingHlsConfiguration;
+
 pub use crate::types::_participant_thumbnail_configuration::ParticipantThumbnailConfiguration;
 
 pub use crate::types::_thumbnail_recording_mode::ThumbnailRecordingMode;
@@ -36,6 +38,8 @@ pub use crate::types::_composition_thumbnail_configuration::CompositionThumbnail
 pub use crate::types::_recording_configuration::RecordingConfiguration;
 
 pub use crate::types::_recording_configuration_format::RecordingConfigurationFormat;
+
+pub use crate::types::_composition_recording_hls_configuration::CompositionRecordingHlsConfiguration;
 
 pub use crate::types::_channel_destination_configuration::ChannelDestinationConfiguration;
 
@@ -115,6 +119,8 @@ mod _channel_destination_configuration;
 
 mod _composition;
 
+mod _composition_recording_hls_configuration;
+
 mod _composition_state;
 
 mod _composition_summary;
@@ -158,6 +164,8 @@ mod _participant;
 mod _participant_protocol;
 
 mod _participant_recording_filter_by_recording_state;
+
+mod _participant_recording_hls_configuration;
 
 mod _participant_recording_media_type;
 

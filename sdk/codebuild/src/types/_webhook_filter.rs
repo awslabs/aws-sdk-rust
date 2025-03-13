@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookFilter {
-    /// <p>The type of webhook filter. There are nine webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
+    /// <p>The type of webhook filter. There are 11 webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, <code>REPOSITORY_NAME</code>, <code>ORGANIZATION_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
     /// <ul>
     /// <li>
     /// <p>EVENT</p>
@@ -41,7 +41,7 @@ pub struct WebhookFilter {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -49,7 +49,7 @@ pub struct WebhookFilter {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -72,8 +72,16 @@ pub struct WebhookFilter {
     /// <p>REPOSITORY_NAME</p>
     /// <ul>
     /// <li>
-    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>ORGANIZATION_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the organization name matches the regular expression <code>pattern</code>.</p><note>
+    /// <p>Works with GitHub global webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -95,7 +103,7 @@ pub struct WebhookFilter {
     pub exclude_matched_pattern: ::std::option::Option<bool>,
 }
 impl WebhookFilter {
-    /// <p>The type of webhook filter. There are nine webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
+    /// <p>The type of webhook filter. There are 11 webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, <code>REPOSITORY_NAME</code>, <code>ORGANIZATION_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
     /// <ul>
     /// <li>
     /// <p>EVENT</p>
@@ -132,7 +140,7 @@ impl WebhookFilter {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -140,7 +148,7 @@ impl WebhookFilter {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -163,8 +171,16 @@ impl WebhookFilter {
     /// <p>REPOSITORY_NAME</p>
     /// <ul>
     /// <li>
-    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>ORGANIZATION_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the organization name matches the regular expression <code>pattern</code>.</p><note>
+    /// <p>Works with GitHub global webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -208,7 +224,7 @@ pub struct WebhookFilterBuilder {
     pub(crate) exclude_matched_pattern: ::std::option::Option<bool>,
 }
 impl WebhookFilterBuilder {
-    /// <p>The type of webhook filter. There are nine webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
+    /// <p>The type of webhook filter. There are 11 webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, <code>REPOSITORY_NAME</code>, <code>ORGANIZATION_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
     /// <ul>
     /// <li>
     /// <p>EVENT</p>
@@ -245,7 +261,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -253,7 +269,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -276,8 +292,16 @@ impl WebhookFilterBuilder {
     /// <p>REPOSITORY_NAME</p>
     /// <ul>
     /// <li>
-    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>ORGANIZATION_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the organization name matches the regular expression <code>pattern</code>.</p><note>
+    /// <p>Works with GitHub global webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -296,7 +320,7 @@ impl WebhookFilterBuilder {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of webhook filter. There are nine webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
+    /// <p>The type of webhook filter. There are 11 webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, <code>REPOSITORY_NAME</code>, <code>ORGANIZATION_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
     /// <ul>
     /// <li>
     /// <p>EVENT</p>
@@ -333,7 +357,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -341,7 +365,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -364,8 +388,16 @@ impl WebhookFilterBuilder {
     /// <p>REPOSITORY_NAME</p>
     /// <ul>
     /// <li>
-    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>ORGANIZATION_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the organization name matches the regular expression <code>pattern</code>.</p><note>
+    /// <p>Works with GitHub global webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -383,7 +415,7 @@ impl WebhookFilterBuilder {
         self.r#type = input;
         self
     }
-    /// <p>The type of webhook filter. There are nine webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
+    /// <p>The type of webhook filter. There are 11 webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, <code>COMMIT_MESSAGE</code>, <code>TAG_NAME</code>, <code>RELEASE_NAME</code>, <code>REPOSITORY_NAME</code>, <code>ORGANIZATION_NAME</code>, and <code>WORKFLOW_NAME</code>.</p>
     /// <ul>
     /// <li>
     /// <p>EVENT</p>
@@ -420,7 +452,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the path of a changed file matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -428,7 +460,7 @@ impl WebhookFilterBuilder {
     /// <ul>
     /// <li>
     /// <p>A webhook triggers a build when the head commit message matches the regular expression <code>pattern</code>.</p><note>
-    /// <p>Works with GitHub and Bitbucket events push and pull requests events. Also works with GitHub Enterprise push events, but does not work with GitHub Enterprise pull request events.</p>
+    /// <p>Works with push and pull request events only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>
@@ -451,8 +483,16 @@ impl WebhookFilterBuilder {
     /// <p>REPOSITORY_NAME</p>
     /// <ul>
     /// <li>
-    /// <p>A webhook triggers a build when the repository name matches the regular expression pattern.</p><note>
+    /// <p>A webhook triggers a build when the repository name matches the regular expression <code>pattern</code>.</p><note>
     /// <p>Works with GitHub global or organization webhooks only.</p>
+    /// </note></li>
+    /// </ul></li>
+    /// <li>
+    /// <p>ORGANIZATION_NAME</p>
+    /// <ul>
+    /// <li>
+    /// <p>A webhook triggers a build when the organization name matches the regular expression <code>pattern</code>.</p><note>
+    /// <p>Works with GitHub global webhooks only.</p>
     /// </note></li>
     /// </ul></li>
     /// <li>

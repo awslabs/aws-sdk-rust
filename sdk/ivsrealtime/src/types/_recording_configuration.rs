@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordingConfiguration {
+    /// <p>An HLS configuration object to return information about how the recording will be configured.</p>
+    pub hls_configuration: ::std::option::Option<crate::types::CompositionRecordingHlsConfiguration>,
     /// <p>The recording format for storing a recording in Amazon S3.</p>
     pub format: ::std::option::Option<crate::types::RecordingConfigurationFormat>,
 }
 impl RecordingConfiguration {
+    /// <p>An HLS configuration object to return information about how the recording will be configured.</p>
+    pub fn hls_configuration(&self) -> ::std::option::Option<&crate::types::CompositionRecordingHlsConfiguration> {
+        self.hls_configuration.as_ref()
+    }
     /// <p>The recording format for storing a recording in Amazon S3.</p>
     pub fn format(&self) -> ::std::option::Option<&crate::types::RecordingConfigurationFormat> {
         self.format.as_ref()
@@ -24,9 +30,24 @@ impl RecordingConfiguration {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct RecordingConfigurationBuilder {
+    pub(crate) hls_configuration: ::std::option::Option<crate::types::CompositionRecordingHlsConfiguration>,
     pub(crate) format: ::std::option::Option<crate::types::RecordingConfigurationFormat>,
 }
 impl RecordingConfigurationBuilder {
+    /// <p>An HLS configuration object to return information about how the recording will be configured.</p>
+    pub fn hls_configuration(mut self, input: crate::types::CompositionRecordingHlsConfiguration) -> Self {
+        self.hls_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An HLS configuration object to return information about how the recording will be configured.</p>
+    pub fn set_hls_configuration(mut self, input: ::std::option::Option<crate::types::CompositionRecordingHlsConfiguration>) -> Self {
+        self.hls_configuration = input;
+        self
+    }
+    /// <p>An HLS configuration object to return information about how the recording will be configured.</p>
+    pub fn get_hls_configuration(&self) -> &::std::option::Option<crate::types::CompositionRecordingHlsConfiguration> {
+        &self.hls_configuration
+    }
     /// <p>The recording format for storing a recording in Amazon S3.</p>
     pub fn format(mut self, input: crate::types::RecordingConfigurationFormat) -> Self {
         self.format = ::std::option::Option::Some(input);
@@ -43,6 +64,9 @@ impl RecordingConfigurationBuilder {
     }
     /// Consumes the builder and constructs a [`RecordingConfiguration`](crate::types::RecordingConfiguration).
     pub fn build(self) -> crate::types::RecordingConfiguration {
-        crate::types::RecordingConfiguration { format: self.format }
+        crate::types::RecordingConfiguration {
+            hls_configuration: self.hls_configuration,
+            format: self.format,
+        }
     }
 }

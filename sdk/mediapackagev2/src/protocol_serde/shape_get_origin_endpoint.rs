@@ -207,6 +207,12 @@ pub(crate) fn de_get_origin_endpoint(
                             .transpose()?,
                     );
                 }
+                "ResetAt" => {
+                    builder = builder.set_reset_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Segment" => {
                     builder = builder.set_segment(crate::protocol_serde::shape_segment::de_segment(tokens)?);
                 }

@@ -4,12 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentConfigurationUserParameter {
+    /// <p>The ID of the environment.</p>
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The environment configuration name.</p>
     pub environment_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The environment parameters.</p>
     pub environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
 }
 impl EnvironmentConfigurationUserParameter {
+    /// <p>The ID of the environment.</p>
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
+    }
     /// <p>The environment configuration name.</p>
     pub fn environment_configuration_name(&self) -> ::std::option::Option<&str> {
         self.environment_configuration_name.as_deref()
@@ -24,6 +30,7 @@ impl EnvironmentConfigurationUserParameter {
 impl ::std::fmt::Debug for EnvironmentConfigurationUserParameter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentConfigurationUserParameter");
+        formatter.field("environment_id", &self.environment_id);
         formatter.field("environment_configuration_name", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_parameters", &self.environment_parameters);
         formatter.finish()
@@ -40,10 +47,25 @@ impl EnvironmentConfigurationUserParameter {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct EnvironmentConfigurationUserParameterBuilder {
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) environment_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
 }
 impl EnvironmentConfigurationUserParameterBuilder {
+    /// <p>The ID of the environment.</p>
+    pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the environment.</p>
+    pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_id = input;
+        self
+    }
+    /// <p>The ID of the environment.</p>
+    pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_id
+    }
     /// <p>The environment configuration name.</p>
     pub fn environment_configuration_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_configuration_name = ::std::option::Option::Some(input.into());
@@ -81,6 +103,7 @@ impl EnvironmentConfigurationUserParameterBuilder {
     /// Consumes the builder and constructs a [`EnvironmentConfigurationUserParameter`](crate::types::EnvironmentConfigurationUserParameter).
     pub fn build(self) -> crate::types::EnvironmentConfigurationUserParameter {
         crate::types::EnvironmentConfigurationUserParameter {
+            environment_id: self.environment_id,
             environment_configuration_name: self.environment_configuration_name,
             environment_parameters: self.environment_parameters,
         }
@@ -89,6 +112,7 @@ impl EnvironmentConfigurationUserParameterBuilder {
 impl ::std::fmt::Debug for EnvironmentConfigurationUserParameterBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentConfigurationUserParameterBuilder");
+        formatter.field("environment_id", &self.environment_id);
         formatter.field("environment_configuration_name", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_parameters", &self.environment_parameters);
         formatter.finish()

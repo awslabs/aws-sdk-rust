@@ -59,6 +59,10 @@ where
                         "StartTag" => {
                             builder = builder.set_start_tag(crate::protocol_serde::shape_start_tag::de_start_tag(tokens)?);
                         }
+                        "UrlEncodeChildManifest" => {
+                            builder =
+                                builder.set_url_encode_child_manifest(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

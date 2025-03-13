@@ -27,6 +27,12 @@ pub fn ser_auto_participant_recording_configuration(
             ::aws_smithy_types::Number::NegInt((input.recording_reconnect_window_seconds).into()),
         );
     }
+    if let Some(var_6) = &input.hls_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("hlsConfiguration").start_object();
+        crate::protocol_serde::shape_participant_recording_hls_configuration::ser_participant_recording_hls_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -67,6 +73,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "hlsConfiguration" => {
+                            builder = builder.set_hls_configuration(
+                                crate::protocol_serde::shape_participant_recording_hls_configuration::de_participant_recording_hls_configuration(
+                                    tokens,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

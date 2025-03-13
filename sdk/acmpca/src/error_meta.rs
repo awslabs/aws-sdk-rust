@@ -665,6 +665,7 @@ impl From<crate::operation::list_tags::ListTagsError> for Error {
         match err {
             crate::operation::list_tags::ListTagsError::InvalidArnException(inner) => Error::InvalidArnException(inner),
             crate::operation::list_tags::ListTagsError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::list_tags::ListTagsError::RequestFailedException(inner) => Error::RequestFailedException(inner),
             crate::operation::list_tags::ListTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags::ListTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }

@@ -13,7 +13,7 @@ pub struct GetLogAnomalyDetectorOutput {
     pub filter_pattern: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the anomaly detector is currently active. To change its status, use the <code>enabled</code> parameter in the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html">UpdateLogAnomalyDetector</a> operation.</p>
     pub anomaly_detector_status: ::std::option::Option<crate::types::AnomalyDetectorStatus>,
-    /// <p>The ID of the KMS key assigned to this anomaly detector, if any.</p>
+    /// <p>The ARN of the KMS key assigned to this anomaly detector, if any.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when this anomaly detector was created.</p>
     pub creation_time_stamp: i64,
@@ -46,7 +46,7 @@ impl GetLogAnomalyDetectorOutput {
     pub fn anomaly_detector_status(&self) -> ::std::option::Option<&crate::types::AnomalyDetectorStatus> {
         self.anomaly_detector_status.as_ref()
     }
-    /// <p>The ID of the KMS key assigned to this anomaly detector, if any.</p>
+    /// <p>The ARN of the KMS key assigned to this anomaly detector, if any.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -167,17 +167,17 @@ impl GetLogAnomalyDetectorOutputBuilder {
     pub fn get_anomaly_detector_status(&self) -> &::std::option::Option<crate::types::AnomalyDetectorStatus> {
         &self.anomaly_detector_status
     }
-    /// <p>The ID of the KMS key assigned to this anomaly detector, if any.</p>
+    /// <p>The ARN of the KMS key assigned to this anomaly detector, if any.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the KMS key assigned to this anomaly detector, if any.</p>
+    /// <p>The ARN of the KMS key assigned to this anomaly detector, if any.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The ID of the KMS key assigned to this anomaly detector, if any.</p>
+    /// <p>The ARN of the KMS key assigned to this anomaly detector, if any.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

@@ -13,6 +13,10 @@ pub struct UpdateEnvironmentInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub blueprint_version: ::std::option::Option<::std::string::String>,
+    /// <p>The user parameters of the environment.</p>
+    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
@@ -37,6 +41,16 @@ impl UpdateEnvironmentInput {
     pub fn glossary_terms(&self) -> &[::std::string::String] {
         self.glossary_terms.as_deref().unwrap_or_default()
     }
+    /// <p>The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn blueprint_version(&self) -> ::std::option::Option<&str> {
+        self.blueprint_version.as_deref()
+    }
+    /// <p>The user parameters of the environment.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
@@ -54,6 +68,8 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) blueprint_version: ::std::option::Option<::std::string::String>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The identifier of the domain in which the environment is to be updated.</p>
@@ -134,6 +150,40 @@ impl UpdateEnvironmentInputBuilder {
     pub fn get_glossary_terms(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.glossary_terms
     }
+    /// <p>The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn blueprint_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.blueprint_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn set_blueprint_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.blueprint_version = input;
+        self
+    }
+    /// <p>The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn get_blueprint_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.blueprint_version
+    }
+    /// Appends an item to `user_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_user_parameters`](Self::set_user_parameters).
+    ///
+    /// <p>The user parameters of the environment.</p>
+    pub fn user_parameters(mut self, input: crate::types::EnvironmentParameter) -> Self {
+        let mut v = self.user_parameters.unwrap_or_default();
+        v.push(input);
+        self.user_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The user parameters of the environment.</p>
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>>) -> Self {
+        self.user_parameters = input;
+        self
+    }
+    /// <p>The user parameters of the environment.</p>
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentParameter>> {
+        &self.user_parameters
+    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
@@ -144,6 +194,8 @@ impl UpdateEnvironmentInputBuilder {
             name: self.name,
             description: self.description,
             glossary_terms: self.glossary_terms,
+            blueprint_version: self.blueprint_version,
+            user_parameters: self.user_parameters,
         })
     }
 }

@@ -12,6 +12,7 @@ impl super::Client {
     /// - On success, responds with [`GetDataAccessOutput`](crate::operation::get_data_access::GetDataAccessOutput) with field(s):
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_data_access::GetDataAccessOutput::credentials): <p>The temporary credential token that S3 Access Grants vends.</p>
     ///   - [`matched_grant_target(Option<String>)`](crate::operation::get_data_access::GetDataAccessOutput::matched_grant_target): <p>The S3 URI path of the data to which you are being granted temporary access credentials.</p>
+    ///   - [`grantee(Option<Grantee>)`](crate::operation::get_data_access::GetDataAccessOutput::grantee): <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
     /// - On failure, responds with [`SdkError<GetDataAccessError>`](crate::operation::get_data_access::GetDataAccessError)
     pub fn get_data_access(&self) -> crate::operation::get_data_access::builders::GetDataAccessFluentBuilder {
         crate::operation::get_data_access::builders::GetDataAccessFluentBuilder::new(self.handle.clone())

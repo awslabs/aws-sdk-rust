@@ -39,5 +39,8 @@ pub fn ser_create_hls_manifest_configuration(
         crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.url_encode_child_manifest {
+        object.key("UrlEncodeChildManifest").boolean(*var_10);
+    }
     Ok(())
 }

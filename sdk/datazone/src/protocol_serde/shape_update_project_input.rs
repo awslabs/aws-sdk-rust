@@ -24,5 +24,23 @@ pub fn ser_update_project_input_input(
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.project_profile_version {
+        object.key("projectProfileVersion").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.user_parameters {
+        let mut array_10 = object.key("userParameters").start_array();
+        for item_11 in var_9 {
+            {
+                #[allow(unused_mut)]
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
+                    &mut object_12,
+                    item_11,
+                )?;
+                object_12.finish();
+            }
+        }
+        array_10.finish();
+    }
     Ok(())
 }

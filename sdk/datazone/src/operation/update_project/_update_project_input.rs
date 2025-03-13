@@ -15,6 +15,10 @@ pub struct UpdateProjectInput {
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment deployment details of the project.</p>
     pub environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
+    /// <p>The user parameters of the project.</p>
+    pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub project_profile_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInput {
     /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
@@ -43,6 +47,16 @@ impl UpdateProjectInput {
     pub fn environment_deployment_details(&self) -> ::std::option::Option<&crate::types::EnvironmentDeploymentDetails> {
         self.environment_deployment_details.as_ref()
     }
+    /// <p>The user parameters of the project.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.user_parameters.is_none()`.
+    pub fn user_parameters(&self) -> &[crate::types::EnvironmentConfigurationUserParameter] {
+        self.user_parameters.as_deref().unwrap_or_default()
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn project_profile_version(&self) -> ::std::option::Option<&str> {
+        self.project_profile_version.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -53,6 +67,8 @@ impl ::std::fmt::Debug for UpdateProjectInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
+        formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("project_profile_version", &self.project_profile_version);
         formatter.finish()
     }
 }
@@ -73,6 +89,8 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
+    pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
+    pub(crate) project_profile_version: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
@@ -167,6 +185,40 @@ impl UpdateProjectInputBuilder {
     pub fn get_environment_deployment_details(&self) -> &::std::option::Option<crate::types::EnvironmentDeploymentDetails> {
         &self.environment_deployment_details
     }
+    /// Appends an item to `user_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_user_parameters`](Self::set_user_parameters).
+    ///
+    /// <p>The user parameters of the project.</p>
+    pub fn user_parameters(mut self, input: crate::types::EnvironmentConfigurationUserParameter) -> Self {
+        let mut v = self.user_parameters.unwrap_or_default();
+        v.push(input);
+        self.user_parameters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn set_user_parameters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>) -> Self {
+        self.user_parameters = input;
+        self
+    }
+    /// <p>The user parameters of the project.</p>
+    pub fn get_user_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>> {
+        &self.user_parameters
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn project_profile_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_profile_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn set_project_profile_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_profile_version = input;
+        self
+    }
+    /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
+    pub fn get_project_profile_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_profile_version
+    }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
@@ -178,6 +230,8 @@ impl UpdateProjectInputBuilder {
             description: self.description,
             glossary_terms: self.glossary_terms,
             environment_deployment_details: self.environment_deployment_details,
+            user_parameters: self.user_parameters,
+            project_profile_version: self.project_profile_version,
         })
     }
 }
@@ -190,6 +244,8 @@ impl ::std::fmt::Debug for UpdateProjectInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("glossary_terms", &self.glossary_terms);
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
+        formatter.field("user_parameters", &self.user_parameters);
+        formatter.field("project_profile_version", &self.project_profile_version);
         formatter.finish()
     }
 }

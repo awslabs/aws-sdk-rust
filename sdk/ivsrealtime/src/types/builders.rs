@@ -5,6 +5,8 @@ pub use crate::types::_stage_endpoints::StageEndpointsBuilder;
 
 pub use crate::types::_auto_participant_recording_configuration::AutoParticipantRecordingConfigurationBuilder;
 
+pub use crate::types::_participant_recording_hls_configuration::ParticipantRecordingHlsConfigurationBuilder;
+
 pub use crate::types::_participant_thumbnail_configuration::ParticipantThumbnailConfigurationBuilder;
 
 pub use crate::types::_ingest_configuration::IngestConfigurationBuilder;
@@ -24,6 +26,8 @@ pub use crate::types::_s3_destination_configuration::S3DestinationConfigurationB
 pub use crate::types::_composition_thumbnail_configuration::CompositionThumbnailConfigurationBuilder;
 
 pub use crate::types::_recording_configuration::RecordingConfigurationBuilder;
+
+pub use crate::types::_composition_recording_hls_configuration::CompositionRecordingHlsConfigurationBuilder;
 
 pub use crate::types::_channel_destination_configuration::ChannelDestinationConfigurationBuilder;
 

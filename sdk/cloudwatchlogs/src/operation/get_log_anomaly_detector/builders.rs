@@ -22,7 +22,7 @@ impl crate::operation::get_log_anomaly_detector::builders::GetLogAnomalyDetector
 }
 /// Fluent builder constructing a request to `GetLogAnomalyDetector`.
 ///
-/// <p>Retrieves information about the log anomaly detector that you specify.</p>
+/// <p>Retrieves information about the log anomaly detector that you specify. The KMS key ARN detected is valid.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLogAnomalyDetectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

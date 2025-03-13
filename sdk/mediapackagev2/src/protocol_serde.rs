@@ -69,6 +69,10 @@ pub(crate) mod shape_put_channel_policy;
 
 pub(crate) mod shape_put_origin_endpoint_policy;
 
+pub(crate) mod shape_reset_channel_state;
+
+pub(crate) mod shape_reset_origin_endpoint_state;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;

@@ -15,6 +15,8 @@
 ///     ProjectStatus::Active => { /* ... */ },
 ///     ProjectStatus::DeleteFailed => { /* ... */ },
 ///     ProjectStatus::Deleting => { /* ... */ },
+///     ProjectStatus::UpdateFailed => { /* ... */ },
+///     ProjectStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +51,10 @@ pub enum ProjectStatus {
     DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for ProjectStatus {
             "ACTIVE" => ProjectStatus::Active,
             "DELETE_FAILED" => ProjectStatus::DeleteFailed,
             "DELETING" => ProjectStatus::Deleting,
+            "UPDATE_FAILED" => ProjectStatus::UpdateFailed,
+            "UPDATING" => ProjectStatus::Updating,
             other => ProjectStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +85,14 @@ impl ProjectStatus {
             ProjectStatus::Active => "ACTIVE",
             ProjectStatus::DeleteFailed => "DELETE_FAILED",
             ProjectStatus::Deleting => "DELETING",
+            ProjectStatus::UpdateFailed => "UPDATE_FAILED",
+            ProjectStatus::Updating => "UPDATING",
             ProjectStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETE_FAILED", "DELETING"]
+        &["ACTIVE", "DELETE_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for ProjectStatus {
@@ -108,6 +118,8 @@ impl ::std::fmt::Display for ProjectStatus {
             ProjectStatus::Active => write!(f, "ACTIVE"),
             ProjectStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             ProjectStatus::Deleting => write!(f, "DELETING"),
+            ProjectStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ProjectStatus::Updating => write!(f, "UPDATING"),
             ProjectStatus::Unknown(value) => write!(f, "{}", value),
         }
     }

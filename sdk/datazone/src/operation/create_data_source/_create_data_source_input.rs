@@ -15,7 +15,7 @@ pub struct CreateDataSourceInput {
     pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection.</p>
     pub connection_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. In Amazon DataZone, you can use data sources to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. In the current release of Amazon DataZone, you can create and run data sources for Amazon Web Services Glue and Amazon Redshift.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code> or <code>redshiftRunConfiguration</code>.</p>
     pub configuration: ::std::option::Option<crate::types::DataSourceConfigurationInput>,
@@ -57,7 +57,7 @@ impl CreateDataSourceInput {
     pub fn connection_identifier(&self) -> ::std::option::Option<&str> {
         self.connection_identifier.as_deref()
     }
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. In Amazon DataZone, you can use data sources to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. In the current release of Amazon DataZone, you can create and run data sources for Amazon Web Services Glue and Amazon Redshift.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -226,18 +226,18 @@ impl CreateDataSourceInputBuilder {
     pub fn get_connection_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_identifier
     }
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. In Amazon DataZone, you can use data sources to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. In the current release of Amazon DataZone, you can create and run data sources for Amazon Web Services Glue and Amazon Redshift.</p>
     /// This field is required.
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. In Amazon DataZone, you can use data sources to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. In the current release of Amazon DataZone, you can create and run data sources for Amazon Web Services Glue and Amazon Redshift.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of the data source.</p>
+    /// <p>The type of the data source. In Amazon DataZone, you can use data sources to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. In the current release of Amazon DataZone, you can create and run data sources for Amazon Web Services Glue and Amazon Redshift.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

@@ -30,7 +30,7 @@ pub struct Participant {
     pub sdk_version: ::std::option::Option<::std::string::String>,
     /// <p>Name of the S3 bucket to where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub recording_s3_bucket_name: ::std::option::Option<::std::string::String>,
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub recording_s3_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The participant’s recording state.</p>
     pub recording_state: ::std::option::Option<crate::types::ParticipantRecordingState>,
@@ -90,7 +90,7 @@ impl Participant {
     pub fn recording_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.recording_s3_bucket_name.as_deref()
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn recording_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.recording_s3_prefix.as_deref()
     }
@@ -320,17 +320,17 @@ impl ParticipantBuilder {
     pub fn get_recording_s3_bucket_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_s3_bucket_name
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn recording_s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.recording_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn set_recording_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.recording_s3_prefix = input;
         self
     }
-    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled. If individual participant recording merge is enabled, and if a stage publisher disconnects from a stage and then reconnects, IVS tries to record to the same S3 prefix as the previous session. See <a href="/ivs/latest/RealTimeUserGuide/rt-individual-participant-recording.html#ind-part-rec-merge-frag"> Merge Fragmented Individual Participant Recordings</a>.</p>
+    /// <p>S3 prefix of the S3 bucket where the participant is being recorded, if individual participant recording is enabled, or <code>""</code> (empty string), if recording is not enabled.</p>
     pub fn get_recording_s3_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.recording_s3_prefix
     }

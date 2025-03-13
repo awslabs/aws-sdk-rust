@@ -7,7 +7,6 @@ pub struct InstanceEventWindowAssociationTarget {
     /// <p>The IDs of the instances associated with the event window.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    /// <p>Note that while you can't create tag keys beginning with <code>aws:</code>, you can specify existing Amazon Web Services managed tag keys (with the <code>aws:</code> prefix) when specifying them as targets to associate with the event window.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
     pub dedicated_host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -20,7 +19,6 @@ impl InstanceEventWindowAssociationTarget {
         self.instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    /// <p>Note that while you can't create tag keys beginning with <code>aws:</code>, you can specify existing Amazon Web Services managed tag keys (with the <code>aws:</code> prefix) when specifying them as targets to associate with the event window.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
@@ -74,7 +72,6 @@ impl InstanceEventWindowAssociationTargetBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    /// <p>Note that while you can't create tag keys beginning with <code>aws:</code>, you can specify existing Amazon Web Services managed tag keys (with the <code>aws:</code> prefix) when specifying them as targets to associate with the event window.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
@@ -82,13 +79,11 @@ impl InstanceEventWindowAssociationTargetBuilder {
         self
     }
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    /// <p>Note that while you can't create tag keys beginning with <code>aws:</code>, you can specify existing Amazon Web Services managed tag keys (with the <code>aws:</code> prefix) when specifying them as targets to associate with the event window.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    /// <p>Note that while you can't create tag keys beginning with <code>aws:</code>, you can specify existing Amazon Web Services managed tag keys (with the <code>aws:</code> prefix) when specifying them as targets to associate with the event window.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }

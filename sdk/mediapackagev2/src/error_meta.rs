@@ -732,6 +732,75 @@ impl From<crate::operation::put_origin_endpoint_policy::PutOriginEndpointPolicyE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_channel_state::ResetChannelStateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_channel_state::ResetChannelStateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reset_channel_state::ResetChannelStateError> for Error {
+    fn from(err: crate::operation::reset_channel_state::ResetChannelStateError) -> Self {
+        match err {
+            crate::operation::reset_channel_state::ResetChannelStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::reset_channel_state::ResetChannelStateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reset_channel_state::ResetChannelStateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::reset_channel_state::ResetChannelStateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reset_channel_state::ResetChannelStateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::reset_channel_state::ResetChannelStateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::reset_channel_state::ResetChannelStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError> for Error {
+    fn from(err: crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError) -> Self {
+        match err {
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

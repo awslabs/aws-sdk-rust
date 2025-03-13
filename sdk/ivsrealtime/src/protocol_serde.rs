@@ -253,6 +253,8 @@ pub(crate) mod shape_ingest_configuration_summary;
 
 pub(crate) mod shape_participant_attributes;
 
+pub(crate) mod shape_participant_recording_hls_configuration;
+
 pub(crate) mod shape_participant_summary;
 
 pub(crate) mod shape_participant_thumbnail_configuration;
@@ -284,6 +286,8 @@ pub(crate) mod shape_destination_summary_list;
 pub(crate) mod shape_participant_recording_media_type_list;
 
 pub(crate) mod shape_recording_configuration;
+
+pub(crate) mod shape_composition_recording_hls_configuration;
 
 pub(crate) mod shape_destination_detail;
 

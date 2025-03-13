@@ -42,27 +42,30 @@ pub fn ser_update_branch_input_input(
     if let Some(var_13) = &input.enable_pull_request_preview {
         object.key("enablePullRequestPreview").boolean(*var_13);
     }
-    if let Some(var_14) = &input.environment_variables {
+    if let Some(var_14) = &input.enable_skew_protection {
+        object.key("enableSkewProtection").boolean(*var_14);
+    }
+    if let Some(var_15) = &input.environment_variables {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("environmentVariables").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("environmentVariables").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_18) = &input.framework {
-        object.key("framework").string(var_18.as_str());
+    if let Some(var_19) = &input.framework {
+        object.key("framework").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.pull_request_environment_name {
-        object.key("pullRequestEnvironmentName").string(var_19.as_str());
+    if let Some(var_20) = &input.pull_request_environment_name {
+        object.key("pullRequestEnvironmentName").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.stage {
-        object.key("stage").string(var_20.as_str());
+    if let Some(var_21) = &input.stage {
+        object.key("stage").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.ttl {
-        object.key("ttl").string(var_21.as_str());
+    if let Some(var_22) = &input.ttl {
+        object.key("ttl").string(var_22.as_str());
     }
     Ok(())
 }

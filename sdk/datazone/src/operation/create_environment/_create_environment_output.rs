@@ -45,6 +45,8 @@ pub struct CreateEnvironmentOutput {
     pub deployment_properties: ::std::option::Option<crate::types::DeploymentProperties>,
     /// <p>The ID of the blueprint with which this Amazon DataZone environment was created.</p>
     pub environment_blueprint_id: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration ID of the environment.</p>
+    pub environment_configuration_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEnvironmentOutput {
@@ -146,6 +148,10 @@ impl CreateEnvironmentOutput {
     pub fn environment_blueprint_id(&self) -> ::std::option::Option<&str> {
         self.environment_blueprint_id.as_deref()
     }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn environment_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.environment_configuration_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateEnvironmentOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -171,6 +177,7 @@ impl ::std::fmt::Debug for CreateEnvironmentOutput {
         formatter.field("provisioning_properties", &self.provisioning_properties);
         formatter.field("deployment_properties", &self.deployment_properties);
         formatter.field("environment_blueprint_id", &self.environment_blueprint_id);
+        formatter.field("environment_configuration_id", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -212,6 +219,7 @@ pub struct CreateEnvironmentOutputBuilder {
     pub(crate) provisioning_properties: ::std::option::Option<crate::types::ProvisioningProperties>,
     pub(crate) deployment_properties: ::std::option::Option<crate::types::DeploymentProperties>,
     pub(crate) environment_blueprint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_configuration_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEnvironmentOutputBuilder {
@@ -538,6 +546,20 @@ impl CreateEnvironmentOutputBuilder {
     pub fn get_environment_blueprint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_blueprint_id
     }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn environment_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn set_environment_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_configuration_id = input;
+        self
+    }
+    /// <p>The configuration ID of the environment.</p>
+    pub fn get_environment_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_configuration_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -604,6 +626,7 @@ impl CreateEnvironmentOutputBuilder {
             provisioning_properties: self.provisioning_properties,
             deployment_properties: self.deployment_properties,
             environment_blueprint_id: self.environment_blueprint_id,
+            environment_configuration_id: self.environment_configuration_id,
             _request_id: self._request_id,
         })
     }
@@ -632,6 +655,7 @@ impl ::std::fmt::Debug for CreateEnvironmentOutputBuilder {
         formatter.field("provisioning_properties", &self.provisioning_properties);
         formatter.field("deployment_properties", &self.deployment_properties);
         formatter.field("environment_blueprint_id", &self.environment_blueprint_id);
+        formatter.field("environment_configuration_id", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

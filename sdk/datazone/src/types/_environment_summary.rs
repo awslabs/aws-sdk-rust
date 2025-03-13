@@ -30,6 +30,8 @@ pub struct EnvironmentSummary {
     pub provider: ::std::string::String,
     /// <p>The status of the environment.</p>
     pub status: ::std::option::Option<crate::types::EnvironmentStatus>,
+    /// <p>The configuration ID with which the environment is created.</p>
+    pub environment_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentSummary {
     /// <p>The identifier of the project in which the environment exists.</p>
@@ -90,6 +92,10 @@ impl EnvironmentSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
+    /// <p>The configuration ID with which the environment is created.</p>
+    pub fn environment_configuration_id(&self) -> ::std::option::Option<&str> {
+        self.environment_configuration_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for EnvironmentSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -107,6 +113,7 @@ impl ::std::fmt::Debug for EnvironmentSummary {
         formatter.field("aws_account_region", &self.aws_account_region);
         formatter.field("provider", &self.provider);
         formatter.field("status", &self.status);
+        formatter.field("environment_configuration_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -134,6 +141,7 @@ pub struct EnvironmentSummaryBuilder {
     pub(crate) aws_account_region: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EnvironmentStatus>,
+    pub(crate) environment_configuration_id: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentSummaryBuilder {
     /// <p>The identifier of the project in which the environment exists.</p>
@@ -323,6 +331,20 @@ impl EnvironmentSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EnvironmentStatus> {
         &self.status
     }
+    /// <p>The configuration ID with which the environment is created.</p>
+    pub fn environment_configuration_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.environment_configuration_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The configuration ID with which the environment is created.</p>
+    pub fn set_environment_configuration_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.environment_configuration_id = input;
+        self
+    }
+    /// <p>The configuration ID with which the environment is created.</p>
+    pub fn get_environment_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.environment_configuration_id
+    }
     /// Consumes the builder and constructs a [`EnvironmentSummary`](crate::types::EnvironmentSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`project_id`](crate::types::builders::EnvironmentSummaryBuilder::project_id)
@@ -370,6 +392,7 @@ impl EnvironmentSummaryBuilder {
                 )
             })?,
             status: self.status,
+            environment_configuration_id: self.environment_configuration_id,
         })
     }
 }
@@ -389,6 +412,7 @@ impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
         formatter.field("aws_account_region", &self.aws_account_region);
         formatter.field("provider", &self.provider);
         formatter.field("status", &self.status);
+        formatter.field("environment_configuration_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

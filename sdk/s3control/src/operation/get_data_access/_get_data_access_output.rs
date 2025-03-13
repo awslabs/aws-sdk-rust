@@ -7,6 +7,8 @@ pub struct GetDataAccessOutput {
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The S3 URI path of the data to which you are being granted temporary access credentials.</p>
     pub matched_grant_target: ::std::option::Option<::std::string::String>,
+    /// <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
+    pub grantee: ::std::option::Option<crate::types::Grantee>,
     _request_id: Option<String>,
 }
 impl GetDataAccessOutput {
@@ -18,12 +20,17 @@ impl GetDataAccessOutput {
     pub fn matched_grant_target(&self) -> ::std::option::Option<&str> {
         self.matched_grant_target.as_deref()
     }
+    /// <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
+    pub fn grantee(&self) -> ::std::option::Option<&crate::types::Grantee> {
+        self.grantee.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetDataAccessOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDataAccessOutput");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("matched_grant_target", &self.matched_grant_target);
+        formatter.field("grantee", &self.grantee);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -46,6 +53,7 @@ impl GetDataAccessOutput {
 pub struct GetDataAccessOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) matched_grant_target: ::std::option::Option<::std::string::String>,
+    pub(crate) grantee: ::std::option::Option<crate::types::Grantee>,
     _request_id: Option<String>,
 }
 impl GetDataAccessOutputBuilder {
@@ -77,6 +85,20 @@ impl GetDataAccessOutputBuilder {
     pub fn get_matched_grant_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.matched_grant_target
     }
+    /// <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
+    pub fn grantee(mut self, input: crate::types::Grantee) -> Self {
+        self.grantee = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
+    pub fn set_grantee(mut self, input: ::std::option::Option<crate::types::Grantee>) -> Self {
+        self.grantee = input;
+        self
+    }
+    /// <p>The user, group, or role that was granted access to the S3 location scope. For directory identities, this API also returns the grants of the IAM role used for the identity-aware request. For more information on identity-aware sessions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_sts-setcontext.html">Granting permissions to use identity-aware console sessions</a>.</p>
+    pub fn get_grantee(&self) -> &::std::option::Option<crate::types::Grantee> {
+        &self.grantee
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -91,6 +113,7 @@ impl GetDataAccessOutputBuilder {
         crate::operation::get_data_access::GetDataAccessOutput {
             credentials: self.credentials,
             matched_grant_target: self.matched_grant_target,
+            grantee: self.grantee,
             _request_id: self._request_id,
         }
     }
@@ -100,6 +123,7 @@ impl ::std::fmt::Debug for GetDataAccessOutputBuilder {
         let mut formatter = f.debug_struct("GetDataAccessOutputBuilder");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("matched_grant_target", &self.matched_grant_target);
+        formatter.field("grantee", &self.grantee);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

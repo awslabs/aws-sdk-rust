@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LakeFormationConfiguration {
-    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using AWS Lake Formation hybrid access mode.</p>
+    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access mode.</p>
     pub location_registration_role: ::std::option::Option<::std::string::String>,
     /// <p>Specifies certain Amazon S3 locations if you do not want Amazon DataZone to automatically register them in hybrid mode.</p>
     pub location_registration_exclude_s3_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LakeFormationConfiguration {
-    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using AWS Lake Formation hybrid access mode.</p>
+    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access mode.</p>
     pub fn location_registration_role(&self) -> ::std::option::Option<&str> {
         self.location_registration_role.as_deref()
     }
@@ -36,17 +36,17 @@ pub struct LakeFormationConfigurationBuilder {
     pub(crate) location_registration_exclude_s3_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LakeFormationConfigurationBuilder {
-    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using AWS Lake Formation hybrid access mode.</p>
+    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access mode.</p>
     pub fn location_registration_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location_registration_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using AWS Lake Formation hybrid access mode.</p>
+    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access mode.</p>
     pub fn set_location_registration_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_registration_role = input;
         self
     }
-    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using AWS Lake Formation hybrid access mode.</p>
+    /// <p>The role that is used to manage read/write access to the chosen Amazon S3 bucket(s) for Data Lake using Amazon Web Services Lake Formation hybrid access mode.</p>
     pub fn get_location_registration_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_registration_role
     }
