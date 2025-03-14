@@ -14,6 +14,8 @@ pub struct RegisterResourceInput {
     pub with_federation: ::std::option::Option<bool>,
     /// <p>Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub hybrid_access_enabled: ::std::option::Option<bool>,
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub with_privileged_access: ::std::option::Option<bool>,
 }
 impl RegisterResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -37,6 +39,10 @@ impl RegisterResourceInput {
     pub fn hybrid_access_enabled(&self) -> ::std::option::Option<bool> {
         self.hybrid_access_enabled
     }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn with_privileged_access(&self) -> ::std::option::Option<bool> {
+        self.with_privileged_access
+    }
 }
 impl RegisterResourceInput {
     /// Creates a new builder-style object to manufacture [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
@@ -54,6 +60,7 @@ pub struct RegisterResourceInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) with_federation: ::std::option::Option<bool>,
     pub(crate) hybrid_access_enabled: ::std::option::Option<bool>,
+    pub(crate) with_privileged_access: ::std::option::Option<bool>,
 }
 impl RegisterResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource that you want to register.</p>
@@ -130,6 +137,20 @@ impl RegisterResourceInputBuilder {
     pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
         &self.hybrid_access_enabled
     }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn with_privileged_access(mut self, input: bool) -> Self {
+        self.with_privileged_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn set_with_privileged_access(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.with_privileged_access = input;
+        self
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn get_with_privileged_access(&self) -> &::std::option::Option<bool> {
+        &self.with_privileged_access
+    }
     /// Consumes the builder and constructs a [`RegisterResourceInput`](crate::operation::register_resource::RegisterResourceInput).
     pub fn build(
         self,
@@ -140,6 +161,7 @@ impl RegisterResourceInputBuilder {
             role_arn: self.role_arn,
             with_federation: self.with_federation,
             hybrid_access_enabled: self.hybrid_access_enabled,
+            with_privileged_access: self.with_privileged_access,
         })
     }
 }

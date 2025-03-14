@@ -80,6 +80,16 @@ where
                                 crate::protocol_serde::shape_principal_permissions_list::de_principal_permissions_list(tokens)?,
                             );
                         }
+                        "AllowFullTableExternalDataAccess" => {
+                            builder = builder.set_allow_full_table_external_data_access(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::AllowFullTableExternalDataAccessEnum::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

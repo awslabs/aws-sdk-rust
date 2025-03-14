@@ -22,8 +22,10 @@ impl crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBu
 }
 /// Fluent builder constructing a request to `UpdateIdentityPool`.
 ///
-/// <p>Updates an identity pool.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>Updates the configuration of an identity pool.</p><important>
+/// <p>If you don't provide a value for a parameter, Amazon Cognito sets it to its default value.</p>
+/// </important>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

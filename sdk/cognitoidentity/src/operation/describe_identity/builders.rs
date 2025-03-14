@@ -23,7 +23,7 @@ impl crate::operation::describe_identity::builders::DescribeIdentityInputBuilder
 /// Fluent builder constructing a request to `DescribeIdentity`.
 ///
 /// <p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

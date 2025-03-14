@@ -433,6 +433,9 @@ impl From<crate::operation::create_lake_formation_opt_in::CreateLakeFormationOpt
             crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::OperationTimeoutException(inner) => {
                 Error::OperationTimeoutException(inner)
             }
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::ResourceNumberLimitExceededException(inner) => {
+                Error::ResourceNumberLimitExceededException(inner)
+            }
             crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

@@ -169,6 +169,20 @@ impl RevokePermissionsFluentBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         self.inner.get_permissions()
     }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(mut self, input: crate::types::Condition) -> Self {
+        self.inner = self.inner.condition(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
+        self.inner = self.inner.set_condition(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        self.inner.get_condition()
+    }
     ///
     /// Appends an item to `PermissionsWithGrantOption`.
     ///

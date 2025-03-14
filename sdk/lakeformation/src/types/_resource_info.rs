@@ -14,6 +14,8 @@ pub struct ResourceInfo {
     pub with_federation: ::std::option::Option<bool>,
     /// <p>Indicates whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub hybrid_access_enabled: ::std::option::Option<bool>,
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub with_privileged_access: ::std::option::Option<bool>,
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -36,6 +38,10 @@ impl ResourceInfo {
     pub fn hybrid_access_enabled(&self) -> ::std::option::Option<bool> {
         self.hybrid_access_enabled
     }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn with_privileged_access(&self) -> ::std::option::Option<bool> {
+        self.with_privileged_access
+    }
 }
 impl ResourceInfo {
     /// Creates a new builder-style object to manufacture [`ResourceInfo`](crate::types::ResourceInfo).
@@ -53,6 +59,7 @@ pub struct ResourceInfoBuilder {
     pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) with_federation: ::std::option::Option<bool>,
     pub(crate) hybrid_access_enabled: ::std::option::Option<bool>,
+    pub(crate) with_privileged_access: ::std::option::Option<bool>,
 }
 impl ResourceInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -125,6 +132,20 @@ impl ResourceInfoBuilder {
     pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
         &self.hybrid_access_enabled
     }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn with_privileged_access(mut self, input: bool) -> Self {
+        self.with_privileged_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn set_with_privileged_access(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.with_privileged_access = input;
+        self
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn get_with_privileged_access(&self) -> &::std::option::Option<bool> {
+        &self.with_privileged_access
+    }
     /// Consumes the builder and constructs a [`ResourceInfo`](crate::types::ResourceInfo).
     pub fn build(self) -> crate::types::ResourceInfo {
         crate::types::ResourceInfo {
@@ -133,6 +154,7 @@ impl ResourceInfoBuilder {
             last_modified: self.last_modified,
             with_federation: self.with_federation,
             hybrid_access_enabled: self.hybrid_access_enabled,
+            with_privileged_access: self.with_privileged_access,
         }
     }
 }

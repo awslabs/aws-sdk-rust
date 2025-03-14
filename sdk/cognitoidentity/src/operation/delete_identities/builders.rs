@@ -23,7 +23,7 @@ impl crate::operation::delete_identities::builders::DeleteIdentitiesInputBuilder
 /// Fluent builder constructing a request to `DeleteIdentities`.
 ///
 /// <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIdentitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

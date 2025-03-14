@@ -23,7 +23,7 @@ impl crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInp
 /// Fluent builder constructing a request to `DescribeIdentityPool`.
 ///
 /// <p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeIdentityPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

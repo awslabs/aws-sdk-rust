@@ -40,6 +40,9 @@ where
                         "HybridAccessEnabled" => {
                             builder = builder.set_hybrid_access_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "WithPrivilegedAccess" => {
+                            builder = builder.set_with_privileged_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

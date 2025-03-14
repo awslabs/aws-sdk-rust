@@ -45,6 +45,8 @@ pub use crate::types::_database_resource::DatabaseResource;
 
 pub use crate::types::_permission::Permission;
 
+pub use crate::types::_condition::Condition;
+
 pub use crate::types::_resource::Resource;
 
 pub use crate::types::_lf_tag_expression_resource::LfTagExpressionResource;
@@ -90,8 +92,6 @@ pub use crate::types::_field_name_string::FieldNameString;
 pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissions;
 
 pub use crate::types::_details_map::DetailsMap;
-
-pub use crate::types::_condition::Condition;
 
 pub use crate::types::_data_lake_resource_type::DataLakeResourceType;
 

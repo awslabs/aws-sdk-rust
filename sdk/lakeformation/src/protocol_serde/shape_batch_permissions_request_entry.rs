@@ -27,14 +27,20 @@ pub fn ser_batch_permissions_request_entry(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.permissions_with_grant_option {
-        let mut array_9 = object.key("PermissionsWithGrantOption").start_array();
-        for item_10 in var_8 {
+    if let Some(var_8) = &input.condition {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("Condition").start_object();
+        crate::protocol_serde::shape_condition::ser_condition(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.permissions_with_grant_option {
+        let mut array_11 = object.key("PermissionsWithGrantOption").start_array();
+        for item_12 in var_10 {
             {
-                array_9.value().string(item_10.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
     Ok(())
 }
@@ -69,6 +75,9 @@ where
                         }
                         "Permissions" => {
                             builder = builder.set_permissions(crate::protocol_serde::shape_permission_list::de_permission_list(tokens)?);
+                        }
+                        "Condition" => {
+                            builder = builder.set_condition(crate::protocol_serde::shape_condition::de_condition(tokens)?);
                         }
                         "PermissionsWithGrantOption" => {
                             builder =

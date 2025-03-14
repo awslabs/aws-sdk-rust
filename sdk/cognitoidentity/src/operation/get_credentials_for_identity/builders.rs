@@ -22,7 +22,7 @@ impl crate::operation::get_credentials_for_identity::builders::GetCredentialsFor
 }
 /// Fluent builder constructing a request to `GetCredentialsForIdentity`.
 ///
-/// <p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p>
+/// <p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for <code>cognito-identity.amazonaws.com</code>, it will be passed through to Security Token Service with the appropriate role for the token.</p>
 /// <p>This is a public API. You do not need any credentials to call this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCredentialsForIdentityFluentBuilder {

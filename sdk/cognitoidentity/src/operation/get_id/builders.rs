@@ -22,7 +22,7 @@ impl crate::operation::get_id::builders::GetIdInputBuilder {
 }
 /// Fluent builder constructing a request to `GetId`.
 ///
-/// <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p>
+/// <p>Generates (or retrieves) IdentityID. Supplying multiple logins will create an implicit linked account.</p>
 /// <p>This is a public API. You do not need any credentials to call this API.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdFluentBuilder {
@@ -96,17 +96,17 @@ impl GetIdFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_account_id()
     }

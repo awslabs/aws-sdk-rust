@@ -28,6 +28,8 @@ pub struct Catalog {
     pub create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>An array of <code>PrincipalPermissions</code> objects. Creates a set of default permissions on the database(s) for principals. Used by Amazon Web Services Lake Formation. Not used in the normal course of Glue operations.</p>
     pub create_database_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    /// <p>Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    pub allow_full_table_external_data_access: ::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum>,
 }
 impl Catalog {
     /// <p>The ID of the catalog. To grant access to the default catalog, this field should not be provided.</p>
@@ -83,6 +85,10 @@ impl Catalog {
     pub fn create_database_default_permissions(&self) -> &[crate::types::PrincipalPermissions] {
         self.create_database_default_permissions.as_deref().unwrap_or_default()
     }
+    /// <p>Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    pub fn allow_full_table_external_data_access(&self) -> ::std::option::Option<&crate::types::AllowFullTableExternalDataAccessEnum> {
+        self.allow_full_table_external_data_access.as_ref()
+    }
 }
 impl Catalog {
     /// Creates a new builder-style object to manufacture [`Catalog`](crate::types::Catalog).
@@ -107,6 +113,7 @@ pub struct CatalogBuilder {
     pub(crate) catalog_properties: ::std::option::Option<crate::types::CatalogPropertiesOutput>,
     pub(crate) create_table_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     pub(crate) create_database_default_permissions: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub(crate) allow_full_table_external_data_access: ::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum>,
 }
 impl CatalogBuilder {
     /// <p>The ID of the catalog. To grant access to the default catalog, this field should not be provided.</p>
@@ -299,6 +306,23 @@ impl CatalogBuilder {
     pub fn get_create_database_default_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>> {
         &self.create_database_default_permissions
     }
+    /// <p>Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    pub fn allow_full_table_external_data_access(mut self, input: crate::types::AllowFullTableExternalDataAccessEnum) -> Self {
+        self.allow_full_table_external_data_access = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    pub fn set_allow_full_table_external_data_access(
+        mut self,
+        input: ::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum>,
+    ) -> Self {
+        self.allow_full_table_external_data_access = input;
+        self
+    }
+    /// <p>Allows third-party engines to access data in Amazon S3 locations that are registered with Lake Formation.</p>
+    pub fn get_allow_full_table_external_data_access(&self) -> &::std::option::Option<crate::types::AllowFullTableExternalDataAccessEnum> {
+        &self.allow_full_table_external_data_access
+    }
     /// Consumes the builder and constructs a [`Catalog`](crate::types::Catalog).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::CatalogBuilder::name)
@@ -321,6 +345,7 @@ impl CatalogBuilder {
             catalog_properties: self.catalog_properties,
             create_table_default_permissions: self.create_table_default_permissions,
             create_database_default_permissions: self.create_database_default_permissions,
+            allow_full_table_external_data_access: self.allow_full_table_external_data_access,
         })
     }
 }

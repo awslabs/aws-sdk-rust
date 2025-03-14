@@ -23,7 +23,7 @@ impl crate::operation::list_identities::builders::ListIdentitiesInputBuilder {
 /// Fluent builder constructing a request to `ListIdentities`.
 ///
 /// <p>Lists the identities in an identity pool.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentitiesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

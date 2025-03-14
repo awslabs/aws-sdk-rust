@@ -263,6 +263,8 @@ pub enum CreateLakeFormationOptInError {
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The operation timed out.</p>
     OperationTimeoutException(crate::types::error::OperationTimeoutException),
+    /// <p>A resource numerical limit was exceeded.</p>
+    ResourceNumberLimitExceededException(crate::types::error::ResourceNumberLimitExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -302,6 +304,7 @@ impl CreateLakeFormationOptInError {
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::OperationTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNumberLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -329,6 +332,10 @@ impl CreateLakeFormationOptInError {
     pub fn is_operation_timeout_exception(&self) -> bool {
         matches!(self, Self::OperationTimeoutException(_))
     }
+    /// Returns `true` if the error kind is `CreateLakeFormationOptInError::ResourceNumberLimitExceededException`.
+    pub fn is_resource_number_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ResourceNumberLimitExceededException(_))
+    }
 }
 impl ::std::error::Error for CreateLakeFormationOptInError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -339,6 +346,7 @@ impl ::std::error::Error for CreateLakeFormationOptInError {
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::OperationTimeoutException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNumberLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -352,6 +360,7 @@ impl ::std::fmt::Display for CreateLakeFormationOptInError {
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::OperationTimeoutException(_inner) => _inner.fmt(f),
+            Self::ResourceNumberLimitExceededException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -379,6 +388,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateLakeFor
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::OperationTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNumberLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

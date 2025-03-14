@@ -23,7 +23,7 @@ impl crate::operation::list_identity_pools::builders::ListIdentityPoolsInputBuil
 /// Fluent builder constructing a request to `ListIdentityPools`.
 ///
 /// <p>Lists all of the Cognito identity pools registered for your account.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

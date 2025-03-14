@@ -18,5 +18,8 @@ pub fn ser_register_resource_input_input(
     if let Some(var_5) = &input.with_federation {
         object.key("WithFederation").boolean(*var_5);
     }
+    if let Some(var_6) = &input.with_privileged_access {
+        object.key("WithPrivilegedAccess").boolean(*var_6);
+    }
     Ok(())
 }

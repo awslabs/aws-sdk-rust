@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdInput {
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ pub struct GetIdInput {
     pub logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetIdInput {
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -75,17 +75,17 @@ pub struct GetIdInputBuilder {
     pub(crate) logins: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl GetIdInputBuilder {
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>A standard AWS account ID (9+ digits).</p>
+    /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

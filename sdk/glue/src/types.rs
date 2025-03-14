@@ -493,6 +493,8 @@ pub use crate::types::_update_grok_classifier_request::UpdateGrokClassifierReque
 
 pub use crate::types::_catalog_input::CatalogInput;
 
+pub use crate::types::_allow_full_table_external_data_access_enum::AllowFullTableExternalDataAccessEnum;
+
 pub use crate::types::_catalog_properties::CatalogProperties;
 
 pub use crate::types::_data_lake_access_properties::DataLakeAccessProperties;
@@ -992,6 +994,8 @@ mod _agg_function;
 mod _aggregate;
 
 mod _aggregate_operation;
+
+mod _allow_full_table_external_data_access_enum;
 
 mod _allowed_value;
 

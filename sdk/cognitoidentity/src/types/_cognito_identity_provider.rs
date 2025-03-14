@@ -9,7 +9,7 @@ pub struct CognitoIdentityProvider {
     /// <p>The client ID for the Amazon Cognito user pool.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or Amazon Web Services credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub server_side_token_check: ::std::option::Option<bool>,
 }
@@ -23,7 +23,7 @@ impl CognitoIdentityProvider {
         self.client_id.as_deref()
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or Amazon Web Services credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn server_side_token_check(&self) -> ::std::option::Option<bool> {
         self.server_side_token_check
@@ -74,21 +74,21 @@ impl CognitoIdentityProviderBuilder {
         &self.client_id
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or Amazon Web Services credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn server_side_token_check(mut self, input: bool) -> Self {
         self.server_side_token_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or Amazon Web Services credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn set_server_side_token_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.server_side_token_check = input;
         self
     }
     /// <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>
-    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p>
+    /// <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or Amazon Web Services credentials for the user.</p>
     /// <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
     pub fn get_server_side_token_check(&self) -> &::std::option::Option<bool> {
         &self.server_side_token_check

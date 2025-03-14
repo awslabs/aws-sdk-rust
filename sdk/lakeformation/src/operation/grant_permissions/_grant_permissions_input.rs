@@ -12,6 +12,8 @@ pub struct GrantPermissionsInput {
     pub resource: ::std::option::Option<crate::types::Resource>,
     /// <p>The permissions granted to the principal on the resource. Lake Formation defines privileges to grant and revoke access to metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3. Lake Formation requires that each principal be authorized to perform a specific task on Lake Formation resources.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     pub permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
@@ -35,6 +37,10 @@ impl GrantPermissionsInput {
     pub fn permissions(&self) -> &[crate::types::Permission] {
         self.permissions.as_deref().unwrap_or_default()
     }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+        self.condition.as_ref()
+    }
     /// <p>Indicates a list of the granted permissions that the principal may pass to other users. These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.permissions_with_grant_option.is_none()`.
@@ -57,6 +63,7 @@ pub struct GrantPermissionsInputBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
     pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
     pub(crate) permissions_with_grant_option: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
 }
 impl GrantPermissionsInputBuilder {
@@ -127,6 +134,20 @@ impl GrantPermissionsInputBuilder {
     pub fn get_permissions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Permission>> {
         &self.permissions
     }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(mut self, input: crate::types::Condition) -> Self {
+        self.condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
+        self.condition = input;
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
+    }
     /// Appends an item to `permissions_with_grant_option`.
     ///
     /// To override the contents of this collection use [`set_permissions_with_grant_option`](Self::set_permissions_with_grant_option).
@@ -156,6 +177,7 @@ impl GrantPermissionsInputBuilder {
             principal: self.principal,
             resource: self.resource,
             permissions: self.permissions,
+            condition: self.condition,
             permissions_with_grant_option: self.permissions_with_grant_option,
         })
     }

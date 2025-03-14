@@ -23,7 +23,7 @@ impl crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesIn
 /// Fluent builder constructing a request to `GetIdentityPoolRoles`.
 ///
 /// <p>Gets the roles for an identity pool.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetIdentityPoolRolesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

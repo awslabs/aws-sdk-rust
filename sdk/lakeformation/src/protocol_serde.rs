@@ -315,6 +315,8 @@ pub(crate) mod shape_batch_permissions_request_entry;
 
 pub(crate) mod shape_column_lf_tags_list;
 
+pub(crate) mod shape_condition;
+
 pub(crate) mod shape_data_cells_filter;
 
 pub(crate) mod shape_data_cells_filter_list;
@@ -448,8 +450,6 @@ pub(crate) mod shape_trusted_resource_owners;
 pub(crate) mod shape_work_unit_range;
 
 pub(crate) mod shape_all_rows_wildcard;
-
-pub(crate) mod shape_condition;
 
 pub(crate) mod shape_details_map;
 

@@ -26,13 +26,13 @@ pub struct AdminCreateUserInput {
     /// email
     /// </dt>
     /// <dd>
-    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// <dt>
     /// phone_number
     /// </dt>
     /// <dd>
-    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>phone_number</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for <code>phone_number</code> when you want to set <code>phone_number_verified</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// </dl>
     pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
@@ -96,13 +96,13 @@ impl AdminCreateUserInput {
     /// email
     /// </dt>
     /// <dd>
-    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// <dt>
     /// phone_number
     /// </dt>
     /// <dd>
-    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>phone_number</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for <code>phone_number</code> when you want to set <code>phone_number_verified</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// </dl>
     ///
@@ -264,13 +264,13 @@ impl AdminCreateUserInputBuilder {
     /// email
     /// </dt>
     /// <dd>
-    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// <dt>
     /// phone_number
     /// </dt>
     /// <dd>
-    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>phone_number</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for <code>phone_number</code> when you want to set <code>phone_number_verified</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// </dl>
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
@@ -289,13 +289,13 @@ impl AdminCreateUserInputBuilder {
     /// email
     /// </dt>
     /// <dd>
-    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// <dt>
     /// phone_number
     /// </dt>
     /// <dd>
-    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>phone_number</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for <code>phone_number</code> when you want to set <code>phone_number_verified</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// </dl>
     pub fn set_user_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>) -> Self {
@@ -312,13 +312,13 @@ impl AdminCreateUserInputBuilder {
     /// email
     /// </dt>
     /// <dd>
-    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The email address where you want the user to receive their confirmation code and username. You must provide a value for <code>email</code> when you want to set <code>email_verified</code> to <code>true</code>, or if you set <code>EMAIL</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// <dt>
     /// phone_number
     /// </dt>
     /// <dd>
-    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for the <code>email</code> when you want to set <code>phone_number</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
+    /// <p>The phone number where you want the user to receive their confirmation code and username. You must provide a value for <code>phone_number</code> when you want to set <code>phone_number_verified</code> to <code>true</code>, or if you set <code>SMS</code> in the <code>DesiredDeliveryMediums</code> parameter.</p>
     /// </dd>
     /// </dl>
     pub fn get_user_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeType>> {

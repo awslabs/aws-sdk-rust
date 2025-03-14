@@ -119,6 +119,27 @@ pub fn de_create_lake_formation_opt_in_http_error(
             }
             tmp
         }),
+        "ResourceNumberLimitExceededException" => {
+            crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::ResourceNumberLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNumberLimitExceededExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_number_limit_exceeded_exception::de_resource_number_limit_exceeded_exception_json_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInError::generic(generic),
     })
 }

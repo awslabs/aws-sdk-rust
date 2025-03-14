@@ -58,5 +58,8 @@ pub fn ser_catalog_input(
         }
         array_17.finish();
     }
+    if let Some(var_20) = &input.allow_full_table_external_data_access {
+        object.key("AllowFullTableExternalDataAccess").string(var_20.as_str());
+    }
     Ok(())
 }

@@ -251,7 +251,8 @@ pub enum GetCredentialsForIdentityError {
     ExternalServiceException(crate::types::error::ExternalServiceException),
     /// <p>Thrown when the service encounters an error during processing the request.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
-    /// <p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>
+    /// <p>If you provided authentication information in the request, the identity pool has no authenticated role configured, or STS returned an error response to the request to assume the authenticated role from the identity pool. If you provided no authentication information in the request, the identity pool has no unauthenticated role configured, or STS returned an error response to the request to assume the unauthenticated role from the identity pool.</p>
+    /// <p>Your role trust policy must grant <code>AssumeRoleWithWebIdentity</code> permissions to <code>cognito-identity.amazonaws.com</code>.</p>
     InvalidIdentityPoolConfigurationException(crate::types::error::InvalidIdentityPoolConfigurationException),
     /// <p>Thrown for missing or bad input parameter(s).</p>
     InvalidParameterException(crate::types::error::InvalidParameterException),

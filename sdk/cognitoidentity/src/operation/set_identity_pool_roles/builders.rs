@@ -23,7 +23,7 @@ impl crate::operation::set_identity_pool_roles::builders::SetIdentityPoolRolesIn
 /// Fluent builder constructing a request to `SetIdentityPoolRoles`.
 ///
 /// <p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityPoolRolesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -147,13 +147,13 @@ impl SetIdentityPoolRolesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
     ///
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, <code>graph.facebook.com</code> or <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id</code>.</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn role_mappings(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RoleMapping) -> Self {
         self.inner = self.inner.role_mappings(k.into(), v);
         self
     }
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, <code>graph.facebook.com</code> or <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id</code>.</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn set_role_mappings(
         mut self,
@@ -162,7 +162,7 @@ impl SetIdentityPoolRolesFluentBuilder {
         self.inner = self.inner.set_role_mappings(input);
         self
     }
-    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
+    /// <p>How users for a specific identity provider are to mapped to roles. This is a string to <code>RoleMapping</code> object map. The string identifies the identity provider, for example, <code>graph.facebook.com</code> or <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id</code>.</p>
     /// <p>Up to 25 rules can be specified per identity provider.</p>
     pub fn get_role_mappings(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RoleMapping>> {
         self.inner.get_role_mappings()

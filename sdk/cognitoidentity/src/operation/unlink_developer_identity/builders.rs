@@ -23,7 +23,7 @@ impl crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdent
 /// Fluent builder constructing a request to `UnlinkDeveloperIdentity`.
 ///
 /// <p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

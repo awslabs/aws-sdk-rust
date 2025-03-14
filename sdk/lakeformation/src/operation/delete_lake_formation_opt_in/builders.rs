@@ -136,4 +136,18 @@ impl DeleteLakeFormationOptInFluentBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         self.inner.get_resource()
     }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(mut self, input: crate::types::Condition) -> Self {
+        self.inner = self.inner.condition(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
+        self.inner = self.inner.set_condition(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        self.inner.get_condition()
+    }
 }

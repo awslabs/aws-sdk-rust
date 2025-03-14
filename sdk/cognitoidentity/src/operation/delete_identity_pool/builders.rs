@@ -23,7 +23,7 @@ impl crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBu
 /// Fluent builder constructing a request to `DeleteIdentityPool`.
 ///
 /// <p>Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p>
-/// <p>You must use AWS Developer credentials to call this API.</p>
+/// <p>You must use Amazon Web Services developer credentials to call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIdentityPoolFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -35,6 +35,8 @@ pub use crate::types::_tagged_database::TaggedDatabaseBuilder;
 
 pub use crate::types::_database_resource::DatabaseResourceBuilder;
 
+pub use crate::types::_condition::ConditionBuilder;
+
 pub use crate::types::_resource::ResourceBuilder;
 
 pub use crate::types::_lf_tag_expression_resource::LfTagExpressionResourceBuilder;
@@ -70,8 +72,6 @@ pub use crate::types::_filter_condition::FilterConditionBuilder;
 pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissionsBuilder;
 
 pub use crate::types::_details_map::DetailsMapBuilder;
-
-pub use crate::types::_condition::ConditionBuilder;
 
 pub use crate::types::_lf_tag_expression::LfTagExpressionBuilder;
 

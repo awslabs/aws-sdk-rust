@@ -7,6 +7,8 @@ pub struct CreateLakeFormationOptInInput {
     pub principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     /// <p>A structure for the resource.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub condition: ::std::option::Option<crate::types::Condition>,
 }
 impl CreateLakeFormationOptInInput {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
@@ -16,6 +18,10 @@ impl CreateLakeFormationOptInInput {
     /// <p>A structure for the resource.</p>
     pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
+        self.condition.as_ref()
     }
 }
 impl CreateLakeFormationOptInInput {
@@ -31,6 +37,7 @@ impl CreateLakeFormationOptInInput {
 pub struct CreateLakeFormationOptInInputBuilder {
     pub(crate) principal: ::std::option::Option<crate::types::DataLakePrincipal>,
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
 }
 impl CreateLakeFormationOptInInputBuilder {
     /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
@@ -63,6 +70,20 @@ impl CreateLakeFormationOptInInputBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         &self.resource
     }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn condition(mut self, input: crate::types::Condition) -> Self {
+        self.condition = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
+        self.condition = input;
+        self
+    }
+    /// <p>A Lake Formation condition, which applies to permissions and opt-ins that contain an expression.</p>
+    pub fn get_condition(&self) -> &::std::option::Option<crate::types::Condition> {
+        &self.condition
+    }
     /// Consumes the builder and constructs a [`CreateLakeFormationOptInInput`](crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInInput).
     pub fn build(
         self,
@@ -73,6 +94,7 @@ impl CreateLakeFormationOptInInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_lake_formation_opt_in::CreateLakeFormationOptInInput {
             principal: self.principal,
             resource: self.resource,
+            condition: self.condition,
         })
     }
 }

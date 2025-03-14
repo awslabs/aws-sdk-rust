@@ -23,7 +23,7 @@ impl crate::operation::register_resource::builders::RegisterResourceInputBuilder
 /// Fluent builder constructing a request to `RegisterResource`.
 ///
 /// <p>Registers the resource as managed by the Data Catalog.</p>
-/// <p>To add or update data, Lake Formation needs read/write access to the chosen Amazon S3 path. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess service-linked role. When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When you register subsequent paths, Lake Formation adds the path to the existing policy.</p>
+/// <p>To add or update data, Lake Formation needs read/write access to the chosen data location. Choose a role that you know has permission to do this, or choose the AWSServiceRoleForLakeFormationDataAccess service-linked role. When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When you register subsequent paths, Lake Formation adds the path to the existing policy.</p>
 /// <p>The following request registers a new location and gives Lake Formation permission to use the service-linked role to access that location.</p>
 /// <p><code>ResourceArn = arn:aws:s3:::my-bucket/ UseServiceLinkedRole = true</code></p>
 /// <p>If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the <code>RoleArn</code>:</p>
@@ -185,5 +185,19 @@ impl RegisterResourceFluentBuilder {
     /// <p>Specifies whether the data access of tables pointing to the location can be managed by both Lake Formation permissions as well as Amazon S3 bucket policies.</p>
     pub fn get_hybrid_access_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_hybrid_access_enabled()
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn with_privileged_access(mut self, input: bool) -> Self {
+        self.inner = self.inner.with_privileged_access(input);
+        self
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn set_with_privileged_access(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_with_privileged_access(input);
+        self
+    }
+    /// <p>Grants the calling principal the permissions to perform all supported Lake Formation operations on the registered data location.</p>
+    pub fn get_with_privileged_access(&self) -> &::std::option::Option<bool> {
+        self.inner.get_with_privileged_access()
     }
 }
