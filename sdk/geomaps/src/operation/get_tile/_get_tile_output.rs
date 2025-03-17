@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTileOutput {
-    /// <p>The blob represents a vector tile in <code>mvt</code> format for the <code>GetTile</code> API.</p>
+    /// <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an image format.</p>
     pub blob: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Header that represents the format of the response. The response returns the following as the HTTP body.</p>
     pub content_type: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct GetTileOutput {
     _request_id: Option<String>,
 }
 impl GetTileOutput {
-    /// <p>The blob represents a vector tile in <code>mvt</code> format for the <code>GetTile</code> API.</p>
+    /// <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an image format.</p>
     pub fn blob(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
@@ -62,17 +62,17 @@ pub struct GetTileOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetTileOutputBuilder {
-    /// <p>The blob represents a vector tile in <code>mvt</code> format for the <code>GetTile</code> API.</p>
+    /// <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an image format.</p>
     pub fn blob(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.blob = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The blob represents a vector tile in <code>mvt</code> format for the <code>GetTile</code> API.</p>
+    /// <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an image format.</p>
     pub fn set_blob(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.blob = input;
         self
     }
-    /// <p>The blob represents a vector tile in <code>mvt</code> format for the <code>GetTile</code> API.</p>
+    /// <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an image format.</p>
     pub fn get_blob(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.blob
     }

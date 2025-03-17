@@ -16,11 +16,19 @@ pub struct GetStaticMapInput {
     /// </note>
     /// <p>Example: 49.295,-123.108</p>
     pub center: ::std::option::Option<::std::string::String>,
+    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Example: <code>Light</code></p>
+    /// <p>Default value: <code>Light</code></p><note>
+    /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
+    /// </note>
+    pub color_scheme: ::std::option::Option<crate::types::ColorScheme>,
     /// <p>Takes in a string to draw geometries on the image. The input is a comma separated format as follows format: <code>\[Lon, Lat\]</code></p>
     /// <p>Example: <code>line:-122.407653,37.798557,-122.413291,37.802443;color=%23DD0000;width=7;outline-color=#00DD00;outline-width=5yd|point:-122.40572,37.80004;label=Fog Hill Market;size=large;text-color=%23DD0000;color=#EE4B2B</code></p><note>
     /// <p>Currently it supports the following geometry types: point, line and polygon. It does not support multiPoint , multiLine and multiPolgyon.</p>
     /// </note>
     pub compact_overlay: ::std::option::Option<::std::string::String>,
+    /// <p>It is a flag that takes in true or false. It prevents the labels that are on the edge of the image from being cut or obscured.</p>
+    pub crop_labels: ::std::option::Option<bool>,
     /// <p>Takes in a string to draw geometries on the image. The input is a valid GeoJSON collection object.</p>
     /// <p>Example: <code>{"type":"FeatureCollection","features": \[{"type":"Feature","geometry":{"type":"MultiPoint","coordinates": \[\[-90.076345,51.504107\],\[-0.074451,51.506892\]\]},"properties": {"color":"#00DD00"}}\]}</code></p>
     pub geo_json_overlay: ::std::option::Option<::std::string::String>,
@@ -28,6 +36,149 @@ pub struct GetStaticMapInput {
     pub height: ::std::option::Option<i32>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
+    /// <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in one of the values - <code>Small</code> or <code>Large</code>.</p>
+    pub label_size: ::std::option::Option<crate::types::LabelSize>,
+    /// <p>Specifies the language on the map labels using the BCP 47 language tag, limited to ISO 639-1 two-letter language codes. If the specified language data isn't available for the map image, the labels will default to the regional primary language.</p>
+    /// <p>Supported codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ar</code></p></li>
+    /// <li>
+    /// <p><code>as</code></p></li>
+    /// <li>
+    /// <p><code>az</code></p></li>
+    /// <li>
+    /// <p><code>be</code></p></li>
+    /// <li>
+    /// <p><code>bg</code></p></li>
+    /// <li>
+    /// <p><code>bn</code></p></li>
+    /// <li>
+    /// <p><code>bs</code></p></li>
+    /// <li>
+    /// <p><code>ca</code></p></li>
+    /// <li>
+    /// <p><code>cs</code></p></li>
+    /// <li>
+    /// <p><code>cy</code></p></li>
+    /// <li>
+    /// <p><code>da</code></p></li>
+    /// <li>
+    /// <p><code>de</code></p></li>
+    /// <li>
+    /// <p><code>el</code></p></li>
+    /// <li>
+    /// <p><code>en</code></p></li>
+    /// <li>
+    /// <p><code>es</code></p></li>
+    /// <li>
+    /// <p><code>et</code></p></li>
+    /// <li>
+    /// <p><code>eu</code></p></li>
+    /// <li>
+    /// <p><code>fi</code></p></li>
+    /// <li>
+    /// <p><code>fo</code></p></li>
+    /// <li>
+    /// <p><code>fr</code></p></li>
+    /// <li>
+    /// <p><code>ga</code></p></li>
+    /// <li>
+    /// <p><code>gl</code></p></li>
+    /// <li>
+    /// <p><code>gn</code></p></li>
+    /// <li>
+    /// <p><code>gu</code></p></li>
+    /// <li>
+    /// <p><code>he</code></p></li>
+    /// <li>
+    /// <p><code>hi</code></p></li>
+    /// <li>
+    /// <p><code>hr</code></p></li>
+    /// <li>
+    /// <p><code>hu</code></p></li>
+    /// <li>
+    /// <p><code>hy</code></p></li>
+    /// <li>
+    /// <p><code>id</code></p></li>
+    /// <li>
+    /// <p><code>is</code></p></li>
+    /// <li>
+    /// <p><code>it</code></p></li>
+    /// <li>
+    /// <p><code>ja</code></p></li>
+    /// <li>
+    /// <p><code>ka</code></p></li>
+    /// <li>
+    /// <p><code>kk</code></p></li>
+    /// <li>
+    /// <p><code>km</code></p></li>
+    /// <li>
+    /// <p><code>kn</code></p></li>
+    /// <li>
+    /// <p><code>ko</code></p></li>
+    /// <li>
+    /// <p><code>ky</code></p></li>
+    /// <li>
+    /// <p><code>lt</code></p></li>
+    /// <li>
+    /// <p><code>lv</code></p></li>
+    /// <li>
+    /// <p><code>mk</code></p></li>
+    /// <li>
+    /// <p><code>ml</code></p></li>
+    /// <li>
+    /// <p><code>mr</code></p></li>
+    /// <li>
+    /// <p><code>ms</code></p></li>
+    /// <li>
+    /// <p><code>mt</code></p></li>
+    /// <li>
+    /// <p><code>my</code></p></li>
+    /// <li>
+    /// <p><code>nl</code></p></li>
+    /// <li>
+    /// <p><code>no</code></p></li>
+    /// <li>
+    /// <p><code>or</code></p></li>
+    /// <li>
+    /// <p><code>pa</code></p></li>
+    /// <li>
+    /// <p><code>pl</code></p></li>
+    /// <li>
+    /// <p><code>pt</code></p></li>
+    /// <li>
+    /// <p><code>ro</code></p></li>
+    /// <li>
+    /// <p><code>ru</code></p></li>
+    /// <li>
+    /// <p><code>sk</code></p></li>
+    /// <li>
+    /// <p><code>sl</code></p></li>
+    /// <li>
+    /// <p><code>sq</code></p></li>
+    /// <li>
+    /// <p><code>sr</code></p></li>
+    /// <li>
+    /// <p><code>sv</code></p></li>
+    /// <li>
+    /// <p><code>ta</code></p></li>
+    /// <li>
+    /// <p><code>te</code></p></li>
+    /// <li>
+    /// <p><code>th</code></p></li>
+    /// <li>
+    /// <p><code>tr</code></p></li>
+    /// <li>
+    /// <p><code>uk</code></p></li>
+    /// <li>
+    /// <p><code>uz</code></p></li>
+    /// <li>
+    /// <p><code>vi</code></p></li>
+    /// <li>
+    /// <p><code>zh</code></p></li>
+    /// </ul>
+    pub language: ::std::option::Option<::std::string::String>,
     /// <p>Applies additional space (in pixels) around overlay feature to prevent them from being cut or obscured.</p><note>
     /// <p>Value for max and min is determined by:</p>
     /// <p>Min: <code>1</code></p>
@@ -35,6 +186,41 @@ pub struct GetStaticMapInput {
     /// </note>
     /// <p>Example: <code>100</code></p>
     pub padding: ::std::option::Option<i32>,
+    /// <p>Specifies the political view, using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
+    pub political_view: ::std::option::Option<::std::string::String>,
+    /// <p>Determines if the result image will display icons representing points of interest on the map.</p>
+    pub points_of_interests: ::std::option::Option<crate::types::MapFeatureMode>,
     /// <p>Used with center parameter, it specifies the zoom of the image where you can control it on a granular level. Takes in any value <code>&gt;= 1</code>.</p>
     /// <p>Example: <code>1500</code></p><note>
     /// <p>Cannot be used with <code>Zoom</code>.</p>
@@ -48,7 +234,7 @@ pub struct GetStaticMapInput {
     /// <p>Displays a scale on the bottom right of the map image with the unit specified in the input.</p>
     /// <p>Example: <code>KilometersMiles, Miles, Kilometers, MilesKilometers</code></p>
     pub scale_bar_unit: ::std::option::Option<crate::types::ScaleBarUnit>,
-    /// <p>Style specifies the desired map style for the <code>Style</code> APIs.</p>
+    /// <p><code>Style</code> specifies the desired map style.</p>
     pub style: ::std::option::Option<crate::types::StaticMapStyle>,
     /// <p>Specifies the width of the map image.</p>
     pub width: ::std::option::Option<i32>,
@@ -77,12 +263,24 @@ impl GetStaticMapInput {
     pub fn center(&self) -> ::std::option::Option<&str> {
         self.center.as_deref()
     }
+    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Example: <code>Light</code></p>
+    /// <p>Default value: <code>Light</code></p><note>
+    /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
+    /// </note>
+    pub fn color_scheme(&self) -> ::std::option::Option<&crate::types::ColorScheme> {
+        self.color_scheme.as_ref()
+    }
     /// <p>Takes in a string to draw geometries on the image. The input is a comma separated format as follows format: <code>\[Lon, Lat\]</code></p>
     /// <p>Example: <code>line:-122.407653,37.798557,-122.413291,37.802443;color=%23DD0000;width=7;outline-color=#00DD00;outline-width=5yd|point:-122.40572,37.80004;label=Fog Hill Market;size=large;text-color=%23DD0000;color=#EE4B2B</code></p><note>
     /// <p>Currently it supports the following geometry types: point, line and polygon. It does not support multiPoint , multiLine and multiPolgyon.</p>
     /// </note>
     pub fn compact_overlay(&self) -> ::std::option::Option<&str> {
         self.compact_overlay.as_deref()
+    }
+    /// <p>It is a flag that takes in true or false. It prevents the labels that are on the edge of the image from being cut or obscured.</p>
+    pub fn crop_labels(&self) -> ::std::option::Option<bool> {
+        self.crop_labels
     }
     /// <p>Takes in a string to draw geometries on the image. The input is a valid GeoJSON collection object.</p>
     /// <p>Example: <code>{"type":"FeatureCollection","features": \[{"type":"Feature","geometry":{"type":"MultiPoint","coordinates": \[\[-90.076345,51.504107\],\[-0.074451,51.506892\]\]},"properties": {"color":"#00DD00"}}\]}</code></p>
@@ -97,6 +295,153 @@ impl GetStaticMapInput {
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
+    /// <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in one of the values - <code>Small</code> or <code>Large</code>.</p>
+    pub fn label_size(&self) -> ::std::option::Option<&crate::types::LabelSize> {
+        self.label_size.as_ref()
+    }
+    /// <p>Specifies the language on the map labels using the BCP 47 language tag, limited to ISO 639-1 two-letter language codes. If the specified language data isn't available for the map image, the labels will default to the regional primary language.</p>
+    /// <p>Supported codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ar</code></p></li>
+    /// <li>
+    /// <p><code>as</code></p></li>
+    /// <li>
+    /// <p><code>az</code></p></li>
+    /// <li>
+    /// <p><code>be</code></p></li>
+    /// <li>
+    /// <p><code>bg</code></p></li>
+    /// <li>
+    /// <p><code>bn</code></p></li>
+    /// <li>
+    /// <p><code>bs</code></p></li>
+    /// <li>
+    /// <p><code>ca</code></p></li>
+    /// <li>
+    /// <p><code>cs</code></p></li>
+    /// <li>
+    /// <p><code>cy</code></p></li>
+    /// <li>
+    /// <p><code>da</code></p></li>
+    /// <li>
+    /// <p><code>de</code></p></li>
+    /// <li>
+    /// <p><code>el</code></p></li>
+    /// <li>
+    /// <p><code>en</code></p></li>
+    /// <li>
+    /// <p><code>es</code></p></li>
+    /// <li>
+    /// <p><code>et</code></p></li>
+    /// <li>
+    /// <p><code>eu</code></p></li>
+    /// <li>
+    /// <p><code>fi</code></p></li>
+    /// <li>
+    /// <p><code>fo</code></p></li>
+    /// <li>
+    /// <p><code>fr</code></p></li>
+    /// <li>
+    /// <p><code>ga</code></p></li>
+    /// <li>
+    /// <p><code>gl</code></p></li>
+    /// <li>
+    /// <p><code>gn</code></p></li>
+    /// <li>
+    /// <p><code>gu</code></p></li>
+    /// <li>
+    /// <p><code>he</code></p></li>
+    /// <li>
+    /// <p><code>hi</code></p></li>
+    /// <li>
+    /// <p><code>hr</code></p></li>
+    /// <li>
+    /// <p><code>hu</code></p></li>
+    /// <li>
+    /// <p><code>hy</code></p></li>
+    /// <li>
+    /// <p><code>id</code></p></li>
+    /// <li>
+    /// <p><code>is</code></p></li>
+    /// <li>
+    /// <p><code>it</code></p></li>
+    /// <li>
+    /// <p><code>ja</code></p></li>
+    /// <li>
+    /// <p><code>ka</code></p></li>
+    /// <li>
+    /// <p><code>kk</code></p></li>
+    /// <li>
+    /// <p><code>km</code></p></li>
+    /// <li>
+    /// <p><code>kn</code></p></li>
+    /// <li>
+    /// <p><code>ko</code></p></li>
+    /// <li>
+    /// <p><code>ky</code></p></li>
+    /// <li>
+    /// <p><code>lt</code></p></li>
+    /// <li>
+    /// <p><code>lv</code></p></li>
+    /// <li>
+    /// <p><code>mk</code></p></li>
+    /// <li>
+    /// <p><code>ml</code></p></li>
+    /// <li>
+    /// <p><code>mr</code></p></li>
+    /// <li>
+    /// <p><code>ms</code></p></li>
+    /// <li>
+    /// <p><code>mt</code></p></li>
+    /// <li>
+    /// <p><code>my</code></p></li>
+    /// <li>
+    /// <p><code>nl</code></p></li>
+    /// <li>
+    /// <p><code>no</code></p></li>
+    /// <li>
+    /// <p><code>or</code></p></li>
+    /// <li>
+    /// <p><code>pa</code></p></li>
+    /// <li>
+    /// <p><code>pl</code></p></li>
+    /// <li>
+    /// <p><code>pt</code></p></li>
+    /// <li>
+    /// <p><code>ro</code></p></li>
+    /// <li>
+    /// <p><code>ru</code></p></li>
+    /// <li>
+    /// <p><code>sk</code></p></li>
+    /// <li>
+    /// <p><code>sl</code></p></li>
+    /// <li>
+    /// <p><code>sq</code></p></li>
+    /// <li>
+    /// <p><code>sr</code></p></li>
+    /// <li>
+    /// <p><code>sv</code></p></li>
+    /// <li>
+    /// <p><code>ta</code></p></li>
+    /// <li>
+    /// <p><code>te</code></p></li>
+    /// <li>
+    /// <p><code>th</code></p></li>
+    /// <li>
+    /// <p><code>tr</code></p></li>
+    /// <li>
+    /// <p><code>uk</code></p></li>
+    /// <li>
+    /// <p><code>uz</code></p></li>
+    /// <li>
+    /// <p><code>vi</code></p></li>
+    /// <li>
+    /// <p><code>zh</code></p></li>
+    /// </ul>
+    pub fn language(&self) -> ::std::option::Option<&str> {
+        self.language.as_deref()
+    }
     /// <p>Applies additional space (in pixels) around overlay feature to prevent them from being cut or obscured.</p><note>
     /// <p>Value for max and min is determined by:</p>
     /// <p>Min: <code>1</code></p>
@@ -105,6 +450,45 @@ impl GetStaticMapInput {
     /// <p>Example: <code>100</code></p>
     pub fn padding(&self) -> ::std::option::Option<i32> {
         self.padding
+    }
+    /// <p>Specifies the political view, using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
+    pub fn political_view(&self) -> ::std::option::Option<&str> {
+        self.political_view.as_deref()
+    }
+    /// <p>Determines if the result image will display icons representing points of interest on the map.</p>
+    pub fn points_of_interests(&self) -> ::std::option::Option<&crate::types::MapFeatureMode> {
+        self.points_of_interests.as_ref()
     }
     /// <p>Used with center parameter, it specifies the zoom of the image where you can control it on a granular level. Takes in any value <code>&gt;= 1</code>.</p>
     /// <p>Example: <code>1500</code></p><note>
@@ -125,7 +509,7 @@ impl GetStaticMapInput {
     pub fn scale_bar_unit(&self) -> ::std::option::Option<&crate::types::ScaleBarUnit> {
         self.scale_bar_unit.as_ref()
     }
-    /// <p>Style specifies the desired map style for the <code>Style</code> APIs.</p>
+    /// <p><code>Style</code> specifies the desired map style.</p>
     pub fn style(&self) -> ::std::option::Option<&crate::types::StaticMapStyle> {
         self.style.as_ref()
     }
@@ -146,11 +530,17 @@ impl ::std::fmt::Debug for GetStaticMapInput {
         formatter.field("bounding_box", &self.bounding_box);
         formatter.field("bounded_positions", &self.bounded_positions);
         formatter.field("center", &self.center);
+        formatter.field("color_scheme", &self.color_scheme);
         formatter.field("compact_overlay", &self.compact_overlay);
+        formatter.field("crop_labels", &self.crop_labels);
         formatter.field("geo_json_overlay", &self.geo_json_overlay);
         formatter.field("height", &self.height);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
+        formatter.field("label_size", &self.label_size);
+        formatter.field("language", &self.language);
         formatter.field("padding", &self.padding);
+        formatter.field("political_view", &self.political_view);
+        formatter.field("points_of_interests", &self.points_of_interests);
         formatter.field("radius", &self.radius);
         formatter.field("file_name", &self.file_name);
         formatter.field("scale_bar_unit", &self.scale_bar_unit);
@@ -174,11 +564,17 @@ pub struct GetStaticMapInputBuilder {
     pub(crate) bounding_box: ::std::option::Option<::std::string::String>,
     pub(crate) bounded_positions: ::std::option::Option<::std::string::String>,
     pub(crate) center: ::std::option::Option<::std::string::String>,
+    pub(crate) color_scheme: ::std::option::Option<crate::types::ColorScheme>,
     pub(crate) compact_overlay: ::std::option::Option<::std::string::String>,
+    pub(crate) crop_labels: ::std::option::Option<bool>,
     pub(crate) geo_json_overlay: ::std::option::Option<::std::string::String>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) label_size: ::std::option::Option<crate::types::LabelSize>,
+    pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) padding: ::std::option::Option<i32>,
+    pub(crate) political_view: ::std::option::Option<::std::string::String>,
+    pub(crate) points_of_interests: ::std::option::Option<crate::types::MapFeatureMode>,
     pub(crate) radius: ::std::option::Option<i64>,
     pub(crate) file_name: ::std::option::Option<::std::string::String>,
     pub(crate) scale_bar_unit: ::std::option::Option<crate::types::ScaleBarUnit>,
@@ -250,6 +646,32 @@ impl GetStaticMapInputBuilder {
     pub fn get_center(&self) -> &::std::option::Option<::std::string::String> {
         &self.center
     }
+    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Example: <code>Light</code></p>
+    /// <p>Default value: <code>Light</code></p><note>
+    /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
+    /// </note>
+    pub fn color_scheme(mut self, input: crate::types::ColorScheme) -> Self {
+        self.color_scheme = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Example: <code>Light</code></p>
+    /// <p>Default value: <code>Light</code></p><note>
+    /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
+    /// </note>
+    pub fn set_color_scheme(mut self, input: ::std::option::Option<crate::types::ColorScheme>) -> Self {
+        self.color_scheme = input;
+        self
+    }
+    /// <p>Sets color tone for map, such as dark and light for specific map styles. It only applies to vector map styles, such as Standard.</p>
+    /// <p>Example: <code>Light</code></p>
+    /// <p>Default value: <code>Light</code></p><note>
+    /// <p>Valid values for <code>ColorScheme</code> are case sensitive.</p>
+    /// </note>
+    pub fn get_color_scheme(&self) -> &::std::option::Option<crate::types::ColorScheme> {
+        &self.color_scheme
+    }
     /// <p>Takes in a string to draw geometries on the image. The input is a comma separated format as follows format: <code>\[Lon, Lat\]</code></p>
     /// <p>Example: <code>line:-122.407653,37.798557,-122.413291,37.802443;color=%23DD0000;width=7;outline-color=#00DD00;outline-width=5yd|point:-122.40572,37.80004;label=Fog Hill Market;size=large;text-color=%23DD0000;color=#EE4B2B</code></p><note>
     /// <p>Currently it supports the following geometry types: point, line and polygon. It does not support multiPoint , multiLine and multiPolgyon.</p>
@@ -272,6 +694,20 @@ impl GetStaticMapInputBuilder {
     /// </note>
     pub fn get_compact_overlay(&self) -> &::std::option::Option<::std::string::String> {
         &self.compact_overlay
+    }
+    /// <p>It is a flag that takes in true or false. It prevents the labels that are on the edge of the image from being cut or obscured.</p>
+    pub fn crop_labels(mut self, input: bool) -> Self {
+        self.crop_labels = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>It is a flag that takes in true or false. It prevents the labels that are on the edge of the image from being cut or obscured.</p>
+    pub fn set_crop_labels(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.crop_labels = input;
+        self
+    }
+    /// <p>It is a flag that takes in true or false. It prevents the labels that are on the edge of the image from being cut or obscured.</p>
+    pub fn get_crop_labels(&self) -> &::std::option::Option<bool> {
+        &self.crop_labels
     }
     /// <p>Takes in a string to draw geometries on the image. The input is a valid GeoJSON collection object.</p>
     /// <p>Example: <code>{"type":"FeatureCollection","features": \[{"type":"Feature","geometry":{"type":"MultiPoint","coordinates": \[\[-90.076345,51.504107\],\[-0.074451,51.506892\]\]},"properties": {"color":"#00DD00"}}\]}</code></p>
@@ -319,6 +755,451 @@ impl GetStaticMapInputBuilder {
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key
     }
+    /// <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in one of the values - <code>Small</code> or <code>Large</code>.</p>
+    pub fn label_size(mut self, input: crate::types::LabelSize) -> Self {
+        self.label_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in one of the values - <code>Small</code> or <code>Large</code>.</p>
+    pub fn set_label_size(mut self, input: ::std::option::Option<crate::types::LabelSize>) -> Self {
+        self.label_size = input;
+        self
+    }
+    /// <p>Overrides the label size auto-calculated by <code>FileName</code>. Takes in one of the values - <code>Small</code> or <code>Large</code>.</p>
+    pub fn get_label_size(&self) -> &::std::option::Option<crate::types::LabelSize> {
+        &self.label_size
+    }
+    /// <p>Specifies the language on the map labels using the BCP 47 language tag, limited to ISO 639-1 two-letter language codes. If the specified language data isn't available for the map image, the labels will default to the regional primary language.</p>
+    /// <p>Supported codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ar</code></p></li>
+    /// <li>
+    /// <p><code>as</code></p></li>
+    /// <li>
+    /// <p><code>az</code></p></li>
+    /// <li>
+    /// <p><code>be</code></p></li>
+    /// <li>
+    /// <p><code>bg</code></p></li>
+    /// <li>
+    /// <p><code>bn</code></p></li>
+    /// <li>
+    /// <p><code>bs</code></p></li>
+    /// <li>
+    /// <p><code>ca</code></p></li>
+    /// <li>
+    /// <p><code>cs</code></p></li>
+    /// <li>
+    /// <p><code>cy</code></p></li>
+    /// <li>
+    /// <p><code>da</code></p></li>
+    /// <li>
+    /// <p><code>de</code></p></li>
+    /// <li>
+    /// <p><code>el</code></p></li>
+    /// <li>
+    /// <p><code>en</code></p></li>
+    /// <li>
+    /// <p><code>es</code></p></li>
+    /// <li>
+    /// <p><code>et</code></p></li>
+    /// <li>
+    /// <p><code>eu</code></p></li>
+    /// <li>
+    /// <p><code>fi</code></p></li>
+    /// <li>
+    /// <p><code>fo</code></p></li>
+    /// <li>
+    /// <p><code>fr</code></p></li>
+    /// <li>
+    /// <p><code>ga</code></p></li>
+    /// <li>
+    /// <p><code>gl</code></p></li>
+    /// <li>
+    /// <p><code>gn</code></p></li>
+    /// <li>
+    /// <p><code>gu</code></p></li>
+    /// <li>
+    /// <p><code>he</code></p></li>
+    /// <li>
+    /// <p><code>hi</code></p></li>
+    /// <li>
+    /// <p><code>hr</code></p></li>
+    /// <li>
+    /// <p><code>hu</code></p></li>
+    /// <li>
+    /// <p><code>hy</code></p></li>
+    /// <li>
+    /// <p><code>id</code></p></li>
+    /// <li>
+    /// <p><code>is</code></p></li>
+    /// <li>
+    /// <p><code>it</code></p></li>
+    /// <li>
+    /// <p><code>ja</code></p></li>
+    /// <li>
+    /// <p><code>ka</code></p></li>
+    /// <li>
+    /// <p><code>kk</code></p></li>
+    /// <li>
+    /// <p><code>km</code></p></li>
+    /// <li>
+    /// <p><code>kn</code></p></li>
+    /// <li>
+    /// <p><code>ko</code></p></li>
+    /// <li>
+    /// <p><code>ky</code></p></li>
+    /// <li>
+    /// <p><code>lt</code></p></li>
+    /// <li>
+    /// <p><code>lv</code></p></li>
+    /// <li>
+    /// <p><code>mk</code></p></li>
+    /// <li>
+    /// <p><code>ml</code></p></li>
+    /// <li>
+    /// <p><code>mr</code></p></li>
+    /// <li>
+    /// <p><code>ms</code></p></li>
+    /// <li>
+    /// <p><code>mt</code></p></li>
+    /// <li>
+    /// <p><code>my</code></p></li>
+    /// <li>
+    /// <p><code>nl</code></p></li>
+    /// <li>
+    /// <p><code>no</code></p></li>
+    /// <li>
+    /// <p><code>or</code></p></li>
+    /// <li>
+    /// <p><code>pa</code></p></li>
+    /// <li>
+    /// <p><code>pl</code></p></li>
+    /// <li>
+    /// <p><code>pt</code></p></li>
+    /// <li>
+    /// <p><code>ro</code></p></li>
+    /// <li>
+    /// <p><code>ru</code></p></li>
+    /// <li>
+    /// <p><code>sk</code></p></li>
+    /// <li>
+    /// <p><code>sl</code></p></li>
+    /// <li>
+    /// <p><code>sq</code></p></li>
+    /// <li>
+    /// <p><code>sr</code></p></li>
+    /// <li>
+    /// <p><code>sv</code></p></li>
+    /// <li>
+    /// <p><code>ta</code></p></li>
+    /// <li>
+    /// <p><code>te</code></p></li>
+    /// <li>
+    /// <p><code>th</code></p></li>
+    /// <li>
+    /// <p><code>tr</code></p></li>
+    /// <li>
+    /// <p><code>uk</code></p></li>
+    /// <li>
+    /// <p><code>uz</code></p></li>
+    /// <li>
+    /// <p><code>vi</code></p></li>
+    /// <li>
+    /// <p><code>zh</code></p></li>
+    /// </ul>
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the language on the map labels using the BCP 47 language tag, limited to ISO 639-1 two-letter language codes. If the specified language data isn't available for the map image, the labels will default to the regional primary language.</p>
+    /// <p>Supported codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ar</code></p></li>
+    /// <li>
+    /// <p><code>as</code></p></li>
+    /// <li>
+    /// <p><code>az</code></p></li>
+    /// <li>
+    /// <p><code>be</code></p></li>
+    /// <li>
+    /// <p><code>bg</code></p></li>
+    /// <li>
+    /// <p><code>bn</code></p></li>
+    /// <li>
+    /// <p><code>bs</code></p></li>
+    /// <li>
+    /// <p><code>ca</code></p></li>
+    /// <li>
+    /// <p><code>cs</code></p></li>
+    /// <li>
+    /// <p><code>cy</code></p></li>
+    /// <li>
+    /// <p><code>da</code></p></li>
+    /// <li>
+    /// <p><code>de</code></p></li>
+    /// <li>
+    /// <p><code>el</code></p></li>
+    /// <li>
+    /// <p><code>en</code></p></li>
+    /// <li>
+    /// <p><code>es</code></p></li>
+    /// <li>
+    /// <p><code>et</code></p></li>
+    /// <li>
+    /// <p><code>eu</code></p></li>
+    /// <li>
+    /// <p><code>fi</code></p></li>
+    /// <li>
+    /// <p><code>fo</code></p></li>
+    /// <li>
+    /// <p><code>fr</code></p></li>
+    /// <li>
+    /// <p><code>ga</code></p></li>
+    /// <li>
+    /// <p><code>gl</code></p></li>
+    /// <li>
+    /// <p><code>gn</code></p></li>
+    /// <li>
+    /// <p><code>gu</code></p></li>
+    /// <li>
+    /// <p><code>he</code></p></li>
+    /// <li>
+    /// <p><code>hi</code></p></li>
+    /// <li>
+    /// <p><code>hr</code></p></li>
+    /// <li>
+    /// <p><code>hu</code></p></li>
+    /// <li>
+    /// <p><code>hy</code></p></li>
+    /// <li>
+    /// <p><code>id</code></p></li>
+    /// <li>
+    /// <p><code>is</code></p></li>
+    /// <li>
+    /// <p><code>it</code></p></li>
+    /// <li>
+    /// <p><code>ja</code></p></li>
+    /// <li>
+    /// <p><code>ka</code></p></li>
+    /// <li>
+    /// <p><code>kk</code></p></li>
+    /// <li>
+    /// <p><code>km</code></p></li>
+    /// <li>
+    /// <p><code>kn</code></p></li>
+    /// <li>
+    /// <p><code>ko</code></p></li>
+    /// <li>
+    /// <p><code>ky</code></p></li>
+    /// <li>
+    /// <p><code>lt</code></p></li>
+    /// <li>
+    /// <p><code>lv</code></p></li>
+    /// <li>
+    /// <p><code>mk</code></p></li>
+    /// <li>
+    /// <p><code>ml</code></p></li>
+    /// <li>
+    /// <p><code>mr</code></p></li>
+    /// <li>
+    /// <p><code>ms</code></p></li>
+    /// <li>
+    /// <p><code>mt</code></p></li>
+    /// <li>
+    /// <p><code>my</code></p></li>
+    /// <li>
+    /// <p><code>nl</code></p></li>
+    /// <li>
+    /// <p><code>no</code></p></li>
+    /// <li>
+    /// <p><code>or</code></p></li>
+    /// <li>
+    /// <p><code>pa</code></p></li>
+    /// <li>
+    /// <p><code>pl</code></p></li>
+    /// <li>
+    /// <p><code>pt</code></p></li>
+    /// <li>
+    /// <p><code>ro</code></p></li>
+    /// <li>
+    /// <p><code>ru</code></p></li>
+    /// <li>
+    /// <p><code>sk</code></p></li>
+    /// <li>
+    /// <p><code>sl</code></p></li>
+    /// <li>
+    /// <p><code>sq</code></p></li>
+    /// <li>
+    /// <p><code>sr</code></p></li>
+    /// <li>
+    /// <p><code>sv</code></p></li>
+    /// <li>
+    /// <p><code>ta</code></p></li>
+    /// <li>
+    /// <p><code>te</code></p></li>
+    /// <li>
+    /// <p><code>th</code></p></li>
+    /// <li>
+    /// <p><code>tr</code></p></li>
+    /// <li>
+    /// <p><code>uk</code></p></li>
+    /// <li>
+    /// <p><code>uz</code></p></li>
+    /// <li>
+    /// <p><code>vi</code></p></li>
+    /// <li>
+    /// <p><code>zh</code></p></li>
+    /// </ul>
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.language = input;
+        self
+    }
+    /// <p>Specifies the language on the map labels using the BCP 47 language tag, limited to ISO 639-1 two-letter language codes. If the specified language data isn't available for the map image, the labels will default to the regional primary language.</p>
+    /// <p>Supported codes:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ar</code></p></li>
+    /// <li>
+    /// <p><code>as</code></p></li>
+    /// <li>
+    /// <p><code>az</code></p></li>
+    /// <li>
+    /// <p><code>be</code></p></li>
+    /// <li>
+    /// <p><code>bg</code></p></li>
+    /// <li>
+    /// <p><code>bn</code></p></li>
+    /// <li>
+    /// <p><code>bs</code></p></li>
+    /// <li>
+    /// <p><code>ca</code></p></li>
+    /// <li>
+    /// <p><code>cs</code></p></li>
+    /// <li>
+    /// <p><code>cy</code></p></li>
+    /// <li>
+    /// <p><code>da</code></p></li>
+    /// <li>
+    /// <p><code>de</code></p></li>
+    /// <li>
+    /// <p><code>el</code></p></li>
+    /// <li>
+    /// <p><code>en</code></p></li>
+    /// <li>
+    /// <p><code>es</code></p></li>
+    /// <li>
+    /// <p><code>et</code></p></li>
+    /// <li>
+    /// <p><code>eu</code></p></li>
+    /// <li>
+    /// <p><code>fi</code></p></li>
+    /// <li>
+    /// <p><code>fo</code></p></li>
+    /// <li>
+    /// <p><code>fr</code></p></li>
+    /// <li>
+    /// <p><code>ga</code></p></li>
+    /// <li>
+    /// <p><code>gl</code></p></li>
+    /// <li>
+    /// <p><code>gn</code></p></li>
+    /// <li>
+    /// <p><code>gu</code></p></li>
+    /// <li>
+    /// <p><code>he</code></p></li>
+    /// <li>
+    /// <p><code>hi</code></p></li>
+    /// <li>
+    /// <p><code>hr</code></p></li>
+    /// <li>
+    /// <p><code>hu</code></p></li>
+    /// <li>
+    /// <p><code>hy</code></p></li>
+    /// <li>
+    /// <p><code>id</code></p></li>
+    /// <li>
+    /// <p><code>is</code></p></li>
+    /// <li>
+    /// <p><code>it</code></p></li>
+    /// <li>
+    /// <p><code>ja</code></p></li>
+    /// <li>
+    /// <p><code>ka</code></p></li>
+    /// <li>
+    /// <p><code>kk</code></p></li>
+    /// <li>
+    /// <p><code>km</code></p></li>
+    /// <li>
+    /// <p><code>kn</code></p></li>
+    /// <li>
+    /// <p><code>ko</code></p></li>
+    /// <li>
+    /// <p><code>ky</code></p></li>
+    /// <li>
+    /// <p><code>lt</code></p></li>
+    /// <li>
+    /// <p><code>lv</code></p></li>
+    /// <li>
+    /// <p><code>mk</code></p></li>
+    /// <li>
+    /// <p><code>ml</code></p></li>
+    /// <li>
+    /// <p><code>mr</code></p></li>
+    /// <li>
+    /// <p><code>ms</code></p></li>
+    /// <li>
+    /// <p><code>mt</code></p></li>
+    /// <li>
+    /// <p><code>my</code></p></li>
+    /// <li>
+    /// <p><code>nl</code></p></li>
+    /// <li>
+    /// <p><code>no</code></p></li>
+    /// <li>
+    /// <p><code>or</code></p></li>
+    /// <li>
+    /// <p><code>pa</code></p></li>
+    /// <li>
+    /// <p><code>pl</code></p></li>
+    /// <li>
+    /// <p><code>pt</code></p></li>
+    /// <li>
+    /// <p><code>ro</code></p></li>
+    /// <li>
+    /// <p><code>ru</code></p></li>
+    /// <li>
+    /// <p><code>sk</code></p></li>
+    /// <li>
+    /// <p><code>sl</code></p></li>
+    /// <li>
+    /// <p><code>sq</code></p></li>
+    /// <li>
+    /// <p><code>sr</code></p></li>
+    /// <li>
+    /// <p><code>sv</code></p></li>
+    /// <li>
+    /// <p><code>ta</code></p></li>
+    /// <li>
+    /// <p><code>te</code></p></li>
+    /// <li>
+    /// <p><code>th</code></p></li>
+    /// <li>
+    /// <p><code>tr</code></p></li>
+    /// <li>
+    /// <p><code>uk</code></p></li>
+    /// <li>
+    /// <p><code>uz</code></p></li>
+    /// <li>
+    /// <p><code>vi</code></p></li>
+    /// <li>
+    /// <p><code>zh</code></p></li>
+    /// </ul>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// <p>Applies additional space (in pixels) around overlay feature to prevent them from being cut or obscured.</p><note>
     /// <p>Value for max and min is determined by:</p>
     /// <p>Min: <code>1</code></p>
@@ -347,6 +1228,127 @@ impl GetStaticMapInputBuilder {
     /// <p>Example: <code>100</code></p>
     pub fn get_padding(&self) -> &::std::option::Option<i32> {
         &self.padding
+    }
+    /// <p>Specifies the political view, using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
+    pub fn political_view(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.political_view = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies the political view, using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
+    pub fn set_political_view(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.political_view = input;
+        self
+    }
+    /// <p>Specifies the political view, using ISO 3166-2 or ISO 3166-3 country code format.</p>
+    /// <p>The following political views are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ARG</code>: Argentina's view on the Southern Patagonian Ice Field and Tierra Del Fuego, including the Falkland Islands, South Georgia, and South Sandwich Islands</p></li>
+    /// <li>
+    /// <p><code>EGY</code>: Egypt's view on Bir Tawil</p></li>
+    /// <li>
+    /// <p><code>IND</code>: India's view on Gilgit-Baltistan</p></li>
+    /// <li>
+    /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
+    /// <li>
+    /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
+    /// <li>
+    /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
+    /// <li>
+    /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
+    /// <li>
+    /// <p><code>SRB</code>: Serbia's view on Kosovo, Vukovar, and Sarengrad Islands</p></li>
+    /// <li>
+    /// <p><code>SUR</code>: Suriname's view on the Courantyne Headwaters and Lawa Headwaters</p></li>
+    /// <li>
+    /// <p><code>SYR</code>: Syria's view on the Golan Heights</p></li>
+    /// <li>
+    /// <p><code>TUR</code>: Turkey's view on Cyprus and Northern Cyprus</p></li>
+    /// <li>
+    /// <p><code>TZA</code>: Tanzania's view on Lake Malawi</p></li>
+    /// <li>
+    /// <p><code>URY</code>: Uruguay's view on Rincon de Artigas</p></li>
+    /// <li>
+    /// <p><code>VNM</code>: Vietnam's view on the Paracel Islands and Spratly Islands</p></li>
+    /// </ul>
+    pub fn get_political_view(&self) -> &::std::option::Option<::std::string::String> {
+        &self.political_view
+    }
+    /// <p>Determines if the result image will display icons representing points of interest on the map.</p>
+    pub fn points_of_interests(mut self, input: crate::types::MapFeatureMode) -> Self {
+        self.points_of_interests = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines if the result image will display icons representing points of interest on the map.</p>
+    pub fn set_points_of_interests(mut self, input: ::std::option::Option<crate::types::MapFeatureMode>) -> Self {
+        self.points_of_interests = input;
+        self
+    }
+    /// <p>Determines if the result image will display icons representing points of interest on the map.</p>
+    pub fn get_points_of_interests(&self) -> &::std::option::Option<crate::types::MapFeatureMode> {
+        &self.points_of_interests
     }
     /// <p>Used with center parameter, it specifies the zoom of the image where you can control it on a granular level. Takes in any value <code>&gt;= 1</code>.</p>
     /// <p>Example: <code>1500</code></p><note>
@@ -412,17 +1414,17 @@ impl GetStaticMapInputBuilder {
     pub fn get_scale_bar_unit(&self) -> &::std::option::Option<crate::types::ScaleBarUnit> {
         &self.scale_bar_unit
     }
-    /// <p>Style specifies the desired map style for the <code>Style</code> APIs.</p>
+    /// <p><code>Style</code> specifies the desired map style.</p>
     pub fn style(mut self, input: crate::types::StaticMapStyle) -> Self {
         self.style = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Style specifies the desired map style for the <code>Style</code> APIs.</p>
+    /// <p><code>Style</code> specifies the desired map style.</p>
     pub fn set_style(mut self, input: ::std::option::Option<crate::types::StaticMapStyle>) -> Self {
         self.style = input;
         self
     }
-    /// <p>Style specifies the desired map style for the <code>Style</code> APIs.</p>
+    /// <p><code>Style</code> specifies the desired map style.</p>
     pub fn get_style(&self) -> &::std::option::Option<crate::types::StaticMapStyle> {
         &self.style
     }
@@ -469,11 +1471,17 @@ impl GetStaticMapInputBuilder {
             bounding_box: self.bounding_box,
             bounded_positions: self.bounded_positions,
             center: self.center,
+            color_scheme: self.color_scheme,
             compact_overlay: self.compact_overlay,
+            crop_labels: self.crop_labels,
             geo_json_overlay: self.geo_json_overlay,
             height: self.height,
             key: self.key,
+            label_size: self.label_size,
+            language: self.language,
             padding: self.padding,
+            political_view: self.political_view,
+            points_of_interests: self.points_of_interests,
             radius: self.radius,
             file_name: self.file_name,
             scale_bar_unit: self.scale_bar_unit,
@@ -489,11 +1497,17 @@ impl ::std::fmt::Debug for GetStaticMapInputBuilder {
         formatter.field("bounding_box", &self.bounding_box);
         formatter.field("bounded_positions", &self.bounded_positions);
         formatter.field("center", &self.center);
+        formatter.field("color_scheme", &self.color_scheme);
         formatter.field("compact_overlay", &self.compact_overlay);
+        formatter.field("crop_labels", &self.crop_labels);
         formatter.field("geo_json_overlay", &self.geo_json_overlay);
         formatter.field("height", &self.height);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
+        formatter.field("label_size", &self.label_size);
+        formatter.field("language", &self.language);
         formatter.field("padding", &self.padding);
+        formatter.field("political_view", &self.political_view);
+        formatter.field("points_of_interests", &self.points_of_interests);
         formatter.field("radius", &self.radius);
         formatter.field("file_name", &self.file_name);
         formatter.field("scale_bar_unit", &self.scale_bar_unit);

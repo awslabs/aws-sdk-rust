@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`y(impl Into<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::y) / [`set_y(Option<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::set_y):<br>required: **true**<br><p>The Y axis value for the map tile.</p><br>
     ///   - [`key(impl Into<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::key) / [`set_key(Option<String>)`](crate::operation::get_tile::builders::GetTileFluentBuilder::set_key):<br>required: **false**<br><p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p><br>
     /// - On success, responds with [`GetTileOutput`](crate::operation::get_tile::GetTileOutput) with field(s):
-    ///   - [`blob(Option<Blob>)`](crate::operation::get_tile::GetTileOutput::blob): <p>The blob represents a vector tile in <code>mvt</code> format for the <code>GetTile</code> API.</p>
+    ///   - [`blob(Option<Blob>)`](crate::operation::get_tile::GetTileOutput::blob): <p>The blob represents a vector tile in <code>mvt</code> or a raster tile in an image format.</p>
     ///   - [`content_type(Option<String>)`](crate::operation::get_tile::GetTileOutput::content_type): <p>Header that represents the format of the response. The response returns the following as the HTTP body.</p>
     ///   - [`cache_control(Option<String>)`](crate::operation::get_tile::GetTileOutput::cache_control): <p>Header that instructs caching configuration for the client.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_tile::GetTileOutput::e_tag): <p>The pricing bucket for which the request is charged at.</p>

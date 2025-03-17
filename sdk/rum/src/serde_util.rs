@@ -179,6 +179,15 @@ pub(crate) fn metric_definition_correct_errors(
     builder
 }
 
+pub(crate) fn java_script_source_maps_correct_errors(
+    mut builder: crate::types::builders::JavaScriptSourceMapsBuilder,
+) -> crate::types::builders::JavaScriptSourceMapsBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DeobfuscationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn metric_definition_request_correct_errors(
     mut builder: crate::types::builders::MetricDefinitionRequestBuilder,
 ) -> crate::types::builders::MetricDefinitionRequestBuilder {

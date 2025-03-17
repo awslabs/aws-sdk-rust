@@ -57,17 +57,27 @@ pub use crate::types::_metric_reference::MetricReference;
 
 pub use crate::types::_service_operation::ServiceOperation;
 
+pub use crate::types::_exclusion_window::ExclusionWindow;
+
+pub use crate::types::_recurrence_rule::RecurrenceRule;
+
+pub use crate::types::_window::Window;
+
 pub use crate::types::_service_dependent::ServiceDependent;
 
 pub use crate::types::_service_dependency::ServiceDependency;
 
 pub use crate::types::_service::Service;
 
+pub use crate::types::_batch_update_exclusion_windows_error::BatchUpdateExclusionWindowsError;
+
 pub use crate::types::_service_level_objective_budget_report_error::ServiceLevelObjectiveBudgetReportError;
 
 pub use crate::types::_service_level_objective_budget_report::ServiceLevelObjectiveBudgetReport;
 
 pub use crate::types::_service_level_objective_budget_status::ServiceLevelObjectiveBudgetStatus;
+
+mod _batch_update_exclusion_windows_error;
 
 mod _burn_rate_configuration;
 
@@ -78,6 +88,8 @@ mod _dimension;
 mod _duration_unit;
 
 mod _evaluation_type;
+
+mod _exclusion_window;
 
 mod _goal;
 
@@ -92,6 +104,8 @@ mod _metric_reference;
 mod _metric_stat;
 
 mod _monitored_request_count_metric_data_queries;
+
+mod _recurrence_rule;
 
 mod _request_based_service_level_indicator;
 
@@ -138,6 +152,8 @@ mod _service_summary;
 mod _standard_unit;
 
 mod _tag;
+
+mod _window;
 
 /// Builders
 pub mod builders;

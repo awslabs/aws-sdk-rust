@@ -7,6 +7,8 @@ pub struct UpdateAppMonitorInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub domain: ::std::option::Option<::std::string::String>,
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub domain_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
     /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.</p>
@@ -14,6 +16,8 @@ pub struct UpdateAppMonitorInput {
     /// <p>Specifies whether this app monitor allows the web client to define and send custom events. The default is for custom events to be <code>DISABLED</code>.</p>
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub custom_events: ::std::option::Option<crate::types::CustomEvents>,
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub deobfuscation_configuration: ::std::option::Option<crate::types::DeobfuscationConfiguration>,
 }
 impl UpdateAppMonitorInput {
     /// <p>The name of the app monitor to update.</p>
@@ -23,6 +27,12 @@ impl UpdateAppMonitorInput {
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
+    }
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.domain_list.is_none()`.
+    pub fn domain_list(&self) -> &[::std::string::String] {
+        self.domain_list.as_deref().unwrap_or_default()
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub fn app_monitor_configuration(&self) -> ::std::option::Option<&crate::types::AppMonitorConfiguration> {
@@ -36,6 +46,10 @@ impl UpdateAppMonitorInput {
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub fn custom_events(&self) -> ::std::option::Option<&crate::types::CustomEvents> {
         self.custom_events.as_ref()
+    }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn deobfuscation_configuration(&self) -> ::std::option::Option<&crate::types::DeobfuscationConfiguration> {
+        self.deobfuscation_configuration.as_ref()
     }
 }
 impl UpdateAppMonitorInput {
@@ -51,9 +65,11 @@ impl UpdateAppMonitorInput {
 pub struct UpdateAppMonitorInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) app_monitor_configuration: ::std::option::Option<crate::types::AppMonitorConfiguration>,
     pub(crate) cw_log_enabled: ::std::option::Option<bool>,
     pub(crate) custom_events: ::std::option::Option<crate::types::CustomEvents>,
+    pub(crate) deobfuscation_configuration: ::std::option::Option<crate::types::DeobfuscationConfiguration>,
 }
 impl UpdateAppMonitorInputBuilder {
     /// <p>The name of the app monitor to update.</p>
@@ -84,6 +100,26 @@ impl UpdateAppMonitorInputBuilder {
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
+    }
+    /// Appends an item to `domain_list`.
+    ///
+    /// To override the contents of this collection use [`set_domain_list`](Self::set_domain_list).
+    ///
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub fn domain_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.domain_list.unwrap_or_default();
+        v.push(input.into());
+        self.domain_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub fn set_domain_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.domain_list = input;
+        self
+    }
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub fn get_domain_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.domain_list
     }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub fn app_monitor_configuration(mut self, input: crate::types::AppMonitorConfiguration) -> Self {
@@ -130,6 +166,20 @@ impl UpdateAppMonitorInputBuilder {
     pub fn get_custom_events(&self) -> &::std::option::Option<crate::types::CustomEvents> {
         &self.custom_events
     }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn deobfuscation_configuration(mut self, input: crate::types::DeobfuscationConfiguration) -> Self {
+        self.deobfuscation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn set_deobfuscation_configuration(mut self, input: ::std::option::Option<crate::types::DeobfuscationConfiguration>) -> Self {
+        self.deobfuscation_configuration = input;
+        self
+    }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn get_deobfuscation_configuration(&self) -> &::std::option::Option<crate::types::DeobfuscationConfiguration> {
+        &self.deobfuscation_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateAppMonitorInput`](crate::operation::update_app_monitor::UpdateAppMonitorInput).
     pub fn build(
         self,
@@ -137,9 +187,11 @@ impl UpdateAppMonitorInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_app_monitor::UpdateAppMonitorInput {
             name: self.name,
             domain: self.domain,
+            domain_list: self.domain_list,
             app_monitor_configuration: self.app_monitor_configuration,
             cw_log_enabled: self.cw_log_enabled,
             custom_events: self.custom_events,
+            deobfuscation_configuration: self.deobfuscation_configuration,
         })
     }
 }

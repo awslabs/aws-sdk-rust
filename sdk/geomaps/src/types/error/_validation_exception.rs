@@ -6,14 +6,14 @@
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::string::String,
-    /// <p>The field where thebb invalid entry was detected.</p>
+    /// <p>The field where the invalid entry was detected.</p>
     pub reason: crate::types::ValidationExceptionReason,
     /// <p>A message with the reason for the validation exception error.</p>
     pub field_list: ::std::vec::Vec<crate::types::ValidationExceptionField>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ValidationException {
-    /// <p>The field where thebb invalid entry was detected.</p>
+    /// <p>The field where the invalid entry was detected.</p>
     pub fn reason(&self) -> &crate::types::ValidationExceptionReason {
         &self.reason
     }
@@ -82,18 +82,18 @@ impl ValidationExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>The field where thebb invalid entry was detected.</p>
+    /// <p>The field where the invalid entry was detected.</p>
     /// This field is required.
     pub fn reason(mut self, input: crate::types::ValidationExceptionReason) -> Self {
         self.reason = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The field where thebb invalid entry was detected.</p>
+    /// <p>The field where the invalid entry was detected.</p>
     pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ValidationExceptionReason>) -> Self {
         self.reason = input;
         self
     }
-    /// <p>The field where thebb invalid entry was detected.</p>
+    /// <p>The field where the invalid entry was detected.</p>
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::ValidationExceptionReason> {
         &self.reason
     }

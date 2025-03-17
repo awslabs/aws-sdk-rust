@@ -22,7 +22,7 @@ impl crate::operation::get_sprites::builders::GetSpritesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetSprites`.
 ///
-/// <p>Returns the map's sprites.</p>
+/// <p><code>GetSprites</code> returns the map's sprites.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSpritesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

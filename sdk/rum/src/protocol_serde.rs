@@ -125,6 +125,8 @@ pub(crate) mod shape_batch_delete_rum_metric_definitions_errors;
 
 pub(crate) mod shape_custom_events;
 
+pub(crate) mod shape_deobfuscation_configuration;
+
 pub(crate) mod shape_event_data_list;
 
 pub(crate) mod shape_metric_definition_ids;
@@ -145,6 +147,8 @@ pub(crate) mod shape_time_range;
 
 pub(crate) mod shape_user_details;
 
+pub(crate) mod shape_app_monitor_domain_list;
+
 pub(crate) mod shape_app_monitor_summary;
 
 pub(crate) mod shape_batch_create_rum_metric_definitions_error;
@@ -152,6 +156,8 @@ pub(crate) mod shape_batch_create_rum_metric_definitions_error;
 pub(crate) mod shape_batch_delete_rum_metric_definitions_error;
 
 pub(crate) mod shape_data_storage;
+
+pub(crate) mod shape_java_script_source_maps;
 
 pub(crate) mod shape_metric_definition;
 

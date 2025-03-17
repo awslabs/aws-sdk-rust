@@ -81,6 +81,12 @@ pub fn ser_field_to_match(
         crate::protocol_serde::shape_ja4_fingerprint::ser_ja4_fingerprint(&mut object_26, var_25)?;
         object_26.finish();
     }
+    if let Some(var_27) = &input.uri_fragment {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("UriFragment").start_object();
+        crate::protocol_serde::shape_uri_fragment::ser_uri_fragment(&mut object_28, var_27)?;
+        object_28.finish();
+    }
     Ok(())
 }
 
@@ -139,6 +145,9 @@ where
                         }
                         "JA4Fingerprint" => {
                             builder = builder.set_ja4_fingerprint(crate::protocol_serde::shape_ja4_fingerprint::de_ja4_fingerprint(tokens)?);
+                        }
+                        "UriFragment" => {
+                            builder = builder.set_uri_fragment(crate::protocol_serde::shape_uri_fragment::de_uri_fragment(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

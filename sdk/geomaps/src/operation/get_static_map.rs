@@ -204,54 +204,84 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStaticMap
                         query.push_kv("center", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.compact_overlay {
+                if let ::std::option::Option::Some(inner_5) = &_input.color_scheme {
                     {
-                        query.push_kv("compact-overlay", &::aws_smithy_http::query::fmt_string(inner_5));
+                        query.push_kv("color-scheme", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
-                if let ::std::option::Option::Some(inner_6) = &_input.geo_json_overlay {
+                if let ::std::option::Option::Some(inner_6) = &_input.compact_overlay {
                     {
-                        query.push_kv("geojson-overlay", &::aws_smithy_http::query::fmt_string(inner_6));
+                        query.push_kv("compact-overlay", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
-                let inner_7 = &_input.height;
-                let inner_7 = inner_7
+                if let ::std::option::Option::Some(inner_7) = &_input.crop_labels {
+                    {
+                        query.push_kv("crop-labels", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_8) = &_input.geo_json_overlay {
+                    {
+                        query.push_kv("geojson-overlay", &::aws_smithy_http::query::fmt_string(inner_8));
+                    }
+                }
+                let inner_9 = &_input.height;
+                let inner_9 = inner_9
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("height", "cannot be empty or unset"))?;
-                query.push_kv("height", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
-                if let ::std::option::Option::Some(inner_8) = &_input.key {
+                query.push_kv("height", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
+                if let ::std::option::Option::Some(inner_10) = &_input.key {
                     {
-                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_8));
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_10));
                     }
                 }
-                if let ::std::option::Option::Some(inner_9) = &_input.padding {
+                if let ::std::option::Option::Some(inner_11) = &_input.label_size {
                     {
-                        query.push_kv("padding", ::aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
+                        query.push_kv("label-size", &::aws_smithy_http::query::fmt_string(inner_11));
                     }
                 }
-                if let ::std::option::Option::Some(inner_10) = &_input.radius {
+                if let ::std::option::Option::Some(inner_12) = &_input.language {
                     {
-                        query.push_kv("radius", ::aws_smithy_types::primitive::Encoder::from(*inner_10).encode());
+                        query.push_kv("lang", &::aws_smithy_http::query::fmt_string(inner_12));
                     }
                 }
-                if let ::std::option::Option::Some(inner_11) = &_input.scale_bar_unit {
+                if let ::std::option::Option::Some(inner_13) = &_input.padding {
                     {
-                        query.push_kv("scale-unit", &::aws_smithy_http::query::fmt_string(inner_11));
+                        query.push_kv("padding", ::aws_smithy_types::primitive::Encoder::from(*inner_13).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_12) = &_input.style {
+                if let ::std::option::Option::Some(inner_14) = &_input.political_view {
                     {
-                        query.push_kv("style", &::aws_smithy_http::query::fmt_string(inner_12));
+                        query.push_kv("political-view", &::aws_smithy_http::query::fmt_string(inner_14));
                     }
                 }
-                let inner_13 = &_input.width;
-                let inner_13 = inner_13
+                if let ::std::option::Option::Some(inner_15) = &_input.points_of_interests {
+                    {
+                        query.push_kv("pois", &::aws_smithy_http::query::fmt_string(inner_15));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_16) = &_input.radius {
+                    {
+                        query.push_kv("radius", ::aws_smithy_types::primitive::Encoder::from(*inner_16).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_17) = &_input.scale_bar_unit {
+                    {
+                        query.push_kv("scale-unit", &::aws_smithy_http::query::fmt_string(inner_17));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_18) = &_input.style {
+                    {
+                        query.push_kv("style", &::aws_smithy_http::query::fmt_string(inner_18));
+                    }
+                }
+                let inner_19 = &_input.width;
+                let inner_19 = inner_19
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("width", "cannot be empty or unset"))?;
-                query.push_kv("width", ::aws_smithy_types::primitive::Encoder::from(*inner_13).encode());
-                if let ::std::option::Option::Some(inner_14) = &_input.zoom {
+                query.push_kv("width", ::aws_smithy_types::primitive::Encoder::from(*inner_19).encode());
+                if let ::std::option::Option::Some(inner_20) = &_input.zoom {
                     {
-                        query.push_kv("zoom", ::aws_smithy_types::primitive::Encoder::from(*inner_14).encode());
+                        query.push_kv("zoom", ::aws_smithy_types::primitive::Encoder::from(*inner_20).encode());
                     }
                 }
                 ::std::result::Result::Ok(())

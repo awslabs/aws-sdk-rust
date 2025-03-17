@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `BatchGetServiceLevelObjectiveBudgetReport` operation.
 pub mod batch_get_service_level_objective_budget_report;
 
+/// Types for the `BatchUpdateExclusionWindows` operation.
+pub mod batch_update_exclusion_windows;
+
 /// Types for the `CreateServiceLevelObjective` operation.
 pub mod create_service_level_objective;
 
@@ -21,6 +24,9 @@ pub mod list_service_dependencies;
 
 /// Types for the `ListServiceDependents` operation.
 pub mod list_service_dependents;
+
+/// Types for the `ListServiceLevelObjectiveExclusionWindows` operation.
+pub mod list_service_level_objective_exclusion_windows;
 
 /// Types for the `ListServiceLevelObjectives` operation.
 pub mod list_service_level_objectives;

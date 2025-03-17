@@ -22,7 +22,7 @@ impl crate::operation::get_style_descriptor::builders::GetStyleDescriptorInputBu
 }
 /// Fluent builder constructing a request to `GetStyleDescriptor`.
 ///
-/// <p>Returns information about the style.</p>
+/// <p><code>GetStyleDescriptor</code> returns information about the style.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetStyleDescriptorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -162,8 +162,6 @@ impl GetStyleDescriptorFluentBuilder {
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
     /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
-    /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>
     /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
@@ -200,8 +198,6 @@ impl GetStyleDescriptorFluentBuilder {
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
     /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
-    /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>
     /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
@@ -237,8 +233,6 @@ impl GetStyleDescriptorFluentBuilder {
     /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
-    /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
     /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>

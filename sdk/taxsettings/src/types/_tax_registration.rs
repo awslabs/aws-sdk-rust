@@ -6,7 +6,7 @@
 pub struct TaxRegistration {
     /// <p>Your tax registration unique identifier.</p>
     pub registration_id: ::std::string::String,
-    /// <p>Type of your tax registration. This can be either <code>VAT</code> or <code>GST</code>.</p>
+    /// <p>Type of your tax registration.</p>
     pub registration_type: crate::types::TaxRegistrationType,
     /// <p>The legal name associated with your TRN registration.</p>
     pub legal_name: ::std::string::String,
@@ -29,7 +29,7 @@ impl TaxRegistration {
         use std::ops::Deref;
         self.registration_id.deref()
     }
-    /// <p>Type of your tax registration. This can be either <code>VAT</code> or <code>GST</code>.</p>
+    /// <p>Type of your tax registration.</p>
     pub fn registration_type(&self) -> &crate::types::TaxRegistrationType {
         &self.registration_type
     }
@@ -117,18 +117,18 @@ impl TaxRegistrationBuilder {
     pub fn get_registration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registration_id
     }
-    /// <p>Type of your tax registration. This can be either <code>VAT</code> or <code>GST</code>.</p>
+    /// <p>Type of your tax registration.</p>
     /// This field is required.
     pub fn registration_type(mut self, input: crate::types::TaxRegistrationType) -> Self {
         self.registration_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of your tax registration. This can be either <code>VAT</code> or <code>GST</code>.</p>
+    /// <p>Type of your tax registration.</p>
     pub fn set_registration_type(mut self, input: ::std::option::Option<crate::types::TaxRegistrationType>) -> Self {
         self.registration_type = input;
         self
     }
-    /// <p>Type of your tax registration. This can be either <code>VAT</code> or <code>GST</code>.</p>
+    /// <p>Type of your tax registration.</p>
     pub fn get_registration_type(&self) -> &::std::option::Option<crate::types::TaxRegistrationType> {
         &self.registration_type
     }

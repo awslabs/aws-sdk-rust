@@ -4,29 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VietnamAdditionalInfo {
-    /// <p>The enterprise identification number for tax registration.</p>
+    /// <p>The enterprise identification number for tax registration. This field must be provided for successful API operation.</p>
     pub enterprise_identification_number: ::std::option::Option<::std::string::String>,
-    /// <p>The electronic transaction code number on the tax return document.</p>
+    /// <p>The electronic transaction code number on the tax return document. This field must be provided for successful API operation.</p>
     pub electronic_transaction_code_number: ::std::option::Option<::std::string::String>,
-    /// <p>The payment voucher number on the tax return payment document.</p>
+    /// <p>The payment voucher number on the tax return payment document. This field must be provided for successful API operation.</p>
     pub payment_voucher_number: ::std::option::Option<::std::string::String>,
-    /// <p>The date on the tax return payment document.</p>
+    /// <p>The date on the tax return payment document. This field must be provided for successful API operation.</p>
     pub payment_voucher_number_date: ::std::option::Option<::std::string::String>,
 }
 impl VietnamAdditionalInfo {
-    /// <p>The enterprise identification number for tax registration.</p>
+    /// <p>The enterprise identification number for tax registration. This field must be provided for successful API operation.</p>
     pub fn enterprise_identification_number(&self) -> ::std::option::Option<&str> {
         self.enterprise_identification_number.as_deref()
     }
-    /// <p>The electronic transaction code number on the tax return document.</p>
+    /// <p>The electronic transaction code number on the tax return document. This field must be provided for successful API operation.</p>
     pub fn electronic_transaction_code_number(&self) -> ::std::option::Option<&str> {
         self.electronic_transaction_code_number.as_deref()
     }
-    /// <p>The payment voucher number on the tax return payment document.</p>
+    /// <p>The payment voucher number on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn payment_voucher_number(&self) -> ::std::option::Option<&str> {
         self.payment_voucher_number.as_deref()
     }
-    /// <p>The date on the tax return payment document.</p>
+    /// <p>The date on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn payment_voucher_number_date(&self) -> ::std::option::Option<&str> {
         self.payment_voucher_number_date.as_deref()
     }
@@ -48,59 +48,59 @@ pub struct VietnamAdditionalInfoBuilder {
     pub(crate) payment_voucher_number_date: ::std::option::Option<::std::string::String>,
 }
 impl VietnamAdditionalInfoBuilder {
-    /// <p>The enterprise identification number for tax registration.</p>
+    /// <p>The enterprise identification number for tax registration. This field must be provided for successful API operation.</p>
     pub fn enterprise_identification_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.enterprise_identification_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The enterprise identification number for tax registration.</p>
+    /// <p>The enterprise identification number for tax registration. This field must be provided for successful API operation.</p>
     pub fn set_enterprise_identification_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.enterprise_identification_number = input;
         self
     }
-    /// <p>The enterprise identification number for tax registration.</p>
+    /// <p>The enterprise identification number for tax registration. This field must be provided for successful API operation.</p>
     pub fn get_enterprise_identification_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.enterprise_identification_number
     }
-    /// <p>The electronic transaction code number on the tax return document.</p>
+    /// <p>The electronic transaction code number on the tax return document. This field must be provided for successful API operation.</p>
     pub fn electronic_transaction_code_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.electronic_transaction_code_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The electronic transaction code number on the tax return document.</p>
+    /// <p>The electronic transaction code number on the tax return document. This field must be provided for successful API operation.</p>
     pub fn set_electronic_transaction_code_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.electronic_transaction_code_number = input;
         self
     }
-    /// <p>The electronic transaction code number on the tax return document.</p>
+    /// <p>The electronic transaction code number on the tax return document. This field must be provided for successful API operation.</p>
     pub fn get_electronic_transaction_code_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.electronic_transaction_code_number
     }
-    /// <p>The payment voucher number on the tax return payment document.</p>
+    /// <p>The payment voucher number on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn payment_voucher_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payment_voucher_number = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The payment voucher number on the tax return payment document.</p>
+    /// <p>The payment voucher number on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn set_payment_voucher_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payment_voucher_number = input;
         self
     }
-    /// <p>The payment voucher number on the tax return payment document.</p>
+    /// <p>The payment voucher number on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn get_payment_voucher_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.payment_voucher_number
     }
-    /// <p>The date on the tax return payment document.</p>
+    /// <p>The date on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn payment_voucher_number_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payment_voucher_number_date = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The date on the tax return payment document.</p>
+    /// <p>The date on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn set_payment_voucher_number_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payment_voucher_number_date = input;
         self
     }
-    /// <p>The date on the tax return payment document.</p>
+    /// <p>The date on the tax return payment document. This field must be provided for successful API operation.</p>
     pub fn get_payment_voucher_number_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.payment_voucher_number_date
     }

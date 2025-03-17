@@ -99,6 +99,43 @@ impl From<crate::operation::batch_get_service_level_objective_budget_report::Bat
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError> for Error {
+    fn from(err: crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError) -> Self {
+        match err {
+            crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_update_exclusion_windows::BatchUpdateExclusionWindowsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_service_level_objective::CreateServiceLevelObjectiveError, R>>
     for Error
 where
@@ -286,6 +323,41 @@ impl From<crate::operation::list_service_dependents::ListServiceDependentsError>
             crate::operation::list_service_dependents::ListServiceDependentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_service_dependents::ListServiceDependentsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_service_dependents::ListServiceDependentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError> for Error {
+    fn from(err: crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError) -> Self {
+        match err {
+            crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

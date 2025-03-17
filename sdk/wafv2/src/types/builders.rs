@@ -53,6 +53,8 @@ pub use crate::types::_text_transformation::TextTransformationBuilder;
 
 pub use crate::types::_field_to_match::FieldToMatchBuilder;
 
+pub use crate::types::_uri_fragment::UriFragmentBuilder;
+
 pub use crate::types::_ja4_fingerprint::Ja4FingerprintBuilder;
 
 pub use crate::types::_ja3_fingerprint::Ja3FingerprintBuilder;

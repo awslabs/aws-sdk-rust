@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_batch_get_service_level_objective_budget_report;
 
+pub(crate) mod shape_batch_update_exclusion_windows;
+
 pub(crate) mod shape_create_service_level_objective;
 
 pub(crate) mod shape_delete_service_level_objective;
@@ -36,6 +38,8 @@ pub(crate) mod shape_get_service_level_objective;
 pub(crate) mod shape_list_service_dependencies;
 
 pub(crate) mod shape_list_service_dependents;
+
+pub(crate) mod shape_list_service_level_objective_exclusion_windows;
 
 pub(crate) mod shape_list_service_level_objectives;
 
@@ -65,6 +69,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_get_service_level_objective_budget_report_input;
 
+pub(crate) mod shape_batch_update_exclusion_windows_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_service_level_objective_input;
@@ -93,7 +99,13 @@ pub(crate) mod shape_update_service_level_objective_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_batch_update_exclusion_windows_errors;
+
 pub(crate) mod shape_burn_rate_configuration;
+
+pub(crate) mod shape_exclusion_window;
+
+pub(crate) mod shape_exclusion_windows;
 
 pub(crate) mod shape_goal;
 
@@ -115,6 +127,8 @@ pub(crate) mod shape_service_level_objective_budget_report_errors;
 
 pub(crate) mod shape_service_level_objective_budget_reports;
 
+pub(crate) mod shape_service_level_objective_ids;
+
 pub(crate) mod shape_service_level_objective_summaries;
 
 pub(crate) mod shape_service_operations;
@@ -129,11 +143,15 @@ pub(crate) mod shape_attribute_maps;
 
 pub(crate) mod shape_attributes;
 
+pub(crate) mod shape_batch_update_exclusion_windows_error;
+
 pub(crate) mod shape_burn_rate_configurations;
 
 pub(crate) mod shape_interval;
 
 pub(crate) mod shape_metric_references;
+
+pub(crate) mod shape_recurrence_rule;
 
 pub(crate) mod shape_request_based_service_level_indicator;
 
@@ -156,6 +174,8 @@ pub(crate) mod shape_service_level_objective_summary;
 pub(crate) mod shape_service_operation;
 
 pub(crate) mod shape_service_summary;
+
+pub(crate) mod shape_window;
 
 pub(crate) mod shape_attribute_map;
 

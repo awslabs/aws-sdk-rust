@@ -22,7 +22,7 @@ impl crate::operation::get_tile::builders::GetTileInputBuilder {
 }
 /// Fluent builder constructing a request to `GetTile`.
 ///
-/// <p>Returns a tile. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.</p>
+/// <p><code>GetTile</code> returns a tile. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

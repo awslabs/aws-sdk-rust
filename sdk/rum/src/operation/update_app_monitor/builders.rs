@@ -139,6 +139,25 @@ impl UpdateAppMonitorFluentBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_domain()
     }
+    ///
+    /// Appends an item to `DomainList`.
+    ///
+    /// To override the contents of this collection use [`set_domain_list`](Self::set_domain_list).
+    ///
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub fn domain_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.domain_list(input.into());
+        self
+    }
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub fn set_domain_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_domain_list(input);
+        self
+    }
+    /// <p>List the domain names for which your application has administrative authority. The <code>UpdateAppMonitor</code> allows either the domain or the domain list.</p>
+    pub fn get_domain_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_domain_list()
+    }
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
     pub fn app_monitor_configuration(mut self, input: crate::types::AppMonitorConfiguration) -> Self {
         self.inner = self.inner.app_monitor_configuration(input);
@@ -183,5 +202,19 @@ impl UpdateAppMonitorFluentBuilder {
     /// <p>For more information about custom events, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send custom events</a>.</p>
     pub fn get_custom_events(&self) -> &::std::option::Option<crate::types::CustomEvents> {
         self.inner.get_custom_events()
+    }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn deobfuscation_configuration(mut self, input: crate::types::DeobfuscationConfiguration) -> Self {
+        self.inner = self.inner.deobfuscation_configuration(input);
+        self
+    }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn set_deobfuscation_configuration(mut self, input: ::std::option::Option<crate::types::DeobfuscationConfiguration>) -> Self {
+        self.inner = self.inner.set_deobfuscation_configuration(input);
+        self
+    }
+    /// <p>A structure that contains the configuration for how an app monitor can deobfuscate stack traces.</p>
+    pub fn get_deobfuscation_configuration(&self) -> &::std::option::Option<crate::types::DeobfuscationConfiguration> {
+        self.inner.get_deobfuscation_configuration()
     }
 }

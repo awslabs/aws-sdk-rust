@@ -11,9 +11,17 @@ pub use crate::types::_static_map_style::StaticMapStyle;
 
 pub use crate::types::_scale_bar_unit::ScaleBarUnit;
 
+pub use crate::types::_map_feature_mode::MapFeatureMode;
+
+pub use crate::types::_label_size::LabelSize;
+
 pub use crate::types::_variant::Variant;
 
 mod _color_scheme;
+
+mod _label_size;
+
+mod _map_feature_mode;
 
 mod _map_style;
 

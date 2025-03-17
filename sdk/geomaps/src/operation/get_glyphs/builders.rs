@@ -22,7 +22,7 @@ impl crate::operation::get_glyphs::builders::GetGlyphsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetGlyphs`.
 ///
-/// <p>Returns the map's glyphs.</p>
+/// <p><code>GetGlyphs</code> returns the map's glyphs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGlyphsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -141,17 +141,17 @@ impl PutTaxExemptionFluentBuilder {
     pub fn get_authority(&self) -> &::std::option::Option<crate::types::Authority> {
         self.inner.get_authority()
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub fn exemption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.exemption_type(input.into());
         self
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub fn set_exemption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_exemption_type(input);
         self
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub fn get_exemption_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_exemption_type()
     }

@@ -28,6 +28,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DomainList" => {
+                            builder =
+                                builder.set_domain_list(crate::protocol_serde::shape_app_monitor_domain_list::de_app_monitor_domain_list(tokens)?);
+                        }
                         "Id" => {
                             builder = builder.set_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -69,6 +73,11 @@ where
                         }
                         "CustomEvents" => {
                             builder = builder.set_custom_events(crate::protocol_serde::shape_custom_events::de_custom_events(tokens)?);
+                        }
+                        "DeobfuscationConfiguration" => {
+                            builder = builder.set_deobfuscation_configuration(
+                                crate::protocol_serde::shape_deobfuscation_configuration::de_deobfuscation_configuration(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

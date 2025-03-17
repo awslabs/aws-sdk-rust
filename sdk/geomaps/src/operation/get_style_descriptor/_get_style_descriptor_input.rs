@@ -25,8 +25,6 @@ pub struct GetStyleDescriptorInput {
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
     /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
-    /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>
     /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
@@ -75,8 +73,6 @@ impl GetStyleDescriptorInput {
     /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
-    /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
     /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>
@@ -186,8 +182,6 @@ impl GetStyleDescriptorInputBuilder {
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
     /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
-    /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>
     /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
@@ -224,8 +218,6 @@ impl GetStyleDescriptorInputBuilder {
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
     /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
-    /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>
     /// <p><code>SDN</code>: Sudan's view on the Halaib Triangle</p></li>
@@ -261,8 +253,6 @@ impl GetStyleDescriptorInputBuilder {
     /// <p><code>KEN</code>: Kenya's view on the Ilemi Triangle</p></li>
     /// <li>
     /// <p><code>MAR</code>: Morocco's view on Western Sahara</p></li>
-    /// <li>
-    /// <p><code>PAK</code>: Pakistan's view on Jammu and Kashmir and the Junagadh Area</p></li>
     /// <li>
     /// <p><code>RUS</code>: Russia's view on Crimea</p></li>
     /// <li>

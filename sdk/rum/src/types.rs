@@ -9,6 +9,12 @@ pub use crate::types::_query_filter::QueryFilter;
 
 pub use crate::types::_time_range::TimeRange;
 
+pub use crate::types::_deobfuscation_configuration::DeobfuscationConfiguration;
+
+pub use crate::types::_java_script_source_maps::JavaScriptSourceMaps;
+
+pub use crate::types::_deobfuscation_status::DeobfuscationStatus;
+
 pub use crate::types::_custom_events::CustomEvents;
 
 pub use crate::types::_custom_events_status::CustomEventsStatus;
@@ -58,6 +64,12 @@ mod _custom_events_status;
 mod _cw_log;
 
 mod _data_storage;
+
+mod _deobfuscation_configuration;
+
+mod _deobfuscation_status;
+
+mod _java_script_source_maps;
 
 mod _metric_definition;
 

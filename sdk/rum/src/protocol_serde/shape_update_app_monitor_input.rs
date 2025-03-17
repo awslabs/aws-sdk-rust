@@ -18,8 +18,23 @@ pub fn ser_update_app_monitor_input_input(
     if let Some(var_5) = &input.cw_log_enabled {
         object.key("CwLogEnabled").boolean(*var_5);
     }
-    if let Some(var_6) = &input.domain {
-        object.key("Domain").string(var_6.as_str());
+    if let Some(var_6) = &input.deobfuscation_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("DeobfuscationConfiguration").start_object();
+        crate::protocol_serde::shape_deobfuscation_configuration::ser_deobfuscation_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.domain {
+        object.key("Domain").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.domain_list {
+        let mut array_10 = object.key("DomainList").start_array();
+        for item_11 in var_9 {
+            {
+                array_10.value().string(item_11.as_str());
+            }
+        }
+        array_10.finish();
     }
     Ok(())
 }

@@ -7,6 +7,10 @@ pub use crate::types::_query_filter::QueryFilterBuilder;
 
 pub use crate::types::_time_range::TimeRangeBuilder;
 
+pub use crate::types::_deobfuscation_configuration::DeobfuscationConfigurationBuilder;
+
+pub use crate::types::_java_script_source_maps::JavaScriptSourceMapsBuilder;
+
 pub use crate::types::_custom_events::CustomEventsBuilder;
 
 pub use crate::types::_app_monitor_configuration::AppMonitorConfigurationBuilder;

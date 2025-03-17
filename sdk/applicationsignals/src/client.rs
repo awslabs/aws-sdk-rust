@@ -138,6 +138,8 @@ impl Client {
 
 mod batch_get_service_level_objective_budget_report;
 
+mod batch_update_exclusion_windows;
+
 mod create_service_level_objective;
 
 /// Operation customization and supporting types.
@@ -176,6 +178,8 @@ mod get_service_level_objective;
 mod list_service_dependencies;
 
 mod list_service_dependents;
+
+mod list_service_level_objective_exclusion_windows;
 
 mod list_service_level_objectives;
 

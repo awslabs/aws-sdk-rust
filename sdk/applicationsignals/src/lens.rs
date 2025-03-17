@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_service_dependents_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_service_level_objective_exclusion_windows_output_output_next_token(
+    input: &crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_service_level_objectives_output_output_next_token(
     input: &crate::operation::list_service_level_objectives::ListServiceLevelObjectivesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -60,6 +70,13 @@ pub(crate) fn lens_list_service_dependents_output_output_service_dependents(
     input: crate::operation::list_service_dependents::ListServiceDependentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceDependent>> {
     let input = input.service_dependents;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_service_level_objective_exclusion_windows_output_output_exclusion_windows(
+    input: crate::operation::list_service_level_objective_exclusion_windows::ListServiceLevelObjectiveExclusionWindowsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExclusionWindow>> {
+    let input = input.exclusion_windows;
     ::std::option::Option::Some(input)
 }
 

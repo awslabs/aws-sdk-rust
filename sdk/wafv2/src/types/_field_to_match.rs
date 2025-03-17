@@ -77,6 +77,9 @@ pub struct FieldToMatch {
     /// <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
     /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
     pub ja4_fingerprint: ::std::option::Option<crate::types::Ja4Fingerprint>,
+    /// <p>Inspect fragments of the request URI. You must configure scope and pattern matching filters in the <code>UriFragment</code> object, to define the fragment of a URI that WAF inspects.</p>
+    /// <p>Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200 URI fragments are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize URI fragment content in the <code>UriFragment</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
+    pub uri_fragment: ::std::option::Option<crate::types::UriFragment>,
 }
 impl FieldToMatch {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
@@ -160,6 +163,11 @@ impl FieldToMatch {
     pub fn ja4_fingerprint(&self) -> ::std::option::Option<&crate::types::Ja4Fingerprint> {
         self.ja4_fingerprint.as_ref()
     }
+    /// <p>Inspect fragments of the request URI. You must configure scope and pattern matching filters in the <code>UriFragment</code> object, to define the fragment of a URI that WAF inspects.</p>
+    /// <p>Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200 URI fragments are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize URI fragment content in the <code>UriFragment</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
+    pub fn uri_fragment(&self) -> ::std::option::Option<&crate::types::UriFragment> {
+        self.uri_fragment.as_ref()
+    }
 }
 impl FieldToMatch {
     /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::types::FieldToMatch).
@@ -185,6 +193,7 @@ pub struct FieldToMatchBuilder {
     pub(crate) header_order: ::std::option::Option<crate::types::HeaderOrder>,
     pub(crate) ja3_fingerprint: ::std::option::Option<crate::types::Ja3Fingerprint>,
     pub(crate) ja4_fingerprint: ::std::option::Option<crate::types::Ja4Fingerprint>,
+    pub(crate) uri_fragment: ::std::option::Option<crate::types::UriFragment>,
 }
 impl FieldToMatchBuilder {
     /// <p>Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive.</p>
@@ -456,6 +465,23 @@ impl FieldToMatchBuilder {
     pub fn get_ja4_fingerprint(&self) -> &::std::option::Option<crate::types::Ja4Fingerprint> {
         &self.ja4_fingerprint
     }
+    /// <p>Inspect fragments of the request URI. You must configure scope and pattern matching filters in the <code>UriFragment</code> object, to define the fragment of a URI that WAF inspects.</p>
+    /// <p>Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200 URI fragments are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize URI fragment content in the <code>UriFragment</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
+    pub fn uri_fragment(mut self, input: crate::types::UriFragment) -> Self {
+        self.uri_fragment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Inspect fragments of the request URI. You must configure scope and pattern matching filters in the <code>UriFragment</code> object, to define the fragment of a URI that WAF inspects.</p>
+    /// <p>Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200 URI fragments are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize URI fragment content in the <code>UriFragment</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
+    pub fn set_uri_fragment(mut self, input: ::std::option::Option<crate::types::UriFragment>) -> Self {
+        self.uri_fragment = input;
+        self
+    }
+    /// <p>Inspect fragments of the request URI. You must configure scope and pattern matching filters in the <code>UriFragment</code> object, to define the fragment of a URI that WAF inspects.</p>
+    /// <p>Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200 URI fragments are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize URI fragment content in the <code>UriFragment</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
+    pub fn get_uri_fragment(&self) -> &::std::option::Option<crate::types::UriFragment> {
+        &self.uri_fragment
+    }
     /// Consumes the builder and constructs a [`FieldToMatch`](crate::types::FieldToMatch).
     pub fn build(self) -> crate::types::FieldToMatch {
         crate::types::FieldToMatch {
@@ -472,6 +498,7 @@ impl FieldToMatchBuilder {
             header_order: self.header_order,
             ja3_fingerprint: self.ja3_fingerprint,
             ja4_fingerprint: self.ja4_fingerprint,
+            uri_fragment: self.uri_fragment,
         }
     }
 }

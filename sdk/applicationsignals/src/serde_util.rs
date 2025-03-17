@@ -23,6 +23,33 @@ pub(crate) fn batch_get_service_level_objective_budget_report_output_output_corr
     builder
 }
 
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_exclusion_windows_output_output_correct_errors(
+    mut builder: crate::operation::batch_update_exclusion_windows::builders::BatchUpdateExclusionWindowsOutputBuilder,
+) -> crate::operation::batch_update_exclusion_windows::builders::BatchUpdateExclusionWindowsOutputBuilder {
+    if builder.slo_ids.is_none() {
+        builder.slo_ids = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -49,21 +76,6 @@ pub(crate) fn create_service_level_objective_output_output_correct_errors(
             let builder = crate::types::builders::ServiceLevelObjectiveBuilder::default();
             crate::serde_util::service_level_objective_correct_errors(builder).build().ok()
         }
-    }
-    builder
-}
-
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }
@@ -124,6 +136,15 @@ pub(crate) fn list_service_dependents_output_output_correct_errors(
     }
     if builder.service_dependents.is_none() {
         builder.service_dependents = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_service_level_objective_exclusion_windows_output_output_correct_errors(
+    mut builder: crate::operation::list_service_level_objective_exclusion_windows::builders::ListServiceLevelObjectiveExclusionWindowsOutputBuilder,
+) -> crate::operation::list_service_level_objective_exclusion_windows::builders::ListServiceLevelObjectiveExclusionWindowsOutputBuilder {
+    if builder.exclusion_windows.is_none() {
+        builder.exclusion_windows = Some(Default::default())
     }
     builder
 }
@@ -200,6 +221,33 @@ pub(crate) fn service_correct_errors(mut builder: crate::types::builders::Servic
     }
     if builder.metric_references.is_none() {
         builder.metric_references = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_update_exclusion_windows_error_correct_errors(
+    mut builder: crate::types::builders::BatchUpdateExclusionWindowsErrorBuilder,
+) -> crate::types::builders::BatchUpdateExclusionWindowsErrorBuilder {
+    if builder.slo_id.is_none() {
+        builder.slo_id = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn exclusion_window_correct_errors(
+    mut builder: crate::types::builders::ExclusionWindowBuilder,
+) -> crate::types::builders::ExclusionWindowBuilder {
+    if builder.window.is_none() {
+        builder.window = {
+            let builder = crate::types::builders::WindowBuilder::default();
+            crate::serde_util::window_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -369,6 +417,15 @@ pub(crate) fn metric_reference_correct_errors(
     builder
 }
 
+pub(crate) fn recurrence_rule_correct_errors(
+    mut builder: crate::types::builders::RecurrenceRuleBuilder,
+) -> crate::types::builders::RecurrenceRuleBuilder {
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn request_based_service_level_indicator_metric_correct_errors(
     mut builder: crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder,
 ) -> crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder {
@@ -386,6 +443,16 @@ pub(crate) fn service_level_indicator_metric_correct_errors(
 ) -> crate::types::builders::ServiceLevelIndicatorMetricBuilder {
     if builder.metric_data_queries.is_none() {
         builder.metric_data_queries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn window_correct_errors(mut builder: crate::types::builders::WindowBuilder) -> crate::types::builders::WindowBuilder {
+    if builder.duration_unit.is_none() {
+        builder.duration_unit = "no value was set".parse::<crate::types::DurationUnit>().ok()
+    }
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
     }
     builder
 }

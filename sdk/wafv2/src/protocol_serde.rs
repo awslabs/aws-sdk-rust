@@ -513,6 +513,8 @@ pub(crate) mod shape_size_constraint_statement;
 
 pub(crate) mod shape_sqli_match_statement;
 
+pub(crate) mod shape_uri_fragment;
+
 pub(crate) mod shape_uri_path;
 
 pub(crate) mod shape_xss_match_statement;

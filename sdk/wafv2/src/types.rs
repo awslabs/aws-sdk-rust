@@ -67,9 +67,11 @@ pub use crate::types::_text_transformation_type::TextTransformationType;
 
 pub use crate::types::_field_to_match::FieldToMatch;
 
-pub use crate::types::_ja4_fingerprint::Ja4Fingerprint;
+pub use crate::types::_uri_fragment::UriFragment;
 
 pub use crate::types::_fallback_behavior::FallbackBehavior;
+
+pub use crate::types::_ja4_fingerprint::Ja4Fingerprint;
 
 pub use crate::types::_ja3_fingerprint::Ja3Fingerprint;
 
@@ -624,6 +626,8 @@ mod _text_transformation;
 mod _text_transformation_type;
 
 mod _time_window;
+
+mod _uri_fragment;
 
 mod _uri_path;
 

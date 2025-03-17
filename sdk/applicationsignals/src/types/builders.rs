@@ -43,11 +43,19 @@ pub use crate::types::_metric_reference::MetricReferenceBuilder;
 
 pub use crate::types::_service_operation::ServiceOperationBuilder;
 
+pub use crate::types::_exclusion_window::ExclusionWindowBuilder;
+
+pub use crate::types::_recurrence_rule::RecurrenceRuleBuilder;
+
+pub use crate::types::_window::WindowBuilder;
+
 pub use crate::types::_service_dependent::ServiceDependentBuilder;
 
 pub use crate::types::_service_dependency::ServiceDependencyBuilder;
 
 pub use crate::types::_service::ServiceBuilder;
+
+pub use crate::types::_batch_update_exclusion_windows_error::BatchUpdateExclusionWindowsErrorBuilder;
 
 pub use crate::types::_service_level_objective_budget_report_error::ServiceLevelObjectiveBudgetReportErrorBuilder;
 

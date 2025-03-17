@@ -7,7 +7,7 @@ pub struct PutTaxExemptionInput {
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The address domain associate with the tax information.</p>
     pub authority: ::std::option::Option<crate::types::Authority>,
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub exemption_type: ::std::option::Option<::std::string::String>,
     /// <p>The exemption certificate.</p>
     pub exemption_certificate: ::std::option::Option<crate::types::ExemptionCertificate>,
@@ -23,7 +23,7 @@ impl PutTaxExemptionInput {
     pub fn authority(&self) -> ::std::option::Option<&crate::types::Authority> {
         self.authority.as_ref()
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub fn exemption_type(&self) -> ::std::option::Option<&str> {
         self.exemption_type.as_deref()
     }
@@ -84,18 +84,18 @@ impl PutTaxExemptionInputBuilder {
     pub fn get_authority(&self) -> &::std::option::Option<crate::types::Authority> {
         &self.authority
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     /// This field is required.
     pub fn exemption_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.exemption_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub fn set_exemption_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exemption_type = input;
         self
     }
-    /// <p>The exemption type.</p>
+    /// <p>The exemption type. Use the supported tax exemption type description.</p>
     pub fn get_exemption_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.exemption_type
     }
