@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum AnalysisSource {
+    /// <p>The artifacts of the analysis source.</p>
+    Artifacts(crate::types::AnalysisTemplateArtifacts),
     /// <p>The query text.</p>
     Text(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum AnalysisSource {
     Unknown,
 }
 impl AnalysisSource {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Artifacts`](crate::types::AnalysisSource::Artifacts), extracting the inner [`AnalysisTemplateArtifacts`](crate::types::AnalysisTemplateArtifacts).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_artifacts(&self) -> ::std::result::Result<&crate::types::AnalysisTemplateArtifacts, &Self> {
+        if let AnalysisSource::Artifacts(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Artifacts`](crate::types::AnalysisSource::Artifacts).
+    pub fn is_artifacts(&self) -> bool {
+        self.as_artifacts().is_ok()
+    }
     /// Tries to convert the enum instance into [`Text`](crate::types::AnalysisSource::Text), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> ::std::result::Result<&::std::string::String, &Self> {
@@ -38,6 +52,10 @@ impl AnalysisSource {
 }
 impl ::std::fmt::Debug for AnalysisSource {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        ::std::write!(f, "*** Sensitive Data Redacted ***")
+        match self {
+            AnalysisSource::Artifacts(val) => f.debug_tuple("Artifacts").field(&val).finish(),
+            AnalysisSource::Text(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            AnalysisSource::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

@@ -16,6 +16,10 @@ pub struct AnalysisRule {
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>A policy that describes the associated data usage limitations.</p>
     pub policy: ::std::option::Option<crate::types::AnalysisRulePolicy>,
+    /// <p>Controls on the query specifications that can be run on an associated configured table.</p>
+    pub collaboration_policy: ::std::option::Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicy>,
+    /// <p>The consolidated policy for the analysis rule.</p>
+    pub consolidated_policy: ::std::option::Option<crate::types::ConsolidatedPolicy>,
 }
 impl AnalysisRule {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -44,6 +48,14 @@ impl AnalysisRule {
     pub fn policy(&self) -> ::std::option::Option<&crate::types::AnalysisRulePolicy> {
         self.policy.as_ref()
     }
+    /// <p>Controls on the query specifications that can be run on an associated configured table.</p>
+    pub fn collaboration_policy(&self) -> ::std::option::Option<&crate::types::ConfiguredTableAssociationAnalysisRulePolicy> {
+        self.collaboration_policy.as_ref()
+    }
+    /// <p>The consolidated policy for the analysis rule.</p>
+    pub fn consolidated_policy(&self) -> ::std::option::Option<&crate::types::ConsolidatedPolicy> {
+        self.consolidated_policy.as_ref()
+    }
 }
 impl AnalysisRule {
     /// Creates a new builder-style object to manufacture [`AnalysisRule`](crate::types::AnalysisRule).
@@ -62,6 +74,8 @@ pub struct AnalysisRuleBuilder {
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) policy: ::std::option::Option<crate::types::AnalysisRulePolicy>,
+    pub(crate) collaboration_policy: ::std::option::Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicy>,
+    pub(crate) consolidated_policy: ::std::option::Option<crate::types::ConsolidatedPolicy>,
 }
 impl AnalysisRuleBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -154,6 +168,34 @@ impl AnalysisRuleBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::AnalysisRulePolicy> {
         &self.policy
     }
+    /// <p>Controls on the query specifications that can be run on an associated configured table.</p>
+    pub fn collaboration_policy(mut self, input: crate::types::ConfiguredTableAssociationAnalysisRulePolicy) -> Self {
+        self.collaboration_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls on the query specifications that can be run on an associated configured table.</p>
+    pub fn set_collaboration_policy(mut self, input: ::std::option::Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicy>) -> Self {
+        self.collaboration_policy = input;
+        self
+    }
+    /// <p>Controls on the query specifications that can be run on an associated configured table.</p>
+    pub fn get_collaboration_policy(&self) -> &::std::option::Option<crate::types::ConfiguredTableAssociationAnalysisRulePolicy> {
+        &self.collaboration_policy
+    }
+    /// <p>The consolidated policy for the analysis rule.</p>
+    pub fn consolidated_policy(mut self, input: crate::types::ConsolidatedPolicy) -> Self {
+        self.consolidated_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The consolidated policy for the analysis rule.</p>
+    pub fn set_consolidated_policy(mut self, input: ::std::option::Option<crate::types::ConsolidatedPolicy>) -> Self {
+        self.consolidated_policy = input;
+        self
+    }
+    /// <p>The consolidated policy for the analysis rule.</p>
+    pub fn get_consolidated_policy(&self) -> &::std::option::Option<crate::types::ConsolidatedPolicy> {
+        &self.consolidated_policy
+    }
     /// Consumes the builder and constructs a [`AnalysisRule`](crate::types::AnalysisRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`collaboration_id`](crate::types::builders::AnalysisRuleBuilder::collaboration_id)
@@ -194,6 +236,8 @@ impl AnalysisRuleBuilder {
                 )
             })?,
             policy: self.policy,
+            collaboration_policy: self.collaboration_policy,
+            consolidated_policy: self.consolidated_policy,
         })
     }
 }

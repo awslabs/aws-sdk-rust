@@ -365,6 +365,9 @@ impl From<crate::operation::create_configured_table_analysis_rule::CreateConfigu
             crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::create_configured_table_analysis_rule::CreateConfiguredTableAnalysisRuleError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -1650,6 +1653,32 @@ impl From<crate::operation::get_privacy_budget_template::GetPrivacyBudgetTemplat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_protected_job::GetProtectedJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_protected_job::GetProtectedJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_protected_job::GetProtectedJobError> for Error {
+    fn from(err: crate::operation::get_protected_job::GetProtectedJobError) -> Self {
+        match err {
+            crate::operation::get_protected_job::GetProtectedJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_protected_job::GetProtectedJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_protected_job::GetProtectedJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_protected_job::GetProtectedJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_protected_job::GetProtectedJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_protected_job::GetProtectedJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_protected_query::GetProtectedQueryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2310,6 +2339,34 @@ impl From<crate::operation::list_privacy_budget_templates::ListPrivacyBudgetTemp
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_protected_jobs::ListProtectedJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_protected_jobs::ListProtectedJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_protected_jobs::ListProtectedJobsError> for Error {
+    fn from(err: crate::operation::list_protected_jobs::ListProtectedJobsError) -> Self {
+        match err {
+            crate::operation::list_protected_jobs::ListProtectedJobsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_protected_jobs::ListProtectedJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_protected_jobs::ListProtectedJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_protected_jobs::ListProtectedJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_protected_jobs::ListProtectedJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_protected_jobs::ListProtectedJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_protected_queries::ListProtectedQueriesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2457,6 +2514,37 @@ impl From<crate::operation::preview_privacy_impact::PreviewPrivacyImpactError> f
             crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::preview_privacy_impact::PreviewPrivacyImpactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_protected_job::StartProtectedJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_protected_job::StartProtectedJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_protected_job::StartProtectedJobError> for Error {
+    fn from(err: crate::operation::start_protected_job::StartProtectedJobError) -> Self {
+        match err {
+            crate::operation::start_protected_job::StartProtectedJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_protected_job::StartProtectedJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_protected_job::StartProtectedJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_protected_job::StartProtectedJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_protected_job::StartProtectedJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_protected_job::StartProtectedJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_protected_job::StartProtectedJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2955,6 +3043,35 @@ impl From<crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetT
                 Error::ValidationException(inner)
             }
             crate::operation::update_privacy_budget_template::UpdatePrivacyBudgetTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_protected_job::UpdateProtectedJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_protected_job::UpdateProtectedJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_protected_job::UpdateProtectedJobError> for Error {
+    fn from(err: crate::operation::update_protected_job::UpdateProtectedJobError) -> Self {
+        match err {
+            crate::operation::update_protected_job::UpdateProtectedJobError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_protected_job::UpdateProtectedJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_protected_job::UpdateProtectedJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_protected_job::UpdateProtectedJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_protected_job::UpdateProtectedJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_protected_job::UpdateProtectedJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_protected_job::UpdateProtectedJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

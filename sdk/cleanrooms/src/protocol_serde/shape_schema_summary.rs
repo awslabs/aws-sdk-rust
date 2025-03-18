@@ -72,6 +72,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "selectedAnalysisMethods" => {
+                            builder = builder.set_selected_analysis_methods(
+                                crate::protocol_serde::shape_selected_analysis_methods::de_selected_analysis_methods(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

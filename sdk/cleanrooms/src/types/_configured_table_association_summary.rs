@@ -20,6 +20,8 @@ pub struct ConfiguredTableAssociationSummary {
     pub id: ::std::string::String,
     /// <p>The unique ARN for the configured table association.</p>
     pub arn: ::std::string::String,
+    /// <p>The analysis rule types that are associated with the configured table associations in this summary.</p>
+    pub analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
 }
 impl ConfiguredTableAssociationSummary {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
@@ -60,6 +62,12 @@ impl ConfiguredTableAssociationSummary {
         use std::ops::Deref;
         self.arn.deref()
     }
+    /// <p>The analysis rule types that are associated with the configured table associations in this summary.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_rule_types.is_none()`.
+    pub fn analysis_rule_types(&self) -> &[crate::types::ConfiguredTableAssociationAnalysisRuleType] {
+        self.analysis_rule_types.as_deref().unwrap_or_default()
+    }
 }
 impl ConfiguredTableAssociationSummary {
     /// Creates a new builder-style object to manufacture [`ConfiguredTableAssociationSummary`](crate::types::ConfiguredTableAssociationSummary).
@@ -80,6 +88,7 @@ pub struct ConfiguredTableAssociationSummaryBuilder {
     pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
 }
 impl ConfiguredTableAssociationSummaryBuilder {
     /// <p>The unique configured table ID that this configured table association refers to.</p>
@@ -202,6 +211,29 @@ impl ConfiguredTableAssociationSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// Appends an item to `analysis_rule_types`.
+    ///
+    /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
+    ///
+    /// <p>The analysis rule types that are associated with the configured table associations in this summary.</p>
+    pub fn analysis_rule_types(mut self, input: crate::types::ConfiguredTableAssociationAnalysisRuleType) -> Self {
+        let mut v = self.analysis_rule_types.unwrap_or_default();
+        v.push(input);
+        self.analysis_rule_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The analysis rule types that are associated with the configured table associations in this summary.</p>
+    pub fn set_analysis_rule_types(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>>,
+    ) -> Self {
+        self.analysis_rule_types = input;
+        self
+    }
+    /// <p>The analysis rule types that are associated with the configured table associations in this summary.</p>
+    pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAssociationAnalysisRuleType>> {
+        &self.analysis_rule_types
+    }
     /// Consumes the builder and constructs a [`ConfiguredTableAssociationSummary`](crate::types::ConfiguredTableAssociationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`configured_table_id`](crate::types::builders::ConfiguredTableAssociationSummaryBuilder::configured_table_id)
@@ -262,6 +294,7 @@ impl ConfiguredTableAssociationSummaryBuilder {
                     "arn was not specified but it is required when building ConfiguredTableAssociationSummary",
                 )
             })?,
+            analysis_rule_types: self.analysis_rule_types,
         })
     }
 }

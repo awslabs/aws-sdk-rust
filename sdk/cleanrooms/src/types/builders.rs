@@ -39,6 +39,32 @@ pub use crate::types::_protected_query_s3_output_configuration::ProtectedQueryS3
 
 pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParametersBuilder;
 
+pub use crate::types::_protected_job::ProtectedJobBuilder;
+
+pub use crate::types::_protected_job_error::ProtectedJobErrorBuilder;
+
+pub use crate::types::_protected_job_result::ProtectedJobResultBuilder;
+
+pub use crate::types::_protected_job_single_member_output::ProtectedJobSingleMemberOutputBuilder;
+
+pub use crate::types::_protected_job_s3_output::ProtectedJobS3OutputBuilder;
+
+pub use crate::types::_protected_job_statistics::ProtectedJobStatisticsBuilder;
+
+pub use crate::types::_billed_job_resource_utilization::BilledJobResourceUtilizationBuilder;
+
+pub use crate::types::_protected_job_result_configuration_output::ProtectedJobResultConfigurationOutputBuilder;
+
+pub use crate::types::_protected_job_member_output_configuration_output::ProtectedJobMemberOutputConfigurationOutputBuilder;
+
+pub use crate::types::_protected_job_s3_output_configuration_output::ProtectedJobS3OutputConfigurationOutputBuilder;
+
+pub use crate::types::_protected_job_parameters::ProtectedJobParametersBuilder;
+
+pub use crate::types::_protected_job_result_configuration_input::ProtectedJobResultConfigurationInputBuilder;
+
+pub use crate::types::_protected_job_member_output_configuration_input::ProtectedJobMemberOutputConfigurationInputBuilder;
+
 pub use crate::types::_differential_privacy_privacy_impact::DifferentialPrivacyPrivacyImpactBuilder;
 
 pub use crate::types::_differential_privacy_preview_aggregation::DifferentialPrivacyPreviewAggregationBuilder;
@@ -51,6 +77,12 @@ pub use crate::types::_receiver_configuration::ReceiverConfigurationBuilder;
 
 pub use crate::types::_direct_analysis_configuration_details::DirectAnalysisConfigurationDetailsBuilder;
 
+pub use crate::types::_protected_job_summary::ProtectedJobSummaryBuilder;
+
+pub use crate::types::_protected_job_receiver_configuration::ProtectedJobReceiverConfigurationBuilder;
+
+pub use crate::types::_protected_job_direct_analysis_configuration_details::ProtectedJobDirectAnalysisConfigurationDetailsBuilder;
+
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummaryBuilder;
 
 pub use crate::types::_differential_privacy_privacy_budget::DifferentialPrivacyPrivacyBudgetBuilder;
@@ -61,6 +93,8 @@ pub use crate::types::_membership::MembershipBuilder;
 
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfigurationBuilder;
 
+pub use crate::types::_membership_job_compute_payment_config::MembershipJobComputePaymentConfigBuilder;
+
 pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfigBuilder;
 
 pub use crate::types::_membership_model_inference_payment_config::MembershipModelInferencePaymentConfigBuilder;
@@ -68,6 +102,10 @@ pub use crate::types::_membership_model_inference_payment_config::MembershipMode
 pub use crate::types::_membership_model_training_payment_config::MembershipModelTrainingPaymentConfigBuilder;
 
 pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfigBuilder;
+
+pub use crate::types::_membership_protected_job_result_configuration::MembershipProtectedJobResultConfigurationBuilder;
+
+pub use crate::types::_protected_job_s3_output_configuration_input::ProtectedJobS3OutputConfigurationInputBuilder;
 
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfigurationBuilder;
 
@@ -147,6 +185,8 @@ pub use crate::types::_member_summary::MemberSummaryBuilder;
 
 pub use crate::types::_payment_configuration::PaymentConfigurationBuilder;
 
+pub use crate::types::_job_compute_payment_config::JobComputePaymentConfigBuilder;
+
 pub use crate::types::_ml_payment_config::MlPaymentConfigBuilder;
 
 pub use crate::types::_model_inference_payment_config::ModelInferencePaymentConfigBuilder;
@@ -166,6 +206,12 @@ pub use crate::types::_collaboration_configured_audience_model_association_summa
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummaryBuilder;
 
 pub use crate::types::_analysis_rule::AnalysisRuleBuilder;
+
+pub use crate::types::_consolidated_policy_custom::ConsolidatedPolicyCustomBuilder;
+
+pub use crate::types::_consolidated_policy_aggregation::ConsolidatedPolicyAggregationBuilder;
+
+pub use crate::types::_consolidated_policy_list::ConsolidatedPolicyListBuilder;
 
 pub use crate::types::_analysis_rule_id_mapping_table::AnalysisRuleIdMappingTableBuilder;
 
@@ -194,6 +240,16 @@ pub use crate::types::_analysis_template_validation_status_detail::AnalysisTempl
 pub use crate::types::_analysis_template_validation_status_reason::AnalysisTemplateValidationStatusReasonBuilder;
 
 pub use crate::types::_analysis_parameter::AnalysisParameterBuilder;
+
+pub use crate::types::_analysis_template_artifact_metadata::AnalysisTemplateArtifactMetadataBuilder;
+
+pub use crate::types::_hash::HashBuilder;
+
+pub use crate::types::_analysis_template_artifacts::AnalysisTemplateArtifactsBuilder;
+
+pub use crate::types::_analysis_template_artifact::AnalysisTemplateArtifactBuilder;
+
+pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_analysis_schema::AnalysisSchemaBuilder;
 

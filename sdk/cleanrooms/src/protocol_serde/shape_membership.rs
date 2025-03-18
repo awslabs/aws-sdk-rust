@@ -96,9 +96,21 @@ where
                                     .transpose()?,
                             );
                         }
+                        "jobLogStatus" => {
+                            builder = builder.set_job_log_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MembershipJobLogStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "defaultResultConfiguration" => {
                             builder = builder.set_default_result_configuration(
                                     crate::protocol_serde::shape_membership_protected_query_result_configuration::de_membership_protected_query_result_configuration(tokens)?
+                                );
+                        }
+                        "defaultJobResultConfiguration" => {
+                            builder = builder.set_default_job_result_configuration(
+                                    crate::protocol_serde::shape_membership_protected_job_result_configuration::de_membership_protected_job_result_configuration(tokens)?
                                 );
                         }
                         "paymentConfiguration" => {

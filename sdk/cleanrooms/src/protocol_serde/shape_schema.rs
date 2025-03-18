@@ -31,6 +31,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "selectedAnalysisMethods" => {
+                            builder = builder.set_selected_analysis_methods(
+                                crate::protocol_serde::shape_selected_analysis_methods::de_selected_analysis_methods(tokens)?,
+                            );
+                        }
                         "creatorAccountId" => {
                             builder = builder.set_creator_account_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -49,6 +49,8 @@
 ///     VpcRegion::UsIsoEast1 => { /* ... */ },
 ///     VpcRegion::UsIsoWest1 => { /* ... */ },
 ///     VpcRegion::UsIsobEast1 => { /* ... */ },
+///     VpcRegion::UsIsofEast1 => { /* ... */ },
+///     VpcRegion::UsIsofSouth1 => { /* ... */ },
 ///     VpcRegion::UsWest1 => { /* ... */ },
 ///     VpcRegion::UsWest2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -154,6 +156,10 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsIsobEast1,
     #[allow(missing_docs)] // documentation missing in model
+    UsIsofEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    UsIsofSouth1,
+    #[allow(missing_docs)] // documentation missing in model
     UsWest1,
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
@@ -201,6 +207,8 @@ impl ::std::convert::From<&str> for VpcRegion {
             "us-iso-east-1" => VpcRegion::UsIsoEast1,
             "us-iso-west-1" => VpcRegion::UsIsoWest1,
             "us-isob-east-1" => VpcRegion::UsIsobEast1,
+            "us-isof-east-1" => VpcRegion::UsIsofEast1,
+            "us-isof-south-1" => VpcRegion::UsIsofSouth1,
             "us-west-1" => VpcRegion::UsWest1,
             "us-west-2" => VpcRegion::UsWest2,
             other => VpcRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -255,6 +263,8 @@ impl VpcRegion {
             VpcRegion::UsIsoEast1 => "us-iso-east-1",
             VpcRegion::UsIsoWest1 => "us-iso-west-1",
             VpcRegion::UsIsobEast1 => "us-isob-east-1",
+            VpcRegion::UsIsofEast1 => "us-isof-east-1",
+            VpcRegion::UsIsofSouth1 => "us-isof-south-1",
             VpcRegion::UsWest1 => "us-west-1",
             VpcRegion::UsWest2 => "us-west-2",
             VpcRegion::Unknown(value) => value.as_str(),
@@ -300,6 +310,8 @@ impl VpcRegion {
             "us-iso-east-1",
             "us-iso-west-1",
             "us-isob-east-1",
+            "us-isof-east-1",
+            "us-isof-south-1",
             "us-west-1",
             "us-west-2",
         ]
@@ -362,6 +374,8 @@ impl ::std::fmt::Display for VpcRegion {
             VpcRegion::UsIsoEast1 => write!(f, "us-iso-east-1"),
             VpcRegion::UsIsoWest1 => write!(f, "us-iso-west-1"),
             VpcRegion::UsIsobEast1 => write!(f, "us-isob-east-1"),
+            VpcRegion::UsIsofEast1 => write!(f, "us-isof-east-1"),
+            VpcRegion::UsIsofSouth1 => write!(f, "us-isof-south-1"),
             VpcRegion::UsWest1 => write!(f, "us-west-1"),
             VpcRegion::UsWest2 => write!(f, "us-west-2"),
             VpcRegion::Unknown(value) => write!(f, "{}", value),

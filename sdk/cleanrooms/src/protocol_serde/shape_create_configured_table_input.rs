@@ -21,21 +21,30 @@ pub fn ser_create_configured_table_input_input(
     if let Some(var_6) = &input.name {
         object.key("name").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.table_reference {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("tableReference").start_object();
-        crate::protocol_serde::shape_table_reference::ser_table_reference(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+    if let Some(var_7) = &input.selected_analysis_methods {
+        let mut array_8 = object.key("selectedAnalysisMethods").start_array();
+        for item_9 in var_7 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        object_10.finish();
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.table_reference {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("tableReference").start_object();
+        crate::protocol_serde::shape_table_reference::ser_table_reference(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
+            {
+                object_13.key(key_14.as_str()).string(value_15.as_str());
+            }
+        }
+        object_13.finish();
     }
     Ok(())
 }

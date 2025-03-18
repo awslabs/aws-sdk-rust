@@ -175,19 +175,16 @@ impl CreateCollaborationFluentBuilder {
         self.inner.get_creator_member_abilities()
     }
     /// <p>The ML abilities granted to the collaboration creator.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn creator_ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
         self.inner = self.inner.creator_ml_member_abilities(input);
         self
     }
     /// <p>The ML abilities granted to the collaboration creator.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn set_creator_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
         self.inner = self.inner.set_creator_ml_member_abilities(input);
         self
     }
     /// <p>The ML abilities granted to the collaboration creator.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn get_creator_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
         self.inner.get_creator_ml_member_abilities()
     }
@@ -220,18 +217,38 @@ impl CreateCollaborationFluentBuilder {
         self.inner.get_data_encryption_metadata()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn query_log_status(mut self, input: crate::types::CollaborationQueryLogStatus) -> Self {
         self.inner = self.inner.query_log_status(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::CollaborationQueryLogStatus>) -> Self {
         self.inner = self.inner.set_query_log_status(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
         self.inner.get_query_log_status()
+    }
+    /// <p>Specifies whether job logs are enabled for this collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration; those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(mut self, input: crate::types::CollaborationJobLogStatus) -> Self {
+        self.inner = self.inner.job_log_status(input);
+        self
+    }
+    /// <p>Specifies whether job logs are enabled for this collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration; those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn set_job_log_status(mut self, input: ::std::option::Option<crate::types::CollaborationJobLogStatus>) -> Self {
+        self.inner = self.inner.set_job_log_status(input);
+        self
+    }
+    /// <p>Specifies whether job logs are enabled for this collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration; those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn get_job_log_status(&self) -> &::std::option::Option<crate::types::CollaborationJobLogStatus> {
+        self.inner.get_job_log_status()
     }
     ///
     /// Adds a key-value pair to `tags`.

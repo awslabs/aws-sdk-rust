@@ -216,4 +216,18 @@ impl CreateAnalysisTemplateFluentBuilder {
     pub fn get_analysis_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>> {
         self.inner.get_analysis_parameters()
     }
+    /// <p>A relation within an analysis.</p>
+    pub fn schema(mut self, input: crate::types::AnalysisSchema) -> Self {
+        self.inner = self.inner.schema(input);
+        self
+    }
+    /// <p>A relation within an analysis.</p>
+    pub fn set_schema(mut self, input: ::std::option::Option<crate::types::AnalysisSchema>) -> Self {
+        self.inner = self.inner.set_schema(input);
+        self
+    }
+    /// <p>A relation within an analysis.</p>
+    pub fn get_schema(&self) -> &::std::option::Option<crate::types::AnalysisSchema> {
+        self.inner.get_schema()
+    }
 }

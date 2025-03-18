@@ -389,6 +389,18 @@ pub(crate) fn get_privacy_budget_template_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_protected_job_output_output_correct_errors(
+    mut builder: crate::operation::get_protected_job::builders::GetProtectedJobOutputBuilder,
+) -> crate::operation::get_protected_job::builders::GetProtectedJobOutputBuilder {
+    if builder.protected_job.is_none() {
+        builder.protected_job = {
+            let builder = crate::types::builders::ProtectedJobBuilder::default();
+            crate::serde_util::protected_job_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_protected_query_output_output_correct_errors(
     mut builder: crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder,
 ) -> crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder {
@@ -567,6 +579,15 @@ pub(crate) fn list_privacy_budgets_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_protected_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_protected_jobs::builders::ListProtectedJobsOutputBuilder,
+) -> crate::operation::list_protected_jobs::builders::ListProtectedJobsOutputBuilder {
+    if builder.protected_jobs.is_none() {
+        builder.protected_jobs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_protected_queries_output_output_correct_errors(
     mut builder: crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder,
 ) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
@@ -608,6 +629,18 @@ pub(crate) fn preview_privacy_impact_output_output_correct_errors(
 ) -> crate::operation::preview_privacy_impact::builders::PreviewPrivacyImpactOutputBuilder {
     if builder.privacy_impact.is_none() {
         builder.privacy_impact = Some(crate::types::PrivacyImpact::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn start_protected_job_output_output_correct_errors(
+    mut builder: crate::operation::start_protected_job::builders::StartProtectedJobOutputBuilder,
+) -> crate::operation::start_protected_job::builders::StartProtectedJobOutputBuilder {
+    if builder.protected_job.is_none() {
+        builder.protected_job = {
+            let builder = crate::types::builders::ProtectedJobBuilder::default();
+            crate::serde_util::protected_job_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -755,6 +788,18 @@ pub(crate) fn update_privacy_budget_template_output_output_correct_errors(
         builder.privacy_budget_template = {
             let builder = crate::types::builders::PrivacyBudgetTemplateBuilder::default();
             crate::serde_util::privacy_budget_template_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_protected_job_output_output_correct_errors(
+    mut builder: crate::operation::update_protected_job::builders::UpdateProtectedJobOutputBuilder,
+) -> crate::operation::update_protected_job::builders::UpdateProtectedJobOutputBuilder {
+    if builder.protected_job.is_none() {
+        builder.protected_job = {
+            let builder = crate::types::builders::ProtectedJobBuilder::default();
+            crate::serde_util::protected_job_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -1230,9 +1275,6 @@ pub(crate) fn collaboration_analysis_template_correct_errors(
     if builder.format.is_none() {
         builder.format = "no value was set".parse::<crate::types::AnalysisFormat>().ok()
     }
-    if builder.source.is_none() {
-        builder.source = Some(crate::types::AnalysisSource::Unknown)
-    }
     builder
 }
 
@@ -1347,6 +1389,25 @@ pub(crate) fn collaboration_privacy_budget_template_correct_errors(
     }
     if builder.parameters.is_none() {
         builder.parameters = Some(crate::types::PrivacyBudgetTemplateParametersOutput::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn protected_job_correct_errors(mut builder: crate::types::builders::ProtectedJobBuilder) -> crate::types::builders::ProtectedJobBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ProtectedJobStatus>().ok()
     }
     builder
 }
@@ -2034,6 +2095,18 @@ pub(crate) fn member_summary_correct_errors(
     builder
 }
 
+pub(crate) fn membership_protected_job_result_configuration_correct_errors(
+    mut builder: crate::types::builders::MembershipProtectedJobResultConfigurationBuilder,
+) -> crate::types::builders::MembershipProtectedJobResultConfigurationBuilder {
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = Some(crate::types::MembershipProtectedJobOutputConfiguration::Unknown)
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn membership_protected_query_result_configuration_correct_errors(
     mut builder: crate::types::builders::MembershipProtectedQueryResultConfigurationBuilder,
 ) -> crate::types::builders::MembershipProtectedQueryResultConfigurationBuilder {
@@ -2169,6 +2242,60 @@ pub(crate) fn privacy_budget_template_summary_correct_errors(
     builder
 }
 
+pub(crate) fn protected_job_error_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobErrorBuilder,
+) -> crate::types::builders::ProtectedJobErrorBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protected_job_result_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobResultBuilder,
+) -> crate::types::builders::ProtectedJobResultBuilder {
+    if builder.output.is_none() {
+        builder.output = Some(crate::types::ProtectedJobOutput::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn protected_job_result_configuration_output_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobResultConfigurationOutputBuilder,
+) -> crate::types::builders::ProtectedJobResultConfigurationOutputBuilder {
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = Some(crate::types::ProtectedJobOutputConfigurationOutput::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn protected_job_summary_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobSummaryBuilder,
+) -> crate::types::builders::ProtectedJobSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.membership_arn.is_none() {
+        builder.membership_arn = Some(Default::default())
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ProtectedJobStatus>().ok()
+    }
+    if builder.receiver_configurations.is_none() {
+        builder.receiver_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_query_error_correct_errors(
     mut builder: crate::types::builders::ProtectedQueryErrorBuilder,
 ) -> crate::types::builders::ProtectedQueryErrorBuilder {
@@ -2286,6 +2413,33 @@ pub(crate) fn analysis_parameter_correct_errors(
     builder
 }
 
+pub(crate) fn analysis_template_artifact_metadata_correct_errors(
+    mut builder: crate::types::builders::AnalysisTemplateArtifactMetadataBuilder,
+) -> crate::types::builders::AnalysisTemplateArtifactMetadataBuilder {
+    if builder.entry_point_hash.is_none() {
+        builder.entry_point_hash = {
+            let builder = crate::types::builders::HashBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn analysis_template_artifacts_correct_errors(
+    mut builder: crate::types::builders::AnalysisTemplateArtifactsBuilder,
+) -> crate::types::builders::AnalysisTemplateArtifactsBuilder {
+    if builder.entry_point.is_none() {
+        builder.entry_point = {
+            let builder = crate::types::builders::AnalysisTemplateArtifactBuilder::default();
+            Some(crate::serde_util::analysis_template_artifact_correct_errors(builder).build())
+        }
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn analysis_template_validation_status_detail_correct_errors(
     mut builder: crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder,
 ) -> crate::types::builders::AnalysisTemplateValidationStatusDetailBuilder {
@@ -2309,6 +2463,15 @@ pub(crate) fn athena_table_reference_correct_errors(
     }
     if builder.table_name.is_none() {
         builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn billed_job_resource_utilization_correct_errors(
+    mut builder: crate::types::builders::BilledJobResourceUtilizationBuilder,
+) -> crate::types::builders::BilledJobResourceUtilizationBuilder {
+    if builder.units.is_none() {
+        builder.units = Some(Default::default())
     }
     builder
 }
@@ -2370,6 +2533,15 @@ pub(crate) fn id_namespace_association_input_reference_properties_summary_correc
 ) -> crate::types::builders::IdNamespaceAssociationInputReferencePropertiesSummaryBuilder {
     if builder.id_namespace_type.is_none() {
         builder.id_namespace_type = "no value was set".parse::<crate::types::IdNamespaceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn membership_job_compute_payment_config_correct_errors(
+    mut builder: crate::types::builders::MembershipJobComputePaymentConfigBuilder,
+) -> crate::types::builders::MembershipJobComputePaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
     }
     builder
 }
@@ -2476,6 +2648,60 @@ pub(crate) fn analysis_rule_list_correct_errors(
     builder
 }
 
+pub(crate) fn analysis_template_artifact_correct_errors(
+    mut builder: crate::types::builders::AnalysisTemplateArtifactBuilder,
+) -> crate::types::builders::AnalysisTemplateArtifactBuilder {
+    if builder.location.is_none() {
+        builder.location = {
+            let builder = crate::types::builders::S3LocationBuilder::default();
+            crate::serde_util::s3_location_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn consolidated_policy_aggregation_correct_errors(
+    mut builder: crate::types::builders::ConsolidatedPolicyAggregationBuilder,
+) -> crate::types::builders::ConsolidatedPolicyAggregationBuilder {
+    if builder.aggregate_columns.is_none() {
+        builder.aggregate_columns = Some(Default::default())
+    }
+    if builder.join_columns.is_none() {
+        builder.join_columns = Some(Default::default())
+    }
+    if builder.dimension_columns.is_none() {
+        builder.dimension_columns = Some(Default::default())
+    }
+    if builder.scalar_functions.is_none() {
+        builder.scalar_functions = Some(Default::default())
+    }
+    if builder.output_constraints.is_none() {
+        builder.output_constraints = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn consolidated_policy_custom_correct_errors(
+    mut builder: crate::types::builders::ConsolidatedPolicyCustomBuilder,
+) -> crate::types::builders::ConsolidatedPolicyCustomBuilder {
+    if builder.allowed_analyses.is_none() {
+        builder.allowed_analyses = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn consolidated_policy_list_correct_errors(
+    mut builder: crate::types::builders::ConsolidatedPolicyListBuilder,
+) -> crate::types::builders::ConsolidatedPolicyListBuilder {
+    if builder.join_columns.is_none() {
+        builder.join_columns = Some(Default::default())
+    }
+    if builder.list_columns.is_none() {
+        builder.list_columns = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn differential_privacy_preview_aggregation_correct_errors(
     mut builder: crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder,
 ) -> crate::types::builders::DifferentialPrivacyPreviewAggregationBuilder {
@@ -2527,6 +2753,15 @@ pub(crate) fn id_mapping_table_input_source_correct_errors(
     builder
 }
 
+pub(crate) fn job_compute_payment_config_correct_errors(
+    mut builder: crate::types::builders::JobComputePaymentConfigBuilder,
+) -> crate::types::builders::JobComputePaymentConfigBuilder {
+    if builder.is_responsible.is_none() {
+        builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn membership_model_inference_payment_config_correct_errors(
     mut builder: crate::types::builders::MembershipModelInferencePaymentConfigBuilder,
 ) -> crate::types::builders::MembershipModelInferencePaymentConfigBuilder {
@@ -2541,6 +2776,51 @@ pub(crate) fn membership_model_training_payment_config_correct_errors(
 ) -> crate::types::builders::MembershipModelTrainingPaymentConfigBuilder {
     if builder.is_responsible.is_none() {
         builder.is_responsible = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protected_job_member_output_configuration_output_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobMemberOutputConfigurationOutputBuilder,
+) -> crate::types::builders::ProtectedJobMemberOutputConfigurationOutputBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protected_job_receiver_configuration_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobReceiverConfigurationBuilder,
+) -> crate::types::builders::ProtectedJobReceiverConfigurationBuilder {
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::ProtectedJobAnalysisType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn protected_job_s3_output_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobS3OutputBuilder,
+) -> crate::types::builders::ProtectedJobS3OutputBuilder {
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protected_job_s3_output_configuration_input_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobS3OutputConfigurationInputBuilder,
+) -> crate::types::builders::ProtectedJobS3OutputConfigurationInputBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protected_job_s3_output_configuration_output_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobS3OutputConfigurationOutputBuilder,
+) -> crate::types::builders::ProtectedJobS3OutputConfigurationOutputBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
     }
     builder
 }
@@ -2629,11 +2909,30 @@ pub(crate) fn model_training_payment_config_correct_errors(
     builder
 }
 
+pub(crate) fn protected_job_single_member_output_correct_errors(
+    mut builder: crate::types::builders::ProtectedJobSingleMemberOutputBuilder,
+) -> crate::types::builders::ProtectedJobSingleMemberOutputBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn protected_query_single_member_output_correct_errors(
     mut builder: crate::types::builders::ProtectedQuerySingleMemberOutputBuilder,
 ) -> crate::types::builders::ProtectedQuerySingleMemberOutputBuilder {
     if builder.account_id.is_none() {
         builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }

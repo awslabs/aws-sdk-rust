@@ -10,6 +10,8 @@ pub struct M3u8Settings {
     pub audio_frames_per_pes: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
     pub audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    /// Manually specify the difference in PTS offset that will be applied to the audio track, in seconds or milliseconds, when you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the default value 0.
+    pub audio_pts_offset_delta: ::std::option::Option<i32>,
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
     pub data_pts_control: ::std::option::Option<crate::types::M3u8DataPtsControl>,
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
@@ -32,7 +34,7 @@ pub struct M3u8Settings {
     pub program_number: ::std::option::Option<i32>,
     /// Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0 to 3600. Leave blank to keep the default value 2.
     pub pts_offset: ::std::option::Option<i32>,
-    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds or Milliseconds. Then specify the number of seconds or milliseconds with PTS offset.
     pub pts_offset_mode: ::std::option::Option<crate::types::TsPtsOffset>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
     pub scte35_pid: ::std::option::Option<i32>,
@@ -61,6 +63,10 @@ impl M3u8Settings {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.audio_pids.is_none()`.
     pub fn audio_pids(&self) -> &[i32] {
         self.audio_pids.as_deref().unwrap_or_default()
+    }
+    /// Manually specify the difference in PTS offset that will be applied to the audio track, in seconds or milliseconds, when you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the default value 0.
+    pub fn audio_pts_offset_delta(&self) -> ::std::option::Option<i32> {
+        self.audio_pts_offset_delta
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
     pub fn data_pts_control(&self) -> ::std::option::Option<&crate::types::M3u8DataPtsControl> {
@@ -106,7 +112,7 @@ impl M3u8Settings {
     pub fn pts_offset(&self) -> ::std::option::Option<i32> {
         self.pts_offset
     }
-    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds or Milliseconds. Then specify the number of seconds or milliseconds with PTS offset.
     pub fn pts_offset_mode(&self) -> ::std::option::Option<&crate::types::TsPtsOffset> {
         self.pts_offset_mode.as_ref()
     }
@@ -149,6 +155,7 @@ pub struct M3u8SettingsBuilder {
     pub(crate) audio_duration: ::std::option::Option<crate::types::M3u8AudioDuration>,
     pub(crate) audio_frames_per_pes: ::std::option::Option<i32>,
     pub(crate) audio_pids: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) audio_pts_offset_delta: ::std::option::Option<i32>,
     pub(crate) data_pts_control: ::std::option::Option<crate::types::M3u8DataPtsControl>,
     pub(crate) max_pcr_interval: ::std::option::Option<i32>,
     pub(crate) nielsen_id3: ::std::option::Option<crate::types::M3u8NielsenId3>,
@@ -216,6 +223,20 @@ impl M3u8SettingsBuilder {
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
     pub fn get_audio_pids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.audio_pids
+    }
+    /// Manually specify the difference in PTS offset that will be applied to the audio track, in seconds or milliseconds, when you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the default value 0.
+    pub fn audio_pts_offset_delta(mut self, input: i32) -> Self {
+        self.audio_pts_offset_delta = ::std::option::Option::Some(input);
+        self
+    }
+    /// Manually specify the difference in PTS offset that will be applied to the audio track, in seconds or milliseconds, when you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the default value 0.
+    pub fn set_audio_pts_offset_delta(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.audio_pts_offset_delta = input;
+        self
+    }
+    /// Manually specify the difference in PTS offset that will be applied to the audio track, in seconds or milliseconds, when you set PTS offset to Seconds or Milliseconds. Enter an integer from -10000 to 10000. Leave blank to keep the default value 0.
+    pub fn get_audio_pts_offset_delta(&self) -> &::std::option::Option<i32> {
+        &self.audio_pts_offset_delta
     }
     /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
     pub fn data_pts_control(mut self, input: crate::types::M3u8DataPtsControl) -> Self {
@@ -371,17 +392,17 @@ impl M3u8SettingsBuilder {
     pub fn get_pts_offset(&self) -> &::std::option::Option<i32> {
         &self.pts_offset
     }
-    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds or Milliseconds. Then specify the number of seconds or milliseconds with PTS offset.
     pub fn pts_offset_mode(mut self, input: crate::types::TsPtsOffset) -> Self {
         self.pts_offset_mode = ::std::option::Option::Some(input);
         self
     }
-    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds or Milliseconds. Then specify the number of seconds or milliseconds with PTS offset.
     pub fn set_pts_offset_mode(mut self, input: ::std::option::Option<crate::types::TsPtsOffset>) -> Self {
         self.pts_offset_mode = input;
         self
     }
-    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+    /// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds or Milliseconds. Then specify the number of seconds or milliseconds with PTS offset.
     pub fn get_pts_offset_mode(&self) -> &::std::option::Option<crate::types::TsPtsOffset> {
         &self.pts_offset_mode
     }
@@ -475,6 +496,7 @@ impl M3u8SettingsBuilder {
             audio_duration: self.audio_duration,
             audio_frames_per_pes: self.audio_frames_per_pes,
             audio_pids: self.audio_pids,
+            audio_pts_offset_delta: self.audio_pts_offset_delta,
             data_pts_control: self.data_pts_control,
             max_pcr_interval: self.max_pcr_interval,
             nielsen_id3: self.nielsen_id3,

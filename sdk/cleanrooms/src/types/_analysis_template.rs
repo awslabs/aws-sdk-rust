@@ -2,7 +2,7 @@
 
 /// <p>The analysis template.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisTemplate {
     /// <p>The identifier for the analysis template.</p>
     pub id: ::std::string::String,
@@ -30,6 +30,8 @@ pub struct AnalysisTemplate {
     pub format: crate::types::AnalysisFormat,
     /// <p>The source of the analysis template.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
+    /// <p>The source metadata for the analysis template.</p>
+    pub source_metadata: ::std::option::Option<crate::types::AnalysisSourceMetadata>,
     /// <p>The parameters of the analysis template.</p>
     pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     /// <p>Information about the validations performed on the analysis template.</p>
@@ -95,6 +97,10 @@ impl AnalysisTemplate {
     pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
         self.source.as_ref()
     }
+    /// <p>The source metadata for the analysis template.</p>
+    pub fn source_metadata(&self) -> ::std::option::Option<&crate::types::AnalysisSourceMetadata> {
+        self.source_metadata.as_ref()
+    }
     /// <p>The parameters of the analysis template.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_parameters.is_none()`.
@@ -108,27 +114,6 @@ impl AnalysisTemplate {
         self.validations.as_deref().unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for AnalysisTemplate {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisTemplate");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("collaboration_id", &self.collaboration_id);
-        formatter.field("collaboration_arn", &self.collaboration_arn);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.field("membership_arn", &self.membership_arn);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.field("source", &"*** Sensitive Data Redacted ***");
-        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field("validations", &self.validations);
-        formatter.finish()
-    }
-}
 impl AnalysisTemplate {
     /// Creates a new builder-style object to manufacture [`AnalysisTemplate`](crate::types::AnalysisTemplate).
     pub fn builder() -> crate::types::builders::AnalysisTemplateBuilder {
@@ -137,7 +122,7 @@ impl AnalysisTemplate {
 }
 
 /// A builder for [`AnalysisTemplate`](crate::types::AnalysisTemplate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct AnalysisTemplateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -153,6 +138,7 @@ pub struct AnalysisTemplateBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::AnalysisSchema>,
     pub(crate) format: ::std::option::Option<crate::types::AnalysisFormat>,
     pub(crate) source: ::std::option::Option<crate::types::AnalysisSource>,
+    pub(crate) source_metadata: ::std::option::Option<crate::types::AnalysisSourceMetadata>,
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
 }
@@ -351,6 +337,20 @@ impl AnalysisTemplateBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::AnalysisSource> {
         &self.source
     }
+    /// <p>The source metadata for the analysis template.</p>
+    pub fn source_metadata(mut self, input: crate::types::AnalysisSourceMetadata) -> Self {
+        self.source_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source metadata for the analysis template.</p>
+    pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::AnalysisSourceMetadata>) -> Self {
+        self.source_metadata = input;
+        self
+    }
+    /// <p>The source metadata for the analysis template.</p>
+    pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::AnalysisSourceMetadata> {
+        &self.source_metadata
+    }
     /// Appends an item to `analysis_parameters`.
     ///
     /// To override the contents of this collection use [`set_analysis_parameters`](Self::set_analysis_parameters).
@@ -468,29 +468,9 @@ impl AnalysisTemplateBuilder {
                 )
             })?,
             source: self.source,
+            source_metadata: self.source_metadata,
             analysis_parameters: self.analysis_parameters,
             validations: self.validations,
         })
-    }
-}
-impl ::std::fmt::Debug for AnalysisTemplateBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("AnalysisTemplateBuilder");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("collaboration_id", &self.collaboration_id);
-        formatter.field("collaboration_arn", &self.collaboration_arn);
-        formatter.field("membership_id", &self.membership_id);
-        formatter.field("membership_arn", &self.membership_arn);
-        formatter.field("description", &self.description);
-        formatter.field("name", &self.name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.field("source", &"*** Sensitive Data Redacted ***");
-        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field("validations", &self.validations);
-        formatter.finish()
     }
 }

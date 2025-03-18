@@ -27,12 +27,17 @@ pub struct Membership {
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub query_log_status: crate::types::MembershipQueryLogStatus,
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    /// <p>The default job result configuration for the membership.</p>
+    pub default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
@@ -90,17 +95,26 @@ impl Membership {
         self.member_abilities.deref()
     }
     /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
         self.ml_member_abilities.as_ref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn query_log_status(&self) -> &crate::types::MembershipQueryLogStatus {
         &self.query_log_status
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(&self) -> ::std::option::Option<&crate::types::MembershipJobLogStatus> {
+        self.job_log_status.as_ref()
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
         self.default_result_configuration.as_ref()
+    }
+    /// <p>The default job result configuration for the membership.</p>
+    pub fn default_job_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedJobResultConfiguration> {
+        self.default_job_result_configuration.as_ref()
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     pub fn payment_configuration(&self) -> ::std::option::Option<&crate::types::MembershipPaymentConfiguration> {
@@ -131,7 +145,9 @@ pub struct MembershipBuilder {
     pub(crate) member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     pub(crate) ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
+    pub(crate) job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    pub(crate) default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl MembershipBuilder {
@@ -306,36 +322,53 @@ impl MembershipBuilder {
         &self.member_abilities
     }
     /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
         self.ml_member_abilities = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn set_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
         self.ml_member_abilities = input;
         self
     }
     /// <p>Specifies the ML member abilities that are granted to a collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn get_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
         &self.ml_member_abilities
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         &self.query_log_status
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(mut self, input: crate::types::MembershipJobLogStatus) -> Self {
+        self.job_log_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn set_job_log_status(mut self, input: ::std::option::Option<crate::types::MembershipJobLogStatus>) -> Self {
+        self.job_log_status = input;
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn get_job_log_status(&self) -> &::std::option::Option<crate::types::MembershipJobLogStatus> {
+        &self.job_log_status
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn default_result_configuration(mut self, input: crate::types::MembershipProtectedQueryResultConfiguration) -> Self {
@@ -353,6 +386,23 @@ impl MembershipBuilder {
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
         &self.default_result_configuration
+    }
+    /// <p>The default job result configuration for the membership.</p>
+    pub fn default_job_result_configuration(mut self, input: crate::types::MembershipProtectedJobResultConfiguration) -> Self {
+        self.default_job_result_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default job result configuration for the membership.</p>
+    pub fn set_default_job_result_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
+    ) -> Self {
+        self.default_job_result_configuration = input;
+        self
+    }
+    /// <p>The default job result configuration for the membership.</p>
+    pub fn get_default_job_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration> {
+        &self.default_job_result_configuration
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// This field is required.
@@ -458,7 +508,9 @@ impl MembershipBuilder {
                     "query_log_status was not specified but it is required when building Membership",
                 )
             })?,
+            job_log_status: self.job_log_status,
             default_result_configuration: self.default_result_configuration,
+            default_job_result_configuration: self.default_job_result_configuration,
             payment_configuration: self.payment_configuration,
         })
     }

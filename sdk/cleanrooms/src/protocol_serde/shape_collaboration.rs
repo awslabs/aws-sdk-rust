@@ -101,6 +101,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "jobLogStatus" => {
+                            builder = builder.set_job_log_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CollaborationJobLogStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "analyticsEngine" => {
                             builder = builder.set_analytics_engine(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

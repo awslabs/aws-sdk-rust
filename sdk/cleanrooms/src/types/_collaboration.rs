@@ -29,7 +29,11 @@ pub struct Collaboration {
     /// <p>The settings for client-side encryption for cryptographic computing.</p>
     pub data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub query_log_status: crate::types::CollaborationQueryLogStatus,
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub job_log_status: ::std::option::Option<crate::types::CollaborationJobLogStatus>,
     /// <p>The analytics engine for the collaboration.</p>
     pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
@@ -88,8 +92,14 @@ impl Collaboration {
         self.data_encryption_metadata.as_ref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn query_log_status(&self) -> &crate::types::CollaborationQueryLogStatus {
         &self.query_log_status
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(&self) -> ::std::option::Option<&crate::types::CollaborationJobLogStatus> {
+        self.job_log_status.as_ref()
     }
     /// <p>The analytics engine for the collaboration.</p>
     pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
@@ -120,6 +130,7 @@ pub struct CollaborationBuilder {
     pub(crate) membership_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
+    pub(crate) job_log_status: ::std::option::Option<crate::types::CollaborationJobLogStatus>,
     pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl CollaborationBuilder {
@@ -300,19 +311,39 @@ impl CollaborationBuilder {
         &self.data_encryption_metadata
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::CollaborationQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::CollaborationQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::CollaborationQueryLogStatus> {
         &self.query_log_status
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(mut self, input: crate::types::CollaborationJobLogStatus) -> Self {
+        self.job_log_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn set_job_log_status(mut self, input: ::std::option::Option<crate::types::CollaborationJobLogStatus>) -> Self {
+        self.job_log_status = input;
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn get_job_log_status(&self) -> &::std::option::Option<crate::types::CollaborationJobLogStatus> {
+        &self.job_log_status
     }
     /// <p>The analytics engine for the collaboration.</p>
     pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
@@ -399,6 +430,7 @@ impl CollaborationBuilder {
                     "query_log_status was not specified but it is required when building Collaboration",
                 )
             })?,
+            job_log_status: self.job_log_status,
             analytics_engine: self.analytics_engine,
         })
     }

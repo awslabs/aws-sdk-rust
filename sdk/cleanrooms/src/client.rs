@@ -245,6 +245,8 @@ mod get_membership;
 
 mod get_privacy_budget_template;
 
+mod get_protected_job;
+
 mod get_protected_query;
 
 mod get_schema;
@@ -283,6 +285,8 @@ mod list_privacy_budget_templates;
 
 mod list_privacy_budgets;
 
+mod list_protected_jobs;
+
 mod list_protected_queries;
 
 mod list_schemas;
@@ -292,6 +296,8 @@ mod list_tags_for_resource;
 mod populate_id_mapping_table;
 
 mod preview_privacy_impact;
+
+mod start_protected_job;
 
 mod start_protected_query;
 
@@ -320,5 +326,7 @@ mod update_id_namespace_association;
 mod update_membership;
 
 mod update_privacy_budget_template;
+
+mod update_protected_job;
 
 mod update_protected_query;

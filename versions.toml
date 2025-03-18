@@ -184,9 +184,9 @@ model_hash = '5c16e1ad00d9b59484932b0ee4e53dd558a48d6966ef231f380aed0c5b3613ca'
 
 [crates.aws-sdk-appsync]
 category = 'AwsSdk'
-version = '1.73.0'
-source_hash = '0e177932f7dbc94d89e449811c69dace53d55ffd2de435caac639c93bdec9272'
-model_hash = '0ef0f14df2f4cc481e6ac0de777fe45b6f838c4ab164310beede1377e7f4bdec'
+version = '1.74.0'
+source_hash = '1acd7c971a6f0d9c3aad3ae33e635ddcea185275709931d4dc05cc147d4989b8'
+model_hash = '320239ed56c956bc0b83ab6a4a366a9eb5d39765ddef537cfdf8a4ba5bfa0050'
 
 [crates.aws-sdk-apptest]
 category = 'AwsSdk'
@@ -376,9 +376,9 @@ model_hash = 'c29b309437bd93e3f555b26bc91d2b3097fcd8758a2dd2ee12eed092f20d3dff'
 
 [crates.aws-sdk-cleanrooms]
 category = 'AwsSdk'
-version = '1.70.0'
-source_hash = '07456f47b2e332909c579f16e5f7163d447b9da3172f173bf8d993792840faa1'
-model_hash = '4d5b9c3c3e7c560691db17959b30ab0e57f6d150a8b9d1ed70a3764aa56abe7f'
+version = '1.71.0'
+source_hash = '35796383239803bfda0ab43d63374357662f24a39f1582d3c34a6179f1cae5e0'
+model_hash = 'bb3b7e8abbca38be109280dad507549ac8fcc3fe116c566d364dd14f4526ef45'
 
 [crates.aws-sdk-cleanroomsml]
 category = 'AwsSdk'
@@ -1480,9 +1480,9 @@ model_hash = '44d6f53b78d77363a85404fe86f72604bfc89aae84423ae235d083ea4857e6fe'
 
 [crates.aws-sdk-mediaconvert]
 category = 'AwsSdk'
-version = '1.76.0'
-source_hash = 'cfc2dbf7e3f5bc823dff4e4f001d6115fc2a0ab5658a4daa0b46ef8ec40367e3'
-model_hash = '26632abcaaafb81f637831e5602d73389c0d0980b4c8c9439dc12db04a69bcd3'
+version = '1.77.0'
+source_hash = '3aa69cfe35a7df30e19427ff62b49a70d95204289c28a2cf683ffe55e1a6dc64'
+model_hash = '3f01270b06dec8463688d0ceccc22081a142b970ef13b0294d2c54dd9b3a9d57'
 
 [crates.aws-sdk-medialive]
 category = 'AwsSdk'
@@ -1954,9 +1954,9 @@ model_hash = '6f5fa488cec83ad13ba61601a55dbb9572afd2acaff4fbe555da2e6893c25206'
 
 [crates.aws-sdk-route53]
 category = 'AwsSdk'
-version = '1.68.0'
-source_hash = '1907c9c7bfc80247db360d28270578dd7f1556a9e391f9dde2781886d9ce4549'
-model_hash = '89457b3c1bd5eb91bfd8abdac4c5a9e72dbe33dbbc902b55ffc4bb6cf97a320d'
+version = '1.69.0'
+source_hash = '32c91e5e326c7a62a2ec37a648e597114e75a5cbab53b23e699a7a38be10629d'
+model_hash = 'fde2b73229e8350bbdba23be8d6a9d8691e77b7bb73faacbc2fbbe4e98b8b389'
 
 [crates.aws-sdk-route53domains]
 category = 'AwsSdk'
@@ -2610,13 +2610,8 @@ source_hash = 'b96d17f6e699f38eb5d14e1a983856886a7fc9382e52606456056a7822f043d8'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9517dcadf7290d477bd65e38c7789c03452ef22d48d8a6665d4983e4d346798e'
-
-[release]
-tag = 'release-2025-03-17'
-
 [release.crates]
-aws-sdk-applicationsignals = '1.37.0'
-aws-sdk-geomaps = '1.16.0'
-aws-sdk-rum = '1.64.0'
-aws-sdk-taxsettings = '1.38.0'
-aws-sdk-wafv2 = '1.70.0'
+aws-sdk-appsync = '1.74.0'
+aws-sdk-cleanrooms = '1.71.0'
+aws-sdk-mediaconvert = '1.77.0'
+aws-sdk-route53 = '1.69.0'

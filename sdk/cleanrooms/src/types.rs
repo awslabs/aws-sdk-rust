@@ -73,7 +73,45 @@ pub use crate::types::_protected_query_sql_parameters::ProtectedQuerySqlParamete
 
 pub use crate::types::_target_protected_query_status::TargetProtectedQueryStatus;
 
+pub use crate::types::_protected_job::ProtectedJob;
+
+pub use crate::types::_protected_job_error::ProtectedJobError;
+
+pub use crate::types::_protected_job_result::ProtectedJobResult;
+
+pub use crate::types::_protected_job_output::ProtectedJobOutput;
+
+pub use crate::types::_protected_job_single_member_output::ProtectedJobSingleMemberOutput;
+
+pub use crate::types::_protected_job_s3_output::ProtectedJobS3Output;
+
+pub use crate::types::_protected_job_statistics::ProtectedJobStatistics;
+
+pub use crate::types::_billed_job_resource_utilization::BilledJobResourceUtilization;
+
+pub use crate::types::_protected_job_result_configuration_output::ProtectedJobResultConfigurationOutput;
+
+pub use crate::types::_protected_job_output_configuration_output::ProtectedJobOutputConfigurationOutput;
+
+pub use crate::types::_protected_job_member_output_configuration_output::ProtectedJobMemberOutputConfigurationOutput;
+
+pub use crate::types::_protected_job_s3_output_configuration_output::ProtectedJobS3OutputConfigurationOutput;
+
+pub use crate::types::_protected_job_status::ProtectedJobStatus;
+
+pub use crate::types::_protected_job_parameters::ProtectedJobParameters;
+
+pub use crate::types::_target_protected_job_status::TargetProtectedJobStatus;
+
 pub use crate::types::_protected_query_type::ProtectedQueryType;
+
+pub use crate::types::_protected_job_result_configuration_input::ProtectedJobResultConfigurationInput;
+
+pub use crate::types::_protected_job_output_configuration_input::ProtectedJobOutputConfigurationInput;
+
+pub use crate::types::_protected_job_member_output_configuration_input::ProtectedJobMemberOutputConfigurationInput;
+
+pub use crate::types::_protected_job_type::ProtectedJobType;
 
 pub use crate::types::_privacy_impact::PrivacyImpact;
 
@@ -95,6 +133,16 @@ pub use crate::types::_direct_analysis_configuration_details::DirectAnalysisConf
 
 pub use crate::types::_analysis_type::AnalysisType;
 
+pub use crate::types::_protected_job_summary::ProtectedJobSummary;
+
+pub use crate::types::_protected_job_receiver_configuration::ProtectedJobReceiverConfiguration;
+
+pub use crate::types::_protected_job_configuration_details::ProtectedJobConfigurationDetails;
+
+pub use crate::types::_protected_job_direct_analysis_configuration_details::ProtectedJobDirectAnalysisConfigurationDetails;
+
+pub use crate::types::_protected_job_analysis_type::ProtectedJobAnalysisType;
+
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummary;
 
 pub use crate::types::_privacy_budget::PrivacyBudget;
@@ -107,6 +155,8 @@ pub use crate::types::_membership::Membership;
 
 pub use crate::types::_membership_payment_configuration::MembershipPaymentConfiguration;
 
+pub use crate::types::_membership_job_compute_payment_config::MembershipJobComputePaymentConfig;
+
 pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfig;
 
 pub use crate::types::_membership_model_inference_payment_config::MembershipModelInferencePaymentConfig;
@@ -115,9 +165,17 @@ pub use crate::types::_membership_model_training_payment_config::MembershipModel
 
 pub use crate::types::_membership_query_compute_payment_config::MembershipQueryComputePaymentConfig;
 
+pub use crate::types::_membership_protected_job_result_configuration::MembershipProtectedJobResultConfiguration;
+
+pub use crate::types::_membership_protected_job_output_configuration::MembershipProtectedJobOutputConfiguration;
+
+pub use crate::types::_protected_job_s3_output_configuration_input::ProtectedJobS3OutputConfigurationInput;
+
 pub use crate::types::_membership_protected_query_result_configuration::MembershipProtectedQueryResultConfiguration;
 
 pub use crate::types::_membership_protected_query_output_configuration::MembershipProtectedQueryOutputConfiguration;
+
+pub use crate::types::_membership_job_log_status::MembershipJobLogStatus;
 
 pub use crate::types::_membership_query_log_status::MembershipQueryLogStatus;
 
@@ -191,6 +249,8 @@ pub use crate::types::_analysis_rule_list::AnalysisRuleList;
 
 pub use crate::types::_configured_table::ConfiguredTable;
 
+pub use crate::types::_selected_analysis_method::SelectedAnalysisMethod;
+
 pub use crate::types::_analysis_method::AnalysisMethod;
 
 pub use crate::types::_table_reference::TableReference;
@@ -239,6 +299,8 @@ pub use crate::types::_member_summary::MemberSummary;
 
 pub use crate::types::_payment_configuration::PaymentConfiguration;
 
+pub use crate::types::_job_compute_payment_config::JobComputePaymentConfig;
+
 pub use crate::types::_ml_payment_config::MlPaymentConfig;
 
 pub use crate::types::_model_inference_payment_config::ModelInferencePaymentConfig;
@@ -260,6 +322,16 @@ pub use crate::types::_collaboration_configured_audience_model_association_summa
 pub use crate::types::_collaboration_analysis_template_summary::CollaborationAnalysisTemplateSummary;
 
 pub use crate::types::_analysis_rule::AnalysisRule;
+
+pub use crate::types::_consolidated_policy::ConsolidatedPolicy;
+
+pub use crate::types::_consolidated_policy_v1::ConsolidatedPolicyV1;
+
+pub use crate::types::_consolidated_policy_custom::ConsolidatedPolicyCustom;
+
+pub use crate::types::_consolidated_policy_aggregation::ConsolidatedPolicyAggregation;
+
+pub use crate::types::_consolidated_policy_list::ConsolidatedPolicyList;
 
 pub use crate::types::_analysis_rule_policy::AnalysisRulePolicy;
 
@@ -309,7 +381,19 @@ pub use crate::types::_analysis_parameter::AnalysisParameter;
 
 pub use crate::types::_parameter_type::ParameterType;
 
+pub use crate::types::_analysis_source_metadata::AnalysisSourceMetadata;
+
+pub use crate::types::_analysis_template_artifact_metadata::AnalysisTemplateArtifactMetadata;
+
+pub use crate::types::_hash::Hash;
+
 pub use crate::types::_analysis_source::AnalysisSource;
+
+pub use crate::types::_analysis_template_artifacts::AnalysisTemplateArtifacts;
+
+pub use crate::types::_analysis_template_artifact::AnalysisTemplateArtifact;
+
+pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_analysis_format::AnalysisFormat;
 
@@ -326,6 +410,8 @@ pub use crate::types::_batch_get_collaboration_analysis_template_error::BatchGet
 pub use crate::types::_collaboration::Collaboration;
 
 pub use crate::types::_analytics_engine::AnalyticsEngine;
+
+pub use crate::types::_collaboration_job_log_status::CollaborationJobLogStatus;
 
 pub use crate::types::_collaboration_query_log_status::CollaborationQueryLogStatus;
 
@@ -379,7 +465,15 @@ mod _analysis_schema;
 
 mod _analysis_source;
 
+mod _analysis_source_metadata;
+
 mod _analysis_template;
+
+mod _analysis_template_artifact;
+
+mod _analysis_template_artifact_metadata;
+
+mod _analysis_template_artifacts;
 
 mod _analysis_template_summary;
 
@@ -403,6 +497,8 @@ mod _batch_get_schema_analysis_rule_error;
 
 mod _batch_get_schema_error;
 
+mod _billed_job_resource_utilization;
+
 mod _billed_resource_utilization;
 
 mod _collaboration;
@@ -418,6 +514,8 @@ mod _collaboration_configured_audience_model_association_summary;
 mod _collaboration_id_namespace_association;
 
 mod _collaboration_id_namespace_association_summary;
+
+mod _collaboration_job_log_status;
 
 mod _collaboration_privacy_budget_summary;
 
@@ -471,6 +569,16 @@ mod _configured_table_summary;
 
 mod _conflict_exception_reason;
 
+mod _consolidated_policy;
+
+mod _consolidated_policy_aggregation;
+
+mod _consolidated_policy_custom;
+
+mod _consolidated_policy_list;
+
+mod _consolidated_policy_v1;
+
 mod _custom_ml_member_ability;
 
 mod _data_encryption_metadata;
@@ -507,6 +615,8 @@ mod _filterable_member_status;
 
 mod _glue_table_reference;
 
+mod _hash;
+
 mod _id_mapping_config;
 
 mod _id_mapping_table;
@@ -533,6 +643,8 @@ mod _id_namespace_association_summary;
 
 mod _id_namespace_type;
 
+mod _job_compute_payment_config;
+
 mod _join_operator;
 
 mod _join_required_option;
@@ -547,6 +659,10 @@ mod _member_summary;
 
 mod _membership;
 
+mod _membership_job_compute_payment_config;
+
+mod _membership_job_log_status;
+
 mod _membership_ml_payment_config;
 
 mod _membership_model_inference_payment_config;
@@ -554,6 +670,10 @@ mod _membership_model_inference_payment_config;
 mod _membership_model_training_payment_config;
 
 mod _membership_payment_configuration;
+
+mod _membership_protected_job_output_configuration;
+
+mod _membership_protected_job_result_configuration;
 
 mod _membership_protected_query_output_configuration;
 
@@ -601,6 +721,52 @@ mod _privacy_budget_type;
 
 mod _privacy_impact;
 
+mod _protected_job;
+
+mod _protected_job_analysis_type;
+
+mod _protected_job_configuration_details;
+
+mod _protected_job_direct_analysis_configuration_details;
+
+mod _protected_job_error;
+
+mod _protected_job_member_output_configuration_input;
+
+mod _protected_job_member_output_configuration_output;
+
+mod _protected_job_output;
+
+mod _protected_job_output_configuration_input;
+
+mod _protected_job_output_configuration_output;
+
+mod _protected_job_parameters;
+
+mod _protected_job_receiver_configuration;
+
+mod _protected_job_result;
+
+mod _protected_job_result_configuration_input;
+
+mod _protected_job_result_configuration_output;
+
+mod _protected_job_s3_output;
+
+mod _protected_job_s3_output_configuration_input;
+
+mod _protected_job_s3_output_configuration_output;
+
+mod _protected_job_single_member_output;
+
+mod _protected_job_statistics;
+
+mod _protected_job_status;
+
+mod _protected_job_summary;
+
+mod _protected_job_type;
+
 mod _protected_query;
 
 mod _protected_query_error;
@@ -643,6 +809,8 @@ mod _resource_type;
 
 mod _result_format;
 
+mod _s3_location;
+
 mod _scalar_functions;
 
 mod _schema;
@@ -665,6 +833,8 @@ mod _schema_type;
 
 mod _schema_type_properties;
 
+mod _selected_analysis_method;
+
 mod _snowflake_table_reference;
 
 mod _snowflake_table_schema;
@@ -672,6 +842,8 @@ mod _snowflake_table_schema;
 mod _snowflake_table_schema_v1;
 
 mod _table_reference;
+
+mod _target_protected_job_status;
 
 mod _target_protected_query_status;
 

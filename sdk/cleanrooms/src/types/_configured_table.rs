@@ -20,10 +20,15 @@ pub struct ConfiguredTable {
     pub update_time: ::aws_smithy_types::DateTime,
     /// <p>The types of analysis rules associated with this configured table. Currently, only one analysis rule may be associated with a configured table.</p>
     pub analysis_rule_types: ::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>,
-    /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub analysis_method: crate::types::AnalysisMethod,
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
     pub allowed_columns: ::std::vec::Vec<::std::string::String>,
+    /// <p>The selected analysis methods for the configured table.</p>
+    pub selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
 impl ConfiguredTable {
     /// <p>The unique ID for the configured table.</p>
@@ -62,7 +67,10 @@ impl ConfiguredTable {
         use std::ops::Deref;
         self.analysis_rule_types.deref()
     }
-    /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn analysis_method(&self) -> &crate::types::AnalysisMethod {
         &self.analysis_method
     }
@@ -70,6 +78,12 @@ impl ConfiguredTable {
     pub fn allowed_columns(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.allowed_columns.deref()
+    }
+    /// <p>The selected analysis methods for the configured table.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_analysis_methods.is_none()`.
+    pub fn selected_analysis_methods(&self) -> &[crate::types::SelectedAnalysisMethod] {
+        self.selected_analysis_methods.as_deref().unwrap_or_default()
     }
 }
 impl ConfiguredTable {
@@ -93,6 +107,7 @@ pub struct ConfiguredTableBuilder {
     pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
     pub(crate) allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
 impl ConfiguredTableBuilder {
     /// <p>The unique ID for the configured table.</p>
@@ -219,18 +234,27 @@ impl ConfiguredTableBuilder {
     pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>> {
         &self.analysis_rule_types
     }
-    /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     /// This field is required.
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }
-    /// <p>The analysis method for the configured table. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
         &self.analysis_method
     }
@@ -253,6 +277,26 @@ impl ConfiguredTableBuilder {
     /// <p>The columns within the underlying Glue table that can be utilized within collaborations.</p>
     pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_columns
+    }
+    /// Appends an item to `selected_analysis_methods`.
+    ///
+    /// To override the contents of this collection use [`set_selected_analysis_methods`](Self::set_selected_analysis_methods).
+    ///
+    /// <p>The selected analysis methods for the configured table.</p>
+    pub fn selected_analysis_methods(mut self, input: crate::types::SelectedAnalysisMethod) -> Self {
+        let mut v = self.selected_analysis_methods.unwrap_or_default();
+        v.push(input);
+        self.selected_analysis_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The selected analysis methods for the configured table.</p>
+    pub fn set_selected_analysis_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>) -> Self {
+        self.selected_analysis_methods = input;
+        self
+    }
+    /// <p>The selected analysis methods for the configured table.</p>
+    pub fn get_selected_analysis_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>> {
+        &self.selected_analysis_methods
     }
     /// Consumes the builder and constructs a [`ConfiguredTable`](crate::types::ConfiguredTable).
     /// This method will fail if any of the following fields are not set:
@@ -316,6 +360,7 @@ impl ConfiguredTableBuilder {
                     "allowed_columns was not specified but it is required when building ConfiguredTable",
                 )
             })?,
+            selected_analysis_methods: self.selected_analysis_methods,
         })
     }
 }

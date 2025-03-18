@@ -6,33 +6,45 @@ pub fn ser_create_membership_input_input(
     if let Some(var_1) = &input.collaboration_identifier {
         object.key("collaborationIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.default_result_configuration {
+    if let Some(var_2) = &input.default_job_result_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("defaultResultConfiguration").start_object();
-        crate::protocol_serde::shape_membership_protected_query_result_configuration::ser_membership_protected_query_result_configuration(
+        let mut object_3 = object.key("defaultJobResultConfiguration").start_object();
+        crate::protocol_serde::shape_membership_protected_job_result_configuration::ser_membership_protected_job_result_configuration(
             &mut object_3,
             var_2,
         )?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.payment_configuration {
+    if let Some(var_4) = &input.default_result_configuration {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("paymentConfiguration").start_object();
-        crate::protocol_serde::shape_membership_payment_configuration::ser_membership_payment_configuration(&mut object_5, var_4)?;
+        let mut object_5 = object.key("defaultResultConfiguration").start_object();
+        crate::protocol_serde::shape_membership_protected_query_result_configuration::ser_membership_protected_query_result_configuration(
+            &mut object_5,
+            var_4,
+        )?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_6.as_str());
+    if let Some(var_6) = &input.job_log_status {
+        object.key("jobLogStatus").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_7) = &input.payment_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_8 = object.key("paymentConfiguration").start_object();
+        crate::protocol_serde::shape_membership_payment_configuration::ser_membership_payment_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_8.finish();
+        object_11.finish();
     }
     Ok(())
 }

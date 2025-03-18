@@ -6,9 +6,15 @@ pub struct UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
     pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    /// <p>The default job result configuration.</p>
+    pub default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
 }
 impl UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
@@ -16,12 +22,22 @@ impl UpdateMembershipInput {
         self.membership_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(&self) -> ::std::option::Option<&crate::types::MembershipJobLogStatus> {
+        self.job_log_status.as_ref()
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
         self.default_result_configuration.as_ref()
+    }
+    /// <p>The default job result configuration.</p>
+    pub fn default_job_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedJobResultConfiguration> {
+        self.default_job_result_configuration.as_ref()
     }
 }
 impl UpdateMembershipInput {
@@ -37,7 +53,9 @@ impl UpdateMembershipInput {
 pub struct UpdateMembershipInputBuilder {
     pub(crate) membership_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
+    pub(crate) job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    pub(crate) default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
 }
 impl UpdateMembershipInputBuilder {
     /// <p>The unique identifier of the membership.</p>
@@ -56,18 +74,38 @@ impl UpdateMembershipInputBuilder {
         &self.membership_identifier
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         &self.query_log_status
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(mut self, input: crate::types::MembershipJobLogStatus) -> Self {
+        self.job_log_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn set_job_log_status(mut self, input: ::std::option::Option<crate::types::MembershipJobLogStatus>) -> Self {
+        self.job_log_status = input;
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn get_job_log_status(&self) -> &::std::option::Option<crate::types::MembershipJobLogStatus> {
+        &self.job_log_status
     }
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn default_result_configuration(mut self, input: crate::types::MembershipProtectedQueryResultConfiguration) -> Self {
@@ -86,6 +124,23 @@ impl UpdateMembershipInputBuilder {
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
         &self.default_result_configuration
     }
+    /// <p>The default job result configuration.</p>
+    pub fn default_job_result_configuration(mut self, input: crate::types::MembershipProtectedJobResultConfiguration) -> Self {
+        self.default_job_result_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default job result configuration.</p>
+    pub fn set_default_job_result_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
+    ) -> Self {
+        self.default_job_result_configuration = input;
+        self
+    }
+    /// <p>The default job result configuration.</p>
+    pub fn get_default_job_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration> {
+        &self.default_job_result_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
     pub fn build(
         self,
@@ -93,7 +148,9 @@ impl UpdateMembershipInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_membership::UpdateMembershipInput {
             membership_identifier: self.membership_identifier,
             query_log_status: self.query_log_status,
+            job_log_status: self.job_log_status,
             default_result_configuration: self.default_result_configuration,
+            default_job_result_configuration: self.default_job_result_configuration,
         })
     }
 }

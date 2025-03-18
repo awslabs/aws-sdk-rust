@@ -24,21 +24,27 @@ pub fn ser_create_analysis_template_input_input(
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.source {
+    if let Some(var_8) = &input.schema {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("source").start_object();
-        crate::protocol_serde::shape_analysis_source::ser_analysis_source(&mut object_9, var_8)?;
+        let mut object_9 = object.key("schema").start_object();
+        crate::protocol_serde::shape_analysis_schema::ser_analysis_schema(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_10) = &input.source {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_11 = object.key("source").start_object();
+        crate::protocol_serde::shape_analysis_source::ser_analysis_source(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_11.finish();
+        object_13.finish();
     }
     Ok(())
 }

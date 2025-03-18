@@ -12,7 +12,9 @@
 /// ```text
 /// # let analysismethod = unimplemented!();
 /// match analysismethod {
+///     AnalysisMethod::DirectJob => { /* ... */ },
 ///     AnalysisMethod::DirectQuery => { /* ... */ },
+///     AnalysisMethod::Multiple => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,7 +44,11 @@
 )]
 pub enum AnalysisMethod {
     #[allow(missing_docs)] // documentation missing in model
+    DirectJob,
+    #[allow(missing_docs)] // documentation missing in model
     DirectQuery,
+    #[allow(missing_docs)] // documentation missing in model
+    Multiple,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +56,9 @@ pub enum AnalysisMethod {
 impl ::std::convert::From<&str> for AnalysisMethod {
     fn from(s: &str) -> Self {
         match s {
+            "DIRECT_JOB" => AnalysisMethod::DirectJob,
             "DIRECT_QUERY" => AnalysisMethod::DirectQuery,
+            "MULTIPLE" => AnalysisMethod::Multiple,
             other => AnalysisMethod::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -66,13 +74,15 @@ impl AnalysisMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AnalysisMethod::DirectJob => "DIRECT_JOB",
             AnalysisMethod::DirectQuery => "DIRECT_QUERY",
+            AnalysisMethod::Multiple => "MULTIPLE",
             AnalysisMethod::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIRECT_QUERY"]
+        &["DIRECT_JOB", "DIRECT_QUERY", "MULTIPLE"]
     }
 }
 impl ::std::convert::AsRef<str> for AnalysisMethod {
@@ -95,7 +105,9 @@ impl AnalysisMethod {
 impl ::std::fmt::Display for AnalysisMethod {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AnalysisMethod::DirectJob => write!(f, "DIRECT_JOB"),
             AnalysisMethod::DirectQuery => write!(f, "DIRECT_QUERY"),
+            AnalysisMethod::Multiple => write!(f, "MULTIPLE"),
             AnalysisMethod::Unknown(value) => write!(f, "{}", value),
         }
     }

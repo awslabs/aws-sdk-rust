@@ -8,6 +8,8 @@ pub struct MembershipPaymentConfiguration {
     pub query_compute: ::std::option::Option<crate::types::MembershipQueryComputePaymentConfig>,
     /// <p>The payment responsibilities accepted by the collaboration member for machine learning costs.</p>
     pub machine_learning: ::std::option::Option<crate::types::MembershipMlPaymentConfig>,
+    /// <p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>
+    pub job_compute: ::std::option::Option<crate::types::MembershipJobComputePaymentConfig>,
 }
 impl MembershipPaymentConfiguration {
     /// <p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>
@@ -17,6 +19,10 @@ impl MembershipPaymentConfiguration {
     /// <p>The payment responsibilities accepted by the collaboration member for machine learning costs.</p>
     pub fn machine_learning(&self) -> ::std::option::Option<&crate::types::MembershipMlPaymentConfig> {
         self.machine_learning.as_ref()
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>
+    pub fn job_compute(&self) -> ::std::option::Option<&crate::types::MembershipJobComputePaymentConfig> {
+        self.job_compute.as_ref()
     }
 }
 impl MembershipPaymentConfiguration {
@@ -32,6 +38,7 @@ impl MembershipPaymentConfiguration {
 pub struct MembershipPaymentConfigurationBuilder {
     pub(crate) query_compute: ::std::option::Option<crate::types::MembershipQueryComputePaymentConfig>,
     pub(crate) machine_learning: ::std::option::Option<crate::types::MembershipMlPaymentConfig>,
+    pub(crate) job_compute: ::std::option::Option<crate::types::MembershipJobComputePaymentConfig>,
 }
 impl MembershipPaymentConfigurationBuilder {
     /// <p>The payment responsibilities accepted by the collaboration member for query compute costs.</p>
@@ -63,11 +70,26 @@ impl MembershipPaymentConfigurationBuilder {
     pub fn get_machine_learning(&self) -> &::std::option::Option<crate::types::MembershipMlPaymentConfig> {
         &self.machine_learning
     }
+    /// <p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>
+    pub fn job_compute(mut self, input: crate::types::MembershipJobComputePaymentConfig) -> Self {
+        self.job_compute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>
+    pub fn set_job_compute(mut self, input: ::std::option::Option<crate::types::MembershipJobComputePaymentConfig>) -> Self {
+        self.job_compute = input;
+        self
+    }
+    /// <p>The payment responsibilities accepted by the collaboration member for job compute costs.</p>
+    pub fn get_job_compute(&self) -> &::std::option::Option<crate::types::MembershipJobComputePaymentConfig> {
+        &self.job_compute
+    }
     /// Consumes the builder and constructs a [`MembershipPaymentConfiguration`](crate::types::MembershipPaymentConfiguration).
     pub fn build(self) -> crate::types::MembershipPaymentConfiguration {
         crate::types::MembershipPaymentConfiguration {
             query_compute: self.query_compute,
             machine_learning: self.machine_learning,
+            job_compute: self.job_compute,
         }
     }
 }

@@ -14,6 +14,7 @@
 /// match memberability {
 ///     MemberAbility::CanQuery => { /* ... */ },
 ///     MemberAbility::CanReceiveResults => { /* ... */ },
+///     MemberAbility::CanRunJob => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum MemberAbility {
     CanQuery,
     #[allow(missing_docs)] // documentation missing in model
     CanReceiveResults,
+    #[allow(missing_docs)] // documentation missing in model
+    CanRunJob,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for MemberAbility {
         match s {
             "CAN_QUERY" => MemberAbility::CanQuery,
             "CAN_RECEIVE_RESULTS" => MemberAbility::CanReceiveResults,
+            "CAN_RUN_JOB" => MemberAbility::CanRunJob,
             other => MemberAbility::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl MemberAbility {
         match self {
             MemberAbility::CanQuery => "CAN_QUERY",
             MemberAbility::CanReceiveResults => "CAN_RECEIVE_RESULTS",
+            MemberAbility::CanRunJob => "CAN_RUN_JOB",
             MemberAbility::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_QUERY", "CAN_RECEIVE_RESULTS"]
+        &["CAN_QUERY", "CAN_RECEIVE_RESULTS", "CAN_RUN_JOB"]
     }
 }
 impl ::std::convert::AsRef<str> for MemberAbility {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for MemberAbility {
         match self {
             MemberAbility::CanQuery => write!(f, "CAN_QUERY"),
             MemberAbility::CanReceiveResults => write!(f, "CAN_RECEIVE_RESULTS"),
+            MemberAbility::CanRunJob => write!(f, "CAN_RUN_JOB"),
             MemberAbility::Unknown(value) => write!(f, "{}", value),
         }
     }

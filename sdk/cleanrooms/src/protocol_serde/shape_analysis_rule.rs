@@ -50,6 +50,15 @@ where
                         "policy" => {
                             builder = builder.set_policy(crate::protocol_serde::shape_analysis_rule_policy::de_analysis_rule_policy(tokens)?);
                         }
+                        "collaborationPolicy" => {
+                            builder = builder.set_collaboration_policy(
+                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_policy::de_configured_table_association_analysis_rule_policy(tokens)?
+                                );
+                        }
+                        "consolidatedPolicy" => {
+                            builder =
+                                builder.set_consolidated_policy(crate::protocol_serde::shape_consolidated_policy::de_consolidated_policy(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

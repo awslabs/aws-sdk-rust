@@ -74,6 +74,11 @@ where
                         "allowedColumns" => {
                             builder = builder.set_allowed_columns(crate::protocol_serde::shape_allowed_column_list::de_allowed_column_list(tokens)?);
                         }
+                        "selectedAnalysisMethods" => {
+                            builder = builder.set_selected_analysis_methods(
+                                crate::protocol_serde::shape_selected_analysis_methods::de_selected_analysis_methods(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

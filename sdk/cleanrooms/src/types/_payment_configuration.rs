@@ -8,6 +8,8 @@ pub struct PaymentConfiguration {
     pub query_compute: ::std::option::Option<crate::types::QueryComputePaymentConfig>,
     /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
     pub machine_learning: ::std::option::Option<crate::types::MlPaymentConfig>,
+    /// <p>The compute configuration for the job.</p>
+    pub job_compute: ::std::option::Option<crate::types::JobComputePaymentConfig>,
 }
 impl PaymentConfiguration {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
@@ -17,6 +19,10 @@ impl PaymentConfiguration {
     /// <p>An object representing the collaboration member's machine learning payment responsibilities set by the collaboration creator.</p>
     pub fn machine_learning(&self) -> ::std::option::Option<&crate::types::MlPaymentConfig> {
         self.machine_learning.as_ref()
+    }
+    /// <p>The compute configuration for the job.</p>
+    pub fn job_compute(&self) -> ::std::option::Option<&crate::types::JobComputePaymentConfig> {
+        self.job_compute.as_ref()
     }
 }
 impl PaymentConfiguration {
@@ -32,6 +38,7 @@ impl PaymentConfiguration {
 pub struct PaymentConfigurationBuilder {
     pub(crate) query_compute: ::std::option::Option<crate::types::QueryComputePaymentConfig>,
     pub(crate) machine_learning: ::std::option::Option<crate::types::MlPaymentConfig>,
+    pub(crate) job_compute: ::std::option::Option<crate::types::JobComputePaymentConfig>,
 }
 impl PaymentConfigurationBuilder {
     /// <p>The collaboration member's payment responsibilities set by the collaboration creator for query compute costs.</p>
@@ -63,11 +70,26 @@ impl PaymentConfigurationBuilder {
     pub fn get_machine_learning(&self) -> &::std::option::Option<crate::types::MlPaymentConfig> {
         &self.machine_learning
     }
+    /// <p>The compute configuration for the job.</p>
+    pub fn job_compute(mut self, input: crate::types::JobComputePaymentConfig) -> Self {
+        self.job_compute = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The compute configuration for the job.</p>
+    pub fn set_job_compute(mut self, input: ::std::option::Option<crate::types::JobComputePaymentConfig>) -> Self {
+        self.job_compute = input;
+        self
+    }
+    /// <p>The compute configuration for the job.</p>
+    pub fn get_job_compute(&self) -> &::std::option::Option<crate::types::JobComputePaymentConfig> {
+        &self.job_compute
+    }
     /// Consumes the builder and constructs a [`PaymentConfiguration`](crate::types::PaymentConfiguration).
     pub fn build(self) -> crate::types::PaymentConfiguration {
         crate::types::PaymentConfiguration {
             query_compute: self.query_compute,
             machine_learning: self.machine_learning,
+            job_compute: self.job_compute,
         }
     }
 }

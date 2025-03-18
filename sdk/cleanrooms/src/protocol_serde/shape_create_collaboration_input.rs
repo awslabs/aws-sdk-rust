@@ -39,33 +39,36 @@ pub fn ser_create_collaboration_input_input(
     if let Some(var_12) = &input.description {
         object.key("description").string(var_12.as_str());
     }
-    if let Some(var_13) = &input.members {
-        let mut array_14 = object.key("members").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.job_log_status {
+        object.key("jobLogStatus").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.members {
+        let mut array_15 = object.key("members").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_member_specification::ser_member_specification(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.name {
-        object.key("name").string(var_17.as_str());
+    if let Some(var_18) = &input.name {
+        object.key("name").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.query_log_status {
-        object.key("queryLogStatus").string(var_18.as_str());
+    if let Some(var_19) = &input.query_log_status {
+        object.key("queryLogStatus").string(var_19.as_str());
     }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_20) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_21 = object.key("tags").start_object();
+        for (key_22, value_23) in var_20 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
-        object_20.finish();
+        object_21.finish();
     }
     Ok(())
 }

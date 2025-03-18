@@ -124,6 +124,9 @@ pub mod get_membership;
 /// Types for the `GetPrivacyBudgetTemplate` operation.
 pub mod get_privacy_budget_template;
 
+/// Types for the `GetProtectedJob` operation.
+pub mod get_protected_job;
+
 /// Types for the `GetProtectedQuery` operation.
 pub mod get_protected_query;
 
@@ -181,6 +184,9 @@ pub mod list_privacy_budget_templates;
 /// Types for the `ListPrivacyBudgets` operation.
 pub mod list_privacy_budgets;
 
+/// Types for the `ListProtectedJobs` operation.
+pub mod list_protected_jobs;
+
 /// Types for the `ListProtectedQueries` operation.
 pub mod list_protected_queries;
 
@@ -195,6 +201,9 @@ pub mod populate_id_mapping_table;
 
 /// Types for the `PreviewPrivacyImpact` operation.
 pub mod preview_privacy_impact;
+
+/// Types for the `StartProtectedJob` operation.
+pub mod start_protected_job;
 
 /// Types for the `StartProtectedQuery` operation.
 pub mod start_protected_query;
@@ -237,6 +246,9 @@ pub mod update_membership;
 
 /// Types for the `UpdatePrivacyBudgetTemplate` operation.
 pub mod update_privacy_budget_template;
+
+/// Types for the `UpdateProtectedJob` operation.
+pub mod update_protected_job;
 
 /// Types for the `UpdateProtectedQuery` operation.
 pub mod update_protected_query;

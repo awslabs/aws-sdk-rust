@@ -10,7 +10,7 @@ pub struct SpekeKeyProvider {
     pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. HLS output groups support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specify the URL to the key server that your SPEKE-compliant DRM key provider uses to provide keys for encrypting your content.
     pub url: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl SpekeKeyProvider {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. HLS output groups support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.system_ids.is_none()`.
     pub fn system_ids(&self) -> &[::std::string::String] {
@@ -103,19 +103,19 @@ impl SpekeKeyProviderBuilder {
     ///
     /// To override the contents of this collection use [`set_system_ids`](Self::set_system_ids).
     ///
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. HLS output groups support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub fn system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.system_ids.unwrap_or_default();
         v.push(input.into());
         self.system_ids = ::std::option::Option::Some(v);
         self
     }
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. HLS output groups support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub fn set_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.system_ids = input;
         self
     }
-    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
+    /// Relates to SPEKE implementation. DRM system identifiers. DASH output groups support a max of two system ids. HLS output groups support a max of 3 system ids. Other group types support one system id. See https://dashif.org/identifiers/content_protection/ for more details.
     pub fn get_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.system_ids
     }

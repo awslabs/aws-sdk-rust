@@ -14,6 +14,7 @@
 /// match hlssegmentlengthcontrol {
 ///     HlsSegmentLengthControl::Exact => { /* ... */ },
 ///     HlsSegmentLengthControl::GopMultiple => { /* ... */ },
+///     HlsSegmentLengthControl::Match => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,7 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
+/// Specify how you want MediaConvert to determine segment lengths in this output group. To use the exact value that you specify under Segment length: Choose Exact. Note that this might result in additional I-frames in the output GOP. To create segment lengths that are a multiple of the GOP: Choose Multiple of GOP. MediaConvert will round up the segment lengths to match the next GOP boundary. To have MediaConvert automatically determine a segment duration that is a multiple of both the audio packets and the frame rates: Choose Match. When you do, also specify a target segment duration under Segment length. This is useful for some ad-insertion or segment replacement workflows. Note that Match has the following requirements: - Output containers: Include at least one video output and at least one audio output. Audio-only outputs are not supported. - Output frame rate: Follow source is not supported. - Multiple output frame rates: When you specify multiple outputs, we recommend they share a similar frame rate (as in X/3, X/2, X, or 2X). For example: 5, 15, 30 and 60. Or: 25 and 50. (Outputs must share an integer multiple.) - Output audio codec: Specify Advanced Audio Coding (AAC). - Output sample rate: Choose 48kHz.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -46,6 +47,8 @@ pub enum HlsSegmentLengthControl {
     Exact,
     #[allow(missing_docs)] // documentation missing in model
     GopMultiple,
+    #[allow(missing_docs)] // documentation missing in model
+    Match,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for HlsSegmentLengthControl {
         match s {
             "EXACT" => HlsSegmentLengthControl::Exact,
             "GOP_MULTIPLE" => HlsSegmentLengthControl::GopMultiple,
+            "MATCH" => HlsSegmentLengthControl::Match,
             other => HlsSegmentLengthControl::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl HlsSegmentLengthControl {
         match self {
             HlsSegmentLengthControl::Exact => "EXACT",
             HlsSegmentLengthControl::GopMultiple => "GOP_MULTIPLE",
+            HlsSegmentLengthControl::Match => "MATCH",
             HlsSegmentLengthControl::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXACT", "GOP_MULTIPLE"]
+        &["EXACT", "GOP_MULTIPLE", "MATCH"]
     }
 }
 impl ::std::convert::AsRef<str> for HlsSegmentLengthControl {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for HlsSegmentLengthControl {
         match self {
             HlsSegmentLengthControl::Exact => write!(f, "EXACT"),
             HlsSegmentLengthControl::GopMultiple => write!(f, "GOP_MULTIPLE"),
+            HlsSegmentLengthControl::Match => write!(f, "MATCH"),
             HlsSegmentLengthControl::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -24,94 +24,100 @@ pub fn ser_m3u8_settings(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.data_pts_control {
-        object.key("dataPTSControl").string(var_6.as_str());
+    if let Some(var_6) = &input.audio_pts_offset_delta {
+        object.key("audioPtsOffsetDelta").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
     }
-    if let Some(var_7) = &input.max_pcr_interval {
+    if let Some(var_7) = &input.data_pts_control {
+        object.key("dataPTSControl").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.max_pcr_interval {
         object.key("maxPcrInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.nielsen_id3 {
-        object.key("nielsenId3").string(var_8.as_str());
+    if let Some(var_9) = &input.nielsen_id3 {
+        object.key("nielsenId3").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.pat_interval {
+    if let Some(var_10) = &input.pat_interval {
         object.key("patInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.pcr_control {
-        object.key("pcrControl").string(var_10.as_str());
+    if let Some(var_11) = &input.pcr_control {
+        object.key("pcrControl").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.pcr_pid {
+    if let Some(var_12) = &input.pcr_pid {
         object.key("pcrPid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
-        );
-    }
-    if let Some(var_12) = &input.pmt_interval {
-        object.key("pmtInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_13) = &input.pmt_pid {
-        object.key("pmtPid").number(
+    if let Some(var_13) = &input.pmt_interval {
+        object.key("pmtInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.private_metadata_pid {
-        object.key("privateMetadataPid").number(
+    if let Some(var_14) = &input.pmt_pid {
+        object.key("pmtPid").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.program_number {
-        object.key("programNumber").number(
+    if let Some(var_15) = &input.private_metadata_pid {
+        object.key("privateMetadataPid").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_16) = &input.pts_offset {
-        object.key("ptsOffset").number(
+    if let Some(var_16) = &input.program_number {
+        object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_17) = &input.pts_offset_mode {
-        object.key("ptsOffsetMode").string(var_17.as_str());
+    if let Some(var_17) = &input.pts_offset {
+        object.key("ptsOffset").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+        );
     }
-    if let Some(var_18) = &input.scte35_pid {
+    if let Some(var_18) = &input.pts_offset_mode {
+        object.key("ptsOffsetMode").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.scte35_pid {
         object.key("scte35Pid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
         );
     }
-    if let Some(var_19) = &input.scte35_source {
-        object.key("scte35Source").string(var_19.as_str());
+    if let Some(var_20) = &input.scte35_source {
+        object.key("scte35Source").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.timed_metadata {
-        object.key("timedMetadata").string(var_20.as_str());
+    if let Some(var_21) = &input.timed_metadata {
+        object.key("timedMetadata").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.timed_metadata_pid {
+    if let Some(var_22) = &input.timed_metadata_pid {
         object.key("timedMetadataPid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_21).into()),
-        );
-    }
-    if let Some(var_22) = &input.transport_stream_id {
-        object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_23) = &input.video_pid {
-        object.key("videoPid").number(
+    if let Some(var_23) = &input.transport_stream_id {
+        object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_23).into()),
+        );
+    }
+    if let Some(var_24) = &input.video_pid {
+        object.key("videoPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
     Ok(())
@@ -149,6 +155,13 @@ where
                         "audioPids" => {
                             builder = builder.set_audio_pids(
                                 crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
+                            );
+                        }
+                        "audioPtsOffsetDelta" => {
+                            builder = builder.set_audio_pts_offset_delta(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "dataPTSControl" => {

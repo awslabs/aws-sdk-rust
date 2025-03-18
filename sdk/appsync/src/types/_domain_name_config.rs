@@ -14,6 +14,10 @@ pub struct DomainNameConfig {
     pub appsync_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of your Amazon Route&nbsp;53 hosted zone.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the domain name.</p>
+    pub domain_name_arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainNameConfig {
     /// <p>The domain name.</p>
@@ -36,6 +40,14 @@ impl DomainNameConfig {
     pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
+    /// <p>A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain name.</p>
+    pub fn domain_name_arn(&self) -> ::std::option::Option<&str> {
+        self.domain_name_arn.as_deref()
+    }
 }
 impl DomainNameConfig {
     /// Creates a new builder-style object to manufacture [`DomainNameConfig`](crate::types::DomainNameConfig).
@@ -53,6 +65,8 @@ pub struct DomainNameConfigBuilder {
     pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
     pub(crate) appsync_domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) domain_name_arn: ::std::option::Option<::std::string::String>,
 }
 impl DomainNameConfigBuilder {
     /// <p>The domain name.</p>
@@ -125,6 +139,40 @@ impl DomainNameConfigBuilder {
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map with keys of <code>TagKey</code> objects and values of <code>TagValue</code> objects.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain name.</p>
+    pub fn domain_name_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain name.</p>
+    pub fn set_domain_name_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.domain_name_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the domain name.</p>
+    pub fn get_domain_name_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.domain_name_arn
+    }
     /// Consumes the builder and constructs a [`DomainNameConfig`](crate::types::DomainNameConfig).
     pub fn build(self) -> crate::types::DomainNameConfig {
         crate::types::DomainNameConfig {
@@ -133,6 +181,8 @@ impl DomainNameConfigBuilder {
             certificate_arn: self.certificate_arn,
             appsync_domain_name: self.appsync_domain_name,
             hosted_zone_id: self.hosted_zone_id,
+            tags: self.tags,
+            domain_name_arn: self.domain_name_arn,
         }
     }
 }

@@ -10,8 +10,13 @@ pub struct Schema {
     pub partition_keys: ::std::vec::Vec<crate::types::Column>,
     /// <p>The analysis rule types that are associated with the schema. Currently, only one entry is present.</p>
     pub analysis_rule_types: ::std::vec::Vec<crate::types::AnalysisRuleType>,
-    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
+    /// <p>The analysis method for the schema.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    /// <p>The selected analysis methods for the schema.</p>
+    pub selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub creator_account_id: ::std::string::String,
     /// <p>A name for the schema. The schema relation is referred to by this name when queried by a protected query.</p>
@@ -49,9 +54,18 @@ impl Schema {
         use std::ops::Deref;
         self.analysis_rule_types.deref()
     }
-    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
+    /// <p>The analysis method for the schema.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
+    }
+    /// <p>The selected analysis methods for the schema.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_analysis_methods.is_none()`.
+    pub fn selected_analysis_methods(&self) -> &[crate::types::SelectedAnalysisMethod] {
+        self.selected_analysis_methods.as_deref().unwrap_or_default()
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     pub fn creator_account_id(&self) -> &str {
@@ -115,6 +129,7 @@ pub struct SchemaBuilder {
     pub(crate) partition_keys: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     pub(crate) analysis_rule_types: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    pub(crate) selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
     pub(crate) creator_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) collaboration_id: ::std::option::Option<::std::string::String>,
@@ -187,19 +202,48 @@ impl SchemaBuilder {
     pub fn get_analysis_rule_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AnalysisRuleType>> {
         &self.analysis_rule_types
     }
-    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
+    /// <p>The analysis method for the schema.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
+    /// <p>The analysis method for the schema.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }
-    /// <p>The analysis method for the schema. The only valid value is currently <code>DIRECT_QUERY</code>.</p>
+    /// <p>The analysis method for the schema.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
         &self.analysis_method
+    }
+    /// Appends an item to `selected_analysis_methods`.
+    ///
+    /// To override the contents of this collection use [`set_selected_analysis_methods`](Self::set_selected_analysis_methods).
+    ///
+    /// <p>The selected analysis methods for the schema.</p>
+    pub fn selected_analysis_methods(mut self, input: crate::types::SelectedAnalysisMethod) -> Self {
+        let mut v = self.selected_analysis_methods.unwrap_or_default();
+        v.push(input);
+        self.selected_analysis_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The selected analysis methods for the schema.</p>
+    pub fn set_selected_analysis_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>) -> Self {
+        self.selected_analysis_methods = input;
+        self
+    }
+    /// <p>The selected analysis methods for the schema.</p>
+    pub fn get_selected_analysis_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>> {
+        &self.selected_analysis_methods
     }
     /// <p>The unique account ID for the Amazon Web Services account that owns the schema.</p>
     /// This field is required.
@@ -389,6 +433,7 @@ impl SchemaBuilder {
                 )
             })?,
             analysis_method: self.analysis_method,
+            selected_analysis_methods: self.selected_analysis_methods,
             creator_account_id: self.creator_account_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creator_account_id",

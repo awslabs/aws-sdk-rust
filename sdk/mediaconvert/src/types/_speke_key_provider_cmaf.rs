@@ -10,7 +10,7 @@ pub struct SpekeKeyProviderCmaf {
     pub dash_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specify the SPEKE version, either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset and a SPEKE v2.0 audio preset.
     pub encryption_contract_configuration: ::std::option::Option<crate::types::EncryptionContractConfiguration>,
-    /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
+    /// Specify up to 3 DRM system IDs that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. For more information, see https://dashif.org/identifiers/content_protection/.
     pub hls_signaled_system_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Specify the resource ID that your SPEKE-compliant key provider uses to identify this content.
     pub resource_id: ::std::option::Option<::std::string::String>,
@@ -32,7 +32,7 @@ impl SpekeKeyProviderCmaf {
     pub fn encryption_contract_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionContractConfiguration> {
         self.encryption_contract_configuration.as_ref()
     }
-    /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
+    /// Specify up to 3 DRM system IDs that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. For more information, see https://dashif.org/identifiers/content_protection/.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.hls_signaled_system_ids.is_none()`.
     pub fn hls_signaled_system_ids(&self) -> &[::std::string::String] {
@@ -118,19 +118,19 @@ impl SpekeKeyProviderCmafBuilder {
     ///
     /// To override the contents of this collection use [`set_hls_signaled_system_ids`](Self::set_hls_signaled_system_ids).
     ///
-    /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
+    /// Specify up to 3 DRM system IDs that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. For more information, see https://dashif.org/identifiers/content_protection/.
     pub fn hls_signaled_system_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hls_signaled_system_ids.unwrap_or_default();
         v.push(input.into());
         self.hls_signaled_system_ids = ::std::option::Option::Some(v);
         self
     }
-    /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
+    /// Specify up to 3 DRM system IDs that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. For more information, see https://dashif.org/identifiers/content_protection/.
     pub fn set_hls_signaled_system_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.hls_signaled_system_ids = input;
         self
     }
-    /// Specify the DRM system ID that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. The HLS manifest can currently signal only one system ID. For more information, see https://dashif.org/identifiers/content_protection/.
+    /// Specify up to 3 DRM system IDs that you want signaled in the HLS manifest that MediaConvert creates as part of this CMAF package. For more information, see https://dashif.org/identifiers/content_protection/.
     pub fn get_hls_signaled_system_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.hls_signaled_system_ids
     }

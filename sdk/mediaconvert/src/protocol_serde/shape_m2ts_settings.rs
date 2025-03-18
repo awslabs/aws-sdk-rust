@@ -27,193 +27,199 @@ pub fn ser_m2ts_settings(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.bitrate {
-        object.key("bitrate").number(
+    if let Some(var_7) = &input.audio_pts_offset_delta {
+        object.key("audioPtsOffsetDelta").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.buffer_model {
-        object.key("bufferModel").string(var_8.as_str());
+    if let Some(var_8) = &input.bitrate {
+        object.key("bitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
     }
-    if let Some(var_9) = &input.data_pts_control {
-        object.key("dataPTSControl").string(var_9.as_str());
+    if let Some(var_9) = &input.buffer_model {
+        object.key("bufferModel").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.dvb_nit_settings {
+    if let Some(var_10) = &input.data_pts_control {
+        object.key("dataPTSControl").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.dvb_nit_settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("dvbNitSettings").start_object();
-        crate::protocol_serde::shape_dvb_nit_settings::ser_dvb_nit_settings(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("dvbNitSettings").start_object();
+        crate::protocol_serde::shape_dvb_nit_settings::ser_dvb_nit_settings(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.dvb_sdt_settings {
+    if let Some(var_13) = &input.dvb_sdt_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("dvbSdtSettings").start_object();
-        crate::protocol_serde::shape_dvb_sdt_settings::ser_dvb_sdt_settings(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("dvbSdtSettings").start_object();
+        crate::protocol_serde::shape_dvb_sdt_settings::ser_dvb_sdt_settings(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.dvb_sub_pids {
-        let mut array_15 = object.key("dvbSubPids").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.dvb_sub_pids {
+        let mut array_16 = object.key("dvbSubPids").start_array();
+        for item_17 in var_15 {
             {
-                array_15.value().number(
+                array_16.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::NegInt((*item_16).into()),
+                    ::aws_smithy_types::Number::NegInt((*item_17).into()),
                 );
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
-    if let Some(var_17) = &input.dvb_tdt_settings {
+    if let Some(var_18) = &input.dvb_tdt_settings {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("dvbTdtSettings").start_object();
-        crate::protocol_serde::shape_dvb_tdt_settings::ser_dvb_tdt_settings(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("dvbTdtSettings").start_object();
+        crate::protocol_serde::shape_dvb_tdt_settings::ser_dvb_tdt_settings(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.dvb_teletext_pid {
+    if let Some(var_20) = &input.dvb_teletext_pid {
         object.key("dvbTeletextPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_20) = &input.ebp_audio_interval {
-        object.key("ebpAudioInterval").string(var_20.as_str());
+    if let Some(var_21) = &input.ebp_audio_interval {
+        object.key("ebpAudioInterval").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.ebp_placement {
-        object.key("ebpPlacement").string(var_21.as_str());
+    if let Some(var_22) = &input.ebp_placement {
+        object.key("ebpPlacement").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.es_rate_in_pes {
-        object.key("esRateInPes").string(var_22.as_str());
+    if let Some(var_23) = &input.es_rate_in_pes {
+        object.key("esRateInPes").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.force_ts_video_ebp_order {
-        object.key("forceTsVideoEbpOrder").string(var_23.as_str());
+    if let Some(var_24) = &input.force_ts_video_ebp_order {
+        object.key("forceTsVideoEbpOrder").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.fragment_time {
+    if let Some(var_25) = &input.fragment_time {
         object.key("fragmentTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_24).into()),
+            ::aws_smithy_types::Number::Float((*var_25).into()),
         );
     }
-    if let Some(var_25) = &input.klv_metadata {
-        object.key("klvMetadata").string(var_25.as_str());
+    if let Some(var_26) = &input.klv_metadata {
+        object.key("klvMetadata").string(var_26.as_str());
     }
-    if let Some(var_26) = &input.max_pcr_interval {
+    if let Some(var_27) = &input.max_pcr_interval {
         object.key("maxPcrInterval").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_26).into()),
-        );
-    }
-    if let Some(var_27) = &input.min_ebp_interval {
-        object.key("minEbpInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_27).into()),
         );
     }
-    if let Some(var_28) = &input.nielsen_id3 {
-        object.key("nielsenId3").string(var_28.as_str());
+    if let Some(var_28) = &input.min_ebp_interval {
+        object.key("minEbpInterval").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_28).into()),
+        );
     }
-    if let Some(var_29) = &input.null_packet_bitrate {
+    if let Some(var_29) = &input.nielsen_id3 {
+        object.key("nielsenId3").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.null_packet_bitrate {
         object.key("nullPacketBitrate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_29).into()),
+            ::aws_smithy_types::Number::Float((*var_30).into()),
         );
     }
-    if let Some(var_30) = &input.pat_interval {
+    if let Some(var_31) = &input.pat_interval {
         object.key("patInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_30).into()),
+            ::aws_smithy_types::Number::NegInt((*var_31).into()),
         );
     }
-    if let Some(var_31) = &input.pcr_control {
-        object.key("pcrControl").string(var_31.as_str());
+    if let Some(var_32) = &input.pcr_control {
+        object.key("pcrControl").string(var_32.as_str());
     }
-    if let Some(var_32) = &input.pcr_pid {
+    if let Some(var_33) = &input.pcr_pid {
         object.key("pcrPid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_32).into()),
-        );
-    }
-    if let Some(var_33) = &input.pmt_interval {
-        object.key("pmtInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_33).into()),
         );
     }
-    if let Some(var_34) = &input.pmt_pid {
-        object.key("pmtPid").number(
+    if let Some(var_34) = &input.pmt_interval {
+        object.key("pmtInterval").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_34).into()),
         );
     }
-    if let Some(var_35) = &input.prevent_buffer_underflow {
-        object.key("preventBufferUnderflow").string(var_35.as_str());
-    }
-    if let Some(var_36) = &input.private_metadata_pid {
-        object.key("privateMetadataPid").number(
+    if let Some(var_35) = &input.pmt_pid {
+        object.key("pmtPid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_36).into()),
+            ::aws_smithy_types::Number::NegInt((*var_35).into()),
         );
     }
-    if let Some(var_37) = &input.program_number {
-        object.key("programNumber").number(
+    if let Some(var_36) = &input.prevent_buffer_underflow {
+        object.key("preventBufferUnderflow").string(var_36.as_str());
+    }
+    if let Some(var_37) = &input.private_metadata_pid {
+        object.key("privateMetadataPid").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_37).into()),
         );
     }
-    if let Some(var_38) = &input.pts_offset {
-        object.key("ptsOffset").number(
+    if let Some(var_38) = &input.program_number {
+        object.key("programNumber").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_38).into()),
         );
     }
-    if let Some(var_39) = &input.pts_offset_mode {
-        object.key("ptsOffsetMode").string(var_39.as_str());
+    if let Some(var_39) = &input.pts_offset {
+        object.key("ptsOffset").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_39).into()),
+        );
     }
-    if let Some(var_40) = &input.rate_mode {
-        object.key("rateMode").string(var_40.as_str());
+    if let Some(var_40) = &input.pts_offset_mode {
+        object.key("ptsOffsetMode").string(var_40.as_str());
     }
-    if let Some(var_41) = &input.scte35_esam {
+    if let Some(var_41) = &input.rate_mode {
+        object.key("rateMode").string(var_41.as_str());
+    }
+    if let Some(var_42) = &input.scte35_esam {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("scte35Esam").start_object();
-        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_42, var_41)?;
-        object_42.finish();
+        let mut object_43 = object.key("scte35Esam").start_object();
+        crate::protocol_serde::shape_m2ts_scte35_esam::ser_m2ts_scte35_esam(&mut object_43, var_42)?;
+        object_43.finish();
     }
-    if let Some(var_43) = &input.scte35_pid {
+    if let Some(var_44) = &input.scte35_pid {
         object.key("scte35Pid").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_43).into()),
+            ::aws_smithy_types::Number::NegInt((*var_44).into()),
         );
     }
-    if let Some(var_44) = &input.scte35_source {
-        object.key("scte35Source").string(var_44.as_str());
+    if let Some(var_45) = &input.scte35_source {
+        object.key("scte35Source").string(var_45.as_str());
     }
-    if let Some(var_45) = &input.segmentation_markers {
-        object.key("segmentationMarkers").string(var_45.as_str());
+    if let Some(var_46) = &input.segmentation_markers {
+        object.key("segmentationMarkers").string(var_46.as_str());
     }
-    if let Some(var_46) = &input.segmentation_style {
-        object.key("segmentationStyle").string(var_46.as_str());
+    if let Some(var_47) = &input.segmentation_style {
+        object.key("segmentationStyle").string(var_47.as_str());
     }
-    if let Some(var_47) = &input.segmentation_time {
+    if let Some(var_48) = &input.segmentation_time {
         object.key("segmentationTime").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::Float((*var_47).into()),
+            ::aws_smithy_types::Number::Float((*var_48).into()),
         );
     }
-    if let Some(var_48) = &input.timed_metadata_pid {
+    if let Some(var_49) = &input.timed_metadata_pid {
         object.key("timedMetadataPid").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_48).into()),
-        );
-    }
-    if let Some(var_49) = &input.transport_stream_id {
-        object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_49).into()),
         );
     }
-    if let Some(var_50) = &input.video_pid {
-        object.key("videoPid").number(
+    if let Some(var_50) = &input.transport_stream_id {
+        object.key("transportStreamId").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_50).into()),
+        );
+    }
+    if let Some(var_51) = &input.video_pid {
+        object.key("videoPid").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_51).into()),
         );
     }
     Ok(())
@@ -258,6 +264,13 @@ where
                         "audioPids" => {
                             builder = builder.set_audio_pids(
                                 crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
+                            );
+                        }
+                        "audioPtsOffsetDelta" => {
+                            builder = builder.set_audio_pts_offset_delta(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         "bitrate" => {

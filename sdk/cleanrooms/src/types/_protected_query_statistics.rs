@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryStatistics {
-    /// <p>The duration of the protected query, from creation until query completion.</p>
+    /// <p>The duration of the protected query, from creation until query completion, in milliseconds.</p>
     pub total_duration_in_millis: ::std::option::Option<i64>,
     /// <p>The billed resource utilization.</p>
     pub billed_resource_utilization: ::std::option::Option<crate::types::BilledResourceUtilization>,
 }
 impl ProtectedQueryStatistics {
-    /// <p>The duration of the protected query, from creation until query completion.</p>
+    /// <p>The duration of the protected query, from creation until query completion, in milliseconds.</p>
     pub fn total_duration_in_millis(&self) -> ::std::option::Option<i64> {
         self.total_duration_in_millis
     }
@@ -34,17 +34,17 @@ pub struct ProtectedQueryStatisticsBuilder {
     pub(crate) billed_resource_utilization: ::std::option::Option<crate::types::BilledResourceUtilization>,
 }
 impl ProtectedQueryStatisticsBuilder {
-    /// <p>The duration of the protected query, from creation until query completion.</p>
+    /// <p>The duration of the protected query, from creation until query completion, in milliseconds.</p>
     pub fn total_duration_in_millis(mut self, input: i64) -> Self {
         self.total_duration_in_millis = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The duration of the protected query, from creation until query completion.</p>
+    /// <p>The duration of the protected query, from creation until query completion, in milliseconds.</p>
     pub fn set_total_duration_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_duration_in_millis = input;
         self
     }
-    /// <p>The duration of the protected query, from creation until query completion.</p>
+    /// <p>The duration of the protected query, from creation until query completion, in milliseconds.</p>
     pub fn get_total_duration_in_millis(&self) -> &::std::option::Option<i64> {
         &self.total_duration_in_millis
     }

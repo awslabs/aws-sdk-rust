@@ -11,8 +11,13 @@ pub struct CreateConfiguredTableInput {
     pub table_reference: ::std::option::Option<crate::types::TableReference>,
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
     pub allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method allowed for the configured tables.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    /// <p>The analysis methods to enable for the configured table. When configured, you must specify at least two analysis methods.</p>
+    pub selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -35,9 +40,18 @@ impl CreateConfiguredTableInput {
     pub fn allowed_columns(&self) -> &[::std::string::String] {
         self.allowed_columns.as_deref().unwrap_or_default()
     }
-    /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method allowed for the configured tables.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
+    }
+    /// <p>The analysis methods to enable for the configured table. When configured, you must specify at least two analysis methods.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_analysis_methods.is_none()`.
+    pub fn selected_analysis_methods(&self) -> &[crate::types::SelectedAnalysisMethod] {
+        self.selected_analysis_methods.as_deref().unwrap_or_default()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -60,6 +74,7 @@ pub struct CreateConfiguredTableInputBuilder {
     pub(crate) table_reference: ::std::option::Option<crate::types::TableReference>,
     pub(crate) allowed_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    pub(crate) selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateConfiguredTableInputBuilder {
@@ -127,20 +142,49 @@ impl CreateConfiguredTableInputBuilder {
     pub fn get_allowed_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allowed_columns
     }
-    /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method allowed for the configured tables.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     /// This field is required.
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
         self.analysis_method = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method allowed for the configured tables.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
         self.analysis_method = input;
         self
     }
-    /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
+    /// <p>The analysis method allowed for the configured tables.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
     pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
         &self.analysis_method
+    }
+    /// Appends an item to `selected_analysis_methods`.
+    ///
+    /// To override the contents of this collection use [`set_selected_analysis_methods`](Self::set_selected_analysis_methods).
+    ///
+    /// <p>The analysis methods to enable for the configured table. When configured, you must specify at least two analysis methods.</p>
+    pub fn selected_analysis_methods(mut self, input: crate::types::SelectedAnalysisMethod) -> Self {
+        let mut v = self.selected_analysis_methods.unwrap_or_default();
+        v.push(input);
+        self.selected_analysis_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The analysis methods to enable for the configured table. When configured, you must specify at least two analysis methods.</p>
+    pub fn set_selected_analysis_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>) -> Self {
+        self.selected_analysis_methods = input;
+        self
+    }
+    /// <p>The analysis methods to enable for the configured table. When configured, you must specify at least two analysis methods.</p>
+    pub fn get_selected_analysis_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>> {
+        &self.selected_analysis_methods
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -173,6 +217,7 @@ impl CreateConfiguredTableInputBuilder {
             table_reference: self.table_reference,
             allowed_columns: self.allowed_columns,
             analysis_method: self.analysis_method,
+            selected_analysis_methods: self.selected_analysis_methods,
             tags: self.tags,
         })
     }

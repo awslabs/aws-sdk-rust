@@ -88,6 +88,11 @@ where
                         "source" => {
                             builder = builder.set_source(crate::protocol_serde::shape_analysis_source::de_analysis_source(tokens)?);
                         }
+                        "sourceMetadata" => {
+                            builder = builder.set_source_metadata(
+                                crate::protocol_serde::shape_analysis_source_metadata::de_analysis_source_metadata(tokens)?,
+                            );
+                        }
                         "analysisParameters" => {
                             builder = builder
                                 .set_analysis_parameters(crate::protocol_serde::shape_analysis_parameter_list::de_analysis_parameter_list(tokens)?);

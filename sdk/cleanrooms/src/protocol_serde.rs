@@ -105,6 +105,8 @@ pub(crate) mod shape_get_membership;
 
 pub(crate) mod shape_get_privacy_budget_template;
 
+pub(crate) mod shape_get_protected_job;
+
 pub(crate) mod shape_get_protected_query;
 
 pub(crate) mod shape_get_schema;
@@ -143,6 +145,8 @@ pub(crate) mod shape_list_privacy_budget_templates;
 
 pub(crate) mod shape_list_privacy_budgets;
 
+pub(crate) mod shape_list_protected_jobs;
+
 pub(crate) mod shape_list_protected_queries;
 
 pub(crate) mod shape_list_schemas;
@@ -152,6 +156,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_populate_id_mapping_table;
 
 pub(crate) mod shape_preview_privacy_impact;
+
+pub(crate) mod shape_start_protected_job;
 
 pub(crate) mod shape_start_protected_query;
 
@@ -180,6 +186,8 @@ pub(crate) mod shape_update_id_namespace_association;
 pub(crate) mod shape_update_membership;
 
 pub(crate) mod shape_update_privacy_budget_template;
+
+pub(crate) mod shape_update_protected_job;
 
 pub(crate) mod shape_update_protected_query;
 
@@ -231,6 +239,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_protected_job_input;
+
 pub(crate) mod shape_start_protected_query_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -259,6 +269,8 @@ pub(crate) mod shape_update_membership_input;
 
 pub(crate) mod shape_update_privacy_budget_template_input;
 
+pub(crate) mod shape_update_protected_job_input;
+
 pub(crate) mod shape_update_protected_query_input;
 
 pub(crate) mod shape_validation_exception;
@@ -266,6 +278,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_analysis_parameter;
 
 pub(crate) mod shape_analysis_rule;
+
+pub(crate) mod shape_analysis_schema;
 
 pub(crate) mod shape_analysis_source;
 
@@ -349,6 +363,8 @@ pub(crate) mod shape_membership;
 
 pub(crate) mod shape_membership_payment_configuration;
 
+pub(crate) mod shape_membership_protected_job_result_configuration;
+
 pub(crate) mod shape_membership_protected_query_result_configuration;
 
 pub(crate) mod shape_membership_summary_list;
@@ -370,6 +386,14 @@ pub(crate) mod shape_privacy_budget_template_summary_list;
 pub(crate) mod shape_privacy_budget_template_update_parameters;
 
 pub(crate) mod shape_privacy_impact;
+
+pub(crate) mod shape_protected_job;
+
+pub(crate) mod shape_protected_job_parameters;
+
+pub(crate) mod shape_protected_job_result_configuration_input;
+
+pub(crate) mod shape_protected_job_summary_list;
 
 pub(crate) mod shape_protected_query;
 
@@ -403,7 +427,9 @@ pub(crate) mod shape_analysis_rule_policy;
 
 pub(crate) mod shape_analysis_rule_type_list;
 
-pub(crate) mod shape_analysis_schema;
+pub(crate) mod shape_analysis_source_metadata;
+
+pub(crate) mod shape_analysis_template_artifacts;
 
 pub(crate) mod shape_analysis_template_summary;
 
@@ -445,6 +471,8 @@ pub(crate) mod shape_configured_table_association_summary;
 
 pub(crate) mod shape_configured_table_summary;
 
+pub(crate) mod shape_consolidated_policy;
+
 pub(crate) mod shape_differential_privacy_parameters;
 
 pub(crate) mod shape_differential_privacy_preview_parameters_input;
@@ -465,11 +493,17 @@ pub(crate) mod shape_id_namespace_association_input_reference_properties;
 
 pub(crate) mod shape_id_namespace_association_summary;
 
+pub(crate) mod shape_job_compute_payment_config;
+
 pub(crate) mod shape_member_abilities;
 
 pub(crate) mod shape_member_summary;
 
+pub(crate) mod shape_membership_job_compute_payment_config;
+
 pub(crate) mod shape_membership_ml_payment_config;
+
+pub(crate) mod shape_membership_protected_job_output_configuration;
 
 pub(crate) mod shape_membership_protected_query_output_configuration;
 
@@ -484,6 +518,18 @@ pub(crate) mod shape_privacy_budget_summary;
 pub(crate) mod shape_privacy_budget_template_parameters_output;
 
 pub(crate) mod shape_privacy_budget_template_summary;
+
+pub(crate) mod shape_protected_job_error;
+
+pub(crate) mod shape_protected_job_output_configuration_input;
+
+pub(crate) mod shape_protected_job_result;
+
+pub(crate) mod shape_protected_job_result_configuration_output;
+
+pub(crate) mod shape_protected_job_statistics;
+
+pub(crate) mod shape_protected_job_summary;
 
 pub(crate) mod shape_protected_query_error;
 
@@ -503,6 +549,8 @@ pub(crate) mod shape_schema_summary;
 
 pub(crate) mod shape_schema_type_properties;
 
+pub(crate) mod shape_selected_analysis_methods;
+
 pub(crate) mod shape_snowflake_table_reference;
 
 pub(crate) mod shape_validation_exception_field;
@@ -517,7 +565,13 @@ pub(crate) mod shape_analysis_rule_list;
 
 pub(crate) mod shape_analysis_rule_policy_v1;
 
+pub(crate) mod shape_analysis_template_artifact;
+
+pub(crate) mod shape_analysis_template_artifact_metadata;
+
 pub(crate) mod shape_analysis_template_validation_status_detail;
+
+pub(crate) mod shape_billed_job_resource_utilization;
 
 pub(crate) mod shape_billed_resource_utilization;
 
@@ -528,6 +582,8 @@ pub(crate) mod shape_configured_table_association_analysis_rule_aggregation;
 pub(crate) mod shape_configured_table_association_analysis_rule_custom;
 
 pub(crate) mod shape_configured_table_association_analysis_rule_list;
+
+pub(crate) mod shape_consolidated_policy_v1;
 
 pub(crate) mod shape_custom_ml_member_abilities;
 
@@ -557,6 +613,16 @@ pub(crate) mod shape_parameter_map;
 
 pub(crate) mod shape_privacy_budget;
 
+pub(crate) mod shape_protected_job_member_output_configuration_input;
+
+pub(crate) mod shape_protected_job_output;
+
+pub(crate) mod shape_protected_job_output_configuration_output;
+
+pub(crate) mod shape_protected_job_receiver_configurations;
+
+pub(crate) mod shape_protected_job_s3_output_configuration_input;
+
 pub(crate) mod shape_protected_query_member_output_configuration;
 
 pub(crate) mod shape_protected_query_output;
@@ -577,7 +643,15 @@ pub(crate) mod shape_aggregation_constraint;
 
 pub(crate) mod shape_analysis_rule_id_mapping_table;
 
+pub(crate) mod shape_analysis_template_artifact_list;
+
 pub(crate) mod shape_analysis_template_validation_status_reason_list;
+
+pub(crate) mod shape_consolidated_policy_aggregation;
+
+pub(crate) mod shape_consolidated_policy_custom;
+
+pub(crate) mod shape_consolidated_policy_list;
 
 pub(crate) mod shape_differential_privacy_configuration;
 
@@ -587,13 +661,29 @@ pub(crate) mod shape_differential_privacy_privacy_budget;
 
 pub(crate) mod shape_differential_privacy_sensitivity_parameters;
 
+pub(crate) mod shape_hash;
+
+pub(crate) mod shape_hash_list;
+
 pub(crate) mod shape_id_mapping_table_input_source;
+
+pub(crate) mod shape_protected_job_member_output_configuration_output;
+
+pub(crate) mod shape_protected_job_member_output_list;
+
+pub(crate) mod shape_protected_job_receiver_configuration;
+
+pub(crate) mod shape_protected_job_s3_output;
+
+pub(crate) mod shape_protected_job_s3_output_configuration_output;
 
 pub(crate) mod shape_protected_query_member_output_list;
 
 pub(crate) mod shape_protected_query_s3_output;
 
 pub(crate) mod shape_receiver_configuration;
+
+pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_schema_configuration_list;
 
@@ -625,6 +715,10 @@ pub(crate) mod shape_differential_privacy_privacy_budget_aggregation_list;
 
 pub(crate) mod shape_join_operators_list;
 
+pub(crate) mod shape_protected_job_configuration_details;
+
+pub(crate) mod shape_protected_job_single_member_output;
+
 pub(crate) mod shape_protected_query_single_member_output;
 
 pub(crate) mod shape_query_constraint_list;
@@ -641,9 +735,13 @@ pub(crate) mod shape_differential_privacy_privacy_budget_aggregation;
 
 pub(crate) mod shape_direct_analysis_configuration_details;
 
+pub(crate) mod shape_protected_job_direct_analysis_configuration_details;
+
 pub(crate) mod shape_query_constraint;
 
 pub(crate) mod shape_analysis_rule_column_name_list;
+
+pub(crate) mod shape_protected_job_receiver_account_ids;
 
 pub(crate) mod shape_query_constraint_require_overlap;
 

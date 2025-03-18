@@ -13,6 +13,7 @@
 /// # let tsptsoffset = unimplemented!();
 /// match tsptsoffset {
 ///     TsPtsOffset::Auto => { /* ... */ },
+///     TsPtsOffset::Milliseconds => { /* ... */ },
 ///     TsPtsOffset::Seconds => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -36,7 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+/// Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS offset: Choose Seconds or Milliseconds. Then specify the number of seconds or milliseconds with PTS offset.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -44,6 +45,8 @@
 pub enum TsPtsOffset {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
+    #[allow(missing_docs)] // documentation missing in model
+    Milliseconds,
     #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for TsPtsOffset {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => TsPtsOffset::Auto,
+            "MILLISECONDS" => TsPtsOffset::Milliseconds,
             "SECONDS" => TsPtsOffset::Seconds,
             other => TsPtsOffset::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl TsPtsOffset {
     pub fn as_str(&self) -> &str {
         match self {
             TsPtsOffset::Auto => "AUTO",
+            TsPtsOffset::Milliseconds => "MILLISECONDS",
             TsPtsOffset::Seconds => "SECONDS",
             TsPtsOffset::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "SECONDS"]
+        &["AUTO", "MILLISECONDS", "SECONDS"]
     }
 }
 impl ::std::convert::AsRef<str> for TsPtsOffset {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for TsPtsOffset {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TsPtsOffset::Auto => write!(f, "AUTO"),
+            TsPtsOffset::Milliseconds => write!(f, "MILLISECONDS"),
             TsPtsOffset::Seconds => write!(f, "SECONDS"),
             TsPtsOffset::Unknown(value) => write!(f, "{}", value),
         }

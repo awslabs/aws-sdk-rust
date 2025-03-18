@@ -9,6 +9,13 @@ pub struct UpdateConfiguredTableInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configured table.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
 impl UpdateConfiguredTableInput {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
@@ -22,6 +29,19 @@ impl UpdateConfiguredTableInput {
     /// <p>A new description for the configured table.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn analysis_method(&self) -> ::std::option::Option<&crate::types::AnalysisMethod> {
+        self.analysis_method.as_ref()
+    }
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_analysis_methods.is_none()`.
+    pub fn selected_analysis_methods(&self) -> &[crate::types::SelectedAnalysisMethod] {
+        self.selected_analysis_methods.as_deref().unwrap_or_default()
     }
 }
 impl UpdateConfiguredTableInput {
@@ -38,6 +58,8 @@ pub struct UpdateConfiguredTableInputBuilder {
     pub(crate) configured_table_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) analysis_method: ::std::option::Option<crate::types::AnalysisMethod>,
+    pub(crate) selected_analysis_methods: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>,
 }
 impl UpdateConfiguredTableInputBuilder {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
@@ -83,6 +105,49 @@ impl UpdateConfiguredTableInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
+        self.analysis_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
+        self.analysis_method = input;
+        self
+    }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
+        &self.analysis_method
+    }
+    /// Appends an item to `selected_analysis_methods`.
+    ///
+    /// To override the contents of this collection use [`set_selected_analysis_methods`](Self::set_selected_analysis_methods).
+    ///
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub fn selected_analysis_methods(mut self, input: crate::types::SelectedAnalysisMethod) -> Self {
+        let mut v = self.selected_analysis_methods.unwrap_or_default();
+        v.push(input);
+        self.selected_analysis_methods = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub fn set_selected_analysis_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>) -> Self {
+        self.selected_analysis_methods = input;
+        self
+    }
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub fn get_selected_analysis_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>> {
+        &self.selected_analysis_methods
+    }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
     pub fn build(
         self,
@@ -92,6 +157,8 @@ impl UpdateConfiguredTableInputBuilder {
             configured_table_identifier: self.configured_table_identifier,
             name: self.name,
             description: self.description,
+            analysis_method: self.analysis_method,
+            selected_analysis_methods: self.selected_analysis_methods,
         })
     }
 }

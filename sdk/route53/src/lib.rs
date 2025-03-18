@@ -36,7 +36,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-route53 = "1.68.0"
+//! aws-sdk-route53 = "1.69.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

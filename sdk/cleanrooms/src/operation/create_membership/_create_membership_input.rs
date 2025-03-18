@@ -6,11 +6,17 @@ pub struct CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
     pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    /// <p>The default job result configuration that determines how job results are protected and managed within this membership. This configuration applies to all jobs.</p>
+    pub default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
     /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
@@ -22,8 +28,14 @@ impl CreateMembershipInput {
         self.collaboration_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(&self) -> ::std::option::Option<&crate::types::MembershipJobLogStatus> {
+        self.job_log_status.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -32,6 +44,10 @@ impl CreateMembershipInput {
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
     pub fn default_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedQueryResultConfiguration> {
         self.default_result_configuration.as_ref()
+    }
+    /// <p>The default job result configuration that determines how job results are protected and managed within this membership. This configuration applies to all jobs.</p>
+    pub fn default_job_result_configuration(&self) -> ::std::option::Option<&crate::types::MembershipProtectedJobResultConfiguration> {
+        self.default_job_result_configuration.as_ref()
     }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
@@ -53,8 +69,10 @@ impl CreateMembershipInput {
 pub struct CreateMembershipInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
+    pub(crate) job_log_status: ::std::option::Option<crate::types::MembershipJobLogStatus>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) default_result_configuration: ::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration>,
+    pub(crate) default_job_result_configuration: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
     pub(crate) payment_configuration: ::std::option::Option<crate::types::MembershipPaymentConfiguration>,
 }
 impl CreateMembershipInputBuilder {
@@ -74,19 +92,39 @@ impl CreateMembershipInputBuilder {
         &self.collaboration_identifier
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     /// This field is required.
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
         self.query_log_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn set_query_log_status(mut self, input: ::std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
         self.query_log_status = input;
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the membership.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about queries run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
     pub fn get_query_log_status(&self) -> &::std::option::Option<crate::types::MembershipQueryLogStatus> {
         &self.query_log_status
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn job_log_status(mut self, input: crate::types::MembershipJobLogStatus) -> Self {
+        self.job_log_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn set_job_log_status(mut self, input: ::std::option::Option<crate::types::MembershipJobLogStatus>) -> Self {
+        self.job_log_status = input;
+        self
+    }
+    /// <p>An indicator as to whether job logging has been enabled or disabled for the collaboration.</p>
+    /// <p>When <code>ENABLED</code>, Clean Rooms logs details about jobs run within this collaboration and those logs can be viewed in Amazon CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
+    pub fn get_job_log_status(&self) -> &::std::option::Option<crate::types::MembershipJobLogStatus> {
+        &self.job_log_status
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -125,6 +163,23 @@ impl CreateMembershipInputBuilder {
     pub fn get_default_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedQueryResultConfiguration> {
         &self.default_result_configuration
     }
+    /// <p>The default job result configuration that determines how job results are protected and managed within this membership. This configuration applies to all jobs.</p>
+    pub fn default_job_result_configuration(mut self, input: crate::types::MembershipProtectedJobResultConfiguration) -> Self {
+        self.default_job_result_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default job result configuration that determines how job results are protected and managed within this membership. This configuration applies to all jobs.</p>
+    pub fn set_default_job_result_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration>,
+    ) -> Self {
+        self.default_job_result_configuration = input;
+        self
+    }
+    /// <p>The default job result configuration that determines how job results are protected and managed within this membership. This configuration applies to all jobs.</p>
+    pub fn get_default_job_result_configuration(&self) -> &::std::option::Option<crate::types::MembershipProtectedJobResultConfiguration> {
+        &self.default_job_result_configuration
+    }
     /// <p>The payment responsibilities accepted by the collaboration member.</p>
     /// <p>Not required if the collaboration member has the member ability to run queries.</p>
     /// <p>Required if the collaboration member doesn't have the member ability to run queries but is configured as a payer by the collaboration creator.</p>
@@ -152,8 +207,10 @@ impl CreateMembershipInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_membership::CreateMembershipInput {
             collaboration_identifier: self.collaboration_identifier,
             query_log_status: self.query_log_status,
+            job_log_status: self.job_log_status,
             tags: self.tags,
             default_result_configuration: self.default_result_configuration,
+            default_job_result_configuration: self.default_job_result_configuration,
             payment_configuration: self.payment_configuration,
         })
     }

@@ -3,11 +3,23 @@ pub fn ser_update_configured_table_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_configured_table::UpdateConfiguredTableInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.analysis_method {
+        object.key("analysisMethod").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.selected_analysis_methods {
+        let mut array_5 = object.key("selectedAnalysisMethods").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
     }
     Ok(())
 }

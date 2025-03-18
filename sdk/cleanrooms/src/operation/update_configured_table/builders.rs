@@ -150,4 +150,46 @@ impl UpdateConfiguredTableFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
+        self.inner = self.inner.analysis_method(input);
+        self
+    }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn set_analysis_method(mut self, input: ::std::option::Option<crate::types::AnalysisMethod>) -> Self {
+        self.inner = self.inner.set_analysis_method(input);
+        self
+    }
+    /// <p>The analysis method for the configured table.</p>
+    /// <p><code>DIRECT_QUERY</code> allows SQL queries to be run directly on this table.</p>
+    /// <p><code>DIRECT_JOB</code> allows PySpark jobs to be run directly on this table.</p>
+    /// <p><code>MULTIPLE</code> allows both SQL queries and PySpark jobs to be run directly on this table.</p>
+    pub fn get_analysis_method(&self) -> &::std::option::Option<crate::types::AnalysisMethod> {
+        self.inner.get_analysis_method()
+    }
+    ///
+    /// Appends an item to `selectedAnalysisMethods`.
+    ///
+    /// To override the contents of this collection use [`set_selected_analysis_methods`](Self::set_selected_analysis_methods).
+    ///
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub fn selected_analysis_methods(mut self, input: crate::types::SelectedAnalysisMethod) -> Self {
+        self.inner = self.inner.selected_analysis_methods(input);
+        self
+    }
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub fn set_selected_analysis_methods(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>>) -> Self {
+        self.inner = self.inner.set_selected_analysis_methods(input);
+        self
+    }
+    /// <p>The selected analysis methods for the table configuration update.</p>
+    pub fn get_selected_analysis_methods(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SelectedAnalysisMethod>> {
+        self.inner.get_selected_analysis_methods()
+    }
 }

@@ -68,6 +68,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "analysisRuleTypes" => {
+                            builder = builder.set_analysis_rule_types(
+                                    crate::protocol_serde::shape_configured_table_association_analysis_rule_type_list::de_configured_table_association_analysis_rule_type_list(tokens)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

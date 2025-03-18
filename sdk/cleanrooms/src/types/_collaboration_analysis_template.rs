@@ -2,7 +2,7 @@
 
 /// <p>The analysis template within a collaboration.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollaborationAnalysisTemplate {
     /// <p>The identifier of the analysis template.</p>
     pub id: ::std::string::String,
@@ -28,6 +28,8 @@ pub struct CollaborationAnalysisTemplate {
     pub format: crate::types::AnalysisFormat,
     /// <p>The source of the analysis template within a collaboration.</p>
     pub source: ::std::option::Option<crate::types::AnalysisSource>,
+    /// <p>The source metadata for the collaboration analysis template.</p>
+    pub source_metadata: ::std::option::Option<crate::types::AnalysisSourceMetadata>,
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
     pub analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     /// <p>The validations that were performed.</p>
@@ -88,6 +90,10 @@ impl CollaborationAnalysisTemplate {
     pub fn source(&self) -> ::std::option::Option<&crate::types::AnalysisSource> {
         self.source.as_ref()
     }
+    /// <p>The source metadata for the collaboration analysis template.</p>
+    pub fn source_metadata(&self) -> ::std::option::Option<&crate::types::AnalysisSourceMetadata> {
+        self.source_metadata.as_ref()
+    }
     /// <p>The analysis parameters that have been specified in the analysis template.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.analysis_parameters.is_none()`.
@@ -101,26 +107,6 @@ impl CollaborationAnalysisTemplate {
         self.validations.as_deref().unwrap_or_default()
     }
 }
-impl ::std::fmt::Debug for CollaborationAnalysisTemplate {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("CollaborationAnalysisTemplate");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("collaboration_id", &self.collaboration_id);
-        formatter.field("collaboration_arn", &self.collaboration_arn);
-        formatter.field("description", &self.description);
-        formatter.field("creator_account_id", &self.creator_account_id);
-        formatter.field("name", &self.name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.field("source", &"*** Sensitive Data Redacted ***");
-        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field("validations", &self.validations);
-        formatter.finish()
-    }
-}
 impl CollaborationAnalysisTemplate {
     /// Creates a new builder-style object to manufacture [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
     pub fn builder() -> crate::types::builders::CollaborationAnalysisTemplateBuilder {
@@ -129,7 +115,7 @@ impl CollaborationAnalysisTemplate {
 }
 
 /// A builder for [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CollaborationAnalysisTemplateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -144,6 +130,7 @@ pub struct CollaborationAnalysisTemplateBuilder {
     pub(crate) schema: ::std::option::Option<crate::types::AnalysisSchema>,
     pub(crate) format: ::std::option::Option<crate::types::AnalysisFormat>,
     pub(crate) source: ::std::option::Option<crate::types::AnalysisSource>,
+    pub(crate) source_metadata: ::std::option::Option<crate::types::AnalysisSourceMetadata>,
     pub(crate) analysis_parameters: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisParameter>>,
     pub(crate) validations: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisTemplateValidationStatusDetail>>,
 }
@@ -313,7 +300,6 @@ impl CollaborationAnalysisTemplateBuilder {
         &self.format
     }
     /// <p>The source of the analysis template within a collaboration.</p>
-    /// This field is required.
     pub fn source(mut self, input: crate::types::AnalysisSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -326,6 +312,20 @@ impl CollaborationAnalysisTemplateBuilder {
     /// <p>The source of the analysis template within a collaboration.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::AnalysisSource> {
         &self.source
+    }
+    /// <p>The source metadata for the collaboration analysis template.</p>
+    pub fn source_metadata(mut self, input: crate::types::AnalysisSourceMetadata) -> Self {
+        self.source_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source metadata for the collaboration analysis template.</p>
+    pub fn set_source_metadata(mut self, input: ::std::option::Option<crate::types::AnalysisSourceMetadata>) -> Self {
+        self.source_metadata = input;
+        self
+    }
+    /// <p>The source metadata for the collaboration analysis template.</p>
+    pub fn get_source_metadata(&self) -> &::std::option::Option<crate::types::AnalysisSourceMetadata> {
+        &self.source_metadata
     }
     /// Appends an item to `analysis_parameters`.
     ///
@@ -437,28 +437,9 @@ impl CollaborationAnalysisTemplateBuilder {
                 )
             })?,
             source: self.source,
+            source_metadata: self.source_metadata,
             analysis_parameters: self.analysis_parameters,
             validations: self.validations,
         })
-    }
-}
-impl ::std::fmt::Debug for CollaborationAnalysisTemplateBuilder {
-    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
-        let mut formatter = f.debug_struct("CollaborationAnalysisTemplateBuilder");
-        formatter.field("id", &self.id);
-        formatter.field("arn", &self.arn);
-        formatter.field("collaboration_id", &self.collaboration_id);
-        formatter.field("collaboration_arn", &self.collaboration_arn);
-        formatter.field("description", &self.description);
-        formatter.field("creator_account_id", &self.creator_account_id);
-        formatter.field("name", &self.name);
-        formatter.field("create_time", &self.create_time);
-        formatter.field("update_time", &self.update_time);
-        formatter.field("schema", &self.schema);
-        formatter.field("format", &self.format);
-        formatter.field("source", &"*** Sensitive Data Redacted ***");
-        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
-        formatter.field("validations", &self.validations);
-        formatter.finish()
     }
 }

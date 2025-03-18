@@ -9,7 +9,6 @@ pub struct MemberSpecification {
     /// <p>The abilities granted to the collaboration member.</p>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>The ML abilities granted to the collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub ml_member_abilities: ::std::option::Option<crate::types::MlMemberAbilities>,
     /// <p>The member's display name.</p>
     pub display_name: ::std::string::String,
@@ -29,7 +28,6 @@ impl MemberSpecification {
         self.member_abilities.deref()
     }
     /// <p>The ML abilities granted to the collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn ml_member_abilities(&self) -> ::std::option::Option<&crate::types::MlMemberAbilities> {
         self.ml_member_abilities.as_ref()
     }
@@ -98,19 +96,16 @@ impl MemberSpecificationBuilder {
         &self.member_abilities
     }
     /// <p>The ML abilities granted to the collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn ml_member_abilities(mut self, input: crate::types::MlMemberAbilities) -> Self {
         self.ml_member_abilities = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ML abilities granted to the collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn set_ml_member_abilities(mut self, input: ::std::option::Option<crate::types::MlMemberAbilities>) -> Self {
         self.ml_member_abilities = input;
         self
     }
     /// <p>The ML abilities granted to the collaboration member.</p>
-    /// <p>Custom ML modeling is in beta release and is subject to change. For beta terms and conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>.</p>
     pub fn get_ml_member_abilities(&self) -> &::std::option::Option<crate::types::MlMemberAbilities> {
         &self.ml_member_abilities
     }
