@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceInput {
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayInstanceInput {
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub fn gateway_instance_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_instance_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeGatewayInstanceInputBuilder {
     pub(crate) gateway_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayInstanceInputBuilder {
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     /// This field is required.
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_instance_arn
     }

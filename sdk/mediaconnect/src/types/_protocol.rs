@@ -14,6 +14,7 @@
 /// match protocol {
 ///     Protocol::Cdi => { /* ... */ },
 ///     Protocol::FujitsuQos => { /* ... */ },
+///     Protocol::NdiSpeedHq => { /* ... */ },
 ///     Protocol::Rist => { /* ... */ },
 ///     Protocol::Rtp => { /* ... */ },
 ///     Protocol::RtpFec => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     FujitsuQos,
     #[allow(missing_docs)] // documentation missing in model
+    NdiSpeedHq,
+    #[allow(missing_docs)] // documentation missing in model
     Rist,
     #[allow(missing_docs)] // documentation missing in model
     Rtp,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for Protocol {
         match s {
             "cdi" => Protocol::Cdi,
             "fujitsu-qos" => Protocol::FujitsuQos,
+            "ndi-speed-hq" => Protocol::NdiSpeedHq,
             "rist" => Protocol::Rist,
             "rtp" => Protocol::Rtp,
             "rtp-fec" => Protocol::RtpFec,
@@ -108,6 +112,7 @@ impl Protocol {
         match self {
             Protocol::Cdi => "cdi",
             Protocol::FujitsuQos => "fujitsu-qos",
+            Protocol::NdiSpeedHq => "ndi-speed-hq",
             Protocol::Rist => "rist",
             Protocol::Rtp => "rtp",
             Protocol::RtpFec => "rtp-fec",
@@ -125,6 +130,7 @@ impl Protocol {
         &[
             "cdi",
             "fujitsu-qos",
+            "ndi-speed-hq",
             "rist",
             "rtp",
             "rtp-fec",
@@ -159,6 +165,7 @@ impl ::std::fmt::Display for Protocol {
         match self {
             Protocol::Cdi => write!(f, "cdi"),
             Protocol::FujitsuQos => write!(f, "fujitsu-qos"),
+            Protocol::NdiSpeedHq => write!(f, "ndi-speed-hq"),
             Protocol::Rist => write!(f, "rist"),
             Protocol::Rtp => write!(f, "rtp"),
             Protocol::RtpFec => write!(f, "rtp-fec"),

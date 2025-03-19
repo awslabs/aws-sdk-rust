@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowOutputOutput {
-    /// The ARN of the flow that is associated with the output you removed.
+    /// <p>The ARN of the flow that the output was removed from.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The ARN of the output that was removed.
+    /// <p>The ARN of the output that was removed.</p>
     pub output_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RemoveFlowOutputOutput {
-    /// The ARN of the flow that is associated with the output you removed.
+    /// <p>The ARN of the flow that the output was removed from.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The ARN of the output that was removed.
+    /// <p>The ARN of the output that was removed.</p>
     pub fn output_arn(&self) -> ::std::option::Option<&str> {
         self.output_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct RemoveFlowOutputOutputBuilder {
     _request_id: Option<String>,
 }
 impl RemoveFlowOutputOutputBuilder {
-    /// The ARN of the flow that is associated with the output you removed.
+    /// <p>The ARN of the flow that the output was removed from.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that is associated with the output you removed.
+    /// <p>The ARN of the flow that the output was removed from.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that is associated with the output you removed.
+    /// <p>The ARN of the flow that the output was removed from.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// The ARN of the output that was removed.
+    /// <p>The ARN of the output that was removed.</p>
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the output that was removed.
+    /// <p>The ARN of the output that was removed.</p>
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_arn = input;
         self
     }
-    /// The ARN of the output that was removed.
+    /// <p>The ARN of the output that was removed.</p>
     pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_arn
     }

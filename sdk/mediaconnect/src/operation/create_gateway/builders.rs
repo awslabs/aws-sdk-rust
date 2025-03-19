@@ -22,7 +22,7 @@ impl crate::operation::create_gateway::builders::CreateGatewayInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateGateway`.
 ///
-/// Creates a new gateway. The request must include at least one network (up to 4).
+/// <p>Creates a new gateway. The request must include at least one network (up to four).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,31 +113,31 @@ impl CreateGatewayFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_egress_cidr_blocks`](Self::set_egress_cidr_blocks).
     ///
-    /// The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn egress_cidr_blocks(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.egress_cidr_blocks(input.into());
         self
     }
-    /// The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn set_egress_cidr_blocks(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_egress_cidr_blocks(input);
         self
     }
-    /// The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn get_egress_cidr_blocks(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_egress_cidr_blocks()
     }
-    /// The name of the gateway. This name can not be modified after the gateway is created.
+    /// <p>The name of the gateway. This name can not be modified after the gateway is created.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The name of the gateway. This name can not be modified after the gateway is created.
+    /// <p>The name of the gateway. This name can not be modified after the gateway is created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The name of the gateway. This name can not be modified after the gateway is created.
+    /// <p>The name of the gateway. This name can not be modified after the gateway is created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -146,17 +146,17 @@ impl CreateGatewayFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_networks`](Self::set_networks).
     ///
-    /// The list of networks that you want to add.
+    /// <p>The list of networks that you want to add to the gateway.</p>
     pub fn networks(mut self, input: crate::types::GatewayNetwork) -> Self {
         self.inner = self.inner.networks(input);
         self
     }
-    /// The list of networks that you want to add.
+    /// <p>The list of networks that you want to add to the gateway.</p>
     pub fn set_networks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>>) -> Self {
         self.inner = self.inner.set_networks(input);
         self
     }
-    /// The list of networks that you want to add.
+    /// <p>The list of networks that you want to add to the gateway.</p>
     pub fn get_networks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayNetwork>> {
         self.inner.get_networks()
     }

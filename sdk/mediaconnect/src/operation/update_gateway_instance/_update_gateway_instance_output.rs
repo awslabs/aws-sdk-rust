@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayInstanceOutput {
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub bridge_placement: ::std::option::Option<crate::types::BridgePlacement>,
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance that was updated.</p>
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateGatewayInstanceOutput {
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn bridge_placement(&self) -> ::std::option::Option<&crate::types::BridgePlacement> {
         self.bridge_placement.as_ref()
     }
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance that was updated.</p>
     pub fn gateway_instance_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_instance_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateGatewayInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateGatewayInstanceOutputBuilder {
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn bridge_placement(mut self, input: crate::types::BridgePlacement) -> Self {
         self.bridge_placement = ::std::option::Option::Some(input);
         self
     }
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_bridge_placement(mut self, input: ::std::option::Option<crate::types::BridgePlacement>) -> Self {
         self.bridge_placement = input;
         self
     }
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_bridge_placement(&self) -> &::std::option::Option<crate::types::BridgePlacement> {
         &self.bridge_placement
     }
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance that was updated.</p>
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance that was updated.</p>
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance that was updated.</p>
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_instance_arn
     }

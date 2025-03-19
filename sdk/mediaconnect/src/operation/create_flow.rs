@@ -240,17 +240,17 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateFlowEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateFlowError {
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning depends on the API, and is documented in the error message.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>Exception raised by Elemental MediaConnect when creating the flow. See the error message for the operation for more information on the cause of this exception.</p>
     CreateFlow420Exception(crate::types::error::CreateFlow420Exception),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>You do not have sufficient access to perform this action.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The service is currently unavailable or busy.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The request was denied due to request throttling.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -356,7 +356,12 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateFlowError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::InternalServerErrorException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ServiceUnavailableException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::TooManyRequestsException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateFlowError {

@@ -3,20 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewayInstancesOutput {
-    /// A list of instance summaries.
+    /// <p>A list of instance summaries.</p>
     pub instances: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>,
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListInstances</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListInstances</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListGatewayInstancesOutput {
-    /// A list of instance summaries.
+    /// <p>A list of instance summaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instances.is_none()`.
     pub fn instances(&self) -> &[crate::types::ListedGatewayInstance] {
         self.instances.as_deref().unwrap_or_default()
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListInstances</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListInstances</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +48,36 @@ impl ListGatewayInstancesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_instances`](Self::set_instances).
     ///
-    /// A list of instance summaries.
+    /// <p>A list of instance summaries.</p>
     pub fn instances(mut self, input: crate::types::ListedGatewayInstance) -> Self {
         let mut v = self.instances.unwrap_or_default();
         v.push(input);
         self.instances = ::std::option::Option::Some(v);
         self
     }
-    /// A list of instance summaries.
+    /// <p>A list of instance summaries.</p>
     pub fn set_instances(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>>) -> Self {
         self.instances = input;
         self
     }
-    /// A list of instance summaries.
+    /// <p>A list of instance summaries.</p>
     pub fn get_instances(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedGatewayInstance>> {
         &self.instances
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListInstances</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListInstances</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListInstances</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListInstances</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListInstances</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListInstances</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -22,7 +22,7 @@ impl crate::operation::describe_gateway_instance::builders::DescribeGatewayInsta
 }
 /// Fluent builder constructing a request to `DescribeGatewayInstance`.
 ///
-/// Displays the details of an instance.
+/// <p>Displays the details of an instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeGatewayInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_instance_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to describe.</p>
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_instance_arn()
     }

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayOutput {
-    /// The Amazon Resource Name (ARN) of the gateway that was deleted.
+    /// <p>The ARN of the gateway that was deleted.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteGatewayOutput {
-    /// The Amazon Resource Name (ARN) of the gateway that was deleted.
+    /// <p>The ARN of the gateway that was deleted.</p>
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteGatewayOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteGatewayOutputBuilder {
-    /// The Amazon Resource Name (ARN) of the gateway that was deleted.
+    /// <p>The ARN of the gateway that was deleted.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway that was deleted.
+    /// <p>The ARN of the gateway that was deleted.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway that was deleted.
+    /// <p>The ARN of the gateway that was deleted.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }

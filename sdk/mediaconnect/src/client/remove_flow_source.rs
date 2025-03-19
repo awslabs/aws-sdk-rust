@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveFlowSource`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to remove a source from.<br>
-    ///   - [`source_arn(impl Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_source_arn):<br>required: **true**<br>The ARN of the source that you want to remove.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to remove a source from.</p><br>
+    ///   - [`source_arn(impl Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_source_arn):<br>required: **true**<br><p>The ARN of the source that you want to remove.</p><br>
     /// - On success, responds with [`RemoveFlowSourceOutput`](crate::operation::remove_flow_source::RemoveFlowSourceOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::flow_arn): The ARN of the flow that is associated with the source you removed.
-    ///   - [`source_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::source_arn): The ARN of the source that was removed.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::flow_arn): <p>The ARN of the flow that the source was removed from.</p>
+    ///   - [`source_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::source_arn): <p>The ARN of the source that was removed.</p>
     /// - On failure, responds with [`SdkError<RemoveFlowSourceError>`](crate::operation::remove_flow_source::RemoveFlowSourceError)
     pub fn remove_flow_source(&self) -> crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder {
         crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::new(self.handle.clone())

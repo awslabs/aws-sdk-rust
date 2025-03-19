@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowOutput {
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The flow that you requested a description of.</p>
     pub flow: ::std::option::Option<crate::types::Flow>,
-    /// Messages that provide the state of the flow.
+    /// <p>Any errors that apply currently to the flow. If there are no errors, MediaConnect will not include this field in the response.</p>
     pub messages: ::std::option::Option<crate::types::Messages>,
     _request_id: Option<String>,
 }
 impl DescribeFlowOutput {
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The flow that you requested a description of.</p>
     pub fn flow(&self) -> ::std::option::Option<&crate::types::Flow> {
         self.flow.as_ref()
     }
-    /// Messages that provide the state of the flow.
+    /// <p>Any errors that apply currently to the flow. If there are no errors, MediaConnect will not include this field in the response.</p>
     pub fn messages(&self) -> ::std::option::Option<&crate::types::Messages> {
         self.messages.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct DescribeFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFlowOutputBuilder {
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The flow that you requested a description of.</p>
     pub fn flow(mut self, input: crate::types::Flow) -> Self {
         self.flow = ::std::option::Option::Some(input);
         self
     }
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The flow that you requested a description of.</p>
     pub fn set_flow(mut self, input: ::std::option::Option<crate::types::Flow>) -> Self {
         self.flow = input;
         self
     }
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The flow that you requested a description of.</p>
     pub fn get_flow(&self) -> &::std::option::Option<crate::types::Flow> {
         &self.flow
     }
-    /// Messages that provide the state of the flow.
+    /// <p>Any errors that apply currently to the flow. If there are no errors, MediaConnect will not include this field in the response.</p>
     pub fn messages(mut self, input: crate::types::Messages) -> Self {
         self.messages = ::std::option::Option::Some(input);
         self
     }
-    /// Messages that provide the state of the flow.
+    /// <p>Any errors that apply currently to the flow. If there are no errors, MediaConnect will not include this field in the response.</p>
     pub fn set_messages(mut self, input: ::std::option::Option<crate::types::Messages>) -> Self {
         self.messages = input;
         self
     }
-    /// Messages that provide the state of the flow.
+    /// <p>Any errors that apply currently to the flow. If there are no errors, MediaConnect will not include this field in the response.</p>
     pub fn get_messages(&self) -> &::std::option::Option<crate::types::Messages> {
         &self.messages
     }

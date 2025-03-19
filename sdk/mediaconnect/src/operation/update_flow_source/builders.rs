@@ -22,7 +22,7 @@ impl crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateFlowSource`.
 ///
-/// Updates the source of a flow.
+/// <p>Updates the source of a flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,115 +108,115 @@ impl UpdateFlowSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
+    /// <p>The type of encryption that is used on the content ingested from the source.</p>
     pub fn decryption(mut self, input: crate::types::UpdateEncryption) -> Self {
         self.inner = self.inner.decryption(input);
         self
     }
-    /// The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
+    /// <p>The type of encryption that is used on the content ingested from the source.</p>
     pub fn set_decryption(mut self, input: ::std::option::Option<crate::types::UpdateEncryption>) -> Self {
         self.inner = self.inner.set_decryption(input);
         self
     }
-    /// The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
+    /// <p>The type of encryption that is used on the content ingested from the source.</p>
     pub fn get_decryption(&self) -> &::std::option::Option<crate::types::UpdateEncryption> {
         self.inner.get_decryption()
     }
-    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    /// <p>A description of the source. This description is not visible outside of the current Amazon Web Services account.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    /// <p>A description of the source. This description is not visible outside of the current Amazon Web Services account.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
+    /// <p>A description of the source. This description is not visible outside of the current Amazon Web Services account.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    /// <p>The Amazon Resource Name (ARN) of the entitlement that allows you to subscribe to the flow. The entitlement is set by the content originator, and the ARN is generated as part of the originator's flow.</p>
     pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entitlement_arn(input.into());
         self
     }
-    /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    /// <p>The Amazon Resource Name (ARN) of the entitlement that allows you to subscribe to the flow. The entitlement is set by the content originator, and the ARN is generated as part of the originator's flow.</p>
     pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entitlement_arn(input);
         self
     }
-    /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
+    /// <p>The Amazon Resource Name (ARN) of the entitlement that allows you to subscribe to the flow. The entitlement is set by the content originator, and the ARN is generated as part of the originator's flow.</p>
     pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entitlement_arn()
     }
-    /// The flow that is associated with the source that you want to update.
+    /// <p>The ARN of the flow that you want to update.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that is associated with the source that you want to update.
+    /// <p>The ARN of the flow that you want to update.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that is associated with the source that you want to update.
+    /// <p>The ARN of the flow that you want to update.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The port that the flow will be listening on for incoming content.
+    /// <p>The port that the flow listens on for incoming content. If the protocol of the source is Zixi, the port must be set to 2088.</p>
     pub fn ingest_port(mut self, input: i32) -> Self {
         self.inner = self.inner.ingest_port(input);
         self
     }
-    /// The port that the flow will be listening on for incoming content.
+    /// <p>The port that the flow listens on for incoming content. If the protocol of the source is Zixi, the port must be set to 2088.</p>
     pub fn set_ingest_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ingest_port(input);
         self
     }
-    /// The port that the flow will be listening on for incoming content.
+    /// <p>The port that the flow listens on for incoming content. If the protocol of the source is Zixi, the port must be set to 2088.</p>
     pub fn get_ingest_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_ingest_port()
     }
-    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+    /// <p>The maximum bitrate for RIST, RTP, and RTP-FEC streams.</p>
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.inner = self.inner.max_bitrate(input);
         self
     }
-    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+    /// <p>The maximum bitrate for RIST, RTP, and RTP-FEC streams.</p>
     pub fn set_max_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_bitrate(input);
         self
     }
-    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+    /// <p>The maximum bitrate for RIST, RTP, and RTP-FEC streams.</p>
     pub fn get_max_bitrate(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_bitrate()
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    /// <p>The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.</p>
     pub fn max_latency(mut self, input: i32) -> Self {
         self.inner = self.inner.max_latency(input);
         self
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    /// <p>The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.</p>
     pub fn set_max_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_latency(input);
         self
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    /// <p>The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.</p>
     pub fn get_max_latency(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_latency()
     }
-    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    /// <p>The size of the buffer (in milliseconds) to use to sync incoming source data.</p>
     pub fn max_sync_buffer(mut self, input: i32) -> Self {
         self.inner = self.inner.max_sync_buffer(input);
         self
     }
-    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    /// <p>The size of the buffer (in milliseconds) to use to sync incoming source data.</p>
     pub fn set_max_sync_buffer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_sync_buffer(input);
         self
     }
-    /// The size of the buffer (in milliseconds) to use to sync incoming source data.
+    /// <p>The size of the buffer (in milliseconds) to use to sync incoming source data.</p>
     pub fn get_max_sync_buffer(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_sync_buffer()
     }
@@ -225,12 +225,12 @@ impl UpdateFlowSourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
     ///
-    /// The media streams that are associated with the source, and the parameters for those associations.
+    /// <p>The media stream that is associated with the source, and the parameters for that association.</p>
     pub fn media_stream_source_configurations(mut self, input: crate::types::MediaStreamSourceConfigurationRequest) -> Self {
         self.inner = self.inner.media_stream_source_configurations(input);
         self
     }
-    /// The media streams that are associated with the source, and the parameters for those associations.
+    /// <p>The media stream that is associated with the source, and the parameters for that association.</p>
     pub fn set_media_stream_source_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
@@ -238,163 +238,169 @@ impl UpdateFlowSourceFluentBuilder {
         self.inner = self.inner.set_media_stream_source_configurations(input);
         self
     }
-    /// The media streams that are associated with the source, and the parameters for those associations.
+    /// <p>The media stream that is associated with the source, and the parameters for that association.</p>
     pub fn get_media_stream_source_configurations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>> {
         self.inner.get_media_stream_source_configurations()
     }
-    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    /// <p>The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.</p>
     pub fn min_latency(mut self, input: i32) -> Self {
         self.inner = self.inner.min_latency(input);
         self
     }
-    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    /// <p>The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.</p>
     pub fn set_min_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_latency(input);
         self
     }
-    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    /// <p>The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.</p>
     pub fn get_min_latency(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_latency()
     }
-    /// The protocol that is used by the source.
+    /// <p>The protocol that the source uses to deliver the content to MediaConnect.</p><note>
+    /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
+    /// </note>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.inner = self.inner.protocol(input);
         self
     }
-    /// The protocol that is used by the source.
+    /// <p>The protocol that the source uses to deliver the content to MediaConnect.</p><note>
+    /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
+    /// </note>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
-    /// The protocol that is used by the source.
+    /// <p>The protocol that the source uses to deliver the content to MediaConnect.</p><note>
+    /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
+    /// </note>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         self.inner.get_protocol()
     }
-    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn sender_control_port(mut self, input: i32) -> Self {
         self.inner = self.inner.sender_control_port(input);
         self
     }
-    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_sender_control_port(input);
         self
     }
-    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_sender_control_port()
     }
-    /// The IP address that the flow communicates with to initiate connection with the sender.
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_ip_address(input.into());
         self
     }
-    /// The IP address that the flow communicates with to initiate connection with the sender.
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_ip_address(input);
         self
     }
-    /// The IP address that the flow communicates with to initiate connection with the sender.
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sender_ip_address()
     }
-    /// The ARN of the source that you want to update.
+    /// <p>The ARN of the source that you want to update.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
         self
     }
-    /// The ARN of the source that you want to update.
+    /// <p>The ARN of the source that you want to update.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
     }
-    /// The ARN of the source that you want to update.
+    /// <p>The ARN of the source that you want to update.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_arn()
     }
-    /// Source IP or domain name for SRT-caller protocol.
+    /// <p>The source IP or domain name for SRT-caller protocol.</p>
     pub fn source_listener_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_listener_address(input.into());
         self
     }
-    /// Source IP or domain name for SRT-caller protocol.
+    /// <p>The source IP or domain name for SRT-caller protocol.</p>
     pub fn set_source_listener_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_listener_address(input);
         self
     }
-    /// Source IP or domain name for SRT-caller protocol.
+    /// <p>The source IP or domain name for SRT-caller protocol.</p>
     pub fn get_source_listener_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_listener_address()
     }
-    /// Source port for SRT-caller protocol.
+    /// <p>Source port for SRT-caller protocol.</p>
     pub fn source_listener_port(mut self, input: i32) -> Self {
         self.inner = self.inner.source_listener_port(input);
         self
     }
-    /// Source port for SRT-caller protocol.
+    /// <p>Source port for SRT-caller protocol.</p>
     pub fn set_source_listener_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_source_listener_port(input);
         self
     }
-    /// Source port for SRT-caller protocol.
+    /// <p>Source port for SRT-caller protocol.</p>
     pub fn get_source_listener_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_source_listener_port()
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    /// <p>The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    /// <p>The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    /// <p>The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.</p>
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_id()
     }
-    /// The name of the VPC interface to use for this source.
+    /// <p>The name of the VPC interface that you want to send your output to.</p>
     pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_interface_name(input.into());
         self
     }
-    /// The name of the VPC interface to use for this source.
+    /// <p>The name of the VPC interface that you want to send your output to.</p>
     pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_interface_name(input);
         self
     }
-    /// The name of the VPC interface to use for this source.
+    /// <p>The name of the VPC interface that you want to send your output to.</p>
     pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_vpc_interface_name()
     }
-    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that are allowed to contribute content to your source. Format the IP addresses as a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn whitelist_cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.whitelist_cidr(input.into());
         self
     }
-    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that are allowed to contribute content to your source. Format the IP addresses as a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn set_whitelist_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_whitelist_cidr(input);
         self
     }
-    /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that are allowed to contribute content to your source. Format the IP addresses as a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn get_whitelist_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_whitelist_cidr()
     }
-    /// The source configuration for cloud flows receiving a stream from a bridge.
+    /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub fn gateway_bridge_source(mut self, input: crate::types::UpdateGatewayBridgeSourceRequest) -> Self {
         self.inner = self.inner.gateway_bridge_source(input);
         self
     }
-    /// The source configuration for cloud flows receiving a stream from a bridge.
+    /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub fn set_gateway_bridge_source(mut self, input: ::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest>) -> Self {
         self.inner = self.inner.set_gateway_bridge_source(input);
         self
     }
-    /// The source configuration for cloud flows receiving a stream from a bridge.
+    /// <p>The source configuration for cloud flows receiving a stream from a bridge.</p>
     pub fn get_gateway_bridge_source(&self) -> &::std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest> {
         self.inner.get_gateway_bridge_source()
     }

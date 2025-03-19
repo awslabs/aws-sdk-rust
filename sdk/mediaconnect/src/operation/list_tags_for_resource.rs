@@ -250,11 +250,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning depends on the API, and is documented in the error message.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -339,7 +339,10 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::InternalServerErrorException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForResourceError {

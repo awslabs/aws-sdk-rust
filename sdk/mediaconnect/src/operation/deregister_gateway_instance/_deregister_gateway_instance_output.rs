@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceOutput {
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance.</p>
     pub gateway_instance_arn: ::std::option::Option<::std::string::String>,
-    /// The status of the instance.
+    /// <p>The status of the instance.</p>
     pub instance_state: ::std::option::Option<crate::types::InstanceState>,
     _request_id: Option<String>,
 }
 impl DeregisterGatewayInstanceOutput {
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance.</p>
     pub fn gateway_instance_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_instance_arn.as_deref()
     }
-    /// The status of the instance.
+    /// <p>The status of the instance.</p>
     pub fn instance_state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.instance_state.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct DeregisterGatewayInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeregisterGatewayInstanceOutputBuilder {
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance.</p>
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance.</p>
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_instance_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) of the instance.
+    /// <p>The ARN of the instance.</p>
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_instance_arn
     }
-    /// The status of the instance.
+    /// <p>The status of the instance.</p>
     pub fn instance_state(mut self, input: crate::types::InstanceState) -> Self {
         self.instance_state = ::std::option::Option::Some(input);
         self
     }
-    /// The status of the instance.
+    /// <p>The status of the instance.</p>
     pub fn set_instance_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.instance_state = input;
         self
     }
-    /// The status of the instance.
+    /// <p>The status of the instance.</p>
     pub fn get_instance_state(&self) -> &::std::option::Option<crate::types::InstanceState> {
         &self.instance_state
     }

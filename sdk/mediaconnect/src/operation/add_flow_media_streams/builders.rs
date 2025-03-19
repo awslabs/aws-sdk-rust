@@ -22,7 +22,7 @@ impl crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInpu
 }
 /// Fluent builder constructing a request to `AddFlowMediaStreams`.
 ///
-/// Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.
+/// <p>Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AddFlowMediaStreamsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
@@ -127,17 +127,17 @@ impl AddFlowMediaStreamsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
     ///
-    /// The media streams that you want to add to the flow.
+    /// <p>The media streams that you want to add to the flow.</p>
     pub fn media_streams(mut self, input: crate::types::AddMediaStreamRequest) -> Self {
         self.inner = self.inner.media_streams(input);
         self
     }
-    /// The media streams that you want to add to the flow.
+    /// <p>The media streams that you want to add to the flow.</p>
     pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
-    /// The media streams that you want to add to the flow.
+    /// <p>The media streams that you want to add to the flow.</p>
     pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
         self.inner.get_media_streams()
     }

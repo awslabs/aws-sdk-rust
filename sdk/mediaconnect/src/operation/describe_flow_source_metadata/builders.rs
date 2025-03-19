@@ -22,7 +22,7 @@ impl crate::operation::describe_flow_source_metadata::builders::DescribeFlowSour
 }
 /// Fluent builder constructing a request to `DescribeFlowSourceMetadata`.
 ///
-/// Displays details of the flow's source stream. The response contains information about the contents of the stream and its programs.
+/// <p>The <code>DescribeFlowSourceMetadata</code> API is used to view information about the flow's source transport stream and programs. This API displays status messages about the flow's source as well as details about the program's video, audio, and other data.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFlowSourceMetadataFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeFlowSourceMetadataFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

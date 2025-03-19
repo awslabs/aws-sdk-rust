@@ -22,7 +22,7 @@ impl crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsI
 }
 /// Fluent builder constructing a request to `GrantFlowEntitlements`.
 ///
-/// Grants entitlements to an existing flow.
+/// <p>Grants entitlements to an existing flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GrantFlowEntitlementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,31 +113,31 @@ impl GrantFlowEntitlementsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
     ///
-    /// The list of entitlements that you want to grant.
+    /// <p>The list of entitlements that you want to grant.</p>
     pub fn entitlements(mut self, input: crate::types::GrantEntitlementRequest) -> Self {
         self.inner = self.inner.entitlements(input);
         self
     }
-    /// The list of entitlements that you want to grant.
+    /// <p>The list of entitlements that you want to grant.</p>
     pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
-    /// The list of entitlements that you want to grant.
+    /// <p>The list of entitlements that you want to grant.</p>
     pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
         self.inner.get_entitlements()
     }
-    /// The flow that you want to grant entitlements on.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to grant entitlements on.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to grant entitlements on.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to grant entitlements on.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to grant entitlements on.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to grant entitlements on.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

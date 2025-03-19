@@ -22,7 +22,7 @@ impl crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilde
 }
 /// Fluent builder constructing a request to `RemoveFlowSource`.
 ///
-/// Removes a source from an existing flow. This request can be made only if there is more than one source on the flow.
+/// <p>Removes a source from an existing flow. This request can be made only if there is more than one source on the flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFlowSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RemoveFlowSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The flow that you want to remove a source from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a source from.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to remove a source from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a source from.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to remove a source from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a source from.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The ARN of the source that you want to remove.
+    /// <p>The ARN of the source that you want to remove.</p>
     pub fn source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_arn(input.into());
         self
     }
-    /// The ARN of the source that you want to remove.
+    /// <p>The ARN of the source that you want to remove.</p>
     pub fn set_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_arn(input);
         self
     }
-    /// The ARN of the source that you want to remove.
+    /// <p>The ARN of the source that you want to remove.</p>
     pub fn get_source_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_arn()
     }

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddFlowSources`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to mutate.<br>
-    ///   - [`sources(SetSourceRequest)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::sources) / [`set_sources(Option<Vec::<SetSourceRequest>>)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::set_sources):<br>required: **true**<br>A list of sources that you want to add.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to update.</p><br>
+    ///   - [`sources(SetSourceRequest)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::sources) / [`set_sources(Option<Vec::<SetSourceRequest>>)`](crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::set_sources):<br>required: **true**<br><p>A list of sources that you want to add to the flow.</p><br>
     /// - On success, responds with [`AddFlowSourcesOutput`](crate::operation::add_flow_sources::AddFlowSourcesOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_sources::AddFlowSourcesOutput::flow_arn): The ARN of the flow that these sources were added to.
-    ///   - [`sources(Option<Vec::<Source>>)`](crate::operation::add_flow_sources::AddFlowSourcesOutput::sources): The details of the newly added sources.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_sources::AddFlowSourcesOutput::flow_arn): <p>The ARN of the flow that these sources were added to.</p>
+    ///   - [`sources(Option<Vec::<Source>>)`](crate::operation::add_flow_sources::AddFlowSourcesOutput::sources): <p>The details of the newly added sources.</p>
     /// - On failure, responds with [`SdkError<AddFlowSourcesError>`](crate::operation::add_flow_sources::AddFlowSourcesError)
     pub fn add_flow_sources(&self) -> crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder {
         crate::operation::add_flow_sources::builders::AddFlowSourcesFluentBuilder::new(self.handle.clone())

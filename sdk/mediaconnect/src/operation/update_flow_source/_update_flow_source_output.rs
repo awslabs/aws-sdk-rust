@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowSourceOutput {
-    /// The ARN of the flow that you want to update.
+    /// <p>The ARN of the flow that you was updated.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The settings for the source of the flow.
+    /// <p>The details of the sources that are assigned to the flow.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     _request_id: Option<String>,
 }
 impl UpdateFlowSourceOutput {
-    /// The ARN of the flow that you want to update.
+    /// <p>The ARN of the flow that you was updated.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The settings for the source of the flow.
+    /// <p>The details of the sources that are assigned to the flow.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.source.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateFlowSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowSourceOutputBuilder {
-    /// The ARN of the flow that you want to update.
+    /// <p>The ARN of the flow that you was updated.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that you want to update.
+    /// <p>The ARN of the flow that you was updated.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that you want to update.
+    /// <p>The ARN of the flow that you was updated.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// The settings for the source of the flow.
+    /// <p>The details of the sources that are assigned to the flow.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// The settings for the source of the flow.
+    /// <p>The details of the sources that are assigned to the flow.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
     }
-    /// The settings for the source of the flow.
+    /// <p>The details of the sources that are assigned to the flow.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::Source> {
         &self.source
     }

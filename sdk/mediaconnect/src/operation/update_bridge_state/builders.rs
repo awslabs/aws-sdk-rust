@@ -22,7 +22,7 @@ impl crate::operation::update_bridge_state::builders::UpdateBridgeStateInputBuil
 }
 /// Fluent builder constructing a request to `UpdateBridgeState`.
 ///
-/// Updates the bridge state
+/// <p>Updates the bridge state.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateBridgeStateFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update the state of.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update the state of.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update the state of.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The desired state for the bridge.</p>
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.inner = self.inner.desired_state(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The desired state for the bridge.</p>
     pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The desired state for the bridge.</p>
     pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
         self.inner.get_desired_state()
     }

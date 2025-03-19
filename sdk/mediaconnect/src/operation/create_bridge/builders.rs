@@ -22,7 +22,7 @@ impl crate::operation::create_bridge::builders::CreateBridgeInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateBridge`.
 ///
-/// Creates a new bridge. The request must include one source.
+/// <p>Creates a new bridge. The request must include one source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBridgeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl CreateBridgeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.
+    /// <p>An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.</p>
     pub fn egress_gateway_bridge(mut self, input: crate::types::AddEgressGatewayBridgeRequest) -> Self {
         self.inner = self.inner.egress_gateway_bridge(input);
         self
     }
-    /// Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.
+    /// <p>An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.</p>
     pub fn set_egress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::AddEgressGatewayBridgeRequest>) -> Self {
         self.inner = self.inner.set_egress_gateway_bridge(input);
         self
     }
-    /// Create a bridge with the egress bridge type. An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.
+    /// <p>An egress bridge is a cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.</p>
     pub fn get_egress_gateway_bridge(&self) -> &::std::option::Option<crate::types::AddEgressGatewayBridgeRequest> {
         self.inner.get_egress_gateway_bridge()
     }
-    /// Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.
+    /// <p>An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.</p>
     pub fn ingress_gateway_bridge(mut self, input: crate::types::AddIngressGatewayBridgeRequest) -> Self {
         self.inner = self.inner.ingress_gateway_bridge(input);
         self
     }
-    /// Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.
+    /// <p>An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.</p>
     pub fn set_ingress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::AddIngressGatewayBridgeRequest>) -> Self {
         self.inner = self.inner.set_ingress_gateway_bridge(input);
         self
     }
-    /// Create a bridge with the ingress bridge type. An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.
+    /// <p>An ingress bridge is a ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.</p>
     pub fn get_ingress_gateway_bridge(&self) -> &::std::option::Option<crate::types::AddIngressGatewayBridgeRequest> {
         self.inner.get_ingress_gateway_bridge()
     }
-    /// The name of the bridge. This name can not be modified after the bridge is created.
+    /// <p>The name of the bridge. This name can not be modified after the bridge is created.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The name of the bridge. This name can not be modified after the bridge is created.
+    /// <p>The name of the bridge. This name can not be modified after the bridge is created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The name of the bridge. This name can not be modified after the bridge is created.
+    /// <p>The name of the bridge. This name can not be modified after the bridge is created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -155,45 +155,45 @@ impl CreateBridgeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// The outputs that you want to add to this bridge.
+    /// <p>The outputs that you want to add to this bridge.</p>
     pub fn outputs(mut self, input: crate::types::AddBridgeOutputRequest) -> Self {
         self.inner = self.inner.outputs(input);
         self
     }
-    /// The outputs that you want to add to this bridge.
+    /// <p>The outputs that you want to add to this bridge.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
-    /// The outputs that you want to add to this bridge.
+    /// <p>The outputs that you want to add to this bridge.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
         self.inner.get_outputs()
     }
-    /// The bridge placement Amazon Resource Number (ARN).
+    /// <p>The bridge placement Amazon Resource Number (ARN).</p>
     pub fn placement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.placement_arn(input.into());
         self
     }
-    /// The bridge placement Amazon Resource Number (ARN).
+    /// <p>The bridge placement Amazon Resource Number (ARN).</p>
     pub fn set_placement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_placement_arn(input);
         self
     }
-    /// The bridge placement Amazon Resource Number (ARN).
+    /// <p>The bridge placement Amazon Resource Number (ARN).</p>
     pub fn get_placement_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_placement_arn()
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn source_failover_config(mut self, input: crate::types::FailoverConfig) -> Self {
         self.inner = self.inner.source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::FailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
         self.inner.get_source_failover_config()
     }
@@ -202,17 +202,17 @@ impl CreateBridgeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// The sources that you want to add to this bridge.
+    /// <p>The sources that you want to add to this bridge.</p>
     pub fn sources(mut self, input: crate::types::AddBridgeSourceRequest) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// The sources that you want to add to this bridge.
+    /// <p>The sources that you want to add to this bridge.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    /// The sources that you want to add to this bridge.
+    /// <p>The sources that you want to add to this bridge.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>> {
         self.inner.get_sources()
     }

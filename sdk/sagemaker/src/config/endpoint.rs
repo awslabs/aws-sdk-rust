@@ -677,11 +677,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.sagemaker.us-gov-west-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api-fips.sagemaker.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.sagemaker.us-gov-west-1.amazonaws.com")
+                .url("https://api-fips.sagemaker.us-gov-west-1.amazonaws.com")
                 .build()
         );
     }
@@ -717,11 +717,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.sagemaker.us-gov-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api-fips.sagemaker.us-gov-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.sagemaker.us-gov-east-1.amazonaws.com")
+                .url("https://api-fips.sagemaker.us-gov-east-1.amazonaws.com")
                 .build()
         );
     }

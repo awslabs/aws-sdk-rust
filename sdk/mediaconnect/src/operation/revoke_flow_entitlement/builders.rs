@@ -22,7 +22,7 @@ impl crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementI
 }
 /// Fluent builder constructing a request to `RevokeFlowEntitlement`.
 ///
-/// Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed.
+/// <p>Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeFlowEntitlementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RevokeFlowEntitlementFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the entitlement that you want to revoke.
+    /// <p>The Amazon Resource Name (ARN) of the entitlement that you want to revoke.</p>
     pub fn entitlement_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entitlement_arn(input.into());
         self
     }
-    /// The ARN of the entitlement that you want to revoke.
+    /// <p>The Amazon Resource Name (ARN) of the entitlement that you want to revoke.</p>
     pub fn set_entitlement_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entitlement_arn(input);
         self
     }
-    /// The ARN of the entitlement that you want to revoke.
+    /// <p>The Amazon Resource Name (ARN) of the entitlement that you want to revoke.</p>
     pub fn get_entitlement_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_entitlement_arn()
     }
-    /// The flow that you want to revoke an entitlement from.
+    /// <p>The flow that you want to revoke an entitlement from.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to revoke an entitlement from.
+    /// <p>The flow that you want to revoke an entitlement from.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to revoke an entitlement from.
+    /// <p>The flow that you want to revoke an entitlement from.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

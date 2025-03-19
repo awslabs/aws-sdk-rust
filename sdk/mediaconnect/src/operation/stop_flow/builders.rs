@@ -22,7 +22,7 @@ impl crate::operation::stop_flow::builders::StopFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `StopFlow`.
 ///
-/// Stops a flow.
+/// <p>Stops a flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -99,17 +99,17 @@ impl StopFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the flow that you want to stop.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to stop.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The ARN of the flow that you want to stop.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to stop.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The ARN of the flow that you want to stop.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to stop.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

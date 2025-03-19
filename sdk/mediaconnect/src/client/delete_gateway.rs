@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGateway`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_arn):<br>required: **true**<br>The ARN of the gateway that you want to delete.<br>
+    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::set_gateway_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the gateway that you want to delete.</p><br>
     /// - On success, responds with [`DeleteGatewayOutput`](crate::operation::delete_gateway::DeleteGatewayOutput) with field(s):
-    ///   - [`gateway_arn(Option<String>)`](crate::operation::delete_gateway::DeleteGatewayOutput::gateway_arn): The Amazon Resource Name (ARN) of the gateway that was deleted.
+    ///   - [`gateway_arn(Option<String>)`](crate::operation::delete_gateway::DeleteGatewayOutput::gateway_arn): <p>The ARN of the gateway that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteGatewayError>`](crate::operation::delete_gateway::DeleteGatewayError)
     pub fn delete_gateway(&self) -> crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder {
         crate::operation::delete_gateway::builders::DeleteGatewayFluentBuilder::new(self.handle.clone())

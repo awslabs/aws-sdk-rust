@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeStateOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
-    /// The state of the bridge. ACTIVE or STANDBY.
+    /// <p>The new state of the bridge.</p>
     pub desired_state: ::std::option::Option<crate::types::DesiredState>,
     _request_id: Option<String>,
 }
 impl UpdateBridgeStateOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
-    /// The state of the bridge. ACTIVE or STANDBY.
+    /// <p>The new state of the bridge.</p>
     pub fn desired_state(&self) -> ::std::option::Option<&crate::types::DesiredState> {
         self.desired_state.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateBridgeStateOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateBridgeStateOutputBuilder {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
-    /// The state of the bridge. ACTIVE or STANDBY.
+    /// <p>The new state of the bridge.</p>
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
         self.desired_state = ::std::option::Option::Some(input);
         self
     }
-    /// The state of the bridge. ACTIVE or STANDBY.
+    /// <p>The new state of the bridge.</p>
     pub fn set_desired_state(mut self, input: ::std::option::Option<crate::types::DesiredState>) -> Self {
         self.desired_state = input;
         self
     }
-    /// The state of the bridge. ACTIVE or STANDBY.
+    /// <p>The new state of the bridge.</p>
     pub fn get_desired_state(&self) -> &::std::option::Option<crate::types::DesiredState> {
         &self.desired_state
     }

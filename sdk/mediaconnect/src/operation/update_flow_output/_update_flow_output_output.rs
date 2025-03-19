@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputOutput {
-    /// The ARN of the flow that is associated with the updated output.
+    /// <p>The ARN of the flow that is associated with the updated output.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The new settings of the output that you updated.
+    /// <p>The new settings of the output that you updated.</p>
     pub output: ::std::option::Option<crate::types::Output>,
     _request_id: Option<String>,
 }
 impl UpdateFlowOutputOutput {
-    /// The ARN of the flow that is associated with the updated output.
+    /// <p>The ARN of the flow that is associated with the updated output.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The new settings of the output that you updated.
+    /// <p>The new settings of the output that you updated.</p>
     pub fn output(&self) -> ::std::option::Option<&crate::types::Output> {
         self.output.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateFlowOutputOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowOutputOutputBuilder {
-    /// The ARN of the flow that is associated with the updated output.
+    /// <p>The ARN of the flow that is associated with the updated output.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that is associated with the updated output.
+    /// <p>The ARN of the flow that is associated with the updated output.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that is associated with the updated output.
+    /// <p>The ARN of the flow that is associated with the updated output.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// The new settings of the output that you updated.
+    /// <p>The new settings of the output that you updated.</p>
     pub fn output(mut self, input: crate::types::Output) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
     }
-    /// The new settings of the output that you updated.
+    /// <p>The new settings of the output that you updated.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::Output>) -> Self {
         self.output = input;
         self
     }
-    /// The new settings of the output that you updated.
+    /// <p>The new settings of the output that you updated.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::Output> {
         &self.output
     }

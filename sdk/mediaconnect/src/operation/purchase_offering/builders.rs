@@ -22,7 +22,7 @@ impl crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder
 }
 /// Fluent builder constructing a request to `PurchaseOffering`.
 ///
-/// Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another offering.
+/// <p>Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another offering.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,48 @@ impl PurchaseOfferingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The Amazon Resource Name (ARN) of the offering.</p>
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The Amazon Resource Name (ARN) of the offering.</p>
     pub fn set_offering_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The Amazon Resource Name (ARN) of the offering.</p>
     pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_offering_arn()
     }
-    /// The name that you want to use for the reservation.
+    /// <p>The name that you want to use for the reservation.</p>
     pub fn reservation_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reservation_name(input.into());
         self
     }
-    /// The name that you want to use for the reservation.
+    /// <p>The name that you want to use for the reservation.</p>
     pub fn set_reservation_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reservation_name(input);
         self
     }
-    /// The name that you want to use for the reservation.
+    /// <p>The name that you want to use for the reservation.</p>
     pub fn get_reservation_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reservation_name()
     }
-    /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    /// <p>The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC).</p>
+    /// <p>You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: <code>YYYY-MM-DDTHH:mm:SSZ</code>, where <code>T</code> and <code>Z</code> are literal characters. For example, to specify 11:30pm on March 5, 2020, enter <code>2020-03-05T23:30:00Z</code>.</p>
     pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start(input.into());
         self
     }
-    /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    /// <p>The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC).</p>
+    /// <p>You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: <code>YYYY-MM-DDTHH:mm:SSZ</code>, where <code>T</code> and <code>Z</code> are literal characters. For example, to specify 11:30pm on March 5, 2020, enter <code>2020-03-05T23:30:00Z</code>.</p>
     pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start(input);
         self
     }
-    /// The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC). You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
+    /// <p>The date and time that you want the reservation to begin, in Coordinated Universal Time (UTC).</p>
+    /// <p>You can specify any date and time between 12:00am on the first day of the current month to the current time on today's date, inclusive. Specify the start in a 24-hour notation. Use the following format: <code>YYYY-MM-DDTHH:mm:SSZ</code>, where <code>T</code> and <code>Z</code> are literal characters. For example, to specify 11:30pm on March 5, 2020, enter <code>2020-03-05T23:30:00Z</code>.</p>
     pub fn get_start(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_start()
     }

@@ -22,7 +22,7 @@ impl crate::operation::remove_flow_output::builders::RemoveFlowOutputInputBuilde
 }
 /// Fluent builder constructing a request to `RemoveFlowOutput`.
 ///
-/// Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output.
+/// <p>Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFlowOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RemoveFlowOutputFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The flow that you want to remove an output from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove an output from.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to remove an output from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove an output from.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to remove an output from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove an output from.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The ARN of the output that you want to remove.
+    /// <p>The ARN of the output that you want to remove.</p>
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_arn(input.into());
         self
     }
-    /// The ARN of the output that you want to remove.
+    /// <p>The ARN of the output that you want to remove.</p>
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_arn(input);
         self
     }
-    /// The ARN of the output that you want to remove.
+    /// <p>The ARN of the output that you want to remove.</p>
     pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_arn()
     }

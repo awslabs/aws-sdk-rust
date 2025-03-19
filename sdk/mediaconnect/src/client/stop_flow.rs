@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopFlow`](crate::operation::stop_flow::builders::StopFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::stop_flow::builders::StopFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::stop_flow::builders::StopFlowFluentBuilder::set_flow_arn):<br>required: **true**<br>The ARN of the flow that you want to stop.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::stop_flow::builders::StopFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::stop_flow::builders::StopFlowFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to stop.</p><br>
     /// - On success, responds with [`StopFlowOutput`](crate::operation::stop_flow::StopFlowOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::stop_flow::StopFlowOutput::flow_arn): The ARN of the flow that you stopped.
-    ///   - [`status(Option<Status>)`](crate::operation::stop_flow::StopFlowOutput::status): The status of the flow when the StopFlow process begins.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::stop_flow::StopFlowOutput::flow_arn): <p>The ARN of the flow that you stopped.</p>
+    ///   - [`status(Option<Status>)`](crate::operation::stop_flow::StopFlowOutput::status): <p>The status of the flow when the <code>StopFlow</code> process begins.</p>
     /// - On failure, responds with [`SdkError<StopFlowError>`](crate::operation::stop_flow::StopFlowError)
     pub fn stop_flow(&self) -> crate::operation::stop_flow::builders::StopFlowFluentBuilder {
         crate::operation::stop_flow::builders::StopFlowFluentBuilder::new(self.handle.clone())

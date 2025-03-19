@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBridgeOutput {
-    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    /// <p>The name of the bridge that was created.</p>
     pub bridge: ::std::option::Option<crate::types::Bridge>,
     _request_id: Option<String>,
 }
 impl CreateBridgeOutput {
-    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    /// <p>The name of the bridge that was created.</p>
     pub fn bridge(&self) -> ::std::option::Option<&crate::types::Bridge> {
         self.bridge.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct CreateBridgeOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateBridgeOutputBuilder {
-    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    /// <p>The name of the bridge that was created.</p>
     pub fn bridge(mut self, input: crate::types::Bridge) -> Self {
         self.bridge = ::std::option::Option::Some(input);
         self
     }
-    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    /// <p>The name of the bridge that was created.</p>
     pub fn set_bridge(mut self, input: ::std::option::Option<crate::types::Bridge>) -> Self {
         self.bridge = input;
         self
     }
-    /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    /// <p>The name of the bridge that was created.</p>
     pub fn get_bridge(&self) -> &::std::option::Option<crate::types::Bridge> {
         &self.bridge
     }

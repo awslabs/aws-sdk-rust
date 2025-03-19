@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBridgeOutput {
-    /// The Amazon Resource Number (ARN) of the deleted bridge.
+    /// <p>The ARN of the deleted bridge.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteBridgeOutput {
-    /// The Amazon Resource Number (ARN) of the deleted bridge.
+    /// <p>The ARN of the deleted bridge.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteBridgeOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteBridgeOutputBuilder {
-    /// The Amazon Resource Number (ARN) of the deleted bridge.
+    /// <p>The ARN of the deleted bridge.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the deleted bridge.
+    /// <p>The ARN of the deleted bridge.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The Amazon Resource Number (ARN) of the deleted bridge.
+    /// <p>The ARN of the deleted bridge.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }

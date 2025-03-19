@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowOutput {
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The updated flow.</p>
     pub flow: ::std::option::Option<crate::types::Flow>,
     _request_id: Option<String>,
 }
 impl UpdateFlowOutput {
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The updated flow.</p>
     pub fn flow(&self) -> ::std::option::Option<&crate::types::Flow> {
         self.flow.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct UpdateFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowOutputBuilder {
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The updated flow.</p>
     pub fn flow(mut self, input: crate::types::Flow) -> Self {
         self.flow = ::std::option::Option::Some(input);
         self
     }
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The updated flow.</p>
     pub fn set_flow(mut self, input: ::std::option::Option<crate::types::Flow>) -> Self {
         self.flow = input;
         self
     }
-    /// The settings for a flow, including its source, outputs, and entitlements.
+    /// <p>The updated flow.</p>
     pub fn get_flow(&self) -> &::std::option::Option<crate::types::Flow> {
         &self.flow
     }

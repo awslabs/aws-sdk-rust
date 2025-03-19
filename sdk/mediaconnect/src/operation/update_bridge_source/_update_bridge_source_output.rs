@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeSourceOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge source.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
-    /// The bridge's source.
+    /// <p>The updated bridge source.</p>
     pub source: ::std::option::Option<crate::types::BridgeSource>,
     _request_id: Option<String>,
 }
 impl UpdateBridgeSourceOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge source.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
-    /// The bridge's source.
+    /// <p>The updated bridge source.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::BridgeSource> {
         self.source.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateBridgeSourceOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateBridgeSourceOutputBuilder {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge source.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge source.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the updated bridge source.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
-    /// The bridge's source.
+    /// <p>The updated bridge source.</p>
     pub fn source(mut self, input: crate::types::BridgeSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// The bridge's source.
+    /// <p>The updated bridge source.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::BridgeSource>) -> Self {
         self.source = input;
         self
     }
-    /// The bridge's source.
+    /// <p>The updated bridge source.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::BridgeSource> {
         &self.source
     }

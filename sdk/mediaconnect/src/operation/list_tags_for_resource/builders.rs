@@ -22,7 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// List all tags on an AWS Elemental MediaConnect resource
+/// <p>List all tags on a MediaConnect resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListTagsForResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    /// <p>The Amazon Resource Name (ARN) that identifies the MediaConnect resource for which to list the tags.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    /// <p>The Amazon Resource Name (ARN) that identifies the MediaConnect resource for which to list the tags.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource for which to list the tags.
+    /// <p>The Amazon Resource Name (ARN) that identifies the MediaConnect resource for which to list the tags.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

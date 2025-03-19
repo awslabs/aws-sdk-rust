@@ -22,7 +22,7 @@ impl crate::operation::create_flow::builders::CreateFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateFlow`.
 ///
-/// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
+/// <p>Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl CreateFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
+    /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
     pub fn availability_zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
+    /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
     pub fn set_availability_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
-    /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
+    /// <p>The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current Amazon Web Services Region.</p>
     pub fn get_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone()
     }
@@ -127,17 +127,17 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
     ///
-    /// The entitlements that you want to grant on a flow.
+    /// <p>The entitlements that you want to grant on a flow.</p>
     pub fn entitlements(mut self, input: crate::types::GrantEntitlementRequest) -> Self {
         self.inner = self.inner.entitlements(input);
         self
     }
-    /// The entitlements that you want to grant on a flow.
+    /// <p>The entitlements that you want to grant on a flow.</p>
     pub fn set_entitlements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
-    /// The entitlements that you want to grant on a flow.
+    /// <p>The entitlements that you want to grant on a flow.</p>
     pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GrantEntitlementRequest>> {
         self.inner.get_entitlements()
     }
@@ -146,31 +146,31 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
     ///
-    /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
+    /// <p>The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.</p>
     pub fn media_streams(mut self, input: crate::types::AddMediaStreamRequest) -> Self {
         self.inner = self.inner.media_streams(input);
         self
     }
-    /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
+    /// <p>The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.</p>
     pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
-    /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
+    /// <p>The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.</p>
     pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddMediaStreamRequest>> {
         self.inner.get_media_streams()
     }
-    /// The name of the flow.
+    /// <p>The name of the flow.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// The name of the flow.
+    /// <p>The name of the flow.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// The name of the flow.
+    /// <p>The name of the flow.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -179,45 +179,45 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// The outputs that you want to add to this flow.
+    /// <p>The outputs that you want to add to this flow.</p>
     pub fn outputs(mut self, input: crate::types::AddOutputRequest) -> Self {
         self.inner = self.inner.outputs(input);
         self
     }
-    /// The outputs that you want to add to this flow.
+    /// <p>The outputs that you want to add to this flow.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
-    /// The outputs that you want to add to this flow.
+    /// <p>The outputs that you want to add to this flow.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
         self.inner.get_outputs()
     }
-    /// The settings for the source of the flow.
+    /// <p>The settings for the source that you want to use for the new flow.</p>
     pub fn source(mut self, input: crate::types::SetSourceRequest) -> Self {
         self.inner = self.inner.source(input);
         self
     }
-    /// The settings for the source of the flow.
+    /// <p>The settings for the source that you want to use for the new flow.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::SetSourceRequest>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
-    /// The settings for the source of the flow.
+    /// <p>The settings for the source that you want to use for the new flow.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::SetSourceRequest> {
         self.inner.get_source()
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn source_failover_config(mut self, input: crate::types::FailoverConfig) -> Self {
         self.inner = self.inner.source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::FailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::FailoverConfig> {
         self.inner.get_source_failover_config()
     }
@@ -226,17 +226,17 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The sources that are assigned to the flow.</p>
     pub fn sources(mut self, input: crate::types::SetSourceRequest) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The sources that are assigned to the flow.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The sources that are assigned to the flow.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
         self.inner.get_sources()
     }
@@ -245,46 +245,74 @@ impl CreateFlowFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
     ///
-    /// The VPC interfaces you want on the flow.
+    /// <p>The VPC interfaces you want on the flow.</p>
     pub fn vpc_interfaces(mut self, input: crate::types::VpcInterfaceRequest) -> Self {
         self.inner = self.inner.vpc_interfaces(input);
         self
     }
-    /// The VPC interfaces you want on the flow.
+    /// <p>The VPC interfaces you want on the flow.</p>
     pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
-    /// The VPC interfaces you want on the flow.
+    /// <p>The VPC interfaces you want on the flow.</p>
     pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
         self.inner.get_vpc_interfaces()
     }
-    /// Create maintenance setting for a flow
+    /// <p>The maintenance settings you want to use for the flow.</p>
     pub fn maintenance(mut self, input: crate::types::AddMaintenance) -> Self {
         self.inner = self.inner.maintenance(input);
         self
     }
-    /// Create maintenance setting for a flow
+    /// <p>The maintenance settings you want to use for the flow.</p>
     pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::AddMaintenance>) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }
-    /// Create maintenance setting for a flow
+    /// <p>The maintenance settings you want to use for the flow.</p>
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::AddMaintenance> {
         self.inner.get_maintenance()
     }
-    /// The settings for source monitoring.
+    /// <p>The settings for source monitoring.</p>
     pub fn source_monitoring_config(mut self, input: crate::types::MonitoringConfig) -> Self {
         self.inner = self.inner.source_monitoring_config(input);
         self
     }
-    /// The settings for source monitoring.
+    /// <p>The settings for source monitoring.</p>
     pub fn set_source_monitoring_config(mut self, input: ::std::option::Option<crate::types::MonitoringConfig>) -> Self {
         self.inner = self.inner.set_source_monitoring_config(input);
         self
     }
-    /// The settings for source monitoring.
+    /// <p>The settings for source monitoring.</p>
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         self.inner.get_source_monitoring_config()
+    }
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    pub fn flow_size(mut self, input: crate::types::FlowSize) -> Self {
+        self.inner = self.inner.flow_size(input);
+        self
+    }
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    pub fn set_flow_size(mut self, input: ::std::option::Option<crate::types::FlowSize>) -> Self {
+        self.inner = self.inner.set_flow_size(input);
+        self
+    }
+    /// <p>Determines the processing capacity and feature set of the flow. Set this optional parameter to <code>LARGE</code> if you want to enable NDI outputs on the flow.</p>
+    pub fn get_flow_size(&self) -> &::std::option::Option<crate::types::FlowSize> {
+        self.inner.get_flow_size()
+    }
+    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
+        self.inner = self.inner.ndi_config(input);
+        self
+    }
+    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
+        self.inner = self.inner.set_ndi_config(input);
+        self
+    }
+    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
+        self.inner.get_ndi_config()
     }
 }

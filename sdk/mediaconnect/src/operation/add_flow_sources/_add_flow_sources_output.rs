@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowSourcesOutput {
-    /// The ARN of the flow that these sources were added to.
+    /// <p>The ARN of the flow that these sources were added to.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The details of the newly added sources.
+    /// <p>The details of the newly added sources.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Source>>,
     _request_id: Option<String>,
 }
 impl AddFlowSourcesOutput {
-    /// The ARN of the flow that these sources were added to.
+    /// <p>The ARN of the flow that these sources were added to.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The details of the newly added sources.
+    /// <p>The details of the newly added sources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
     pub fn sources(&self) -> &[crate::types::Source] {
@@ -42,17 +42,17 @@ pub struct AddFlowSourcesOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddFlowSourcesOutputBuilder {
-    /// The ARN of the flow that these sources were added to.
+    /// <p>The ARN of the flow that these sources were added to.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that these sources were added to.
+    /// <p>The ARN of the flow that these sources were added to.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that these sources were added to.
+    /// <p>The ARN of the flow that these sources were added to.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
@@ -60,19 +60,19 @@ impl AddFlowSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// The details of the newly added sources.
+    /// <p>The details of the newly added sources.</p>
     pub fn sources(mut self, input: crate::types::Source) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = ::std::option::Option::Some(v);
         self
     }
-    /// The details of the newly added sources.
+    /// <p>The details of the newly added sources.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Source>>) -> Self {
         self.sources = input;
         self
     }
-    /// The details of the newly added sources.
+    /// <p>The details of the newly added sources.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Source>> {
         &self.sources
     }

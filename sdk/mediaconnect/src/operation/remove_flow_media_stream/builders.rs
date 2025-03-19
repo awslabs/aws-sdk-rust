@@ -22,7 +22,7 @@ impl crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStream
 }
 /// Fluent builder constructing a request to `RemoveFlowMediaStream`.
 ///
-/// Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output.
+/// <p>Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFlowMediaStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RemoveFlowMediaStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The name of the media stream that you want to remove.
+    /// <p>The name of the media stream that you want to remove.</p>
     pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_stream_name(input.into());
         self
     }
-    /// The name of the media stream that you want to remove.
+    /// <p>The name of the media stream that you want to remove.</p>
     pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_stream_name(input);
         self
     }
-    /// The name of the media stream that you want to remove.
+    /// <p>The name of the media stream that you want to remove.</p>
     pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_media_stream_name()
     }

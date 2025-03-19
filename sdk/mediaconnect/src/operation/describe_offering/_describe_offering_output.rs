@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOfferingOutput {
-    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    /// <p>The offering that you requested a description of.</p>
     pub offering: ::std::option::Option<crate::types::Offering>,
     _request_id: Option<String>,
 }
 impl DescribeOfferingOutput {
-    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    /// <p>The offering that you requested a description of.</p>
     pub fn offering(&self) -> ::std::option::Option<&crate::types::Offering> {
         self.offering.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeOfferingOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeOfferingOutputBuilder {
-    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    /// <p>The offering that you requested a description of.</p>
     pub fn offering(mut self, input: crate::types::Offering) -> Self {
         self.offering = ::std::option::Option::Some(input);
         self
     }
-    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    /// <p>The offering that you requested a description of.</p>
     pub fn set_offering(mut self, input: ::std::option::Option<crate::types::Offering>) -> Self {
         self.offering = input;
         self
     }
-    /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
+    /// <p>The offering that you requested a description of.</p>
     pub fn get_offering(&self) -> &::std::option::Option<crate::types::Offering> {
         &self.offering
     }

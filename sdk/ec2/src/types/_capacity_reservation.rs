@@ -47,13 +47,17 @@ pub struct CapacityReservation {
     /// <li>
     /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
     /// <li>
-    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
     /// <li>
-    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <p><code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront payment has not been processed yet.</p></li>
     /// <li>
-    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <p><code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p></li>
     /// <li>
-    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub state: ::std::option::Option<crate::types::CapacityReservationState>,
     /// <p>The date and time at which the Capacity Reservation was started.</p>
@@ -165,13 +169,17 @@ impl CapacityReservation {
     /// <li>
     /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
     /// <li>
-    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
     /// <li>
-    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <p><code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront payment has not been processed yet.</p></li>
     /// <li>
-    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <p><code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p></li>
     /// <li>
-    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn state(&self) -> ::std::option::Option<&crate::types::CapacityReservationState> {
         self.state.as_ref()
@@ -488,13 +496,17 @@ impl CapacityReservationBuilder {
     /// <li>
     /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
     /// <li>
-    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
     /// <li>
-    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <p><code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront payment has not been processed yet.</p></li>
     /// <li>
-    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <p><code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p></li>
     /// <li>
-    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn state(mut self, input: crate::types::CapacityReservationState) -> Self {
         self.state = ::std::option::Option::Some(input);
@@ -513,13 +525,17 @@ impl CapacityReservationBuilder {
     /// <li>
     /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
     /// <li>
-    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
     /// <li>
-    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <p><code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront payment has not been processed yet.</p></li>
     /// <li>
-    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <p><code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p></li>
     /// <li>
-    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::CapacityReservationState>) -> Self {
         self.state = input;
@@ -538,13 +554,17 @@ impl CapacityReservationBuilder {
     /// <li>
     /// <p><code>failed</code> - The Capacity Reservation request has failed. A request can fail due to request parameters that are not valid, capacity constraints, or instance limit constraints. You can view a failed request for 60 minutes.</p></li>
     /// <li>
-    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations only</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
+    /// <p><code>scheduled</code> - (<i>Future-dated Capacity Reservations</i>) The future-dated Capacity Reservation request was approved and the Capacity Reservation is scheduled for delivery on the requested start date.</p></li>
     /// <li>
-    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <p><code>payment-pending</code> - (<i>Capacity Blocks</i>) The upfront payment has not been processed yet.</p></li>
     /// <li>
-    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <p><code>payment-failed</code> - (<i>Capacity Blocks</i>) The upfront payment was not processed in the 12-hour time frame. Your Capacity Block was released.</p></li>
     /// <li>
-    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
+    /// <p><code>assessing</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 is assessing your request for a future-dated Capacity Reservation.</p></li>
+    /// <li>
+    /// <p><code>delayed</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 encountered a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2 is unable to deliver the requested capacity by the requested start date and time.</p></li>
+    /// <li>
+    /// <p><code>unsupported</code> - (<i>Future-dated Capacity Reservations</i>) Amazon EC2 can't support the future-dated Capacity Reservation request due to capacity constraints. You can view unsupported requests for 30 days. The Capacity Reservation will not be delivered.</p></li>
     /// </ul>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::CapacityReservationState> {
         &self.state

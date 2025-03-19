@@ -22,7 +22,7 @@ impl crate::operation::add_flow_sources::builders::AddFlowSourcesInputBuilder {
 }
 /// Fluent builder constructing a request to `AddFlowSources`.
 ///
-/// Adds Sources to flow
+/// <p>Adds sources to a flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddFlowSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AddFlowSourcesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The flow that you want to mutate.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to mutate.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to mutate.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
@@ -127,17 +127,17 @@ impl AddFlowSourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// A list of sources that you want to add.
+    /// <p>A list of sources that you want to add to the flow.</p>
     pub fn sources(mut self, input: crate::types::SetSourceRequest) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// A list of sources that you want to add.
+    /// <p>A list of sources that you want to add to the flow.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    /// A list of sources that you want to add.
+    /// <p>A list of sources that you want to add to the flow.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SetSourceRequest>> {
         self.inner.get_sources()
     }

@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateBridgeState`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
-    ///   - [`desired_state(DesiredState)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::desired_state) / [`set_desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_desired_state):<br>required: **true**<br>(undocumented)<br>
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_bridge_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the bridge that you want to update the state of.</p><br>
+    ///   - [`desired_state(DesiredState)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::desired_state) / [`set_desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::set_desired_state):<br>required: **true**<br><p>The desired state for the bridge.</p><br>
     /// - On success, responds with [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput) with field(s):
-    ///   - [`bridge_arn(Option<String>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::bridge_arn): The Amazon Resource Number (ARN) of the bridge.
-    ///   - [`desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::desired_state): The state of the bridge. ACTIVE or STANDBY.
+    ///   - [`bridge_arn(Option<String>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::bridge_arn): <p>The ARN of the updated bridge.</p>
+    ///   - [`desired_state(Option<DesiredState>)`](crate::operation::update_bridge_state::UpdateBridgeStateOutput::desired_state): <p>The new state of the bridge.</p>
     /// - On failure, responds with [`SdkError<UpdateBridgeStateError>`](crate::operation::update_bridge_state::UpdateBridgeStateError)
     pub fn update_bridge_state(&self) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder {
         crate::operation::update_bridge_state::builders::UpdateBridgeStateFluentBuilder::new(self.handle.clone())

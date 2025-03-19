@@ -22,7 +22,7 @@ impl crate::operation::describe_flow::builders::DescribeFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeFlow`.
 ///
-/// Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements.
+/// <p>Displays the details of a flow. The response includes the flow Amazon Resource Name (ARN), name, and Availability Zone, as well as details about the source, outputs, and entitlements.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

@@ -3,32 +3,32 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowSourceMetadataOutput {
-    /// The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+    /// <p>The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// Provides a status code and message regarding issues found with the flow source metadata.
+    /// <p>Provides a status code and message regarding issues found with the flow source metadata.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>,
-    /// The timestamp of the most recent change in metadata for this flow’s source.
+    /// <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// The metadata of the transport stream in the current flow's source.
+    /// <p>Information about the flow's transport media.</p>
     pub transport_media_info: ::std::option::Option<crate::types::TransportMediaInfo>,
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceMetadataOutput {
-    /// The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+    /// <p>The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// Provides a status code and message regarding issues found with the flow source metadata.
+    /// <p>Provides a status code and message regarding issues found with the flow source metadata.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.messages.is_none()`.
     pub fn messages(&self) -> &[crate::types::MessageDetail] {
         self.messages.as_deref().unwrap_or_default()
     }
-    /// The timestamp of the most recent change in metadata for this flow’s source.
+    /// <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
-    /// The metadata of the transport stream in the current flow's source.
+    /// <p>Information about the flow's transport media.</p>
     pub fn transport_media_info(&self) -> ::std::option::Option<&crate::types::TransportMediaInfo> {
         self.transport_media_info.as_ref()
     }
@@ -56,17 +56,17 @@ pub struct DescribeFlowSourceMetadataOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceMetadataOutputBuilder {
-    /// The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+    /// <p>The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+    /// <p>The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that DescribeFlowSourceMetadata was performed on.
+    /// <p>The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
@@ -74,47 +74,47 @@ impl DescribeFlowSourceMetadataOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_messages`](Self::set_messages).
     ///
-    /// Provides a status code and message regarding issues found with the flow source metadata.
+    /// <p>Provides a status code and message regarding issues found with the flow source metadata.</p>
     pub fn messages(mut self, input: crate::types::MessageDetail) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
         self.messages = ::std::option::Option::Some(v);
         self
     }
-    /// Provides a status code and message regarding issues found with the flow source metadata.
+    /// <p>Provides a status code and message regarding issues found with the flow source metadata.</p>
     pub fn set_messages(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>>) -> Self {
         self.messages = input;
         self
     }
-    /// Provides a status code and message regarding issues found with the flow source metadata.
+    /// <p>Provides a status code and message regarding issues found with the flow source metadata.</p>
     pub fn get_messages(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageDetail>> {
         &self.messages
     }
-    /// The timestamp of the most recent change in metadata for this flow’s source.
+    /// <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
     pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.timestamp = ::std::option::Option::Some(input);
         self
     }
-    /// The timestamp of the most recent change in metadata for this flow’s source.
+    /// <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
     pub fn set_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.timestamp = input;
         self
     }
-    /// The timestamp of the most recent change in metadata for this flow’s source.
+    /// <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
-    /// The metadata of the transport stream in the current flow's source.
+    /// <p>Information about the flow's transport media.</p>
     pub fn transport_media_info(mut self, input: crate::types::TransportMediaInfo) -> Self {
         self.transport_media_info = ::std::option::Option::Some(input);
         self
     }
-    /// The metadata of the transport stream in the current flow's source.
+    /// <p>Information about the flow's transport media.</p>
     pub fn set_transport_media_info(mut self, input: ::std::option::Option<crate::types::TransportMediaInfo>) -> Self {
         self.transport_media_info = input;
         self
     }
-    /// The metadata of the transport stream in the current flow's source.
+    /// <p>Information about the flow's transport media.</p>
     pub fn get_transport_media_info(&self) -> &::std::option::Option<crate::types::TransportMediaInfo> {
         &self.transport_media_info
     }

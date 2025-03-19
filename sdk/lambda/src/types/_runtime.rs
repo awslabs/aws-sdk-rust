@@ -52,6 +52,7 @@
 ///     Runtime::Ruby27 => { /* ... */ },
 ///     Runtime::Ruby32 => { /* ... */ },
 ///     Runtime::Ruby33 => { /* ... */ },
+///     Runtime::Ruby34 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -160,6 +161,8 @@ pub enum Runtime {
     Ruby32,
     #[allow(missing_docs)] // documentation missing in model
     Ruby33,
+    #[allow(missing_docs)] // documentation missing in model
+    Ruby34,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -207,6 +210,7 @@ impl ::std::convert::From<&str> for Runtime {
             "ruby2.7" => Runtime::Ruby27,
             "ruby3.2" => Runtime::Ruby32,
             "ruby3.3" => Runtime::Ruby33,
+            "ruby3.4" => Runtime::Ruby34,
             other => Runtime::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -262,6 +266,7 @@ impl Runtime {
             Runtime::Ruby27 => "ruby2.7",
             Runtime::Ruby32 => "ruby3.2",
             Runtime::Ruby33 => "ruby3.3",
+            Runtime::Ruby34 => "ruby3.4",
             Runtime::Unknown(value) => value.as_str(),
         }
     }
@@ -308,6 +313,7 @@ impl Runtime {
             "ruby2.7",
             "ruby3.2",
             "ruby3.3",
+            "ruby3.4",
         ]
     }
 }
@@ -371,6 +377,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Ruby27 => write!(f, "ruby2.7"),
             Runtime::Ruby32 => write!(f, "ruby3.2"),
             Runtime::Ruby33 => write!(f, "ruby3.3"),
+            Runtime::Ruby34 => write!(f, "ruby3.4"),
             Runtime::Unknown(value) => write!(f, "{}", value),
         }
     }

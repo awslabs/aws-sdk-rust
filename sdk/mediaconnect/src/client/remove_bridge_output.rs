@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveBridgeOutput`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
-    ///   - [`output_name(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::output_name) / [`set_output_name(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_output_name):<br>required: **true**<br>The name of the bridge output that you want to remove.<br>
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_bridge_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p><br>
+    ///   - [`output_name(impl Into<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::output_name) / [`set_output_name(Option<String>)`](crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::set_output_name):<br>required: **true**<br><p>The name of the bridge output that you want to remove.</p><br>
     /// - On success, responds with [`RemoveBridgeOutputOutput`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput) with field(s):
-    ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::bridge_arn): (undocumented)
-    ///   - [`output_name(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::output_name): (undocumented)
+    ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::bridge_arn): <p>The ARN of the bridge from which the output was removed.</p>
+    ///   - [`output_name(Option<String>)`](crate::operation::remove_bridge_output::RemoveBridgeOutputOutput::output_name): <p>The name of the bridge output that was removed.</p>
     /// - On failure, responds with [`SdkError<RemoveBridgeOutputError>`](crate::operation::remove_bridge_output::RemoveBridgeOutputError)
     pub fn remove_bridge_output(&self) -> crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder {
         crate::operation::remove_bridge_output::builders::RemoveBridgeOutputFluentBuilder::new(self.handle.clone())

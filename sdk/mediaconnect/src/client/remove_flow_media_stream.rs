@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveFlowMediaStream`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::set_flow_arn):<br>required: **true**<br>The Amazon Resource Name (ARN) of the flow.<br>
-    ///   - [`media_stream_name(impl Into<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::media_stream_name) / [`set_media_stream_name(Option<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::set_media_stream_name):<br>required: **true**<br>The name of the media stream that you want to remove.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to update.</p><br>
+    ///   - [`media_stream_name(impl Into<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::media_stream_name) / [`set_media_stream_name(Option<String>)`](crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::set_media_stream_name):<br>required: **true**<br><p>The name of the media stream that you want to remove.</p><br>
     /// - On success, responds with [`RemoveFlowMediaStreamOutput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput::flow_arn): The Amazon Resource Name (ARN) of the flow.
-    ///   - [`media_stream_name(Option<String>)`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput::media_stream_name): The name of the media stream that was removed.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput::flow_arn): <p>The ARN of the flow that was updated.</p>
+    ///   - [`media_stream_name(Option<String>)`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput::media_stream_name): <p>The name of the media stream that was removed.</p>
     /// - On failure, responds with [`SdkError<RemoveFlowMediaStreamError>`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError)
     pub fn remove_flow_media_stream(&self) -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder {
         crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamFluentBuilder::new(self.handle.clone())

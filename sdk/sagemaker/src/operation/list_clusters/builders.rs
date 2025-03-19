@@ -108,6 +108,12 @@ impl ListClustersFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
+        crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
+    }
     /// <p>Set a start time for the time range during which you want to list SageMaker HyperPod clusters. Timestamps are formatted according to the ISO 8601 standard.</p>
     /// <p>Acceptable formats include:</p>
     /// <ul>

@@ -22,7 +22,7 @@ impl crate::operation::update_flow_media_stream::builders::UpdateFlowMediaStream
 }
 /// Fluent builder constructing a request to `UpdateFlowMediaStream`.
 ///
-/// Updates an existing media stream.
+/// <p>Updates an existing media stream.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,101 +108,101 @@ impl UpdateFlowMediaStreamFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The attributes that you want to assign to the media stream.
+    /// <p>The attributes that you want to assign to the media stream.</p>
     pub fn attributes(mut self, input: crate::types::MediaStreamAttributesRequest) -> Self {
         self.inner = self.inner.attributes(input);
         self
     }
-    /// The attributes that you want to assign to the media stream.
+    /// <p>The attributes that you want to assign to the media stream.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<crate::types::MediaStreamAttributesRequest>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// The attributes that you want to assign to the media stream.
+    /// <p>The attributes that you want to assign to the media stream.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<crate::types::MediaStreamAttributesRequest> {
         self.inner.get_attributes()
     }
-    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    /// <p>The sample rate for the stream. This value in measured in kHz.</p>
     pub fn clock_rate(mut self, input: i32) -> Self {
         self.inner = self.inner.clock_rate(input);
         self
     }
-    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    /// <p>The sample rate for the stream. This value in measured in kHz.</p>
     pub fn set_clock_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_clock_rate(input);
         self
     }
-    /// The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+    /// <p>The sample rate for the stream. This value in measured in kHz.</p>
     pub fn get_clock_rate(&self) -> &::std::option::Option<i32> {
         self.inner.get_clock_rate()
     }
-    /// Description
+    /// <p>A description that can help you quickly identify what your media stream is used for.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Description
+    /// <p>A description that can help you quickly identify what your media stream is used for.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Description
+    /// <p>A description that can help you quickly identify what your media stream is used for.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow that is associated with the media stream that you updated.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow that is associated with the media stream that you updated.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow that is associated with the media stream that you updated.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The name of the media stream that you want to update.
+    /// <p>The media stream that you updated.</p>
     pub fn media_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.media_stream_name(input.into());
         self
     }
-    /// The name of the media stream that you want to update.
+    /// <p>The media stream that you updated.</p>
     pub fn set_media_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_media_stream_name(input);
         self
     }
-    /// The name of the media stream that you want to update.
+    /// <p>The media stream that you updated.</p>
     pub fn get_media_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_media_stream_name()
     }
-    /// The type of media stream.
+    /// <p>The type of media stream.</p>
     pub fn media_stream_type(mut self, input: crate::types::MediaStreamType) -> Self {
         self.inner = self.inner.media_stream_type(input);
         self
     }
-    /// The type of media stream.
+    /// <p>The type of media stream.</p>
     pub fn set_media_stream_type(mut self, input: ::std::option::Option<crate::types::MediaStreamType>) -> Self {
         self.inner = self.inner.set_media_stream_type(input);
         self
     }
-    /// The type of media stream.
+    /// <p>The type of media stream.</p>
     pub fn get_media_stream_type(&self) -> &::std::option::Option<crate::types::MediaStreamType> {
         self.inner.get_media_stream_type()
     }
-    /// The resolution of the video.
+    /// <p>The resolution of the video.</p>
     pub fn video_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.video_format(input.into());
         self
     }
-    /// The resolution of the video.
+    /// <p>The resolution of the video.</p>
     pub fn set_video_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_video_format(input);
         self
     }
-    /// The resolution of the video.
+    /// <p>The resolution of the video.</p>
     pub fn get_video_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_video_format()
     }

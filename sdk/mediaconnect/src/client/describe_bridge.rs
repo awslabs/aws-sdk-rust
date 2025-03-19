@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBridge`](crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to describe.<br>
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::set_bridge_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the bridge that you want to describe.</p><br>
     /// - On success, responds with [`DescribeBridgeOutput`](crate::operation::describe_bridge::DescribeBridgeOutput) with field(s):
-    ///   - [`bridge(Option<Bridge>)`](crate::operation::describe_bridge::DescribeBridgeOutput::bridge): A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
+    ///   - [`bridge(Option<Bridge>)`](crate::operation::describe_bridge::DescribeBridgeOutput::bridge): <p>The bridge that you requested a description of.</p>
     /// - On failure, responds with [`SdkError<DescribeBridgeError>`](crate::operation::describe_bridge::DescribeBridgeError)
     pub fn describe_bridge(&self) -> crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder {
         crate::operation::describe_bridge::builders::DescribeBridgeFluentBuilder::new(self.handle.clone())

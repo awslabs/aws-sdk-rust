@@ -283,6 +283,8 @@ pub(crate) mod shape_messages;
 
 pub(crate) mod shape_monitoring_config;
 
+pub(crate) mod shape_ndi_config;
+
 pub(crate) mod shape_offering;
 
 pub(crate) mod shape_output;
@@ -379,6 +381,8 @@ pub(crate) mod shape_message_detail;
 
 pub(crate) mod shape_multicast_source_settings;
 
+pub(crate) mod shape_ndi_discovery_server_config;
+
 pub(crate) mod shape_resource_specification;
 
 pub(crate) mod shape_set_gateway_bridge_source_request;
@@ -400,6 +404,8 @@ pub(crate) mod shape_frozen_frames;
 pub(crate) mod shape_interface_request;
 
 pub(crate) mod shape_list_of_audio_monitoring_setting;
+
+pub(crate) mod shape_list_of_ndi_discovery_server_config;
 
 pub(crate) mod shape_list_of_video_monitoring_setting;
 

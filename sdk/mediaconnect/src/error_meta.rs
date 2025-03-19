@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>Exception raised by Elemental MediaConnect when adding the flow output. See the error message for the operation for more information on the cause of this exception.</p>
     AddFlowOutputs420Exception(crate::types::error::AddFlowOutputs420Exception),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>This exception is thrown if the request contains a semantic error. The precise meaning depends on the API, and is documented in the error message.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The requested operation would cause a conflict with the current state of a service resource associated with the request. Resolve the conflict before retrying this request.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>Exception raised by Elemental MediaConnect when creating the bridge. See the error message for the operation for more information on the cause of this exception.</p>
     CreateBridge420Exception(crate::types::error::CreateBridge420Exception),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>Exception raised by Elemental MediaConnect when creating the flow. See the error message for the operation for more information on the cause of this exception.</p>
     CreateFlow420Exception(crate::types::error::CreateFlow420Exception),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>Exception raised by Elemental MediaConnect when creating the gateway. See the error message for the operation for more information on the cause of this exception.</p>
     CreateGateway420Exception(crate::types::error::CreateGateway420Exception),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>You do not have sufficient access to perform this action.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>Exception raised by Elemental MediaConnect when granting the entitlement. See the error message for the operation for more information on the cause of this exception.</p>
     GrantFlowEntitlements420Exception(crate::types::error::GrantFlowEntitlements420Exception),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The server encountered an internal error and is unable to complete the request.</p>
     InternalServerErrorException(crate::types::error::InternalServerErrorException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>One or more of the resources in the request does not exist in the system.</p>
     NotFoundException(crate::types::error::NotFoundException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The service is currently unavailable or busy.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
-    /// Exception raised by AWS Elemental MediaConnect. See the error message and documentation for the operation for more information on the cause of this exception.
+    /// <p>The request was denied due to request throttling.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

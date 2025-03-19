@@ -93,17 +93,17 @@ impl FlowDeletedFluentBuilder {
             .build();
         ::aws_smithy_runtime::client::waiters::attach_waiter_tracing_span(orchestrator.orchestrate()).await
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

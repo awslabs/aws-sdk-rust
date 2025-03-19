@@ -22,7 +22,7 @@ impl crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBu
 }
 /// Fluent builder constructing a request to `RemoveBridgeSource`.
 ///
-/// Removes a source from a bridge.
+/// <p>Removes a source from a bridge.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveBridgeSourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RemoveBridgeSourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
-    /// The name of the bridge source that you want to remove.
+    /// <p>The name of the bridge source that you want to remove.</p>
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_name(input.into());
         self
     }
-    /// The name of the bridge source that you want to remove.
+    /// <p>The name of the bridge source that you want to remove.</p>
     pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_name(input);
         self
     }
-    /// The name of the bridge source that you want to remove.
+    /// <p>The name of the bridge source that you want to remove.</p>
     pub fn get_source_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_source_name()
     }

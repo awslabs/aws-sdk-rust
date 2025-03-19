@@ -22,7 +22,7 @@ impl crate::operation::update_flow::builders::UpdateFlowInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateFlow`.
 ///
-/// Updates flow
+/// <p>Updates an existing flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,60 +108,74 @@ impl UpdateFlowFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The flow that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn source_failover_config(mut self, input: crate::types::UpdateFailoverConfig) -> Self {
         self.inner = self.inner.source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::UpdateFailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::UpdateFailoverConfig> {
         self.inner.get_source_failover_config()
     }
-    /// Update maintenance setting for a flow
+    /// <p>The maintenance setting of the flow.</p>
     pub fn maintenance(mut self, input: crate::types::UpdateMaintenance) -> Self {
         self.inner = self.inner.maintenance(input);
         self
     }
-    /// Update maintenance setting for a flow
+    /// <p>The maintenance setting of the flow.</p>
     pub fn set_maintenance(mut self, input: ::std::option::Option<crate::types::UpdateMaintenance>) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }
-    /// Update maintenance setting for a flow
+    /// <p>The maintenance setting of the flow.</p>
     pub fn get_maintenance(&self) -> &::std::option::Option<crate::types::UpdateMaintenance> {
         self.inner.get_maintenance()
     }
-    /// The settings for source monitoring.
+    /// <p>The settings for source monitoring.</p>
     pub fn source_monitoring_config(mut self, input: crate::types::MonitoringConfig) -> Self {
         self.inner = self.inner.source_monitoring_config(input);
         self
     }
-    /// The settings for source monitoring.
+    /// <p>The settings for source monitoring.</p>
     pub fn set_source_monitoring_config(mut self, input: ::std::option::Option<crate::types::MonitoringConfig>) -> Self {
         self.inner = self.inner.set_source_monitoring_config(input);
         self
     }
-    /// The settings for source monitoring.
+    /// <p>The settings for source monitoring.</p>
     pub fn get_source_monitoring_config(&self) -> &::std::option::Option<crate::types::MonitoringConfig> {
         self.inner.get_source_monitoring_config()
+    }
+    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    pub fn ndi_config(mut self, input: crate::types::NdiConfig) -> Self {
+        self.inner = self.inner.ndi_config(input);
+        self
+    }
+    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    pub fn set_ndi_config(mut self, input: ::std::option::Option<crate::types::NdiConfig>) -> Self {
+        self.inner = self.inner.set_ndi_config(input);
+        self
+    }
+    /// <p>Specifies the configuration settings for NDI outputs. Required when the flow includes NDI outputs.</p>
+    pub fn get_ndi_config(&self) -> &::std::option::Option<crate::types::NdiConfig> {
+        self.inner.get_ndi_config()
     }
 }

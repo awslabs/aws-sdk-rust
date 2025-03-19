@@ -22,7 +22,7 @@ impl crate::operation::remove_bridge_output::builders::RemoveBridgeOutputInputBu
 }
 /// Fluent builder constructing a request to `RemoveBridgeOutput`.
 ///
-/// Removes an output from a bridge.
+/// <p>Removes an output from a bridge.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveBridgeOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl RemoveBridgeOutputFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
-    /// The name of the bridge output that you want to remove.
+    /// <p>The name of the bridge output that you want to remove.</p>
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_name(input.into());
         self
     }
-    /// The name of the bridge output that you want to remove.
+    /// <p>The name of the bridge output that you want to remove.</p>
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_name(input);
         self
     }
-    /// The name of the bridge output that you want to remove.
+    /// <p>The name of the bridge output that you want to remove.</p>
     pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_name()
     }

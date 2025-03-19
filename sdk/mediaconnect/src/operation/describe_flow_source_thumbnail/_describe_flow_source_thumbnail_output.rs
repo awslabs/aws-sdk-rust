@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFlowSourceThumbnailOutput {
-    /// The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.
+    /// <p>The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.</p>
     pub thumbnail_details: ::std::option::Option<crate::types::ThumbnailDetails>,
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceThumbnailOutput {
-    /// The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.
+    /// <p>The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.</p>
     pub fn thumbnail_details(&self) -> ::std::option::Option<&crate::types::ThumbnailDetails> {
         self.thumbnail_details.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeFlowSourceThumbnailOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceThumbnailOutputBuilder {
-    /// The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.
+    /// <p>The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.</p>
     pub fn thumbnail_details(mut self, input: crate::types::ThumbnailDetails) -> Self {
         self.thumbnail_details = ::std::option::Option::Some(input);
         self
     }
-    /// The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.
+    /// <p>The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.</p>
     pub fn set_thumbnail_details(mut self, input: ::std::option::Option<crate::types::ThumbnailDetails>) -> Self {
         self.thumbnail_details = input;
         self
     }
-    /// The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.
+    /// <p>The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.</p>
     pub fn get_thumbnail_details(&self) -> &::std::option::Option<crate::types::ThumbnailDetails> {
         &self.thumbnail_details
     }

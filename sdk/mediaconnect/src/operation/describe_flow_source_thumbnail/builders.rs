@@ -22,7 +22,7 @@ impl crate::operation::describe_flow_source_thumbnail::builders::DescribeFlowSou
 }
 /// Fluent builder constructing a request to `DescribeFlowSourceThumbnail`.
 ///
-/// Displays the thumbnail details of a flow's source stream.
+/// <p>Describes the thumbnail for the flow source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFlowSourceThumbnailFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeFlowSourceThumbnailFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the flow.
+    /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

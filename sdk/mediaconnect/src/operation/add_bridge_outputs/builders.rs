@@ -22,7 +22,7 @@ impl crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilde
 }
 /// Fluent builder constructing a request to `AddBridgeOutputs`.
 ///
-/// Adds outputs to an existing bridge.
+/// <p>Adds outputs to an existing bridge.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddBridgeOutputsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AddBridgeOutputsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
@@ -127,17 +127,17 @@ impl AddBridgeOutputsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// The outputs that you want to add to this bridge.
+    /// <p>The outputs that you want to add to this bridge.</p>
     pub fn outputs(mut self, input: crate::types::AddBridgeOutputRequest) -> Self {
         self.inner = self.inner.outputs(input);
         self
     }
-    /// The outputs that you want to add to this bridge.
+    /// <p>The outputs that you want to add to this bridge.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
-    /// The outputs that you want to add to this bridge.
+    /// <p>The outputs that you want to add to this bridge.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeOutputRequest>> {
         self.inner.get_outputs()
     }

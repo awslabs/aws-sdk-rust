@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBridge`](crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to delete.<br>
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::set_bridge_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p><br>
     /// - On success, responds with [`DeleteBridgeOutput`](crate::operation::delete_bridge::DeleteBridgeOutput) with field(s):
-    ///   - [`bridge_arn(Option<String>)`](crate::operation::delete_bridge::DeleteBridgeOutput::bridge_arn): The Amazon Resource Number (ARN) of the deleted bridge.
+    ///   - [`bridge_arn(Option<String>)`](crate::operation::delete_bridge::DeleteBridgeOutput::bridge_arn): <p>The ARN of the deleted bridge.</p>
     /// - On failure, responds with [`SdkError<DeleteBridgeError>`](crate::operation::delete_bridge::DeleteBridgeError)
     pub fn delete_bridge(&self) -> crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder {
         crate::operation::delete_bridge::builders::DeleteBridgeFluentBuilder::new(self.handle.clone())

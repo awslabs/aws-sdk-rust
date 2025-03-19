@@ -22,7 +22,7 @@ impl crate::operation::deregister_gateway_instance::builders::DeregisterGatewayI
 }
 /// Fluent builder constructing a request to `DeregisterGatewayInstance`.
 ///
-/// Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option.
+/// <p>Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DeregisterGatewayInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
+    /// <p>Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
+    /// <p>Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.</p>
     pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
-    /// Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.
+    /// <p>Force the deregistration of an instance. Force will deregister an instance, even if there are bridges running on it.</p>
     pub fn get_force(&self) -> &::std::option::Option<bool> {
         self.inner.get_force()
     }
-    /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+    /// <p>The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.</p>
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_instance_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+    /// <p>The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.</p>
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.
+    /// <p>The Amazon Resource Name (ARN) of the gateway that contains the instance that you want to deregister.</p>
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_instance_arn()
     }

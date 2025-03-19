@@ -22,7 +22,7 @@ impl crate::operation::delete_bridge::builders::DeleteBridgeInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteBridge`.
 ///
-/// Deletes a bridge. Before you can delete a bridge, you must stop the bridge.
+/// <p>Deletes a bridge. Before you can delete a bridge, you must stop the bridge.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteBridgeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteBridgeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }

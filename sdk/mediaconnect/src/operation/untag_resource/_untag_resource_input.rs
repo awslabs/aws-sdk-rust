@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UntagResourceInput {
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// The keys of the tags to be removed.
+    /// <p>The keys of the tags to be removed.</p>
     pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInput {
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// The keys of the tags to be removed.
+    /// <p>The keys of the tags to be removed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_keys.is_none()`.
     pub fn tag_keys(&self) -> &[::std::string::String] {
@@ -35,18 +35,18 @@ pub struct UntagResourceInputBuilder {
     pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UntagResourceInputBuilder {
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that identifies the AWS Elemental MediaConnect resource from which to delete tags.
+    /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
@@ -54,19 +54,19 @@ impl UntagResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// The keys of the tags to be removed.
+    /// <p>The keys of the tags to be removed.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
         v.push(input.into());
         self.tag_keys = ::std::option::Option::Some(v);
         self
     }
-    /// The keys of the tags to be removed.
+    /// <p>The keys of the tags to be removed.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.tag_keys = input;
         self
     }
-    /// The keys of the tags to be removed.
+    /// <p>The keys of the tags to be removed.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tag_keys
     }

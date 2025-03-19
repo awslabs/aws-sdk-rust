@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeSourcesOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added sources to.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
-    /// The sources that you added to this bridge.
+    /// <p>The sources that you added to this bridge.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>,
     _request_id: Option<String>,
 }
 impl AddBridgeSourcesOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added sources to.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
-    /// The sources that you added to this bridge.
+    /// <p>The sources that you added to this bridge.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sources.is_none()`.
     pub fn sources(&self) -> &[crate::types::BridgeSource] {
@@ -42,17 +42,17 @@ pub struct AddBridgeSourcesOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddBridgeSourcesOutputBuilder {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added sources to.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added sources to.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added sources to.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
@@ -60,19 +60,19 @@ impl AddBridgeSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// The sources that you added to this bridge.
+    /// <p>The sources that you added to this bridge.</p>
     pub fn sources(mut self, input: crate::types::BridgeSource) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
         self.sources = ::std::option::Option::Some(v);
         self
     }
-    /// The sources that you added to this bridge.
+    /// <p>The sources that you added to this bridge.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>>) -> Self {
         self.sources = input;
         self
     }
-    /// The sources that you added to this bridge.
+    /// <p>The sources that you added to this bridge.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeSource>> {
         &self.sources
     }

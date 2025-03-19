@@ -3,20 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFlowsOutput {
-    /// A list of flow summaries.
+    /// <p>A list of flow summaries.</p>
     pub flows: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>,
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListFlows</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListFlows</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFlowsOutput {
-    /// A list of flow summaries.
+    /// <p>A list of flow summaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flows.is_none()`.
     pub fn flows(&self) -> &[crate::types::ListedFlow] {
         self.flows.as_deref().unwrap_or_default()
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListFlows</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListFlows</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +48,36 @@ impl ListFlowsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_flows`](Self::set_flows).
     ///
-    /// A list of flow summaries.
+    /// <p>A list of flow summaries.</p>
     pub fn flows(mut self, input: crate::types::ListedFlow) -> Self {
         let mut v = self.flows.unwrap_or_default();
         v.push(input);
         self.flows = ::std::option::Option::Some(v);
         self
     }
-    /// A list of flow summaries.
+    /// <p>A list of flow summaries.</p>
     pub fn set_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>>) -> Self {
         self.flows = input;
         self
     }
-    /// A list of flow summaries.
+    /// <p>A list of flow summaries.</p>
     pub fn get_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedFlow>> {
         &self.flows
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListFlows</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListFlows</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListFlows</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListFlows</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListFlows</code> request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListFlows</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

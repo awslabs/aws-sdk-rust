@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBridgeOutputOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that was updated.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
-    /// The output that you updated.
+    /// <p>The bridge output that was updated.</p>
     pub output: ::std::option::Option<crate::types::BridgeOutput>,
     _request_id: Option<String>,
 }
 impl UpdateBridgeOutputOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that was updated.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
-    /// The output that you updated.
+    /// <p>The bridge output that was updated.</p>
     pub fn output(&self) -> ::std::option::Option<&crate::types::BridgeOutput> {
         self.output.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateBridgeOutputOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateBridgeOutputOutputBuilder {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that was updated.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that was updated.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that was updated.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
-    /// The output that you updated.
+    /// <p>The bridge output that was updated.</p>
     pub fn output(mut self, input: crate::types::BridgeOutput) -> Self {
         self.output = ::std::option::Option::Some(input);
         self
     }
-    /// The output that you updated.
+    /// <p>The bridge output that was updated.</p>
     pub fn set_output(mut self, input: ::std::option::Option<crate::types::BridgeOutput>) -> Self {
         self.output = input;
         self
     }
-    /// The output that you updated.
+    /// <p>The bridge output that was updated.</p>
     pub fn get_output(&self) -> &::std::option::Option<crate::types::BridgeOutput> {
         &self.output
     }

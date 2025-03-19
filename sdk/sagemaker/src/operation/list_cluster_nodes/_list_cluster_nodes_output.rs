@@ -43,7 +43,6 @@ pub struct ListClusterNodesOutputBuilder {
 }
 impl ListClusterNodesOutputBuilder {
     /// <p>The next token specified for listing instances in a SageMaker HyperPod cluster.</p>
-    /// This field is required.
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self

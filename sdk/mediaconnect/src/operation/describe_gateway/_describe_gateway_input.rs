@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayInput {
-    /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    /// <p>The ARN of the gateway that you want to describe.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayInput {
-    /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    /// <p>The ARN of the gateway that you want to describe.</p>
     pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeGatewayInputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayInputBuilder {
-    /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    /// <p>The ARN of the gateway that you want to describe.</p>
     /// This field is required.
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    /// <p>The ARN of the gateway that you want to describe.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
+    /// <p>The ARN of the gateway that you want to describe.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.gateway_arn
     }

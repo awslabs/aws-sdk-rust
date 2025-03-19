@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementOutput {
-    /// The new configuration of the entitlement that you updated.
+    /// <p>The new configuration of the entitlement that you updated.</p>
     pub entitlement: ::std::option::Option<crate::types::Entitlement>,
-    /// The ARN of the flow that this entitlement was granted on.
+    /// <p>The ARN of the flow that this entitlement was granted on.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateFlowEntitlementOutput {
-    /// The new configuration of the entitlement that you updated.
+    /// <p>The new configuration of the entitlement that you updated.</p>
     pub fn entitlement(&self) -> ::std::option::Option<&crate::types::Entitlement> {
         self.entitlement.as_ref()
     }
-    /// The ARN of the flow that this entitlement was granted on.
+    /// <p>The ARN of the flow that this entitlement was granted on.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateFlowEntitlementOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowEntitlementOutputBuilder {
-    /// The new configuration of the entitlement that you updated.
+    /// <p>The new configuration of the entitlement that you updated.</p>
     pub fn entitlement(mut self, input: crate::types::Entitlement) -> Self {
         self.entitlement = ::std::option::Option::Some(input);
         self
     }
-    /// The new configuration of the entitlement that you updated.
+    /// <p>The new configuration of the entitlement that you updated.</p>
     pub fn set_entitlement(mut self, input: ::std::option::Option<crate::types::Entitlement>) -> Self {
         self.entitlement = input;
         self
     }
-    /// The new configuration of the entitlement that you updated.
+    /// <p>The new configuration of the entitlement that you updated.</p>
     pub fn get_entitlement(&self) -> &::std::option::Option<crate::types::Entitlement> {
         &self.entitlement
     }
-    /// The ARN of the flow that this entitlement was granted on.
+    /// <p>The ARN of the flow that this entitlement was granted on.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that this entitlement was granted on.
+    /// <p>The ARN of the flow that this entitlement was granted on.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that this entitlement was granted on.
+    /// <p>The ARN of the flow that this entitlement was granted on.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }

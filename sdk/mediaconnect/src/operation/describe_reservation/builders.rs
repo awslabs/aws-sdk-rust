@@ -22,7 +22,7 @@ impl crate::operation::describe_reservation::builders::DescribeReservationInputB
 }
 /// Fluent builder constructing a request to `DescribeReservation`.
 ///
-/// Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth).
+/// <p>Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeReservationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the reservation.
+    /// <p>The Amazon Resource Name (ARN) of the offering.</p>
     pub fn reservation_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reservation_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the reservation.
+    /// <p>The Amazon Resource Name (ARN) of the offering.</p>
     pub fn set_reservation_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reservation_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the reservation.
+    /// <p>The Amazon Resource Name (ARN) of the offering.</p>
     pub fn get_reservation_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_reservation_arn()
     }

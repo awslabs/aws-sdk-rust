@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddFlowVpcInterfaces`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to mutate.<br>
-    ///   - [`vpc_interfaces(VpcInterfaceRequest)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::vpc_interfaces) / [`set_vpc_interfaces(Option<Vec::<VpcInterfaceRequest>>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_vpc_interfaces):<br>required: **true**<br>A list of VPC interfaces that you want to add.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to update.</p><br>
+    ///   - [`vpc_interfaces(VpcInterfaceRequest)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::vpc_interfaces) / [`set_vpc_interfaces(Option<Vec::<VpcInterfaceRequest>>)`](crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::set_vpc_interfaces):<br>required: **true**<br><p>A list of VPC interfaces that you want to add to the flow.</p><br>
     /// - On success, responds with [`AddFlowVpcInterfacesOutput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::flow_arn): The ARN of the flow that these VPC interfaces were added to.
-    ///   - [`vpc_interfaces(Option<Vec::<VpcInterface>>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::vpc_interfaces): The details of the newly added VPC interfaces.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::flow_arn): <p>The ARN of the flow that these VPC interfaces were added to.</p>
+    ///   - [`vpc_interfaces(Option<Vec::<VpcInterface>>)`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput::vpc_interfaces): <p>The details of the newly added VPC interfaces.</p>
     /// - On failure, responds with [`SdkError<AddFlowVpcInterfacesError>`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError)
     pub fn add_flow_vpc_interfaces(&self) -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder {
         crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesFluentBuilder::new(self.handle.clone())

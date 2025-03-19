@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBridgeInput {
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBridgeInput {
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DeleteBridgeInputBuilder {
     pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBridgeInputBuilder {
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     /// This field is required.
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The ARN of the bridge that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to delete.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }

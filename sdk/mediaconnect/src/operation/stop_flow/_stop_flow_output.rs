@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFlowOutput {
-    /// The ARN of the flow that you stopped.
+    /// <p>The ARN of the flow that you stopped.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The status of the flow when the StopFlow process begins.
+    /// <p>The status of the flow when the <code>StopFlow</code> process begins.</p>
     pub status: ::std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
 impl StopFlowOutput {
-    /// The ARN of the flow that you stopped.
+    /// <p>The ARN of the flow that you stopped.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The status of the flow when the StopFlow process begins.
+    /// <p>The status of the flow when the <code>StopFlow</code> process begins.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct StopFlowOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopFlowOutputBuilder {
-    /// The ARN of the flow that you stopped.
+    /// <p>The ARN of the flow that you stopped.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that you stopped.
+    /// <p>The ARN of the flow that you stopped.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that you stopped.
+    /// <p>The ARN of the flow that you stopped.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// The status of the flow when the StopFlow process begins.
+    /// <p>The status of the flow when the <code>StopFlow</code> process begins.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// The status of the flow when the StopFlow process begins.
+    /// <p>The status of the flow when the <code>StopFlow</code> process begins.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
-    /// The status of the flow when the StopFlow process begins.
+    /// <p>The status of the flow when the <code>StopFlow</code> process begins.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status
     }

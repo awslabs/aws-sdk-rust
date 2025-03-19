@@ -1691,9 +1691,6 @@ pub(crate) fn list_candidates_for_auto_ml_job_output_output_correct_errors(
 pub(crate) fn list_cluster_nodes_output_output_correct_errors(
     mut builder: crate::operation::list_cluster_nodes::builders::ListClusterNodesOutputBuilder,
 ) -> crate::operation::list_cluster_nodes::builders::ListClusterNodesOutputBuilder {
-    if builder.next_token.is_none() {
-        builder.next_token = Some(Default::default())
-    }
     if builder.cluster_node_summaries.is_none() {
         builder.cluster_node_summaries = Some(Default::default())
     }
@@ -1703,9 +1700,6 @@ pub(crate) fn list_cluster_nodes_output_output_correct_errors(
 pub(crate) fn list_clusters_output_output_correct_errors(
     mut builder: crate::operation::list_clusters::builders::ListClustersOutputBuilder,
 ) -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
-    if builder.next_token.is_none() {
-        builder.next_token = Some(Default::default())
-    }
     if builder.cluster_summaries.is_none() {
         builder.cluster_summaries = Some(Default::default())
     }

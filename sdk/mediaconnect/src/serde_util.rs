@@ -668,6 +668,18 @@ pub(crate) fn encoding_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn ndi_discovery_server_config_correct_errors(
+    mut builder: crate::types::builders::NdiDiscoveryServerConfigBuilder,
+) -> crate::types::builders::NdiDiscoveryServerConfigBuilder {
+    if builder.discovery_server_address.is_none() {
+        builder.discovery_server_address = Some(Default::default())
+    }
+    if builder.vpc_interface_adapter.is_none() {
+        builder.vpc_interface_adapter = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn destination_configuration_correct_errors(
     mut builder: crate::types::builders::DestinationConfigurationBuilder,
 ) -> crate::types::builders::DestinationConfigurationBuilder {

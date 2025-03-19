@@ -22,7 +22,7 @@ impl crate::operation::add_bridge_sources::builders::AddBridgeSourcesInputBuilde
 }
 /// Fluent builder constructing a request to `AddBridgeSources`.
 ///
-/// Adds sources to an existing bridge.
+/// <p>Adds sources to an existing bridge.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddBridgeSourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AddBridgeSourcesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
@@ -127,17 +127,17 @@ impl AddBridgeSourcesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
-    /// The sources that you want to add to this bridge.
+    /// <p>The sources that you want to add to this bridge.</p>
     pub fn sources(mut self, input: crate::types::AddBridgeSourceRequest) -> Self {
         self.inner = self.inner.sources(input);
         self
     }
-    /// The sources that you want to add to this bridge.
+    /// <p>The sources that you want to add to this bridge.</p>
     pub fn set_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
-    /// The sources that you want to add to this bridge.
+    /// <p>The sources that you want to add to this bridge.</p>
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>> {
         self.inner.get_sources()
     }

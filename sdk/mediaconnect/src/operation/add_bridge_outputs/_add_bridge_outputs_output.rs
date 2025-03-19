@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeOutputsOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added outputs to.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
-    /// The outputs that you added to this bridge.
+    /// <p>The outputs that you added to this bridge.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>,
     _request_id: Option<String>,
 }
 impl AddBridgeOutputsOutput {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added outputs to.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
-    /// The outputs that you added to this bridge.
+    /// <p>The outputs that you added to this bridge.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
     pub fn outputs(&self) -> &[crate::types::BridgeOutput] {
@@ -42,17 +42,17 @@ pub struct AddBridgeOutputsOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddBridgeOutputsOutputBuilder {
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added outputs to.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added outputs to.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge.
+    /// <p>The ARN of the bridge that you added outputs to.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
@@ -60,19 +60,19 @@ impl AddBridgeOutputsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// The outputs that you added to this bridge.
+    /// <p>The outputs that you added to this bridge.</p>
     pub fn outputs(mut self, input: crate::types::BridgeOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// The outputs that you added to this bridge.
+    /// <p>The outputs that you added to this bridge.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>>) -> Self {
         self.outputs = input;
         self
     }
-    /// The outputs that you added to this bridge.
+    /// <p>The outputs that you added to this bridge.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BridgeOutput>> {
         &self.outputs
     }

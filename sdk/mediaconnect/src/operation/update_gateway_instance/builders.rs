@@ -22,7 +22,7 @@ impl crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceI
 }
 /// Fluent builder constructing a request to `UpdateGatewayInstance`.
 ///
-/// Updates the configuration of an existing Gateway Instance.
+/// <p>Updates an existing gateway instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGatewayInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl UpdateGatewayInstanceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn bridge_placement(mut self, input: crate::types::BridgePlacement) -> Self {
         self.inner = self.inner.bridge_placement(input);
         self
     }
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn set_bridge_placement(mut self, input: ::std::option::Option<crate::types::BridgePlacement>) -> Self {
         self.inner = self.inner.set_bridge_placement(input);
         self
     }
-    /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
+    /// <p>The state of the instance. <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn get_bridge_placement(&self) -> &::std::option::Option<crate::types::BridgePlacement> {
         self.inner.get_bridge_placement()
     }
-    /// The Amazon Resource Name (ARN) of the instance that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to update.</p>
     pub fn gateway_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_instance_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the instance that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to update.</p>
     pub fn set_gateway_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the instance that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the gateway instance that you want to update.</p>
     pub fn get_gateway_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_instance_arn()
     }

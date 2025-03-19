@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveFlowOutput`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to remove an output from.<br>
-    ///   - [`output_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::output_arn) / [`set_output_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_output_arn):<br>required: **true**<br>The ARN of the output that you want to remove.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to remove an output from.</p><br>
+    ///   - [`output_arn(impl Into<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::output_arn) / [`set_output_arn(Option<String>)`](crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::set_output_arn):<br>required: **true**<br><p>The ARN of the output that you want to remove.</p><br>
     /// - On success, responds with [`RemoveFlowOutputOutput`](crate::operation::remove_flow_output::RemoveFlowOutputOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_output::RemoveFlowOutputOutput::flow_arn): The ARN of the flow that is associated with the output you removed.
-    ///   - [`output_arn(Option<String>)`](crate::operation::remove_flow_output::RemoveFlowOutputOutput::output_arn): The ARN of the output that was removed.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_output::RemoveFlowOutputOutput::flow_arn): <p>The ARN of the flow that the output was removed from.</p>
+    ///   - [`output_arn(Option<String>)`](crate::operation::remove_flow_output::RemoveFlowOutputOutput::output_arn): <p>The ARN of the output that was removed.</p>
     /// - On failure, responds with [`SdkError<RemoveFlowOutputError>`](crate::operation::remove_flow_output::RemoveFlowOutputError)
     pub fn remove_flow_output(&self) -> crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder {
         crate::operation::remove_flow_output::builders::RemoveFlowOutputFluentBuilder::new(self.handle.clone())

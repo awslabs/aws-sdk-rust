@@ -22,7 +22,7 @@ impl crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilde
 }
 /// Fluent builder constructing a request to `UpdateFlowOutput`.
 ///
-/// Updates an existing flow output.
+/// <p>Updates an existing flow output.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFlowOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,87 +113,87 @@ impl UpdateFlowOutputFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
     ///
-    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn cidr_allow_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cidr_allow_list(input.into());
         self
     }
-    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn set_cidr_allow_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_cidr_allow_list(input);
         self
     }
-    /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
+    /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
     pub fn get_cidr_allow_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cidr_allow_list()
     }
-    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    /// <p>A description of the output. This description appears only on the MediaConnect console and will not be seen by the end user.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    /// <p>A description of the output. This description appears only on the MediaConnect console and will not be seen by the end user.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// A description of the output. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the end user.
+    /// <p>A description of the output. This description appears only on the MediaConnect console and will not be seen by the end user.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// The IP address where you want to send the output.
+    /// <p>The IP address where you want to send the output.</p>
     pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.destination(input.into());
         self
     }
-    /// The IP address where you want to send the output.
+    /// <p>The IP address where you want to send the output.</p>
     pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
-    /// The IP address where you want to send the output.
+    /// <p>The IP address where you want to send the output.</p>
     pub fn get_destination(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_destination()
     }
-    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
+    /// <p>The type of key used for the encryption. If no <code>keyType</code> is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.</p>
     pub fn encryption(mut self, input: crate::types::UpdateEncryption) -> Self {
         self.inner = self.inner.encryption(input);
         self
     }
-    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
+    /// <p>The type of key used for the encryption. If no <code>keyType</code> is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.</p>
     pub fn set_encryption(mut self, input: ::std::option::Option<crate::types::UpdateEncryption>) -> Self {
         self.inner = self.inner.set_encryption(input);
         self
     }
-    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
+    /// <p>The type of key used for the encryption. If no <code>keyType</code> is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.</p>
     pub fn get_encryption(&self) -> &::std::option::Option<crate::types::UpdateEncryption> {
         self.inner.get_encryption()
     }
-    /// The flow that is associated with the output that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the flow that is associated with the output that you want to update.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that is associated with the output that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the flow that is associated with the output that you want to update.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that is associated with the output that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the flow that is associated with the output that you want to update.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    /// <p>The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.</p>
     pub fn max_latency(mut self, input: i32) -> Self {
         self.inner = self.inner.max_latency(input);
         self
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    /// <p>The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.</p>
     pub fn set_max_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_latency(input);
         self
     }
-    /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+    /// <p>The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.</p>
     pub fn get_max_latency(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_latency()
     }
@@ -202,12 +202,12 @@ impl UpdateFlowOutputFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
     ///
-    /// The media streams that are associated with the output, and the parameters for those associations.
+    /// <p>The media streams that are associated with the output, and the parameters for those associations.</p>
     pub fn media_stream_output_configurations(mut self, input: crate::types::MediaStreamOutputConfigurationRequest) -> Self {
         self.inner = self.inner.media_stream_output_configurations(input);
         self
     }
-    /// The media streams that are associated with the output, and the parameters for those associations.
+    /// <p>The media streams that are associated with the output, and the parameters for those associations.</p>
     pub fn set_media_stream_output_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>,
@@ -215,164 +215,198 @@ impl UpdateFlowOutputFluentBuilder {
         self.inner = self.inner.set_media_stream_output_configurations(input);
         self
     }
-    /// The media streams that are associated with the output, and the parameters for those associations.
+    /// <p>The media streams that are associated with the output, and the parameters for those associations.</p>
     pub fn get_media_stream_output_configurations(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>> {
         self.inner.get_media_stream_output_configurations()
     }
-    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    /// <p>The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.</p>
     pub fn min_latency(mut self, input: i32) -> Self {
         self.inner = self.inner.min_latency(input);
         self
     }
-    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    /// <p>The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.</p>
     pub fn set_min_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_latency(input);
         self
     }
-    /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+    /// <p>The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.</p>
     pub fn get_min_latency(&self) -> &::std::option::Option<i32> {
         self.inner.get_min_latency()
     }
-    /// The ARN of the output that you want to update.
+    /// <p>The ARN of the output that you want to update.</p>
     pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_arn(input.into());
         self
     }
-    /// The ARN of the output that you want to update.
+    /// <p>The ARN of the output that you want to update.</p>
     pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_arn(input);
         self
     }
-    /// The ARN of the output that you want to update.
+    /// <p>The ARN of the output that you want to update.</p>
     pub fn get_output_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_arn()
     }
-    /// The port to use when content is distributed to this output.
+    /// <p>The port to use when content is distributed to this output.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
     }
-    /// The port to use when content is distributed to this output.
+    /// <p>The port to use when content is distributed to this output.</p>
     pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
-    /// The port to use when content is distributed to this output.
+    /// <p>The port to use when content is distributed to this output.</p>
     pub fn get_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_port()
     }
-    /// The protocol to use for the output.
+    /// <p>The protocol to use for the output.</p><note>
+    /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
+    /// </note>
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
         self.inner = self.inner.protocol(input);
         self
     }
-    /// The protocol to use for the output.
+    /// <p>The protocol to use for the output.</p><note>
+    /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
+    /// </note>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
-    /// The protocol to use for the output.
+    /// <p>The protocol to use for the output.</p><note>
+    /// <p>Elemental MediaConnect no longer supports the Fujitsu QoS protocol. This reference is maintained for legacy purposes only.</p>
+    /// </note>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::Protocol> {
         self.inner.get_protocol()
     }
-    /// The remote ID for the Zixi-pull stream.
+    /// <p>The remote ID for the Zixi-pull stream.</p>
     pub fn remote_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.remote_id(input.into());
         self
     }
-    /// The remote ID for the Zixi-pull stream.
+    /// <p>The remote ID for the Zixi-pull stream.</p>
     pub fn set_remote_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_remote_id(input);
         self
     }
-    /// The remote ID for the Zixi-pull stream.
+    /// <p>The remote ID for the Zixi-pull stream.</p>
     pub fn get_remote_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remote_id()
     }
-    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn sender_control_port(mut self, input: i32) -> Self {
         self.inner = self.inner.sender_control_port(input);
         self
     }
-    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn set_sender_control_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_sender_control_port(input);
         self
     }
-    /// The port that the flow uses to send outbound requests to initiate connection with the sender.
+    /// <p>The port that the flow uses to send outbound requests to initiate connection with the sender.</p>
     pub fn get_sender_control_port(&self) -> &::std::option::Option<i32> {
         self.inner.get_sender_control_port()
     }
-    /// The IP address that the flow communicates with to initiate connection with the sender.
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn sender_ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sender_ip_address(input.into());
         self
     }
-    /// The IP address that the flow communicates with to initiate connection with the sender.
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn set_sender_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sender_ip_address(input);
         self
     }
-    /// The IP address that the flow communicates with to initiate connection with the sender.
+    /// <p>The IP address that the flow communicates with to initiate connection with the sender.</p>
     pub fn get_sender_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sender_ip_address()
     }
-    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    /// <p>The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.</p>
     pub fn smoothing_latency(mut self, input: i32) -> Self {
         self.inner = self.inner.smoothing_latency(input);
         self
     }
-    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    /// <p>The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.</p>
     pub fn set_smoothing_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_smoothing_latency(input);
         self
     }
-    /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+    /// <p>The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.</p>
     pub fn get_smoothing_latency(&self) -> &::std::option::Option<i32> {
         self.inner.get_smoothing_latency()
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    /// <p>The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.</p>
     pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    /// <p>The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.</p>
     pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    /// <p>The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.</p>
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_id()
     }
-    /// The name of the VPC interface attachment to use for this output.
+    /// <p>The name of the VPC interface attachment to use for this output.</p>
     pub fn vpc_interface_attachment(mut self, input: crate::types::VpcInterfaceAttachment) -> Self {
         self.inner = self.inner.vpc_interface_attachment(input);
         self
     }
-    /// The name of the VPC interface attachment to use for this output.
+    /// <p>The name of the VPC interface attachment to use for this output.</p>
     pub fn set_vpc_interface_attachment(mut self, input: ::std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
         self.inner = self.inner.set_vpc_interface_attachment(input);
         self
     }
-    /// The name of the VPC interface attachment to use for this output.
+    /// <p>The name of the VPC interface attachment to use for this output.</p>
     pub fn get_vpc_interface_attachment(&self) -> &::std::option::Option<crate::types::VpcInterfaceAttachment> {
         self.inner.get_vpc_interface_attachment()
     }
-    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    /// <p>An indication of whether the output should transmit data or not. If you don't specify the <code>outputStatus</code> field in your request, MediaConnect leaves the value unchanged.</p>
     pub fn output_status(mut self, input: crate::types::OutputStatus) -> Self {
         self.inner = self.inner.output_status(input);
         self
     }
-    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    /// <p>An indication of whether the output should transmit data or not. If you don't specify the <code>outputStatus</code> field in your request, MediaConnect leaves the value unchanged.</p>
     pub fn set_output_status(mut self, input: ::std::option::Option<crate::types::OutputStatus>) -> Self {
         self.inner = self.inner.set_output_status(input);
         self
     }
-    /// An indication of whether the output should transmit data or not. If you don't specify the outputStatus field in your request, MediaConnect leaves the value unchanged.
+    /// <p>An indication of whether the output should transmit data or not. If you don't specify the <code>outputStatus</code> field in your request, MediaConnect leaves the value unchanged.</p>
     pub fn get_output_status(&self) -> &::std::option::Option<crate::types::OutputStatus> {
         self.inner.get_output_status()
+    }
+    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    pub fn ndi_program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.ndi_program_name(input.into());
+        self
+    }
+    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    pub fn set_ndi_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_ndi_program_name(input);
+        self
+    }
+    /// <p>A suffix for the names of the NDI sources that the flow creates. If a custom name isn't specified, MediaConnect uses the output name.</p>
+    pub fn get_ndi_program_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_ndi_program_name()
+    }
+    /// <p>A quality setting for the NDI Speed HQ encoder.</p>
+    pub fn ndi_speed_hq_quality(mut self, input: i32) -> Self {
+        self.inner = self.inner.ndi_speed_hq_quality(input);
+        self
+    }
+    /// <p>A quality setting for the NDI Speed HQ encoder.</p>
+    pub fn set_ndi_speed_hq_quality(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_ndi_speed_hq_quality(input);
+        self
+    }
+    /// <p>A quality setting for the NDI Speed HQ encoder.</p>
+    pub fn get_ndi_speed_hq_quality(&self) -> &::std::option::Option<i32> {
+        self.inner.get_ndi_speed_hq_quality()
     }
 }

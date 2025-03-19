@@ -90,6 +90,28 @@ pub(crate) fn match_describe_flow_370bdfc8b90a93f70(
     false
 }
 
+/// Matcher union: {"output":{"path":"Flow.Status","expected":"STANDBY","comparator":"stringEquals"}}
+pub(crate) fn match_describe_flow_50041433fc24a447b(
+    _result: ::std::result::Result<&crate::operation::describe_flow::DescribeFlowOutput, &crate::operation::describe_flow::DescribeFlowError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::describe_flow::DescribeFlowOutput) -> ::std::option::Option<&'a crate::types::Status> {
+        let _fld_1 = _output.flow.as_ref()?;
+        let _fld_2 = _fld_1.status.as_ref()?;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "STANDBY";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"Flow.Status","expected":"ERROR","comparator":"stringEquals"}}
 pub(crate) fn match_describe_flow_4eb5bd3e59f68831d(
     _result: ::std::result::Result<&crate::operation::describe_flow::DescribeFlowOutput, &crate::operation::describe_flow::DescribeFlowError>,
@@ -140,28 +162,6 @@ pub(crate) fn match_describe_flow_58fa01d9b568bfa16(
         .map(|value| {
             let _tmp_2 = value.as_str();
             let right = "DELETING";
-            let _cmp_1 = _tmp_2 == right;
-            _cmp_1
-        })
-        .unwrap_or_default()
-}
-
-/// Matcher union: {"output":{"path":"Flow.Status","expected":"STANDBY","comparator":"stringEquals"}}
-pub(crate) fn match_describe_flow_50041433fc24a447b(
-    _result: ::std::result::Result<&crate::operation::describe_flow::DescribeFlowOutput, &crate::operation::describe_flow::DescribeFlowError>,
-) -> bool {
-    fn path_traversal<'a>(_output: &'a crate::operation::describe_flow::DescribeFlowOutput) -> ::std::option::Option<&'a crate::types::Status> {
-        let _fld_1 = _output.flow.as_ref()?;
-        let _fld_2 = _fld_1.status.as_ref()?;
-        ::std::option::Option::Some(_fld_2)
-    }
-    _result
-        .as_ref()
-        .ok()
-        .and_then(|output| path_traversal(output))
-        .map(|value| {
-            let _tmp_2 = value.as_str();
-            let right = "STANDBY";
             let _cmp_1 = _tmp_2 == right;
             _cmp_1
         })

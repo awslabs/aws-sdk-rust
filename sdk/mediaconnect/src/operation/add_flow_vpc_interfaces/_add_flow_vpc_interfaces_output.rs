@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesOutput {
-    /// The ARN of the flow that these VPC interfaces were added to.
+    /// <p>The ARN of the flow that these VPC interfaces were added to.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The details of the newly added VPC interfaces.
+    /// <p>The details of the newly added VPC interfaces.</p>
     pub vpc_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>,
     _request_id: Option<String>,
 }
 impl AddFlowVpcInterfacesOutput {
-    /// The ARN of the flow that these VPC interfaces were added to.
+    /// <p>The ARN of the flow that these VPC interfaces were added to.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The details of the newly added VPC interfaces.
+    /// <p>The details of the newly added VPC interfaces.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_interfaces.is_none()`.
     pub fn vpc_interfaces(&self) -> &[crate::types::VpcInterface] {
@@ -42,17 +42,17 @@ pub struct AddFlowVpcInterfacesOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddFlowVpcInterfacesOutputBuilder {
-    /// The ARN of the flow that these VPC interfaces were added to.
+    /// <p>The ARN of the flow that these VPC interfaces were added to.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that these VPC interfaces were added to.
+    /// <p>The ARN of the flow that these VPC interfaces were added to.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that these VPC interfaces were added to.
+    /// <p>The ARN of the flow that these VPC interfaces were added to.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
@@ -60,19 +60,19 @@ impl AddFlowVpcInterfacesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
     ///
-    /// The details of the newly added VPC interfaces.
+    /// <p>The details of the newly added VPC interfaces.</p>
     pub fn vpc_interfaces(mut self, input: crate::types::VpcInterface) -> Self {
         let mut v = self.vpc_interfaces.unwrap_or_default();
         v.push(input);
         self.vpc_interfaces = ::std::option::Option::Some(v);
         self
     }
-    /// The details of the newly added VPC interfaces.
+    /// <p>The details of the newly added VPC interfaces.</p>
     pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>>) -> Self {
         self.vpc_interfaces = input;
         self
     }
-    /// The details of the newly added VPC interfaces.
+    /// <p>The details of the newly added VPC interfaces.</p>
     pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterface>> {
         &self.vpc_interfaces
     }

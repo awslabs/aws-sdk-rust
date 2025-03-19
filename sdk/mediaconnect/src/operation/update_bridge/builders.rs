@@ -22,7 +22,7 @@ impl crate::operation::update_bridge::builders::UpdateBridgeInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateBridge`.
 ///
-/// Updates the bridge
+/// <p>Updates the bridge.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBridgeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateBridgeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge that you want to update.
+    /// <p>TheAmazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge that you want to update.
+    /// <p>TheAmazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The Amazon Resource Number (ARN) of the bridge that you want to update.
+    /// <p>TheAmazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.</p>
     pub fn egress_gateway_bridge(mut self, input: crate::types::UpdateEgressGatewayBridgeRequest) -> Self {
         self.inner = self.inner.egress_gateway_bridge(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.</p>
     pub fn set_egress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest>) -> Self {
         self.inner = self.inner.set_egress_gateway_bridge(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A cloud-to-ground bridge. The content comes from an existing MediaConnect flow and is delivered to your premises.</p>
     pub fn get_egress_gateway_bridge(&self) -> &::std::option::Option<crate::types::UpdateEgressGatewayBridgeRequest> {
         self.inner.get_egress_gateway_bridge()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.</p>
     pub fn ingress_gateway_bridge(mut self, input: crate::types::UpdateIngressGatewayBridgeRequest) -> Self {
         self.inner = self.inner.ingress_gateway_bridge(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.</p>
     pub fn set_ingress_gateway_bridge(mut self, input: ::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest>) -> Self {
         self.inner = self.inner.set_ingress_gateway_bridge(input);
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A ground-to-cloud bridge. The content originates at your premises and is delivered to the cloud.</p>
     pub fn get_ingress_gateway_bridge(&self) -> &::std::option::Option<crate::types::UpdateIngressGatewayBridgeRequest> {
         self.inner.get_ingress_gateway_bridge()
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn source_failover_config(mut self, input: crate::types::UpdateFailoverConfig) -> Self {
         self.inner = self.inner.source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn set_source_failover_config(mut self, input: ::std::option::Option<crate::types::UpdateFailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
-    /// The settings for source failover.
+    /// <p>The settings for source failover.</p>
     pub fn get_source_failover_config(&self) -> &::std::option::Option<crate::types::UpdateFailoverConfig> {
         self.inner.get_source_failover_config()
     }

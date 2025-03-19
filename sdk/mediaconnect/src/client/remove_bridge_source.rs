@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveBridgeSource`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_bridge_arn):<br>required: **true**<br>The ARN of the bridge that you want to update.<br>
-    ///   - [`source_name(impl Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::source_name) / [`set_source_name(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_source_name):<br>required: **true**<br>The name of the bridge source that you want to remove.<br>
+    ///   - [`bridge_arn(impl Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::bridge_arn) / [`set_bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_bridge_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p><br>
+    ///   - [`source_name(impl Into<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::source_name) / [`set_source_name(Option<String>)`](crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::set_source_name):<br>required: **true**<br><p>The name of the bridge source that you want to remove.</p><br>
     /// - On success, responds with [`RemoveBridgeSourceOutput`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput) with field(s):
-    ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput::bridge_arn): (undocumented)
-    ///   - [`source_name(Option<String>)`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput::source_name): (undocumented)
+    ///   - [`bridge_arn(Option<String>)`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput::bridge_arn): <p>The ARN of the bridge from which the source was removed.</p>
+    ///   - [`source_name(Option<String>)`](crate::operation::remove_bridge_source::RemoveBridgeSourceOutput::source_name): <p>The name of the bridge source that was removed.</p>
     /// - On failure, responds with [`SdkError<RemoveBridgeSourceError>`](crate::operation::remove_bridge_source::RemoveBridgeSourceError)
     pub fn remove_bridge_source(&self) -> crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder {
         crate::operation::remove_bridge_source::builders::RemoveBridgeSourceFluentBuilder::new(self.handle.clone())

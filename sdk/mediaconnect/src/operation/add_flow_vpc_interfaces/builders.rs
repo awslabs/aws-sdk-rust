@@ -22,7 +22,7 @@ impl crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesIn
 }
 /// Fluent builder constructing a request to `AddFlowVpcInterfaces`.
 ///
-/// Adds VPC interfaces to flow
+/// <p>Adds VPC interfaces to a flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AddFlowVpcInterfacesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The flow that you want to mutate.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to mutate.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to mutate.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to update.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
@@ -127,17 +127,17 @@ impl AddFlowVpcInterfacesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vpc_interfaces`](Self::set_vpc_interfaces).
     ///
-    /// A list of VPC interfaces that you want to add.
+    /// <p>A list of VPC interfaces that you want to add to the flow.</p>
     pub fn vpc_interfaces(mut self, input: crate::types::VpcInterfaceRequest) -> Self {
         self.inner = self.inner.vpc_interfaces(input);
         self
     }
-    /// A list of VPC interfaces that you want to add.
+    /// <p>A list of VPC interfaces that you want to add to the flow.</p>
     pub fn set_vpc_interfaces(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
-    /// A list of VPC interfaces that you want to add.
+    /// <p>A list of VPC interfaces that you want to add to the flow.</p>
     pub fn get_vpc_interfaces(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpcInterfaceRequest>> {
         self.inner.get_vpc_interfaces()
     }

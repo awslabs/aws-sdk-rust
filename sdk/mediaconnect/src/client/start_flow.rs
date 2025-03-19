@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartFlow`](crate::operation::start_flow::builders::StartFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::set_flow_arn):<br>required: **true**<br>The ARN of the flow that you want to start.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::start_flow::builders::StartFlowFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to start.</p><br>
     /// - On success, responds with [`StartFlowOutput`](crate::operation::start_flow::StartFlowOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::start_flow::StartFlowOutput::flow_arn): The ARN of the flow that you started.
-    ///   - [`status(Option<Status>)`](crate::operation::start_flow::StartFlowOutput::status): The status of the flow when the StartFlow process begins.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::start_flow::StartFlowOutput::flow_arn): <p>The ARN of the flow that you started.</p>
+    ///   - [`status(Option<Status>)`](crate::operation::start_flow::StartFlowOutput::status): <p>The status of the flow when the <code>StartFlow</code> process begins.</p>
     /// - On failure, responds with [`SdkError<StartFlowError>`](crate::operation::start_flow::StartFlowError)
     pub fn start_flow(&self) -> crate::operation::start_flow::builders::StartFlowFluentBuilder {
         crate::operation::start_flow::builders::StartFlowFluentBuilder::new(self.handle.clone())

@@ -29,7 +29,7 @@ pub struct DescribeAvailabilityZonesInput {
     /// <li>
     /// <p><code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code>).</p></li>
+    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code> | <code>unavailable</code> | <code>constrained</code>).</p></li>
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>), the Local Zone (for example, <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p></li>
     /// <li>
@@ -78,7 +78,7 @@ impl DescribeAvailabilityZonesInput {
     /// <li>
     /// <p><code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code>).</p></li>
+    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code> | <code>unavailable</code> | <code>constrained</code>).</p></li>
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>), the Local Zone (for example, <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p></li>
     /// <li>
@@ -202,7 +202,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <li>
     /// <p><code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code>).</p></li>
+    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code> | <code>unavailable</code> | <code>constrained</code>).</p></li>
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>), the Local Zone (for example, <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p></li>
     /// <li>
@@ -233,7 +233,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <li>
     /// <p><code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code>).</p></li>
+    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code> | <code>unavailable</code> | <code>constrained</code>).</p></li>
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>), the Local Zone (for example, <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p></li>
     /// <li>
@@ -262,7 +262,7 @@ impl DescribeAvailabilityZonesInputBuilder {
     /// <li>
     /// <p><code>region-name</code> - The name of the Region for the Zone (for example, <code>us-east-1</code>).</p></li>
     /// <li>
-    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code>).</p></li>
+    /// <p><code>state</code> - The state of the Availability Zone, the Local Zone, or the Wavelength Zone (<code>available</code> | <code>unavailable</code> | <code>constrained</code>).</p></li>
     /// <li>
     /// <p><code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>), the Local Zone (for example, <code>usw2-lax1-az1</code>), or the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).</p></li>
     /// <li>

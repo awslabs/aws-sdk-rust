@@ -18,80 +18,89 @@ pub fn ser_create_flow_input_input(
         }
         array_3.finish();
     }
-    if let Some(var_6) = &input.maintenance {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("maintenance").start_object();
-        crate::protocol_serde::shape_add_maintenance::ser_add_maintenance(&mut object_7, var_6)?;
-        object_7.finish();
+    if let Some(var_6) = &input.flow_size {
+        object.key("flowSize").string(var_6.as_str());
     }
-    if let Some(var_8) = &input.media_streams {
-        let mut array_9 = object.key("mediaStreams").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.maintenance {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("maintenance").start_object();
+        crate::protocol_serde::shape_add_maintenance::ser_add_maintenance(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.media_streams {
+        let mut array_10 = object.key("mediaStreams").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_add_media_stream_request::ser_add_media_stream_request(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_add_media_stream_request::ser_add_media_stream_request(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.outputs {
-        let mut array_14 = object.key("outputs").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.ndi_config {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("ndiConfig").start_object();
+        crate::protocol_serde::shape_ndi_config::ser_ndi_config(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.outputs {
+        let mut array_17 = object.key("outputs").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_add_output_request::ser_add_output_request(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_add_output_request::ser_add_output_request(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_14.finish();
+        array_17.finish();
     }
-    if let Some(var_17) = &input.source {
+    if let Some(var_20) = &input.source {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("source").start_object();
-        crate::protocol_serde::shape_set_source_request::ser_set_source_request(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_21 = object.key("source").start_object();
+        crate::protocol_serde::shape_set_source_request::ser_set_source_request(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_19) = &input.source_failover_config {
+    if let Some(var_22) = &input.source_failover_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("sourceFailoverConfig").start_object();
-        crate::protocol_serde::shape_failover_config::ser_failover_config(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_23 = object.key("sourceFailoverConfig").start_object();
+        crate::protocol_serde::shape_failover_config::ser_failover_config(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_21) = &input.source_monitoring_config {
+    if let Some(var_24) = &input.source_monitoring_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("sourceMonitoringConfig").start_object();
-        crate::protocol_serde::shape_monitoring_config::ser_monitoring_config(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_25 = object.key("sourceMonitoringConfig").start_object();
+        crate::protocol_serde::shape_monitoring_config::ser_monitoring_config(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_23) = &input.sources {
-        let mut array_24 = object.key("sources").start_array();
-        for item_25 in var_23 {
+    if let Some(var_26) = &input.sources {
+        let mut array_27 = object.key("sources").start_array();
+        for item_28 in var_26 {
             {
                 #[allow(unused_mut)]
-                let mut object_26 = array_24.value().start_object();
-                crate::protocol_serde::shape_set_source_request::ser_set_source_request(&mut object_26, item_25)?;
-                object_26.finish();
+                let mut object_29 = array_27.value().start_object();
+                crate::protocol_serde::shape_set_source_request::ser_set_source_request(&mut object_29, item_28)?;
+                object_29.finish();
             }
         }
-        array_24.finish();
+        array_27.finish();
     }
-    if let Some(var_27) = &input.vpc_interfaces {
-        let mut array_28 = object.key("vpcInterfaces").start_array();
-        for item_29 in var_27 {
+    if let Some(var_30) = &input.vpc_interfaces {
+        let mut array_31 = object.key("vpcInterfaces").start_array();
+        for item_32 in var_30 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_vpc_interface_request::ser_vpc_interface_request(&mut object_30, item_29)?;
-                object_30.finish();
+                let mut object_33 = array_31.value().start_object();
+                crate::protocol_serde::shape_vpc_interface_request::ser_vpc_interface_request(&mut object_33, item_32)?;
+                object_33.finish();
             }
         }
-        array_28.finish();
+        array_31.finish();
     }
     Ok(())
 }

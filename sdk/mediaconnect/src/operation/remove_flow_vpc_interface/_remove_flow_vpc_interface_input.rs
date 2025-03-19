@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceInput {
-    /// The flow that you want to remove a VPC interface from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a VPC interface from.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The name of the VPC interface that you want to remove.
+    /// <p>The name of the VPC interface that you want to remove.</p>
     pub vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveFlowVpcInterfaceInput {
-    /// The flow that you want to remove a VPC interface from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a VPC interface from.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The name of the VPC interface that you want to remove.
+    /// <p>The name of the VPC interface that you want to remove.</p>
     pub fn vpc_interface_name(&self) -> ::std::option::Option<&str> {
         self.vpc_interface_name.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct RemoveFlowVpcInterfaceInputBuilder {
     pub(crate) vpc_interface_name: ::std::option::Option<::std::string::String>,
 }
 impl RemoveFlowVpcInterfaceInputBuilder {
-    /// The flow that you want to remove a VPC interface from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a VPC interface from.</p>
     /// This field is required.
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The flow that you want to remove a VPC interface from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a VPC interface from.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The flow that you want to remove a VPC interface from.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to remove a VPC interface from.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// The name of the VPC interface that you want to remove.
+    /// <p>The name of the VPC interface that you want to remove.</p>
     /// This field is required.
     pub fn vpc_interface_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_interface_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// The name of the VPC interface that you want to remove.
+    /// <p>The name of the VPC interface that you want to remove.</p>
     pub fn set_vpc_interface_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_interface_name = input;
         self
     }
-    /// The name of the VPC interface that you want to remove.
+    /// <p>The name of the VPC interface that you want to remove.</p>
     pub fn get_vpc_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_interface_name
     }

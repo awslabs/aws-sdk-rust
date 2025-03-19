@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFlowSourceThumbnail`](crate::operation::describe_flow_source_thumbnail::builders::DescribeFlowSourceThumbnailFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::describe_flow_source_thumbnail::builders::DescribeFlowSourceThumbnailFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::describe_flow_source_thumbnail::builders::DescribeFlowSourceThumbnailFluentBuilder::set_flow_arn):<br>required: **true**<br>The Amazon Resource Name (ARN) of the flow.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::describe_flow_source_thumbnail::builders::DescribeFlowSourceThumbnailFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::describe_flow_source_thumbnail::builders::DescribeFlowSourceThumbnailFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow.</p><br>
     /// - On success, responds with [`DescribeFlowSourceThumbnailOutput`](crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailOutput) with field(s):
-    ///   - [`thumbnail_details(Option<ThumbnailDetails>)`](crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailOutput::thumbnail_details): The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.
+    ///   - [`thumbnail_details(Option<ThumbnailDetails>)`](crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailOutput::thumbnail_details): <p>The details of the thumbnail, including thumbnail base64 string, timecode and the time when thumbnail was generated.</p>
     /// - On failure, responds with [`SdkError<DescribeFlowSourceThumbnailError>`](crate::operation::describe_flow_source_thumbnail::DescribeFlowSourceThumbnailError)
     pub fn describe_flow_source_thumbnail(
         &self,

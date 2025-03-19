@@ -85,6 +85,16 @@ where
                             builder =
                                 builder.set_source_monitoring_config(crate::protocol_serde::shape_monitoring_config::de_monitoring_config(tokens)?);
                         }
+                        "flowSize" => {
+                            builder = builder.set_flow_size(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::FlowSize::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ndiConfig" => {
+                            builder = builder.set_ndi_config(crate::protocol_serde::shape_ndi_config::de_ndi_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

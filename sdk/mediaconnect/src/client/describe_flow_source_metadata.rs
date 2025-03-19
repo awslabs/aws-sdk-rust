@@ -3,12 +3,12 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFlowSourceMetadata`](crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataFluentBuilder::set_flow_arn):<br>required: **true**<br>The Amazon Resource Name (ARN) of the flow.<br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::describe_flow_source_metadata::builders::DescribeFlowSourceMetadataFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow.</p><br>
     /// - On success, responds with [`DescribeFlowSourceMetadataOutput`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput) with field(s):
-    ///   - [`flow_arn(Option<String>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::flow_arn): The ARN of the flow that DescribeFlowSourceMetadata was performed on.
-    ///   - [`messages(Option<Vec::<MessageDetail>>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::messages): Provides a status code and message regarding issues found with the flow source metadata.
-    ///   - [`timestamp(Option<DateTime>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::timestamp): The timestamp of the most recent change in metadata for this flow’s source.
-    ///   - [`transport_media_info(Option<TransportMediaInfo>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::transport_media_info): The metadata of the transport stream in the current flow's source.
+    ///   - [`flow_arn(Option<String>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::flow_arn): <p>The ARN of the flow that DescribeFlowSourceMetadata was performed on.</p>
+    ///   - [`messages(Option<Vec::<MessageDetail>>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::messages): <p>Provides a status code and message regarding issues found with the flow source metadata.</p>
+    ///   - [`timestamp(Option<DateTime>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::timestamp): <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
+    ///   - [`transport_media_info(Option<TransportMediaInfo>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::transport_media_info): <p>Information about the flow's transport media.</p>
     /// - On failure, responds with [`SdkError<DescribeFlowSourceMetadataError>`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataError)
     pub fn describe_flow_source_metadata(
         &self,

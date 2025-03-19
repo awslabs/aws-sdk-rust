@@ -22,7 +22,7 @@ impl crate::operation::add_flow_outputs::builders::AddFlowOutputsInputBuilder {
 }
 /// Fluent builder constructing a request to `AddFlowOutputs`.
 ///
-/// Adds outputs to an existing flow. You can create up to 50 outputs per flow.
+/// <p>Adds outputs to an existing flow. You can create up to 50 outputs per flow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddFlowOutputsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl AddFlowOutputsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The flow that you want to add outputs to.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to add outputs to.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The flow that you want to add outputs to.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to add outputs to.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The flow that you want to add outputs to.
+    /// <p>The Amazon Resource Name (ARN) of the flow that you want to add outputs to.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }
@@ -127,17 +127,17 @@ impl AddFlowOutputsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// A list of outputs that you want to add.
+    /// <p>A list of outputs that you want to add to the flow.</p>
     pub fn outputs(mut self, input: crate::types::AddOutputRequest) -> Self {
         self.inner = self.inner.outputs(input);
         self
     }
-    /// A list of outputs that you want to add.
+    /// <p>A list of outputs that you want to add to the flow.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
-    /// A list of outputs that you want to add.
+    /// <p>A list of outputs that you want to add to the flow.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AddOutputRequest>> {
         self.inner.get_outputs()
     }

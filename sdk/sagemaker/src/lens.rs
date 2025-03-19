@@ -89,8 +89,28 @@ pub(crate) fn reflens_list_candidates_for_auto_ml_job_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cluster_nodes_output_output_next_token(
+    input: &crate::operation::list_cluster_nodes::ListClusterNodesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_cluster_scheduler_configs_output_output_next_token(
     input: &crate::operation::list_cluster_scheduler_configs::ListClusterSchedulerConfigsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_clusters_output_output_next_token(
+    input: &crate::operation::list_clusters::ListClustersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -869,10 +889,30 @@ pub(crate) fn lens_list_candidates_for_auto_ml_job_output_output_candidates(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_cluster_nodes_output_output_cluster_node_summaries(
+    input: crate::operation::list_cluster_nodes::ListClusterNodesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterNodeSummary>> {
+    let input = match input.cluster_node_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_cluster_scheduler_configs_output_output_cluster_scheduler_config_summaries(
     input: crate::operation::list_cluster_scheduler_configs::ListClusterSchedulerConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterSchedulerConfigSummary>> {
     let input = match input.cluster_scheduler_config_summaries {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_clusters_output_output_cluster_summaries(
+    input: crate::operation::list_clusters::ListClustersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>> {
+    let input = match input.cluster_summaries {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

@@ -250,7 +250,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeAsyncEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InvokeAsyncError {
-    /// <p>The request body could not be parsed as JSON.</p>
+    /// <p>The request body could not be parsed as JSON, or a request header is invalid. For example, the 'x-amzn-RequestId' header is not a valid UUID string.</p>
     InvalidRequestContentException(crate::types::error::InvalidRequestContentException),
     /// <p>The runtime or runtime version specified is not supported.</p>
     InvalidRuntimeException(crate::types::error::InvalidRuntimeException),

@@ -22,7 +22,7 @@ impl crate::operation::describe_offering::builders::DescribeOfferingInputBuilder
 }
 /// Fluent builder constructing a request to `DescribeOffering`.
 ///
-/// Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN).
+/// <p>Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOfferingFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeOfferingFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub fn set_offering_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_offering_arn()
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_bridge_output::builders::UpdateBridgeOutputInputBu
 }
 /// Fluent builder constructing a request to `UpdateBridgeOutput`.
 ///
-/// Updates an existing bridge output.
+/// <p>Updates an existing bridge output.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBridgeOutputFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateBridgeOutputFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bridge_arn(input.into());
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bridge_arn(input);
         self
     }
-    /// The ARN of the bridge that you want to update.
+    /// <p>The Amazon Resource Name (ARN) of the bridge that you want to update.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_bridge_arn()
     }
-    /// Update an existing network output.
+    /// <p>The network of the bridge output.</p>
     pub fn network_output(mut self, input: crate::types::UpdateBridgeNetworkOutputRequest) -> Self {
         self.inner = self.inner.network_output(input);
         self
     }
-    /// Update an existing network output.
+    /// <p>The network of the bridge output.</p>
     pub fn set_network_output(mut self, input: ::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>) -> Self {
         self.inner = self.inner.set_network_output(input);
         self
     }
-    /// Update an existing network output.
+    /// <p>The network of the bridge output.</p>
     pub fn get_network_output(&self) -> &::std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest> {
         self.inner.get_network_output()
     }
-    /// The name of the bridge output that you want to update.
+    /// <p>Tname of the output that you want to update.</p>
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_name(input.into());
         self
     }
-    /// The name of the bridge output that you want to update.
+    /// <p>Tname of the output that you want to update.</p>
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_name(input);
         self
     }
-    /// The name of the bridge output that you want to update.
+    /// <p>Tname of the output that you want to update.</p>
     pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_name()
     }

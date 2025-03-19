@@ -1,6 +1,14 @@
 # aws-sdk-mediaconnect
 
-API for AWS Elemental MediaConnect
+Welcome to the Elemental MediaConnect API reference.
+
+MediaConnect is a service that lets you ingest live video content into the cloud and distribute it to destinations all over the world, both inside and outside the Amazon Web Services cloud. This API reference provides descriptions, syntax, and usage examples for each of the actions and data types that are supported by MediaConnect.
+
+Use the following links to get started with the MediaConnect API:
+  - [Actions](https://docs.aws.amazon.com/mediaconnect/latest/api/API_Operations.html): An alphabetical list of all MediaConnect API operations.
+  - [Data types](https://docs.aws.amazon.com/mediaconnect/latest/api/API_Types.html): An alphabetical list of all MediaConnect data types.
+  - [Common parameters](https://docs.aws.amazon.com/mediaconnect/latest/api/CommonParameters.html): Parameters that all operations can use.
+  - [Common errors](https://docs.aws.amazon.com/mediaconnect/latest/api/CommonErrors.html): Client and server errors that all operations can return.
 
 ## Getting Started
 
@@ -14,7 +22,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-mediaconnect = "1.66.0"
+aws-sdk-mediaconnect = "1.67.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -3,18 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOfferingsOutput {
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListOfferings</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListOfferings</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// A list of offerings that are available to this account in the current AWS Region.
+    /// <p>A list of offerings that are available to this account in the current Amazon Web Services Region.</p>
     pub offerings: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>,
     _request_id: Option<String>,
 }
 impl ListOfferingsOutput {
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListOfferings</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListOfferings</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// A list of offerings that are available to this account in the current AWS Region.
+    /// <p>A list of offerings that are available to this account in the current Amazon Web Services Region.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.offerings.is_none()`.
     pub fn offerings(&self) -> &[crate::types::Offering] {
@@ -42,17 +44,20 @@ pub struct ListOfferingsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListOfferingsOutputBuilder {
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListOfferings</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListOfferings</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListOfferings</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListOfferings</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListOfferings</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListOfferings</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
@@ -60,19 +65,19 @@ impl ListOfferingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
     ///
-    /// A list of offerings that are available to this account in the current AWS Region.
+    /// <p>A list of offerings that are available to this account in the current Amazon Web Services Region.</p>
     pub fn offerings(mut self, input: crate::types::Offering) -> Self {
         let mut v = self.offerings.unwrap_or_default();
         v.push(input);
         self.offerings = ::std::option::Option::Some(v);
         self
     }
-    /// A list of offerings that are available to this account in the current AWS Region.
+    /// <p>A list of offerings that are available to this account in the current Amazon Web Services Region.</p>
     pub fn set_offerings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Offering>>) -> Self {
         self.offerings = input;
         self
     }
-    /// A list of offerings that are available to this account in the current AWS Region.
+    /// <p>A list of offerings that are available to this account in the current Amazon Web Services Region.</p>
     pub fn get_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Offering>> {
         &self.offerings
     }

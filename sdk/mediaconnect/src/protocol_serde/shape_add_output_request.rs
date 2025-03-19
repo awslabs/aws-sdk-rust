@@ -90,5 +90,14 @@ pub fn ser_add_output_request(
     if let Some(var_23) = &input.output_status {
         object.key("outputStatus").string(var_23.as_str());
     }
+    if let Some(var_24) = &input.ndi_speed_hq_quality {
+        object.key("ndiSpeedHqQuality").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
+        );
+    }
+    if let Some(var_25) = &input.ndi_program_name {
+        object.key("ndiProgramName").string(var_25.as_str());
+    }
     Ok(())
 }

@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveBridgeOutputOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ARN of the bridge from which the output was removed.</p>
     pub bridge_arn: ::std::option::Option<::std::string::String>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the bridge output that was removed.</p>
     pub output_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RemoveBridgeOutputOutput {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ARN of the bridge from which the output was removed.</p>
     pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the bridge output that was removed.</p>
     pub fn output_name(&self) -> ::std::option::Option<&str> {
         self.output_name.as_deref()
     }
@@ -40,31 +40,31 @@ pub struct RemoveBridgeOutputOutputBuilder {
     _request_id: Option<String>,
 }
 impl RemoveBridgeOutputOutputBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ARN of the bridge from which the output was removed.</p>
     pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ARN of the bridge from which the output was removed.</p>
     pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The ARN of the bridge from which the output was removed.</p>
     pub fn get_bridge_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.bridge_arn
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the bridge output that was removed.</p>
     pub fn output_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.output_name = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the bridge output that was removed.</p>
     pub fn set_output_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_name = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>The name of the bridge output that was removed.</p>
     pub fn get_output_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.output_name
     }

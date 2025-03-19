@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeFlowEntitlement`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entitlement_arn(impl Into<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::entitlement_arn) / [`set_entitlement_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::set_entitlement_arn):<br>required: **true**<br>The ARN of the entitlement that you want to revoke.<br>
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to revoke an entitlement from.<br>
+    ///   - [`entitlement_arn(impl Into<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::entitlement_arn) / [`set_entitlement_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::set_entitlement_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the entitlement that you want to revoke.</p><br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The flow that you want to revoke an entitlement from.</p><br>
     /// - On success, responds with [`RevokeFlowEntitlementOutput`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput) with field(s):
-    ///   - [`entitlement_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput::entitlement_arn): The ARN of the entitlement that was revoked.
-    ///   - [`flow_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput::flow_arn): The ARN of the flow that the entitlement was revoked from.
+    ///   - [`entitlement_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput::entitlement_arn): <p>The ARN of the entitlement that was revoked.</p>
+    ///   - [`flow_arn(Option<String>)`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput::flow_arn): <p>The ARN of the flow that the entitlement was revoked from.</p>
     /// - On failure, responds with [`SdkError<RevokeFlowEntitlementError>`](crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError)
     pub fn revoke_flow_entitlement(&self) -> crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder {
         crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementFluentBuilder::new(self.handle.clone())

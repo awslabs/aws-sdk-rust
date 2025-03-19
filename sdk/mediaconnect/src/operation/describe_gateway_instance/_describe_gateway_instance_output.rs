@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayInstanceOutput {
-    /// The settings for an instance in a gateway.
+    /// <p>The gateway instance that you requested a description of.</p>
     pub gateway_instance: ::std::option::Option<crate::types::GatewayInstance>,
     _request_id: Option<String>,
 }
 impl DescribeGatewayInstanceOutput {
-    /// The settings for an instance in a gateway.
+    /// <p>The gateway instance that you requested a description of.</p>
     pub fn gateway_instance(&self) -> ::std::option::Option<&crate::types::GatewayInstance> {
         self.gateway_instance.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeGatewayInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeGatewayInstanceOutputBuilder {
-    /// The settings for an instance in a gateway.
+    /// <p>The gateway instance that you requested a description of.</p>
     pub fn gateway_instance(mut self, input: crate::types::GatewayInstance) -> Self {
         self.gateway_instance = ::std::option::Option::Some(input);
         self
     }
-    /// The settings for an instance in a gateway.
+    /// <p>The gateway instance that you requested a description of.</p>
     pub fn set_gateway_instance(mut self, input: ::std::option::Option<crate::types::GatewayInstance>) -> Self {
         self.gateway_instance = input;
         self
     }
-    /// The settings for an instance in a gateway.
+    /// <p>The gateway instance that you requested a description of.</p>
     pub fn get_gateway_instance(&self) -> &::std::option::Option<crate::types::GatewayInstance> {
         &self.gateway_instance
     }

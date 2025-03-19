@@ -3,11 +3,11 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GrantFlowEntitlements`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entitlements(GrantEntitlementRequest)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::entitlements) / [`set_entitlements(Option<Vec::<GrantEntitlementRequest>>)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::set_entitlements):<br>required: **true**<br>The list of entitlements that you want to grant.<br>
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::set_flow_arn):<br>required: **true**<br>The flow that you want to grant entitlements on.<br>
+    ///   - [`entitlements(GrantEntitlementRequest)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::entitlements) / [`set_entitlements(Option<Vec::<GrantEntitlementRequest>>)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::set_entitlements):<br>required: **true**<br><p>The list of entitlements that you want to grant.</p><br>
+    ///   - [`flow_arn(impl Into<String>)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::set_flow_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the flow that you want to grant entitlements on.</p><br>
     /// - On success, responds with [`GrantFlowEntitlementsOutput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput) with field(s):
-    ///   - [`entitlements(Option<Vec::<Entitlement>>)`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput::entitlements): The entitlements that were just granted.
-    ///   - [`flow_arn(Option<String>)`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput::flow_arn): The ARN of the flow that these entitlements were granted to.
+    ///   - [`entitlements(Option<Vec::<Entitlement>>)`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput::entitlements): <p>The entitlements that were just granted.</p>
+    ///   - [`flow_arn(Option<String>)`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput::flow_arn): <p>The ARN of the flow that these entitlements were granted to.</p>
     /// - On failure, responds with [`SdkError<GrantFlowEntitlementsError>`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError)
     pub fn grant_flow_entitlements(&self) -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder {
         crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsFluentBuilder::new(self.handle.clone())

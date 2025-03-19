@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowOutputsOutput {
-    /// The ARN of the flow that these outputs were added to.
+    /// <p>The ARN of the flow that these outputs were added to.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The details of the newly added outputs.
+    /// <p>The details of the newly added outputs.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
     _request_id: Option<String>,
 }
 impl AddFlowOutputsOutput {
-    /// The ARN of the flow that these outputs were added to.
+    /// <p>The ARN of the flow that these outputs were added to.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The details of the newly added outputs.
+    /// <p>The details of the newly added outputs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.outputs.is_none()`.
     pub fn outputs(&self) -> &[crate::types::Output] {
@@ -42,17 +42,17 @@ pub struct AddFlowOutputsOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddFlowOutputsOutputBuilder {
-    /// The ARN of the flow that these outputs were added to.
+    /// <p>The ARN of the flow that these outputs were added to.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that these outputs were added to.
+    /// <p>The ARN of the flow that these outputs were added to.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that these outputs were added to.
+    /// <p>The ARN of the flow that these outputs were added to.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
@@ -60,19 +60,19 @@ impl AddFlowOutputsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
     ///
-    /// The details of the newly added outputs.
+    /// <p>The details of the newly added outputs.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
         v.push(input);
         self.outputs = ::std::option::Option::Some(v);
         self
     }
-    /// The details of the newly added outputs.
+    /// <p>The details of the newly added outputs.</p>
     pub fn set_outputs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Output>>) -> Self {
         self.outputs = input;
         self
     }
-    /// The details of the newly added outputs.
+    /// <p>The details of the newly added outputs.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Output>> {
         &self.outputs
     }

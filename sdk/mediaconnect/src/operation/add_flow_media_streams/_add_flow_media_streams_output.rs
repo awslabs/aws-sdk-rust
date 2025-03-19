@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddFlowMediaStreamsOutput {
-    /// The ARN of the flow that you added media streams to.
+    /// <p>The ARN of the flow that you added media streams to.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The media streams that you added to the flow.
+    /// <p>The media streams that you added to the flow.</p>
     pub media_streams: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>,
     _request_id: Option<String>,
 }
 impl AddFlowMediaStreamsOutput {
-    /// The ARN of the flow that you added media streams to.
+    /// <p>The ARN of the flow that you added media streams to.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The media streams that you added to the flow.
+    /// <p>The media streams that you added to the flow.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.media_streams.is_none()`.
     pub fn media_streams(&self) -> &[crate::types::MediaStream] {
@@ -42,17 +42,17 @@ pub struct AddFlowMediaStreamsOutputBuilder {
     _request_id: Option<String>,
 }
 impl AddFlowMediaStreamsOutputBuilder {
-    /// The ARN of the flow that you added media streams to.
+    /// <p>The ARN of the flow that you added media streams to.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that you added media streams to.
+    /// <p>The ARN of the flow that you added media streams to.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that you added media streams to.
+    /// <p>The ARN of the flow that you added media streams to.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
@@ -60,19 +60,19 @@ impl AddFlowMediaStreamsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_media_streams`](Self::set_media_streams).
     ///
-    /// The media streams that you added to the flow.
+    /// <p>The media streams that you added to the flow.</p>
     pub fn media_streams(mut self, input: crate::types::MediaStream) -> Self {
         let mut v = self.media_streams.unwrap_or_default();
         v.push(input);
         self.media_streams = ::std::option::Option::Some(v);
         self
     }
-    /// The media streams that you added to the flow.
+    /// <p>The media streams that you added to the flow.</p>
     pub fn set_media_streams(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MediaStream>>) -> Self {
         self.media_streams = input;
         self
     }
-    /// The media streams that you added to the flow.
+    /// <p>The media streams that you added to the flow.</p>
     pub fn get_media_streams(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaStream>> {
         &self.media_streams
     }

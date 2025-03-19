@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowMediaStreamOutput {
-    /// The ARN of the flow that is associated with the media stream that you updated.
+    /// <p>The ARN of the flow that is associated with the media stream that you updated.</p>
     pub flow_arn: ::std::option::Option<::std::string::String>,
-    /// The media stream that you updated.
+    /// <p>The media stream that you updated.</p>
     pub media_stream: ::std::option::Option<crate::types::MediaStream>,
     _request_id: Option<String>,
 }
 impl UpdateFlowMediaStreamOutput {
-    /// The ARN of the flow that is associated with the media stream that you updated.
+    /// <p>The ARN of the flow that is associated with the media stream that you updated.</p>
     pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
-    /// The media stream that you updated.
+    /// <p>The media stream that you updated.</p>
     pub fn media_stream(&self) -> ::std::option::Option<&crate::types::MediaStream> {
         self.media_stream.as_ref()
     }
@@ -40,31 +40,31 @@ pub struct UpdateFlowMediaStreamOutputBuilder {
     _request_id: Option<String>,
 }
 impl UpdateFlowMediaStreamOutputBuilder {
-    /// The ARN of the flow that is associated with the media stream that you updated.
+    /// <p>The ARN of the flow that is associated with the media stream that you updated.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The ARN of the flow that is associated with the media stream that you updated.
+    /// <p>The ARN of the flow that is associated with the media stream that you updated.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
-    /// The ARN of the flow that is associated with the media stream that you updated.
+    /// <p>The ARN of the flow that is associated with the media stream that you updated.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.flow_arn
     }
-    /// The media stream that you updated.
+    /// <p>The media stream that you updated.</p>
     pub fn media_stream(mut self, input: crate::types::MediaStream) -> Self {
         self.media_stream = ::std::option::Option::Some(input);
         self
     }
-    /// The media stream that you updated.
+    /// <p>The media stream that you updated.</p>
     pub fn set_media_stream(mut self, input: ::std::option::Option<crate::types::MediaStream>) -> Self {
         self.media_stream = input;
         self
     }
-    /// The media stream that you updated.
+    /// <p>The media stream that you updated.</p>
     pub fn get_media_stream(&self) -> &::std::option::Option<crate::types::MediaStream> {
         &self.media_stream
     }

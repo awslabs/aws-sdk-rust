@@ -108,6 +108,12 @@ impl ListClusterNodesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_cluster_nodes::paginator::ListClusterNodesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_cluster_nodes::paginator::ListClusterNodesPaginator {
+        crate::operation::list_cluster_nodes::paginator::ListClusterNodesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster in which you want to retrieve the list of nodes.</p>
     pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());

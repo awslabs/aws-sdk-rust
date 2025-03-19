@@ -63,7 +63,9 @@ pub struct FleetLaunchTemplateOverrides {
     /// <p>This parameter is only available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI ID in the launch template.</p>
     /// </note>
     pub image_id: ::std::option::Option<::std::string::String>,
-    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The block device mappings, which define the EBS volumes and instance store volumes to attach to the instance at launch.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub block_device_mappings: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>,
 }
 impl FleetLaunchTemplateOverrides {
@@ -144,7 +146,9 @@ impl FleetLaunchTemplateOverrides {
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
-    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The block device mappings, which define the EBS volumes and instance store volumes to attach to the instance at launch.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.block_device_mappings.is_none()`.
     pub fn block_device_mappings(&self) -> &[crate::types::BlockDeviceMappingResponse] {
@@ -427,19 +431,25 @@ impl FleetLaunchTemplateOverridesBuilder {
     ///
     /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
     ///
-    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The block device mappings, which define the EBS volumes and instance store volumes to attach to the instance at launch.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMappingResponse) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
         self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The block device mappings, which define the EBS volumes and instance store volumes to attach to the instance at launch.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_block_device_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>>) -> Self {
         self.block_device_mappings = input;
         self
     }
-    /// <p>The block device mapping, which defines the EBS volumes and instance store volumes to attach to the instance at launch. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    /// <p>The block device mappings, which define the EBS volumes and instance store volumes to attach to the instance at launch.</p>
+    /// <p>Supported only for fleets of type <code>instant</code>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block device mappings for volumes on Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn get_block_device_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMappingResponse>> {
         &self.block_device_mappings
     }

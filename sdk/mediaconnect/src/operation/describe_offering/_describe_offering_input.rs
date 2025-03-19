@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOfferingInput {
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub offering_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInput {
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub fn offering_arn(&self) -> ::std::option::Option<&str> {
         self.offering_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeOfferingInputBuilder {
     pub(crate) offering_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInputBuilder {
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     /// This field is required.
     pub fn offering_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offering_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub fn set_offering_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) of the offering.
+    /// <p>The ARN of the offering.</p>
     pub fn get_offering_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.offering_arn
     }

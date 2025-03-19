@@ -22,7 +22,7 @@ impl crate::operation::delete_gateway::builders::DeleteGatewayInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteGateway`.
 ///
-/// Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.
+/// <p>Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteGatewayFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The ARN of the gateway that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the gateway that you want to delete.</p>
     pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());
         self
     }
-    /// The ARN of the gateway that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the gateway that you want to delete.</p>
     pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gateway_arn(input);
         self
     }
-    /// The ARN of the gateway that you want to delete.
+    /// <p>The Amazon Resource Name (ARN) of the gateway that you want to delete.</p>
     pub fn get_gateway_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_gateway_arn()
     }

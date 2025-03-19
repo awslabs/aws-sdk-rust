@@ -75,6 +75,10 @@ impl FlowActiveFluentBuilder {
             if crate::waiters::matchers::match_describe_flow_370bdfc8b90a93f70(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;
             }
+            // Matches: {"output":{"path":"Flow.Status","expected":"STANDBY","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_describe_flow_50041433fc24a447b(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             // Matches: {"output":{"path":"Flow.Status","expected":"ERROR","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_describe_flow_4eb5bd3e59f68831d(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
@@ -97,17 +101,17 @@ impl FlowActiveFluentBuilder {
             .build();
         ::aws_smithy_runtime::client::waiters::attach_waiter_tracing_span(orchestrator.orchestrate()).await
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_arn(input);
         self
     }
-    /// The ARN of the flow that you want to describe.
+    /// <p>The ARN of the flow that you want to describe.</p>
     pub fn get_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_flow_arn()
     }

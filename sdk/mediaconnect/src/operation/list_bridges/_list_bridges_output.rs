@@ -3,20 +3,22 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListBridgesOutput {
-    /// A list of bridge summaries.
+    /// <p>A list of bridge summaries.</p>
     pub bridges: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>,
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListBridges</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListBridges</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListBridgesOutput {
-    /// A list of bridge summaries.
+    /// <p>A list of bridge summaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.bridges.is_none()`.
     pub fn bridges(&self) -> &[crate::types::ListedBridge] {
         self.bridges.as_deref().unwrap_or_default()
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListBridges</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListBridges</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +48,36 @@ impl ListBridgesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_bridges`](Self::set_bridges).
     ///
-    /// A list of bridge summaries.
+    /// <p>A list of bridge summaries.</p>
     pub fn bridges(mut self, input: crate::types::ListedBridge) -> Self {
         let mut v = self.bridges.unwrap_or_default();
         v.push(input);
         self.bridges = ::std::option::Option::Some(v);
         self
     }
-    /// A list of bridge summaries.
+    /// <p>A list of bridge summaries.</p>
     pub fn set_bridges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>>) -> Self {
         self.bridges = input;
         self
     }
-    /// A list of bridge summaries.
+    /// <p>A list of bridge summaries.</p>
     pub fn get_bridges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListedBridge>> {
         &self.bridges
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListBridges</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListBridges</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListBridges</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListBridges</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
+    /// <p>The token that identifies the batch of results that you want to see.</p>
+    /// <p>For example, you submit a <code>ListBridges</code> request with <code>MaxResults</code> set at 5. The service returns the first batch of results (up to 5) and a <code>NextToken</code> value. To see the next batch of results, you can submit the <code>ListBridges</code> request a second time and specify the <code>NextToken</code> value.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
