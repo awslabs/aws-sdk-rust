@@ -10,6 +10,12 @@ pub fn ser_evaluation_model_config(
             crate::protocol_serde::shape_evaluation_bedrock_model::ser_evaluation_bedrock_model(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::EvaluationModelConfig::PrecomputedInferenceSource(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_3.key("precomputedInferenceSource").start_object();
+            crate::protocol_serde::shape_evaluation_precomputed_inference_source::ser_evaluation_precomputed_inference_source(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::EvaluationModelConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluationModelConfig",
@@ -53,6 +59,14 @@ where
                             crate::protocol_serde::shape_evaluation_bedrock_model::de_evaluation_bedrock_model(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'bedrockModel' cannot be null")
                             })?,
+                        )),
+                        "precomputedInferenceSource" => Some(crate::types::EvaluationModelConfig::PrecomputedInferenceSource(
+                            crate::protocol_serde::shape_evaluation_precomputed_inference_source::de_evaluation_precomputed_inference_source(tokens)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'precomputedInferenceSource' cannot be null",
+                                    )
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

@@ -54,15 +54,22 @@ where
                         }
                         "modelIdentifiers" => {
                             builder = builder.set_model_identifiers(
-                                crate::protocol_serde::shape_evaluation_model_identifiers::de_evaluation_model_identifiers(tokens)?,
+                                crate::protocol_serde::shape_evaluation_bedrock_model_identifiers::de_evaluation_bedrock_model_identifiers(tokens)?,
                             );
                         }
                         "ragIdentifiers" => {
-                            builder = builder.set_rag_identifiers(crate::protocol_serde::shape_rag_identifiers::de_rag_identifiers(tokens)?);
+                            builder = builder.set_rag_identifiers(
+                                    crate::protocol_serde::shape_evaluation_bedrock_knowledge_base_identifiers::de_evaluation_bedrock_knowledge_base_identifiers(tokens)?
+                                );
                         }
                         "evaluatorModelIdentifiers" => {
                             builder = builder.set_evaluator_model_identifiers(
                                 crate::protocol_serde::shape_evaluator_model_identifiers::de_evaluator_model_identifiers(tokens)?,
+                            );
+                        }
+                        "inferenceConfigSummary" => {
+                            builder = builder.set_inference_config_summary(
+                                crate::protocol_serde::shape_evaluation_inference_config_summary::de_evaluation_inference_config_summary(tokens)?,
                             );
                         }
                         "applicationType" => {

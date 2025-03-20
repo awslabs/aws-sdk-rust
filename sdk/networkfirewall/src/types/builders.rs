@@ -89,9 +89,15 @@ pub use crate::types::_stateful_rule_group_override::StatefulRuleGroupOverrideBu
 
 pub use crate::types::_stateless_rule_group_reference::StatelessRuleGroupReferenceBuilder;
 
+pub use crate::types::_flow_filter::FlowFilterBuilder;
+
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadataBuilder;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadataBuilder;
+
+pub use crate::types::_flow_operation_metadata::FlowOperationMetadataBuilder;
+
+pub use crate::types::_flow::FlowBuilder;
 
 pub use crate::types::_firewall_metadata::FirewallMetadataBuilder;
 
@@ -106,6 +112,8 @@ pub use crate::types::_unique_sources::UniqueSourcesBuilder;
 pub use crate::types::_hits::HitsBuilder;
 
 pub use crate::types::_subnet_mapping::SubnetMappingBuilder;
+
+pub use crate::types::_flow_operation::FlowOperationBuilder;
 
 pub use crate::types::_firewall_status::FirewallStatusBuilder;
 

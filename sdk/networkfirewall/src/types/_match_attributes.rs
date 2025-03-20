@@ -8,13 +8,14 @@ pub struct MatchAttributes {
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
     /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not specified, this matches with any destination address.</p>
     pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::Address>>,
-    /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>If not specified, this matches with any source port.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
     pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any settings. This setting is only used for protocol 6 (TCP).</p>
     pub tcp_flags: ::std::option::Option<::std::vec::Vec<crate::types::TcpFlagField>>,
@@ -32,21 +33,22 @@ impl MatchAttributes {
     pub fn destinations(&self) -> &[crate::types::Address] {
         self.destinations.as_deref().unwrap_or_default()
     }
-    /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>If not specified, this matches with any source port.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_ports.is_none()`.
     pub fn source_ports(&self) -> &[crate::types::PortRange] {
         self.source_ports.as_deref().unwrap_or_default()
     }
-    /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.destination_ports.is_none()`.
     pub fn destination_ports(&self) -> &[crate::types::PortRange] {
         self.destination_ports.as_deref().unwrap_or_default()
     }
-    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
     pub fn protocols(&self) -> &[i32] {
@@ -122,22 +124,25 @@ impl MatchAttributesBuilder {
     ///
     /// To override the contents of this collection use [`set_source_ports`](Self::set_source_ports).
     ///
-    /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>If not specified, this matches with any source port.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub fn source_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.source_ports.unwrap_or_default();
         v.push(input);
         self.source_ports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>If not specified, this matches with any source port.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub fn set_source_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.source_ports = input;
         self
     }
-    /// <p>The source ports to inspect for. If not specified, this matches with any source port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The source port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>If not specified, this matches with any source port.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub fn get_source_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.source_ports
     }
@@ -145,22 +150,22 @@ impl MatchAttributesBuilder {
     ///
     /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
     ///
-    /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub fn destination_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.destination_ports.unwrap_or_default();
         v.push(input);
         self.destination_ports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub fn set_destination_ports(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>) -> Self {
         self.destination_ports = input;
         self
     }
-    /// <p>The destination ports to inspect for. If not specified, this matches with any destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
-    /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port ranges, for example <code>1990:1994</code>.</p>
+    /// <p>The destination port to inspect for. You can specify an individual port, for example <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>. To match with any port, specify <code>ANY</code>.</p>
+    /// <p>This setting is only used for protocols 6 (TCP) and 17 (UDP).</p>
     pub fn get_destination_ports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PortRange>> {
         &self.destination_ports
     }
@@ -168,19 +173,19 @@ impl MatchAttributesBuilder {
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
     pub fn protocols(mut self, input: i32) -> Self {
         let mut v = self.protocols.unwrap_or_default();
         v.push(input);
         self.protocols = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.protocols = input;
         self
     }
-    /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol number (IANA). If not specified, this matches with any protocol.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.protocols
     }

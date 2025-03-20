@@ -10,6 +10,15 @@ pub fn ser_rag_config(
             crate::protocol_serde::shape_knowledge_base_config::ser_knowledge_base_config(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::RagConfig::PrecomputedRagSourceConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_6.key("precomputedRagSourceConfig").start_object();
+            crate::protocol_serde::shape_evaluation_precomputed_rag_source_config::ser_evaluation_precomputed_rag_source_config(
+                &mut object_2,
+                inner,
+            )?;
+            object_2.finish();
+        }
         crate::types::RagConfig::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RagConfig")),
     }
     Ok(())
@@ -48,6 +57,16 @@ where
                         "knowledgeBaseConfig" => Some(crate::types::RagConfig::KnowledgeBaseConfig(
                             crate::protocol_serde::shape_knowledge_base_config::de_knowledge_base_config(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'knowledgeBaseConfig' cannot be null")
+                            })?,
+                        )),
+                        "precomputedRagSourceConfig" => Some(crate::types::RagConfig::PrecomputedRagSourceConfig(
+                            crate::protocol_serde::shape_evaluation_precomputed_rag_source_config::de_evaluation_precomputed_rag_source_config(
+                                tokens,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'precomputedRagSourceConfig' cannot be null",
+                                )
                             })?,
                         )),
                         _ => {

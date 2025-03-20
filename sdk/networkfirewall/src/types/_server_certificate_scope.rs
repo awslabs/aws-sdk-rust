@@ -14,7 +14,8 @@ pub struct ServerCertificateScope {
     /// <p>The destination ports to decrypt for inspection, in Transmission Control Protocol (TCP) format. If not specified, this matches with any destination port.</p>
     /// <p>You can specify individual ports, for example <code>1994</code>, and you can specify port ranges, such as <code>1990:1994</code>.</p>
     pub destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
-    /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
+    /// <p>Network Firewall currently supports only TCP.</p>
     pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl ServerCertificateScope {
@@ -44,7 +45,8 @@ impl ServerCertificateScope {
     pub fn destination_ports(&self) -> &[crate::types::PortRange] {
         self.destination_ports.as_deref().unwrap_or_default()
     }
-    /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
+    /// <p>Network Firewall currently supports only TCP.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.protocols.is_none()`.
     pub fn protocols(&self) -> &[i32] {
@@ -159,19 +161,22 @@ impl ServerCertificateScopeBuilder {
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
+    /// <p>Network Firewall currently supports only TCP.</p>
     pub fn protocols(mut self, input: i32) -> Self {
         let mut v = self.protocols.unwrap_or_default();
         v.push(input);
         self.protocols = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
+    /// <p>Network Firewall currently supports only TCP.</p>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.protocols = input;
         self
     }
-    /// <p>The protocols to decrypt for inspection, specified using each protocol's assigned internet protocol number (IANA). Network Firewall currently supports only TCP.</p>
+    /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
+    /// <p>Network Firewall currently supports only TCP.</p>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.protocols
     }

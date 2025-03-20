@@ -1138,6 +1138,15 @@ pub(crate) fn evaluation_dataset_metric_config_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_precomputed_inference_source_correct_errors(
+    mut builder: crate::types::builders::EvaluationPrecomputedInferenceSourceBuilder,
+) -> crate::types::builders::EvaluationPrecomputedInferenceSourceBuilder {
+    if builder.inference_source_identifier.is_none() {
+        builder.inference_source_identifier = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn human_evaluation_custom_metric_correct_errors(
     mut builder: crate::types::builders::HumanEvaluationCustomMetricBuilder,
 ) -> crate::types::builders::HumanEvaluationCustomMetricBuilder {
@@ -1164,6 +1173,24 @@ pub(crate) fn evaluation_dataset_correct_errors(
 ) -> crate::types::builders::EvaluationDatasetBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_precomputed_retrieve_and_generate_source_config_correct_errors(
+    mut builder: crate::types::builders::EvaluationPrecomputedRetrieveAndGenerateSourceConfigBuilder,
+) -> crate::types::builders::EvaluationPrecomputedRetrieveAndGenerateSourceConfigBuilder {
+    if builder.rag_source_identifier.is_none() {
+        builder.rag_source_identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluation_precomputed_retrieve_source_config_correct_errors(
+    mut builder: crate::types::builders::EvaluationPrecomputedRetrieveSourceConfigBuilder,
+) -> crate::types::builders::EvaluationPrecomputedRetrieveSourceConfigBuilder {
+    if builder.rag_source_identifier.is_none() {
+        builder.rag_source_identifier = Some(Default::default())
     }
     builder
 }

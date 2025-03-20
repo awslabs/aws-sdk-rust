@@ -14,7 +14,7 @@ pub struct Step {
     pub end_time: ::aws_smithy_types::DateTime,
     /// <p>The URL to the logs for the execution step.</p>
     pub log_url: ::std::option::Option<::std::string::String>,
-    /// <p>The URL to the artifact for the execution step.</p>
+    /// <p>The URL to the build artifact for the execution step.</p>
     pub artifacts_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the test artifact for the execution step.</p>
     pub test_artifacts_url: ::std::option::Option<::std::string::String>,
@@ -49,7 +49,7 @@ impl Step {
     pub fn log_url(&self) -> ::std::option::Option<&str> {
         self.log_url.as_deref()
     }
-    /// <p>The URL to the artifact for the execution step.</p>
+    /// <p>The URL to the build artifact for the execution step.</p>
     pub fn artifacts_url(&self) -> ::std::option::Option<&str> {
         self.artifacts_url.as_deref()
     }
@@ -172,17 +172,17 @@ impl StepBuilder {
     pub fn get_log_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_url
     }
-    /// <p>The URL to the artifact for the execution step.</p>
+    /// <p>The URL to the build artifact for the execution step.</p>
     pub fn artifacts_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.artifacts_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL to the artifact for the execution step.</p>
+    /// <p>The URL to the build artifact for the execution step.</p>
     pub fn set_artifacts_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifacts_url = input;
         self
     }
-    /// <p>The URL to the artifact for the execution step.</p>
+    /// <p>The URL to the build artifact for the execution step.</p>
     pub fn get_artifacts_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifacts_url
     }

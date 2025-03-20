@@ -17,11 +17,15 @@ pub struct EvaluationSummary {
     /// <p>The type of task for model evaluation.</p>
     pub evaluation_task_types: ::std::vec::Vec<crate::types::EvaluationTaskType>,
     /// <p>The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub model_identifiers: ::std::vec::Vec<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge base evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub rag_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge base evaluation job.</p>
     pub evaluator_model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
+    pub inference_config_summary: ::std::option::Option<crate::types::EvaluationInferenceConfigSummary>,
     /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
     pub application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
@@ -54,6 +58,7 @@ impl EvaluationSummary {
         self.evaluation_task_types.deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn model_identifiers(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.model_identifiers.deref()
@@ -61,6 +66,7 @@ impl EvaluationSummary {
     /// <p>The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge base evaluation job.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rag_identifiers.is_none()`.
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn rag_identifiers(&self) -> &[::std::string::String] {
         self.rag_identifiers.as_deref().unwrap_or_default()
     }
@@ -69,6 +75,10 @@ impl EvaluationSummary {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.evaluator_model_identifiers.is_none()`.
     pub fn evaluator_model_identifiers(&self) -> &[::std::string::String] {
         self.evaluator_model_identifiers.as_deref().unwrap_or_default()
+    }
+    /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
+    pub fn inference_config_summary(&self) -> ::std::option::Option<&crate::types::EvaluationInferenceConfigSummary> {
+        self.inference_config_summary.as_ref()
     }
     /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
     pub fn application_type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
@@ -95,6 +105,7 @@ pub struct EvaluationSummaryBuilder {
     pub(crate) model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) rag_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) evaluator_model_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inference_config_summary: ::std::option::Option<crate::types::EvaluationInferenceConfigSummary>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
 }
 impl EvaluationSummaryBuilder {
@@ -198,6 +209,7 @@ impl EvaluationSummaryBuilder {
     /// To override the contents of this collection use [`set_model_identifiers`](Self::set_model_identifiers).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn model_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.model_identifiers.unwrap_or_default();
         v.push(input.into());
@@ -205,11 +217,13 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn set_model_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.model_identifiers = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the model(s) used for the evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn get_model_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.model_identifiers
     }
@@ -218,6 +232,7 @@ impl EvaluationSummaryBuilder {
     /// To override the contents of this collection use [`set_rag_identifiers`](Self::set_rag_identifiers).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge base evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn rag_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.rag_identifiers.unwrap_or_default();
         v.push(input.into());
@@ -225,11 +240,13 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge base evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn set_rag_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.rag_identifiers = input;
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the knowledge base resources used for a knowledge base evaluation job.</p>
+    #[deprecated(note = "Inference identifiers should be retrieved from the inferenceConfigSummary", since = "2025-03-07")]
     pub fn get_rag_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.rag_identifiers
     }
@@ -252,6 +269,20 @@ impl EvaluationSummaryBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the models used to compute the metrics for a knowledge base evaluation job.</p>
     pub fn get_evaluator_model_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.evaluator_model_identifiers
+    }
+    /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
+    pub fn inference_config_summary(mut self, input: crate::types::EvaluationInferenceConfigSummary) -> Self {
+        self.inference_config_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
+    pub fn set_inference_config_summary(mut self, input: ::std::option::Option<crate::types::EvaluationInferenceConfigSummary>) -> Self {
+        self.inference_config_summary = input;
+        self
+    }
+    /// <p>Identifies the models, Knowledge Bases, or other RAG sources evaluated in a model or Knowledge Base evaluation job.</p>
+    pub fn get_inference_config_summary(&self) -> &::std::option::Option<crate::types::EvaluationInferenceConfigSummary> {
+        &self.inference_config_summary
     }
     /// <p>Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).</p>
     pub fn application_type(mut self, input: crate::types::ApplicationType) -> Self {
@@ -316,6 +347,7 @@ impl EvaluationSummaryBuilder {
             model_identifiers: self.model_identifiers.unwrap_or_default(),
             rag_identifiers: self.rag_identifiers,
             evaluator_model_identifiers: self.evaluator_model_identifiers,
+            inference_config_summary: self.inference_config_summary,
             application_type: self.application_type,
         })
     }

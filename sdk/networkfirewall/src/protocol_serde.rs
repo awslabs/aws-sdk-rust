@@ -49,6 +49,8 @@ pub(crate) mod shape_describe_firewall;
 
 pub(crate) mod shape_describe_firewall_policy;
 
+pub(crate) mod shape_describe_flow_operation;
+
 pub(crate) mod shape_describe_logging_configuration;
 
 pub(crate) mod shape_describe_resource_policy;
@@ -69,6 +71,10 @@ pub(crate) mod shape_list_firewall_policies;
 
 pub(crate) mod shape_list_firewalls;
 
+pub(crate) mod shape_list_flow_operation_results;
+
+pub(crate) mod shape_list_flow_operations;
+
 pub(crate) mod shape_list_rule_groups;
 
 pub(crate) mod shape_list_tags_for_resource;
@@ -78,6 +84,10 @@ pub(crate) mod shape_list_tls_inspection_configurations;
 pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_start_analysis_report;
+
+pub(crate) mod shape_start_flow_capture;
+
+pub(crate) mod shape_start_flow_flush;
 
 pub(crate) mod shape_tag_resource;
 
@@ -137,6 +147,8 @@ pub(crate) mod shape_describe_firewall_input;
 
 pub(crate) mod shape_describe_firewall_policy_input;
 
+pub(crate) mod shape_describe_flow_operation_input;
+
 pub(crate) mod shape_describe_logging_configuration_input;
 
 pub(crate) mod shape_describe_resource_policy_input;
@@ -171,6 +183,10 @@ pub(crate) mod shape_list_firewall_policies_input;
 
 pub(crate) mod shape_list_firewalls_input;
 
+pub(crate) mod shape_list_flow_operation_results_input;
+
+pub(crate) mod shape_list_flow_operations_input;
+
 pub(crate) mod shape_list_rule_groups_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
@@ -186,6 +202,10 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_resource_owner_check_exception;
 
 pub(crate) mod shape_start_analysis_report_input;
+
+pub(crate) mod shape_start_flow_capture_input;
+
+pub(crate) mod shape_start_flow_flush_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -235,6 +255,14 @@ pub(crate) mod shape_firewall_status;
 
 pub(crate) mod shape_firewalls;
 
+pub(crate) mod shape_flow_filter;
+
+pub(crate) mod shape_flow_operation;
+
+pub(crate) mod shape_flow_operations;
+
+pub(crate) mod shape_flows;
+
 pub(crate) mod shape_logging_configuration;
 
 pub(crate) mod shape_rule_group;
@@ -261,6 +289,8 @@ pub(crate) mod shape_tls_inspection_configuration_response;
 
 pub(crate) mod shape_tls_inspection_configurations;
 
+pub(crate) mod shape_address;
+
 pub(crate) mod shape_analysis_report;
 
 pub(crate) mod shape_analysis_result_list;
@@ -278,6 +308,12 @@ pub(crate) mod shape_custom_actions;
 pub(crate) mod shape_firewall_metadata;
 
 pub(crate) mod shape_firewall_policy_metadata;
+
+pub(crate) mod shape_flow;
+
+pub(crate) mod shape_flow_filters;
+
+pub(crate) mod shape_flow_operation_metadata;
 
 pub(crate) mod shape_log_destination_config;
 
@@ -359,8 +395,6 @@ pub(crate) mod shape_sync_state;
 
 pub(crate) mod shape_unique_sources;
 
-pub(crate) mod shape_address;
-
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_header;
@@ -370,6 +404,8 @@ pub(crate) mod shape_ip_set_metadata_map;
 pub(crate) mod shape_log_destination_map;
 
 pub(crate) mod shape_port_range;
+
+pub(crate) mod shape_protocol_strings;
 
 pub(crate) mod shape_publish_metric_action;
 

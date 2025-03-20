@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleBooleanToEvaluate {
+    /// <p>The Add On ARN and its returned value to evaluate in a boolean condition expression.</p>
+    Analysis(crate::types::Analysis),
     /// <p>The boolean type representing the allowed attribute types for an email.</p>
     Attribute(crate::types::RuleBooleanEmailAttribute),
     /// <p>The structure representing the address lists and address list attribute that will be used in evaluation of boolean expression.</p>
@@ -19,6 +21,19 @@ pub enum RuleBooleanToEvaluate {
     Unknown,
 }
 impl RuleBooleanToEvaluate {
+    /// Tries to convert the enum instance into [`Analysis`](crate::types::RuleBooleanToEvaluate::Analysis), extracting the inner [`Analysis`](crate::types::Analysis).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_analysis(&self) -> ::std::result::Result<&crate::types::Analysis, &Self> {
+        if let RuleBooleanToEvaluate::Analysis(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Analysis`](crate::types::RuleBooleanToEvaluate::Analysis).
+    pub fn is_analysis(&self) -> bool {
+        self.as_analysis().is_ok()
+    }
     /// Tries to convert the enum instance into [`Attribute`](crate::types::RuleBooleanToEvaluate::Attribute), extracting the inner [`RuleBooleanEmailAttribute`](crate::types::RuleBooleanEmailAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> ::std::result::Result<&crate::types::RuleBooleanEmailAttribute, &Self> {

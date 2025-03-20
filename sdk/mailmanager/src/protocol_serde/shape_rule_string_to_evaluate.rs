@@ -10,6 +10,12 @@ pub fn ser_rule_string_to_evaluate(
         crate::types::RuleStringToEvaluate::MimeHeaderAttribute(inner) => {
             object_2.key("MimeHeaderAttribute").string(inner.as_str());
         }
+        crate::types::RuleStringToEvaluate::Analysis(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("Analysis").start_object();
+            crate::protocol_serde::shape_analysis::ser_analysis(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::RuleStringToEvaluate::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "RuleStringToEvaluate",
@@ -64,6 +70,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'MimeHeaderAttribute' cannot be null")
                                 })?,
+                        )),
+                        "Analysis" => Some(crate::types::RuleStringToEvaluate::Analysis(
+                            crate::protocol_serde::shape_analysis::de_analysis(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

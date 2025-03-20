@@ -532,6 +532,37 @@ impl From<crate::operation::describe_firewall_policy::DescribeFirewallPolicyErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_flow_operation::DescribeFlowOperationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_flow_operation::DescribeFlowOperationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_flow_operation::DescribeFlowOperationError> for Error {
+    fn from(err: crate::operation::describe_flow_operation::DescribeFlowOperationError) -> Self {
+        match err {
+            crate::operation::describe_flow_operation::DescribeFlowOperationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::describe_flow_operation::DescribeFlowOperationError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_flow_operation::DescribeFlowOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_flow_operation::DescribeFlowOperationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_flow_operation::DescribeFlowOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError, R>>
     for Error
@@ -858,6 +889,69 @@ impl From<crate::operation::list_firewalls::ListFirewallsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flow_operation_results::ListFlowOperationResultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flow_operation_results::ListFlowOperationResultsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_flow_operation_results::ListFlowOperationResultsError> for Error {
+    fn from(err: crate::operation::list_flow_operation_results::ListFlowOperationResultsError) -> Self {
+        match err {
+            crate::operation::list_flow_operation_results::ListFlowOperationResultsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::list_flow_operation_results::ListFlowOperationResultsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_flow_operation_results::ListFlowOperationResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_flow_operation_results::ListFlowOperationResultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_flow_operation_results::ListFlowOperationResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flow_operations::ListFlowOperationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flow_operations::ListFlowOperationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_flow_operations::ListFlowOperationsError> for Error {
+    fn from(err: crate::operation::list_flow_operations::ListFlowOperationsError) -> Self {
+        match err {
+            crate::operation::list_flow_operations::ListFlowOperationsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_flow_operations::ListFlowOperationsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_flow_operations::ListFlowOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_flow_operations::ListFlowOperationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_flow_operations::ListFlowOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_rule_groups::ListRuleGroupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1008,6 +1102,56 @@ impl From<crate::operation::start_analysis_report::StartAnalysisReportError> for
             }
             crate::operation::start_analysis_report::StartAnalysisReportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_analysis_report::StartAnalysisReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_flow_capture::StartFlowCaptureError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_flow_capture::StartFlowCaptureError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_flow_capture::StartFlowCaptureError> for Error {
+    fn from(err: crate::operation::start_flow_capture::StartFlowCaptureError) -> Self {
+        match err {
+            crate::operation::start_flow_capture::StartFlowCaptureError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_flow_capture::StartFlowCaptureError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_flow_capture::StartFlowCaptureError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_flow_capture::StartFlowCaptureError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_flow_capture::StartFlowCaptureError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_flow_flush::StartFlowFlushError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_flow_flush::StartFlowFlushError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_flow_flush::StartFlowFlushError> for Error {
+    fn from(err: crate::operation::start_flow_flush::StartFlowFlushError) -> Self {
+        match err {
+            crate::operation::start_flow_flush::StartFlowFlushError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_flow_flush::StartFlowFlushError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_flow_flush::StartFlowFlushError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_flow_flush::StartFlowFlushError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_flow_flush::StartFlowFlushError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

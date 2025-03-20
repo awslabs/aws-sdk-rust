@@ -39,6 +39,26 @@ pub(crate) fn reflens_list_firewalls_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_flow_operation_results_output_output_next_token(
+    input: &crate::operation::list_flow_operation_results::ListFlowOperationResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_flow_operations_output_output_next_token(
+    input: &crate::operation::list_flow_operations::ListFlowOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_rule_groups_output_output_next_token(
     input: &crate::operation::list_rule_groups::ListRuleGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +123,26 @@ pub(crate) fn lens_list_firewalls_output_output_firewalls(
     input: crate::operation::list_firewalls::ListFirewallsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FirewallMetadata>> {
     let input = match input.firewalls {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flow_operation_results_output_output_flows(
+    input: crate::operation::list_flow_operation_results::ListFlowOperationResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Flow>> {
+    let input = match input.flows {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flow_operations_output_output_flow_operations(
+    input: crate::operation::list_flow_operations::ListFlowOperationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowOperationMetadata>> {
+    let input = match input.flow_operations {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

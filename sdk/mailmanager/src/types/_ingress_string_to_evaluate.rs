@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum IngressStringToEvaluate {
+    /// <p>The structure type for a string condition stating the Add On ARN and its returned value.</p>
+    Analysis(crate::types::IngressAnalysis),
     /// <p>The enum type representing the allowed attribute types for a string condition.</p>
     Attribute(crate::types::IngressStringEmailAttribute),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum IngressStringToEvaluate {
     Unknown,
 }
 impl IngressStringToEvaluate {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`Analysis`](crate::types::IngressStringToEvaluate::Analysis), extracting the inner [`IngressAnalysis`](crate::types::IngressAnalysis).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_analysis(&self) -> ::std::result::Result<&crate::types::IngressAnalysis, &Self> {
+        if let IngressStringToEvaluate::Analysis(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Analysis`](crate::types::IngressStringToEvaluate::Analysis).
+    pub fn is_analysis(&self) -> bool {
+        self.as_analysis().is_ok()
+    }
     /// Tries to convert the enum instance into [`Attribute`](crate::types::IngressStringToEvaluate::Attribute), extracting the inner [`IngressStringEmailAttribute`](crate::types::IngressStringEmailAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> ::std::result::Result<&crate::types::IngressStringEmailAttribute, &Self> {

@@ -123,6 +123,10 @@ pub use crate::types::_stateless_rule_group_reference::StatelessRuleGroupReferen
 
 pub use crate::types::_enabled_analysis_type::EnabledAnalysisType;
 
+pub use crate::types::_flow_operation_status::FlowOperationStatus;
+
+pub use crate::types::_flow_filter::FlowFilter;
+
 pub use crate::types::_tls_inspection_configuration_metadata::TlsInspectionConfigurationMetadata;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadata;
@@ -130,6 +134,12 @@ pub use crate::types::_rule_group_metadata::RuleGroupMetadata;
 pub use crate::types::_resource_managed_type::ResourceManagedType;
 
 pub use crate::types::_resource_managed_status::ResourceManagedStatus;
+
+pub use crate::types::_flow_operation_metadata::FlowOperationMetadata;
+
+pub use crate::types::_flow_operation_type::FlowOperationType;
+
+pub use crate::types::_flow::Flow;
 
 pub use crate::types::_firewall_metadata::FirewallMetadata;
 
@@ -146,6 +156,8 @@ pub use crate::types::_hits::Hits;
 pub use crate::types::_subnet_mapping::SubnetMapping;
 
 pub use crate::types::_ip_address_type::IpAddressType;
+
+pub use crate::types::_flow_operation::FlowOperation;
 
 pub use crate::types::_firewall_status::FirewallStatus;
 
@@ -216,6 +228,18 @@ mod _firewall_policy_response;
 mod _firewall_status;
 
 mod _firewall_status_value;
+
+mod _flow;
+
+mod _flow_filter;
+
+mod _flow_operation;
+
+mod _flow_operation_metadata;
+
+mod _flow_operation_status;
+
+mod _flow_operation_type;
 
 mod _flow_timeouts;
 

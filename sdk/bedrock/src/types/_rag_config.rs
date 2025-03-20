@@ -6,6 +6,8 @@
 pub enum RagConfig {
     /// <p>Contains configuration details for knowledge base retrieval and response generation.</p>
     KnowledgeBaseConfig(crate::types::KnowledgeBaseConfig),
+    /// <p>Contains configuration details about the RAG source used to generate inference response data for a Knowledge Base evaluation job.</p>
+    PrecomputedRagSourceConfig(crate::types::EvaluationPrecomputedRagSourceConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum RagConfig {
     Unknown,
 }
 impl RagConfig {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`KnowledgeBaseConfig`](crate::types::RagConfig::KnowledgeBaseConfig), extracting the inner [`KnowledgeBaseConfig`](crate::types::KnowledgeBaseConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_config(&self) -> ::std::result::Result<&crate::types::KnowledgeBaseConfig, &Self> {
@@ -30,6 +31,19 @@ impl RagConfig {
     /// Returns true if this is a [`KnowledgeBaseConfig`](crate::types::RagConfig::KnowledgeBaseConfig).
     pub fn is_knowledge_base_config(&self) -> bool {
         self.as_knowledge_base_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`PrecomputedRagSourceConfig`](crate::types::RagConfig::PrecomputedRagSourceConfig), extracting the inner [`EvaluationPrecomputedRagSourceConfig`](crate::types::EvaluationPrecomputedRagSourceConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_precomputed_rag_source_config(&self) -> ::std::result::Result<&crate::types::EvaluationPrecomputedRagSourceConfig, &Self> {
+        if let RagConfig::PrecomputedRagSourceConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`PrecomputedRagSourceConfig`](crate::types::RagConfig::PrecomputedRagSourceConfig).
+    pub fn is_precomputed_rag_source_config(&self) -> bool {
+        self.as_precomputed_rag_source_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

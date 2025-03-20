@@ -7,11 +7,17 @@ pub fn ser_rule_boolean_to_evaluate(
         crate::types::RuleBooleanToEvaluate::Attribute(inner) => {
             object_2.key("Attribute").string(inner.as_str());
         }
+        crate::types::RuleBooleanToEvaluate::Analysis(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("Analysis").start_object();
+            crate::protocol_serde::shape_analysis::ser_analysis(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::RuleBooleanToEvaluate::IsInAddressList(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_2.key("IsInAddressList").start_object();
-            crate::protocol_serde::shape_rule_is_in_address_list::ser_rule_is_in_address_list(&mut object_1, inner)?;
-            object_1.finish();
+            let mut object_2 = object_2.key("IsInAddressList").start_object();
+            crate::protocol_serde::shape_rule_is_in_address_list::ser_rule_is_in_address_list(&mut object_2, inner)?;
+            object_2.finish();
         }
         crate::types::RuleBooleanToEvaluate::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -59,6 +65,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Attribute' cannot be null")
                                 })?,
+                        )),
+                        "Analysis" => Some(crate::types::RuleBooleanToEvaluate::Analysis(
+                            crate::protocol_serde::shape_analysis::de_analysis(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
+                            })?,
                         )),
                         "IsInAddressList" => Some(crate::types::RuleBooleanToEvaluate::IsInAddressList(
                             crate::protocol_serde::shape_rule_is_in_address_list::de_rule_is_in_address_list(tokens)?.ok_or_else(|| {

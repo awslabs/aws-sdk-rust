@@ -193,6 +193,12 @@ pub use crate::types::_evaluation_summary::EvaluationSummary;
 
 pub use crate::types::_application_type::ApplicationType;
 
+pub use crate::types::_evaluation_inference_config_summary::EvaluationInferenceConfigSummary;
+
+pub use crate::types::_evaluation_rag_config_summary::EvaluationRagConfigSummary;
+
+pub use crate::types::_evaluation_model_config_summary::EvaluationModelConfigSummary;
+
 pub use crate::types::_evaluation_task_type::EvaluationTaskType;
 
 pub use crate::types::_evaluation_job_type::EvaluationJobType;
@@ -204,6 +210,12 @@ pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfig
 pub use crate::types::_evaluation_inference_config::EvaluationInferenceConfig;
 
 pub use crate::types::_rag_config::RagConfig;
+
+pub use crate::types::_evaluation_precomputed_rag_source_config::EvaluationPrecomputedRagSourceConfig;
+
+pub use crate::types::_evaluation_precomputed_retrieve_and_generate_source_config::EvaluationPrecomputedRetrieveAndGenerateSourceConfig;
+
+pub use crate::types::_evaluation_precomputed_retrieve_source_config::EvaluationPrecomputedRetrieveSourceConfig;
 
 pub use crate::types::_knowledge_base_config::KnowledgeBaseConfig;
 
@@ -254,6 +266,8 @@ pub use crate::types::_retrieve_and_generate_type::RetrieveAndGenerateType;
 pub use crate::types::_retrieve_config::RetrieveConfig;
 
 pub use crate::types::_evaluation_model_config::EvaluationModelConfig;
+
+pub use crate::types::_evaluation_precomputed_inference_source::EvaluationPrecomputedInferenceSource;
 
 pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModel;
 
@@ -333,13 +347,27 @@ mod _evaluation_dataset_metric_config;
 
 mod _evaluation_inference_config;
 
+mod _evaluation_inference_config_summary;
+
 mod _evaluation_job_status;
 
 mod _evaluation_job_type;
 
 mod _evaluation_model_config;
 
+mod _evaluation_model_config_summary;
+
 mod _evaluation_output_data_config;
+
+mod _evaluation_precomputed_inference_source;
+
+mod _evaluation_precomputed_rag_source_config;
+
+mod _evaluation_precomputed_retrieve_and_generate_source_config;
+
+mod _evaluation_precomputed_retrieve_source_config;
+
+mod _evaluation_rag_config_summary;
 
 mod _evaluation_summary;
 

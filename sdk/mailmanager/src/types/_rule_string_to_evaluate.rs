@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleStringToEvaluate {
+    /// <p>The Add On ARN and its returned value to evaluate in a string condition expression.</p>
+    Analysis(crate::types::Analysis),
     /// <p>The email attribute to evaluate in a string condition expression.</p>
     Attribute(crate::types::RuleStringEmailAttribute),
     /// <p>The email MIME X-Header attribute to evaluate in a string condition expression.</p>
@@ -19,6 +21,19 @@ pub enum RuleStringToEvaluate {
     Unknown,
 }
 impl RuleStringToEvaluate {
+    /// Tries to convert the enum instance into [`Analysis`](crate::types::RuleStringToEvaluate::Analysis), extracting the inner [`Analysis`](crate::types::Analysis).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_analysis(&self) -> ::std::result::Result<&crate::types::Analysis, &Self> {
+        if let RuleStringToEvaluate::Analysis(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Analysis`](crate::types::RuleStringToEvaluate::Analysis).
+    pub fn is_analysis(&self) -> bool {
+        self.as_analysis().is_ok()
+    }
     /// Tries to convert the enum instance into [`Attribute`](crate::types::RuleStringToEvaluate::Attribute), extracting the inner [`RuleStringEmailAttribute`](crate::types::RuleStringEmailAttribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> ::std::result::Result<&crate::types::RuleStringEmailAttribute, &Self> {

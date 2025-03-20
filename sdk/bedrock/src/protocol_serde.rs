@@ -419,13 +419,21 @@ pub(crate) mod shape_validator_metric;
 
 pub(crate) mod shape_validators;
 
+pub(crate) mod shape_evaluation_bedrock_knowledge_base_identifiers;
+
 pub(crate) mod shape_evaluation_bedrock_model;
+
+pub(crate) mod shape_evaluation_bedrock_model_identifiers;
 
 pub(crate) mod shape_evaluation_dataset_metric_config;
 
 pub(crate) mod shape_evaluation_dataset_metric_configs;
 
-pub(crate) mod shape_evaluation_model_identifiers;
+pub(crate) mod shape_evaluation_inference_config_summary;
+
+pub(crate) mod shape_evaluation_precomputed_inference_source;
+
+pub(crate) mod shape_evaluation_precomputed_rag_source_config;
 
 pub(crate) mod shape_evaluation_task_types;
 
@@ -457,8 +465,6 @@ pub(crate) mod shape_invocation_log_source;
 
 pub(crate) mod shape_knowledge_base_config;
 
-pub(crate) mod shape_rag_identifiers;
-
 pub(crate) mod shape_request_metadata_filters;
 
 pub(crate) mod shape_teacher_model_config;
@@ -468,6 +474,14 @@ pub(crate) mod shape_bedrock_evaluator_model;
 pub(crate) mod shape_bedrock_evaluator_models;
 
 pub(crate) mod shape_evaluation_dataset;
+
+pub(crate) mod shape_evaluation_model_config_summary;
+
+pub(crate) mod shape_evaluation_precomputed_retrieve_and_generate_source_config;
+
+pub(crate) mod shape_evaluation_precomputed_retrieve_source_config;
+
+pub(crate) mod shape_evaluation_rag_config_summary;
 
 pub(crate) mod shape_guardrail_modalities;
 
@@ -488,6 +502,10 @@ pub(crate) mod shape_retrieve_config;
 pub(crate) mod shape_evaluation_dataset_location;
 
 pub(crate) mod shape_evaluation_metric_names;
+
+pub(crate) mod shape_evaluation_precomputed_inference_source_identifiers;
+
+pub(crate) mod shape_evaluation_precomputed_rag_source_identifiers;
 
 pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
 

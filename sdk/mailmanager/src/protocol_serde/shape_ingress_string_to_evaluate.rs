@@ -7,6 +7,12 @@ pub fn ser_ingress_string_to_evaluate(
         crate::types::IngressStringToEvaluate::Attribute(inner) => {
             object_2.key("Attribute").string(inner.as_str());
         }
+        crate::types::IngressStringToEvaluate::Analysis(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_2.key("Analysis").start_object();
+            crate::protocol_serde::shape_ingress_analysis::ser_ingress_analysis(&mut object_1, inner)?;
+            object_1.finish();
+        }
         crate::types::IngressStringToEvaluate::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "IngressStringToEvaluate",
@@ -53,6 +59,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Attribute' cannot be null")
                                 })?,
+                        )),
+                        "Analysis" => Some(crate::types::IngressStringToEvaluate::Analysis(
+                            crate::protocol_serde::shape_ingress_analysis::de_ingress_analysis(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Analysis' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

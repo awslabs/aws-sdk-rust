@@ -40,6 +40,9 @@ pub mod describe_firewall;
 /// Types for the `DescribeFirewallPolicy` operation.
 pub mod describe_firewall_policy;
 
+/// Types for the `DescribeFlowOperation` operation.
+pub mod describe_flow_operation;
+
 /// Types for the `DescribeLoggingConfiguration` operation.
 pub mod describe_logging_configuration;
 
@@ -70,6 +73,12 @@ pub mod list_firewall_policies;
 /// Types for the `ListFirewalls` operation.
 pub mod list_firewalls;
 
+/// Types for the `ListFlowOperationResults` operation.
+pub mod list_flow_operation_results;
+
+/// Types for the `ListFlowOperations` operation.
+pub mod list_flow_operations;
+
 /// Types for the `ListRuleGroups` operation.
 pub mod list_rule_groups;
 
@@ -84,6 +93,12 @@ pub mod put_resource_policy;
 
 /// Types for the `StartAnalysisReport` operation.
 pub mod start_analysis_report;
+
+/// Types for the `StartFlowCapture` operation.
+pub mod start_flow_capture;
+
+/// Types for the `StartFlowFlush` operation.
+pub mod start_flow_flush;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

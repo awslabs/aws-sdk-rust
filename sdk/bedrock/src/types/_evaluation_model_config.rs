@@ -6,6 +6,8 @@
 pub enum EvaluationModelConfig {
     /// <p>Defines the Amazon Bedrock model or inference profile and inference parameters you want used.</p>
     BedrockModel(crate::types::EvaluationBedrockModel),
+    /// <p>Defines the model used to generate inference response data for a model evaluation job where you provide your own inference response data.</p>
+    PrecomputedInferenceSource(crate::types::EvaluationPrecomputedInferenceSource),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum EvaluationModelConfig {
     Unknown,
 }
 impl EvaluationModelConfig {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`BedrockModel`](crate::types::EvaluationModelConfig::BedrockModel), extracting the inner [`EvaluationBedrockModel`](crate::types::EvaluationBedrockModel).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bedrock_model(&self) -> ::std::result::Result<&crate::types::EvaluationBedrockModel, &Self> {
@@ -30,6 +31,19 @@ impl EvaluationModelConfig {
     /// Returns true if this is a [`BedrockModel`](crate::types::EvaluationModelConfig::BedrockModel).
     pub fn is_bedrock_model(&self) -> bool {
         self.as_bedrock_model().is_ok()
+    }
+    /// Tries to convert the enum instance into [`PrecomputedInferenceSource`](crate::types::EvaluationModelConfig::PrecomputedInferenceSource), extracting the inner [`EvaluationPrecomputedInferenceSource`](crate::types::EvaluationPrecomputedInferenceSource).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_precomputed_inference_source(&self) -> ::std::result::Result<&crate::types::EvaluationPrecomputedInferenceSource, &Self> {
+        if let EvaluationModelConfig::PrecomputedInferenceSource(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`PrecomputedInferenceSource`](crate::types::EvaluationModelConfig::PrecomputedInferenceSource).
+    pub fn is_precomputed_inference_source(&self) -> bool {
+        self.as_precomputed_inference_source().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

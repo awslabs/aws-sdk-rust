@@ -189,6 +189,8 @@ mod describe_firewall;
 
 mod describe_firewall_policy;
 
+mod describe_flow_operation;
+
 mod describe_logging_configuration;
 
 mod describe_resource_policy;
@@ -209,6 +211,10 @@ mod list_firewall_policies;
 
 mod list_firewalls;
 
+mod list_flow_operation_results;
+
+mod list_flow_operations;
+
 mod list_rule_groups;
 
 mod list_tags_for_resource;
@@ -218,6 +224,10 @@ mod list_tls_inspection_configurations;
 mod put_resource_policy;
 
 mod start_analysis_report;
+
+mod start_flow_capture;
+
+mod start_flow_flush;
 
 mod tag_resource;
 

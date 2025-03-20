@@ -331,6 +331,13 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn address_correct_errors(mut builder: crate::types::builders::AddressBuilder) -> crate::types::builders::AddressBuilder {
+    if builder.address_definition.is_none() {
+        builder.address_definition = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_action_correct_errors(mut builder: crate::types::builders::CustomActionBuilder) -> crate::types::builders::CustomActionBuilder {
     if builder.action_name.is_none() {
         builder.action_name = Some(Default::default())
@@ -491,13 +498,6 @@ pub(crate) fn rule_definition_correct_errors(
 pub(crate) fn rule_option_correct_errors(mut builder: crate::types::builders::RuleOptionBuilder) -> crate::types::builders::RuleOptionBuilder {
     if builder.keyword.is_none() {
         builder.keyword = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn address_correct_errors(mut builder: crate::types::builders::AddressBuilder) -> crate::types::builders::AddressBuilder {
-    if builder.address_definition.is_none() {
-        builder.address_definition = Some(Default::default())
     }
     builder
 }

@@ -10,6 +10,8 @@ pub struct Webhook {
     pub webhook_id: ::std::string::String,
     /// <p>The URL of the webhook.</p>
     pub webhook_url: ::std::string::String,
+    /// <p>The unique ID of an Amplify app.</p>
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name for a branch that is part of an Amplify app.</p>
     pub branch_name: ::std::string::String,
     /// <p>The description for a webhook.</p>
@@ -34,6 +36,10 @@ impl Webhook {
     pub fn webhook_url(&self) -> &str {
         use std::ops::Deref;
         self.webhook_url.deref()
+    }
+    /// <p>The unique ID of an Amplify app.</p>
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
+        self.app_id.as_deref()
     }
     /// <p>The name for a branch that is part of an Amplify app.</p>
     pub fn branch_name(&self) -> &str {
@@ -68,6 +74,7 @@ pub struct WebhookBuilder {
     pub(crate) webhook_arn: ::std::option::Option<::std::string::String>,
     pub(crate) webhook_id: ::std::option::Option<::std::string::String>,
     pub(crate) webhook_url: ::std::option::Option<::std::string::String>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
     pub(crate) branch_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -118,6 +125,20 @@ impl WebhookBuilder {
     /// <p>The URL of the webhook.</p>
     pub fn get_webhook_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.webhook_url
+    }
+    /// <p>The unique ID of an Amplify app.</p>
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique ID of an Amplify app.</p>
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.app_id = input;
+        self
+    }
+    /// <p>The unique ID of an Amplify app.</p>
+    pub fn get_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.app_id
     }
     /// <p>The name for a branch that is part of an Amplify app.</p>
     /// This field is required.
@@ -208,6 +229,7 @@ impl WebhookBuilder {
                     "webhook_url was not specified but it is required when building Webhook",
                 )
             })?,
+            app_id: self.app_id,
             branch_name: self.branch_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "branch_name",

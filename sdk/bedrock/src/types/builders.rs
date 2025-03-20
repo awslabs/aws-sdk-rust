@@ -117,7 +117,17 @@ pub use crate::types::_guardrail_summary::GuardrailSummaryBuilder;
 
 pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
 
+pub use crate::types::_evaluation_inference_config_summary::EvaluationInferenceConfigSummaryBuilder;
+
+pub use crate::types::_evaluation_rag_config_summary::EvaluationRagConfigSummaryBuilder;
+
+pub use crate::types::_evaluation_model_config_summary::EvaluationModelConfigSummaryBuilder;
+
 pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfigBuilder;
+
+pub use crate::types::_evaluation_precomputed_retrieve_and_generate_source_config::EvaluationPrecomputedRetrieveAndGenerateSourceConfigBuilder;
+
+pub use crate::types::_evaluation_precomputed_retrieve_source_config::EvaluationPrecomputedRetrieveSourceConfigBuilder;
 
 pub use crate::types::_retrieve_and_generate_configuration::RetrieveAndGenerateConfigurationBuilder;
 
@@ -154,6 +164,8 @@ pub use crate::types::_knowledge_base_vector_search_configuration::KnowledgeBase
 pub use crate::types::_filter_attribute::FilterAttributeBuilder;
 
 pub use crate::types::_retrieve_config::RetrieveConfigBuilder;
+
+pub use crate::types::_evaluation_precomputed_inference_source::EvaluationPrecomputedInferenceSourceBuilder;
 
 pub use crate::types::_evaluation_bedrock_model::EvaluationBedrockModelBuilder;
 
