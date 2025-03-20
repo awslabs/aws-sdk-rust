@@ -2610,6 +2610,10 @@ source_hash = 'b96d17f6e699f38eb5d14e1a983856886a7fc9382e52606456056a7822f043d8'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9517dcadf7290d477bd65e38c7789c03452ef22d48d8a6665d4983e4d346798e'
+
+[release]
+tag = 'release-2025-03-20'
+
 [release.crates]
 aws-sdk-amplify = '1.70.0'
 aws-sdk-bedrock = '1.80.0'
