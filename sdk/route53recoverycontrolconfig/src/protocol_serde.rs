@@ -65,6 +65,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_cluster;
+
 pub(crate) mod shape_update_control_panel;
 
 pub(crate) mod shape_update_routing_control;
@@ -100,6 +102,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_cluster_input;
 
 pub(crate) mod shape_update_control_panel_input;
 

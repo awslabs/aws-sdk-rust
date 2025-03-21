@@ -13,11 +13,11 @@ pub use crate::types::_routing_control::RoutingControlBuilder;
 
 pub use crate::types::_control_panel::ControlPanelBuilder;
 
-pub use crate::types::_rule::RuleBuilder;
-
 pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_cluster_endpoint::ClusterEndpointBuilder;
+
+pub use crate::types::_rule::RuleBuilder;
 
 pub use crate::types::_new_gating_rule::NewGatingRuleBuilder;
 

@@ -17,11 +17,13 @@ pub use crate::types::_routing_control::RoutingControl;
 
 pub use crate::types::_control_panel::ControlPanel;
 
-pub use crate::types::_rule::Rule;
-
 pub use crate::types::_cluster::Cluster;
 
+pub use crate::types::_network_type::NetworkType;
+
 pub use crate::types::_cluster_endpoint::ClusterEndpoint;
+
+pub use crate::types::_rule::Rule;
 
 pub use crate::types::_new_gating_rule::NewGatingRule;
 
@@ -40,6 +42,8 @@ mod _control_panel;
 mod _gating_rule;
 
 mod _gating_rule_update;
+
+mod _network_type;
 
 mod _new_assertion_rule;
 

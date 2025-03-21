@@ -132,6 +132,9 @@ pub(crate) fn de_get_imported_model(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "customModelUnits" => {
+                    builder = builder.set_custom_model_units(crate::protocol_serde::shape_custom_model_units::de_custom_model_units(tokens)?);
+                }
                 "instructSupported" => {
                     builder = builder.set_instruct_supported(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

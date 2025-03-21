@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`model_architecture(Option<String>)`](crate::operation::get_imported_model::GetImportedModelOutput::model_architecture): <p>The architecture of the imported model.</p>
     ///   - [`model_kms_key_arn(Option<String>)`](crate::operation::get_imported_model::GetImportedModelOutput::model_kms_key_arn): <p>The imported model is encrypted at rest using this key.</p>
     ///   - [`instruct_supported(Option<bool>)`](crate::operation::get_imported_model::GetImportedModelOutput::instruct_supported): <p>Specifies if the imported model supports converse.</p>
+    ///   - [`custom_model_units(Option<CustomModelUnits>)`](crate::operation::get_imported_model::GetImportedModelOutput::custom_model_units): <p>Information about the hardware utilization for a single copy of the model.</p>
     /// - On failure, responds with [`SdkError<GetImportedModelError>`](crate::operation::get_imported_model::GetImportedModelError)
     pub fn get_imported_model(&self) -> crate::operation::get_imported_model::builders::GetImportedModelFluentBuilder {
         crate::operation::get_imported_model::builders::GetImportedModelFluentBuilder::new(self.handle.clone())

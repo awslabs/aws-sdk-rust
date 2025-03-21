@@ -13,13 +13,13 @@ pub(super) fn resolve_endpoint(
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
 ) -> ::aws_smithy_http::endpoint::Result {
     #[allow(unused_variables)]
-    let region = &_params.region;
-    #[allow(unused_variables)]
     let use_dual_stack = &_params.use_dual_stack;
     #[allow(unused_variables)]
     let use_fips = &_params.use_fips;
     #[allow(unused_variables)]
     let endpoint = &_params.endpoint;
+    #[allow(unused_variables)]
+    let region = &_params.region;
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
         if (*use_fips) == (true) {
@@ -38,6 +38,42 @@ pub(super) fn resolve_endpoint(
     if let Some(region) = region {
         #[allow(unused_variables)]
         if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+            if (partition_result.name()) == ("aws") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (false) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://route53-recovery-control-config.us-west-2.amazonaws.com".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
+            if (partition_result.name()) == ("aws") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (true) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url("https://arc-recovery-control-config.us-west-2.api.aws".to_string())
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                }
+            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
@@ -47,12 +83,21 @@ pub(super) fn resolve_endpoint(
                                     let mut out = String::new();
                                     out.push_str("https://route53-recovery-control-config-fips.");
                                     #[allow(clippy::needless_borrow)]
-                                    out.push_str(&region.as_ref() as &str);
+                                    out.push_str(&partition_result.implicit_global_region());
                                     out.push('.');
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
                                     out
                                 })
+                                .property(
+                                    "authSchemes",
+                                    vec![::aws_smithy_types::Document::from({
+                                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                        out.insert("name".to_string(), "sigv4".to_string().into());
+                                        out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
+                                        out
+                                    })],
+                                )
                                 .build());
                         }
                     }
@@ -62,69 +107,85 @@ pub(super) fn resolve_endpoint(
                 }
             }
             if (*use_fips) == (true) {
-                if (partition_result.supports_fips()) == (true) {
-                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                        .url({
-                            let mut out = String::new();
-                            out.push_str("https://route53-recovery-control-config-fips.");
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&region.as_ref() as &str);
-                            out.push('.');
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&partition_result.dns_suffix());
-                            out
-                        })
-                        .build());
+                if (*use_dual_stack) == (false) {
+                    if (partition_result.supports_fips()) == (true) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://route53-recovery-control-config-fips.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.implicit_global_region());
+                                out.push('.');
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.dns_suffix());
+                                out
+                            })
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        "FIPS is enabled but this partition does not support FIPS".to_string(),
+                    ));
                 }
-                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                    "FIPS is enabled but this partition does not support FIPS".to_string(),
-                ));
             }
-            if (*use_dual_stack) == (true) {
-                if (true) == (partition_result.supports_dual_stack()) {
-                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                        .url({
-                            let mut out = String::new();
-                            out.push_str("https://route53-recovery-control-config.");
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&region.as_ref() as &str);
-                            out.push('.');
-                            #[allow(clippy::needless_borrow)]
-                            out.push_str(&partition_result.dual_stack_dns_suffix());
-                            out
-                        })
-                        .build());
+            if (*use_fips) == (false) {
+                if (*use_dual_stack) == (true) {
+                    if (true) == (partition_result.supports_dual_stack()) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://route53-recovery-control-config.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.implicit_global_region());
+                                out.push('.');
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.dual_stack_dns_suffix());
+                                out
+                            })
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        "DualStack is enabled but this partition does not support DualStack".to_string(),
+                    ));
                 }
-                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                    "DualStack is enabled but this partition does not support DualStack".to_string(),
-                ));
-            }
-            if (region.as_ref() as &str) == ("aws-global") {
-                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                    .url("https://route53-recovery-control-config.us-west-2.amazonaws.com".to_string())
-                    .property(
-                        "authSchemes",
-                        vec![::aws_smithy_types::Document::from({
-                            let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                            out.insert("name".to_string(), "sigv4".to_string().into());
-                            out.insert("signingName".to_string(), "route53-recovery-control-config".to_string().into());
-                            out.insert("signingRegion".to_string(), "us-west-2".to_string().into());
-                            out
-                        })],
-                    )
-                    .build());
             }
             return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                 .url({
                     let mut out = String::new();
                     out.push_str("https://route53-recovery-control-config.");
                     #[allow(clippy::needless_borrow)]
-                    out.push_str(&region.as_ref() as &str);
+                    out.push_str(&partition_result.implicit_global_region());
                     out.push('.');
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dns_suffix());
                     out
                 })
+                .property(
+                    "authSchemes",
+                    vec![::aws_smithy_types::Document::from({
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingRegion".to_string(), partition_result.implicit_global_region().to_owned().into());
+                        out
+                    })],
+                )
                 .build());
         }
         #[allow(unreachable_code)]

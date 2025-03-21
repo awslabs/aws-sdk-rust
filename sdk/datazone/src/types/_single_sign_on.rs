@@ -8,6 +8,8 @@ pub struct SingleSignOn {
     pub r#type: ::std::option::Option<crate::types::AuthType>,
     /// <p>The single sign-on user assignment in Amazon DataZone.</p>
     pub user_assignment: ::std::option::Option<crate::types::UserAssignment>,
+    /// <p>The ARN of the IDC instance.</p>
+    pub idc_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl SingleSignOn {
     /// <p>The type of single sign-on in Amazon DataZone.</p>
@@ -17,6 +19,10 @@ impl SingleSignOn {
     /// <p>The single sign-on user assignment in Amazon DataZone.</p>
     pub fn user_assignment(&self) -> ::std::option::Option<&crate::types::UserAssignment> {
         self.user_assignment.as_ref()
+    }
+    /// <p>The ARN of the IDC instance.</p>
+    pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.idc_instance_arn.as_deref()
     }
 }
 impl SingleSignOn {
@@ -32,6 +38,7 @@ impl SingleSignOn {
 pub struct SingleSignOnBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::AuthType>,
     pub(crate) user_assignment: ::std::option::Option<crate::types::UserAssignment>,
+    pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl SingleSignOnBuilder {
     /// <p>The type of single sign-on in Amazon DataZone.</p>
@@ -62,11 +69,26 @@ impl SingleSignOnBuilder {
     pub fn get_user_assignment(&self) -> &::std::option::Option<crate::types::UserAssignment> {
         &self.user_assignment
     }
+    /// <p>The ARN of the IDC instance.</p>
+    pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.idc_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IDC instance.</p>
+    pub fn set_idc_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.idc_instance_arn = input;
+        self
+    }
+    /// <p>The ARN of the IDC instance.</p>
+    pub fn get_idc_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.idc_instance_arn
+    }
     /// Consumes the builder and constructs a [`SingleSignOn`](crate::types::SingleSignOn).
     pub fn build(self) -> crate::types::SingleSignOn {
         crate::types::SingleSignOn {
             r#type: self.r#type,
             user_assignment: self.user_assignment,
+            idc_instance_arn: self.idc_instance_arn,
         }
     }
 }

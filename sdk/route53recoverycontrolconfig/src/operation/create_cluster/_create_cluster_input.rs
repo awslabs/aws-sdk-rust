@@ -10,6 +10,8 @@ pub struct CreateClusterInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the cluster.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateClusterInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
@@ -23,6 +25,10 @@ impl CreateClusterInput {
     /// <p>The tags associated with the cluster.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
+    }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
     }
 }
 impl CreateClusterInput {
@@ -39,6 +45,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl CreateClusterInputBuilder {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
@@ -90,6 +97,20 @@ impl CreateClusterInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -98,6 +119,7 @@ impl CreateClusterInputBuilder {
             client_token: self.client_token,
             cluster_name: self.cluster_name,
             tags: self.tags,
+            network_type: self.network_type,
         })
     }
 }

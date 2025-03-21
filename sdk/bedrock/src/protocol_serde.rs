@@ -213,6 +213,8 @@ pub(crate) mod shape_batch_delete_evaluation_job_items;
 
 pub(crate) mod shape_custom_model_summary_list;
 
+pub(crate) mod shape_custom_model_units;
+
 pub(crate) mod shape_customization_config;
 
 pub(crate) mod shape_endpoint_config;

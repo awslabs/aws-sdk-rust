@@ -101,6 +101,8 @@ pub use crate::types::_model_data_source::ModelDataSource;
 
 pub use crate::types::_s3_data_source::S3DataSource;
 
+pub use crate::types::_custom_model_units::CustomModelUnits;
+
 pub use crate::types::_model_copy_job_summary::ModelCopyJobSummary;
 
 pub use crate::types::_model_copy_job_status::ModelCopyJobStatus;
@@ -326,6 +328,8 @@ mod _cloud_watch_config;
 mod _commitment_duration;
 
 mod _custom_model_summary;
+
+mod _custom_model_units;
 
 mod _customization_config;
 

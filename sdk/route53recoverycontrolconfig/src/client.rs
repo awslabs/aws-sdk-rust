@@ -259,6 +259,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_cluster;
+
 mod update_control_panel;
 
 mod update_routing_control;

@@ -21,6 +21,8 @@ pub struct GetImportedModelOutput {
     pub model_kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the imported model supports converse.</p>
     pub instruct_supported: ::std::option::Option<bool>,
+    /// <p>Information about the hardware utilization for a single copy of the model.</p>
+    pub custom_model_units: ::std::option::Option<crate::types::CustomModelUnits>,
     _request_id: Option<String>,
 }
 impl GetImportedModelOutput {
@@ -60,6 +62,10 @@ impl GetImportedModelOutput {
     pub fn instruct_supported(&self) -> ::std::option::Option<bool> {
         self.instruct_supported
     }
+    /// <p>Information about the hardware utilization for a single copy of the model.</p>
+    pub fn custom_model_units(&self) -> ::std::option::Option<&crate::types::CustomModelUnits> {
+        self.custom_model_units.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetImportedModelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -86,6 +92,7 @@ pub struct GetImportedModelOutputBuilder {
     pub(crate) model_architecture: ::std::option::Option<::std::string::String>,
     pub(crate) model_kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) instruct_supported: ::std::option::Option<bool>,
+    pub(crate) custom_model_units: ::std::option::Option<crate::types::CustomModelUnits>,
     _request_id: Option<String>,
 }
 impl GetImportedModelOutputBuilder {
@@ -215,6 +222,20 @@ impl GetImportedModelOutputBuilder {
     pub fn get_instruct_supported(&self) -> &::std::option::Option<bool> {
         &self.instruct_supported
     }
+    /// <p>Information about the hardware utilization for a single copy of the model.</p>
+    pub fn custom_model_units(mut self, input: crate::types::CustomModelUnits) -> Self {
+        self.custom_model_units = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the hardware utilization for a single copy of the model.</p>
+    pub fn set_custom_model_units(mut self, input: ::std::option::Option<crate::types::CustomModelUnits>) -> Self {
+        self.custom_model_units = input;
+        self
+    }
+    /// <p>Information about the hardware utilization for a single copy of the model.</p>
+    pub fn get_custom_model_units(&self) -> &::std::option::Option<crate::types::CustomModelUnits> {
+        &self.custom_model_units
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -236,6 +257,7 @@ impl GetImportedModelOutputBuilder {
             model_architecture: self.model_architecture,
             model_kms_key_arn: self.model_kms_key_arn,
             instruct_supported: self.instruct_supported,
+            custom_model_units: self.custom_model_units,
             _request_id: self._request_id,
         }
     }

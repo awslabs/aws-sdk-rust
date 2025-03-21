@@ -64,6 +64,9 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateCluster` operation.
+pub mod update_cluster;
+
 /// Types for the `UpdateControlPanel` operation.
 pub mod update_control_panel;
 

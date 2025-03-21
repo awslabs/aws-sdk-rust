@@ -53,6 +53,8 @@ pub use crate::types::_imported_model_summary::ImportedModelSummaryBuilder;
 
 pub use crate::types::_s3_data_source::S3DataSourceBuilder;
 
+pub use crate::types::_custom_model_units::CustomModelUnitsBuilder;
+
 pub use crate::types::_model_copy_job_summary::ModelCopyJobSummaryBuilder;
 
 pub use crate::types::_logging_config::LoggingConfigBuilder;

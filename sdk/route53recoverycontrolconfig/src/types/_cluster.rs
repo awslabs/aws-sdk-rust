@@ -15,6 +15,8 @@ pub struct Cluster {
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     pub owner: ::std::option::Option<::std::string::String>,
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -40,6 +42,10 @@ impl Cluster {
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
+        self.network_type.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -57,6 +63,7 @@ pub struct ClusterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::Status>,
     pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
 }
 impl ClusterBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -138,6 +145,20 @@ impl ClusterBuilder {
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner
     }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn network_type(mut self, input: crate::types::NetworkType) -> Self {
+        self.network_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn set_network_type(mut self, input: ::std::option::Option<crate::types::NetworkType>) -> Self {
+        self.network_type = input;
+        self
+    }
+    /// <p>The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.</p>
+    pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
+        &self.network_type
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -146,6 +167,7 @@ impl ClusterBuilder {
             name: self.name,
             status: self.status,
             owner: self.owner,
+            network_type: self.network_type,
         }
     }
 }

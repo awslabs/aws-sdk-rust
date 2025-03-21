@@ -136,6 +136,7 @@ impl SearchTrainingPlanOfferingsInputBuilder {
         &self.end_time_before
     }
     /// <p>The desired duration in hours for the training plan offerings.</p>
+    /// This field is required.
     pub fn duration_hours(mut self, input: i64) -> Self {
         self.duration_hours = ::std::option::Option::Some(input);
         self
