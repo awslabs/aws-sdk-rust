@@ -22,7 +22,7 @@ impl crate::operation::delete_multicast_group::builders::DeleteMulticastGroupInp
 }
 /// Fluent builder constructing a request to `DeleteMulticastGroup`.
 ///
-/// <p>Deletes a multicast group if it is not in use by a fuota task.</p>
+/// <p>Deletes a multicast group if it is not in use by a FUOTA task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMulticastGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

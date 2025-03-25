@@ -22,7 +22,7 @@ impl crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsB
 }
 /// Fluent builder constructing a request to `GetLogLevelsByResourceTypes`.
 ///
-/// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options.</p>
+/// <p>Returns current default log levels or log levels by resource types. Based on the resource type, log levels can be returned for wireless device, wireless gateway, or FUOTA task log options.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

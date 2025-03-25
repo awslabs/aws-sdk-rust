@@ -182,6 +182,13 @@ pub(crate) fn de_get_patch_baseline(
                 "Sources" => {
                     builder = builder.set_sources(crate::protocol_serde::shape_patch_source_list::de_patch_source_list(tokens)?);
                 }
+                "AvailableSecurityUpdatesComplianceStatus" => {
+                    builder = builder.set_available_security_updates_compliance_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PatchComplianceStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -22,7 +22,7 @@ impl crate::operation::remove_assistant_ai_agent::builders::RemoveAssistantAiAge
 }
 /// Fluent builder constructing a request to `RemoveAssistantAIAgent`.
 ///
-/// <p>Removes the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.</p>
+/// <p>Removes the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAssistantAIAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

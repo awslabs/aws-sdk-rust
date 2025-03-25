@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`modified_date(Option<DateTime>)`](crate::operation::get_patch_baseline::GetPatchBaselineOutput::modified_date): <p>The date the patch baseline was last modified.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_patch_baseline::GetPatchBaselineOutput::description): <p>A description of the patch baseline.</p>
     ///   - [`sources(Option<Vec::<PatchSource>>)`](crate::operation::get_patch_baseline::GetPatchBaselineOutput::sources): <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
+    ///   - [`available_security_updates_compliance_status(Option<PatchComplianceStatus>)`](crate::operation::get_patch_baseline::GetPatchBaselineOutput::available_security_updates_compliance_status): <p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p> <p>Applies to Windows Server managed nodes only.</p>
     /// - On failure, responds with [`SdkError<GetPatchBaselineError>`](crate::operation::get_patch_baseline::GetPatchBaselineError)
     pub fn get_patch_baseline(&self) -> crate::operation::get_patch_baseline::builders::GetPatchBaselineFluentBuilder {
         crate::operation::get_patch_baseline::builders::GetPatchBaselineFluentBuilder::new(self.handle.clone())

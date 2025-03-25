@@ -185,6 +185,13 @@ pub(crate) fn de_describe_patch_group_state(
                             .transpose()?,
                     );
                 }
+                "InstancesWithAvailableSecurityUpdates" => {
+                    builder = builder.set_instances_with_available_security_updates(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

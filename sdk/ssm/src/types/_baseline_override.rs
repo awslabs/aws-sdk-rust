@@ -24,6 +24,9 @@ pub struct BaselineOverride {
     pub approved_patches_enable_non_security: bool,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    /// <p>Indicates whether managed nodes for which there are available security-related patches that have not been approved by the baseline are being defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub available_security_updates_compliance_status: ::std::option::Option<crate::types::PatchComplianceStatus>,
 }
 impl BaselineOverride {
     /// <p>The operating system rule used by the patch baseline override.</p>
@@ -70,6 +73,11 @@ impl BaselineOverride {
     pub fn sources(&self) -> &[crate::types::PatchSource] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether managed nodes for which there are available security-related patches that have not been approved by the baseline are being defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(&self) -> ::std::option::Option<&crate::types::PatchComplianceStatus> {
+        self.available_security_updates_compliance_status.as_ref()
+    }
 }
 impl BaselineOverride {
     /// Creates a new builder-style object to manufacture [`BaselineOverride`](crate::types::BaselineOverride).
@@ -91,6 +99,7 @@ pub struct BaselineOverrideBuilder {
     pub(crate) rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     pub(crate) approved_patches_enable_non_security: ::std::option::Option<bool>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    pub(crate) available_security_updates_compliance_status: ::std::option::Option<crate::types::PatchComplianceStatus>,
 }
 impl BaselineOverrideBuilder {
     /// <p>The operating system rule used by the patch baseline override.</p>
@@ -243,6 +252,23 @@ impl BaselineOverrideBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
         &self.sources
     }
+    /// <p>Indicates whether managed nodes for which there are available security-related patches that have not been approved by the baseline are being defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(mut self, input: crate::types::PatchComplianceStatus) -> Self {
+        self.available_security_updates_compliance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether managed nodes for which there are available security-related patches that have not been approved by the baseline are being defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn set_available_security_updates_compliance_status(mut self, input: ::std::option::Option<crate::types::PatchComplianceStatus>) -> Self {
+        self.available_security_updates_compliance_status = input;
+        self
+    }
+    /// <p>Indicates whether managed nodes for which there are available security-related patches that have not been approved by the baseline are being defined as <code>COMPLIANT</code> or <code>NON_COMPLIANT</code>. This option is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn get_available_security_updates_compliance_status(&self) -> &::std::option::Option<crate::types::PatchComplianceStatus> {
+        &self.available_security_updates_compliance_status
+    }
     /// Consumes the builder and constructs a [`BaselineOverride`](crate::types::BaselineOverride).
     pub fn build(self) -> crate::types::BaselineOverride {
         crate::types::BaselineOverride {
@@ -255,6 +281,7 @@ impl BaselineOverrideBuilder {
             rejected_patches_action: self.rejected_patches_action,
             approved_patches_enable_non_security: self.approved_patches_enable_non_security.unwrap_or_default(),
             sources: self.sources,
+            available_security_updates_compliance_status: self.available_security_updates_compliance_status,
         }
     }
 }

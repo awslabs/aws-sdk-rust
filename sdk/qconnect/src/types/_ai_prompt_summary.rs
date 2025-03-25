@@ -20,7 +20,7 @@ pub struct AiPromptSummary {
     pub modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the prompt template for this AI Prompt.</p>
     pub template_type: crate::types::AiPromptTemplateType,
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
     pub model_id: ::std::string::String,
     /// <p>The API format used for this AI Prompt.</p>
     pub api_format: crate::types::AiPromptApiFormat,
@@ -73,7 +73,7 @@ impl AiPromptSummary {
     pub fn template_type(&self) -> &crate::types::AiPromptTemplateType {
         &self.template_type
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
     pub fn model_id(&self) -> &str {
         use std::ops::Deref;
         self.model_id.deref()
@@ -250,18 +250,18 @@ impl AiPromptSummaryBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::AiPromptTemplateType> {
         &self.template_type
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code>.</p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code>.</p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

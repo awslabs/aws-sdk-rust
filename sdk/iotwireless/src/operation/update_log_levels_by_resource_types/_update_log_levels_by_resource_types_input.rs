@@ -5,7 +5,7 @@
 pub struct UpdateLogLevelsByResourceTypesInput {
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub default_log_level: ::std::option::Option<crate::types::LogLevel>,
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fuota_task_log_options: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>,
     /// <p>The list of wireless device log options.</p>
     pub wireless_device_log_options: ::std::option::Option<::std::vec::Vec<crate::types::WirelessDeviceLogOption>>,
@@ -17,7 +17,7 @@ impl UpdateLogLevelsByResourceTypesInput {
     pub fn default_log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.default_log_level.as_ref()
     }
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fuota_task_log_options.is_none()`.
     pub fn fuota_task_log_options(&self) -> &[crate::types::FuotaTaskLogOption] {
@@ -71,19 +71,19 @@ impl UpdateLogLevelsByResourceTypesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_fuota_task_log_options`](Self::set_fuota_task_log_options).
     ///
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fn fuota_task_log_options(mut self, input: crate::types::FuotaTaskLogOption) -> Self {
         let mut v = self.fuota_task_log_options.unwrap_or_default();
         v.push(input);
         self.fuota_task_log_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fn set_fuota_task_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>) -> Self {
         self.fuota_task_log_options = input;
         self
     }
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fn get_fuota_task_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>> {
         &self.fuota_task_log_options
     }

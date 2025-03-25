@@ -59,5 +59,8 @@ pub fn ser_baseline_override(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.available_security_updates_compliance_status {
+        object.key("AvailableSecurityUpdatesComplianceStatus").string(var_18.as_str());
+    }
     Ok(())
 }

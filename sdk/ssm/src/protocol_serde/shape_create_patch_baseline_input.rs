@@ -63,20 +63,23 @@ pub fn ser_create_patch_baseline_input_input(
         }
         array_18.finish();
     }
-    if let Some(var_21) = &input.client_token {
-        object.key("ClientToken").string(var_21.as_str());
+    if let Some(var_21) = &input.available_security_updates_compliance_status {
+        object.key("AvailableSecurityUpdatesComplianceStatus").string(var_21.as_str());
     }
-    if let Some(var_22) = &input.tags {
-        let mut array_23 = object.key("Tags").start_array();
-        for item_24 in var_22 {
+    if let Some(var_22) = &input.client_token {
+        object.key("ClientToken").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.tags {
+        let mut array_24 = object.key("Tags").start_array();
+        for item_25 in var_23 {
             {
                 #[allow(unused_mut)]
-                let mut object_25 = array_23.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_25, item_24)?;
-                object_25.finish();
+                let mut object_26 = array_24.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_26, item_25)?;
+                object_26.finish();
             }
         }
-        array_23.finish();
+        array_24.finish();
     }
     Ok(())
 }

@@ -22,7 +22,7 @@ impl crate::operation::reset_resource_log_level::builders::ResetResourceLogLevel
 }
 /// Fluent builder constructing a request to `ResetResourceLogLevel`.
 ///
-/// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device, a wireless gateway, or a fuota task.</p>
+/// <p>Removes the log-level override, if any, for a specific resource ID and resource type. It can be used for a wireless device, a wireless gateway, or a FUOTA task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetResourceLogLevelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl ResetResourceLogLevelFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    /// <p>The unique identifier of the resource, which can be the wireless gateway ID, the wireless device ID, or the FUOTA task ID.</p>
     pub fn resource_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    /// <p>The unique identifier of the resource, which can be the wireless gateway ID, the wireless device ID, or the FUOTA task ID.</p>
     pub fn set_resource_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
-    /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
+    /// <p>The unique identifier of the resource, which can be the wireless gateway ID, the wireless device ID, or the FUOTA task ID.</p>
     pub fn get_resource_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_identifier()
     }
-    /// <p>The type of the resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
+    /// <p>The type of resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The type of the resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
+    /// <p>The type of resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
-    /// <p>The type of the resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
+    /// <p>The type of resource, which can be <code>WirelessDevice</code>, <code>WirelessGateway</code>, or <code>FuotaTask</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_type()
     }

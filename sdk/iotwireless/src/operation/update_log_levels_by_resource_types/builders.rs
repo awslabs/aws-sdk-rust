@@ -22,7 +22,7 @@ impl crate::operation::update_log_levels_by_resource_types::builders::UpdateLogL
 }
 /// Fluent builder constructing a request to `UpdateLogLevelsByResourceTypes`.
 ///
-/// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
+/// <p>Set default log level, or log levels by resource types. This can be for wireless device, wireless gateway, or FUOTA task log options, and is used to control the log messages that'll be displayed in CloudWatch.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl UpdateLogLevelsByResourceTypesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_fuota_task_log_options`](Self::set_fuota_task_log_options).
     ///
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fn fuota_task_log_options(mut self, input: crate::types::FuotaTaskLogOption) -> Self {
         self.inner = self.inner.fuota_task_log_options(input);
         self
     }
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fn set_fuota_task_log_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>>) -> Self {
         self.inner = self.inner.set_fuota_task_log_options(input);
         self
     }
-    /// <p>The list of fuota task log options.</p>
+    /// <p>The list of FUOTA task log options.</p>
     pub fn get_fuota_task_log_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FuotaTaskLogOption>> {
         self.inner.get_fuota_task_log_options()
     }

@@ -7,9 +7,9 @@ pub struct ModifyDocumentPermissionInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
     pub permission_type: ::std::option::Option<crate::types::DocumentPermissionType>,
-    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. You must specify a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>
     pub account_ids_to_add: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. You must specify a value for this parameter or the <code>AccountIdsToAdd</code> parameter.</p>
     pub account_ids_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
     pub shared_document_version: ::std::option::Option<::std::string::String>,
@@ -23,13 +23,13 @@ impl ModifyDocumentPermissionInput {
     pub fn permission_type(&self) -> ::std::option::Option<&crate::types::DocumentPermissionType> {
         self.permission_type.as_ref()
     }
-    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. You must specify a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids_to_add.is_none()`.
     pub fn account_ids_to_add(&self) -> &[::std::string::String] {
         self.account_ids_to_add.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. You must specify a value for this parameter or the <code>AccountIdsToAdd</code> parameter.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids_to_remove.is_none()`.
     pub fn account_ids_to_remove(&self) -> &[::std::string::String] {
@@ -92,19 +92,19 @@ impl ModifyDocumentPermissionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids_to_add`](Self::set_account_ids_to_add).
     ///
-    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. You must specify a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>
     pub fn account_ids_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids_to_add.unwrap_or_default();
         v.push(input.into());
         self.account_ids_to_add = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. You must specify a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>
     pub fn set_account_ids_to_add(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids_to_add = input;
         self
     }
-    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>. You must specify a value for this parameter or the <code>AccountIdsToRemove</code> parameter.</p>
     pub fn get_account_ids_to_add(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids_to_add
     }
@@ -112,19 +112,19 @@ impl ModifyDocumentPermissionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids_to_remove`](Self::set_account_ids_to_remove).
     ///
-    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. You must specify a value for this parameter or the <code>AccountIdsToAdd</code> parameter.</p>
     pub fn account_ids_to_remove(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids_to_remove.unwrap_or_default();
         v.push(input.into());
         self.account_ids_to_remove = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. You must specify a value for this parameter or the <code>AccountIdsToAdd</code> parameter.</p>
     pub fn set_account_ids_to_remove(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids_to_remove = input;
         self
     }
-    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
+    /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <code>AccountIdsToAdd</code>. If you specify an ID to add and the same ID to remove, the system removes access to the document. You must specify a value for this parameter or the <code>AccountIdsToAdd</code> parameter.</p>
     pub fn get_account_ids_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids_to_remove
     }

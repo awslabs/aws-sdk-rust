@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceEndpointInput {
-    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     pub service_type: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
 }
 impl GetServiceEndpointInput {
-    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     pub fn service_type(&self) -> ::std::option::Option<&crate::types::WirelessGatewayServiceType> {
         self.service_type.as_ref()
     }
@@ -26,17 +26,17 @@ pub struct GetServiceEndpointInputBuilder {
     pub(crate) service_type: ::std::option::Option<crate::types::WirelessGatewayServiceType>,
 }
 impl GetServiceEndpointInputBuilder {
-    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     pub fn service_type(mut self, input: crate::types::WirelessGatewayServiceType) -> Self {
         self.service_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     pub fn set_service_type(mut self, input: ::std::option::Option<crate::types::WirelessGatewayServiceType>) -> Self {
         self.service_type = input;
         self
     }
-    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code> for the global endpoint.</p>
+    /// <p>The service type for which to get endpoint information about. Can be <code>CUPS</code> for the Configuration and Update Server endpoint, or <code>LNS</code> for the LoRaWAN Network Server endpoint.</p>
     pub fn get_service_type(&self) -> &::std::option::Option<crate::types::WirelessGatewayServiceType> {
         &self.service_type
     }

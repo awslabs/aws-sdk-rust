@@ -29,6 +29,9 @@ pub struct DescribePatchGroupStateOutput {
     pub instances_with_security_non_compliant_patches: ::std::option::Option<i32>,
     /// <p>The number of managed nodes with patches installed that are specified as other than <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The status of these managed nodes is <code>NON_COMPLIANT</code>.</p>
     pub instances_with_other_non_compliant_patches: ::std::option::Option<i32>,
+    /// <p>The number of managed nodes for which security-related patches are available but not approved because because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub instances_with_available_security_updates: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribePatchGroupStateOutput {
@@ -82,6 +85,11 @@ impl DescribePatchGroupStateOutput {
     pub fn instances_with_other_non_compliant_patches(&self) -> ::std::option::Option<i32> {
         self.instances_with_other_non_compliant_patches
     }
+    /// <p>The number of managed nodes for which security-related patches are available but not approved because because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn instances_with_available_security_updates(&self) -> ::std::option::Option<i32> {
+        self.instances_with_available_security_updates
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribePatchGroupStateOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +119,7 @@ pub struct DescribePatchGroupStateOutputBuilder {
     pub(crate) instances_with_critical_non_compliant_patches: ::std::option::Option<i32>,
     pub(crate) instances_with_security_non_compliant_patches: ::std::option::Option<i32>,
     pub(crate) instances_with_other_non_compliant_patches: ::std::option::Option<i32>,
+    pub(crate) instances_with_available_security_updates: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribePatchGroupStateOutputBuilder {
@@ -288,6 +297,23 @@ impl DescribePatchGroupStateOutputBuilder {
     pub fn get_instances_with_other_non_compliant_patches(&self) -> &::std::option::Option<i32> {
         &self.instances_with_other_non_compliant_patches
     }
+    /// <p>The number of managed nodes for which security-related patches are available but not approved because because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn instances_with_available_security_updates(mut self, input: i32) -> Self {
+        self.instances_with_available_security_updates = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of managed nodes for which security-related patches are available but not approved because because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn set_instances_with_available_security_updates(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.instances_with_available_security_updates = input;
+        self
+    }
+    /// <p>The number of managed nodes for which security-related patches are available but not approved because because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn get_instances_with_available_security_updates(&self) -> &::std::option::Option<i32> {
+        &self.instances_with_available_security_updates
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -312,6 +338,7 @@ impl DescribePatchGroupStateOutputBuilder {
             instances_with_critical_non_compliant_patches: self.instances_with_critical_non_compliant_patches,
             instances_with_security_non_compliant_patches: self.instances_with_security_non_compliant_patches,
             instances_with_other_non_compliant_patches: self.instances_with_other_non_compliant_patches,
+            instances_with_available_security_updates: self.instances_with_available_security_updates,
             _request_id: self._request_id,
         }
     }

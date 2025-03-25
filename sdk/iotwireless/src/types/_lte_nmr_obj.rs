@@ -86,7 +86,6 @@ impl LteNmrObjBuilder {
         &self.earfcn
     }
     /// <p>E-UTRAN (Evolved Universal Terrestrial Radio Access Network) cell global identifier (EUTRANCID).</p>
-    /// This field is required.
     pub fn eutran_cid(mut self, input: i32) -> Self {
         self.eutran_cid = ::std::option::Option::Some(input);
         self
@@ -132,7 +131,6 @@ impl LteNmrObjBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`pci`](crate::types::builders::LteNmrObjBuilder::pci)
     /// - [`earfcn`](crate::types::builders::LteNmrObjBuilder::earfcn)
-    /// - [`eutran_cid`](crate::types::builders::LteNmrObjBuilder::eutran_cid)
     pub fn build(self) -> ::std::result::Result<crate::types::LteNmrObj, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LteNmrObj {
             pci: self.pci.ok_or_else(|| {
@@ -147,12 +145,7 @@ impl LteNmrObjBuilder {
                     "earfcn was not specified but it is required when building LteNmrObj",
                 )
             })?,
-            eutran_cid: self.eutran_cid.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "eutran_cid",
-                    "eutran_cid was not specified but it is required when building LteNmrObj",
-                )
-            })?,
+            eutran_cid: self.eutran_cid.unwrap_or_default(),
             rsrp: self.rsrp,
             rsrq: self.rsrq,
         })
