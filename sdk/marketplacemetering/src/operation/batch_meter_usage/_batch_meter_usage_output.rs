@@ -4,14 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchMeterUsageOutput {
-    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by Amazon Web Services Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>,
     /// <p>Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>. This is a list of <code>UsageRecords</code>. You can retry the failed request by making another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.</p>
     pub unprocessed_records: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>>,
     _request_id: Option<String>,
 }
 impl BatchMeterUsageOutput {
-    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by Amazon Web Services Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.results.is_none()`.
     pub fn results(&self) -> &[crate::types::UsageRecordResult] {
@@ -49,19 +49,19 @@ impl BatchMeterUsageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_results`](Self::set_results).
     ///
-    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by Amazon Web Services Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     pub fn results(mut self, input: crate::types::UsageRecordResult) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
         self.results = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by Amazon Web Services Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     pub fn set_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>>) -> Self {
         self.results = input;
         self
     }
-    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by AWS Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
+    /// <p>Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>. These records were either honored by Amazon Web Services Marketplace Metering Service or were invalid. Invalid records should be fixed before being resubmitted.</p>
     pub fn get_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecordResult>> {
         &self.results
     }

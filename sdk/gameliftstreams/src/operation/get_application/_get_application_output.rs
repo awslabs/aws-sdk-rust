@@ -7,14 +7,14 @@ pub struct GetApplicationOutput {
     pub arn: ::std::string::String,
     /// <p>A human-readable label for the application. You can edit this value.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -30,13 +30,13 @@ pub struct GetApplicationOutput {
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
     /// <p>The path and file name of the executable file that launches the content for streaming.</p>
     pub executable_path: ::std::option::Option<::std::string::String>,
-    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub application_log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p>
     pub application_log_output_uri: ::std::option::Option<::std::string::String>,
     /// <p>The original Amazon S3 location of uploaded stream content for the application.</p>
     pub application_source_uri: ::std::option::Option<::std::string::String>,
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the application resource. Possible statuses include the following:</p>
     /// <ul>
@@ -61,7 +61,7 @@ pub struct GetApplicationOutput {
     /// <p>A timestamp that indicates when this resource was last updated. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of stream groups that this application is associated with. You can use any of these stream groups to stream your application.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>.</p>
     pub associated_stream_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -75,14 +75,14 @@ impl GetApplicationOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -102,13 +102,13 @@ impl GetApplicationOutput {
     pub fn executable_path(&self) -> ::std::option::Option<&str> {
         self.executable_path.as_deref()
     }
-    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_log_paths.is_none()`.
     pub fn application_log_paths(&self) -> &[::std::string::String] {
         self.application_log_paths.as_deref().unwrap_or_default()
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p>
     pub fn application_log_output_uri(&self) -> ::std::option::Option<&str> {
         self.application_log_output_uri.as_deref()
     }
@@ -116,7 +116,7 @@ impl GetApplicationOutput {
     pub fn application_source_uri(&self) -> ::std::option::Option<&str> {
         self.application_source_uri.as_deref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -155,7 +155,7 @@ impl GetApplicationOutput {
         self.last_updated_at.as_ref()
     }
     /// <p>A set of stream groups that this application is associated with. You can use any of these stream groups to stream your application.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_stream_groups.is_none()`.
     pub fn associated_stream_groups(&self) -> &[::std::string::String] {
@@ -224,14 +224,14 @@ impl GetApplicationOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -248,14 +248,14 @@ impl GetApplicationOutputBuilder {
         self.runtime_environment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -272,14 +272,14 @@ impl GetApplicationOutputBuilder {
         self.runtime_environment = input;
         self
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -313,33 +313,33 @@ impl GetApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_log_paths`](Self::set_application_log_paths).
     ///
-    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub fn application_log_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_log_paths.unwrap_or_default();
         v.push(input.into());
         self.application_log_paths = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub fn set_application_log_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_log_paths = input;
         self
     }
-    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Amazon GameLift Streams uploads log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub fn get_application_log_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_log_paths
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p>
     pub fn application_log_output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_log_output_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p>
     pub fn set_application_log_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_log_output_uri = input;
         self
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p>
     pub fn get_application_log_output_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_log_output_uri
     }
@@ -357,17 +357,17 @@ impl GetApplicationOutputBuilder {
     pub fn get_application_source_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_source_uri
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -488,7 +488,7 @@ impl GetApplicationOutputBuilder {
     /// To override the contents of this collection use [`set_associated_stream_groups`](Self::set_associated_stream_groups).
     ///
     /// <p>A set of stream groups that this application is associated with. You can use any of these stream groups to stream your application.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>.</p>
     pub fn associated_stream_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_stream_groups.unwrap_or_default();
         v.push(input.into());
@@ -496,13 +496,13 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>A set of stream groups that this application is associated with. You can use any of these stream groups to stream your application.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>.</p>
     pub fn set_associated_stream_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.associated_stream_groups = input;
         self
     }
     /// <p>A set of stream groups that this application is associated with. You can use any of these stream groups to stream your application.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify stream group resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code>.</p>
     pub fn get_associated_stream_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_stream_groups
     }

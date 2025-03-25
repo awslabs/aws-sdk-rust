@@ -12,6 +12,7 @@
 /// ```text
 /// # let getentitlementfiltername = unimplemented!();
 /// match getentitlementfiltername {
+///     GetEntitlementFilterName::CustomerAwsAccountId => { /* ... */ },
 ///     GetEntitlementFilterName::CustomerIdentifier => { /* ... */ },
 ///     GetEntitlementFilterName::Dimension => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum GetEntitlementFilterName {
     #[allow(missing_docs)] // documentation missing in model
+    CustomerAwsAccountId,
+    #[allow(missing_docs)] // documentation missing in model
     CustomerIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     Dimension,
@@ -53,6 +56,7 @@ pub enum GetEntitlementFilterName {
 impl ::std::convert::From<&str> for GetEntitlementFilterName {
     fn from(s: &str) -> Self {
         match s {
+            "CUSTOMER_AWS_ACCOUNT_ID" => GetEntitlementFilterName::CustomerAwsAccountId,
             "CUSTOMER_IDENTIFIER" => GetEntitlementFilterName::CustomerIdentifier,
             "DIMENSION" => GetEntitlementFilterName::Dimension,
             other => GetEntitlementFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl GetEntitlementFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            GetEntitlementFilterName::CustomerAwsAccountId => "CUSTOMER_AWS_ACCOUNT_ID",
             GetEntitlementFilterName::CustomerIdentifier => "CUSTOMER_IDENTIFIER",
             GetEntitlementFilterName::Dimension => "DIMENSION",
             GetEntitlementFilterName::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl GetEntitlementFilterName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOMER_IDENTIFIER", "DIMENSION"]
+        &["CUSTOMER_AWS_ACCOUNT_ID", "CUSTOMER_IDENTIFIER", "DIMENSION"]
     }
 }
 impl ::std::convert::AsRef<str> for GetEntitlementFilterName {
@@ -100,6 +105,7 @@ impl GetEntitlementFilterName {
 impl ::std::fmt::Display for GetEntitlementFilterName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            GetEntitlementFilterName::CustomerAwsAccountId => write!(f, "CUSTOMER_AWS_ACCOUNT_ID"),
             GetEntitlementFilterName::CustomerIdentifier => write!(f, "CUSTOMER_IDENTIFIER"),
             GetEntitlementFilterName::Dimension => write!(f, "DIMENSION"),
             GetEntitlementFilterName::Unknown(value) => write!(f, "{}", value),

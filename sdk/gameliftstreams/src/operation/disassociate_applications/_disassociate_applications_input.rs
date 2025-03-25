@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateApplicationsInput {
     /// <p>A stream group to disassociate these applications from.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A set of applications that you want to disassociate from the stream group.</p>
-    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub application_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateApplicationsInput {
     /// <p>A stream group to disassociate these applications from.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>A set of applications that you want to disassociate from the stream group.</p>
-    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_identifiers.is_none()`.
     pub fn application_identifiers(&self) -> &[::std::string::String] {
@@ -40,20 +40,20 @@ pub struct DisassociateApplicationsInputBuilder {
 }
 impl DisassociateApplicationsInputBuilder {
     /// <p>A stream group to disassociate these applications from.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A stream group to disassociate these applications from.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>A stream group to disassociate these applications from.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
@@ -62,7 +62,7 @@ impl DisassociateApplicationsInputBuilder {
     /// To override the contents of this collection use [`set_application_identifiers`](Self::set_application_identifiers).
     ///
     /// <p>A set of applications that you want to disassociate from the stream group.</p>
-    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn application_identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_identifiers.unwrap_or_default();
         v.push(input.into());
@@ -70,13 +70,13 @@ impl DisassociateApplicationsInputBuilder {
         self
     }
     /// <p>A set of applications that you want to disassociate from the stream group.</p>
-    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn set_application_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_identifiers = input;
         self
     }
     /// <p>A set of applications that you want to disassociate from the stream group.</p>
-    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of either <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARN)</a> or IDs that uniquely identify application resources. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn get_application_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_identifiers
     }

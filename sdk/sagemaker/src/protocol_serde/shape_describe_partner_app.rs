@@ -116,8 +116,21 @@ pub(crate) fn de_describe_partner_app(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "LastModifiedTime" => {
+                    builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "ExecutionRoleArn" => {
                     builder = builder.set_execution_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "KmsKeyId" => {
+                    builder = builder.set_kms_key_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

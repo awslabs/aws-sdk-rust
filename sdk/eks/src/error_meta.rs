@@ -13,6 +13,8 @@ pub enum Error {
     InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The request is invalid given the state of the cluster. Check the state of the cluster and the associated operations.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
+    /// <p>Amazon EKS detected upgrade readiness issues. Call the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListInsights.html"> <code>ListInsights</code> </a> API to view detected upgrade blocking issues. Pass the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html#API_UpdateClusterVersion_RequestBody"> <code>force</code> </a> flag when updating to override upgrade readiness errors.</p>
+    InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>A service resource associated with the request could not be found. Clients should not retry such requests.</p>
     NotFoundException(crate::types::error::NotFoundException),
     /// <p>The specified resource is in use.</p>
@@ -27,6 +29,8 @@ pub enum Error {
     ServerException(crate::types::error::ServerException),
     /// <p>The service is unavailable. Back off and retry the operation.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
+    /// <p>The request or operation couldn't be performed because a service is throttling requests.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>At least one of your specified cluster subnets is in an Availability Zone that does not support Amazon EKS. The exception output specifies the supported Availability Zones for your account, from which you can choose subnets for your cluster.</p>
     UnsupportedAvailabilityZoneException(crate::types::error::UnsupportedAvailabilityZoneException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -46,6 +50,7 @@ impl ::std::fmt::Display for Error {
             Error::ClientException(inner) => inner.fmt(f),
             Error::InvalidParameterException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
+            Error::InvalidStateException(inner) => inner.fmt(f),
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
@@ -53,6 +58,7 @@ impl ::std::fmt::Display for Error {
             Error::ResourcePropagationDelayException(inner) => inner.fmt(f),
             Error::ServerException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
+            Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnsupportedAvailabilityZoneException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -80,6 +86,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ClientException(inner) => inner.meta(),
             Self::InvalidParameterException(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
+            Self::InvalidStateException(inner) => inner.meta(),
             Self::NotFoundException(inner) => inner.meta(),
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceLimitExceededException(inner) => inner.meta(),
@@ -87,6 +94,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourcePropagationDelayException(inner) => inner.meta(),
             Self::ServerException(inner) => inner.meta(),
             Self::ServiceUnavailableException(inner) => inner.meta(),
+            Self::ThrottlingException(inner) => inner.meta(),
             Self::UnsupportedAvailabilityZoneException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
@@ -159,6 +167,9 @@ impl From<crate::operation::associate_encryption_config::AssociateEncryptionConf
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::associate_encryption_config::AssociateEncryptionConfigError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::associate_encryption_config::AssociateEncryptionConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::associate_encryption_config::AssociateEncryptionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -208,6 +219,9 @@ impl From<crate::operation::associate_identity_provider_config::AssociateIdentit
             }
             crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigError::ServerException(inner) => {
                 Error::ServerException(inner)
+            }
+            crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1196,6 +1210,9 @@ impl From<crate::operation::disassociate_identity_provider_config::DisassociateI
             crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigError::ServerException(inner) => {
                 Error::ServerException(inner)
             }
+            crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfigError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
@@ -1756,6 +1773,7 @@ impl From<crate::operation::update_cluster_config::UpdateClusterConfigError> for
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_cluster_config::UpdateClusterConfigError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_cluster_config::UpdateClusterConfigError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_cluster_config::UpdateClusterConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1784,6 +1802,7 @@ impl From<crate::operation::update_cluster_version::UpdateClusterVersionError> f
             crate::operation::update_cluster_version::UpdateClusterVersionError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
+            crate::operation::update_cluster_version::UpdateClusterVersionError::InvalidStateException(inner) => Error::InvalidStateException(inner),
             crate::operation::update_cluster_version::UpdateClusterVersionError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
@@ -1791,6 +1810,7 @@ impl From<crate::operation::update_cluster_version::UpdateClusterVersionError> f
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::update_cluster_version::UpdateClusterVersionError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::update_cluster_version::UpdateClusterVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_cluster_version::UpdateClusterVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1973,6 +1993,7 @@ impl ::std::error::Error for Error {
             Error::ClientException(inner) => inner.source(),
             Error::InvalidParameterException(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
+            Error::InvalidStateException(inner) => inner.source(),
             Error::NotFoundException(inner) => inner.source(),
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceLimitExceededException(inner) => inner.source(),
@@ -1980,6 +2001,7 @@ impl ::std::error::Error for Error {
             Error::ResourcePropagationDelayException(inner) => inner.source(),
             Error::ServerException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
+            Error::ThrottlingException(inner) => inner.source(),
             Error::UnsupportedAvailabilityZoneException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
@@ -1993,6 +2015,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ClientException(e) => e.request_id(),
             Self::InvalidParameterException(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),
+            Self::InvalidStateException(e) => e.request_id(),
             Self::NotFoundException(e) => e.request_id(),
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),
@@ -2000,6 +2023,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourcePropagationDelayException(e) => e.request_id(),
             Self::ServerException(e) => e.request_id(),
             Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
             Self::UnsupportedAvailabilityZoneException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }

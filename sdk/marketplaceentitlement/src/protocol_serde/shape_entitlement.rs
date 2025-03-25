@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "CustomerAWSAccountId" => {
+                            builder = builder.set_customer_aws_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Value" => {
                             builder = builder.set_value(crate::protocol_serde::shape_entitlement_value::de_entitlement_value(tokens)?);
                         }

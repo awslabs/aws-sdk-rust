@@ -1681,6 +1681,29 @@ pub(crate) fn neptune_analytics_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn open_search_managed_cluster_configuration_correct_errors(
+    mut builder: crate::types::builders::OpenSearchManagedClusterConfigurationBuilder,
+) -> crate::types::builders::OpenSearchManagedClusterConfigurationBuilder {
+    if builder.domain_endpoint.is_none() {
+        builder.domain_endpoint = Some(Default::default())
+    }
+    if builder.domain_arn.is_none() {
+        builder.domain_arn = Some(Default::default())
+    }
+    if builder.vector_index_name.is_none() {
+        builder.vector_index_name = Some(Default::default())
+    }
+    if builder.field_mapping.is_none() {
+        builder.field_mapping = {
+            let builder = crate::types::builders::OpenSearchManagedClusterFieldMappingBuilder::default();
+            crate::serde_util::open_search_managed_cluster_field_mapping_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn open_search_serverless_configuration_correct_errors(
     mut builder: crate::types::builders::OpenSearchServerlessConfigurationBuilder,
 ) -> crate::types::builders::OpenSearchServerlessConfigurationBuilder {
@@ -2124,6 +2147,21 @@ pub(crate) fn multiple_node_input_connections_flow_validation_details_correct_er
 pub(crate) fn neptune_analytics_field_mapping_correct_errors(
     mut builder: crate::types::builders::NeptuneAnalyticsFieldMappingBuilder,
 ) -> crate::types::builders::NeptuneAnalyticsFieldMappingBuilder {
+    if builder.text_field.is_none() {
+        builder.text_field = Some(Default::default())
+    }
+    if builder.metadata_field.is_none() {
+        builder.metadata_field = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn open_search_managed_cluster_field_mapping_correct_errors(
+    mut builder: crate::types::builders::OpenSearchManagedClusterFieldMappingBuilder,
+) -> crate::types::builders::OpenSearchManagedClusterFieldMappingBuilder {
+    if builder.vector_field.is_none() {
+        builder.vector_field = Some(Default::default())
+    }
     if builder.text_field.is_none() {
         builder.text_field = Some(Default::default())
     }

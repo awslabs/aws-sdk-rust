@@ -3,9 +3,6 @@ pub(crate) fn usage_record_correct_errors(mut builder: crate::types::builders::U
     if builder.timestamp.is_none() {
         builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
-    if builder.customer_identifier.is_none() {
-        builder.customer_identifier = Some(Default::default())
-    }
     if builder.dimension.is_none() {
         builder.dimension = Some(Default::default())
     }

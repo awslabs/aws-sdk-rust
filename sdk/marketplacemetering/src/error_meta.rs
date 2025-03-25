@@ -11,27 +11,27 @@ pub enum Error {
     DuplicateRequestException(crate::types::error::DuplicateRequestException),
     /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the Amazon Web Services forums.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
     InvalidCustomerIdentifierException(crate::types::error::InvalidCustomerIdentifierException),
-    /// <p>The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the AWS Region of the resource must match.</p>
+    /// <p>The endpoint being called is in a Amazon Web Services Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the Amazon Web Services Region of the resource must match.</p>
     InvalidEndpointRegionException(crate::types::error::InvalidEndpointRegionException),
     /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
     InvalidPublicKeyVersionException(crate::types::error::InvalidPublicKeyVersionException),
-    /// <p><code>RegisterUsage</code> must be called in the same AWS Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
+    /// <p><code>RegisterUsage</code> must be called in the same Amazon Web Services Region the ECS task was launched in. This prevents a container from hardcoding a Region (e.g. withRegion(“us-east-1”) when calling <code>RegisterUsage</code>.</p>
     InvalidRegionException(crate::types::error::InvalidRegionException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>Registration token is invalid.</p>
     InvalidTokenException(crate::types::error::InvalidTokenException),
-    /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
+    /// <p>Sum of allocated usage quantities is not equal to the usage quantity.</p>
     InvalidUsageAllocationsException(crate::types::error::InvalidUsageAllocationsException),
     /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::types::error::InvalidUsageDimensionException),
-    /// <p>AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and AWS Fargate are supported.</p>
+    /// <p>Amazon Web Services Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS, Amazon EKS, and Fargate are supported.</p>
     PlatformNotSupportedException(crate::types::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

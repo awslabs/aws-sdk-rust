@@ -22,7 +22,7 @@ impl crate::operation::delete_stream_group::builders::DeleteStreamGroupInputBuil
 }
 /// Fluent builder constructing a request to `DeleteStreamGroup`.
 ///
-/// <p>Permanently deletes all compute resources and information related to a stream group. To delete a stream group, specify the unique stream group identifier. During the deletion process, the stream group's status is <code>DELETING</code>. This operation stops streams in progress and prevents new streams from starting. As a best practice, before deleting the stream group, call <code>ListStreamSessions</code> to check for streams in progress and take action to stop them. When you delete a stream group, any application associations referring to that stream group are automatically removed.</p>
+/// <p>Permanently deletes all compute resources and information related to a stream group. To delete a stream group, specify the unique stream group identifier. During the deletion process, the stream group's status is <code>DELETING</code>. This operation stops streams in progress and prevents new streams from starting. As a best practice, before deleting the stream group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListStreamSessions.html">ListStreamSessions</a> to check for streams in progress and take action to stop them. When you delete a stream group, any application associations referring to that stream group are automatically removed.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteStreamGroupFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteStreamGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID value of the stream group resource to delete. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>The unique ID value of the stream group resource to delete. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The unique ID value of the stream group resource to delete. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>The unique ID value of the stream group resource to delete. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The unique ID value of the stream group resource to delete. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>The unique ID value of the stream group resource to delete. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

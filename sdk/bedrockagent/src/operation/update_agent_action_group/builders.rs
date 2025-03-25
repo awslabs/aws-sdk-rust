@@ -255,7 +255,7 @@ impl UpdateAgentActionGroupFluentBuilder {
     /// To override the contents of this collection use [`set_parent_action_group_signature_params`](Self::set_parent_action_group_signature_params).
     ///
     /// <p>The configuration settings for a computer use action.</p><important>
-    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     /// </important>
     pub fn parent_action_group_signature_params(
         mut self,
@@ -266,7 +266,7 @@ impl UpdateAgentActionGroupFluentBuilder {
         self
     }
     /// <p>The configuration settings for a computer use action.</p><important>
-    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     /// </important>
     pub fn set_parent_action_group_signature_params(
         mut self,
@@ -276,7 +276,7 @@ impl UpdateAgentActionGroupFluentBuilder {
         self
     }
     /// <p>The configuration settings for a computer use action.</p><important>
-    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
+    /// <p>Computer use is a new Anthropic Claude model capability (in beta) available with Claude 3.7 Sonnet and Claude 3.5 Sonnet v2 only. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agent-computer-use.html">Configure an Amazon Bedrock Agent to complete tasks with computer use tools</a>.</p>
     /// </important>
     pub fn get_parent_action_group_signature_params(
         &self,

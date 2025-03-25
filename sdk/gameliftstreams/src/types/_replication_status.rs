@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationStatus {
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the replication process.</p>
     pub status: ::std::option::Option<crate::types::ReplicationStatusType>,
 }
 impl ReplicationStatus {
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ReplicationStatusBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReplicationStatusType>,
 }
 impl ReplicationStatusBuilder {
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }

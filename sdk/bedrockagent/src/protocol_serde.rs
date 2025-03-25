@@ -431,6 +431,8 @@ pub(crate) mod shape_mongo_db_atlas_configuration;
 
 pub(crate) mod shape_neptune_analytics_configuration;
 
+pub(crate) mod shape_open_search_managed_cluster_configuration;
+
 pub(crate) mod shape_open_search_serverless_configuration;
 
 pub(crate) mod shape_orchestration_executor;
@@ -524,6 +526,8 @@ pub(crate) mod shape_metadata_attribute;
 pub(crate) mod shape_mongo_db_atlas_field_mapping;
 
 pub(crate) mod shape_neptune_analytics_field_mapping;
+
+pub(crate) mod shape_open_search_managed_cluster_field_mapping;
 
 pub(crate) mod shape_open_search_serverless_field_mapping;
 

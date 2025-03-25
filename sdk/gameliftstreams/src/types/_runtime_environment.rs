@@ -7,7 +7,7 @@
 /// <p>For Linux applications</p>
 /// <ul>
 /// <li>
-/// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+/// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
 /// </ul></li>
 /// <li>
 /// <p>For Windows applications</p>

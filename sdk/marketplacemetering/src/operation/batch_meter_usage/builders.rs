@@ -22,15 +22,16 @@ impl crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder 
 }
 /// Fluent builder constructing a request to `BatchMeterUsage`.
 ///
-/// <p><code>BatchMeterUsage</code> is called from a SaaS application listed on AWS Marketplace to post metering records for a set of customers.</p>
-/// <p>For identical requests, the API is idempotent; requests can be retried with the same records or a subset of the input records.</p>
-/// <p>Every request to <code>BatchMeterUsage</code> is for one product. If you need to meter usage for multiple products, you must make multiple calls to <code>BatchMeterUsage</code>.</p>
-/// <p>Usage records are expected to be submitted as quickly as possible after the event that is being recorded, and are not accepted more than 6 hours after the event.</p>
-/// <p><code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a time.</p>
-/// <p>A <code>UsageRecord</code> can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define (or allow the customer to define).</p>
-/// <p><code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code> objects, showing the result for each <code>UsageRecord</code>, as well as a list of <code>UnprocessedRecords</code>, indicating errors in the service side that you should retry.</p>
-/// <p><code>BatchMeterUsage</code> requests must be less than 1MB in size.</p><note>
-/// <p>For an example of using <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example"> BatchMeterUsage code example</a> in the <i>AWS Marketplace Seller Guide</i>.</p>
+/// <important>
+/// <p>The <code>CustomerIdentifier</code> parameter is scheduled for deprecation. Use <code>CustomerAWSAccountID</code> instead.</p>
+/// <p>These parameters are mutually exclusive. You can't specify both <code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> in the same request.</p>
+/// </important>
+/// <p>To post metering records for customers, SaaS applications call <code>BatchMeterUsage</code>, which is used for metering SaaS flexible consumption pricing (FCP). Identical requests are idempotent and can be retried with the same records or a subset of records. Each <code>BatchMeterUsage</code> request is for only one product. If you want to meter usage for multiple products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
+/// <p>Usage records should be submitted in quick succession following a recorded event. Usage records aren't accepted 6 hours or more after an event.</p>
+/// <p><code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a time, and each request must be less than 1 MB in size. Optionally, you can have multiple usage allocations for usage data that's split into buckets according to predefined tags.</p>
+/// <p><code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code> objects, which have each <code>UsageRecord</code>. It also returns a list of <code>UnprocessedRecords</code>, which indicate errors on the service side that should be retried.</p>
+/// <p>For Amazon Web Services Regions that support <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#batchmeterusage-region-support">BatchMeterUsage Region support</a>.</p><note>
+/// <p>For an example of <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-example"> BatchMeterUsage code example</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchMeterUsageFluentBuilder {
@@ -136,17 +137,17 @@ impl BatchMeterUsageFluentBuilder {
     pub fn get_usage_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
         self.inner.get_usage_records()
     }
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_code(input.into());
         self
     }
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_code(input);
         self
     }
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product_code()
     }

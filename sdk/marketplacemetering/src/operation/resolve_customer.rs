@@ -258,7 +258,7 @@ pub enum ResolveCustomerError {
     DisabledApiException(crate::types::error::DisabledApiException),
     /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the Amazon Web Services forums.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>Registration token is invalid.</p>
     InvalidTokenException(crate::types::error::InvalidTokenException),

@@ -10,6 +10,8 @@ pub struct Entitlement {
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
     pub customer_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
     pub value: ::std::option::Option<crate::types::EntitlementValue>,
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
@@ -27,6 +29,10 @@ impl Entitlement {
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
     pub fn customer_identifier(&self) -> ::std::option::Option<&str> {
         self.customer_identifier.as_deref()
+    }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
+        self.customer_aws_account_id.as_deref()
     }
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::EntitlementValue> {
@@ -51,6 +57,7 @@ pub struct EntitlementBuilder {
     pub(crate) product_code: ::std::option::Option<::std::string::String>,
     pub(crate) dimension: ::std::option::Option<::std::string::String>,
     pub(crate) customer_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::EntitlementValue>,
     pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -97,6 +104,20 @@ impl EntitlementBuilder {
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_identifier
     }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_aws_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_aws_account_id = input;
+        self
+    }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_aws_account_id
+    }
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
     pub fn value(mut self, input: crate::types::EntitlementValue) -> Self {
         self.value = ::std::option::Option::Some(input);
@@ -131,6 +152,7 @@ impl EntitlementBuilder {
             product_code: self.product_code,
             dimension: self.dimension,
             customer_identifier: self.customer_identifier,
+            customer_aws_account_id: self.customer_aws_account_id,
             value: self.value,
             expiration_date: self.expiration_date,
         }

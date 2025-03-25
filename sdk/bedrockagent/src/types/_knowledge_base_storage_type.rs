@@ -14,6 +14,7 @@
 /// match knowledgebasestoragetype {
 ///     KnowledgeBaseStorageType::MongoDbAtlas => { /* ... */ },
 ///     KnowledgeBaseStorageType::NeptuneAnalytics => { /* ... */ },
+///     KnowledgeBaseStorageType::OpensearchManagedCluster => { /* ... */ },
 ///     KnowledgeBaseStorageType::OpensearchServerless => { /* ... */ },
 ///     KnowledgeBaseStorageType::Pinecone => { /* ... */ },
 ///     KnowledgeBaseStorageType::Rds => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum KnowledgeBaseStorageType {
     #[allow(missing_docs)] // documentation missing in model
     NeptuneAnalytics,
     #[allow(missing_docs)] // documentation missing in model
+    OpensearchManagedCluster,
+    #[allow(missing_docs)] // documentation missing in model
     OpensearchServerless,
     #[allow(missing_docs)] // documentation missing in model
     Pinecone,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for KnowledgeBaseStorageType {
         match s {
             "MONGO_DB_ATLAS" => KnowledgeBaseStorageType::MongoDbAtlas,
             "NEPTUNE_ANALYTICS" => KnowledgeBaseStorageType::NeptuneAnalytics,
+            "OPENSEARCH_MANAGED_CLUSTER" => KnowledgeBaseStorageType::OpensearchManagedCluster,
             "OPENSEARCH_SERVERLESS" => KnowledgeBaseStorageType::OpensearchServerless,
             "PINECONE" => KnowledgeBaseStorageType::Pinecone,
             "RDS" => KnowledgeBaseStorageType::Rds,
@@ -88,6 +92,7 @@ impl KnowledgeBaseStorageType {
         match self {
             KnowledgeBaseStorageType::MongoDbAtlas => "MONGO_DB_ATLAS",
             KnowledgeBaseStorageType::NeptuneAnalytics => "NEPTUNE_ANALYTICS",
+            KnowledgeBaseStorageType::OpensearchManagedCluster => "OPENSEARCH_MANAGED_CLUSTER",
             KnowledgeBaseStorageType::OpensearchServerless => "OPENSEARCH_SERVERLESS",
             KnowledgeBaseStorageType::Pinecone => "PINECONE",
             KnowledgeBaseStorageType::Rds => "RDS",
@@ -100,6 +105,7 @@ impl KnowledgeBaseStorageType {
         &[
             "MONGO_DB_ATLAS",
             "NEPTUNE_ANALYTICS",
+            "OPENSEARCH_MANAGED_CLUSTER",
             "OPENSEARCH_SERVERLESS",
             "PINECONE",
             "RDS",
@@ -129,6 +135,7 @@ impl ::std::fmt::Display for KnowledgeBaseStorageType {
         match self {
             KnowledgeBaseStorageType::MongoDbAtlas => write!(f, "MONGO_DB_ATLAS"),
             KnowledgeBaseStorageType::NeptuneAnalytics => write!(f, "NEPTUNE_ANALYTICS"),
+            KnowledgeBaseStorageType::OpensearchManagedCluster => write!(f, "OPENSEARCH_MANAGED_CLUSTER"),
             KnowledgeBaseStorageType::OpensearchServerless => write!(f, "OPENSEARCH_SERVERLESS"),
             KnowledgeBaseStorageType::Pinecone => write!(f, "PINECONE"),
             KnowledgeBaseStorageType::Rds => write!(f, "RDS"),

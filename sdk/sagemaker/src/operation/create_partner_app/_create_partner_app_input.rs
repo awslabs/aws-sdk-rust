@@ -9,6 +9,8 @@ pub struct CreatePartnerAppInput {
     pub r#type: ::std::option::Option<crate::types::PartnerAppType>,
     /// <p>The ARN of the IAM role that the partner application uses.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Maintenance configuration settings for the SageMaker Partner AI App.</p>
     pub maintenance_config: ::std::option::Option<crate::types::PartnerAppMaintenanceConfig>,
     /// <p>Indicates the instance type and size of the cluster attached to the SageMaker Partner AI App.</p>
@@ -36,6 +38,10 @@ impl CreatePartnerAppInput {
     /// <p>The ARN of the IAM role that the partner application uses.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
+    }
+    /// <p>SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
     /// <p>Maintenance configuration settings for the SageMaker Partner AI App.</p>
     pub fn maintenance_config(&self) -> ::std::option::Option<&crate::types::PartnerAppMaintenanceConfig> {
@@ -82,6 +88,7 @@ pub struct CreatePartnerAppInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PartnerAppType>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_config: ::std::option::Option<crate::types::PartnerAppMaintenanceConfig>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) application_config: ::std::option::Option<crate::types::PartnerAppConfig>,
@@ -135,6 +142,20 @@ impl CreatePartnerAppInputBuilder {
     /// <p>The ARN of the IAM role that the partner application uses.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
+    }
+    /// <p>SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>SageMaker Partner AI Apps uses Amazon Web Services KMS to encrypt data at rest using an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Maintenance configuration settings for the SageMaker Partner AI App.</p>
     pub fn maintenance_config(mut self, input: crate::types::PartnerAppMaintenanceConfig) -> Self {
@@ -250,6 +271,7 @@ impl CreatePartnerAppInputBuilder {
             name: self.name,
             r#type: self.r#type,
             execution_role_arn: self.execution_role_arn,
+            kms_key_id: self.kms_key_id,
             maintenance_config: self.maintenance_config,
             tier: self.tier,
             application_config: self.application_config,

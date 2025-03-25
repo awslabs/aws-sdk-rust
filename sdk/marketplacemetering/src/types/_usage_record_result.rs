@@ -20,7 +20,7 @@ pub struct UsageRecordResult {
     /// <li>
     /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
     /// <li>
-    /// <p>The customer's AWS account was suspended.</p></li>
+    /// <p>The customer's Amazon Web Services account was suspended.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
@@ -48,7 +48,7 @@ impl UsageRecordResult {
     /// <li>
     /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
     /// <li>
-    /// <p>The customer's AWS account was suspended.</p></li>
+    /// <p>The customer's Amazon Web Services account was suspended.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
@@ -113,7 +113,7 @@ impl UsageRecordResultBuilder {
     /// <li>
     /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
     /// <li>
-    /// <p>The customer's AWS account was suspended.</p></li>
+    /// <p>The customer's Amazon Web Services account was suspended.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
@@ -134,7 +134,7 @@ impl UsageRecordResultBuilder {
     /// <li>
     /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
     /// <li>
-    /// <p>The customer's AWS account was suspended.</p></li>
+    /// <p>The customer's Amazon Web Services account was suspended.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>
@@ -155,7 +155,7 @@ impl UsageRecordResultBuilder {
     /// <li>
     /// <p>The customer identifier provided in the metering record does not have an active agreement or subscription with this product. Future <code>UsageRecords</code> for this customer will fail until the customer subscribes to your product.</p></li>
     /// <li>
-    /// <p>The customer's AWS account was suspended.</p></li>
+    /// <p>The customer's Amazon Web Services account was suspended.</p></li>
     /// </ul></li>
     /// <li>
     /// <p><i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and not honored. A previously metered <code>UsageRecord</code> had the same customer, dimension, and time, but a different quantity.</p></li>

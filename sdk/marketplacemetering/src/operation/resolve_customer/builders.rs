@@ -23,9 +23,10 @@ impl crate::operation::resolve_customer::builders::ResolveCustomerInputBuilder {
 /// Fluent builder constructing a request to `ResolveCustomer`.
 ///
 /// <p><code>ResolveCustomer</code> is called by a SaaS application during the registration process. When a buyer visits your website during the registration process, the buyer submits a registration token through their browser. The registration token is resolved through this API to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p><note>
-/// <p>The API needs to called from the seller account id used to publish the SaaS application to successfully resolve the token.</p>
-/// <p>For an example of using <code>ResolveCustomer</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example"> ResolveCustomer code example</a> in the <i>AWS Marketplace Seller Guide</i>.</p>
+/// <p>To successfully resolve the token, the API must be called from the account that was used to publish the SaaS application. For an example of using <code>ResolveCustomer</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example"> ResolveCustomer code example</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
 /// </note>
+/// <p>Permission is required for this operation. Your IAM role or user performing this operation requires a policy to allow the <code>aws-marketplace:ResolveCustomer</code> action. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacemeteringservice.html">Actions, resources, and condition keys for Amazon Web Services Marketplace Metering Service</a> in the <i>Service Authorization Reference</i>.</p>
+/// <p>For Amazon Web Services Regions that support <code>ResolveCustomer</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#resolvecustomer-region-support">ResolveCustomer Region support</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResolveCustomerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

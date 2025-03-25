@@ -18,7 +18,7 @@ pub struct StartStreamSessionOutput {
     /// <p>The data transfer protocol in use with the stream session.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The WebRTC ICE offer string that a client generates to initiate a connection to the stream session.</p>
     pub signal_request: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ pub struct StartStreamSessionOutput {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when this resource was created. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about the stream session's exported files.</p>
     pub export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
@@ -80,7 +80,7 @@ impl StartStreamSessionOutput {
         self.protocol.as_ref()
     }
     /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
@@ -132,7 +132,7 @@ impl StartStreamSessionOutput {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn application_arn(&self) -> ::std::option::Option<&str> {
         self.application_arn.as_deref()
     }
@@ -306,19 +306,19 @@ impl StartStreamSessionOutputBuilder {
         &self.protocol
     }
     /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The location where Amazon GameLift Streams is streaming your application from.</p>
-    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
@@ -495,17 +495,17 @@ impl StartStreamSessionOutputBuilder {
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn application_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn set_application_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_arn = input;
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the application resource. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn get_application_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_arn
     }

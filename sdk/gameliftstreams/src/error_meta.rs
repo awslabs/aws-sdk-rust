@@ -194,6 +194,9 @@ impl From<crate::operation::create_stream_group::CreateStreamGroupError> for Err
             crate::operation::create_stream_group::CreateStreamGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_stream_group::CreateStreamGroupError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_stream_group::CreateStreamGroupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_stream_group::CreateStreamGroupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_stream_group::CreateStreamGroupError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
@@ -666,6 +669,9 @@ impl From<crate::operation::start_stream_session::StartStreamSessionError> for E
             crate::operation::start_stream_session::StartStreamSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_stream_session::StartStreamSessionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_stream_session::StartStreamSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_stream_session::StartStreamSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::start_stream_session::StartStreamSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_stream_session::StartStreamSessionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_stream_session::StartStreamSessionError::Unhandled(inner) => Error::Unhandled(inner),

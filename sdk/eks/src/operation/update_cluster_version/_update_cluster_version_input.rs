@@ -9,6 +9,8 @@ pub struct UpdateClusterVersionInput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub force: ::std::option::Option<bool>,
 }
 impl UpdateClusterVersionInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -22,6 +24,10 @@ impl UpdateClusterVersionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
 }
 impl UpdateClusterVersionInput {
@@ -38,6 +44,7 @@ pub struct UpdateClusterVersionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl UpdateClusterVersionInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -84,6 +91,20 @@ impl UpdateClusterVersionInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
     pub fn build(
         self,
@@ -93,6 +114,7 @@ impl UpdateClusterVersionInputBuilder {
             name: self.name,
             version: self.version,
             client_request_token: self.client_request_token,
+            force: self.force,
         })
     }
 }

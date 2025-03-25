@@ -8,7 +8,7 @@ pub struct ResolveCustomerOutput {
     pub customer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -21,7 +21,7 @@ impl ResolveCustomerOutput {
     pub fn product_code(&self) -> ::std::option::Option<&str> {
         self.product_code.as_deref()
     }
-    /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.customer_aws_account_id.as_deref()
     }
@@ -76,17 +76,17 @@ impl ResolveCustomerOutputBuilder {
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_code
     }
-    /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_account_id = input;
         self
     }
-    /// <p>The <code>CustomerAWSAccountId</code> provides the AWS account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> provides the Amazon Web Services account ID associated with the <code>CustomerIdentifier</code> for the individual customer.</p>
     pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_aws_account_id
     }

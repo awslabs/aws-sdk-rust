@@ -107,6 +107,10 @@ pub use crate::types::_pinecone_configuration::PineconeConfiguration;
 
 pub use crate::types::_pinecone_field_mapping::PineconeFieldMapping;
 
+pub use crate::types::_open_search_managed_cluster_configuration::OpenSearchManagedClusterConfiguration;
+
+pub use crate::types::_open_search_managed_cluster_field_mapping::OpenSearchManagedClusterFieldMapping;
+
 pub use crate::types::_open_search_serverless_configuration::OpenSearchServerlessConfiguration;
 
 pub use crate::types::_open_search_serverless_field_mapping::OpenSearchServerlessFieldMapping;
@@ -860,6 +864,10 @@ mod _multiple_node_input_connections_flow_validation_details;
 mod _neptune_analytics_configuration;
 
 mod _neptune_analytics_field_mapping;
+
+mod _open_search_managed_cluster_configuration;
+
+mod _open_search_managed_cluster_field_mapping;
 
 mod _open_search_serverless_configuration;
 

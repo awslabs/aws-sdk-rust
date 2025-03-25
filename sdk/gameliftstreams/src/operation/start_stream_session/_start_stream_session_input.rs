@@ -8,18 +8,18 @@ pub struct StartStreamSessionInput {
     /// <p>A human-readable label for the stream session. You can update this value later.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The stream group to run this stream session with.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The data transport protocol to use for the stream session.</p>
     pub protocol: ::std::option::Option<crate::types::Protocol>,
     /// <p>A WebRTC ICE offer string to use when initializing a WebRTC connection. The offer is a very long JSON string. Provide the string as a text value in quotes.</p>
     pub signal_request: ::std::option::Option<::std::string::String>,
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An opaque, unique identifier for an end-user, defined by the developer.</p>
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of locations, in order of priority, where you want Amazon GameLift Streams to start a stream from. Amazon GameLift Streams selects the location with the next available capacity to start a single stream session in. If this value is empty, Amazon GameLift Streams attempts to start a stream session in the primary location.</p>
-    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Length of time (in seconds) that Amazon GameLift Streams should wait for a client to connect to the stream session. This time span starts when the stream session reaches <code>ACTIVE</code> status. If no client connects before the timeout, Amazon GameLift Streams stops the stream session with status of <code>TERMINATED</code>. Default value is 120.</p>
     pub connection_timeout_seconds: ::std::option::Option<i32>,
@@ -44,7 +44,7 @@ impl StartStreamSessionInput {
         self.description.as_deref()
     }
     /// <p>The stream group to run this stream session with.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -56,7 +56,7 @@ impl StartStreamSessionInput {
     pub fn signal_request(&self) -> ::std::option::Option<&str> {
         self.signal_request.as_deref()
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn application_identifier(&self) -> ::std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
@@ -65,7 +65,7 @@ impl StartStreamSessionInput {
         self.user_id.as_deref()
     }
     /// <p>A list of locations, in order of priority, where you want Amazon GameLift Streams to start a stream from. Amazon GameLift Streams selects the location with the next available capacity to start a single stream session in. If this value is empty, Amazon GameLift Streams attempts to start a stream session in the primary location.</p>
-    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.locations.is_none()`.
     pub fn locations(&self) -> &[::std::string::String] {
@@ -168,20 +168,20 @@ impl StartStreamSessionInputBuilder {
         &self.description
     }
     /// <p>The stream group to run this stream session with.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stream group to run this stream session with.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>The stream group to run this stream session with.</p>
-    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code> or ID-<code>1AB2C3De4</code>.</p>
+    /// <p>This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the stream group resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/sg-1AB2C3De4</code> or ID-<code>sg-1AB2C3De4</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
@@ -215,18 +215,18 @@ impl StartStreamSessionInputBuilder {
     pub fn get_signal_request(&self) -> &::std::option::Option<::std::string::String> {
         &self.signal_request
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     /// This field is required.
     pub fn application_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn set_application_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_identifier = input;
         self
     }
-    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code> or ID-<code>9ZY8X7Wv6</code>.</p>
+    /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> or ID that uniquely identifies the application resource. Format example: ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code> or ID-<code>a-9ZY8X7Wv6</code>.</p>
     pub fn get_application_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_identifier
     }
@@ -249,7 +249,7 @@ impl StartStreamSessionInputBuilder {
     /// To override the contents of this collection use [`set_locations`](Self::set_locations).
     ///
     /// <p>A list of locations, in order of priority, where you want Amazon GameLift Streams to start a stream from. Amazon GameLift Streams selects the location with the next available capacity to start a single stream session in. If this value is empty, Amazon GameLift Streams attempts to start a stream session in the primary location.</p>
-    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn locations(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.locations.unwrap_or_default();
         v.push(input.into());
@@ -257,13 +257,13 @@ impl StartStreamSessionInputBuilder {
         self
     }
     /// <p>A list of locations, in order of priority, where you want Amazon GameLift Streams to start a stream from. Amazon GameLift Streams selects the location with the next available capacity to start a single stream session in. If this value is empty, Amazon GameLift Streams attempts to start a stream session in the primary location.</p>
-    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn set_locations(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.locations = input;
         self
     }
     /// <p>A list of locations, in order of priority, where you want Amazon GameLift Streams to start a stream from. Amazon GameLift Streams selects the location with the next available capacity to start a single stream session in. If this value is empty, Amazon GameLift Streams attempts to start a stream session in the primary location.</p>
-    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, see the Regions and quotas section in the Amazon GameLift Streams Developer Guide .</p>
+    /// <p>This value is A set of location names. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions and quotas</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub fn get_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.locations
     }

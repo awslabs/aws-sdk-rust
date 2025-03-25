@@ -12,35 +12,41 @@ pub fn ser_storage_configuration(
         crate::protocol_serde::shape_open_search_serverless_configuration::ser_open_search_serverless_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.pinecone_configuration {
+    if let Some(var_3) = &input.opensearch_managed_cluster_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("pineconeConfiguration").start_object();
-        crate::protocol_serde::shape_pinecone_configuration::ser_pinecone_configuration(&mut object_4, var_3)?;
+        let mut object_4 = object.key("opensearchManagedClusterConfiguration").start_object();
+        crate::protocol_serde::shape_open_search_managed_cluster_configuration::ser_open_search_managed_cluster_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.redis_enterprise_cloud_configuration {
+    if let Some(var_5) = &input.pinecone_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("redisEnterpriseCloudConfiguration").start_object();
-        crate::protocol_serde::shape_redis_enterprise_cloud_configuration::ser_redis_enterprise_cloud_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("pineconeConfiguration").start_object();
+        crate::protocol_serde::shape_pinecone_configuration::ser_pinecone_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.rds_configuration {
+    if let Some(var_7) = &input.redis_enterprise_cloud_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("rdsConfiguration").start_object();
-        crate::protocol_serde::shape_rds_configuration::ser_rds_configuration(&mut object_8, var_7)?;
+        let mut object_8 = object.key("redisEnterpriseCloudConfiguration").start_object();
+        crate::protocol_serde::shape_redis_enterprise_cloud_configuration::ser_redis_enterprise_cloud_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.mongo_db_atlas_configuration {
+    if let Some(var_9) = &input.rds_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("mongoDbAtlasConfiguration").start_object();
-        crate::protocol_serde::shape_mongo_db_atlas_configuration::ser_mongo_db_atlas_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("rdsConfiguration").start_object();
+        crate::protocol_serde::shape_rds_configuration::ser_rds_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.neptune_analytics_configuration {
+    if let Some(var_11) = &input.mongo_db_atlas_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("neptuneAnalyticsConfiguration").start_object();
-        crate::protocol_serde::shape_neptune_analytics_configuration::ser_neptune_analytics_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("mongoDbAtlasConfiguration").start_object();
+        crate::protocol_serde::shape_mongo_db_atlas_configuration::ser_mongo_db_atlas_configuration(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.neptune_analytics_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("neptuneAnalyticsConfiguration").start_object();
+        crate::protocol_serde::shape_neptune_analytics_configuration::ser_neptune_analytics_configuration(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }
@@ -70,6 +76,13 @@ where
                         "opensearchServerlessConfiguration" => {
                             builder = builder.set_opensearch_serverless_configuration(
                                 crate::protocol_serde::shape_open_search_serverless_configuration::de_open_search_serverless_configuration(tokens)?,
+                            );
+                        }
+                        "opensearchManagedClusterConfiguration" => {
+                            builder = builder.set_opensearch_managed_cluster_configuration(
+                                crate::protocol_serde::shape_open_search_managed_cluster_configuration::de_open_search_managed_cluster_configuration(
+                                    tokens,
+                                )?,
                             );
                         }
                         "pineconeConfiguration" => {

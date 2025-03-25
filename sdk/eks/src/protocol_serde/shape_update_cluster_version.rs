@@ -65,6 +65,21 @@ pub fn de_update_cluster_version_http_error(
             }
             tmp
         }),
+        "InvalidStateException" => crate::operation::update_cluster_version::UpdateClusterVersionError::InvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_cluster_version::UpdateClusterVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceInUseException" => crate::operation::update_cluster_version::UpdateClusterVersionError::ResourceInUseException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -101,6 +116,21 @@ pub fn de_update_cluster_version_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServerExceptionBuilder::default();
                 output = crate::protocol_serde::shape_server_exception::de_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_cluster_version::UpdateClusterVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::update_cluster_version::UpdateClusterVersionError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_cluster_version::UpdateClusterVersionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()

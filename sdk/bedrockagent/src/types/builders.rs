@@ -71,6 +71,10 @@ pub use crate::types::_pinecone_configuration::PineconeConfigurationBuilder;
 
 pub use crate::types::_pinecone_field_mapping::PineconeFieldMappingBuilder;
 
+pub use crate::types::_open_search_managed_cluster_configuration::OpenSearchManagedClusterConfigurationBuilder;
+
+pub use crate::types::_open_search_managed_cluster_field_mapping::OpenSearchManagedClusterFieldMappingBuilder;
+
 pub use crate::types::_open_search_serverless_configuration::OpenSearchServerlessConfigurationBuilder;
 
 pub use crate::types::_open_search_serverless_field_mapping::OpenSearchServerlessFieldMappingBuilder;

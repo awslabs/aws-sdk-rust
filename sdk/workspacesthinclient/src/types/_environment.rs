@@ -41,6 +41,10 @@ pub struct Environment {
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service key used to encrypt the environment.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the resource.</p>
+    #[deprecated(
+        note = "This field will be removed in future releases. Use ListTagsForResource API instead.",
+        since = "2025-03-25"
+    )]
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The tag keys and optional values for the newly created devices for this environment.</p>
     pub device_creation_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -119,6 +123,10 @@ impl Environment {
         self.kms_key_arn.as_deref()
     }
     /// <p>The tag keys and optional values for the resource.</p>
+    #[deprecated(
+        note = "This field will be removed in future releases. Use ListTagsForResource API instead.",
+        since = "2025-03-25"
+    )]
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -135,7 +143,7 @@ impl ::std::fmt::Debug for Environment {
         formatter.field("desktop_arn", &self.desktop_arn);
         formatter.field("desktop_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("desktop_type", &self.desktop_type);
-        formatter.field("activation_code", &self.activation_code);
+        formatter.field("activation_code", &"*** Sensitive Data Redacted ***");
         formatter.field("registered_devices_count", &self.registered_devices_count);
         formatter.field("software_set_update_schedule", &self.software_set_update_schedule);
         formatter.field("maintenance_window", &self.maintenance_window);
@@ -443,6 +451,10 @@ impl EnvironmentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tag keys and optional values for the resource.</p>
+    #[deprecated(
+        note = "This field will be removed in future releases. Use ListTagsForResource API instead.",
+        since = "2025-03-25"
+    )]
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
@@ -450,11 +462,19 @@ impl EnvironmentBuilder {
         self
     }
     /// <p>The tag keys and optional values for the resource.</p>
+    #[deprecated(
+        note = "This field will be removed in future releases. Use ListTagsForResource API instead.",
+        since = "2025-03-25"
+    )]
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
     /// <p>The tag keys and optional values for the resource.</p>
+    #[deprecated(
+        note = "This field will be removed in future releases. Use ListTagsForResource API instead.",
+        since = "2025-03-25"
+    )]
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
@@ -519,7 +539,7 @@ impl ::std::fmt::Debug for EnvironmentBuilder {
         formatter.field("desktop_arn", &self.desktop_arn);
         formatter.field("desktop_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("desktop_type", &self.desktop_type);
-        formatter.field("activation_code", &self.activation_code);
+        formatter.field("activation_code", &"*** Sensitive Data Redacted ***");
         formatter.field("registered_devices_count", &self.registered_devices_count);
         formatter.field("software_set_update_schedule", &self.software_set_update_schedule);
         formatter.field("maintenance_window", &self.maintenance_window);

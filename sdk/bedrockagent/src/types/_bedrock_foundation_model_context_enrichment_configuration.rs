@@ -6,7 +6,7 @@
 pub struct BedrockFoundationModelContextEnrichmentConfiguration {
     /// <p>The enrichment stategy used to provide additional context. For example, Neptune GraphRAG uses Amazon Bedrock foundation models to perform chunk entity extraction.</p>
     pub enrichment_strategy_configuration: ::std::option::Option<crate::types::EnrichmentStrategyConfiguration>,
-    /// <p>The Amazon Resource Name (ARN) of the foundation model used for context enrichment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub model_arn: ::std::string::String,
 }
 impl BedrockFoundationModelContextEnrichmentConfiguration {
@@ -14,7 +14,7 @@ impl BedrockFoundationModelContextEnrichmentConfiguration {
     pub fn enrichment_strategy_configuration(&self) -> ::std::option::Option<&crate::types::EnrichmentStrategyConfiguration> {
         self.enrichment_strategy_configuration.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the foundation model used for context enrichment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn model_arn(&self) -> &str {
         use std::ops::Deref;
         self.model_arn.deref()
@@ -50,18 +50,18 @@ impl BedrockFoundationModelContextEnrichmentConfigurationBuilder {
     pub fn get_enrichment_strategy_configuration(&self) -> &::std::option::Option<crate::types::EnrichmentStrategyConfiguration> {
         &self.enrichment_strategy_configuration
     }
-    /// <p>The Amazon Resource Name (ARN) of the foundation model used for context enrichment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     /// This field is required.
     pub fn model_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the foundation model used for context enrichment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn set_model_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the foundation model used for context enrichment.</p>
+    /// <p>The Amazon Resource Name (ARN) of the model used to create vector embeddings for the knowledge base.</p>
     pub fn get_model_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_arn
     }

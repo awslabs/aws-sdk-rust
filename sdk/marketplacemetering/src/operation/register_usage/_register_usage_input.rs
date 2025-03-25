@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterUsageInput {
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
-    /// <p>Public Key Version provided by AWS Marketplace</p>
+    /// <p>Public Key Version provided by Amazon Web Services Marketplace</p>
     pub public_key_version: ::std::option::Option<i32>,
     /// <p>(Optional) To scope down the registration to a specific running software instance and guard against replay attacks.</p>
     pub nonce: ::std::option::Option<::std::string::String>,
 }
 impl RegisterUsageInput {
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(&self) -> ::std::option::Option<&str> {
         self.product_code.as_deref()
     }
-    /// <p>Public Key Version provided by AWS Marketplace</p>
+    /// <p>Public Key Version provided by Amazon Web Services Marketplace</p>
     pub fn public_key_version(&self) -> ::std::option::Option<i32> {
         self.public_key_version
     }
@@ -40,33 +40,33 @@ pub struct RegisterUsageInputBuilder {
     pub(crate) nonce: ::std::option::Option<::std::string::String>,
 }
 impl RegisterUsageInputBuilder {
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_code = input;
         self
     }
-    /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_code
     }
-    /// <p>Public Key Version provided by AWS Marketplace</p>
+    /// <p>Public Key Version provided by Amazon Web Services Marketplace</p>
     /// This field is required.
     pub fn public_key_version(mut self, input: i32) -> Self {
         self.public_key_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Public Key Version provided by AWS Marketplace</p>
+    /// <p>Public Key Version provided by Amazon Web Services Marketplace</p>
     pub fn set_public_key_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.public_key_version = input;
         self
     }
-    /// <p>Public Key Version provided by AWS Marketplace</p>
+    /// <p>Public Key Version provided by Amazon Web Services Marketplace</p>
     pub fn get_public_key_version(&self) -> &::std::option::Option<i32> {
         &self.public_key_version
     }

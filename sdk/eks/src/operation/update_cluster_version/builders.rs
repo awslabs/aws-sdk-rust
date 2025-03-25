@@ -152,4 +152,18 @@ impl UpdateClusterVersionFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn force(mut self, input: bool) -> Self {
+        self.inner = self.inner.force(input);
+        self
+    }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force(input);
+        self
+    }
+    /// <p>Set this value to <code>true</code> to override upgrade-blocking readiness checks when updating a cluster.</p>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
+    }
 }

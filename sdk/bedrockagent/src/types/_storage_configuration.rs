@@ -8,6 +8,8 @@ pub struct StorageConfiguration {
     pub r#type: crate::types::KnowledgeBaseStorageType,
     /// <p>Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.</p>
     pub opensearch_serverless_configuration: ::std::option::Option<crate::types::OpenSearchServerlessConfiguration>,
+    /// <p>Contains details about the storage configuration of the knowledge base in OpenSearch Managed Cluster. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create a vector index in Amazon OpenSearch Service</a>.</p>
+    pub opensearch_managed_cluster_configuration: ::std::option::Option<crate::types::OpenSearchManagedClusterConfiguration>,
     /// <p>Contains the storage configuration of the knowledge base in Pinecone.</p>
     pub pinecone_configuration: ::std::option::Option<crate::types::PineconeConfiguration>,
     /// <p>Contains the storage configuration of the knowledge base in Redis Enterprise Cloud.</p>
@@ -27,6 +29,10 @@ impl StorageConfiguration {
     /// <p>Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.</p>
     pub fn opensearch_serverless_configuration(&self) -> ::std::option::Option<&crate::types::OpenSearchServerlessConfiguration> {
         self.opensearch_serverless_configuration.as_ref()
+    }
+    /// <p>Contains details about the storage configuration of the knowledge base in OpenSearch Managed Cluster. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create a vector index in Amazon OpenSearch Service</a>.</p>
+    pub fn opensearch_managed_cluster_configuration(&self) -> ::std::option::Option<&crate::types::OpenSearchManagedClusterConfiguration> {
+        self.opensearch_managed_cluster_configuration.as_ref()
     }
     /// <p>Contains the storage configuration of the knowledge base in Pinecone.</p>
     pub fn pinecone_configuration(&self) -> ::std::option::Option<&crate::types::PineconeConfiguration> {
@@ -62,6 +68,7 @@ impl StorageConfiguration {
 pub struct StorageConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::KnowledgeBaseStorageType>,
     pub(crate) opensearch_serverless_configuration: ::std::option::Option<crate::types::OpenSearchServerlessConfiguration>,
+    pub(crate) opensearch_managed_cluster_configuration: ::std::option::Option<crate::types::OpenSearchManagedClusterConfiguration>,
     pub(crate) pinecone_configuration: ::std::option::Option<crate::types::PineconeConfiguration>,
     pub(crate) redis_enterprise_cloud_configuration: ::std::option::Option<crate::types::RedisEnterpriseCloudConfiguration>,
     pub(crate) rds_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
@@ -97,6 +104,23 @@ impl StorageConfigurationBuilder {
     /// <p>Contains the storage configuration of the knowledge base in Amazon OpenSearch Service.</p>
     pub fn get_opensearch_serverless_configuration(&self) -> &::std::option::Option<crate::types::OpenSearchServerlessConfiguration> {
         &self.opensearch_serverless_configuration
+    }
+    /// <p>Contains details about the storage configuration of the knowledge base in OpenSearch Managed Cluster. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create a vector index in Amazon OpenSearch Service</a>.</p>
+    pub fn opensearch_managed_cluster_configuration(mut self, input: crate::types::OpenSearchManagedClusterConfiguration) -> Self {
+        self.opensearch_managed_cluster_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the storage configuration of the knowledge base in OpenSearch Managed Cluster. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create a vector index in Amazon OpenSearch Service</a>.</p>
+    pub fn set_opensearch_managed_cluster_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::OpenSearchManagedClusterConfiguration>,
+    ) -> Self {
+        self.opensearch_managed_cluster_configuration = input;
+        self
+    }
+    /// <p>Contains details about the storage configuration of the knowledge base in OpenSearch Managed Cluster. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-osm.html">Create a vector index in Amazon OpenSearch Service</a>.</p>
+    pub fn get_opensearch_managed_cluster_configuration(&self) -> &::std::option::Option<crate::types::OpenSearchManagedClusterConfiguration> {
+        &self.opensearch_managed_cluster_configuration
     }
     /// <p>Contains the storage configuration of the knowledge base in Pinecone.</p>
     pub fn pinecone_configuration(mut self, input: crate::types::PineconeConfiguration) -> Self {
@@ -180,6 +204,7 @@ impl StorageConfigurationBuilder {
                 )
             })?,
             opensearch_serverless_configuration: self.opensearch_serverless_configuration,
+            opensearch_managed_cluster_configuration: self.opensearch_managed_cluster_configuration,
             pinecone_configuration: self.pinecone_configuration,
             redis_enterprise_cloud_configuration: self.redis_enterprise_cloud_configuration,
             rds_configuration: self.rds_configuration,

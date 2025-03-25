@@ -11,6 +11,10 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_client_exception::ClientException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
+pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+
 pub use crate::types::error::_not_found_exception::NotFoundException;
 
 pub use crate::types::error::_bad_request_exception::BadRequestException;
@@ -35,6 +39,8 @@ mod _invalid_parameter_exception;
 
 mod _invalid_request_exception;
 
+mod _invalid_state_exception;
+
 mod _not_found_exception;
 
 mod _resource_in_use_exception;
@@ -48,6 +54,8 @@ mod _resource_propagation_delay_exception;
 mod _server_exception;
 
 mod _service_unavailable_exception;
+
+mod _throttling_exception;
 
 mod _unsupported_availability_zone_exception;
 

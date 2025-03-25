@@ -3,7 +3,7 @@
 /// <p>The replication specification of the keyspace includes:</p>
 /// <ul>
 /// <li>
-/// <p><code>regionList</code> - up to six Amazon Web Services Regions where the keyspace is replicated in.</p></li>
+/// <p><code>regionList</code> - the Amazon Web Services Regions where the keyspace is replicated in.</p></li>
 /// <li>
 /// <p><code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p></li>
 /// </ul>
@@ -12,7 +12,7 @@
 pub struct ReplicationSpecification {
     /// <p>The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p>
     pub replication_strategy: crate::types::Rs,
-    /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
+    /// <p>The <code>regionList</code> contains the Amazon Web Services Regions where the keyspace is replicated in.</p>
     pub region_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplicationSpecification {
@@ -20,7 +20,7 @@ impl ReplicationSpecification {
     pub fn replication_strategy(&self) -> &crate::types::Rs {
         &self.replication_strategy
     }
-    /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
+    /// <p>The <code>regionList</code> contains the Amazon Web Services Regions where the keyspace is replicated in.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.region_list.is_none()`.
     pub fn region_list(&self) -> &[::std::string::String] {
@@ -61,19 +61,19 @@ impl ReplicationSpecificationBuilder {
     ///
     /// To override the contents of this collection use [`set_region_list`](Self::set_region_list).
     ///
-    /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
+    /// <p>The <code>regionList</code> contains the Amazon Web Services Regions where the keyspace is replicated in.</p>
     pub fn region_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.region_list.unwrap_or_default();
         v.push(input.into());
         self.region_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
+    /// <p>The <code>regionList</code> contains the Amazon Web Services Regions where the keyspace is replicated in.</p>
     pub fn set_region_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.region_list = input;
         self
     }
-    /// <p>The <code>regionList</code> can contain up to six Amazon Web Services Regions where the keyspace is replicated in.</p>
+    /// <p>The <code>regionList</code> contains the Amazon Web Services Regions where the keyspace is replicated in.</p>
     pub fn get_region_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.region_list
     }

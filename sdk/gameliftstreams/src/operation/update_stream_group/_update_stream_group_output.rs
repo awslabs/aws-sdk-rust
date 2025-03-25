@@ -7,7 +7,7 @@ pub struct UpdateStreamGroupOutput {
     pub arn: ::std::string::String,
     /// <p>A descriptive label for the stream group.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon GameLift Streams application that is associated with this stream group.</p>
+    /// <p>The default Amazon GameLift Streams application that is associated with this stream group.</p>
     pub default_application: ::std::option::Option<crate::types::DefaultApplication>,
     /// <p>This value is set of locations, including their name, current status, and capacities.</p>
     /// <p>A location can be in one of the following states:</p>
@@ -26,7 +26,7 @@ pub struct UpdateStreamGroupOutput {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -62,7 +62,7 @@ pub struct UpdateStreamGroupOutput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -99,7 +99,7 @@ pub struct UpdateStreamGroupOutput {
     /// </ul></li>
     /// </ul>
     pub stream_class: ::std::option::Option<crate::types::StreamClass>,
-    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the stream group resource. Possible statuses include the following:</p>
     /// <ul>
@@ -130,7 +130,7 @@ pub struct UpdateStreamGroupOutput {
     /// <p>A timestamp that indicates when this resource was created. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub associated_applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -144,7 +144,7 @@ impl UpdateStreamGroupOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The Amazon GameLift Streams application that is associated with this stream group.</p>
+    /// <p>The default Amazon GameLift Streams application that is associated with this stream group.</p>
     pub fn default_application(&self) -> ::std::option::Option<&crate::types::DefaultApplication> {
         self.default_application.as_ref()
     }
@@ -169,7 +169,7 @@ impl UpdateStreamGroupOutput {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -205,7 +205,7 @@ impl UpdateStreamGroupOutput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -244,7 +244,7 @@ impl UpdateStreamGroupOutput {
     pub fn stream_class(&self) -> ::std::option::Option<&crate::types::StreamClass> {
         self.stream_class.as_ref()
     }
-    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -285,7 +285,7 @@ impl UpdateStreamGroupOutput {
         self.created_at.as_ref()
     }
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_applications.is_none()`.
     pub fn associated_applications(&self) -> &[::std::string::String] {
@@ -351,17 +351,17 @@ impl UpdateStreamGroupOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The Amazon GameLift Streams application that is associated with this stream group.</p>
+    /// <p>The default Amazon GameLift Streams application that is associated with this stream group.</p>
     pub fn default_application(mut self, input: crate::types::DefaultApplication) -> Self {
         self.default_application = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon GameLift Streams application that is associated with this stream group.</p>
+    /// <p>The default Amazon GameLift Streams application that is associated with this stream group.</p>
     pub fn set_default_application(mut self, input: ::std::option::Option<crate::types::DefaultApplication>) -> Self {
         self.default_application = input;
         self
     }
-    /// <p>The Amazon GameLift Streams application that is associated with this stream group.</p>
+    /// <p>The default Amazon GameLift Streams application that is associated with this stream group.</p>
     pub fn get_default_application(&self) -> &::std::option::Option<crate::types::DefaultApplication> {
         &self.default_application
     }
@@ -422,7 +422,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -458,7 +458,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -502,7 +502,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -538,7 +538,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -582,7 +582,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -618,7 +618,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -657,17 +657,17 @@ impl UpdateStreamGroupOutputBuilder {
     pub fn get_stream_class(&self) -> &::std::option::Option<crate::types::StreamClass> {
         &self.stream_class
     }
-    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>A unique ID value that is assigned to the resource when it's created. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -792,7 +792,7 @@ impl UpdateStreamGroupOutputBuilder {
     /// To override the contents of this collection use [`set_associated_applications`](Self::set_associated_applications).
     ///
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn associated_applications(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.associated_applications.unwrap_or_default();
         v.push(input.into());
@@ -800,13 +800,13 @@ impl UpdateStreamGroupOutputBuilder {
         self
     }
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn set_associated_applications(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.associated_applications = input;
         self
     }
     /// <p>A set of applications that this stream group is associated with. You can stream any of these applications with the stream group.</p>
-    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/9ZY8X7Wv6</code>.</p>
+    /// <p>This value is a set of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Names (ARNs)</a> that uniquely identify application resources. Format example: <code>arn:aws:gameliftstreams:us-west-2:123456789012:application/a-9ZY8X7Wv6</code>.</p>
     pub fn get_associated_applications(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.associated_applications
     }

@@ -13,7 +13,7 @@ pub struct CreateKeyspaceInput {
     /// <li>
     /// <p><code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p></li>
     /// <li>
-    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p></li>
+    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.</p></li>
     /// </ul>
     pub replication_specification: ::std::option::Option<crate::types::ReplicationSpecification>,
 }
@@ -34,7 +34,7 @@ impl CreateKeyspaceInput {
     /// <li>
     /// <p><code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p></li>
     /// <li>
-    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p></li>
+    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.</p></li>
     /// </ul>
     pub fn replication_specification(&self) -> ::std::option::Option<&crate::types::ReplicationSpecification> {
         self.replication_specification.as_ref()
@@ -99,7 +99,7 @@ impl CreateKeyspaceInputBuilder {
     /// <li>
     /// <p><code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p></li>
     /// <li>
-    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p></li>
+    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.</p></li>
     /// </ul>
     pub fn replication_specification(mut self, input: crate::types::ReplicationSpecification) -> Self {
         self.replication_specification = ::std::option::Option::Some(input);
@@ -110,7 +110,7 @@ impl CreateKeyspaceInputBuilder {
     /// <li>
     /// <p><code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p></li>
     /// <li>
-    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p></li>
+    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.</p></li>
     /// </ul>
     pub fn set_replication_specification(mut self, input: ::std::option::Option<crate::types::ReplicationSpecification>) -> Self {
         self.replication_specification = input;
@@ -121,7 +121,7 @@ impl CreateKeyspaceInputBuilder {
     /// <li>
     /// <p><code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.</p></li>
     /// <li>
-    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in. The maximum number of supported replication Regions including the current Region is six.</p></li>
+    /// <p><code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where the keyspace is going to be replicated in.</p></li>
     /// </ul>
     pub fn get_replication_specification(&self) -> &::std::option::Option<crate::types::ReplicationSpecification> {
         &self.replication_specification

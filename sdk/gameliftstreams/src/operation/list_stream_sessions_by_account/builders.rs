@@ -23,8 +23,8 @@ impl crate::operation::list_stream_sessions_by_account::builders::ListStreamSess
 /// Fluent builder constructing a request to `ListStreamSessionsByAccount`.
 ///
 /// <p>Retrieves a list of Amazon GameLift Streams stream sessions that this user account has access to.</p>
-/// <p>In the returned list of stream sessions, the <code>ExportFilesMetadata</code> property only shows the <code>Status</code> value. To get the <code>OutpurUri</code> and <code>StatusReason</code> values, use <code>GetStreamSession</code>.</p>
-/// <p>We don't recommend using this operation to regularly check stream session statuses because it's costly. Instead, to check status updates for a specific stream session, use <code>GetStreamSession</code>.</p>
+/// <p>In the returned list of stream sessions, the <code>ExportFilesMetadata</code> property only shows the <code>Status</code> value. To get the <code>OutpurUri</code> and <code>StatusReason</code> values, use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p>
+/// <p>We don't recommend using this operation to regularly check stream session statuses because it's costly. Instead, to check status updates for a specific stream session, use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListStreamSessionsByAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

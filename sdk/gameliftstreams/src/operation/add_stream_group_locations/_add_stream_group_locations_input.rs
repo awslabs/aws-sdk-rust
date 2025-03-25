@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddStreamGroupLocationsInput {
     /// <p>A stream group to add the specified locations to.</p>
-    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A set of one or more locations and the streaming capacity for each location.</p>
     pub location_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
 }
 impl AddStreamGroupLocationsInput {
     /// <p>A stream group to add the specified locations to.</p>
-    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
@@ -38,20 +38,20 @@ pub struct AddStreamGroupLocationsInputBuilder {
 }
 impl AddStreamGroupLocationsInputBuilder {
     /// <p>A stream group to add the specified locations to.</p>
-    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>sg-1AB2C3De4</code>.</p>
     /// This field is required.
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A stream group to add the specified locations to.</p>
-    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>A stream group to add the specified locations to.</p>
-    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>This value is a Amazon Resource Name (ARN) that uniquely identifies the stream group resource. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }

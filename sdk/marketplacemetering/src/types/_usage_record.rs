@@ -10,12 +10,14 @@ pub struct UsageRecord {
     pub timestamp: ::aws_smithy_types::DateTime,
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
     pub customer_identifier: ::std::string::String,
-    /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub dimension: ::std::string::String,
     /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
     pub quantity: ::std::option::Option<i32>,
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
@@ -28,7 +30,7 @@ impl UsageRecord {
         use std::ops::Deref;
         self.customer_identifier.deref()
     }
-    /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub fn dimension(&self) -> &str {
         use std::ops::Deref;
         self.dimension.deref()
@@ -42,6 +44,10 @@ impl UsageRecord {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_allocations.is_none()`.
     pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
         self.usage_allocations.as_deref().unwrap_or_default()
+    }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
+        self.customer_aws_account_id.as_deref()
     }
 }
 impl UsageRecord {
@@ -60,6 +66,7 @@ pub struct UsageRecordBuilder {
     pub(crate) dimension: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
+    pub(crate) customer_aws_account_id: ::std::option::Option<::std::string::String>,
 }
 impl UsageRecordBuilder {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
@@ -81,7 +88,6 @@ impl UsageRecordBuilder {
         &self.timestamp
     }
     /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
-    /// This field is required.
     pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
@@ -95,18 +101,18 @@ impl UsageRecordBuilder {
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_identifier
     }
-    /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     /// This field is required.
     pub fn dimension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dimension = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub fn set_dimension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dimension = input;
         self
     }
-    /// <p>During the process of registering a product on AWS Marketplace, dimensions are specified. These represent different units of value in your application.</p>
+    /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension
     }
@@ -144,10 +150,23 @@ impl UsageRecordBuilder {
     pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         &self.usage_allocations
     }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.customer_aws_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.customer_aws_account_id = input;
+        self
+    }
+    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.customer_aws_account_id
+    }
     /// Consumes the builder and constructs a [`UsageRecord`](crate::types::UsageRecord).
     /// This method will fail if any of the following fields are not set:
     /// - [`timestamp`](crate::types::builders::UsageRecordBuilder::timestamp)
-    /// - [`customer_identifier`](crate::types::builders::UsageRecordBuilder::customer_identifier)
     /// - [`dimension`](crate::types::builders::UsageRecordBuilder::dimension)
     pub fn build(self) -> ::std::result::Result<crate::types::UsageRecord, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::UsageRecord {
@@ -157,12 +176,7 @@ impl UsageRecordBuilder {
                     "timestamp was not specified but it is required when building UsageRecord",
                 )
             })?,
-            customer_identifier: self.customer_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "customer_identifier",
-                    "customer_identifier was not specified but it is required when building UsageRecord",
-                )
-            })?,
+            customer_identifier: self.customer_identifier.unwrap_or_default(),
             dimension: self.dimension.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "dimension",
@@ -171,6 +185,7 @@ impl UsageRecordBuilder {
             })?,
             quantity: self.quantity,
             usage_allocations: self.usage_allocations,
+            customer_aws_account_id: self.customer_aws_account_id,
         })
     }
 }

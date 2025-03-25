@@ -256,7 +256,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchMeterUsa
 pub enum BatchMeterUsageError {
     /// <p>The API is disabled in the Region.</p>
     DisabledApiException(crate::types::error::DisabledApiException),
-    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>
+    /// <p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the Amazon Web Services forums.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
     InvalidCustomerIdentifierException(crate::types::error::InvalidCustomerIdentifierException),
@@ -264,7 +264,7 @@ pub enum BatchMeterUsageError {
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::types::error::InvalidTagException),
-    /// <p>The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single usage record.</p>
+    /// <p>Sum of allocated usage quantities is not equal to the usage quantity.</p>
     InvalidUsageAllocationsException(crate::types::error::InvalidUsageAllocationsException),
     /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::types::error::InvalidUsageDimensionException),

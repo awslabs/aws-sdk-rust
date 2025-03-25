@@ -60,6 +60,20 @@ pub fn de_create_stream_group_http_error(
             };
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::create_stream_group::CreateStreamGroupError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_stream_group::CreateStreamGroupError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_stream_group::CreateStreamGroupError::unhandled)?
+            };
+            tmp
+        }),
         "ServiceQuotaExceededException" => crate::operation::create_stream_group::CreateStreamGroupError::ServiceQuotaExceededException({
             #[allow(unused_mut)]
             let mut tmp = {

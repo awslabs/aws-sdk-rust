@@ -108,17 +108,17 @@ impl GetStreamGroupFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique ID value of the stream group resource to retrieve. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>The unique ID value of the stream group resource to retrieve. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The unique ID value of the stream group resource to retrieve. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>The unique ID value of the stream group resource to retrieve. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The unique ID value of the stream group resource to retrieve. Format example: <code>1AB2C3De4</code>.</p>
+    /// <p>The unique ID value of the stream group resource to retrieve. Format example: <code>sg-1AB2C3De4</code>.</p>
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }

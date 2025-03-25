@@ -7,6 +7,7 @@ pub struct GetEntitlementsInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub filter: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
     /// <p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -19,6 +20,7 @@ impl GetEntitlementsInput {
         self.product_code.as_deref()
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn filter(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {
@@ -71,6 +73,7 @@ impl GetEntitlementsInputBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k, v);
@@ -78,6 +81,7 @@ impl GetEntitlementsInputBuilder {
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
@@ -86,6 +90,7 @@ impl GetEntitlementsInputBuilder {
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn get_filter(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {

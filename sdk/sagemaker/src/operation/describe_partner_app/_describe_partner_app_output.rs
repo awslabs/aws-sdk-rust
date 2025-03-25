@@ -13,8 +13,12 @@ pub struct DescribePartnerAppOutput {
     pub status: ::std::option::Option<crate::types::PartnerAppStatus>,
     /// <p>The time that the SageMaker Partner AI App was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The time that the SageMaker Partner AI App was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the IAM role associated with the SageMaker Partner AI App.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt the data at rest associated with SageMaker Partner AI Apps.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the SageMaker Partner AI App that the Application SDK uses to support in-app calls for the user.</p>
     pub base_url: ::std::option::Option<::std::string::String>,
     /// <p>Maintenance configuration settings for the SageMaker Partner AI App.</p>
@@ -54,9 +58,17 @@ impl DescribePartnerAppOutput {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
+    /// <p>The time that the SageMaker Partner AI App was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
     /// <p>The ARN of the IAM role associated with the SageMaker Partner AI App.</p>
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
+    }
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt the data at rest associated with SageMaker Partner AI Apps.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
     /// <p>The URL of the SageMaker Partner AI App that the Application SDK uses to support in-app calls for the user.</p>
     pub fn base_url(&self) -> ::std::option::Option<&str> {
@@ -112,7 +124,9 @@ pub struct DescribePartnerAppOutputBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::PartnerAppType>,
     pub(crate) status: ::std::option::Option<crate::types::PartnerAppStatus>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) base_url: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_config: ::std::option::Option<crate::types::PartnerAppMaintenanceConfig>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
@@ -194,6 +208,20 @@ impl DescribePartnerAppOutputBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
+    /// <p>The time that the SageMaker Partner AI App was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time that the SageMaker Partner AI App was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The time that the SageMaker Partner AI App was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// <p>The ARN of the IAM role associated with the SageMaker Partner AI App.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
@@ -207,6 +235,20 @@ impl DescribePartnerAppOutputBuilder {
     /// <p>The ARN of the IAM role associated with the SageMaker Partner AI App.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
+    }
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt the data at rest associated with SageMaker Partner AI Apps.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt the data at rest associated with SageMaker Partner AI Apps.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS customer managed key used to encrypt the data at rest associated with SageMaker Partner AI Apps.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The URL of the SageMaker Partner AI App that the Application SDK uses to support in-app calls for the user.</p>
     pub fn base_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -337,7 +379,9 @@ impl DescribePartnerAppOutputBuilder {
             r#type: self.r#type,
             status: self.status,
             creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
             execution_role_arn: self.execution_role_arn,
+            kms_key_id: self.kms_key_id,
             base_url: self.base_url,
             maintenance_config: self.maintenance_config,
             tier: self.tier,

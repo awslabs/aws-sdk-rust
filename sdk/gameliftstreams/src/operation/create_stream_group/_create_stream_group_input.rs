@@ -9,7 +9,7 @@ pub struct CreateStreamGroupInput {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -45,7 +45,7 @@ pub struct CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -86,7 +86,7 @@ pub struct CreateStreamGroupInput {
     pub default_application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A set of one or more locations and the streaming capacity for each location.</p>
     pub location_configurations: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
-    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. It is useful to tag Amazon Web Services resources for resource management, access management, and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services </i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -100,7 +100,7 @@ impl CreateStreamGroupInput {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -136,7 +136,7 @@ impl CreateStreamGroupInput {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -185,7 +185,7 @@ impl CreateStreamGroupInput {
     pub fn location_configurations(&self) -> &[crate::types::LocationConfiguration] {
         self.location_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. It is useful to tag Amazon Web Services resources for resource management, access management, and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services </i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -232,7 +232,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -268,7 +268,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -313,7 +313,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -349,7 +349,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -393,7 +393,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>A stream class can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.x builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
+    /// <p><b> <code>gen5n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA A10G Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -429,7 +429,7 @@ impl CreateStreamGroupInputBuilder {
     /// <p>Tenancy: Supports 1 concurrent stream session</p></li>
     /// </ul></li>
     /// <li>
-    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with most Unreal Engine 5.2 and 5.3 builds, 32-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
+    /// <p><b> <code>gen4n_win2022</code> (NVIDIA, ultra)</b> Supports applications with extremely high 3D scene complexity. Runs applications on Microsoft Windows Server 2022 Base and supports DirectX 12. Compatible with Unreal Engine versions up through 5.4, 32 and 64-bit applications, and anti-cheat technology. Uses NVIDIA T4 Tensor GPU.</p>
     /// <ul>
     /// <li>
     /// <p>Reference resolution: 1080p</p></li>
@@ -506,19 +506,19 @@ impl CreateStreamGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. It is useful to tag Amazon Web Services resources for resource management, access management, and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services </i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. It is useful to tag Amazon Web Services resources for resource management, access management, and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services </i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. It is useful to tag Amazon Web Services resources for resource management, access management, and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code>, <code>UntagResource</code>, and <code>ListTagsForResource</code> to add, remove, and view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services </i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new stream group resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

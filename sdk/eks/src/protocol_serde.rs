@@ -179,6 +179,8 @@ pub(crate) mod shape_invalid_parameter_exception;
 
 pub(crate) mod shape_invalid_request_exception;
 
+pub(crate) mod shape_invalid_state_exception;
+
 pub(crate) mod shape_list_insights_input;
 
 pub(crate) mod shape_not_found_exception;
@@ -198,6 +200,8 @@ pub(crate) mod shape_server_exception;
 pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_tag_resource_input;
+
+pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unsupported_availability_zone_exception;
 

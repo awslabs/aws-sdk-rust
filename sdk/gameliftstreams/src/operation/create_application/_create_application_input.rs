@@ -5,14 +5,14 @@
 pub struct CreateApplicationInput {
     /// <p>A human-readable label for the application. You can update this value later.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -28,18 +28,18 @@ pub struct CreateApplicationInput {
     pub runtime_environment: ::std::option::Option<crate::types::RuntimeEnvironment>,
     /// <p>The path and file name of the executable file that launches the content for streaming. Enter a path value that is relative to the location set in <code>ApplicationSourceUri</code>.</p>
     pub executable_path: ::std::option::Option<::std::string::String>,
-    /// <p>The location of the content that you want to stream. Enter the URI of an Amazon S3 location (bucket name and prefixes) that contains your content. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
+    /// <p>The location of the content that you want to stream. Enter an Amazon S3 URI to a bucket that contains your game or other application. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
     /// <p>This value is immutable. To designate a different content location, create a new application.</p><note>
-    /// <p>The S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
+    /// <p>The Amazon S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
     /// </note>
     pub application_source_uri: ::std::option::Option<::std::string::String>,
-    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log locations. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub application_log_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p><note>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p><note>
     /// <p>The log bucket must have permissions that give Amazon GameLift Streams access to write the log files. For more information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer Guide.</p>
     /// </note>
     pub application_log_output_uri: ::std::option::Option<::std::string::String>,
-    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code> to add tags, <code>UntagResource</code> to remove tags, and <code>ListTagsForResource</code> to view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -49,14 +49,14 @@ impl CreateApplicationInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -76,26 +76,26 @@ impl CreateApplicationInput {
     pub fn executable_path(&self) -> ::std::option::Option<&str> {
         self.executable_path.as_deref()
     }
-    /// <p>The location of the content that you want to stream. Enter the URI of an Amazon S3 location (bucket name and prefixes) that contains your content. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
+    /// <p>The location of the content that you want to stream. Enter an Amazon S3 URI to a bucket that contains your game or other application. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
     /// <p>This value is immutable. To designate a different content location, create a new application.</p><note>
-    /// <p>The S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
+    /// <p>The Amazon S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
     /// </note>
     pub fn application_source_uri(&self) -> ::std::option::Option<&str> {
         self.application_source_uri.as_deref()
     }
-    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log locations. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_log_paths.is_none()`.
     pub fn application_log_paths(&self) -> &[::std::string::String] {
         self.application_log_paths.as_deref().unwrap_or_default()
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p><note>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p><note>
     /// <p>The log bucket must have permissions that give Amazon GameLift Streams access to write the log files. For more information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer Guide.</p>
     /// </note>
     pub fn application_log_output_uri(&self) -> ::std::option::Option<&str> {
         self.application_log_output_uri.as_deref()
     }
-    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code> to add tags, <code>UntagResource</code> to remove tags, and <code>ListTagsForResource</code> to view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -140,14 +140,14 @@ impl CreateApplicationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -165,14 +165,14 @@ impl CreateApplicationInputBuilder {
         self.runtime_environment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -189,14 +189,14 @@ impl CreateApplicationInputBuilder {
         self.runtime_environment = input;
         self
     }
-    /// <p>A set of configuration settings to run the application on a stream group. This configures the operating system, and can include compatibility layers and other drivers.</p>
+    /// <p>Configuration settings that identify the operating system for an application resource. This can also include a compatibility layer and other drivers.</p>
     /// <p>A runtime environment can be one of the following:</p>
     /// <ul>
     /// <li>
     /// <p>For Linux applications</p>
     /// <ul>
     /// <li>
-    /// <p>Ubuntu 22.04 LTS(<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
+    /// <p>Ubuntu 22.04 LTS (<code>Type=UBUNTU, Version=22_04_LTS</code>)</p></li>
     /// </ul></li>
     /// <li>
     /// <p>For Windows applications</p>
@@ -227,26 +227,26 @@ impl CreateApplicationInputBuilder {
     pub fn get_executable_path(&self) -> &::std::option::Option<::std::string::String> {
         &self.executable_path
     }
-    /// <p>The location of the content that you want to stream. Enter the URI of an Amazon S3 location (bucket name and prefixes) that contains your content. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
+    /// <p>The location of the content that you want to stream. Enter an Amazon S3 URI to a bucket that contains your game or other application. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
     /// <p>This value is immutable. To designate a different content location, create a new application.</p><note>
-    /// <p>The S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
+    /// <p>The Amazon S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
     /// </note>
     /// This field is required.
     pub fn application_source_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_source_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The location of the content that you want to stream. Enter the URI of an Amazon S3 location (bucket name and prefixes) that contains your content. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
+    /// <p>The location of the content that you want to stream. Enter an Amazon S3 URI to a bucket that contains your game or other application. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
     /// <p>This value is immutable. To designate a different content location, create a new application.</p><note>
-    /// <p>The S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
+    /// <p>The Amazon S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
     /// </note>
     pub fn set_application_source_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_source_uri = input;
         self
     }
-    /// <p>The location of the content that you want to stream. Enter the URI of an Amazon S3 location (bucket name and prefixes) that contains your content. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
+    /// <p>The location of the content that you want to stream. Enter an Amazon S3 URI to a bucket that contains your game or other application. The location can have a multi-level prefix structure, but it must include all the files needed to run the content. Amazon GameLift Streams copies everything under the specified location.</p>
     /// <p>This value is immutable. To designate a different content location, create a new application.</p><note>
-    /// <p>The S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
+    /// <p>The Amazon S3 bucket and the Amazon GameLift Streams application must be in the same Amazon Web Services Region.</p>
     /// </note>
     pub fn get_application_source_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_source_uri
@@ -255,37 +255,37 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_log_paths`](Self::set_application_log_paths).
     ///
-    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log locations. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub fn application_log_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_log_paths.unwrap_or_default();
         v.push(input.into());
         self.application_log_paths = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log locations. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub fn set_application_log_paths(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_log_paths = input;
         self
     }
-    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log locations. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <code>GetStreamSession</code> and get the <code>LogFileLocationUri</code>.</p>
+    /// <p>Locations of log files that your content generates during a stream session. Enter path values that are relative to the <code>ApplicationSourceUri</code> location. You can specify up to 10 log paths. Amazon GameLift Streams uploads designated log files to the Amazon S3 bucket that you specify in <code>ApplicationLogOutputUri</code> at the end of a stream session. To retrieve stored log files, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a> and get the <code>LogFileLocationUri</code>.</p>
     pub fn get_application_log_paths(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_log_paths
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p><note>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p><note>
     /// <p>The log bucket must have permissions that give Amazon GameLift Streams access to write the log files. For more information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer Guide.</p>
     /// </note>
     pub fn application_log_output_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_log_output_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p><note>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p><note>
     /// <p>The log bucket must have permissions that give Amazon GameLift Streams access to write the log files. For more information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer Guide.</p>
     /// </note>
     pub fn set_application_log_output_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_log_output_uri = input;
         self
     }
-    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Use the following format for the URI: <code>s3://\[bucket name\]/\[prefix\]</code>. Required if you specify one or more <code>LogPaths</code>.</p><note>
+    /// <p>An Amazon S3 URI to a bucket where you would like Amazon GameLift Streams to save application logs. Required if you specify one or more <code>ApplicationLogPaths</code>.</p><note>
     /// <p>The log bucket must have permissions that give Amazon GameLift Streams access to write the log files. For more information, see <b>Getting Started</b> in the Amazon GameLift Streams Developer Guide.</p>
     /// </note>
     pub fn get_application_log_output_uri(&self) -> &::std::option::Option<::std::string::String> {
@@ -295,19 +295,19 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code> to add tags, <code>UntagResource</code> to remove tags, and <code>ListTagsForResource</code> to view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code> to add tags, <code>UntagResource</code> to remove tags, and <code>ListTagsForResource</code> to view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <code>TagResource</code> to add tags, <code>UntagResource</code> to remove tags, and <code>ListTagsForResource</code> to view tags on existing resources. The maximum tag limit might be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual tagging limits.</p>
+    /// <p>A list of labels to assign to the new application resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources is useful for resource management, access management and cost allocation. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. You can use <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TagResource.html">TagResource</a> to add tags, <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UntagResource.html">UntagResource</a> to remove tags, and <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a> to view tags on existing resources.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

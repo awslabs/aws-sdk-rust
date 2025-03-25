@@ -22,7 +22,10 @@ impl crate::operation::get_entitlements::builders::GetEntitlementsInputBuilder {
 }
 /// Fluent builder constructing a request to `GetEntitlements`.
 ///
-/// <p>GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions.</p>
+/// <p>GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier, AWS account ID, or product dimensions.</p><important>
+/// <p>The <code>CustomerIdentifier</code> parameter is on path for deprecation. Use <code>CustomerAWSAccountID</code> instead.</p>
+/// <p>These parameters are mutually exclusive. You can't specify both <code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> in the same request.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEntitlementsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -134,11 +137,13 @@ impl GetEntitlementsFluentBuilder {
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn filter(mut self, k: crate::types::GetEntitlementFilterName, v: ::std::vec::Vec<::std::string::String>) -> Self {
         self.inner = self.inner.filter(k, v);
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn set_filter(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>>,
@@ -147,6 +152,7 @@ impl GetEntitlementsFluentBuilder {
         self
     }
     /// <p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>
+    /// <p><code>CustomerIdentifier</code> and <code>CustomerAWSAccountID</code> are mutually exclusive. You can't specify both in the same request.</p>
     pub fn get_filter(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::GetEntitlementFilterName, ::std::vec::Vec<::std::string::String>>> {

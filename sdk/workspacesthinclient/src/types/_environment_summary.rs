@@ -99,7 +99,7 @@ impl ::std::fmt::Debug for EnvironmentSummary {
         formatter.field("desktop_arn", &self.desktop_arn);
         formatter.field("desktop_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("desktop_type", &self.desktop_type);
-        formatter.field("activation_code", &self.activation_code);
+        formatter.field("activation_code", &"*** Sensitive Data Redacted ***");
         formatter.field("software_set_update_schedule", &self.software_set_update_schedule);
         formatter.field("maintenance_window", &self.maintenance_window);
         formatter.field("software_set_update_mode", &self.software_set_update_mode);
@@ -362,7 +362,7 @@ impl ::std::fmt::Debug for EnvironmentSummaryBuilder {
         formatter.field("desktop_arn", &self.desktop_arn);
         formatter.field("desktop_endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("desktop_type", &self.desktop_type);
-        formatter.field("activation_code", &self.activation_code);
+        formatter.field("activation_code", &"*** Sensitive Data Redacted ***");
         formatter.field("software_set_update_schedule", &self.software_set_update_schedule);
         formatter.field("maintenance_window", &self.maintenance_window);
         formatter.field("software_set_update_mode", &self.software_set_update_mode);

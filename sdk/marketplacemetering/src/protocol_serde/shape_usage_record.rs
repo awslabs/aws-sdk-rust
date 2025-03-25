@@ -32,6 +32,9 @@ pub fn ser_usage_record(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.customer_aws_account_id {
+        object.key("CustomerAWSAccountId").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -79,6 +82,13 @@ where
                         }
                         "UsageAllocations" => {
                             builder = builder.set_usage_allocations(crate::protocol_serde::shape_usage_allocations::de_usage_allocations(tokens)?);
+                        }
+                        "CustomerAWSAccountId" => {
+                            builder = builder.set_customer_aws_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

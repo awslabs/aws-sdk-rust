@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportFilesMetadata {
-    /// <p>The result of the <code>ExportStreamSessionFiles</code> operation.</p>
+    /// <p>The result of the <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a> operation.</p>
     pub status: ::std::option::Option<crate::types::ExportFilesStatus>,
     /// <p>A short description of the reason the export is in <code>FAILED</code> status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct ExportFilesMetadata {
     pub output_uri: ::std::option::Option<::std::string::String>,
 }
 impl ExportFilesMetadata {
-    /// <p>The result of the <code>ExportStreamSessionFiles</code> operation.</p>
+    /// <p>The result of the <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a> operation.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ExportFilesStatus> {
         self.status.as_ref()
     }
@@ -45,17 +45,17 @@ pub struct ExportFilesMetadataBuilder {
     pub(crate) output_uri: ::std::option::Option<::std::string::String>,
 }
 impl ExportFilesMetadataBuilder {
-    /// <p>The result of the <code>ExportStreamSessionFiles</code> operation.</p>
+    /// <p>The result of the <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a> operation.</p>
     pub fn status(mut self, input: crate::types::ExportFilesStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The result of the <code>ExportStreamSessionFiles</code> operation.</p>
+    /// <p>The result of the <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a> operation.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExportFilesStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The result of the <code>ExportStreamSessionFiles</code> operation.</p>
+    /// <p>The result of the <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_ExportStreamSessionFiles.html">ExportStreamSessionFiles</a> operation.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExportFilesStatus> {
         &self.status
     }
