@@ -5,6 +5,8 @@ pub use crate::types::_resource_data_sync_aws_organizations_source::ResourceData
 
 pub use crate::types::_resource_data_sync_organizational_unit::ResourceDataSyncOrganizationalUnit;
 
+pub use crate::types::_patch_compliance_status::PatchComplianceStatus;
+
 pub use crate::types::_patch_source::PatchSource;
 
 pub use crate::types::_patch_action::PatchAction;
@@ -938,6 +940,8 @@ mod _patch_compliance_data;
 mod _patch_compliance_data_state;
 
 mod _patch_compliance_level;
+
+mod _patch_compliance_status;
 
 mod _patch_deployment_status;
 

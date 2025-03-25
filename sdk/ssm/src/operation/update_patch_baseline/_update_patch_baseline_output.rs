@@ -31,6 +31,9 @@ pub struct UpdatePatchBaselineOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    /// <p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub available_security_updates_compliance_status: ::std::option::Option<crate::types::PatchComplianceStatus>,
     _request_id: Option<String>,
 }
 impl UpdatePatchBaselineOutput {
@@ -96,6 +99,11 @@ impl UpdatePatchBaselineOutput {
     pub fn sources(&self) -> &[crate::types::PatchSource] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(&self) -> ::std::option::Option<&crate::types::PatchComplianceStatus> {
+        self.available_security_updates_compliance_status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdatePatchBaselineOutput {
     fn request_id(&self) -> Option<&str> {
@@ -127,6 +135,7 @@ pub struct UpdatePatchBaselineOutputBuilder {
     pub(crate) modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    pub(crate) available_security_updates_compliance_status: ::std::option::Option<crate::types::PatchComplianceStatus>,
     _request_id: Option<String>,
 }
 impl UpdatePatchBaselineOutputBuilder {
@@ -344,6 +353,23 @@ impl UpdatePatchBaselineOutputBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
         &self.sources
     }
+    /// <p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(mut self, input: crate::types::PatchComplianceStatus) -> Self {
+        self.available_security_updates_compliance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn set_available_security_updates_compliance_status(mut self, input: ::std::option::Option<crate::types::PatchComplianceStatus>) -> Self {
+        self.available_security_updates_compliance_status = input;
+        self
+    }
+    /// <p>Indicates the compliance status of managed nodes for which security-related patches are available but were not approved. This preference is specified when the <code>CreatePatchBaseline</code> or <code>UpdatePatchBaseline</code> commands are run.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn get_available_security_updates_compliance_status(&self) -> &::std::option::Option<crate::types::PatchComplianceStatus> {
+        &self.available_security_updates_compliance_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -370,6 +396,7 @@ impl UpdatePatchBaselineOutputBuilder {
             modified_date: self.modified_date,
             description: self.description,
             sources: self.sources,
+            available_security_updates_compliance_status: self.available_security_updates_compliance_status,
             _request_id: self._request_id,
         }
     }

@@ -22,7 +22,7 @@ impl crate::operation::list_multicast_groups_by_fuota_task::builders::ListMultic
 }
 /// Fluent builder constructing a request to `ListMulticastGroupsByFuotaTask`.
 ///
-/// <p>List all multicast groups associated with a fuota task.</p>
+/// <p>List all multicast groups associated with a FUOTA task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMulticastGroupsByFuotaTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,7 +22,7 @@ impl crate::operation::disassociate_multicast_group_from_fuota_task::builders::D
 }
 /// Fluent builder constructing a request to `DisassociateMulticastGroupFromFuotaTask`.
 ///
-/// <p>Disassociates a multicast group from a fuota task.</p>
+/// <p>Disassociates a multicast group from a FUOTA task.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateMulticastGroupFromFuotaTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

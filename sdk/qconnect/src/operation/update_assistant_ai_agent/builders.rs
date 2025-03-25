@@ -22,7 +22,7 @@ impl crate::operation::update_assistant_ai_agent::builders::UpdateAssistantAiAge
 }
 /// Fluent builder constructing a request to `UpdateAssistantAIAgent`.
 ///
-/// <p>Updates the AI Agent that is set for use by defafult on an Amazon Q in Connect Assistant.</p>
+/// <p>Updates the AI Agent that is set for use by default on an Amazon Q in Connect Assistant.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssistantAIAgentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -63,8 +63,11 @@ pub fn ser_update_patch_baseline_input_input(
         }
         array_18.finish();
     }
-    if let Some(var_21) = &input.replace {
-        object.key("Replace").boolean(*var_21);
+    if let Some(var_21) = &input.available_security_updates_compliance_status {
+        object.key("AvailableSecurityUpdatesComplianceStatus").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.replace {
+        object.key("Replace").boolean(*var_22);
     }
     Ok(())
 }

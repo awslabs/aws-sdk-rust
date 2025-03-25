@@ -12,6 +12,7 @@
 /// ```text
 /// # let patchcompliancedatastate = unimplemented!();
 /// match patchcompliancedatastate {
+///     PatchComplianceDataState::AvailableSecurityUpdate => { /* ... */ },
 ///     PatchComplianceDataState::Failed => { /* ... */ },
 ///     PatchComplianceDataState::Installed => { /* ... */ },
 ///     PatchComplianceDataState::InstalledOther => { /* ... */ },
@@ -48,6 +49,8 @@
 )]
 pub enum PatchComplianceDataState {
     #[allow(missing_docs)] // documentation missing in model
+    AvailableSecurityUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Installed,
@@ -68,6 +71,7 @@ pub enum PatchComplianceDataState {
 impl ::std::convert::From<&str> for PatchComplianceDataState {
     fn from(s: &str) -> Self {
         match s {
+            "AVAILABLE_SECURITY_UPDATE" => PatchComplianceDataState::AvailableSecurityUpdate,
             "FAILED" => PatchComplianceDataState::Failed,
             "INSTALLED" => PatchComplianceDataState::Installed,
             "INSTALLED_OTHER" => PatchComplianceDataState::InstalledOther,
@@ -90,6 +94,7 @@ impl PatchComplianceDataState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PatchComplianceDataState::AvailableSecurityUpdate => "AVAILABLE_SECURITY_UPDATE",
             PatchComplianceDataState::Failed => "FAILED",
             PatchComplianceDataState::Installed => "INSTALLED",
             PatchComplianceDataState::InstalledOther => "INSTALLED_OTHER",
@@ -103,6 +108,7 @@ impl PatchComplianceDataState {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AVAILABLE_SECURITY_UPDATE",
             "FAILED",
             "INSTALLED",
             "INSTALLED_OTHER",
@@ -133,6 +139,7 @@ impl PatchComplianceDataState {
 impl ::std::fmt::Display for PatchComplianceDataState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PatchComplianceDataState::AvailableSecurityUpdate => write!(f, "AVAILABLE_SECURITY_UPDATE"),
             PatchComplianceDataState::Failed => write!(f, "FAILED"),
             PatchComplianceDataState::Installed => write!(f, "INSTALLED"),
             PatchComplianceDataState::InstalledOther => write!(f, "INSTALLED_OTHER"),

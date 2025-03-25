@@ -206,17 +206,17 @@ impl CreateAIPromptFluentBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::AiPromptTemplateType> {
         self.inner.get_template_type()
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code></p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code></p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
-    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>CLAUDE_3_HAIKU_20240307_V1</code></p>
+    /// <p>The identifier of the model used for this AI Prompt. Model Ids supported are: <code>anthropic.claude-3-haiku-20240307-v1:0</code></p>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_model_id()
     }

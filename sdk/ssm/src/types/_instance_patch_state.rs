@@ -35,6 +35,9 @@ pub struct InstancePatchState {
     pub unreported_not_applicable_count: ::std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that aren't applicable for the managed node and therefore aren't installed on the node. This number may be truncated if the list of patch names is very large. The number of patches beyond this limit are reported in <code>UnreportedNotApplicableCount</code>.</p>
     pub not_applicable_count: i32,
+    /// <p>The number of security-related patches that are available but not approved because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub available_security_update_count: ::std::option::Option<i32>,
     /// <p>The time the most recent patching operation was started on the managed node.</p>
     pub operation_start_time: ::aws_smithy_types::DateTime,
     /// <p>The time the most recent patching operation completed on the managed node.</p>
@@ -129,6 +132,11 @@ impl InstancePatchState {
     pub fn not_applicable_count(&self) -> i32 {
         self.not_applicable_count
     }
+    /// <p>The number of security-related patches that are available but not approved because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn available_security_update_count(&self) -> ::std::option::Option<i32> {
+        self.available_security_update_count
+    }
     /// <p>The time the most recent patching operation was started on the managed node.</p>
     pub fn operation_start_time(&self) -> &::aws_smithy_types::DateTime {
         &self.operation_start_time
@@ -193,6 +201,7 @@ impl ::std::fmt::Debug for InstancePatchState {
         formatter.field("failed_count", &self.failed_count);
         formatter.field("unreported_not_applicable_count", &self.unreported_not_applicable_count);
         formatter.field("not_applicable_count", &self.not_applicable_count);
+        formatter.field("available_security_update_count", &self.available_security_update_count);
         formatter.field("operation_start_time", &self.operation_start_time);
         formatter.field("operation_end_time", &self.operation_end_time);
         formatter.field("operation", &self.operation);
@@ -229,6 +238,7 @@ pub struct InstancePatchStateBuilder {
     pub(crate) failed_count: ::std::option::Option<i32>,
     pub(crate) unreported_not_applicable_count: ::std::option::Option<i32>,
     pub(crate) not_applicable_count: ::std::option::Option<i32>,
+    pub(crate) available_security_update_count: ::std::option::Option<i32>,
     pub(crate) operation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) operation_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) operation: ::std::option::Option<crate::types::PatchOperationType>,
@@ -447,6 +457,23 @@ impl InstancePatchStateBuilder {
     pub fn get_not_applicable_count(&self) -> &::std::option::Option<i32> {
         &self.not_applicable_count
     }
+    /// <p>The number of security-related patches that are available but not approved because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn available_security_update_count(mut self, input: i32) -> Self {
+        self.available_security_update_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of security-related patches that are available but not approved because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn set_available_security_update_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.available_security_update_count = input;
+        self
+    }
+    /// <p>The number of security-related patches that are available but not approved because they didn't meet the patch baseline requirements. For example, an updated version of a patch might have been released before the specified auto-approval period was over.</p>
+    /// <p>Applies to Windows Server managed nodes only.</p>
+    pub fn get_available_security_update_count(&self) -> &::std::option::Option<i32> {
+        &self.available_security_update_count
+    }
     /// <p>The time the most recent patching operation was started on the managed node.</p>
     /// This field is required.
     pub fn operation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -643,6 +670,7 @@ impl InstancePatchStateBuilder {
             failed_count: self.failed_count.unwrap_or_default(),
             unreported_not_applicable_count: self.unreported_not_applicable_count,
             not_applicable_count: self.not_applicable_count.unwrap_or_default(),
+            available_security_update_count: self.available_security_update_count,
             operation_start_time: self.operation_start_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "operation_start_time",
@@ -686,6 +714,7 @@ impl ::std::fmt::Debug for InstancePatchStateBuilder {
         formatter.field("failed_count", &self.failed_count);
         formatter.field("unreported_not_applicable_count", &self.unreported_not_applicable_count);
         formatter.field("not_applicable_count", &self.not_applicable_count);
+        formatter.field("available_security_update_count", &self.available_security_update_count);
         formatter.field("operation_start_time", &self.operation_start_time);
         formatter.field("operation_end_time", &self.operation_end_time);
         formatter.field("operation", &self.operation);

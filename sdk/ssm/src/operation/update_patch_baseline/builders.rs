@@ -336,6 +336,26 @@ impl UpdatePatchBaselineFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
         self.inner.get_sources()
     }
+    /// <p>Indicates the status to be assigned to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(mut self, input: crate::types::PatchComplianceStatus) -> Self {
+        self.inner = self.inner.available_security_updates_compliance_status(input);
+        self
+    }
+    /// <p>Indicates the status to be assigned to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn set_available_security_updates_compliance_status(mut self, input: ::std::option::Option<crate::types::PatchComplianceStatus>) -> Self {
+        self.inner = self.inner.set_available_security_updates_compliance_status(input);
+        self
+    }
+    /// <p>Indicates the status to be assigned to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn get_available_security_updates_compliance_status(&self) -> &::std::option::Option<crate::types::PatchComplianceStatus> {
+        self.inner.get_available_security_updates_compliance_status()
+    }
     /// <p>If True, then all fields that are required by the <code>CreatePatchBaseline</code> operation are also required for this API request. Optional fields that aren't specified are set to null.</p>
     pub fn replace(mut self, input: bool) -> Self {
         self.inner = self.inner.replace(input);

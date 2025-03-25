@@ -112,6 +112,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AvailableSecurityUpdateCount" => {
+                            builder = builder.set_available_security_update_count(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "OperationStartTime" => {
                             builder = builder.set_operation_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

@@ -7,7 +7,7 @@ impl super::Client {
     ///   - [`default_log_level(Option<LogLevel>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::default_log_level): <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     ///   - [`wireless_gateway_log_options(Option<Vec::<WirelessGatewayLogOption>>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::wireless_gateway_log_options): <p>The list of wireless gateway log options.</p>
     ///   - [`wireless_device_log_options(Option<Vec::<WirelessDeviceLogOption>>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::wireless_device_log_options): <p>The list of wireless device log options.</p>
-    ///   - [`fuota_task_log_options(Option<Vec::<FuotaTaskLogOption>>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::fuota_task_log_options): <p>The list of fuota task log options.</p>
+    ///   - [`fuota_task_log_options(Option<Vec::<FuotaTaskLogOption>>)`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput::fuota_task_log_options): <p>The list of FUOTA task log options.</p>
     /// - On failure, responds with [`SdkError<GetLogLevelsByResourceTypesError>`](crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError)
     pub fn get_log_levels_by_resource_types(
         &self,

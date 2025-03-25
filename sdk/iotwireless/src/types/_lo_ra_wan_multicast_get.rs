@@ -12,7 +12,7 @@ pub struct LoRaWanMulticastGet {
     pub number_of_devices_requested: ::std::option::Option<i32>,
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub number_of_devices_in_group: ::std::option::Option<i32>,
-    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the list, with the transmission interval as the time interval between each message.</p>
     pub participating_gateways: ::std::option::Option<crate::types::ParticipatingGatewaysMulticast>,
 }
 impl LoRaWanMulticastGet {
@@ -32,7 +32,7 @@ impl LoRaWanMulticastGet {
     pub fn number_of_devices_in_group(&self) -> ::std::option::Option<i32> {
         self.number_of_devices_in_group
     }
-    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the list, with the transmission interval as the time interval between each message.</p>
     pub fn participating_gateways(&self) -> ::std::option::Option<&crate::types::ParticipatingGatewaysMulticast> {
         self.participating_gateways.as_ref()
     }
@@ -111,17 +111,17 @@ impl LoRaWanMulticastGetBuilder {
     pub fn get_number_of_devices_in_group(&self) -> &::std::option::Option<i32> {
         &self.number_of_devices_in_group
     }
-    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the list, with the transmission interval as the time interval between each message.</p>
     pub fn participating_gateways(mut self, input: crate::types::ParticipatingGatewaysMulticast) -> Self {
         self.participating_gateways = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the list, with the transmission interval as the time interval between each message.</p>
     pub fn set_participating_gateways(mut self, input: ::std::option::Option<crate::types::ParticipatingGatewaysMulticast>) -> Self {
         self.participating_gateways = input;
         self
     }
-    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the sequence provided in the list.</p>
+    /// <p>Specify the list of gateways to which you want to send the multicast downlink messages. The multicast message will be sent to each gateway in the list, with the transmission interval as the time interval between each message.</p>
     pub fn get_participating_gateways(&self) -> &::std::option::Option<crate::types::ParticipatingGatewaysMulticast> {
         &self.participating_gateways
     }

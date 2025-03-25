@@ -44,6 +44,10 @@ pub struct CreatePatchBaselineInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    /// <p>Indicates the status you want to assign to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub available_security_updates_compliance_status: ::std::option::Option<crate::types::PatchComplianceStatus>,
     /// <p>User-provided idempotency token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the severity level of patches it specifies and the operating system family it applies to. In this case, you could specify the following key-value pairs:</p>
@@ -127,6 +131,12 @@ impl CreatePatchBaselineInput {
     pub fn sources(&self) -> &[crate::types::PatchSource] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates the status you want to assign to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(&self) -> ::std::option::Option<&crate::types::PatchComplianceStatus> {
+        self.available_security_updates_compliance_status.as_ref()
+    }
     /// <p>User-provided idempotency token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -168,6 +178,7 @@ pub struct CreatePatchBaselineInputBuilder {
     pub(crate) rejected_patches_action: ::std::option::Option<crate::types::PatchAction>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
+    pub(crate) available_security_updates_compliance_status: ::std::option::Option<crate::types::PatchComplianceStatus>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -402,6 +413,26 @@ impl CreatePatchBaselineInputBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PatchSource>> {
         &self.sources
     }
+    /// <p>Indicates the status you want to assign to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn available_security_updates_compliance_status(mut self, input: crate::types::PatchComplianceStatus) -> Self {
+        self.available_security_updates_compliance_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the status you want to assign to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn set_available_security_updates_compliance_status(mut self, input: ::std::option::Option<crate::types::PatchComplianceStatus>) -> Self {
+        self.available_security_updates_compliance_status = input;
+        self
+    }
+    /// <p>Indicates the status you want to assign to security patches that are available but not approved because they don't meet the installation criteria specified in the patch baseline.</p>
+    /// <p>Example scenario: Security patches that you might want installed can be skipped if you have specified a long period to wait after a patch is released before installation. If an update to the patch is released during your specified waiting period, the waiting period for installing the patch starts over. If the waiting period is too long, multiple versions of the patch could be released but never installed.</p>
+    /// <p>Supported for Windows Server managed nodes only.</p>
+    pub fn get_available_security_updates_compliance_status(&self) -> &::std::option::Option<crate::types::PatchComplianceStatus> {
+        &self.available_security_updates_compliance_status
+    }
     /// <p>User-provided idempotency token.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -477,6 +508,7 @@ impl CreatePatchBaselineInputBuilder {
             rejected_patches_action: self.rejected_patches_action,
             description: self.description,
             sources: self.sources,
+            available_security_updates_compliance_status: self.available_security_updates_compliance_status,
             client_token: self.client_token,
             tags: self.tags,
         })

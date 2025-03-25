@@ -15,7 +15,7 @@ pub struct AnswerRecommendationAiAgentConfiguration {
     /// <p>The association configurations for overriding behavior on this AI Agent.</p>
     pub association_configurations: ::std::option::Option<::std::vec::Vec<crate::types::AssociationConfiguration>>,
     /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
-    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// <p>Changing this locale to anything other than <code>en_US</code>, <code>en_GB</code>, or <code>en_AU</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
     /// </note>
     pub locale: ::std::option::Option<::std::string::String>,
 }
@@ -43,7 +43,7 @@ impl AnswerRecommendationAiAgentConfiguration {
         self.association_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
-    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// <p>Changing this locale to anything other than <code>en_US</code>, <code>en_GB</code>, or <code>en_AU</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
     /// </note>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
@@ -145,21 +145,21 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
         &self.association_configurations
     }
     /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
-    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// <p>Changing this locale to anything other than <code>en_US</code>, <code>en_GB</code>, or <code>en_AU</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
     /// </note>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
-    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// <p>Changing this locale to anything other than <code>en_US</code>, <code>en_GB</code>, or <code>en_AU</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
     /// </note>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
     /// <p>The locale to which specifies the language and region settings that determine the response language for <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_amazon-q-connect_QueryAssistant.html">QueryAssistant</a>.</p><note>
-    /// <p>Changing this locale to anything other than <code>en_US</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
+    /// <p>Changing this locale to anything other than <code>en_US</code>, <code>en_GB</code>, or <code>en_AU</code> will turn off recommendations triggered by contact transcripts for agent assistance, as this feature is not supported in multiple languages.</p>
     /// </note>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
