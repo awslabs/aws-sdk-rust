@@ -122,6 +122,25 @@ impl CreateDirectConnectGatewayFluentBuilder {
     pub fn get_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_direct_connect_gateway_name()
     }
+    ///
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        self.inner = self.inner.tags(input);
+        self
+    }
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.inner = self.inner.set_tags(input);
+        self
+    }
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        self.inner.get_tags()
+    }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
         self.inner = self.inner.amazon_side_asn(input);

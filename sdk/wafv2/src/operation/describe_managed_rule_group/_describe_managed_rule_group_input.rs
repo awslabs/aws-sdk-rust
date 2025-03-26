@@ -7,7 +7,7 @@ pub struct DescribeManagedRuleGroupInput {
     pub vendor_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -28,7 +28,7 @@ impl DescribeManagedRuleGroupInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -91,7 +91,7 @@ impl DescribeManagedRuleGroupInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -104,7 +104,7 @@ impl DescribeManagedRuleGroupInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -116,7 +116,7 @@ impl DescribeManagedRuleGroupInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

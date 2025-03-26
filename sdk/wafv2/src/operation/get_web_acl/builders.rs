@@ -119,7 +119,7 @@ impl GetWebACLFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -131,7 +131,7 @@ impl GetWebACLFluentBuilder {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -143,7 +143,7 @@ impl GetWebACLFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -167,5 +167,19 @@ impl GetWebACLFluentBuilder {
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to retrieve.</p>
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to retrieve.</p>
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to retrieve.</p>
+    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_arn()
     }
 }

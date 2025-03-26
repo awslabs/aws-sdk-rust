@@ -12,5 +12,8 @@ pub fn ser_get_web_acl_input_input(
     if let Some(var_3) = &input.id {
         object.key("Id").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.arn {
+        object.key("ARN").string(var_4.as_str());
+    }
     Ok(())
 }

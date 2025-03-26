@@ -23,7 +23,7 @@ impl crate::operation::update_autoshift_observer_notification_status::builders::
 /// Fluent builder constructing a request to `UpdateAutoshiftObserverNotificationStatus`.
 ///
 /// <p>Update the status of autoshift observer notification. Autoshift observer notification enables you to be notified, through Amazon EventBridge, when there is an autoshift event for zonal autoshift.</p>
-/// <p>If the status is <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use the EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
+/// <p>If the status is <code>ENABLED</code>, ARC includes all autoshift events when you use the EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.how-it-works.html#ZAShiftNotification"> Notifications for practice runs and autoshifts</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAutoshiftObserverNotificationStatusFluentBuilder {
@@ -117,17 +117,17 @@ impl UpdateAutoshiftObserverNotificationStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The status to set for autoshift observer notification. If the status is <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
+    /// <p>The status to set for autoshift observer notification. If the status is <code>ENABLED</code>, ARC includes all autoshift events when you use the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
     pub fn status(mut self, input: crate::types::AutoshiftObserverNotificationStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>The status to set for autoshift observer notification. If the status is <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
+    /// <p>The status to set for autoshift observer notification. If the status is <code>ENABLED</code>, ARC includes all autoshift events when you use the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AutoshiftObserverNotificationStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The status to set for autoshift observer notification. If the status is <code>ENABLED</code>, Route 53 ARC includes all autoshift events when you use the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
+    /// <p>The status to set for autoshift observer notification. If the status is <code>ENABLED</code>, ARC includes all autoshift events when you use the Amazon EventBridge pattern <code>Autoshift In Progress</code>. When the status is <code>DISABLED</code>, ARC includes only autoshift events for autoshifts when one or more of your resources is included in the autoshift.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AutoshiftObserverNotificationStatus> {
         self.inner.get_status()
     }

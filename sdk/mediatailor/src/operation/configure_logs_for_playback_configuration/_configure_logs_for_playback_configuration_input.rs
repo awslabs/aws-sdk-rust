@@ -12,6 +12,10 @@ pub struct ConfigureLogsForPlaybackConfigurationInput {
     /// <p>The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose <code>LEGACY_CLOUDWATCH</code>. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose <code>VENDED_LOGS</code>. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
     /// <p>To use vended logs, you must configure the delivery destination in Amazon CloudWatch, as described in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions-V2">Enable logging from AWS services, Logging that requires additional permissions \[V2\]</a>.</p>
     pub enabled_logging_strategies: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>,
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub ads_interaction_log: ::std::option::Option<crate::types::AdsInteractionLog>,
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub manifest_service_interaction_log: ::std::option::Option<crate::types::ManifestServiceInteractionLog>,
 }
 impl ConfigureLogsForPlaybackConfigurationInput {
     /// <p>The percentage of session logs that MediaTailor sends to your CloudWatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
@@ -30,6 +34,14 @@ impl ConfigureLogsForPlaybackConfigurationInput {
     pub fn enabled_logging_strategies(&self) -> &[crate::types::LoggingStrategy] {
         self.enabled_logging_strategies.as_deref().unwrap_or_default()
     }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn ads_interaction_log(&self) -> ::std::option::Option<&crate::types::AdsInteractionLog> {
+        self.ads_interaction_log.as_ref()
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn manifest_service_interaction_log(&self) -> ::std::option::Option<&crate::types::ManifestServiceInteractionLog> {
+        self.manifest_service_interaction_log.as_ref()
+    }
 }
 impl ConfigureLogsForPlaybackConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsForPlaybackConfigurationInput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput).
@@ -45,6 +57,8 @@ pub struct ConfigureLogsForPlaybackConfigurationInputBuilder {
     pub(crate) percent_enabled: ::std::option::Option<i32>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_logging_strategies: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>,
+    pub(crate) ads_interaction_log: ::std::option::Option<crate::types::AdsInteractionLog>,
+    pub(crate) manifest_service_interaction_log: ::std::option::Option<crate::types::ManifestServiceInteractionLog>,
 }
 impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     /// <p>The percentage of session logs that MediaTailor sends to your CloudWatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug log mode</a>.</p>
@@ -103,6 +117,34 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
     pub fn get_enabled_logging_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>> {
         &self.enabled_logging_strategies
     }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn ads_interaction_log(mut self, input: crate::types::AdsInteractionLog) -> Self {
+        self.ads_interaction_log = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn set_ads_interaction_log(mut self, input: ::std::option::Option<crate::types::AdsInteractionLog>) -> Self {
+        self.ads_interaction_log = input;
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn get_ads_interaction_log(&self) -> &::std::option::Option<crate::types::AdsInteractionLog> {
+        &self.ads_interaction_log
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn manifest_service_interaction_log(mut self, input: crate::types::ManifestServiceInteractionLog) -> Self {
+        self.manifest_service_interaction_log = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn set_manifest_service_interaction_log(mut self, input: ::std::option::Option<crate::types::ManifestServiceInteractionLog>) -> Self {
+        self.manifest_service_interaction_log = input;
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn get_manifest_service_interaction_log(&self) -> &::std::option::Option<crate::types::ManifestServiceInteractionLog> {
+        &self.manifest_service_interaction_log
+    }
     /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationInput`](crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput).
     pub fn build(
         self,
@@ -115,6 +157,8 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
                 percent_enabled: self.percent_enabled,
                 playback_configuration_name: self.playback_configuration_name,
                 enabled_logging_strategies: self.enabled_logging_strategies,
+                ads_interaction_log: self.ads_interaction_log,
+                manifest_service_interaction_log: self.manifest_service_interaction_log,
             },
         )
     }

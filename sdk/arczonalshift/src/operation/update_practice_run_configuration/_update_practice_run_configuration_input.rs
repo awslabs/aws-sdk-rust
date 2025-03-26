@@ -5,7 +5,7 @@
 pub struct UpdatePracticeRunConfigurationInput {
     /// <p>The identifier for the resource that you want to update the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub blocked_windows: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -23,7 +23,7 @@ impl UpdatePracticeRunConfigurationInput {
     pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
-    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     ///
@@ -89,7 +89,7 @@ impl UpdatePracticeRunConfigurationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_blocked_windows`](Self::set_blocked_windows).
     ///
-    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn blocked_windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -98,14 +98,14 @@ impl UpdatePracticeRunConfigurationInputBuilder {
         self.blocked_windows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn set_blocked_windows(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.blocked_windows = input;
         self
     }
-    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block Route 53 ARC from starting a practice run for a resource.</p>
+    /// <p>Add, change, or remove windows of days and times for when you can, optionally, block ARC from starting a practice run for a resource.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn get_blocked_windows(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

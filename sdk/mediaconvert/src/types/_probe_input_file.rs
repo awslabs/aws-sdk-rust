@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProbeInputFile {
-    /// The URI to your input file(s) that is stored in Amazon S3 or on an HTTP(S) server.
+    /// Specify the S3, HTTP, or HTTPS URL for your media file.
     pub file_url: ::std::option::Option<::std::string::String>,
 }
 impl ProbeInputFile {
-    /// The URI to your input file(s) that is stored in Amazon S3 or on an HTTP(S) server.
+    /// Specify the S3, HTTP, or HTTPS URL for your media file.
     pub fn file_url(&self) -> ::std::option::Option<&str> {
         self.file_url.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct ProbeInputFileBuilder {
     pub(crate) file_url: ::std::option::Option<::std::string::String>,
 }
 impl ProbeInputFileBuilder {
-    /// The URI to your input file(s) that is stored in Amazon S3 or on an HTTP(S) server.
+    /// Specify the S3, HTTP, or HTTPS URL for your media file.
     pub fn file_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// The URI to your input file(s) that is stored in Amazon S3 or on an HTTP(S) server.
+    /// Specify the S3, HTTP, or HTTPS URL for your media file.
     pub fn set_file_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_url = input;
         self
     }
-    /// The URI to your input file(s) that is stored in Amazon S3 or on an HTTP(S) server.
+    /// Specify the S3, HTTP, or HTTPS URL for your media file.
     pub fn get_file_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_url
     }

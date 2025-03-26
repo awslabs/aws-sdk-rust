@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApiKeyInput {
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -18,7 +18,7 @@ pub struct CreateApiKeyInput {
     pub token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateApiKeyInput {
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -53,7 +53,7 @@ pub struct CreateApiKeyInputBuilder {
     pub(crate) token_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateApiKeyInputBuilder {
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -66,7 +66,7 @@ impl CreateApiKeyInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -78,7 +78,7 @@ impl CreateApiKeyInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

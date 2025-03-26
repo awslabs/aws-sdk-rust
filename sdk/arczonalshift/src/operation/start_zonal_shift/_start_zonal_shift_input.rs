@@ -8,7 +8,7 @@ pub struct StartZonalShiftInput {
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone (for example, <code>use1-az1</code>) that traffic is moved away from for a resource when you start a zonal shift. Until the zonal shift expires or you cancel it, traffic for the resource is instead moved to other Availability Zones in the Amazon Web Services Region.</p>
     pub away_from: ::std::option::Option<::std::string::String>,
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
@@ -32,7 +32,7 @@ impl StartZonalShiftInput {
     pub fn away_from(&self) -> ::std::option::Option<&str> {
         self.away_from.as_deref()
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
@@ -100,7 +100,7 @@ impl StartZonalShiftInputBuilder {
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.away_from
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
@@ -115,7 +115,7 @@ impl StartZonalShiftInputBuilder {
         self.expires_in = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
@@ -129,7 +129,7 @@ impl StartZonalShiftInputBuilder {
         self.expires_in = input;
         self
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>

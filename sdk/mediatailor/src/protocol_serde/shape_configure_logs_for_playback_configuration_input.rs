@@ -3,23 +3,35 @@ pub fn ser_configure_logs_for_playback_configuration_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.enabled_logging_strategies {
-        let mut array_2 = object.key("EnabledLoggingStrategies").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.ads_interaction_log {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("AdsInteractionLog").start_object();
+        crate::protocol_serde::shape_ads_interaction_log::ser_ads_interaction_log(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.enabled_logging_strategies {
+        let mut array_4 = object.key("EnabledLoggingStrategies").start_array();
+        for item_5 in var_3 {
             {
-                array_2.value().string(item_3.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_4) = &input.percent_enabled {
+    if let Some(var_6) = &input.manifest_service_interaction_log {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("ManifestServiceInteractionLog").start_object();
+        crate::protocol_serde::shape_manifest_service_interaction_log::ser_manifest_service_interaction_log(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.percent_enabled {
         object.key("PercentEnabled").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_5) = &input.playback_configuration_name {
-        object.key("PlaybackConfigurationName").string(var_5.as_str());
+    if let Some(var_9) = &input.playback_configuration_name {
+        object.key("PlaybackConfigurationName").string(var_9.as_str());
     }
     Ok(())
 }

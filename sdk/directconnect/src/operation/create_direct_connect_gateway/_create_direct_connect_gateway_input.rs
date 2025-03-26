@@ -5,6 +5,8 @@
 pub struct CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
     pub direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub amazon_side_asn: ::std::option::Option<i64>,
 }
@@ -12,6 +14,12 @@ impl CreateDirectConnectGatewayInput {
     /// <p>The name of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_name(&self) -> ::std::option::Option<&str> {
         self.direct_connect_gateway_name.as_deref()
+    }
+    /// <p>The key-value pair tags associated with the request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
     }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(&self) -> ::std::option::Option<i64> {
@@ -30,6 +38,7 @@ impl CreateDirectConnectGatewayInput {
 #[non_exhaustive]
 pub struct CreateDirectConnectGatewayInputBuilder {
     pub(crate) direct_connect_gateway_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) amazon_side_asn: ::std::option::Option<i64>,
 }
 impl CreateDirectConnectGatewayInputBuilder {
@@ -47,6 +56,26 @@ impl CreateDirectConnectGatewayInputBuilder {
     /// <p>The name of the Direct Connect gateway.</p>
     pub fn get_direct_connect_gateway_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.direct_connect_gateway_name
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>The key-value pair tags associated with the request.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
     }
     /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured on the Amazon side of the connection. The ASN must be in the private range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
     pub fn amazon_side_asn(mut self, input: i64) -> Self {
@@ -71,6 +100,7 @@ impl CreateDirectConnectGatewayInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayInput {
             direct_connect_gateway_name: self.direct_connect_gateway_name,
+            tags: self.tags,
             amazon_side_asn: self.amazon_side_asn,
         })
     }

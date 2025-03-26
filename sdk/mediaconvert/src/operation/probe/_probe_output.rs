@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProbeOutput {
-    /// List of probe results for the input media file(s).
+    /// Probe results for your media file.
     pub probe_results: ::std::option::Option<::std::vec::Vec<crate::types::ProbeResult>>,
     _request_id: Option<String>,
 }
 impl ProbeOutput {
-    /// List of probe results for the input media file(s).
+    /// Probe results for your media file.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.probe_results.is_none()`.
     pub fn probe_results(&self) -> &[crate::types::ProbeResult] {
@@ -39,19 +39,19 @@ impl ProbeOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_probe_results`](Self::set_probe_results).
     ///
-    /// List of probe results for the input media file(s).
+    /// Probe results for your media file.
     pub fn probe_results(mut self, input: crate::types::ProbeResult) -> Self {
         let mut v = self.probe_results.unwrap_or_default();
         v.push(input);
         self.probe_results = ::std::option::Option::Some(v);
         self
     }
-    /// List of probe results for the input media file(s).
+    /// Probe results for your media file.
     pub fn set_probe_results(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProbeResult>>) -> Self {
         self.probe_results = input;
         self
     }
-    /// List of probe results for the input media file(s).
+    /// Probe results for your media file.
     pub fn get_probe_results(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProbeResult>> {
         &self.probe_results
     }

@@ -251,9 +251,6 @@ pub(crate) fn autoshift_summary_correct_errors(
     if builder.away_from.is_none() {
         builder.away_from = Some(Default::default())
     }
-    if builder.end_time.is_none() {
-        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
     if builder.start_time.is_none() {
         builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }

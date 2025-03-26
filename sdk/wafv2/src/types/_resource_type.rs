@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::Amplify => { /* ... */ },
 ///     ResourceType::ApiGateway => { /* ... */ },
 ///     ResourceType::ApplicationLoadBalancer => { /* ... */ },
 ///     ResourceType::Appsync => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    Amplify,
+    #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
     #[allow(missing_docs)] // documentation missing in model
     ApplicationLoadBalancer,
@@ -65,6 +68,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AMPLIFY" => ResourceType::Amplify,
             "API_GATEWAY" => ResourceType::ApiGateway,
             "APPLICATION_LOAD_BALANCER" => ResourceType::ApplicationLoadBalancer,
             "APPSYNC" => ResourceType::Appsync,
@@ -86,6 +90,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::Amplify => "AMPLIFY",
             ResourceType::ApiGateway => "API_GATEWAY",
             ResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
             ResourceType::Appsync => "APPSYNC",
@@ -98,6 +103,7 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AMPLIFY",
             "API_GATEWAY",
             "APPLICATION_LOAD_BALANCER",
             "APPSYNC",
@@ -127,6 +133,7 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::Amplify => write!(f, "AMPLIFY"),
             ResourceType::ApiGateway => write!(f, "API_GATEWAY"),
             ResourceType::ApplicationLoadBalancer => write!(f, "APPLICATION_LOAD_BALANCER"),
             ResourceType::Appsync => write!(f, "APPSYNC"),

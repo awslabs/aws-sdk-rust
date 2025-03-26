@@ -26,6 +26,15 @@ where
                                 crate::protocol_serde::shape_list_of_logging_strategies::de_list_of_logging_strategies(tokens)?,
                             );
                         }
+                        "AdsInteractionLog" => {
+                            builder =
+                                builder.set_ads_interaction_log(crate::protocol_serde::shape_ads_interaction_log::de_ads_interaction_log(tokens)?);
+                        }
+                        "ManifestServiceInteractionLog" => {
+                            builder = builder.set_manifest_service_interaction_log(
+                                crate::protocol_serde::shape_manifest_service_interaction_log::de_manifest_service_interaction_log(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

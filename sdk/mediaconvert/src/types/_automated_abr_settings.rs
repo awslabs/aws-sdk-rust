@@ -6,6 +6,8 @@
 pub struct AutomatedAbrSettings {
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub max_abr_bitrate: ::std::option::Option<i32>,
+    /// Optional. Specify the QVBR quality level to use for all renditions in your automated ABR stack. To have MediaConvert automatically determine the quality level: Leave blank. To manually specify a quality level: Enter an integer from 1 to 10. MediaConvert will use a quality level up to the value that you specify, depending on your source. For more information about QVBR quality levels, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
+    pub max_quality_level: ::std::option::Option<f64>,
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
     pub max_renditions: ::std::option::Option<i32>,
     /// Specify the minimum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 600,000 (600 kb/s) by default. The average bitrate of your lowest-quality rendition will be near this value. Note that the instantaneous minimum bitrate may vary below the value that you specify.
@@ -17,6 +19,10 @@ impl AutomatedAbrSettings {
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub fn max_abr_bitrate(&self) -> ::std::option::Option<i32> {
         self.max_abr_bitrate
+    }
+    /// Optional. Specify the QVBR quality level to use for all renditions in your automated ABR stack. To have MediaConvert automatically determine the quality level: Leave blank. To manually specify a quality level: Enter an integer from 1 to 10. MediaConvert will use a quality level up to the value that you specify, depending on your source. For more information about QVBR quality levels, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
+    pub fn max_quality_level(&self) -> ::std::option::Option<f64> {
+        self.max_quality_level
     }
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
     pub fn max_renditions(&self) -> ::std::option::Option<i32> {
@@ -45,6 +51,7 @@ impl AutomatedAbrSettings {
 #[non_exhaustive]
 pub struct AutomatedAbrSettingsBuilder {
     pub(crate) max_abr_bitrate: ::std::option::Option<i32>,
+    pub(crate) max_quality_level: ::std::option::Option<f64>,
     pub(crate) max_renditions: ::std::option::Option<i32>,
     pub(crate) min_abr_bitrate: ::std::option::Option<i32>,
     pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::AutomatedAbrRule>>,
@@ -63,6 +70,20 @@ impl AutomatedAbrSettingsBuilder {
     /// Specify the maximum average bitrate for MediaConvert to use in your automated ABR stack. If you don't specify a value, MediaConvert uses 8,000,000 (8 mb/s) by default. The average bitrate of your highest-quality rendition will be equal to or below this value, depending on the quality, complexity, and resolution of your content. Note that the instantaneous maximum bitrate may vary above the value that you specify.
     pub fn get_max_abr_bitrate(&self) -> &::std::option::Option<i32> {
         &self.max_abr_bitrate
+    }
+    /// Optional. Specify the QVBR quality level to use for all renditions in your automated ABR stack. To have MediaConvert automatically determine the quality level: Leave blank. To manually specify a quality level: Enter an integer from 1 to 10. MediaConvert will use a quality level up to the value that you specify, depending on your source. For more information about QVBR quality levels, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
+    pub fn max_quality_level(mut self, input: f64) -> Self {
+        self.max_quality_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// Optional. Specify the QVBR quality level to use for all renditions in your automated ABR stack. To have MediaConvert automatically determine the quality level: Leave blank. To manually specify a quality level: Enter an integer from 1 to 10. MediaConvert will use a quality level up to the value that you specify, depending on your source. For more information about QVBR quality levels, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
+    pub fn set_max_quality_level(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.max_quality_level = input;
+        self
+    }
+    /// Optional. Specify the QVBR quality level to use for all renditions in your automated ABR stack. To have MediaConvert automatically determine the quality level: Leave blank. To manually specify a quality level: Enter an integer from 1 to 10. MediaConvert will use a quality level up to the value that you specify, depending on your source. For more information about QVBR quality levels, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/qvbr-guidelines.html
+    pub fn get_max_quality_level(&self) -> &::std::option::Option<f64> {
+        &self.max_quality_level
     }
     /// Optional. The maximum number of renditions that MediaConvert will create in your automated ABR stack. The number of renditions is determined automatically, based on analysis of each job, but will never exceed this limit. When you set this to Auto in the console, which is equivalent to excluding it from your JSON job specification, MediaConvert defaults to a limit of 15.
     pub fn max_renditions(mut self, input: i32) -> Self {
@@ -116,6 +137,7 @@ impl AutomatedAbrSettingsBuilder {
     pub fn build(self) -> crate::types::AutomatedAbrSettings {
         crate::types::AutomatedAbrSettings {
             max_abr_bitrate: self.max_abr_bitrate,
+            max_quality_level: self.max_quality_level,
             max_renditions: self.max_renditions,
             min_abr_bitrate: self.min_abr_bitrate,
             rules: self.rules,

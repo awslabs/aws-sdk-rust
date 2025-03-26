@@ -42,6 +42,8 @@ pub struct FieldToMatch {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
     pub body: ::std::option::Option<crate::types::Body>,
@@ -54,6 +56,8 @@ pub struct FieldToMatch {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
     pub json_body: ::std::option::Option<crate::types::JsonBody>,
@@ -112,6 +116,8 @@ impl FieldToMatch {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
     pub fn body(&self) -> ::std::option::Option<&crate::types::Body> {
@@ -128,6 +134,8 @@ impl FieldToMatch {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
     pub fn json_body(&self) -> ::std::option::Option<&crate::types::JsonBody> {
@@ -282,6 +290,8 @@ impl FieldToMatchBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
     pub fn body(mut self, input: crate::types::Body) -> Self {
@@ -295,6 +305,8 @@ impl FieldToMatchBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
     pub fn set_body(mut self, input: ::std::option::Option<crate::types::Body>) -> Self {
@@ -308,6 +320,8 @@ impl FieldToMatchBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.</p>
     pub fn get_body(&self) -> &::std::option::Option<crate::types::Body> {
@@ -334,6 +348,8 @@ impl FieldToMatchBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
     pub fn json_body(mut self, input: crate::types::JsonBody) -> Self {
@@ -347,6 +363,8 @@ impl FieldToMatchBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
     pub fn set_json_body(mut self, input: ::std::option::Option<crate::types::JsonBody>) -> Self {
@@ -360,6 +378,8 @@ impl FieldToMatchBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.</p>
     pub fn get_json_body(&self) -> &::std::option::Option<crate::types::JsonBody> {

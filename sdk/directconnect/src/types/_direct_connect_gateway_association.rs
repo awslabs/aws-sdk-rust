@@ -30,7 +30,7 @@ pub struct DirectConnectGatewayAssociation {
     pub association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC prefixes to advertise to the Direct Connect gateway.</p>
     pub allowed_prefixes_to_direct_connect_gateway: ::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>>,
-    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect gateway attachment.</p>
     pub associated_core_network: ::std::option::Option<crate::types::AssociatedCoreNetwork>,
     /// <p>The ID of the virtual private gateway. Applies only to private virtual interfaces.</p>
     pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl DirectConnectGatewayAssociation {
     pub fn allowed_prefixes_to_direct_connect_gateway(&self) -> &[crate::types::RouteFilterPrefix] {
         self.allowed_prefixes_to_direct_connect_gateway.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect gateway attachment.</p>
     pub fn associated_core_network(&self) -> ::std::option::Option<&crate::types::AssociatedCoreNetwork> {
         self.associated_core_network.as_ref()
     }
@@ -266,17 +266,17 @@ impl DirectConnectGatewayAssociationBuilder {
     pub fn get_allowed_prefixes_to_direct_connect_gateway(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RouteFilterPrefix>> {
         &self.allowed_prefixes_to_direct_connect_gateway
     }
-    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect gateway attachment.</p>
     pub fn associated_core_network(mut self, input: crate::types::AssociatedCoreNetwork) -> Self {
         self.associated_core_network = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect gateway attachment.</p>
     pub fn set_associated_core_network(mut self, input: ::std::option::Option<crate::types::AssociatedCoreNetwork>) -> Self {
         self.associated_core_network = input;
         self
     }
-    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect attachment.</p>
+    /// <p>The ID of the Cloud WAN core network associated with the Direct Connect gateway attachment.</p>
     pub fn get_associated_core_network(&self) -> &::std::option::Option<crate::types::AssociatedCoreNetwork> {
         &self.associated_core_network
     }

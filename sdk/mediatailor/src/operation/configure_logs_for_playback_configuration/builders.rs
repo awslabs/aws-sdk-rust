@@ -164,4 +164,32 @@ impl ConfigureLogsForPlaybackConfigurationFluentBuilder {
     pub fn get_enabled_logging_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>> {
         self.inner.get_enabled_logging_strategies()
     }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn ads_interaction_log(mut self, input: crate::types::AdsInteractionLog) -> Self {
+        self.inner = self.inner.ads_interaction_log(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn set_ads_interaction_log(mut self, input: ::std::option::Option<crate::types::AdsInteractionLog>) -> Self {
+        self.inner = self.inner.set_ads_interaction_log(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn get_ads_interaction_log(&self) -> &::std::option::Option<crate::types::AdsInteractionLog> {
+        self.inner.get_ads_interaction_log()
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn manifest_service_interaction_log(mut self, input: crate::types::ManifestServiceInteractionLog) -> Self {
+        self.inner = self.inner.manifest_service_interaction_log(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn set_manifest_service_interaction_log(mut self, input: ::std::option::Option<crate::types::ManifestServiceInteractionLog>) -> Self {
+        self.inner = self.inner.set_manifest_service_interaction_log(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn get_manifest_service_interaction_log(&self) -> &::std::option::Option<crate::types::ManifestServiceInteractionLog> {
+        self.inner.get_manifest_service_interaction_log()
+    }
 }

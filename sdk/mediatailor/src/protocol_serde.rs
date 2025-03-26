@@ -163,6 +163,8 @@ pub(crate) mod shape_ad_break_opportunities;
 
 pub(crate) mod shape_ad_conditioning_configuration;
 
+pub(crate) mod shape_ads_interaction_log;
+
 pub(crate) mod shape_audience_media;
 
 pub(crate) mod shape_audiences;
@@ -225,6 +227,8 @@ pub(crate) mod shape_log_types;
 
 pub(crate) mod shape_manifest_processing_rules;
 
+pub(crate) mod shape_manifest_service_interaction_log;
+
 pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_prefetch_consumption;
@@ -249,6 +253,10 @@ pub(crate) mod shape_ad_break_opportunity;
 
 pub(crate) mod shape_ad_marker_passthrough;
 
+pub(crate) mod shape_ads_interaction_exclude_event_types_list;
+
+pub(crate) mod shape_ads_interaction_publish_opt_in_event_types_list;
+
 pub(crate) mod shape_alert;
 
 pub(crate) mod shape_alternate_media;
@@ -266,6 +274,8 @@ pub(crate) mod shape_key_value_pair;
 pub(crate) mod shape_list_of_avail_matching_criteria;
 
 pub(crate) mod shape_live_source;
+
+pub(crate) mod shape_manifest_service_exclude_event_types_list;
 
 pub(crate) mod shape_playback_configuration;
 

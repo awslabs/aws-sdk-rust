@@ -9,6 +9,8 @@ pub use crate::types::_zonal_shift_summary::ZonalShiftSummary;
 
 pub use crate::types::_practice_run_outcome::PracticeRunOutcome;
 
+pub use crate::types::_shift_type::ShiftType;
+
 pub use crate::types::_practice_run_configuration::PracticeRunConfiguration;
 
 pub use crate::types::_control_condition::ControlCondition;
@@ -56,6 +58,8 @@ mod _managed_resource_summary;
 mod _practice_run_configuration;
 
 mod _practice_run_outcome;
+
+mod _shift_type;
 
 mod _validation_exception_reason;
 

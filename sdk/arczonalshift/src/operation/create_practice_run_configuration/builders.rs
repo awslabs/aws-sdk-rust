@@ -23,7 +23,7 @@ impl crate::operation::create_practice_run_configuration::builders::CreatePracti
 /// Fluent builder constructing a request to `CreatePracticeRunConfiguration`.
 ///
 /// <p>A practice run configuration for zonal autoshift is required when you enable zonal autoshift. A practice run configuration includes specifications for blocked dates and blocked time windows, and for Amazon CloudWatch alarms that you create to use with practice runs. The alarms that you specify are an <i>outcome alarm</i>, to monitor application health during practice runs and, optionally, a <i>blocking alarm</i>, to block practice runs from starting.</p>
-/// <p>When a resource has a practice run configuration, Route 53 ARC starts zonal shifts for the resource weekly, to shift traffic for practice runs. Practice runs help you to ensure that shifting away traffic from an Availability Zone during an autoshift is safe for your application.</p>
+/// <p>When a resource has a practice run configuration, ARC starts zonal shifts for the resource weekly, to shift traffic for practice runs. Practice runs help you to ensure that shifting away traffic from an Availability Zone during an autoshift is safe for your application.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-autoshift.considerations.html"> Considerations when you configure zonal autoshift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePracticeRunConfigurationFluentBuilder {
@@ -132,21 +132,21 @@ impl CreatePracticeRunConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_blocked_windows`](Self::set_blocked_windows).
     ///
-    /// <p>Optionally, you can block Route 53 ARC from starting practice runs for specific windows of days and times.</p>
+    /// <p>Optionally, you can block ARC from starting practice runs for specific windows of days and times.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn blocked_windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blocked_windows(input.into());
         self
     }
-    /// <p>Optionally, you can block Route 53 ARC from starting practice runs for specific windows of days and times.</p>
+    /// <p>Optionally, you can block ARC from starting practice runs for specific windows of days and times.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn set_blocked_windows(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_blocked_windows(input);
         self
     }
-    /// <p>Optionally, you can block Route 53 ARC from starting practice runs for specific windows of days and times.</p>
+    /// <p>Optionally, you can block ARC from starting practice runs for specific windows of days and times.</p>
     /// <p>The format for blocked windows is: DAY:HH:SS-DAY:HH:SS. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Also, be aware of potential time adjustments that might be required for daylight saving time differences. Separate multiple blocked windows with spaces.</p>
     /// <p>For example, say you run business report summaries three days a week. For this scenario, you might set the following recurring days and times as blocked windows, for example: <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.</p>
     pub fn get_blocked_windows(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -157,21 +157,21 @@ impl CreatePracticeRunConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_blocked_dates`](Self::set_blocked_dates).
     ///
-    /// <p>Optionally, you can block Route 53 ARC from starting practice runs for a resource on specific calendar dates.</p>
+    /// <p>Optionally, you can block ARC from starting practice runs for a resource on specific calendar dates.</p>
     /// <p>The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
     pub fn blocked_dates(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.blocked_dates(input.into());
         self
     }
-    /// <p>Optionally, you can block Route 53 ARC from starting practice runs for a resource on specific calendar dates.</p>
+    /// <p>Optionally, you can block ARC from starting practice runs for a resource on specific calendar dates.</p>
     /// <p>The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
     pub fn set_blocked_dates(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_blocked_dates(input);
         self
     }
-    /// <p>Optionally, you can block Route 53 ARC from starting practice runs for a resource on specific calendar dates.</p>
+    /// <p>Optionally, you can block ARC from starting practice runs for a resource on specific calendar dates.</p>
     /// <p>The format for blocked dates is: YYYY-MM-DD. Keep in mind, when you specify dates, that dates and times for practice runs are in UTC. Separate multiple blocked dates with spaces.</p>
     /// <p>For example, if you have an application update scheduled to launch on May 1, 2024, and you don't want practice runs to shift traffic away at that time, you could set a blocked date for <code>2024-05-01</code>.</p>
     pub fn get_blocked_dates(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -182,17 +182,17 @@ impl CreatePracticeRunConfigurationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_blocking_alarms`](Self::set_blocking_alarms).
     ///
-    /// <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs. This alarm blocks Route 53 ARC from starting practice run zonal shifts, and ends a practice run that's in progress, when the alarm is in an <code>ALARM</code> state.</p>
+    /// <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs. This alarm blocks ARC from starting practice run zonal shifts, and ends a practice run that's in progress, when the alarm is in an <code>ALARM</code> state.</p>
     pub fn blocking_alarms(mut self, input: crate::types::ControlCondition) -> Self {
         self.inner = self.inner.blocking_alarms(input);
         self
     }
-    /// <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs. This alarm blocks Route 53 ARC from starting practice run zonal shifts, and ends a practice run that's in progress, when the alarm is in an <code>ALARM</code> state.</p>
+    /// <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs. This alarm blocks ARC from starting practice run zonal shifts, and ends a practice run that's in progress, when the alarm is in an <code>ALARM</code> state.</p>
     pub fn set_blocking_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>) -> Self {
         self.inner = self.inner.set_blocking_alarms(input);
         self
     }
-    /// <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs. This alarm blocks Route 53 ARC from starting practice run zonal shifts, and ends a practice run that's in progress, when the alarm is in an <code>ALARM</code> state.</p>
+    /// <p>An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs. This alarm blocks ARC from starting practice run zonal shifts, and ends a practice run that's in progress, when the alarm is in an <code>ALARM</code> state.</p>
     pub fn get_blocking_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
         self.inner.get_blocking_alarms()
     }
@@ -202,19 +202,19 @@ impl CreatePracticeRunConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_outcome_alarms`](Self::set_outcome_alarms).
     ///
     /// <p>The <i>outcome alarm</i> for practice runs is a required Amazon CloudWatch alarm that you specify that ends a practice run when the alarm is in an <code>ALARM</code> state.</p>
-    /// <p>Configure the alarm to monitor the health of your application when traffic is shifted away from an Availability Zone during each weekly practice run. You should configure the alarm to go into an <code>ALARM</code> state if your application is impacted by the zonal shift, and you want to stop the zonal shift, to let traffic for the resource return to the Availability Zone.</p>
+    /// <p>Configure the alarm to monitor the health of your application when traffic is shifted away from an Availability Zone during each practice run. You should configure the alarm to go into an <code>ALARM</code> state if your application is impacted by the zonal shift, and you want to stop the zonal shift, to let traffic for the resource return to the Availability Zone.</p>
     pub fn outcome_alarms(mut self, input: crate::types::ControlCondition) -> Self {
         self.inner = self.inner.outcome_alarms(input);
         self
     }
     /// <p>The <i>outcome alarm</i> for practice runs is a required Amazon CloudWatch alarm that you specify that ends a practice run when the alarm is in an <code>ALARM</code> state.</p>
-    /// <p>Configure the alarm to monitor the health of your application when traffic is shifted away from an Availability Zone during each weekly practice run. You should configure the alarm to go into an <code>ALARM</code> state if your application is impacted by the zonal shift, and you want to stop the zonal shift, to let traffic for the resource return to the Availability Zone.</p>
+    /// <p>Configure the alarm to monitor the health of your application when traffic is shifted away from an Availability Zone during each practice run. You should configure the alarm to go into an <code>ALARM</code> state if your application is impacted by the zonal shift, and you want to stop the zonal shift, to let traffic for the resource return to the Availability Zone.</p>
     pub fn set_outcome_alarms(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>>) -> Self {
         self.inner = self.inner.set_outcome_alarms(input);
         self
     }
     /// <p>The <i>outcome alarm</i> for practice runs is a required Amazon CloudWatch alarm that you specify that ends a practice run when the alarm is in an <code>ALARM</code> state.</p>
-    /// <p>Configure the alarm to monitor the health of your application when traffic is shifted away from an Availability Zone during each weekly practice run. You should configure the alarm to go into an <code>ALARM</code> state if your application is impacted by the zonal shift, and you want to stop the zonal shift, to let traffic for the resource return to the Availability Zone.</p>
+    /// <p>Configure the alarm to monitor the health of your application when traffic is shifted away from an Availability Zone during each practice run. You should configure the alarm to go into an <code>ALARM</code> state if your application is impacted by the zonal shift, and you want to stop the zonal shift, to let traffic for the resource return to the Availability Zone.</p>
     pub fn get_outcome_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlCondition>> {
         self.inner.get_outcome_alarms()
     }

@@ -22,7 +22,7 @@ impl crate::operation::probe::builders::ProbeInputBuilder {
 }
 /// Fluent builder constructing a request to `Probe`.
 ///
-/// The Probe operation analyzes the provided media file and returns comprehensive metadata about its container format, tracks, and any encountered errors.
+/// Use Probe to obtain detailed information about your input media files. Probe returns a JSON that includes container, codec, frame rate, resolution, track count, audio layout, captions, and more. You can use this information to learn more about your media files, or to help make decisions while automating your transcoding workflow.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProbeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -100,17 +100,17 @@ impl ProbeFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_input_files`](Self::set_input_files).
     ///
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub fn input_files(mut self, input: crate::types::ProbeInputFile) -> Self {
         self.inner = self.inner.input_files(input);
         self
     }
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub fn set_input_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProbeInputFile>>) -> Self {
         self.inner = self.inner.set_input_files(input);
         self
     }
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub fn get_input_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProbeInputFile>> {
         self.inner.get_input_files()
     }

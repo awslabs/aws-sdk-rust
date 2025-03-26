@@ -12,6 +12,8 @@ pub struct Body {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -34,6 +36,8 @@ impl Body {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -71,6 +75,8 @@ impl BodyBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -94,6 +100,8 @@ impl BodyBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -117,6 +125,8 @@ impl BodyBuilder {
     /// <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).</p></li>
     /// <li>
     /// <p>For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for additional processing fees.</p></li>
+    /// <li>
+    /// <p>For Amplify, use the CloudFront limit.</p></li>
     /// </ul>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>

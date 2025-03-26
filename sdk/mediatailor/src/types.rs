@@ -41,6 +41,16 @@ pub use crate::types::_ad_marker_passthrough::AdMarkerPassthrough;
 
 pub use crate::types::_log_configuration::LogConfiguration;
 
+pub use crate::types::_manifest_service_interaction_log::ManifestServiceInteractionLog;
+
+pub use crate::types::_manifest_service_exclude_event_type::ManifestServiceExcludeEventType;
+
+pub use crate::types::_ads_interaction_log::AdsInteractionLog;
+
+pub use crate::types::_ads_interaction_exclude_event_type::AdsInteractionExcludeEventType;
+
+pub use crate::types::_ads_interaction_publish_opt_in_event_type::AdsInteractionPublishOptInEventType;
+
 pub use crate::types::_logging_strategy::LoggingStrategy;
 
 pub use crate::types::_live_pre_roll_configuration::LivePreRollConfiguration;
@@ -147,6 +157,12 @@ mod _ad_marker_passthrough;
 
 mod _ad_markup_type;
 
+mod _ads_interaction_exclude_event_type;
+
+mod _ads_interaction_log;
+
+mod _ads_interaction_publish_opt_in_event_type;
+
 mod _alert;
 
 mod _alert_category;
@@ -204,6 +220,10 @@ mod _log_type;
 mod _logging_strategy;
 
 mod _manifest_processing_rules;
+
+mod _manifest_service_exclude_event_type;
+
+mod _manifest_service_interaction_log;
 
 mod _message_type;
 

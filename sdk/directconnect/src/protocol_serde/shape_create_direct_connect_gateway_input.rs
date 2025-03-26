@@ -6,10 +6,22 @@ pub fn ser_create_direct_connect_gateway_input_input(
     if let Some(var_1) = &input.direct_connect_gateway_name {
         object.key("directConnectGatewayName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.amazon_side_asn {
+    if let Some(var_2) = &input.tags {
+        let mut array_3 = object.key("tags").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
+    if let Some(var_6) = &input.amazon_side_asn {
         object.key("amazonSideAsn").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

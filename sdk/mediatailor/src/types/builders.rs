@@ -33,6 +33,10 @@ pub use crate::types::_ad_marker_passthrough::AdMarkerPassthroughBuilder;
 
 pub use crate::types::_log_configuration::LogConfigurationBuilder;
 
+pub use crate::types::_manifest_service_interaction_log::ManifestServiceInteractionLogBuilder;
+
+pub use crate::types::_ads_interaction_log::AdsInteractionLogBuilder;
+
 pub use crate::types::_live_pre_roll_configuration::LivePreRollConfigurationBuilder;
 
 pub use crate::types::_hls_configuration::HlsConfigurationBuilder;

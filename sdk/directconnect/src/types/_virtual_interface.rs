@@ -44,6 +44,8 @@ pub struct VirtualInterface {
     /// <li>
     /// <p><code>down</code>: A virtual interface that is BGP down.</p></li>
     /// <li>
+    /// <p><code>testing</code>: A virtual interface is in this state immediately after calling <code>StartBgpFailoverTest</code> and remains in this state during the duration of the test.</p></li>
+    /// <li>
     /// <p><code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p></li>
     /// <li>
     /// <p><code>deleted</code>: A virtual interface that cannot forward traffic.</p></li>
@@ -144,6 +146,8 @@ impl VirtualInterface {
     /// <p><code>available</code>: A virtual interface that is able to forward traffic.</p></li>
     /// <li>
     /// <p><code>down</code>: A virtual interface that is BGP down.</p></li>
+    /// <li>
+    /// <p><code>testing</code>: A virtual interface is in this state immediately after calling <code>StartBgpFailoverTest</code> and remains in this state during the duration of the test.</p></li>
     /// <li>
     /// <p><code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p></li>
     /// <li>
@@ -448,6 +452,8 @@ impl VirtualInterfaceBuilder {
     /// <li>
     /// <p><code>down</code>: A virtual interface that is BGP down.</p></li>
     /// <li>
+    /// <p><code>testing</code>: A virtual interface is in this state immediately after calling <code>StartBgpFailoverTest</code> and remains in this state during the duration of the test.</p></li>
+    /// <li>
     /// <p><code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p></li>
     /// <li>
     /// <p><code>deleted</code>: A virtual interface that cannot forward traffic.</p></li>
@@ -473,6 +479,8 @@ impl VirtualInterfaceBuilder {
     /// <li>
     /// <p><code>down</code>: A virtual interface that is BGP down.</p></li>
     /// <li>
+    /// <p><code>testing</code>: A virtual interface is in this state immediately after calling <code>StartBgpFailoverTest</code> and remains in this state during the duration of the test.</p></li>
+    /// <li>
     /// <p><code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p></li>
     /// <li>
     /// <p><code>deleted</code>: A virtual interface that cannot forward traffic.</p></li>
@@ -497,6 +505,8 @@ impl VirtualInterfaceBuilder {
     /// <p><code>available</code>: A virtual interface that is able to forward traffic.</p></li>
     /// <li>
     /// <p><code>down</code>: A virtual interface that is BGP down.</p></li>
+    /// <li>
+    /// <p><code>testing</code>: A virtual interface is in this state immediately after calling <code>StartBgpFailoverTest</code> and remains in this state during the duration of the test.</p></li>
     /// <li>
     /// <p><code>deleting</code>: A virtual interface is in this state immediately after calling <code>DeleteVirtualInterface</code> until it can no longer forward traffic.</p></li>
     /// <li>

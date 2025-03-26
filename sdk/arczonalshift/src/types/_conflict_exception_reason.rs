@@ -16,6 +16,7 @@
 ///     ConflictExceptionReason::PracticeConfigurationAlreadyExists => { /* ... */ },
 ///     ConflictExceptionReason::PracticeConfigurationDoesNotExist => { /* ... */ },
 ///     ConflictExceptionReason::SimultaneousZonalShiftsConflict => { /* ... */ },
+///     ConflictExceptionReason::ZonalAutoshiftActive => { /* ... */ },
 ///     ConflictExceptionReason::ZonalShiftAlreadyExists => { /* ... */ },
 ///     ConflictExceptionReason::ZonalShiftStatusNotActive => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +56,8 @@ pub enum ConflictExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     SimultaneousZonalShiftsConflict,
     #[allow(missing_docs)] // documentation missing in model
+    ZonalAutoshiftActive,
+    #[allow(missing_docs)] // documentation missing in model
     ZonalShiftAlreadyExists,
     #[allow(missing_docs)] // documentation missing in model
     ZonalShiftStatusNotActive,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for ConflictExceptionReason {
             "PracticeConfigurationAlreadyExists" => ConflictExceptionReason::PracticeConfigurationAlreadyExists,
             "PracticeConfigurationDoesNotExist" => ConflictExceptionReason::PracticeConfigurationDoesNotExist,
             "SimultaneousZonalShiftsConflict" => ConflictExceptionReason::SimultaneousZonalShiftsConflict,
+            "ZonalAutoshiftActive" => ConflictExceptionReason::ZonalAutoshiftActive,
             "ZonalShiftAlreadyExists" => ConflictExceptionReason::ZonalShiftAlreadyExists,
             "ZonalShiftStatusNotActive" => ConflictExceptionReason::ZonalShiftStatusNotActive,
             other => ConflictExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +94,7 @@ impl ConflictExceptionReason {
             ConflictExceptionReason::PracticeConfigurationAlreadyExists => "PracticeConfigurationAlreadyExists",
             ConflictExceptionReason::PracticeConfigurationDoesNotExist => "PracticeConfigurationDoesNotExist",
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => "SimultaneousZonalShiftsConflict",
+            ConflictExceptionReason::ZonalAutoshiftActive => "ZonalAutoshiftActive",
             ConflictExceptionReason::ZonalShiftAlreadyExists => "ZonalShiftAlreadyExists",
             ConflictExceptionReason::ZonalShiftStatusNotActive => "ZonalShiftStatusNotActive",
             ConflictExceptionReason::Unknown(value) => value.as_str(),
@@ -102,6 +107,7 @@ impl ConflictExceptionReason {
             "PracticeConfigurationAlreadyExists",
             "PracticeConfigurationDoesNotExist",
             "SimultaneousZonalShiftsConflict",
+            "ZonalAutoshiftActive",
             "ZonalShiftAlreadyExists",
             "ZonalShiftStatusNotActive",
         ]
@@ -131,6 +137,7 @@ impl ::std::fmt::Display for ConflictExceptionReason {
             ConflictExceptionReason::PracticeConfigurationAlreadyExists => write!(f, "PracticeConfigurationAlreadyExists"),
             ConflictExceptionReason::PracticeConfigurationDoesNotExist => write!(f, "PracticeConfigurationDoesNotExist"),
             ConflictExceptionReason::SimultaneousZonalShiftsConflict => write!(f, "SimultaneousZonalShiftsConflict"),
+            ConflictExceptionReason::ZonalAutoshiftActive => write!(f, "ZonalAutoshiftActive"),
             ConflictExceptionReason::ZonalShiftAlreadyExists => write!(f, "ZonalShiftAlreadyExists"),
             ConflictExceptionReason::ZonalShiftStatusNotActive => write!(f, "ZonalShiftStatusNotActive"),
             ConflictExceptionReason::Unknown(value) => write!(f, "{}", value),

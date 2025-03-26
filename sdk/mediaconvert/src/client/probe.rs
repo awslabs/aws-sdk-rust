@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`Probe`](crate::operation::probe::builders::ProbeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_files(ProbeInputFile)`](crate::operation::probe::builders::ProbeFluentBuilder::input_files) / [`set_input_files(Option<Vec::<ProbeInputFile>>)`](crate::operation::probe::builders::ProbeFluentBuilder::set_input_files):<br>required: **false**<br>The list of input media files to be probed.<br>
+    ///   - [`input_files(ProbeInputFile)`](crate::operation::probe::builders::ProbeFluentBuilder::input_files) / [`set_input_files(Option<Vec::<ProbeInputFile>>)`](crate::operation::probe::builders::ProbeFluentBuilder::set_input_files):<br>required: **false**<br>Specify a media file to probe.<br>
     /// - On success, responds with [`ProbeOutput`](crate::operation::probe::ProbeOutput) with field(s):
-    ///   - [`probe_results(Option<Vec::<ProbeResult>>)`](crate::operation::probe::ProbeOutput::probe_results): List of probe results for the input media file(s).
+    ///   - [`probe_results(Option<Vec::<ProbeResult>>)`](crate::operation::probe::ProbeOutput::probe_results): Probe results for your media file.
     /// - On failure, responds with [`SdkError<ProbeError>`](crate::operation::probe::ProbeError)
     pub fn probe(&self) -> crate::operation::probe::builders::ProbeFluentBuilder {
         crate::operation::probe::builders::ProbeFluentBuilder::new(self.handle.clone())

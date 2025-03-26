@@ -26,6 +26,8 @@ pub struct DirectConnectGateway {
     pub direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
     pub state_change_error: ::std::option::Option<::std::string::String>,
+    /// <p>Information about a tag.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DirectConnectGateway {
     /// <p>The ID of the Direct Connect gateway.</p>
@@ -62,6 +64,12 @@ impl DirectConnectGateway {
     pub fn state_change_error(&self) -> ::std::option::Option<&str> {
         self.state_change_error.as_deref()
     }
+    /// <p>Information about a tag.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl DirectConnectGateway {
     /// Creates a new builder-style object to manufacture [`DirectConnectGateway`](crate::types::DirectConnectGateway).
@@ -80,6 +88,7 @@ pub struct DirectConnectGatewayBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     pub(crate) state_change_error: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DirectConnectGatewayBuilder {
     /// <p>The ID of the Direct Connect gateway.</p>
@@ -196,6 +205,26 @@ impl DirectConnectGatewayBuilder {
     pub fn get_state_change_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_change_error
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Information about a tag.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about a tag.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Information about a tag.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`DirectConnectGateway`](crate::types::DirectConnectGateway).
     pub fn build(self) -> crate::types::DirectConnectGateway {
         crate::types::DirectConnectGateway {
@@ -205,6 +234,7 @@ impl DirectConnectGatewayBuilder {
             owner_account: self.owner_account,
             direct_connect_gateway_state: self.direct_connect_gateway_state,
             state_change_error: self.state_change_error,
+            tags: self.tags,
         }
     }
 }

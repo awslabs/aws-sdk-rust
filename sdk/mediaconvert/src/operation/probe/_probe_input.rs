@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProbeInput {
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub input_files: ::std::option::Option<::std::vec::Vec<crate::types::ProbeInputFile>>,
 }
 impl ProbeInput {
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.input_files.is_none()`.
     pub fn input_files(&self) -> &[crate::types::ProbeInputFile] {
@@ -32,19 +32,19 @@ impl ProbeInputBuilder {
     ///
     /// To override the contents of this collection use [`set_input_files`](Self::set_input_files).
     ///
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub fn input_files(mut self, input: crate::types::ProbeInputFile) -> Self {
         let mut v = self.input_files.unwrap_or_default();
         v.push(input);
         self.input_files = ::std::option::Option::Some(v);
         self
     }
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub fn set_input_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProbeInputFile>>) -> Self {
         self.input_files = input;
         self
     }
-    /// The list of input media files to be probed.
+    /// Specify a media file to probe.
     pub fn get_input_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProbeInputFile>> {
         &self.input_files
     }

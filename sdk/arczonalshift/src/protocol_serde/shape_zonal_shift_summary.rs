@@ -61,6 +61,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "shiftType" => {
+                            builder = builder.set_shift_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ShiftType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "practiceRunOutcome" => {
                             builder = builder.set_practice_run_outcome(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

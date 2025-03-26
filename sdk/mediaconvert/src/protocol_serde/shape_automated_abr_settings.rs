@@ -9,29 +9,35 @@ pub fn ser_automated_abr_settings(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.max_renditions {
-        object.key("maxRenditions").number(
+    if let Some(var_2) = &input.max_quality_level {
+        object.key("maxQualityLevel").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::Float((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.min_abr_bitrate {
-        object.key("minAbrBitrate").number(
+    if let Some(var_3) = &input.max_renditions {
+        object.key("maxRenditions").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_4) = &input.rules {
-        let mut array_5 = object.key("rules").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.min_abr_bitrate {
+        object.key("minAbrBitrate").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.rules {
+        let mut array_6 = object.key("rules").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_automated_abr_rule::ser_automated_abr_rule(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_automated_abr_rule::ser_automated_abr_rule(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }
@@ -56,6 +62,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "maxQualityLevel" => {
+                            builder = builder.set_max_quality_level(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }
                         "maxRenditions" => {

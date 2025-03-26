@@ -12,6 +12,7 @@
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
+///     ValidationExceptionReason::FisExperimentUpdateNotAllowed => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAlarmCondition => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAz => { /* ... */ },
 ///     ValidationExceptionReason::InvalidConditionType => { /* ... */ },
@@ -51,6 +52,8 @@
 )]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
+    FisExperimentUpdateNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidAlarmCondition,
     #[allow(missing_docs)] // documentation missing in model
     InvalidAz,
@@ -77,6 +80,7 @@ pub enum ValidationExceptionReason {
 impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
+            "FISExperimentUpdateNotAllowed" => ValidationExceptionReason::FisExperimentUpdateNotAllowed,
             "InvalidAlarmCondition" => ValidationExceptionReason::InvalidAlarmCondition,
             "InvalidAz" => ValidationExceptionReason::InvalidAz,
             "InvalidConditionType" => ValidationExceptionReason::InvalidConditionType,
@@ -102,6 +106,7 @@ impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ValidationExceptionReason::FisExperimentUpdateNotAllowed => "FISExperimentUpdateNotAllowed",
             ValidationExceptionReason::InvalidAlarmCondition => "InvalidAlarmCondition",
             ValidationExceptionReason::InvalidAz => "InvalidAz",
             ValidationExceptionReason::InvalidConditionType => "InvalidConditionType",
@@ -118,6 +123,7 @@ impl ValidationExceptionReason {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "FISExperimentUpdateNotAllowed",
             "InvalidAlarmCondition",
             "InvalidAz",
             "InvalidConditionType",
@@ -151,6 +157,7 @@ impl ValidationExceptionReason {
 impl ::std::fmt::Display for ValidationExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ValidationExceptionReason::FisExperimentUpdateNotAllowed => write!(f, "FISExperimentUpdateNotAllowed"),
             ValidationExceptionReason::InvalidAlarmCondition => write!(f, "InvalidAlarmCondition"),
             ValidationExceptionReason::InvalidAz => write!(f, "InvalidAz"),
             ValidationExceptionReason::InvalidConditionType => write!(f, "InvalidConditionType"),

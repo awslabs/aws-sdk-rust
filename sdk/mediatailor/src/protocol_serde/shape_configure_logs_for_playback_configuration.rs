@@ -66,9 +66,17 @@ pub(crate) fn de_configure_logs_for_playback_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AdsInteractionLog" => {
+                    builder = builder.set_ads_interaction_log(crate::protocol_serde::shape_ads_interaction_log::de_ads_interaction_log(tokens)?);
+                }
                 "EnabledLoggingStrategies" => {
                     builder = builder.set_enabled_logging_strategies(
                         crate::protocol_serde::shape_list_of_logging_strategies::de_list_of_logging_strategies(tokens)?,
+                    );
+                }
+                "ManifestServiceInteractionLog" => {
+                    builder = builder.set_manifest_service_interaction_log(
+                        crate::protocol_serde::shape_manifest_service_interaction_log::de_manifest_service_interaction_log(tokens)?,
                     );
                 }
                 "PercentEnabled" => {

@@ -22,9 +22,9 @@ impl crate::operation::start_zonal_shift::builders::StartZonalShiftInputBuilder 
 }
 /// Fluent builder constructing a request to `StartZonalShift`.
 ///
-/// <p>You start a zonal shift to temporarily move load balancer traffic away from an Availability Zone in an Amazon Web Services Region, to help your application recover immediately, for example, from a developer's bad code deployment or from an Amazon Web Services infrastructure failure in a single Availability Zone. You can start a zonal shift in Route 53 ARC only for managed resources in your Amazon Web Services account in an Amazon Web Services Region. Resources are automatically registered with Route 53 ARC by Amazon Web Services services.</p>
+/// <p>You start a zonal shift to temporarily move load balancer traffic away from an Availability Zone in an Amazon Web Services Region, to help your application recover immediately, for example, from a developer's bad code deployment or from an Amazon Web Services infrastructure failure in a single Availability Zone. You can start a zonal shift in ARC only for managed resources in your Amazon Web Services account in an Amazon Web Services Region. Resources are automatically registered with ARC by Amazon Web Services services.</p>
 /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
-/// <p>When you start a zonal shift, traffic for the resource is no longer routed to the Availability Zone. The zonal shift is created immediately in Route 53 ARC. However, it can take a short time, typically up to a few minutes, for existing, in-progress connections in the Availability Zone to complete.</p>
+/// <p>When you start a zonal shift, traffic for the resource is no longer routed to the Availability Zone. The zonal shift is created immediately in ARC. However, it can take a short time, typically up to a few minutes, for existing, in-progress connections in the Availability Zone to complete.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/arc-zonal-shift.html">Zonal shift</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartZonalShiftFluentBuilder {
@@ -142,7 +142,7 @@ impl StartZonalShiftFluentBuilder {
     pub fn get_away_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_away_from()
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
@@ -156,7 +156,7 @@ impl StartZonalShiftFluentBuilder {
         self.inner = self.inner.expires_in(input.into());
         self
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>
@@ -170,7 +170,7 @@ impl StartZonalShiftFluentBuilder {
         self.inner = self.inner.set_expires_in(input);
         self
     }
-    /// <p>The length of time that you want a zonal shift to be active, which Route 53 ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
+    /// <p>The length of time that you want a zonal shift to be active, which ARC converts to an expiry time (expiration time). Zonal shifts are temporary. You can set a zonal shift to be active initially for up to three days (72 hours).</p>
     /// <p>If you want to still keep traffic away from an Availability Zone, you can update the zonal shift and set a new expiration. You can also cancel a zonal shift, before it expires, for example, if you're ready to restore traffic to the Availability Zone.</p>
     /// <p>To set a length of time for a zonal shift to be active, specify a whole number, and then one of the following, with no space:</p>
     /// <ul>

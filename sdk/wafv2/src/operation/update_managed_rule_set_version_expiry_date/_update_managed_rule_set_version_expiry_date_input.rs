@@ -6,7 +6,7 @@ pub struct UpdateManagedRuleSetVersionExpiryDateInput {
     /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
     /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -97,7 +97,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -110,7 +110,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         self.scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -122,7 +122,7 @@ impl UpdateManagedRuleSetVersionExpiryDateInputBuilder {
         self.scope = input;
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>

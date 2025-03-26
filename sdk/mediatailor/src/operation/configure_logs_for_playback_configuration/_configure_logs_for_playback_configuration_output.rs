@@ -9,6 +9,10 @@ pub struct ConfigureLogsForPlaybackConfigurationOutput {
     pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The method used for collecting logs from AWS Elemental MediaTailor. <code>LEGACY_CLOUDWATCH</code> indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <code>VENDED_LOGS</code> indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs to your destination of choice. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.</p>
     pub enabled_logging_strategies: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>,
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub ads_interaction_log: ::std::option::Option<crate::types::AdsInteractionLog>,
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub manifest_service_interaction_log: ::std::option::Option<crate::types::ManifestServiceInteractionLog>,
     _request_id: Option<String>,
 }
 impl ConfigureLogsForPlaybackConfigurationOutput {
@@ -25,6 +29,14 @@ impl ConfigureLogsForPlaybackConfigurationOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_logging_strategies.is_none()`.
     pub fn enabled_logging_strategies(&self) -> &[crate::types::LoggingStrategy] {
         self.enabled_logging_strategies.as_deref().unwrap_or_default()
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn ads_interaction_log(&self) -> ::std::option::Option<&crate::types::AdsInteractionLog> {
+        self.ads_interaction_log.as_ref()
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn manifest_service_interaction_log(&self) -> ::std::option::Option<&crate::types::ManifestServiceInteractionLog> {
+        self.manifest_service_interaction_log.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for ConfigureLogsForPlaybackConfigurationOutput {
@@ -46,6 +58,8 @@ pub struct ConfigureLogsForPlaybackConfigurationOutputBuilder {
     pub(crate) percent_enabled: ::std::option::Option<i32>,
     pub(crate) playback_configuration_name: ::std::option::Option<::std::string::String>,
     pub(crate) enabled_logging_strategies: ::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>>,
+    pub(crate) ads_interaction_log: ::std::option::Option<crate::types::AdsInteractionLog>,
+    pub(crate) manifest_service_interaction_log: ::std::option::Option<crate::types::ManifestServiceInteractionLog>,
     _request_id: Option<String>,
 }
 impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
@@ -98,6 +112,34 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
     pub fn get_enabled_logging_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LoggingStrategy>> {
         &self.enabled_logging_strategies
     }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn ads_interaction_log(mut self, input: crate::types::AdsInteractionLog) -> Self {
+        self.ads_interaction_log = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn set_ads_interaction_log(mut self, input: ::std::option::Option<crate::types::AdsInteractionLog>) -> Self {
+        self.ads_interaction_log = input;
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the ADS.</p>
+    pub fn get_ads_interaction_log(&self) -> &::std::option::Option<crate::types::AdsInteractionLog> {
+        &self.ads_interaction_log
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn manifest_service_interaction_log(mut self, input: crate::types::ManifestServiceInteractionLog) -> Self {
+        self.manifest_service_interaction_log = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn set_manifest_service_interaction_log(mut self, input: ::std::option::Option<crate::types::ManifestServiceInteractionLog>) -> Self {
+        self.manifest_service_interaction_log = input;
+        self
+    }
+    /// <p>The event types that MediaTailor emits in logs for interactions with the origin server.</p>
+    pub fn get_manifest_service_interaction_log(&self) -> &::std::option::Option<crate::types::ManifestServiceInteractionLog> {
+        &self.manifest_service_interaction_log
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -113,6 +155,8 @@ impl ConfigureLogsForPlaybackConfigurationOutputBuilder {
             percent_enabled: self.percent_enabled.unwrap_or_default(),
             playback_configuration_name: self.playback_configuration_name,
             enabled_logging_strategies: self.enabled_logging_strategies,
+            ads_interaction_log: self.ads_interaction_log,
+            manifest_service_interaction_log: self.manifest_service_interaction_log,
             _request_id: self._request_id,
         }
     }

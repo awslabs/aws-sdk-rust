@@ -137,7 +137,7 @@ impl GetSampledRequestsFluentBuilder {
     pub fn get_rule_metric_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rule_metric_name()
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -149,7 +149,7 @@ impl GetSampledRequestsFluentBuilder {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
@@ -161,7 +161,7 @@ impl GetSampledRequestsFluentBuilder {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution.</p>
+    /// <p>Specifies whether this is for a global resource type, such as a Amazon CloudFront distribution. For an Amplify application, use <code>CLOUDFRONT</code>.</p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:</p>
     /// <ul>
     /// <li>
