@@ -1443,6 +1443,8 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
         None => ::std::borrow::Cow::from(default_retry_partition),
     };
 
+    let scope = "aws-sdk-s3";
+
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
                         // defaults
                         .with_client_plugins(::aws_smithy_runtime::client::defaults::default_plugins(
@@ -1458,7 +1460,14 @@ pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_sm
                         )
                         // codegen config
                         .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config.clone()))
-                        .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
+                        .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new())
+                        .with_client_plugin(
+                            ::aws_smithy_runtime::client::metrics::MetricsRuntimePlugin::builder()
+                                .with_scope(scope)
+                                .with_time_source(config.runtime_components.time_source().unwrap_or_default())
+                                .build()
+                                .expect("All required fields have been set")
+                        );
 
     plugins = plugins.with_client_plugin(crate::s3_express::runtime_plugin::S3ExpressRuntimePlugin::new(
         config.config.load::<crate::config::DisableS3ExpressSessionAuth>().cloned(),

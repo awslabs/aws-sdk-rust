@@ -25,7 +25,7 @@ pub enum AttributeValue {
 
 /// Structured telemetry metadata.
 #[non_exhaustive]
-#[derive(Clone, Default)]
+#[derive(Clone, Debug, Default)]
 pub struct Attributes {
     attrs: HashMap<String, AttributeValue>,
 }
