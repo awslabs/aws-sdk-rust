@@ -156,6 +156,9 @@ where
                             builder = builder
                                 .set_repository_credentials(crate::protocol_serde::shape_repository_credentials::de_repository_credentials(tokens)?);
                         }
+                        "enableExecuteCommand" => {
+                            builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

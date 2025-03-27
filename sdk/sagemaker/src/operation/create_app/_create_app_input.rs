@@ -19,6 +19,8 @@ pub struct CreateAppInput {
     /// <p>The value of <code>InstanceType</code> passed as part of the <code>ResourceSpec</code> in the <code>CreateApp</code> call overrides the value passed as part of the <code>ResourceSpec</code> configured for the user profile or the domain. If <code>InstanceType</code> is not specified in any of those three <code>ResourceSpec</code> values for a <code>KernelGateway</code> app, the <code>CreateApp</code> call fails with a request validation error.</p>
     /// </note>
     pub resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub recovery_mode: ::std::option::Option<bool>,
 }
 impl CreateAppInput {
     /// <p>The domain ID.</p>
@@ -53,6 +55,10 @@ impl CreateAppInput {
     pub fn resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.resource_spec.as_ref()
     }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn recovery_mode(&self) -> ::std::option::Option<bool> {
+        self.recovery_mode
+    }
 }
 impl CreateAppInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
@@ -72,6 +78,7 @@ pub struct CreateAppInputBuilder {
     pub(crate) app_name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
+    pub(crate) recovery_mode: ::std::option::Option<bool>,
 }
 impl CreateAppInputBuilder {
     /// <p>The domain ID.</p>
@@ -187,6 +194,20 @@ impl CreateAppInputBuilder {
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         &self.resource_spec
     }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn recovery_mode(mut self, input: bool) -> Self {
+        self.recovery_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn set_recovery_mode(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.recovery_mode = input;
+        self
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn get_recovery_mode(&self) -> &::std::option::Option<bool> {
+        &self.recovery_mode
+    }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
@@ -197,6 +218,7 @@ impl CreateAppInputBuilder {
             app_name: self.app_name,
             tags: self.tags,
             resource_spec: self.resource_spec,
+            recovery_mode: self.recovery_mode,
         })
     }
 }

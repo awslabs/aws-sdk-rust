@@ -123,6 +123,10 @@ pub use crate::types::_device::Device;
 
 pub use crate::types::_device_cgroup_permission::DeviceCgroupPermission;
 
+pub use crate::types::_firelens_configuration::FirelensConfiguration;
+
+pub use crate::types::_firelens_configuration_type::FirelensConfigurationType;
+
 pub use crate::types::_task_container_dependency::TaskContainerDependency;
 
 pub use crate::types::_eks_properties::EksProperties;
@@ -364,6 +368,10 @@ mod _evaluate_on_exit;
 mod _fairshare_policy;
 
 mod _fargate_platform_configuration;
+
+mod _firelens_configuration;
+
+mod _firelens_configuration_type;
 
 mod _front_of_queue_detail;
 

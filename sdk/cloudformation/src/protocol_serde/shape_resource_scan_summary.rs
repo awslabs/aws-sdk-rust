@@ -90,6 +90,20 @@ pub fn de_resource_scan_summary(
                 builder = builder.set_percentage_completed(var_6);
             }
             ,
+            s if s.matches("ScanType") /* ScanType com.amazonaws.cloudformation#ResourceScanSummary$ScanType */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::ScanType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ScanType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_scan_type(var_7);
+            }
+            ,
             _ => {}
         }
     }

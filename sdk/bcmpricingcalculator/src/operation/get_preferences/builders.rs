@@ -22,7 +22,7 @@ impl crate::operation::get_preferences::builders::GetPreferencesInputBuilder {
 }
 /// Fluent builder constructing a request to `GetPreferences`.
 ///
-/// <p>Retrieves the current preferences for the Amazon Web Services Cost Explorer service.</p>
+/// <p>Retrieves the current preferences for Pricing Calculator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

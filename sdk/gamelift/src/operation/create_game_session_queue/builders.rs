@@ -22,11 +22,47 @@ impl crate::operation::create_game_session_queue::builders::CreateGameSessionQue
 }
 /// Fluent builder constructing a request to `CreateGameSessionQueue`.
 ///
-/// <p>Creates a placement queue that processes requests for new game sessions. A queue uses FleetIQ algorithms to determine the best placement locations and find an available game server there, then prompts the game server process to start a new game session.</p>
-/// <p>A game session queue is configured with a set of destinations (Amazon GameLift fleets or aliases), which determine the locations where the queue can place new game sessions. These destinations can span multiple fleet types (Spot and On-Demand), instance types, and Amazon Web Services Regions. If the queue includes multi-location fleets, the queue is able to place game sessions in all of a fleet's remote locations. You can opt to filter out individual locations if needed.</p>
-/// <p>The queue configuration also determines how FleetIQ selects the best available placement for a new game session. Before searching for an available game server, FleetIQ first prioritizes the queue's destinations and locations, with the best placement locations on top. You can set up the queue to use the FleetIQ default prioritization or provide an alternate set of priorities.</p>
-/// <p>To create a new queue, provide a name, timeout value, and a list of destinations. Optionally, specify a sort configuration and/or a filter, and define a set of latency cap policies. You can also include the ARN for an Amazon Simple Notification Service (SNS) topic to receive notifications of game session placement activity. Notifications using SNS or CloudWatch events is the preferred way to track placement activity.</p>
-/// <p>If successful, a new <code>GameSessionQueue</code> object is returned with an assigned queue ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>, reference a queue's name or ARN.</p>
+/// <p>Creates a placement queue that processes requests for new game sessions. A queue uses FleetIQ algorithms to locate the best available placement locations for a new game session, and then prompts the game server process to start a new game session.</p>
+/// <p>A game session queue is configured with a set of destinations (Amazon GameLift fleets or aliases) that determine where the queue can place new game sessions. These destinations can span multiple Amazon Web Services Regions, can use different instance types, and can include both Spot and On-Demand fleets. If the queue includes multi-location fleets, the queue can place game sessions in any of a fleet's remote locations.</p>
+/// <p>You can configure a queue to determine how it selects the best available placement for a new game session. Queues can prioritize placement decisions based on a combination of location, hosting cost, and player latency. You can set up the queue to use the default prioritization or provide alternate instructions using <code>PriorityConfiguration</code>.</p>
+/// <p><b>Request options</b></p>
+/// <p>Use this operation to make these common types of requests.</p>
+/// <ul>
+/// <li>
+/// <p>Create a queue with the minimum required parameters.</p>
+/// <ul>
+/// <li>
+/// <p><code>Name</code></p></li>
+/// <li>
+/// <p><code>Destinations</code> (This parameter isn't required, but a queue can't make placements without at least one destination.)</p></li>
+/// </ul></li>
+/// <li>
+/// <p>Create a queue with placement notification. Queues that have high placement activity must use a notification system, such as with Amazon Simple Notification Service (Amazon SNS) or Amazon CloudWatch.</p>
+/// <ul>
+/// <li>
+/// <p>Required parameters <code>Name</code> and <code>Destinations</code></p></li>
+/// <li>
+/// <p><code>NotificationTarget</code></p></li>
+/// </ul></li>
+/// <li>
+/// <p>Create a queue with custom prioritization settings. These custom settings replace the default prioritization configuration for a queue.</p>
+/// <ul>
+/// <li>
+/// <p>Required parameters <code>Name</code> and <code>Destinations</code></p></li>
+/// <li>
+/// <p><code>PriorityConfiguration</code></p></li>
+/// </ul></li>
+/// <li>
+/// <p>Create a queue with special rules for processing player latency data.</p>
+/// <ul>
+/// <li>
+/// <p>Required parameters <code>Name</code> and <code>Destinations</code></p></li>
+/// <li>
+/// <p><code>PlayerLatencyPolicies</code></p></li>
+/// </ul></li>
+/// </ul>
+/// <p><b>Results</b></p>
+/// <p>If successful, this operation returns a new <code>GameSessionQueue</code> object with an assigned queue ARN. Use the queue's name or ARN when submitting new game session requests with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>.</p>
 /// <p><b>Learn more</b></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html"> Design a game session queue</a></p>
 /// <p><a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html"> Create a game session queue</a></p>
@@ -131,17 +167,17 @@ impl CreateGameSessionQueueFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
+    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. If you don't specify a request timeout, the queue uses a default value.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.timeout_in_seconds(input);
         self
     }
-    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
+    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. If you don't specify a request timeout, the queue uses a default value.</p>
     pub fn set_timeout_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout_in_seconds(input);
         self
     }
-    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.</p>
+    /// <p>The maximum time, in seconds, that a new game session placement request remains in the queue. When a request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. If you don't specify a request timeout, the queue uses a default value.</p>
     pub fn get_timeout_in_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_timeout_in_seconds()
     }

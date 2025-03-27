@@ -141,23 +141,26 @@ pub fn ser_container_properties(
         crate::protocol_serde::shape_fargate_platform_configuration::ser_fargate_platform_configuration(&mut object_44, var_43)?;
         object_44.finish();
     }
-    if let Some(var_45) = &input.ephemeral_storage {
-        #[allow(unused_mut)]
-        let mut object_46 = object.key("ephemeralStorage").start_object();
-        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_46, var_45)?;
-        object_46.finish();
+    if let Some(var_45) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_45);
     }
-    if let Some(var_47) = &input.runtime_platform {
+    if let Some(var_46) = &input.ephemeral_storage {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("runtimePlatform").start_object();
-        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(&mut object_48, var_47)?;
-        object_48.finish();
+        let mut object_47 = object.key("ephemeralStorage").start_object();
+        crate::protocol_serde::shape_ephemeral_storage::ser_ephemeral_storage(&mut object_47, var_46)?;
+        object_47.finish();
     }
-    if let Some(var_49) = &input.repository_credentials {
+    if let Some(var_48) = &input.runtime_platform {
         #[allow(unused_mut)]
-        let mut object_50 = object.key("repositoryCredentials").start_object();
-        crate::protocol_serde::shape_repository_credentials::ser_repository_credentials(&mut object_50, var_49)?;
-        object_50.finish();
+        let mut object_49 = object.key("runtimePlatform").start_object();
+        crate::protocol_serde::shape_runtime_platform::ser_runtime_platform(&mut object_49, var_48)?;
+        object_49.finish();
+    }
+    if let Some(var_50) = &input.repository_credentials {
+        #[allow(unused_mut)]
+        let mut object_51 = object.key("repositoryCredentials").start_object();
+        crate::protocol_serde::shape_repository_credentials::ser_repository_credentials(&mut object_51, var_50)?;
+        object_51.finish();
     }
     Ok(())
 }
@@ -269,6 +272,9 @@ where
                             builder = builder.set_fargate_platform_configuration(
                                 crate::protocol_serde::shape_fargate_platform_configuration::de_fargate_platform_configuration(tokens)?,
                             );
+                        }
+                        "enableExecuteCommand" => {
+                            builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ephemeralStorage" => {
                             builder = builder.set_ephemeral_storage(crate::protocol_serde::shape_ephemeral_storage::de_ephemeral_storage(tokens)?);

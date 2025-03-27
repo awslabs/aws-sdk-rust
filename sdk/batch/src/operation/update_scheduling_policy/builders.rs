@@ -122,17 +122,17 @@ impl UpdateSchedulingPolicyFluentBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.inner = self.inner.fairshare_policy(input);
         self
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.inner = self.inner.set_fairshare_policy(input);
         self
     }
-    /// <p>The fair share policy.</p>
+    /// <p>The fair-share policy scheduling details.</p>
     pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
         self.inner.get_fairshare_policy()
     }

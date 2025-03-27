@@ -262,6 +262,10 @@ pub(crate) fn de_create_token_with_iam(
                             .transpose()?,
                     );
                 }
+                "awsAdditionalDetails" => {
+                    builder =
+                        builder.set_aws_additional_details(crate::protocol_serde::shape_aws_additional_details::de_aws_additional_details(tokens)?);
+                }
                 "expiresIn" => {
                     builder = builder.set_expires_in(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

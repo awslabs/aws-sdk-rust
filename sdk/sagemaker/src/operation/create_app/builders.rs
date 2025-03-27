@@ -211,4 +211,18 @@ impl CreateAppFluentBuilder {
     pub fn get_resource_spec(&self) -> &::std::option::Option<crate::types::ResourceSpec> {
         self.inner.get_resource_spec()
     }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn recovery_mode(mut self, input: bool) -> Self {
+        self.inner = self.inner.recovery_mode(input);
+        self
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn set_recovery_mode(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_recovery_mode(input);
+        self
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn get_recovery_mode(&self) -> &::std::option::Option<bool> {
+        self.inner.get_recovery_mode()
+    }
 }

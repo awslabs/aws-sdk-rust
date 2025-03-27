@@ -362,36 +362,42 @@ impl CreateStackSetFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites for using StackSets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn administration_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administration_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites for using StackSets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn set_administration_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administration_role_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use to create this stack set.</p>
-    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites for using StackSets</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn get_administration_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_administration_role_arn()
     }
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn execution_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_name(input.into());
         self
     }
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn set_execution_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_name(input);
         self
     }
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+    /// <p>Valid only if the permissions model is <code>SELF_MANAGED</code>.</p>
     pub fn get_execution_role_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_name()
     }
@@ -427,21 +433,24 @@ impl CreateStackSetFluentBuilder {
     pub fn get_permission_model(&self) -> &::std::option::Option<crate::types::PermissionModels> {
         self.inner.get_permission_model()
     }
-    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage automatic deployments for CloudFormation StackSets that use service-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Required if the permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed permissions.)</p>
     pub fn auto_deployment(mut self, input: crate::types::AutoDeployment) -> Self {
         self.inner = self.inner.auto_deployment(input);
         self
     }
-    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage automatic deployments for CloudFormation StackSets that use service-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Required if the permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed permissions.)</p>
     pub fn set_auto_deployment(mut self, input: ::std::option::Option<crate::types::AutoDeployment>) -> Self {
         self.inner = self.inner.set_auto_deployment(input);
         self
     }
-    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that are added to the target organization or organizational unit (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage automatic deployments for CloudFormation StackSets that use service-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
+    /// <p>Required if the permissions model is <code>SERVICE_MANAGED</code>. (Not used with self-managed permissions.)</p>
     pub fn get_auto_deployment(&self) -> &::std::option::Option<crate::types::AutoDeployment> {
         self.inner.get_auto_deployment()
     }
-    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -451,11 +460,12 @@ impl CreateStackSetFluentBuilder {
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>Valid only if the permissions model is <code>SERVICE_MANAGED</code>.</p>
     pub fn call_as(mut self, input: crate::types::CallAs) -> Self {
         self.inner = self.inner.call_as(input);
         self
     }
-    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -465,11 +475,12 @@ impl CreateStackSetFluentBuilder {
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>Valid only if the permissions model is <code>SERVICE_MANAGED</code>.</p>
     pub fn set_call_as(mut self, input: ::std::option::Option<crate::types::CallAs>) -> Self {
         self.inner = self.inner.set_call_as(input);
         self
     }
-    /// <p>\[Service-managed permissions\] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
     /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
     /// <ul>
     /// <li>
@@ -479,6 +490,7 @@ impl CreateStackSetFluentBuilder {
     /// <p>Your Amazon Web Services account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p></li>
     /// </ul>
     /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>Valid only if the permissions model is <code>SERVICE_MANAGED</code>.</p>
     pub fn get_call_as(&self) -> &::std::option::Option<crate::types::CallAs> {
         self.inner.get_call_as()
     }

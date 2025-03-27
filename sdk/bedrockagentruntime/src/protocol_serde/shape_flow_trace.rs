@@ -45,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'conditionNodeResultTrace' cannot be null")
                             })?,
                         )),
+                        "nodeActionTrace" => Some(crate::types::FlowTrace::NodeActionTrace(
+                            crate::protocol_serde::shape_flow_trace_node_action_event::de_flow_trace_node_action_event(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'nodeActionTrace' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::FlowTrace::Unknown)

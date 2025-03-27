@@ -8,7 +8,7 @@ pub struct DescribeResourceScanOutput {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -45,10 +45,12 @@ pub struct DescribeResourceScanOutput {
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of resources that were listed. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED </code>.</p>
     pub resources_scanned: ::std::option::Option<i32>,
-    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED </code>.</p><note>
+    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED</code>.</p><note>
     /// <p>This field may be 0 if the resource scan failed with a <code>ResourceScanLimitExceededException</code>.</p>
     /// </note>
     pub resources_read: ::std::option::Option<i32>,
+    /// <p>The scan filters that were used.</p>
+    pub scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>,
     _request_id: Option<String>,
 }
 impl DescribeResourceScanOutput {
@@ -59,7 +61,7 @@ impl DescribeResourceScanOutput {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -112,11 +114,17 @@ impl DescribeResourceScanOutput {
     pub fn resources_scanned(&self) -> ::std::option::Option<i32> {
         self.resources_scanned
     }
-    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED </code>.</p><note>
+    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED</code>.</p><note>
     /// <p>This field may be 0 if the resource scan failed with a <code>ResourceScanLimitExceededException</code>.</p>
     /// </note>
     pub fn resources_read(&self) -> ::std::option::Option<i32> {
         self.resources_read
+    }
+    /// <p>The scan filters that were used.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_filters.is_none()`.
+    pub fn scan_filters(&self) -> &[crate::types::ScanFilter] {
+        self.scan_filters.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeResourceScanOutput {
@@ -144,6 +152,7 @@ pub struct DescribeResourceScanOutputBuilder {
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resources_scanned: ::std::option::Option<i32>,
     pub(crate) resources_read: ::std::option::Option<i32>,
+    pub(crate) scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>,
     _request_id: Option<String>,
 }
 impl DescribeResourceScanOutputBuilder {
@@ -164,7 +173,7 @@ impl DescribeResourceScanOutputBuilder {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -195,7 +204,7 @@ impl DescribeResourceScanOutputBuilder {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -226,7 +235,7 @@ impl DescribeResourceScanOutputBuilder {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -343,25 +352,45 @@ impl DescribeResourceScanOutputBuilder {
     pub fn get_resources_scanned(&self) -> &::std::option::Option<i32> {
         &self.resources_scanned
     }
-    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED </code>.</p><note>
+    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED</code>.</p><note>
     /// <p>This field may be 0 if the resource scan failed with a <code>ResourceScanLimitExceededException</code>.</p>
     /// </note>
     pub fn resources_read(mut self, input: i32) -> Self {
         self.resources_read = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED </code>.</p><note>
+    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED</code>.</p><note>
     /// <p>This field may be 0 if the resource scan failed with a <code>ResourceScanLimitExceededException</code>.</p>
     /// </note>
     pub fn set_resources_read(mut self, input: ::std::option::Option<i32>) -> Self {
         self.resources_read = input;
         self
     }
-    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED </code>.</p><note>
+    /// <p>The number of resources that were read. This is only available for scans with a <code>Status</code> set to <code>COMPLETE</code>, <code>EXPIRED</code>, or <code>FAILED</code>.</p><note>
     /// <p>This field may be 0 if the resource scan failed with a <code>ResourceScanLimitExceededException</code>.</p>
     /// </note>
     pub fn get_resources_read(&self) -> &::std::option::Option<i32> {
         &self.resources_read
+    }
+    /// Appends an item to `scan_filters`.
+    ///
+    /// To override the contents of this collection use [`set_scan_filters`](Self::set_scan_filters).
+    ///
+    /// <p>The scan filters that were used.</p>
+    pub fn scan_filters(mut self, input: crate::types::ScanFilter) -> Self {
+        let mut v = self.scan_filters.unwrap_or_default();
+        v.push(input);
+        self.scan_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The scan filters that were used.</p>
+    pub fn set_scan_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>) -> Self {
+        self.scan_filters = input;
+        self
+    }
+    /// <p>The scan filters that were used.</p>
+    pub fn get_scan_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>> {
+        &self.scan_filters
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -384,6 +413,7 @@ impl DescribeResourceScanOutputBuilder {
             resource_types: self.resource_types,
             resources_scanned: self.resources_scanned,
             resources_read: self.resources_read,
+            scan_filters: self.scan_filters,
             _request_id: self._request_id,
         }
     }

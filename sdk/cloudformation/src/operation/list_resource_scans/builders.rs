@@ -142,4 +142,18 @@ impl ListResourceScansFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn scan_type_filter(mut self, input: crate::types::ScanType) -> Self {
+        self.inner = self.inner.scan_type_filter(input);
+        self
+    }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn set_scan_type_filter(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
+        self.inner = self.inner.set_scan_type_filter(input);
+        self
+    }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn get_scan_type_filter(&self) -> &::std::option::Option<crate::types::ScanType> {
+        self.inner.get_scan_type_filter()
+    }
 }

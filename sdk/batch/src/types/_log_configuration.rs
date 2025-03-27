@@ -10,6 +10,12 @@ pub struct LogConfiguration {
     /// </note>
     /// <dl>
     /// <dt>
+    /// awsfirelens
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies the firelens logging driver. For more information on configuring Firelens, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </dd>
+    /// <dt>
     /// awslogs
     /// </dt>
     /// <dd>
@@ -67,6 +73,12 @@ impl LogConfiguration {
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>
+    /// <dt>
+    /// awsfirelens
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies the firelens logging driver. For more information on configuring Firelens, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </dd>
     /// <dt>
     /// awslogs
     /// </dt>
@@ -149,6 +161,12 @@ impl LogConfigurationBuilder {
     /// </note>
     /// <dl>
     /// <dt>
+    /// awsfirelens
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies the firelens logging driver. For more information on configuring Firelens, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </dd>
+    /// <dt>
     /// awslogs
     /// </dt>
     /// <dd>
@@ -205,6 +223,12 @@ impl LogConfigurationBuilder {
     /// </note>
     /// <dl>
     /// <dt>
+    /// awsfirelens
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies the firelens logging driver. For more information on configuring Firelens, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </dd>
+    /// <dt>
     /// awslogs
     /// </dt>
     /// <dd>
@@ -259,6 +283,12 @@ impl LogConfigurationBuilder {
     /// <p>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code> log drivers.</p>
     /// </note>
     /// <dl>
+    /// <dt>
+    /// awsfirelens
+    /// </dt>
+    /// <dd>
+    /// <p>Specifies the firelens logging driver. For more information on configuring Firelens, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// </dd>
     /// <dt>
     /// awslogs
     /// </dt>

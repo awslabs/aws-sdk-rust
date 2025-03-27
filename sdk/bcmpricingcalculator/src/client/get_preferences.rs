@@ -6,6 +6,7 @@ impl super::Client {
     /// - On success, responds with [`GetPreferencesOutput`](crate::operation::get_preferences::GetPreferencesOutput) with field(s):
     ///   - [`management_account_rate_type_selections(Option<Vec::<RateType>>)`](crate::operation::get_preferences::GetPreferencesOutput::management_account_rate_type_selections): <p>The preferred rate types for the management account.</p>
     ///   - [`member_account_rate_type_selections(Option<Vec::<RateType>>)`](crate::operation::get_preferences::GetPreferencesOutput::member_account_rate_type_selections): <p>The preferred rate types for member accounts.</p>
+    ///   - [`standalone_account_rate_type_selections(Option<Vec::<RateType>>)`](crate::operation::get_preferences::GetPreferencesOutput::standalone_account_rate_type_selections): <p>The preferred rate types for a standalone account.</p>
     /// - On failure, responds with [`SdkError<GetPreferencesError>`](crate::operation::get_preferences::GetPreferencesError)
     pub fn get_preferences(&self) -> crate::operation::get_preferences::builders::GetPreferencesFluentBuilder {
         crate::operation::get_preferences::builders::GetPreferencesFluentBuilder::new(self.handle.clone())

@@ -75,4 +75,6 @@ pub(crate) mod shape_unauthorized_client_exception;
 
 pub(crate) mod shape_unsupported_grant_type_exception;
 
+pub(crate) mod shape_aws_additional_details;
+
 pub(crate) mod shape_scopes;

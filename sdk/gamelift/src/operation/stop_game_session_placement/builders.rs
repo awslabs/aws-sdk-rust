@@ -22,7 +22,10 @@ impl crate::operation::stop_game_session_placement::builders::StopGameSessionPla
 }
 /// Fluent builder constructing a request to `StopGameSessionPlacement`.
 ///
-/// <p>Cancels a game session placement that is in <code>PENDING</code> status. To stop a placement, provide the placement ID values. If successful, the placement is moved to <code>CANCELLED</code> status.</p>
+/// <p>Cancels a game session placement that's in <code>PENDING</code> status. To stop a placement, provide the placement ID value.</p>
+/// <p>Results</p>
+/// <p>If successful, this operation removes the placement request from the queue and moves the <code>GameSessionPlacement</code> to <code>CANCELLED</code> status.</p>
+/// <p>This operation results in an <code>InvalidRequestExecption</code> (400) error if a game session has already been created for this placement. You can clean up an unneeded game session by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession">TerminateGameSession</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopGameSessionPlacementFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -30,6 +30,8 @@ pub struct EcsTaskDetails {
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>A list of data volumes used in a job.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub enable_execute_command: ::std::option::Option<bool>,
 }
 impl EcsTaskDetails {
     /// <p>A list of containers that are included in the <code>taskProperties</code> list.</p>
@@ -86,6 +88,10 @@ impl EcsTaskDetails {
     pub fn volumes(&self) -> &[crate::types::Volume] {
         self.volumes.as_deref().unwrap_or_default()
     }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
+        self.enable_execute_command
+    }
 }
 impl EcsTaskDetails {
     /// Creates a new builder-style object to manufacture [`EcsTaskDetails`](crate::types::EcsTaskDetails).
@@ -110,6 +116,7 @@ pub struct EcsTaskDetailsBuilder {
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
+    pub(crate) enable_execute_command: ::std::option::Option<bool>,
 }
 impl EcsTaskDetailsBuilder {
     /// Appends an item to `containers`.
@@ -298,6 +305,20 @@ impl EcsTaskDetailsBuilder {
     pub fn get_volumes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Volume>> {
         &self.volumes
     }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn enable_execute_command(mut self, input: bool) -> Self {
+        self.enable_execute_command = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_execute_command = input;
+        self
+    }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
+        &self.enable_execute_command
+    }
     /// Consumes the builder and constructs a [`EcsTaskDetails`](crate::types::EcsTaskDetails).
     pub fn build(self) -> crate::types::EcsTaskDetails {
         crate::types::EcsTaskDetails {
@@ -313,6 +334,7 @@ impl EcsTaskDetailsBuilder {
             network_configuration: self.network_configuration,
             runtime_platform: self.runtime_platform,
             volumes: self.volumes,
+            enable_execute_command: self.enable_execute_command,
         }
     }
 }

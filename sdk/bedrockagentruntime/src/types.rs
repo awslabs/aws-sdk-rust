@@ -489,6 +489,8 @@ pub use crate::types::_flow_trace_event::FlowTraceEvent;
 
 pub use crate::types::_flow_trace::FlowTrace;
 
+pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEvent;
+
 pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEvent;
 
 pub use crate::types::_flow_trace_condition::FlowTraceCondition;
@@ -652,6 +654,8 @@ mod _flow_trace_condition;
 mod _flow_trace_condition_node_result_event;
 
 mod _flow_trace_event;
+
+mod _flow_trace_node_action_event;
 
 mod _flow_trace_node_input_content;
 

@@ -17,6 +17,8 @@ pub struct DescribeAppOutput {
     pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The status.</p>
     pub status: ::std::option::Option<crate::types::AppStatus>,
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub recovery_mode: ::std::option::Option<bool>,
     /// <p>The timestamp of the last health check.</p>
     pub last_health_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code> is also updated when SageMaker AI performs health checks without user activity. As a result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.</p>
@@ -61,6 +63,10 @@ impl DescribeAppOutput {
     /// <p>The status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AppStatus> {
         self.status.as_ref()
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn recovery_mode(&self) -> ::std::option::Option<bool> {
+        self.recovery_mode
     }
     /// <p>The timestamp of the last health check.</p>
     pub fn last_health_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -112,6 +118,7 @@ pub struct DescribeAppOutputBuilder {
     pub(crate) user_profile_name: ::std::option::Option<::std::string::String>,
     pub(crate) space_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AppStatus>,
+    pub(crate) recovery_mode: ::std::option::Option<bool>,
     pub(crate) last_health_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_user_activity_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -218,6 +225,20 @@ impl DescribeAppOutputBuilder {
     /// <p>The status.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AppStatus> {
         &self.status
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn recovery_mode(mut self, input: bool) -> Self {
+        self.recovery_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn set_recovery_mode(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.recovery_mode = input;
+        self
+    }
+    /// <p>Indicates whether the application is launched in recovery mode.</p>
+    pub fn get_recovery_mode(&self) -> &::std::option::Option<bool> {
+        &self.recovery_mode
     }
     /// <p>The timestamp of the last health check.</p>
     pub fn last_health_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -328,6 +349,7 @@ impl DescribeAppOutputBuilder {
             user_profile_name: self.user_profile_name,
             space_name: self.space_name,
             status: self.status,
+            recovery_mode: self.recovery_mode,
             last_health_check_timestamp: self.last_health_check_timestamp,
             last_user_activity_timestamp: self.last_user_activity_timestamp,
             creation_time: self.creation_time,

@@ -22,7 +22,7 @@ impl crate::operation::update_preferences::builders::UpdatePreferencesInputBuild
 }
 /// Fluent builder constructing a request to `UpdatePreferences`.
 ///
-/// <p>Updates the preferences for the Amazon Web Services Cost Explorer service.</p>
+/// <p>Updates the preferences for Pricing Calculator.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePreferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -145,5 +145,24 @@ impl UpdatePreferencesFluentBuilder {
     /// <p>The updated preferred rate types for member accounts.</p>
     pub fn get_member_account_rate_type_selections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateType>> {
         self.inner.get_member_account_rate_type_selections()
+    }
+    ///
+    /// Appends an item to `standaloneAccountRateTypeSelections`.
+    ///
+    /// To override the contents of this collection use [`set_standalone_account_rate_type_selections`](Self::set_standalone_account_rate_type_selections).
+    ///
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub fn standalone_account_rate_type_selections(mut self, input: crate::types::RateType) -> Self {
+        self.inner = self.inner.standalone_account_rate_type_selections(input);
+        self
+    }
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub fn set_standalone_account_rate_type_selections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>) -> Self {
+        self.inner = self.inner.set_standalone_account_rate_type_selections(input);
+        self
+    }
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub fn get_standalone_account_rate_type_selections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateType>> {
+        self.inner.get_standalone_account_rate_type_selections()
     }
 }

@@ -23,20 +23,20 @@ impl crate::operation::list_compute::builders::ListComputeInputBuilder {
 /// Fluent builder constructing a request to `ListCompute`.
 ///
 /// <p>Retrieves information on the compute resources in an Amazon GameLift fleet. Use the pagination parameters to retrieve results in a set of sequential pages.</p>
-/// <p><b>Request options:</b></p>
+/// <p><b>Request options</b></p>
 /// <ul>
 /// <li>
 /// <p>Retrieve a list of all computes in a fleet. Specify a fleet ID.</p></li>
 /// <li>
 /// <p>Retrieve a list of all computes in a specific fleet location. Specify a fleet ID and location.</p></li>
 /// </ul>
-/// <p><b>Results:</b></p>
+/// <p><b>Results</b></p>
 /// <p>If successful, this operation returns information on a set of computes. Depending on the type of fleet, the result includes the following information:</p>
 /// <ul>
 /// <li>
-/// <p>For managed EC2 fleets (compute type <code>EC2</code>), this operation returns information about the EC2 instance. Compute names are EC2 instance IDs.</p></li>
+/// <p>For a managed EC2 fleet (compute type <code>EC2</code>), this operation returns information about the EC2 instance. Compute names are EC2 instance IDs.</p></li>
 /// <li>
-/// <p>For Anywhere fleets (compute type <code>ANYWHERE</code>), this operation returns compute names and details as provided when the compute was registered with <code>RegisterCompute</code>. This includes <code>GameLiftServiceSdkEndpoint</code> or <code>GameLiftAgentEndpoint</code>.</p></li>
+/// <p>For an Anywhere fleet (compute type <code>ANYWHERE</code>), this operation returns compute names and details from when the compute was registered with <code>RegisterCompute</code>. This includes <code>GameLiftServiceSdkEndpoint</code> or <code>GameLiftAgentEndpoint</code>.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComputeFluentBuilder {

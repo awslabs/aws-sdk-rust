@@ -435,6 +435,8 @@ pub(crate) mod shape_failure_trace;
 
 pub(crate) mod shape_flow_trace_condition_node_result_event;
 
+pub(crate) mod shape_flow_trace_node_action_event;
+
 pub(crate) mod shape_flow_trace_node_input_event;
 
 pub(crate) mod shape_flow_trace_node_output_event;

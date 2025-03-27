@@ -118,7 +118,6 @@ impl GetTemplateFluentBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
         self
@@ -130,7 +129,6 @@ impl GetTemplateFluentBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
@@ -142,7 +140,6 @@ impl GetTemplateFluentBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }

@@ -20,6 +20,8 @@ pub struct CreateTokenWithIamOutput {
     pub issued_token_type: ::std::option::Option<::std::string::String>,
     /// <p>The list of scopes for which authorization is granted. The access token that is issued is limited to the scopes that are granted.</p>
     pub scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    pub aws_additional_details: ::std::option::Option<crate::types::AwsAdditionalDetails>,
     _request_id: Option<String>,
 }
 impl CreateTokenWithIamOutput {
@@ -56,6 +58,10 @@ impl CreateTokenWithIamOutput {
     pub fn scope(&self) -> &[::std::string::String] {
         self.scope.as_deref().unwrap_or_default()
     }
+    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    pub fn aws_additional_details(&self) -> ::std::option::Option<&crate::types::AwsAdditionalDetails> {
+        self.aws_additional_details.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateTokenWithIamOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -67,6 +73,7 @@ impl ::std::fmt::Debug for CreateTokenWithIamOutput {
         formatter.field("id_token", &"*** Sensitive Data Redacted ***");
         formatter.field("issued_token_type", &self.issued_token_type);
         formatter.field("scope", &self.scope);
+        formatter.field("aws_additional_details", &self.aws_additional_details);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -94,6 +101,7 @@ pub struct CreateTokenWithIamOutputBuilder {
     pub(crate) id_token: ::std::option::Option<::std::string::String>,
     pub(crate) issued_token_type: ::std::option::Option<::std::string::String>,
     pub(crate) scope: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_additional_details: ::std::option::Option<crate::types::AwsAdditionalDetails>,
     _request_id: Option<String>,
 }
 impl CreateTokenWithIamOutputBuilder {
@@ -210,6 +218,20 @@ impl CreateTokenWithIamOutputBuilder {
     pub fn get_scope(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scope
     }
+    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    pub fn aws_additional_details(mut self, input: crate::types::AwsAdditionalDetails) -> Self {
+        self.aws_additional_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    pub fn set_aws_additional_details(mut self, input: ::std::option::Option<crate::types::AwsAdditionalDetails>) -> Self {
+        self.aws_additional_details = input;
+        self
+    }
+    /// <p>A structure containing information from the <code>idToken</code>. Only the <code>identityContext</code> is in it, which is a value extracted from the <code>idToken</code>. This provides direct access to identity information without requiring JWT parsing.</p>
+    pub fn get_aws_additional_details(&self) -> &::std::option::Option<crate::types::AwsAdditionalDetails> {
+        &self.aws_additional_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -229,6 +251,7 @@ impl CreateTokenWithIamOutputBuilder {
             id_token: self.id_token,
             issued_token_type: self.issued_token_type,
             scope: self.scope,
+            aws_additional_details: self.aws_additional_details,
             _request_id: self._request_id,
         }
     }
@@ -243,6 +266,7 @@ impl ::std::fmt::Debug for CreateTokenWithIamOutputBuilder {
         formatter.field("id_token", &"*** Sensitive Data Redacted ***");
         formatter.field("issued_token_type", &self.issued_token_type);
         formatter.field("scope", &self.scope);
+        formatter.field("aws_additional_details", &self.aws_additional_details);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

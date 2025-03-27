@@ -529,3 +529,12 @@ pub(crate) fn eks_container_environment_variable_correct_errors(
     }
     builder
 }
+
+pub(crate) fn firelens_configuration_correct_errors(
+    mut builder: crate::types::builders::FirelensConfigurationBuilder,
+) -> crate::types::builders::FirelensConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::FirelensConfigurationType>().ok()
+    }
+    builder
+}

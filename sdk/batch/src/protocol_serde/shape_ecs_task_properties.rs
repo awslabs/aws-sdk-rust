@@ -60,6 +60,9 @@ pub fn ser_ecs_task_properties(
         }
         array_17.finish();
     }
+    if let Some(var_20) = &input.enable_execute_command {
+        object.key("enableExecuteCommand").boolean(*var_20);
+    }
     Ok(())
 }
 
@@ -130,6 +133,9 @@ where
                         }
                         "volumes" => {
                             builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
+                        }
+                        "enableExecuteCommand" => {
+                            builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

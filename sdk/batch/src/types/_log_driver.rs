@@ -12,6 +12,7 @@
 /// ```text
 /// # let logdriver = unimplemented!();
 /// match logdriver {
+///     LogDriver::Awsfirelens => { /* ... */ },
 ///     LogDriver::Awslogs => { /* ... */ },
 ///     LogDriver::Fluentd => { /* ... */ },
 ///     LogDriver::Gelf => { /* ... */ },
@@ -48,6 +49,8 @@
 )]
 pub enum LogDriver {
     #[allow(missing_docs)] // documentation missing in model
+    Awsfirelens,
+    #[allow(missing_docs)] // documentation missing in model
     Awslogs,
     #[allow(missing_docs)] // documentation missing in model
     Fluentd,
@@ -68,6 +71,7 @@ pub enum LogDriver {
 impl ::std::convert::From<&str> for LogDriver {
     fn from(s: &str) -> Self {
         match s {
+            "awsfirelens" => LogDriver::Awsfirelens,
             "awslogs" => LogDriver::Awslogs,
             "fluentd" => LogDriver::Fluentd,
             "gelf" => LogDriver::Gelf,
@@ -90,6 +94,7 @@ impl LogDriver {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            LogDriver::Awsfirelens => "awsfirelens",
             LogDriver::Awslogs => "awslogs",
             LogDriver::Fluentd => "fluentd",
             LogDriver::Gelf => "gelf",
@@ -102,7 +107,7 @@ impl LogDriver {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["awslogs", "fluentd", "gelf", "journald", "json-file", "splunk", "syslog"]
+        &["awsfirelens", "awslogs", "fluentd", "gelf", "journald", "json-file", "splunk", "syslog"]
     }
 }
 impl ::std::convert::AsRef<str> for LogDriver {
@@ -125,6 +130,7 @@ impl LogDriver {
 impl ::std::fmt::Display for LogDriver {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            LogDriver::Awsfirelens => write!(f, "awsfirelens"),
             LogDriver::Awslogs => write!(f, "awslogs"),
             LogDriver::Fluentd => write!(f, "fluentd"),
             LogDriver::Gelf => write!(f, "gelf"),

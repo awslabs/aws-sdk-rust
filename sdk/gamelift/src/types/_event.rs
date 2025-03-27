@@ -74,7 +74,7 @@ pub struct Event {
     /// <li>
     /// <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p></li>
     /// <li>
-    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.</p></li>
+    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time. This event is not emitted for managed container fleets and Anywhere fleets unless they're deployed with the Amazon GameLift Agent.</p></li>
     /// <li>
     /// <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why <code>ProcessReady()</code> was not called in time.</p></li>
     /// <li>
@@ -187,7 +187,7 @@ impl Event {
     /// <li>
     /// <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p></li>
     /// <li>
-    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.</p></li>
+    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time. This event is not emitted for managed container fleets and Anywhere fleets unless they're deployed with the Amazon GameLift Agent.</p></li>
     /// <li>
     /// <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why <code>ProcessReady()</code> was not called in time.</p></li>
     /// <li>
@@ -349,7 +349,7 @@ impl EventBuilder {
     /// <li>
     /// <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p></li>
     /// <li>
-    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.</p></li>
+    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time. This event is not emitted for managed container fleets and Anywhere fleets unless they're deployed with the Amazon GameLift Agent.</p></li>
     /// <li>
     /// <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why <code>ProcessReady()</code> was not called in time.</p></li>
     /// <li>
@@ -447,7 +447,7 @@ impl EventBuilder {
     /// <li>
     /// <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p></li>
     /// <li>
-    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.</p></li>
+    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time. This event is not emitted for managed container fleets and Anywhere fleets unless they're deployed with the Amazon GameLift Agent.</p></li>
     /// <li>
     /// <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why <code>ProcessReady()</code> was not called in time.</p></li>
     /// <li>
@@ -545,7 +545,7 @@ impl EventBuilder {
     /// <li>
     /// <p>SERVER_PROCESS_INVALID_PATH -- The game server executable or script could not be found based on the Fleet runtime configuration. Check that the launch path is correct based on the operating system of the Fleet.</p></li>
     /// <li>
-    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.</p></li>
+    /// <p>SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time. This event is not emitted for managed container fleets and Anywhere fleets unless they're deployed with the Amazon GameLift Agent.</p></li>
     /// <li>
     /// <p>SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why <code>ProcessReady()</code> was not called in time.</p></li>
     /// <li>

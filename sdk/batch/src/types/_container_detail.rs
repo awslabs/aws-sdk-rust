@@ -78,6 +78,8 @@ pub struct ContainerDetail {
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>The private repository authentication credentials to use.</p>
     pub repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub enable_execute_command: ::std::option::Option<bool>,
 }
 impl ContainerDetail {
     /// <p>The image used to start the container.</p>
@@ -228,6 +230,10 @@ impl ContainerDetail {
     pub fn repository_credentials(&self) -> ::std::option::Option<&crate::types::RepositoryCredentials> {
         self.repository_credentials.as_ref()
     }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
+        self.enable_execute_command
+    }
 }
 impl ContainerDetail {
     /// Creates a new builder-style object to manufacture [`ContainerDetail`](crate::types::ContainerDetail).
@@ -269,6 +275,7 @@ pub struct ContainerDetailBuilder {
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     pub(crate) repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
+    pub(crate) enable_execute_command: ::std::option::Option<bool>,
 }
 impl ContainerDetailBuilder {
     /// <p>The image used to start the container.</p>
@@ -773,6 +780,20 @@ impl ContainerDetailBuilder {
     pub fn get_repository_credentials(&self) -> &::std::option::Option<crate::types::RepositoryCredentials> {
         &self.repository_credentials
     }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn enable_execute_command(mut self, input: bool) -> Self {
+        self.enable_execute_command = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_execute_command = input;
+        self
+    }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
+        &self.enable_execute_command
+    }
     /// Consumes the builder and constructs a [`ContainerDetail`](crate::types::ContainerDetail).
     pub fn build(self) -> crate::types::ContainerDetail {
         crate::types::ContainerDetail {
@@ -805,6 +826,7 @@ impl ContainerDetailBuilder {
             ephemeral_storage: self.ephemeral_storage,
             runtime_platform: self.runtime_platform,
             repository_credentials: self.repository_credentials,
+            enable_execute_command: self.enable_execute_command,
         }
     }
 }

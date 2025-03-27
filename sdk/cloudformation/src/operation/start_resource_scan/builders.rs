@@ -122,4 +122,23 @@ impl StartResourceScanFluentBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_request_token()
     }
+    ///
+    /// Appends an item to `ScanFilters`.
+    ///
+    /// To override the contents of this collection use [`set_scan_filters`](Self::set_scan_filters).
+    ///
+    /// <p>The scan filters to use.</p>
+    pub fn scan_filters(mut self, input: crate::types::ScanFilter) -> Self {
+        self.inner = self.inner.scan_filters(input);
+        self
+    }
+    /// <p>The scan filters to use.</p>
+    pub fn set_scan_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>) -> Self {
+        self.inner = self.inner.set_scan_filters(input);
+        self
+    }
+    /// <p>The scan filters to use.</p>
+    pub fn get_scan_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>> {
+        self.inner.get_scan_filters()
+    }
 }

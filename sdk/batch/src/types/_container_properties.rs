@@ -80,6 +80,8 @@ pub struct ContainerProperties {
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The platform configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub fargate_platform_configuration: ::std::option::Option<crate::types::FargatePlatformConfiguration>,
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub enable_execute_command: ::std::option::Option<bool>,
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
@@ -218,6 +220,10 @@ impl ContainerProperties {
     pub fn fargate_platform_configuration(&self) -> ::std::option::Option<&crate::types::FargatePlatformConfiguration> {
         self.fargate_platform_configuration.as_ref()
     }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
+        self.enable_execute_command
+    }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
@@ -262,6 +268,7 @@ pub struct ContainerPropertiesBuilder {
     pub(crate) secrets: ::std::option::Option<::std::vec::Vec<crate::types::Secret>>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) fargate_platform_configuration: ::std::option::Option<crate::types::FargatePlatformConfiguration>,
+    pub(crate) enable_execute_command: ::std::option::Option<bool>,
     pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     pub(crate) repository_credentials: ::std::option::Option<crate::types::RepositoryCredentials>,
@@ -697,6 +704,20 @@ impl ContainerPropertiesBuilder {
     pub fn get_fargate_platform_configuration(&self) -> &::std::option::Option<crate::types::FargatePlatformConfiguration> {
         &self.fargate_platform_configuration
     }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn enable_execute_command(mut self, input: bool) -> Self {
+        self.enable_execute_command = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_execute_command = input;
+        self
+    }
+    /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
+    pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
+        &self.enable_execute_command
+    }
     /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
@@ -762,6 +783,7 @@ impl ContainerPropertiesBuilder {
             secrets: self.secrets,
             network_configuration: self.network_configuration,
             fargate_platform_configuration: self.fargate_platform_configuration,
+            enable_execute_command: self.enable_execute_command,
             ephemeral_storage: self.ephemeral_storage,
             runtime_platform: self.runtime_platform,
             repository_credentials: self.repository_credentials,

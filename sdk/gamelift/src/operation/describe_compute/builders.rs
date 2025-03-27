@@ -22,14 +22,24 @@ impl crate::operation::describe_compute::builders::DescribeComputeInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeCompute`.
 ///
-/// <p>Retrieves properties for a compute resource in an Amazon GameLift fleet. To get a list of all computes in a fleet, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html</a>.</p>
-/// <p>To request information on a specific compute, provide the fleet ID and compute name.</p>
+/// <p>Retrieves properties for a specific compute resource in an Amazon GameLift fleet. You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
+/// <p><b>Request options</b></p>
+/// <p>Provide the fleet ID and compute name. The compute name varies depending on the type of fleet.</p>
+/// <ul>
+/// <li>
+/// <p>For a compute in a managed EC2 fleet, provide an instance ID. Each instance in the fleet is a compute.</p></li>
+/// <li>
+/// <p>For a compute in a managed container fleet, provide a compute name. In a container fleet, each game server container group on a fleet instance is assigned a compute name.</p></li>
+/// <li>
+/// <p>For a compute in an Anywhere fleet, provide a registered compute name. Anywhere fleet computes are created when you register a hosting resource with the fleet.</p></li>
+/// </ul>
+/// <p><b>Results</b></p>
 /// <p>If successful, this operation returns details for the requested compute resource. Depending on the fleet's compute type, the result includes the following information:</p>
 /// <ul>
 /// <li>
-/// <p>For managed EC2 fleets, this operation returns information about the EC2 instance.</p></li>
+/// <p>For a managed EC2 fleet, this operation returns information about the EC2 instance.</p></li>
 /// <li>
-/// <p>For Anywhere fleets, this operation returns information about the registered compute.</p></li>
+/// <p>For an Anywhere fleet, this operation returns information about the registered compute.</p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeComputeFluentBuilder {
@@ -130,17 +140,17 @@ impl DescribeComputeFluentBuilder {
     pub fn get_fleet_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_fleet_id()
     }
-    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID.</p>
+    /// <p>The unique identifier of the compute resource to retrieve properties for. For a managed container fleet or Anywhere fleet, use a compute name. For an EC2 fleet, use an instance ID. To retrieve a fleet's compute identifiers, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
     pub fn compute_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.compute_name(input.into());
         self
     }
-    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID.</p>
+    /// <p>The unique identifier of the compute resource to retrieve properties for. For a managed container fleet or Anywhere fleet, use a compute name. For an EC2 fleet, use an instance ID. To retrieve a fleet's compute identifiers, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
     pub fn set_compute_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_compute_name(input);
         self
     }
-    /// <p>The unique identifier of the compute resource to retrieve properties for. For an Anywhere fleet compute, use the registered compute name. For an EC2 fleet instance, use the instance ID.</p>
+    /// <p>The unique identifier of the compute resource to retrieve properties for. For a managed container fleet or Anywhere fleet, use a compute name. For an EC2 fleet, use an instance ID. To retrieve a fleet's compute identifiers, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.</p>
     pub fn get_compute_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_compute_name()
     }

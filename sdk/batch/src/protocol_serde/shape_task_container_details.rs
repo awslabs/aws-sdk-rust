@@ -28,6 +28,10 @@ where
                         "essential" => {
                             builder = builder.set_essential(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "firelensConfiguration" => {
+                            builder = builder
+                                .set_firelens_configuration(crate::protocol_serde::shape_firelens_configuration::de_firelens_configuration(tokens)?);
+                        }
                         "image" => {
                             builder = builder.set_image(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

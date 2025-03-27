@@ -321,6 +321,8 @@ pub use crate::types::_flow_multi_turn_input_request_event::FlowMultiTurnInputRe
 
 pub use crate::types::_flow_trace_event::FlowTraceEventBuilder;
 
+pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEventBuilder;
+
 pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditionNodeResultEventBuilder;
 
 pub use crate::types::_flow_trace_condition::FlowTraceConditionBuilder;

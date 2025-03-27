@@ -10,6 +10,17 @@ pub fn ser_start_resource_scan_input_input_input(
     if let Some(var_2) = &input.client_request_token {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("ScanFilters");
+    if let Some(var_4) = &input.scan_filters {
+        let mut list_6 = scope_3.start_list(false, None);
+        for item_5 in var_4 {
+            #[allow(unused_mut)]
+            let mut entry_7 = list_6.entry();
+            crate::protocol_serde::shape_scan_filter::ser_scan_filter(entry_7, item_5)?;
+        }
+        list_6.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

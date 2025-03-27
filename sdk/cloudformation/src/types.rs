@@ -39,6 +39,8 @@ pub use crate::types::_resource_definition::ResourceDefinition;
 
 pub use crate::types::_third_party_type::ThirdPartyType;
 
+pub use crate::types::_scan_filter::ScanFilter;
+
 pub use crate::types::_resource_signal_status::ResourceSignalStatus;
 
 pub use crate::types::_registry_type::RegistryType;
@@ -150,6 +152,8 @@ pub use crate::types::_difference_type::DifferenceType;
 pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePair;
 
 pub use crate::types::_resource_scan_summary::ResourceScanSummary;
+
+pub use crate::types::_scan_type::ScanType;
 
 pub use crate::types::_resource_scan_status::ResourceScanStatus;
 
@@ -468,6 +472,10 @@ mod _resource_to_import;
 mod _rollback_configuration;
 
 mod _rollback_trigger;
+
+mod _scan_filter;
+
+mod _scan_type;
 
 mod _scanned_resource;
 

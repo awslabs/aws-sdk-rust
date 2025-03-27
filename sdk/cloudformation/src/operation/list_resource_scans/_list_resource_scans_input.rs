@@ -7,6 +7,8 @@ pub struct ListResourceScansInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. The default value is 10. The maximum value is 100.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub scan_type_filter: ::std::option::Option<crate::types::ScanType>,
 }
 impl ListResourceScansInput {
     /// <p>A string that identifies the next page of resource scan results.</p>
@@ -16,6 +18,10 @@ impl ListResourceScansInput {
     /// <p>If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can use for the <code>NextToken</code> parameter to get the next set of results. The default value is 10. The maximum value is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn scan_type_filter(&self) -> ::std::option::Option<&crate::types::ScanType> {
+        self.scan_type_filter.as_ref()
     }
 }
 impl ListResourceScansInput {
@@ -31,6 +37,7 @@ impl ListResourceScansInput {
 pub struct ListResourceScansInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) scan_type_filter: ::std::option::Option<crate::types::ScanType>,
 }
 impl ListResourceScansInputBuilder {
     /// <p>A string that identifies the next page of resource scan results.</p>
@@ -61,6 +68,20 @@ impl ListResourceScansInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn scan_type_filter(mut self, input: crate::types::ScanType) -> Self {
+        self.scan_type_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn set_scan_type_filter(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
+        self.scan_type_filter = input;
+        self
+    }
+    /// <p>The scan type that you want to get summary information about. The default is <code>FULL</code>.</p>
+    pub fn get_scan_type_filter(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type_filter
+    }
     /// Consumes the builder and constructs a [`ListResourceScansInput`](crate::operation::list_resource_scans::ListResourceScansInput).
     pub fn build(
         self,
@@ -68,6 +89,7 @@ impl ListResourceScansInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_resource_scans::ListResourceScansInput {
             next_token: self.next_token,
             max_results: self.max_results,
+            scan_type_filter: self.scan_type_filter,
         })
     }
 }

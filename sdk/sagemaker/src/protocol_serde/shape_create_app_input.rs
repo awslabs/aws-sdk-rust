@@ -36,5 +36,8 @@ pub fn ser_create_app_input_input(
         crate::protocol_serde::shape_resource_spec::ser_resource_spec(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.recovery_mode {
+        object.key("RecoveryMode").boolean(*var_12);
+    }
     Ok(())
 }

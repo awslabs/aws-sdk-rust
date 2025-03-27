@@ -5,11 +5,19 @@
 pub struct StartResourceScanInput {
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
     pub client_request_token: ::std::option::Option<::std::string::String>,
+    /// <p>The scan filters to use.</p>
+    pub scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>,
 }
 impl StartResourceScanInput {
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
     pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+    /// <p>The scan filters to use.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scan_filters.is_none()`.
+    pub fn scan_filters(&self) -> &[crate::types::ScanFilter] {
+        self.scan_filters.as_deref().unwrap_or_default()
     }
 }
 impl StartResourceScanInput {
@@ -24,6 +32,7 @@ impl StartResourceScanInput {
 #[non_exhaustive]
 pub struct StartResourceScanInputBuilder {
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) scan_filters: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>,
 }
 impl StartResourceScanInputBuilder {
     /// <p>A unique identifier for this <code>StartResourceScan</code> request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.</p>
@@ -40,12 +49,33 @@ impl StartResourceScanInputBuilder {
     pub fn get_client_request_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_request_token
     }
+    /// Appends an item to `scan_filters`.
+    ///
+    /// To override the contents of this collection use [`set_scan_filters`](Self::set_scan_filters).
+    ///
+    /// <p>The scan filters to use.</p>
+    pub fn scan_filters(mut self, input: crate::types::ScanFilter) -> Self {
+        let mut v = self.scan_filters.unwrap_or_default();
+        v.push(input);
+        self.scan_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The scan filters to use.</p>
+    pub fn set_scan_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>>) -> Self {
+        self.scan_filters = input;
+        self
+    }
+    /// <p>The scan filters to use.</p>
+    pub fn get_scan_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ScanFilter>> {
+        &self.scan_filters
+    }
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_resource_scan::StartResourceScanInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_resource_scan::StartResourceScanInput {
             client_request_token: self.client_request_token,
+            scan_filters: self.scan_filters,
         })
     }
 }

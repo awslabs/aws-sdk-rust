@@ -108,31 +108,31 @@ impl CreateSchedulingPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the fair-share scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the fair-share scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
+    /// <p>The name of the fair-share scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The fair share policy of the scheduling policy.</p>
+    /// <p>The fair-share scheduling policy details.</p>
     pub fn fairshare_policy(mut self, input: crate::types::FairsharePolicy) -> Self {
         self.inner = self.inner.fairshare_policy(input);
         self
     }
-    /// <p>The fair share policy of the scheduling policy.</p>
+    /// <p>The fair-share scheduling policy details.</p>
     pub fn set_fairshare_policy(mut self, input: ::std::option::Option<crate::types::FairsharePolicy>) -> Self {
         self.inner = self.inner.set_fairshare_policy(input);
         self
     }
-    /// <p>The fair share policy of the scheduling policy.</p>
+    /// <p>The fair-share scheduling policy details.</p>
     pub fn get_fairshare_policy(&self) -> &::std::option::Option<crate::types::FairsharePolicy> {
         self.inner.get_fairshare_policy()
     }

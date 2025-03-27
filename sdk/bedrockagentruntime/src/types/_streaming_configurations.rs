@@ -6,7 +6,12 @@
 pub struct StreamingConfigurations {
     /// <p>Specifies whether to enable streaming for the final response. This is set to <code>false</code> by default.</p>
     pub stream_final_response: bool,
-    /// <p>The guardrail interval to apply as response is generated.</p>
+    /// <p>The guardrail interval to apply as response is generated. By default, the guardrail interval is set to 50 characters. If a larger interval is specified, the response will be generated in larger chunks with fewer <code>ApplyGuardrail</code> calls. The following examples show the response generated for <i>Hello, I am an agent</i> input string.</p>
+    /// <p><b>Example response in chunks: Interval set to 3 characters</b></p>
+    /// <p><code>'Hel', 'lo, ','I am', ' an', ' Age', 'nt'</code></p>
+    /// <p>Each chunk has at least 3 characters except for the last chunk</p>
+    /// <p><b>Example response in chunks: Interval set to 20 or more characters</b></p>
+    /// <p><code>Hello, I am an Agent</code></p>
     pub apply_guardrail_interval: ::std::option::Option<i32>,
 }
 impl StreamingConfigurations {
@@ -14,7 +19,12 @@ impl StreamingConfigurations {
     pub fn stream_final_response(&self) -> bool {
         self.stream_final_response
     }
-    /// <p>The guardrail interval to apply as response is generated.</p>
+    /// <p>The guardrail interval to apply as response is generated. By default, the guardrail interval is set to 50 characters. If a larger interval is specified, the response will be generated in larger chunks with fewer <code>ApplyGuardrail</code> calls. The following examples show the response generated for <i>Hello, I am an agent</i> input string.</p>
+    /// <p><b>Example response in chunks: Interval set to 3 characters</b></p>
+    /// <p><code>'Hel', 'lo, ','I am', ' an', ' Age', 'nt'</code></p>
+    /// <p>Each chunk has at least 3 characters except for the last chunk</p>
+    /// <p><b>Example response in chunks: Interval set to 20 or more characters</b></p>
+    /// <p><code>Hello, I am an Agent</code></p>
     pub fn apply_guardrail_interval(&self) -> ::std::option::Option<i32> {
         self.apply_guardrail_interval
     }
@@ -48,17 +58,32 @@ impl StreamingConfigurationsBuilder {
     pub fn get_stream_final_response(&self) -> &::std::option::Option<bool> {
         &self.stream_final_response
     }
-    /// <p>The guardrail interval to apply as response is generated.</p>
+    /// <p>The guardrail interval to apply as response is generated. By default, the guardrail interval is set to 50 characters. If a larger interval is specified, the response will be generated in larger chunks with fewer <code>ApplyGuardrail</code> calls. The following examples show the response generated for <i>Hello, I am an agent</i> input string.</p>
+    /// <p><b>Example response in chunks: Interval set to 3 characters</b></p>
+    /// <p><code>'Hel', 'lo, ','I am', ' an', ' Age', 'nt'</code></p>
+    /// <p>Each chunk has at least 3 characters except for the last chunk</p>
+    /// <p><b>Example response in chunks: Interval set to 20 or more characters</b></p>
+    /// <p><code>Hello, I am an Agent</code></p>
     pub fn apply_guardrail_interval(mut self, input: i32) -> Self {
         self.apply_guardrail_interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The guardrail interval to apply as response is generated.</p>
+    /// <p>The guardrail interval to apply as response is generated. By default, the guardrail interval is set to 50 characters. If a larger interval is specified, the response will be generated in larger chunks with fewer <code>ApplyGuardrail</code> calls. The following examples show the response generated for <i>Hello, I am an agent</i> input string.</p>
+    /// <p><b>Example response in chunks: Interval set to 3 characters</b></p>
+    /// <p><code>'Hel', 'lo, ','I am', ' an', ' Age', 'nt'</code></p>
+    /// <p>Each chunk has at least 3 characters except for the last chunk</p>
+    /// <p><b>Example response in chunks: Interval set to 20 or more characters</b></p>
+    /// <p><code>Hello, I am an Agent</code></p>
     pub fn set_apply_guardrail_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.apply_guardrail_interval = input;
         self
     }
-    /// <p>The guardrail interval to apply as response is generated.</p>
+    /// <p>The guardrail interval to apply as response is generated. By default, the guardrail interval is set to 50 characters. If a larger interval is specified, the response will be generated in larger chunks with fewer <code>ApplyGuardrail</code> calls. The following examples show the response generated for <i>Hello, I am an agent</i> input string.</p>
+    /// <p><b>Example response in chunks: Interval set to 3 characters</b></p>
+    /// <p><code>'Hel', 'lo, ','I am', ' an', ' Age', 'nt'</code></p>
+    /// <p>Each chunk has at least 3 characters except for the last chunk</p>
+    /// <p><b>Example response in chunks: Interval set to 20 or more characters</b></p>
+    /// <p><code>Hello, I am an Agent</code></p>
     pub fn get_apply_guardrail_interval(&self) -> &::std::option::Option<i32> {
         &self.apply_guardrail_interval
     }

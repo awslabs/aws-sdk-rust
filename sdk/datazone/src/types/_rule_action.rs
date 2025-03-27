@@ -12,6 +12,7 @@
 /// ```text
 /// # let ruleaction = unimplemented!();
 /// match ruleaction {
+///     RuleAction::CreateListingChangeSet => { /* ... */ },
 ///     RuleAction::CreateSubscriptionRequest => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum RuleAction {
     #[allow(missing_docs)] // documentation missing in model
+    CreateListingChangeSet,
+    #[allow(missing_docs)] // documentation missing in model
     CreateSubscriptionRequest,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum RuleAction {
 impl ::std::convert::From<&str> for RuleAction {
     fn from(s: &str) -> Self {
         match s {
+            "CREATE_LISTING_CHANGE_SET" => RuleAction::CreateListingChangeSet,
             "CREATE_SUBSCRIPTION_REQUEST" => RuleAction::CreateSubscriptionRequest,
             other => RuleAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl RuleAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RuleAction::CreateListingChangeSet => "CREATE_LISTING_CHANGE_SET",
             RuleAction::CreateSubscriptionRequest => "CREATE_SUBSCRIPTION_REQUEST",
             RuleAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_SUBSCRIPTION_REQUEST"]
+        &["CREATE_LISTING_CHANGE_SET", "CREATE_SUBSCRIPTION_REQUEST"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleAction {
@@ -95,6 +100,7 @@ impl RuleAction {
 impl ::std::fmt::Display for RuleAction {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RuleAction::CreateListingChangeSet => write!(f, "CREATE_LISTING_CHANGE_SET"),
             RuleAction::CreateSubscriptionRequest => write!(f, "CREATE_SUBSCRIPTION_REQUEST"),
             RuleAction::Unknown(value) => write!(f, "{}", value),
         }

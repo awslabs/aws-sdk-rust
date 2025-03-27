@@ -156,6 +156,9 @@ pub(crate) fn de_update_preferences(
                 "memberAccountRateTypeSelections" => {
                     builder = builder.set_member_account_rate_type_selections(crate::protocol_serde::shape_rate_types::de_rate_types(tokens)?);
                 }
+                "standaloneAccountRateTypeSelections" => {
+                    builder = builder.set_standalone_account_rate_type_selections(crate::protocol_serde::shape_rate_types::de_rate_types(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

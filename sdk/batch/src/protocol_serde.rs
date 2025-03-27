@@ -377,6 +377,8 @@ pub(crate) mod shape_environment_variables;
 
 pub(crate) mod shape_evaluate_on_exit_list;
 
+pub(crate) mod shape_firelens_configuration;
+
 pub(crate) mod shape_list_ecs_task_details;
 
 pub(crate) mod shape_list_ecs_task_properties;
@@ -460,3 +462,5 @@ pub(crate) mod shape_eks_limits;
 pub(crate) mod shape_eks_requests;
 
 pub(crate) mod shape_task_container_dependency_list;
+
+pub(crate) mod shape_firelens_configuration_options_map;

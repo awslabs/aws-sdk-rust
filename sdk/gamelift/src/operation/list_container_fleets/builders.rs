@@ -30,7 +30,7 @@ impl crate::operation::list_container_fleets::builders::ListContainerFleetsInput
 /// <li>
 /// <p>Get a list of fleets filtered by container group definition. Provide the container group definition name or ARN value.</p></li>
 /// <li>
-/// <p>To get a list of all Realtime Servers fleets with a specific configuration script, provide the script ID.</p></li>
+/// <p>To get a list of all Amazon GameLift Realtime fleets with a specific configuration script, provide the script ID.</p></li>
 /// </ul>
 /// <p>Use the pagination parameters to retrieve results as a set of sequential pages.</p>
 /// <p>If successful, this operation returns a collection of container fleets that match the request parameters. A NextToken value is also returned if there are more result pages to retrieve.</p><note>

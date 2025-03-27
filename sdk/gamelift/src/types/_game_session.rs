@@ -7,13 +7,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameSession {
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
     /// ::gamesession/
     /// <fleet id>
     /// /
     /// <custom id string or idempotency token></custom>
     /// </fleet>
-    /// </region></code>.</p>
+    /// </location></code>.</p>
     pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -76,13 +76,13 @@ pub struct GameSession {
     pub location: ::std::option::Option<::std::string::String>,
 }
 impl GameSession {
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
     /// ::gamesession/
     /// <fleet id>
     /// /
     /// <custom id string or idempotency token></custom>
     /// </fleet>
-    /// </region></code>.</p>
+    /// </location></code>.</p>
     pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
@@ -241,35 +241,35 @@ pub struct GameSessionBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl GameSessionBuilder {
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
     /// ::gamesession/
     /// <fleet id>
     /// /
     /// <custom id string or idempotency token></custom>
     /// </fleet>
-    /// </region></code>.</p>
+    /// </location></code>.</p>
     pub fn game_session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
     /// ::gamesession/
     /// <fleet id>
     /// /
     /// <custom id string or idempotency token></custom>
     /// </fleet>
-    /// </region></code>.</p>
+    /// </location></code>.</p>
     pub fn set_game_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_session_id = input;
         self
     }
-    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<region>
+    /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:<location>
     /// ::gamesession/
     /// <fleet id>
     /// /
     /// <custom id string or idempotency token></custom>
     /// </fleet>
-    /// </region></code>.</p>
+    /// </location></code>.</p>
     pub fn get_game_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.game_session_id
     }

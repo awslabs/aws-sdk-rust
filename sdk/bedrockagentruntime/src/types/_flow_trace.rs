@@ -6,6 +6,8 @@
 pub enum FlowTrace {
     /// <p>Contains information about an output from a condition node.</p>
     ConditionNodeResultTrace(crate::types::FlowTraceConditionNodeResultEvent),
+    /// <p>Contains information about an action (operation) called by a node. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.</p>
+    NodeActionTrace(crate::types::FlowTraceNodeActionEvent),
     /// <p>Contains information about the input into a node.</p>
     NodeInputTrace(crate::types::FlowTraceNodeInputEvent),
     /// <p>Contains information about the output from a node.</p>
@@ -33,6 +35,19 @@ impl FlowTrace {
     /// Returns true if this is a [`ConditionNodeResultTrace`](crate::types::FlowTrace::ConditionNodeResultTrace).
     pub fn is_condition_node_result_trace(&self) -> bool {
         self.as_condition_node_result_trace().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NodeActionTrace`](crate::types::FlowTrace::NodeActionTrace), extracting the inner [`FlowTraceNodeActionEvent`](crate::types::FlowTraceNodeActionEvent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_node_action_trace(&self) -> ::std::result::Result<&crate::types::FlowTraceNodeActionEvent, &Self> {
+        if let FlowTrace::NodeActionTrace(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NodeActionTrace`](crate::types::FlowTrace::NodeActionTrace).
+    pub fn is_node_action_trace(&self) -> bool {
+        self.as_node_action_trace().is_ok()
     }
     /// Tries to convert the enum instance into [`NodeInputTrace`](crate::types::FlowTrace::NodeInputTrace), extracting the inner [`FlowTraceNodeInputEvent`](crate::types::FlowTraceNodeInputEvent).
     /// Returns `Err(&Self)` if it can't be converted.

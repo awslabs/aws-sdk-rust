@@ -399,6 +399,27 @@ pub(crate) fn flow_trace_condition_node_result_event_correct_errors(
     builder
 }
 
+pub(crate) fn flow_trace_node_action_event_correct_errors(
+    mut builder: crate::types::builders::FlowTraceNodeActionEventBuilder,
+) -> crate::types::builders::FlowTraceNodeActionEventBuilder {
+    if builder.node_name.is_none() {
+        builder.node_name = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.service_name.is_none() {
+        builder.service_name = Some(Default::default())
+    }
+    if builder.operation_name.is_none() {
+        builder.operation_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn flow_trace_node_input_event_correct_errors(
     mut builder: crate::types::builders::FlowTraceNodeInputEventBuilder,
 ) -> crate::types::builders::FlowTraceNodeInputEventBuilder {

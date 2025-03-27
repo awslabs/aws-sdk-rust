@@ -68,7 +68,7 @@ pub struct GameSessionPlacement {
     pub game_session_data: ::std::option::Option<::std::string::String>,
     /// <p>Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>.</p>
     pub matchmaker_data: ::std::option::Option<::std::string::String>,
-    /// <p>A prioritized list of locations to use with a game session placement request and instructions on how to use it. This list overrides a queue's prioritized location list for a single game session placement request only. The list can include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs Amazon GameLift to use the override list for the first placement attempt only or for all placement attempts.</p>
+    /// <p>An alternative priority list of locations that's included with a game session placement request. When provided, the list overrides a queue's location order list for this game session placement request only. The list might include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy tells Amazon GameLift what action to take (if any) in the event that it failed to place a new game session.</p>
     pub priority_configuration_override: ::std::option::Option<crate::types::PriorityConfigurationOverride>,
 }
 impl GameSessionPlacement {
@@ -176,7 +176,7 @@ impl GameSessionPlacement {
     pub fn matchmaker_data(&self) -> ::std::option::Option<&str> {
         self.matchmaker_data.as_deref()
     }
-    /// <p>A prioritized list of locations to use with a game session placement request and instructions on how to use it. This list overrides a queue's prioritized location list for a single game session placement request only. The list can include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs Amazon GameLift to use the override list for the first placement attempt only or for all placement attempts.</p>
+    /// <p>An alternative priority list of locations that's included with a game session placement request. When provided, the list overrides a queue's location order list for this game session placement request only. The list might include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy tells Amazon GameLift what action to take (if any) in the event that it failed to place a new game session.</p>
     pub fn priority_configuration_override(&self) -> ::std::option::Option<&crate::types::PriorityConfigurationOverride> {
         self.priority_configuration_override.as_ref()
     }
@@ -586,17 +586,17 @@ impl GameSessionPlacementBuilder {
     pub fn get_matchmaker_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.matchmaker_data
     }
-    /// <p>A prioritized list of locations to use with a game session placement request and instructions on how to use it. This list overrides a queue's prioritized location list for a single game session placement request only. The list can include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs Amazon GameLift to use the override list for the first placement attempt only or for all placement attempts.</p>
+    /// <p>An alternative priority list of locations that's included with a game session placement request. When provided, the list overrides a queue's location order list for this game session placement request only. The list might include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy tells Amazon GameLift what action to take (if any) in the event that it failed to place a new game session.</p>
     pub fn priority_configuration_override(mut self, input: crate::types::PriorityConfigurationOverride) -> Self {
         self.priority_configuration_override = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A prioritized list of locations to use with a game session placement request and instructions on how to use it. This list overrides a queue's prioritized location list for a single game session placement request only. The list can include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs Amazon GameLift to use the override list for the first placement attempt only or for all placement attempts.</p>
+    /// <p>An alternative priority list of locations that's included with a game session placement request. When provided, the list overrides a queue's location order list for this game session placement request only. The list might include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy tells Amazon GameLift what action to take (if any) in the event that it failed to place a new game session.</p>
     pub fn set_priority_configuration_override(mut self, input: ::std::option::Option<crate::types::PriorityConfigurationOverride>) -> Self {
         self.priority_configuration_override = input;
         self
     }
-    /// <p>A prioritized list of locations to use with a game session placement request and instructions on how to use it. This list overrides a queue's prioritized location list for a single game session placement request only. The list can include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy instructs Amazon GameLift to use the override list for the first placement attempt only or for all placement attempts.</p>
+    /// <p>An alternative priority list of locations that's included with a game session placement request. When provided, the list overrides a queue's location order list for this game session placement request only. The list might include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy tells Amazon GameLift what action to take (if any) in the event that it failed to place a new game session.</p>
     pub fn get_priority_configuration_override(&self) -> &::std::option::Option<crate::types::PriorityConfigurationOverride> {
         &self.priority_configuration_override
     }

@@ -21,5 +21,14 @@ pub fn ser_update_preferences_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.standalone_account_rate_type_selections {
+        let mut array_8 = object.key("standaloneAccountRateTypeSelections").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }

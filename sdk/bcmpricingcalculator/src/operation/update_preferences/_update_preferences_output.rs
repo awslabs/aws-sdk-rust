@@ -7,6 +7,8 @@ pub struct UpdatePreferencesOutput {
     pub management_account_rate_type_selections: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>,
     /// <p>The updated preferred rate types for member accounts.</p>
     pub member_account_rate_type_selections: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>,
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub standalone_account_rate_type_selections: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>,
     _request_id: Option<String>,
 }
 impl UpdatePreferencesOutput {
@@ -21,6 +23,12 @@ impl UpdatePreferencesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.member_account_rate_type_selections.is_none()`.
     pub fn member_account_rate_type_selections(&self) -> &[crate::types::RateType] {
         self.member_account_rate_type_selections.as_deref().unwrap_or_default()
+    }
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standalone_account_rate_type_selections.is_none()`.
+    pub fn standalone_account_rate_type_selections(&self) -> &[crate::types::RateType] {
+        self.standalone_account_rate_type_selections.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdatePreferencesOutput {
@@ -41,6 +49,7 @@ impl UpdatePreferencesOutput {
 pub struct UpdatePreferencesOutputBuilder {
     pub(crate) management_account_rate_type_selections: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>,
     pub(crate) member_account_rate_type_selections: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>,
+    pub(crate) standalone_account_rate_type_selections: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>,
     _request_id: Option<String>,
 }
 impl UpdatePreferencesOutputBuilder {
@@ -84,6 +93,26 @@ impl UpdatePreferencesOutputBuilder {
     pub fn get_member_account_rate_type_selections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateType>> {
         &self.member_account_rate_type_selections
     }
+    /// Appends an item to `standalone_account_rate_type_selections`.
+    ///
+    /// To override the contents of this collection use [`set_standalone_account_rate_type_selections`](Self::set_standalone_account_rate_type_selections).
+    ///
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub fn standalone_account_rate_type_selections(mut self, input: crate::types::RateType) -> Self {
+        let mut v = self.standalone_account_rate_type_selections.unwrap_or_default();
+        v.push(input);
+        self.standalone_account_rate_type_selections = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub fn set_standalone_account_rate_type_selections(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RateType>>) -> Self {
+        self.standalone_account_rate_type_selections = input;
+        self
+    }
+    /// <p>The updated preferred rate types for a standalone account.</p>
+    pub fn get_standalone_account_rate_type_selections(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RateType>> {
+        &self.standalone_account_rate_type_selections
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -98,6 +127,7 @@ impl UpdatePreferencesOutputBuilder {
         crate::operation::update_preferences::UpdatePreferencesOutput {
             management_account_rate_type_selections: self.management_account_rate_type_selections,
             member_account_rate_type_selections: self.member_account_rate_type_selections,
+            standalone_account_rate_type_selections: self.standalone_account_rate_type_selections,
             _request_id: self._request_id,
         }
     }

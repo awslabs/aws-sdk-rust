@@ -11,10 +11,8 @@ pub struct DescribeStackResourceInput {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub logical_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeStackResourceInput {
@@ -25,12 +23,10 @@ impl DescribeStackResourceInput {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
@@ -57,7 +53,6 @@ impl DescribeStackResourceInputBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     /// This field is required.
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
@@ -70,7 +65,6 @@ impl DescribeStackResourceInputBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
@@ -82,25 +76,21 @@ impl DescribeStackResourceInputBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     /// This field is required.
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logical_resource_id = input;
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.logical_resource_id
     }

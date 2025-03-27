@@ -39,86 +39,92 @@ pub fn ser_task_container_properties(
     if let Some(var_12) = &input.essential {
         object.key("essential").boolean(*var_12);
     }
-    if let Some(var_13) = &input.image {
-        object.key("image").string(var_13.as_str());
-    }
-    if let Some(var_14) = &input.linux_parameters {
+    if let Some(var_13) = &input.firelens_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("linuxParameters").start_object();
-        crate::protocol_serde::shape_linux_parameters::ser_linux_parameters(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_14 = object.key("firelensConfiguration").start_object();
+        crate::protocol_serde::shape_firelens_configuration::ser_firelens_configuration(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_16) = &input.log_configuration {
+    if let Some(var_15) = &input.image {
+        object.key("image").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.linux_parameters {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("logConfiguration").start_object();
-        crate::protocol_serde::shape_log_configuration::ser_log_configuration(&mut object_17, var_16)?;
+        let mut object_17 = object.key("linuxParameters").start_object();
+        crate::protocol_serde::shape_linux_parameters::ser_linux_parameters(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.mount_points {
-        let mut array_19 = object.key("mountPoints").start_array();
-        for item_20 in var_18 {
-            {
-                #[allow(unused_mut)]
-                let mut object_21 = array_19.value().start_object();
-                crate::protocol_serde::shape_mount_point::ser_mount_point(&mut object_21, item_20)?;
-                object_21.finish();
-            }
-        }
-        array_19.finish();
-    }
-    if let Some(var_22) = &input.name {
-        object.key("name").string(var_22.as_str());
-    }
-    if let Some(var_23) = &input.privileged {
-        object.key("privileged").boolean(*var_23);
-    }
-    if let Some(var_24) = &input.readonly_root_filesystem {
-        object.key("readonlyRootFilesystem").boolean(*var_24);
-    }
-    if let Some(var_25) = &input.repository_credentials {
+    if let Some(var_18) = &input.log_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("repositoryCredentials").start_object();
-        crate::protocol_serde::shape_repository_credentials::ser_repository_credentials(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_19 = object.key("logConfiguration").start_object();
+        crate::protocol_serde::shape_log_configuration::ser_log_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_27) = &input.resource_requirements {
-        let mut array_28 = object.key("resourceRequirements").start_array();
-        for item_29 in var_27 {
+    if let Some(var_20) = &input.mount_points {
+        let mut array_21 = object.key("mountPoints").start_array();
+        for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_resource_requirement::ser_resource_requirement(&mut object_30, item_29)?;
-                object_30.finish();
+                let mut object_23 = array_21.value().start_object();
+                crate::protocol_serde::shape_mount_point::ser_mount_point(&mut object_23, item_22)?;
+                object_23.finish();
             }
         }
-        array_28.finish();
+        array_21.finish();
     }
-    if let Some(var_31) = &input.secrets {
-        let mut array_32 = object.key("secrets").start_array();
-        for item_33 in var_31 {
+    if let Some(var_24) = &input.name {
+        object.key("name").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.privileged {
+        object.key("privileged").boolean(*var_25);
+    }
+    if let Some(var_26) = &input.readonly_root_filesystem {
+        object.key("readonlyRootFilesystem").boolean(*var_26);
+    }
+    if let Some(var_27) = &input.repository_credentials {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("repositoryCredentials").start_object();
+        crate::protocol_serde::shape_repository_credentials::ser_repository_credentials(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.resource_requirements {
+        let mut array_30 = object.key("resourceRequirements").start_array();
+        for item_31 in var_29 {
             {
                 #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                crate::protocol_serde::shape_secret::ser_secret(&mut object_34, item_33)?;
-                object_34.finish();
+                let mut object_32 = array_30.value().start_object();
+                crate::protocol_serde::shape_resource_requirement::ser_resource_requirement(&mut object_32, item_31)?;
+                object_32.finish();
             }
         }
-        array_32.finish();
+        array_30.finish();
     }
-    if let Some(var_35) = &input.ulimits {
-        let mut array_36 = object.key("ulimits").start_array();
-        for item_37 in var_35 {
+    if let Some(var_33) = &input.secrets {
+        let mut array_34 = object.key("secrets").start_array();
+        for item_35 in var_33 {
             {
                 #[allow(unused_mut)]
-                let mut object_38 = array_36.value().start_object();
-                crate::protocol_serde::shape_ulimit::ser_ulimit(&mut object_38, item_37)?;
-                object_38.finish();
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_secret::ser_secret(&mut object_36, item_35)?;
+                object_36.finish();
             }
         }
-        array_36.finish();
+        array_34.finish();
     }
-    if let Some(var_39) = &input.user {
-        object.key("user").string(var_39.as_str());
+    if let Some(var_37) = &input.ulimits {
+        let mut array_38 = object.key("ulimits").start_array();
+        for item_39 in var_37 {
+            {
+                #[allow(unused_mut)]
+                let mut object_40 = array_38.value().start_object();
+                crate::protocol_serde::shape_ulimit::ser_ulimit(&mut object_40, item_39)?;
+                object_40.finish();
+            }
+        }
+        array_38.finish();
+    }
+    if let Some(var_41) = &input.user {
+        object.key("user").string(var_41.as_str());
     }
     Ok(())
 }
@@ -151,6 +157,10 @@ where
                         }
                         "essential" => {
                             builder = builder.set_essential(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "firelensConfiguration" => {
+                            builder = builder
+                                .set_firelens_configuration(crate::protocol_serde::shape_firelens_configuration::de_firelens_configuration(tokens)?);
                         }
                         "image" => {
                             builder = builder.set_image(

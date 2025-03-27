@@ -95,6 +95,8 @@ pub use crate::types::_tmpfs::TmpfsBuilder;
 
 pub use crate::types::_device::DeviceBuilder;
 
+pub use crate::types::_firelens_configuration::FirelensConfigurationBuilder;
+
 pub use crate::types::_task_container_dependency::TaskContainerDependencyBuilder;
 
 pub use crate::types::_eks_properties::EksPropertiesBuilder;

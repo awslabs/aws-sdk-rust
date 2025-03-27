@@ -123,6 +123,9 @@ pub(crate) fn de_describe_app(
                             .transpose()?,
                     );
                 }
+                "RecoveryMode" => {
+                    builder = builder.set_recovery_mode(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "LastHealthCheckTimestamp" => {
                     builder = builder.set_last_health_check_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

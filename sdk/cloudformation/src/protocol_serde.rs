@@ -435,6 +435,8 @@ pub(crate) mod shape_resource_to_import;
 
 pub(crate) mod shape_rollback_configuration;
 
+pub(crate) mod shape_scan_filter;
+
 pub(crate) mod shape_scanned_resource_identifier;
 
 pub(crate) mod shape_stack_definition;
@@ -512,6 +514,8 @@ pub(crate) mod shape_resource_scan_summaries;
 pub(crate) mod shape_resource_types;
 
 pub(crate) mod shape_rollback_trigger;
+
+pub(crate) mod shape_scan_filters;
 
 pub(crate) mod shape_scanned_resources;
 
@@ -682,6 +686,8 @@ pub(crate) mod shape_resource_change;
 pub(crate) mod shape_resource_identifier_properties;
 
 pub(crate) mod shape_resource_identifiers;
+
+pub(crate) mod shape_resource_type_filters;
 
 pub(crate) mod shape_stack_drift_information;
 

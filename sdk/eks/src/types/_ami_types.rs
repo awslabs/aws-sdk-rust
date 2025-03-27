@@ -20,8 +20,10 @@
 ///     AmiTypes::Al2X8664 => { /* ... */ },
 ///     AmiTypes::Al2X8664Gpu => { /* ... */ },
 ///     AmiTypes::BottlerocketArm64 => { /* ... */ },
+///     AmiTypes::BottlerocketArm64Fips => { /* ... */ },
 ///     AmiTypes::BottlerocketArm64Nvidia => { /* ... */ },
 ///     AmiTypes::BottlerocketX8664 => { /* ... */ },
+///     AmiTypes::BottlerocketX8664Fips => { /* ... */ },
 ///     AmiTypes::BottlerocketX8664Nvidia => { /* ... */ },
 ///     AmiTypes::Custom => { /* ... */ },
 ///     AmiTypes::WindowsCore2019X8664 => { /* ... */ },
@@ -73,9 +75,13 @@ pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
     BottlerocketArm64,
     #[allow(missing_docs)] // documentation missing in model
+    BottlerocketArm64Fips,
+    #[allow(missing_docs)] // documentation missing in model
     BottlerocketArm64Nvidia,
     #[allow(missing_docs)] // documentation missing in model
     BottlerocketX8664,
+    #[allow(missing_docs)] // documentation missing in model
+    BottlerocketX8664Fips,
     #[allow(missing_docs)] // documentation missing in model
     BottlerocketX8664Nvidia,
     #[allow(missing_docs)] // documentation missing in model
@@ -103,8 +109,10 @@ impl ::std::convert::From<&str> for AmiTypes {
             "AL2_x86_64" => AmiTypes::Al2X8664,
             "AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
             "BOTTLEROCKET_ARM_64" => AmiTypes::BottlerocketArm64,
+            "BOTTLEROCKET_ARM_64_FIPS" => AmiTypes::BottlerocketArm64Fips,
             "BOTTLEROCKET_ARM_64_NVIDIA" => AmiTypes::BottlerocketArm64Nvidia,
             "BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
+            "BOTTLEROCKET_x86_64_FIPS" => AmiTypes::BottlerocketX8664Fips,
             "BOTTLEROCKET_x86_64_NVIDIA" => AmiTypes::BottlerocketX8664Nvidia,
             "CUSTOM" => AmiTypes::Custom,
             "WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
@@ -134,8 +142,10 @@ impl AmiTypes {
             AmiTypes::Al2X8664 => "AL2_x86_64",
             AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
             AmiTypes::BottlerocketArm64 => "BOTTLEROCKET_ARM_64",
+            AmiTypes::BottlerocketArm64Fips => "BOTTLEROCKET_ARM_64_FIPS",
             AmiTypes::BottlerocketArm64Nvidia => "BOTTLEROCKET_ARM_64_NVIDIA",
             AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
+            AmiTypes::BottlerocketX8664Fips => "BOTTLEROCKET_x86_64_FIPS",
             AmiTypes::BottlerocketX8664Nvidia => "BOTTLEROCKET_x86_64_NVIDIA",
             AmiTypes::Custom => "CUSTOM",
             AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
@@ -156,8 +166,10 @@ impl AmiTypes {
             "AL2_x86_64",
             "AL2_x86_64_GPU",
             "BOTTLEROCKET_ARM_64",
+            "BOTTLEROCKET_ARM_64_FIPS",
             "BOTTLEROCKET_ARM_64_NVIDIA",
             "BOTTLEROCKET_x86_64",
+            "BOTTLEROCKET_x86_64_FIPS",
             "BOTTLEROCKET_x86_64_NVIDIA",
             "CUSTOM",
             "WINDOWS_CORE_2019_x86_64",
@@ -195,8 +207,10 @@ impl ::std::fmt::Display for AmiTypes {
             AmiTypes::Al2X8664 => write!(f, "AL2_x86_64"),
             AmiTypes::Al2X8664Gpu => write!(f, "AL2_x86_64_GPU"),
             AmiTypes::BottlerocketArm64 => write!(f, "BOTTLEROCKET_ARM_64"),
+            AmiTypes::BottlerocketArm64Fips => write!(f, "BOTTLEROCKET_ARM_64_FIPS"),
             AmiTypes::BottlerocketArm64Nvidia => write!(f, "BOTTLEROCKET_ARM_64_NVIDIA"),
             AmiTypes::BottlerocketX8664 => write!(f, "BOTTLEROCKET_x86_64"),
+            AmiTypes::BottlerocketX8664Fips => write!(f, "BOTTLEROCKET_x86_64_FIPS"),
             AmiTypes::BottlerocketX8664Nvidia => write!(f, "BOTTLEROCKET_x86_64_NVIDIA"),
             AmiTypes::Custom => write!(f, "CUSTOM"),
             AmiTypes::WindowsCore2019X8664 => write!(f, "WINDOWS_CORE_2019_x86_64"),

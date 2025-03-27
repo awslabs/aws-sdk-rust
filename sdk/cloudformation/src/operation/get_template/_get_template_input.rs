@@ -11,7 +11,6 @@ pub struct GetTemplateInput {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
     pub change_set_name: ::std::option::Option<::std::string::String>,
@@ -27,7 +26,6 @@ impl GetTemplateInput {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
@@ -64,7 +62,6 @@ impl GetTemplateInputBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_name = ::std::option::Option::Some(input.into());
         self
@@ -76,7 +73,6 @@ impl GetTemplateInputBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
@@ -88,7 +84,6 @@ impl GetTemplateInputBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_name
     }

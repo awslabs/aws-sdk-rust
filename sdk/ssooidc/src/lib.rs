@@ -91,7 +91,7 @@
 //! either a successful output or a [`SdkError`](crate::error::SdkError).
 //!
 //! Some of these API inputs may be structs or enums to provide more complex structured information.
-//! There are some simpler types for
+//! These structs and enums live in [`types`](crate::types). There are some simpler types for
 //! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
 //!
 //! All types required to configure a client via the [`Config`](crate::Config) struct live
@@ -150,6 +150,9 @@ pub mod operation;
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
 
+/// Data structures used by operation inputs/outputs.
+pub mod types;
+
 mod auth_plugin;
 
 pub(crate) mod protocol_serde;
@@ -157,9 +160,6 @@ pub(crate) mod protocol_serde;
 mod sdk_feature_tracker;
 
 mod serialization_settings;
-
-/// Data structures used by operation inputs/outputs.
-pub mod types;
 
 mod endpoint_lib;
 

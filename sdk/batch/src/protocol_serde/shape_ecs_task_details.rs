@@ -81,6 +81,9 @@ where
                         "volumes" => {
                             builder = builder.set_volumes(crate::protocol_serde::shape_volumes::de_volumes(tokens)?);
                         }
+                        "enableExecuteCommand" => {
+                            builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

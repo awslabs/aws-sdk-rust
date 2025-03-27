@@ -116,7 +116,6 @@ impl DescribeStackResourceFluentBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
         self
@@ -128,7 +127,6 @@ impl DescribeStackResourceFluentBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
@@ -140,24 +138,20 @@ impl DescribeStackResourceFluentBuilder {
     /// <li>
     /// <p>Deleted stacks: You must specify the unique stack ID.</p></li>
     /// </ul>
-    /// <p>Default: There is no default value.</p>
     pub fn get_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stack_name()
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub fn logical_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logical_resource_id(input.into());
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub fn set_logical_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
     /// <p>The logical name of the resource as specified in the template.</p>
-    /// <p>Default: There is no default value.</p>
     pub fn get_logical_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_logical_resource_id()
     }

@@ -9,7 +9,7 @@ pub struct ResourceScanSummary {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -42,6 +42,8 @@ pub struct ResourceScanSummary {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The percentage of the resource scan that has been completed.</p>
     pub percentage_completed: ::std::option::Option<f64>,
+    /// <p>The scan type that has been completed.</p>
+    pub scan_type: ::std::option::Option<crate::types::ScanType>,
 }
 impl ResourceScanSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
@@ -51,7 +53,7 @@ impl ResourceScanSummary {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -94,6 +96,10 @@ impl ResourceScanSummary {
     pub fn percentage_completed(&self) -> ::std::option::Option<f64> {
         self.percentage_completed
     }
+    /// <p>The scan type that has been completed.</p>
+    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
+        self.scan_type.as_ref()
+    }
 }
 impl ResourceScanSummary {
     /// Creates a new builder-style object to manufacture [`ResourceScanSummary`](crate::types::ResourceScanSummary).
@@ -112,6 +118,7 @@ pub struct ResourceScanSummaryBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) percentage_completed: ::std::option::Option<f64>,
+    pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
 }
 impl ResourceScanSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource scan.</p>
@@ -131,7 +138,7 @@ impl ResourceScanSummaryBuilder {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -162,7 +169,7 @@ impl ResourceScanSummaryBuilder {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -193,7 +200,7 @@ impl ResourceScanSummaryBuilder {
     /// <p>Status of the resource scan.</p>
     /// <dl>
     /// <dt>
-    /// INPROGRESS
+    /// IN_PROGRESS
     /// </dt>
     /// <dd>
     /// <p>The resource scan is still in progress.</p>
@@ -276,6 +283,20 @@ impl ResourceScanSummaryBuilder {
     pub fn get_percentage_completed(&self) -> &::std::option::Option<f64> {
         &self.percentage_completed
     }
+    /// <p>The scan type that has been completed.</p>
+    pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
+        self.scan_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scan type that has been completed.</p>
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
+        self.scan_type = input;
+        self
+    }
+    /// <p>The scan type that has been completed.</p>
+    pub fn get_scan_type(&self) -> &::std::option::Option<crate::types::ScanType> {
+        &self.scan_type
+    }
     /// Consumes the builder and constructs a [`ResourceScanSummary`](crate::types::ResourceScanSummary).
     pub fn build(self) -> crate::types::ResourceScanSummary {
         crate::types::ResourceScanSummary {
@@ -285,6 +306,7 @@ impl ResourceScanSummaryBuilder {
             start_time: self.start_time,
             end_time: self.end_time,
             percentage_completed: self.percentage_completed,
+            scan_type: self.scan_type,
         }
     }
 }

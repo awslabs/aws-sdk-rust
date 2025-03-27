@@ -214,6 +214,16 @@ pub fn de_describe_resource_scan(
                 builder = builder.set_resources_read(var_9);
             }
             ,
+            s if s.matches("ScanFilters") /* ScanFilters com.amazonaws.cloudformation.synthetic#DescribeResourceScanOutput$ScanFilters */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_scan_filters::de_scan_filters(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_scan_filters(var_10);
+            }
+            ,
             _ => {}
         }
         }

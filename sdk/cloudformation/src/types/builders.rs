@@ -21,6 +21,8 @@ pub use crate::types::_template_configuration::TemplateConfigurationBuilder;
 
 pub use crate::types::_resource_definition::ResourceDefinitionBuilder;
 
+pub use crate::types::_scan_filter::ScanFilterBuilder;
+
 pub use crate::types::_logging_config::LoggingConfigBuilder;
 
 pub use crate::types::_type_version_summary::TypeVersionSummaryBuilder;

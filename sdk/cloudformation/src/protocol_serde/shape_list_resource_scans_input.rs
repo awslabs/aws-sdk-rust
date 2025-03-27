@@ -18,6 +18,11 @@ pub fn ser_list_resource_scans_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("ScanTypeFilter");
+    if let Some(var_6) = &input.scan_type_filter {
+        scope_5.string(var_6.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

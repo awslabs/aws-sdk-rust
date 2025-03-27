@@ -15,6 +15,8 @@ pub struct TaskContainerDetails {
     /// <p>If the essential parameter of a container is marked as <code>true</code>, and that container fails or stops for any reason, all other containers that are part of the task are stopped. If the <code>essential</code> parameter of a container is marked as false, its failure doesn't affect the rest of the containers in a task. If this parameter is omitted, a container is assumed to be essential.</p>
     /// <p>All jobs must have at least one essential container. If you have an application that's composed of multiple containers, group containers that are used for a common purpose into components, and separate the different components into multiple task definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub essential: ::std::option::Option<bool>,
+    /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log</a> routing in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. By default, images in the Docker Hub registry are available. Other repositories are specified with either <code>repository-url/image:tag</code> or <code>repository-url/image@digest</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>IMAGE</code> parameter of the <a href="https://docs.docker.com/engine/reference/run/#security-configuration"> <i>docker run</i> </a>.</p>
     pub image: ::std::option::Option<::std::string::String>,
     /// <p>Linux-specific modifications that are applied to the container, such as Linux kernel capabilities. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><note>
@@ -113,6 +115,10 @@ impl TaskContainerDetails {
     /// <p>All jobs must have at least one essential container. If you have an application that's composed of multiple containers, group containers that are used for a common purpose into components, and separate the different components into multiple task definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn essential(&self) -> ::std::option::Option<bool> {
         self.essential
+    }
+    /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log</a> routing in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn firelens_configuration(&self) -> ::std::option::Option<&crate::types::FirelensConfiguration> {
+        self.firelens_configuration.as_ref()
     }
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. By default, images in the Docker Hub registry are available. Other repositories are specified with either <code>repository-url/image:tag</code> or <code>repository-url/image@digest</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>IMAGE</code> parameter of the <a href="https://docs.docker.com/engine/reference/run/#security-configuration"> <i>docker run</i> </a>.</p>
     pub fn image(&self) -> ::std::option::Option<&str> {
@@ -244,6 +250,7 @@ pub struct TaskContainerDetailsBuilder {
     pub(crate) depends_on: ::std::option::Option<::std::vec::Vec<crate::types::TaskContainerDependency>>,
     pub(crate) environment: ::std::option::Option<::std::vec::Vec<crate::types::KeyValuePair>>,
     pub(crate) essential: ::std::option::Option<bool>,
+    pub(crate) firelens_configuration: ::std::option::Option<crate::types::FirelensConfiguration>,
     pub(crate) image: ::std::option::Option<::std::string::String>,
     pub(crate) linux_parameters: ::std::option::Option<crate::types::LinuxParameters>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
@@ -344,6 +351,20 @@ impl TaskContainerDetailsBuilder {
     /// <p>All jobs must have at least one essential container. If you have an application that's composed of multiple containers, group containers that are used for a common purpose into components, and separate the different components into multiple task definitions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application Architecture</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn get_essential(&self) -> &::std::option::Option<bool> {
         &self.essential
+    }
+    /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log</a> routing in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn firelens_configuration(mut self, input: crate::types::FirelensConfiguration) -> Self {
+        self.firelens_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log</a> routing in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn set_firelens_configuration(mut self, input: ::std::option::Option<crate::types::FirelensConfiguration>) -> Self {
+        self.firelens_configuration = input;
+        self
+    }
+    /// <p>The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html">Custom log</a> routing in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    pub fn get_firelens_configuration(&self) -> &::std::option::Option<crate::types::FirelensConfiguration> {
+        &self.firelens_configuration
     }
     /// <p>The image used to start a container. This string is passed directly to the Docker daemon. By default, images in the Docker Hub registry are available. Other repositories are specified with either <code>repository-url/image:tag</code> or <code>repository-url/image@digest</code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>IMAGE</code> parameter of the <a href="https://docs.docker.com/engine/reference/run/#security-configuration"> <i>docker run</i> </a>.</p>
     pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -726,6 +747,7 @@ impl TaskContainerDetailsBuilder {
             depends_on: self.depends_on,
             environment: self.environment,
             essential: self.essential,
+            firelens_configuration: self.firelens_configuration,
             image: self.image,
             linux_parameters: self.linux_parameters,
             log_configuration: self.log_configuration,
