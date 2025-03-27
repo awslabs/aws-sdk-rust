@@ -145,6 +145,24 @@ pub use config::Config;
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`AcceptPrimaryEmailUpdate`](crate::operation::accept_primary_email_update) operation has
+/// a [`Client::accept_primary_email_update`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.accept_primary_email_update()
+///     .account_id("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 pub mod client;
 
 /// Configuration for AWS Account.

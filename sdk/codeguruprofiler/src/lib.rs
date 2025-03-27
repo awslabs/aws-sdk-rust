@@ -154,14 +154,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetFindingsReportAccountSummary`](crate::operation::get_findings_report_account_summary) operation has
-/// a [`Client::get_findings_report_account_summary`], function which returns a builder for that operation.
+/// For example, the [`AddNotificationChannels`](crate::operation::add_notification_channels) operation has
+/// a [`Client::add_notification_channels`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_findings_report_account_summary()
-///     .next_token("example")
+/// let result = client.add_notification_channels()
+///     .profiling_group_name("example")
 ///     .send()
 ///     .await;
 /// ```

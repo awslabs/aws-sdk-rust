@@ -150,14 +150,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ConfigureLogsForPlaybackConfiguration`](crate::operation::configure_logs_for_playback_configuration) operation has
-/// a [`Client::configure_logs_for_playback_configuration`], function which returns a builder for that operation.
+/// For example, the [`ConfigureLogsForChannel`](crate::operation::configure_logs_for_channel) operation has
+/// a [`Client::configure_logs_for_channel`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.configure_logs_for_playback_configuration()
-///     .playback_configuration_name("example")
+/// let result = client.configure_logs_for_channel()
+///     .channel_name("example")
 ///     .send()
 ///     .await;
 /// ```

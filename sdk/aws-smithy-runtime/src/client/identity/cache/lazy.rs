@@ -326,7 +326,7 @@ impl ResolveCachedIdentity for LazyCache {
                 let start_time = time_source.now();
                 let result = cache
                     .get_or_load(|| {
-                        let span = tracing::info_span!("lazy_load_identity");
+                        let span = tracing::debug_span!("lazy_load_identity");
                         async move {
                             let fut = Timeout::new(
                                 resolver.resolve_identity(runtime_components, config_bag),

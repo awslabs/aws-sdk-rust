@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ExpireSession`](crate::operation::expire_session) operation has
-/// a [`Client::expire_session`], function which returns a builder for that operation.
+/// For example, the [`AssociateBrowserSettings`](crate::operation::associate_browser_settings) operation has
+/// a [`Client::associate_browser_settings`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.expire_session()
-///     .portal_id("example")
+/// let result = client.associate_browser_settings()
+///     .portal_arn("example")
 ///     .send()
 ///     .await;
 /// ```

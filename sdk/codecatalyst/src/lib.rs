@@ -198,14 +198,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetUserDetails`](crate::operation::get_user_details) operation has
-/// a [`Client::get_user_details`], function which returns a builder for that operation.
+/// For example, the [`CreateAccessToken`](crate::operation::create_access_token) operation has
+/// a [`Client::create_access_token`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_user_details()
-///     .id("example")
+/// let result = client.create_access_token()
+///     .name("example")
 ///     .send()
 ///     .await;
 /// ```

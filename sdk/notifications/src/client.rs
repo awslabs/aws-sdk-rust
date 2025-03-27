@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListManagedNotificationChannelAssociations`](crate::operation::list_managed_notification_channel_associations) operation has
-/// a [`Client::list_managed_notification_channel_associations`], function which returns a builder for that operation.
+/// For example, the [`AssociateChannel`](crate::operation::associate_channel) operation has
+/// a [`Client::associate_channel`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_managed_notification_channel_associations()
-///     .managed_notification_configuration_arn("example")
+/// let result = client.associate_channel()
+///     .arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -157,7 +157,7 @@ mod create_notification_configuration;
 /// # let client: aws_sdk_notifications::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_managed_notification_channel_associations()
+/// let result = client.associate_channel()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

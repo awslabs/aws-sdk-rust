@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateCustomDomainAssociation`](crate::operation::create_custom_domain_association) operation has
-/// a [`Client::create_custom_domain_association`], function which returns a builder for that operation.
+/// For example, the [`ConvertRecoveryPointToSnapshot`](crate::operation::convert_recovery_point_to_snapshot) operation has
+/// a [`Client::convert_recovery_point_to_snapshot`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_custom_domain_association()
-///     .workgroup_name("example")
+/// let result = client.convert_recovery_point_to_snapshot()
+///     .recovery_point_id("example")
 ///     .send()
 ///     .await;
 /// ```

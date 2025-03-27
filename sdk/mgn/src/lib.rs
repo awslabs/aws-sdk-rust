@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListManagedAccounts`](crate::operation::list_managed_accounts) operation has
-/// a [`Client::list_managed_accounts`], function which returns a builder for that operation.
+/// For example, the [`ArchiveApplication`](crate::operation::archive_application) operation has
+/// a [`Client::archive_application`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_managed_accounts()
-///     .next_token("example")
+/// let result = client.archive_application()
+///     .application_id("example")
 ///     .send()
 ///     .await;
 /// ```

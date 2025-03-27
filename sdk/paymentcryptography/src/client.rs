@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ExportKey`](crate::operation::export_key) operation has
-/// a [`Client::export_key`], function which returns a builder for that operation.
+/// For example, the [`CreateAlias`](crate::operation::create_alias) operation has
+/// a [`Client::create_alias`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.export_key()
-///     .export_key_identifier("example")
+/// let result = client.create_alias()
+///     .alias_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -151,7 +151,7 @@ mod create_key;
 /// # let client: aws_sdk_paymentcryptography::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.export_key()
+/// let result = client.create_alias()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

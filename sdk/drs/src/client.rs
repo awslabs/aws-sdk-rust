@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateExtendedSourceServer`](crate::operation::create_extended_source_server) operation has
-/// a [`Client::create_extended_source_server`], function which returns a builder for that operation.
+/// For example, the [`AssociateSourceNetworkStack`](crate::operation::associate_source_network_stack) operation has
+/// a [`Client::associate_source_network_stack`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_extended_source_server()
-///     .source_server_arn("example")
+/// let result = client.associate_source_network_stack()
+///     .source_network_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -157,7 +157,7 @@ mod create_source_network;
 /// # let client: aws_sdk_drs::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_extended_source_server()
+/// let result = client.associate_source_network_stack()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

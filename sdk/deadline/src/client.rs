@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateQueueFleetAssociation`](crate::operation::create_queue_fleet_association) operation has
-/// a [`Client::create_queue_fleet_association`], function which returns a builder for that operation.
+/// For example, the [`AssociateMemberToFarm`](crate::operation::associate_member_to_farm) operation has
+/// a [`Client::associate_member_to_farm`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_queue_fleet_association()
+/// let result = client.associate_member_to_farm()
 ///     .farm_id("example")
 ///     .send()
 ///     .await;
@@ -267,7 +267,7 @@ mod create_worker;
 /// # let client: aws_sdk_deadline::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_queue_fleet_association()
+/// let result = client.associate_member_to_farm()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

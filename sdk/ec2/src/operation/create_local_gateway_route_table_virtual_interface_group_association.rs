@@ -20,7 +20,17 @@ impl CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation {
                                 err.downcast::<crate::operation::create_local_gateway_route_table_virtual_interface_group_association::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError>().expect("correct error type")
                             })
         };
+        use ::tracing::Instrument;
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+            // Create a parent span for the entire operation. Includes a random, internal-only,
+            // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
+            .instrument(::tracing::debug_span!(
+                "ec2.CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation",
+                "rpc.service" = "ec2",
+                "rpc.method" = "CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociation",
+                "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
+                "rpc.system" = "aws-api",
+            ))
             .await
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateStarterMappingTemplate`](crate::operation::create_starter_mapping_template) operation has
-/// a [`Client::create_starter_mapping_template`], function which returns a builder for that operation.
+/// For example, the [`CreateCapability`](crate::operation::create_capability) operation has
+/// a [`Client::create_capability`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_starter_mapping_template()
-///     .mapping_type("example")
+/// let result = client.create_capability()
+///     .name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -157,7 +157,7 @@ mod create_transformer;
 /// # let client: aws_sdk_b2bi::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_starter_mapping_template()
+/// let result = client.create_capability()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

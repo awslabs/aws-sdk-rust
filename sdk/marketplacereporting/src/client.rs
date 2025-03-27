@@ -56,6 +56,24 @@ pub(crate) struct Handle {
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`GetBuyerDashboard`](crate::operation::get_buyer_dashboard) operation has
+/// a [`Client::get_buyer_dashboard`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.get_buyer_dashboard()
+///     .dashboard_identifier("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -120,6 +138,29 @@ impl Client {
 
 /// Operation customization and supporting types.
 ///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_marketplacereporting::Error> {
+/// # let client: aws_sdk_marketplacereporting::Client = unimplemented!();
+/// use ::http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.get_buyer_dashboard()
+///     .customize()
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
 pub mod customize;
 
 mod get_buyer_dashboard;

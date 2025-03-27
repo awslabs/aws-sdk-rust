@@ -168,8 +168,11 @@ pub async fn invoke_with_stop_point(
         .maybe_timeout(operation_timeout_config)
         .await
     }
-    // Include a random, internal-only, seven-digit ID for the operation invocation so that it can be correlated in the logs.
-    .instrument(debug_span!("invoke", service = %service_name, operation = %operation_name, sdk_invocation_id = fastrand::u32(1_000_000..10_000_000)))
+    .instrument(debug_span!(
+        "invoke",
+        "rpc.service" = service_name,
+        "rpc.method" = operation_name
+    ))
     .await
 }
 
@@ -305,8 +308,12 @@ async fn try_op(
         trace!(attempt_timeout_config = ?attempt_timeout_config);
         let maybe_timeout = async {
             debug!("beginning attempt #{i}");
-            try_attempt(ctx, cfg, runtime_components, stop_point).await;
-            finally_attempt(ctx, cfg, runtime_components).await;
+            try_attempt(ctx, cfg, runtime_components, stop_point)
+                .instrument(debug_span!("try_attempt", "attempt" = i))
+                .await;
+            finally_attempt(ctx, cfg, runtime_components)
+                .instrument(debug_span!("finally_attempt", "attempt" = i))
+                .await;
             Result::<_, SdkError<Error, HttpResponse>>::Ok(())
         }
         .maybe_timeout(attempt_timeout_config)
@@ -341,7 +348,6 @@ async fn try_op(
     }
 }
 
-#[instrument(skip_all, level = "debug")]
 async fn try_attempt(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,
@@ -350,7 +356,10 @@ async fn try_attempt(
 ) {
     run_interceptors!(halt_on_err: read_before_attempt(ctx, runtime_components, cfg));
 
-    halt_on_err!([ctx] => orchestrate_endpoint(ctx, runtime_components, cfg).await.map_err(OrchestratorError::other));
+    halt_on_err!([ctx] => orchestrate_endpoint(ctx, runtime_components, cfg)
+                            .instrument(debug_span!("orchestrate_endpoint"))
+                            .await
+                            .map_err(OrchestratorError::other));
 
     run_interceptors!(halt_on_err: {
         modify_before_signing(ctx, runtime_components, cfg);
@@ -438,7 +447,6 @@ async fn try_attempt(
     run_interceptors!(halt_on_err: read_after_deserialization(ctx, runtime_components, cfg));
 }
 
-#[instrument(skip_all, level = "debug")]
 async fn finally_attempt(
     ctx: &mut InterceptorContext,
     cfg: &mut ConfigBag,

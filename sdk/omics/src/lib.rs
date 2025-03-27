@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteS3AccessPolicy`](crate::operation::delete_s3_access_policy) operation has
-/// a [`Client::delete_s3_access_policy`], function which returns a builder for that operation.
+/// For example, the [`AbortMultipartReadSetUpload`](crate::operation::abort_multipart_read_set_upload) operation has
+/// a [`Client::abort_multipart_read_set_upload`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_s3_access_policy()
-///     .s3_access_point_arn("example")
+/// let result = client.abort_multipart_read_set_upload()
+///     .sequence_store_id("example")
 ///     .send()
 ///     .await;
 /// ```

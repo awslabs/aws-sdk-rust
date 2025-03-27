@@ -150,13 +150,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAddressListImportJob`](crate::operation::create_address_list_import_job) operation has
-/// a [`Client::create_address_list_import_job`], function which returns a builder for that operation.
+/// For example, the [`CreateAddonInstance`](crate::operation::create_addon_instance) operation has
+/// a [`Client::create_addon_instance`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_address_list_import_job()
+/// let result = client.create_addon_instance()
 ///     .client_token("example")
 ///     .send()
 ///     .await;

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListManagedAccounts`](crate::operation::list_managed_accounts) operation has
-/// a [`Client::list_managed_accounts`], function which returns a builder for that operation.
+/// For example, the [`ArchiveApplication`](crate::operation::archive_application) operation has
+/// a [`Client::archive_application`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_managed_accounts()
-///     .next_token("example")
+/// let result = client.archive_application()
+///     .application_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -167,7 +167,7 @@ mod create_wave;
 /// # let client: aws_sdk_mgn::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.initialize_service()
+/// let result = client.archive_application()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -20,6 +20,7 @@ version = "1.2.2"
 
 [dependencies.aws-runtime]
 path = "../aws-runtime"
+features = ["event-stream"]
 version = "1.5.6"
 
 [dependencies.aws-smithy-async]

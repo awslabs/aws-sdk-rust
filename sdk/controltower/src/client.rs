@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DisableControl`](crate::operation::disable_control) operation has
-/// a [`Client::disable_control`], function which returns a builder for that operation.
+/// For example, the [`CreateLandingZone`](crate::operation::create_landing_zone) operation has
+/// a [`Client::create_landing_zone`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.disable_control()
-///     .control_identifier("example")
+/// let result = client.create_landing_zone()
+///     .version("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -149,7 +149,7 @@ mod create_landing_zone;
 /// # let client: aws_sdk_controltower::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.disable_control()
+/// let result = client.create_landing_zone()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

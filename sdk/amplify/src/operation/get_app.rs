@@ -23,7 +23,17 @@ impl GetApp {
                 ::aws_smithy_runtime_api::client::interceptors::context::Error,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >| { err.map_service_error(|err| err.downcast::<crate::operation::get_app::GetAppError>().expect("correct error type")) };
+        use ::tracing::Instrument;
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
+            // Create a parent span for the entire operation. Includes a random, internal-only,
+            // seven-digit ID for the operation orchestration so that it can be correlated in the logs.
+            .instrument(::tracing::debug_span!(
+                "amplify.GetApp",
+                "rpc.service" = "amplify",
+                "rpc.method" = "GetApp",
+                "sdk_invocation_id" = ::fastrand::u32(1_000_000..10_000_000),
+                "rpc.system" = "aws-api",
+            ))
             .await
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;

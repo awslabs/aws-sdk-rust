@@ -150,13 +150,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetGroupId`](crate::operation::get_group_id) operation has
-/// a [`Client::get_group_id`], function which returns a builder for that operation.
+/// For example, the [`CreateGroup`](crate::operation::create_group) operation has
+/// a [`Client::create_group`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_group_id()
+/// let result = client.create_group()
 ///     .identity_store_id("example")
 ///     .send()
 ///     .await;

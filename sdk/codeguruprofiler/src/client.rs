@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetFindingsReportAccountSummary`](crate::operation::get_findings_report_account_summary) operation has
-/// a [`Client::get_findings_report_account_summary`], function which returns a builder for that operation.
+/// For example, the [`AddNotificationChannels`](crate::operation::add_notification_channels) operation has
+/// a [`Client::add_notification_channels`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_findings_report_account_summary()
-///     .next_token("example")
+/// let result = client.add_notification_channels()
+///     .profiling_group_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -155,7 +155,7 @@ mod create_profiling_group;
 /// # let client: aws_sdk_codeguruprofiler::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_findings_report_account_summary()
+/// let result = client.add_notification_channels()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

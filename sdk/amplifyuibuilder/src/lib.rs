@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ExchangeCodeForToken`](crate::operation::exchange_code_for_token) operation has
-/// a [`Client::exchange_code_for_token`], function which returns a builder for that operation.
+/// For example, the [`CreateComponent`](crate::operation::create_component) operation has
+/// a [`Client::create_component`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.exchange_code_for_token()
-///     .provider("example")
+/// let result = client.create_component()
+///     .app_id("example")
 ///     .send()
 ///     .await;
 /// ```

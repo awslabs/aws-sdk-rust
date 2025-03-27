@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`BatchCreateBillScenarioCommitmentModification`](crate::operation::batch_create_bill_scenario_commitment_modification) operation has
+/// a [`Client::batch_create_bill_scenario_commitment_modification`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .arn("example")
+/// let result = client.batch_create_bill_scenario_commitment_modification()
+///     .bill_scenario_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -171,7 +171,7 @@ mod create_workload_estimate;
 /// # let client: aws_sdk_bcmpricingcalculator::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.get_preferences()
+/// let result = client.batch_create_bill_scenario_commitment_modification()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

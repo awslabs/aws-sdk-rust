@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelQuery`](crate::operation::cancel_query) operation has
-/// a [`Client::cancel_query`], function which returns a builder for that operation.
+/// For example, the [`CancelExportTask`](crate::operation::cancel_export_task) operation has
+/// a [`Client::cancel_export_task`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_query()
-///     .graph_identifier("example")
+/// let result = client.cancel_export_task()
+///     .task_identifier("example")
 ///     .send()
 ///     .await;
 /// ```

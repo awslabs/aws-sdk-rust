@@ -72,7 +72,7 @@ impl DefaultCredentialsChain {
     async fn credentials(&self) -> provider::Result {
         self.provider_chain
             .provide_credentials()
-            .instrument(tracing::debug_span!("provide_credentials", provider = %"default_chain"))
+            .instrument(tracing::debug_span!("default_credentials_chain"))
             .await
     }
 }

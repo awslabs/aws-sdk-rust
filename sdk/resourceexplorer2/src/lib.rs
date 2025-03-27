@@ -154,14 +154,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetManagedView`](crate::operation::get_managed_view) operation has
-/// a [`Client::get_managed_view`], function which returns a builder for that operation.
+/// For example, the [`AssociateDefaultView`](crate::operation::associate_default_view) operation has
+/// a [`Client::associate_default_view`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_managed_view()
-///     .managed_view_arn("example")
+/// let result = client.associate_default_view()
+///     .view_arn("example")
 ///     .send()
 ///     .await;
 /// ```

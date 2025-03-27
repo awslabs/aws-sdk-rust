@@ -56,6 +56,24 @@ pub(crate) struct Handle {
 /// [`aws_config::from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.from_env.html
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
+/// # Using the `Client`
+///
+/// A client has a function for every operation that can be performed by the service.
+/// For example, the [`CreateEvaluationJob`](crate::operation::create_evaluation_job) operation has
+/// a [`Client::create_evaluation_job`], function which returns a builder for that operation.
+/// The fluent builder ultimately has a `send()` function that returns an async future that
+/// returns a result, as illustrated below:
+///
+/// ```rust,ignore
+/// let result = client.create_evaluation_job()
+///     .job_name("example")
+///     .send()
+///     .await;
+/// ```
+///
+/// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
+/// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
+/// information.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -144,6 +162,29 @@ mod create_provisioned_model_throughput;
 
 /// Operation customization and supporting types.
 ///
+/// The underlying HTTP requests made during an operation can be customized
+/// by calling the `customize()` method on the builder returned from a client
+/// operation call. For example, this can be used to add an additional HTTP header:
+///
+/// ```ignore
+/// # async fn wrapper() -> ::std::result::Result<(), aws_sdk_bedrock::Error> {
+/// # let client: aws_sdk_bedrock::Client = unimplemented!();
+/// use ::http::header::{HeaderName, HeaderValue};
+///
+/// let result = client.batch_delete_evaluation_job()
+///     .customize()
+///     .mutate_request(|req| {
+///         // Add `x-example-header` with value
+///         req.headers_mut()
+///             .insert(
+///                 HeaderName::from_static("x-example-header"),
+///                 HeaderValue::from_static("1"),
+///             );
+///     })
+///     .send()
+///     .await;
+/// # }
+/// ```
 pub mod customize;
 
 mod delete_custom_model;

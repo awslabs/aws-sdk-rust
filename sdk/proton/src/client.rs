@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelComponentDeployment`](crate::operation::cancel_component_deployment) operation has
-/// a [`Client::cancel_component_deployment`], function which returns a builder for that operation.
+/// For example, the [`AcceptEnvironmentAccountConnection`](crate::operation::accept_environment_account_connection) operation has
+/// a [`Client::accept_environment_account_connection`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_component_deployment()
-///     .component_name("example")
+/// let result = client.accept_environment_account_connection()
+///     .id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -263,7 +263,7 @@ mod create_template_sync_config;
 /// # let client: aws_sdk_proton::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.cancel_component_deployment()
+/// let result = client.accept_environment_account_connection()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

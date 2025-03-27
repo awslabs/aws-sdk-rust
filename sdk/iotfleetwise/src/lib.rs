@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`GetVehicleStatus`](crate::operation::get_vehicle_status) operation has
-/// a [`Client::get_vehicle_status`], function which returns a builder for that operation.
+/// For example, the [`AssociateVehicleFleet`](crate::operation::associate_vehicle_fleet) operation has
+/// a [`Client::associate_vehicle_fleet`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.get_vehicle_status()
-///     .next_token("example")
+/// let result = client.associate_vehicle_fleet()
+///     .vehicle_name("example")
 ///     .send()
 ///     .await;
 /// ```

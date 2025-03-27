@@ -92,7 +92,7 @@ impl CredentialsProviderChain {
 
     async fn credentials(&self) -> provider::Result {
         for (name, provider) in &self.providers {
-            let span = tracing::debug_span!("load_credentials", provider = %name);
+            let span = tracing::debug_span!("credentials_provider_chain", provider = %name);
             match provider.provide_credentials().instrument(span).await {
                 Ok(credentials) => {
                     tracing::debug!(provider = %name, "loaded credentials");

@@ -452,7 +452,7 @@ impl Builder {
 
     /// Builds a [`ProfileFileCredentialsProvider`]
     pub fn build(self) -> ProfileFileCredentialsProvider {
-        let build_span = tracing::debug_span!("build_profile_provider");
+        let build_span = tracing::debug_span!("build_profile_file_credentials_provider");
         let _enter = build_span.enter();
         let conf = self
             .provider_config

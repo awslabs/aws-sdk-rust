@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`CreateBillOfMaterialsImportJob`](crate::operation::create_bill_of_materials_import_job) operation has
+/// a [`Client::create_bill_of_materials_import_job`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.create_bill_of_materials_import_job()
+///     .instance_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -155,7 +155,7 @@ mod create_instance;
 /// # let client: aws_sdk_supplychain::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_tags_for_resource()
+/// let result = client.create_bill_of_materials_import_job()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

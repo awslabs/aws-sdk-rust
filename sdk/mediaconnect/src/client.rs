@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListEntitlements`](crate::operation::list_entitlements) operation has
-/// a [`Client::list_entitlements`], function which returns a builder for that operation.
+/// For example, the [`AddBridgeOutputs`](crate::operation::add_bridge_outputs) operation has
+/// a [`Client::add_bridge_outputs`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_entitlements()
-///     .next_token("example")
+/// let result = client.add_bridge_outputs()
+///     .bridge_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -204,7 +204,7 @@ mod create_gateway;
 /// # let client: aws_sdk_mediaconnect::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_entitlements()
+/// let result = client.add_bridge_outputs()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

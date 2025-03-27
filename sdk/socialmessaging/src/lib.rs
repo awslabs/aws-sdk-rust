@@ -158,14 +158,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`DeleteWhatsAppMessageMedia`](crate::operation::delete_whats_app_message_media) operation has
+/// a [`Client::delete_whats_app_message_media`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.delete_whats_app_message_media()
+///     .media_id("example")
 ///     .send()
 ///     .await;
 /// ```

@@ -83,7 +83,7 @@ impl TokenProviderChain {
 
     async fn token(&self) -> Result {
         for (name, provider) in &self.providers {
-            let span = tracing::debug_span!("load_token", provider = %name);
+            let span = tracing::debug_span!("token_provider_chain", provider = %name);
             match provider.provide_token().instrument(span).await {
                 Ok(credentials) => {
                     tracing::debug!(provider = %name, "loaded access token");

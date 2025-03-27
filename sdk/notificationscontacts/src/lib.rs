@@ -148,13 +148,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`ActivateEmailContact`](crate::operation::activate_email_contact) operation has
+/// a [`Client::activate_email_contact`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
+/// let result = client.activate_email_contact()
 ///     .arn("example")
 ///     .send()
 ///     .await;

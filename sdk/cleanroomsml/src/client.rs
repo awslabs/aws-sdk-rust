@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListCollaborationConfiguredModelAlgorithmAssociations`](crate::operation::list_collaboration_configured_model_algorithm_associations) operation has
-/// a [`Client::list_collaboration_configured_model_algorithm_associations`], function which returns a builder for that operation.
+/// For example, the [`CancelTrainedModel`](crate::operation::cancel_trained_model) operation has
+/// a [`Client::cancel_trained_model`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_collaboration_configured_model_algorithm_associations()
-///     .next_token("example")
+/// let result = client.cancel_trained_model()
+///     .membership_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -165,7 +165,7 @@ mod create_training_dataset;
 /// # let client: aws_sdk_cleanroomsml::Client = unimplemented!();
 /// use ::http::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.list_collaboration_configured_model_algorithm_associations()
+/// let result = client.cancel_trained_model()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
