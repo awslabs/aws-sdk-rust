@@ -80,7 +80,12 @@ pub fn check_matches(events: &[RecordedEvent], matchers: &[Matcher]) {
     let mut idx = -1;
     loop {
         idx += 1;
-        let bail = |err: Box<dyn Error>| panic!("failed on event {}:\n  {}", idx, err);
+        let bail = |err: Box<dyn Error>| {
+            panic!(
+                "failed on event {}:\n  {}\n  actual recorded events: {:?}",
+                idx, err, events
+            )
+        };
         match (events_iter.next(), matcher_iter.next()) {
             (Some(event), Some((matcher, _msg))) => matcher(event).unwrap_or_else(bail),
             (None, None) => return,

@@ -34,7 +34,7 @@ version = "1.8.1"
 [dev-dependencies.aws-smithy-http-client]
 path = "../../sdk/aws-smithy-http-client"
 features = ["test-util"]
-version = "1.0.0"
+version = "1.0.1"
 
 [dev-dependencies.aws-credential-types]
 path = "../../sdk/aws-credential-types"
