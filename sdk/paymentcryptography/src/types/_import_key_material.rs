@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ImportKeyMaterial {
+    /// <p>Parameter information for key material import using the asymmetric ECDH key exchange method.</p>
+    DiffieHellmanTr31KeyBlock(crate::types::ImportDiffieHellmanTr31KeyBlock),
     /// <p>Parameter information for key material import using asymmetric RSA wrap and unwrap key exchange method.</p>
     KeyCryptogram(crate::types::ImportKeyCryptogram),
     /// <p>Parameter information for root public key certificate import.</p>
@@ -25,6 +27,19 @@ pub enum ImportKeyMaterial {
     Unknown,
 }
 impl ImportKeyMaterial {
+    /// Tries to convert the enum instance into [`DiffieHellmanTr31KeyBlock`](crate::types::ImportKeyMaterial::DiffieHellmanTr31KeyBlock), extracting the inner [`ImportDiffieHellmanTr31KeyBlock`](crate::types::ImportDiffieHellmanTr31KeyBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_diffie_hellman_tr31_key_block(&self) -> ::std::result::Result<&crate::types::ImportDiffieHellmanTr31KeyBlock, &Self> {
+        if let ImportKeyMaterial::DiffieHellmanTr31KeyBlock(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DiffieHellmanTr31KeyBlock`](crate::types::ImportKeyMaterial::DiffieHellmanTr31KeyBlock).
+    pub fn is_diffie_hellman_tr31_key_block(&self) -> bool {
+        self.as_diffie_hellman_tr31_key_block().is_ok()
+    }
     /// Tries to convert the enum instance into [`KeyCryptogram`](crate::types::ImportKeyMaterial::KeyCryptogram), extracting the inner [`ImportKeyCryptogram`](crate::types::ImportKeyCryptogram).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_key_cryptogram(&self) -> ::std::result::Result<&crate::types::ImportKeyCryptogram, &Self> {

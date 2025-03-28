@@ -62,6 +62,8 @@ pub struct ProjectCache {
     /// </dd>
     /// </dl>
     pub modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
+    /// <p>Defines the scope of the cache. You can use this namespace to share a cache across multiple projects. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache sharing between projects</a> in the <i>CodeBuild User Guide</i>.</p>
+    pub cache_namespace: ::std::option::Option<::std::string::String>,
 }
 impl ProjectCache {
     /// <p>The type of cache used by the build project. Valid values include:</p>
@@ -130,6 +132,10 @@ impl ProjectCache {
     pub fn modes(&self) -> &[crate::types::CacheMode] {
         self.modes.as_deref().unwrap_or_default()
     }
+    /// <p>Defines the scope of the cache. You can use this namespace to share a cache across multiple projects. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache sharing between projects</a> in the <i>CodeBuild User Guide</i>.</p>
+    pub fn cache_namespace(&self) -> ::std::option::Option<&str> {
+        self.cache_namespace.as_deref()
+    }
 }
 impl ProjectCache {
     /// Creates a new builder-style object to manufacture [`ProjectCache`](crate::types::ProjectCache).
@@ -145,6 +151,7 @@ pub struct ProjectCacheBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CacheType>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) modes: ::std::option::Option<::std::vec::Vec<crate::types::CacheMode>>,
+    pub(crate) cache_namespace: ::std::option::Option<::std::string::String>,
 }
 impl ProjectCacheBuilder {
     /// <p>The type of cache used by the build project. Valid values include:</p>
@@ -352,6 +359,20 @@ impl ProjectCacheBuilder {
     pub fn get_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CacheMode>> {
         &self.modes
     }
+    /// <p>Defines the scope of the cache. You can use this namespace to share a cache across multiple projects. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache sharing between projects</a> in the <i>CodeBuild User Guide</i>.</p>
+    pub fn cache_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cache_namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Defines the scope of the cache. You can use this namespace to share a cache across multiple projects. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache sharing between projects</a> in the <i>CodeBuild User Guide</i>.</p>
+    pub fn set_cache_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cache_namespace = input;
+        self
+    }
+    /// <p>Defines the scope of the cache. You can use this namespace to share a cache across multiple projects. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/caching-s3.html#caching-s3-sharing">Cache sharing between projects</a> in the <i>CodeBuild User Guide</i>.</p>
+    pub fn get_cache_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cache_namespace
+    }
     /// Consumes the builder and constructs a [`ProjectCache`](crate::types::ProjectCache).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProjectCacheBuilder::type)
@@ -365,6 +386,7 @@ impl ProjectCacheBuilder {
             })?,
             location: self.location,
             modes: self.modes,
+            cache_namespace: self.cache_namespace,
         })
     }
 }

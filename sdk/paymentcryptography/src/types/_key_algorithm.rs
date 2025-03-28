@@ -17,6 +17,7 @@
 ///     KeyAlgorithm::Aes256 => { /* ... */ },
 ///     KeyAlgorithm::EccNistP256 => { /* ... */ },
 ///     KeyAlgorithm::EccNistP384 => { /* ... */ },
+///     KeyAlgorithm::EccNistP521 => { /* ... */ },
 ///     KeyAlgorithm::Rsa2048 => { /* ... */ },
 ///     KeyAlgorithm::Rsa3072 => { /* ... */ },
 ///     KeyAlgorithm::Rsa4096 => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     EccNistP384,
     #[allow(missing_docs)] // documentation missing in model
+    EccNistP521,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
     #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for KeyAlgorithm {
             "AES_256" => KeyAlgorithm::Aes256,
             "ECC_NIST_P256" => KeyAlgorithm::EccNistP256,
             "ECC_NIST_P384" => KeyAlgorithm::EccNistP384,
+            "ECC_NIST_P521" => KeyAlgorithm::EccNistP521,
             "RSA_2048" => KeyAlgorithm::Rsa2048,
             "RSA_3072" => KeyAlgorithm::Rsa3072,
             "RSA_4096" => KeyAlgorithm::Rsa4096,
@@ -107,6 +111,7 @@ impl KeyAlgorithm {
             KeyAlgorithm::Aes256 => "AES_256",
             KeyAlgorithm::EccNistP256 => "ECC_NIST_P256",
             KeyAlgorithm::EccNistP384 => "ECC_NIST_P384",
+            KeyAlgorithm::EccNistP521 => "ECC_NIST_P521",
             KeyAlgorithm::Rsa2048 => "RSA_2048",
             KeyAlgorithm::Rsa3072 => "RSA_3072",
             KeyAlgorithm::Rsa4096 => "RSA_4096",
@@ -123,6 +128,7 @@ impl KeyAlgorithm {
             "AES_256",
             "ECC_NIST_P256",
             "ECC_NIST_P384",
+            "ECC_NIST_P521",
             "RSA_2048",
             "RSA_3072",
             "RSA_4096",
@@ -156,6 +162,7 @@ impl ::std::fmt::Display for KeyAlgorithm {
             KeyAlgorithm::Aes256 => write!(f, "AES_256"),
             KeyAlgorithm::EccNistP256 => write!(f, "ECC_NIST_P256"),
             KeyAlgorithm::EccNistP384 => write!(f, "ECC_NIST_P384"),
+            KeyAlgorithm::EccNistP521 => write!(f, "ECC_NIST_P521"),
             KeyAlgorithm::Rsa2048 => write!(f, "RSA_2048"),
             KeyAlgorithm::Rsa3072 => write!(f, "RSA_3072"),
             KeyAlgorithm::Rsa4096 => write!(f, "RSA_4096"),

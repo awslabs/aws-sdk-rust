@@ -31,6 +31,8 @@ pub struct Key {
     pub delete_pending_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time after which Amazon Web Services Payment Cryptography will delete the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code> and the Amazon Web Services Payment Cryptography key is deleted.</p>
     pub delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
 }
 impl Key {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -88,6 +90,10 @@ impl Key {
     pub fn delete_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.delete_timestamp.as_ref()
     }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn derive_key_usage(&self) -> ::std::option::Option<&crate::types::DeriveKeyUsage> {
+        self.derive_key_usage.as_ref()
+    }
 }
 impl Key {
     /// Creates a new builder-style object to manufacture [`Key`](crate::types::Key).
@@ -113,6 +119,7 @@ pub struct KeyBuilder {
     pub(crate) usage_stop_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_pending_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) delete_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
 }
 impl KeyBuilder {
     /// <p>The Amazon Resource Name (ARN) of the key.</p>
@@ -309,6 +316,20 @@ impl KeyBuilder {
     pub fn get_delete_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.delete_timestamp
     }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn derive_key_usage(mut self, input: crate::types::DeriveKeyUsage) -> Self {
+        self.derive_key_usage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn set_derive_key_usage(mut self, input: ::std::option::Option<crate::types::DeriveKeyUsage>) -> Self {
+        self.derive_key_usage = input;
+        self
+    }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn get_derive_key_usage(&self) -> &::std::option::Option<crate::types::DeriveKeyUsage> {
+        &self.derive_key_usage
+    }
     /// Consumes the builder and constructs a [`Key`](crate::types::Key).
     /// This method will fail if any of the following fields are not set:
     /// - [`key_arn`](crate::types::builders::KeyBuilder::key_arn)
@@ -374,6 +395,7 @@ impl KeyBuilder {
             usage_stop_timestamp: self.usage_stop_timestamp,
             delete_pending_timestamp: self.delete_pending_timestamp,
             delete_timestamp: self.delete_timestamp,
+            derive_key_usage: self.derive_key_usage,
         })
     }
 }

@@ -163,6 +163,8 @@ pub use crate::types::_query_execution_mode::QueryExecutionMode;
 
 pub use crate::types::_asset_options::AssetOptions;
 
+pub use crate::types::_q_business_insights_status::QBusinessInsightsStatus;
+
 pub use crate::types::_day_of_the_week::DayOfTheWeek;
 
 pub use crate::types::_analysis_defaults::AnalysisDefaults;
@@ -1401,6 +1403,10 @@ pub use crate::types::_table_paginated_report_options::TablePaginatedReportOptio
 
 pub use crate::types::_table_field_options::TableFieldOptions;
 
+pub use crate::types::_transposed_table_option::TransposedTableOption;
+
+pub use crate::types::_transposed_column_type::TransposedColumnType;
+
 pub use crate::types::_table_pinned_field_options::TablePinnedFieldOptions;
 
 pub use crate::types::_table_field_option::TableFieldOption;
@@ -1721,6 +1727,8 @@ pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclara
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptions;
 
+pub use crate::types::_data_qa_enabled_option::DataQaEnabledOption;
+
 pub use crate::types::_data_point_tooltip_option::DataPointTooltipOption;
 
 pub use crate::types::_data_point_menu_label_option::DataPointMenuLabelOption;
@@ -1883,6 +1891,22 @@ pub use crate::types::_asset_bundle_import_job_theme_override_parameters::AssetB
 
 pub use crate::types::_asset_bundle_import_job_data_set_override_parameters::AssetBundleImportJobDataSetOverrideParameters;
 
+pub use crate::types::_data_set_refresh_properties::DataSetRefreshProperties;
+
+pub use crate::types::_refresh_failure_configuration::RefreshFailureConfiguration;
+
+pub use crate::types::_refresh_failure_email_alert::RefreshFailureEmailAlert;
+
+pub use crate::types::_refresh_failure_alert_status::RefreshFailureAlertStatus;
+
+pub use crate::types::_refresh_configuration::RefreshConfiguration;
+
+pub use crate::types::_incremental_refresh::IncrementalRefresh;
+
+pub use crate::types::_lookback_window::LookbackWindow;
+
+pub use crate::types::_lookback_window_size_unit::LookbackWindowSizeUnit;
+
 pub use crate::types::_asset_bundle_import_job_data_source_override_parameters::AssetBundleImportJobDataSourceOverrideParameters;
 
 pub use crate::types::_asset_bundle_import_job_data_source_credentials::AssetBundleImportJobDataSourceCredentials;
@@ -1975,6 +1999,8 @@ pub use crate::types::_data_source_filter_attribute::DataSourceFilterAttribute;
 
 pub use crate::types::_data_set_summary::DataSetSummary;
 
+pub use crate::types::_data_set_use_as::DataSetUseAs;
+
 pub use crate::types::_data_set_search_filter::DataSetSearchFilter;
 
 pub use crate::types::_data_set_filter_attribute::DataSetFilterAttribute;
@@ -1990,16 +2016,6 @@ pub use crate::types::_analysis_summary::AnalysisSummary;
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilter;
 
 pub use crate::types::_analysis_filter_attribute::AnalysisFilterAttribute;
-
-pub use crate::types::_data_set_refresh_properties::DataSetRefreshProperties;
-
-pub use crate::types::_refresh_configuration::RefreshConfiguration;
-
-pub use crate::types::_incremental_refresh::IncrementalRefresh;
-
-pub use crate::types::_lookback_window::LookbackWindow;
-
-pub use crate::types::_lookback_window_size_unit::LookbackWindowSizeUnit;
 
 pub use crate::types::_qa_result::QaResult;
 
@@ -2169,6 +2185,22 @@ pub use crate::types::_registered_user_quick_sight_console_embedding_configurati
 
 pub use crate::types::_registered_user_console_feature_configurations::RegisteredUserConsoleFeatureConfigurations;
 
+pub use crate::types::_threshold_alerts_configurations::ThresholdAlertsConfigurations;
+
+pub use crate::types::_recent_snapshots_configurations::RecentSnapshotsConfigurations;
+
+pub use crate::types::_schedules_configurations::SchedulesConfigurations;
+
+pub use crate::types::_amazon_q_in_quick_sight_console_configurations::AmazonQInQuickSightConsoleConfigurations;
+
+pub use crate::types::_data_stories_configurations::DataStoriesConfigurations;
+
+pub use crate::types::_executive_summary_configurations::ExecutiveSummaryConfigurations;
+
+pub use crate::types::_generative_authoring_configurations::GenerativeAuthoringConfigurations;
+
+pub use crate::types::_data_qn_a_configurations::DataQnAConfigurations;
+
 pub use crate::types::_shared_view_configurations::SharedViewConfigurations;
 
 pub use crate::types::_state_persistence_configurations::StatePersistenceConfigurations;
@@ -2176,6 +2208,8 @@ pub use crate::types::_state_persistence_configurations::StatePersistenceConfigu
 pub use crate::types::_registered_user_dashboard_embedding_configuration::RegisteredUserDashboardEmbeddingConfiguration;
 
 pub use crate::types::_registered_user_dashboard_feature_configurations::RegisteredUserDashboardFeatureConfigurations;
+
+pub use crate::types::_amazon_q_in_quick_sight_dashboard_configurations::AmazonQInQuickSightDashboardConfigurations;
 
 pub use crate::types::_bookmarks_configurations::BookmarksConfigurations;
 
@@ -2318,6 +2352,10 @@ mod _all_sheets_filter_scope_configuration;
 mod _amazon_elasticsearch_parameters;
 
 mod _amazon_open_search_parameters;
+
+mod _amazon_q_in_quick_sight_console_configurations;
+
+mod _amazon_q_in_quick_sight_dashboard_configurations;
 
 mod _analysis;
 
@@ -2881,6 +2919,10 @@ mod _data_point_menu_label_option;
 
 mod _data_point_tooltip_option;
 
+mod _data_qa_enabled_option;
+
+mod _data_qn_a_configurations;
+
 mod _data_set;
 
 mod _data_set_configuration;
@@ -2903,6 +2945,8 @@ mod _data_set_summary;
 
 mod _data_set_usage_configuration;
 
+mod _data_set_use_as;
+
 mod _data_source;
 
 mod _data_source_credentials;
@@ -2920,6 +2964,8 @@ mod _data_source_search_filter;
 mod _data_source_summary;
 
 mod _data_source_type;
+
+mod _data_stories_configurations;
 
 mod _databricks_parameters;
 
@@ -3042,6 +3088,8 @@ mod _exasol_parameters;
 mod _exception_resource_type;
 
 mod _exclude_period_configuration;
+
+mod _executive_summary_configurations;
 
 mod _explicit_hierarchy;
 
@@ -3214,6 +3262,8 @@ mod _gauge_chart_visual;
 mod _generated_answer_result;
 
 mod _generated_answer_status;
+
+mod _generative_authoring_configurations;
 
 mod _geo_spatial_column_group;
 
@@ -3829,6 +3879,8 @@ mod _property_usage;
 
 mod _purchase_mode;
 
+mod _q_business_insights_status;
+
 mod _q_search_status;
 
 mod _qa_result;
@@ -3865,6 +3917,8 @@ mod _range_ends_label_type;
 
 mod _rds_parameters;
 
+mod _recent_snapshots_configurations;
+
 mod _redshift_iam_parameters;
 
 mod _redshift_parameters;
@@ -3896,6 +3950,12 @@ mod _reference_line_value_label_configuration;
 mod _reference_line_value_label_relative_position;
 
 mod _refresh_configuration;
+
+mod _refresh_failure_alert_status;
+
+mod _refresh_failure_configuration;
+
+mod _refresh_failure_email_alert;
 
 mod _refresh_frequency;
 
@@ -3990,6 +4050,8 @@ mod _scatter_plot_unaggregated_field_wells;
 mod _scatter_plot_visual;
 
 mod _schedule_refresh_on_entity;
+
+mod _schedules_configurations;
 
 mod _scroll_bar_options;
 
@@ -4331,6 +4393,8 @@ mod _theme_version_summary;
 
 mod _thousand_separator_options;
 
+mod _threshold_alerts_configurations;
+
 mod _tile_layout_style;
 
 mod _tile_style;
@@ -4456,6 +4520,10 @@ mod _total_aggregation_option;
 mod _total_options;
 
 mod _transform_operation;
+
+mod _transposed_column_type;
+
+mod _transposed_table_option;
 
 mod _tree_map_aggregated_field_wells;
 

@@ -8,6 +8,8 @@ pub struct AssetBundleImportJobDataSetOverrideParameters {
     pub data_set_id: ::std::string::String,
     /// <p>A new name for the dataset.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The refresh properties of a dataset.</p>
+    pub data_set_refresh_properties: ::std::option::Option<crate::types::DataSetRefreshProperties>,
 }
 impl AssetBundleImportJobDataSetOverrideParameters {
     /// <p>The ID of the dataset to apply overrides to.</p>
@@ -18,6 +20,10 @@ impl AssetBundleImportJobDataSetOverrideParameters {
     /// <p>A new name for the dataset.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The refresh properties of a dataset.</p>
+    pub fn data_set_refresh_properties(&self) -> ::std::option::Option<&crate::types::DataSetRefreshProperties> {
+        self.data_set_refresh_properties.as_ref()
     }
 }
 impl AssetBundleImportJobDataSetOverrideParameters {
@@ -33,6 +39,7 @@ impl AssetBundleImportJobDataSetOverrideParameters {
 pub struct AssetBundleImportJobDataSetOverrideParametersBuilder {
     pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_set_refresh_properties: ::std::option::Option<crate::types::DataSetRefreshProperties>,
 }
 impl AssetBundleImportJobDataSetOverrideParametersBuilder {
     /// <p>The ID of the dataset to apply overrides to.</p>
@@ -64,6 +71,20 @@ impl AssetBundleImportJobDataSetOverrideParametersBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The refresh properties of a dataset.</p>
+    pub fn data_set_refresh_properties(mut self, input: crate::types::DataSetRefreshProperties) -> Self {
+        self.data_set_refresh_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The refresh properties of a dataset.</p>
+    pub fn set_data_set_refresh_properties(mut self, input: ::std::option::Option<crate::types::DataSetRefreshProperties>) -> Self {
+        self.data_set_refresh_properties = input;
+        self
+    }
+    /// <p>The refresh properties of a dataset.</p>
+    pub fn get_data_set_refresh_properties(&self) -> &::std::option::Option<crate::types::DataSetRefreshProperties> {
+        &self.data_set_refresh_properties
+    }
     /// Consumes the builder and constructs a [`AssetBundleImportJobDataSetOverrideParameters`](crate::types::AssetBundleImportJobDataSetOverrideParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`data_set_id`](crate::types::builders::AssetBundleImportJobDataSetOverrideParametersBuilder::data_set_id)
@@ -78,6 +99,7 @@ impl AssetBundleImportJobDataSetOverrideParametersBuilder {
                 )
             })?,
             name: self.name,
+            data_set_refresh_properties: self.data_set_refresh_properties,
         })
     }
 }

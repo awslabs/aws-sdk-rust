@@ -25,6 +25,32 @@ pub struct TransformResources {
     /// <p>Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code></p></li>
     /// </ul>
     pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions.</p>
+    /// <dl>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-470
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 470</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-535
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 535</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub transform_ami_version: ::std::option::Option<::std::string::String>,
 }
 impl TransformResources {
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
@@ -54,6 +80,34 @@ impl TransformResources {
     pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions.</p>
+    /// <dl>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-470
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 470</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-535
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 535</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub fn transform_ami_version(&self) -> ::std::option::Option<&str> {
+        self.transform_ami_version.as_deref()
+    }
 }
 impl TransformResources {
     /// Creates a new builder-style object to manufacture [`TransformResources`](crate::types::TransformResources).
@@ -69,6 +123,7 @@ pub struct TransformResourcesBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::TransformInstanceType>,
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transform_ami_version: ::std::option::Option<::std::string::String>,
 }
 impl TransformResourcesBuilder {
     /// <p>The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
@@ -160,12 +215,99 @@ impl TransformResourcesBuilder {
     pub fn get_volume_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.volume_kms_key_id
     }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions.</p>
+    /// <dl>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-470
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 470</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-535
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 535</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub fn transform_ami_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transform_ami_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions.</p>
+    /// <dl>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-470
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 470</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-535
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 535</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub fn set_transform_ami_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transform_ami_version = input;
+        self
+    }
+    /// <p>Specifies an option from a collection of preconfigured Amazon Machine Image (AMI) images. Each image is configured by Amazon Web Services with a set of software and driver versions.</p>
+    /// <dl>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-470
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 470</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2-ami-sagemaker-batch-gpu-535
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 535</p></li>
+    /// </ul>
+    /// </dd>
+    /// </dl>
+    pub fn get_transform_ami_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transform_ami_version
+    }
     /// Consumes the builder and constructs a [`TransformResources`](crate::types::TransformResources).
     pub fn build(self) -> crate::types::TransformResources {
         crate::types::TransformResources {
             instance_type: self.instance_type,
             instance_count: self.instance_count,
             volume_kms_key_id: self.volume_kms_key_id,
+            transform_ami_version: self.transform_ami_version,
         }
     }
 }

@@ -31,6 +31,8 @@ pub use crate::types::_domain_name_configuration::DomainNameConfiguration;
 
 pub use crate::types::_security_policy::SecurityPolicy;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_endpoint_type::EndpointType;
 
 pub use crate::types::_domain_name_status::DomainNameStatus;
@@ -106,6 +108,8 @@ mod _integration;
 mod _integration_response;
 
 mod _integration_type;
+
+mod _ip_address_type;
 
 mod _jwt_configuration;
 

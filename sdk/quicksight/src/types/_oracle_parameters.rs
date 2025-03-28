@@ -10,6 +10,8 @@ pub struct OracleParameters {
     pub port: i32,
     /// <p>The database.</p>
     pub database: ::std::string::String,
+    /// <p>A Boolean value that indicates whether the <code>Database</code> uses a service name or an SID. If this value is left blank, the default value is <code>SID</code>. If this value is set to <code>false</code>, the value is <code>SID</code>.</p>
+    pub use_service_name: bool,
 }
 impl OracleParameters {
     /// <p>An Oracle host.</p>
@@ -26,6 +28,10 @@ impl OracleParameters {
         use std::ops::Deref;
         self.database.deref()
     }
+    /// <p>A Boolean value that indicates whether the <code>Database</code> uses a service name or an SID. If this value is left blank, the default value is <code>SID</code>. If this value is set to <code>false</code>, the value is <code>SID</code>.</p>
+    pub fn use_service_name(&self) -> bool {
+        self.use_service_name
+    }
 }
 impl OracleParameters {
     /// Creates a new builder-style object to manufacture [`OracleParameters`](crate::types::OracleParameters).
@@ -41,6 +47,7 @@ pub struct OracleParametersBuilder {
     pub(crate) host: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) use_service_name: ::std::option::Option<bool>,
 }
 impl OracleParametersBuilder {
     /// <p>An Oracle host.</p>
@@ -88,6 +95,20 @@ impl OracleParametersBuilder {
     pub fn get_database(&self) -> &::std::option::Option<::std::string::String> {
         &self.database
     }
+    /// <p>A Boolean value that indicates whether the <code>Database</code> uses a service name or an SID. If this value is left blank, the default value is <code>SID</code>. If this value is set to <code>false</code>, the value is <code>SID</code>.</p>
+    pub fn use_service_name(mut self, input: bool) -> Self {
+        self.use_service_name = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether the <code>Database</code> uses a service name or an SID. If this value is left blank, the default value is <code>SID</code>. If this value is set to <code>false</code>, the value is <code>SID</code>.</p>
+    pub fn set_use_service_name(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_service_name = input;
+        self
+    }
+    /// <p>A Boolean value that indicates whether the <code>Database</code> uses a service name or an SID. If this value is left blank, the default value is <code>SID</code>. If this value is set to <code>false</code>, the value is <code>SID</code>.</p>
+    pub fn get_use_service_name(&self) -> &::std::option::Option<bool> {
+        &self.use_service_name
+    }
     /// Consumes the builder and constructs a [`OracleParameters`](crate::types::OracleParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`host`](crate::types::builders::OracleParametersBuilder::host)
@@ -113,6 +134,7 @@ impl OracleParametersBuilder {
                     "database was not specified but it is required when building OracleParameters",
                 )
             })?,
+            use_service_name: self.use_service_name.unwrap_or_default(),
         })
     }
 }

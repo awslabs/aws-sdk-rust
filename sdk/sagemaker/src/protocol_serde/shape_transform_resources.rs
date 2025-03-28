@@ -15,6 +15,9 @@ pub fn ser_transform_resources(
     if let Some(var_3) = &input.volume_kms_key_id {
         object.key("VolumeKmsKeyId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.transform_ami_version {
+        object.key("TransformAmiVersion").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -49,6 +52,13 @@ where
                         }
                         "VolumeKmsKeyId" => {
                             builder = builder.set_volume_kms_key_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TransformAmiVersion" => {
+                            builder = builder.set_transform_ami_version(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

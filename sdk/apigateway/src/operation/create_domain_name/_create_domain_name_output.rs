@@ -28,7 +28,7 @@ pub struct CreateDomainNameOutput {
     pub distribution_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.</p>
     pub distribution_hosted_zone_id: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>The status of the DomainName migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub domain_name_status: ::std::option::Option<crate::types::DomainNameStatus>,
@@ -97,7 +97,7 @@ impl CreateDomainNameOutput {
     pub fn distribution_hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.distribution_hosted_zone_id.as_deref()
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
@@ -342,17 +342,17 @@ impl CreateDomainNameOutputBuilder {
     pub fn get_distribution_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.distribution_hosted_zone_id
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         &self.endpoint_configuration
     }

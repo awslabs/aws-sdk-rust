@@ -69,6 +69,12 @@ pub fn ser_dashboard_publish_options(
         crate::protocol_serde::shape_data_point_tooltip_option::ser_data_point_tooltip_option(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.data_qa_enabled_option {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("DataQAEnabledOption").start_object();
+        crate::protocol_serde::shape_data_qa_enabled_option::ser_data_qa_enabled_option(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }
 
@@ -139,6 +145,10 @@ where
                             builder = builder.set_data_point_tooltip_option(
                                 crate::protocol_serde::shape_data_point_tooltip_option::de_data_point_tooltip_option(tokens)?,
                             );
+                        }
+                        "DataQAEnabledOption" => {
+                            builder = builder
+                                .set_data_qa_enabled_option(crate::protocol_serde::shape_data_qa_enabled_option::de_data_qa_enabled_option(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

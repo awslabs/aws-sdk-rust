@@ -24,20 +24,23 @@ pub fn ser_update_api_input_input(
     if let Some(var_7) = &input.disable_schema_validation {
         object.key("disableSchemaValidation").boolean(*var_7);
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    if let Some(var_8) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.route_key {
-        object.key("routeKey").string(var_9.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.route_selection_expression {
-        object.key("routeSelectionExpression").string(var_10.as_str());
+    if let Some(var_10) = &input.route_key {
+        object.key("routeKey").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.target {
-        object.key("target").string(var_11.as_str());
+    if let Some(var_11) = &input.route_selection_expression {
+        object.key("routeSelectionExpression").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.version {
-        object.key("version").string(var_12.as_str());
+    if let Some(var_12) = &input.target {
+        object.key("target").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.version {
+        object.key("version").string(var_13.as_str());
     }
     Ok(())
 }

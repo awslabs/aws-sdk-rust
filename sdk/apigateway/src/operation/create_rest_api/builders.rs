@@ -211,17 +211,17 @@ impl CreateRestApiFluentBuilder {
     pub fn get_api_key_source(&self) -> &::std::option::Option<crate::types::ApiKeySourceType> {
         self.inner.get_api_key_source()
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types and IP address types of the API.</p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.inner = self.inner.endpoint_configuration(input);
         self
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types and IP address types of the API.</p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.inner = self.inner.set_endpoint_configuration(input);
         self
     }
-    /// <p>The endpoint configuration of this RestApi showing the endpoint types of the API.</p>
+    /// <p>The endpoint configuration of this RestApi showing the endpoint types and IP address types of the API.</p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         self.inner.get_endpoint_configuration()
     }

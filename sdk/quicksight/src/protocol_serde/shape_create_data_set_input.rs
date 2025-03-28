@@ -144,5 +144,8 @@ pub fn ser_create_data_set_input_input(
         }
         array_47.finish();
     }
+    if let Some(var_50) = &input.use_as {
+        object.key("UseAs").string(var_50.as_str());
+    }
     Ok(())
 }

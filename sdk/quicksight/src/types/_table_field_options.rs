@@ -10,6 +10,8 @@ pub struct TableFieldOptions {
     pub order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The settings for the pinned columns of a table visual.</p>
     pub pinned_field_options: ::std::option::Option<crate::types::TablePinnedFieldOptions>,
+    /// <p>The <code>TableOptions</code> of a transposed table.</p>
+    pub transposed_table_options: ::std::option::Option<::std::vec::Vec<crate::types::TransposedTableOption>>,
 }
 impl TableFieldOptions {
     /// <p>The field options to be configured to a table.</p>
@@ -28,6 +30,12 @@ impl TableFieldOptions {
     pub fn pinned_field_options(&self) -> ::std::option::Option<&crate::types::TablePinnedFieldOptions> {
         self.pinned_field_options.as_ref()
     }
+    /// <p>The <code>TableOptions</code> of a transposed table.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transposed_table_options.is_none()`.
+    pub fn transposed_table_options(&self) -> &[crate::types::TransposedTableOption] {
+        self.transposed_table_options.as_deref().unwrap_or_default()
+    }
 }
 impl TableFieldOptions {
     /// Creates a new builder-style object to manufacture [`TableFieldOptions`](crate::types::TableFieldOptions).
@@ -43,6 +51,7 @@ pub struct TableFieldOptionsBuilder {
     pub(crate) selected_field_options: ::std::option::Option<::std::vec::Vec<crate::types::TableFieldOption>>,
     pub(crate) order: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) pinned_field_options: ::std::option::Option<crate::types::TablePinnedFieldOptions>,
+    pub(crate) transposed_table_options: ::std::option::Option<::std::vec::Vec<crate::types::TransposedTableOption>>,
 }
 impl TableFieldOptionsBuilder {
     /// Appends an item to `selected_field_options`.
@@ -99,12 +108,33 @@ impl TableFieldOptionsBuilder {
     pub fn get_pinned_field_options(&self) -> &::std::option::Option<crate::types::TablePinnedFieldOptions> {
         &self.pinned_field_options
     }
+    /// Appends an item to `transposed_table_options`.
+    ///
+    /// To override the contents of this collection use [`set_transposed_table_options`](Self::set_transposed_table_options).
+    ///
+    /// <p>The <code>TableOptions</code> of a transposed table.</p>
+    pub fn transposed_table_options(mut self, input: crate::types::TransposedTableOption) -> Self {
+        let mut v = self.transposed_table_options.unwrap_or_default();
+        v.push(input);
+        self.transposed_table_options = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The <code>TableOptions</code> of a transposed table.</p>
+    pub fn set_transposed_table_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TransposedTableOption>>) -> Self {
+        self.transposed_table_options = input;
+        self
+    }
+    /// <p>The <code>TableOptions</code> of a transposed table.</p>
+    pub fn get_transposed_table_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TransposedTableOption>> {
+        &self.transposed_table_options
+    }
     /// Consumes the builder and constructs a [`TableFieldOptions`](crate::types::TableFieldOptions).
     pub fn build(self) -> crate::types::TableFieldOptions {
         crate::types::TableFieldOptions {
             selected_field_options: self.selected_field_options,
             order: self.order,
             pinned_field_options: self.pinned_field_options,
+            transposed_table_options: self.transposed_table_options,
         }
     }
 }

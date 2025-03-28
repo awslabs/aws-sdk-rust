@@ -16,6 +16,8 @@ pub struct CreateApiInput {
     pub disable_schema_validation: ::std::option::Option<bool>,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: ::std::option::Option<bool>,
+    /// <p>The IP address types that can invoke the API.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the API.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API protocol.</p>
@@ -55,6 +57,10 @@ impl CreateApiInput {
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn disable_execute_api_endpoint(&self) -> ::std::option::Option<bool> {
         self.disable_execute_api_endpoint
+    }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
     }
     /// <p>The name of the API.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -102,6 +108,7 @@ pub struct CreateApiInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) disable_schema_validation: ::std::option::Option<bool>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) route_key: ::std::option::Option<::std::string::String>,
@@ -194,6 +201,20 @@ impl CreateApiInputBuilder {
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
         &self.disable_execute_api_endpoint
+    }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
     }
     /// <p>The name of the API.</p>
     /// This field is required.
@@ -310,6 +331,7 @@ impl CreateApiInputBuilder {
             description: self.description,
             disable_schema_validation: self.disable_schema_validation,
             disable_execute_api_endpoint: self.disable_execute_api_endpoint,
+            ip_address_type: self.ip_address_type,
             name: self.name,
             protocol_type: self.protocol_type,
             route_key: self.route_key,

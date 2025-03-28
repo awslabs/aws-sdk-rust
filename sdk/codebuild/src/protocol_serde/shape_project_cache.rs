@@ -18,6 +18,9 @@ pub fn ser_project_cache(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.cache_namespace {
+        object.key("cacheNamespace").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -52,6 +55,13 @@ where
                         }
                         "modes" => {
                             builder = builder.set_modes(crate::protocol_serde::shape_project_cache_modes::de_project_cache_modes(tokens)?);
+                        }
+                        "cacheNamespace" => {
+                            builder = builder.set_cache_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

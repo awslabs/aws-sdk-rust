@@ -16,6 +16,8 @@ pub struct GuardrailUsage {
     pub sensitive_information_policy_free_units: i32,
     /// <p>The contextual grounding policy units processed by the guardrail.</p>
     pub contextual_grounding_policy_units: i32,
+    /// <p>The content policy image units processed by the guardrail.</p>
+    pub content_policy_image_units: ::std::option::Option<i32>,
 }
 impl GuardrailUsage {
     /// <p>The topic policy units processed by the guardrail.</p>
@@ -42,6 +44,10 @@ impl GuardrailUsage {
     pub fn contextual_grounding_policy_units(&self) -> i32 {
         self.contextual_grounding_policy_units
     }
+    /// <p>The content policy image units processed by the guardrail.</p>
+    pub fn content_policy_image_units(&self) -> ::std::option::Option<i32> {
+        self.content_policy_image_units
+    }
 }
 impl GuardrailUsage {
     /// Creates a new builder-style object to manufacture [`GuardrailUsage`](crate::types::GuardrailUsage).
@@ -60,6 +66,7 @@ pub struct GuardrailUsageBuilder {
     pub(crate) sensitive_information_policy_units: ::std::option::Option<i32>,
     pub(crate) sensitive_information_policy_free_units: ::std::option::Option<i32>,
     pub(crate) contextual_grounding_policy_units: ::std::option::Option<i32>,
+    pub(crate) content_policy_image_units: ::std::option::Option<i32>,
 }
 impl GuardrailUsageBuilder {
     /// <p>The topic policy units processed by the guardrail.</p>
@@ -152,6 +159,20 @@ impl GuardrailUsageBuilder {
     pub fn get_contextual_grounding_policy_units(&self) -> &::std::option::Option<i32> {
         &self.contextual_grounding_policy_units
     }
+    /// <p>The content policy image units processed by the guardrail.</p>
+    pub fn content_policy_image_units(mut self, input: i32) -> Self {
+        self.content_policy_image_units = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The content policy image units processed by the guardrail.</p>
+    pub fn set_content_policy_image_units(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.content_policy_image_units = input;
+        self
+    }
+    /// <p>The content policy image units processed by the guardrail.</p>
+    pub fn get_content_policy_image_units(&self) -> &::std::option::Option<i32> {
+        &self.content_policy_image_units
+    }
     /// Consumes the builder and constructs a [`GuardrailUsage`](crate::types::GuardrailUsage).
     /// This method will fail if any of the following fields are not set:
     /// - [`topic_policy_units`](crate::types::builders::GuardrailUsageBuilder::topic_policy_units)
@@ -198,6 +219,7 @@ impl GuardrailUsageBuilder {
                     "contextual_grounding_policy_units was not specified but it is required when building GuardrailUsage",
                 )
             })?,
+            content_policy_image_units: self.content_policy_image_units,
         })
     }
 }

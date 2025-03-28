@@ -15,6 +15,7 @@ impl super::Client {
     /// - On success, responds with [`SearchOutput`](crate::operation::search::SearchOutput) with field(s):
     ///   - [`results(Option<Vec::<SearchRecord>>)`](crate::operation::search::SearchOutput::results): <p>A list of <code>SearchRecord</code> objects.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::search::SearchOutput::next_token): <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
+    ///   - [`total_hits(Option<TotalHits>)`](crate::operation::search::SearchOutput::total_hits): <p>The total number of matching results.</p>
     /// - On failure, responds with [`SdkError<SearchError>`](crate::operation::search::SearchError)
     pub fn search(&self) -> crate::operation::search::builders::SearchFluentBuilder {
         crate::operation::search::builders::SearchFluentBuilder::new(self.handle.clone())

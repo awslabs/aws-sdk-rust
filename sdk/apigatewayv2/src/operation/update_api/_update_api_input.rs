@@ -18,6 +18,8 @@ pub struct UpdateApiInput {
     pub disable_schema_validation: ::std::option::Option<bool>,
     /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
     pub disable_execute_api_endpoint: ::std::option::Option<bool>,
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the API.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
@@ -58,6 +60,10 @@ impl UpdateApiInput {
     pub fn disable_execute_api_endpoint(&self) -> ::std::option::Option<bool> {
         self.disable_execute_api_endpoint
     }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The name of the API.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -97,6 +103,7 @@ pub struct UpdateApiInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) disable_schema_validation: ::std::option::Option<bool>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) route_key: ::std::option::Option<::std::string::String>,
     pub(crate) route_selection_expression: ::std::option::Option<::std::string::String>,
@@ -203,6 +210,20 @@ impl UpdateApiInputBuilder {
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
         &self.disable_execute_api_endpoint
     }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>The name of the API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -283,6 +304,7 @@ impl UpdateApiInputBuilder {
             description: self.description,
             disable_schema_validation: self.disable_schema_validation,
             disable_execute_api_endpoint: self.disable_execute_api_endpoint,
+            ip_address_type: self.ip_address_type,
             name: self.name,
             route_key: self.route_key,
             route_selection_expression: self.route_selection_expression,

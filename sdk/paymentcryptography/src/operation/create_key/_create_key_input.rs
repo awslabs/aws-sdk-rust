@@ -19,6 +19,8 @@ pub struct CreateKeyInput {
     /// <p>Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
 }
 impl CreateKeyInput {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
@@ -49,6 +51,10 @@ impl CreateKeyInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn derive_key_usage(&self) -> ::std::option::Option<&crate::types::DeriveKeyUsage> {
+        self.derive_key_usage.as_ref()
+    }
 }
 impl CreateKeyInput {
     /// Creates a new builder-style object to manufacture [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
@@ -66,6 +72,7 @@ pub struct CreateKeyInputBuilder {
     pub(crate) exportable: ::std::option::Option<bool>,
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) derive_key_usage: ::std::option::Option<crate::types::DeriveKeyUsage>,
 }
 impl CreateKeyInputBuilder {
     /// <p>The role of the key, the algorithm it supports, and the cryptographic operations allowed with the key. This data is immutable after the key is created.</p>
@@ -164,6 +171,20 @@ impl CreateKeyInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn derive_key_usage(mut self, input: crate::types::DeriveKeyUsage) -> Self {
+        self.derive_key_usage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn set_derive_key_usage(mut self, input: ::std::option::Option<crate::types::DeriveKeyUsage>) -> Self {
+        self.derive_key_usage = input;
+        self
+    }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn get_derive_key_usage(&self) -> &::std::option::Option<crate::types::DeriveKeyUsage> {
+        &self.derive_key_usage
+    }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
@@ -172,6 +193,7 @@ impl CreateKeyInputBuilder {
             exportable: self.exportable,
             enabled: self.enabled,
             tags: self.tags,
+            derive_key_usage: self.derive_key_usage,
         })
     }
 }

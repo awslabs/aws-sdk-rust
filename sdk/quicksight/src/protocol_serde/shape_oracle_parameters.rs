@@ -15,6 +15,9 @@ pub fn ser_oracle_parameters(
     {
         object.key("Database").string(input.database.as_str());
     }
+    if input.use_service_name {
+        object.key("UseServiceName").boolean(input.use_service_name);
+    }
     Ok(())
 }
 
@@ -53,6 +56,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "UseServiceName" => {
+                            builder = builder.set_use_service_name(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

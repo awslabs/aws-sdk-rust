@@ -34,6 +34,12 @@ pub fn ser_import_key_material(
             crate::protocol_serde::shape_import_key_cryptogram::ser_import_key_cryptogram(&mut object_5, inner)?;
             object_5.finish();
         }
+        crate::types::ImportKeyMaterial::DiffieHellmanTr31KeyBlock(inner) => {
+            #[allow(unused_mut)]
+            let mut object_6 = object_2.key("DiffieHellmanTr31KeyBlock").start_object();
+            crate::protocol_serde::shape_import_diffie_hellman_tr31_key_block::ser_import_diffie_hellman_tr31_key_block(&mut object_6, inner)?;
+            object_6.finish();
+        }
         crate::types::ImportKeyMaterial::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ImportKeyMaterial",

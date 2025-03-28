@@ -9,6 +9,18 @@ pub fn ser_asset_options(
     if let Some(var_2) = &input.week_start {
         object.key("WeekStart").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.q_business_insights_status {
+        object.key("QBusinessInsightsStatus").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.excluded_data_set_arns {
+        let mut array_5 = object.key("ExcludedDataSetArns").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +52,17 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::DayOfTheWeek::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "QBusinessInsightsStatus" => {
+                            builder = builder.set_q_business_insights_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::QBusinessInsightsStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ExcludedDataSetArns" => {
+                            builder =
+                                builder.set_excluded_data_set_arns(crate::protocol_serde::shape_data_set_arns_list::de_data_set_arns_list(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -7,6 +7,8 @@ pub struct SearchOutput {
     pub results: ::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>>,
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The total number of matching results.</p>
+    pub total_hits: ::std::option::Option<crate::types::TotalHits>,
     _request_id: Option<String>,
 }
 impl SearchOutput {
@@ -19,6 +21,10 @@ impl SearchOutput {
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The total number of matching results.</p>
+    pub fn total_hits(&self) -> ::std::option::Option<&crate::types::TotalHits> {
+        self.total_hits.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchOutput {
@@ -39,6 +45,7 @@ impl SearchOutput {
 pub struct SearchOutputBuilder {
     pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::SearchRecord>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) total_hits: ::std::option::Option<crate::types::TotalHits>,
     _request_id: Option<String>,
 }
 impl SearchOutputBuilder {
@@ -76,6 +83,20 @@ impl SearchOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The total number of matching results.</p>
+    pub fn total_hits(mut self, input: crate::types::TotalHits) -> Self {
+        self.total_hits = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of matching results.</p>
+    pub fn set_total_hits(mut self, input: ::std::option::Option<crate::types::TotalHits>) -> Self {
+        self.total_hits = input;
+        self
+    }
+    /// <p>The total number of matching results.</p>
+    pub fn get_total_hits(&self) -> &::std::option::Option<crate::types::TotalHits> {
+        &self.total_hits
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +111,7 @@ impl SearchOutputBuilder {
         crate::operation::search::SearchOutput {
             results: self.results,
             next_token: self.next_token,
+            total_hits: self.total_hits,
             _request_id: self._request_id,
         }
     }

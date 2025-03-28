@@ -17,6 +17,13 @@ where
                         "types" => {
                             builder = builder.set_types(crate::protocol_serde::shape_list_of_endpoint_type::de_list_of_endpoint_type(tokens)?);
                         }
+                        "ipAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "vpcEndpointIds" => {
                             builder = builder.set_vpc_endpoint_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
@@ -51,14 +58,17 @@ pub fn ser_endpoint_configuration(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.vpc_endpoint_ids {
-        let mut array_5 = object.key("vpcEndpointIds").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.vpc_endpoint_ids {
+        let mut array_6 = object.key("vpcEndpointIds").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

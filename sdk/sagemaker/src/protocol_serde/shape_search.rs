@@ -59,6 +59,9 @@ pub(crate) fn de_search(
                             .transpose()?,
                     );
                 }
+                "TotalHits" => {
+                    builder = builder.set_total_hits(crate::protocol_serde::shape_total_hits::de_total_hits(tokens)?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

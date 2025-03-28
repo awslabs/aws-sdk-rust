@@ -20,7 +20,7 @@ pub struct CreateDomainNameInput {
     pub regional_certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.</p>
     pub regional_certificate_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub endpoint_configuration: ::std::option::Option<crate::types::EndpointConfiguration>,
     /// <p>The key-value map of strings. The valid character set is \[a-zA-Z+-=._:/\]. The tag key can be up to 128 characters and must not start with aws:. The tag value can be up to 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -66,7 +66,7 @@ impl CreateDomainNameInput {
     pub fn regional_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.regional_certificate_arn.as_deref()
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn endpoint_configuration(&self) -> ::std::option::Option<&crate::types::EndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
@@ -231,17 +231,17 @@ impl CreateDomainNameInputBuilder {
     pub fn get_regional_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.regional_certificate_arn
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn endpoint_configuration(mut self, input: crate::types::EndpointConfiguration) -> Self {
         self.endpoint_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn set_endpoint_configuration(mut self, input: ::std::option::Option<crate::types::EndpointConfiguration>) -> Self {
         self.endpoint_configuration = input;
         self
     }
-    /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name.</p>
+    /// <p>The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.</p>
     pub fn get_endpoint_configuration(&self) -> &::std::option::Option<crate::types::EndpointConfiguration> {
         &self.endpoint_configuration
     }

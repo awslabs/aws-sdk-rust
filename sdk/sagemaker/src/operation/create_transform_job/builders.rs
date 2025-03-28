@@ -35,7 +35,7 @@ impl crate::operation::create_transform_job::builders::CreateTransformJobInputBu
 /// <li>
 /// <p><code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p></li>
 /// <li>
-/// <p><code>TransformResources</code> - Identifies the ML compute instances for the transform job.</p></li>
+/// <p><code>TransformResources</code> - Identifies the ML compute instances and AMI image versions for the transform job.</p></li>
 /// </ul>
 /// <p>For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch Transform</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

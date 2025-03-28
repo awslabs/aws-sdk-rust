@@ -22,6 +22,8 @@ pub struct DataSetSummary {
     pub row_level_permission_tag_configuration_applied: bool,
     /// <p>A value that indicates if the dataset has column level permission configured.</p>
     pub column_level_permission_rules_applied: bool,
+    /// <p>The usage of the dataset.</p>
+    pub use_as: ::std::option::Option<crate::types::DataSetUseAs>,
 }
 impl DataSetSummary {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -60,6 +62,10 @@ impl DataSetSummary {
     pub fn column_level_permission_rules_applied(&self) -> bool {
         self.column_level_permission_rules_applied
     }
+    /// <p>The usage of the dataset.</p>
+    pub fn use_as(&self) -> ::std::option::Option<&crate::types::DataSetUseAs> {
+        self.use_as.as_ref()
+    }
 }
 impl DataSetSummary {
     /// Creates a new builder-style object to manufacture [`DataSetSummary`](crate::types::DataSetSummary).
@@ -81,6 +87,7 @@ pub struct DataSetSummaryBuilder {
     pub(crate) row_level_permission_data_set: ::std::option::Option<crate::types::RowLevelPermissionDataSet>,
     pub(crate) row_level_permission_tag_configuration_applied: ::std::option::Option<bool>,
     pub(crate) column_level_permission_rules_applied: ::std::option::Option<bool>,
+    pub(crate) use_as: ::std::option::Option<crate::types::DataSetUseAs>,
 }
 impl DataSetSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -209,6 +216,20 @@ impl DataSetSummaryBuilder {
     pub fn get_column_level_permission_rules_applied(&self) -> &::std::option::Option<bool> {
         &self.column_level_permission_rules_applied
     }
+    /// <p>The usage of the dataset.</p>
+    pub fn use_as(mut self, input: crate::types::DataSetUseAs) -> Self {
+        self.use_as = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The usage of the dataset.</p>
+    pub fn set_use_as(mut self, input: ::std::option::Option<crate::types::DataSetUseAs>) -> Self {
+        self.use_as = input;
+        self
+    }
+    /// <p>The usage of the dataset.</p>
+    pub fn get_use_as(&self) -> &::std::option::Option<crate::types::DataSetUseAs> {
+        &self.use_as
+    }
     /// Consumes the builder and constructs a [`DataSetSummary`](crate::types::DataSetSummary).
     pub fn build(self) -> crate::types::DataSetSummary {
         crate::types::DataSetSummary {
@@ -221,6 +242,7 @@ impl DataSetSummaryBuilder {
             row_level_permission_data_set: self.row_level_permission_data_set,
             row_level_permission_tag_configuration_applied: self.row_level_permission_tag_configuration_applied.unwrap_or_default(),
             column_level_permission_rules_applied: self.column_level_permission_rules_applied.unwrap_or_default(),
+            use_as: self.use_as,
         }
     }
 }

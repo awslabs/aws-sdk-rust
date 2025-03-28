@@ -18,6 +18,11 @@ where
                             builder = builder
                                 .set_refresh_configuration(crate::protocol_serde::shape_refresh_configuration::de_refresh_configuration(tokens)?);
                         }
+                        "FailureConfiguration" => {
+                            builder = builder.set_failure_configuration(
+                                crate::protocol_serde::shape_refresh_failure_configuration::de_refresh_failure_configuration(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -28,7 +33,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::data_set_refresh_properties_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -45,6 +50,12 @@ pub fn ser_data_set_refresh_properties(
         let mut object_2 = object.key("RefreshConfiguration").start_object();
         crate::protocol_serde::shape_refresh_configuration::ser_refresh_configuration(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.failure_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("FailureConfiguration").start_object();
+        crate::protocol_serde::shape_refresh_failure_configuration::ser_refresh_failure_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

@@ -23,6 +23,8 @@ pub struct CreateApiOutput {
     pub disable_execute_api_endpoint: ::std::option::Option<bool>,
     /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
     pub import_info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address types that can invoke the API.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the API.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API protocol.</p>
@@ -80,6 +82,10 @@ impl CreateApiOutput {
     pub fn import_info(&self) -> &[::std::string::String] {
         self.import_info.as_deref().unwrap_or_default()
     }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The name of the API.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -133,6 +139,7 @@ pub struct CreateApiOutputBuilder {
     pub(crate) disable_schema_validation: ::std::option::Option<bool>,
     pub(crate) disable_execute_api_endpoint: ::std::option::Option<bool>,
     pub(crate) import_info: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     pub(crate) route_selection_expression: ::std::option::Option<::std::string::String>,
@@ -288,6 +295,20 @@ impl CreateApiOutputBuilder {
     pub fn get_import_info(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.import_info
     }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address types that can invoke the API.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>The name of the API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -406,6 +427,7 @@ impl CreateApiOutputBuilder {
             disable_schema_validation: self.disable_schema_validation,
             disable_execute_api_endpoint: self.disable_execute_api_endpoint,
             import_info: self.import_info,
+            ip_address_type: self.ip_address_type,
             name: self.name,
             protocol_type: self.protocol_type,
             route_selection_expression: self.route_selection_expression,

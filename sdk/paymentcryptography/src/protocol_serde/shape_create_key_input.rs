@@ -30,5 +30,8 @@ pub fn ser_create_key_input_input(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.derive_key_usage {
+        object.key("DeriveKeyUsage").string(var_10.as_str());
+    }
     Ok(())
 }

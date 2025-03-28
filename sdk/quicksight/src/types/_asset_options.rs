@@ -8,6 +8,10 @@ pub struct AssetOptions {
     pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>Determines the week start day for an analysis.</p>
     pub week_start: ::std::option::Option<crate::types::DayOfTheWeek>,
+    /// <p>Determines whether insight summaries from Amazon Q Business are allowed in Dashboard Q&amp;A.</p>
+    pub q_business_insights_status: ::std::option::Option<crate::types::QBusinessInsightsStatus>,
+    /// <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
+    pub excluded_data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssetOptions {
     /// <p>Determines the timezone for the analysis.</p>
@@ -17,6 +21,16 @@ impl AssetOptions {
     /// <p>Determines the week start day for an analysis.</p>
     pub fn week_start(&self) -> ::std::option::Option<&crate::types::DayOfTheWeek> {
         self.week_start.as_ref()
+    }
+    /// <p>Determines whether insight summaries from Amazon Q Business are allowed in Dashboard Q&amp;A.</p>
+    pub fn q_business_insights_status(&self) -> ::std::option::Option<&crate::types::QBusinessInsightsStatus> {
+        self.q_business_insights_status.as_ref()
+    }
+    /// <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_data_set_arns.is_none()`.
+    pub fn excluded_data_set_arns(&self) -> &[::std::string::String] {
+        self.excluded_data_set_arns.as_deref().unwrap_or_default()
     }
 }
 impl AssetOptions {
@@ -32,6 +46,8 @@ impl AssetOptions {
 pub struct AssetOptionsBuilder {
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
     pub(crate) week_start: ::std::option::Option<crate::types::DayOfTheWeek>,
+    pub(crate) q_business_insights_status: ::std::option::Option<crate::types::QBusinessInsightsStatus>,
+    pub(crate) excluded_data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssetOptionsBuilder {
     /// <p>Determines the timezone for the analysis.</p>
@@ -62,11 +78,47 @@ impl AssetOptionsBuilder {
     pub fn get_week_start(&self) -> &::std::option::Option<crate::types::DayOfTheWeek> {
         &self.week_start
     }
+    /// <p>Determines whether insight summaries from Amazon Q Business are allowed in Dashboard Q&amp;A.</p>
+    pub fn q_business_insights_status(mut self, input: crate::types::QBusinessInsightsStatus) -> Self {
+        self.q_business_insights_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Determines whether insight summaries from Amazon Q Business are allowed in Dashboard Q&amp;A.</p>
+    pub fn set_q_business_insights_status(mut self, input: ::std::option::Option<crate::types::QBusinessInsightsStatus>) -> Self {
+        self.q_business_insights_status = input;
+        self
+    }
+    /// <p>Determines whether insight summaries from Amazon Q Business are allowed in Dashboard Q&amp;A.</p>
+    pub fn get_q_business_insights_status(&self) -> &::std::option::Option<crate::types::QBusinessInsightsStatus> {
+        &self.q_business_insights_status
+    }
+    /// Appends an item to `excluded_data_set_arns`.
+    ///
+    /// To override the contents of this collection use [`set_excluded_data_set_arns`](Self::set_excluded_data_set_arns).
+    ///
+    /// <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
+    pub fn excluded_data_set_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.excluded_data_set_arns.unwrap_or_default();
+        v.push(input.into());
+        self.excluded_data_set_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
+    pub fn set_excluded_data_set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.excluded_data_set_arns = input;
+        self
+    }
+    /// <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
+    pub fn get_excluded_data_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_data_set_arns
+    }
     /// Consumes the builder and constructs a [`AssetOptions`](crate::types::AssetOptions).
     pub fn build(self) -> crate::types::AssetOptions {
         crate::types::AssetOptions {
             timezone: self.timezone,
             week_start: self.week_start,
+            q_business_insights_status: self.q_business_insights_status,
+            excluded_data_set_arns: self.excluded_data_set_arns,
         }
     }
 }

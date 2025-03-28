@@ -20,6 +20,8 @@ pub struct DomainNameConfiguration {
     pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     /// <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address types that can invoke the domain name. Use ipv4 to allow only IPv4 addresses to invoke your domain name, or use dualstack to allow both IPv4 and IPv6 addresses to invoke your domain name.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
@@ -58,6 +60,10 @@ impl DomainNameConfiguration {
     pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
+    /// <p>The IP address types that can invoke the domain name. Use ipv4 to allow only IPv4 addresses to invoke your domain name, or use dualstack to allow both IPv4 and IPv6 addresses to invoke your domain name.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
     pub fn security_policy(&self) -> ::std::option::Option<&crate::types::SecurityPolicy> {
         self.security_policy.as_ref()
@@ -86,6 +92,7 @@ pub struct DomainNameConfigurationBuilder {
     pub(crate) domain_name_status_message: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) security_policy: ::std::option::Option<crate::types::SecurityPolicy>,
     pub(crate) ownership_verification_certificate_arn: ::std::option::Option<::std::string::String>,
 }
@@ -202,6 +209,20 @@ impl DomainNameConfigurationBuilder {
     pub fn get_hosted_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.hosted_zone_id
     }
+    /// <p>The IP address types that can invoke the domain name. Use ipv4 to allow only IPv4 addresses to invoke your domain name, or use dualstack to allow both IPv4 and IPv6 addresses to invoke your domain name.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address types that can invoke the domain name. Use ipv4 to allow only IPv4 addresses to invoke your domain name, or use dualstack to allow both IPv4 and IPv6 addresses to invoke your domain name.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address types that can invoke the domain name. Use ipv4 to allow only IPv4 addresses to invoke your domain name, or use dualstack to allow both IPv4 and IPv6 addresses to invoke your domain name.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        &self.ip_address_type
+    }
     /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicy) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
@@ -241,6 +262,7 @@ impl DomainNameConfigurationBuilder {
             domain_name_status_message: self.domain_name_status_message,
             endpoint_type: self.endpoint_type,
             hosted_zone_id: self.hosted_zone_id,
+            ip_address_type: self.ip_address_type,
             security_policy: self.security_policy,
             ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
         }

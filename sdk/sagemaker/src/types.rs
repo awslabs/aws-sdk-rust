@@ -463,6 +463,10 @@ pub use crate::types::_reserved_capacity_instance_type::ReservedCapacityInstance
 
 pub use crate::types::_sage_maker_resource_name::SageMakerResourceName;
 
+pub use crate::types::_total_hits::TotalHits;
+
+pub use crate::types::_relation::Relation;
+
 pub use crate::types::_search_record::SearchRecord;
 
 pub use crate::types::_model_dashboard_model::ModelDashboardModel;
@@ -3303,6 +3307,8 @@ mod _redshift_result_format;
 
 mod _register_model_step_metadata;
 
+mod _relation;
+
 mod _remote_debug_config;
 
 mod _remote_debug_config_for_update;
@@ -3566,6 +3572,8 @@ mod _time_series_forecasting_job_config;
 mod _time_series_forecasting_settings;
 
 mod _time_series_transformations;
+
+mod _total_hits;
 
 mod _tracking_server_size;
 

@@ -30,6 +30,18 @@ pub fn ser_table_field_options(
         crate::protocol_serde::shape_table_pinned_field_options::ser_table_pinned_field_options(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.transposed_table_options {
+        let mut array_11 = object.key("TransposedTableOptions").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_transposed_table_option::ser_transposed_table_option(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
 
@@ -59,6 +71,11 @@ where
                         "PinnedFieldOptions" => {
                             builder = builder.set_pinned_field_options(
                                 crate::protocol_serde::shape_table_pinned_field_options::de_table_pinned_field_options(tokens)?,
+                            );
+                        }
+                        "TransposedTableOptions" => {
+                            builder = builder.set_transposed_table_options(
+                                crate::protocol_serde::shape_transposed_table_option_list::de_transposed_table_option_list(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

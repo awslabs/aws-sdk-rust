@@ -208,4 +208,18 @@ impl CreateKeyFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn derive_key_usage(mut self, input: crate::types::DeriveKeyUsage) -> Self {
+        self.inner = self.inner.derive_key_usage(input);
+        self
+    }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn set_derive_key_usage(mut self, input: ::std::option::Option<crate::types::DeriveKeyUsage>) -> Self {
+        self.inner = self.inner.set_derive_key_usage(input);
+        self
+    }
+    /// <p>The cryptographic usage of an ECDH derived key as deﬁned in section A.5.2 of the TR-31 spec.</p>
+    pub fn get_derive_key_usage(&self) -> &::std::option::Option<crate::types::DeriveKeyUsage> {
+        self.inner.get_derive_key_usage()
+    }
 }

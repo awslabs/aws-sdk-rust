@@ -327,6 +327,8 @@ pub use crate::types::_training_plan_offering::TrainingPlanOfferingBuilder;
 
 pub use crate::types::_reserved_capacity_offering::ReservedCapacityOfferingBuilder;
 
+pub use crate::types::_total_hits::TotalHitsBuilder;
+
 pub use crate::types::_search_record::SearchRecordBuilder;
 
 pub use crate::types::_model_dashboard_model::ModelDashboardModelBuilder;

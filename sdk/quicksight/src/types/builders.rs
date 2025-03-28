@@ -1103,6 +1103,8 @@ pub use crate::types::_table_paginated_report_options::TablePaginatedReportOptio
 
 pub use crate::types::_table_field_options::TableFieldOptionsBuilder;
 
+pub use crate::types::_transposed_table_option::TransposedTableOptionBuilder;
+
 pub use crate::types::_table_pinned_field_options::TablePinnedFieldOptionsBuilder;
 
 pub use crate::types::_table_field_option::TableFieldOptionBuilder;
@@ -1359,6 +1361,8 @@ pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclara
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptionsBuilder;
 
+pub use crate::types::_data_qa_enabled_option::DataQaEnabledOptionBuilder;
+
 pub use crate::types::_data_point_tooltip_option::DataPointTooltipOptionBuilder;
 
 pub use crate::types::_data_point_menu_label_option::DataPointMenuLabelOptionBuilder;
@@ -1505,6 +1509,18 @@ pub use crate::types::_asset_bundle_import_job_theme_override_parameters::AssetB
 
 pub use crate::types::_asset_bundle_import_job_data_set_override_parameters::AssetBundleImportJobDataSetOverrideParametersBuilder;
 
+pub use crate::types::_data_set_refresh_properties::DataSetRefreshPropertiesBuilder;
+
+pub use crate::types::_refresh_failure_configuration::RefreshFailureConfigurationBuilder;
+
+pub use crate::types::_refresh_failure_email_alert::RefreshFailureEmailAlertBuilder;
+
+pub use crate::types::_refresh_configuration::RefreshConfigurationBuilder;
+
+pub use crate::types::_incremental_refresh::IncrementalRefreshBuilder;
+
+pub use crate::types::_lookback_window::LookbackWindowBuilder;
+
 pub use crate::types::_asset_bundle_import_job_data_source_override_parameters::AssetBundleImportJobDataSourceOverrideParametersBuilder;
 
 pub use crate::types::_asset_bundle_import_job_data_source_credentials::AssetBundleImportJobDataSourceCredentialsBuilder;
@@ -1566,14 +1582,6 @@ pub use crate::types::_dashboard_search_filter::DashboardSearchFilterBuilder;
 pub use crate::types::_analysis_summary::AnalysisSummaryBuilder;
 
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilterBuilder;
-
-pub use crate::types::_data_set_refresh_properties::DataSetRefreshPropertiesBuilder;
-
-pub use crate::types::_refresh_configuration::RefreshConfigurationBuilder;
-
-pub use crate::types::_incremental_refresh::IncrementalRefreshBuilder;
-
-pub use crate::types::_lookback_window::LookbackWindowBuilder;
 
 pub use crate::types::_qa_result::QaResultBuilder;
 
@@ -1689,6 +1697,22 @@ pub use crate::types::_registered_user_quick_sight_console_embedding_configurati
 
 pub use crate::types::_registered_user_console_feature_configurations::RegisteredUserConsoleFeatureConfigurationsBuilder;
 
+pub use crate::types::_threshold_alerts_configurations::ThresholdAlertsConfigurationsBuilder;
+
+pub use crate::types::_recent_snapshots_configurations::RecentSnapshotsConfigurationsBuilder;
+
+pub use crate::types::_schedules_configurations::SchedulesConfigurationsBuilder;
+
+pub use crate::types::_amazon_q_in_quick_sight_console_configurations::AmazonQInQuickSightConsoleConfigurationsBuilder;
+
+pub use crate::types::_data_stories_configurations::DataStoriesConfigurationsBuilder;
+
+pub use crate::types::_executive_summary_configurations::ExecutiveSummaryConfigurationsBuilder;
+
+pub use crate::types::_generative_authoring_configurations::GenerativeAuthoringConfigurationsBuilder;
+
+pub use crate::types::_data_qn_a_configurations::DataQnAConfigurationsBuilder;
+
 pub use crate::types::_shared_view_configurations::SharedViewConfigurationsBuilder;
 
 pub use crate::types::_state_persistence_configurations::StatePersistenceConfigurationsBuilder;
@@ -1696,6 +1720,8 @@ pub use crate::types::_state_persistence_configurations::StatePersistenceConfigu
 pub use crate::types::_registered_user_dashboard_embedding_configuration::RegisteredUserDashboardEmbeddingConfigurationBuilder;
 
 pub use crate::types::_registered_user_dashboard_feature_configurations::RegisteredUserDashboardFeatureConfigurationsBuilder;
+
+pub use crate::types::_amazon_q_in_quick_sight_dashboard_configurations::AmazonQInQuickSightDashboardConfigurationsBuilder;
 
 pub use crate::types::_bookmarks_configurations::BookmarksConfigurationsBuilder;
 

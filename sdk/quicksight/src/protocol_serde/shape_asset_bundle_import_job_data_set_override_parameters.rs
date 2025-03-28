@@ -9,6 +9,12 @@ pub fn ser_asset_bundle_import_job_data_set_override_parameters(
     if let Some(var_1) = &input.name {
         object.key("Name").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.data_set_refresh_properties {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("DataSetRefreshProperties").start_object();
+        crate::protocol_serde::shape_data_set_refresh_properties::ser_data_set_refresh_properties(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +45,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "DataSetRefreshProperties" => {
+                            builder = builder.set_data_set_refresh_properties(
+                                crate::protocol_serde::shape_data_set_refresh_properties::de_data_set_refresh_properties(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

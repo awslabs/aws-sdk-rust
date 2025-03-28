@@ -6,11 +6,17 @@
 pub struct DataSetRefreshProperties {
     /// <p>The refresh configuration for a dataset.</p>
     pub refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
+    /// <p>The failure configuration for a dataset.</p>
+    pub failure_configuration: ::std::option::Option<crate::types::RefreshFailureConfiguration>,
 }
 impl DataSetRefreshProperties {
     /// <p>The refresh configuration for a dataset.</p>
     pub fn refresh_configuration(&self) -> ::std::option::Option<&crate::types::RefreshConfiguration> {
         self.refresh_configuration.as_ref()
+    }
+    /// <p>The failure configuration for a dataset.</p>
+    pub fn failure_configuration(&self) -> ::std::option::Option<&crate::types::RefreshFailureConfiguration> {
+        self.failure_configuration.as_ref()
     }
 }
 impl DataSetRefreshProperties {
@@ -25,10 +31,10 @@ impl DataSetRefreshProperties {
 #[non_exhaustive]
 pub struct DataSetRefreshPropertiesBuilder {
     pub(crate) refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
+    pub(crate) failure_configuration: ::std::option::Option<crate::types::RefreshFailureConfiguration>,
 }
 impl DataSetRefreshPropertiesBuilder {
     /// <p>The refresh configuration for a dataset.</p>
-    /// This field is required.
     pub fn refresh_configuration(mut self, input: crate::types::RefreshConfiguration) -> Self {
         self.refresh_configuration = ::std::option::Option::Some(input);
         self
@@ -42,10 +48,25 @@ impl DataSetRefreshPropertiesBuilder {
     pub fn get_refresh_configuration(&self) -> &::std::option::Option<crate::types::RefreshConfiguration> {
         &self.refresh_configuration
     }
+    /// <p>The failure configuration for a dataset.</p>
+    pub fn failure_configuration(mut self, input: crate::types::RefreshFailureConfiguration) -> Self {
+        self.failure_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The failure configuration for a dataset.</p>
+    pub fn set_failure_configuration(mut self, input: ::std::option::Option<crate::types::RefreshFailureConfiguration>) -> Self {
+        self.failure_configuration = input;
+        self
+    }
+    /// <p>The failure configuration for a dataset.</p>
+    pub fn get_failure_configuration(&self) -> &::std::option::Option<crate::types::RefreshFailureConfiguration> {
+        &self.failure_configuration
+    }
     /// Consumes the builder and constructs a [`DataSetRefreshProperties`](crate::types::DataSetRefreshProperties).
     pub fn build(self) -> crate::types::DataSetRefreshProperties {
         crate::types::DataSetRefreshProperties {
             refresh_configuration: self.refresh_configuration,
+            failure_configuration: self.failure_configuration,
         }
     }
 }

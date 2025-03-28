@@ -29,6 +29,8 @@ pub struct DashboardPublishOptions {
     pub data_point_menu_label_option: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     /// <p>The data point tool tip options of a dashboard.</p>
     pub data_point_tooltip_option: ::std::option::Option<crate::types::DataPointTooltipOption>,
+    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    pub data_qa_enabled_option: ::std::option::Option<crate::types::DataQaEnabledOption>,
 }
 impl DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
@@ -78,6 +80,10 @@ impl DashboardPublishOptions {
     pub fn data_point_tooltip_option(&self) -> ::std::option::Option<&crate::types::DataPointTooltipOption> {
         self.data_point_tooltip_option.as_ref()
     }
+    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    pub fn data_qa_enabled_option(&self) -> ::std::option::Option<&crate::types::DataQaEnabledOption> {
+        self.data_qa_enabled_option.as_ref()
+    }
 }
 impl DashboardPublishOptions {
     /// Creates a new builder-style object to manufacture [`DashboardPublishOptions`](crate::types::DashboardPublishOptions).
@@ -101,6 +107,7 @@ pub struct DashboardPublishOptionsBuilder {
     pub(crate) data_point_drill_up_down_option: ::std::option::Option<crate::types::DataPointDrillUpDownOption>,
     pub(crate) data_point_menu_label_option: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     pub(crate) data_point_tooltip_option: ::std::option::Option<crate::types::DataPointTooltipOption>,
+    pub(crate) data_qa_enabled_option: ::std::option::Option<crate::types::DataQaEnabledOption>,
 }
 impl DashboardPublishOptionsBuilder {
     /// <p>Ad hoc (one-time) filtering option.</p>
@@ -269,6 +276,20 @@ impl DashboardPublishOptionsBuilder {
     pub fn get_data_point_tooltip_option(&self) -> &::std::option::Option<crate::types::DataPointTooltipOption> {
         &self.data_point_tooltip_option
     }
+    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    pub fn data_qa_enabled_option(mut self, input: crate::types::DataQaEnabledOption) -> Self {
+        self.data_qa_enabled_option = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    pub fn set_data_qa_enabled_option(mut self, input: ::std::option::Option<crate::types::DataQaEnabledOption>) -> Self {
+        self.data_qa_enabled_option = input;
+        self
+    }
+    /// <p>Adds Q&amp;A capabilities to an Amazon QuickSight dashboard. If no topic is linked, Dashboard Q&amp;A uses the data values that are rendered on the dashboard. End users can use Dashboard Q&amp;A to ask for different slices of the data that they see on the dashboard. If a topic is linked, Topic Q&amp;A is used.</p>
+    pub fn get_data_qa_enabled_option(&self) -> &::std::option::Option<crate::types::DataQaEnabledOption> {
+        &self.data_qa_enabled_option
+    }
     /// Consumes the builder and constructs a [`DashboardPublishOptions`](crate::types::DashboardPublishOptions).
     pub fn build(self) -> crate::types::DashboardPublishOptions {
         crate::types::DashboardPublishOptions {
@@ -283,6 +304,7 @@ impl DashboardPublishOptionsBuilder {
             data_point_drill_up_down_option: self.data_point_drill_up_down_option,
             data_point_menu_label_option: self.data_point_menu_label_option,
             data_point_tooltip_option: self.data_point_tooltip_option,
+            data_qa_enabled_option: self.data_qa_enabled_option,
         }
     }
 }

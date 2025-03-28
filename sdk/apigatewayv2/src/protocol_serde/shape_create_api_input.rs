@@ -24,33 +24,36 @@ pub fn ser_create_api_input_input(
     if let Some(var_7) = &input.disable_schema_validation {
         object.key("disableSchemaValidation").boolean(*var_7);
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    if let Some(var_8) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.protocol_type {
-        object.key("protocolType").string(var_9.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.route_key {
-        object.key("routeKey").string(var_10.as_str());
+    if let Some(var_10) = &input.protocol_type {
+        object.key("protocolType").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.route_selection_expression {
-        object.key("routeSelectionExpression").string(var_11.as_str());
+    if let Some(var_11) = &input.route_key {
+        object.key("routeKey").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_12) = &input.route_selection_expression {
+        object.key("routeSelectionExpression").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if let Some(var_16) = &input.target {
-        object.key("target").string(var_16.as_str());
+    if let Some(var_17) = &input.target {
+        object.key("target").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.version {
-        object.key("version").string(var_17.as_str());
+    if let Some(var_18) = &input.version {
+        object.key("version").string(var_18.as_str());
     }
     Ok(())
 }

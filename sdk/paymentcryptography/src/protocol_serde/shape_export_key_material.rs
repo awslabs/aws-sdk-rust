@@ -22,6 +22,12 @@ pub fn ser_export_key_material(
             crate::protocol_serde::shape_export_key_cryptogram::ser_export_key_cryptogram(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::ExportKeyMaterial::DiffieHellmanTr31KeyBlock(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_2.key("DiffieHellmanTr31KeyBlock").start_object();
+            crate::protocol_serde::shape_export_diffie_hellman_tr31_key_block::ser_export_diffie_hellman_tr31_key_block(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::ExportKeyMaterial::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExportKeyMaterial",

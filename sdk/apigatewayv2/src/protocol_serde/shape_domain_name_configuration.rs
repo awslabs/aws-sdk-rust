@@ -29,11 +29,14 @@ pub fn ser_domain_name_configuration(
     if let Some(var_8) = &input.hosted_zone_id {
         object.key("hostedZoneId").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.security_policy {
-        object.key("securityPolicy").string(var_9.as_str());
+    if let Some(var_9) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.ownership_verification_certificate_arn {
-        object.key("ownershipVerificationCertificateArn").string(var_10.as_str());
+    if let Some(var_10) = &input.security_policy {
+        object.key("securityPolicy").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.ownership_verification_certificate_arn {
+        object.key("ownershipVerificationCertificateArn").string(var_11.as_str());
     }
     Ok(())
 }
@@ -105,6 +108,13 @@ where
                             builder = builder.set_hosted_zone_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ipAddressType" => {
+                            builder = builder.set_ip_address_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

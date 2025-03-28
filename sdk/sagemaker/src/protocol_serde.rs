@@ -2103,6 +2103,8 @@ pub(crate) mod shape_throughput_config_description;
 
 pub(crate) mod shape_throughput_config_update;
 
+pub(crate) mod shape_total_hits;
+
 pub(crate) mod shape_tracking_server_summary_list;
 
 pub(crate) mod shape_training_environment_map;

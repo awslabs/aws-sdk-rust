@@ -200,6 +200,20 @@ impl UpdateApiFluentBuilder {
     pub fn get_disable_execute_api_endpoint(&self) -> &::std::option::Option<bool> {
         self.inner.get_disable_execute_api_endpoint()
     }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address types that can invoke your API or domain name.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
+        self.inner.get_ip_address_type()
+    }
     /// <p>The name of the API.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

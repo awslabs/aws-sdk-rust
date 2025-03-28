@@ -10,6 +10,14 @@ pub struct RegisteredUserDashboardFeatureConfigurations {
     pub shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
     pub bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,
+    /// <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+    pub amazon_q_in_quick_sight: ::std::option::Option<crate::types::AmazonQInQuickSightDashboardConfigurations>,
+    /// <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+    pub schedules: ::std::option::Option<crate::types::SchedulesConfigurations>,
+    /// <p>The recent snapshots configuration for an Amazon QuickSight embedded dashboard</p>
+    pub recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
+    /// <p>The threshold alerts configuration for an Amazon QuickSight embedded dashboard.</p>
+    pub threshold_alerts: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
@@ -23,6 +31,22 @@ impl RegisteredUserDashboardFeatureConfigurations {
     /// <p>The bookmarks configuration for an embedded dashboard in Amazon QuickSight.</p>
     pub fn bookmarks(&self) -> ::std::option::Option<&crate::types::BookmarksConfigurations> {
         self.bookmarks.as_ref()
+    }
+    /// <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+    pub fn amazon_q_in_quick_sight(&self) -> ::std::option::Option<&crate::types::AmazonQInQuickSightDashboardConfigurations> {
+        self.amazon_q_in_quick_sight.as_ref()
+    }
+    /// <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+    pub fn schedules(&self) -> ::std::option::Option<&crate::types::SchedulesConfigurations> {
+        self.schedules.as_ref()
+    }
+    /// <p>The recent snapshots configuration for an Amazon QuickSight embedded dashboard</p>
+    pub fn recent_snapshots(&self) -> ::std::option::Option<&crate::types::RecentSnapshotsConfigurations> {
+        self.recent_snapshots.as_ref()
+    }
+    /// <p>The threshold alerts configuration for an Amazon QuickSight embedded dashboard.</p>
+    pub fn threshold_alerts(&self) -> ::std::option::Option<&crate::types::ThresholdAlertsConfigurations> {
+        self.threshold_alerts.as_ref()
     }
 }
 impl RegisteredUserDashboardFeatureConfigurations {
@@ -39,6 +63,10 @@ pub struct RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub(crate) state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
     pub(crate) shared_view: ::std::option::Option<crate::types::SharedViewConfigurations>,
     pub(crate) bookmarks: ::std::option::Option<crate::types::BookmarksConfigurations>,
+    pub(crate) amazon_q_in_quick_sight: ::std::option::Option<crate::types::AmazonQInQuickSightDashboardConfigurations>,
+    pub(crate) schedules: ::std::option::Option<crate::types::SchedulesConfigurations>,
+    pub(crate) recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
+    pub(crate) threshold_alerts: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     /// <p>The state persistence settings of an embedded dashboard.</p>
@@ -83,12 +111,72 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub fn get_bookmarks(&self) -> &::std::option::Option<crate::types::BookmarksConfigurations> {
         &self.bookmarks
     }
+    /// <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+    pub fn amazon_q_in_quick_sight(mut self, input: crate::types::AmazonQInQuickSightDashboardConfigurations) -> Self {
+        self.amazon_q_in_quick_sight = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+    pub fn set_amazon_q_in_quick_sight(mut self, input: ::std::option::Option<crate::types::AmazonQInQuickSightDashboardConfigurations>) -> Self {
+        self.amazon_q_in_quick_sight = input;
+        self
+    }
+    /// <p>The Amazon Q configurations of an embedded Amazon QuickSight dashboard.</p>
+    pub fn get_amazon_q_in_quick_sight(&self) -> &::std::option::Option<crate::types::AmazonQInQuickSightDashboardConfigurations> {
+        &self.amazon_q_in_quick_sight
+    }
+    /// <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+    pub fn schedules(mut self, input: crate::types::SchedulesConfigurations) -> Self {
+        self.schedules = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+    pub fn set_schedules(mut self, input: ::std::option::Option<crate::types::SchedulesConfigurations>) -> Self {
+        self.schedules = input;
+        self
+    }
+    /// <p>The schedules configuration for an embedded Amazon QuickSight dashboard.</p>
+    pub fn get_schedules(&self) -> &::std::option::Option<crate::types::SchedulesConfigurations> {
+        &self.schedules
+    }
+    /// <p>The recent snapshots configuration for an Amazon QuickSight embedded dashboard</p>
+    pub fn recent_snapshots(mut self, input: crate::types::RecentSnapshotsConfigurations) -> Self {
+        self.recent_snapshots = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The recent snapshots configuration for an Amazon QuickSight embedded dashboard</p>
+    pub fn set_recent_snapshots(mut self, input: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>) -> Self {
+        self.recent_snapshots = input;
+        self
+    }
+    /// <p>The recent snapshots configuration for an Amazon QuickSight embedded dashboard</p>
+    pub fn get_recent_snapshots(&self) -> &::std::option::Option<crate::types::RecentSnapshotsConfigurations> {
+        &self.recent_snapshots
+    }
+    /// <p>The threshold alerts configuration for an Amazon QuickSight embedded dashboard.</p>
+    pub fn threshold_alerts(mut self, input: crate::types::ThresholdAlertsConfigurations) -> Self {
+        self.threshold_alerts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The threshold alerts configuration for an Amazon QuickSight embedded dashboard.</p>
+    pub fn set_threshold_alerts(mut self, input: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>) -> Self {
+        self.threshold_alerts = input;
+        self
+    }
+    /// <p>The threshold alerts configuration for an Amazon QuickSight embedded dashboard.</p>
+    pub fn get_threshold_alerts(&self) -> &::std::option::Option<crate::types::ThresholdAlertsConfigurations> {
+        &self.threshold_alerts
+    }
     /// Consumes the builder and constructs a [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserDashboardFeatureConfigurations {
         crate::types::RegisteredUserDashboardFeatureConfigurations {
             state_persistence: self.state_persistence,
             shared_view: self.shared_view,
             bookmarks: self.bookmarks,
+            amazon_q_in_quick_sight: self.amazon_q_in_quick_sight,
+            schedules: self.schedules,
+            recent_snapshots: self.recent_snapshots,
+            threshold_alerts: self.threshold_alerts,
         }
     }
 }

@@ -13,6 +13,7 @@
 /// # let assetbundleexportjobdatasetpropertytooverride = unimplemented!();
 /// match assetbundleexportjobdatasetpropertytooverride {
 ///     AssetBundleExportJobDataSetPropertyToOverride::Name => { /* ... */ },
+///     AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum AssetBundleExportJobDataSetPropertyToOverride {
     #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
+    RefreshFailureEmailAlertStatus,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for AssetBundleExportJobDataSetPropertyToOverrid
     fn from(s: &str) -> Self {
         match s {
             "Name" => AssetBundleExportJobDataSetPropertyToOverride::Name,
+            "RefreshFailureEmailAlertStatus" => AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus,
             other => {
                 AssetBundleExportJobDataSetPropertyToOverride::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
             }
@@ -69,12 +73,13 @@ impl AssetBundleExportJobDataSetPropertyToOverride {
     pub fn as_str(&self) -> &str {
         match self {
             AssetBundleExportJobDataSetPropertyToOverride::Name => "Name",
+            AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus => "RefreshFailureEmailAlertStatus",
             AssetBundleExportJobDataSetPropertyToOverride::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Name"]
+        &["Name", "RefreshFailureEmailAlertStatus"]
     }
 }
 impl ::std::convert::AsRef<str> for AssetBundleExportJobDataSetPropertyToOverride {
@@ -98,6 +103,7 @@ impl ::std::fmt::Display for AssetBundleExportJobDataSetPropertyToOverride {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AssetBundleExportJobDataSetPropertyToOverride::Name => write!(f, "Name"),
+            AssetBundleExportJobDataSetPropertyToOverride::RefreshFailureEmailAlertStatus => write!(f, "RefreshFailureEmailAlertStatus"),
             AssetBundleExportJobDataSetPropertyToOverride::Unknown(value) => write!(f, "{}", value),
         }
     }

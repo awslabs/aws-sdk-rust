@@ -167,6 +167,13 @@ pub(crate) fn de_create_api(
                 "importInfo" => {
                     builder = builder.set_import_info(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
+                "ipAddressType" => {
+                    builder = builder.set_ip_address_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::IpAddressType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

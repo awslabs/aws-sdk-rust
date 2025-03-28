@@ -37,6 +37,8 @@ pub struct CreateDataSetInput {
     pub folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration for the performance optimization of the dataset that contains a <code>UniqueKey</code> configuration.</p>
     pub performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub use_as: ::std::option::Option<crate::types::DataSetUseAs>,
 }
 impl CreateDataSetInput {
     /// <p>The Amazon Web Services account ID.</p>
@@ -119,6 +121,10 @@ impl CreateDataSetInput {
     pub fn performance_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceConfiguration> {
         self.performance_configuration.as_ref()
     }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn use_as(&self) -> ::std::option::Option<&crate::types::DataSetUseAs> {
+        self.use_as.as_ref()
+    }
 }
 impl CreateDataSetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
@@ -148,6 +154,7 @@ pub struct CreateDataSetInputBuilder {
     pub(crate) dataset_parameters: ::std::option::Option<::std::vec::Vec<crate::types::DatasetParameter>>,
     pub(crate) folder_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) performance_configuration: ::std::option::Option<crate::types::PerformanceConfiguration>,
+    pub(crate) use_as: ::std::option::Option<crate::types::DataSetUseAs>,
 }
 impl CreateDataSetInputBuilder {
     /// <p>The Amazon Web Services account ID.</p>
@@ -461,6 +468,20 @@ impl CreateDataSetInputBuilder {
     pub fn get_performance_configuration(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
         &self.performance_configuration
     }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn use_as(mut self, input: crate::types::DataSetUseAs) -> Self {
+        self.use_as = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn set_use_as(mut self, input: ::std::option::Option<crate::types::DataSetUseAs>) -> Self {
+        self.use_as = input;
+        self
+    }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn get_use_as(&self) -> &::std::option::Option<crate::types::DataSetUseAs> {
+        &self.use_as
+    }
     /// Consumes the builder and constructs a [`CreateDataSetInput`](crate::operation::create_data_set::CreateDataSetInput).
     pub fn build(
         self,
@@ -483,6 +504,7 @@ impl CreateDataSetInputBuilder {
             dataset_parameters: self.dataset_parameters,
             folder_arns: self.folder_arns,
             performance_configuration: self.performance_configuration,
+            use_as: self.use_as,
         })
     }
 }

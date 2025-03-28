@@ -15,5 +15,32 @@ pub fn ser_registered_user_console_feature_configurations(
         crate::protocol_serde::shape_shared_view_configurations::ser_shared_view_configurations(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.amazon_q_in_quick_sight {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("AmazonQInQuickSight").start_object();
+        crate::protocol_serde::shape_amazon_q_in_quick_sight_console_configurations::ser_amazon_q_in_quick_sight_console_configurations(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.schedules {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Schedules").start_object();
+        crate::protocol_serde::shape_schedules_configurations::ser_schedules_configurations(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.recent_snapshots {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("RecentSnapshots").start_object();
+        crate::protocol_serde::shape_recent_snapshots_configurations::ser_recent_snapshots_configurations(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.threshold_alerts {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("ThresholdAlerts").start_object();
+        crate::protocol_serde::shape_threshold_alerts_configurations::ser_threshold_alerts_configurations(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

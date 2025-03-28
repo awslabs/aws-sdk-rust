@@ -27,6 +27,8 @@ pub use crate::types::_cache_cluster_size::CacheClusterSize;
 
 pub use crate::types::_endpoint_configuration::EndpointConfiguration;
 
+pub use crate::types::_ip_address_type::IpAddressType;
+
 pub use crate::types::_endpoint_type::EndpointType;
 
 pub use crate::types::_api_key_source_type::ApiKeySourceType;
@@ -180,6 +182,8 @@ mod _integration;
 mod _integration_response;
 
 mod _integration_type;
+
+mod _ip_address_type;
 
 mod _location_status_type;
 

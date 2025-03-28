@@ -406,4 +406,18 @@ impl CreateDataSetFluentBuilder {
     pub fn get_performance_configuration(&self) -> &::std::option::Option<crate::types::PerformanceConfiguration> {
         self.inner.get_performance_configuration()
     }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn use_as(mut self, input: crate::types::DataSetUseAs) -> Self {
+        self.inner = self.inner.use_as(input);
+        self
+    }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn set_use_as(mut self, input: ::std::option::Option<crate::types::DataSetUseAs>) -> Self {
+        self.inner = self.inner.set_use_as(input);
+        self
+    }
+    /// <p>The usage of the dataset. <code>RLS_RULES</code> must be specified for RLS permission datasets.</p>
+    pub fn get_use_as(&self) -> &::std::option::Option<crate::types::DataSetUseAs> {
+        self.inner.get_use_as()
+    }
 }
