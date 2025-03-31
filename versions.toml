@@ -2610,6 +2610,10 @@ source_hash = '6be256fa6379fd9811a47e311ac9821b016a2ca57a7cfed9b0f49352caa37390'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9d60ffec7d4b70f12914eda9ff963ff6a757dada06c4539caf523fa6003f8485'
+
+[release]
+tag = 'release-2025-03-31'
+
 [release.crates]
 aws-sdk-bedrockruntime = '1.80.0'
 aws-sdk-deadline = '1.51.0'
