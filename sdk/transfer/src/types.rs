@@ -39,6 +39,8 @@ pub use crate::types::_update_web_app_identity_center_config::UpdateWebAppIdenti
 
 pub use crate::types::_described_web_app::DescribedWebApp;
 
+pub use crate::types::_web_app_endpoint_policy::WebAppEndpointPolicy;
+
 pub use crate::types::_described_web_app_identity_provider_details::DescribedWebAppIdentityProviderDetails;
 
 pub use crate::types::_described_identity_center_config::DescribedIdentityCenterConfig;
@@ -374,6 +376,8 @@ mod _update_web_app_identity_center_config;
 mod _update_web_app_identity_provider_details;
 
 mod _user_details;
+
+mod _web_app_endpoint_policy;
 
 mod _web_app_identity_provider_details;
 

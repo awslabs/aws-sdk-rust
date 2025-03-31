@@ -27,6 +27,8 @@ pub struct UpdateClusterConfigInput {
     pub kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
     /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
     pub storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
 }
 impl UpdateClusterConfigInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -73,6 +75,10 @@ impl UpdateClusterConfigInput {
     pub fn storage_config(&self) -> ::std::option::Option<&crate::types::StorageConfigRequest> {
         self.storage_config.as_ref()
     }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn remote_network_config(&self) -> ::std::option::Option<&crate::types::RemoteNetworkConfigRequest> {
+        self.remote_network_config.as_ref()
+    }
 }
 impl UpdateClusterConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
@@ -95,6 +101,7 @@ pub struct UpdateClusterConfigInputBuilder {
     pub(crate) compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
     pub(crate) kubernetes_network_config: ::std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
+    pub(crate) remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
 }
 impl UpdateClusterConfigInputBuilder {
     /// <p>The name of the Amazon EKS cluster to update.</p>
@@ -250,6 +257,20 @@ impl UpdateClusterConfigInputBuilder {
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigRequest> {
         &self.storage_config
     }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn remote_network_config(mut self, input: crate::types::RemoteNetworkConfigRequest) -> Self {
+        self.remote_network_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn set_remote_network_config(mut self, input: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>) -> Self {
+        self.remote_network_config = input;
+        self
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigRequest> {
+        &self.remote_network_config
+    }
     /// Consumes the builder and constructs a [`UpdateClusterConfigInput`](crate::operation::update_cluster_config::UpdateClusterConfigInput).
     pub fn build(
         self,
@@ -266,6 +287,7 @@ impl UpdateClusterConfigInputBuilder {
             compute_config: self.compute_config,
             kubernetes_network_config: self.kubernetes_network_config,
             storage_config: self.storage_config,
+            remote_network_config: self.remote_network_config,
         })
     }
 }

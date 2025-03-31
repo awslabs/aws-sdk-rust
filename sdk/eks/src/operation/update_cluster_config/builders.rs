@@ -22,13 +22,22 @@ impl crate::operation::update_cluster_config::builders::UpdateClusterConfigInput
 }
 /// Fluent builder constructing a request to `UpdateClusterConfig`.
 ///
-/// <p>Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with <code>DescribeUpdate</code>"/&gt;.</p>
+/// <p>Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with <code>DescribeUpdate</code>.</p>
+/// <p>You can use this operation to do the following actions:</p>
+/// <ul>
+/// <li>
 /// <p>You can use this API operation to enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p><note>
 /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
-/// </note>
-/// <p>You can also use this API operation to enable or disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is enabled, and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
-/// <p>You can also use this API operation to choose different subnets and security groups for the cluster. You must specify at least two subnets that are in different Availability Zones. You can't change which VPC the subnets are from, the subnets must be in the same VPC as the subnets that the cluster was created with. For more information about the VPC requirements, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
-/// <p>You can also use this API operation to enable or disable ARC zonal shift. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p>
+/// </note></li>
+/// <li>
+/// <p>You can also use this API operation to enable or disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is enabled, and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p></li>
+/// <li>
+/// <p>You can also use this API operation to choose different subnets and security groups for the cluster. You must specify at least two subnets that are in different Availability Zones. You can't change which VPC the subnets are from, the subnets must be in the same VPC as the subnets that the cluster was created with. For more information about the VPC requirements, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p></li>
+/// <li>
+/// <p>You can also use this API operation to enable or disable ARC zonal shift. If zonal shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.</p></li>
+/// <li>
+/// <p>You can also use this API operation to add, change, or remove the configuration in the cluster for EKS Hybrid Nodes. To remove the configuration, use the <code>remoteNetworkConfig</code> key with an object containing both subkeys with empty arrays for each. Here is an inline example: <code>"remoteNetworkConfig": { "remoteNodeNetworks": \[\], "remotePodNetworks": \[\] }</code>.</p></li>
+/// </ul>
 /// <p>Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClusterConfigFluentBuilder {
@@ -266,5 +275,19 @@ impl UpdateClusterConfigFluentBuilder {
     /// <p>Update the configuration of the block storage capability of your EKS Auto Mode cluster. For example, enable the capability.</p>
     pub fn get_storage_config(&self) -> &::std::option::Option<crate::types::StorageConfigRequest> {
         self.inner.get_storage_config()
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn remote_network_config(mut self, input: crate::types::RemoteNetworkConfigRequest) -> Self {
+        self.inner = self.inner.remote_network_config(input);
+        self
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn set_remote_network_config(mut self, input: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>) -> Self {
+        self.inner = self.inner.set_remote_network_config(input);
+        self
+    }
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
+    pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigRequest> {
+        self.inner.get_remote_network_config()
     }
 }

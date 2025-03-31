@@ -579,12 +579,12 @@ async fn operation_input_test_get_access_point_17() {
             .send()
             .await
     );
-    let req = rcvr.expect_request();
-    let uri = req.uri().to_string();
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [gov cloud with fips@cn-north-1]");
     assert!(
-        uri.starts_with("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn"),
-        "expected URI to start with `https://s3-outposts-fips.cn-north-1.amazonaws.com.cn` but it was `{}`",
-        uri
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
     );
 }
 
@@ -615,12 +615,12 @@ async fn operation_input_test_delete_access_point_18() {
             .send()
             .await
     );
-    let req = rcvr.expect_request();
-    let uri = req.uri().to_string();
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [gov cloud with fips@cn-north-1]");
     assert!(
-        uri.starts_with("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn"),
-        "expected URI to start with `https://s3-outposts-fips.cn-north-1.amazonaws.com.cn` but it was `{}`",
-        uri
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
     );
 }
 
@@ -3072,5 +3072,1847 @@ async fn operation_input_test_put_bucket_versioning_88() {
         uri.starts_with("https://s3-outposts.us-west-2.amazonaws.com"),
         "expected URI to start with `https://s3-outposts.us-west-2.amazonaws.com` but it was `{}`",
         uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_89() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_90() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_91() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_scope_92() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_scope_93() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_scope_94() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_95() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_96() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_97() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_98() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_99() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for List */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_100() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_101() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_102() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_scope_103() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_scope_104() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_scope_105() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_106() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_107() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_108() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_109() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_110() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for FIPS for List */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://s3express-control-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_111() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_112() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_113() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_scope_114() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_scope_115() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_scope_116() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_117() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_118() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_119() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_120() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_121() {
+    /* documentation: Access Point APIs on express bucket routed to s3express-control for china region for List */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_122() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_123() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_124() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_access_points_for_directory_buckets_125() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .list_access_points_for_directory_buckets()
+            .set_directory_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_scope_126() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_scope_127() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_scope_128() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_129() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_130() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_131() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_132() {
+    /* documentation: Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_access_point_133() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_bucket(::std::option::Option::Some("mybucket-garbage-zone-garbage-zone".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_134() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_135() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_scope_136() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_scope(::std::option::Option::Some(
+                aws_sdk_s3control::types::Scope::builder()
+                    .set_prefixes(::std::option::Option::Some(vec![]))
+                    .set_permissions(::std::option::Option::Some(vec![]))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_scope_137() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_scope_138() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_scope()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_put_access_point_policy_139() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .set_policy(::std::option::Option::Some("my-policy".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_140() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_access_point_policy_141() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_access_point_policy()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_access_point_policy_status_142() {
+    /* documentation: Error Access Point APIs on express bucket routed to s3express-control invalid zone */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3control::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3control::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_access_point_policy_status()
+            .set_name(::std::option::Option::Some("myaccesspoint-garbage-zone--xa-s3".to_owned()))
+            .set_account_id(::std::option::Option::Some("871317572157".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express Access Point name format."),
+        "expected error to contain `Unrecognized S3Express Access Point name format.` but it was {:?}",
+        error
     );
 }

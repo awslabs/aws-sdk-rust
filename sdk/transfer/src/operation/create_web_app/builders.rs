@@ -109,30 +109,36 @@ impl CreateWebAppFluentBuilder {
         self
     }
     /// <p>You can provide a structure that contains the details for the identity provider to use with your web app.</p>
+    /// <p>For more details about this parameter, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-identity-center.html">Configure your identity provider for Transfer Family web apps</a>.</p>
     pub fn identity_provider_details(mut self, input: crate::types::WebAppIdentityProviderDetails) -> Self {
         self.inner = self.inner.identity_provider_details(input);
         self
     }
     /// <p>You can provide a structure that contains the details for the identity provider to use with your web app.</p>
+    /// <p>For more details about this parameter, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-identity-center.html">Configure your identity provider for Transfer Family web apps</a>.</p>
     pub fn set_identity_provider_details(mut self, input: ::std::option::Option<crate::types::WebAppIdentityProviderDetails>) -> Self {
         self.inner = self.inner.set_identity_provider_details(input);
         self
     }
     /// <p>You can provide a structure that contains the details for the identity provider to use with your web app.</p>
+    /// <p>For more details about this parameter, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-identity-center.html">Configure your identity provider for Transfer Family web apps</a>.</p>
     pub fn get_identity_provider_details(&self) -> &::std::option::Option<crate::types::WebAppIdentityProviderDetails> {
         self.inner.get_identity_provider_details()
     }
     /// <p>The <code>AccessEndpoint</code> is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.</p>
+    /// <p>Before you enter a custom URL for this parameter, follow the steps described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-customize.html">Update your access endpoint with a custom URL</a>.</p>
     pub fn access_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.access_endpoint(input.into());
         self
     }
     /// <p>The <code>AccessEndpoint</code> is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.</p>
+    /// <p>Before you enter a custom URL for this parameter, follow the steps described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-customize.html">Update your access endpoint with a custom URL</a>.</p>
     pub fn set_access_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_access_endpoint(input);
         self
     }
     /// <p>The <code>AccessEndpoint</code> is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.</p>
+    /// <p>Before you enter a custom URL for this parameter, follow the steps described in <a href="https://docs.aws.amazon.com/transfer/latest/userguide/webapp-customize.html">Update your access endpoint with a custom URL</a>.</p>
     pub fn get_access_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_access_endpoint()
     }
@@ -168,5 +174,22 @@ impl CreateWebAppFluentBuilder {
     /// <p>Key-value pairs that can be used to group and search for web apps.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If you are creating the web app in an Amazon Web Services GovCloud (US) Region, you can set this parameter to <code>FIPS</code>.</p>
+    pub fn web_app_endpoint_policy(mut self, input: crate::types::WebAppEndpointPolicy) -> Self {
+        self.inner = self.inner.web_app_endpoint_policy(input);
+        self
+    }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If you are creating the web app in an Amazon Web Services GovCloud (US) Region, you can set this parameter to <code>FIPS</code>.</p>
+    pub fn set_web_app_endpoint_policy(mut self, input: ::std::option::Option<crate::types::WebAppEndpointPolicy>) -> Self {
+        self.inner = self.inner.set_web_app_endpoint_policy(input);
+        self
+    }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If you are creating the web app in an Amazon Web Services GovCloud (US) Region, you can set this parameter to <code>FIPS</code>.</p>
+    pub fn get_web_app_endpoint_policy(&self) -> &::std::option::Option<crate::types::WebAppEndpointPolicy> {
+        self.inner.get_web_app_endpoint_policy()
     }
 }

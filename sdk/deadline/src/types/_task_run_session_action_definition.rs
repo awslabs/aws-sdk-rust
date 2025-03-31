@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskRunSessionActionDefinition {
     /// <p>The task ID.</p>
-    pub task_id: ::std::string::String,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The step ID.</p>
     pub step_id: ::std::string::String,
     /// <p>The task parameters.</p>
@@ -13,9 +13,8 @@ pub struct TaskRunSessionActionDefinition {
 }
 impl TaskRunSessionActionDefinition {
     /// <p>The task ID.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
+        self.task_id.as_deref()
     }
     /// <p>The step ID.</p>
     pub fn step_id(&self) -> &str {
@@ -53,7 +52,6 @@ pub struct TaskRunSessionActionDefinitionBuilder {
 }
 impl TaskRunSessionActionDefinitionBuilder {
     /// <p>The task ID.</p>
-    /// This field is required.
     pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.task_id = ::std::option::Option::Some(input.into());
         self
@@ -107,17 +105,11 @@ impl TaskRunSessionActionDefinitionBuilder {
     }
     /// Consumes the builder and constructs a [`TaskRunSessionActionDefinition`](crate::types::TaskRunSessionActionDefinition).
     /// This method will fail if any of the following fields are not set:
-    /// - [`task_id`](crate::types::builders::TaskRunSessionActionDefinitionBuilder::task_id)
     /// - [`step_id`](crate::types::builders::TaskRunSessionActionDefinitionBuilder::step_id)
     /// - [`parameters`](crate::types::builders::TaskRunSessionActionDefinitionBuilder::parameters)
     pub fn build(self) -> ::std::result::Result<crate::types::TaskRunSessionActionDefinition, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TaskRunSessionActionDefinition {
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building TaskRunSessionActionDefinition",
-                )
-            })?,
+            task_id: self.task_id,
             step_id: self.step_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "step_id",

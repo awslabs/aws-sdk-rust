@@ -79,6 +79,9 @@ pub mod associate_ipam_resource_discovery;
 /// Types for the `AssociateNatGatewayAddress` operation.
 pub mod associate_nat_gateway_address;
 
+/// Types for the `AssociateRouteServer` operation.
+pub mod associate_route_server;
+
 /// Types for the `AssociateRouteTable` operation.
 pub mod associate_route_table;
 
@@ -319,6 +322,15 @@ pub mod create_restore_image_task;
 /// Types for the `CreateRoute` operation.
 pub mod create_route;
 
+/// Types for the `CreateRouteServer` operation.
+pub mod create_route_server;
+
+/// Types for the `CreateRouteServerEndpoint` operation.
+pub mod create_route_server_endpoint;
+
+/// Types for the `CreateRouteServerPeer` operation.
+pub mod create_route_server_peer;
+
 /// Types for the `CreateRouteTable` operation.
 pub mod create_route_table;
 
@@ -552,6 +564,15 @@ pub mod delete_queued_reserved_instances;
 
 /// Types for the `DeleteRoute` operation.
 pub mod delete_route;
+
+/// Types for the `DeleteRouteServer` operation.
+pub mod delete_route_server;
+
+/// Types for the `DeleteRouteServerEndpoint` operation.
+pub mod delete_route_server_endpoint;
+
+/// Types for the `DeleteRouteServerPeer` operation.
+pub mod delete_route_server_peer;
 
 /// Types for the `DeleteRouteTable` operation.
 pub mod delete_route_table;
@@ -988,6 +1009,15 @@ pub mod describe_reserved_instances_modifications;
 /// Types for the `DescribeReservedInstancesOfferings` operation.
 pub mod describe_reserved_instances_offerings;
 
+/// Types for the `DescribeRouteServerEndpoints` operation.
+pub mod describe_route_server_endpoints;
+
+/// Types for the `DescribeRouteServerPeers` operation.
+pub mod describe_route_server_peers;
+
+/// Types for the `DescribeRouteServers` operation.
+pub mod describe_route_servers;
+
 /// Types for the `DescribeRouteTables` operation.
 pub mod describe_route_tables;
 
@@ -1219,6 +1249,9 @@ pub mod disable_image_deregistration_protection;
 /// Types for the `DisableIpamOrganizationAdminAccount` operation.
 pub mod disable_ipam_organization_admin_account;
 
+/// Types for the `DisableRouteServerPropagation` operation.
+pub mod disable_route_server_propagation;
+
 /// Types for the `DisableSerialConsoleAccess` operation.
 pub mod disable_serial_console_access;
 
@@ -1263,6 +1296,9 @@ pub mod disassociate_ipam_resource_discovery;
 
 /// Types for the `DisassociateNatGatewayAddress` operation.
 pub mod disassociate_nat_gateway_address;
+
+/// Types for the `DisassociateRouteServer` operation.
+pub mod disassociate_route_server;
 
 /// Types for the `DisassociateRouteTable` operation.
 pub mod disassociate_route_table;
@@ -1323,6 +1359,9 @@ pub mod enable_ipam_organization_admin_account;
 
 /// Types for the `EnableReachabilityAnalyzerOrganizationSharing` operation.
 pub mod enable_reachability_analyzer_organization_sharing;
+
+/// Types for the `EnableRouteServerPropagation` operation.
+pub mod enable_route_server_propagation;
 
 /// Types for the `EnableSerialConsoleAccess` operation.
 pub mod enable_serial_console_access;
@@ -1461,6 +1500,15 @@ pub mod get_password_data;
 
 /// Types for the `GetReservedInstancesExchangeQuote` operation.
 pub mod get_reserved_instances_exchange_quote;
+
+/// Types for the `GetRouteServerAssociations` operation.
+pub mod get_route_server_associations;
+
+/// Types for the `GetRouteServerPropagations` operation.
+pub mod get_route_server_propagations;
+
+/// Types for the `GetRouteServerRoutingDatabase` operation.
+pub mod get_route_server_routing_database;
 
 /// Types for the `GetSecurityGroupsForVpc` operation.
 pub mod get_security_groups_for_vpc;
@@ -1647,6 +1695,9 @@ pub mod modify_private_dns_name_options;
 
 /// Types for the `ModifyReservedInstances` operation.
 pub mod modify_reserved_instances;
+
+/// Types for the `ModifyRouteServer` operation.
+pub mod modify_route_server;
 
 /// Types for the `ModifySecurityGroupRules` operation.
 pub mod modify_security_group_rules;

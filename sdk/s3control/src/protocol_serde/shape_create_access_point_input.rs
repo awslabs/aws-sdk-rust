@@ -17,9 +17,13 @@ pub fn ser_create_access_point_input_input_input(
         let inner_writer = scope.start_el("PublicAccessBlockConfiguration");
         crate::protocol_serde::shape_public_access_block_configuration::ser_public_access_block_configuration(var_3, inner_writer)?
     }
-    if let Some(var_4) = &input.vpc_configuration {
+    if let Some(var_4) = &input.scope {
+        let inner_writer = scope.start_el("Scope");
+        crate::protocol_serde::shape_scope::ser_scope(var_4, inner_writer)?
+    }
+    if let Some(var_5) = &input.vpc_configuration {
         let inner_writer = scope.start_el("VpcConfiguration");
-        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(var_4, inner_writer)?
+        crate::protocol_serde::shape_vpc_configuration::ser_vpc_configuration(var_5, inner_writer)?
     }
     scope.finish();
     Ok(())

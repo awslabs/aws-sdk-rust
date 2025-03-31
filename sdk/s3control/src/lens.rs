@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_access_points_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_access_points_for_directory_buckets_output_output_next_token(
+    input: &crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_access_points_for_object_lambda_output_output_next_token(
     input: &crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -103,6 +113,16 @@ pub(crate) fn reflens_list_storage_lens_groups_output_output_next_token(
     input: &crate::operation::list_storage_lens_groups::ListStorageLensGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_access_points_for_directory_buckets_output_output_access_point_list(
+    input: crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPoint>> {
+    let input = match input.access_point_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

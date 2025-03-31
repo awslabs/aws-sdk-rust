@@ -111,6 +111,13 @@ pub(crate) fn de_get_capacity_task(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AssetId" => {
+                    builder = builder.set_asset_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "CapacityTaskId" => {
                     builder = builder.set_capacity_task_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

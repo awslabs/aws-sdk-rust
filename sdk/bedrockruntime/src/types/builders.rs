@@ -75,6 +75,8 @@ pub use crate::types::_any_tool_choice::AnyToolChoiceBuilder;
 
 pub use crate::types::_auto_tool_choice::AutoToolChoiceBuilder;
 
+pub use crate::types::_cache_point_block::CachePointBlockBuilder;
+
 pub use crate::types::_tool_specification::ToolSpecificationBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;

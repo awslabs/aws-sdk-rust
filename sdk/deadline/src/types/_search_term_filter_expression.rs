@@ -6,12 +6,30 @@
 pub struct SearchTermFilterExpression {
     /// <p>The term to search for.</p>
     pub search_term: ::std::string::String,
+    /// <p>Specifies how Deadline Cloud matches your search term in the results. If you don't specify a <code>matchType</code> the default is <code>FUZZY_MATCH</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FUZZY_MATCH</code> - Matches if a portion of the search term is found in the result.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code> - Matches if the exact search term is contained in the result.</p></li>
+    /// </ul>
+    pub match_type: crate::types::SearchTermMatchingType,
 }
 impl SearchTermFilterExpression {
     /// <p>The term to search for.</p>
     pub fn search_term(&self) -> &str {
         use std::ops::Deref;
         self.search_term.deref()
+    }
+    /// <p>Specifies how Deadline Cloud matches your search term in the results. If you don't specify a <code>matchType</code> the default is <code>FUZZY_MATCH</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FUZZY_MATCH</code> - Matches if a portion of the search term is found in the result.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code> - Matches if the exact search term is contained in the result.</p></li>
+    /// </ul>
+    pub fn match_type(&self) -> &crate::types::SearchTermMatchingType {
+        &self.match_type
     }
 }
 impl SearchTermFilterExpression {
@@ -26,6 +44,7 @@ impl SearchTermFilterExpression {
 #[non_exhaustive]
 pub struct SearchTermFilterExpressionBuilder {
     pub(crate) search_term: ::std::option::Option<::std::string::String>,
+    pub(crate) match_type: ::std::option::Option<crate::types::SearchTermMatchingType>,
 }
 impl SearchTermFilterExpressionBuilder {
     /// <p>The term to search for.</p>
@@ -43,6 +62,38 @@ impl SearchTermFilterExpressionBuilder {
     pub fn get_search_term(&self) -> &::std::option::Option<::std::string::String> {
         &self.search_term
     }
+    /// <p>Specifies how Deadline Cloud matches your search term in the results. If you don't specify a <code>matchType</code> the default is <code>FUZZY_MATCH</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FUZZY_MATCH</code> - Matches if a portion of the search term is found in the result.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code> - Matches if the exact search term is contained in the result.</p></li>
+    /// </ul>
+    pub fn match_type(mut self, input: crate::types::SearchTermMatchingType) -> Self {
+        self.match_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how Deadline Cloud matches your search term in the results. If you don't specify a <code>matchType</code> the default is <code>FUZZY_MATCH</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FUZZY_MATCH</code> - Matches if a portion of the search term is found in the result.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code> - Matches if the exact search term is contained in the result.</p></li>
+    /// </ul>
+    pub fn set_match_type(mut self, input: ::std::option::Option<crate::types::SearchTermMatchingType>) -> Self {
+        self.match_type = input;
+        self
+    }
+    /// <p>Specifies how Deadline Cloud matches your search term in the results. If you don't specify a <code>matchType</code> the default is <code>FUZZY_MATCH</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FUZZY_MATCH</code> - Matches if a portion of the search term is found in the result.</p></li>
+    /// <li>
+    /// <p><code>CONTAINS</code> - Matches if the exact search term is contained in the result.</p></li>
+    /// </ul>
+    pub fn get_match_type(&self) -> &::std::option::Option<crate::types::SearchTermMatchingType> {
+        &self.match_type
+    }
     /// Consumes the builder and constructs a [`SearchTermFilterExpression`](crate::types::SearchTermFilterExpression).
     /// This method will fail if any of the following fields are not set:
     /// - [`search_term`](crate::types::builders::SearchTermFilterExpressionBuilder::search_term)
@@ -54,6 +105,11 @@ impl SearchTermFilterExpressionBuilder {
                     "search_term was not specified but it is required when building SearchTermFilterExpression",
                 )
             })?,
+            match_type: self.match_type.unwrap_or(
+                "FUZZY_MATCH"
+                    .parse::<crate::types::SearchTermMatchingType>()
+                    .expect("static value validated to member"),
+            ),
         })
     }
 }

@@ -30,5 +30,8 @@ pub fn ser_create_web_app_input_input(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.web_app_endpoint_policy {
+        object.key("WebAppEndpointPolicy").string(var_10.as_str());
+    }
     Ok(())
 }

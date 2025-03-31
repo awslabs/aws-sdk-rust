@@ -39,7 +39,7 @@ pub struct CreateClusterInput {
     /// <p>Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal shift is designed to be a temporary measure that allows you to move traffic for a resource away from an impaired AZ until the zonal shift expires or you cancel it. You can extend the zonal shift if necessary.</p>
     /// <p>You can start a zonal shift for an Amazon EKS cluster, or you can allow Amazon Web Services to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of east-to-west network traffic in your cluster to only consider network endpoints for Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling ingress traffic for applications in your Amazon EKS cluster will automatically route traffic to targets in the healthy AZs. For more information about zonal shift in EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigRequest>,
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>,
     /// <p>Enable or disable the compute capability of EKS Auto Mode when creating your EKS Auto Mode cluster. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account</p>
     pub compute_config: ::std::option::Option<crate::types::ComputeConfigRequest>,
@@ -113,7 +113,7 @@ impl CreateClusterInput {
     pub fn zonal_shift_config(&self) -> ::std::option::Option<&crate::types::ZonalShiftConfigRequest> {
         self.zonal_shift_config.as_ref()
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn remote_network_config(&self) -> ::std::option::Option<&crate::types::RemoteNetworkConfigRequest> {
         self.remote_network_config.as_ref()
     }
@@ -391,17 +391,17 @@ impl CreateClusterInputBuilder {
     pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigRequest> {
         &self.zonal_shift_config
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn remote_network_config(mut self, input: crate::types::RemoteNetworkConfigRequest) -> Self {
         self.remote_network_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn set_remote_network_config(mut self, input: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>) -> Self {
         self.remote_network_config = input;
         self
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigRequest> {
         &self.remote_network_config
     }

@@ -63,6 +63,9 @@
 ///     ResourceType::PrefixList => { /* ... */ },
 ///     ResourceType::ReplaceRootVolumeTask => { /* ... */ },
 ///     ResourceType::ReservedInstances => { /* ... */ },
+///     ResourceType::RouteServer => { /* ... */ },
+///     ResourceType::RouteServerEndpoint => { /* ... */ },
+///     ResourceType::RouteServerPeer => { /* ... */ },
 ///     ResourceType::RouteTable => { /* ... */ },
 ///     ResourceType::SecurityGroup => { /* ... */ },
 ///     ResourceType::SecurityGroupRule => { /* ... */ },
@@ -232,6 +235,12 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
+    RouteServer,
+    #[allow(missing_docs)] // documentation missing in model
+    RouteServerEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
+    RouteServerPeer,
+    #[allow(missing_docs)] // documentation missing in model
     RouteTable,
     #[allow(missing_docs)] // documentation missing in model
     SecurityGroup,
@@ -365,6 +374,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "prefix-list" => ResourceType::PrefixList,
             "replace-root-volume-task" => ResourceType::ReplaceRootVolumeTask,
             "reserved-instances" => ResourceType::ReservedInstances,
+            "route-server" => ResourceType::RouteServer,
+            "route-server-endpoint" => ResourceType::RouteServerEndpoint,
+            "route-server-peer" => ResourceType::RouteServerPeer,
             "route-table" => ResourceType::RouteTable,
             "security-group" => ResourceType::SecurityGroup,
             "security-group-rule" => ResourceType::SecurityGroupRule,
@@ -469,6 +481,9 @@ impl ResourceType {
             ResourceType::PrefixList => "prefix-list",
             ResourceType::ReplaceRootVolumeTask => "replace-root-volume-task",
             ResourceType::ReservedInstances => "reserved-instances",
+            ResourceType::RouteServer => "route-server",
+            ResourceType::RouteServerEndpoint => "route-server-endpoint",
+            ResourceType::RouteServerPeer => "route-server-peer",
             ResourceType::RouteTable => "route-table",
             ResourceType::SecurityGroup => "security-group",
             ResourceType::SecurityGroupRule => "security-group-rule",
@@ -564,6 +579,9 @@ impl ResourceType {
             "prefix-list",
             "replace-root-volume-task",
             "reserved-instances",
+            "route-server",
+            "route-server-endpoint",
+            "route-server-peer",
             "route-table",
             "security-group",
             "security-group-rule",
@@ -678,6 +696,9 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::PrefixList => write!(f, "prefix-list"),
             ResourceType::ReplaceRootVolumeTask => write!(f, "replace-root-volume-task"),
             ResourceType::ReservedInstances => write!(f, "reserved-instances"),
+            ResourceType::RouteServer => write!(f, "route-server"),
+            ResourceType::RouteServerEndpoint => write!(f, "route-server-endpoint"),
+            ResourceType::RouteServerPeer => write!(f, "route-server-peer"),
             ResourceType::RouteTable => write!(f, "route-table"),
             ResourceType::SecurityGroup => write!(f, "security-group"),
             ResourceType::SecurityGroupRule => write!(f, "security-group-rule"),

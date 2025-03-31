@@ -127,6 +127,10 @@ pub use crate::types::_auto_tool_choice::AutoToolChoice;
 
 pub use crate::types::_tool::Tool;
 
+pub use crate::types::_cache_point_block::CachePointBlock;
+
+pub use crate::types::_cache_point_type::CachePointType;
+
 pub use crate::types::_tool_specification::ToolSpecification;
 
 pub use crate::types::_tool_input_schema::ToolInputSchema;
@@ -234,6 +238,10 @@ mod _async_invoke_status;
 mod _async_invoke_summary;
 
 mod _auto_tool_choice;
+
+mod _cache_point_block;
+
+mod _cache_point_type;
 
 mod _content_block;
 

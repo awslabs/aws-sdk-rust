@@ -958,11 +958,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123.456def.endpoints.email.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123.456def.endpoints.email.global.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://abc123.456def.endpoints.email.api.aws")
+                .url("https://abc123.456def.endpoints.email.global.api.aws")
                 .property(
                     "authSchemes",
                     vec![{

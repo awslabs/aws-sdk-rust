@@ -57,7 +57,7 @@ pub(super) fn resolve_endpoint(
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&endpoint_id.as_ref() as &str);
-                                        out.push_str(".endpoints.email.");
+                                        out.push_str(".endpoints.email.global.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out

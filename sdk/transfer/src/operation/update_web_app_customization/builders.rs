@@ -150,17 +150,17 @@ impl UpdateWebAppCustomizationFluentBuilder {
     pub fn get_logo_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_logo_file()
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn favicon_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.favicon_file(input);
         self
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn set_favicon_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_favicon_file(input);
         self
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn get_favicon_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_favicon_file()
     }

@@ -13,7 +13,7 @@ pub struct CreateJobInput {
     pub template: ::std::option::Option<::std::string::String>,
     /// <p>The file type for the job template.</p>
     pub template_type: ::std::option::Option<crate::types::JobTemplateType>,
-    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The parameters for the job.</p>
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::JobParameter>>,
@@ -55,7 +55,7 @@ impl CreateJobInput {
     pub fn template_type(&self) -> ::std::option::Option<&crate::types::JobTemplateType> {
         self.template_type.as_ref()
     }
-    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -213,18 +213,18 @@ impl CreateJobInputBuilder {
     pub fn get_template_type(&self) -> &::std::option::Option<crate::types::JobTemplateType> {
         &self.template_type
     }
-    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>The priority of the job on a scale of 0 to 100. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
+    /// <p>The priority of the job. The highest priority (first scheduled) is 100. When two jobs have the same priority, the oldest job is scheduled first.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }

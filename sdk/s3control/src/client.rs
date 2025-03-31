@@ -199,6 +199,8 @@ mod delete_access_point_policy;
 
 mod delete_access_point_policy_for_object_lambda;
 
+mod delete_access_point_scope;
+
 mod delete_bucket;
 
 mod delete_bucket_lifecycle_configuration;
@@ -251,6 +253,8 @@ mod get_access_point_policy_status;
 
 mod get_access_point_policy_status_for_object_lambda;
 
+mod get_access_point_scope;
+
 mod get_bucket;
 
 mod get_bucket_lifecycle_configuration;
@@ -291,6 +295,8 @@ mod list_access_grants_locations;
 
 mod list_access_points;
 
+mod list_access_points_for_directory_buckets;
+
 mod list_access_points_for_object_lambda;
 
 mod list_caller_access_grants;
@@ -314,6 +320,8 @@ mod put_access_point_configuration_for_object_lambda;
 mod put_access_point_policy;
 
 mod put_access_point_policy_for_object_lambda;
+
+mod put_access_point_scope;
 
 mod put_bucket_lifecycle_configuration;
 

@@ -3,32 +3,35 @@ pub fn ser_start_capacity_task_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_capacity_task::StartCapacityTaskInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.dry_run {
-        object.key("DryRun").boolean(*var_1);
+    if let Some(var_1) = &input.asset_id {
+        object.key("AssetId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.instance_pools {
-        let mut array_3 = object.key("InstancePools").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.dry_run {
+        object.key("DryRun").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.instance_pools {
+        let mut array_4 = object.key("InstancePools").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_instance_type_capacity::ser_instance_type_capacity(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_instance_type_capacity::ser_instance_type_capacity(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.instances_to_exclude {
+    if let Some(var_7) = &input.instances_to_exclude {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("InstancesToExclude").start_object();
-        crate::protocol_serde::shape_instances_to_exclude::ser_instances_to_exclude(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("InstancesToExclude").start_object();
+        crate::protocol_serde::shape_instances_to_exclude::ser_instances_to_exclude(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.order_id {
-        object.key("OrderId").string(var_8.as_str());
+    if let Some(var_9) = &input.order_id {
+        object.key("OrderId").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.task_action_on_blocking_instances {
-        object.key("TaskActionOnBlockingInstances").string(var_9.as_str());
+    if let Some(var_10) = &input.task_action_on_blocking_instances {
+        object.key("TaskActionOnBlockingInstances").string(var_10.as_str());
     }
     Ok(())
 }

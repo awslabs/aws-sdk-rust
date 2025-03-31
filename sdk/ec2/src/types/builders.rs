@@ -529,6 +529,8 @@ pub use crate::types::_security_group_rule_update::SecurityGroupRuleUpdateBuilde
 
 pub use crate::types::_security_group_rule_request::SecurityGroupRuleRequestBuilder;
 
+pub use crate::types::_route_server::RouteServerBuilder;
+
 pub use crate::types::_reserved_instances_configuration::ReservedInstancesConfigurationBuilder;
 
 pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAttachmentChangesBuilder;
@@ -730,6 +732,14 @@ pub use crate::types::_spot_placement_score::SpotPlacementScoreBuilder;
 pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequestBuilder;
 
 pub use crate::types::_security_group_for_vpc::SecurityGroupForVpcBuilder;
+
+pub use crate::types::_route_server_route::RouteServerRouteBuilder;
+
+pub use crate::types::_route_server_route_installation_detail::RouteServerRouteInstallationDetailBuilder;
+
+pub use crate::types::_route_server_propagation::RouteServerPropagationBuilder;
+
+pub use crate::types::_route_server_association::RouteServerAssociationBuilder;
 
 pub use crate::types::_target_reservation_value::TargetReservationValueBuilder;
 
@@ -1078,6 +1088,16 @@ pub use crate::types::_route::RouteBuilder;
 pub use crate::types::_propagating_vgw::PropagatingVgwBuilder;
 
 pub use crate::types::_route_table_association::RouteTableAssociationBuilder;
+
+pub use crate::types::_route_server_peer::RouteServerPeerBuilder;
+
+pub use crate::types::_route_server_bfd_status::RouteServerBfdStatusBuilder;
+
+pub use crate::types::_route_server_bgp_status::RouteServerBgpStatusBuilder;
+
+pub use crate::types::_route_server_bgp_options::RouteServerBgpOptionsBuilder;
+
+pub use crate::types::_route_server_endpoint::RouteServerEndpointBuilder;
 
 pub use crate::types::_reserved_instances_offering::ReservedInstancesOfferingBuilder;
 
@@ -1492,6 +1512,8 @@ pub use crate::types::_s3_object_tag::S3ObjectTagBuilder;
 pub use crate::types::_snapshot_info::SnapshotInfoBuilder;
 
 pub use crate::types::_instance_specification::InstanceSpecificationBuilder;
+
+pub use crate::types::_route_server_bgp_options_request::RouteServerBgpOptionsRequestBuilder;
 
 pub use crate::types::_price_schedule_specification::PriceScheduleSpecificationBuilder;
 

@@ -147,7 +147,7 @@ impl ::std::fmt::Debug for GetQueueOutput {
         formatter.field("blocked_reason", &self.blocked_reason);
         formatter.field("job_attachment_settings", &self.job_attachment_settings);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("required_file_system_location_names", &"*** Sensitive Data Redacted ***");
+        formatter.field("required_file_system_location_names", &self.required_file_system_location_names);
         formatter.field("allowed_storage_profile_ids", &self.allowed_storage_profile_ids);
         formatter.field("job_run_as_user", &self.job_run_as_user);
         formatter.field("created_at", &self.created_at);
@@ -559,7 +559,7 @@ impl ::std::fmt::Debug for GetQueueOutputBuilder {
         formatter.field("blocked_reason", &self.blocked_reason);
         formatter.field("job_attachment_settings", &self.job_attachment_settings);
         formatter.field("role_arn", &self.role_arn);
-        formatter.field("required_file_system_location_names", &"*** Sensitive Data Redacted ***");
+        formatter.field("required_file_system_location_names", &self.required_file_system_location_names);
         formatter.field("allowed_storage_profile_ids", &self.allowed_storage_profile_ids);
         formatter.field("job_run_as_user", &self.job_run_as_user);
         formatter.field("created_at", &self.created_at);

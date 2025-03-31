@@ -1765,9 +1765,6 @@ pub(crate) fn storage_profile_summary_correct_errors(
 pub(crate) fn task_run_session_action_definition_correct_errors(
     mut builder: crate::types::builders::TaskRunSessionActionDefinitionBuilder,
 ) -> crate::types::builders::TaskRunSessionActionDefinitionBuilder {
-    if builder.task_id.is_none() {
-        builder.task_id = Some(Default::default())
-    }
     if builder.step_id.is_none() {
         builder.step_id = Some(Default::default())
     }
@@ -2187,9 +2184,6 @@ pub(crate) fn memory_mib_range_correct_errors(
 pub(crate) fn task_run_session_action_definition_summary_correct_errors(
     mut builder: crate::types::builders::TaskRunSessionActionDefinitionSummaryBuilder,
 ) -> crate::types::builders::TaskRunSessionActionDefinitionSummaryBuilder {
-    if builder.task_id.is_none() {
-        builder.task_id = Some(Default::default())
-    }
     if builder.step_id.is_none() {
         builder.step_id = Some(Default::default())
     }
@@ -2250,9 +2244,6 @@ pub(crate) fn assigned_environment_exit_session_action_definition_correct_errors
 pub(crate) fn assigned_task_run_session_action_definition_correct_errors(
     mut builder: crate::types::builders::AssignedTaskRunSessionActionDefinitionBuilder,
 ) -> crate::types::builders::AssignedTaskRunSessionActionDefinitionBuilder {
-    if builder.task_id.is_none() {
-        builder.task_id = Some(Default::default())
-    }
     if builder.step_id.is_none() {
         builder.step_id = Some(Default::default())
     }

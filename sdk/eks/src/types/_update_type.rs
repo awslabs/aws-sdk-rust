@@ -21,6 +21,7 @@
 ///     UpdateType::DisassociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::EndpointAccessUpdate => { /* ... */ },
 ///     UpdateType::LoggingUpdate => { /* ... */ },
+///     UpdateType::RemoteNetworkConfigUpdate => { /* ... */ },
 ///     UpdateType::UpgradePolicyUpdate => { /* ... */ },
 ///     UpdateType::VersionUpdate => { /* ... */ },
 ///     UpdateType::VpcConfigUpdate => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     LoggingUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    RemoteNetworkConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     UpgradePolicyUpdate,
     #[allow(missing_docs)] // documentation missing in model
     VersionUpdate,
@@ -95,6 +98,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "DisassociateIdentityProviderConfig" => UpdateType::DisassociateIdentityProviderConfig,
             "EndpointAccessUpdate" => UpdateType::EndpointAccessUpdate,
             "LoggingUpdate" => UpdateType::LoggingUpdate,
+            "RemoteNetworkConfigUpdate" => UpdateType::RemoteNetworkConfigUpdate,
             "UpgradePolicyUpdate" => UpdateType::UpgradePolicyUpdate,
             "VersionUpdate" => UpdateType::VersionUpdate,
             "VpcConfigUpdate" => UpdateType::VpcConfigUpdate,
@@ -123,6 +127,7 @@ impl UpdateType {
             UpdateType::DisassociateIdentityProviderConfig => "DisassociateIdentityProviderConfig",
             UpdateType::EndpointAccessUpdate => "EndpointAccessUpdate",
             UpdateType::LoggingUpdate => "LoggingUpdate",
+            UpdateType::RemoteNetworkConfigUpdate => "RemoteNetworkConfigUpdate",
             UpdateType::UpgradePolicyUpdate => "UpgradePolicyUpdate",
             UpdateType::VersionUpdate => "VersionUpdate",
             UpdateType::VpcConfigUpdate => "VpcConfigUpdate",
@@ -142,6 +147,7 @@ impl UpdateType {
             "DisassociateIdentityProviderConfig",
             "EndpointAccessUpdate",
             "LoggingUpdate",
+            "RemoteNetworkConfigUpdate",
             "UpgradePolicyUpdate",
             "VersionUpdate",
             "VpcConfigUpdate",
@@ -178,6 +184,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::DisassociateIdentityProviderConfig => write!(f, "DisassociateIdentityProviderConfig"),
             UpdateType::EndpointAccessUpdate => write!(f, "EndpointAccessUpdate"),
             UpdateType::LoggingUpdate => write!(f, "LoggingUpdate"),
+            UpdateType::RemoteNetworkConfigUpdate => write!(f, "RemoteNetworkConfigUpdate"),
             UpdateType::UpgradePolicyUpdate => write!(f, "UpgradePolicyUpdate"),
             UpdateType::VersionUpdate => write!(f, "VersionUpdate"),
             UpdateType::VpcConfigUpdate => write!(f, "VpcConfigUpdate"),

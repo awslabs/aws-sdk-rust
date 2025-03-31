@@ -298,6 +298,15 @@ pub(crate) fn converse_stream_metrics_correct_errors(
     builder
 }
 
+pub(crate) fn cache_point_block_correct_errors(
+    mut builder: crate::types::builders::CachePointBlockBuilder,
+) -> crate::types::builders::CachePointBlockBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::CachePointType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn document_block_correct_errors(
     mut builder: crate::types::builders::DocumentBlockBuilder,
 ) -> crate::types::builders::DocumentBlockBuilder {

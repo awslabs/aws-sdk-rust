@@ -562,6 +562,30 @@ impl From<crate::operation::delete_access_point_policy_for_object_lambda::Delete
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_point_scope::DeleteAccessPointScopeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_access_point_scope::DeleteAccessPointScopeError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_access_point_scope::DeleteAccessPointScopeError> for Error {
+    fn from(err: crate::operation::delete_access_point_scope::DeleteAccessPointScopeError) -> Self {
+        match err {
+            crate::operation::delete_access_point_scope::DeleteAccessPointScopeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_bucket::DeleteBucketError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1281,6 +1305,27 @@ impl From<crate::operation::get_access_point_policy_status_for_object_lambda::Ge
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_point_scope::GetAccessPointScopeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_access_point_scope::GetAccessPointScopeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_access_point_scope::GetAccessPointScopeError> for Error {
+    fn from(err: crate::operation::get_access_point_scope::GetAccessPointScopeError) -> Self {
+        match err {
+            crate::operation::get_access_point_scope::GetAccessPointScopeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_bucket::GetBucketError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1787,6 +1832,40 @@ impl From<crate::operation::list_access_points::ListAccessPointsError> for Error
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsError> for Error {
+    fn from(err: crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsError) -> Self {
+        match err {
+            crate::operation::list_access_points_for_directory_buckets::ListAccessPointsForDirectoryBucketsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError,
             R,
         >,
@@ -2108,6 +2187,27 @@ impl From<crate::operation::put_access_point_policy_for_object_lambda::PutAccess
             crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_access_point_scope::PutAccessPointScopeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_access_point_scope::PutAccessPointScopeError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_access_point_scope::PutAccessPointScopeError> for Error {
+    fn from(err: crate::operation::put_access_point_scope::PutAccessPointScopeError) -> Self {
+        match err {
+            crate::operation::put_access_point_scope::PutAccessPointScopeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -127,6 +127,10 @@ pub(crate) mod shape_associate_nat_gateway_address;
 
 pub(crate) mod shape_associate_nat_gateway_address_input;
 
+pub(crate) mod shape_associate_route_server;
+
+pub(crate) mod shape_associate_route_server_input;
+
 pub(crate) mod shape_associate_route_table;
 
 pub(crate) mod shape_associate_route_table_input;
@@ -447,6 +451,18 @@ pub(crate) mod shape_create_route;
 
 pub(crate) mod shape_create_route_input;
 
+pub(crate) mod shape_create_route_server;
+
+pub(crate) mod shape_create_route_server_endpoint;
+
+pub(crate) mod shape_create_route_server_endpoint_input;
+
+pub(crate) mod shape_create_route_server_input;
+
+pub(crate) mod shape_create_route_server_peer;
+
+pub(crate) mod shape_create_route_server_peer_input;
+
 pub(crate) mod shape_create_route_table;
 
 pub(crate) mod shape_create_route_table_input;
@@ -758,6 +774,18 @@ pub(crate) mod shape_delete_queued_reserved_instances_input;
 pub(crate) mod shape_delete_route;
 
 pub(crate) mod shape_delete_route_input;
+
+pub(crate) mod shape_delete_route_server;
+
+pub(crate) mod shape_delete_route_server_endpoint;
+
+pub(crate) mod shape_delete_route_server_endpoint_input;
+
+pub(crate) mod shape_delete_route_server_input;
+
+pub(crate) mod shape_delete_route_server_peer;
+
+pub(crate) mod shape_delete_route_server_peer_input;
 
 pub(crate) mod shape_delete_route_table;
 
@@ -1339,6 +1367,18 @@ pub(crate) mod shape_describe_reserved_instances_offerings;
 
 pub(crate) mod shape_describe_reserved_instances_offerings_input;
 
+pub(crate) mod shape_describe_route_server_endpoints;
+
+pub(crate) mod shape_describe_route_server_endpoints_input;
+
+pub(crate) mod shape_describe_route_server_peers;
+
+pub(crate) mod shape_describe_route_server_peers_input;
+
+pub(crate) mod shape_describe_route_servers;
+
+pub(crate) mod shape_describe_route_servers_input;
+
 pub(crate) mod shape_describe_route_tables;
 
 pub(crate) mod shape_describe_route_tables_input;
@@ -1647,6 +1687,10 @@ pub(crate) mod shape_disable_ipam_organization_admin_account;
 
 pub(crate) mod shape_disable_ipam_organization_admin_account_input;
 
+pub(crate) mod shape_disable_route_server_propagation;
+
+pub(crate) mod shape_disable_route_server_propagation_input;
+
 pub(crate) mod shape_disable_serial_console_access;
 
 pub(crate) mod shape_disable_serial_console_access_input;
@@ -1706,6 +1750,10 @@ pub(crate) mod shape_disassociate_ipam_resource_discovery_input;
 pub(crate) mod shape_disassociate_nat_gateway_address;
 
 pub(crate) mod shape_disassociate_nat_gateway_address_input;
+
+pub(crate) mod shape_disassociate_route_server;
+
+pub(crate) mod shape_disassociate_route_server_input;
 
 pub(crate) mod shape_disassociate_route_table;
 
@@ -1786,6 +1834,10 @@ pub(crate) mod shape_enable_ipam_organization_admin_account_input;
 pub(crate) mod shape_enable_reachability_analyzer_organization_sharing;
 
 pub(crate) mod shape_enable_reachability_analyzer_organization_sharing_input;
+
+pub(crate) mod shape_enable_route_server_propagation;
+
+pub(crate) mod shape_enable_route_server_propagation_input;
 
 pub(crate) mod shape_enable_serial_console_access;
 
@@ -1970,6 +2022,18 @@ pub(crate) mod shape_get_password_data_input;
 pub(crate) mod shape_get_reserved_instances_exchange_quote;
 
 pub(crate) mod shape_get_reserved_instances_exchange_quote_input;
+
+pub(crate) mod shape_get_route_server_associations;
+
+pub(crate) mod shape_get_route_server_associations_input;
+
+pub(crate) mod shape_get_route_server_propagations;
+
+pub(crate) mod shape_get_route_server_propagations_input;
+
+pub(crate) mod shape_get_route_server_routing_database;
+
+pub(crate) mod shape_get_route_server_routing_database_input;
 
 pub(crate) mod shape_get_security_groups_for_vpc;
 
@@ -2218,6 +2282,10 @@ pub(crate) mod shape_modify_private_dns_name_options_input;
 pub(crate) mod shape_modify_reserved_instances;
 
 pub(crate) mod shape_modify_reserved_instances_input;
+
+pub(crate) mod shape_modify_route_server;
+
+pub(crate) mod shape_modify_route_server_input;
 
 pub(crate) mod shape_modify_security_group_rules;
 
@@ -2879,6 +2947,8 @@ pub(crate) mod shape_reserved_instance_limit_price;
 
 pub(crate) mod shape_reserved_instances_configuration;
 
+pub(crate) mod shape_route_server_bgp_options_request;
+
 pub(crate) mod shape_run_instances_monitoring_enabled;
 
 pub(crate) mod shape_s3_object_tag;
@@ -3504,6 +3574,28 @@ pub(crate) mod shape_response_host_id_list;
 pub(crate) mod shape_response_launch_template_data;
 
 pub(crate) mod shape_revoked_security_group_rule_list;
+
+pub(crate) mod shape_route_server;
+
+pub(crate) mod shape_route_server_association;
+
+pub(crate) mod shape_route_server_associations_list;
+
+pub(crate) mod shape_route_server_endpoint;
+
+pub(crate) mod shape_route_server_endpoints_list;
+
+pub(crate) mod shape_route_server_peer;
+
+pub(crate) mod shape_route_server_peers_list;
+
+pub(crate) mod shape_route_server_propagation;
+
+pub(crate) mod shape_route_server_propagations_list;
+
+pub(crate) mod shape_route_server_route_list;
+
+pub(crate) mod shape_route_servers_list;
 
 pub(crate) mod shape_route_table;
 
@@ -4187,6 +4279,14 @@ pub(crate) mod shape_revoked_security_group_rule;
 
 pub(crate) mod shape_route_list;
 
+pub(crate) mod shape_route_server_bfd_status;
+
+pub(crate) mod shape_route_server_bgp_options;
+
+pub(crate) mod shape_route_server_bgp_status;
+
+pub(crate) mod shape_route_server_route;
+
 pub(crate) mod shape_route_table_association_list;
 
 pub(crate) mod shape_scheduled_instance;
@@ -4390,6 +4490,8 @@ pub(crate) mod shape_account_attribute_value_list;
 pub(crate) mod shape_allowed_instance_type_set;
 
 pub(crate) mod shape_alternate_path_hint;
+
+pub(crate) mod shape_as_path;
 
 pub(crate) mod shape_associated_target_network_set;
 
@@ -4659,6 +4761,8 @@ pub(crate) mod shape_root_device_type_list;
 
 pub(crate) mod shape_route;
 
+pub(crate) mod shape_route_server_route_installation_details;
+
 pub(crate) mod shape_route_table_association;
 
 pub(crate) mod shape_scheduled_instance_recurrence;
@@ -4898,6 +5002,8 @@ pub(crate) mod shape_regional_summary;
 pub(crate) mod shape_reserved_instances_id;
 
 pub(crate) mod shape_reserved_instances_modification_result;
+
+pub(crate) mod shape_route_server_route_installation_detail;
 
 pub(crate) mod shape_stale_ip_permission;
 

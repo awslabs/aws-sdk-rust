@@ -55,6 +55,9 @@ pub mod delete_access_point_policy;
 /// Types for the `DeleteAccessPointPolicyForObjectLambda` operation.
 pub mod delete_access_point_policy_for_object_lambda;
 
+/// Types for the `DeleteAccessPointScope` operation.
+pub mod delete_access_point_scope;
+
 /// Types for the `DeleteBucket` operation.
 pub mod delete_bucket;
 
@@ -133,6 +136,9 @@ pub mod get_access_point_policy_status;
 /// Types for the `GetAccessPointPolicyStatusForObjectLambda` operation.
 pub mod get_access_point_policy_status_for_object_lambda;
 
+/// Types for the `GetAccessPointScope` operation.
+pub mod get_access_point_scope;
+
 /// Types for the `GetBucket` operation.
 pub mod get_bucket;
 
@@ -193,6 +199,9 @@ pub mod list_access_grants_locations;
 /// Types for the `ListAccessPoints` operation.
 pub mod list_access_points;
 
+/// Types for the `ListAccessPointsForDirectoryBuckets` operation.
+pub mod list_access_points_for_directory_buckets;
+
 /// Types for the `ListAccessPointsForObjectLambda` operation.
 pub mod list_access_points_for_object_lambda;
 
@@ -228,6 +237,9 @@ pub mod put_access_point_policy;
 
 /// Types for the `PutAccessPointPolicyForObjectLambda` operation.
 pub mod put_access_point_policy_for_object_lambda;
+
+/// Types for the `PutAccessPointScope` operation.
+pub mod put_access_point_scope;
 
 /// Types for the `PutBucketLifecycleConfiguration` operation.
 pub mod put_bucket_lifecycle_configuration;

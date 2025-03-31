@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Tool {
+    /// <p>CachePoint to include in the tool configuration.</p>
+    CachePoint(crate::types::CachePointBlock),
     /// <p>The specfication for the tool.</p>
     ToolSpec(crate::types::ToolSpecification),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum Tool {
     Unknown,
 }
 impl Tool {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`CachePoint`](crate::types::Tool::CachePoint), extracting the inner [`CachePointBlock`](crate::types::CachePointBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cache_point(&self) -> ::std::result::Result<&crate::types::CachePointBlock, &Self> {
+        if let Tool::CachePoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CachePoint`](crate::types::Tool::CachePoint).
+    pub fn is_cache_point(&self) -> bool {
+        self.as_cache_point().is_ok()
+    }
     /// Tries to convert the enum instance into [`ToolSpec`](crate::types::Tool::ToolSpec), extracting the inner [`ToolSpecification`](crate::types::ToolSpecification).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tool_spec(&self) -> ::std::result::Result<&crate::types::ToolSpecification, &Self> {

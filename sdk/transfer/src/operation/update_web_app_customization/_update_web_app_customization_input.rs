@@ -9,7 +9,7 @@ pub struct UpdateWebAppCustomizationInput {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Specify logo file data string (in base64 encoding).</p>
     pub logo_file: ::std::option::Option<::aws_smithy_types::Blob>,
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub favicon_file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl UpdateWebAppCustomizationInput {
@@ -25,7 +25,7 @@ impl UpdateWebAppCustomizationInput {
     pub fn logo_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.logo_file.as_ref()
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn favicon_file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.favicon_file.as_ref()
     }
@@ -100,17 +100,17 @@ impl UpdateWebAppCustomizationInputBuilder {
     pub fn get_logo_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.logo_file
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn favicon_file(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.favicon_file = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn set_favicon_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.favicon_file = input;
         self
     }
-    /// <p>Specify icon file data string (in base64 encoding).</p>
+    /// <p>Specify an icon file data string (in base64 encoding).</p>
     pub fn get_favicon_file(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.favicon_file
     }

@@ -22,9 +22,6 @@ impl crate::operation::get_access_point_policy::builders::GetAccessPointPolicyIn
 }
 /// Fluent builder constructing a request to `GetAccessPointPolicy`.
 ///
-/// <note>
-/// <p>This operation is not supported by directory buckets.</p>
-/// </note>
 /// <p>Returns the access point policy associated with the specified access point.</p>
 /// <p>The following actions are related to <code>GetAccessPointPolicy</code>:</p>
 /// <ul>

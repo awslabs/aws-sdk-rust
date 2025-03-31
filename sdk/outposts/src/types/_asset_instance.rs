@@ -8,7 +8,7 @@ pub struct AssetInstance {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl AssetInstance {
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
@@ -83,17 +83,17 @@ impl AssetInstanceBuilder {
     pub fn get_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_type
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }

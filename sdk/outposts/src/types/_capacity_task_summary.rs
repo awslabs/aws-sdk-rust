@@ -10,6 +10,8 @@ pub struct CapacityTaskSummary {
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Outposts order of the host associated with the capacity task.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the capacity task.</p>
     pub capacity_task_status: ::std::option::Option<crate::types::CapacityTaskStatus>,
     /// <p>The date that the specified capacity task was created.</p>
@@ -31,6 +33,10 @@ impl CapacityTaskSummary {
     /// <p>The ID of the Amazon Web Services Outposts order of the host associated with the capacity task.</p>
     pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
     }
     /// <p>The status of the capacity task.</p>
     pub fn capacity_task_status(&self) -> ::std::option::Option<&crate::types::CapacityTaskStatus> {
@@ -63,6 +69,7 @@ pub struct CapacityTaskSummaryBuilder {
     pub(crate) capacity_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_task_status: ::std::option::Option<crate::types::CapacityTaskStatus>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) completion_date: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -110,6 +117,20 @@ impl CapacityTaskSummaryBuilder {
     /// <p>The ID of the Amazon Web Services Outposts order of the host associated with the capacity task.</p>
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_id
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_id = input;
+        self
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The status of the capacity task.</p>
     pub fn capacity_task_status(mut self, input: crate::types::CapacityTaskStatus) -> Self {
@@ -173,6 +194,7 @@ impl CapacityTaskSummaryBuilder {
             capacity_task_id: self.capacity_task_id,
             outpost_id: self.outpost_id,
             order_id: self.order_id,
+            asset_id: self.asset_id,
             capacity_task_status: self.capacity_task_status,
             creation_date: self.creation_date,
             completion_date: self.completion_date,

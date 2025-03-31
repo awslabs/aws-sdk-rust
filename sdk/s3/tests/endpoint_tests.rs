@@ -4855,6 +4855,102 @@ async fn operation_input_test_get_object_140() {
 
 #[::tokio::test]
 async fn operation_input_test_get_object_141() {
+    /* documentation: Data Plane with short zone name china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--abcd-ab1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://mybucket--abcd-ab1--x-s3.s3express-abcd-ab1.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://mybucket--abcd-ab1--x-s3.s3express-abcd-ab1.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_142() {
+    /* documentation: Data Plane with short zone name with AP */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--abcd-ab1--xa-s3.s3express-abcd-ab1.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://myaccesspoint--abcd-ab1--xa-s3.s3express-abcd-ab1.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_143() {
+    /* documentation: Data Plane with short zone name with AP china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--abcd-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--abcd-ab1--xa-s3.s3express-abcd-ab1.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://myaccesspoint--abcd-ab1--xa-s3.s3express-abcd-ab1.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_144() {
     /* documentation: Data Plane with short zone names (13 chars) */
     /* builtIns: {
         "AWS::Region": "us-west-2"
@@ -4886,7 +4982,39 @@ async fn operation_input_test_get_object_141() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_142() {
+async fn operation_input_test_get_object_145() {
+    /* documentation: Data Plane with short zone names (13 chars) with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test-zone-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--test-zone-ab1--xa-s3.s3express-test-zone-ab1.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://myaccesspoint--test-zone-ab1--xa-s3.s3express-test-zone-ab1.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_146() {
     /* documentation: Data Plane with medium zone names (14 chars) */
     /* builtIns: {
         "AWS::Region": "us-west-2"
@@ -4918,7 +5046,39 @@ async fn operation_input_test_get_object_142() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_143() {
+async fn operation_input_test_get_object_147() {
+    /* documentation: Data Plane with medium zone names (14 chars) with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test1-zone-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--test1-zone-ab1--xa-s3.s3express-test1-zone-ab1.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://myaccesspoint--test1-zone-ab1--xa-s3.s3express-test1-zone-ab1.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_148() {
     /* documentation: Data Plane with long zone names (20 chars) */
     /* builtIns: {
         "AWS::Region": "us-west-2"
@@ -4946,7 +5106,35 @@ async fn operation_input_test_get_object_143() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_144() {
+async fn operation_input_test_get_object_149() {
+    /* documentation: Data Plane with long zone names (20 chars) */
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test1-long1-zone-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(uri.starts_with("https://myaccesspoint--test1-long1-zone-ab1--xa-s3.s3express-test1-long1-zone-ab1.us-west-2.amazonaws.com"), "expected URI to start with `https://myaccesspoint--test1-long1-zone-ab1--xa-s3.s3express-test1-long1-zone-ab1.us-west-2.amazonaws.com` but it was `{}`", uri);
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_150() {
     /* documentation: Data Plane with short zone fips */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -4980,7 +5168,109 @@ async fn operation_input_test_get_object_144() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_145() {
+async fn operation_input_test_get_object_151() {
+    /* documentation: Data Plane with short zone fips china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("mybucket--test-ab1--x-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Data Plane with short zone fips china region]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_152() {
+    /* documentation: Data Plane with short zone fips with AP */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--test-ab1--xa-s3.s3express-fips-test-ab1.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://myaccesspoint--test-ab1--xa-s3.s3express-fips-test-ab1.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_153() {
+    /* documentation: Data Plane with short zone fips with AP china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Data Plane with short zone fips with AP china region]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_154() {
     /* documentation: Data Plane with short zone (13 chars) fips */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5014,7 +5304,37 @@ async fn operation_input_test_get_object_145() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_146() {
+async fn operation_input_test_get_object_155() {
+    /* documentation: Data Plane with short zone (13 chars) fips with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test-zone-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(uri.starts_with("https://myaccesspoint--test-zone-ab1--xa-s3.s3express-fips-test-zone-ab1.us-west-2.amazonaws.com"), "expected URI to start with `https://myaccesspoint--test-zone-ab1--xa-s3.s3express-fips-test-zone-ab1.us-west-2.amazonaws.com` but it was `{}`", uri);
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_156() {
     /* documentation: Data Plane with medium zone (14 chars) fips */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5048,7 +5368,37 @@ async fn operation_input_test_get_object_146() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_147() {
+async fn operation_input_test_get_object_157() {
+    /* documentation: Data Plane with medium zone (14 chars) fips with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test1-zone-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(uri.starts_with("https://myaccesspoint--test1-zone-ab1--xa-s3.s3express-fips-test1-zone-ab1.us-west-2.amazonaws.com"), "expected URI to start with `https://myaccesspoint--test1-zone-ab1--xa-s3.s3express-fips-test1-zone-ab1.us-west-2.amazonaws.com` but it was `{}`", uri);
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_158() {
     /* documentation: Data Plane with long zone (20 chars) fips */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5078,7 +5428,37 @@ async fn operation_input_test_get_object_147() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_148() {
+async fn operation_input_test_get_object_159() {
+    /* documentation: Data Plane with long zone (20 chars) fips with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test1-long1-zone-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(uri.starts_with("https://myaccesspoint--test1-long1-zone-ab1--xa-s3.s3express-fips-test1-long1-zone-ab1.us-west-2.amazonaws.com"), "expected URI to start with `https://myaccesspoint--test1-long1-zone-ab1--xa-s3.s3express-fips-test1-long1-zone-ab1.us-west-2.amazonaws.com` but it was `{}`", uri);
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_160() {
     /* documentation: Data Plane with long AZ */
     /* builtIns: {
         "AWS::Region": "us-west-2"
@@ -5110,7 +5490,39 @@ async fn operation_input_test_get_object_148() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_149() {
+async fn operation_input_test_get_object_161() {
+    /* documentation: Data Plane with long AZ with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test1-az1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--test1-az1--xa-s3.s3express-test1-az1.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://myaccesspoint--test1-az1--xa-s3.s3express-test1-az1.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_162() {
     /* documentation: Data Plane with long AZ fips */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5144,7 +5556,41 @@ async fn operation_input_test_get_object_149() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_bucket_150() {
+async fn operation_input_test_get_object_163() {
+    /* documentation: Data Plane with long AZ fips with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test1-az1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--test1-az1--xa-s3.s3express-fips-test1-az1.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://myaccesspoint--test1-az1--xa-s3.s3express-fips-test1-az1.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_164() {
     /* documentation: Control plane with short AZ bucket */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -5175,7 +5621,38 @@ async fn operation_input_test_create_bucket_150() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_bucket_151() {
+async fn operation_input_test_create_bucket_165() {
+    /* documentation: Control plane with short AZ bucket china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_bucket()
+            .set_bucket(::std::option::Option::Some("mybucket--test-ab1--x-s3".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://s3express-control.cn-north-1.amazonaws.com.cn/mybucket--test-ab1--x-s3"),
+        "expected URI to start with `https://s3express-control.cn-north-1.amazonaws.com.cn/mybucket--test-ab1--x-s3` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_bucket_166() {
     /* documentation: Control plane with short AZ bucket and fips */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5208,7 +5685,40 @@ async fn operation_input_test_create_bucket_151() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_directory_buckets_152() {
+async fn operation_input_test_create_bucket_167() {
+    /* documentation: Control plane with short AZ bucket and fips china region */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_bucket()
+            .set_bucket(::std::option::Option::Some("mybucket--test-ab1--x-s3".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Partition does not support FIPS [Control plane with short AZ bucket and fips china region]");
+    assert!(
+        format!("{:?}", error).contains("Partition does not support FIPS"),
+        "expected error to contain `Partition does not support FIPS` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_directory_buckets_168() {
     /* documentation: Control plane without bucket */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -5233,7 +5743,7 @@ async fn operation_input_test_list_directory_buckets_152() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_directory_buckets_153() {
+async fn operation_input_test_list_directory_buckets_169() {
     /* documentation: Control plane without bucket and fips */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5260,7 +5770,7 @@ async fn operation_input_test_list_directory_buckets_153() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_154() {
+async fn operation_input_test_get_object_170() {
     /* documentation: Data plane host override non virtual session auth */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5294,7 +5804,41 @@ async fn operation_input_test_get_object_154() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_155() {
+async fn operation_input_test_get_object_171() {
+    /* documentation: Data plane host override non virtual session auth with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "SDK::Endpoint": "https://10.0.0.1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.endpoint_url("https://10.0.0.1");
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--usw2-az1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://10.0.0.1/myaccesspoint--usw2-az1--xa-s3"),
+        "expected URI to start with `https://10.0.0.1/myaccesspoint--usw2-az1--xa-s3` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_172() {
     /* documentation: Data plane host override */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5328,7 +5872,41 @@ async fn operation_input_test_get_object_155() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_156() {
+async fn operation_input_test_get_object_173() {
+    /* documentation: Data plane host override with AP */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "SDK::Endpoint": "https://custom.com"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.endpoint_url("https://custom.com");
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--usw2-az1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myaccesspoint--usw2-az1--xa-s3.custom.com"),
+        "expected URI to start with `https://myaccesspoint--usw2-az1--xa-s3.custom.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_174() {
     /* documentation: bad format error */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -5360,7 +5938,39 @@ async fn operation_input_test_get_object_156() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_157() {
+async fn operation_input_test_get_object_175() {
+    /* documentation: bad AP format error */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--usaz1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express bucket name format. [bad AP format error]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express bucket name format."),
+        "expected error to contain `Unrecognized S3Express bucket name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_176() {
     /* documentation: bad format error no session auth */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -5392,7 +6002,39 @@ async fn operation_input_test_get_object_157() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_158() {
+async fn operation_input_test_get_object_177() {
+    /* documentation: bad AP format error no session auth */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--usaz1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Unrecognized S3Express bucket name format. [bad AP format error no session auth]");
+    assert!(
+        format!("{:?}", error).contains("Unrecognized S3Express bucket name format."),
+        "expected error to contain `Unrecognized S3Express bucket name format.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_178() {
     /* documentation: dual-stack error */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5426,7 +6068,41 @@ async fn operation_input_test_get_object_158() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_159() {
+async fn operation_input_test_get_object_179() {
+    /* documentation: dual-stack error with AP */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: S3Express does not support Dual-stack. [dual-stack error with AP]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support Dual-stack."),
+        "expected error to contain `S3Express does not support Dual-stack.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_180() {
     /* documentation: accelerate error */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -5460,7 +6136,41 @@ async fn operation_input_test_get_object_159() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_160() {
+async fn operation_input_test_get_object_181() {
+    /* documentation: accelerate error with AP */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::S3::Accelerate": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.accelerate(true);
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("myaccesspoint--test-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: S3Express does not support S3 Accelerate. [accelerate error with AP]");
+    assert!(
+        format!("{:?}", error).contains("S3Express does not support S3 Accelerate."),
+        "expected error to contain `S3Express does not support S3 Accelerate.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_182() {
     /* documentation: Data plane bucket format error */
     /* builtIns: {
         "AWS::Region": "us-east-1"
@@ -5492,7 +6202,39 @@ async fn operation_input_test_get_object_160() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_get_object_161() {
+async fn operation_input_test_get_object_183() {
+    /* documentation: Data plane AP format error */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("my.myaccesspoint--test-ab1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: S3Express bucket name is not a valid virtual hostable name. [Data plane AP format error]");
+    assert!(
+        format!("{:?}", error).contains("S3Express bucket name is not a valid virtual hostable name."),
+        "expected error to contain `S3Express bucket name is not a valid virtual hostable name.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_184() {
     /* documentation: host override data plane bucket error session auth */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -5520,6 +6262,41 @@ async fn operation_input_test_get_object_161() {
     let error = _result.expect_err(
         "expected error: S3Express bucket name is not a valid virtual hostable name. [host override data plane bucket error session auth]",
     );
+    assert!(
+        format!("{:?}", error).contains("S3Express bucket name is not a valid virtual hostable name."),
+        "expected error to contain `S3Express bucket name is not a valid virtual hostable name.` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_get_object_185() {
+    /* documentation: host override data plane AP error session auth */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "SDK::Endpoint": "https://custom.com"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_s3::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.endpoint_url("https://custom.com");
+        builder.build()
+    };
+    let client = aws_sdk_s3::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .get_object()
+            .set_bucket(::std::option::Option::Some("my.myaccesspoint--usw2-az1--xa-s3".to_owned()))
+            .set_key(::std::option::Option::Some("key".to_owned()))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result
+        .expect_err("expected error: S3Express bucket name is not a valid virtual hostable name. [host override data plane AP error session auth]");
     assert!(
         format!("{:?}", error).contains("S3Express bucket name is not a valid virtual hostable name."),
         "expected error to contain `S3Express bucket name is not a valid virtual hostable name.` but it was {:?}",

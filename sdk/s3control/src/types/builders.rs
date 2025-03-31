@@ -117,6 +117,8 @@ pub use crate::types::_lifecycle_rule_and_operator::LifecycleRuleAndOperatorBuil
 
 pub use crate::types::_lifecycle_expiration::LifecycleExpirationBuilder;
 
+pub use crate::types::_scope::ScopeBuilder;
+
 pub use crate::types::_object_lambda_configuration::ObjectLambdaConfigurationBuilder;
 
 pub use crate::types::_object_lambda_transformation_configuration::ObjectLambdaTransformationConfigurationBuilder;

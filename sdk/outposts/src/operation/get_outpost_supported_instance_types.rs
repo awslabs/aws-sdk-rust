@@ -223,14 +223,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetOutpostSu
                         query.push_kv("OrderId", &::aws_smithy_http::query::fmt_string(inner_2));
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_3) = &_input.asset_id {
                     {
-                        query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
+                        query.push_kv("AssetId", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
                     {
-                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_4));
+                        query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_5) = &_input.next_token {
+                    {
+                        query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(inner_5));
                     }
                 }
                 ::std::result::Result::Ok(())

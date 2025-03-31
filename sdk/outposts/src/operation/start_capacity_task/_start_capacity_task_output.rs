@@ -9,6 +9,8 @@ pub struct StartCapacityTaskOutput {
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the Amazon Web Services Outposts order of the host associated with the capacity task.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>List of the instance pools requested in the specified capacity task.</p>
     pub requested_instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
     /// <p>User-specified instances that must not be stopped in order to free up the capacity needed to run the capacity task.</p>
@@ -47,6 +49,10 @@ impl StartCapacityTaskOutput {
     /// <p>ID of the Amazon Web Services Outposts order of the host associated with the capacity task.</p>
     pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
     }
     /// <p>List of the instance pools requested in the specified capacity task.</p>
     ///
@@ -112,6 +118,7 @@ pub struct StartCapacityTaskOutputBuilder {
     pub(crate) capacity_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) requested_instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
     pub(crate) instances_to_exclude: ::std::option::Option<crate::types::InstancesToExclude>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -165,6 +172,20 @@ impl StartCapacityTaskOutputBuilder {
     /// <p>ID of the Amazon Web Services Outposts order of the host associated with the capacity task.</p>
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_id
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_id = input;
+        self
+    }
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// Appends an item to `requested_instance_pools`.
     ///
@@ -331,6 +352,7 @@ impl StartCapacityTaskOutputBuilder {
             capacity_task_id: self.capacity_task_id,
             outpost_id: self.outpost_id,
             order_id: self.order_id,
+            asset_id: self.asset_id,
             requested_instance_pools: self.requested_instance_pools,
             instances_to_exclude: self.instances_to_exclude,
             dry_run: self.dry_run.unwrap_or_default(),

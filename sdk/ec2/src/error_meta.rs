@@ -757,6 +757,27 @@ impl From<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAd
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_route_server::AssociateRouteServerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_route_server::AssociateRouteServerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_route_server::AssociateRouteServerError> for Error {
+    fn from(err: crate::operation::associate_route_server::AssociateRouteServerError) -> Self {
+        match err {
+            crate::operation::associate_route_server::AssociateRouteServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_route_table::AssociateRouteTableError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2739,6 +2760,74 @@ impl From<crate::operation::create_route::CreateRouteError> for Error {
     fn from(err: crate::operation::create_route::CreateRouteError) -> Self {
         match err {
             crate::operation::create_route::CreateRouteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route_server::CreateRouteServerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route_server::CreateRouteServerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_route_server::CreateRouteServerError> for Error {
+    fn from(err: crate::operation::create_route_server::CreateRouteServerError) -> Self {
+        match err {
+            crate::operation::create_route_server::CreateRouteServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route_server_endpoint::CreateRouteServerEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route_server_endpoint::CreateRouteServerEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_route_server_endpoint::CreateRouteServerEndpointError> for Error {
+    fn from(err: crate::operation::create_route_server_endpoint::CreateRouteServerEndpointError) -> Self {
+        match err {
+            crate::operation::create_route_server_endpoint::CreateRouteServerEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route_server_peer::CreateRouteServerPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_route_server_peer::CreateRouteServerPeerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_route_server_peer::CreateRouteServerPeerError> for Error {
+    fn from(err: crate::operation::create_route_server_peer::CreateRouteServerPeerError) -> Self {
+        match err {
+            crate::operation::create_route_server_peer::CreateRouteServerPeerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4745,6 +4834,74 @@ impl From<crate::operation::delete_route::DeleteRouteError> for Error {
     fn from(err: crate::operation::delete_route::DeleteRouteError) -> Self {
         match err {
             crate::operation::delete_route::DeleteRouteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route_server::DeleteRouteServerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route_server::DeleteRouteServerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_route_server::DeleteRouteServerError> for Error {
+    fn from(err: crate::operation::delete_route_server::DeleteRouteServerError) -> Self {
+        match err {
+            crate::operation::delete_route_server::DeleteRouteServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route_server_endpoint::DeleteRouteServerEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route_server_endpoint::DeleteRouteServerEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_route_server_endpoint::DeleteRouteServerEndpointError> for Error {
+    fn from(err: crate::operation::delete_route_server_endpoint::DeleteRouteServerEndpointError) -> Self {
+        match err {
+            crate::operation::delete_route_server_endpoint::DeleteRouteServerEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route_server_peer::DeleteRouteServerPeerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_route_server_peer::DeleteRouteServerPeerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_route_server_peer::DeleteRouteServerPeerError> for Error {
+    fn from(err: crate::operation::delete_route_server_peer::DeleteRouteServerPeerError) -> Self {
+        match err {
+            crate::operation::delete_route_server_peer::DeleteRouteServerPeerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8625,6 +8782,79 @@ impl From<crate::operation::describe_reserved_instances_offerings::DescribeReser
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsError> for Error {
+    fn from(err: crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsError) -> Self {
+        match err {
+            crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_route_server_peers::DescribeRouteServerPeersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_route_server_peers::DescribeRouteServerPeersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_route_server_peers::DescribeRouteServerPeersError> for Error {
+    fn from(err: crate::operation::describe_route_server_peers::DescribeRouteServerPeersError) -> Self {
+        match err {
+            crate::operation::describe_route_server_peers::DescribeRouteServerPeersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_route_servers::DescribeRouteServersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_route_servers::DescribeRouteServersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_route_servers::DescribeRouteServersError> for Error {
+    fn from(err: crate::operation::describe_route_servers::DescribeRouteServersError) -> Self {
+        match err {
+            crate::operation::describe_route_servers::DescribeRouteServersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_route_tables::DescribeRouteTablesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10793,6 +11023,35 @@ impl From<crate::operation::disable_ipam_organization_admin_account::DisableIpam
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_route_server_propagation::DisableRouteServerPropagationError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_route_server_propagation::DisableRouteServerPropagationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_route_server_propagation::DisableRouteServerPropagationError> for Error {
+    fn from(err: crate::operation::disable_route_server_propagation::DisableRouteServerPropagationError) -> Self {
+        match err {
+            crate::operation::disable_route_server_propagation::DisableRouteServerPropagationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError, R>>
     for Error
 where
@@ -11234,6 +11493,30 @@ impl From<crate::operation::disassociate_nat_gateway_address::DisassociateNatGat
     fn from(err: crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError) -> Self {
         match err {
             crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_route_server::DisassociateRouteServerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_route_server::DisassociateRouteServerError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_route_server::DisassociateRouteServerError> for Error {
+    fn from(err: crate::operation::disassociate_route_server::DisassociateRouteServerError) -> Self {
+        match err {
+            crate::operation::disassociate_route_server::DisassociateRouteServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -11795,6 +12078,34 @@ impl From<crate::operation::enable_reachability_analyzer_organization_sharing::E
             crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharingError::Unhandled(
                 inner,
             ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::enable_route_server_propagation::EnableRouteServerPropagationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_route_server_propagation::EnableRouteServerPropagationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_route_server_propagation::EnableRouteServerPropagationError> for Error {
+    fn from(err: crate::operation::enable_route_server_propagation::EnableRouteServerPropagationError) -> Self {
+        match err {
+            crate::operation::enable_route_server_propagation::EnableRouteServerPropagationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -13067,6 +13378,86 @@ impl From<crate::operation::get_reserved_instances_exchange_quote::GetReservedIn
             crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_route_server_associations::GetRouteServerAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_route_server_associations::GetRouteServerAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_route_server_associations::GetRouteServerAssociationsError> for Error {
+    fn from(err: crate::operation::get_route_server_associations::GetRouteServerAssociationsError) -> Self {
+        match err {
+            crate::operation::get_route_server_associations::GetRouteServerAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_route_server_propagations::GetRouteServerPropagationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_route_server_propagations::GetRouteServerPropagationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_route_server_propagations::GetRouteServerPropagationsError> for Error {
+    fn from(err: crate::operation::get_route_server_propagations::GetRouteServerPropagationsError) -> Self {
+        match err {
+            crate::operation::get_route_server_propagations::GetRouteServerPropagationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_route_server_routing_database::GetRouteServerRoutingDatabaseError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_route_server_routing_database::GetRouteServerRoutingDatabaseError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_route_server_routing_database::GetRouteServerRoutingDatabaseError> for Error {
+    fn from(err: crate::operation::get_route_server_routing_database::GetRouteServerRoutingDatabaseError) -> Self {
+        match err {
+            crate::operation::get_route_server_routing_database::GetRouteServerRoutingDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -14741,6 +15132,27 @@ impl From<crate::operation::modify_reserved_instances::ModifyReservedInstancesEr
     fn from(err: crate::operation::modify_reserved_instances::ModifyReservedInstancesError) -> Self {
         match err {
             crate::operation::modify_reserved_instances::ModifyReservedInstancesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_route_server::ModifyRouteServerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_route_server::ModifyRouteServerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_route_server::ModifyRouteServerError> for Error {
+    fn from(err: crate::operation::modify_route_server::ModifyRouteServerError) -> Self {
+        match err {
+            crate::operation::modify_route_server::ModifyRouteServerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

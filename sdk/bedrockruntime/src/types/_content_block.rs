@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum ContentBlock {
+    /// <p>CachePoint to include in the message.</p>
+    CachePoint(crate::types::CachePointBlock),
     /// <p>A document to include in the message.</p>
     Document(crate::types::DocumentBlock),
     /// <p>Contains the content to assess with the guardrail. If you don't specify <code>guardContent</code> in a call to the Converse API, the guardrail (if passed in the Converse API) assesses the entire message.</p>
@@ -34,6 +36,19 @@ pub enum ContentBlock {
     Unknown,
 }
 impl ContentBlock {
+    /// Tries to convert the enum instance into [`CachePoint`](crate::types::ContentBlock::CachePoint), extracting the inner [`CachePointBlock`](crate::types::CachePointBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cache_point(&self) -> ::std::result::Result<&crate::types::CachePointBlock, &Self> {
+        if let ContentBlock::CachePoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CachePoint`](crate::types::ContentBlock::CachePoint).
+    pub fn is_cache_point(&self) -> bool {
+        self.as_cache_point().is_ok()
+    }
     /// Tries to convert the enum instance into [`Document`](crate::types::ContentBlock::Document), extracting the inner [`DocumentBlock`](crate::types::DocumentBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_document(&self) -> ::std::result::Result<&crate::types::DocumentBlock, &Self> {
@@ -146,6 +161,7 @@ impl ContentBlock {
 impl ::std::fmt::Debug for ContentBlock {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            ContentBlock::CachePoint(val) => f.debug_tuple("CachePoint").field(&val).finish(),
             ContentBlock::Document(val) => f.debug_tuple("Document").field(&val).finish(),
             ContentBlock::GuardContent(val) => f.debug_tuple("GuardContent").field(&val).finish(),
             ContentBlock::Image(val) => f.debug_tuple("Image").field(&val).finish(),

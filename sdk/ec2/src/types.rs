@@ -809,6 +809,14 @@ pub use crate::types::_security_group_rule_update::SecurityGroupRuleUpdate;
 
 pub use crate::types::_security_group_rule_request::SecurityGroupRuleRequest;
 
+pub use crate::types::_route_server::RouteServer;
+
+pub use crate::types::_route_server_persist_routes_state::RouteServerPersistRoutesState;
+
+pub use crate::types::_route_server_state::RouteServerState;
+
+pub use crate::types::_route_server_persist_routes_action::RouteServerPersistRoutesAction;
+
 pub use crate::types::_reserved_instances_configuration::ReservedInstancesConfiguration;
 
 pub use crate::types::_scope::Scope;
@@ -1094,6 +1102,22 @@ pub use crate::types::_architecture_type::ArchitectureType;
 pub use crate::types::_snapshot_block_public_access_state::SnapshotBlockPublicAccessState;
 
 pub use crate::types::_security_group_for_vpc::SecurityGroupForVpc;
+
+pub use crate::types::_route_server_route::RouteServerRoute;
+
+pub use crate::types::_route_server_route_status::RouteServerRouteStatus;
+
+pub use crate::types::_route_server_route_installation_detail::RouteServerRouteInstallationDetail;
+
+pub use crate::types::_route_server_route_installation_status::RouteServerRouteInstallationStatus;
+
+pub use crate::types::_route_server_propagation::RouteServerPropagation;
+
+pub use crate::types::_route_server_propagation_state::RouteServerPropagationState;
+
+pub use crate::types::_route_server_association::RouteServerAssociation;
+
+pub use crate::types::_route_server_association_state::RouteServerAssociationState;
 
 pub use crate::types::_target_reservation_value::TargetReservationValue;
 
@@ -1606,6 +1630,26 @@ pub use crate::types::_route_origin::RouteOrigin;
 pub use crate::types::_propagating_vgw::PropagatingVgw;
 
 pub use crate::types::_route_table_association::RouteTableAssociation;
+
+pub use crate::types::_route_server_peer::RouteServerPeer;
+
+pub use crate::types::_route_server_bfd_status::RouteServerBfdStatus;
+
+pub use crate::types::_route_server_bfd_state::RouteServerBfdState;
+
+pub use crate::types::_route_server_bgp_status::RouteServerBgpStatus;
+
+pub use crate::types::_route_server_bgp_state::RouteServerBgpState;
+
+pub use crate::types::_route_server_bgp_options::RouteServerBgpOptions;
+
+pub use crate::types::_route_server_peer_liveness_mode::RouteServerPeerLivenessMode;
+
+pub use crate::types::_route_server_peer_state::RouteServerPeerState;
+
+pub use crate::types::_route_server_endpoint::RouteServerEndpoint;
+
+pub use crate::types::_route_server_endpoint_state::RouteServerEndpointState;
 
 pub use crate::types::_reserved_instances_offering::ReservedInstancesOffering;
 
@@ -2204,6 +2248,8 @@ pub use crate::types::_snapshot_location_enum::SnapshotLocationEnum;
 pub use crate::types::_copy_tags_from_source::CopyTagsFromSource;
 
 pub use crate::types::_instance_specification::InstanceSpecification;
+
+pub use crate::types::_route_server_bgp_options_request::RouteServerBgpOptionsRequest;
 
 pub use crate::types::_price_schedule_specification::PriceScheduleSpecification;
 
@@ -4012,6 +4058,52 @@ mod _root_device_type;
 mod _route;
 
 mod _route_origin;
+
+mod _route_server;
+
+mod _route_server_association;
+
+mod _route_server_association_state;
+
+mod _route_server_bfd_state;
+
+mod _route_server_bfd_status;
+
+mod _route_server_bgp_options;
+
+mod _route_server_bgp_options_request;
+
+mod _route_server_bgp_state;
+
+mod _route_server_bgp_status;
+
+mod _route_server_endpoint;
+
+mod _route_server_endpoint_state;
+
+mod _route_server_peer;
+
+mod _route_server_peer_liveness_mode;
+
+mod _route_server_peer_state;
+
+mod _route_server_persist_routes_action;
+
+mod _route_server_persist_routes_state;
+
+mod _route_server_propagation;
+
+mod _route_server_propagation_state;
+
+mod _route_server_route;
+
+mod _route_server_route_installation_detail;
+
+mod _route_server_route_installation_status;
+
+mod _route_server_route_status;
+
+mod _route_server_state;
 
 mod _route_state;
 

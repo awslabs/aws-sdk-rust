@@ -6,7 +6,7 @@
 pub struct UpdatedSessionActionInfo {
     /// <p>The status of the session upon completion.</p>
     pub completed_status: ::std::option::Option<crate::types::CompletedStatus>,
-    /// <p>The process exit code.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub process_exit_code: ::std::option::Option<i32>,
     /// <p>A message to indicate the progress of the updated session action.</p>
     pub progress_message: ::std::option::Option<::std::string::String>,
@@ -24,7 +24,7 @@ impl UpdatedSessionActionInfo {
     pub fn completed_status(&self) -> ::std::option::Option<&crate::types::CompletedStatus> {
         self.completed_status.as_ref()
     }
-    /// <p>The process exit code.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn process_exit_code(&self) -> ::std::option::Option<i32> {
         self.process_exit_code
     }
@@ -96,17 +96,17 @@ impl UpdatedSessionActionInfoBuilder {
     pub fn get_completed_status(&self) -> &::std::option::Option<crate::types::CompletedStatus> {
         &self.completed_status
     }
-    /// <p>The process exit code.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn process_exit_code(mut self, input: i32) -> Self {
         self.process_exit_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The process exit code.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn set_process_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.process_exit_code = input;
         self
     }
-    /// <p>The process exit code.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn get_process_exit_code(&self) -> &::std::option::Option<i32> {
         &self.process_exit_code
     }

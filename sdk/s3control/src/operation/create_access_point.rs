@@ -265,6 +265,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAccessP
                     .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("bucket", "A required field was not set"))?,
             ))
+            .set_access_point_name(Some(
+                _input
+                    .name
+                    .clone()
+                    .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
+                    .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("name", "A required field was not set"))?,
+            ))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

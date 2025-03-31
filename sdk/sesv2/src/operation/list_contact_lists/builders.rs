@@ -23,6 +23,7 @@ impl crate::operation::list_contact_lists::builders::ListContactListsInputBuilde
 /// Fluent builder constructing a request to `ListContactLists`.
 ///
 /// <p>Lists all of the contact lists available.</p>
+/// <p>If your output includes a "NextToken" field with a string value, this indicates there may be additional contacts on the filtered list - regardless of the number of contacts returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContactListsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

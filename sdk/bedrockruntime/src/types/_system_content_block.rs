@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SystemContentBlock {
+    /// <p>CachePoint to include in the system prompt.</p>
+    CachePoint(crate::types::CachePointBlock),
     /// <p>A content block to assess with the guardrail. Use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a> or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a> API operations.</p>
     /// <p>For more information, see <i>Use a guardrail with the Converse API</i> in the <i>Amazon Bedrock User Guide</i>.</p>
     GuardContent(crate::types::GuardrailConverseContentBlock),
@@ -20,6 +22,19 @@ pub enum SystemContentBlock {
     Unknown,
 }
 impl SystemContentBlock {
+    /// Tries to convert the enum instance into [`CachePoint`](crate::types::SystemContentBlock::CachePoint), extracting the inner [`CachePointBlock`](crate::types::CachePointBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_cache_point(&self) -> ::std::result::Result<&crate::types::CachePointBlock, &Self> {
+        if let SystemContentBlock::CachePoint(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CachePoint`](crate::types::SystemContentBlock::CachePoint).
+    pub fn is_cache_point(&self) -> bool {
+        self.as_cache_point().is_ok()
+    }
     /// Tries to convert the enum instance into [`GuardContent`](crate::types::SystemContentBlock::GuardContent), extracting the inner [`GuardrailConverseContentBlock`](crate::types::GuardrailConverseContentBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_guard_content(&self) -> ::std::result::Result<&crate::types::GuardrailConverseContentBlock, &Self> {

@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`worker_updated_at(Option<DateTime>)`](crate::operation::get_session_action::GetSessionActionOutput::worker_updated_at): <p>The Linux timestamp of the date and time the session action was last updated.</p>
     ///   - [`progress_percent(Option<f32>)`](crate::operation::get_session_action::GetSessionActionOutput::progress_percent): <p>The percentage completed for a session action.</p>
     ///   - [`session_id(String)`](crate::operation::get_session_action::GetSessionActionOutput::session_id): <p>The session ID for the session action.</p>
-    ///   - [`process_exit_code(Option<i32>)`](crate::operation::get_session_action::GetSessionActionOutput::process_exit_code): <p>The exit code to exit the session.</p>
+    ///   - [`process_exit_code(Option<i32>)`](crate::operation::get_session_action::GetSessionActionOutput::process_exit_code): <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     ///   - [`progress_message(Option<String>)`](crate::operation::get_session_action::GetSessionActionOutput::progress_message): <p>The message that communicates the progress of the session action.</p>
     ///   - [`definition(Option<SessionActionDefinition>)`](crate::operation::get_session_action::GetSessionActionOutput::definition): <p>The session action definition.</p>
     ///   - [`acquired_limits(Option<Vec::<AcquiredLimit>>)`](crate::operation::get_session_action::GetSessionActionOutput::acquired_limits): <p>The limits and their amounts acquired during a session action. If no limits were acquired during the session, this field isn't returned.</p>

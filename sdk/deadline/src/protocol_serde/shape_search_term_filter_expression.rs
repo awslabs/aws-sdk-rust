@@ -6,5 +6,8 @@ pub fn ser_search_term_filter_expression(
     {
         object.key("searchTerm").string(input.search_term.as_str());
     }
+    {
+        object.key("matchType").string(input.match_type.as_str());
+    }
     Ok(())
 }

@@ -36,6 +36,7 @@
 ///     UpdateParamType::PodIdentityAssociations => { /* ... */ },
 ///     UpdateParamType::PublicAccessCidrs => { /* ... */ },
 ///     UpdateParamType::ReleaseVersion => { /* ... */ },
+///     UpdateParamType::RemoteNetworkConfig => { /* ... */ },
 ///     UpdateParamType::ResolveConflicts => { /* ... */ },
 ///     UpdateParamType::SecurityGroups => { /* ... */ },
 ///     UpdateParamType::ServiceAccountRoleArn => { /* ... */ },
@@ -124,6 +125,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     ReleaseVersion,
     #[allow(missing_docs)] // documentation missing in model
+    RemoteNetworkConfig,
+    #[allow(missing_docs)] // documentation missing in model
     ResolveConflicts,
     #[allow(missing_docs)] // documentation missing in model
     SecurityGroups,
@@ -176,6 +179,7 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "PodIdentityAssociations" => UpdateParamType::PodIdentityAssociations,
             "PublicAccessCidrs" => UpdateParamType::PublicAccessCidrs,
             "ReleaseVersion" => UpdateParamType::ReleaseVersion,
+            "RemoteNetworkConfig" => UpdateParamType::RemoteNetworkConfig,
             "ResolveConflicts" => UpdateParamType::ResolveConflicts,
             "SecurityGroups" => UpdateParamType::SecurityGroups,
             "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
@@ -226,6 +230,7 @@ impl UpdateParamType {
             UpdateParamType::PodIdentityAssociations => "PodIdentityAssociations",
             UpdateParamType::PublicAccessCidrs => "PublicAccessCidrs",
             UpdateParamType::ReleaseVersion => "ReleaseVersion",
+            UpdateParamType::RemoteNetworkConfig => "RemoteNetworkConfig",
             UpdateParamType::ResolveConflicts => "ResolveConflicts",
             UpdateParamType::SecurityGroups => "SecurityGroups",
             UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
@@ -267,6 +272,7 @@ impl UpdateParamType {
             "PodIdentityAssociations",
             "PublicAccessCidrs",
             "ReleaseVersion",
+            "RemoteNetworkConfig",
             "ResolveConflicts",
             "SecurityGroups",
             "ServiceAccountRoleArn",
@@ -325,6 +331,7 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::PodIdentityAssociations => write!(f, "PodIdentityAssociations"),
             UpdateParamType::PublicAccessCidrs => write!(f, "PublicAccessCidrs"),
             UpdateParamType::ReleaseVersion => write!(f, "ReleaseVersion"),
+            UpdateParamType::RemoteNetworkConfig => write!(f, "RemoteNetworkConfig"),
             UpdateParamType::ResolveConflicts => write!(f, "ResolveConflicts"),
             UpdateParamType::SecurityGroups => write!(f, "SecurityGroups"),
             UpdateParamType::ServiceAccountRoleArn => write!(f, "ServiceAccountRoleArn"),

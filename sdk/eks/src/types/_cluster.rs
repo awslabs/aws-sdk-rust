@@ -51,7 +51,7 @@ pub struct Cluster {
     pub upgrade_policy: ::std::option::Option<crate::types::UpgradePolicyResponse>,
     /// <p>The configuration for zonal shift for the cluster.</p>
     pub zonal_shift_config: ::std::option::Option<crate::types::ZonalShiftConfigResponse>,
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub remote_network_config: ::std::option::Option<crate::types::RemoteNetworkConfigResponse>,
     /// <p>Indicates the current configuration of the compute capability on your EKS Auto Mode cluster. For example, if the capability is enabled or disabled. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account. For more information, see EKS Auto Mode compute capability in the <i>Amazon EKS User Guide</i>.</p>
     pub compute_config: ::std::option::Option<crate::types::ComputeConfigResponse>,
@@ -154,7 +154,7 @@ impl Cluster {
     pub fn zonal_shift_config(&self) -> ::std::option::Option<&crate::types::ZonalShiftConfigResponse> {
         self.zonal_shift_config.as_ref()
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn remote_network_config(&self) -> ::std::option::Option<&crate::types::RemoteNetworkConfigResponse> {
         self.remote_network_config.as_ref()
     }
@@ -543,17 +543,17 @@ impl ClusterBuilder {
     pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigResponse> {
         &self.zonal_shift_config
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn remote_network_config(mut self, input: crate::types::RemoteNetworkConfigResponse) -> Self {
         self.remote_network_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn set_remote_network_config(mut self, input: ::std::option::Option<crate::types::RemoteNetworkConfigResponse>) -> Self {
         self.remote_network_config = input;
         self
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigResponse> {
         &self.remote_network_config
     }

@@ -739,6 +739,36 @@ pub(crate) fn reflens_describe_reserved_instances_offerings_output_output_next_t
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_route_server_endpoints_output_output_next_token(
+    input: &crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_route_server_peers_output_output_next_token(
+    input: &crate::operation::describe_route_server_peers::DescribeRouteServerPeersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_route_servers_output_output_next_token(
+    input: &crate::operation::describe_route_servers::DescribeRouteServersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_route_tables_output_output_next_token(
     input: &crate::operation::describe_route_tables::DescribeRouteTablesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2183,6 +2213,36 @@ pub(crate) fn lens_describe_reserved_instances_offerings_output_output_reserved_
     input: crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesOffering>> {
     let input = match input.reserved_instances_offerings {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_route_server_endpoints_output_output_route_server_endpoints(
+    input: crate::operation::describe_route_server_endpoints::DescribeRouteServerEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RouteServerEndpoint>> {
+    let input = match input.route_server_endpoints {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_route_server_peers_output_output_route_server_peers(
+    input: crate::operation::describe_route_server_peers::DescribeRouteServerPeersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RouteServerPeer>> {
+    let input = match input.route_server_peers {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_route_servers_output_output_route_servers(
+    input: crate::operation::describe_route_servers::DescribeRouteServersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RouteServer>> {
+    let input = match input.route_servers {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

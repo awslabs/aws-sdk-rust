@@ -24,7 +24,10 @@ pub struct DescribedUser {
     pub posix_profile: ::std::option::Option<crate::types::PosixProfile>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub role: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
+    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p><note>
+    /// <p>To delete the public key body, set its value to zero keys, as shown here:</p>
+    /// <p><code>SshPublicKeys: \[\]</code></p>
+    /// </note>
     pub ssh_public_keys: ::std::option::Option<::std::vec::Vec<crate::types::SshPublicKey>>,
     /// <p>Specifies the key-value pairs for the user requested. Tag can be used to search for and group users for a variety of purposes.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -69,7 +72,10 @@ impl DescribedUser {
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
+    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p><note>
+    /// <p>To delete the public key body, set its value to zero keys, as shown here:</p>
+    /// <p><code>SshPublicKeys: \[\]</code></p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ssh_public_keys.is_none()`.
     pub fn ssh_public_keys(&self) -> &[crate::types::SshPublicKey] {
@@ -236,19 +242,28 @@ impl DescribedUserBuilder {
     ///
     /// To override the contents of this collection use [`set_ssh_public_keys`](Self::set_ssh_public_keys).
     ///
-    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
+    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p><note>
+    /// <p>To delete the public key body, set its value to zero keys, as shown here:</p>
+    /// <p><code>SshPublicKeys: \[\]</code></p>
+    /// </note>
     pub fn ssh_public_keys(mut self, input: crate::types::SshPublicKey) -> Self {
         let mut v = self.ssh_public_keys.unwrap_or_default();
         v.push(input);
         self.ssh_public_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
+    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p><note>
+    /// <p>To delete the public key body, set its value to zero keys, as shown here:</p>
+    /// <p><code>SshPublicKeys: \[\]</code></p>
+    /// </note>
     pub fn set_ssh_public_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SshPublicKey>>) -> Self {
         self.ssh_public_keys = input;
         self
     }
-    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p>
+    /// <p>Specifies the public key portion of the Secure Shell (SSH) keys stored for the described user.</p><note>
+    /// <p>To delete the public key body, set its value to zero keys, as shown here:</p>
+    /// <p><code>SshPublicKeys: \[\]</code></p>
+    /// </note>
     pub fn get_ssh_public_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SshPublicKey>> {
         &self.ssh_public_keys
     }

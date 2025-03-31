@@ -17,7 +17,7 @@ pub struct GetSessionActionOutput {
     pub progress_percent: ::std::option::Option<f32>,
     /// <p>The session ID for the session action.</p>
     pub session_id: ::std::string::String,
-    /// <p>The exit code to exit the session.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub process_exit_code: ::std::option::Option<i32>,
     /// <p>The message that communicates the progress of the session action.</p>
     pub progress_message: ::std::option::Option<::std::string::String>,
@@ -58,7 +58,7 @@ impl GetSessionActionOutput {
         use std::ops::Deref;
         self.session_id.deref()
     }
-    /// <p>The exit code to exit the session.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn process_exit_code(&self) -> ::std::option::Option<i32> {
         self.process_exit_code
     }
@@ -226,17 +226,17 @@ impl GetSessionActionOutputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
-    /// <p>The exit code to exit the session.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn process_exit_code(mut self, input: i32) -> Self {
         self.process_exit_code = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exit code to exit the session.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn set_process_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.process_exit_code = input;
         self
     }
-    /// <p>The exit code to exit the session.</p>
+    /// <p>The process exit code. The default Deadline Cloud worker agent converts unsigned 32-bit exit codes to signed 32-bit exit codes.</p>
     pub fn get_process_exit_code(&self) -> &::std::option::Option<i32> {
         &self.process_exit_code
     }

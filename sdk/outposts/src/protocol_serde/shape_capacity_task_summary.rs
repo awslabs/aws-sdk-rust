@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "AssetId" => {
+                            builder = builder.set_asset_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "CapacityTaskStatus" => {
                             builder = builder.set_capacity_task_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

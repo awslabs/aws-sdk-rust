@@ -139,6 +139,8 @@ pub(crate) mod shape_async_invoke_s3_output_data_config;
 
 pub(crate) mod shape_async_invoke_summary;
 
+pub(crate) mod shape_cache_point_block;
+
 pub(crate) mod shape_content_block;
 
 pub(crate) mod shape_content_block_delta_event;

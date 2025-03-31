@@ -337,6 +337,8 @@ pub use crate::types::_comparison_operator::ComparisonOperator;
 
 pub use crate::types::_search_term_filter_expression::SearchTermFilterExpression;
 
+pub use crate::types::_search_term_matching_type::SearchTermMatchingType;
+
 pub use crate::types::_parameter_filter_expression::ParameterFilterExpression;
 
 pub use crate::types::_date_time_filter_expression::DateTimeFilterExpression;
@@ -598,6 +600,8 @@ mod _search_grouped_filter_expressions;
 mod _search_sort_expression;
 
 mod _search_term_filter_expression;
+
+mod _search_term_matching_type;
 
 mod _service_managed_ec2_fleet_configuration;
 

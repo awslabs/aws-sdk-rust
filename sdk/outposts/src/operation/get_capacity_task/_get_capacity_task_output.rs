@@ -9,6 +9,8 @@ pub struct GetCapacityTaskOutput {
     pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the Amazon Web Services Outposts order associated with the specified capacity task.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>List of instance pools requested in the capacity task.</p>
     pub requested_instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
     /// <p>Instances that the user specified they cannot stop in order to free up the capacity needed to run the capacity task.</p>
@@ -23,7 +25,15 @@ pub struct GetCapacityTaskOutput {
     /// <li>
     /// <p><code>IN_PROGRESS</code> - The capacity task is running and cannot be cancelled.</p></li>
     /// <li>
+    /// <p><code>FAILED</code> - The capacity task could not be completed.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The capacity task has completed successfully.</p></li>
+    /// <li>
     /// <p><code>WAITING_FOR_EVACUATION</code> - The capacity task requires capacity to run. You must stop the recommended EC2 running instances to free up capacity for the task to run.</p></li>
+    /// <li>
+    /// <p><code>CANCELLATION_IN_PROGRESS</code> - The capacity task has been cancelled and is in the process of cleaning up resources.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - The capacity task is cancelled.</p></li>
     /// </ul>
     pub capacity_task_status: ::std::option::Option<crate::types::CapacityTaskStatus>,
     /// <p>Reason why the capacity task failed.</p>
@@ -57,6 +67,10 @@ impl GetCapacityTaskOutput {
     pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
     }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
     /// <p>List of instance pools requested in the capacity task.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requested_instance_pools.is_none()`.
@@ -79,7 +93,15 @@ impl GetCapacityTaskOutput {
     /// <li>
     /// <p><code>IN_PROGRESS</code> - The capacity task is running and cannot be cancelled.</p></li>
     /// <li>
+    /// <p><code>FAILED</code> - The capacity task could not be completed.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The capacity task has completed successfully.</p></li>
+    /// <li>
     /// <p><code>WAITING_FOR_EVACUATION</code> - The capacity task requires capacity to run. You must stop the recommended EC2 running instances to free up capacity for the task to run.</p></li>
+    /// <li>
+    /// <p><code>CANCELLATION_IN_PROGRESS</code> - The capacity task has been cancelled and is in the process of cleaning up resources.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - The capacity task is cancelled.</p></li>
     /// </ul>
     pub fn capacity_task_status(&self) -> ::std::option::Option<&crate::types::CapacityTaskStatus> {
         self.capacity_task_status.as_ref()
@@ -130,6 +152,7 @@ pub struct GetCapacityTaskOutputBuilder {
     pub(crate) capacity_task_id: ::std::option::Option<::std::string::String>,
     pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) requested_instance_pools: ::std::option::Option<::std::vec::Vec<crate::types::InstanceTypeCapacity>>,
     pub(crate) instances_to_exclude: ::std::option::Option<crate::types::InstancesToExclude>,
     pub(crate) dry_run: ::std::option::Option<bool>,
@@ -183,6 +206,20 @@ impl GetCapacityTaskOutputBuilder {
     /// <p>ID of the Amazon Web Services Outposts order associated with the specified capacity task.</p>
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_id
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_id = input;
+        self
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// Appends an item to `requested_instance_pools`.
     ///
@@ -240,7 +277,15 @@ impl GetCapacityTaskOutputBuilder {
     /// <li>
     /// <p><code>IN_PROGRESS</code> - The capacity task is running and cannot be cancelled.</p></li>
     /// <li>
+    /// <p><code>FAILED</code> - The capacity task could not be completed.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The capacity task has completed successfully.</p></li>
+    /// <li>
     /// <p><code>WAITING_FOR_EVACUATION</code> - The capacity task requires capacity to run. You must stop the recommended EC2 running instances to free up capacity for the task to run.</p></li>
+    /// <li>
+    /// <p><code>CANCELLATION_IN_PROGRESS</code> - The capacity task has been cancelled and is in the process of cleaning up resources.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - The capacity task is cancelled.</p></li>
     /// </ul>
     pub fn capacity_task_status(mut self, input: crate::types::CapacityTaskStatus) -> Self {
         self.capacity_task_status = ::std::option::Option::Some(input);
@@ -254,7 +299,15 @@ impl GetCapacityTaskOutputBuilder {
     /// <li>
     /// <p><code>IN_PROGRESS</code> - The capacity task is running and cannot be cancelled.</p></li>
     /// <li>
+    /// <p><code>FAILED</code> - The capacity task could not be completed.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The capacity task has completed successfully.</p></li>
+    /// <li>
     /// <p><code>WAITING_FOR_EVACUATION</code> - The capacity task requires capacity to run. You must stop the recommended EC2 running instances to free up capacity for the task to run.</p></li>
+    /// <li>
+    /// <p><code>CANCELLATION_IN_PROGRESS</code> - The capacity task has been cancelled and is in the process of cleaning up resources.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - The capacity task is cancelled.</p></li>
     /// </ul>
     pub fn set_capacity_task_status(mut self, input: ::std::option::Option<crate::types::CapacityTaskStatus>) -> Self {
         self.capacity_task_status = input;
@@ -268,7 +321,15 @@ impl GetCapacityTaskOutputBuilder {
     /// <li>
     /// <p><code>IN_PROGRESS</code> - The capacity task is running and cannot be cancelled.</p></li>
     /// <li>
+    /// <p><code>FAILED</code> - The capacity task could not be completed.</p></li>
+    /// <li>
+    /// <p><code>COMPLETED</code> - The capacity task has completed successfully.</p></li>
+    /// <li>
     /// <p><code>WAITING_FOR_EVACUATION</code> - The capacity task requires capacity to run. You must stop the recommended EC2 running instances to free up capacity for the task to run.</p></li>
+    /// <li>
+    /// <p><code>CANCELLATION_IN_PROGRESS</code> - The capacity task has been cancelled and is in the process of cleaning up resources.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> - The capacity task is cancelled.</p></li>
     /// </ul>
     pub fn get_capacity_task_status(&self) -> &::std::option::Option<crate::types::CapacityTaskStatus> {
         &self.capacity_task_status
@@ -376,6 +437,7 @@ impl GetCapacityTaskOutputBuilder {
             capacity_task_id: self.capacity_task_id,
             outpost_id: self.outpost_id,
             order_id: self.order_id,
+            asset_id: self.asset_id,
             requested_instance_pools: self.requested_instance_pools,
             instances_to_exclude: self.instances_to_exclude,
             dry_run: self.dry_run.unwrap_or_default(),

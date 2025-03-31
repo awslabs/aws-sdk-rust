@@ -18,6 +18,9 @@ pub struct DescribedWebApp {
     pub web_app_units: ::std::option::Option<crate::types::WebAppUnits>,
     /// <p>Key-value pairs that can be used to group and search for web apps. Tags are metadata attached to web apps for any purpose.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If your web app was created in an Amazon Web Services GovCloud (US) Region, the value of this parameter can be <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
+    pub web_app_endpoint_policy: ::std::option::Option<crate::types::WebAppEndpointPolicy>,
 }
 impl DescribedWebApp {
     /// <p>The Amazon Resource Name (ARN) of the web app.</p>
@@ -52,6 +55,11 @@ impl DescribedWebApp {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If your web app was created in an Amazon Web Services GovCloud (US) Region, the value of this parameter can be <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
+    pub fn web_app_endpoint_policy(&self) -> ::std::option::Option<&crate::types::WebAppEndpointPolicy> {
+        self.web_app_endpoint_policy.as_ref()
+    }
 }
 impl DescribedWebApp {
     /// Creates a new builder-style object to manufacture [`DescribedWebApp`](crate::types::DescribedWebApp).
@@ -71,6 +79,7 @@ pub struct DescribedWebAppBuilder {
     pub(crate) web_app_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) web_app_units: ::std::option::Option<crate::types::WebAppUnits>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) web_app_endpoint_policy: ::std::option::Option<crate::types::WebAppEndpointPolicy>,
 }
 impl DescribedWebAppBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web app.</p>
@@ -182,6 +191,23 @@ impl DescribedWebAppBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If your web app was created in an Amazon Web Services GovCloud (US) Region, the value of this parameter can be <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
+    pub fn web_app_endpoint_policy(mut self, input: crate::types::WebAppEndpointPolicy) -> Self {
+        self.web_app_endpoint_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If your web app was created in an Amazon Web Services GovCloud (US) Region, the value of this parameter can be <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
+    pub fn set_web_app_endpoint_policy(mut self, input: ::std::option::Option<crate::types::WebAppEndpointPolicy>) -> Self {
+        self.web_app_endpoint_policy = input;
+        self
+    }
+    /// <p>Setting for the type of endpoint policy for the web app. The default value is <code>STANDARD</code>.</p>
+    /// <p>If your web app was created in an Amazon Web Services GovCloud (US) Region, the value of this parameter can be <code>FIPS</code>, which indicates the web app endpoint is FIPS-compliant.</p>
+    pub fn get_web_app_endpoint_policy(&self) -> &::std::option::Option<crate::types::WebAppEndpointPolicy> {
+        &self.web_app_endpoint_policy
+    }
     /// Consumes the builder and constructs a [`DescribedWebApp`](crate::types::DescribedWebApp).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::DescribedWebAppBuilder::arn)
@@ -205,6 +231,7 @@ impl DescribedWebAppBuilder {
             web_app_endpoint: self.web_app_endpoint,
             web_app_units: self.web_app_units,
             tags: self.tags,
+            web_app_endpoint_policy: self.web_app_endpoint_policy,
         })
     }
 }

@@ -318,27 +318,8 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://s3-outposts-fips.cn-north-1.amazonaws.com.cn");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://s3-outposts-fips.cn-north-1.amazonaws.com.cn")
-                .header("x-amz-account-id", "123456789012")
-                .header("x-amz-outpost-id", "op-01234567890123456")
-                .property(
-                    "authSchemes",
-                    vec![{
-                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                        out.insert("name".to_string(), "sigv4".to_string().into());
-                        out.insert("signingName".to_string(), "s3-outposts".to_string().into());
-                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
-                        out.insert("disableDoubleEncoding".to_string(), true.into());
-                        out
-                    }
-                    .into()]
-                )
-                .build()
-        );
+        let error = endpoint.expect_err("expected error: Partition does not support FIPS [gov cloud with fips@cn-north-1]");
+        assert_eq!(format!("{}", error), "Partition does not support FIPS")
     }
 
     /// govcloud with fips + arn region@us-gov-west-1
@@ -3335,6 +3316,251 @@ mod test {
         let error = endpoint.expect_err("expected error: S3 Snow does not support DualStack [S3 Snow Control with Dualstack enabled]");
         assert_eq!(format!("{}", error), "S3 Snow does not support DualStack")
     }
+
+    /// Access Point APIs on express bucket routed to s3express-control
+    #[test]
+    fn test_113() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Access Point APIs on express bucket routed to s3express-control for List
+    #[test]
+    fn test_114() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .use_s3_express_control_endpoint(true)
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Access Point APIs on express bucket routed to s3express-control for FIPS
+    #[test]
+    fn test_115() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control-fips.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Access Point APIs on express bucket routed to s3express-control for FIPS for List
+    #[test]
+    fn test_116() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .use_s3_express_control_endpoint(true)
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control-fips.us-east-1.amazonaws.com")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "us-east-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Access Point APIs on express bucket routed to s3express-control for china region
+    #[test]
+    fn test_117() {
+        let params = crate::config::endpoint::Params::builder()
+            .access_point_name("myaccesspoint--abcd-ab1--xa-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.cn-north-1.amazonaws.com.cn")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Access Point APIs on express bucket routed to s3express-control for china region for List
+    #[test]
+    fn test_118() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("cn-north-1".to_string())
+            .use_s3_express_control_endpoint(true)
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://s3express-control.cn-north-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://s3express-control.cn-north-1.amazonaws.com.cn")
+                .property(
+                    "authSchemes",
+                    vec![{
+                        let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                        out.insert("name".to_string(), "sigv4".to_string().into());
+                        out.insert("signingName".to_string(), "s3express".to_string().into());
+                        out.insert("signingRegion".to_string(), "cn-north-1".to_string().into());
+                        out.insert("disableDoubleEncoding".to_string(), true.into());
+                        out
+                    }
+                    .into()]
+                )
+                .build()
+        );
+    }
+
+    /// Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS
+    #[test]
+    fn test_119() {
+        let params = crate::config::endpoint::Params::builder()
+            .account_id("871317572157".to_string())
+            .region("cn-north-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Partition does not support FIPS [Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS]");
+        assert_eq!(format!("{}", error), "Partition does not support FIPS")
+    }
+
+    /// Error Access Point APIs on express bucket routed to s3express-control invalid zone
+    #[test]
+    fn test_120() {
+        let params = crate::config::endpoint::Params::builder()
+            .access_point_name("myaccesspoint-garbage-zone--xa-s3".to_string())
+            .account_id("871317572157".to_string())
+            .region("us-east-1".to_string())
+            .requires_account_id(true)
+            .use_dual_stack(false)
+            .use_fips(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Unrecognized S3Express Access Point name format. [Error Access Point APIs on express bucket routed to s3express-control invalid zone]");
+        assert_eq!(format!("{}", error), "Unrecognized S3Express Access Point name format.")
+    }
 }
 
 /// Endpoint resolver trait specific to AWS S3 Control
@@ -3427,6 +3653,8 @@ pub struct Params {
     pub(crate) access_point_name: ::std::option::Option<::std::string::String>,
     /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
     pub(crate) use_arn_region: ::std::option::Option<bool>,
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
+    pub(crate) use_s3_express_control_endpoint: ::std::option::Option<bool>,
 }
 impl Params {
     /// Create a builder for [`Params`]
@@ -3473,6 +3701,10 @@ impl Params {
     pub fn use_arn_region(&self) -> ::std::option::Option<bool> {
         self.use_arn_region
     }
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
+    pub fn use_s3_express_control_endpoint(&self) -> ::std::option::Option<bool> {
+        self.use_s3_express_control_endpoint
+    }
 }
 
 /// Builder for [`Params`]
@@ -3488,6 +3720,7 @@ pub struct ParamsBuilder {
     bucket: ::std::option::Option<::std::string::String>,
     access_point_name: ::std::option::Option<::std::string::String>,
     use_arn_region: ::std::option::Option<bool>,
+    use_s3_express_control_endpoint: ::std::option::Option<bool>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -3511,6 +3744,7 @@ impl ParamsBuilder {
                 bucket: self.bucket,
                 access_point_name: self.access_point_name,
                 use_arn_region: self.use_arn_region,
+                use_s3_express_control_endpoint: self.use_s3_express_control_endpoint,
             },
         )
     }
@@ -3666,6 +3900,21 @@ impl ParamsBuilder {
     /// When an Access Point ARN is provided and this flag is enabled, the SDK MUST use the ARN's region when constructing the endpoint instead of the client's configured region.
     pub fn set_use_arn_region(mut self, param: Option<bool>) -> Self {
         self.use_arn_region = param;
+        self
+    }
+    /// Sets the value for use_s3_express_control_endpoint
+    ///
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
+    pub fn use_s3_express_control_endpoint(mut self, value: impl Into<bool>) -> Self {
+        self.use_s3_express_control_endpoint = Some(value.into());
+        self
+    }
+
+    /// Sets the value for use_s3_express_control_endpoint
+    ///
+    /// Internal parameter to indicate whether S3Express operation should use control plane, (ex. ListDirectoryAccessPoints)
+    pub fn set_use_s3_express_control_endpoint(mut self, param: Option<bool>) -> Self {
+        self.use_s3_express_control_endpoint = param;
         self
     }
 }

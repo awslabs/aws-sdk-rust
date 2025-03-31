@@ -9,7 +9,7 @@ pub struct CreateQueueEnvironmentInput {
     pub farm_id: ::std::option::Option<::std::string::String>,
     /// <p>The queue ID to connect the queue and environment.</p>
     pub queue_id: ::std::option::Option<::std::string::String>,
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority. If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     pub priority: ::std::option::Option<i32>,
     /// <p>The template's file type, <code>JSON</code> or <code>YAML</code>.</p>
     pub template_type: ::std::option::Option<crate::types::EnvironmentTemplateType>,
@@ -29,7 +29,7 @@ impl CreateQueueEnvironmentInput {
     pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority. If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
@@ -117,18 +117,18 @@ impl CreateQueueEnvironmentInputBuilder {
     pub fn get_queue_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.queue_id
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority. If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     /// This field is required.
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority. If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
-    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority. If two environments share the same priority value, the environment created first takes higher priority.</p>
+    /// <p>Sets the priority of the environments in the queue from 0 to 10,000, where 0 is the highest priority (activated first and deactivated last). If two environments share the same priority value, the environment created first takes higher priority.</p>
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }

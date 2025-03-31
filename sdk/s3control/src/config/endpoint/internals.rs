@@ -33,52 +33,16 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     let use_arn_region = &_params.use_arn_region;
     #[allow(unused_variables)]
+    let use_s3_express_control_endpoint = &_params.use_s3_express_control_endpoint;
+    #[allow(unused_variables)]
     if let Some(region) = region {
-        if (region.as_ref() as &str) == ("snow") {
+        if (*use_fips) == (true) {
             #[allow(unused_variables)]
-            if let Some(endpoint) = endpoint {
-                #[allow(unused_variables)]
-                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
-                    #[allow(unused_variables)]
-                    if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
-                        if (*use_dual_stack) == (true) {
-                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "S3 Snow does not support DualStack".to_string(),
-                            ));
-                        }
-                        if (*use_fips) == (true) {
-                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                                "S3 Snow does not support FIPS".to_string(),
-                            ));
-                        }
-                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
-                            .url({
-                                let mut out = String::new();
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&url.scheme());
-                                out.push_str("://");
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&url.authority());
-                                out
-                            })
-                            .property(
-                                "authSchemes",
-                                vec![::aws_smithy_types::Document::from({
-                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
-                                    out.insert("disableDoubleEncoding".to_string(), true.into());
-                                    out.insert("name".to_string(), "sigv4".to_string().into());
-                                    out.insert("signingName".to_string(), "s3".to_string().into());
-                                    out.insert("signingRegion".to_string(), region.to_owned().into());
-                                    out
-                                })],
-                            )
-                            .build());
-                    }
-                    #[allow(unreachable_code)]
-                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
-                        "No rules matched these parameters. This is a bug. {:?}",
-                        _params
-                    )));
+            if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                if (partition_result.name()) == ("aws-cn") {
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        "Partition does not support FIPS".to_string(),
+                    ));
                 }
             }
         }
@@ -86,13 +50,6 @@ pub(super) fn resolve_endpoint(
         if let Some(outpost_id) = outpost_id {
             #[allow(unused_variables)]
             if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
-                if (*use_fips) == (true) {
-                    if (partition_result.name()) == ("aws-cn") {
-                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "Partition does not support FIPS".to_string(),
-                        ));
-                    }
-                }
                 #[allow(unused_variables)]
                 if let Some(requires_account_id) = requires_account_id {
                     if (*requires_account_id) == (true) {
@@ -265,6 +222,441 @@ pub(super) fn resolve_endpoint(
                 "No rules matched these parameters. This is a bug. {:?}",
                 _params
             )));
+        }
+        #[allow(unused_variables)]
+        if let Some(access_point_name) = access_point_name {
+            #[allow(unused_variables)]
+            if let Some(access_point_suffix) =
+                crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 0, 7, true, _diagnostic_collector)
+            {
+                if (access_point_suffix.as_ref() as &str) == ("--xa-s3") {
+                    #[allow(unused_variables)]
+                    if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                        if (*use_dual_stack) == (true) {
+                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                "S3Express does not support Dual-stack.".to_string(),
+                            ));
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 7, 15, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 15, 17, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim.as_ref() as &str) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3express-control-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region.as_ref() as &str);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3express-control.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region.as_ref() as &str);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 7, 16, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 16, 18, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim.as_ref() as &str) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3express-control-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region.as_ref() as &str);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3express-control.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region.as_ref() as &str);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 7, 20, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 20, 22, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim.as_ref() as &str) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3express-control-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region.as_ref() as &str);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3express-control.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region.as_ref() as &str);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 7, 21, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 21, 23, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim.as_ref() as &str) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3express-control-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region.as_ref() as &str);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3express-control.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region.as_ref() as &str);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        #[allow(unused_variables)]
+                        if let Some(s3express_availability_zone_id) =
+                            crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 7, 27, true, _diagnostic_collector)
+                        {
+                            #[allow(unused_variables)]
+                            if let Some(s3express_availability_zone_delim) =
+                                crate::endpoint_lib::substring::substring(access_point_name.as_ref() as &str, 27, 29, true, _diagnostic_collector)
+                            {
+                                if (s3express_availability_zone_delim.as_ref() as &str) == ("--") {
+                                    if (*use_fips) == (true) {
+                                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                            .url({
+                                                let mut out = String::new();
+                                                out.push_str("https://s3express-control-fips.");
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&region.as_ref() as &str);
+                                                out.push('.');
+                                                #[allow(clippy::needless_borrow)]
+                                                out.push_str(&partition_result.dns_suffix());
+                                                out
+                                            })
+                                            .property(
+                                                "authSchemes",
+                                                vec![::aws_smithy_types::Document::from({
+                                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                    out
+                                                })],
+                                            )
+                                            .build());
+                                    }
+                                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                                        .url({
+                                            let mut out = String::new();
+                                            out.push_str("https://s3express-control.");
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&region.as_ref() as &str);
+                                            out.push('.');
+                                            #[allow(clippy::needless_borrow)]
+                                            out.push_str(&partition_result.dns_suffix());
+                                            out
+                                        })
+                                        .property(
+                                            "authSchemes",
+                                            vec![::aws_smithy_types::Document::from({
+                                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                                out
+                                            })],
+                                        )
+                                        .build());
+                                }
+                            }
+                        }
+                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Unrecognized S3Express Access Point name format.".to_string(),
+                        ));
+                    }
+                    #[allow(unreachable_code)]
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                        "No rules matched these parameters. This is a bug. {:?}",
+                        _params
+                    )));
+                }
+            }
+        }
+        #[allow(unused_variables)]
+        if let Some(use_s3_express_control_endpoint) = use_s3_express_control_endpoint {
+            if (*use_s3_express_control_endpoint) == (true) {
+                #[allow(unused_variables)]
+                if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                    if (*use_fips) == (true) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://s3express-control-fips.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push('.');
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.dns_suffix());
+                                out
+                            })
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "s3express".to_string().into());
+                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                        .url({
+                            let mut out = String::new();
+                            out.push_str("https://s3express-control.");
+                            #[allow(clippy::needless_borrow)]
+                            out.push_str(&region.as_ref() as &str);
+                            out.push('.');
+                            #[allow(clippy::needless_borrow)]
+                            out.push_str(&partition_result.dns_suffix());
+                            out
+                        })
+                        .property(
+                            "authSchemes",
+                            vec![::aws_smithy_types::Document::from({
+                                let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                out.insert("disableDoubleEncoding".to_string(), true.into());
+                                out.insert("name".to_string(), "sigv4".to_string().into());
+                                out.insert("signingName".to_string(), "s3express".to_string().into());
+                                out.insert("signingRegion".to_string(), region.to_owned().into());
+                                out
+                            })],
+                        )
+                        .build());
+                }
+                #[allow(unreachable_code)]
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                    "No rules matched these parameters. This is a bug. {:?}",
+                    _params
+                )));
+            }
+        }
+        if (region.as_ref() as &str) == ("snow") {
+            #[allow(unused_variables)]
+            if let Some(endpoint) = endpoint {
+                #[allow(unused_variables)]
+                if let Some(url) = crate::endpoint_lib::parse_url::parse_url(endpoint.as_ref() as &str, _diagnostic_collector) {
+                    #[allow(unused_variables)]
+                    if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
+                        if (*use_dual_stack) == (true) {
+                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                "S3 Snow does not support DualStack".to_string(),
+                            ));
+                        }
+                        if (*use_fips) == (true) {
+                            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                                "S3 Snow does not support FIPS".to_string(),
+                            ));
+                        }
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&url.scheme());
+                                out.push_str("://");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&url.authority());
+                                out
+                            })
+                            .property(
+                                "authSchemes",
+                                vec![::aws_smithy_types::Document::from({
+                                    let mut out = ::std::collections::HashMap::<String, ::aws_smithy_types::Document>::new();
+                                    out.insert("disableDoubleEncoding".to_string(), true.into());
+                                    out.insert("name".to_string(), "sigv4".to_string().into());
+                                    out.insert("signingName".to_string(), "s3".to_string().into());
+                                    out.insert("signingRegion".to_string(), region.to_owned().into());
+                                    out
+                                })],
+                            )
+                            .build());
+                    }
+                    #[allow(unreachable_code)]
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(format!(
+                        "No rules matched these parameters. This is a bug. {:?}",
+                        _params
+                    )));
+                }
+            }
         }
         #[allow(unused_variables)]
         if let Some(access_point_name) = access_point_name {
@@ -1017,13 +1409,6 @@ pub(super) fn resolve_endpoint(
         #[allow(unused_variables)]
         if let Some(partition_result) = partition_resolver.resolve_partition(region.as_ref() as &str, _diagnostic_collector) {
             if crate::endpoint_lib::host::is_valid_host_label(region.as_ref() as &str, true, _diagnostic_collector) {
-                if (*use_fips) == (true) {
-                    if (partition_result.name()) == ("aws-cn") {
-                        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
-                            "Partition does not support FIPS".to_string(),
-                        ));
-                    }
-                }
                 #[allow(unused_variables)]
                 if let Some(requires_account_id) = requires_account_id {
                     if (*requires_account_id) == (true) {

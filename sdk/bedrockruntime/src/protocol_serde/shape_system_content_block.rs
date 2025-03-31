@@ -13,6 +13,12 @@ pub fn ser_system_content_block(
             crate::protocol_serde::shape_guardrail_converse_content_block::ser_guardrail_converse_content_block(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::SystemContentBlock::CachePoint(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_27.key("cachePoint").start_object();
+            crate::protocol_serde::shape_cache_point_block::ser_cache_point_block(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::SystemContentBlock::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "SystemContentBlock",

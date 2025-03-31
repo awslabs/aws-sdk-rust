@@ -65,6 +65,8 @@ pub(crate) mod shape_delete_access_point_policy;
 
 pub(crate) mod shape_delete_access_point_policy_for_object_lambda;
 
+pub(crate) mod shape_delete_access_point_scope;
+
 pub(crate) mod shape_delete_bucket;
 
 pub(crate) mod shape_delete_bucket_lifecycle_configuration;
@@ -117,6 +119,8 @@ pub(crate) mod shape_get_access_point_policy_status;
 
 pub(crate) mod shape_get_access_point_policy_status_for_object_lambda;
 
+pub(crate) mod shape_get_access_point_scope;
+
 pub(crate) mod shape_get_bucket;
 
 pub(crate) mod shape_get_bucket_lifecycle_configuration;
@@ -157,6 +161,8 @@ pub(crate) mod shape_list_access_grants_locations;
 
 pub(crate) mod shape_list_access_points;
 
+pub(crate) mod shape_list_access_points_for_directory_buckets;
+
 pub(crate) mod shape_list_access_points_for_object_lambda;
 
 pub(crate) mod shape_list_caller_access_grants;
@@ -180,6 +186,8 @@ pub(crate) mod shape_put_access_point_configuration_for_object_lambda;
 pub(crate) mod shape_put_access_point_policy;
 
 pub(crate) mod shape_put_access_point_policy_for_object_lambda;
+
+pub(crate) mod shape_put_access_point_scope;
 
 pub(crate) mod shape_put_bucket_lifecycle_configuration;
 
@@ -281,6 +289,8 @@ pub(crate) mod shape_put_access_point_policy_for_object_lambda_input;
 
 pub(crate) mod shape_put_access_point_policy_input;
 
+pub(crate) mod shape_put_access_point_scope_input;
+
 pub(crate) mod shape_put_bucket_policy_input;
 
 pub(crate) mod shape_put_job_tagging_input;
@@ -373,6 +383,8 @@ pub(crate) mod shape_s3_tag;
 
 pub(crate) mod shape_s3_tag_set;
 
+pub(crate) mod shape_scope;
+
 pub(crate) mod shape_storage_lens_configuration;
 
 pub(crate) mod shape_storage_lens_group;
@@ -435,6 +447,8 @@ pub(crate) mod shape_object_lambda_transformation_configuration;
 
 pub(crate) mod shape_object_lambda_transformation_configurations_list;
 
+pub(crate) mod shape_prefixes_list;
+
 pub(crate) mod shape_proposed_multi_region_access_point_policy;
 
 pub(crate) mod shape_region;
@@ -462,6 +476,8 @@ pub(crate) mod shape_s3_set_object_legal_hold_operation;
 pub(crate) mod shape_s3_set_object_retention_operation;
 
 pub(crate) mod shape_s3_set_object_tagging_operation;
+
+pub(crate) mod shape_scope_permission_list;
 
 pub(crate) mod shape_storage_lens_aws_org;
 

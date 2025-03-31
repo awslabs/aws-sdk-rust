@@ -43,6 +43,12 @@ pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscript
 
 pub use crate::types::_eks_anywhere_subscription_license_type::EksAnywhereSubscriptionLicenseType;
 
+pub use crate::types::_remote_network_config_request::RemoteNetworkConfigRequest;
+
+pub use crate::types::_remote_pod_network::RemotePodNetwork;
+
+pub use crate::types::_remote_node_network::RemoteNodeNetwork;
+
 pub use crate::types::_storage_config_request::StorageConfigRequest;
 
 pub use crate::types::_block_storage::BlockStorage;
@@ -86,10 +92,6 @@ pub use crate::types::_storage_config_response::StorageConfigResponse;
 pub use crate::types::_compute_config_response::ComputeConfigResponse;
 
 pub use crate::types::_remote_network_config_response::RemoteNetworkConfigResponse;
-
-pub use crate::types::_remote_pod_network::RemotePodNetwork;
-
-pub use crate::types::_remote_node_network::RemoteNodeNetwork;
 
 pub use crate::types::_zonal_shift_config_response::ZonalShiftConfigResponse;
 
@@ -228,8 +230,6 @@ pub use crate::types::_addon_issue::AddonIssue;
 pub use crate::types::_addon_issue_code::AddonIssueCode;
 
 pub use crate::types::_addon_status::AddonStatus;
-
-pub use crate::types::_remote_network_config_request::RemoteNetworkConfigRequest;
 
 pub use crate::types::_create_access_config_request::CreateAccessConfigRequest;
 

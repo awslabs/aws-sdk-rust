@@ -151,6 +151,10 @@ pub use crate::types::_lifecycle_rule_and_operator::LifecycleRuleAndOperator;
 
 pub use crate::types::_lifecycle_expiration::LifecycleExpiration;
 
+pub use crate::types::_scope::Scope;
+
+pub use crate::types::_scope_permission::ScopePermission;
+
 pub use crate::types::_object_lambda_configuration::ObjectLambdaConfiguration;
 
 pub use crate::types::_object_lambda_transformation_configuration::ObjectLambdaTransformationConfiguration;
@@ -656,6 +660,10 @@ mod _s3_sse_algorithm;
 mod _s3_storage_class;
 
 mod _s3_tag;
+
+mod _scope;
+
+mod _scope_permission;
 
 mod _selection_criteria;
 

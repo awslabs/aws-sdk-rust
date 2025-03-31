@@ -13,6 +13,8 @@
 /// # let vpcencryptioncontrolstate = unimplemented!();
 /// match vpcencryptioncontrolstate {
 ///     VpcEncryptionControlState::Available => { /* ... */ },
+///     VpcEncryptionControlState::Creating => { /* ... */ },
+///     VpcEncryptionControlState::DeleteFailed => { /* ... */ },
 ///     VpcEncryptionControlState::Deleted => { /* ... */ },
 ///     VpcEncryptionControlState::Deleting => { /* ... */ },
 ///     VpcEncryptionControlState::EnforceFailed => { /* ... */ },
@@ -50,6 +52,10 @@ pub enum VpcEncryptionControlState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     #[allow(missing_docs)] // documentation missing in model
+    Creating,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -69,6 +75,8 @@ impl ::std::convert::From<&str> for VpcEncryptionControlState {
     fn from(s: &str) -> Self {
         match s {
             "available" => VpcEncryptionControlState::Available,
+            "creating" => VpcEncryptionControlState::Creating,
+            "delete-failed" => VpcEncryptionControlState::DeleteFailed,
             "deleted" => VpcEncryptionControlState::Deleted,
             "deleting" => VpcEncryptionControlState::Deleting,
             "enforce-failed" => VpcEncryptionControlState::EnforceFailed,
@@ -91,6 +99,8 @@ impl VpcEncryptionControlState {
     pub fn as_str(&self) -> &str {
         match self {
             VpcEncryptionControlState::Available => "available",
+            VpcEncryptionControlState::Creating => "creating",
+            VpcEncryptionControlState::DeleteFailed => "delete-failed",
             VpcEncryptionControlState::Deleted => "deleted",
             VpcEncryptionControlState::Deleting => "deleting",
             VpcEncryptionControlState::EnforceFailed => "enforce-failed",
@@ -104,6 +114,8 @@ impl VpcEncryptionControlState {
     pub const fn values() -> &'static [&'static str] {
         &[
             "available",
+            "creating",
+            "delete-failed",
             "deleted",
             "deleting",
             "enforce-failed",
@@ -134,6 +146,8 @@ impl ::std::fmt::Display for VpcEncryptionControlState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VpcEncryptionControlState::Available => write!(f, "available"),
+            VpcEncryptionControlState::Creating => write!(f, "creating"),
+            VpcEncryptionControlState::DeleteFailed => write!(f, "delete-failed"),
             VpcEncryptionControlState::Deleted => write!(f, "deleted"),
             VpcEncryptionControlState::Deleting => write!(f, "deleting"),
             VpcEncryptionControlState::EnforceFailed => write!(f, "enforce-failed"),

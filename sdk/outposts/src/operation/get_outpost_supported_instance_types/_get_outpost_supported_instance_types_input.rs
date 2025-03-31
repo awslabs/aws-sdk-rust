@@ -7,6 +7,8 @@ pub struct GetOutpostSupportedInstanceTypesInput {
     pub outpost_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the Amazon Web Services Outposts order.</p>
     pub order_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
@@ -20,6 +22,10 @@ impl GetOutpostSupportedInstanceTypesInput {
     /// <p>The ID for the Amazon Web Services Outposts order.</p>
     pub fn order_id(&self) -> ::std::option::Option<&str> {
         self.order_id.as_deref()
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -43,6 +49,7 @@ impl GetOutpostSupportedInstanceTypesInput {
 pub struct GetOutpostSupportedInstanceTypesInputBuilder {
     pub(crate) outpost_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) order_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -75,6 +82,20 @@ impl GetOutpostSupportedInstanceTypesInputBuilder {
     /// <p>The ID for the Amazon Web Services Outposts order.</p>
     pub fn get_order_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.order_id
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_id = input;
+        self
+    }
+    /// <p>The ID of the Outpost asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// <p>The maximum page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -115,6 +136,7 @@ impl GetOutpostSupportedInstanceTypesInputBuilder {
             crate::operation::get_outpost_supported_instance_types::GetOutpostSupportedInstanceTypesInput {
                 outpost_identifier: self.outpost_identifier,
                 order_id: self.order_id,
+                asset_id: self.asset_id,
                 max_results: self.max_results,
                 next_token: self.next_token,
             },

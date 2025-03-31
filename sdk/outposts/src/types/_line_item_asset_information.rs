@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemAssetInformation {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The MAC addresses of the asset.</p>
     pub mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemAssetInformation {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
@@ -36,17 +36,17 @@ pub struct LineItemAssetInformationBuilder {
     pub(crate) mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemAssetInformationBuilder {
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
-    /// <p>The ID of the asset.</p>
+    /// <p>The ID of the asset. An Outpost asset can be a single server within an Outposts rack or an Outposts server configuration.</p>
     pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_id
     }

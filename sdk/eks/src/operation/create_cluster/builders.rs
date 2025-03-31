@@ -346,17 +346,17 @@ impl CreateClusterFluentBuilder {
     pub fn get_zonal_shift_config(&self) -> &::std::option::Option<crate::types::ZonalShiftConfigRequest> {
         self.inner.get_zonal_shift_config()
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn remote_network_config(mut self, input: crate::types::RemoteNetworkConfigRequest) -> Self {
         self.inner = self.inner.remote_network_config(input);
         self
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn set_remote_network_config(mut self, input: ::std::option::Option<crate::types::RemoteNetworkConfigRequest>) -> Self {
         self.inner = self.inner.set_remote_network_config(input);
         self
     }
-    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can't change or update this configuration after the cluster is created.</p>
+    /// <p>The configuration in the cluster for EKS Hybrid Nodes. You can add, change, or remove this configuration after the cluster is created.</p>
     pub fn get_remote_network_config(&self) -> &::std::option::Option<crate::types::RemoteNetworkConfigRequest> {
         self.inner.get_remote_network_config()
     }

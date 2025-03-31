@@ -396,6 +396,8 @@ mod associate_ipam_resource_discovery;
 
 mod associate_nat_gateway_address;
 
+mod associate_route_server;
+
 mod associate_route_table;
 
 mod associate_security_group_vpc;
@@ -555,6 +557,12 @@ mod create_reserved_instances_listing;
 mod create_restore_image_task;
 
 mod create_route;
+
+mod create_route_server;
+
+mod create_route_server_endpoint;
+
+mod create_route_server_peer;
 
 mod create_route_table;
 
@@ -738,6 +746,12 @@ mod delete_public_ipv4_pool;
 mod delete_queued_reserved_instances;
 
 mod delete_route;
+
+mod delete_route_server;
+
+mod delete_route_server_endpoint;
+
+mod delete_route_server_peer;
 
 mod delete_route_table;
 
@@ -1029,6 +1043,12 @@ mod describe_reserved_instances_modifications;
 
 mod describe_reserved_instances_offerings;
 
+mod describe_route_server_endpoints;
+
+mod describe_route_server_peers;
+
+mod describe_route_servers;
+
 mod describe_route_tables;
 
 mod describe_scheduled_instance_availability;
@@ -1183,6 +1203,8 @@ mod disable_image_deregistration_protection;
 
 mod disable_ipam_organization_admin_account;
 
+mod disable_route_server_propagation;
+
 mod disable_serial_console_access;
 
 mod disable_snapshot_block_public_access;
@@ -1212,6 +1234,8 @@ mod disassociate_ipam_byoasn;
 mod disassociate_ipam_resource_discovery;
 
 mod disassociate_nat_gateway_address;
+
+mod disassociate_route_server;
 
 mod disassociate_route_table;
 
@@ -1252,6 +1276,8 @@ mod enable_image_deregistration_protection;
 mod enable_ipam_organization_admin_account;
 
 mod enable_reachability_analyzer_organization_sharing;
+
+mod enable_route_server_propagation;
 
 mod enable_serial_console_access;
 
@@ -1344,6 +1370,12 @@ mod get_network_insights_access_scope_content;
 mod get_password_data;
 
 mod get_reserved_instances_exchange_quote;
+
+mod get_route_server_associations;
+
+mod get_route_server_propagations;
+
+mod get_route_server_routing_database;
 
 mod get_security_groups_for_vpc;
 
@@ -1468,6 +1500,8 @@ mod modify_network_interface_attribute;
 mod modify_private_dns_name_options;
 
 mod modify_reserved_instances;
+
+mod modify_route_server;
 
 mod modify_security_group_rules;
 
