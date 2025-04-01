@@ -9,6 +9,8 @@ pub struct UpdateCollaborationInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collaboration.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The analytics engine.</p>
+    pub analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl UpdateCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
@@ -22,6 +24,10 @@ impl UpdateCollaborationInput {
     /// <p>A description of the collaboration.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(&self) -> ::std::option::Option<&crate::types::AnalyticsEngine> {
+        self.analytics_engine.as_ref()
     }
 }
 impl UpdateCollaborationInput {
@@ -38,6 +44,7 @@ pub struct UpdateCollaborationInputBuilder {
     pub(crate) collaboration_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) analytics_engine: ::std::option::Option<crate::types::AnalyticsEngine>,
 }
 impl UpdateCollaborationInputBuilder {
     /// <p>The identifier for the collaboration.</p>
@@ -83,6 +90,20 @@ impl UpdateCollaborationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The analytics engine.</p>
+    pub fn analytics_engine(mut self, input: crate::types::AnalyticsEngine) -> Self {
+        self.analytics_engine = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn set_analytics_engine(mut self, input: ::std::option::Option<crate::types::AnalyticsEngine>) -> Self {
+        self.analytics_engine = input;
+        self
+    }
+    /// <p>The analytics engine.</p>
+    pub fn get_analytics_engine(&self) -> &::std::option::Option<crate::types::AnalyticsEngine> {
+        &self.analytics_engine
+    }
     /// Consumes the builder and constructs a [`UpdateCollaborationInput`](crate::operation::update_collaboration::UpdateCollaborationInput).
     pub fn build(
         self,
@@ -92,6 +113,7 @@ impl UpdateCollaborationInputBuilder {
             collaboration_identifier: self.collaboration_identifier,
             name: self.name,
             description: self.description,
+            analytics_engine: self.analytics_engine,
         })
     }
 }

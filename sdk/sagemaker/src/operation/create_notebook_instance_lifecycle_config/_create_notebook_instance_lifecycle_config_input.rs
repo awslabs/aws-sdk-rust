@@ -9,6 +9,8 @@ pub struct CreateNotebookInstanceLifecycleConfigInput {
     pub on_create: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     /// <p>A shell script that runs every time you start a notebook instance, including when you create the notebook instance. The shell script must be a base64-encoded string.</p>
     pub on_start: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateNotebookInstanceLifecycleConfigInput {
     /// <p>The name of the lifecycle configuration.</p>
@@ -27,6 +29,12 @@ impl CreateNotebookInstanceLifecycleConfigInput {
     pub fn on_start(&self) -> &[crate::types::NotebookInstanceLifecycleHook] {
         self.on_start.as_deref().unwrap_or_default()
     }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
 }
 impl CreateNotebookInstanceLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceLifecycleConfigInput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigInput).
@@ -42,6 +50,7 @@ pub struct CreateNotebookInstanceLifecycleConfigInputBuilder {
     pub(crate) notebook_instance_lifecycle_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) on_create: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
     pub(crate) on_start: ::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateNotebookInstanceLifecycleConfigInputBuilder {
     /// <p>The name of the lifecycle configuration.</p>
@@ -99,6 +108,26 @@ impl CreateNotebookInstanceLifecycleConfigInputBuilder {
     pub fn get_on_start(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotebookInstanceLifecycleHook>> {
         &self.on_start
     }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html">Tagging Amazon Web Services Resources</a>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`CreateNotebookInstanceLifecycleConfigInput`](crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigInput).
     pub fn build(
         self,
@@ -111,6 +140,7 @@ impl CreateNotebookInstanceLifecycleConfigInputBuilder {
                 notebook_instance_lifecycle_config_name: self.notebook_instance_lifecycle_config_name,
                 on_create: self.on_create,
                 on_start: self.on_start,
+                tags: self.tags,
             },
         )
     }
