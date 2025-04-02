@@ -334,4 +334,18 @@ impl CreateInputFluentBuilder {
     pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettingsCreateRequest> {
         self.inner.get_multicast_settings()
     }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn smpte2110_receiver_group_settings(mut self, input: crate::types::Smpte2110ReceiverGroupSettings) -> Self {
+        self.inner = self.inner.smpte2110_receiver_group_settings(input);
+        self
+    }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn set_smpte2110_receiver_group_settings(mut self, input: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>) -> Self {
+        self.inner = self.inner.set_smpte2110_receiver_group_settings(input);
+        self
+    }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn get_smpte2110_receiver_group_settings(&self) -> &::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings> {
+        self.inner.get_smpte2110_receiver_group_settings()
+    }
 }

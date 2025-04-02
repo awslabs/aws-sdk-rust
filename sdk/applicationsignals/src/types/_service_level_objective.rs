@@ -24,6 +24,16 @@ pub struct ServiceLevelObjective {
     pub goal: ::std::option::Option<crate::types::Goal>,
     /// <p>Each object in this array defines the length of the look-back window used to calculate one burn rate metric for this SLO. The burn rate measures how fast the service is consuming the error budget, relative to the attainment goal of the SLO.</p>
     pub burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
 }
 impl ServiceLevelObjective {
     /// <p>The ARN of this SLO.</p>
@@ -70,6 +80,18 @@ impl ServiceLevelObjective {
     pub fn burn_rate_configurations(&self) -> &[crate::types::BurnRateConfiguration] {
         self.burn_rate_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn metric_source_type(&self) -> ::std::option::Option<&crate::types::MetricSourceType> {
+        self.metric_source_type.as_ref()
+    }
 }
 impl ServiceLevelObjective {
     /// Creates a new builder-style object to manufacture [`ServiceLevelObjective`](crate::types::ServiceLevelObjective).
@@ -92,6 +114,7 @@ pub struct ServiceLevelObjectiveBuilder {
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) goal: ::std::option::Option<crate::types::Goal>,
     pub(crate) burn_rate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>>,
+    pub(crate) metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
 }
 impl ServiceLevelObjectiveBuilder {
     /// <p>The ARN of this SLO.</p>
@@ -245,6 +268,44 @@ impl ServiceLevelObjectiveBuilder {
     pub fn get_burn_rate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BurnRateConfiguration>> {
         &self.burn_rate_configurations
     }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn metric_source_type(mut self, input: crate::types::MetricSourceType) -> Self {
+        self.metric_source_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn set_metric_source_type(mut self, input: ::std::option::Option<crate::types::MetricSourceType>) -> Self {
+        self.metric_source_type = input;
+        self
+    }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn get_metric_source_type(&self) -> &::std::option::Option<crate::types::MetricSourceType> {
+        &self.metric_source_type
+    }
     /// Consumes the builder and constructs a [`ServiceLevelObjective`](crate::types::ServiceLevelObjective).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ServiceLevelObjectiveBuilder::arn)
@@ -283,6 +344,7 @@ impl ServiceLevelObjectiveBuilder {
             evaluation_type: self.evaluation_type,
             goal: self.goal,
             burn_rate_configurations: self.burn_rate_configurations,
+            metric_source_type: self.metric_source_type,
         })
     }
 }

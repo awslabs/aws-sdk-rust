@@ -40,24 +40,30 @@ pub fn ser_create_bot_input_input(
     if let Some(var_13) = &input.description {
         object.key("description").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_14) = &input.error_log_settings {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("errorLogSettings").start_object();
+        crate::protocol_serde::shape_error_log_settings::ser_error_log_settings(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_15) = &input.role_arn {
-        object.key("roleArn").string(var_15.as_str());
+    if let Some(var_17) = &input.role_arn {
+        object.key("roleArn").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.test_bot_alias_tags {
+    if let Some(var_18) = &input.test_bot_alias_tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("testBotAliasTags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_19 = object.key("testBotAliasTags").start_object();
+        for (key_20, value_21) in var_18 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_19.key(key_20.as_str()).string(value_21.as_str());
             }
         }
-        object_17.finish();
+        object_19.finish();
     }
     Ok(())
 }

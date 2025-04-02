@@ -390,4 +390,18 @@ impl CreateIntentFluentBuilder {
     pub fn get_qn_a_intent_configuration(&self) -> &::std::option::Option<crate::types::QnAIntentConfiguration> {
         self.inner.get_qn_a_intent_configuration()
     }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn q_in_connect_intent_configuration(mut self, input: crate::types::QInConnectIntentConfiguration) -> Self {
+        self.inner = self.inner.q_in_connect_intent_configuration(input);
+        self
+    }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn set_q_in_connect_intent_configuration(mut self, input: ::std::option::Option<crate::types::QInConnectIntentConfiguration>) -> Self {
+        self.inner = self.inner.set_q_in_connect_intent_configuration(input);
+        self
+    }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn get_q_in_connect_intent_configuration(&self) -> &::std::option::Option<crate::types::QInConnectIntentConfiguration> {
+        self.inner.get_q_in_connect_intent_configuration()
+    }
 }

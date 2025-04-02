@@ -256,4 +256,18 @@ impl CreateBotFluentBuilder {
     pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         self.inner.get_bot_members()
     }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.inner = self.inner.error_log_settings(input);
+        self
+    }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.inner = self.inner.set_error_log_settings(input);
+        self
+    }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        self.inner.get_error_log_settings()
+    }
 }

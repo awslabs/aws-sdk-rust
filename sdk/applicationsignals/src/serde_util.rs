@@ -402,6 +402,18 @@ pub(crate) fn burn_rate_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn dependency_config_correct_errors(
+    mut builder: crate::types::builders::DependencyConfigBuilder,
+) -> crate::types::builders::DependencyConfigBuilder {
+    if builder.dependency_key_attributes.is_none() {
+        builder.dependency_key_attributes = Some(Default::default())
+    }
+    if builder.dependency_operation_name.is_none() {
+        builder.dependency_operation_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn metric_reference_correct_errors(
     mut builder: crate::types::builders::MetricReferenceBuilder,
 ) -> crate::types::builders::MetricReferenceBuilder {

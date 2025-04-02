@@ -38,11 +38,28 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DependencyConfig" => {
+                            builder = builder.set_dependency_config(crate::protocol_serde::shape_dependency_config::de_dependency_config(tokens)?);
+                        }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
+                        }
+                        "EvaluationType" => {
+                            builder = builder.set_evaluation_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EvaluationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "MetricSourceType" => {
+                            builder = builder.set_metric_source_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::MetricSourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

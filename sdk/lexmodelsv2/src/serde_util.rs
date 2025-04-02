@@ -15,6 +15,15 @@ pub(crate) fn dialog_code_hook_settings_correct_errors(
     builder
 }
 
+pub(crate) fn error_log_settings_correct_errors(
+    mut builder: crate::types::builders::ErrorLogSettingsBuilder,
+) -> crate::types::builders::ErrorLogSettingsBuilder {
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn fulfillment_code_hook_settings_correct_errors(
     mut builder: crate::types::builders::FulfillmentCodeHookSettingsBuilder,
 ) -> crate::types::builders::FulfillmentCodeHookSettingsBuilder {
@@ -468,6 +477,15 @@ pub(crate) fn prompt_specification_correct_errors(
     }
     if builder.max_retries.is_none() {
         builder.max_retries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn q_in_connect_assistant_configuration_correct_errors(
+    mut builder: crate::types::builders::QInConnectAssistantConfigurationBuilder,
+) -> crate::types::builders::QInConnectAssistantConfigurationBuilder {
+    if builder.assistant_arn.is_none() {
+        builder.assistant_arn = Some(Default::default())
     }
     builder
 }

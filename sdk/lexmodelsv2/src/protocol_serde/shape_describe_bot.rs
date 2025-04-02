@@ -179,6 +179,9 @@ pub(crate) fn de_describe_bot(
                             .transpose()?,
                     );
                 }
+                "errorLogSettings" => {
+                    builder = builder.set_error_log_settings(crate::protocol_serde::shape_error_log_settings::de_error_log_settings(tokens)?);
+                }
                 "failureReasons" => {
                     builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons::de_failure_reasons(tokens)?);
                 }

@@ -24,8 +24,22 @@ pub struct ServiceLevelObjectiveSummary {
     pub key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>If this service level objective is specific to a single operation, this field displays the name of that operation.</p>
     pub operation_name: ::std::option::Option<::std::string::String>,
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
     /// <p>The date and time that this service level objective was created. It is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
 }
 impl ServiceLevelObjectiveSummary {
     /// <p>The ARN of this service level objective.</p>
@@ -58,9 +72,29 @@ impl ServiceLevelObjectiveSummary {
     pub fn operation_name(&self) -> ::std::option::Option<&str> {
         self.operation_name.as_deref()
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(&self) -> ::std::option::Option<&crate::types::DependencyConfig> {
+        self.dependency_config.as_ref()
+    }
     /// <p>The date and time that this service level objective was created. It is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
+        self.evaluation_type.as_ref()
+    }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn metric_source_type(&self) -> ::std::option::Option<&crate::types::MetricSourceType> {
+        self.metric_source_type.as_ref()
     }
 }
 impl ServiceLevelObjectiveSummary {
@@ -78,7 +112,10 @@ pub struct ServiceLevelObjectiveSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) key_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) operation_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
+    pub(crate) metric_source_type: ::std::option::Option<crate::types::MetricSourceType>,
 }
 impl ServiceLevelObjectiveSummaryBuilder {
     /// <p>The ARN of this service level objective.</p>
@@ -188,6 +225,20 @@ impl ServiceLevelObjectiveSummaryBuilder {
     pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.operation_name
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(mut self, input: crate::types::DependencyConfig) -> Self {
+        self.dependency_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn set_dependency_config(mut self, input: ::std::option::Option<crate::types::DependencyConfig>) -> Self {
+        self.dependency_config = input;
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn get_dependency_config(&self) -> &::std::option::Option<crate::types::DependencyConfig> {
+        &self.dependency_config
+    }
     /// <p>The date and time that this service level objective was created. It is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
@@ -201,6 +252,58 @@ impl ServiceLevelObjectiveSummaryBuilder {
     /// <p>The date and time that this service level objective was created. It is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_time
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
+        self.evaluation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn set_evaluation_type(mut self, input: ::std::option::Option<crate::types::EvaluationType>) -> Self {
+        self.evaluation_type = input;
+        self
+    }
+    /// <p>Displays whether this is a period-based SLO or a request-based SLO.</p>
+    pub fn get_evaluation_type(&self) -> &::std::option::Option<crate::types::EvaluationType> {
+        &self.evaluation_type
+    }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn metric_source_type(mut self, input: crate::types::MetricSourceType) -> Self {
+        self.metric_source_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn set_metric_source_type(mut self, input: ::std::option::Option<crate::types::MetricSourceType>) -> Self {
+        self.metric_source_type = input;
+        self
+    }
+    /// <p>Displays the SLI metric source type for this SLO. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn get_metric_source_type(&self) -> &::std::option::Option<crate::types::MetricSourceType> {
+        &self.metric_source_type
     }
     /// Consumes the builder and constructs a [`ServiceLevelObjectiveSummary`](crate::types::ServiceLevelObjectiveSummary).
     /// This method will fail if any of the following fields are not set:
@@ -222,7 +325,10 @@ impl ServiceLevelObjectiveSummaryBuilder {
             })?,
             key_attributes: self.key_attributes,
             operation_name: self.operation_name,
+            dependency_config: self.dependency_config,
             created_time: self.created_time,
+            evaluation_type: self.evaluation_type,
+            metric_source_type: self.metric_source_type,
         })
     }
 }

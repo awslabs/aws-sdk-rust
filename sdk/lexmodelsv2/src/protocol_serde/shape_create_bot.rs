@@ -207,6 +207,9 @@ pub(crate) fn de_create_bot(
                             .transpose()?,
                     );
                 }
+                "errorLogSettings" => {
+                    builder = builder.set_error_log_settings(crate::protocol_serde::shape_error_log_settings::de_error_log_settings(tokens)?);
+                }
                 "idleSessionTTLInSeconds" => {
                     builder = builder.set_idle_session_ttl_in_seconds(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

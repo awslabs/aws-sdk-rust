@@ -42,6 +42,8 @@ pub struct Input {
     pub input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
     /// Multicast Input settings.
     pub multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
 }
 impl Input {
     /// The Unique ARN of the input (generated, immutable).
@@ -134,6 +136,10 @@ impl Input {
     pub fn multicast_settings(&self) -> ::std::option::Option<&crate::types::MulticastSettings> {
         self.multicast_settings.as_ref()
     }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn smpte2110_receiver_group_settings(&self) -> ::std::option::Option<&crate::types::Smpte2110ReceiverGroupSettings> {
+        self.smpte2110_receiver_group_settings.as_ref()
+    }
 }
 impl Input {
     /// Creates a new builder-style object to manufacture [`Input`](crate::types::Input).
@@ -165,6 +171,7 @@ pub struct InputBuilder {
     pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettings>,
     pub(crate) input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
     pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
+    pub(crate) smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
 }
 impl InputBuilder {
     /// The Unique ARN of the input (generated, immutable).
@@ -481,6 +488,20 @@ impl InputBuilder {
     pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettings> {
         &self.multicast_settings
     }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn smpte2110_receiver_group_settings(mut self, input: crate::types::Smpte2110ReceiverGroupSettings) -> Self {
+        self.smpte2110_receiver_group_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn set_smpte2110_receiver_group_settings(mut self, input: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>) -> Self {
+        self.smpte2110_receiver_group_settings = input;
+        self
+    }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn get_smpte2110_receiver_group_settings(&self) -> &::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings> {
+        &self.smpte2110_receiver_group_settings
+    }
     /// Consumes the builder and constructs a [`Input`](crate::types::Input).
     pub fn build(self) -> crate::types::Input {
         crate::types::Input {
@@ -503,6 +524,7 @@ impl InputBuilder {
             srt_settings: self.srt_settings,
             input_network_location: self.input_network_location,
             multicast_settings: self.multicast_settings,
+            smpte2110_receiver_group_settings: self.smpte2110_receiver_group_settings,
         }
     }
 }

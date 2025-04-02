@@ -25,6 +25,8 @@ pub struct UpdateBotOutput {
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bot members in the network that was updated.</p>
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    /// <p>Settings for managing error logs within the response of an update bot operation.</p>
+    pub error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     _request_id: Option<String>,
 }
 impl UpdateBotOutput {
@@ -74,6 +76,10 @@ impl UpdateBotOutput {
     pub fn bot_members(&self) -> &[crate::types::BotMember] {
         self.bot_members.as_deref().unwrap_or_default()
     }
+    /// <p>Settings for managing error logs within the response of an update bot operation.</p>
+    pub fn error_log_settings(&self) -> ::std::option::Option<&crate::types::ErrorLogSettings> {
+        self.error_log_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateBotOutput {
     fn request_id(&self) -> Option<&str> {
@@ -102,6 +108,7 @@ pub struct UpdateBotOutputBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    pub(crate) error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     _request_id: Option<String>,
 }
 impl UpdateBotOutputBuilder {
@@ -265,6 +272,20 @@ impl UpdateBotOutputBuilder {
     pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
+    /// <p>Settings for managing error logs within the response of an update bot operation.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.error_log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for managing error logs within the response of an update bot operation.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.error_log_settings = input;
+        self
+    }
+    /// <p>Settings for managing error logs within the response of an update bot operation.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        &self.error_log_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -288,6 +309,7 @@ impl UpdateBotOutputBuilder {
             last_updated_date_time: self.last_updated_date_time,
             bot_type: self.bot_type,
             bot_members: self.bot_members,
+            error_log_settings: self.error_log_settings,
             _request_id: self._request_id,
         }
     }

@@ -131,6 +131,14 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::Input;
 
+pub use crate::types::_smpte2110_receiver_group_settings::Smpte2110ReceiverGroupSettings;
+
+pub use crate::types::_smpte2110_receiver_group::Smpte2110ReceiverGroup;
+
+pub use crate::types::_smpte2110_receiver_group_sdp_settings::Smpte2110ReceiverGroupSdpSettings;
+
+pub use crate::types::_input_sdp_location::InputSdpLocation;
+
 pub use crate::types::_multicast_settings::MulticastSettings;
 
 pub use crate::types::_multicast_source::MulticastSource;
@@ -1943,6 +1951,8 @@ mod _input_request_destination_route;
 
 mod _input_resolution;
 
+mod _input_sdp_location;
+
 mod _input_security_group;
 
 mod _input_security_group_state;
@@ -2372,6 +2382,12 @@ mod _smooth_group_stream_manifest_behavior;
 mod _smooth_group_timestamp_offset_mode;
 
 mod _smpte2038_data_preference;
+
+mod _smpte2110_receiver_group;
+
+mod _smpte2110_receiver_group_sdp_settings;
+
+mod _smpte2110_receiver_group_settings;
 
 mod _smpte_tt_destination_settings;
 

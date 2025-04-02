@@ -10,6 +10,8 @@ pub struct BotImportSpecification {
     pub role_arn: ::std::string::String,
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
     pub data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
+    /// <p>Allows you to configure destinations where error logs will be published during the bot import process.</p>
+    pub error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
@@ -33,6 +35,10 @@ impl BotImportSpecification {
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
     pub fn data_privacy(&self) -> ::std::option::Option<&crate::types::DataPrivacy> {
         self.data_privacy.as_ref()
+    }
+    /// <p>Allows you to configure destinations where error logs will be published during the bot import process.</p>
+    pub fn error_log_settings(&self) -> ::std::option::Option<&crate::types::ErrorLogSettings> {
+        self.error_log_settings.as_ref()
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
@@ -63,6 +69,7 @@ pub struct BotImportSpecificationBuilder {
     pub(crate) bot_name: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_privacy: ::std::option::Option<crate::types::DataPrivacy>,
+    pub(crate) error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) bot_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -112,6 +119,20 @@ impl BotImportSpecificationBuilder {
     /// <p>By default, data stored by Amazon Lex is encrypted. The <code>DataPrivacy</code> structure provides settings that determine how Amazon Lex handles special cases of securing the data for your bot.</p>
     pub fn get_data_privacy(&self) -> &::std::option::Option<crate::types::DataPrivacy> {
         &self.data_privacy
+    }
+    /// <p>Allows you to configure destinations where error logs will be published during the bot import process.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.error_log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows you to configure destinations where error logs will be published during the bot import process.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.error_log_settings = input;
+        self
+    }
+    /// <p>Allows you to configure destinations where error logs will be published during the bot import process.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        &self.error_log_settings
     }
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.</p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
@@ -199,6 +220,7 @@ impl BotImportSpecificationBuilder {
                 )
             })?,
             data_privacy: self.data_privacy,
+            error_log_settings: self.error_log_settings,
             idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
             bot_tags: self.bot_tags,
             test_bot_alias_tags: self.test_bot_alias_tags,

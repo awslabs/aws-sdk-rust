@@ -30,14 +30,20 @@ pub fn ser_update_bot_input_input(
     if let Some(var_9) = &input.description {
         object.key("description").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_10) = &input.error_log_settings {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("errorLogSettings").start_object();
+        crate::protocol_serde::shape_error_log_settings::ser_error_log_settings(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_10).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_11) = &input.role_arn {
-        object.key("roleArn").string(var_11.as_str());
+    if let Some(var_13) = &input.role_arn {
+        object.key("roleArn").string(var_13.as_str());
     }
     Ok(())
 }

@@ -230,6 +230,11 @@ pub(crate) fn de_describe_intent(
                             .transpose()?,
                     );
                 }
+                "qInConnectIntentConfiguration" => {
+                    builder = builder.set_q_in_connect_intent_configuration(
+                        crate::protocol_serde::shape_q_in_connect_intent_configuration::de_q_in_connect_intent_configuration(tokens)?,
+                    );
+                }
                 "qnAIntentConfiguration" => {
                     builder = builder.set_qn_a_intent_configuration(
                         crate::protocol_serde::shape_qn_a_intent_configuration::de_qn_a_intent_configuration(tokens)?,

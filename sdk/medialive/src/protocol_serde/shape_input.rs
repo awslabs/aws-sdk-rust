@@ -113,6 +113,11 @@ where
                         "multicastSettings" => {
                             builder = builder.set_multicast_settings(crate::protocol_serde::shape_multicast_settings::de_multicast_settings(tokens)?);
                         }
+                        "smpte2110ReceiverGroupSettings" => {
+                            builder = builder.set_smpte2110_receiver_group_settings(
+                                crate::protocol_serde::shape_smpte2110_receiver_group_settings::de_smpte2110_receiver_group_settings(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

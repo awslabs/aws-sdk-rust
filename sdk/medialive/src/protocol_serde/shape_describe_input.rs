@@ -232,6 +232,11 @@ pub(crate) fn de_describe_input(
                 "securityGroups" => {
                     builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
+                "smpte2110ReceiverGroupSettings" => {
+                    builder = builder.set_smpte2110_receiver_group_settings(
+                        crate::protocol_serde::shape_smpte2110_receiver_group_settings::de_smpte2110_receiver_group_settings(tokens)?,
+                    );
+                }
                 "sources" => {
                     builder = builder.set_sources(crate::protocol_serde::shape_list_of_input_source::de_list_of_input_source(tokens)?);
                 }

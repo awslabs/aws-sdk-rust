@@ -66,42 +66,48 @@ pub fn ser_create_input_input_input(
     if let Some(var_21) = &input.role_arn {
         object.key("roleArn").string(var_21.as_str());
     }
-    if let Some(var_22) = &input.sources {
-        let mut array_23 = object.key("sources").start_array();
-        for item_24 in var_22 {
+    if let Some(var_22) = &input.smpte2110_receiver_group_settings {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("smpte2110ReceiverGroupSettings").start_object();
+        crate::protocol_serde::shape_smpte2110_receiver_group_settings::ser_smpte2110_receiver_group_settings(&mut object_23, var_22)?;
+        object_23.finish();
+    }
+    if let Some(var_24) = &input.sources {
+        let mut array_25 = object.key("sources").start_array();
+        for item_26 in var_24 {
             {
                 #[allow(unused_mut)]
-                let mut object_25 = array_23.value().start_object();
-                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_25, item_24)?;
-                object_25.finish();
+                let mut object_27 = array_25.value().start_object();
+                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_27, item_26)?;
+                object_27.finish();
             }
         }
-        array_23.finish();
+        array_25.finish();
     }
-    if let Some(var_26) = &input.srt_settings {
+    if let Some(var_28) = &input.srt_settings {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("srtSettings").start_object();
-        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_27, var_26)?;
-        object_27.finish();
-    }
-    if let Some(var_28) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_29 = object.key("tags").start_object();
-        for (key_30, value_31) in var_28 {
-            {
-                object_29.key(key_30.as_str()).string(value_31.as_str());
-            }
-        }
+        let mut object_29 = object.key("srtSettings").start_object();
+        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_29, var_28)?;
         object_29.finish();
     }
-    if let Some(var_32) = &input.r#type {
-        object.key("type").string(var_32.as_str());
-    }
-    if let Some(var_33) = &input.vpc {
+    if let Some(var_30) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("vpc").start_object();
-        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_34, var_33)?;
-        object_34.finish();
+        let mut object_31 = object.key("tags").start_object();
+        for (key_32, value_33) in var_30 {
+            {
+                object_31.key(key_32.as_str()).string(value_33.as_str());
+            }
+        }
+        object_31.finish();
+    }
+    if let Some(var_34) = &input.r#type {
+        object.key("type").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.vpc {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("vpc").start_object();
+        crate::protocol_serde::shape_input_vpc_request::ser_input_vpc_request(&mut object_36, var_35)?;
+        object_36.finish();
     }
     Ok(())
 }

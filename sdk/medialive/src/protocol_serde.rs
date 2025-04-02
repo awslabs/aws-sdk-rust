@@ -565,6 +565,8 @@ pub(crate) mod shape_route_create_request;
 
 pub(crate) mod shape_route_update_request;
 
+pub(crate) mod shape_smpte2110_receiver_group_settings;
+
 pub(crate) mod shape_srt_settings;
 
 pub(crate) mod shape_srt_settings_request;
@@ -659,6 +661,8 @@ pub(crate) mod shape_list_of_multicast_source;
 
 pub(crate) mod shape_list_of_output_group;
 
+pub(crate) mod shape_list_of_smpte2110_receiver_group;
+
 pub(crate) mod shape_list_of_srt_caller_source;
 
 pub(crate) mod shape_list_of_video_description;
@@ -704,6 +708,8 @@ pub(crate) mod shape_route;
 pub(crate) mod shape_schedule_action;
 
 pub(crate) mod shape_signal_map_summary;
+
+pub(crate) mod shape_smpte2110_receiver_group;
 
 pub(crate) mod shape_srt_caller_source_request;
 
@@ -787,6 +793,8 @@ pub(crate) mod shape_schedule_action_settings;
 
 pub(crate) mod shape_schedule_action_start_settings;
 
+pub(crate) mod shape_smpte2110_receiver_group_sdp_settings;
+
 pub(crate) mod shape_srt_caller_decryption_request;
 
 pub(crate) mod shape_srt_caller_source;
@@ -862,6 +870,8 @@ pub(crate) mod shape_immediate_mode_schedule_action_start_settings;
 pub(crate) mod shape_input_destination_route;
 
 pub(crate) mod shape_input_prepare_schedule_action_settings;
+
+pub(crate) mod shape_input_sdp_location;
 
 pub(crate) mod shape_input_switch_schedule_action_settings;
 
@@ -1012,6 +1022,8 @@ pub(crate) mod shape_input_loss_failover_settings;
 pub(crate) mod shape_key_provider_settings;
 
 pub(crate) mod shape_list_of_audio_channel_mapping;
+
+pub(crate) mod shape_list_of_input_sdp_location;
 
 pub(crate) mod shape_list_of_pipeline_pause_state_settings;
 

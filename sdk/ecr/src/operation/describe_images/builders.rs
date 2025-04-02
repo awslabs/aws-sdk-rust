@@ -23,7 +23,7 @@ impl crate::operation::describe_images::builders::DescribeImagesInputBuilder {
 /// Fluent builder constructing a request to `DescribeImages`.
 ///
 /// <p>Returns metadata about the images in a repository.</p><note>
-/// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it may return a larger image size than the image sizes returned by <code>DescribeImages</code>.</p>
+/// <p>Starting with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size. Therefore, Docker might return a larger image than the image shown in the Amazon Web Services Management Console.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImagesFluentBuilder {

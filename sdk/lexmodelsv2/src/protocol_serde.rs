@@ -493,6 +493,8 @@ pub(crate) mod shape_dialog_code_hook_settings;
 
 pub(crate) mod shape_encryption_setting;
 
+pub(crate) mod shape_error_log_settings;
+
 pub(crate) mod shape_export_filter;
 
 pub(crate) mod shape_export_resource_specification;
@@ -554,6 +556,8 @@ pub(crate) mod shape_output_contexts_list;
 pub(crate) mod shape_parent_bot_networks;
 
 pub(crate) mod shape_principal;
+
+pub(crate) mod shape_q_in_connect_intent_configuration;
 
 pub(crate) mod shape_qn_a_intent_configuration;
 
@@ -740,6 +744,8 @@ pub(crate) mod shape_parent_bot_network;
 pub(crate) mod shape_post_fulfillment_status_specification;
 
 pub(crate) mod shape_prompt_specification;
+
+pub(crate) mod shape_q_in_connect_assistant_configuration;
 
 pub(crate) mod shape_recommended_intent_summary;
 

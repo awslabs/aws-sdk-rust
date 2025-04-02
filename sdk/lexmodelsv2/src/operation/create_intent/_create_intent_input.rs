@@ -44,6 +44,8 @@ pub struct CreateIntentInput {
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     /// <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>. The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't determine another intent to invoke. If you specify this field, you can't specify the <code>kendraConfiguration</code> field.</p>
     pub qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub q_in_connect_intent_configuration: ::std::option::Option<crate::types::QInConnectIntentConfiguration>,
 }
 impl CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
@@ -125,6 +127,10 @@ impl CreateIntentInput {
     pub fn qn_a_intent_configuration(&self) -> ::std::option::Option<&crate::types::QnAIntentConfiguration> {
         self.qn_a_intent_configuration.as_ref()
     }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn q_in_connect_intent_configuration(&self) -> ::std::option::Option<&crate::types::QInConnectIntentConfiguration> {
+        self.q_in_connect_intent_configuration.as_ref()
+    }
 }
 impl CreateIntentInput {
     /// Creates a new builder-style object to manufacture [`CreateIntentInput`](crate::operation::create_intent::CreateIntentInput).
@@ -153,6 +159,7 @@ pub struct CreateIntentInputBuilder {
     pub(crate) locale_id: ::std::option::Option<::std::string::String>,
     pub(crate) initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     pub(crate) qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
+    pub(crate) q_in_connect_intent_configuration: ::std::option::Option<crate::types::QInConnectIntentConfiguration>,
 }
 impl CreateIntentInputBuilder {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
@@ -428,6 +435,20 @@ impl CreateIntentInputBuilder {
     pub fn get_qn_a_intent_configuration(&self) -> &::std::option::Option<crate::types::QnAIntentConfiguration> {
         &self.qn_a_intent_configuration
     }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn q_in_connect_intent_configuration(mut self, input: crate::types::QInConnectIntentConfiguration) -> Self {
+        self.q_in_connect_intent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn set_q_in_connect_intent_configuration(mut self, input: ::std::option::Option<crate::types::QInConnectIntentConfiguration>) -> Self {
+        self.q_in_connect_intent_configuration = input;
+        self
+    }
+    /// <p>Qinconnect intent configuration details for the create intent request.</p>
+    pub fn get_q_in_connect_intent_configuration(&self) -> &::std::option::Option<crate::types::QInConnectIntentConfiguration> {
+        &self.q_in_connect_intent_configuration
+    }
     /// Consumes the builder and constructs a [`CreateIntentInput`](crate::operation::create_intent::CreateIntentInput).
     pub fn build(
         self,
@@ -449,6 +470,7 @@ impl CreateIntentInputBuilder {
             locale_id: self.locale_id,
             initial_response_setting: self.initial_response_setting,
             qn_a_intent_configuration: self.qn_a_intent_configuration,
+            q_in_connect_intent_configuration: self.q_in_connect_intent_configuration,
         })
     }
 }

@@ -123,6 +123,10 @@ pub use crate::types::_condition::Condition;
 
 pub use crate::types::_slot_constraint::SlotConstraint;
 
+pub use crate::types::_q_in_connect_intent_configuration::QInConnectIntentConfiguration;
+
+pub use crate::types::_q_in_connect_assistant_configuration::QInConnectAssistantConfiguration;
+
 pub use crate::types::_qn_a_intent_configuration::QnAIntentConfiguration;
 
 pub use crate::types::_bedrock_model_specification::BedrockModelSpecification;
@@ -242,6 +246,8 @@ pub use crate::types::_bot_alias_locale_settings::BotAliasLocaleSettings;
 pub use crate::types::_code_hook_specification::CodeHookSpecification;
 
 pub use crate::types::_lambda_code_hook::LambdaCodeHook;
+
+pub use crate::types::_error_log_settings::ErrorLogSettings;
 
 pub use crate::types::_bot_member::BotMember;
 
@@ -1041,6 +1047,8 @@ mod _encryption_setting;
 
 mod _error_code;
 
+mod _error_log_settings;
+
 mod _exact_response_fields;
 
 mod _execution_error_details;
@@ -1196,6 +1204,10 @@ mod _prompt_attempt;
 mod _prompt_attempt_specification;
 
 mod _prompt_specification;
+
+mod _q_in_connect_assistant_configuration;
+
+mod _q_in_connect_intent_configuration;
 
 mod _qn_a_intent_configuration;
 

@@ -23,6 +23,8 @@ pub struct CreateBotInput {
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bot members in a network to be created.</p>
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
 }
 impl CreateBotInput {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
@@ -65,6 +67,10 @@ impl CreateBotInput {
     pub fn bot_members(&self) -> &[crate::types::BotMember] {
         self.bot_members.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn error_log_settings(&self) -> ::std::option::Option<&crate::types::ErrorLogSettings> {
+        self.error_log_settings.as_ref()
+    }
 }
 impl CreateBotInput {
     /// Creates a new builder-style object to manufacture [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
@@ -86,6 +92,7 @@ pub struct CreateBotInputBuilder {
     pub(crate) test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    pub(crate) error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
 }
 impl CreateBotInputBuilder {
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
@@ -249,6 +256,20 @@ impl CreateBotInputBuilder {
     pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.error_log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.error_log_settings = input;
+        self
+    }
+    /// <p>Specifies the configuration for error logging during bot creation.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        &self.error_log_settings
+    }
     /// Consumes the builder and constructs a [`CreateBotInput`](crate::operation::create_bot::CreateBotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_bot::CreateBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_bot::CreateBotInput {
@@ -261,6 +282,7 @@ impl CreateBotInputBuilder {
             test_bot_alias_tags: self.test_bot_alias_tags,
             bot_type: self.bot_type,
             bot_members: self.bot_members,
+            error_log_settings: self.error_log_settings,
         })
     }
 }

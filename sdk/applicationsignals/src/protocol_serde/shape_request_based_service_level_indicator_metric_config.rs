@@ -40,5 +40,11 @@ pub fn ser_request_based_service_level_indicator_metric_config(
         )?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.dependency_config {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("DependencyConfig").start_object();
+        crate::protocol_serde::shape_dependency_config::ser_dependency_config(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

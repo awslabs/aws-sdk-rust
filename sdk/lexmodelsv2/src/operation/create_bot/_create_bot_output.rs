@@ -27,6 +27,8 @@ pub struct CreateBotOutput {
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bots in a network that was created.</p>
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    /// <p>Specifies configuration settings for delivering error logs to Cloudwatch Logs in an Amazon Lex bot response.</p>
+    pub error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     _request_id: Option<String>,
 }
 impl CreateBotOutput {
@@ -80,6 +82,10 @@ impl CreateBotOutput {
     pub fn bot_members(&self) -> &[crate::types::BotMember] {
         self.bot_members.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies configuration settings for delivering error logs to Cloudwatch Logs in an Amazon Lex bot response.</p>
+    pub fn error_log_settings(&self) -> ::std::option::Option<&crate::types::ErrorLogSettings> {
+        self.error_log_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateBotOutput {
     fn request_id(&self) -> Option<&str> {
@@ -109,6 +115,7 @@ pub struct CreateBotOutputBuilder {
     pub(crate) test_bot_alias_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    pub(crate) error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     _request_id: Option<String>,
 }
 impl CreateBotOutputBuilder {
@@ -305,6 +312,20 @@ impl CreateBotOutputBuilder {
     pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
+    /// <p>Specifies configuration settings for delivering error logs to Cloudwatch Logs in an Amazon Lex bot response.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.error_log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration settings for delivering error logs to Cloudwatch Logs in an Amazon Lex bot response.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.error_log_settings = input;
+        self
+    }
+    /// <p>Specifies configuration settings for delivering error logs to Cloudwatch Logs in an Amazon Lex bot response.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        &self.error_log_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -329,6 +350,7 @@ impl CreateBotOutputBuilder {
             test_bot_alias_tags: self.test_bot_alias_tags,
             bot_type: self.bot_type,
             bot_members: self.bot_members,
+            error_log_settings: self.error_log_settings,
             _request_id: self._request_id,
         }
     }

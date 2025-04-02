@@ -27,6 +27,8 @@ pub struct RequestBasedServiceLevelIndicatorMetricConfig {
     pub total_request_count_metric: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     /// <p>Use this structure to define the metric that you want to use as the "good request" or "bad request" value for a request-based SLO. This value observed for the metric defined in <code>TotalRequestCountMetric</code> will be divided by the number found for <code>MonitoredRequestCountMetric</code> to determine the percentage of successful requests that this SLO tracks.</p>
     pub monitored_request_count_metric: ::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries>,
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
 impl RequestBasedServiceLevelIndicatorMetricConfig {
     /// <p>If this SLO is related to a metric collected by Application Signals, you must use this field to specify which service the SLO metric is related to. To do so, you must specify at least the <code>Type</code>, <code>Name</code>, and <code>Environment</code> attributes.</p>
@@ -64,6 +66,10 @@ impl RequestBasedServiceLevelIndicatorMetricConfig {
     pub fn monitored_request_count_metric(&self) -> ::std::option::Option<&crate::types::MonitoredRequestCountMetricDataQueries> {
         self.monitored_request_count_metric.as_ref()
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(&self) -> ::std::option::Option<&crate::types::DependencyConfig> {
+        self.dependency_config.as_ref()
+    }
 }
 impl RequestBasedServiceLevelIndicatorMetricConfig {
     /// Creates a new builder-style object to manufacture [`RequestBasedServiceLevelIndicatorMetricConfig`](crate::types::RequestBasedServiceLevelIndicatorMetricConfig).
@@ -81,6 +87,7 @@ pub struct RequestBasedServiceLevelIndicatorMetricConfigBuilder {
     pub(crate) metric_type: ::std::option::Option<crate::types::ServiceLevelIndicatorMetricType>,
     pub(crate) total_request_count_metric: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     pub(crate) monitored_request_count_metric: ::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries>,
+    pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
 impl RequestBasedServiceLevelIndicatorMetricConfigBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -211,6 +218,20 @@ impl RequestBasedServiceLevelIndicatorMetricConfigBuilder {
     pub fn get_monitored_request_count_metric(&self) -> &::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries> {
         &self.monitored_request_count_metric
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(mut self, input: crate::types::DependencyConfig) -> Self {
+        self.dependency_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn set_dependency_config(mut self, input: ::std::option::Option<crate::types::DependencyConfig>) -> Self {
+        self.dependency_config = input;
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn get_dependency_config(&self) -> &::std::option::Option<crate::types::DependencyConfig> {
+        &self.dependency_config
+    }
     /// Consumes the builder and constructs a [`RequestBasedServiceLevelIndicatorMetricConfig`](crate::types::RequestBasedServiceLevelIndicatorMetricConfig).
     pub fn build(self) -> crate::types::RequestBasedServiceLevelIndicatorMetricConfig {
         crate::types::RequestBasedServiceLevelIndicatorMetricConfig {
@@ -219,6 +240,7 @@ impl RequestBasedServiceLevelIndicatorMetricConfigBuilder {
             metric_type: self.metric_type,
             total_request_count_metric: self.total_request_count_metric,
             monitored_request_count_metric: self.monitored_request_count_metric,
+            dependency_config: self.dependency_config,
         }
     }
 }

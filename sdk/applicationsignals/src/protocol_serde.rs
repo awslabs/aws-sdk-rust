@@ -103,6 +103,8 @@ pub(crate) mod shape_batch_update_exclusion_windows_errors;
 
 pub(crate) mod shape_burn_rate_configuration;
 
+pub(crate) mod shape_dependency_config;
+
 pub(crate) mod shape_exclusion_window;
 
 pub(crate) mod shape_exclusion_windows;

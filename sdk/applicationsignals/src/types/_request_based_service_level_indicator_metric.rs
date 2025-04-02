@@ -26,6 +26,8 @@ pub struct RequestBasedServiceLevelIndicatorMetric {
     pub total_request_count_metric: ::std::vec::Vec<crate::types::MetricDataQuery>,
     /// <p>This structure defines the metric that is used as the "good request" or "bad request" value for a request-based SLO. This value observed for the metric defined in <code>TotalRequestCountMetric</code> is divided by the number found for <code>MonitoredRequestCountMetric</code> to determine the percentage of successful requests that this SLO tracks.</p>
     pub monitored_request_count_metric: ::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries>,
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
 impl RequestBasedServiceLevelIndicatorMetric {
     /// <p>This is a string-to-string map that contains information about the type of object that this SLO is related to. It can include the following fields.</p>
@@ -61,6 +63,10 @@ impl RequestBasedServiceLevelIndicatorMetric {
     pub fn monitored_request_count_metric(&self) -> ::std::option::Option<&crate::types::MonitoredRequestCountMetricDataQueries> {
         self.monitored_request_count_metric.as_ref()
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(&self) -> ::std::option::Option<&crate::types::DependencyConfig> {
+        self.dependency_config.as_ref()
+    }
 }
 impl RequestBasedServiceLevelIndicatorMetric {
     /// Creates a new builder-style object to manufacture [`RequestBasedServiceLevelIndicatorMetric`](crate::types::RequestBasedServiceLevelIndicatorMetric).
@@ -78,6 +84,7 @@ pub struct RequestBasedServiceLevelIndicatorMetricBuilder {
     pub(crate) metric_type: ::std::option::Option<crate::types::ServiceLevelIndicatorMetricType>,
     pub(crate) total_request_count_metric: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     pub(crate) monitored_request_count_metric: ::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries>,
+    pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
 impl RequestBasedServiceLevelIndicatorMetricBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -206,6 +213,20 @@ impl RequestBasedServiceLevelIndicatorMetricBuilder {
     pub fn get_monitored_request_count_metric(&self) -> &::std::option::Option<crate::types::MonitoredRequestCountMetricDataQueries> {
         &self.monitored_request_count_metric
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(mut self, input: crate::types::DependencyConfig) -> Self {
+        self.dependency_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn set_dependency_config(mut self, input: ::std::option::Option<crate::types::DependencyConfig>) -> Self {
+        self.dependency_config = input;
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn get_dependency_config(&self) -> &::std::option::Option<crate::types::DependencyConfig> {
+        &self.dependency_config
+    }
     /// Consumes the builder and constructs a [`RequestBasedServiceLevelIndicatorMetric`](crate::types::RequestBasedServiceLevelIndicatorMetric).
     /// This method will fail if any of the following fields are not set:
     /// - [`total_request_count_metric`](crate::types::builders::RequestBasedServiceLevelIndicatorMetricBuilder::total_request_count_metric)
@@ -223,6 +244,7 @@ impl RequestBasedServiceLevelIndicatorMetricBuilder {
                 )
             })?,
             monitored_request_count_metric: self.monitored_request_count_metric,
+            dependency_config: self.dependency_config,
         })
     }
 }

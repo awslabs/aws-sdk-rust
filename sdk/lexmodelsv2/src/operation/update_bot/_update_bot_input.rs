@@ -21,6 +21,8 @@ pub struct UpdateBotInput {
     pub bot_type: ::std::option::Option<crate::types::BotType>,
     /// <p>The list of bot members in the network associated with the update action.</p>
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    /// <p>Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.</p>
+    pub error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
 }
 impl UpdateBotInput {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
@@ -59,6 +61,10 @@ impl UpdateBotInput {
     pub fn bot_members(&self) -> &[crate::types::BotMember] {
         self.bot_members.as_deref().unwrap_or_default()
     }
+    /// <p>Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.</p>
+    pub fn error_log_settings(&self) -> ::std::option::Option<&crate::types::ErrorLogSettings> {
+        self.error_log_settings.as_ref()
+    }
 }
 impl UpdateBotInput {
     /// Creates a new builder-style object to manufacture [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
@@ -79,6 +85,7 @@ pub struct UpdateBotInputBuilder {
     pub(crate) idle_session_ttl_in_seconds: ::std::option::Option<i32>,
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
+    pub(crate) error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
 }
 impl UpdateBotInputBuilder {
     /// <p>The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</p>
@@ -210,6 +217,20 @@ impl UpdateBotInputBuilder {
     pub fn get_bot_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BotMember>> {
         &self.bot_members
     }
+    /// <p>Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.error_log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.error_log_settings = input;
+        self
+    }
+    /// <p>Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        &self.error_log_settings
+    }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_bot::UpdateBotInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_bot::UpdateBotInput {
@@ -221,6 +242,7 @@ impl UpdateBotInputBuilder {
             idle_session_ttl_in_seconds: self.idle_session_ttl_in_seconds,
             bot_type: self.bot_type,
             bot_members: self.bot_members,
+            error_log_settings: self.error_log_settings,
         })
     }
 }

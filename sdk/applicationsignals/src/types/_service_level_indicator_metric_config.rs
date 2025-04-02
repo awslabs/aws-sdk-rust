@@ -29,6 +29,8 @@ pub struct ServiceLevelIndicatorMetricConfig {
     pub period_seconds: ::std::option::Option<i32>,
     /// <p>If this SLO monitors a CloudWatch metric or the result of a CloudWatch metric math expression, use this structure to specify that metric or expression.</p>
     pub metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
 impl ServiceLevelIndicatorMetricConfig {
     /// <p>If this SLO is related to a metric collected by Application Signals, you must use this field to specify which service the SLO metric is related to. To do so, you must specify at least the <code>Type</code>, <code>Name</code>, and <code>Environment</code> attributes.</p>
@@ -70,6 +72,10 @@ impl ServiceLevelIndicatorMetricConfig {
     pub fn metric_data_queries(&self) -> &[crate::types::MetricDataQuery] {
         self.metric_data_queries.as_deref().unwrap_or_default()
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(&self) -> ::std::option::Option<&crate::types::DependencyConfig> {
+        self.dependency_config.as_ref()
+    }
 }
 impl ServiceLevelIndicatorMetricConfig {
     /// Creates a new builder-style object to manufacture [`ServiceLevelIndicatorMetricConfig`](crate::types::ServiceLevelIndicatorMetricConfig).
@@ -88,6 +94,7 @@ pub struct ServiceLevelIndicatorMetricConfigBuilder {
     pub(crate) statistic: ::std::option::Option<::std::string::String>,
     pub(crate) period_seconds: ::std::option::Option<i32>,
     pub(crate) metric_data_queries: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub(crate) dependency_config: ::std::option::Option<crate::types::DependencyConfig>,
 }
 impl ServiceLevelIndicatorMetricConfigBuilder {
     /// Adds a key-value pair to `key_attributes`.
@@ -232,6 +239,20 @@ impl ServiceLevelIndicatorMetricConfigBuilder {
     pub fn get_metric_data_queries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>> {
         &self.metric_data_queries
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(mut self, input: crate::types::DependencyConfig) -> Self {
+        self.dependency_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn set_dependency_config(mut self, input: ::std::option::Option<crate::types::DependencyConfig>) -> Self {
+        self.dependency_config = input;
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn get_dependency_config(&self) -> &::std::option::Option<crate::types::DependencyConfig> {
+        &self.dependency_config
+    }
     /// Consumes the builder and constructs a [`ServiceLevelIndicatorMetricConfig`](crate::types::ServiceLevelIndicatorMetricConfig).
     pub fn build(self) -> crate::types::ServiceLevelIndicatorMetricConfig {
         crate::types::ServiceLevelIndicatorMetricConfig {
@@ -241,6 +262,7 @@ impl ServiceLevelIndicatorMetricConfigBuilder {
             statistic: self.statistic,
             period_seconds: self.period_seconds,
             metric_data_queries: self.metric_data_queries,
+            dependency_config: self.dependency_config,
         }
     }
 }

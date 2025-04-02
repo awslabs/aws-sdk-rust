@@ -101,6 +101,10 @@ pub use crate::types::_conditional_branch::ConditionalBranchBuilder;
 
 pub use crate::types::_condition::ConditionBuilder;
 
+pub use crate::types::_q_in_connect_intent_configuration::QInConnectIntentConfigurationBuilder;
+
+pub use crate::types::_q_in_connect_assistant_configuration::QInConnectAssistantConfigurationBuilder;
+
 pub use crate::types::_qn_a_intent_configuration::QnAIntentConfigurationBuilder;
 
 pub use crate::types::_bedrock_model_specification::BedrockModelSpecificationBuilder;
@@ -204,6 +208,8 @@ pub use crate::types::_bot_alias_locale_settings::BotAliasLocaleSettingsBuilder;
 pub use crate::types::_code_hook_specification::CodeHookSpecificationBuilder;
 
 pub use crate::types::_lambda_code_hook::LambdaCodeHookBuilder;
+
+pub use crate::types::_error_log_settings::ErrorLogSettingsBuilder;
 
 pub use crate::types::_bot_member::BotMemberBuilder;
 

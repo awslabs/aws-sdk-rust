@@ -40,6 +40,9 @@ where
                                     crate::protocol_serde::shape_monitored_request_count_metric_data_queries::de_monitored_request_count_metric_data_queries(tokens)?
                                 );
                         }
+                        "DependencyConfig" => {
+                            builder = builder.set_dependency_config(crate::protocol_serde::shape_dependency_config::de_dependency_config(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

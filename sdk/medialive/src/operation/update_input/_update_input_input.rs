@@ -24,6 +24,8 @@ pub struct UpdateInputInput {
     pub srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
     /// Multicast Input settings.
     pub multicast_settings: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>,
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
 }
 impl UpdateInputInput {
     /// Destination settings for PUSH type inputs.
@@ -76,6 +78,10 @@ impl UpdateInputInput {
     pub fn multicast_settings(&self) -> ::std::option::Option<&crate::types::MulticastSettingsUpdateRequest> {
         self.multicast_settings.as_ref()
     }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn smpte2110_receiver_group_settings(&self) -> ::std::option::Option<&crate::types::Smpte2110ReceiverGroupSettings> {
+        self.smpte2110_receiver_group_settings.as_ref()
+    }
 }
 impl UpdateInputInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
@@ -98,6 +104,7 @@ pub struct UpdateInputInputBuilder {
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<crate::types::InputSourceRequest>>,
     pub(crate) srt_settings: ::std::option::Option<crate::types::SrtSettingsRequest>,
     pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettingsUpdateRequest>,
+    pub(crate) smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
 }
 impl UpdateInputInputBuilder {
     /// Appends an item to `destinations`.
@@ -271,6 +278,20 @@ impl UpdateInputInputBuilder {
     pub fn get_multicast_settings(&self) -> &::std::option::Option<crate::types::MulticastSettingsUpdateRequest> {
         &self.multicast_settings
     }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn smpte2110_receiver_group_settings(mut self, input: crate::types::Smpte2110ReceiverGroupSettings) -> Self {
+        self.smpte2110_receiver_group_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn set_smpte2110_receiver_group_settings(mut self, input: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>) -> Self {
+        self.smpte2110_receiver_group_settings = input;
+        self
+    }
+    /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    pub fn get_smpte2110_receiver_group_settings(&self) -> &::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings> {
+        &self.smpte2110_receiver_group_settings
+    }
     /// Consumes the builder and constructs a [`UpdateInputInput`](crate::operation::update_input::UpdateInputInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_input::UpdateInputInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_input::UpdateInputInput {
@@ -284,6 +305,7 @@ impl UpdateInputInputBuilder {
             sources: self.sources,
             srt_settings: self.srt_settings,
             multicast_settings: self.multicast_settings,
+            smpte2110_receiver_group_settings: self.smpte2110_receiver_group_settings,
         })
     }
 }

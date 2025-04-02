@@ -31,6 +31,9 @@ where
                         "dataPrivacy" => {
                             builder = builder.set_data_privacy(crate::protocol_serde::shape_data_privacy::de_data_privacy(tokens)?);
                         }
+                        "errorLogSettings" => {
+                            builder = builder.set_error_log_settings(crate::protocol_serde::shape_error_log_settings::de_error_log_settings(tokens)?);
+                        }
                         "idleSessionTTLInSeconds" => {
                             builder = builder.set_idle_session_ttl_in_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
@@ -82,31 +85,37 @@ pub fn ser_bot_import_specification(
         crate::protocol_serde::shape_data_privacy::ser_data_privacy(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.idle_session_ttl_in_seconds {
+    if let Some(var_3) = &input.error_log_settings {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("errorLogSettings").start_object();
+        crate::protocol_serde::shape_error_log_settings::ser_error_log_settings(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.idle_session_ttl_in_seconds {
         object.key("idleSessionTTLInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.bot_tags {
+    if let Some(var_6) = &input.bot_tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("botTags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_7 = object.key("botTags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_5.finish();
+        object_7.finish();
     }
-    if let Some(var_8) = &input.test_bot_alias_tags {
+    if let Some(var_10) = &input.test_bot_alias_tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("testBotAliasTags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_11 = object.key("testBotAliasTags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_9.finish();
+        object_11.finish();
     }
     Ok(())
 }

@@ -193,6 +193,20 @@ impl ListServiceLevelObjectivesFluentBuilder {
     pub fn get_operation_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operation_name()
     }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn dependency_config(mut self, input: crate::types::DependencyConfig) -> Self {
+        self.inner = self.inner.dependency_config(input);
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn set_dependency_config(mut self, input: ::std::option::Option<crate::types::DependencyConfig>) -> Self {
+        self.inner = self.inner.set_dependency_config(input);
+        self
+    }
+    /// <p>Identifies the dependency using the <code>DependencyKeyAttributes</code> and <code>DependencyOperationName</code>.</p>
+    pub fn get_dependency_config(&self) -> &::std::option::Option<crate::types::DependencyConfig> {
+        self.inner.get_dependency_config()
+    }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 50 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -220,6 +234,49 @@ impl ListServiceLevelObjectivesFluentBuilder {
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of service level objectives.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
+    }
+    ///
+    /// Appends an item to `MetricSourceTypes`.
+    ///
+    /// To override the contents of this collection use [`set_metric_source_types`](Self::set_metric_source_types).
+    ///
+    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn metric_source_types(mut self, input: crate::types::MetricSourceType) -> Self {
+        self.inner = self.inner.metric_source_types(input);
+        self
+    }
+    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn set_metric_source_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricSourceType>>) -> Self {
+        self.inner = self.inner.set_metric_source_types(input);
+        self
+    }
+    /// <p>Use this optional field to only include SLOs with the specified metric source types in the output. Supported types are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Service operation</p></li>
+    /// <li>
+    /// <p>Service dependency</p></li>
+    /// <li>
+    /// <p>CloudWatch metric</p></li>
+    /// </ul>
+    pub fn get_metric_source_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricSourceType>> {
+        self.inner.get_metric_source_types()
     }
     /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include SLO from source accounts in the returned data.</p>
     /// <p>When you are monitoring an account, you can use Amazon Web Services account ID in <code>KeyAttribute</code> filter for service source account and <code>SloOwnerawsaccountID</code> for SLO source account with <code>IncludeLinkedAccounts</code> to filter the returned data to only a single source account.</p>

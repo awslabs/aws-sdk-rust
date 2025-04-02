@@ -20,6 +20,7 @@
 ///     InputType::RtmpPull => { /* ... */ },
 ///     InputType::RtmpPush => { /* ... */ },
 ///     InputType::RtpPush => { /* ... */ },
+///     InputType::Smpte2110ReceiverGroup => { /* ... */ },
 ///     InputType::SrtCaller => { /* ... */ },
 ///     InputType::TsFile => { /* ... */ },
 ///     InputType::UdpPush => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum InputType {
     #[allow(missing_docs)] // documentation missing in model
     RtpPush,
     #[allow(missing_docs)] // documentation missing in model
+    Smpte2110ReceiverGroup,
+    #[allow(missing_docs)] // documentation missing in model
     SrtCaller,
     #[allow(missing_docs)] // documentation missing in model
     TsFile,
@@ -91,6 +94,7 @@ impl ::std::convert::From<&str> for InputType {
             "RTMP_PULL" => InputType::RtmpPull,
             "RTMP_PUSH" => InputType::RtmpPush,
             "RTP_PUSH" => InputType::RtpPush,
+            "SMPTE_2110_RECEIVER_GROUP" => InputType::Smpte2110ReceiverGroup,
             "SRT_CALLER" => InputType::SrtCaller,
             "TS_FILE" => InputType::TsFile,
             "UDP_PUSH" => InputType::UdpPush,
@@ -118,6 +122,7 @@ impl InputType {
             InputType::RtmpPull => "RTMP_PULL",
             InputType::RtmpPush => "RTMP_PUSH",
             InputType::RtpPush => "RTP_PUSH",
+            InputType::Smpte2110ReceiverGroup => "SMPTE_2110_RECEIVER_GROUP",
             InputType::SrtCaller => "SRT_CALLER",
             InputType::TsFile => "TS_FILE",
             InputType::UdpPush => "UDP_PUSH",
@@ -136,6 +141,7 @@ impl InputType {
             "RTMP_PULL",
             "RTMP_PUSH",
             "RTP_PUSH",
+            "SMPTE_2110_RECEIVER_GROUP",
             "SRT_CALLER",
             "TS_FILE",
             "UDP_PUSH",
@@ -171,6 +177,7 @@ impl ::std::fmt::Display for InputType {
             InputType::RtmpPull => write!(f, "RTMP_PULL"),
             InputType::RtmpPush => write!(f, "RTMP_PUSH"),
             InputType::RtpPush => write!(f, "RTP_PUSH"),
+            InputType::Smpte2110ReceiverGroup => write!(f, "SMPTE_2110_RECEIVER_GROUP"),
             InputType::SrtCaller => write!(f, "SRT_CALLER"),
             InputType::TsFile => write!(f, "TS_FILE"),
             InputType::UdpPush => write!(f, "UDP_PUSH"),

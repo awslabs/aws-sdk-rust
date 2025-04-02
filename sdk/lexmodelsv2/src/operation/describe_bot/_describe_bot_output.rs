@@ -27,6 +27,8 @@ pub struct DescribeBotOutput {
     pub bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     /// <p>If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons that the bot couldn't be built.</p>
     pub failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Contains the configuration for error logging that specifies where and how bot errors are recorded, including destinations like CloudWatch Logs.</p>
+    pub error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     _request_id: Option<String>,
 }
 impl DescribeBotOutput {
@@ -82,6 +84,10 @@ impl DescribeBotOutput {
     pub fn failure_reasons(&self) -> &[::std::string::String] {
         self.failure_reasons.as_deref().unwrap_or_default()
     }
+    /// <p>Contains the configuration for error logging that specifies where and how bot errors are recorded, including destinations like CloudWatch Logs.</p>
+    pub fn error_log_settings(&self) -> ::std::option::Option<&crate::types::ErrorLogSettings> {
+        self.error_log_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeBotOutput {
     fn request_id(&self) -> Option<&str> {
@@ -111,6 +117,7 @@ pub struct DescribeBotOutputBuilder {
     pub(crate) bot_type: ::std::option::Option<crate::types::BotType>,
     pub(crate) bot_members: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) error_log_settings: ::std::option::Option<crate::types::ErrorLogSettings>,
     _request_id: Option<String>,
 }
 impl DescribeBotOutputBuilder {
@@ -294,6 +301,20 @@ impl DescribeBotOutputBuilder {
     pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.failure_reasons
     }
+    /// <p>Contains the configuration for error logging that specifies where and how bot errors are recorded, including destinations like CloudWatch Logs.</p>
+    pub fn error_log_settings(mut self, input: crate::types::ErrorLogSettings) -> Self {
+        self.error_log_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the configuration for error logging that specifies where and how bot errors are recorded, including destinations like CloudWatch Logs.</p>
+    pub fn set_error_log_settings(mut self, input: ::std::option::Option<crate::types::ErrorLogSettings>) -> Self {
+        self.error_log_settings = input;
+        self
+    }
+    /// <p>Contains the configuration for error logging that specifies where and how bot errors are recorded, including destinations like CloudWatch Logs.</p>
+    pub fn get_error_log_settings(&self) -> &::std::option::Option<crate::types::ErrorLogSettings> {
+        &self.error_log_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -318,6 +339,7 @@ impl DescribeBotOutputBuilder {
             bot_type: self.bot_type,
             bot_members: self.bot_members,
             failure_reasons: self.failure_reasons,
+            error_log_settings: self.error_log_settings,
             _request_id: self._request_id,
         }
     }

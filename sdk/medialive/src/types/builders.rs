@@ -63,6 +63,14 @@ pub use crate::types::_input_device_media_connect_configurable_settings::InputDe
 
 pub use crate::types::_input::InputBuilder;
 
+pub use crate::types::_smpte2110_receiver_group_settings::Smpte2110ReceiverGroupSettingsBuilder;
+
+pub use crate::types::_smpte2110_receiver_group::Smpte2110ReceiverGroupBuilder;
+
+pub use crate::types::_smpte2110_receiver_group_sdp_settings::Smpte2110ReceiverGroupSdpSettingsBuilder;
+
+pub use crate::types::_input_sdp_location::InputSdpLocationBuilder;
+
 pub use crate::types::_multicast_settings::MulticastSettingsBuilder;
 
 pub use crate::types::_multicast_source::MulticastSourceBuilder;

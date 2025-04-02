@@ -43,6 +43,8 @@ pub struct DescribeIntentOutput {
     pub initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     /// <p>Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.</p>
     pub qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
+    /// <p>Qinconnect intent configuration details for the describe intent response.</p>
+    pub q_in_connect_intent_configuration: ::std::option::Option<crate::types::QInConnectIntentConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeIntentOutput {
@@ -134,6 +136,10 @@ impl DescribeIntentOutput {
     pub fn qn_a_intent_configuration(&self) -> ::std::option::Option<&crate::types::QnAIntentConfiguration> {
         self.qn_a_intent_configuration.as_ref()
     }
+    /// <p>Qinconnect intent configuration details for the describe intent response.</p>
+    pub fn q_in_connect_intent_configuration(&self) -> ::std::option::Option<&crate::types::QInConnectIntentConfiguration> {
+        self.q_in_connect_intent_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeIntentOutput {
     fn request_id(&self) -> Option<&str> {
@@ -171,6 +177,7 @@ pub struct DescribeIntentOutputBuilder {
     pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) initial_response_setting: ::std::option::Option<crate::types::InitialResponseSetting>,
     pub(crate) qn_a_intent_configuration: ::std::option::Option<crate::types::QnAIntentConfiguration>,
+    pub(crate) q_in_connect_intent_configuration: ::std::option::Option<crate::types::QInConnectIntentConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeIntentOutputBuilder {
@@ -478,6 +485,20 @@ impl DescribeIntentOutputBuilder {
     pub fn get_qn_a_intent_configuration(&self) -> &::std::option::Option<crate::types::QnAIntentConfiguration> {
         &self.qn_a_intent_configuration
     }
+    /// <p>Qinconnect intent configuration details for the describe intent response.</p>
+    pub fn q_in_connect_intent_configuration(mut self, input: crate::types::QInConnectIntentConfiguration) -> Self {
+        self.q_in_connect_intent_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Qinconnect intent configuration details for the describe intent response.</p>
+    pub fn set_q_in_connect_intent_configuration(mut self, input: ::std::option::Option<crate::types::QInConnectIntentConfiguration>) -> Self {
+        self.q_in_connect_intent_configuration = input;
+        self
+    }
+    /// <p>Qinconnect intent configuration details for the describe intent response.</p>
+    pub fn get_q_in_connect_intent_configuration(&self) -> &::std::option::Option<crate::types::QInConnectIntentConfiguration> {
+        &self.q_in_connect_intent_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -510,6 +531,7 @@ impl DescribeIntentOutputBuilder {
             last_updated_date_time: self.last_updated_date_time,
             initial_response_setting: self.initial_response_setting,
             qn_a_intent_configuration: self.qn_a_intent_configuration,
+            q_in_connect_intent_configuration: self.q_in_connect_intent_configuration,
             _request_id: self._request_id,
         }
     }

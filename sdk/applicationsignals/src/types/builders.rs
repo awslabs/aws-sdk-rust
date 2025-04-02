@@ -13,6 +13,8 @@ pub use crate::types::_request_based_service_level_indicator::RequestBasedServic
 
 pub use crate::types::_request_based_service_level_indicator_metric::RequestBasedServiceLevelIndicatorMetricBuilder;
 
+pub use crate::types::_dependency_config::DependencyConfigBuilder;
+
 pub use crate::types::_metric_data_query::MetricDataQueryBuilder;
 
 pub use crate::types::_metric_stat::MetricStatBuilder;
