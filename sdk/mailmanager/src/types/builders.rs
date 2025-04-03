@@ -9,6 +9,8 @@ pub use crate::types::_ingress_analysis::IngressAnalysisBuilder;
 
 pub use crate::types::_ingress_tls_protocol_expression::IngressTlsProtocolExpressionBuilder;
 
+pub use crate::types::_ingress_ipv6_expression::IngressIpv6ExpressionBuilder;
+
 pub use crate::types::_ingress_ipv4_expression::IngressIpv4ExpressionBuilder;
 
 pub use crate::types::_ingress_string_expression::IngressStringExpressionBuilder;
@@ -58,6 +60,10 @@ pub use crate::types::_rule_set::RuleSetBuilder;
 pub use crate::types::_no_authentication::NoAuthenticationBuilder;
 
 pub use crate::types::_relay::RelayBuilder;
+
+pub use crate::types::_private_network_configuration::PrivateNetworkConfigurationBuilder;
+
+pub use crate::types::_public_network_configuration::PublicNetworkConfigurationBuilder;
 
 pub use crate::types::_ingress_point_auth_configuration::IngressPointAuthConfigurationBuilder;
 

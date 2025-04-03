@@ -22,7 +22,7 @@ impl crate::operation::create_application::builders::CreateApplicationInputBuild
 }
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
-/// <p>Creates an OpenSearch Application.</p>
+/// <p>Creates an OpenSearch UI application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using the OpenSearch user interface in Amazon OpenSearch Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl CreateApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
@@ -141,31 +141,31 @@ impl CreateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         self.inner = self.inner.data_sources(input);
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         self.inner.get_data_sources()
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterOptionsInput) -> Self {
         self.inner = self.inner.iam_identity_center_options(input);
         self
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>) -> Self {
         self.inner = self.inner.set_iam_identity_center_options(input);
         self
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterOptionsInput> {
         self.inner.get_iam_identity_center_options()
     }
@@ -174,17 +174,17 @@ impl CreateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_app_configs`](Self::set_app_configs).
     ///
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn app_configs(mut self, input: crate::types::AppConfig) -> Self {
         self.inner = self.inner.app_configs(input);
         self
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn set_app_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>) -> Self {
         self.inner = self.inner.set_app_configs(input);
         self
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         self.inner.get_app_configs()
     }

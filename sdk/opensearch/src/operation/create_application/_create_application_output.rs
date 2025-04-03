@@ -3,30 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
-    /// <p>Unique identifier for the created OpenSearch Application.</p>
+    /// <p>The unique identifier assigned to the OpenSearch application.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the created OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Data sources associated with the created OpenSearch Application.</p>
+    /// <p>The data sources linked to the OpenSearch application.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    /// <p>Settings of IAM Identity Center for the created OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterOptions>,
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
     /// <p>A list of tags attached to a domain.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Timestamp when the OpenSearch Application was created.</p>
+    /// <p>The timestamp indicating when the OpenSearch application was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
-    /// <p>Unique identifier for the created OpenSearch Application.</p>
+    /// <p>The unique identifier assigned to the OpenSearch application.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Name of the created OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -34,17 +34,17 @@ impl CreateApplicationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Data sources associated with the created OpenSearch Application.</p>
+    /// <p>The data sources linked to the OpenSearch application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     pub fn data_sources(&self) -> &[crate::types::DataSource] {
         self.data_sources.as_deref().unwrap_or_default()
     }
-    /// <p>Settings of IAM Identity Center for the created OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::IamIdentityCenterOptions> {
         self.iam_identity_center_options.as_ref()
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_configs.is_none()`.
     pub fn app_configs(&self) -> &[crate::types::AppConfig] {
@@ -56,7 +56,7 @@ impl CreateApplicationOutput {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
-    /// <p>Timestamp when the OpenSearch Application was created.</p>
+    /// <p>The timestamp indicating when the OpenSearch application was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
@@ -88,31 +88,31 @@ pub struct CreateApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
-    /// <p>Unique identifier for the created OpenSearch Application.</p>
+    /// <p>The unique identifier assigned to the OpenSearch application.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier for the created OpenSearch Application.</p>
+    /// <p>The unique identifier assigned to the OpenSearch application.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>Unique identifier for the created OpenSearch Application.</p>
+    /// <p>The unique identifier assigned to the OpenSearch application.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>Name of the created OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the created OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Name of the created OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -134,33 +134,33 @@ impl CreateApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Data sources associated with the created OpenSearch Application.</p>
+    /// <p>The data sources linked to the OpenSearch application.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Data sources associated with the created OpenSearch Application.</p>
+    /// <p>The data sources linked to the OpenSearch application.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.data_sources = input;
         self
     }
-    /// <p>Data sources associated with the created OpenSearch Application.</p>
+    /// <p>The data sources linked to the OpenSearch application.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
-    /// <p>Settings of IAM Identity Center for the created OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterOptions) -> Self {
         self.iam_identity_center_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings of IAM Identity Center for the created OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterOptions>) -> Self {
         self.iam_identity_center_options = input;
         self
     }
-    /// <p>Settings of IAM Identity Center for the created OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterOptions> {
         &self.iam_identity_center_options
     }
@@ -168,19 +168,19 @@ impl CreateApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_app_configs`](Self::set_app_configs).
     ///
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn app_configs(mut self, input: crate::types::AppConfig) -> Self {
         let mut v = self.app_configs.unwrap_or_default();
         v.push(input);
         self.app_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn set_app_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>) -> Self {
         self.app_configs = input;
         self
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         &self.app_configs
     }
@@ -204,17 +204,17 @@ impl CreateApplicationOutputBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
-    /// <p>Timestamp when the OpenSearch Application was created.</p>
+    /// <p>The timestamp indicating when the OpenSearch application was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Timestamp when the OpenSearch Application was created.</p>
+    /// <p>The timestamp indicating when the OpenSearch application was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>Timestamp when the OpenSearch Application was created.</p>
+    /// <p>The timestamp indicating when the OpenSearch application was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }

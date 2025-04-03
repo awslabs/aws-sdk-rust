@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationInput {
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationInput {
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct GetApplicationInputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationInputBuilder {
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

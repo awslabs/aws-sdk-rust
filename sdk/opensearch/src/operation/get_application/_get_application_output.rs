@@ -3,30 +3,30 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationOutput {
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the checked OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Endpoint URL of the checked OpenSearch Application.</p>
+    /// <p>The endpoint URL of the OpenSearch application.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
-    /// <p>Current status of the checked OpenSearch Application. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>The current status of the OpenSearch application. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub status: ::std::option::Option<crate::types::ApplicationStatus>,
-    /// <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterOptions>,
-    /// <p>Associated data sources to the checked OpenSearch Application.</p>
+    /// <p>The data sources associated with the OpenSearch application.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    /// <p>App configurations of the checked OpenSearch Application.</p>
+    /// <p>The configuration settings of the OpenSearch application.</p>
     pub app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
-    /// <p>Timestamp at which the checked OpenSearch Application was created.</p>
+    /// <p>The timestamp when the OpenSearch application was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+    /// <p>The timestamp of the last update to the OpenSearch application.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -34,39 +34,39 @@ impl GetApplicationOutput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>Name of the checked OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Endpoint URL of the checked OpenSearch Application.</p>
+    /// <p>The endpoint URL of the OpenSearch application.</p>
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
-    /// <p>Current status of the checked OpenSearch Application. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>The current status of the OpenSearch application. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
-    /// <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::IamIdentityCenterOptions> {
         self.iam_identity_center_options.as_ref()
     }
-    /// <p>Associated data sources to the checked OpenSearch Application.</p>
+    /// <p>The data sources associated with the OpenSearch application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     pub fn data_sources(&self) -> &[crate::types::DataSource] {
         self.data_sources.as_deref().unwrap_or_default()
     }
-    /// <p>App configurations of the checked OpenSearch Application.</p>
+    /// <p>The configuration settings of the OpenSearch application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_configs.is_none()`.
     pub fn app_configs(&self) -> &[crate::types::AppConfig] {
         self.app_configs.as_deref().unwrap_or_default()
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was created.</p>
+    /// <p>The timestamp when the OpenSearch application was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+    /// <p>The timestamp of the last update to the OpenSearch application.</p>
     pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
@@ -100,17 +100,17 @@ pub struct GetApplicationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -128,59 +128,59 @@ impl GetApplicationOutputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>Name of the checked OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the checked OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Name of the checked OpenSearch Application.</p>
+    /// <p>The name of the OpenSearch application.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Endpoint URL of the checked OpenSearch Application.</p>
+    /// <p>The endpoint URL of the OpenSearch application.</p>
     pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Endpoint URL of the checked OpenSearch Application.</p>
+    /// <p>The endpoint URL of the OpenSearch application.</p>
     pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
-    /// <p>Endpoint URL of the checked OpenSearch Application.</p>
+    /// <p>The endpoint URL of the OpenSearch application.</p>
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
-    /// <p>Current status of the checked OpenSearch Application. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>The current status of the OpenSearch application. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Current status of the checked OpenSearch Application. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>The current status of the OpenSearch application. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Current status of the checked OpenSearch Application. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>The current status of the OpenSearch application. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationStatus> {
         &self.status
     }
-    /// <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterOptions) -> Self {
         self.iam_identity_center_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterOptions>) -> Self {
         self.iam_identity_center_options = input;
         self
     }
-    /// <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
+    /// <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
     pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterOptions> {
         &self.iam_identity_center_options
     }
@@ -188,19 +188,19 @@ impl GetApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Associated data sources to the checked OpenSearch Application.</p>
+    /// <p>The data sources associated with the OpenSearch application.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Associated data sources to the checked OpenSearch Application.</p>
+    /// <p>The data sources associated with the OpenSearch application.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.data_sources = input;
         self
     }
-    /// <p>Associated data sources to the checked OpenSearch Application.</p>
+    /// <p>The data sources associated with the OpenSearch application.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
@@ -208,47 +208,47 @@ impl GetApplicationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_app_configs`](Self::set_app_configs).
     ///
-    /// <p>App configurations of the checked OpenSearch Application.</p>
+    /// <p>The configuration settings of the OpenSearch application.</p>
     pub fn app_configs(mut self, input: crate::types::AppConfig) -> Self {
         let mut v = self.app_configs.unwrap_or_default();
         v.push(input);
         self.app_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>App configurations of the checked OpenSearch Application.</p>
+    /// <p>The configuration settings of the OpenSearch application.</p>
     pub fn set_app_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>) -> Self {
         self.app_configs = input;
         self
     }
-    /// <p>App configurations of the checked OpenSearch Application.</p>
+    /// <p>The configuration settings of the OpenSearch application.</p>
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         &self.app_configs
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was created.</p>
+    /// <p>The timestamp when the OpenSearch application was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was created.</p>
+    /// <p>The timestamp when the OpenSearch application was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was created.</p>
+    /// <p>The timestamp when the OpenSearch application was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+    /// <p>The timestamp of the last update to the OpenSearch application.</p>
     pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+    /// <p>The timestamp of the last update to the OpenSearch application.</p>
     pub fn set_last_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_at = input;
         self
     }
-    /// <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+    /// <p>The timestamp of the last update to the OpenSearch application.</p>
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }

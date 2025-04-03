@@ -154,6 +154,10 @@ pub(crate) fn de_get_ingress_point(
                         crate::protocol_serde::shape_ingress_point_auth_configuration::de_ingress_point_auth_configuration(tokens)?,
                     );
                 }
+                "NetworkConfiguration" => {
+                    builder =
+                        builder.set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(tokens)?);
+                }
                 "CreatedTimestamp" => {
                     builder = builder.set_created_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

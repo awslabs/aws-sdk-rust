@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_id):<br>required: **true**<br><p>Unique identifier for the OpenSearch Application that you want to delete.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier of the OpenSearch application to delete.</p><br>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
     pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {

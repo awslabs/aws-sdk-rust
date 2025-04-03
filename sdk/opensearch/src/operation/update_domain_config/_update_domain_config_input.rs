@@ -41,7 +41,7 @@ pub struct UpdateDomainConfigInput {
     pub node_to_node_encryption_options: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Options for fine-grained access control.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
-    /// <p>Container for IAM Identity Center Options settings.</p>
+    /// <p>Configuration settings for enabling and managing IAM Identity Center.</p>
     pub identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsInput>,
     /// <p>Options for Auto-Tune.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
@@ -130,7 +130,7 @@ impl UpdateDomainConfigInput {
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsInput> {
         self.advanced_security_options.as_ref()
     }
-    /// <p>Container for IAM Identity Center Options settings.</p>
+    /// <p>Configuration settings for enabling and managing IAM Identity Center.</p>
     pub fn identity_center_options(&self) -> ::std::option::Option<&crate::types::IdentityCenterOptionsInput> {
         self.identity_center_options.as_ref()
     }
@@ -447,17 +447,17 @@ impl UpdateDomainConfigInputBuilder {
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsInput> {
         &self.advanced_security_options
     }
-    /// <p>Container for IAM Identity Center Options settings.</p>
+    /// <p>Configuration settings for enabling and managing IAM Identity Center.</p>
     pub fn identity_center_options(mut self, input: crate::types::IdentityCenterOptionsInput) -> Self {
         self.identity_center_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container for IAM Identity Center Options settings.</p>
+    /// <p>Configuration settings for enabling and managing IAM Identity Center.</p>
     pub fn set_identity_center_options(mut self, input: ::std::option::Option<crate::types::IdentityCenterOptionsInput>) -> Self {
         self.identity_center_options = input;
         self
     }
-    /// <p>Container for IAM Identity Center Options settings.</p>
+    /// <p>Configuration settings for enabling and managing IAM Identity Center.</p>
     pub fn get_identity_center_options(&self) -> &::std::option::Option<crate::types::IdentityCenterOptionsInput> {
         &self.identity_center_options
     }

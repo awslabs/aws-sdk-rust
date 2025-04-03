@@ -27,9 +27,15 @@ pub use crate::types::_ingress_tls_protocol_to_evaluate::IngressTlsProtocolToEva
 
 pub use crate::types::_ingress_tls_attribute::IngressTlsAttribute;
 
-pub use crate::types::_ingress_ipv4_expression::IngressIpv4Expression;
+pub use crate::types::_ingress_ipv6_expression::IngressIpv6Expression;
 
 pub use crate::types::_ingress_ip_operator::IngressIpOperator;
+
+pub use crate::types::_ingress_ipv6_to_evaluate::IngressIpv6ToEvaluate;
+
+pub use crate::types::_ingress_ipv6_attribute::IngressIpv6Attribute;
+
+pub use crate::types::_ingress_ipv4_expression::IngressIpv4Expression;
 
 pub use crate::types::_ingress_ip_to_evaluate::IngressIpToEvaluate;
 
@@ -140,6 +146,14 @@ pub use crate::types::_relay::Relay;
 pub use crate::types::_ingress_point_configuration::IngressPointConfiguration;
 
 pub use crate::types::_ingress_point_status_to_update::IngressPointStatusToUpdate;
+
+pub use crate::types::_network_configuration::NetworkConfiguration;
+
+pub use crate::types::_private_network_configuration::PrivateNetworkConfiguration;
+
+pub use crate::types::_public_network_configuration::PublicNetworkConfiguration;
+
+pub use crate::types::_ip_type::IpType;
 
 pub use crate::types::_ingress_point_auth_configuration::IngressPointAuthConfiguration;
 
@@ -307,6 +321,12 @@ mod _ingress_ipv4_attribute;
 
 mod _ingress_ipv4_expression;
 
+mod _ingress_ipv6_attribute;
+
+mod _ingress_ipv6_expression;
+
+mod _ingress_ipv6_to_evaluate;
+
 mod _ingress_is_in_address_list;
 
 mod _ingress_point;
@@ -341,17 +361,25 @@ mod _ingress_tls_protocol_operator;
 
 mod _ingress_tls_protocol_to_evaluate;
 
+mod _ip_type;
+
 mod _mail_from;
 
 mod _message_body;
 
 mod _metadata;
 
+mod _network_configuration;
+
 mod _no_authentication;
 
 mod _policy_condition;
 
 mod _policy_statement;
+
+mod _private_network_configuration;
+
+mod _public_network_configuration;
 
 mod _relay;
 

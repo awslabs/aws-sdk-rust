@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`rule_set_id(Option<String>)`](crate::operation::get_ingress_point::GetIngressPointOutput::rule_set_id): <p>The identifier of a rule set resource associated with the ingress endpoint.</p>
     ///   - [`traffic_policy_id(Option<String>)`](crate::operation::get_ingress_point::GetIngressPointOutput::traffic_policy_id): <p>The identifier of the traffic policy resource associated with the ingress endpoint.</p>
     ///   - [`ingress_point_auth_configuration(Option<IngressPointAuthConfiguration>)`](crate::operation::get_ingress_point::GetIngressPointOutput::ingress_point_auth_configuration): <p>The authentication configuration of the ingress endpoint resource.</p>
+    ///   - [`network_configuration(Option<NetworkConfiguration>)`](crate::operation::get_ingress_point::GetIngressPointOutput::network_configuration): <p>The network configuration for the ingress point.</p>
     ///   - [`created_timestamp(Option<DateTime>)`](crate::operation::get_ingress_point::GetIngressPointOutput::created_timestamp): <p>The timestamp of when the ingress endpoint was created.</p>
     ///   - [`last_updated_timestamp(Option<DateTime>)`](crate::operation::get_ingress_point::GetIngressPointOutput::last_updated_timestamp): <p>The timestamp of when the ingress endpoint was last updated.</p>
     /// - On failure, responds with [`SdkError<GetIngressPointError>`](crate::operation::get_ingress_point::GetIngressPointError)

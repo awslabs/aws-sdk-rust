@@ -192,6 +192,20 @@ impl CreateIngressPointFluentBuilder {
     pub fn get_ingress_point_configuration(&self) -> &::std::option::Option<crate::types::IngressPointConfiguration> {
         self.inner.get_ingress_point_configuration()
     }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
+        self.inner = self.inner.network_configuration(input);
+        self
+    }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
+        self.inner = self.inner.set_network_configuration(input);
+        self
+    }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        self.inner.get_network_configuration()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

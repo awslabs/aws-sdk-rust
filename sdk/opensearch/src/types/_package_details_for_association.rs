@@ -6,7 +6,7 @@
 pub struct PackageDetailsForAssociation {
     /// <p>Internal ID of the package that you want to associate with a domain.</p>
     pub package_id: ::std::string::String,
-    /// <p>List of package IDs that must be associated with the domain with or before the package can be associated.</p>
+    /// <p>List of package IDs that must be linked to the domain before or simultaneously with the package association.</p>
     pub prerequisite_package_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The configuration parameters for associating the package with a domain.</p>
     pub association_configuration: ::std::option::Option<crate::types::PackageAssociationConfiguration>,
@@ -17,7 +17,7 @@ impl PackageDetailsForAssociation {
         use std::ops::Deref;
         self.package_id.deref()
     }
-    /// <p>List of package IDs that must be associated with the domain with or before the package can be associated.</p>
+    /// <p>List of package IDs that must be linked to the domain before or simultaneously with the package association.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prerequisite_package_id_list.is_none()`.
     pub fn prerequisite_package_id_list(&self) -> &[::std::string::String] {
@@ -63,19 +63,19 @@ impl PackageDetailsForAssociationBuilder {
     ///
     /// To override the contents of this collection use [`set_prerequisite_package_id_list`](Self::set_prerequisite_package_id_list).
     ///
-    /// <p>List of package IDs that must be associated with the domain with or before the package can be associated.</p>
+    /// <p>List of package IDs that must be linked to the domain before or simultaneously with the package association.</p>
     pub fn prerequisite_package_id_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prerequisite_package_id_list.unwrap_or_default();
         v.push(input.into());
         self.prerequisite_package_id_list = ::std::option::Option::Some(v);
         self
     }
-    /// <p>List of package IDs that must be associated with the domain with or before the package can be associated.</p>
+    /// <p>List of package IDs that must be linked to the domain before or simultaneously with the package association.</p>
     pub fn set_prerequisite_package_id_list(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.prerequisite_package_id_list = input;
         self
     }
-    /// <p>List of package IDs that must be associated with the domain with or before the package can be associated.</p>
+    /// <p>List of package IDs that must be linked to the domain before or simultaneously with the package association.</p>
     pub fn get_prerequisite_package_id_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.prerequisite_package_id_list
     }

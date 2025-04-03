@@ -6,7 +6,7 @@
 pub struct PackageEncryptionOptions {
     /// <p>KMS key ID for encrypting the package.</p>
     pub kms_key_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>This indicates whether encryption is enabled for the package.</p>
+    /// <p>Whether encryption is enabled for the package.</p>
     pub encryption_enabled: bool,
 }
 impl PackageEncryptionOptions {
@@ -14,7 +14,7 @@ impl PackageEncryptionOptions {
     pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
         self.kms_key_identifier.as_deref()
     }
-    /// <p>This indicates whether encryption is enabled for the package.</p>
+    /// <p>Whether encryption is enabled for the package.</p>
     pub fn encryption_enabled(&self) -> bool {
         self.encryption_enabled
     }
@@ -48,18 +48,18 @@ impl PackageEncryptionOptionsBuilder {
     pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_identifier
     }
-    /// <p>This indicates whether encryption is enabled for the package.</p>
+    /// <p>Whether encryption is enabled for the package.</p>
     /// This field is required.
     pub fn encryption_enabled(mut self, input: bool) -> Self {
         self.encryption_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This indicates whether encryption is enabled for the package.</p>
+    /// <p>Whether encryption is enabled for the package.</p>
     pub fn set_encryption_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_enabled = input;
         self
     }
-    /// <p>This indicates whether encryption is enabled for the package.</p>
+    /// <p>Whether encryption is enabled for the package.</p>
     pub fn get_encryption_enabled(&self) -> &::std::option::Option<bool> {
         &self.encryption_enabled
     }

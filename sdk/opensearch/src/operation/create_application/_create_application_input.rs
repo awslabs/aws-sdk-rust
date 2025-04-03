@@ -3,39 +3,39 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationInput {
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub iam_identity_center_options: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>,
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
     /// <p>A list of tags attached to a domain.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateApplicationInput {
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     pub fn data_sources(&self) -> &[crate::types::DataSource] {
         self.data_sources.as_deref().unwrap_or_default()
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn iam_identity_center_options(&self) -> ::std::option::Option<&crate::types::IamIdentityCenterOptionsInput> {
         self.iam_identity_center_options.as_ref()
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_configs.is_none()`.
     pub fn app_configs(&self) -> &[crate::types::AppConfig] {
@@ -67,32 +67,32 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateApplicationInputBuilder {
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique client idempotency token. It will be auto generated if not provided.</p>
+    /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Name of the OpenSearch Appication to create. Application names are unique across the applications owned by an account within an Amazon Web Services Region.</p>
+    /// <p>The unique name of the OpenSearch application. Names must be unique within an Amazon Web Services Region for each account.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
@@ -100,33 +100,33 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.data_sources = input;
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to link to the OpenSearch application.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn iam_identity_center_options(mut self, input: crate::types::IamIdentityCenterOptionsInput) -> Self {
         self.iam_identity_center_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn set_iam_identity_center_options(mut self, input: ::std::option::Option<crate::types::IamIdentityCenterOptionsInput>) -> Self {
         self.iam_identity_center_options = input;
         self
     }
-    /// <p>Settings of IAM Identity Center for the OpenSearch Application.</p>
+    /// <p>Configuration settings for integrating Amazon Web Services IAM Identity Center with the OpenSearch application.</p>
     pub fn get_iam_identity_center_options(&self) -> &::std::option::Option<crate::types::IamIdentityCenterOptionsInput> {
         &self.iam_identity_center_options
     }
@@ -134,19 +134,19 @@ impl CreateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_app_configs`](Self::set_app_configs).
     ///
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn app_configs(mut self, input: crate::types::AppConfig) -> Self {
         let mut v = self.app_configs.unwrap_or_default();
         v.push(input);
         self.app_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn set_app_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>) -> Self {
         self.app_configs = input;
         self
     }
-    /// <p>Configurations of the OpenSearch Application, inlcuding admin configuration.</p>
+    /// <p>Configuration settings for the OpenSearch application, including administrative options.</p>
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         &self.app_configs
     }

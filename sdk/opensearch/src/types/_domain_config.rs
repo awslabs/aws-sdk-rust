@@ -32,7 +32,7 @@ pub struct DomainConfig {
     pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptionsStatus>,
     /// <p>Container for fine-grained access control settings for the domain.</p>
     pub advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsStatus>,
-    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    /// <p>Configuration options for enabling and managing IAM Identity Center integration within a domain.</p>
     pub identity_center_options: ::std::option::Option<crate::types::IdentityCenterOptionsStatus>,
     /// <p>Container for Auto-Tune settings for the domain.</p>
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
@@ -104,7 +104,7 @@ impl DomainConfig {
     pub fn advanced_security_options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsStatus> {
         self.advanced_security_options.as_ref()
     }
-    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    /// <p>Configuration options for enabling and managing IAM Identity Center integration within a domain.</p>
     pub fn identity_center_options(&self) -> ::std::option::Option<&crate::types::IdentityCenterOptionsStatus> {
         self.identity_center_options.as_ref()
     }
@@ -365,17 +365,17 @@ impl DomainConfigBuilder {
     pub fn get_advanced_security_options(&self) -> &::std::option::Option<crate::types::AdvancedSecurityOptionsStatus> {
         &self.advanced_security_options
     }
-    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    /// <p>Configuration options for enabling and managing IAM Identity Center integration within a domain.</p>
     pub fn identity_center_options(mut self, input: crate::types::IdentityCenterOptionsStatus) -> Self {
         self.identity_center_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    /// <p>Configuration options for enabling and managing IAM Identity Center integration within a domain.</p>
     pub fn set_identity_center_options(mut self, input: ::std::option::Option<crate::types::IdentityCenterOptionsStatus>) -> Self {
         self.identity_center_options = input;
         self
     }
-    /// <p>Container for IAM Identity Center Option control for the domain.</p>
+    /// <p>Configuration options for enabling and managing IAM Identity Center integration within a domain.</p>
     pub fn get_identity_center_options(&self) -> &::std::option::Option<crate::types::IdentityCenterOptionsStatus> {
         &self.identity_center_options
     }

@@ -113,6 +113,7 @@
 ///     LanguageCode::ViVn => { /* ... */ },
 ///     LanguageCode::WoSn => { /* ... */ },
 ///     LanguageCode::ZhCn => { /* ... */ },
+///     LanguageCode::ZhHk => { /* ... */ },
 ///     LanguageCode::ZhTw => { /* ... */ },
 ///     LanguageCode::ZuZa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -346,6 +347,8 @@ pub enum LanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     #[allow(missing_docs)] // documentation missing in model
+    ZhHk,
+    #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     #[allow(missing_docs)] // documentation missing in model
     ZuZa,
@@ -457,6 +460,7 @@ impl ::std::convert::From<&str> for LanguageCode {
             "vi-VN" => LanguageCode::ViVn,
             "wo-SN" => LanguageCode::WoSn,
             "zh-CN" => LanguageCode::ZhCn,
+            "zh-HK" => LanguageCode::ZhHk,
             "zh-TW" => LanguageCode::ZhTw,
             "zu-ZA" => LanguageCode::ZuZa,
             other => LanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -575,6 +579,7 @@ impl LanguageCode {
             LanguageCode::ViVn => "vi-VN",
             LanguageCode::WoSn => "wo-SN",
             LanguageCode::ZhCn => "zh-CN",
+            LanguageCode::ZhHk => "zh-HK",
             LanguageCode::ZhTw => "zh-TW",
             LanguageCode::ZuZa => "zu-ZA",
             LanguageCode::Unknown(value) => value.as_str(),
@@ -589,7 +594,7 @@ impl LanguageCode {
             "id-ID", "is-IS", "it-IT", "ja-JP", "ka-GE", "kab-DZ", "kk-KZ", "kn-IN", "ko-KR", "ky-KG", "lg-IN", "lt-LT", "lv-LV", "mhr-RU", "mi-NZ",
             "mk-MK", "ml-IN", "mn-MN", "mr-IN", "ms-MY", "mt-MT", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL", "ps-AF", "pt-BR", "pt-PT", "ro-RO",
             "ru-RU", "rw-RW", "si-LK", "sk-SK", "sl-SI", "so-SO", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE", "sw-RW", "sw-TZ", "sw-UG", "ta-IN",
-            "te-IN", "th-TH", "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-TW", "zu-ZA",
+            "te-IN", "th-TH", "tl-PH", "tr-TR", "tt-RU", "ug-CN", "uk-UA", "uz-UZ", "vi-VN", "wo-SN", "zh-CN", "zh-HK", "zh-TW", "zu-ZA",
         ]
     }
 }
@@ -714,6 +719,7 @@ impl ::std::fmt::Display for LanguageCode {
             LanguageCode::ViVn => write!(f, "vi-VN"),
             LanguageCode::WoSn => write!(f, "wo-SN"),
             LanguageCode::ZhCn => write!(f, "zh-CN"),
+            LanguageCode::ZhHk => write!(f, "zh-HK"),
             LanguageCode::ZhTw => write!(f, "zh-TW"),
             LanguageCode::ZuZa => write!(f, "zu-ZA"),
             LanguageCode::Unknown(value) => write!(f, "{}", value),

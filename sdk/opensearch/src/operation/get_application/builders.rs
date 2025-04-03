@@ -22,7 +22,7 @@ impl crate::operation::get_application::builders::GetApplicationInputBuilder {
 }
 /// Fluent builder constructing a request to `GetApplication`.
 ///
-/// <p>Check the configuration and status of an existing OpenSearch Application.</p>
+/// <p>Retrieves the configuration and status of an existing OpenSearch application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>Unique identifier of the checked OpenSearch Application.</p>
+    /// <p>The unique identifier of the OpenSearch application to retrieve.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

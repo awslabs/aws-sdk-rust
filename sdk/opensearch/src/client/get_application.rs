@@ -3,18 +3,18 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApplication`](crate::operation::get_application::builders::GetApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_id):<br>required: **true**<br><p>Unique identifier of the checked OpenSearch Application.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_application::builders::GetApplicationFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier of the OpenSearch application to retrieve.</p><br>
     /// - On success, responds with [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::id): <p>Unique identifier of the checked OpenSearch Application.</p>
+    ///   - [`id(Option<String>)`](crate::operation::get_application::GetApplicationOutput::id): <p>The unique identifier of the OpenSearch application.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_application::GetApplicationOutput::arn): <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information.</p>
-    ///   - [`name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::name): <p>Name of the checked OpenSearch Application.</p>
-    ///   - [`endpoint(Option<String>)`](crate::operation::get_application::GetApplicationOutput::endpoint): <p>Endpoint URL of the checked OpenSearch Application.</p>
-    ///   - [`status(Option<ApplicationStatus>)`](crate::operation::get_application::GetApplicationOutput::status): <p>Current status of the checked OpenSearch Application. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
-    ///   - [`iam_identity_center_options(Option<IamIdentityCenterOptions>)`](crate::operation::get_application::GetApplicationOutput::iam_identity_center_options): <p>IAM Identity Center settings for the checked OpenSearch Application.</p>
-    ///   - [`data_sources(Option<Vec::<DataSource>>)`](crate::operation::get_application::GetApplicationOutput::data_sources): <p>Associated data sources to the checked OpenSearch Application.</p>
-    ///   - [`app_configs(Option<Vec::<AppConfig>>)`](crate::operation::get_application::GetApplicationOutput::app_configs): <p>App configurations of the checked OpenSearch Application.</p>
-    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_at): <p>Timestamp at which the checked OpenSearch Application was created.</p>
-    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_updated_at): <p>Timestamp at which the checked OpenSearch Application was last updated.</p>
+    ///   - [`name(Option<String>)`](crate::operation::get_application::GetApplicationOutput::name): <p>The name of the OpenSearch application.</p>
+    ///   - [`endpoint(Option<String>)`](crate::operation::get_application::GetApplicationOutput::endpoint): <p>The endpoint URL of the OpenSearch application.</p>
+    ///   - [`status(Option<ApplicationStatus>)`](crate::operation::get_application::GetApplicationOutput::status): <p>The current status of the OpenSearch application. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    ///   - [`iam_identity_center_options(Option<IamIdentityCenterOptions>)`](crate::operation::get_application::GetApplicationOutput::iam_identity_center_options): <p>The IAM Identity Center settings configured for the OpenSearch application.</p>
+    ///   - [`data_sources(Option<Vec::<DataSource>>)`](crate::operation::get_application::GetApplicationOutput::data_sources): <p>The data sources associated with the OpenSearch application.</p>
+    ///   - [`app_configs(Option<Vec::<AppConfig>>)`](crate::operation::get_application::GetApplicationOutput::app_configs): <p>The configuration settings of the OpenSearch application.</p>
+    ///   - [`created_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::created_at): <p>The timestamp when the OpenSearch application was created.</p>
+    ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_application::GetApplicationOutput::last_updated_at): <p>The timestamp of the last update to the OpenSearch application.</p>
     /// - On failure, responds with [`SdkError<GetApplicationError>`](crate::operation::get_application::GetApplicationError)
     pub fn get_application(&self) -> crate::operation::get_application::builders::GetApplicationFluentBuilder {
         crate::operation::get_application::builders::GetApplicationFluentBuilder::new(self.handle.clone())

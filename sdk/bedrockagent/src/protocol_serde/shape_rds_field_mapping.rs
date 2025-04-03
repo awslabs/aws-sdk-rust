@@ -15,6 +15,9 @@ pub fn ser_rds_field_mapping(
     {
         object.key("metadataField").string(input.metadata_field.as_str());
     }
+    if let Some(var_1) = &input.custom_metadata_field {
+        object.key("customMetadataField").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -56,6 +59,13 @@ where
                         }
                         "metadataField" => {
                             builder = builder.set_metadata_field(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "customMetadataField" => {
+                            builder = builder.set_custom_metadata_field(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

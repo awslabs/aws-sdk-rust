@@ -27,6 +27,9 @@ pub fn ser_mongo_db_atlas_configuration(
     if let Some(var_3) = &input.endpoint_service_name {
         object.key("endpointServiceName").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.text_index_name {
+        object.key("textIndexName").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -87,6 +90,13 @@ where
                         }
                         "endpointServiceName" => {
                             builder = builder.set_endpoint_service_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "textIndexName" => {
+                            builder = builder.set_text_index_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

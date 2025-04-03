@@ -18,6 +18,8 @@ pub struct MongoDbAtlasConfiguration {
     pub field_mapping: ::std::option::Option<crate::types::MongoDbAtlasFieldMapping>,
     /// <p>The name of the VPC endpoint service in your account that is connected to your MongoDB Atlas cluster.</p>
     pub endpoint_service_name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>
+    pub text_index_name: ::std::option::Option<::std::string::String>,
 }
 impl MongoDbAtlasConfiguration {
     /// <p>The endpoint URL of your MongoDB Atlas cluster for your knowledge base.</p>
@@ -53,6 +55,10 @@ impl MongoDbAtlasConfiguration {
     pub fn endpoint_service_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_service_name.as_deref()
     }
+    /// <p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>
+    pub fn text_index_name(&self) -> ::std::option::Option<&str> {
+        self.text_index_name.as_deref()
+    }
 }
 impl MongoDbAtlasConfiguration {
     /// Creates a new builder-style object to manufacture [`MongoDbAtlasConfiguration`](crate::types::MongoDbAtlasConfiguration).
@@ -72,6 +78,7 @@ pub struct MongoDbAtlasConfigurationBuilder {
     pub(crate) credentials_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) field_mapping: ::std::option::Option<crate::types::MongoDbAtlasFieldMapping>,
     pub(crate) endpoint_service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) text_index_name: ::std::option::Option<::std::string::String>,
 }
 impl MongoDbAtlasConfigurationBuilder {
     /// <p>The endpoint URL of your MongoDB Atlas cluster for your knowledge base.</p>
@@ -178,6 +185,20 @@ impl MongoDbAtlasConfigurationBuilder {
     pub fn get_endpoint_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint_service_name
     }
+    /// <p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>
+    pub fn text_index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text_index_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>
+    pub fn set_text_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.text_index_name = input;
+        self
+    }
+    /// <p>The name of the text search index in the MongoDB collection. This is required for using the hybrid search feature.</p>
+    pub fn get_text_index_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.text_index_name
+    }
     /// Consumes the builder and constructs a [`MongoDbAtlasConfiguration`](crate::types::MongoDbAtlasConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::MongoDbAtlasConfigurationBuilder::endpoint)
@@ -219,6 +240,7 @@ impl MongoDbAtlasConfigurationBuilder {
             })?,
             field_mapping: self.field_mapping,
             endpoint_service_name: self.endpoint_service_name,
+            text_index_name: self.text_index_name,
         })
     }
 }

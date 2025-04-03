@@ -319,6 +319,8 @@ pub(crate) mod shape_message_body;
 
 pub(crate) mod shape_metadata;
 
+pub(crate) mod shape_network_configuration;
+
 pub(crate) mod shape_policy_statement;
 
 pub(crate) mod shape_policy_statement_list;
@@ -371,6 +373,10 @@ pub(crate) mod shape_no_authentication;
 
 pub(crate) mod shape_policy_condition;
 
+pub(crate) mod shape_private_network_configuration;
+
+pub(crate) mod shape_public_network_configuration;
+
 pub(crate) mod shape_relay;
 
 pub(crate) mod shape_row;
@@ -411,6 +417,8 @@ pub(crate) mod shape_ingress_boolean_expression;
 
 pub(crate) mod shape_ingress_ipv4_expression;
 
+pub(crate) mod shape_ingress_ipv6_expression;
+
 pub(crate) mod shape_ingress_string_expression;
 
 pub(crate) mod shape_ingress_tls_protocol_expression;
@@ -449,6 +457,8 @@ pub(crate) mod shape_ingress_boolean_to_evaluate;
 
 pub(crate) mod shape_ingress_ip_to_evaluate;
 
+pub(crate) mod shape_ingress_ipv6_to_evaluate;
+
 pub(crate) mod shape_ingress_string_to_evaluate;
 
 pub(crate) mod shape_ingress_tls_protocol_to_evaluate;
@@ -474,6 +484,8 @@ pub(crate) mod shape_rule_is_in_address_list;
 pub(crate) mod shape_string_value_list;
 
 pub(crate) mod shape_ipv4_cidrs;
+
+pub(crate) mod shape_ipv6_cidrs;
 
 pub(crate) mod shape_recipients;
 

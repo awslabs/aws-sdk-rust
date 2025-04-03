@@ -378,6 +378,24 @@ pub(crate) fn policy_statement_correct_errors(
     builder
 }
 
+pub(crate) fn private_network_configuration_correct_errors(
+    mut builder: crate::types::builders::PrivateNetworkConfigurationBuilder,
+) -> crate::types::builders::PrivateNetworkConfigurationBuilder {
+    if builder.vpc_endpoint_id.is_none() {
+        builder.vpc_endpoint_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn public_network_configuration_correct_errors(
+    mut builder: crate::types::builders::PublicNetworkConfigurationBuilder,
+) -> crate::types::builders::PublicNetworkConfigurationBuilder {
+    if builder.ip_type.is_none() {
+        builder.ip_type = "no value was set".parse::<crate::types::IpType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn rule_correct_errors(mut builder: crate::types::builders::RuleBuilder) -> crate::types::builders::RuleBuilder {
     if builder.actions.is_none() {
         builder.actions = Some(Default::default())
@@ -512,6 +530,21 @@ pub(crate) fn ingress_ipv4_expression_correct_errors(
 ) -> crate::types::builders::IngressIpv4ExpressionBuilder {
     if builder.evaluate.is_none() {
         builder.evaluate = Some(crate::types::IngressIpToEvaluate::Unknown)
+    }
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::IngressIpOperator>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ingress_ipv6_expression_correct_errors(
+    mut builder: crate::types::builders::IngressIpv6ExpressionBuilder,
+) -> crate::types::builders::IngressIpv6ExpressionBuilder {
+    if builder.evaluate.is_none() {
+        builder.evaluate = Some(crate::types::IngressIpv6ToEvaluate::Unknown)
     }
     if builder.operator.is_none() {
         builder.operator = "no value was set".parse::<crate::types::IngressIpOperator>().ok()

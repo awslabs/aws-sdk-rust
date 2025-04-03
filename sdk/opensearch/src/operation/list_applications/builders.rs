@@ -22,7 +22,7 @@ impl crate::operation::list_applications::builders::ListApplicationsInputBuilder
 }
 /// Fluent builder constructing a request to `ListApplications`.
 ///
-/// <p>List all OpenSearch Applications under your account.</p>
+/// <p>Lists all OpenSearch applications under your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,17 +133,17 @@ impl ListApplicationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
     ///
-    /// <p>OpenSearch Application Status can be used as filters for the listing request. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>Filters the list of OpenSearch applications by status. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn statuses(mut self, input: crate::types::ApplicationStatus) -> Self {
         self.inner = self.inner.statuses(input);
         self
     }
-    /// <p>OpenSearch Application Status can be used as filters for the listing request. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>Filters the list of OpenSearch applications by status. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationStatus>>) -> Self {
         self.inner = self.inner.set_statuses(input);
         self
     }
-    /// <p>OpenSearch Application Status can be used as filters for the listing request. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
+    /// <p>Filters the list of OpenSearch applications by status. Possible values: <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>FAILED</code>, <code>ACTIVE</code>, and <code>DELETED</code>.</p>
     pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationStatus>> {
         self.inner.get_statuses()
     }

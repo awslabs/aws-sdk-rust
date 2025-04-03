@@ -16,6 +16,8 @@ pub struct Template {
     pub template_data: ::std::option::Option<::std::string::String>,
     /// <p>The list of message headers that will be added to the email message.</p>
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
 }
 impl Template {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
@@ -42,6 +44,12 @@ impl Template {
     pub fn headers(&self) -> &[crate::types::MessageHeader] {
         self.headers.as_deref().unwrap_or_default()
     }
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::Attachment] {
+        self.attachments.as_deref().unwrap_or_default()
+    }
 }
 impl Template {
     /// Creates a new builder-style object to manufacture [`Template`](crate::types::Template).
@@ -59,6 +67,7 @@ pub struct TemplateBuilder {
     pub(crate) template_content: ::std::option::Option<crate::types::EmailTemplateContent>,
     pub(crate) template_data: ::std::option::Option<::std::string::String>,
     pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
 }
 impl TemplateBuilder {
     /// <p>The name of the template. You will refer to this name when you send email using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.</p>
@@ -143,6 +152,26 @@ impl TemplateBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
         &self.headers
     }
+    /// Appends an item to `attachments`.
+    ///
+    /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+    ///
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub fn attachments(mut self, input: crate::types::Attachment) -> Self {
+        let mut v = self.attachments.unwrap_or_default();
+        v.push(input);
+        self.attachments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
+        self.attachments = input;
+        self
+    }
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+        &self.attachments
+    }
     /// Consumes the builder and constructs a [`Template`](crate::types::Template).
     pub fn build(self) -> crate::types::Template {
         crate::types::Template {
@@ -151,6 +180,7 @@ impl TemplateBuilder {
             template_content: self.template_content,
             template_data: self.template_data,
             headers: self.headers,
+            attachments: self.attachments,
         }
     }
 }

@@ -30,11 +30,11 @@ pub struct PackageDetails {
     pub available_package_configuration: ::std::option::Option<crate::types::PackageConfiguration>,
     /// <p>A list of users who are allowed to view and associate the package. This field is only visible to the owner of a package.</p>
     pub allow_listed_user_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    /// <p>The owner of the package who is allowed to create and update a package and add users to the package scope.</p>
     pub package_owner: ::std::option::Option<::std::string::String>,
     /// <p>Package Vending Options for a package.</p>
     pub package_vending_options: ::std::option::Option<crate::types::PackageVendingOptions>,
-    /// <p>Package Encryption Options for a package.</p>
+    /// <p>Encryption options for a package.</p>
     pub package_encryption_options: ::std::option::Option<crate::types::PackageEncryptionOptions>,
 }
 impl PackageDetails {
@@ -92,7 +92,7 @@ impl PackageDetails {
     pub fn allow_listed_user_list(&self) -> &[::std::string::String] {
         self.allow_listed_user_list.as_deref().unwrap_or_default()
     }
-    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    /// <p>The owner of the package who is allowed to create and update a package and add users to the package scope.</p>
     pub fn package_owner(&self) -> ::std::option::Option<&str> {
         self.package_owner.as_deref()
     }
@@ -100,7 +100,7 @@ impl PackageDetails {
     pub fn package_vending_options(&self) -> ::std::option::Option<&crate::types::PackageVendingOptions> {
         self.package_vending_options.as_ref()
     }
-    /// <p>Package Encryption Options for a package.</p>
+    /// <p>Encryption options for a package.</p>
     pub fn package_encryption_options(&self) -> ::std::option::Option<&crate::types::PackageEncryptionOptions> {
         self.package_encryption_options.as_ref()
     }
@@ -322,17 +322,17 @@ impl PackageDetailsBuilder {
     pub fn get_allow_listed_user_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.allow_listed_user_list
     }
-    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    /// <p>The owner of the package who is allowed to create and update a package and add users to the package scope.</p>
     pub fn package_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.package_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    /// <p>The owner of the package who is allowed to create and update a package and add users to the package scope.</p>
     pub fn set_package_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_owner = input;
         self
     }
-    /// <p>The owner of the package who is allowed to create/update a package and add users to the package scope.</p>
+    /// <p>The owner of the package who is allowed to create and update a package and add users to the package scope.</p>
     pub fn get_package_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.package_owner
     }
@@ -350,17 +350,17 @@ impl PackageDetailsBuilder {
     pub fn get_package_vending_options(&self) -> &::std::option::Option<crate::types::PackageVendingOptions> {
         &self.package_vending_options
     }
-    /// <p>Package Encryption Options for a package.</p>
+    /// <p>Encryption options for a package.</p>
     pub fn package_encryption_options(mut self, input: crate::types::PackageEncryptionOptions) -> Self {
         self.package_encryption_options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Package Encryption Options for a package.</p>
+    /// <p>Encryption options for a package.</p>
     pub fn set_package_encryption_options(mut self, input: ::std::option::Option<crate::types::PackageEncryptionOptions>) -> Self {
         self.package_encryption_options = input;
         self
     }
-    /// <p>Package Encryption Options for a package.</p>
+    /// <p>Encryption options for a package.</p>
     pub fn get_package_encryption_options(&self) -> &::std::option::Option<crate::types::PackageEncryptionOptions> {
         &self.package_encryption_options
     }

@@ -21,6 +21,8 @@ pub struct GetIngressPointOutput {
     pub traffic_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication configuration of the ingress endpoint resource.</p>
     pub ingress_point_auth_configuration: ::std::option::Option<crate::types::IngressPointAuthConfiguration>,
+    /// <p>The network configuration for the ingress point.</p>
+    pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The timestamp of when the ingress endpoint was created.</p>
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the ingress endpoint was last updated.</p>
@@ -66,6 +68,10 @@ impl GetIngressPointOutput {
     pub fn ingress_point_auth_configuration(&self) -> ::std::option::Option<&crate::types::IngressPointAuthConfiguration> {
         self.ingress_point_auth_configuration.as_ref()
     }
+    /// <p>The network configuration for the ingress point.</p>
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
     /// <p>The timestamp of when the ingress endpoint was created.</p>
     pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
@@ -100,6 +106,7 @@ pub struct GetIngressPointOutputBuilder {
     pub(crate) rule_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_auth_configuration: ::std::option::Option<crate::types::IngressPointAuthConfiguration>,
+    pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -233,6 +240,20 @@ impl GetIngressPointOutputBuilder {
     pub fn get_ingress_point_auth_configuration(&self) -> &::std::option::Option<crate::types::IngressPointAuthConfiguration> {
         &self.ingress_point_auth_configuration
     }
+    /// <p>The network configuration for the ingress point.</p>
+    pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
+        self.network_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network configuration for the ingress point.</p>
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
+        self.network_configuration = input;
+        self
+    }
+    /// <p>The network configuration for the ingress point.</p>
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
+    }
     /// <p>The timestamp of when the ingress endpoint was created.</p>
     pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_timestamp = ::std::option::Option::Some(input);
@@ -297,6 +318,7 @@ impl GetIngressPointOutputBuilder {
             rule_set_id: self.rule_set_id,
             traffic_policy_id: self.traffic_policy_id,
             ingress_point_auth_configuration: self.ingress_point_auth_configuration,
+            network_configuration: self.network_configuration,
             created_timestamp: self.created_timestamp,
             last_updated_timestamp: self.last_updated_timestamp,
             _request_id: self._request_id,

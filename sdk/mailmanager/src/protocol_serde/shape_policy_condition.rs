@@ -16,17 +16,23 @@ pub fn ser_policy_condition(
             crate::protocol_serde::shape_ingress_ipv4_expression::ser_ingress_ipv4_expression(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::PolicyCondition::Ipv6Expression(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("Ipv6Expression").start_object();
+            crate::protocol_serde::shape_ingress_ipv6_expression::ser_ingress_ipv6_expression(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::PolicyCondition::TlsExpression(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_3.key("TlsExpression").start_object();
-            crate::protocol_serde::shape_ingress_tls_protocol_expression::ser_ingress_tls_protocol_expression(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_3.key("TlsExpression").start_object();
+            crate::protocol_serde::shape_ingress_tls_protocol_expression::ser_ingress_tls_protocol_expression(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::PolicyCondition::BooleanExpression(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_3.key("BooleanExpression").start_object();
-            crate::protocol_serde::shape_ingress_boolean_expression::ser_ingress_boolean_expression(&mut object_4, inner)?;
-            object_4.finish();
+            let mut object_5 = object_3.key("BooleanExpression").start_object();
+            crate::protocol_serde::shape_ingress_boolean_expression::ser_ingress_boolean_expression(&mut object_5, inner)?;
+            object_5.finish();
         }
         crate::types::PolicyCondition::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -75,6 +81,11 @@ where
                         "IpExpression" => Some(crate::types::PolicyCondition::IpExpression(
                             crate::protocol_serde::shape_ingress_ipv4_expression::de_ingress_ipv4_expression(tokens)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'IpExpression' cannot be null")
+                            })?,
+                        )),
+                        "Ipv6Expression" => Some(crate::types::PolicyCondition::Ipv6Expression(
+                            crate::protocol_serde::shape_ingress_ipv6_expression::de_ingress_ipv6_expression(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Ipv6Expression' cannot be null")
                             })?,
                         )),
                         "TlsExpression" => Some(crate::types::PolicyCondition::TlsExpression(

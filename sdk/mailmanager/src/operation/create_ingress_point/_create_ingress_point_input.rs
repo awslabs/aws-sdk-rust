@@ -15,6 +15,8 @@ pub struct CreateIngressPointInput {
     pub traffic_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>If you choose an Authenticated ingress endpoint, you must configure either an SMTP password or a secret ARN.</p>
     pub ingress_point_configuration: ::std::option::Option<crate::types::IngressPointConfiguration>,
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     /// <p>The tags used to organize, track, or control access for the resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -43,6 +45,10 @@ impl CreateIngressPointInput {
     pub fn ingress_point_configuration(&self) -> ::std::option::Option<&crate::types::IngressPointConfiguration> {
         self.ingress_point_configuration.as_ref()
     }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
+        self.network_configuration.as_ref()
+    }
     /// <p>The tags used to organize, track, or control access for the resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -67,6 +73,7 @@ pub struct CreateIngressPointInputBuilder {
     pub(crate) rule_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) traffic_policy_id: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_point_configuration: ::std::option::Option<crate::types::IngressPointConfiguration>,
+    pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateIngressPointInputBuilder {
@@ -158,6 +165,20 @@ impl CreateIngressPointInputBuilder {
     pub fn get_ingress_point_configuration(&self) -> &::std::option::Option<crate::types::IngressPointConfiguration> {
         &self.ingress_point_configuration
     }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
+        self.network_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
+        self.network_configuration = input;
+        self
+    }
+    /// <p>Specifies the network configuration for the ingress point. This allows you to create an IPv4-only, Dual-Stack, or PrivateLink type of ingress point. If not specified, the default network type is IPv4-only.</p>
+    pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
+        &self.network_configuration
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -190,6 +211,7 @@ impl CreateIngressPointInputBuilder {
             rule_set_id: self.rule_set_id,
             traffic_policy_id: self.traffic_policy_id,
             ingress_point_configuration: self.ingress_point_configuration,
+            network_configuration: self.network_configuration,
             tags: self.tags,
         })
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_application::builders::UpdateApplicationInputBuild
 }
 /// Fluent builder constructing a request to `UpdateApplication`.
 ///
-/// <p>Update the OpenSearch Application.</p>
+/// <p>Updates the configuration and settings of an existing OpenSearch application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UpdateApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
@@ -127,17 +127,17 @@ impl UpdateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         self.inner = self.inner.data_sources(input);
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         self.inner.get_data_sources()
     }
@@ -146,17 +146,17 @@ impl UpdateApplicationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_app_configs`](Self::set_app_configs).
     ///
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub fn app_configs(mut self, input: crate::types::AppConfig) -> Self {
         self.inner = self.inner.app_configs(input);
         self
     }
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub fn set_app_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>) -> Self {
         self.inner = self.inner.set_app_configs(input);
         self
     }
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         self.inner.get_app_configs()
     }

@@ -6,7 +6,7 @@
 pub struct DomainNodesStatus {
     /// <p>The ID of the node.</p>
     pub node_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+    /// <p>Indicates whether the nodes is a data, master, or UltraWarm node.</p>
     pub node_type: ::std::option::Option<crate::types::NodeType>,
     /// <p>The Availability Zone of the node.</p>
     pub availability_zone: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct DomainNodesStatus {
     pub node_status: ::std::option::Option<crate::types::NodeStatus>,
     /// <p>Indicates if the node has EBS or instance storage.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
-    /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
+    /// <p>If the nodes has EBS storage, indicates if the volume type is gp2 or gp3. Only applicable for data nodes.</p>
     pub storage_volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The storage size of the node, in GiB.</p>
     pub storage_size: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ impl DomainNodesStatus {
     pub fn node_id(&self) -> ::std::option::Option<&str> {
         self.node_id.as_deref()
     }
-    /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+    /// <p>Indicates whether the nodes is a data, master, or UltraWarm node.</p>
     pub fn node_type(&self) -> ::std::option::Option<&crate::types::NodeType> {
         self.node_type.as_ref()
     }
@@ -46,7 +46,7 @@ impl DomainNodesStatus {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
-    /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
+    /// <p>If the nodes has EBS storage, indicates if the volume type is gp2 or gp3. Only applicable for data nodes.</p>
     pub fn storage_volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.storage_volume_type.as_ref()
     }
@@ -90,17 +90,17 @@ impl DomainNodesStatusBuilder {
     pub fn get_node_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.node_id
     }
-    /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+    /// <p>Indicates whether the nodes is a data, master, or UltraWarm node.</p>
     pub fn node_type(mut self, input: crate::types::NodeType) -> Self {
         self.node_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+    /// <p>Indicates whether the nodes is a data, master, or UltraWarm node.</p>
     pub fn set_node_type(mut self, input: ::std::option::Option<crate::types::NodeType>) -> Self {
         self.node_type = input;
         self
     }
-    /// <p>Indicates whether the nodes is a data, master, or ultrawarm node.</p>
+    /// <p>Indicates whether the nodes is a data, master, or UltraWarm node.</p>
     pub fn get_node_type(&self) -> &::std::option::Option<crate::types::NodeType> {
         &self.node_type
     }
@@ -160,17 +160,17 @@ impl DomainNodesStatusBuilder {
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
     }
-    /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
+    /// <p>If the nodes has EBS storage, indicates if the volume type is gp2 or gp3. Only applicable for data nodes.</p>
     pub fn storage_volume_type(mut self, input: crate::types::VolumeType) -> Self {
         self.storage_volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
+    /// <p>If the nodes has EBS storage, indicates if the volume type is gp2 or gp3. Only applicable for data nodes.</p>
     pub fn set_storage_volume_type(mut self, input: ::std::option::Option<crate::types::VolumeType>) -> Self {
         self.storage_volume_type = input;
         self
     }
-    /// <p>If the nodes has EBS storage, indicates if the volume type is GP2 or GP3. Only applicable for data nodes.</p>
+    /// <p>If the nodes has EBS storage, indicates if the volume type is gp2 or gp3. Only applicable for data nodes.</p>
     pub fn get_storage_volume_type(&self) -> &::std::option::Option<crate::types::VolumeType> {
         &self.storage_volume_type
     }

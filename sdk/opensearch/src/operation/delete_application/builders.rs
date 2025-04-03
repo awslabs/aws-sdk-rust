@@ -22,7 +22,7 @@ impl crate::operation::delete_application::builders::DeleteApplicationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// <p>Deletes an existing OpenSearch Application.</p>
+/// <p>Deletes a specified OpenSearch application.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteApplicationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique identifier for the OpenSearch Application that you want to delete.</p>
+    /// <p>The unique identifier of the OpenSearch application to delete.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
-    /// <p>Unique identifier for the OpenSearch Application that you want to delete.</p>
+    /// <p>The unique identifier of the OpenSearch application to delete.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
-    /// <p>Unique identifier for the OpenSearch Application that you want to delete.</p>
+    /// <p>The unique identifier of the OpenSearch application to delete.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }

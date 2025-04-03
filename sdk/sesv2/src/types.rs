@@ -35,6 +35,12 @@ pub use crate::types::_email_content::EmailContent;
 
 pub use crate::types::_template::Template;
 
+pub use crate::types::_attachment::Attachment;
+
+pub use crate::types::_attachment_content_transfer_encoding::AttachmentContentTransferEncoding;
+
+pub use crate::types::_attachment_content_disposition::AttachmentContentDisposition;
+
 pub use crate::types::_message_header::MessageHeader;
 
 pub use crate::types::_raw_message::RawMessage;
@@ -282,6 +288,12 @@ pub use crate::types::_batch_get_metric_data_query::BatchGetMetricDataQuery;
 mod _account_details;
 
 mod _archiving_options;
+
+mod _attachment;
+
+mod _attachment_content_disposition;
+
+mod _attachment_content_transfer_encoding;
 
 mod _batch_get_metric_data_query;
 

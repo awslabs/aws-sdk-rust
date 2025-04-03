@@ -3997,6 +3997,7 @@ where
 impl From<crate::operation::validate_e911_address::ValidateE911AddressError> for Error {
     fn from(err: crate::operation::validate_e911_address::ValidateE911AddressError) -> Self {
         match err {
+            crate::operation::validate_e911_address::ValidateE911AddressError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::validate_e911_address::ValidateE911AddressError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::validate_e911_address::ValidateE911AddressError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::validate_e911_address::ValidateE911AddressError::NotFoundException(inner) => Error::NotFoundException(inner),

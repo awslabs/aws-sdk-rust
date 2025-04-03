@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub data_sources: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
 }
 impl UpdateApplicationInput {
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_sources.is_none()`.
     pub fn data_sources(&self) -> &[crate::types::DataSource] {
         self.data_sources.as_deref().unwrap_or_default()
     }
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_configs.is_none()`.
     pub fn app_configs(&self) -> &[crate::types::AppConfig] {
@@ -44,18 +44,18 @@ pub struct UpdateApplicationInputBuilder {
     pub(crate) app_configs: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>,
 }
 impl UpdateApplicationInputBuilder {
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     /// This field is required.
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>Unique identifier of the OpenSearch Application to be updated.</p>
+    /// <p>The unique identifier for the OpenSearch application to be updated.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
@@ -63,19 +63,19 @@ impl UpdateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
         v.push(input);
         self.data_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub fn set_data_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>) -> Self {
         self.data_sources = input;
         self
     }
-    /// <p>Data sources to be associated with the OpenSearch Application.</p>
+    /// <p>The data sources to associate with the OpenSearch application.</p>
     pub fn get_data_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
         &self.data_sources
     }
@@ -83,19 +83,19 @@ impl UpdateApplicationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_app_configs`](Self::set_app_configs).
     ///
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub fn app_configs(mut self, input: crate::types::AppConfig) -> Self {
         let mut v = self.app_configs.unwrap_or_default();
         v.push(input);
         self.app_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub fn set_app_configs(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AppConfig>>) -> Self {
         self.app_configs = input;
         self
     }
-    /// <p>Configurations to be changed for the OpenSearch Application.</p>
+    /// <p>The configuration settings to modify for the OpenSearch application.</p>
     pub fn get_app_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppConfig>> {
         &self.app_configs
     }

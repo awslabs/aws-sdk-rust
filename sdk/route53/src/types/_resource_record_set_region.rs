@@ -44,6 +44,8 @@
 ///     ResourceRecordSetRegion::SaEast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsEast1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsEast2 => { /* ... */ },
+///     ResourceRecordSetRegion::UsGovEast1 => { /* ... */ },
+///     ResourceRecordSetRegion::UsGovWest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsWest1 => { /* ... */ },
 ///     ResourceRecordSetRegion::UsWest2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -139,6 +141,10 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsEast2,
     #[allow(missing_docs)] // documentation missing in model
+    UsGovEast1,
+    #[allow(missing_docs)] // documentation missing in model
+    UsGovWest1,
+    #[allow(missing_docs)] // documentation missing in model
     UsWest1,
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
@@ -181,6 +187,8 @@ impl ::std::convert::From<&str> for ResourceRecordSetRegion {
             "sa-east-1" => ResourceRecordSetRegion::SaEast1,
             "us-east-1" => ResourceRecordSetRegion::UsEast1,
             "us-east-2" => ResourceRecordSetRegion::UsEast2,
+            "us-gov-east-1" => ResourceRecordSetRegion::UsGovEast1,
+            "us-gov-west-1" => ResourceRecordSetRegion::UsGovWest1,
             "us-west-1" => ResourceRecordSetRegion::UsWest1,
             "us-west-2" => ResourceRecordSetRegion::UsWest2,
             other => ResourceRecordSetRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -230,6 +238,8 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::SaEast1 => "sa-east-1",
             ResourceRecordSetRegion::UsEast1 => "us-east-1",
             ResourceRecordSetRegion::UsEast2 => "us-east-2",
+            ResourceRecordSetRegion::UsGovEast1 => "us-gov-east-1",
+            ResourceRecordSetRegion::UsGovWest1 => "us-gov-west-1",
             ResourceRecordSetRegion::UsWest1 => "us-west-1",
             ResourceRecordSetRegion::UsWest2 => "us-west-2",
             ResourceRecordSetRegion::Unknown(value) => value.as_str(),
@@ -270,6 +280,8 @@ impl ResourceRecordSetRegion {
             "sa-east-1",
             "us-east-1",
             "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
             "us-west-1",
             "us-west-2",
         ]
@@ -327,6 +339,8 @@ impl ::std::fmt::Display for ResourceRecordSetRegion {
             ResourceRecordSetRegion::SaEast1 => write!(f, "sa-east-1"),
             ResourceRecordSetRegion::UsEast1 => write!(f, "us-east-1"),
             ResourceRecordSetRegion::UsEast2 => write!(f, "us-east-2"),
+            ResourceRecordSetRegion::UsGovEast1 => write!(f, "us-gov-east-1"),
+            ResourceRecordSetRegion::UsGovWest1 => write!(f, "us-gov-west-1"),
             ResourceRecordSetRegion::UsWest1 => write!(f, "us-west-1"),
             ResourceRecordSetRegion::UsWest2 => write!(f, "us-west-2"),
             ResourceRecordSetRegion::Unknown(value) => write!(f, "{}", value),

@@ -18,6 +18,8 @@ pub struct PhoneNumberOrder {
     pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The updated phone number order time stamp, in ISO 8601 format.</p>
     pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Firm Order Commitment (FOC) date for phone number porting orders. This field is null if a phone number order is not a porting order.</p>
+    pub foc_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PhoneNumberOrder {
     /// <p>The ID of the phone order.</p>
@@ -50,6 +52,10 @@ impl PhoneNumberOrder {
     pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
+    /// <p>The Firm Order Commitment (FOC) date for phone number porting orders. This field is null if a phone number order is not a porting order.</p>
+    pub fn foc_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.foc_date.as_ref()
+    }
 }
 impl PhoneNumberOrder {
     /// Creates a new builder-style object to manufacture [`PhoneNumberOrder`](crate::types::PhoneNumberOrder).
@@ -69,6 +75,7 @@ pub struct PhoneNumberOrderBuilder {
     pub(crate) ordered_phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::OrderedPhoneNumber>>,
     pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) foc_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PhoneNumberOrderBuilder {
     /// <p>The ID of the phone order.</p>
@@ -175,6 +182,20 @@ impl PhoneNumberOrderBuilder {
     pub fn get_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_timestamp
     }
+    /// <p>The Firm Order Commitment (FOC) date for phone number porting orders. This field is null if a phone number order is not a porting order.</p>
+    pub fn foc_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.foc_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Firm Order Commitment (FOC) date for phone number porting orders. This field is null if a phone number order is not a porting order.</p>
+    pub fn set_foc_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.foc_date = input;
+        self
+    }
+    /// <p>The Firm Order Commitment (FOC) date for phone number porting orders. This field is null if a phone number order is not a porting order.</p>
+    pub fn get_foc_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.foc_date
+    }
     /// Consumes the builder and constructs a [`PhoneNumberOrder`](crate::types::PhoneNumberOrder).
     pub fn build(self) -> crate::types::PhoneNumberOrder {
         crate::types::PhoneNumberOrder {
@@ -185,6 +206,7 @@ impl PhoneNumberOrderBuilder {
             ordered_phone_numbers: self.ordered_phone_numbers,
             created_timestamp: self.created_timestamp,
             updated_timestamp: self.updated_timestamp,
+            foc_date: self.foc_date,
         }
     }
 }

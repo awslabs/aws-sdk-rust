@@ -10,6 +10,8 @@ pub struct Message {
     pub body: ::std::option::Option<crate::types::Body>,
     /// <p>The list of message headers that will be added to the email message.</p>
     pub headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
 }
 impl Message {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
@@ -26,6 +28,12 @@ impl Message {
     pub fn headers(&self) -> &[crate::types::MessageHeader] {
         self.headers.as_deref().unwrap_or_default()
     }
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::Attachment] {
+        self.attachments.as_deref().unwrap_or_default()
+    }
 }
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::types::Message).
@@ -41,6 +49,7 @@ pub struct MessageBuilder {
     pub(crate) subject: ::std::option::Option<crate::types::Content>,
     pub(crate) body: ::std::option::Option<crate::types::Body>,
     pub(crate) headers: ::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
 }
 impl MessageBuilder {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
@@ -93,12 +102,33 @@ impl MessageBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageHeader>> {
         &self.headers
     }
+    /// Appends an item to `attachments`.
+    ///
+    /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+    ///
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub fn attachments(mut self, input: crate::types::Attachment) -> Self {
+        let mut v = self.attachments.unwrap_or_default();
+        v.push(input);
+        self.attachments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>) -> Self {
+        self.attachments = input;
+        self
+    }
+    /// <p>The List of attachments to include in your email. All recipients will receive the same attachments.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
+        &self.attachments
+    }
     /// Consumes the builder and constructs a [`Message`](crate::types::Message).
     pub fn build(self) -> crate::types::Message {
         crate::types::Message {
             subject: self.subject,
             body: self.body,
             headers: self.headers,
+            attachments: self.attachments,
         }
     }
 }

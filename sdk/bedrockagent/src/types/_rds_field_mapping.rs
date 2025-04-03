@@ -12,6 +12,8 @@ pub struct RdsFieldMapping {
     pub text_field: ::std::string::String,
     /// <p>The name of the field in which Amazon Bedrock stores metadata about the vector store.</p>
     pub metadata_field: ::std::string::String,
+    /// <p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>
+    pub custom_metadata_field: ::std::option::Option<::std::string::String>,
 }
 impl RdsFieldMapping {
     /// <p>The name of the field in which Amazon Bedrock stores the ID for each entry.</p>
@@ -34,6 +36,10 @@ impl RdsFieldMapping {
         use std::ops::Deref;
         self.metadata_field.deref()
     }
+    /// <p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>
+    pub fn custom_metadata_field(&self) -> ::std::option::Option<&str> {
+        self.custom_metadata_field.as_deref()
+    }
 }
 impl RdsFieldMapping {
     /// Creates a new builder-style object to manufacture [`RdsFieldMapping`](crate::types::RdsFieldMapping).
@@ -50,6 +56,7 @@ pub struct RdsFieldMappingBuilder {
     pub(crate) vector_field: ::std::option::Option<::std::string::String>,
     pub(crate) text_field: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_field: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_metadata_field: ::std::option::Option<::std::string::String>,
 }
 impl RdsFieldMappingBuilder {
     /// <p>The name of the field in which Amazon Bedrock stores the ID for each entry.</p>
@@ -112,6 +119,20 @@ impl RdsFieldMappingBuilder {
     pub fn get_metadata_field(&self) -> &::std::option::Option<::std::string::String> {
         &self.metadata_field
     }
+    /// <p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>
+    pub fn custom_metadata_field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.custom_metadata_field = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>
+    pub fn set_custom_metadata_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.custom_metadata_field = input;
+        self
+    }
+    /// <p>Provide a name for the universal metadata field where Amazon Bedrock will store any custom metadata from your data source.</p>
+    pub fn get_custom_metadata_field(&self) -> &::std::option::Option<::std::string::String> {
+        &self.custom_metadata_field
+    }
     /// Consumes the builder and constructs a [`RdsFieldMapping`](crate::types::RdsFieldMapping).
     /// This method will fail if any of the following fields are not set:
     /// - [`primary_key_field`](crate::types::builders::RdsFieldMappingBuilder::primary_key_field)
@@ -144,6 +165,7 @@ impl RdsFieldMappingBuilder {
                     "metadata_field was not specified but it is required when building RdsFieldMapping",
                 )
             })?,
+            custom_metadata_field: self.custom_metadata_field,
         })
     }
 }

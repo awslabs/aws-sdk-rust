@@ -8,6 +8,8 @@ pub enum PolicyCondition {
     BooleanExpression(crate::types::IngressBooleanExpression),
     /// <p>This represents an IP based condition matching on the incoming mail. It performs the operation configured in 'Operator' and evaluates the 'Protocol' object against the 'Value'.</p>
     IpExpression(crate::types::IngressIpv4Expression),
+    /// <p>This represents an IPv6 based condition matching on the incoming mail. It performs the operation configured in 'Operator' and evaluates the 'Protocol' object against the 'Value'.</p>
+    Ipv6Expression(crate::types::IngressIpv6Expression),
     /// <p>This represents a string based condition matching on the incoming mail. It performs the string operation configured in 'Operator' and evaluates the 'Protocol' object against the 'Value'.</p>
     StringExpression(crate::types::IngressStringExpression),
     /// <p>This represents a TLS based condition matching on the incoming mail. It performs the operation configured in 'Operator' and evaluates the 'Protocol' object against the 'Value'.</p>
@@ -48,6 +50,19 @@ impl PolicyCondition {
     /// Returns true if this is a [`IpExpression`](crate::types::PolicyCondition::IpExpression).
     pub fn is_ip_expression(&self) -> bool {
         self.as_ip_expression().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Ipv6Expression`](crate::types::PolicyCondition::Ipv6Expression), extracting the inner [`IngressIpv6Expression`](crate::types::IngressIpv6Expression).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_ipv6_expression(&self) -> ::std::result::Result<&crate::types::IngressIpv6Expression, &Self> {
+        if let PolicyCondition::Ipv6Expression(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Ipv6Expression`](crate::types::PolicyCondition::Ipv6Expression).
+    pub fn is_ipv6_expression(&self) -> bool {
+        self.as_ipv6_expression().is_ok()
     }
     /// Tries to convert the enum instance into [`StringExpression`](crate::types::PolicyCondition::StringExpression), extracting the inner [`IngressStringExpression`](crate::types::IngressStringExpression).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -599,6 +599,8 @@ pub(crate) mod shape_topic_filter;
 
 pub(crate) mod shape_volume_statistics;
 
+pub(crate) mod shape_attachment;
+
 pub(crate) mod shape_blacklist_entry;
 
 pub(crate) mod shape_body;

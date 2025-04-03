@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsOutput {
-    /// <p>Summary of the OpenSearch Applications, including ID, ARN, name, endpoint, status, create time and last update time.</p>
+    /// <p>Summarizes OpenSearch applications, including ID, ARN, name, endpoint, status, creation time, and last update time.</p>
     pub application_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Send the request again using the returned token to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
-    /// <p>Summary of the OpenSearch Applications, including ID, ARN, name, endpoint, status, create time and last update time.</p>
+    /// <p>Summarizes OpenSearch applications, including ID, ARN, name, endpoint, status, creation time, and last update time.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_summaries.is_none()`.
     pub fn application_summaries(&self) -> &[crate::types::ApplicationSummary] {
@@ -46,19 +46,19 @@ impl ListApplicationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_summaries`](Self::set_application_summaries).
     ///
-    /// <p>Summary of the OpenSearch Applications, including ID, ARN, name, endpoint, status, create time and last update time.</p>
+    /// <p>Summarizes OpenSearch applications, including ID, ARN, name, endpoint, status, creation time, and last update time.</p>
     pub fn application_summaries(mut self, input: crate::types::ApplicationSummary) -> Self {
         let mut v = self.application_summaries.unwrap_or_default();
         v.push(input);
         self.application_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Summary of the OpenSearch Applications, including ID, ARN, name, endpoint, status, create time and last update time.</p>
+    /// <p>Summarizes OpenSearch applications, including ID, ARN, name, endpoint, status, creation time, and last update time.</p>
     pub fn set_application_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>>) -> Self {
         self.application_summaries = input;
         self
     }
-    /// <p>Summary of the OpenSearch Applications, including ID, ARN, name, endpoint, status, create time and last update time.</p>
+    /// <p>Summarizes OpenSearch applications, including ID, ARN, name, endpoint, status, creation time, and last update time.</p>
     pub fn get_application_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
         &self.application_summaries
     }

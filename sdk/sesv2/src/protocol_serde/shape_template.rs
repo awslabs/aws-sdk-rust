@@ -30,5 +30,17 @@ pub fn ser_template(
         }
         array_7.finish();
     }
+    if let Some(var_10) = &input.attachments {
+        let mut array_11 = object.key("Attachments").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_attachment::ser_attachment(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
     Ok(())
 }
