@@ -17,6 +17,9 @@ pub struct DescribeArchiveOutput {
     pub state: ::std::option::Option<crate::types::ArchiveState>,
     /// <p>The reason that the archive is in the state.</p>
     pub state_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt this archive, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events for in the archive.</p>
     pub retention_days: ::std::option::Option<i32>,
     /// <p>The size of the archive in bytes.</p>
@@ -55,6 +58,11 @@ impl DescribeArchiveOutput {
     /// <p>The reason that the archive is in the state.</p>
     pub fn state_reason(&self) -> ::std::option::Option<&str> {
         self.state_reason.as_deref()
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt this archive, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
     }
     /// <p>The number of days to retain events for in the archive.</p>
     pub fn retention_days(&self) -> ::std::option::Option<i32> {
@@ -96,6 +104,7 @@ pub struct DescribeArchiveOutputBuilder {
     pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ArchiveState>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) retention_days: ::std::option::Option<i32>,
     pub(crate) size_bytes: ::std::option::Option<i64>,
     pub(crate) event_count: ::std::option::Option<i64>,
@@ -201,6 +210,23 @@ impl DescribeArchiveOutputBuilder {
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_reason
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt this archive, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt this archive, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt this archive, if one has been specified.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// <p>The number of days to retain events for in the archive.</p>
     pub fn retention_days(mut self, input: i32) -> Self {
         self.retention_days = ::std::option::Option::Some(input);
@@ -276,6 +302,7 @@ impl DescribeArchiveOutputBuilder {
             event_pattern: self.event_pattern,
             state: self.state,
             state_reason: self.state_reason,
+            kms_key_identifier: self.kms_key_identifier,
             retention_days: self.retention_days,
             size_bytes: self.size_bytes.unwrap_or_default(),
             event_count: self.event_count.unwrap_or_default(),

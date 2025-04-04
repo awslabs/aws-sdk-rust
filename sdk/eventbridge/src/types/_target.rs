@@ -34,8 +34,8 @@ pub struct Target {
     /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift cluster.</p>
     /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
     pub redshift_data_parameters: ::std::option::Option<crate::types::RedshiftDataParameters>,
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker AI Model Building Pipeline parameters to start execution of a SageMaker AI Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker AI Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     /// <p>The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.</p>
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
@@ -102,8 +102,8 @@ impl Target {
     pub fn redshift_data_parameters(&self) -> ::std::option::Option<&crate::types::RedshiftDataParameters> {
         self.redshift_data_parameters.as_ref()
     }
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker AI Model Building Pipeline parameters to start execution of a SageMaker AI Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker AI Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub fn sage_maker_pipeline_parameters(&self) -> ::std::option::Option<&crate::types::SageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
@@ -343,20 +343,20 @@ impl TargetBuilder {
     pub fn get_redshift_data_parameters(&self) -> &::std::option::Option<crate::types::RedshiftDataParameters> {
         &self.redshift_data_parameters
     }
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker AI Model Building Pipeline parameters to start execution of a SageMaker AI Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker AI Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub fn sage_maker_pipeline_parameters(mut self, input: crate::types::SageMakerPipelineParameters) -> Self {
         self.sage_maker_pipeline_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker AI Model Building Pipeline parameters to start execution of a SageMaker AI Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker AI Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub fn set_sage_maker_pipeline_parameters(mut self, input: ::std::option::Option<crate::types::SageMakerPipelineParameters>) -> Self {
         self.sage_maker_pipeline_parameters = input;
         self
     }
-    /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building Pipeline.</p>
-    /// <p>If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
+    /// <p>Contains the SageMaker AI Model Building Pipeline parameters to start execution of a SageMaker AI Model Building Pipeline.</p>
+    /// <p>If you specify a SageMaker AI Model Building Pipeline as a target, you can use this to specify parameters to start a pipeline execution based on EventBridge events.</p>
     pub fn get_sage_maker_pipeline_parameters(&self) -> &::std::option::Option<crate::types::SageMakerPipelineParameters> {
         &self.sage_maker_pipeline_parameters
     }

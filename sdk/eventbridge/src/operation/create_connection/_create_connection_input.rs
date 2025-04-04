@@ -14,8 +14,8 @@ pub struct CreateConnectionInput {
     /// <p>The authorization parameters to use to authorize with the endpoint.</p>
     /// <p>You must include only authorization parameters for the <code>AuthorizationType</code> you specify.</p>
     pub auth_parameters: ::std::option::Option<crate::types::CreateConnectionAuthRequestParameters>,
-    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    /// <p>For connections to private APIs, the parameters to use for invoking the API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub invocation_connectivity_parameters: ::std::option::Option<crate::types::ConnectivityResourceParameters>,
 }
 impl CreateConnectionInput {
@@ -38,8 +38,8 @@ impl CreateConnectionInput {
     pub fn auth_parameters(&self) -> ::std::option::Option<&crate::types::CreateConnectionAuthRequestParameters> {
         self.auth_parameters.as_ref()
     }
-    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    /// <p>For connections to private APIs, the parameters to use for invoking the API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn invocation_connectivity_parameters(&self) -> ::std::option::Option<&crate::types::ConnectivityResourceParameters> {
         self.invocation_connectivity_parameters.as_ref()
     }
@@ -130,20 +130,20 @@ impl CreateConnectionInputBuilder {
     pub fn get_auth_parameters(&self) -> &::std::option::Option<crate::types::CreateConnectionAuthRequestParameters> {
         &self.auth_parameters
     }
-    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    /// <p>For connections to private APIs, the parameters to use for invoking the API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn invocation_connectivity_parameters(mut self, input: crate::types::ConnectivityResourceParameters) -> Self {
         self.invocation_connectivity_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    /// <p>For connections to private APIs, the parameters to use for invoking the API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn set_invocation_connectivity_parameters(mut self, input: ::std::option::Option<crate::types::ConnectivityResourceParameters>) -> Self {
         self.invocation_connectivity_parameters = input;
         self
     }
-    /// <p>For connections to private resource endpoints, the parameters to use for invoking the resource endpoint.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-private.html">Connecting to private resources</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
+    /// <p>For connections to private APIs, the parameters to use for invoking the API.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html">Connecting to private APIs</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn get_invocation_connectivity_parameters(&self) -> &::std::option::Option<crate::types::ConnectivityResourceParameters> {
         &self.invocation_connectivity_parameters
     }

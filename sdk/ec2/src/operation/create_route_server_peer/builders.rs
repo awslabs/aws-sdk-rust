@@ -23,7 +23,7 @@ impl crate::operation::create_route_server_peer::builders::CreateRouteServerPeer
 /// Fluent builder constructing a request to `CreateRouteServerPeer`.
 ///
 /// <p>Creates a new BGP peer for a specified route server endpoint.</p>
-/// <p>A route server peer is a network appliance or function deployed in Amazon Web Services, such as firewall appliances and other network security functions, that meet these requirements:</p>
+/// <p>A route server peer is a session between a route server endpoint and the device deployed in Amazon Web Services (such as a firewall appliance or other network security function running on an EC2 instance). The device must meet these requirements:</p>
 /// <ul>
 /// <li>
 /// <p>Have an elastic network interface in the VPC</p></li>
@@ -32,6 +32,7 @@ impl crate::operation::create_route_server_peer::builders::CreateRouteServerPeer
 /// <li>
 /// <p>Can initiate BGP sessions</p></li>
 /// </ul>
+/// <p>For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRouteServerPeerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -131,17 +132,17 @@ impl CreateRouteServerPeerFluentBuilder {
     pub fn get_route_server_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_route_server_endpoint_id()
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_address(input.into());
         self
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_address(input);
         self
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_peer_address()
     }

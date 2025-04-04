@@ -164,17 +164,17 @@ impl DescribeGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_other_attributes`](Self::set_other_attributes).
     ///
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub fn other_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.other_attributes(input.into());
         self
     }
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub fn set_other_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_other_attributes(input);
         self
     }
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub fn get_other_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_other_attributes()
     }

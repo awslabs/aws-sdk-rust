@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have the necessary permissons for this action.</p>
+    /// <p>You do not have the necessary permissions for this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>There is concurrent modification on a rule, target, archive, or replay.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),

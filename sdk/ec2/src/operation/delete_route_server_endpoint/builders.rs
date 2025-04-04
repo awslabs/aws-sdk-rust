@@ -23,7 +23,7 @@ impl crate::operation::delete_route_server_endpoint::builders::DeleteRouteServer
 /// Fluent builder constructing a request to `DeleteRouteServerEndpoint`.
 ///
 /// <p>Deletes the specified route server endpoint.</p>
-/// <p>A route server endpoint is an Amazon Web Services-managed component inside a subnet that facilitates BGP (Border Gateway Protocol) connections between your route server and your BGP peers. Create two endpoints per subnet for redundancy.</p>
+/// <p>A route server endpoint is an Amazon Web Services-managed component inside a subnet that facilitates <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP (Border Gateway Protocol)</a> connections between your route server and your BGP peers.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRouteServerEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

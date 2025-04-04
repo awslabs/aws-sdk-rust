@@ -23,8 +23,8 @@ impl crate::operation::get_route_server_associations::builders::GetRouteServerAs
 /// Fluent builder constructing a request to `GetRouteServerAssociations`.
 ///
 /// <p>Gets information about the associations for the specified route server.</p>
-/// <p>A route server association is the connection established between a route server and a VPC. This is a fundamental configuration step that enables the route server to work with appliances in your VPC.</p>
-/// <p>For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
+/// <p>A route server association is the connection established between a route server and a VPC.</p>
+/// <p>For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRouteServerAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

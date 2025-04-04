@@ -12,7 +12,9 @@ pub struct ModifyInstanceAttributeInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the instance.</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the attribute to modify.</p><important>
+    /// <p>The name of the attribute to modify.</p><note>
+    /// <p>When changing the instance type: If the original instance type is configured for configurable bandwidth, and the desired instance type doesn't support configurable bandwidth, first set the existing bandwidth configuration to <code>default</code> using the <code>ModifyInstanceNetworkPerformanceOptions</code> operation.</p>
+    /// </note> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub attribute: ::std::option::Option<crate::types::InstanceAttributeName>,
@@ -63,7 +65,9 @@ impl ModifyInstanceAttributeInput {
     pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
-    /// <p>The name of the attribute to modify.</p><important>
+    /// <p>The name of the attribute to modify.</p><note>
+    /// <p>When changing the instance type: If the original instance type is configured for configurable bandwidth, and the desired instance type doesn't support configurable bandwidth, first set the existing bandwidth configuration to <code>default</code> using the <code>ModifyInstanceNetworkPerformanceOptions</code> operation.</p>
+    /// </note> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn attribute(&self) -> ::std::option::Option<&crate::types::InstanceAttributeName> {
@@ -216,21 +220,27 @@ impl ModifyInstanceAttributeInputBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_id
     }
-    /// <p>The name of the attribute to modify.</p><important>
+    /// <p>The name of the attribute to modify.</p><note>
+    /// <p>When changing the instance type: If the original instance type is configured for configurable bandwidth, and the desired instance type doesn't support configurable bandwidth, first set the existing bandwidth configuration to <code>default</code> using the <code>ModifyInstanceNetworkPerformanceOptions</code> operation.</p>
+    /// </note> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn attribute(mut self, input: crate::types::InstanceAttributeName) -> Self {
         self.attribute = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The name of the attribute to modify.</p><important>
+    /// <p>The name of the attribute to modify.</p><note>
+    /// <p>When changing the instance type: If the original instance type is configured for configurable bandwidth, and the desired instance type doesn't support configurable bandwidth, first set the existing bandwidth configuration to <code>default</code> using the <code>ModifyInstanceNetworkPerformanceOptions</code> operation.</p>
+    /// </note> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn set_attribute(mut self, input: ::std::option::Option<crate::types::InstanceAttributeName>) -> Self {
         self.attribute = input;
         self
     }
-    /// <p>The name of the attribute to modify.</p><important>
+    /// <p>The name of the attribute to modify.</p><note>
+    /// <p>When changing the instance type: If the original instance type is configured for configurable bandwidth, and the desired instance type doesn't support configurable bandwidth, first set the existing bandwidth configuration to <code>default</code> using the <code>ModifyInstanceNetworkPerformanceOptions</code> operation.</p>
+    /// </note> <important>
     /// <p>You can modify the following attributes only: <code>disableApiTermination</code> | <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code> | <code>enclaveOptions</code></p>
     /// </important>
     pub fn get_attribute(&self) -> &::std::option::Option<crate::types::InstanceAttributeName> {

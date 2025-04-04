@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`sid(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::sid): <p>The unique security identifier (SID) of the user.</p>
     ///   - [`sam_account_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::sam_account_name): <p>The name of the user.</p>
     ///   - [`distinguished_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::distinguished_name): <p>The <a href="https://learn.microsoft.com/en-us/windows/win32/ad/object-names-and-identities#distinguished-name">distinguished name</a> of the object.</p>
-    ///   - [`user_principal_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_principal_name): <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
+    ///   - [`user_principal_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::user_principal_name): <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
     ///   - [`email_address(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::email_address): <p>The email address of the user.</p>
     ///   - [`given_name(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::given_name): <p>The first name of the user.</p>
     ///   - [`surname(Option<String>)`](crate::operation::describe_user::DescribeUserOutput::surname): <p>The last name of the user.</p>

@@ -5,7 +5,7 @@
 pub struct CreateRouteServerPeerInput {
     /// <p>The ID of the route server endpoint for which to create a peer.</p>
     pub route_server_endpoint_id: ::std::option::Option<::std::string::String>,
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub peer_address: ::std::option::Option<::std::string::String>,
     /// <p>The BGP options for the peer, including ASN (Autonomous System Number) and BFD (Bidrectional Forwarding Detection) settings.</p>
     pub bgp_options: ::std::option::Option<crate::types::RouteServerBgpOptionsRequest>,
@@ -19,7 +19,7 @@ impl CreateRouteServerPeerInput {
     pub fn route_server_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.route_server_endpoint_id.as_deref()
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub fn peer_address(&self) -> ::std::option::Option<&str> {
         self.peer_address.as_deref()
     }
@@ -71,18 +71,18 @@ impl CreateRouteServerPeerInputBuilder {
     pub fn get_route_server_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.route_server_endpoint_id
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     /// This field is required.
     pub fn peer_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.peer_address = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub fn set_peer_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_address = input;
         self
     }
-    /// <p>The IPv4 address of the peer.</p>
+    /// <p>The IPv4 address of the peer device.</p>
     pub fn get_peer_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.peer_address
     }

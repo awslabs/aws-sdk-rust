@@ -262,7 +262,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateConnect
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateConnectionError {
-    /// <p>You do not have the necessary permissons for this action.</p>
+    /// <p>You do not have the necessary permissions for this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception occurs due to unexpected causes.</p>
     InternalException(crate::types::error::InternalException),

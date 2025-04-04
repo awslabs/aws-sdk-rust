@@ -183,14 +183,14 @@ impl UpdateUserFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_other_attributes`](Self::set_other_attributes).
     ///
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn other_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
         self.inner = self.inner.other_attributes(k.into(), v);
         self
     }
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn set_other_attributes(
@@ -200,7 +200,7 @@ impl UpdateUserFluentBuilder {
         self.inner = self.inner.set_other_attributes(input);
         self
     }
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn get_other_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {

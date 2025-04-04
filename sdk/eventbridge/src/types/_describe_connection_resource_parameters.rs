@@ -7,6 +7,7 @@ pub struct DescribeConnectionResourceParameters {
     /// <p>The Amazon Resource Name (ARN) of the resource configuration for the private API.</p>
     pub resource_configuration_arn: ::std::string::String,
     /// <p>For connections to private APIs, the Amazon Resource Name (ARN) of the resource association EventBridge created between the connection and the private API's resource configuration.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html#connection-private-snra"> Managing service network resource associations for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub resource_association_arn: ::std::string::String,
 }
 impl DescribeConnectionResourceParameters {
@@ -16,6 +17,7 @@ impl DescribeConnectionResourceParameters {
         self.resource_configuration_arn.deref()
     }
     /// <p>For connections to private APIs, the Amazon Resource Name (ARN) of the resource association EventBridge created between the connection and the private API's resource configuration.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html#connection-private-snra"> Managing service network resource associations for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn resource_association_arn(&self) -> &str {
         use std::ops::Deref;
         self.resource_association_arn.deref()
@@ -52,17 +54,20 @@ impl DescribeConnectionResourceParametersBuilder {
         &self.resource_configuration_arn
     }
     /// <p>For connections to private APIs, the Amazon Resource Name (ARN) of the resource association EventBridge created between the connection and the private API's resource configuration.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html#connection-private-snra"> Managing service network resource associations for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     /// This field is required.
     pub fn resource_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For connections to private APIs, the Amazon Resource Name (ARN) of the resource association EventBridge created between the connection and the private API's resource configuration.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html#connection-private-snra"> Managing service network resource associations for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn set_resource_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_association_arn = input;
         self
     }
     /// <p>For connections to private APIs, the Amazon Resource Name (ARN) of the resource association EventBridge created between the connection and the private API's resource configuration.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/connection-private.html#connection-private-snra"> Managing service network resource associations for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.</p>
     pub fn get_resource_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_association_arn
     }

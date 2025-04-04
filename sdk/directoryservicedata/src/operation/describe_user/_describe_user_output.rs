@@ -13,7 +13,7 @@ pub struct DescribeUserOutput {
     pub sam_account_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://learn.microsoft.com/en-us/windows/win32/ad/object-names-and-identities#distinguished-name">distinguished name</a> of the object.</p>
     pub distinguished_name: ::std::option::Option<::std::string::String>,
-    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
+    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
     pub user_principal_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user.</p>
     pub email_address: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl DescribeUserOutput {
     pub fn distinguished_name(&self) -> ::std::option::Option<&str> {
         self.distinguished_name.as_deref()
     }
-    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
+    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
     pub fn user_principal_name(&self) -> ::std::option::Option<&str> {
         self.user_principal_name.as_deref()
     }
@@ -195,17 +195,17 @@ impl DescribeUserOutputBuilder {
     pub fn get_distinguished_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.distinguished_name
     }
-    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
+    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
     pub fn user_principal_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_principal_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
+    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
     pub fn set_user_principal_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_principal_name = input;
         self
     }
-    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
+    /// <p>The UPN that is an Internet-style login name for a user and is based on the Internet standard <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a>. The UPN is shorter than the distinguished name and easier to remember.</p>
     pub fn get_user_principal_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_principal_name
     }

@@ -13,7 +13,7 @@ pub struct UpdateUserInput {
     pub given_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user.</p>
     pub surname: ::std::option::Option<::std::string::String>,
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub other_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>>,
@@ -47,7 +47,7 @@ impl UpdateUserInput {
     pub fn surname(&self) -> ::std::option::Option<&str> {
         self.surname.as_deref()
     }
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn other_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {
@@ -177,7 +177,7 @@ impl UpdateUserInputBuilder {
     ///
     /// To override the contents of this collection use [`set_other_attributes`](Self::set_other_attributes).
     ///
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn other_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AttributeValue) -> Self {
@@ -186,7 +186,7 @@ impl UpdateUserInputBuilder {
         self.other_attributes = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn set_other_attributes(
@@ -196,7 +196,7 @@ impl UpdateUserInputBuilder {
         self.other_attributes = input;
         self
     }
-    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p><note>
+    /// <p>An expression that defines one or more attribute names with the data type and value of each attribute. A key is an attribute name, and the value is a list of maps. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p><note>
     /// <p>Attribute names are case insensitive.</p>
     /// </note>
     pub fn get_other_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>> {

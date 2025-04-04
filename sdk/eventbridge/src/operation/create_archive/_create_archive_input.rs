@@ -13,6 +13,13 @@ pub struct CreateArchiveInput {
     pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are retained indefinitely</p>
     pub retention_days: ::std::option::Option<i32>,
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p><important>
+    /// <p>If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// </important>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateArchiveInput {
     /// <p>The name for the archive to create.</p>
@@ -35,6 +42,15 @@ impl CreateArchiveInput {
     pub fn retention_days(&self) -> ::std::option::Option<i32> {
         self.retention_days
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p><important>
+    /// <p>If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// </important>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
 }
 impl CreateArchiveInput {
     /// Creates a new builder-style object to manufacture [`CreateArchiveInput`](crate::operation::create_archive::CreateArchiveInput).
@@ -52,6 +68,7 @@ pub struct CreateArchiveInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
     pub(crate) retention_days: ::std::option::Option<i32>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CreateArchiveInputBuilder {
     /// <p>The name for the archive to create.</p>
@@ -126,6 +143,35 @@ impl CreateArchiveInputBuilder {
     pub fn get_retention_days(&self) -> &::std::option::Option<i32> {
         &self.retention_days
     }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p><important>
+    /// <p>If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// </important>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p><important>
+    /// <p>If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// </important>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The identifier of the KMS customer managed key for EventBridge to use, if you choose to use a customer managed key to encrypt this archive. The identifier can be the key Amazon Resource Name (ARN), KeyId, key alias, or key alias ARN.</p>
+    /// <p>If you do not specify a customer managed key identifier, EventBridge uses an Amazon Web Services owned key to encrypt the archive.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html">Identify and view keys</a> in the <i>Key Management Service Developer Guide</i>.</p><important>
+    /// <p>If you have specified that EventBridge use a customer managed key for encrypting the source event bus, we strongly recommend you also specify a customer managed key for any archives for the event bus as well.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
+    /// </important>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// Consumes the builder and constructs a [`CreateArchiveInput`](crate::operation::create_archive::CreateArchiveInput).
     pub fn build(
         self,
@@ -136,6 +182,7 @@ impl CreateArchiveInputBuilder {
             description: self.description,
             event_pattern: self.event_pattern,
             retention_days: self.retention_days,
+            kms_key_identifier: self.kms_key_identifier,
         })
     }
 }

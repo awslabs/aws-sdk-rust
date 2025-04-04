@@ -21,5 +21,8 @@ pub fn ser_create_archive_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.kms_key_identifier {
+        object.key("KmsKeyIdentifier").string(var_6.as_str());
+    }
     Ok(())
 }

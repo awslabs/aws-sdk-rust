@@ -12,7 +12,7 @@ pub struct DescribeGroupInput {
     pub realm: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
     pub sam_account_name: ::std::option::Option<::std::string::String>,
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub other_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeGroupInput {
@@ -31,7 +31,7 @@ impl DescribeGroupInput {
     pub fn sam_account_name(&self) -> ::std::option::Option<&str> {
         self.sam_account_name.as_deref()
     }
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.other_attributes.is_none()`.
     pub fn other_attributes(&self) -> &[::std::string::String] {
@@ -112,19 +112,19 @@ impl DescribeGroupInputBuilder {
     ///
     /// To override the contents of this collection use [`set_other_attributes`](Self::set_other_attributes).
     ///
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub fn other_attributes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.other_attributes.unwrap_or_default();
         v.push(input.into());
         self.other_attributes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub fn set_other_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.other_attributes = input;
         self
     }
-    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data-attributes.html">Directory Service Data Attributes</a>.</p>
+    /// <p>One or more attributes to be returned for the group. For a list of supported attributes, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_data_attributes.html">Directory Service Data Attributes</a>.</p>
     pub fn get_other_attributes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.other_attributes
     }

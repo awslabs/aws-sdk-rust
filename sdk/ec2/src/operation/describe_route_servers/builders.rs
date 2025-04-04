@@ -23,18 +23,18 @@ impl crate::operation::describe_route_servers::builders::DescribeRouteServersInp
 /// Fluent builder constructing a request to `DescribeRouteServers`.
 ///
 /// <p>Describes one or more route servers.</p>
-/// <p>Amazon VPC Route Server simplifies routing for traffic between workloads that are deployed within a VPC and its internet gateways. With this feature, VPC Route Server dynamically updates VPC and gateway route tables with your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for those workloads. This enables you to automatically reroute traffic within a VPC, which increases the manageability of VPC routing and interoperability with third-party workloads.</p>
+/// <p>Amazon VPC Route Server simplifies routing for traffic between workloads that are deployed within a VPC and its internet gateways. With this feature, VPC Route Server dynamically updates VPC and internet gateway route tables with your preferred IPv4 or IPv6 routes to achieve routing fault tolerance for those workloads. This enables you to automatically reroute traffic within a VPC, which increases the manageability of VPC routing and interoperability with third-party workloads.</p>
 /// <p>Route server supports the follow route table types:</p>
 /// <ul>
 /// <li>
-/// <p>VPC route tables</p></li>
+/// <p>VPC route tables not associated with subnets</p></li>
 /// <li>
 /// <p>Subnet route tables</p></li>
 /// <li>
 /// <p>Internet gateway route tables</p></li>
 /// </ul>
 /// <p>Route server does not support route tables associated with virtual private gateways. To propagate routes into a transit gateway route table, use <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html">Transit Gateway Connect</a>.</p>
-/// <p>For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
+/// <p>For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeRouteServersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

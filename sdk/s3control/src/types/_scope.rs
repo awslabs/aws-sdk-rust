@@ -5,13 +5,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scope {
-    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 512 KB in size.</p>
+    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes in size.</p>
     pub prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>You can include one or more API operations as permissions.</p>
     pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::ScopePermission>>,
 }
 impl Scope {
-    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 512 KB in size.</p>
+    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes in size.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.prefixes.is_none()`.
     pub fn prefixes(&self) -> &[::std::string::String] {
@@ -43,19 +43,19 @@ impl ScopeBuilder {
     ///
     /// To override the contents of this collection use [`set_prefixes`](Self::set_prefixes).
     ///
-    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 512 KB in size.</p>
+    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes in size.</p>
     pub fn prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.prefixes.unwrap_or_default();
         v.push(input.into());
         self.prefixes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 512 KB in size.</p>
+    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes in size.</p>
     pub fn set_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.prefixes = input;
         self
     }
-    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 512 KB in size.</p>
+    /// <p>You can specify any amount of prefixes, but the total length of characters of all prefixes must be less than 256 bytes in size.</p>
     pub fn get_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.prefixes
     }

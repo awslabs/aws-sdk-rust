@@ -24,7 +24,7 @@ impl crate::operation::enable_route_server_propagation::builders::EnableRouteSer
 ///
 /// <p>Defines which route tables the route server can update with routes.</p>
 /// <p>When enabled, route server propagation installs the routes in the FIB on the route table you've specified. Route server supports IPv4 and IPv6 route propagation.</p>
-/// <p>For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
+/// <p>For more information see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/dynamic-routing-route-server.html">Dynamic routing in your VPC with VPC Route Server</a> in the <i>Amazon VPC User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableRouteServerPropagationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

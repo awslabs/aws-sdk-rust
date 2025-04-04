@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`event_pattern(Option<String>)`](crate::operation::describe_archive::DescribeArchiveOutput::event_pattern): <p>The event pattern used to filter events sent to the archive.</p>
     ///   - [`state(Option<ArchiveState>)`](crate::operation::describe_archive::DescribeArchiveOutput::state): <p>The state of the archive.</p>
     ///   - [`state_reason(Option<String>)`](crate::operation::describe_archive::DescribeArchiveOutput::state_reason): <p>The reason that the archive is in the state.</p>
+    ///   - [`kms_key_identifier(Option<String>)`](crate::operation::describe_archive::DescribeArchiveOutput::kms_key_identifier): <p>The identifier of the KMS customer managed key for EventBridge to use to encrypt this archive, if one has been specified.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/encryption-archives.html">Encrypting archives</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     ///   - [`retention_days(Option<i32>)`](crate::operation::describe_archive::DescribeArchiveOutput::retention_days): <p>The number of days to retain events for in the archive.</p>
     ///   - [`size_bytes(i64)`](crate::operation::describe_archive::DescribeArchiveOutput::size_bytes): <p>The size of the archive in bytes.</p>
     ///   - [`event_count(i64)`](crate::operation::describe_archive::DescribeArchiveOutput::event_count): <p>The number of events in the archive.</p>

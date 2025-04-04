@@ -163,6 +163,8 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
+    /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
+    /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second for an EBS-optimized instance type.</p></li>
@@ -272,6 +274,8 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <li>
     /// <p><code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
+    /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
+    /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second for an EBS-optimized instance type.</p></li>
@@ -380,6 +384,8 @@ impl DescribeInstanceTypesFluentBuilder {
     /// <p><code>burstable-performance-supported</code> - Indicates whether the instance type is a burstable performance T instance type (<code>true</code> | <code>false</code>).</p></li>
     /// <li>
     /// <p><code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of an instance family (<code>true</code> | <code>false</code>).</p></li>
+    /// <li>
+    /// <p><code>dedicated-hosts-supported</code> - Indicates whether the instance type supports Dedicated Hosts. (<code>true</code> | <code>false</code>)</p></li>
     /// <li>
     /// <p><code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p></li>
     /// <li>

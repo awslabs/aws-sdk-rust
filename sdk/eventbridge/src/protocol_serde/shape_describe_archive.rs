@@ -158,6 +158,13 @@ pub(crate) fn de_describe_archive(
                             .transpose()?,
                     );
                 }
+                "KmsKeyIdentifier" => {
+                    builder = builder.set_kms_key_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "RetentionDays" => {
                     builder = builder.set_retention_days(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
