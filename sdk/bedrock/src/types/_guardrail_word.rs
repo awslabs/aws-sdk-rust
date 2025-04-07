@@ -2,16 +2,75 @@
 
 /// <p>A word configured for the guardrail.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GuardrailWord {
     /// <p>Text of the word configured for the guardrail to block.</p>
     pub text: ::std::string::String,
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub input_action: ::std::option::Option<crate::types::GuardrailWordAction>,
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub output_action: ::std::option::Option<crate::types::GuardrailWordAction>,
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub input_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub output_enabled: ::std::option::Option<bool>,
 }
 impl GuardrailWord {
     /// <p>Text of the word configured for the guardrail to block.</p>
     pub fn text(&self) -> &str {
         use std::ops::Deref;
         self.text.deref()
+    }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn input_action(&self) -> ::std::option::Option<&crate::types::GuardrailWordAction> {
+        self.input_action.as_ref()
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn output_action(&self) -> ::std::option::Option<&crate::types::GuardrailWordAction> {
+        self.output_action.as_ref()
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn input_enabled(&self) -> ::std::option::Option<bool> {
+        self.input_enabled
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn output_enabled(&self) -> ::std::option::Option<bool> {
+        self.output_enabled
+    }
+}
+impl ::std::fmt::Debug for GuardrailWord {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GuardrailWord");
+        formatter.field("text", &self.text);
+        formatter.field("input_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_enabled", &self.input_enabled);
+        formatter.field("output_enabled", &self.output_enabled);
+        formatter.finish()
     }
 }
 impl GuardrailWord {
@@ -22,10 +81,14 @@ impl GuardrailWord {
 }
 
 /// A builder for [`GuardrailWord`](crate::types::GuardrailWord).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GuardrailWordBuilder {
     pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) input_action: ::std::option::Option<crate::types::GuardrailWordAction>,
+    pub(crate) output_action: ::std::option::Option<crate::types::GuardrailWordAction>,
+    pub(crate) input_enabled: ::std::option::Option<bool>,
+    pub(crate) output_enabled: ::std::option::Option<bool>,
 }
 impl GuardrailWordBuilder {
     /// <p>Text of the word configured for the guardrail to block.</p>
@@ -43,6 +106,98 @@ impl GuardrailWordBuilder {
     pub fn get_text(&self) -> &::std::option::Option<::std::string::String> {
         &self.text
     }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn input_action(mut self, input: crate::types::GuardrailWordAction) -> Self {
+        self.input_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_input_action(mut self, input: ::std::option::Option<crate::types::GuardrailWordAction>) -> Self {
+        self.input_action = input;
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_input_action(&self) -> &::std::option::Option<crate::types::GuardrailWordAction> {
+        &self.input_action
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn output_action(mut self, input: crate::types::GuardrailWordAction) -> Self {
+        self.output_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_output_action(mut self, input: ::std::option::Option<crate::types::GuardrailWordAction>) -> Self {
+        self.output_action = input;
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_output_action(&self) -> &::std::option::Option<crate::types::GuardrailWordAction> {
+        &self.output_action
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn input_enabled(mut self, input: bool) -> Self {
+        self.input_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_input_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.input_enabled = input;
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_input_enabled(&self) -> &::std::option::Option<bool> {
+        &self.input_enabled
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn output_enabled(mut self, input: bool) -> Self {
+        self.output_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_output_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.output_enabled = input;
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_output_enabled(&self) -> &::std::option::Option<bool> {
+        &self.output_enabled
+    }
     /// Consumes the builder and constructs a [`GuardrailWord`](crate::types::GuardrailWord).
     /// This method will fail if any of the following fields are not set:
     /// - [`text`](crate::types::builders::GuardrailWordBuilder::text)
@@ -54,6 +209,21 @@ impl GuardrailWordBuilder {
                     "text was not specified but it is required when building GuardrailWord",
                 )
             })?,
+            input_action: self.input_action,
+            output_action: self.output_action,
+            input_enabled: self.input_enabled,
+            output_enabled: self.output_enabled,
         })
+    }
+}
+impl ::std::fmt::Debug for GuardrailWordBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GuardrailWordBuilder");
+        formatter.field("text", &self.text);
+        formatter.field("input_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_enabled", &self.input_enabled);
+        formatter.field("output_enabled", &self.output_enabled);
+        formatter.finish()
     }
 }

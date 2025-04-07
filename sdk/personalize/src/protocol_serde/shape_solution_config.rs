@@ -38,23 +38,29 @@ pub fn ser_solution_config(
         crate::protocol_serde::shape_auto_ml_config::ser_auto_ml_config(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.optimization_objective {
+    if let Some(var_14) = &input.events_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("optimizationObjective").start_object();
-        crate::protocol_serde::shape_optimization_objective::ser_optimization_objective(&mut object_15, var_14)?;
+        let mut object_15 = object.key("eventsConfig").start_object();
+        crate::protocol_serde::shape_events_config::ser_events_config(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.training_data_config {
+    if let Some(var_16) = &input.optimization_objective {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("trainingDataConfig").start_object();
-        crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_17, var_16)?;
+        let mut object_17 = object.key("optimizationObjective").start_object();
+        crate::protocol_serde::shape_optimization_objective::ser_optimization_objective(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.auto_training_config {
+    if let Some(var_18) = &input.training_data_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("autoTrainingConfig").start_object();
-        crate::protocol_serde::shape_auto_training_config::ser_auto_training_config(&mut object_19, var_18)?;
+        let mut object_19 = object.key("trainingDataConfig").start_object();
+        crate::protocol_serde::shape_training_data_config::ser_training_data_config(&mut object_19, var_18)?;
         object_19.finish();
+    }
+    if let Some(var_20) = &input.auto_training_config {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("autoTrainingConfig").start_object();
+        crate::protocol_serde::shape_auto_training_config::ser_auto_training_config(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }
@@ -95,6 +101,9 @@ where
                         }
                         "autoMLConfig" => {
                             builder = builder.set_auto_ml_config(crate::protocol_serde::shape_auto_ml_config::de_auto_ml_config(tokens)?);
+                        }
+                        "eventsConfig" => {
+                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens)?);
                         }
                         "optimizationObjective" => {
                             builder = builder

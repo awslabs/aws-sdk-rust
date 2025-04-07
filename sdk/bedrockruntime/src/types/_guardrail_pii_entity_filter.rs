@@ -10,6 +10,8 @@ pub struct GuardrailPiiEntityFilter {
     pub r#type: crate::types::GuardrailPiiEntityType,
     /// <p>The PII entity filter action.</p>
     pub action: crate::types::GuardrailSensitiveInformationPolicyAction,
+    /// <p>Indicates whether personally identifiable information (PII) that breaches the guardrail configuration is detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailPiiEntityFilter {
     /// <p>The PII entity filter match.</p>
@@ -24,6 +26,10 @@ impl GuardrailPiiEntityFilter {
     /// <p>The PII entity filter action.</p>
     pub fn action(&self) -> &crate::types::GuardrailSensitiveInformationPolicyAction {
         &self.action
+    }
+    /// <p>Indicates whether personally identifiable information (PII) that breaches the guardrail configuration is detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
     }
 }
 impl GuardrailPiiEntityFilter {
@@ -40,6 +46,7 @@ pub struct GuardrailPiiEntityFilterBuilder {
     pub(crate) r#match: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailPiiEntityType>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailPiiEntityFilterBuilder {
     /// <p>The PII entity filter match.</p>
@@ -87,6 +94,20 @@ impl GuardrailPiiEntityFilterBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether personally identifiable information (PII) that breaches the guardrail configuration is detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether personally identifiable information (PII) that breaches the guardrail configuration is detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether personally identifiable information (PII) that breaches the guardrail configuration is detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailPiiEntityFilter`](crate::types::GuardrailPiiEntityFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#match`](crate::types::builders::GuardrailPiiEntityFilterBuilder::match)
@@ -112,6 +133,7 @@ impl GuardrailPiiEntityFilterBuilder {
                     "action was not specified but it is required when building GuardrailPiiEntityFilter",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

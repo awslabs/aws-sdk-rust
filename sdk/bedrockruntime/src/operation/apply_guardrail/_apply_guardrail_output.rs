@@ -7,6 +7,8 @@ pub struct ApplyGuardrailOutput {
     pub usage: ::std::option::Option<crate::types::GuardrailUsage>,
     /// <p>The action taken in the response from the guardrail.</p>
     pub action: crate::types::GuardrailAction,
+    /// <p>The reason for the action taken when harmful content is detected.</p>
+    pub action_reason: ::std::option::Option<::std::string::String>,
     /// <p>The output details in the response from the guardrail.</p>
     pub outputs: ::std::vec::Vec<crate::types::GuardrailOutputContent>,
     /// <p>The assessment details in the response from the guardrail.</p>
@@ -23,6 +25,10 @@ impl ApplyGuardrailOutput {
     /// <p>The action taken in the response from the guardrail.</p>
     pub fn action(&self) -> &crate::types::GuardrailAction {
         &self.action
+    }
+    /// <p>The reason for the action taken when harmful content is detected.</p>
+    pub fn action_reason(&self) -> ::std::option::Option<&str> {
+        self.action_reason.as_deref()
     }
     /// <p>The output details in the response from the guardrail.</p>
     pub fn outputs(&self) -> &[crate::types::GuardrailOutputContent] {
@@ -57,6 +63,7 @@ impl ApplyGuardrailOutput {
 pub struct ApplyGuardrailOutputBuilder {
     pub(crate) usage: ::std::option::Option<crate::types::GuardrailUsage>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailAction>,
+    pub(crate) action_reason: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailOutputContent>>,
     pub(crate) assessments: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailAssessment>>,
     pub(crate) guardrail_coverage: ::std::option::Option<crate::types::GuardrailCoverage>,
@@ -92,6 +99,20 @@ impl ApplyGuardrailOutputBuilder {
     /// <p>The action taken in the response from the guardrail.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailAction> {
         &self.action
+    }
+    /// <p>The reason for the action taken when harmful content is detected.</p>
+    pub fn action_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The reason for the action taken when harmful content is detected.</p>
+    pub fn set_action_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.action_reason = input;
+        self
+    }
+    /// <p>The reason for the action taken when harmful content is detected.</p>
+    pub fn get_action_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_reason
     }
     /// Appends an item to `outputs`.
     ///
@@ -172,6 +193,7 @@ impl ApplyGuardrailOutputBuilder {
                     "action was not specified but it is required when building ApplyGuardrailOutput",
                 )
             })?,
+            action_reason: self.action_reason,
             outputs: self.outputs.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "outputs",

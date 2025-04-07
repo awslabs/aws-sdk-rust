@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_builds_for_project_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_command_executions_for_sandbox_output_output_next_token(
+    input: &crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_fleets_output_output_next_token(
     input: &crate::operation::list_fleets::ListFleetsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -101,6 +111,26 @@ pub(crate) fn reflens_list_reports_output_output_next_token(
 
 pub(crate) fn reflens_list_reports_for_report_group_output_output_next_token(
     input: &crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_sandboxes_output_output_next_token(
+    input: &crate::operation::list_sandboxes::ListSandboxesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_sandboxes_for_project_output_output_next_token(
+    input: &crate::operation::list_sandboxes_for_project::ListSandboxesForProjectOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -189,6 +219,16 @@ pub(crate) fn lens_list_builds_for_project_output_output_ids(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_command_executions_for_sandbox_output_output_command_executions(
+    input: crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CommandExecution>> {
+    let input = match input.command_executions {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_projects_output_output_projects(
     input: crate::operation::list_projects::ListProjectsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -223,6 +263,26 @@ pub(crate) fn lens_list_reports_for_report_group_output_output_reports(
     input: crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = match input.reports {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sandboxes_output_output_ids(
+    input: crate::operation::list_sandboxes::ListSandboxesOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.ids {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sandboxes_for_project_output_output_ids(
+    input: crate::operation::list_sandboxes_for_project::ListSandboxesForProjectOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = match input.ids {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

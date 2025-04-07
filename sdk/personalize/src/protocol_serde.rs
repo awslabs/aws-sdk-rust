@@ -469,6 +469,8 @@ pub(crate) mod shape_default_hyper_parameter_ranges;
 
 pub(crate) mod shape_event_tracker_summary;
 
+pub(crate) mod shape_events_config;
+
 pub(crate) mod shape_featurization_parameters;
 
 pub(crate) mod shape_fields_for_theme_generation;
@@ -509,6 +511,8 @@ pub(crate) mod shape_default_continuous_hyper_parameter_ranges;
 
 pub(crate) mod shape_default_integer_hyper_parameter_ranges;
 
+pub(crate) mod shape_event_parameters;
+
 pub(crate) mod shape_feature_transformation_parameters;
 
 pub(crate) mod shape_hpo_objective;
@@ -528,6 +532,8 @@ pub(crate) mod shape_default_categorical_hyper_parameter_range;
 pub(crate) mod shape_default_continuous_hyper_parameter_range;
 
 pub(crate) mod shape_default_integer_hyper_parameter_range;
+
+pub(crate) mod shape_event_parameters_list;
 
 pub(crate) mod shape_excluded_dataset_columns;
 

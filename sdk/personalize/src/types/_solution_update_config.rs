@@ -6,11 +6,17 @@
 pub struct SolutionUpdateConfig {
     /// <p>The automatic training configuration to use when <code>performAutoTraining</code> is true.</p>
     pub auto_training_config: ::std::option::Option<crate::types::AutoTrainingConfig>,
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub events_config: ::std::option::Option<crate::types::EventsConfig>,
 }
 impl SolutionUpdateConfig {
     /// <p>The automatic training configuration to use when <code>performAutoTraining</code> is true.</p>
     pub fn auto_training_config(&self) -> ::std::option::Option<&crate::types::AutoTrainingConfig> {
         self.auto_training_config.as_ref()
+    }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn events_config(&self) -> ::std::option::Option<&crate::types::EventsConfig> {
+        self.events_config.as_ref()
     }
 }
 impl SolutionUpdateConfig {
@@ -25,6 +31,7 @@ impl SolutionUpdateConfig {
 #[non_exhaustive]
 pub struct SolutionUpdateConfigBuilder {
     pub(crate) auto_training_config: ::std::option::Option<crate::types::AutoTrainingConfig>,
+    pub(crate) events_config: ::std::option::Option<crate::types::EventsConfig>,
 }
 impl SolutionUpdateConfigBuilder {
     /// <p>The automatic training configuration to use when <code>performAutoTraining</code> is true.</p>
@@ -41,10 +48,25 @@ impl SolutionUpdateConfigBuilder {
     pub fn get_auto_training_config(&self) -> &::std::option::Option<crate::types::AutoTrainingConfig> {
         &self.auto_training_config
     }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn events_config(mut self, input: crate::types::EventsConfig) -> Self {
+        self.events_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn set_events_config(mut self, input: ::std::option::Option<crate::types::EventsConfig>) -> Self {
+        self.events_config = input;
+        self
+    }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn get_events_config(&self) -> &::std::option::Option<crate::types::EventsConfig> {
+        &self.events_config
+    }
     /// Consumes the builder and constructs a [`SolutionUpdateConfig`](crate::types::SolutionUpdateConfig).
     pub fn build(self) -> crate::types::SolutionUpdateConfig {
         crate::types::SolutionUpdateConfig {
             auto_training_config: self.auto_training_config,
+            events_config: self.events_config,
         }
     }
 }

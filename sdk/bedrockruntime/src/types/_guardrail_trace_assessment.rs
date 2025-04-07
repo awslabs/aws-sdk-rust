@@ -11,6 +11,8 @@ pub struct GuardrailTraceAssessment {
     /// <p>the output assessments.</p>
     pub output_assessments:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::GuardrailAssessment>>>,
+    /// <p>Provides the reason for the action taken when harmful content is detected.</p>
+    pub action_reason: ::std::option::Option<::std::string::String>,
 }
 impl GuardrailTraceAssessment {
     /// <p>The output from the model.</p>
@@ -29,6 +31,10 @@ impl GuardrailTraceAssessment {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::GuardrailAssessment>>> {
         self.output_assessments.as_ref()
     }
+    /// <p>Provides the reason for the action taken when harmful content is detected.</p>
+    pub fn action_reason(&self) -> ::std::option::Option<&str> {
+        self.action_reason.as_deref()
+    }
 }
 impl GuardrailTraceAssessment {
     /// Creates a new builder-style object to manufacture [`GuardrailTraceAssessment`](crate::types::GuardrailTraceAssessment).
@@ -45,6 +51,7 @@ pub struct GuardrailTraceAssessmentBuilder {
     pub(crate) input_assessment: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::GuardrailAssessment>>,
     pub(crate) output_assessments:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::GuardrailAssessment>>>,
+    pub(crate) action_reason: ::std::option::Option<::std::string::String>,
 }
 impl GuardrailTraceAssessmentBuilder {
     /// Appends an item to `model_output`.
@@ -121,12 +128,27 @@ impl GuardrailTraceAssessmentBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::GuardrailAssessment>>> {
         &self.output_assessments
     }
+    /// <p>Provides the reason for the action taken when harmful content is detected.</p>
+    pub fn action_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Provides the reason for the action taken when harmful content is detected.</p>
+    pub fn set_action_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.action_reason = input;
+        self
+    }
+    /// <p>Provides the reason for the action taken when harmful content is detected.</p>
+    pub fn get_action_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.action_reason
+    }
     /// Consumes the builder and constructs a [`GuardrailTraceAssessment`](crate::types::GuardrailTraceAssessment).
     pub fn build(self) -> crate::types::GuardrailTraceAssessment {
         crate::types::GuardrailTraceAssessment {
             model_output: self.model_output,
             input_assessment: self.input_assessment,
             output_assessments: self.output_assessments,
+            action_reason: self.action_reason,
         }
     }
 }

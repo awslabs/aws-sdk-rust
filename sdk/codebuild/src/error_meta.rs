@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.</p>
     AccountLimitExceededException(crate::types::error::AccountLimitExceededException),
+    /// <p>The CodeBuild access has been suspended for the calling Amazon Web Services account.</p>
+    AccountSuspendedException(crate::types::error::AccountSuspendedException),
     /// <p>The input value that was provided is not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>There was a problem with the underlying OAuth provider.</p>
@@ -26,6 +28,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccountLimitExceededException(inner) => inner.fmt(f),
+            Error::AccountSuspendedException(inner) => inner.fmt(f),
             Error::InvalidInputException(inner) => inner.fmt(f),
             Error::OAuthProviderException(inner) => inner.fmt(f),
             Error::ResourceAlreadyExistsException(inner) => inner.fmt(f),
@@ -52,6 +55,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccountLimitExceededException(inner) => inner.meta(),
+            Self::AccountSuspendedException(inner) => inner.meta(),
             Self::InvalidInputException(inner) => inner.meta(),
             Self::OAuthProviderException(inner) => inner.meta(),
             Self::ResourceAlreadyExistsException(inner) => inner.meta(),
@@ -125,6 +129,33 @@ impl From<crate::operation::batch_get_builds::BatchGetBuildsError> for Error {
         match err {
             crate::operation::batch_get_builds::BatchGetBuildsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::batch_get_builds::BatchGetBuildsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_command_executions::BatchGetCommandExecutionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_command_executions::BatchGetCommandExecutionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_command_executions::BatchGetCommandExecutionsError> for Error {
+    fn from(err: crate::operation::batch_get_command_executions::BatchGetCommandExecutionsError) -> Self {
+        match err {
+            crate::operation::batch_get_command_executions::BatchGetCommandExecutionsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::batch_get_command_executions::BatchGetCommandExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -215,6 +246,28 @@ impl From<crate::operation::batch_get_reports::BatchGetReportsError> for Error {
         match err {
             crate::operation::batch_get_reports::BatchGetReportsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::batch_get_reports::BatchGetReportsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_sandboxes::BatchGetSandboxesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_sandboxes::BatchGetSandboxesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_sandboxes::BatchGetSandboxesError> for Error {
+    fn from(err: crate::operation::batch_get_sandboxes::BatchGetSandboxesError) -> Self {
+        match err {
+            crate::operation::batch_get_sandboxes::BatchGetSandboxesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_sandboxes::BatchGetSandboxesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -774,6 +827,44 @@ impl From<crate::operation::list_builds_for_project::ListBuildsForProjectError> 
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError> for Error {
+    fn from(err: crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError) -> Self {
+        match err {
+            crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError, R>>
     for Error
 where
@@ -916,6 +1007,58 @@ impl From<crate::operation::list_reports_for_report_group::ListReportsForReportG
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_reports_for_report_group::ListReportsForReportGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sandboxes::ListSandboxesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sandboxes::ListSandboxesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sandboxes::ListSandboxesError> for Error {
+    fn from(err: crate::operation::list_sandboxes::ListSandboxesError) -> Self {
+        match err {
+            crate::operation::list_sandboxes::ListSandboxesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::list_sandboxes::ListSandboxesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError> for Error {
+    fn from(err: crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError) -> Self {
+        match err {
+            crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_sandboxes_for_project::ListSandboxesForProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1113,6 +1256,88 @@ impl From<crate::operation::start_build_batch::StartBuildBatchError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_command_execution::StartCommandExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_command_execution::StartCommandExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_command_execution::StartCommandExecutionError> for Error {
+    fn from(err: crate::operation::start_command_execution::StartCommandExecutionError) -> Self {
+        match err {
+            crate::operation::start_command_execution::StartCommandExecutionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::start_command_execution::StartCommandExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_command_execution::StartCommandExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_sandbox::StartSandboxError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_sandbox::StartSandboxError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_sandbox::StartSandboxError> for Error {
+    fn from(err: crate::operation::start_sandbox::StartSandboxError) -> Self {
+        match err {
+            crate::operation::start_sandbox::StartSandboxError::AccountSuspendedException(inner) => Error::AccountSuspendedException(inner),
+            crate::operation::start_sandbox::StartSandboxError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::start_sandbox::StartSandboxError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_sandbox::StartSandboxError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_sandbox_connection::StartSandboxConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_sandbox_connection::StartSandboxConnectionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_sandbox_connection::StartSandboxConnectionError> for Error {
+    fn from(err: crate::operation::start_sandbox_connection::StartSandboxConnectionError) -> Self {
+        match err {
+            crate::operation::start_sandbox_connection::StartSandboxConnectionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::start_sandbox_connection::StartSandboxConnectionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_sandbox_connection::StartSandboxConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_build::StopBuildError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1156,6 +1381,29 @@ impl From<crate::operation::stop_build_batch::StopBuildBatchError> for Error {
             crate::operation::stop_build_batch::StopBuildBatchError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::stop_build_batch::StopBuildBatchError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::stop_build_batch::StopBuildBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_sandbox::StopSandboxError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_sandbox::StopSandboxError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_sandbox::StopSandboxError> for Error {
+    fn from(err: crate::operation::stop_sandbox::StopSandboxError) -> Self {
+        match err {
+            crate::operation::stop_sandbox::StopSandboxError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::stop_sandbox::StopSandboxError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_sandbox::StopSandboxError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1289,6 +1537,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccountLimitExceededException(inner) => inner.source(),
+            Error::AccountSuspendedException(inner) => inner.source(),
             Error::InvalidInputException(inner) => inner.source(),
             Error::OAuthProviderException(inner) => inner.source(),
             Error::ResourceAlreadyExistsException(inner) => inner.source(),
@@ -1301,6 +1550,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccountLimitExceededException(e) => e.request_id(),
+            Self::AccountSuspendedException(e) => e.request_id(),
             Self::InvalidInputException(e) => e.request_id(),
             Self::OAuthProviderException(e) => e.request_id(),
             Self::ResourceAlreadyExistsException(e) => e.request_id(),

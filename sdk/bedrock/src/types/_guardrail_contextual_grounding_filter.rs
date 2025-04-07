@@ -2,12 +2,22 @@
 
 /// <p>The details for the guardrails contextual grounding filter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GuardrailContextualGroundingFilter {
     /// <p>The filter type details for the guardrails contextual grounding filter.</p>
     pub r#type: crate::types::GuardrailContextualGroundingFilterType,
     /// <p>The threshold details for the guardrails contextual grounding filter.</p>
     pub threshold: f64,
+    /// <p>The action to take when content fails the contextual grounding evaluation. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub action: ::std::option::Option<crate::types::GuardrailContextualGroundingAction>,
+    /// <p>Indicates whether contextual grounding is enabled for evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub enabled: ::std::option::Option<bool>,
 }
 impl GuardrailContextualGroundingFilter {
     /// <p>The filter type details for the guardrails contextual grounding filter.</p>
@@ -18,6 +28,30 @@ impl GuardrailContextualGroundingFilter {
     pub fn threshold(&self) -> f64 {
         self.threshold
     }
+    /// <p>The action to take when content fails the contextual grounding evaluation. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn action(&self) -> ::std::option::Option<&crate::types::GuardrailContextualGroundingAction> {
+        self.action.as_ref()
+    }
+    /// <p>Indicates whether contextual grounding is enabled for evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
+        self.enabled
+    }
+}
+impl ::std::fmt::Debug for GuardrailContextualGroundingFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GuardrailContextualGroundingFilter");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("threshold", &self.threshold);
+        formatter.field("action", &"*** Sensitive Data Redacted ***");
+        formatter.field("enabled", &self.enabled);
+        formatter.finish()
+    }
 }
 impl GuardrailContextualGroundingFilter {
     /// Creates a new builder-style object to manufacture [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
@@ -27,11 +61,13 @@ impl GuardrailContextualGroundingFilter {
 }
 
 /// A builder for [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GuardrailContextualGroundingFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContextualGroundingFilterType>,
     pub(crate) threshold: ::std::option::Option<f64>,
+    pub(crate) action: ::std::option::Option<crate::types::GuardrailContextualGroundingAction>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl GuardrailContextualGroundingFilterBuilder {
     /// <p>The filter type details for the guardrails contextual grounding filter.</p>
@@ -64,6 +100,52 @@ impl GuardrailContextualGroundingFilterBuilder {
     pub fn get_threshold(&self) -> &::std::option::Option<f64> {
         &self.threshold
     }
+    /// <p>The action to take when content fails the contextual grounding evaluation. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn action(mut self, input: crate::types::GuardrailContextualGroundingAction) -> Self {
+        self.action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action to take when content fails the contextual grounding evaluation. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::GuardrailContextualGroundingAction>) -> Self {
+        self.action = input;
+        self
+    }
+    /// <p>The action to take when content fails the contextual grounding evaluation. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingAction> {
+        &self.action
+    }
+    /// <p>Indicates whether contextual grounding is enabled for evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn enabled(mut self, input: bool) -> Self {
+        self.enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether contextual grounding is enabled for evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enabled = input;
+        self
+    }
+    /// <p>Indicates whether contextual grounding is enabled for evaluation. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_enabled(&self) -> &::std::option::Option<bool> {
+        &self.enabled
+    }
     /// Consumes the builder and constructs a [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::type)
@@ -82,6 +164,18 @@ impl GuardrailContextualGroundingFilterBuilder {
                     "threshold was not specified but it is required when building GuardrailContextualGroundingFilter",
                 )
             })?,
+            action: self.action,
+            enabled: self.enabled,
         })
+    }
+}
+impl ::std::fmt::Debug for GuardrailContextualGroundingFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GuardrailContextualGroundingFilterBuilder");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("threshold", &self.threshold);
+        formatter.field("action", &"*** Sensitive Data Redacted ***");
+        formatter.field("enabled", &self.enabled);
+        formatter.finish()
     }
 }

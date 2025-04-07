@@ -9,5 +9,17 @@ pub fn ser_update_node_input_input(
     if let Some(var_2) = &input.role {
         object.key("role").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.sdi_source_mappings {
+        let mut array_4 = object.key("sdiSourceMappings").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_sdi_source_mapping_update_request::ser_sdi_source_mapping_update_request(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }

@@ -164,4 +164,23 @@ impl UpdateNodeFluentBuilder {
     pub fn get_role(&self) -> &::std::option::Option<crate::types::NodeRole> {
         self.inner.get_role()
     }
+    ///
+    /// Appends an item to `SdiSourceMappings`.
+    ///
+    /// To override the contents of this collection use [`set_sdi_source_mappings`](Self::set_sdi_source_mappings).
+    ///
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub fn sdi_source_mappings(mut self, input: crate::types::SdiSourceMappingUpdateRequest) -> Self {
+        self.inner = self.inner.sdi_source_mappings(input);
+        self
+    }
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub fn set_sdi_source_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMappingUpdateRequest>>) -> Self {
+        self.inner = self.inner.set_sdi_source_mappings(input);
+        self
+    }
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub fn get_sdi_source_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMappingUpdateRequest>> {
+        self.inner.get_sdi_source_mappings()
+    }
 }

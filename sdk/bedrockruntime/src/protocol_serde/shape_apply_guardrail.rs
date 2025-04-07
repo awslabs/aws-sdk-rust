@@ -163,6 +163,13 @@ pub(crate) fn de_apply_guardrail(
                             .transpose()?,
                     );
                 }
+                "actionReason" => {
+                    builder = builder.set_action_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "assessments" => {
                     builder = builder.set_assessments(crate::protocol_serde::shape_guardrail_assessment_list::de_guardrail_assessment_list(
                         tokens,

@@ -9,5 +9,17 @@ pub fn ser_guardrail_pii_entity_config(
     {
         object.key("action").string(input.action.as_str());
     }
+    if let Some(var_1) = &input.input_action {
+        object.key("inputAction").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.output_action {
+        object.key("outputAction").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.input_enabled {
+        object.key("inputEnabled").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.output_enabled {
+        object.key("outputEnabled").boolean(*var_4);
+    }
     Ok(())
 }

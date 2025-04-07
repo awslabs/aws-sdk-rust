@@ -14,6 +14,8 @@ pub struct SolutionConfig {
     pub feature_transformation_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     pub auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub events_config: ::std::option::Option<crate::types::EventsConfig>,
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
     /// <p>Specifies the training data configuration to use when creating a custom solution version (trained model).</p>
@@ -44,6 +46,10 @@ impl SolutionConfig {
     pub fn auto_ml_config(&self) -> ::std::option::Option<&crate::types::AutoMlConfig> {
         self.auto_ml_config.as_ref()
     }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn events_config(&self) -> ::std::option::Option<&crate::types::EventsConfig> {
+        self.events_config.as_ref()
+    }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub fn optimization_objective(&self) -> ::std::option::Option<&crate::types::OptimizationObjective> {
         self.optimization_objective.as_ref()
@@ -73,6 +79,7 @@ pub struct SolutionConfigBuilder {
     pub(crate) algorithm_hyper_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) feature_transformation_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
+    pub(crate) events_config: ::std::option::Option<crate::types::EventsConfig>,
     pub(crate) optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
     pub(crate) training_data_config: ::std::option::Option<crate::types::TrainingDataConfig>,
     pub(crate) auto_training_config: ::std::option::Option<crate::types::AutoTrainingConfig>,
@@ -178,6 +185,20 @@ impl SolutionConfigBuilder {
     pub fn get_auto_ml_config(&self) -> &::std::option::Option<crate::types::AutoMlConfig> {
         &self.auto_ml_config
     }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn events_config(mut self, input: crate::types::EventsConfig) -> Self {
+        self.events_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn set_events_config(mut self, input: ::std::option::Option<crate::types::EventsConfig>) -> Self {
+        self.events_config = input;
+        self
+    }
+    /// <p>Describes the configuration of an event, which includes a list of event parameters. You can specify up to 10 event parameters. Events are used in solution creation.</p>
+    pub fn get_events_config(&self) -> &::std::option::Option<crate::types::EventsConfig> {
+        &self.events_config
+    }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub fn optimization_objective(mut self, input: crate::types::OptimizationObjective) -> Self {
         self.optimization_objective = ::std::option::Option::Some(input);
@@ -228,6 +249,7 @@ impl SolutionConfigBuilder {
             algorithm_hyper_parameters: self.algorithm_hyper_parameters,
             feature_transformation_parameters: self.feature_transformation_parameters,
             auto_ml_config: self.auto_ml_config,
+            events_config: self.events_config,
             optimization_objective: self.optimization_objective,
             training_data_config: self.training_data_config,
             auto_training_config: self.auto_training_config,

@@ -60,29 +60,38 @@ pub fn ser_update_input_input_input(
     if let Some(var_19) = &input.role_arn {
         object.key("roleArn").string(var_19.as_str());
     }
-    if let Some(var_20) = &input.smpte2110_receiver_group_settings {
-        #[allow(unused_mut)]
-        let mut object_21 = object.key("smpte2110ReceiverGroupSettings").start_object();
-        crate::protocol_serde::shape_smpte2110_receiver_group_settings::ser_smpte2110_receiver_group_settings(&mut object_21, var_20)?;
-        object_21.finish();
-    }
-    if let Some(var_22) = &input.sources {
-        let mut array_23 = object.key("sources").start_array();
-        for item_24 in var_22 {
+    if let Some(var_20) = &input.sdi_sources {
+        let mut array_21 = object.key("sdiSources").start_array();
+        for item_22 in var_20 {
             {
-                #[allow(unused_mut)]
-                let mut object_25 = array_23.value().start_object();
-                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_25, item_24)?;
-                object_25.finish();
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_23.finish();
+        array_21.finish();
     }
-    if let Some(var_26) = &input.srt_settings {
+    if let Some(var_23) = &input.smpte2110_receiver_group_settings {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("srtSettings").start_object();
-        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_24 = object.key("smpte2110ReceiverGroupSettings").start_object();
+        crate::protocol_serde::shape_smpte2110_receiver_group_settings::ser_smpte2110_receiver_group_settings(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.sources {
+        let mut array_26 = object.key("sources").start_array();
+        for item_27 in var_25 {
+            {
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_input_source_request::ser_input_source_request(&mut object_28, item_27)?;
+                object_28.finish();
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_29) = &input.srt_settings {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("srtSettings").start_object();
+        crate::protocol_serde::shape_srt_settings_request::ser_srt_settings_request(&mut object_30, var_29)?;
+        object_30.finish();
     }
     Ok(())
 }

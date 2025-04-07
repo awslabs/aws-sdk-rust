@@ -31,7 +31,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-codebuild = "1.84.0"
+//! aws-sdk-codebuild = "1.85.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -148,14 +148,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateFleet`](crate::operation::create_fleet) operation has
-/// a [`Client::create_fleet`], function which returns a builder for that operation.
+/// For example, the [`BatchGetCommandExecutions`](crate::operation::batch_get_command_executions) operation has
+/// a [`Client::batch_get_command_executions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_fleet()
-///     .name("example")
+/// let result = client.batch_get_command_executions()
+///     .sandbox_id("example")
 ///     .send()
 ///     .await;
 /// ```

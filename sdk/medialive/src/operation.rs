@@ -67,6 +67,9 @@ pub mod create_node_registration_script;
 /// Types for the `CreatePartnerInput` operation.
 pub mod create_partner_input;
 
+/// Types for the `CreateSdiSource` operation.
+pub mod create_sdi_source;
+
 /// Types for the `CreateSignalMap` operation.
 pub mod create_signal_map;
 
@@ -118,6 +121,9 @@ pub mod delete_reservation;
 /// Types for the `DeleteSchedule` operation.
 pub mod delete_schedule;
 
+/// Types for the `DeleteSdiSource` operation.
+pub mod delete_sdi_source;
+
 /// Types for the `DeleteSignalMap` operation.
 pub mod delete_signal_map;
 
@@ -168,6 +174,9 @@ pub mod describe_reservation;
 
 /// Types for the `DescribeSchedule` operation.
 pub mod describe_schedule;
+
+/// Types for the `DescribeSdiSource` operation.
+pub mod describe_sdi_source;
 
 /// Types for the `DescribeThumbnails` operation.
 pub mod describe_thumbnails;
@@ -237,6 +246,9 @@ pub mod list_offerings;
 
 /// Types for the `ListReservations` operation.
 pub mod list_reservations;
+
+/// Types for the `ListSdiSources` operation.
+pub mod list_sdi_sources;
 
 /// Types for the `ListSignalMaps` operation.
 pub mod list_signal_maps;
@@ -345,3 +357,6 @@ pub mod update_node_state;
 
 /// Types for the `UpdateReservation` operation.
 pub mod update_reservation;
+
+/// Types for the `UpdateSdiSource` operation.
+pub mod update_sdi_source;

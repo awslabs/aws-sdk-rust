@@ -30,5 +30,17 @@ pub fn ser_guardrail_content_filter_config(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.input_action {
+        object.key("inputAction").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.output_action {
+        object.key("outputAction").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.input_enabled {
+        object.key("inputEnabled").boolean(*var_9);
+    }
+    if let Some(var_10) = &input.output_enabled {
+        object.key("outputEnabled").boolean(*var_10);
+    }
     Ok(())
 }

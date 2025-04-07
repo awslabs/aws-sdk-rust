@@ -494,6 +494,24 @@ pub(crate) fn start_file_transfer_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_remote_delete_output_output_correct_errors(
+    mut builder: crate::operation::start_remote_delete::builders::StartRemoteDeleteOutputBuilder,
+) -> crate::operation::start_remote_delete::builders::StartRemoteDeleteOutputBuilder {
+    if builder.delete_id.is_none() {
+        builder.delete_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_remote_move_output_output_correct_errors(
+    mut builder: crate::operation::start_remote_move::builders::StartRemoteMoveOutputBuilder,
+) -> crate::operation::start_remote_move::builders::StartRemoteMoveOutputBuilder {
+    if builder.move_id.is_none() {
+        builder.move_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn test_identity_provider_output_output_correct_errors(
     mut builder: crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder,
 ) -> crate::operation::test_identity_provider::builders::TestIdentityProviderOutputBuilder {

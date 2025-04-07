@@ -199,6 +199,8 @@ pub use crate::types::_guardrail_output_content::GuardrailOutputContent;
 
 pub use crate::types::_guardrail_action::GuardrailAction;
 
+pub use crate::types::_guardrail_output_scope::GuardrailOutputScope;
+
 pub use crate::types::_guardrail_content_block::GuardrailContentBlock;
 
 pub use crate::types::_guardrail_image_block::GuardrailImageBlock;
@@ -340,6 +342,8 @@ mod _guardrail_managed_word;
 mod _guardrail_managed_word_type;
 
 mod _guardrail_output_content;
+
+mod _guardrail_output_scope;
 
 mod _guardrail_pii_entity_filter;
 

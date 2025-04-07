@@ -170,4 +170,21 @@ impl ApplyGuardrailFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailContentBlock>> {
         self.inner.get_content()
     }
+    /// <p>Specifies the scope of the output that you get in the response. Set to <code>FULL</code> to return the entire output, including any detected and non-detected entries in the response for enhanced debugging.</p>
+    /// <p>Note that the full output scope doesn't apply to word filters or regex in sensitive information filters. It does apply to all other filtering policies, including sensitive information with filters that can detect personally identifiable information (PII).</p>
+    pub fn output_scope(mut self, input: crate::types::GuardrailOutputScope) -> Self {
+        self.inner = self.inner.output_scope(input);
+        self
+    }
+    /// <p>Specifies the scope of the output that you get in the response. Set to <code>FULL</code> to return the entire output, including any detected and non-detected entries in the response for enhanced debugging.</p>
+    /// <p>Note that the full output scope doesn't apply to word filters or regex in sensitive information filters. It does apply to all other filtering policies, including sensitive information with filters that can detect personally identifiable information (PII).</p>
+    pub fn set_output_scope(mut self, input: ::std::option::Option<crate::types::GuardrailOutputScope>) -> Self {
+        self.inner = self.inner.set_output_scope(input);
+        self
+    }
+    /// <p>Specifies the scope of the output that you get in the response. Set to <code>FULL</code> to return the entire output, including any detected and non-detected entries in the response for enhanced debugging.</p>
+    /// <p>Note that the full output scope doesn't apply to word filters or regex in sensitive information filters. It does apply to all other filtering policies, including sensitive information with filters that can detect personally identifiable information (PII).</p>
+    pub fn get_output_scope(&self) -> &::std::option::Option<crate::types::GuardrailOutputScope> {
+        self.inner.get_output_scope()
+    }
 }

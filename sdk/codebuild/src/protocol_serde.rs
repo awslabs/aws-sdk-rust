@@ -29,6 +29,8 @@ pub(crate) mod shape_batch_get_build_batches;
 
 pub(crate) mod shape_batch_get_builds;
 
+pub(crate) mod shape_batch_get_command_executions;
+
 pub(crate) mod shape_batch_get_fleets;
 
 pub(crate) mod shape_batch_get_projects;
@@ -36,6 +38,8 @@ pub(crate) mod shape_batch_get_projects;
 pub(crate) mod shape_batch_get_report_groups;
 
 pub(crate) mod shape_batch_get_reports;
+
+pub(crate) mod shape_batch_get_sandboxes;
 
 pub(crate) mod shape_create_fleet;
 
@@ -81,6 +85,8 @@ pub(crate) mod shape_list_builds;
 
 pub(crate) mod shape_list_builds_for_project;
 
+pub(crate) mod shape_list_command_executions_for_sandbox;
+
 pub(crate) mod shape_list_curated_environment_images;
 
 pub(crate) mod shape_list_fleets;
@@ -92,6 +98,10 @@ pub(crate) mod shape_list_report_groups;
 pub(crate) mod shape_list_reports;
 
 pub(crate) mod shape_list_reports_for_report_group;
+
+pub(crate) mod shape_list_sandboxes;
+
+pub(crate) mod shape_list_sandboxes_for_project;
 
 pub(crate) mod shape_list_shared_projects;
 
@@ -109,9 +119,17 @@ pub(crate) mod shape_start_build;
 
 pub(crate) mod shape_start_build_batch;
 
+pub(crate) mod shape_start_command_execution;
+
+pub(crate) mod shape_start_sandbox;
+
+pub(crate) mod shape_start_sandbox_connection;
+
 pub(crate) mod shape_stop_build;
 
 pub(crate) mod shape_stop_build_batch;
+
+pub(crate) mod shape_stop_sandbox;
 
 pub(crate) mod shape_update_fleet;
 
@@ -133,11 +151,15 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_account_limit_exceeded_exception;
 
+pub(crate) mod shape_account_suspended_exception;
+
 pub(crate) mod shape_batch_delete_builds_input;
 
 pub(crate) mod shape_batch_get_build_batches_input;
 
 pub(crate) mod shape_batch_get_builds_input;
+
+pub(crate) mod shape_batch_get_command_executions_input;
 
 pub(crate) mod shape_batch_get_fleets_input;
 
@@ -146,6 +168,8 @@ pub(crate) mod shape_batch_get_projects_input;
 pub(crate) mod shape_batch_get_report_groups_input;
 
 pub(crate) mod shape_batch_get_reports_input;
+
+pub(crate) mod shape_batch_get_sandboxes_input;
 
 pub(crate) mod shape_create_fleet_input;
 
@@ -193,6 +217,8 @@ pub(crate) mod shape_list_builds_for_project_input;
 
 pub(crate) mod shape_list_builds_input;
 
+pub(crate) mod shape_list_command_executions_for_sandbox_input;
+
 pub(crate) mod shape_list_fleets_input;
 
 pub(crate) mod shape_list_projects_input;
@@ -202,6 +228,10 @@ pub(crate) mod shape_list_report_groups_input;
 pub(crate) mod shape_list_reports_for_report_group_input;
 
 pub(crate) mod shape_list_reports_input;
+
+pub(crate) mod shape_list_sandboxes_for_project_input;
+
+pub(crate) mod shape_list_sandboxes_input;
 
 pub(crate) mod shape_list_shared_projects_input;
 
@@ -223,9 +253,17 @@ pub(crate) mod shape_start_build_batch_input;
 
 pub(crate) mod shape_start_build_input;
 
+pub(crate) mod shape_start_command_execution_input;
+
+pub(crate) mod shape_start_sandbox_connection_input;
+
+pub(crate) mod shape_start_sandbox_input;
+
 pub(crate) mod shape_stop_build_batch_input;
 
 pub(crate) mod shape_stop_build_input;
+
+pub(crate) mod shape_stop_sandbox_input;
 
 pub(crate) mod shape_update_fleet_input;
 
@@ -256,6 +294,12 @@ pub(crate) mod shape_builds;
 pub(crate) mod shape_builds_not_deleted;
 
 pub(crate) mod shape_code_coverages;
+
+pub(crate) mod shape_command_execution;
+
+pub(crate) mod shape_command_execution_ids;
+
+pub(crate) mod shape_command_executions;
 
 pub(crate) mod shape_compute_configuration;
 
@@ -321,6 +365,12 @@ pub(crate) mod shape_report_groups;
 
 pub(crate) mod shape_reports;
 
+pub(crate) mod shape_sandbox;
+
+pub(crate) mod shape_sandbox_ids;
+
+pub(crate) mod shape_sandboxes;
+
 pub(crate) mod shape_scaling_configuration_input;
 
 pub(crate) mod shape_scope_configuration;
@@ -328,6 +378,8 @@ pub(crate) mod shape_scope_configuration;
 pub(crate) mod shape_source_auth;
 
 pub(crate) mod shape_source_credentials_infos;
+
+pub(crate) mod shape_ssm_session;
 
 pub(crate) mod shape_tag;
 
@@ -397,6 +449,8 @@ pub(crate) mod shape_s3_logs_config;
 
 pub(crate) mod shape_s3_report_export_config;
 
+pub(crate) mod shape_sandbox_session;
+
 pub(crate) mod shape_scaling_configuration_output;
 
 pub(crate) mod shape_source_credentials_info;
@@ -427,6 +481,8 @@ pub(crate) mod shape_fleet_proxy_rules;
 
 pub(crate) mod shape_project_cache_modes;
 
+pub(crate) mod shape_sandbox_session_phases;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnets;
@@ -450,6 +506,8 @@ pub(crate) mod shape_identifiers;
 pub(crate) mod shape_phase_contexts;
 
 pub(crate) mod shape_report_status_counts;
+
+pub(crate) mod shape_sandbox_session_phase;
 
 pub(crate) mod shape_environment_images;
 

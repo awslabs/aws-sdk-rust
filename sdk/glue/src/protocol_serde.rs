@@ -1993,6 +1993,8 @@ pub(crate) mod shape_condition_list;
 
 pub(crate) mod shape_confusion_matrix;
 
+pub(crate) mod shape_connection_string_list;
+
 pub(crate) mod shape_csv_header;
 
 pub(crate) mod shape_custom_datatypes;

@@ -303,6 +303,10 @@ mod start_directory_listing;
 
 mod start_file_transfer;
 
+mod start_remote_delete;
+
+mod start_remote_move;
+
 mod start_server;
 
 mod stop_server;

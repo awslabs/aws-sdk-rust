@@ -25,6 +25,7 @@ impl super::Client {
     ///   - [`input_network_location(Option<InputNetworkLocation>)`](crate::operation::describe_input::DescribeInputOutput::input_network_location): The location of this input. AWS, for an input existing in the AWS Cloud, On-Prem for an input in a customer network.
     ///   - [`multicast_settings(Option<MulticastSettings>)`](crate::operation::describe_input::DescribeInputOutput::multicast_settings): Multicast Input settings.
     ///   - [`smpte2110_receiver_group_settings(Option<Smpte2110ReceiverGroupSettings>)`](crate::operation::describe_input::DescribeInputOutput::smpte2110_receiver_group_settings): Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
+    ///   - [`sdi_sources(Option<Vec::<String>>)`](crate::operation::describe_input::DescribeInputOutput::sdi_sources): SDI Sources for this Input.
     /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::operation::describe_input::DescribeInputError)
     pub fn describe_input(&self) -> crate::operation::describe_input::builders::DescribeInputFluentBuilder {
         crate::operation::describe_input::builders::DescribeInputFluentBuilder::new(self.handle.clone())

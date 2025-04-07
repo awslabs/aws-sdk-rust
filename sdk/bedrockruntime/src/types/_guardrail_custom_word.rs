@@ -8,6 +8,8 @@ pub struct GuardrailCustomWord {
     pub r#match: ::std::string::String,
     /// <p>The action for the custom word.</p>
     pub action: crate::types::GuardrailWordPolicyAction,
+    /// <p>Indicates whether custom word content that breaches the guardrail configuration is detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailCustomWord {
     /// <p>The match for the custom word.</p>
@@ -18,6 +20,10 @@ impl GuardrailCustomWord {
     /// <p>The action for the custom word.</p>
     pub fn action(&self) -> &crate::types::GuardrailWordPolicyAction {
         &self.action
+    }
+    /// <p>Indicates whether custom word content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
     }
 }
 impl GuardrailCustomWord {
@@ -33,6 +39,7 @@ impl GuardrailCustomWord {
 pub struct GuardrailCustomWordBuilder {
     pub(crate) r#match: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailWordPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailCustomWordBuilder {
     /// <p>The match for the custom word.</p>
@@ -65,6 +72,20 @@ impl GuardrailCustomWordBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailWordPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether custom word content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether custom word content that breaches the guardrail configuration is detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether custom word content that breaches the guardrail configuration is detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailCustomWord`](crate::types::GuardrailCustomWord).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#match`](crate::types::builders::GuardrailCustomWordBuilder::match)
@@ -83,6 +104,7 @@ impl GuardrailCustomWordBuilder {
                     "action was not specified but it is required when building GuardrailCustomWord",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

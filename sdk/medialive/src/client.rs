@@ -326,6 +326,8 @@ mod create_node_registration_script;
 
 mod create_partner_input;
 
+mod create_sdi_source;
+
 mod create_signal_map;
 
 mod create_tags;
@@ -387,6 +389,8 @@ mod delete_reservation;
 
 mod delete_schedule;
 
+mod delete_sdi_source;
+
 mod delete_signal_map;
 
 mod delete_tags;
@@ -420,6 +424,8 @@ mod describe_offering;
 mod describe_reservation;
 
 mod describe_schedule;
+
+mod describe_sdi_source;
 
 mod describe_thumbnails;
 
@@ -466,6 +472,8 @@ mod list_nodes;
 mod list_offerings;
 
 mod list_reservations;
+
+mod list_sdi_sources;
 
 mod list_signal_maps;
 
@@ -538,3 +546,5 @@ mod update_node;
 mod update_node_state;
 
 mod update_reservation;
+
+mod update_sdi_source;

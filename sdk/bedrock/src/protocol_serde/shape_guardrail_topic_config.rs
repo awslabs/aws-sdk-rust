@@ -21,5 +21,17 @@ pub fn ser_guardrail_topic_config(
     {
         object.key("type").string(input.r#type.as_str());
     }
+    if let Some(var_4) = &input.input_action {
+        object.key("inputAction").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.output_action {
+        object.key("outputAction").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.input_enabled {
+        object.key("inputEnabled").boolean(*var_6);
+    }
+    if let Some(var_7) = &input.output_enabled {
+        object.key("outputEnabled").boolean(*var_7);
+    }
     Ok(())
 }

@@ -7,9 +7,13 @@ pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
 pub use crate::types::error::_account_limit_exceeded_exception::AccountLimitExceededException;
 
+pub use crate::types::error::_account_suspended_exception::AccountSuspendedException;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsException;
 
 mod _account_limit_exceeded_exception;
+
+mod _account_suspended_exception;
 
 mod _invalid_input_exception;
 

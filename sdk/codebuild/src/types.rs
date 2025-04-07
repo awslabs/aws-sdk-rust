@@ -137,6 +137,20 @@ pub use crate::types::_fleet_status_code::FleetStatusCode;
 
 pub use crate::types::_scaling_configuration_input::ScalingConfigurationInput;
 
+pub use crate::types::_sandbox::Sandbox;
+
+pub use crate::types::_sandbox_session::SandboxSession;
+
+pub use crate::types::_network_interface::NetworkInterface;
+
+pub use crate::types::_logs_location::LogsLocation;
+
+pub use crate::types::_sandbox_session_phase::SandboxSessionPhase;
+
+pub use crate::types::_phase_context::PhaseContext;
+
+pub use crate::types::_status_type::StatusType;
+
 pub use crate::types::_build_batch::BuildBatch;
 
 pub use crate::types::_build_group::BuildGroup;
@@ -145,13 +159,9 @@ pub use crate::types::_build_summary::BuildSummary;
 
 pub use crate::types::_resolved_artifact::ResolvedArtifact;
 
-pub use crate::types::_status_type::StatusType;
-
 pub use crate::types::_build_artifacts::BuildArtifacts;
 
 pub use crate::types::_build_batch_phase::BuildBatchPhase;
-
-pub use crate::types::_phase_context::PhaseContext;
 
 pub use crate::types::_build_batch_phase_type::BuildBatchPhaseType;
 
@@ -163,13 +173,15 @@ pub use crate::types::_debug_session::DebugSession;
 
 pub use crate::types::_exported_environment_variable::ExportedEnvironmentVariable;
 
-pub use crate::types::_network_interface::NetworkInterface;
-
-pub use crate::types::_logs_location::LogsLocation;
-
 pub use crate::types::_build_phase::BuildPhase;
 
 pub use crate::types::_build_phase_type::BuildPhaseType;
+
+pub use crate::types::_ssm_session::SsmSession;
+
+pub use crate::types::_command_execution::CommandExecution;
+
+pub use crate::types::_command_type::CommandType;
 
 pub use crate::types::_retry_build_batch_type::RetryBuildBatchType;
 
@@ -276,6 +288,10 @@ mod _cloud_watch_logs_config;
 mod _code_coverage;
 
 mod _code_coverage_report_summary;
+
+mod _command_execution;
+
+mod _command_type;
 
 mod _compute_configuration;
 
@@ -409,6 +425,12 @@ mod _s3_logs_config;
 
 mod _s3_report_export_config;
 
+mod _sandbox;
+
+mod _sandbox_session;
+
+mod _sandbox_session_phase;
+
 mod _scaling_configuration_input;
 
 mod _scaling_configuration_output;
@@ -428,6 +450,8 @@ mod _source_auth_type;
 mod _source_credentials_info;
 
 mod _source_type;
+
+mod _ssm_session;
 
 mod _status_type;
 

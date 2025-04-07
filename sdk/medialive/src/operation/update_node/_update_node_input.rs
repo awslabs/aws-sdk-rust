@@ -12,6 +12,8 @@ pub struct UpdateNodeInput {
     pub node_id: ::std::option::Option<::std::string::String>,
     /// The initial role of the Node in the Cluster. ACTIVE means the Node is available for encoding. BACKUP means the Node is a redundant Node and might get used if an ACTIVE Node fails.
     pub role: ::std::option::Option<crate::types::NodeRole>,
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub sdi_source_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMappingUpdateRequest>>,
 }
 impl UpdateNodeInput {
     /// The ID of the cluster
@@ -30,6 +32,12 @@ impl UpdateNodeInput {
     pub fn role(&self) -> ::std::option::Option<&crate::types::NodeRole> {
         self.role.as_ref()
     }
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sdi_source_mappings.is_none()`.
+    pub fn sdi_source_mappings(&self) -> &[crate::types::SdiSourceMappingUpdateRequest] {
+        self.sdi_source_mappings.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateNodeInput {
     /// Creates a new builder-style object to manufacture [`UpdateNodeInput`](crate::operation::update_node::UpdateNodeInput).
@@ -46,6 +54,7 @@ pub struct UpdateNodeInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) node_id: ::std::option::Option<::std::string::String>,
     pub(crate) role: ::std::option::Option<crate::types::NodeRole>,
+    pub(crate) sdi_source_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMappingUpdateRequest>>,
 }
 impl UpdateNodeInputBuilder {
     /// The ID of the cluster
@@ -106,6 +115,26 @@ impl UpdateNodeInputBuilder {
     pub fn get_role(&self) -> &::std::option::Option<crate::types::NodeRole> {
         &self.role
     }
+    /// Appends an item to `sdi_source_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_sdi_source_mappings`](Self::set_sdi_source_mappings).
+    ///
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub fn sdi_source_mappings(mut self, input: crate::types::SdiSourceMappingUpdateRequest) -> Self {
+        let mut v = self.sdi_source_mappings.unwrap_or_default();
+        v.push(input);
+        self.sdi_source_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub fn set_sdi_source_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMappingUpdateRequest>>) -> Self {
+        self.sdi_source_mappings = input;
+        self
+    }
+    /// The mappings of a SDI capture card port to a logical SDI data stream
+    pub fn get_sdi_source_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMappingUpdateRequest>> {
+        &self.sdi_source_mappings
+    }
     /// Consumes the builder and constructs a [`UpdateNodeInput`](crate::operation::update_node::UpdateNodeInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_node::UpdateNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_node::UpdateNodeInput {
@@ -113,6 +142,7 @@ impl UpdateNodeInputBuilder {
             name: self.name,
             node_id: self.node_id,
             role: self.role,
+            sdi_source_mappings: self.sdi_source_mappings,
         })
     }
 }

@@ -18,15 +18,17 @@ pub struct DescribedCertificate {
     /// <p><code>TLS</code>: For securing AS2 communications sent over HTTPS</p></li>
     /// </ul>
     pub usage: ::std::option::Option<crate::types::CertificateUsageType>,
-    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
+    /// <p>A certificate's status can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>You can set <code>ActiveDate</code> and <code>InactiveDate</code> in the <code>UpdateCertificate</code> call. If you set values for these parameters, those values are used to determine whether the certificate has a status of <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>If you don't set values for <code>ActiveDate</code> and <code>InactiveDate</code>, we use the <code>NotBefore</code> and <code>NotAfter</code> date as specified on the X509 certificate to determine when a certificate is active and when it is inactive.</p>
     pub status: ::std::option::Option<crate::types::CertificateStatusType>,
     /// <p>The file name for the certificate.</p>
     pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The list of certificates that make up the chain for the certificate.</p>
     pub certificate_chain: ::std::option::Option<::std::string::String>,
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub active_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub inactive_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The serial number for the certificate.</p>
     pub serial: ::std::option::Option<::std::string::String>,
@@ -63,7 +65,9 @@ impl DescribedCertificate {
     pub fn usage(&self) -> ::std::option::Option<&crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
-    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
+    /// <p>A certificate's status can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>You can set <code>ActiveDate</code> and <code>InactiveDate</code> in the <code>UpdateCertificate</code> call. If you set values for these parameters, those values are used to determine whether the certificate has a status of <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>If you don't set values for <code>ActiveDate</code> and <code>InactiveDate</code>, we use the <code>NotBefore</code> and <code>NotAfter</code> date as specified on the X509 certificate to determine when a certificate is active and when it is inactive.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::CertificateStatusType> {
         self.status.as_ref()
     }
@@ -75,11 +79,11 @@ impl DescribedCertificate {
     pub fn certificate_chain(&self) -> ::std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn active_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.active_date.as_ref()
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn inactive_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.inactive_date.as_ref()
     }
@@ -224,17 +228,23 @@ impl DescribedCertificateBuilder {
     pub fn get_usage(&self) -> &::std::option::Option<crate::types::CertificateUsageType> {
         &self.usage
     }
-    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
+    /// <p>A certificate's status can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>You can set <code>ActiveDate</code> and <code>InactiveDate</code> in the <code>UpdateCertificate</code> call. If you set values for these parameters, those values are used to determine whether the certificate has a status of <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>If you don't set values for <code>ActiveDate</code> and <code>InactiveDate</code>, we use the <code>NotBefore</code> and <code>NotAfter</code> date as specified on the X509 certificate to determine when a certificate is active and when it is inactive.</p>
     pub fn status(mut self, input: crate::types::CertificateStatusType) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
+    /// <p>A certificate's status can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>You can set <code>ActiveDate</code> and <code>InactiveDate</code> in the <code>UpdateCertificate</code> call. If you set values for these parameters, those values are used to determine whether the certificate has a status of <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>If you don't set values for <code>ActiveDate</code> and <code>InactiveDate</code>, we use the <code>NotBefore</code> and <code>NotAfter</code> date as specified on the X509 certificate to determine when a certificate is active and when it is inactive.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CertificateStatusType>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Currently, the only available status is <code>ACTIVE</code>: all other values are reserved for future use.</p>
+    /// <p>A certificate's status can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>You can set <code>ActiveDate</code> and <code>InactiveDate</code> in the <code>UpdateCertificate</code> call. If you set values for these parameters, those values are used to determine whether the certificate has a status of <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
+    /// <p>If you don't set values for <code>ActiveDate</code> and <code>InactiveDate</code>, we use the <code>NotBefore</code> and <code>NotAfter</code> date as specified on the X509 certificate to determine when a certificate is active and when it is inactive.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CertificateStatusType> {
         &self.status
     }
@@ -266,31 +276,31 @@ impl DescribedCertificateBuilder {
     pub fn get_certificate_chain(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_chain
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.active_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.active_date = input;
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.active_date
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inactive_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inactive_date = input;
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.inactive_date
     }

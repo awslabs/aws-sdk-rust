@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateFleet`](crate::operation::create_fleet) operation has
-/// a [`Client::create_fleet`], function which returns a builder for that operation.
+/// For example, the [`BatchGetCommandExecutions`](crate::operation::batch_get_command_executions) operation has
+/// a [`Client::batch_get_command_executions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_fleet()
-///     .name("example")
+/// let result = client.batch_get_command_executions()
+///     .sandbox_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -142,6 +142,8 @@ mod batch_get_build_batches;
 
 mod batch_get_builds;
 
+mod batch_get_command_executions;
+
 mod batch_get_fleets;
 
 mod batch_get_projects;
@@ -149,6 +151,8 @@ mod batch_get_projects;
 mod batch_get_report_groups;
 
 mod batch_get_reports;
+
+mod batch_get_sandboxes;
 
 mod create_fleet;
 
@@ -221,6 +225,8 @@ mod list_builds;
 
 mod list_builds_for_project;
 
+mod list_command_executions_for_sandbox;
+
 mod list_curated_environment_images;
 
 mod list_fleets;
@@ -232,6 +238,10 @@ mod list_report_groups;
 mod list_reports;
 
 mod list_reports_for_report_group;
+
+mod list_sandboxes;
+
+mod list_sandboxes_for_project;
 
 mod list_shared_projects;
 
@@ -249,9 +259,17 @@ mod start_build;
 
 mod start_build_batch;
 
+mod start_command_execution;
+
+mod start_sandbox;
+
+mod start_sandbox_connection;
+
 mod stop_build;
 
 mod stop_build_batch;
+
+mod stop_sandbox;
 
 mod update_fleet;
 

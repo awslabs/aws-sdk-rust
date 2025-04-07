@@ -10,6 +10,8 @@ pub struct GuardrailManagedWord {
     pub r#type: crate::types::GuardrailManagedWordType,
     /// <p>The action for the managed word.</p>
     pub action: crate::types::GuardrailWordPolicyAction,
+    /// <p>Indicates whether managed word content that breaches the guardrail configuration is detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailManagedWord {
     /// <p>The match for the managed word.</p>
@@ -24,6 +26,10 @@ impl GuardrailManagedWord {
     /// <p>The action for the managed word.</p>
     pub fn action(&self) -> &crate::types::GuardrailWordPolicyAction {
         &self.action
+    }
+    /// <p>Indicates whether managed word content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
     }
 }
 impl GuardrailManagedWord {
@@ -40,6 +46,7 @@ pub struct GuardrailManagedWordBuilder {
     pub(crate) r#match: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailManagedWordType>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailWordPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailManagedWordBuilder {
     /// <p>The match for the managed word.</p>
@@ -87,6 +94,20 @@ impl GuardrailManagedWordBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailWordPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether managed word content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether managed word content that breaches the guardrail configuration is detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether managed word content that breaches the guardrail configuration is detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailManagedWord`](crate::types::GuardrailManagedWord).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#match`](crate::types::builders::GuardrailManagedWordBuilder::match)
@@ -112,6 +133,7 @@ impl GuardrailManagedWordBuilder {
                     "action was not specified but it is required when building GuardrailManagedWord",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

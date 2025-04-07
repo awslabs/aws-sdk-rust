@@ -1554,6 +1554,64 @@ impl From<crate::operation::start_file_transfer::StartFileTransferError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_remote_delete::StartRemoteDeleteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_remote_delete::StartRemoteDeleteError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_remote_delete::StartRemoteDeleteError> for Error {
+    fn from(err: crate::operation::start_remote_delete::StartRemoteDeleteError) -> Self {
+        match err {
+            crate::operation::start_remote_delete::StartRemoteDeleteError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::start_remote_delete::StartRemoteDeleteError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_remote_delete::StartRemoteDeleteError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_remote_delete::StartRemoteDeleteError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_remote_delete::StartRemoteDeleteError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_remote_delete::StartRemoteDeleteError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_remote_move::StartRemoteMoveError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_remote_move::StartRemoteMoveError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_remote_move::StartRemoteMoveError> for Error {
+    fn from(err: crate::operation::start_remote_move::StartRemoteMoveError) -> Self {
+        match err {
+            crate::operation::start_remote_move::StartRemoteMoveError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::start_remote_move::StartRemoteMoveError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::start_remote_move::StartRemoteMoveError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_remote_move::StartRemoteMoveError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_remote_move::StartRemoteMoveError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_remote_move::StartRemoteMoveError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_server::StartServerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

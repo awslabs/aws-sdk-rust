@@ -43,6 +43,26 @@ where
                             builder =
                                 builder.set_output_modalities(crate::protocol_serde::shape_guardrail_modalities::de_guardrail_modalities(tokens)?);
                         }
+                        "inputAction" => {
+                            builder = builder.set_input_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GuardrailContentFilterAction::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "outputAction" => {
+                            builder = builder.set_output_action(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GuardrailContentFilterAction::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "inputEnabled" => {
+                            builder = builder.set_input_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "outputEnabled" => {
+                            builder = builder.set_output_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

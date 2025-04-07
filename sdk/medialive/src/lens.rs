@@ -179,6 +179,16 @@ pub(crate) fn reflens_list_reservations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sdi_sources_output_output_next_token(
+    input: &crate::operation::list_sdi_sources::ListSdiSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_signal_maps_output_output_next_token(
     input: &crate::operation::list_signal_maps::ListSignalMapsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -363,6 +373,16 @@ pub(crate) fn lens_list_reservations_output_output_reservations(
     input: crate::operation::list_reservations::ListReservationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Reservation>> {
     let input = match input.reservations {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sdi_sources_output_output_sdi_sources(
+    input: crate::operation::list_sdi_sources::ListSdiSourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceSummary>> {
+    let input = match input.sdi_sources {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

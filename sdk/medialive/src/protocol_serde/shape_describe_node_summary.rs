@@ -85,6 +85,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sdiSourceMappings" => {
+                            builder =
+                                builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(tokens)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

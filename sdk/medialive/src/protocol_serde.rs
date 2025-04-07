@@ -67,6 +67,8 @@ pub(crate) mod shape_create_node_registration_script;
 
 pub(crate) mod shape_create_partner_input;
 
+pub(crate) mod shape_create_sdi_source;
+
 pub(crate) mod shape_create_signal_map;
 
 pub(crate) mod shape_create_tags;
@@ -101,6 +103,8 @@ pub(crate) mod shape_delete_reservation;
 
 pub(crate) mod shape_delete_schedule;
 
+pub(crate) mod shape_delete_sdi_source;
+
 pub(crate) mod shape_delete_signal_map;
 
 pub(crate) mod shape_delete_tags;
@@ -134,6 +138,8 @@ pub(crate) mod shape_describe_offering;
 pub(crate) mod shape_describe_reservation;
 
 pub(crate) mod shape_describe_schedule;
+
+pub(crate) mod shape_describe_sdi_source;
 
 pub(crate) mod shape_describe_thumbnails;
 
@@ -180,6 +186,8 @@ pub(crate) mod shape_list_nodes;
 pub(crate) mod shape_list_offerings;
 
 pub(crate) mod shape_list_reservations;
+
+pub(crate) mod shape_list_sdi_sources;
 
 pub(crate) mod shape_list_signal_maps;
 
@@ -253,6 +261,8 @@ pub(crate) mod shape_update_node_state;
 
 pub(crate) mod shape_update_reservation;
 
+pub(crate) mod shape_update_sdi_source;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -306,6 +316,8 @@ pub(crate) mod shape_create_node_input;
 pub(crate) mod shape_create_node_registration_script_input;
 
 pub(crate) mod shape_create_partner_input_input;
+
+pub(crate) mod shape_create_sdi_source_input;
 
 pub(crate) mod shape_create_signal_map_input;
 
@@ -373,6 +385,8 @@ pub(crate) mod shape_update_node_state_input;
 
 pub(crate) mod shape_update_reservation_input;
 
+pub(crate) mod shape_update_sdi_source_input;
+
 pub(crate) mod shape_account_configuration;
 
 pub(crate) mod shape_anywhere_settings;
@@ -424,6 +438,8 @@ pub(crate) mod shape_input_device_request;
 pub(crate) mod shape_input_device_settings;
 
 pub(crate) mod shape_input_device_uhd_settings;
+
+pub(crate) mod shape_input_sdi_sources;
 
 pub(crate) mod shape_input_security_group;
 
@@ -509,6 +525,8 @@ pub(crate) mod shape_list_of_route;
 
 pub(crate) mod shape_list_of_schedule_action;
 
+pub(crate) mod shape_list_of_sdi_source_summary;
+
 pub(crate) mod shape_list_of_signal_map_summary;
 
 pub(crate) mod shape_list_of_string;
@@ -564,6 +582,12 @@ pub(crate) mod shape_reservation_resource_specification;
 pub(crate) mod shape_route_create_request;
 
 pub(crate) mod shape_route_update_request;
+
+pub(crate) mod shape_sdi_source;
+
+pub(crate) mod shape_sdi_source_mapping_update_request;
+
+pub(crate) mod shape_sdi_source_mappings;
 
 pub(crate) mod shape_smpte2110_receiver_group_settings;
 
@@ -706,6 +730,10 @@ pub(crate) mod shape_pipeline_detail;
 pub(crate) mod shape_route;
 
 pub(crate) mod shape_schedule_action;
+
+pub(crate) mod shape_sdi_source_mapping;
+
+pub(crate) mod shape_sdi_source_summary;
 
 pub(crate) mod shape_signal_map_summary;
 

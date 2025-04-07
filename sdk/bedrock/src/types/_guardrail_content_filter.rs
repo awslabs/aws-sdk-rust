@@ -19,7 +19,7 @@
 /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetGuardrail.html#API_GetGuardrail_ResponseSyntax">GetGuardrail response body</a></p></li>
 /// </ul>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GuardrailContentFilter {
     /// <p>The harmful category that the content filter is applied to.</p>
     pub r#type: crate::types::GuardrailContentFilterType,
@@ -31,6 +31,26 @@ pub struct GuardrailContentFilter {
     pub input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
     /// <p>The output modalities selected for the guardrail content filter.</p>
     pub output_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub input_action: ::std::option::Option<crate::types::GuardrailContentFilterAction>,
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub output_action: ::std::option::Option<crate::types::GuardrailContentFilterAction>,
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub input_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub output_enabled: ::std::option::Option<bool>,
 }
 impl GuardrailContentFilter {
     /// <p>The harmful category that the content filter is applied to.</p>
@@ -57,6 +77,49 @@ impl GuardrailContentFilter {
     pub fn output_modalities(&self) -> &[crate::types::GuardrailModality] {
         self.output_modalities.as_deref().unwrap_or_default()
     }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn input_action(&self) -> ::std::option::Option<&crate::types::GuardrailContentFilterAction> {
+        self.input_action.as_ref()
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn output_action(&self) -> ::std::option::Option<&crate::types::GuardrailContentFilterAction> {
+        self.output_action.as_ref()
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn input_enabled(&self) -> ::std::option::Option<bool> {
+        self.input_enabled
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn output_enabled(&self) -> ::std::option::Option<bool> {
+        self.output_enabled
+    }
+}
+impl ::std::fmt::Debug for GuardrailContentFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GuardrailContentFilter");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("input_strength", &self.input_strength);
+        formatter.field("output_strength", &self.output_strength);
+        formatter.field("input_modalities", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_modalities", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_enabled", &self.input_enabled);
+        formatter.field("output_enabled", &self.output_enabled);
+        formatter.finish()
+    }
 }
 impl GuardrailContentFilter {
     /// Creates a new builder-style object to manufacture [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
@@ -66,7 +129,7 @@ impl GuardrailContentFilter {
 }
 
 /// A builder for [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GuardrailContentFilterBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailContentFilterType>,
@@ -74,6 +137,10 @@ pub struct GuardrailContentFilterBuilder {
     pub(crate) output_strength: ::std::option::Option<crate::types::GuardrailFilterStrength>,
     pub(crate) input_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
     pub(crate) output_modalities: ::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>>,
+    pub(crate) input_action: ::std::option::Option<crate::types::GuardrailContentFilterAction>,
+    pub(crate) output_action: ::std::option::Option<crate::types::GuardrailContentFilterAction>,
+    pub(crate) input_enabled: ::std::option::Option<bool>,
+    pub(crate) output_enabled: ::std::option::Option<bool>,
 }
 impl GuardrailContentFilterBuilder {
     /// <p>The harmful category that the content filter is applied to.</p>
@@ -161,6 +228,98 @@ impl GuardrailContentFilterBuilder {
     pub fn get_output_modalities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GuardrailModality>> {
         &self.output_modalities
     }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn input_action(mut self, input: crate::types::GuardrailContentFilterAction) -> Self {
+        self.input_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_input_action(mut self, input: ::std::option::Option<crate::types::GuardrailContentFilterAction>) -> Self {
+        self.input_action = input;
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_input_action(&self) -> &::std::option::Option<crate::types::GuardrailContentFilterAction> {
+        &self.input_action
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn output_action(mut self, input: crate::types::GuardrailContentFilterAction) -> Self {
+        self.output_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_output_action(mut self, input: ::std::option::Option<crate::types::GuardrailContentFilterAction>) -> Self {
+        self.output_action = input;
+        self
+    }
+    /// <p>The action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_output_action(&self) -> &::std::option::Option<crate::types::GuardrailContentFilterAction> {
+        &self.output_action
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn input_enabled(mut self, input: bool) -> Self {
+        self.input_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_input_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.input_enabled = input;
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_input_enabled(&self) -> &::std::option::Option<bool> {
+        &self.input_enabled
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn output_enabled(mut self, input: bool) -> Self {
+        self.output_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_output_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.output_enabled = input;
+        self
+    }
+    /// <p>Indicates whether guardrail evaluation is enabled on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_output_enabled(&self) -> &::std::option::Option<bool> {
+        &self.output_enabled
+    }
     /// Consumes the builder and constructs a [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GuardrailContentFilterBuilder::type)
@@ -188,6 +347,25 @@ impl GuardrailContentFilterBuilder {
             })?,
             input_modalities: self.input_modalities,
             output_modalities: self.output_modalities,
+            input_action: self.input_action,
+            output_action: self.output_action,
+            input_enabled: self.input_enabled,
+            output_enabled: self.output_enabled,
         })
+    }
+}
+impl ::std::fmt::Debug for GuardrailContentFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GuardrailContentFilterBuilder");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("input_strength", &self.input_strength);
+        formatter.field("output_strength", &self.output_strength);
+        formatter.field("input_modalities", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_modalities", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_action", &"*** Sensitive Data Redacted ***");
+        formatter.field("input_enabled", &self.input_enabled);
+        formatter.field("output_enabled", &self.output_enabled);
+        formatter.finish()
     }
 }

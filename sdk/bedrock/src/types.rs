@@ -127,6 +127,8 @@ pub use crate::types::_guardrail_contextual_grounding_policy_config::GuardrailCo
 
 pub use crate::types::_guardrail_contextual_grounding_filter_config::GuardrailContextualGroundingFilterConfig;
 
+pub use crate::types::_guardrail_contextual_grounding_action::GuardrailContextualGroundingAction;
+
 pub use crate::types::_guardrail_contextual_grounding_filter_type::GuardrailContextualGroundingFilterType;
 
 pub use crate::types::_guardrail_sensitive_information_policy_config::GuardrailSensitiveInformationPolicyConfig;
@@ -143,6 +145,8 @@ pub use crate::types::_guardrail_word_policy_config::GuardrailWordPolicyConfig;
 
 pub use crate::types::_guardrail_managed_words_config::GuardrailManagedWordsConfig;
 
+pub use crate::types::_guardrail_word_action::GuardrailWordAction;
+
 pub use crate::types::_guardrail_managed_words_type::GuardrailManagedWordsType;
 
 pub use crate::types::_guardrail_word_config::GuardrailWordConfig;
@@ -150,6 +154,8 @@ pub use crate::types::_guardrail_word_config::GuardrailWordConfig;
 pub use crate::types::_guardrail_content_policy_config::GuardrailContentPolicyConfig;
 
 pub use crate::types::_guardrail_content_filter_config::GuardrailContentFilterConfig;
+
+pub use crate::types::_guardrail_content_filter_action::GuardrailContentFilterAction;
 
 pub use crate::types::_guardrail_modality::GuardrailModality;
 
@@ -160,6 +166,8 @@ pub use crate::types::_guardrail_content_filter_type::GuardrailContentFilterType
 pub use crate::types::_guardrail_topic_policy_config::GuardrailTopicPolicyConfig;
 
 pub use crate::types::_guardrail_topic_config::GuardrailTopicConfig;
+
+pub use crate::types::_guardrail_topic_action::GuardrailTopicAction;
 
 pub use crate::types::_guardrail_topic_type::GuardrailTopicType;
 
@@ -405,6 +413,8 @@ mod _guardrail_configuration;
 
 mod _guardrail_content_filter;
 
+mod _guardrail_content_filter_action;
+
 mod _guardrail_content_filter_config;
 
 mod _guardrail_content_filter_type;
@@ -412,6 +422,8 @@ mod _guardrail_content_filter_type;
 mod _guardrail_content_policy;
 
 mod _guardrail_content_policy_config;
+
+mod _guardrail_contextual_grounding_action;
 
 mod _guardrail_contextual_grounding_filter;
 
@@ -455,6 +467,8 @@ mod _guardrail_summary;
 
 mod _guardrail_topic;
 
+mod _guardrail_topic_action;
+
 mod _guardrail_topic_config;
 
 mod _guardrail_topic_policy;
@@ -464,6 +478,8 @@ mod _guardrail_topic_policy_config;
 mod _guardrail_topic_type;
 
 mod _guardrail_word;
+
+mod _guardrail_word_action;
 
 mod _guardrail_word_config;
 

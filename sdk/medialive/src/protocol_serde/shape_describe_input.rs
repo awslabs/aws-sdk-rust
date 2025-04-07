@@ -229,6 +229,9 @@ pub(crate) fn de_describe_input(
                             .transpose()?,
                     );
                 }
+                "sdiSources" => {
+                    builder = builder.set_sdi_sources(crate::protocol_serde::shape_input_sdi_sources::de_input_sdi_sources(tokens)?);
+                }
                 "securityGroups" => {
                     builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }

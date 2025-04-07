@@ -2,7 +2,7 @@
 
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging Amazon Personalize resources</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     pub tag_key: ::std::string::String,
@@ -21,6 +21,14 @@ impl Tag {
         self.tag_value.deref()
     }
 }
+impl ::std::fmt::Debug for Tag {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Tag");
+        formatter.field("tag_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("tag_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::types::Tag).
     pub fn builder() -> crate::types::builders::TagBuilder {
@@ -29,7 +37,7 @@ impl Tag {
 }
 
 /// A builder for [`Tag`](crate::types::Tag).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TagBuilder {
     pub(crate) tag_key: ::std::option::Option<::std::string::String>,
@@ -85,5 +93,13 @@ impl TagBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for TagBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TagBuilder");
+        formatter.field("tag_key", &"*** Sensitive Data Redacted ***");
+        formatter.field("tag_value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -69,6 +69,18 @@ pub use crate::types::_fleet_status::FleetStatusBuilder;
 
 pub use crate::types::_scaling_configuration_input::ScalingConfigurationInputBuilder;
 
+pub use crate::types::_sandbox::SandboxBuilder;
+
+pub use crate::types::_sandbox_session::SandboxSessionBuilder;
+
+pub use crate::types::_network_interface::NetworkInterfaceBuilder;
+
+pub use crate::types::_logs_location::LogsLocationBuilder;
+
+pub use crate::types::_sandbox_session_phase::SandboxSessionPhaseBuilder;
+
+pub use crate::types::_phase_context::PhaseContextBuilder;
+
 pub use crate::types::_build_batch::BuildBatchBuilder;
 
 pub use crate::types::_build_group::BuildGroupBuilder;
@@ -81,8 +93,6 @@ pub use crate::types::_build_artifacts::BuildArtifactsBuilder;
 
 pub use crate::types::_build_batch_phase::BuildBatchPhaseBuilder;
 
-pub use crate::types::_phase_context::PhaseContextBuilder;
-
 pub use crate::types::_build::BuildBuilder;
 
 pub use crate::types::_auto_retry_config::AutoRetryConfigBuilder;
@@ -91,11 +101,11 @@ pub use crate::types::_debug_session::DebugSessionBuilder;
 
 pub use crate::types::_exported_environment_variable::ExportedEnvironmentVariableBuilder;
 
-pub use crate::types::_network_interface::NetworkInterfaceBuilder;
-
-pub use crate::types::_logs_location::LogsLocationBuilder;
-
 pub use crate::types::_build_phase::BuildPhaseBuilder;
+
+pub use crate::types::_ssm_session::SsmSessionBuilder;
+
+pub use crate::types::_command_execution::CommandExecutionBuilder;
 
 pub use crate::types::_source_credentials_info::SourceCredentialsInfoBuilder;
 

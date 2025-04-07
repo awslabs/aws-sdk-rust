@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`node_interface_mappings(Option<Vec::<NodeInterfaceMapping>>)`](crate::operation::update_node_state::UpdateNodeStateOutput::node_interface_mappings): Documentation update needed
     ///   - [`role(Option<NodeRole>)`](crate::operation::update_node_state::UpdateNodeStateOutput::role): The initial role current role of the Node in the Cluster. ACTIVE means the Node is available for encoding. BACKUP means the Node is a redundant Node and might get used if an ACTIVE Node fails.
     ///   - [`state(Option<NodeState>)`](crate::operation::update_node_state::UpdateNodeStateOutput::state): The current state of the Node.
+    ///   - [`sdi_source_mappings(Option<Vec::<SdiSourceMapping>>)`](crate::operation::update_node_state::UpdateNodeStateOutput::sdi_source_mappings): An array of SDI source mappings. Each mapping connects one logical SdiSource to the physical SDI card and port that the physical SDI source uses.
     /// - On failure, responds with [`SdkError<UpdateNodeStateError>`](crate::operation::update_node_state::UpdateNodeStateError)
     pub fn update_node_state(&self) -> crate::operation::update_node_state::builders::UpdateNodeStateFluentBuilder {
         crate::operation::update_node_state::builders::UpdateNodeStateFluentBuilder::new(self.handle.clone())

@@ -12,6 +12,8 @@ pub struct GuardrailContextualGroundingFilter {
     pub score: f64,
     /// <p>The action performed by the guardrails contextual grounding filter.</p>
     pub action: crate::types::GuardrailContextualGroundingPolicyAction,
+    /// <p>Indicates whether content that fails the contextual grounding evaluation (grounding or relevance score less than the corresponding threshold) was detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailContextualGroundingFilter {
     /// <p>The contextual grounding filter type.</p>
@@ -30,6 +32,10 @@ impl GuardrailContextualGroundingFilter {
     pub fn action(&self) -> &crate::types::GuardrailContextualGroundingPolicyAction {
         &self.action
     }
+    /// <p>Indicates whether content that fails the contextual grounding evaluation (grounding or relevance score less than the corresponding threshold) was detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
+    }
 }
 impl GuardrailContextualGroundingFilter {
     /// Creates a new builder-style object to manufacture [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
@@ -46,6 +52,7 @@ pub struct GuardrailContextualGroundingFilterBuilder {
     pub(crate) threshold: ::std::option::Option<f64>,
     pub(crate) score: ::std::option::Option<f64>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailContextualGroundingFilterBuilder {
     /// <p>The contextual grounding filter type.</p>
@@ -108,6 +115,20 @@ impl GuardrailContextualGroundingFilterBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailContextualGroundingPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether content that fails the contextual grounding evaluation (grounding or relevance score less than the corresponding threshold) was detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether content that fails the contextual grounding evaluation (grounding or relevance score less than the corresponding threshold) was detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether content that fails the contextual grounding evaluation (grounding or relevance score less than the corresponding threshold) was detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailContextualGroundingFilter`](crate::types::GuardrailContextualGroundingFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GuardrailContextualGroundingFilterBuilder::type)
@@ -140,6 +161,7 @@ impl GuardrailContextualGroundingFilterBuilder {
                     "action was not specified but it is required when building GuardrailContextualGroundingFilter",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

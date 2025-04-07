@@ -122,31 +122,31 @@ impl UpdateCertificateFluentBuilder {
     pub fn get_certificate_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate_id()
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.active_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_active_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_active_date()
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.inactive_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_inactive_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_inactive_date()
     }

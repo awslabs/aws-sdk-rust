@@ -12,6 +12,8 @@ pub struct GuardrailRegexFilter {
     pub regex: ::std::option::Option<::std::string::String>,
     /// <p>The region filter action.</p>
     pub action: crate::types::GuardrailSensitiveInformationPolicyAction,
+    /// <p>Indicates whether custom regex entities that breach the guardrail configuration are detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailRegexFilter {
     /// <p>The regex filter name.</p>
@@ -30,6 +32,10 @@ impl GuardrailRegexFilter {
     pub fn action(&self) -> &crate::types::GuardrailSensitiveInformationPolicyAction {
         &self.action
     }
+    /// <p>Indicates whether custom regex entities that breach the guardrail configuration are detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
+    }
 }
 impl GuardrailRegexFilter {
     /// Creates a new builder-style object to manufacture [`GuardrailRegexFilter`](crate::types::GuardrailRegexFilter).
@@ -46,6 +52,7 @@ pub struct GuardrailRegexFilterBuilder {
     pub(crate) r#match: ::std::option::Option<::std::string::String>,
     pub(crate) regex: ::std::option::Option<::std::string::String>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailRegexFilterBuilder {
     /// <p>The regex filter name.</p>
@@ -105,6 +112,20 @@ impl GuardrailRegexFilterBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether custom regex entities that breach the guardrail configuration are detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether custom regex entities that breach the guardrail configuration are detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether custom regex entities that breach the guardrail configuration are detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailRegexFilter`](crate::types::GuardrailRegexFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`action`](crate::types::builders::GuardrailRegexFilterBuilder::action)
@@ -119,6 +140,7 @@ impl GuardrailRegexFilterBuilder {
                     "action was not specified but it is required when building GuardrailRegexFilter",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

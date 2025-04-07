@@ -10,6 +10,8 @@ pub struct GuardrailTopic {
     pub r#type: crate::types::GuardrailTopicType,
     /// <p>The action the guardrail should take when it intervenes on a topic.</p>
     pub action: crate::types::GuardrailTopicPolicyAction,
+    /// <p>Indicates whether topic content that breaches the guardrail configuration is detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailTopic {
     /// <p>The name for the guardrail.</p>
@@ -24,6 +26,10 @@ impl GuardrailTopic {
     /// <p>The action the guardrail should take when it intervenes on a topic.</p>
     pub fn action(&self) -> &crate::types::GuardrailTopicPolicyAction {
         &self.action
+    }
+    /// <p>Indicates whether topic content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
     }
 }
 impl GuardrailTopic {
@@ -40,6 +46,7 @@ pub struct GuardrailTopicBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailTopicType>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailTopicPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailTopicBuilder {
     /// <p>The name for the guardrail.</p>
@@ -87,6 +94,20 @@ impl GuardrailTopicBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailTopicPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether topic content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether topic content that breaches the guardrail configuration is detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether topic content that breaches the guardrail configuration is detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailTopic`](crate::types::GuardrailTopic).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::GuardrailTopicBuilder::name)
@@ -112,6 +133,7 @@ impl GuardrailTopicBuilder {
                     "action was not specified but it is required when building GuardrailTopic",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

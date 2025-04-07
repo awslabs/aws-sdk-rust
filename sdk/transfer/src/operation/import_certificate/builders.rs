@@ -23,6 +23,9 @@ impl crate::operation::import_certificate::builders::ImportCertificateInputBuild
 /// Fluent builder constructing a request to `ImportCertificate`.
 ///
 /// <p>Imports the signing and encryption certificates that you need to create local (AS2) profiles and partner profiles.</p>
+/// <p>You can import both the certificate and its chain in the <code>Certificate</code> parameter.</p><note>
+/// <p>If you use the <code>Certificate</code> parameter to upload both the certificate and its chain, don't use the <code>CertificateChain</code> parameter.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportCertificateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -151,7 +154,9 @@ impl ImportCertificateFluentBuilder {
     /// <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p></li>
     /// <li>
     /// <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>You can provide both the certificate and its chain in this parameter, without needing to use the <code>CertificateChain</code> parameter. If you use this parameter for both the certificate and its chain, do not use the <code>CertificateChain</code> parameter.</p>
+    /// </note>
     pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
         self
@@ -161,7 +166,9 @@ impl ImportCertificateFluentBuilder {
     /// <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p></li>
     /// <li>
     /// <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>You can provide both the certificate and its chain in this parameter, without needing to use the <code>CertificateChain</code> parameter. If you use this parameter for both the certificate and its chain, do not use the <code>CertificateChain</code> parameter.</p>
+    /// </note>
     pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
@@ -171,7 +178,9 @@ impl ImportCertificateFluentBuilder {
     /// <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p></li>
     /// <li>
     /// <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>You can provide both the certificate and its chain in this parameter, without needing to use the <code>CertificateChain</code> parameter. If you use this parameter for both the certificate and its chain, do not use the <code>CertificateChain</code> parameter.</p>
+    /// </note>
     pub fn get_certificate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_certificate()
     }
@@ -191,7 +200,7 @@ impl ImportCertificateFluentBuilder {
     }
     /// <ul>
     /// <li>
-    /// <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p></li>
+    /// <p>For the CLI, provide a file path for a private key in URI format. For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p></li>
     /// <li>
     /// <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code></p></li>
     /// </ul>
@@ -201,7 +210,7 @@ impl ImportCertificateFluentBuilder {
     }
     /// <ul>
     /// <li>
-    /// <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p></li>
+    /// <p>For the CLI, provide a file path for a private key in URI format. For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p></li>
     /// <li>
     /// <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code></p></li>
     /// </ul>
@@ -211,38 +220,38 @@ impl ImportCertificateFluentBuilder {
     }
     /// <ul>
     /// <li>
-    /// <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p></li>
+    /// <p>For the CLI, provide a file path for a private key in URI format. For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p></li>
     /// <li>
     /// <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code></p></li>
     /// </ul>
     pub fn get_private_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_private_key()
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.active_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn set_active_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_active_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes active.</p>
+    /// <p>An optional date that specifies when the certificate becomes active. If you do not specify a value, <code>ActiveDate</code> takes the same value as <code>NotBeforeDate</code>, which is specified by the CA.</p>
     pub fn get_active_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_active_date()
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.inactive_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn set_inactive_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_inactive_date(input);
         self
     }
-    /// <p>An optional date that specifies when the certificate becomes inactive.</p>
+    /// <p>An optional date that specifies when the certificate becomes inactive. If you do not specify a value, <code>InactiveDate</code> takes the same value as <code>NotAfterDate</code>, which is specified by the CA.</p>
     pub fn get_inactive_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_inactive_date()
     }

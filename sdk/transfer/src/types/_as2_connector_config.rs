@@ -27,7 +27,7 @@ pub struct As2ConnectorConfig {
     /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub mdn_signing_algorithm: ::std::option::Option<crate::types::MdnSigningAlg>,
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
@@ -91,7 +91,7 @@ impl As2ConnectorConfig {
     pub fn mdn_signing_algorithm(&self) -> ::std::option::Option<&crate::types::MdnSigningAlg> {
         self.mdn_signing_algorithm.as_ref()
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
@@ -271,7 +271,7 @@ impl As2ConnectorConfigBuilder {
     pub fn get_mdn_signing_algorithm(&self) -> &::std::option::Option<crate::types::MdnSigningAlg> {
         &self.mdn_signing_algorithm
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
@@ -282,7 +282,7 @@ impl As2ConnectorConfigBuilder {
         self.mdn_response = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>
@@ -293,7 +293,7 @@ impl As2ConnectorConfigBuilder {
         self.mdn_response = input;
         self
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <p>Used for outbound requests (from an Transfer Family connector to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
     /// <ul>
     /// <li>
     /// <p><code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p></li>

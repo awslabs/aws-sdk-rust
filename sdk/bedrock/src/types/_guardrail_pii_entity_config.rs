@@ -137,6 +137,30 @@ pub struct GuardrailPiiEntityConfig {
     pub r#type: crate::types::GuardrailPiiEntityType,
     /// <p>Configure guardrail action when the PII entity is detected.</p>
     pub action: crate::types::GuardrailSensitiveInformationAction,
+    /// <p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub input_action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,
+    /// <p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub output_action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,
+    /// <p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub input_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub output_enabled: ::std::option::Option<bool>,
 }
 impl GuardrailPiiEntityConfig {
     /// <p>Configure guardrail type when the PII entity is detected.</p>
@@ -276,6 +300,38 @@ impl GuardrailPiiEntityConfig {
     pub fn action(&self) -> &crate::types::GuardrailSensitiveInformationAction {
         &self.action
     }
+    /// <p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn input_action(&self) -> ::std::option::Option<&crate::types::GuardrailSensitiveInformationAction> {
+        self.input_action.as_ref()
+    }
+    /// <p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn output_action(&self) -> ::std::option::Option<&crate::types::GuardrailSensitiveInformationAction> {
+        self.output_action.as_ref()
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn input_enabled(&self) -> ::std::option::Option<bool> {
+        self.input_enabled
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn output_enabled(&self) -> ::std::option::Option<bool> {
+        self.output_enabled
+    }
 }
 impl GuardrailPiiEntityConfig {
     /// Creates a new builder-style object to manufacture [`GuardrailPiiEntityConfig`](crate::types::GuardrailPiiEntityConfig).
@@ -290,6 +346,10 @@ impl GuardrailPiiEntityConfig {
 pub struct GuardrailPiiEntityConfigBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::GuardrailPiiEntityType>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,
+    pub(crate) input_action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,
+    pub(crate) output_action: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>,
+    pub(crate) input_enabled: ::std::option::Option<bool>,
+    pub(crate) output_enabled: ::std::option::Option<bool>,
 }
 impl GuardrailPiiEntityConfigBuilder {
     /// <p>Configure guardrail type when the PII entity is detected.</p>
@@ -709,6 +769,110 @@ impl GuardrailPiiEntityConfigBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationAction> {
         &self.action
     }
+    /// <p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn input_action(mut self, input: crate::types::GuardrailSensitiveInformationAction) -> Self {
+        self.input_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_input_action(mut self, input: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>) -> Self {
+        self.input_action = input;
+        self
+    }
+    /// <p>Specifies the action to take when harmful content is detected in the input. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_input_action(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationAction> {
+        &self.input_action
+    }
+    /// <p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn output_action(mut self, input: crate::types::GuardrailSensitiveInformationAction) -> Self {
+        self.output_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn set_output_action(mut self, input: ::std::option::Option<crate::types::GuardrailSensitiveInformationAction>) -> Self {
+        self.output_action = input;
+        self
+    }
+    /// <p>Specifies the action to take when harmful content is detected in the output. Supported values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BLOCK</code> – Block the content and replace it with blocked messaging.</p></li>
+    /// <li>
+    /// <p><code>ANONYMIZE</code> – Mask the content and replace it with identifier tags.</p></li>
+    /// <li>
+    /// <p><code>NONE</code> – Take no action but return detection information in the trace response.</p></li>
+    /// </ul>
+    pub fn get_output_action(&self) -> &::std::option::Option<crate::types::GuardrailSensitiveInformationAction> {
+        &self.output_action
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn input_enabled(mut self, input: bool) -> Self {
+        self.input_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_input_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.input_enabled = input;
+        self
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the input. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_input_enabled(&self) -> &::std::option::Option<bool> {
+        &self.input_enabled
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn output_enabled(mut self, input: bool) -> Self {
+        self.output_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn set_output_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.output_enabled = input;
+        self
+    }
+    /// <p>Specifies whether to enable guardrail evaluation on the output. When disabled, you aren't charged for the evaluation. The evaluation doesn't appear in the response.</p>
+    pub fn get_output_enabled(&self) -> &::std::option::Option<bool> {
+        &self.output_enabled
+    }
     /// Consumes the builder and constructs a [`GuardrailPiiEntityConfig`](crate::types::GuardrailPiiEntityConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GuardrailPiiEntityConfigBuilder::type)
@@ -727,6 +891,10 @@ impl GuardrailPiiEntityConfigBuilder {
                     "action was not specified but it is required when building GuardrailPiiEntityConfig",
                 )
             })?,
+            input_action: self.input_action,
+            output_action: self.output_action,
+            input_enabled: self.input_enabled,
+            output_enabled: self.output_enabled,
         })
     }
 }

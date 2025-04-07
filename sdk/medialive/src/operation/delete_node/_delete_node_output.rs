@@ -24,6 +24,8 @@ pub struct DeleteNodeOutput {
     pub role: ::std::option::Option<crate::types::NodeRole>,
     /// The current state of the Node.
     pub state: ::std::option::Option<crate::types::NodeState>,
+    /// An array of SDI source mappings. Each mapping connects one logical SdiSource to the physical SDI card and port that the physical SDI source uses.
+    pub sdi_source_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMapping>>,
     _request_id: Option<String>,
 }
 impl DeleteNodeOutput {
@@ -71,6 +73,12 @@ impl DeleteNodeOutput {
     pub fn state(&self) -> ::std::option::Option<&crate::types::NodeState> {
         self.state.as_ref()
     }
+    /// An array of SDI source mappings. Each mapping connects one logical SdiSource to the physical SDI card and port that the physical SDI source uses.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sdi_source_mappings.is_none()`.
+    pub fn sdi_source_mappings(&self) -> &[crate::types::SdiSourceMapping] {
+        self.sdi_source_mappings.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteNodeOutput {
     fn request_id(&self) -> Option<&str> {
@@ -98,6 +106,7 @@ pub struct DeleteNodeOutputBuilder {
     pub(crate) node_interface_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NodeInterfaceMapping>>,
     pub(crate) role: ::std::option::Option<crate::types::NodeRole>,
     pub(crate) state: ::std::option::Option<crate::types::NodeState>,
+    pub(crate) sdi_source_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMapping>>,
     _request_id: Option<String>,
 }
 impl DeleteNodeOutputBuilder {
@@ -253,6 +262,26 @@ impl DeleteNodeOutputBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::NodeState> {
         &self.state
     }
+    /// Appends an item to `sdi_source_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_sdi_source_mappings`](Self::set_sdi_source_mappings).
+    ///
+    /// An array of SDI source mappings. Each mapping connects one logical SdiSource to the physical SDI card and port that the physical SDI source uses.
+    pub fn sdi_source_mappings(mut self, input: crate::types::SdiSourceMapping) -> Self {
+        let mut v = self.sdi_source_mappings.unwrap_or_default();
+        v.push(input);
+        self.sdi_source_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// An array of SDI source mappings. Each mapping connects one logical SdiSource to the physical SDI card and port that the physical SDI source uses.
+    pub fn set_sdi_source_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMapping>>) -> Self {
+        self.sdi_source_mappings = input;
+        self
+    }
+    /// An array of SDI source mappings. Each mapping connects one logical SdiSource to the physical SDI card and port that the physical SDI source uses.
+    pub fn get_sdi_source_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SdiSourceMapping>> {
+        &self.sdi_source_mappings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -275,6 +304,7 @@ impl DeleteNodeOutputBuilder {
             node_interface_mappings: self.node_interface_mappings,
             role: self.role,
             state: self.state,
+            sdi_source_mappings: self.sdi_source_mappings,
             _request_id: self._request_id,
         }
     }

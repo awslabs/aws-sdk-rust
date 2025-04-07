@@ -14,6 +14,7 @@
 /// match guardrailsensitiveinformationpolicyaction {
 ///     GuardrailSensitiveInformationPolicyAction::Anonymized => { /* ... */ },
 ///     GuardrailSensitiveInformationPolicyAction::Blocked => { /* ... */ },
+///     GuardrailSensitiveInformationPolicyAction::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum GuardrailSensitiveInformationPolicyAction {
     Anonymized,
     #[allow(missing_docs)] // documentation missing in model
     Blocked,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for GuardrailSensitiveInformationPolicyAction {
         match s {
             "ANONYMIZED" => GuardrailSensitiveInformationPolicyAction::Anonymized,
             "BLOCKED" => GuardrailSensitiveInformationPolicyAction::Blocked,
+            "NONE" => GuardrailSensitiveInformationPolicyAction::None,
             other => {
                 GuardrailSensitiveInformationPolicyAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
             }
@@ -74,12 +78,13 @@ impl GuardrailSensitiveInformationPolicyAction {
         match self {
             GuardrailSensitiveInformationPolicyAction::Anonymized => "ANONYMIZED",
             GuardrailSensitiveInformationPolicyAction::Blocked => "BLOCKED",
+            GuardrailSensitiveInformationPolicyAction::None => "NONE",
             GuardrailSensitiveInformationPolicyAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ANONYMIZED", "BLOCKED"]
+        &["ANONYMIZED", "BLOCKED", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for GuardrailSensitiveInformationPolicyAction {
@@ -104,6 +109,7 @@ impl ::std::fmt::Display for GuardrailSensitiveInformationPolicyAction {
         match self {
             GuardrailSensitiveInformationPolicyAction::Anonymized => write!(f, "ANONYMIZED"),
             GuardrailSensitiveInformationPolicyAction::Blocked => write!(f, "BLOCKED"),
+            GuardrailSensitiveInformationPolicyAction::None => write!(f, "NONE"),
             GuardrailSensitiveInformationPolicyAction::Unknown(value) => write!(f, "{}", value),
         }
     }

@@ -918,6 +918,36 @@ impl From<crate::operation::create_partner_input::CreatePartnerInputError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sdi_source::CreateSdiSourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_sdi_source::CreateSdiSourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_sdi_source::CreateSdiSourceError> for Error {
+    fn from(err: crate::operation::create_sdi_source::CreateSdiSourceError) -> Self {
+        match err {
+            crate::operation::create_sdi_source::CreateSdiSourceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::create_sdi_source::CreateSdiSourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_sdi_source::CreateSdiSourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_sdi_source::CreateSdiSourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_sdi_source::CreateSdiSourceError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::create_sdi_source::CreateSdiSourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_sdi_source::CreateSdiSourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_sdi_source::CreateSdiSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_signal_map::CreateSignalMapError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1543,6 +1573,37 @@ impl From<crate::operation::delete_schedule::DeleteScheduleError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sdi_source::DeleteSdiSourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_sdi_source::DeleteSdiSourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_sdi_source::DeleteSdiSourceError> for Error {
+    fn from(err: crate::operation::delete_sdi_source::DeleteSdiSourceError) -> Self {
+        match err {
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_sdi_source::DeleteSdiSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_signal_map::DeleteSignalMapError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2129,6 +2190,36 @@ impl From<crate::operation::describe_schedule::DescribeScheduleError> for Error 
             crate::operation::describe_schedule::DescribeScheduleError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::describe_schedule::DescribeScheduleError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::describe_schedule::DescribeScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_sdi_source::DescribeSdiSourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_sdi_source::DescribeSdiSourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_sdi_source::DescribeSdiSourceError> for Error {
+    fn from(err: crate::operation::describe_sdi_source::DescribeSdiSourceError) -> Self {
+        match err {
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_sdi_source::DescribeSdiSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2954,6 +3045,35 @@ impl From<crate::operation::list_reservations::ListReservationsError> for Error 
             }
             crate::operation::list_reservations::ListReservationsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::list_reservations::ListReservationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sdi_sources::ListSdiSourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sdi_sources::ListSdiSourcesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sdi_sources::ListSdiSourcesError> for Error {
+    fn from(err: crate::operation::list_sdi_sources::ListSdiSourcesError) -> Self {
+        match err {
+            crate::operation::list_sdi_sources::ListSdiSourcesError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::list_sdi_sources::ListSdiSourcesError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_sdi_sources::ListSdiSourcesError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_sdi_sources::ListSdiSourcesError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::list_sdi_sources::ListSdiSourcesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_sdi_sources::ListSdiSourcesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_sdi_sources::ListSdiSourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4270,6 +4390,36 @@ impl From<crate::operation::update_reservation::UpdateReservationError> for Erro
             crate::operation::update_reservation::UpdateReservationError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::update_reservation::UpdateReservationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_reservation::UpdateReservationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sdi_source::UpdateSdiSourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_sdi_source::UpdateSdiSourceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_sdi_source::UpdateSdiSourceError> for Error {
+    fn from(err: crate::operation::update_sdi_source::UpdateSdiSourceError) -> Self {
+        match err {
+            crate::operation::update_sdi_source::UpdateSdiSourceError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::update_sdi_source::UpdateSdiSourceError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_sdi_source::UpdateSdiSourceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_sdi_source::UpdateSdiSourceError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_sdi_source::UpdateSdiSourceError::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
+            crate::operation::update_sdi_source::UpdateSdiSourceError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_sdi_source::UpdateSdiSourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_sdi_source::UpdateSdiSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -12,6 +12,8 @@ pub struct GuardrailContentFilter {
     pub filter_strength: ::std::option::Option<crate::types::GuardrailContentFilterStrength>,
     /// <p>The guardrail action.</p>
     pub action: crate::types::GuardrailContentPolicyAction,
+    /// <p>Indicates whether content that breaches the guardrail configuration is detected.</p>
+    pub detected: ::std::option::Option<bool>,
 }
 impl GuardrailContentFilter {
     /// <p>The guardrail type.</p>
@@ -30,6 +32,10 @@ impl GuardrailContentFilter {
     pub fn action(&self) -> &crate::types::GuardrailContentPolicyAction {
         &self.action
     }
+    /// <p>Indicates whether content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(&self) -> ::std::option::Option<bool> {
+        self.detected
+    }
 }
 impl GuardrailContentFilter {
     /// Creates a new builder-style object to manufacture [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
@@ -46,6 +52,7 @@ pub struct GuardrailContentFilterBuilder {
     pub(crate) confidence: ::std::option::Option<crate::types::GuardrailContentFilterConfidence>,
     pub(crate) filter_strength: ::std::option::Option<crate::types::GuardrailContentFilterStrength>,
     pub(crate) action: ::std::option::Option<crate::types::GuardrailContentPolicyAction>,
+    pub(crate) detected: ::std::option::Option<bool>,
 }
 impl GuardrailContentFilterBuilder {
     /// <p>The guardrail type.</p>
@@ -107,6 +114,20 @@ impl GuardrailContentFilterBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::GuardrailContentPolicyAction> {
         &self.action
     }
+    /// <p>Indicates whether content that breaches the guardrail configuration is detected.</p>
+    pub fn detected(mut self, input: bool) -> Self {
+        self.detected = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether content that breaches the guardrail configuration is detected.</p>
+    pub fn set_detected(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.detected = input;
+        self
+    }
+    /// <p>Indicates whether content that breaches the guardrail configuration is detected.</p>
+    pub fn get_detected(&self) -> &::std::option::Option<bool> {
+        &self.detected
+    }
     /// Consumes the builder and constructs a [`GuardrailContentFilter`](crate::types::GuardrailContentFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::GuardrailContentFilterBuilder::type)
@@ -133,6 +154,7 @@ impl GuardrailContentFilterBuilder {
                     "action was not specified but it is required when building GuardrailContentFilter",
                 )
             })?,
+            detected: self.detected,
         })
     }
 }

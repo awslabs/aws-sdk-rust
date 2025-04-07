@@ -9,6 +9,12 @@ pub fn ser_solution_update_config(
         crate::protocol_serde::shape_auto_training_config::ser_auto_training_config(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.events_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("eventsConfig").start_object();
+        crate::protocol_serde::shape_events_config::ser_events_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -30,6 +36,9 @@ where
                         "autoTrainingConfig" => {
                             builder =
                                 builder.set_auto_training_config(crate::protocol_serde::shape_auto_training_config::de_auto_training_config(tokens)?);
+                        }
+                        "eventsConfig" => {
+                            builder = builder.set_events_config(crate::protocol_serde::shape_events_config::de_events_config(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

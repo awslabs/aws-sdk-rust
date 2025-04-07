@@ -240,6 +240,9 @@ pub(crate) fn de_update_node_state(
                             .transpose()?,
                     );
                 }
+                "sdiSourceMappings" => {
+                    builder = builder.set_sdi_source_mappings(crate::protocol_serde::shape_sdi_source_mappings::de_sdi_source_mappings(tokens)?);
+                }
                 "state" => {
                     builder = builder.set_state(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -10,6 +10,9 @@ pub mod batch_get_build_batches;
 /// Types for the `BatchGetBuilds` operation.
 pub mod batch_get_builds;
 
+/// Types for the `BatchGetCommandExecutions` operation.
+pub mod batch_get_command_executions;
+
 /// Types for the `BatchGetFleets` operation.
 pub mod batch_get_fleets;
 
@@ -21,6 +24,9 @@ pub mod batch_get_report_groups;
 
 /// Types for the `BatchGetReports` operation.
 pub mod batch_get_reports;
+
+/// Types for the `BatchGetSandboxes` operation.
+pub mod batch_get_sandboxes;
 
 /// Types for the `CreateFleet` operation.
 pub mod create_fleet;
@@ -88,6 +94,9 @@ pub mod list_builds;
 /// Types for the `ListBuildsForProject` operation.
 pub mod list_builds_for_project;
 
+/// Types for the `ListCommandExecutionsForSandbox` operation.
+pub mod list_command_executions_for_sandbox;
+
 /// Types for the `ListCuratedEnvironmentImages` operation.
 pub mod list_curated_environment_images;
 
@@ -105,6 +114,12 @@ pub mod list_reports;
 
 /// Types for the `ListReportsForReportGroup` operation.
 pub mod list_reports_for_report_group;
+
+/// Types for the `ListSandboxes` operation.
+pub mod list_sandboxes;
+
+/// Types for the `ListSandboxesForProject` operation.
+pub mod list_sandboxes_for_project;
 
 /// Types for the `ListSharedProjects` operation.
 pub mod list_shared_projects;
@@ -130,11 +145,23 @@ pub mod start_build;
 /// Types for the `StartBuildBatch` operation.
 pub mod start_build_batch;
 
+/// Types for the `StartCommandExecution` operation.
+pub mod start_command_execution;
+
+/// Types for the `StartSandbox` operation.
+pub mod start_sandbox;
+
+/// Types for the `StartSandboxConnection` operation.
+pub mod start_sandbox_connection;
+
 /// Types for the `StopBuild` operation.
 pub mod stop_build;
 
 /// Types for the `StopBuildBatch` operation.
 pub mod stop_build_batch;
+
+/// Types for the `StopSandbox` operation.
+pub mod stop_sandbox;
 
 /// Types for the `UpdateFleet` operation.
 pub mod update_fleet;

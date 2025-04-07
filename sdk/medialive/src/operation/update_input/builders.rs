@@ -287,4 +287,23 @@ impl UpdateInputFluentBuilder {
     pub fn get_smpte2110_receiver_group_settings(&self) -> &::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings> {
         self.inner.get_smpte2110_receiver_group_settings()
     }
+    ///
+    /// Appends an item to `SdiSources`.
+    ///
+    /// To override the contents of this collection use [`set_sdi_sources`](Self::set_sdi_sources).
+    ///
+    /// SDI Sources for this Input.
+    pub fn sdi_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.sdi_sources(input.into());
+        self
+    }
+    /// SDI Sources for this Input.
+    pub fn set_sdi_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_sdi_sources(input);
+        self
+    }
+    /// SDI Sources for this Input.
+    pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_sdi_sources()
+    }
 }

@@ -15,8 +15,11 @@ pub fn ser_apply_guardrail_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.source {
-        object.key("source").string(var_5.as_str());
+    if let Some(var_5) = &input.output_scope {
+        object.key("outputScope").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.source {
+        object.key("source").string(var_6.as_str());
     }
     Ok(())
 }

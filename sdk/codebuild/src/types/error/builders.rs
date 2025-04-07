@@ -7,4 +7,6 @@ pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuil
 
 pub use crate::types::error::_account_limit_exceeded_exception::AccountLimitExceededExceptionBuilder;
 
+pub use crate::types::error::_account_suspended_exception::AccountSuspendedExceptionBuilder;
+
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;

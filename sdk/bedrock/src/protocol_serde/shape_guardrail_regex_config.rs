@@ -15,5 +15,17 @@ pub fn ser_guardrail_regex_config(
     {
         object.key("action").string(input.action.as_str());
     }
+    if let Some(var_2) = &input.input_action {
+        object.key("inputAction").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.output_action {
+        object.key("outputAction").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.input_enabled {
+        object.key("inputEnabled").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.output_enabled {
+        object.key("outputEnabled").boolean(*var_5);
+    }
     Ok(())
 }

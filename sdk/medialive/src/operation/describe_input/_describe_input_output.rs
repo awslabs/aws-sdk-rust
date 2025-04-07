@@ -44,6 +44,8 @@ pub struct DescribeInputOutput {
     pub multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
     /// Include this parameter if the input is a SMPTE 2110 input, to identify the stream sources for this input.
     pub smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
+    /// SDI Sources for this Input.
+    pub sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeInputOutput {
@@ -141,6 +143,12 @@ impl DescribeInputOutput {
     pub fn smpte2110_receiver_group_settings(&self) -> ::std::option::Option<&crate::types::Smpte2110ReceiverGroupSettings> {
         self.smpte2110_receiver_group_settings.as_ref()
     }
+    /// SDI Sources for this Input.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sdi_sources.is_none()`.
+    pub fn sdi_sources(&self) -> &[::std::string::String] {
+        self.sdi_sources.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInputOutput {
     fn request_id(&self) -> Option<&str> {
@@ -178,6 +186,7 @@ pub struct DescribeInputOutputBuilder {
     pub(crate) input_network_location: ::std::option::Option<crate::types::InputNetworkLocation>,
     pub(crate) multicast_settings: ::std::option::Option<crate::types::MulticastSettings>,
     pub(crate) smpte2110_receiver_group_settings: ::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings>,
+    pub(crate) sdi_sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeInputOutputBuilder {
@@ -509,6 +518,26 @@ impl DescribeInputOutputBuilder {
     pub fn get_smpte2110_receiver_group_settings(&self) -> &::std::option::Option<crate::types::Smpte2110ReceiverGroupSettings> {
         &self.smpte2110_receiver_group_settings
     }
+    /// Appends an item to `sdi_sources`.
+    ///
+    /// To override the contents of this collection use [`set_sdi_sources`](Self::set_sdi_sources).
+    ///
+    /// SDI Sources for this Input.
+    pub fn sdi_sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.sdi_sources.unwrap_or_default();
+        v.push(input.into());
+        self.sdi_sources = ::std::option::Option::Some(v);
+        self
+    }
+    /// SDI Sources for this Input.
+    pub fn set_sdi_sources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.sdi_sources = input;
+        self
+    }
+    /// SDI Sources for this Input.
+    pub fn get_sdi_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.sdi_sources
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -541,6 +570,7 @@ impl DescribeInputOutputBuilder {
             input_network_location: self.input_network_location,
             multicast_settings: self.multicast_settings,
             smpte2110_receiver_group_settings: self.smpte2110_receiver_group_settings,
+            sdi_sources: self.sdi_sources,
             _request_id: self._request_id,
         }
     }

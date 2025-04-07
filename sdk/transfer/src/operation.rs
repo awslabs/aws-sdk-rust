@@ -160,6 +160,12 @@ pub mod start_directory_listing;
 /// Types for the `StartFileTransfer` operation.
 pub mod start_file_transfer;
 
+/// Types for the `StartRemoteDelete` operation.
+pub mod start_remote_delete;
+
+/// Types for the `StartRemoteMove` operation.
+pub mod start_remote_move;
+
 /// Types for the `StartServer` operation.
 pub mod start_server;
 

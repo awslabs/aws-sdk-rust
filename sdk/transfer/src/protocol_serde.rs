@@ -129,6 +129,10 @@ pub(crate) mod shape_start_directory_listing;
 
 pub(crate) mod shape_start_file_transfer;
 
+pub(crate) mod shape_start_remote_delete;
+
+pub(crate) mod shape_start_remote_move;
+
 pub(crate) mod shape_start_server;
 
 pub(crate) mod shape_stop_server;
@@ -290,6 +294,10 @@ pub(crate) mod shape_service_unavailable_exception;
 pub(crate) mod shape_start_directory_listing_input;
 
 pub(crate) mod shape_start_file_transfer_input;
+
+pub(crate) mod shape_start_remote_delete_input;
+
+pub(crate) mod shape_start_remote_move_input;
 
 pub(crate) mod shape_start_server_input;
 
