@@ -39,6 +39,16 @@ pub(crate) fn reflens_describe_vtl_devices_output_output_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cache_reports_output_output_marker(
+    input: &crate::operation::list_cache_reports::ListCacheReportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_file_shares_output_output_next_marker(
     input: &crate::operation::list_file_shares::ListFileSharesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -143,6 +153,16 @@ pub(crate) fn lens_describe_vtl_devices_output_output_vtl_devices(
     input: crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>> {
     let input = match input.vtl_devices {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cache_reports_output_output_cache_report_list(
+    input: crate::operation::list_cache_reports::ListCacheReportsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CacheReportInfo>> {
+    let input = match input.cache_report_list {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };

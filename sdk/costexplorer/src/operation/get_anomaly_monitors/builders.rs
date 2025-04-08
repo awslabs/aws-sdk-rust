@@ -108,6 +108,12 @@ impl GetAnomalyMonitorsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_anomaly_monitors::paginator::GetAnomalyMonitorsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::get_anomaly_monitors::paginator::GetAnomalyMonitorsPaginator {
+        crate::operation::get_anomaly_monitors::paginator::GetAnomalyMonitorsPaginator::new(self.handle, self.inner)
+    }
     ///
     /// Appends an item to `MonitorArnList`.
     ///

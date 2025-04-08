@@ -19,6 +19,8 @@ pub struct UpdateVehicleInput {
     pub state_templates_to_add: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
     /// <p>Remove state templates from the vehicle.</p>
     pub state_templates_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub state_templates_to_update: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
 }
 impl UpdateVehicleInput {
     /// <p>The unique ID of the vehicle to update.</p>
@@ -55,6 +57,12 @@ impl UpdateVehicleInput {
     pub fn state_templates_to_remove(&self) -> &[::std::string::String] {
         self.state_templates_to_remove.as_deref().unwrap_or_default()
     }
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.state_templates_to_update.is_none()`.
+    pub fn state_templates_to_update(&self) -> &[crate::types::StateTemplateAssociation] {
+        self.state_templates_to_update.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateVehicleInput {
     /// Creates a new builder-style object to manufacture [`UpdateVehicleInput`](crate::operation::update_vehicle::UpdateVehicleInput).
@@ -74,6 +82,7 @@ pub struct UpdateVehicleInputBuilder {
     pub(crate) attribute_update_mode: ::std::option::Option<crate::types::UpdateMode>,
     pub(crate) state_templates_to_add: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
     pub(crate) state_templates_to_remove: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) state_templates_to_update: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>,
 }
 impl UpdateVehicleInputBuilder {
     /// <p>The unique ID of the vehicle to update.</p>
@@ -199,6 +208,26 @@ impl UpdateVehicleInputBuilder {
     pub fn get_state_templates_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.state_templates_to_remove
     }
+    /// Appends an item to `state_templates_to_update`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates_to_update`](Self::set_state_templates_to_update).
+    ///
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub fn state_templates_to_update(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        let mut v = self.state_templates_to_update.unwrap_or_default();
+        v.push(input);
+        self.state_templates_to_update = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub fn set_state_templates_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.state_templates_to_update = input;
+        self
+    }
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub fn get_state_templates_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        &self.state_templates_to_update
+    }
     /// Consumes the builder and constructs a [`UpdateVehicleInput`](crate::operation::update_vehicle::UpdateVehicleInput).
     pub fn build(
         self,
@@ -211,6 +240,7 @@ impl UpdateVehicleInputBuilder {
             attribute_update_mode: self.attribute_update_mode,
             state_templates_to_add: self.state_templates_to_add,
             state_templates_to_remove: self.state_templates_to_remove,
+            state_templates_to_update: self.state_templates_to_update,
         })
     }
 }

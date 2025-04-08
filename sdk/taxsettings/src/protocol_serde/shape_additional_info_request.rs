@@ -105,5 +105,11 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_greece_additional_info::ser_greece_additional_info(&mut object_34, var_33)?;
         object_34.finish();
     }
+    if let Some(var_35) = &input.uzbekistan_additional_info {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("uzbekistanAdditionalInfo").start_object();
+        crate::protocol_serde::shape_uzbekistan_additional_info::ser_uzbekistan_additional_info(&mut object_36, var_35)?;
+        object_36.finish();
+    }
     Ok(())
 }

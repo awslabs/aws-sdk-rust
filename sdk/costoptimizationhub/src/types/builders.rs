@@ -15,6 +15,18 @@ pub use crate::types::_order_by::OrderByBuilder;
 
 pub use crate::types::_account_enrollment_status::AccountEnrollmentStatusBuilder;
 
+pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstancesBuilder;
+
+pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculationBuilder;
+
+pub use crate::types::_reserved_instances_pricing::ReservedInstancesPricingBuilder;
+
+pub use crate::types::_memory_db_reserved_instances_configuration::MemoryDbReservedInstancesConfigurationBuilder;
+
+pub use crate::types::_dynamo_db_reserved_capacity::DynamoDbReservedCapacityBuilder;
+
+pub use crate::types::_dynamo_db_reserved_capacity_configuration::DynamoDbReservedCapacityConfigurationBuilder;
+
 pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorageBuilder;
 
 pub use crate::types::_resource_cost_calculation::ResourceCostCalculationBuilder;
@@ -50,10 +62,6 @@ pub use crate::types::_ec2_instance_savings_plans::Ec2InstanceSavingsPlansBuilde
 pub use crate::types::_ec2_instance_savings_plans_configuration::Ec2InstanceSavingsPlansConfigurationBuilder;
 
 pub use crate::types::_redshift_reserved_instances::RedshiftReservedInstancesBuilder;
-
-pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculationBuilder;
-
-pub use crate::types::_reserved_instances_pricing::ReservedInstancesPricingBuilder;
 
 pub use crate::types::_redshift_reserved_instances_configuration::RedshiftReservedInstancesConfigurationBuilder;
 

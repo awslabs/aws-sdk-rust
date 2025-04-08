@@ -304,9 +304,9 @@ model_hash = '37b1fb0dee22ba1679bb3a440150963980f0065761e9542f052f5a271ecc32aa'
 
 [crates.aws-sdk-bedrockruntime]
 category = 'AwsSdk'
-version = '1.81.0'
-source_hash = '998526bbeffe36a4311d64b219371b23b44a2b71666f15e8e6108e44e0420dc6'
-model_hash = '52e4409ff8a2af450e4a42226ded30bbd56bc8795f06bf3dca5fb2c644521773'
+version = '1.82.0'
+source_hash = 'c9c2f585f6fea22497dd8097772d267dcef7f28d2dabd103c285b7f8ecfdfd6d'
+model_hash = 'ff77c493ac7618919e628388d63ea8b5f692a00b7bca203c4ab95715e012fef0'
 
 [crates.aws-sdk-billing]
 category = 'AwsSdk'
@@ -646,15 +646,15 @@ model_hash = 'bf4538c4a88e7593ec09204cc1424a979ccc4bed2885498a403e0650d1607c9d'
 
 [crates.aws-sdk-costexplorer]
 category = 'AwsSdk'
-version = '1.71.0'
-source_hash = 'e07a58a34e5a52d5fece0368cba2ddd787127a645db8b864a97601d3975781c0'
-model_hash = 'fc007fe763799066f33085f78aaad61cf61430fd1daa80ba60d4d54c0a6bcf6f'
+version = '1.72.0'
+source_hash = 'ffbd7e02d74da5a7d5b0455631b050ec1e6ea104bdf8ab5170bb17669bb5ee19'
+model_hash = 'e42f3df486d847bc46027b26b664e0b19ef54f90f86b797de22e96c23a79bca2'
 
 [crates.aws-sdk-costoptimizationhub]
 category = 'AwsSdk'
-version = '1.66.0'
-source_hash = 'c819f36e39e49ebabfe2071123ef9464508af47d28a47b820a131cdde87c5432'
-model_hash = '2cfcc2124c8042178ba277cfe7b3c404751122748258bae71174851e261123f4'
+version = '1.67.0'
+source_hash = '67fe399cd488a3138268b2262fe4b4158e2c163bbd2e8a44abf5afc4f6944800'
+model_hash = '09eafcc5ba3544f52c9f6076d54b5829b7f8225ecb9e9c978de4b352b898f979'
 
 [crates.aws-sdk-customerprofiles]
 category = 'AwsSdk'
@@ -1156,9 +1156,9 @@ model_hash = '445ebd849fd5c7031c93b5e6f57b120d23bcb3ea42ac713b4ebd321203611c2c'
 
 [crates.aws-sdk-iotfleetwise]
 category = 'AwsSdk'
-version = '1.69.0'
-source_hash = 'a183d7701244ae4fc592c81b31ed54002c66cebb5b50ad1311ab4d4c98481d28'
-model_hash = '4a876ddb3c7ef347147b4efe90ecfb27cbba1197cecf348dc3e8a04c33ee18c3'
+version = '1.70.0'
+source_hash = '9b6f5ca0d36ad2367edeffb86a555e2070ebfe7c8a9ba13868e69d613c521cda'
+model_hash = '0463b2c04526b5fc77e5c1c13ea19c58825078d75a6888296a7741a83bfbaec9'
 
 [crates.aws-sdk-iotjobsdataplane]
 category = 'AwsSdk'
@@ -2092,9 +2092,9 @@ model_hash = '38c9e5e795416e436816ff34ca2e8c33e9deaf5e682fa6ac31f7c99a32ca6f67'
 
 [crates.aws-sdk-securityhub]
 category = 'AwsSdk'
-version = '1.69.0'
-source_hash = '4ed3fbd6e416c69b3045e8f866a952f25e72d76df4b544981925a6dd309b3c08'
-model_hash = '2f461c44c6996e7f7b024c64b03a6425c0cd0e5ecaf7a21caa7d0831e5e73eb3'
+version = '1.69.1'
+source_hash = 'c86bd4f9fde1223bd25e52cc9e2a02a22cc3fa28b1e6c038557955324eada210'
+model_hash = '22dc3ebcc4d9b427c2d92a3bf693190c2d99107f5eb264fef4b6116eba0afd8a'
 
 [crates.aws-sdk-securityir]
 category = 'AwsSdk'
@@ -2260,9 +2260,9 @@ model_hash = '1a6710acb21ff856911408e41c509ce38300e5fd2c8730b511885f8b821521b4'
 
 [crates.aws-sdk-storagegateway]
 category = 'AwsSdk'
-version = '1.69.0'
-source_hash = '900843b0e8cff94d111fda49fac327e84619d45729bdc3619f1db969970472f7'
-model_hash = 'b09c36a2305878c8d7452545345efd76c86251b9996bb700f8b0ba60d2f666d2'
+version = '1.70.0'
+source_hash = 'cf4604f50cad34bc91d51207cfc2748806764532c9dd853f0bf5d52127383ec0'
+model_hash = '4ae9ad569bf70c8d9bd2ff413daf858b63a1363397849b553d77871a41e9eecf'
 
 [crates.aws-sdk-sts]
 category = 'AwsSdk'
@@ -2302,9 +2302,9 @@ model_hash = 'dd226f5fc2d0e55aba7892cbb176756d628f3b8059ee7bbe6e2dc7fa1b359764'
 
 [crates.aws-sdk-taxsettings]
 category = 'AwsSdk'
-version = '1.40.0'
-source_hash = '67f7228d0b07a99844946e2cb8d8dbc23837f4d5a27364dac5a2c69f37e8d98f'
-model_hash = '027c9740cb89f0afc0b9e62909a72201ec7de8f3d8a08b14b47e6abb803119e3'
+version = '1.41.0'
+source_hash = '8eaaaddb6259c63ff52243d5e79fc86691b4ef20be3d7eb1e033f3fdb1aff2f6'
+model_hash = '2b29621d93b45a152ebbcd0998e0084bc44bab6cf9130d930148f44d39a8afc8'
 
 [crates.aws-sdk-textract]
 category = 'AwsSdk'
@@ -2610,15 +2610,11 @@ source_hash = '6be256fa6379fd9811a47e311ac9821b016a2ca57a7cfed9b0f49352caa37390'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '9d60ffec7d4b70f12914eda9ff963ff6a757dada06c4539caf523fa6003f8485'
-
-[release]
-tag = 'release-2025-04-07'
-
 [release.crates]
-aws-sdk-bedrock = '1.84.0'
-aws-sdk-bedrockruntime = '1.81.0'
-aws-sdk-codebuild = '1.85.0'
-aws-sdk-glue = '1.89.0'
-aws-sdk-medialive = '1.83.0'
-aws-sdk-personalize = '1.67.0'
-aws-sdk-transfer = '1.74.0'
+aws-sdk-bedrockruntime = '1.82.0'
+aws-sdk-costexplorer = '1.72.0'
+aws-sdk-costoptimizationhub = '1.67.0'
+aws-sdk-iotfleetwise = '1.70.0'
+aws-sdk-securityhub = '1.69.1'
+aws-sdk-storagegateway = '1.70.0'
+aws-sdk-taxsettings = '1.41.0'

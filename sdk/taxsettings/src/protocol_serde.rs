@@ -207,6 +207,8 @@ pub(crate) mod shape_turkey_additional_info;
 
 pub(crate) mod shape_ukraine_additional_info;
 
+pub(crate) mod shape_uzbekistan_additional_info;
+
 pub(crate) mod shape_vietnam_additional_info;
 
 pub(crate) mod shape_address_role_map;

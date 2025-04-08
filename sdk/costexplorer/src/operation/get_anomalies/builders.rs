@@ -108,6 +108,12 @@ impl GetAnomaliesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_anomalies::paginator::GetAnomaliesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::get_anomalies::paginator::GetAnomaliesPaginator {
+        crate::operation::get_anomalies::paginator::GetAnomaliesPaginator::new(self.handle, self.inner)
+    }
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN).</p>
     pub fn monitor_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.monitor_arn(input.into());

@@ -17,6 +17,10 @@ pub use crate::types::_source_s3_location::SourceS3Location;
 
 pub use crate::types::_additional_info_request::AdditionalInfoRequest;
 
+pub use crate::types::_uzbekistan_additional_info::UzbekistanAdditionalInfo;
+
+pub use crate::types::_uzbekistan_tax_registration_number_type::UzbekistanTaxRegistrationNumberType;
+
 pub use crate::types::_greece_additional_info::GreeceAdditionalInfo;
 
 pub use crate::types::_egypt_additional_info::EgyptAdditionalInfo;
@@ -238,6 +242,10 @@ mod _turkey_additional_info;
 mod _ukraine_additional_info;
 
 mod _ukraine_trn_type;
+
+mod _uzbekistan_additional_info;
+
+mod _uzbekistan_tax_registration_number_type;
 
 mod _validation_exception_error_code;
 

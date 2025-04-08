@@ -22,7 +22,7 @@ impl crate::operation::start_cost_allocation_tag_backfill::builders::StartCostAl
 }
 /// Fluent builder constructing a request to `StartCostAllocationTagBackfill`.
 ///
-/// <p>Request a cost allocation tag backfill. This will backfill the activation status (either <code>active</code> or <code>inactive</code>) for all tag keys from <code>para:BackfillFrom</code> up to the when this request is made.</p>
+/// <p>Request a cost allocation tag backfill. This will backfill the activation status (either <code>active</code> or <code>inactive</code>) for all tag keys from <code>para:BackfillFrom</code> up to the time this request is made.</p>
 /// <p>You can request a backfill once every 24 hours.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCostAllocationTagBackfillFluentBuilder {

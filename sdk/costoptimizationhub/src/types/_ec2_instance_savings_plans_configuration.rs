@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2InstanceSavingsPlansConfiguration {
-    /// <p>The account scope that you want your recommendations for.</p>
+    /// <p>The account scope for which you want recommendations.</p>
     pub account_scope: ::std::option::Option<::std::string::String>,
     /// <p>The Savings Plans recommendation term in years.</p>
     pub term: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct Ec2InstanceSavingsPlansConfiguration {
     pub savings_plans_region: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceSavingsPlansConfiguration {
-    /// <p>The account scope that you want your recommendations for.</p>
+    /// <p>The account scope for which you want recommendations.</p>
     pub fn account_scope(&self) -> ::std::option::Option<&str> {
         self.account_scope.as_deref()
     }
@@ -62,17 +62,17 @@ pub struct Ec2InstanceSavingsPlansConfigurationBuilder {
     pub(crate) savings_plans_region: ::std::option::Option<::std::string::String>,
 }
 impl Ec2InstanceSavingsPlansConfigurationBuilder {
-    /// <p>The account scope that you want your recommendations for.</p>
+    /// <p>The account scope for which you want recommendations.</p>
     pub fn account_scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_scope = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account scope that you want your recommendations for.</p>
+    /// <p>The account scope for which you want recommendations.</p>
     pub fn set_account_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_scope = input;
         self
     }
-    /// <p>The account scope that you want your recommendations for.</p>
+    /// <p>The account scope for which you want recommendations.</p>
     pub fn get_account_scope(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_scope
     }

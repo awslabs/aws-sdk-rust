@@ -16,6 +16,9 @@ pub mod get_async_invoke;
 /// Types for the `InvokeModel` operation.
 pub mod invoke_model;
 
+/// Types for the `InvokeModelWithBidirectionalStream` operation.
+pub mod invoke_model_with_bidirectional_stream;
+
 /// Types for the `InvokeModelWithResponseStream` operation.
 pub mod invoke_model_with_response_stream;
 

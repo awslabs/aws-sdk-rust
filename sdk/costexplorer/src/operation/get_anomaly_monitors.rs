@@ -388,3 +388,6 @@ mod _get_anomaly_monitors_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

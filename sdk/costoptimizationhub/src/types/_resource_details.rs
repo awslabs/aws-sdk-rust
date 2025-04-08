@@ -6,6 +6,8 @@
 pub enum ResourceDetails {
     /// <p>The Compute Savings Plans recommendation details.</p>
     ComputeSavingsPlans(crate::types::ComputeSavingsPlans),
+    /// <p>The DynamoDB reserved capacity recommendation details.</p>
+    DynamoDbReservedCapacity(crate::types::DynamoDbReservedCapacity),
     /// <p>The Amazon Elastic Block Store volume recommendation details.</p>
     EbsVolume(crate::types::EbsVolume),
     /// <p>The EC2 Auto Scaling group recommendation details.</p>
@@ -22,6 +24,8 @@ pub enum ResourceDetails {
     ElastiCacheReservedInstances(crate::types::ElastiCacheReservedInstances),
     /// <p>The Lambda function recommendation details.</p>
     LambdaFunction(crate::types::LambdaFunction),
+    /// <p>The MemoryDB reserved instances recommendation details.</p>
+    MemoryDbReservedInstances(crate::types::MemoryDbReservedInstances),
     /// <p>The OpenSearch reserved instances recommendation details.</p>
     OpenSearchReservedInstances(crate::types::OpenSearchReservedInstances),
     /// <p>The DB instance recommendation details.</p>
@@ -57,6 +61,19 @@ impl ResourceDetails {
     /// Returns true if this is a [`ComputeSavingsPlans`](crate::types::ResourceDetails::ComputeSavingsPlans).
     pub fn is_compute_savings_plans(&self) -> bool {
         self.as_compute_savings_plans().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DynamoDbReservedCapacity`](crate::types::ResourceDetails::DynamoDbReservedCapacity), extracting the inner [`DynamoDbReservedCapacity`](crate::types::DynamoDbReservedCapacity).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_dynamo_db_reserved_capacity(&self) -> ::std::result::Result<&crate::types::DynamoDbReservedCapacity, &Self> {
+        if let ResourceDetails::DynamoDbReservedCapacity(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DynamoDbReservedCapacity`](crate::types::ResourceDetails::DynamoDbReservedCapacity).
+    pub fn is_dynamo_db_reserved_capacity(&self) -> bool {
+        self.as_dynamo_db_reserved_capacity().is_ok()
     }
     /// Tries to convert the enum instance into [`EbsVolume`](crate::types::ResourceDetails::EbsVolume), extracting the inner [`EbsVolume`](crate::types::EbsVolume).
     /// Returns `Err(&Self)` if it can't be converted.
@@ -161,6 +178,19 @@ impl ResourceDetails {
     /// Returns true if this is a [`LambdaFunction`](crate::types::ResourceDetails::LambdaFunction).
     pub fn is_lambda_function(&self) -> bool {
         self.as_lambda_function().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MemoryDbReservedInstances`](crate::types::ResourceDetails::MemoryDbReservedInstances), extracting the inner [`MemoryDbReservedInstances`](crate::types::MemoryDbReservedInstances).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_memory_db_reserved_instances(&self) -> ::std::result::Result<&crate::types::MemoryDbReservedInstances, &Self> {
+        if let ResourceDetails::MemoryDbReservedInstances(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MemoryDbReservedInstances`](crate::types::ResourceDetails::MemoryDbReservedInstances).
+    pub fn is_memory_db_reserved_instances(&self) -> bool {
+        self.as_memory_db_reserved_instances().is_ok()
     }
     /// Tries to convert the enum instance into [`OpenSearchReservedInstances`](crate::types::ResourceDetails::OpenSearchReservedInstances), extracting the inner [`OpenSearchReservedInstances`](crate::types::OpenSearchReservedInstances).
     /// Returns `Err(&Self)` if it can't be converted.

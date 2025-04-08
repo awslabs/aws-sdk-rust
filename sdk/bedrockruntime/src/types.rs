@@ -7,6 +7,14 @@ pub use crate::types::_payload_part::PayloadPart;
 
 pub use crate::types::_trace::Trace;
 
+pub use crate::types::_invoke_model_with_bidirectional_stream_output::InvokeModelWithBidirectionalStreamOutput;
+
+pub use crate::types::_bidirectional_output_payload_part::BidirectionalOutputPayloadPart;
+
+pub use crate::types::_invoke_model_with_bidirectional_stream_input::InvokeModelWithBidirectionalStreamInput;
+
+pub use crate::types::_bidirectional_input_payload_part::BidirectionalInputPayloadPart;
+
 pub use crate::types::_converse_stream_output::ConverseStreamOutput;
 
 pub use crate::types::_converse_stream_metadata_event::ConverseStreamMetadataEvent;
@@ -241,6 +249,10 @@ mod _async_invoke_summary;
 
 mod _auto_tool_choice;
 
+mod _bidirectional_input_payload_part;
+
+mod _bidirectional_output_payload_part;
+
 mod _cache_point_block;
 
 mod _cache_point_type;
@@ -388,6 +400,10 @@ mod _image_format;
 mod _image_source;
 
 mod _inference_configuration;
+
+mod _invoke_model_with_bidirectional_stream_input;
+
+mod _invoke_model_with_bidirectional_stream_output;
 
 mod _message;
 

@@ -114,6 +114,18 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'rdsDbInstanceStorage' cannot be null")
                             })?,
                         )),
+                        "dynamoDbReservedCapacity" => Some(crate::types::ResourceDetails::DynamoDbReservedCapacity(
+                            crate::protocol_serde::shape_dynamo_db_reserved_capacity::de_dynamo_db_reserved_capacity(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'dynamoDbReservedCapacity' cannot be null")
+                            })?,
+                        )),
+                        "memoryDbReservedInstances" => Some(crate::types::ResourceDetails::MemoryDbReservedInstances(
+                            crate::protocol_serde::shape_memory_db_reserved_instances::de_memory_db_reserved_instances(tokens)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'memoryDbReservedInstances' cannot be null",
+                                )
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ResourceDetails::Unknown)

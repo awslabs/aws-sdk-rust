@@ -37,6 +37,18 @@ pub use crate::types::_account_enrollment_status::AccountEnrollmentStatus;
 
 pub use crate::types::_resource_details::ResourceDetails;
 
+pub use crate::types::_memory_db_reserved_instances::MemoryDbReservedInstances;
+
+pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculation;
+
+pub use crate::types::_reserved_instances_pricing::ReservedInstancesPricing;
+
+pub use crate::types::_memory_db_reserved_instances_configuration::MemoryDbReservedInstancesConfiguration;
+
+pub use crate::types::_dynamo_db_reserved_capacity::DynamoDbReservedCapacity;
+
+pub use crate::types::_dynamo_db_reserved_capacity_configuration::DynamoDbReservedCapacityConfiguration;
+
 pub use crate::types::_rds_db_instance_storage::RdsDbInstanceStorage;
 
 pub use crate::types::_resource_cost_calculation::ResourceCostCalculation;
@@ -72,10 +84,6 @@ pub use crate::types::_ec2_instance_savings_plans::Ec2InstanceSavingsPlans;
 pub use crate::types::_ec2_instance_savings_plans_configuration::Ec2InstanceSavingsPlansConfiguration;
 
 pub use crate::types::_redshift_reserved_instances::RedshiftReservedInstances;
-
-pub use crate::types::_reserved_instances_cost_calculation::ReservedInstancesCostCalculation;
-
-pub use crate::types::_reserved_instances_pricing::ReservedInstancesPricing;
 
 pub use crate::types::_redshift_reserved_instances_configuration::RedshiftReservedInstancesConfiguration;
 
@@ -145,6 +153,10 @@ mod _compute_savings_plans_configuration;
 
 mod _db_instance_configuration;
 
+mod _dynamo_db_reserved_capacity;
+
+mod _dynamo_db_reserved_capacity_configuration;
+
 mod _ebs_volume;
 
 mod _ebs_volume_configuration;
@@ -190,6 +202,10 @@ mod _lambda_function;
 mod _lambda_function_configuration;
 
 mod _member_account_discount_visibility;
+
+mod _memory_db_reserved_instances;
+
+mod _memory_db_reserved_instances_configuration;
 
 mod _mixed_instance_configuration;
 

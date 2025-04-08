@@ -13,6 +13,8 @@ pub use crate::types::_source_s3_location::SourceS3LocationBuilder;
 
 pub use crate::types::_additional_info_request::AdditionalInfoRequestBuilder;
 
+pub use crate::types::_uzbekistan_additional_info::UzbekistanAdditionalInfoBuilder;
+
 pub use crate::types::_greece_additional_info::GreeceAdditionalInfoBuilder;
 
 pub use crate::types::_egypt_additional_info::EgyptAdditionalInfoBuilder;

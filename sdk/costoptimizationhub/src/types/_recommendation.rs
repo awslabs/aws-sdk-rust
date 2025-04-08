@@ -6,7 +6,7 @@
 pub struct Recommendation {
     /// <p>The ID for the recommendation.</p>
     pub recommendation_id: ::std::option::Option<::std::string::String>,
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the resource.</p>
     pub region: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl Recommendation {
     pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_id.as_deref()
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -183,17 +183,17 @@ impl RecommendationBuilder {
     pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_id
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

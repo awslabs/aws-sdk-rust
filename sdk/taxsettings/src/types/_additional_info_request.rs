@@ -41,6 +41,8 @@ pub struct AdditionalInfoRequest {
     pub egypt_additional_info: ::std::option::Option<crate::types::EgyptAdditionalInfo>,
     /// <p>Additional tax information to specify for a TRN in Greece.</p>
     pub greece_additional_info: ::std::option::Option<crate::types::GreeceAdditionalInfo>,
+    /// <p>Additional tax information to specify for a TRN in Uzbekistan.</p>
+    pub uzbekistan_additional_info: ::std::option::Option<crate::types::UzbekistanAdditionalInfo>,
 }
 impl AdditionalInfoRequest {
     /// <p>Additional tax information to specify for a TRN in Malaysia.</p>
@@ -111,6 +113,10 @@ impl AdditionalInfoRequest {
     pub fn greece_additional_info(&self) -> ::std::option::Option<&crate::types::GreeceAdditionalInfo> {
         self.greece_additional_info.as_ref()
     }
+    /// <p>Additional tax information to specify for a TRN in Uzbekistan.</p>
+    pub fn uzbekistan_additional_info(&self) -> ::std::option::Option<&crate::types::UzbekistanAdditionalInfo> {
+        self.uzbekistan_additional_info.as_ref()
+    }
 }
 impl AdditionalInfoRequest {
     /// Creates a new builder-style object to manufacture [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
@@ -140,6 +146,7 @@ pub struct AdditionalInfoRequestBuilder {
     pub(crate) vietnam_additional_info: ::std::option::Option<crate::types::VietnamAdditionalInfo>,
     pub(crate) egypt_additional_info: ::std::option::Option<crate::types::EgyptAdditionalInfo>,
     pub(crate) greece_additional_info: ::std::option::Option<crate::types::GreeceAdditionalInfo>,
+    pub(crate) uzbekistan_additional_info: ::std::option::Option<crate::types::UzbekistanAdditionalInfo>,
 }
 impl AdditionalInfoRequestBuilder {
     /// <p>Additional tax information to specify for a TRN in Malaysia.</p>
@@ -380,6 +387,20 @@ impl AdditionalInfoRequestBuilder {
     pub fn get_greece_additional_info(&self) -> &::std::option::Option<crate::types::GreeceAdditionalInfo> {
         &self.greece_additional_info
     }
+    /// <p>Additional tax information to specify for a TRN in Uzbekistan.</p>
+    pub fn uzbekistan_additional_info(mut self, input: crate::types::UzbekistanAdditionalInfo) -> Self {
+        self.uzbekistan_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information to specify for a TRN in Uzbekistan.</p>
+    pub fn set_uzbekistan_additional_info(mut self, input: ::std::option::Option<crate::types::UzbekistanAdditionalInfo>) -> Self {
+        self.uzbekistan_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information to specify for a TRN in Uzbekistan.</p>
+    pub fn get_uzbekistan_additional_info(&self) -> &::std::option::Option<crate::types::UzbekistanAdditionalInfo> {
+        &self.uzbekistan_additional_info
+    }
     /// Consumes the builder and constructs a [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
     pub fn build(self) -> crate::types::AdditionalInfoRequest {
         crate::types::AdditionalInfoRequest {
@@ -400,6 +421,7 @@ impl AdditionalInfoRequestBuilder {
             vietnam_additional_info: self.vietnam_additional_info,
             egypt_additional_info: self.egypt_additional_info,
             greece_additional_info: self.greece_additional_info,
+            uzbekistan_additional_info: self.uzbekistan_additional_info,
         }
     }
 }

@@ -237,6 +237,73 @@ impl From<crate::operation::invoke_model::InvokeModelError> for Error {
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError> for Error {
+    fn from(err: crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError) -> Self {
+        match err {
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelTimeoutException(inner) => {
+                Error::ModelTimeoutException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelStreamErrorException(inner) => {
+                Error::ModelStreamErrorException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelNotReadyException(inner) => {
+                Error::ModelNotReadyException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ModelErrorException(inner) => {
+                Error::ModelErrorException(inner)
+            }
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::invoke_model_with_bidirectional_stream::InvokeModelWithBidirectionalStreamError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamError,
             R,
         >,
@@ -380,6 +447,60 @@ impl From<crate::types::error::ConverseStreamOutputError> for Error {
             crate::types::error::ConverseStreamOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::types::error::ConverseStreamOutputError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
             crate::types::error::ConverseStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeModelWithBidirectionalStreamInputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeModelWithBidirectionalStreamInputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::InvokeModelWithBidirectionalStreamInputError> for Error {
+    fn from(err: crate::types::error::InvokeModelWithBidirectionalStreamInputError) -> Self {
+        match err {
+            crate::types::error::InvokeModelWithBidirectionalStreamInputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeModelWithBidirectionalStreamOutputError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::InvokeModelWithBidirectionalStreamOutputError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::types::error::InvokeModelWithBidirectionalStreamOutputError> for Error {
+    fn from(err: crate::types::error::InvokeModelWithBidirectionalStreamOutputError) -> Self {
+        match err {
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::ModelStreamErrorException(inner) => {
+                Error::ModelStreamErrorException(inner)
+            }
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::ModelTimeoutException(inner) => Error::ModelTimeoutException(inner),
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::types::error::InvokeModelWithBidirectionalStreamOutputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

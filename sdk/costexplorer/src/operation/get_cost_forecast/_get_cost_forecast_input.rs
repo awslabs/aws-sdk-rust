@@ -32,8 +32,6 @@ pub struct GetCostForecastInput {
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
     /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
     /// <p><code>PURCHASE_TYPE</code></p></li>
@@ -113,8 +111,6 @@ impl GetCostForecastInput {
     /// <p><code>INSTANCE_TYPE</code></p></li>
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
     /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
@@ -281,8 +277,6 @@ impl GetCostForecastInputBuilder {
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
     /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
     /// <p><code>PURCHASE_TYPE</code></p></li>
@@ -334,8 +328,6 @@ impl GetCostForecastInputBuilder {
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
     /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
     /// <p><code>PURCHASE_TYPE</code></p></li>
@@ -386,8 +378,6 @@ impl GetCostForecastInputBuilder {
     /// <p><code>INSTANCE_TYPE</code></p></li>
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
     /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>

@@ -89,6 +89,8 @@ pub(crate) mod shape_account_enrollment_status;
 
 pub(crate) mod shape_compute_savings_plans;
 
+pub(crate) mod shape_dynamo_db_reserved_capacity;
+
 pub(crate) mod shape_ebs_volume;
 
 pub(crate) mod shape_ec2_auto_scaling_group;
@@ -104,6 +106,8 @@ pub(crate) mod shape_ecs_service;
 pub(crate) mod shape_elasti_cache_reserved_instances;
 
 pub(crate) mod shape_lambda_function;
+
+pub(crate) mod shape_memory_db_reserved_instances;
 
 pub(crate) mod shape_open_search_reserved_instances;
 
@@ -127,6 +131,8 @@ pub(crate) mod shape_validation_exception_detail;
 
 pub(crate) mod shape_compute_savings_plans_configuration;
 
+pub(crate) mod shape_dynamo_db_reserved_capacity_configuration;
+
 pub(crate) mod shape_ebs_volume_configuration;
 
 pub(crate) mod shape_ec2_auto_scaling_group_configuration;
@@ -142,6 +148,8 @@ pub(crate) mod shape_ecs_service_configuration;
 pub(crate) mod shape_elasti_cache_reserved_instances_configuration;
 
 pub(crate) mod shape_lambda_function_configuration;
+
+pub(crate) mod shape_memory_db_reserved_instances_configuration;
 
 pub(crate) mod shape_open_search_reserved_instances_configuration;
 

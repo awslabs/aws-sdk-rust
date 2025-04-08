@@ -8,7 +8,7 @@ impl super::Client {
     ///   - [`recommendation_id(Option<String>)`](crate::operation::get_recommendation::GetRecommendationOutput::recommendation_id): <p>The ID for the recommendation.</p>
     ///   - [`resource_id(Option<String>)`](crate::operation::get_recommendation::GetRecommendationOutput::resource_id): <p>The unique identifier for the resource. This is the same as the Amazon Resource Name (ARN), if available.</p>
     ///   - [`resource_arn(Option<String>)`](crate::operation::get_recommendation::GetRecommendationOutput::resource_arn): <p>The Amazon Resource Name (ARN) of the resource.</p>
-    ///   - [`account_id(Option<String>)`](crate::operation::get_recommendation::GetRecommendationOutput::account_id): <p>The account that the recommendation is for.</p>
+    ///   - [`account_id(Option<String>)`](crate::operation::get_recommendation::GetRecommendationOutput::account_id): <p>The account to which the recommendation applies.</p>
     ///   - [`currency_code(Option<String>)`](crate::operation::get_recommendation::GetRecommendationOutput::currency_code): <p>The currency code used for the recommendation.</p>
     ///   - [`recommendation_lookback_period_in_days(Option<i32>)`](crate::operation::get_recommendation::GetRecommendationOutput::recommendation_lookback_period_in_days): <p>The lookback period that's used to generate the recommendation.</p>
     ///   - [`cost_calculation_lookback_period_in_days(Option<i32>)`](crate::operation::get_recommendation::GetRecommendationOutput::cost_calculation_lookback_period_in_days): <p>The lookback period used to calculate cost impact for a recommendation.</p>

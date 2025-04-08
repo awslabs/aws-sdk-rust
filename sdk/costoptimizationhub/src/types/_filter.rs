@@ -10,7 +10,7 @@ pub struct Filter {
     pub rollback_possible: ::std::option::Option<bool>,
     /// <p>The effort required to implement the recommendation.</p>
     pub implementation_efforts: ::std::option::Option<::std::vec::Vec<crate::types::ImplementationEffort>>,
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Web Services Region of the resource.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -42,7 +42,7 @@ impl Filter {
     pub fn implementation_efforts(&self) -> &[crate::types::ImplementationEffort] {
         self.implementation_efforts.as_deref().unwrap_or_default()
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
@@ -167,19 +167,19 @@ impl FilterBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

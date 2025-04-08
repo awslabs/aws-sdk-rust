@@ -98,6 +98,11 @@ where
                             builder = builder
                                 .set_greece_additional_info(crate::protocol_serde::shape_greece_additional_info::de_greece_additional_info(tokens)?);
                         }
+                        "uzbekistanAdditionalInfo" => {
+                            builder = builder.set_uzbekistan_additional_info(
+                                crate::protocol_serde::shape_uzbekistan_additional_info::de_uzbekistan_additional_info(tokens)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -35,6 +35,8 @@ pub(crate) mod shape_invoke_model;
 
 pub(crate) mod shape_invoke_model_input;
 
+pub(crate) mod shape_invoke_model_with_bidirectional_stream;
+
 pub(crate) mod shape_invoke_model_with_response_stream;
 
 pub(crate) mod shape_invoke_model_with_response_stream_input;
@@ -67,6 +69,10 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invoke_model_output;
 
+pub(crate) mod shape_invoke_model_with_bidirectional_stream_input;
+
+pub(crate) mod shape_invoke_model_with_bidirectional_stream_output;
+
 pub(crate) mod shape_invoke_model_with_response_stream_output;
 
 pub(crate) mod shape_model_error_exception;
@@ -98,6 +104,8 @@ pub fn parse_event_stream_error_metadata(
 pub(crate) mod shape_async_invoke_output_data_config;
 
 pub(crate) mod shape_async_invoke_summaries;
+
+pub(crate) mod shape_bidirectional_input_payload_part;
 
 pub(crate) mod shape_converse_metrics;
 
@@ -138,6 +146,8 @@ pub(crate) mod shape_tool_configuration;
 pub(crate) mod shape_async_invoke_s3_output_data_config;
 
 pub(crate) mod shape_async_invoke_summary;
+
+pub(crate) mod shape_bidirectional_output_payload_part;
 
 pub(crate) mod shape_cache_point_block;
 

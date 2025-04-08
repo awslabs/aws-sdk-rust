@@ -13,6 +13,7 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::ComputeSavingsPlans => { /* ... */ },
+///     ResourceType::DynamoDbReservedCapacity => { /* ... */ },
 ///     ResourceType::EbsVolume => { /* ... */ },
 ///     ResourceType::Ec2AutoScalingGroup => { /* ... */ },
 ///     ResourceType::Ec2Instance => { /* ... */ },
@@ -21,6 +22,7 @@
 ///     ResourceType::EcsService => { /* ... */ },
 ///     ResourceType::ElastiCacheReservedInstances => { /* ... */ },
 ///     ResourceType::LambdaFunction => { /* ... */ },
+///     ResourceType::MemoryDbReservedInstances => { /* ... */ },
 ///     ResourceType::OpenSearchReservedInstances => { /* ... */ },
 ///     ResourceType::RdsDbInstance => { /* ... */ },
 ///     ResourceType::RdsDbInstanceStorage => { /* ... */ },
@@ -58,6 +60,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ComputeSavingsPlans,
     #[allow(missing_docs)] // documentation missing in model
+    DynamoDbReservedCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     EbsVolume,
     #[allow(missing_docs)] // documentation missing in model
     Ec2AutoScalingGroup,
@@ -73,6 +77,8 @@ pub enum ResourceType {
     ElastiCacheReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
     LambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    MemoryDbReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
     OpenSearchReservedInstances,
     #[allow(missing_docs)] // documentation missing in model
@@ -93,6 +99,7 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "ComputeSavingsPlans" => ResourceType::ComputeSavingsPlans,
+            "DynamoDbReservedCapacity" => ResourceType::DynamoDbReservedCapacity,
             "EbsVolume" => ResourceType::EbsVolume,
             "Ec2AutoScalingGroup" => ResourceType::Ec2AutoScalingGroup,
             "Ec2Instance" => ResourceType::Ec2Instance,
@@ -101,6 +108,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "EcsService" => ResourceType::EcsService,
             "ElastiCacheReservedInstances" => ResourceType::ElastiCacheReservedInstances,
             "LambdaFunction" => ResourceType::LambdaFunction,
+            "MemoryDbReservedInstances" => ResourceType::MemoryDbReservedInstances,
             "OpenSearchReservedInstances" => ResourceType::OpenSearchReservedInstances,
             "RdsDbInstance" => ResourceType::RdsDbInstance,
             "RdsDbInstanceStorage" => ResourceType::RdsDbInstanceStorage,
@@ -123,6 +131,7 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::ComputeSavingsPlans => "ComputeSavingsPlans",
+            ResourceType::DynamoDbReservedCapacity => "DynamoDbReservedCapacity",
             ResourceType::EbsVolume => "EbsVolume",
             ResourceType::Ec2AutoScalingGroup => "Ec2AutoScalingGroup",
             ResourceType::Ec2Instance => "Ec2Instance",
@@ -131,6 +140,7 @@ impl ResourceType {
             ResourceType::EcsService => "EcsService",
             ResourceType::ElastiCacheReservedInstances => "ElastiCacheReservedInstances",
             ResourceType::LambdaFunction => "LambdaFunction",
+            ResourceType::MemoryDbReservedInstances => "MemoryDbReservedInstances",
             ResourceType::OpenSearchReservedInstances => "OpenSearchReservedInstances",
             ResourceType::RdsDbInstance => "RdsDbInstance",
             ResourceType::RdsDbInstanceStorage => "RdsDbInstanceStorage",
@@ -144,6 +154,7 @@ impl ResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ComputeSavingsPlans",
+            "DynamoDbReservedCapacity",
             "EbsVolume",
             "Ec2AutoScalingGroup",
             "Ec2Instance",
@@ -152,6 +163,7 @@ impl ResourceType {
             "EcsService",
             "ElastiCacheReservedInstances",
             "LambdaFunction",
+            "MemoryDbReservedInstances",
             "OpenSearchReservedInstances",
             "RdsDbInstance",
             "RdsDbInstanceStorage",
@@ -182,6 +194,7 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::ComputeSavingsPlans => write!(f, "ComputeSavingsPlans"),
+            ResourceType::DynamoDbReservedCapacity => write!(f, "DynamoDbReservedCapacity"),
             ResourceType::EbsVolume => write!(f, "EbsVolume"),
             ResourceType::Ec2AutoScalingGroup => write!(f, "Ec2AutoScalingGroup"),
             ResourceType::Ec2Instance => write!(f, "Ec2Instance"),
@@ -190,6 +203,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::EcsService => write!(f, "EcsService"),
             ResourceType::ElastiCacheReservedInstances => write!(f, "ElastiCacheReservedInstances"),
             ResourceType::LambdaFunction => write!(f, "LambdaFunction"),
+            ResourceType::MemoryDbReservedInstances => write!(f, "MemoryDbReservedInstances"),
             ResourceType::OpenSearchReservedInstances => write!(f, "OpenSearchReservedInstances"),
             ResourceType::RdsDbInstance => write!(f, "RdsDbInstance"),
             ResourceType::RdsDbInstanceStorage => write!(f, "RdsDbInstanceStorage"),

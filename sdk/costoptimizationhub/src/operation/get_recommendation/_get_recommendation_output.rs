@@ -9,7 +9,7 @@ pub struct GetRecommendationOutput {
     pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The currency code used for the recommendation.</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
@@ -64,7 +64,7 @@ impl GetRecommendationOutput {
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -231,17 +231,17 @@ impl GetRecommendationOutputBuilder {
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The account that the recommendation is for.</p>
+    /// <p>The account to which the recommendation applies.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

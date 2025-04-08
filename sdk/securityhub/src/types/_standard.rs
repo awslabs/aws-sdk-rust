@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Standard {
-    /// <p>The ARN of a standard.</p>
+    /// <p>The ARN of the standard.</p>
     pub standards_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the standard.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ pub struct Standard {
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
 }
 impl Standard {
-    /// <p>The ARN of a standard.</p>
+    /// <p>The ARN of the standard.</p>
     pub fn standards_arn(&self) -> ::std::option::Option<&str> {
         self.standards_arn.as_deref()
     }
@@ -57,17 +57,17 @@ pub struct StandardBuilder {
     pub(crate) standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
 }
 impl StandardBuilder {
-    /// <p>The ARN of a standard.</p>
+    /// <p>The ARN of the standard.</p>
     pub fn standards_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a standard.</p>
+    /// <p>The ARN of the standard.</p>
     pub fn set_standards_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_arn = input;
         self
     }
-    /// <p>The ARN of a standard.</p>
+    /// <p>The ARN of the standard.</p>
     pub fn get_standards_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_arn
     }

@@ -173,6 +173,8 @@ mod get_async_invoke;
 
 mod invoke_model;
 
+mod invoke_model_with_bidirectional_stream;
+
 mod invoke_model_with_response_stream;
 
 mod list_async_invokes;

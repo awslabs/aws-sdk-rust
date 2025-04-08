@@ -7,12 +7,12 @@ pub struct StartCacheReportInput {
     pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role used when saving the cache report to Amazon S3.</p>
     pub role: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the Amazon S3 bucket where the cache report will be saved.</p><note>
+    /// <p>The ARN of the Amazon S3 bucket where you want to save the cache report.</p><note>
     /// <p>We do not recommend saving the cache report to the same Amazon S3 bucket for which you are generating the report.</p>
     /// <p>This field does not accept access point ARNs.</p>
     /// </note>
     pub location_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services Region of the Amazon S3 bucket associated with the file share for which you want to generate the cache report.</p>
+    /// <p>The Amazon Web Services Region of the Amazon S3 bucket where you want to save the cache report.</p>
     pub bucket_region: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the VPC endpoint associated with the Amazon S3 where you want to save the cache report. Optional.</p>
     pub vpc_endpoint_dns_name: ::std::option::Option<::std::string::String>,
@@ -34,14 +34,14 @@ impl StartCacheReportInput {
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
-    /// <p>The ARN of the Amazon S3 bucket where the cache report will be saved.</p><note>
+    /// <p>The ARN of the Amazon S3 bucket where you want to save the cache report.</p><note>
     /// <p>We do not recommend saving the cache report to the same Amazon S3 bucket for which you are generating the report.</p>
     /// <p>This field does not accept access point ARNs.</p>
     /// </note>
     pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
-    /// <p>The Amazon Web Services Region of the Amazon S3 bucket associated with the file share for which you want to generate the cache report.</p>
+    /// <p>The Amazon Web Services Region of the Amazon S3 bucket where you want to save the cache report.</p>
     pub fn bucket_region(&self) -> ::std::option::Option<&str> {
         self.bucket_region.as_deref()
     }
@@ -124,7 +124,7 @@ impl StartCacheReportInputBuilder {
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }
-    /// <p>The ARN of the Amazon S3 bucket where the cache report will be saved.</p><note>
+    /// <p>The ARN of the Amazon S3 bucket where you want to save the cache report.</p><note>
     /// <p>We do not recommend saving the cache report to the same Amazon S3 bucket for which you are generating the report.</p>
     /// <p>This field does not accept access point ARNs.</p>
     /// </note>
@@ -133,7 +133,7 @@ impl StartCacheReportInputBuilder {
         self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon S3 bucket where the cache report will be saved.</p><note>
+    /// <p>The ARN of the Amazon S3 bucket where you want to save the cache report.</p><note>
     /// <p>We do not recommend saving the cache report to the same Amazon S3 bucket for which you are generating the report.</p>
     /// <p>This field does not accept access point ARNs.</p>
     /// </note>
@@ -141,25 +141,25 @@ impl StartCacheReportInputBuilder {
         self.location_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon S3 bucket where the cache report will be saved.</p><note>
+    /// <p>The ARN of the Amazon S3 bucket where you want to save the cache report.</p><note>
     /// <p>We do not recommend saving the cache report to the same Amazon S3 bucket for which you are generating the report.</p>
     /// <p>This field does not accept access point ARNs.</p>
     /// </note>
     pub fn get_location_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.location_arn
     }
-    /// <p>The Amazon Web Services Region of the Amazon S3 bucket associated with the file share for which you want to generate the cache report.</p>
+    /// <p>The Amazon Web Services Region of the Amazon S3 bucket where you want to save the cache report.</p>
     /// This field is required.
     pub fn bucket_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.bucket_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services Region of the Amazon S3 bucket associated with the file share for which you want to generate the cache report.</p>
+    /// <p>The Amazon Web Services Region of the Amazon S3 bucket where you want to save the cache report.</p>
     pub fn set_bucket_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_region = input;
         self
     }
-    /// <p>The Amazon Web Services Region of the Amazon S3 bucket associated with the file share for which you want to generate the cache report.</p>
+    /// <p>The Amazon Web Services Region of the Amazon S3 bucket where you want to save the cache report.</p>
     pub fn get_bucket_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.bucket_region
     }

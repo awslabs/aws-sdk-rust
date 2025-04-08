@@ -22,7 +22,9 @@ impl crate::operation::update_vehicle::builders::UpdateVehicleInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateVehicle`.
 ///
-/// <p>Updates a vehicle.</p>
+/// <p>Updates a vehicle.</p><important>
+/// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVehicleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -226,5 +228,24 @@ impl UpdateVehicleFluentBuilder {
     /// <p>Remove state templates from the vehicle.</p>
     pub fn get_state_templates_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_state_templates_to_remove()
+    }
+    ///
+    /// Appends an item to `stateTemplatesToUpdate`.
+    ///
+    /// To override the contents of this collection use [`set_state_templates_to_update`](Self::set_state_templates_to_update).
+    ///
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub fn state_templates_to_update(mut self, input: crate::types::StateTemplateAssociation) -> Self {
+        self.inner = self.inner.state_templates_to_update(input);
+        self
+    }
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub fn set_state_templates_to_update(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>>) -> Self {
+        self.inner = self.inner.set_state_templates_to_update(input);
+        self
+    }
+    /// <p>Change the <code>stateTemplateUpdateStrategy</code> of state templates already associated with the vehicle.</p>
+    pub fn get_state_templates_to_update(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StateTemplateAssociation>> {
+        self.inner.get_state_templates_to_update()
     }
 }

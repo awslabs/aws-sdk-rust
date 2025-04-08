@@ -14,6 +14,7 @@
 /// match activedirectorystatus {
 ///     ActiveDirectoryStatus::AccessDenied => { /* ... */ },
 ///     ActiveDirectoryStatus::Detached => { /* ... */ },
+///     ActiveDirectoryStatus::InsufficientPermissions => { /* ... */ },
 ///     ActiveDirectoryStatus::Joined => { /* ... */ },
 ///     ActiveDirectoryStatus::Joining => { /* ... */ },
 ///     ActiveDirectoryStatus::NetworkError => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum ActiveDirectoryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Detached,
     #[allow(missing_docs)] // documentation missing in model
+    InsufficientPermissions,
+    #[allow(missing_docs)] // documentation missing in model
     Joined,
     #[allow(missing_docs)] // documentation missing in model
     Joining,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for ActiveDirectoryStatus {
         match s {
             "ACCESS_DENIED" => ActiveDirectoryStatus::AccessDenied,
             "DETACHED" => ActiveDirectoryStatus::Detached,
+            "INSUFFICIENT_PERMISSIONS" => ActiveDirectoryStatus::InsufficientPermissions,
             "JOINED" => ActiveDirectoryStatus::Joined,
             "JOINING" => ActiveDirectoryStatus::Joining,
             "NETWORK_ERROR" => ActiveDirectoryStatus::NetworkError,
@@ -92,6 +96,7 @@ impl ActiveDirectoryStatus {
         match self {
             ActiveDirectoryStatus::AccessDenied => "ACCESS_DENIED",
             ActiveDirectoryStatus::Detached => "DETACHED",
+            ActiveDirectoryStatus::InsufficientPermissions => "INSUFFICIENT_PERMISSIONS",
             ActiveDirectoryStatus::Joined => "JOINED",
             ActiveDirectoryStatus::Joining => "JOINING",
             ActiveDirectoryStatus::NetworkError => "NETWORK_ERROR",
@@ -105,6 +110,7 @@ impl ActiveDirectoryStatus {
         &[
             "ACCESS_DENIED",
             "DETACHED",
+            "INSUFFICIENT_PERMISSIONS",
             "JOINED",
             "JOINING",
             "NETWORK_ERROR",
@@ -135,6 +141,7 @@ impl ::std::fmt::Display for ActiveDirectoryStatus {
         match self {
             ActiveDirectoryStatus::AccessDenied => write!(f, "ACCESS_DENIED"),
             ActiveDirectoryStatus::Detached => write!(f, "DETACHED"),
+            ActiveDirectoryStatus::InsufficientPermissions => write!(f, "INSUFFICIENT_PERMISSIONS"),
             ActiveDirectoryStatus::Joined => write!(f, "JOINED"),
             ActiveDirectoryStatus::Joining => write!(f, "JOINING"),
             ActiveDirectoryStatus::NetworkError => write!(f, "NETWORK_ERROR"),

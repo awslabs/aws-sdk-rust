@@ -28,13 +28,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "normalizedUnitsToPurchase" => {
-                            builder = builder.set_normalized_units_to_purchase(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "term" => {
                             builder = builder.set_term(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -44,6 +37,34 @@ where
                         }
                         "paymentOption" => {
                             builder = builder.set_payment_option(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "reservedInstancesRegion" => {
+                            builder = builder.set_reserved_instances_region(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "upfrontCost" => {
+                            builder = builder.set_upfront_cost(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "monthlyRecurringCost" => {
+                            builder = builder.set_monthly_recurring_cost(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "normalizedUnitsToPurchase" => {
+                            builder = builder.set_normalized_units_to_purchase(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -70,13 +91,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "reservedInstancesRegion" => {
-                            builder = builder.set_reserved_instances_region(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
                         "currentGeneration" => {
                             builder = builder.set_current_generation(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -86,20 +100,6 @@ where
                         }
                         "sizeFlexEligible" => {
                             builder = builder.set_size_flex_eligible(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                        }
-                        "upfrontCost" => {
-                            builder = builder.set_upfront_cost(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "monthlyRecurringCost" => {
-                            builder = builder.set_monthly_recurring_cost(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

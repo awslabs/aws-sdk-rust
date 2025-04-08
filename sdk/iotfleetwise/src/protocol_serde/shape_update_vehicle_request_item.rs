@@ -46,5 +46,17 @@ pub fn ser_update_vehicle_request_item(
         }
         array_13.finish();
     }
+    if let Some(var_15) = &input.state_templates_to_update {
+        let mut array_16 = object.key("stateTemplatesToUpdate").start_array();
+        for item_17 in var_15 {
+            {
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_state_template_association::ser_state_template_association(&mut object_18, item_17)?;
+                object_18.finish();
+            }
+        }
+        array_16.finish();
+    }
     Ok(())
 }

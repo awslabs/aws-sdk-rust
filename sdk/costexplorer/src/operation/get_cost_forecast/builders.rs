@@ -201,8 +201,6 @@ impl GetCostForecastFluentBuilder {
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
     /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
     /// <p><code>PURCHASE_TYPE</code></p></li>
@@ -254,8 +252,6 @@ impl GetCostForecastFluentBuilder {
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
     /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
-    /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
     /// <p><code>PURCHASE_TYPE</code></p></li>
@@ -306,8 +302,6 @@ impl GetCostForecastFluentBuilder {
     /// <p><code>INSTANCE_TYPE</code></p></li>
     /// <li>
     /// <p><code>LINKED_ACCOUNT</code></p></li>
-    /// <li>
-    /// <p><code>LINKED_ACCOUNT_NAME</code></p></li>
     /// <li>
     /// <p><code>OPERATION</code></p></li>
     /// <li>
