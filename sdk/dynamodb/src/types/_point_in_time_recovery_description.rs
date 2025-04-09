@@ -12,7 +12,7 @@ pub struct PointInTimeRecoveryDescription {
     /// <p><code>DISABLED</code> - Point in time recovery is disabled.</p></li>
     /// </ul>
     pub point_in_time_recovery_status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
-    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional.</p>
     pub recovery_period_in_days: ::std::option::Option<i32>,
     /// <p>Specifies the earliest point in time you can restore your table to. You can restore your table to any point in time during the last 35 days.</p>
     pub earliest_restorable_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,7 +30,7 @@ impl PointInTimeRecoveryDescription {
     pub fn point_in_time_recovery_status(&self) -> ::std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
         self.point_in_time_recovery_status.as_ref()
     }
-    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional.</p>
     pub fn recovery_period_in_days(&self) -> ::std::option::Option<i32> {
         self.recovery_period_in_days
     }
@@ -92,17 +92,17 @@ impl PointInTimeRecoveryDescriptionBuilder {
     pub fn get_point_in_time_recovery_status(&self) -> &::std::option::Option<crate::types::PointInTimeRecoveryStatus> {
         &self.point_in_time_recovery_status
     }
-    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional.</p>
     pub fn recovery_period_in_days(mut self, input: i32) -> Self {
         self.recovery_period_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional.</p>
     pub fn set_recovery_period_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.recovery_period_in_days = input;
         self
     }
-    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional. If no value is provided, the value will default to 35.</p>
+    /// <p>The number of preceding days for which continuous backups are taken and maintained. Your table data is only recoverable to any point-in-time from within the configured recovery period. This parameter is optional.</p>
     pub fn get_recovery_period_in_days(&self) -> &::std::option::Option<i32> {
         &self.recovery_period_in_days
     }

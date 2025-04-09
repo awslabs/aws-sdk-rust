@@ -35,6 +35,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "DpuHours" => {
+                            builder = builder.set_dpu_hours(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         "NumberOfDpus" => {
                             builder = builder.set_number_of_dpus(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

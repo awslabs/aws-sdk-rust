@@ -11,6 +11,8 @@ pub struct GetControlOutput {
     pub description: ::std::string::String,
     /// <p>A term that identifies the control's functional behavior. One of <code>Preventive</code>, <code>Detective</code>, <code>Proactive</code></p>
     pub behavior: crate::types::ControlBehavior,
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub severity: ::std::option::Option<crate::types::ControlSeverity>,
     /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
@@ -18,6 +20,8 @@ pub struct GetControlOutput {
     pub implementation: ::std::option::Option<crate::types::ImplementationDetails>,
     /// <p>Returns an array of <code>ControlParameter</code> objects that specify the parameters a control supports. An empty list is returned for controls that don’t support parameters.</p>
     pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetControlOutput {
@@ -40,6 +44,10 @@ impl GetControlOutput {
     pub fn behavior(&self) -> &crate::types::ControlBehavior {
         &self.behavior
     }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::ControlSeverity> {
+        self.severity.as_ref()
+    }
     /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     pub fn region_configuration(&self) -> ::std::option::Option<&crate::types::RegionConfiguration> {
@@ -54,6 +62,10 @@ impl GetControlOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.parameters.is_none()`.
     pub fn parameters(&self) -> &[crate::types::ControlParameter] {
         self.parameters.as_deref().unwrap_or_default()
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.create_time.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetControlOutput {
@@ -76,9 +88,11 @@ pub struct GetControlOutputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) behavior: ::std::option::Option<crate::types::ControlBehavior>,
+    pub(crate) severity: ::std::option::Option<crate::types::ControlSeverity>,
     pub(crate) region_configuration: ::std::option::Option<crate::types::RegionConfiguration>,
     pub(crate) implementation: ::std::option::Option<crate::types::ImplementationDetails>,
     pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetControlOutputBuilder {
@@ -142,6 +156,20 @@ impl GetControlOutputBuilder {
     pub fn get_behavior(&self) -> &::std::option::Option<crate::types::ControlBehavior> {
         &self.behavior
     }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn severity(mut self, input: crate::types::ControlSeverity) -> Self {
+        self.severity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ControlSeverity>) -> Self {
+        self.severity = input;
+        self
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ControlSeverity> {
+        &self.severity
+    }
     /// <p>Returns information about the control, including the scope of the control, if enabled, and the Regions in which the control currently is available for deployment. For more information about scope, see <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/global-services.html">Global services</a>.</p>
     /// <p>If you are applying controls through an Amazon Web Services Control Tower landing zone environment, remember that the values returned in the <code>RegionConfiguration</code> API operation are not related to the governed Regions in your landing zone. For example, if you are governing Regions <code>A</code>,<code>B</code>,and <code>C</code> while the control is available in Regions <code>A</code>, <code>B</code>, C<code>,</code> and <code>D</code>, you'd see a response with <code>DeployableRegions</code> of <code>A</code>, <code>B</code>, <code>C</code>, and <code>D</code> for a control with <code>REGIONAL</code> scope, even though you may not intend to deploy the control in Region <code>D</code>, because you do not govern it through your landing zone.</p>
     /// This field is required.
@@ -194,6 +222,20 @@ impl GetControlOutputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlParameter>> {
         &self.parameters
     }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input;
+        self
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -235,9 +277,11 @@ impl GetControlOutputBuilder {
                     "behavior was not specified but it is required when building GetControlOutput",
                 )
             })?,
+            severity: self.severity,
             region_configuration: self.region_configuration,
             implementation: self.implementation,
             parameters: self.parameters,
+            create_time: self.create_time,
             _request_id: self._request_id,
         })
     }

@@ -151,6 +151,8 @@ pub use crate::types::_described_agreement::DescribedAgreement;
 
 pub use crate::types::_listed_agreement::ListedAgreement;
 
+pub use crate::types::_sftp_connector_connection_details::SftpConnectorConnectionDetails;
+
 pub use crate::types::_custom_step_status::CustomStepStatus;
 
 pub use crate::types::_listed_host_key::ListedHostKey;
@@ -356,6 +358,8 @@ mod _set_stat_option;
 mod _sftp_authentication_methods;
 
 mod _sftp_connector_config;
+
+mod _sftp_connector_connection_details;
 
 mod _signing_alg;
 

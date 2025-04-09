@@ -115,17 +115,17 @@ impl CreateDataflowEndpointGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_endpoint_details`](Self::set_endpoint_details).
     ///
-    /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    /// <p>Endpoint details of each endpoint in the dataflow endpoint group. All dataflow endpoints within a single dataflow endpoint group must be of the same type. You cannot mix <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html"> AWS Ground Station Agent endpoints</a> with <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html">Dataflow endpoints</a> in the same group. If your use case requires both types of endpoints, you must create separate dataflow endpoint groups for each type.</p>
     pub fn endpoint_details(mut self, input: crate::types::EndpointDetails) -> Self {
         self.inner = self.inner.endpoint_details(input);
         self
     }
-    /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    /// <p>Endpoint details of each endpoint in the dataflow endpoint group. All dataflow endpoints within a single dataflow endpoint group must be of the same type. You cannot mix <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html"> AWS Ground Station Agent endpoints</a> with <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html">Dataflow endpoints</a> in the same group. If your use case requires both types of endpoints, you must create separate dataflow endpoint groups for each type.</p>
     pub fn set_endpoint_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>>) -> Self {
         self.inner = self.inner.set_endpoint_details(input);
         self
     }
-    /// <p>Endpoint details of each endpoint in the dataflow endpoint group.</p>
+    /// <p>Endpoint details of each endpoint in the dataflow endpoint group. All dataflow endpoints within a single dataflow endpoint group must be of the same type. You cannot mix <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_AwsGroundStationAgentEndpoint.html"> AWS Ground Station Agent endpoints</a> with <a href="https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html">Dataflow endpoints</a> in the same group. If your use case requires both types of endpoints, you must create separate dataflow endpoint groups for each type.</p>
     pub fn get_endpoint_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EndpointDetails>> {
         self.inner.get_endpoint_details()
     }

@@ -10,6 +10,14 @@ pub struct ControlSummary {
     pub name: ::std::string::String,
     /// <p>A description of the control, as it may appear in the console. Describes the functionality of the control.</p>
     pub description: ::std::string::String,
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub behavior: ::std::option::Option<crate::types::ControlBehavior>,
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub severity: ::std::option::Option<crate::types::ControlSeverity>,
+    /// <p>An object of type <code>ImplementationSummary</code> that describes how the control is implemented.</p>
+    pub implementation: ::std::option::Option<crate::types::ImplementationSummary>,
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlSummary {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
@@ -27,6 +35,22 @@ impl ControlSummary {
         use std::ops::Deref;
         self.description.deref()
     }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn behavior(&self) -> ::std::option::Option<&crate::types::ControlBehavior> {
+        self.behavior.as_ref()
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::ControlSeverity> {
+        self.severity.as_ref()
+    }
+    /// <p>An object of type <code>ImplementationSummary</code> that describes how the control is implemented.</p>
+    pub fn implementation(&self) -> ::std::option::Option<&crate::types::ImplementationSummary> {
+        self.implementation.as_ref()
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.create_time.as_ref()
+    }
 }
 impl ControlSummary {
     /// Creates a new builder-style object to manufacture [`ControlSummary`](crate::types::ControlSummary).
@@ -42,6 +66,10 @@ pub struct ControlSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) behavior: ::std::option::Option<crate::types::ControlBehavior>,
+    pub(crate) severity: ::std::option::Option<crate::types::ControlSeverity>,
+    pub(crate) implementation: ::std::option::Option<crate::types::ImplementationSummary>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control.</p>
@@ -89,6 +117,62 @@ impl ControlSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn behavior(mut self, input: crate::types::ControlBehavior) -> Self {
+        self.behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::ControlBehavior>) -> Self {
+        self.behavior = input;
+        self
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn get_behavior(&self) -> &::std::option::Option<crate::types::ControlBehavior> {
+        &self.behavior
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn severity(mut self, input: crate::types::ControlSeverity) -> Self {
+        self.severity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn set_severity(mut self, input: ::std::option::Option<crate::types::ControlSeverity>) -> Self {
+        self.severity = input;
+        self
+    }
+    /// <p>An enumerated type, with the following possible values:</p>
+    pub fn get_severity(&self) -> &::std::option::Option<crate::types::ControlSeverity> {
+        &self.severity
+    }
+    /// <p>An object of type <code>ImplementationSummary</code> that describes how the control is implemented.</p>
+    pub fn implementation(mut self, input: crate::types::ImplementationSummary) -> Self {
+        self.implementation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object of type <code>ImplementationSummary</code> that describes how the control is implemented.</p>
+    pub fn set_implementation(mut self, input: ::std::option::Option<crate::types::ImplementationSummary>) -> Self {
+        self.implementation = input;
+        self
+    }
+    /// <p>An object of type <code>ImplementationSummary</code> that describes how the control is implemented.</p>
+    pub fn get_implementation(&self) -> &::std::option::Option<crate::types::ImplementationSummary> {
+        &self.implementation
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn set_create_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input;
+        self
+    }
+    /// <p>A timestamp that notes the time when the control was released (start of its life) as a governance capability in Amazon Web Services.</p>
+    pub fn get_create_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.create_time
+    }
     /// Consumes the builder and constructs a [`ControlSummary`](crate::types::ControlSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::ControlSummaryBuilder::arn)
@@ -114,6 +198,10 @@ impl ControlSummaryBuilder {
                     "description was not specified but it is required when building ControlSummary",
                 )
             })?,
+            behavior: self.behavior,
+            severity: self.severity,
+            implementation: self.implementation,
+            create_time: self.create_time,
         })
     }
 }

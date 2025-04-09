@@ -7,6 +7,8 @@ pub struct RegisterAgentInput {
     pub discovery_data: ::std::option::Option<crate::types::DiscoveryData>,
     /// <p>Detailed information about the agent being registered.</p>
     pub agent_details: ::std::option::Option<crate::types::AgentDetails>,
+    /// <p>Tags assigned to an <code>Agent</code>.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RegisterAgentInput {
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
@@ -16,6 +18,10 @@ impl RegisterAgentInput {
     /// <p>Detailed information about the agent being registered.</p>
     pub fn agent_details(&self) -> ::std::option::Option<&crate::types::AgentDetails> {
         self.agent_details.as_ref()
+    }
+    /// <p>Tags assigned to an <code>Agent</code>.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl RegisterAgentInput {
@@ -31,6 +37,7 @@ impl RegisterAgentInput {
 pub struct RegisterAgentInputBuilder {
     pub(crate) discovery_data: ::std::option::Option<crate::types::DiscoveryData>,
     pub(crate) agent_details: ::std::option::Option<crate::types::AgentDetails>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RegisterAgentInputBuilder {
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
@@ -63,6 +70,26 @@ impl RegisterAgentInputBuilder {
     pub fn get_agent_details(&self) -> &::std::option::Option<crate::types::AgentDetails> {
         &self.agent_details
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags assigned to an <code>Agent</code>.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Tags assigned to an <code>Agent</code>.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags assigned to an <code>Agent</code>.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`RegisterAgentInput`](crate::operation::register_agent::RegisterAgentInput).
     pub fn build(
         self,
@@ -70,6 +97,7 @@ impl RegisterAgentInputBuilder {
         ::std::result::Result::Ok(crate::operation::register_agent::RegisterAgentInput {
             discovery_data: self.discovery_data,
             agent_details: self.agent_details,
+            tags: self.tags,
         })
     }
 }

@@ -15,6 +15,12 @@ pub fn ser_sftp_connector_config(
         }
         array_3.finish();
     }
+    if input.max_concurrent_connections != 1 {
+        object.key("MaxConcurrentConnections").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((input.max_concurrent_connections).into()),
+        );
+    }
     Ok(())
 }
 
@@ -43,6 +49,13 @@ where
                         "TrustedHostKeys" => {
                             builder = builder.set_trusted_host_keys(
                                 crate::protocol_serde::shape_sftp_connector_trusted_host_key_list::de_sftp_connector_trusted_host_key_list(tokens)?,
+                            );
+                        }
+                        "MaxConcurrentConnections" => {
+                            builder = builder.set_max_concurrent_connections(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

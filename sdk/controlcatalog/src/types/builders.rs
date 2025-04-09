@@ -17,6 +17,8 @@ pub use crate::types::_region_configuration::RegionConfigurationBuilder;
 
 pub use crate::types::_control_summary::ControlSummaryBuilder;
 
+pub use crate::types::_implementation_summary::ImplementationSummaryBuilder;
+
 pub use crate::types::_common_control_summary::CommonControlSummaryBuilder;
 
 pub use crate::types::_associated_objective_summary::AssociatedObjectiveSummaryBuilder;

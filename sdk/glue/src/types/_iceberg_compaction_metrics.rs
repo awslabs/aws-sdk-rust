@@ -9,6 +9,8 @@ pub struct IcebergCompactionMetrics {
     /// <p>The number of files removed by the compaction job run.</p>
     pub number_of_files_compacted: i64,
     /// <p>The number of DPU hours consumed by the job.</p>
+    pub dpu_hours: f64,
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub number_of_dpus: i32,
     /// <p>The duration of the job in hours.</p>
     pub job_duration_in_hour: f64,
@@ -23,6 +25,10 @@ impl IcebergCompactionMetrics {
         self.number_of_files_compacted
     }
     /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn dpu_hours(&self) -> f64 {
+        self.dpu_hours
+    }
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn number_of_dpus(&self) -> i32 {
         self.number_of_dpus
     }
@@ -44,6 +50,7 @@ impl IcebergCompactionMetrics {
 pub struct IcebergCompactionMetricsBuilder {
     pub(crate) number_of_bytes_compacted: ::std::option::Option<i64>,
     pub(crate) number_of_files_compacted: ::std::option::Option<i64>,
+    pub(crate) dpu_hours: ::std::option::Option<f64>,
     pub(crate) number_of_dpus: ::std::option::Option<i32>,
     pub(crate) job_duration_in_hour: ::std::option::Option<f64>,
 }
@@ -77,16 +84,30 @@ impl IcebergCompactionMetricsBuilder {
         &self.number_of_files_compacted
     }
     /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn dpu_hours(mut self, input: f64) -> Self {
+        self.dpu_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn set_dpu_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.dpu_hours = input;
+        self
+    }
+    /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn get_dpu_hours(&self) -> &::std::option::Option<f64> {
+        &self.dpu_hours
+    }
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn number_of_dpus(mut self, input: i32) -> Self {
         self.number_of_dpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn set_number_of_dpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_dpus = input;
         self
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn get_number_of_dpus(&self) -> &::std::option::Option<i32> {
         &self.number_of_dpus
     }
@@ -109,6 +130,7 @@ impl IcebergCompactionMetricsBuilder {
         crate::types::IcebergCompactionMetrics {
             number_of_bytes_compacted: self.number_of_bytes_compacted.unwrap_or_default(),
             number_of_files_compacted: self.number_of_files_compacted.unwrap_or_default(),
+            dpu_hours: self.dpu_hours.unwrap_or_default(),
             number_of_dpus: self.number_of_dpus.unwrap_or_default(),
             job_duration_in_hour: self.job_duration_in_hour.unwrap_or_default(),
         }

@@ -35,6 +35,30 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Behavior" => {
+                            builder = builder.set_behavior(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ControlBehavior::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Severity" => {
+                            builder = builder.set_severity(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ControlSeverity::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Implementation" => {
+                            builder =
+                                builder.set_implementation(crate::protocol_serde::shape_implementation_summary::de_implementation_summary(tokens)?);
+                        }
+                        "CreateTime" => {
+                            builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

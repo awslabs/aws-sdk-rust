@@ -85,6 +85,8 @@ pub use crate::types::_described_agreement::DescribedAgreementBuilder;
 
 pub use crate::types::_listed_agreement::ListedAgreementBuilder;
 
+pub use crate::types::_sftp_connector_connection_details::SftpConnectorConnectionDetailsBuilder;
+
 pub use crate::types::_listed_host_key::ListedHostKeyBuilder;
 
 pub use crate::types::_connector_file_transfer_result::ConnectorFileTransferResultBuilder;

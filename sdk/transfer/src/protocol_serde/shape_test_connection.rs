@@ -140,6 +140,11 @@ pub(crate) fn de_test_connection(
                             .transpose()?,
                     );
                 }
+                "SftpConnectionDetails" => {
+                    builder = builder.set_sftp_connection_details(
+                        crate::protocol_serde::shape_sftp_connector_connection_details::de_sftp_connector_connection_details(tokens)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

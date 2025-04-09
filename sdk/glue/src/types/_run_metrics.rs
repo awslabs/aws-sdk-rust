@@ -9,7 +9,7 @@ pub struct RunMetrics {
     pub number_of_bytes_compacted: ::std::option::Option<::std::string::String>,
     /// <p>The number of files removed by the compaction job run.</p>
     pub number_of_files_compacted: ::std::option::Option<::std::string::String>,
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub number_of_dpus: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the job in hours.</p>
     pub job_duration_in_hour: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl RunMetrics {
     pub fn number_of_files_compacted(&self) -> ::std::option::Option<&str> {
         self.number_of_files_compacted.as_deref()
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn number_of_dpus(&self) -> ::std::option::Option<&str> {
         self.number_of_dpus.as_deref()
     }
@@ -77,17 +77,17 @@ impl RunMetricsBuilder {
     pub fn get_number_of_files_compacted(&self) -> &::std::option::Option<::std::string::String> {
         &self.number_of_files_compacted
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn number_of_dpus(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.number_of_dpus = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn set_number_of_dpus(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.number_of_dpus = input;
         self
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn get_number_of_dpus(&self) -> &::std::option::Option<::std::string::String> {
         &self.number_of_dpus
     }

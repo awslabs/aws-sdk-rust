@@ -150,6 +150,12 @@ pub(crate) fn de_get_control(
                             .transpose()?,
                     );
                 }
+                "CreateTime" => {
+                    builder = builder.set_create_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -172,6 +178,13 @@ pub(crate) fn de_get_control(
                 }
                 "RegionConfiguration" => {
                     builder = builder.set_region_configuration(crate::protocol_serde::shape_region_configuration::de_region_configuration(tokens)?);
+                }
+                "Severity" => {
+                    builder = builder.set_severity(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ControlSeverity::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

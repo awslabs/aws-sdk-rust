@@ -94,3 +94,5 @@ pub(crate) mod shape_objective_summary;
 pub(crate) mod shape_associated_domain_summary;
 
 pub(crate) mod shape_associated_objective_summary;
+
+pub(crate) mod shape_implementation_summary;

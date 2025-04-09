@@ -38,19 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The mode of authentication for a server. The default value is
-/// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
-/// the Transfer Family service.</p>
-/// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
-/// Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your
-/// on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to
-/// provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p>
-/// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-/// <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call
-/// for authentication by using the <code>IdentityProviderDetails</code> parameter.</p>
-/// <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider.
-/// If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter
-/// for the <code>IdentityProviderDetails</code> data type.</p>
+/// <p>The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within the Transfer Family service.</p> <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in Directory Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises environment or in Amazon Web Services using AD Connector. This option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code> parameter.</p> <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code> parameter.</p> <p>Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity provider. If you choose this value, you must specify the ARN for the Lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

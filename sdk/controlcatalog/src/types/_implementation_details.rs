@@ -19,12 +19,18 @@
 pub struct ImplementationDetails {
     /// <p>A string that describes a control's implementation type.</p>
     pub r#type: ::std::string::String,
+    /// <p>A service-specific identifier for the control, assigned by the service that implemented the control. For example, this identifier could be an Amazon Web Services Config Rule ID or a Security Hub Control ID.</p>
+    pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl ImplementationDetails {
     /// <p>A string that describes a control's implementation type.</p>
     pub fn r#type(&self) -> &str {
         use std::ops::Deref;
         self.r#type.deref()
+    }
+    /// <p>A service-specific identifier for the control, assigned by the service that implemented the control. For example, this identifier could be an Amazon Web Services Config Rule ID or a Security Hub Control ID.</p>
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
 }
 impl ImplementationDetails {
@@ -39,6 +45,7 @@ impl ImplementationDetails {
 #[non_exhaustive]
 pub struct ImplementationDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl ImplementationDetailsBuilder {
     /// <p>A string that describes a control's implementation type.</p>
@@ -56,6 +63,20 @@ impl ImplementationDetailsBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>A service-specific identifier for the control, assigned by the service that implemented the control. For example, this identifier could be an Amazon Web Services Config Rule ID or a Security Hub Control ID.</p>
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A service-specific identifier for the control, assigned by the service that implemented the control. For example, this identifier could be an Amazon Web Services Config Rule ID or a Security Hub Control ID.</p>
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identifier = input;
+        self
+    }
+    /// <p>A service-specific identifier for the control, assigned by the service that implemented the control. For example, this identifier could be an Amazon Web Services Config Rule ID or a Security Hub Control ID.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
+    }
     /// Consumes the builder and constructs a [`ImplementationDetails`](crate::types::ImplementationDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ImplementationDetailsBuilder::type)
@@ -67,6 +88,7 @@ impl ImplementationDetailsBuilder {
                     "r#type was not specified but it is required when building ImplementationDetails",
                 )
             })?,
+            identifier: self.identifier,
         })
     }
 }

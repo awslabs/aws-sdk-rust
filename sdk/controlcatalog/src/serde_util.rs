@@ -181,3 +181,12 @@ pub(crate) fn objective_summary_correct_errors(
     }
     builder
 }
+
+pub(crate) fn implementation_summary_correct_errors(
+    mut builder: crate::types::builders::ImplementationSummaryBuilder,
+) -> crate::types::builders::ImplementationSummaryBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    builder
+}

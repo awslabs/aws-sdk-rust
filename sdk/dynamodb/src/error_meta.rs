@@ -7,7 +7,7 @@ pub enum Error {
     BackupInUseException(crate::types::error::BackupInUseException),
     /// <p>Backup not found for the given BackupARN.</p>
     BackupNotFoundException(crate::types::error::BackupNotFoundException),
-    /// <p>A condition specified in the operation could not be evaluated.</p>
+    /// <p>A condition specified in the operation failed to be evaluated.</p>
     ConditionalCheckFailedException(crate::types::error::ConditionalCheckFailedException),
     /// <p>Backups have not yet been enabled for this table.</p>
     ContinuousBackupsUnavailableException(crate::types::error::ContinuousBackupsUnavailableException),
@@ -60,7 +60,7 @@ pub enum Error {
     ReplicaNotFoundException(crate::types::error::ReplicaNotFoundException),
     /// <p>The request was rejected because one or more items in the request are being modified by a request in another Region.</p>
     ReplicatedWriteConflictException(crate::types::error::ReplicatedWriteConflictException),
-    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a quota increase.</p>
+    /// <p>Throughput exceeds the current throughput quota for your account. Please contact <a href="https://aws.amazon.com/support">Amazon Web ServicesSupport</a> to request a quota increase.</p>
     RequestLimitExceeded(crate::types::error::RequestLimitExceeded),
     /// <p>The operation conflicts with the resource's availability. For example:</p>
     /// <ul>

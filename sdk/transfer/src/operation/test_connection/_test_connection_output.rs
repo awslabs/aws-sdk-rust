@@ -19,6 +19,8 @@ pub struct TestConnectionOutput {
     /// <p>Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code> output.</p></li>
     /// </ul>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>Structure that contains the SFTP connector host key.</p>
+    pub sftp_connection_details: ::std::option::Option<crate::types::SftpConnectorConnectionDetails>,
     _request_id: Option<String>,
 }
 impl TestConnectionOutput {
@@ -44,6 +46,10 @@ impl TestConnectionOutput {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>Structure that contains the SFTP connector host key.</p>
+    pub fn sftp_connection_details(&self) -> ::std::option::Option<&crate::types::SftpConnectorConnectionDetails> {
+        self.sftp_connection_details.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for TestConnectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -64,6 +70,7 @@ pub struct TestConnectionOutputBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) sftp_connection_details: ::std::option::Option<crate::types::SftpConnectorConnectionDetails>,
     _request_id: Option<String>,
 }
 impl TestConnectionOutputBuilder {
@@ -139,6 +146,20 @@ impl TestConnectionOutputBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p>Structure that contains the SFTP connector host key.</p>
+    pub fn sftp_connection_details(mut self, input: crate::types::SftpConnectorConnectionDetails) -> Self {
+        self.sftp_connection_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Structure that contains the SFTP connector host key.</p>
+    pub fn set_sftp_connection_details(mut self, input: ::std::option::Option<crate::types::SftpConnectorConnectionDetails>) -> Self {
+        self.sftp_connection_details = input;
+        self
+    }
+    /// <p>Structure that contains the SFTP connector host key.</p>
+    pub fn get_sftp_connection_details(&self) -> &::std::option::Option<crate::types::SftpConnectorConnectionDetails> {
+        &self.sftp_connection_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -154,6 +175,7 @@ impl TestConnectionOutputBuilder {
             connector_id: self.connector_id,
             status: self.status,
             status_message: self.status_message,
+            sftp_connection_details: self.sftp_connection_details,
             _request_id: self._request_id,
         }
     }

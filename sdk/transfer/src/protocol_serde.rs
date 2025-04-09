@@ -403,6 +403,8 @@ pub(crate) mod shape_security_policy_names;
 
 pub(crate) mod shape_sftp_connector_config;
 
+pub(crate) mod shape_sftp_connector_connection_details;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tags;

@@ -17,9 +17,13 @@ pub use crate::types::_region_configuration::RegionConfiguration;
 
 pub use crate::types::_control_scope::ControlScope;
 
+pub use crate::types::_control_severity::ControlSeverity;
+
 pub use crate::types::_control_behavior::ControlBehavior;
 
 pub use crate::types::_control_summary::ControlSummary;
+
+pub use crate::types::_implementation_summary::ImplementationSummary;
 
 pub use crate::types::_common_control_summary::CommonControlSummary;
 
@@ -43,6 +47,8 @@ mod _control_parameter;
 
 mod _control_scope;
 
+mod _control_severity;
+
 mod _control_summary;
 
 mod _domain_resource_filter;
@@ -50,6 +56,8 @@ mod _domain_resource_filter;
 mod _domain_summary;
 
 mod _implementation_details;
+
+mod _implementation_summary;
 
 mod _objective_filter;
 

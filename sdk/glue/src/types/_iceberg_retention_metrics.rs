@@ -11,6 +11,8 @@ pub struct IcebergRetentionMetrics {
     /// <p>The number of manifest lists deleted by the retention job run.</p>
     pub number_of_manifest_lists_deleted: i64,
     /// <p>The number of DPU hours consumed by the job.</p>
+    pub dpu_hours: f64,
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub number_of_dpus: i32,
     /// <p>The duration of the job in hours.</p>
     pub job_duration_in_hour: f64,
@@ -29,6 +31,10 @@ impl IcebergRetentionMetrics {
         self.number_of_manifest_lists_deleted
     }
     /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn dpu_hours(&self) -> f64 {
+        self.dpu_hours
+    }
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn number_of_dpus(&self) -> i32 {
         self.number_of_dpus
     }
@@ -51,6 +57,7 @@ pub struct IcebergRetentionMetricsBuilder {
     pub(crate) number_of_data_files_deleted: ::std::option::Option<i64>,
     pub(crate) number_of_manifest_files_deleted: ::std::option::Option<i64>,
     pub(crate) number_of_manifest_lists_deleted: ::std::option::Option<i64>,
+    pub(crate) dpu_hours: ::std::option::Option<f64>,
     pub(crate) number_of_dpus: ::std::option::Option<i32>,
     pub(crate) job_duration_in_hour: ::std::option::Option<f64>,
 }
@@ -98,16 +105,30 @@ impl IcebergRetentionMetricsBuilder {
         &self.number_of_manifest_lists_deleted
     }
     /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn dpu_hours(mut self, input: f64) -> Self {
+        self.dpu_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn set_dpu_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.dpu_hours = input;
+        self
+    }
+    /// <p>The number of DPU hours consumed by the job.</p>
+    pub fn get_dpu_hours(&self) -> &::std::option::Option<f64> {
+        &self.dpu_hours
+    }
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn number_of_dpus(mut self, input: i32) -> Self {
         self.number_of_dpus = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn set_number_of_dpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_dpus = input;
         self
     }
-    /// <p>The number of DPU hours consumed by the job.</p>
+    /// <p>The number of DPUs consumed by the job, rounded up to the nearest whole number.</p>
     pub fn get_number_of_dpus(&self) -> &::std::option::Option<i32> {
         &self.number_of_dpus
     }
@@ -131,6 +152,7 @@ impl IcebergRetentionMetricsBuilder {
             number_of_data_files_deleted: self.number_of_data_files_deleted.unwrap_or_default(),
             number_of_manifest_files_deleted: self.number_of_manifest_files_deleted.unwrap_or_default(),
             number_of_manifest_lists_deleted: self.number_of_manifest_lists_deleted.unwrap_or_default(),
+            dpu_hours: self.dpu_hours.unwrap_or_default(),
             number_of_dpus: self.number_of_dpus.unwrap_or_default(),
             job_duration_in_hour: self.job_duration_in_hour.unwrap_or_default(),
         }
