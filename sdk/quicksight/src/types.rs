@@ -163,6 +163,12 @@ pub use crate::types::_query_execution_mode::QueryExecutionMode;
 
 pub use crate::types::_asset_options::AssetOptions;
 
+pub use crate::types::_visual_custom_action_defaults::VisualCustomActionDefaults;
+
+pub use crate::types::_visual_highlight_operation::VisualHighlightOperation;
+
+pub use crate::types::_visual_highlight_trigger::VisualHighlightTrigger;
+
 pub use crate::types::_q_business_insights_status::QBusinessInsightsStatus;
 
 pub use crate::types::_day_of_the_week::DayOfTheWeek;
@@ -4581,9 +4587,15 @@ mod _visual_axis_sort_option;
 
 mod _visual_custom_action;
 
+mod _visual_custom_action_defaults;
+
 mod _visual_custom_action_operation;
 
 mod _visual_custom_action_trigger;
+
+mod _visual_highlight_operation;
+
+mod _visual_highlight_trigger;
 
 mod _visual_interaction_options;
 

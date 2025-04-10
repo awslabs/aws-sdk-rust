@@ -12,6 +12,8 @@ pub struct AssetOptions {
     pub q_business_insights_status: ::std::option::Option<crate::types::QBusinessInsightsStatus>,
     /// <p>A list of dataset ARNS to exclude from Dashboard Q&amp;A.</p>
     pub excluded_data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>A list of visual custom actions for the analysis.</p>
+    pub custom_action_defaults: ::std::option::Option<crate::types::VisualCustomActionDefaults>,
 }
 impl AssetOptions {
     /// <p>Determines the timezone for the analysis.</p>
@@ -32,6 +34,10 @@ impl AssetOptions {
     pub fn excluded_data_set_arns(&self) -> &[::std::string::String] {
         self.excluded_data_set_arns.as_deref().unwrap_or_default()
     }
+    /// <p>A list of visual custom actions for the analysis.</p>
+    pub fn custom_action_defaults(&self) -> ::std::option::Option<&crate::types::VisualCustomActionDefaults> {
+        self.custom_action_defaults.as_ref()
+    }
 }
 impl AssetOptions {
     /// Creates a new builder-style object to manufacture [`AssetOptions`](crate::types::AssetOptions).
@@ -48,6 +54,7 @@ pub struct AssetOptionsBuilder {
     pub(crate) week_start: ::std::option::Option<crate::types::DayOfTheWeek>,
     pub(crate) q_business_insights_status: ::std::option::Option<crate::types::QBusinessInsightsStatus>,
     pub(crate) excluded_data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) custom_action_defaults: ::std::option::Option<crate::types::VisualCustomActionDefaults>,
 }
 impl AssetOptionsBuilder {
     /// <p>Determines the timezone for the analysis.</p>
@@ -112,6 +119,20 @@ impl AssetOptionsBuilder {
     pub fn get_excluded_data_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.excluded_data_set_arns
     }
+    /// <p>A list of visual custom actions for the analysis.</p>
+    pub fn custom_action_defaults(mut self, input: crate::types::VisualCustomActionDefaults) -> Self {
+        self.custom_action_defaults = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A list of visual custom actions for the analysis.</p>
+    pub fn set_custom_action_defaults(mut self, input: ::std::option::Option<crate::types::VisualCustomActionDefaults>) -> Self {
+        self.custom_action_defaults = input;
+        self
+    }
+    /// <p>A list of visual custom actions for the analysis.</p>
+    pub fn get_custom_action_defaults(&self) -> &::std::option::Option<crate::types::VisualCustomActionDefaults> {
+        &self.custom_action_defaults
+    }
     /// Consumes the builder and constructs a [`AssetOptions`](crate::types::AssetOptions).
     pub fn build(self) -> crate::types::AssetOptions {
         crate::types::AssetOptions {
@@ -119,6 +140,7 @@ impl AssetOptionsBuilder {
             week_start: self.week_start,
             q_business_insights_status: self.q_business_insights_status,
             excluded_data_set_arns: self.excluded_data_set_arns,
+            custom_action_defaults: self.custom_action_defaults,
         }
     }
 }

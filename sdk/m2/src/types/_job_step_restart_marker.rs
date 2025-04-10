@@ -12,6 +12,10 @@ pub struct JobStepRestartMarker {
     pub to_step: ::std::option::Option<::std::string::String>,
     /// <p>The procedure step name that a batch job was restarted to.</p>
     pub to_proc_step: ::std::option::Option<::std::string::String>,
+    /// <p>Skip selected step and issue a restart from immediate successor step for an Amazon Web Services Blu Age application batch job.</p>
+    pub step_checkpoint: ::std::option::Option<i32>,
+    /// <p>The step-level checkpoint timestamp (creation or last modification) for an Amazon Web Services Blu Age application batch job.</p>
+    pub skip: ::std::option::Option<bool>,
 }
 impl JobStepRestartMarker {
     /// <p>The step name that a batch job was restarted from.</p>
@@ -31,6 +35,14 @@ impl JobStepRestartMarker {
     pub fn to_proc_step(&self) -> ::std::option::Option<&str> {
         self.to_proc_step.as_deref()
     }
+    /// <p>Skip selected step and issue a restart from immediate successor step for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint(&self) -> ::std::option::Option<i32> {
+        self.step_checkpoint
+    }
+    /// <p>The step-level checkpoint timestamp (creation or last modification) for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn skip(&self) -> ::std::option::Option<bool> {
+        self.skip
+    }
 }
 impl JobStepRestartMarker {
     /// Creates a new builder-style object to manufacture [`JobStepRestartMarker`](crate::types::JobStepRestartMarker).
@@ -47,6 +59,8 @@ pub struct JobStepRestartMarkerBuilder {
     pub(crate) from_proc_step: ::std::option::Option<::std::string::String>,
     pub(crate) to_step: ::std::option::Option<::std::string::String>,
     pub(crate) to_proc_step: ::std::option::Option<::std::string::String>,
+    pub(crate) step_checkpoint: ::std::option::Option<i32>,
+    pub(crate) skip: ::std::option::Option<bool>,
 }
 impl JobStepRestartMarkerBuilder {
     /// <p>The step name that a batch job was restarted from.</p>
@@ -106,6 +120,34 @@ impl JobStepRestartMarkerBuilder {
     pub fn get_to_proc_step(&self) -> &::std::option::Option<::std::string::String> {
         &self.to_proc_step
     }
+    /// <p>Skip selected step and issue a restart from immediate successor step for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint(mut self, input: i32) -> Self {
+        self.step_checkpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Skip selected step and issue a restart from immediate successor step for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn set_step_checkpoint(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.step_checkpoint = input;
+        self
+    }
+    /// <p>Skip selected step and issue a restart from immediate successor step for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn get_step_checkpoint(&self) -> &::std::option::Option<i32> {
+        &self.step_checkpoint
+    }
+    /// <p>The step-level checkpoint timestamp (creation or last modification) for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn skip(mut self, input: bool) -> Self {
+        self.skip = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The step-level checkpoint timestamp (creation or last modification) for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn set_skip(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip = input;
+        self
+    }
+    /// <p>The step-level checkpoint timestamp (creation or last modification) for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn get_skip(&self) -> &::std::option::Option<bool> {
+        &self.skip
+    }
     /// Consumes the builder and constructs a [`JobStepRestartMarker`](crate::types::JobStepRestartMarker).
     /// This method will fail if any of the following fields are not set:
     /// - [`from_step`](crate::types::builders::JobStepRestartMarkerBuilder::from_step)
@@ -120,6 +162,8 @@ impl JobStepRestartMarkerBuilder {
             from_proc_step: self.from_proc_step,
             to_step: self.to_step,
             to_proc_step: self.to_proc_step,
+            step_checkpoint: self.step_checkpoint,
+            skip: self.skip,
         })
     }
 }

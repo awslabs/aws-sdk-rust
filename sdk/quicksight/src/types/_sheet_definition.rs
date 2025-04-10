@@ -37,6 +37,8 @@ pub struct SheetDefinition {
     /// <p><code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.</p></li>
     /// </ul>
     pub content_type: ::std::option::Option<crate::types::SheetContentType>,
+    /// <p>A list of visual custom actions for the sheet.</p>
+    pub custom_action_defaults: ::std::option::Option<crate::types::VisualCustomActionDefaults>,
 }
 impl SheetDefinition {
     /// <p>The unique identifier of a sheet.</p>
@@ -111,6 +113,10 @@ impl SheetDefinition {
     pub fn content_type(&self) -> ::std::option::Option<&crate::types::SheetContentType> {
         self.content_type.as_ref()
     }
+    /// <p>A list of visual custom actions for the sheet.</p>
+    pub fn custom_action_defaults(&self) -> ::std::option::Option<&crate::types::VisualCustomActionDefaults> {
+        self.custom_action_defaults.as_ref()
+    }
 }
 impl SheetDefinition {
     /// Creates a new builder-style object to manufacture [`SheetDefinition`](crate::types::SheetDefinition).
@@ -135,6 +141,7 @@ pub struct SheetDefinitionBuilder {
     pub(crate) layouts: ::std::option::Option<::std::vec::Vec<crate::types::Layout>>,
     pub(crate) sheet_control_layouts: ::std::option::Option<::std::vec::Vec<crate::types::SheetControlLayout>>,
     pub(crate) content_type: ::std::option::Option<crate::types::SheetContentType>,
+    pub(crate) custom_action_defaults: ::std::option::Option<crate::types::VisualCustomActionDefaults>,
 }
 impl SheetDefinitionBuilder {
     /// <p>The unique identifier of a sheet.</p>
@@ -375,6 +382,20 @@ impl SheetDefinitionBuilder {
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::SheetContentType> {
         &self.content_type
     }
+    /// <p>A list of visual custom actions for the sheet.</p>
+    pub fn custom_action_defaults(mut self, input: crate::types::VisualCustomActionDefaults) -> Self {
+        self.custom_action_defaults = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A list of visual custom actions for the sheet.</p>
+    pub fn set_custom_action_defaults(mut self, input: ::std::option::Option<crate::types::VisualCustomActionDefaults>) -> Self {
+        self.custom_action_defaults = input;
+        self
+    }
+    /// <p>A list of visual custom actions for the sheet.</p>
+    pub fn get_custom_action_defaults(&self) -> &::std::option::Option<crate::types::VisualCustomActionDefaults> {
+        &self.custom_action_defaults
+    }
     /// Consumes the builder and constructs a [`SheetDefinition`](crate::types::SheetDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`sheet_id`](crate::types::builders::SheetDefinitionBuilder::sheet_id)
@@ -397,6 +418,7 @@ impl SheetDefinitionBuilder {
             layouts: self.layouts,
             sheet_control_layouts: self.sheet_control_layouts,
             content_type: self.content_type,
+            custom_action_defaults: self.custom_action_defaults,
         })
     }
 }

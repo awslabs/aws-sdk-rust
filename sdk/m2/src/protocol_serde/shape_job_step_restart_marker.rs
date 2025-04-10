@@ -42,6 +42,16 @@ where
                                     .transpose()?,
                             );
                         }
+                        "stepCheckpoint" => {
+                            builder = builder.set_step_checkpoint(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "skip" => {
+                            builder = builder.set_skip(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -77,6 +87,15 @@ pub fn ser_job_step_restart_marker(
     }
     if let Some(var_3) = &input.to_proc_step {
         object.key("toProcStep").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.step_checkpoint {
+        object.key("stepCheckpoint").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.skip {
+        object.key("skip").boolean(*var_5);
     }
     Ok(())
 }

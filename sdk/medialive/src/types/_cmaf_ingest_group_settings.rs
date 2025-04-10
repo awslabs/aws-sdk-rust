@@ -28,6 +28,14 @@ pub struct CmafIngestGroupSettings {
     pub id3_behavior: ::std::option::Option<crate::types::CmafId3Behavior>,
     /// Change the modifier that MediaLive automatically adds to the Streams() name that identifies an ID3 track. The default is "id3", which means the default name will be Streams(id3.cmfm). Any string you enter here will replace the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100 characters.
     pub id3_name_modifier: ::std::option::Option<::std::string::String>,
+    /// An array that identifies the languages in the four caption channels in the embedded captions.
+    pub caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CmafIngestCaptionLanguageMapping>>,
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub timed_metadata_id3_frame: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>,
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub timed_metadata_id3_period: ::std::option::Option<i32>,
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
 }
 impl CmafIngestGroupSettings {
     /// A HTTP destination for the tracks
@@ -78,6 +86,24 @@ impl CmafIngestGroupSettings {
     pub fn id3_name_modifier(&self) -> ::std::option::Option<&str> {
         self.id3_name_modifier.as_deref()
     }
+    /// An array that identifies the languages in the four caption channels in the embedded captions.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.caption_language_mappings.is_none()`.
+    pub fn caption_language_mappings(&self) -> &[crate::types::CmafIngestCaptionLanguageMapping] {
+        self.caption_language_mappings.as_deref().unwrap_or_default()
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn timed_metadata_id3_frame(&self) -> ::std::option::Option<&crate::types::CmafTimedMetadataId3Frame> {
+        self.timed_metadata_id3_frame.as_ref()
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn timed_metadata_id3_period(&self) -> ::std::option::Option<i32> {
+        self.timed_metadata_id3_period
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn timed_metadata_passthrough(&self) -> ::std::option::Option<&crate::types::CmafTimedMetadataPassthrough> {
+        self.timed_metadata_passthrough.as_ref()
+    }
 }
 impl CmafIngestGroupSettings {
     /// Creates a new builder-style object to manufacture [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
@@ -102,6 +128,10 @@ pub struct CmafIngestGroupSettingsBuilder {
     pub(crate) scte35_name_modifier: ::std::option::Option<::std::string::String>,
     pub(crate) id3_behavior: ::std::option::Option<crate::types::CmafId3Behavior>,
     pub(crate) id3_name_modifier: ::std::option::Option<::std::string::String>,
+    pub(crate) caption_language_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CmafIngestCaptionLanguageMapping>>,
+    pub(crate) timed_metadata_id3_frame: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>,
+    pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
+    pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
 }
 impl CmafIngestGroupSettingsBuilder {
     /// A HTTP destination for the tracks
@@ -273,6 +303,71 @@ impl CmafIngestGroupSettingsBuilder {
     pub fn get_id3_name_modifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.id3_name_modifier
     }
+    /// Appends an item to `caption_language_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_caption_language_mappings`](Self::set_caption_language_mappings).
+    ///
+    /// An array that identifies the languages in the four caption channels in the embedded captions.
+    pub fn caption_language_mappings(mut self, input: crate::types::CmafIngestCaptionLanguageMapping) -> Self {
+        let mut v = self.caption_language_mappings.unwrap_or_default();
+        v.push(input);
+        self.caption_language_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// An array that identifies the languages in the four caption channels in the embedded captions.
+    pub fn set_caption_language_mappings(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CmafIngestCaptionLanguageMapping>>,
+    ) -> Self {
+        self.caption_language_mappings = input;
+        self
+    }
+    /// An array that identifies the languages in the four caption channels in the embedded captions.
+    pub fn get_caption_language_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CmafIngestCaptionLanguageMapping>> {
+        &self.caption_language_mappings
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn timed_metadata_id3_frame(mut self, input: crate::types::CmafTimedMetadataId3Frame) -> Self {
+        self.timed_metadata_id3_frame = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn set_timed_metadata_id3_frame(mut self, input: ::std::option::Option<crate::types::CmafTimedMetadataId3Frame>) -> Self {
+        self.timed_metadata_id3_frame = input;
+        self
+    }
+    /// Set to none if you don't want to insert a timecode in the output. Otherwise choose the frame type for the timecode.
+    pub fn get_timed_metadata_id3_frame(&self) -> &::std::option::Option<crate::types::CmafTimedMetadataId3Frame> {
+        &self.timed_metadata_id3_frame
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn timed_metadata_id3_period(mut self, input: i32) -> Self {
+        self.timed_metadata_id3_period = ::std::option::Option::Some(input);
+        self
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn set_timed_metadata_id3_period(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.timed_metadata_id3_period = input;
+        self
+    }
+    /// If you set up to insert a timecode in the output, specify the frequency for the frame, in seconds.
+    pub fn get_timed_metadata_id3_period(&self) -> &::std::option::Option<i32> {
+        &self.timed_metadata_id3_period
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn timed_metadata_passthrough(mut self, input: crate::types::CmafTimedMetadataPassthrough) -> Self {
+        self.timed_metadata_passthrough = ::std::option::Option::Some(input);
+        self
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn set_timed_metadata_passthrough(mut self, input: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>) -> Self {
+        self.timed_metadata_passthrough = input;
+        self
+    }
+    /// Set to enabled to pass through ID3 metadata from the input sources.
+    pub fn get_timed_metadata_passthrough(&self) -> &::std::option::Option<crate::types::CmafTimedMetadataPassthrough> {
+        &self.timed_metadata_passthrough
+    }
     /// Consumes the builder and constructs a [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
     pub fn build(self) -> crate::types::CmafIngestGroupSettings {
         crate::types::CmafIngestGroupSettings {
@@ -288,6 +383,10 @@ impl CmafIngestGroupSettingsBuilder {
             scte35_name_modifier: self.scte35_name_modifier,
             id3_behavior: self.id3_behavior,
             id3_name_modifier: self.id3_name_modifier,
+            caption_language_mappings: self.caption_language_mappings,
+            timed_metadata_id3_frame: self.timed_metadata_id3_frame,
+            timed_metadata_id3_period: self.timed_metadata_id3_period,
+            timed_metadata_passthrough: self.timed_metadata_passthrough,
         }
     }
 }

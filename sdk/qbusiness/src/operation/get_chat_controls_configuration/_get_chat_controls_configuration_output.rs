@@ -17,6 +17,8 @@ pub struct GetChatControlsConfigurationOutput {
     pub creator_mode_configuration: ::std::option::Option<crate::types::AppliedCreatorModeConfiguration>,
     /// <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub hallucination_reduction_configuration: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetChatControlsConfigurationOutput {
@@ -48,6 +50,10 @@ impl GetChatControlsConfigurationOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn hallucination_reduction_configuration(&self) -> ::std::option::Option<&crate::types::HallucinationReductionConfiguration> {
+        self.hallucination_reduction_configuration.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetChatControlsConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -71,6 +77,7 @@ pub struct GetChatControlsConfigurationOutputBuilder {
     pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) creator_mode_configuration: ::std::option::Option<crate::types::AppliedCreatorModeConfiguration>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) hallucination_reduction_configuration: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
     _request_id: Option<String>,
 }
 impl GetChatControlsConfigurationOutputBuilder {
@@ -170,6 +177,23 @@ impl GetChatControlsConfigurationOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn hallucination_reduction_configuration(mut self, input: crate::types::HallucinationReductionConfiguration) -> Self {
+        self.hallucination_reduction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn set_hallucination_reduction_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
+    ) -> Self {
+        self.hallucination_reduction_configuration = input;
+        self
+    }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn get_hallucination_reduction_configuration(&self) -> &::std::option::Option<crate::types::HallucinationReductionConfiguration> {
+        &self.hallucination_reduction_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -188,6 +212,7 @@ impl GetChatControlsConfigurationOutputBuilder {
             topic_configurations: self.topic_configurations,
             creator_mode_configuration: self.creator_mode_configuration,
             next_token: self.next_token,
+            hallucination_reduction_configuration: self.hallucination_reduction_configuration,
             _request_id: self._request_id,
         }
     }

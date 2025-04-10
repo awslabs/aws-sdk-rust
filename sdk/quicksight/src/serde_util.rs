@@ -1431,6 +1431,15 @@ pub(crate) fn unique_key_correct_errors(mut builder: crate::types::builders::Uni
     builder
 }
 
+pub(crate) fn visual_highlight_operation_correct_errors(
+    mut builder: crate::types::builders::VisualHighlightOperationBuilder,
+) -> crate::types::builders::VisualHighlightOperationBuilder {
+    if builder.trigger.is_none() {
+        builder.trigger = "no value was set".parse::<crate::types::VisualHighlightTrigger>().ok()
+    }
+    builder
+}
+
 pub(crate) fn asset_bundle_import_job_data_source_credential_pair_correct_errors(
     mut builder: crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder,
 ) -> crate::types::builders::AssetBundleImportJobDataSourceCredentialPairBuilder {

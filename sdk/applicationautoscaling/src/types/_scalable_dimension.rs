@@ -24,6 +24,7 @@
 ///     ScalableDimension::DynamoDbTableWriteCapacityUnits => { /* ... */ },
 ///     ScalableDimension::Ec2SpotFleetRequestTargetCapacity => { /* ... */ },
 ///     ScalableDimension::EcsServiceDesiredCount => { /* ... */ },
+///     ScalableDimension::ElastiCacheCacheClusterNodes => { /* ... */ },
 ///     ScalableDimension::ElastiCacheReplicationGroupNodeGroups => { /* ... */ },
 ///     ScalableDimension::ElastiCacheReplicationGroupReplicas => { /* ... */ },
 ///     ScalableDimension::EmrInstanceGroupInstanceCount => { /* ... */ },
@@ -88,6 +89,8 @@ pub enum ScalableDimension {
     #[allow(missing_docs)] // documentation missing in model
     EcsServiceDesiredCount,
     #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheCacheClusterNodes,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReplicationGroupNodeGroups,
     #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReplicationGroupReplicas,
@@ -128,6 +131,7 @@ impl ::std::convert::From<&str> for ScalableDimension {
             "dynamodb:table:WriteCapacityUnits" => ScalableDimension::DynamoDbTableWriteCapacityUnits,
             "ec2:spot-fleet-request:TargetCapacity" => ScalableDimension::Ec2SpotFleetRequestTargetCapacity,
             "ecs:service:DesiredCount" => ScalableDimension::EcsServiceDesiredCount,
+            "elasticache:cache-cluster:Nodes" => ScalableDimension::ElastiCacheCacheClusterNodes,
             "elasticache:replication-group:NodeGroups" => ScalableDimension::ElastiCacheReplicationGroupNodeGroups,
             "elasticache:replication-group:Replicas" => ScalableDimension::ElastiCacheReplicationGroupReplicas,
             "elasticmapreduce:instancegroup:InstanceCount" => ScalableDimension::EmrInstanceGroupInstanceCount,
@@ -166,6 +170,7 @@ impl ScalableDimension {
             ScalableDimension::DynamoDbTableWriteCapacityUnits => "dynamodb:table:WriteCapacityUnits",
             ScalableDimension::Ec2SpotFleetRequestTargetCapacity => "ec2:spot-fleet-request:TargetCapacity",
             ScalableDimension::EcsServiceDesiredCount => "ecs:service:DesiredCount",
+            ScalableDimension::ElastiCacheCacheClusterNodes => "elasticache:cache-cluster:Nodes",
             ScalableDimension::ElastiCacheReplicationGroupNodeGroups => "elasticache:replication-group:NodeGroups",
             ScalableDimension::ElastiCacheReplicationGroupReplicas => "elasticache:replication-group:Replicas",
             ScalableDimension::EmrInstanceGroupInstanceCount => "elasticmapreduce:instancegroup:InstanceCount",
@@ -195,6 +200,7 @@ impl ScalableDimension {
             "dynamodb:table:WriteCapacityUnits",
             "ec2:spot-fleet-request:TargetCapacity",
             "ecs:service:DesiredCount",
+            "elasticache:cache-cluster:Nodes",
             "elasticache:replication-group:NodeGroups",
             "elasticache:replication-group:Replicas",
             "elasticmapreduce:instancegroup:InstanceCount",
@@ -245,6 +251,7 @@ impl ::std::fmt::Display for ScalableDimension {
             ScalableDimension::DynamoDbTableWriteCapacityUnits => write!(f, "dynamodb:table:WriteCapacityUnits"),
             ScalableDimension::Ec2SpotFleetRequestTargetCapacity => write!(f, "ec2:spot-fleet-request:TargetCapacity"),
             ScalableDimension::EcsServiceDesiredCount => write!(f, "ecs:service:DesiredCount"),
+            ScalableDimension::ElastiCacheCacheClusterNodes => write!(f, "elasticache:cache-cluster:Nodes"),
             ScalableDimension::ElastiCacheReplicationGroupNodeGroups => write!(f, "elasticache:replication-group:NodeGroups"),
             ScalableDimension::ElastiCacheReplicationGroupReplicas => write!(f, "elasticache:replication-group:Replicas"),
             ScalableDimension::EmrInstanceGroupInstanceCount => write!(f, "elasticmapreduce:instancegroup:InstanceCount"),

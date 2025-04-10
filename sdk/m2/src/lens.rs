@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_batch_job_executions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_data_set_export_history_output_output_next_token(
+    input: &crate::operation::list_data_set_export_history::ListDataSetExportHistoryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_data_set_import_history_output_output_next_token(
     input: &crate::operation::list_data_set_import_history::ListDataSetImportHistoryOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -114,6 +124,13 @@ pub(crate) fn lens_list_batch_job_executions_output_output_batch_job_executions(
     input: crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BatchJobExecutionSummary>> {
     let input = input.batch_job_executions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_data_set_export_history_output_output_data_set_export_tasks(
+    input: crate::operation::list_data_set_export_history::ListDataSetExportHistoryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSetExportTask>> {
+    let input = input.data_set_export_tasks;
     ::std::option::Option::Some(input)
 }
 

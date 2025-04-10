@@ -2246,6 +2246,7 @@ impl From<crate::operation::update_user::UpdateUserError> for Error {
     fn from(err: crate::operation::update_user::UpdateUserError) -> Self {
         match err {
             crate::operation::update_user::UpdateUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_user::UpdateUserError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_user::UpdateUserError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_user::UpdateUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_user::UpdateUserError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),

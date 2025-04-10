@@ -19,6 +19,8 @@ pub struct UpdateChatControlsConfigurationInput {
     pub topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     /// <p>The configuration details for <code>CREATOR_MODE</code>.</p>
     pub creator_mode_configuration: ::std::option::Option<crate::types::CreatorModeConfiguration>,
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub hallucination_reduction_configuration: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
 }
 impl UpdateChatControlsConfigurationInput {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
@@ -57,6 +59,10 @@ impl UpdateChatControlsConfigurationInput {
     pub fn creator_mode_configuration(&self) -> ::std::option::Option<&crate::types::CreatorModeConfiguration> {
         self.creator_mode_configuration.as_ref()
     }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn hallucination_reduction_configuration(&self) -> ::std::option::Option<&crate::types::HallucinationReductionConfiguration> {
+        self.hallucination_reduction_configuration.as_ref()
+    }
 }
 impl UpdateChatControlsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateChatControlsConfigurationInput`](crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput).
@@ -77,6 +83,7 @@ pub struct UpdateChatControlsConfigurationInputBuilder {
     pub(crate) topic_configurations_to_create_or_update: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) topic_configurations_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) creator_mode_configuration: ::std::option::Option<crate::types::CreatorModeConfiguration>,
+    pub(crate) hallucination_reduction_configuration: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
 }
 impl UpdateChatControlsConfigurationInputBuilder {
     /// <p>The identifier of the application for which the chat controls are configured.</p>
@@ -207,6 +214,23 @@ impl UpdateChatControlsConfigurationInputBuilder {
     pub fn get_creator_mode_configuration(&self) -> &::std::option::Option<crate::types::CreatorModeConfiguration> {
         &self.creator_mode_configuration
     }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn hallucination_reduction_configuration(mut self, input: crate::types::HallucinationReductionConfiguration) -> Self {
+        self.hallucination_reduction_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn set_hallucination_reduction_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
+    ) -> Self {
+        self.hallucination_reduction_configuration = input;
+        self
+    }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn get_hallucination_reduction_configuration(&self) -> &::std::option::Option<crate::types::HallucinationReductionConfiguration> {
+        &self.hallucination_reduction_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateChatControlsConfigurationInput`](crate::operation::update_chat_controls_configuration::UpdateChatControlsConfigurationInput).
     pub fn build(
         self,
@@ -224,6 +248,7 @@ impl UpdateChatControlsConfigurationInputBuilder {
                 topic_configurations_to_create_or_update: self.topic_configurations_to_create_or_update,
                 topic_configurations_to_delete: self.topic_configurations_to_delete,
                 creator_mode_configuration: self.creator_mode_configuration,
+                hallucination_reduction_configuration: self.hallucination_reduction_configuration,
             },
         )
     }

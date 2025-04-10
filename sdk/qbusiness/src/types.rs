@@ -185,6 +185,10 @@ pub use crate::types::_user_alias::UserAlias;
 
 pub use crate::types::_subscription_details::SubscriptionDetails;
 
+pub use crate::types::_hallucination_reduction_configuration::HallucinationReductionConfiguration;
+
+pub use crate::types::_hallucination_reduction_control::HallucinationReductionControl;
+
 pub use crate::types::_creator_mode_configuration::CreatorModeConfiguration;
 
 pub use crate::types::_creator_mode_control::CreatorModeControl;
@@ -338,6 +342,8 @@ pub use crate::types::_action_review_event::ActionReviewEvent;
 pub use crate::types::_metadata_event::MetadataEvent;
 
 pub use crate::types::_text_output_event::TextOutputEvent;
+
+pub use crate::types::_system_message_type::SystemMessageType;
 
 pub use crate::types::_chat_input_stream::ChatInputStream;
 
@@ -567,6 +573,10 @@ mod _group_status_detail;
 
 mod _group_summary;
 
+mod _hallucination_reduction_configuration;
+
+mod _hallucination_reduction_control;
+
 mod _hook_configuration;
 
 mod _idc_auth_configuration;
@@ -718,6 +728,8 @@ mod _subscription_details;
 mod _subscription_principal;
 
 mod _subscription_type;
+
+mod _system_message_type;
 
 mod _tag;
 

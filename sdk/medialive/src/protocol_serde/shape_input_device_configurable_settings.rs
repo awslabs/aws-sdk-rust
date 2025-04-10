@@ -42,5 +42,8 @@ pub fn ser_input_device_configurable_settings(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.input_resolution {
+        object.key("inputResolution").string(var_11.as_str());
+    }
     Ok(())
 }

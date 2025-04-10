@@ -140,6 +140,8 @@ mod cancel_batch_job_execution;
 
 mod create_application;
 
+mod create_data_set_export_task;
+
 mod create_data_set_import_task;
 
 mod create_deployment;
@@ -187,6 +189,8 @@ mod get_batch_job_execution;
 
 mod get_data_set_details;
 
+mod get_data_set_export_task;
+
 mod get_data_set_import_task;
 
 mod get_deployment;
@@ -204,6 +208,8 @@ mod list_batch_job_definitions;
 mod list_batch_job_executions;
 
 mod list_batch_job_restart_points;
+
+mod list_data_set_export_history;
 
 mod list_data_set_import_history;
 

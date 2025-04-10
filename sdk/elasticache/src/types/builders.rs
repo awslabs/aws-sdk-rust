@@ -51,6 +51,8 @@ pub use crate::types::_notification_configuration::NotificationConfigurationBuil
 
 pub use crate::types::_pending_modified_values::PendingModifiedValuesBuilder;
 
+pub use crate::types::_scale_config::ScaleConfigBuilder;
+
 pub use crate::types::_global_replication_group::GlobalReplicationGroupBuilder;
 
 pub use crate::types::_global_node_group::GlobalNodeGroupBuilder;

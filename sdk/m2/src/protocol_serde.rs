@@ -27,6 +27,8 @@ pub(crate) mod shape_cancel_batch_job_execution;
 
 pub(crate) mod shape_create_application;
 
+pub(crate) mod shape_create_data_set_export_task;
+
 pub(crate) mod shape_create_data_set_import_task;
 
 pub(crate) mod shape_create_deployment;
@@ -47,6 +49,8 @@ pub(crate) mod shape_get_batch_job_execution;
 
 pub(crate) mod shape_get_data_set_details;
 
+pub(crate) mod shape_get_data_set_export_task;
+
 pub(crate) mod shape_get_data_set_import_task;
 
 pub(crate) mod shape_get_deployment;
@@ -64,6 +68,8 @@ pub(crate) mod shape_list_batch_job_definitions;
 pub(crate) mod shape_list_batch_job_executions;
 
 pub(crate) mod shape_list_batch_job_restart_points;
+
+pub(crate) mod shape_list_data_set_export_history;
 
 pub(crate) mod shape_list_data_set_import_history;
 
@@ -106,6 +112,8 @@ pub(crate) mod shape_cancel_batch_job_execution_input;
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_application_input;
+
+pub(crate) mod shape_create_data_set_export_task_input;
 
 pub(crate) mod shape_create_data_set_import_task_input;
 
@@ -153,6 +161,12 @@ pub(crate) mod shape_batch_job_identifier;
 
 pub(crate) mod shape_batch_job_step_list;
 
+pub(crate) mod shape_data_set_export_config;
+
+pub(crate) mod shape_data_set_export_summary;
+
+pub(crate) mod shape_data_set_export_task_list;
+
 pub(crate) mod shape_data_set_import_config;
 
 pub(crate) mod shape_data_set_import_summary;
@@ -198,6 +212,10 @@ pub(crate) mod shape_application_summary;
 pub(crate) mod shape_batch_job_definition;
 
 pub(crate) mod shape_batch_job_execution_summary;
+
+pub(crate) mod shape_data_set_export_item;
+
+pub(crate) mod shape_data_set_export_task;
 
 pub(crate) mod shape_data_set_import_item;
 

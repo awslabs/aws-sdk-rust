@@ -102,6 +102,12 @@ pub fn ser_sheet_definition(
     if let Some(var_32) = &input.content_type {
         object.key("ContentType").string(var_32.as_str());
     }
+    if let Some(var_33) = &input.custom_action_defaults {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("CustomActionDefaults").start_object();
+        crate::protocol_serde::shape_visual_custom_action_defaults::ser_visual_custom_action_defaults(&mut object_34, var_33)?;
+        object_34.finish();
+    }
     Ok(())
 }
 
@@ -177,6 +183,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::SheetContentType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "CustomActionDefaults" => {
+                            builder = builder.set_custom_action_defaults(
+                                crate::protocol_serde::shape_visual_custom_action_defaults::de_visual_custom_action_defaults(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

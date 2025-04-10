@@ -107,6 +107,8 @@ pub use crate::types::_user_alias::UserAliasBuilder;
 
 pub use crate::types::_subscription_details::SubscriptionDetailsBuilder;
 
+pub use crate::types::_hallucination_reduction_configuration::HallucinationReductionConfigurationBuilder;
+
 pub use crate::types::_creator_mode_configuration::CreatorModeConfigurationBuilder;
 
 pub use crate::types::_topic_configuration::TopicConfigurationBuilder;

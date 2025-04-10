@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`topic_configurations(Option<Vec::<TopicConfiguration>>)`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput::topic_configurations): <p>The topic specific controls configured for a Amazon Q Business application.</p>
     ///   - [`creator_mode_configuration(Option<AppliedCreatorModeConfiguration>)`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput::creator_mode_configuration): <p>The configuration details for <code>CREATOR_MODE</code>.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput::next_token): <p>If the <code>maxResults</code> response was incomplete because there is more data to retrieve, Amazon Q Business returns a pagination token in the response. You can use this pagination token to retrieve the next set of Amazon Q Business chat controls configured.</p>
+    ///   - [`hallucination_reduction_configuration(Option<HallucinationReductionConfiguration>)`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationOutput::hallucination_reduction_configuration): <p>The hallucination reduction settings for your application.</p>
     /// - On failure, responds with [`SdkError<GetChatControlsConfigurationError>`](crate::operation::get_chat_controls_configuration::GetChatControlsConfigurationError)
     pub fn get_chat_controls_configuration(
         &self,

@@ -29,6 +29,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "systemMessageType" => {
+                            builder = builder.set_system_message_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SystemMessageType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "conversationId" => {
                             builder = builder.set_conversation_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -16,6 +16,8 @@ pub struct InputDeviceConfigurableSettings {
     pub mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>,
     /// An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration.
     pub audio_channel_pairs: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>>,
+    /// Choose the resolution of the Link device's source (HD or UHD). Make sure the resolution matches the current source from the device. This value determines MediaLive resource allocation and billing for this input. Only UHD devices can specify this parameter.
+    pub input_resolution: ::std::option::Option<::std::string::String>,
 }
 impl InputDeviceConfigurableSettings {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -44,6 +46,10 @@ impl InputDeviceConfigurableSettings {
     pub fn audio_channel_pairs(&self) -> &[crate::types::InputDeviceConfigurableAudioChannelPairConfig] {
         self.audio_channel_pairs.as_deref().unwrap_or_default()
     }
+    /// Choose the resolution of the Link device's source (HD or UHD). Make sure the resolution matches the current source from the device. This value determines MediaLive resource allocation and billing for this input. Only UHD devices can specify this parameter.
+    pub fn input_resolution(&self) -> ::std::option::Option<&str> {
+        self.input_resolution.as_deref()
+    }
 }
 impl InputDeviceConfigurableSettings {
     /// Creates a new builder-style object to manufacture [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
@@ -62,6 +68,7 @@ pub struct InputDeviceConfigurableSettingsBuilder {
     pub(crate) codec: ::std::option::Option<crate::types::InputDeviceCodec>,
     pub(crate) mediaconnect_settings: ::std::option::Option<crate::types::InputDeviceMediaConnectConfigurableSettings>,
     pub(crate) audio_channel_pairs: ::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>>,
+    pub(crate) input_resolution: ::std::option::Option<::std::string::String>,
 }
 impl InputDeviceConfigurableSettingsBuilder {
     /// The input source that you want to use. If the device has a source connected to only one of its input ports, or if you don't care which source the device sends, specify Auto. If the device has sources connected to both its input ports, and you want to use a specific source, specify the source.
@@ -157,6 +164,20 @@ impl InputDeviceConfigurableSettingsBuilder {
     pub fn get_audio_channel_pairs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InputDeviceConfigurableAudioChannelPairConfig>> {
         &self.audio_channel_pairs
     }
+    /// Choose the resolution of the Link device's source (HD or UHD). Make sure the resolution matches the current source from the device. This value determines MediaLive resource allocation and billing for this input. Only UHD devices can specify this parameter.
+    pub fn input_resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_resolution = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Choose the resolution of the Link device's source (HD or UHD). Make sure the resolution matches the current source from the device. This value determines MediaLive resource allocation and billing for this input. Only UHD devices can specify this parameter.
+    pub fn set_input_resolution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.input_resolution = input;
+        self
+    }
+    /// Choose the resolution of the Link device's source (HD or UHD). Make sure the resolution matches the current source from the device. This value determines MediaLive resource allocation and billing for this input. Only UHD devices can specify this parameter.
+    pub fn get_input_resolution(&self) -> &::std::option::Option<::std::string::String> {
+        &self.input_resolution
+    }
     /// Consumes the builder and constructs a [`InputDeviceConfigurableSettings`](crate::types::InputDeviceConfigurableSettings).
     pub fn build(self) -> crate::types::InputDeviceConfigurableSettings {
         crate::types::InputDeviceConfigurableSettings {
@@ -166,6 +187,7 @@ impl InputDeviceConfigurableSettingsBuilder {
             codec: self.codec,
             mediaconnect_settings: self.mediaconnect_settings,
             audio_channel_pairs: self.audio_channel_pairs,
+            input_resolution: self.input_resolution,
         }
     }
 }

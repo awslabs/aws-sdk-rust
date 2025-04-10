@@ -92,6 +92,13 @@ where
                                     crate::protocol_serde::shape_list_of_input_device_uhd_audio_channel_pair_config::de_list_of_input_device_uhd_audio_channel_pair_config(tokens)?
                                 );
                         }
+                        "inputResolution" => {
+                            builder = builder.set_input_resolution(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

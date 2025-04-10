@@ -363,6 +363,8 @@ pub(crate) mod shape_group_status_details;
 
 pub(crate) mod shape_group_summary_list;
 
+pub(crate) mod shape_hallucination_reduction_configuration;
+
 pub(crate) mod shape_identity_provider_configuration;
 
 pub(crate) mod shape_index_capacity_configuration;

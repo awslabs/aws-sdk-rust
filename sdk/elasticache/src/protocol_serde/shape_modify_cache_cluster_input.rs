@@ -151,6 +151,11 @@ pub fn ser_modify_cache_cluster_input_input_input(
     if let Some(var_59) = &input.ip_discovery {
         scope_58.string(var_59.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_60 = writer.prefix("ScaleConfig");
+    if let Some(var_61) = &input.scale_config {
+        crate::protocol_serde::shape_scale_config::ser_scale_config(scope_60, var_61)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

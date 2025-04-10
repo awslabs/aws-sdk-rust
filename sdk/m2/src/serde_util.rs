@@ -77,6 +77,15 @@ pub(crate) fn create_application_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_data_set_export_task_output_output_correct_errors(
+    mut builder: crate::operation::create_data_set_export_task::builders::CreateDataSetExportTaskOutputBuilder,
+) -> crate::operation::create_data_set_export_task::builders::CreateDataSetExportTaskOutputBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_data_set_import_task_output_output_correct_errors(
     mut builder: crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder,
 ) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder {
@@ -196,6 +205,18 @@ pub(crate) fn get_data_set_details_output_output_correct_errors(
 ) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder {
     if builder.data_set_name.is_none() {
         builder.data_set_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_data_set_export_task_output_output_correct_errors(
+    mut builder: crate::operation::get_data_set_export_task::builders::GetDataSetExportTaskOutputBuilder,
+) -> crate::operation::get_data_set_export_task::builders::GetDataSetExportTaskOutputBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataSetTaskLifecycle>().ok()
     }
     builder
 }
@@ -320,6 +341,15 @@ pub(crate) fn list_batch_job_executions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_data_set_export_history_output_output_correct_errors(
+    mut builder: crate::operation::list_data_set_export_history::builders::ListDataSetExportHistoryOutputBuilder,
+) -> crate::operation::list_data_set_export_history::builders::ListDataSetExportHistoryOutputBuilder {
+    if builder.data_set_export_tasks.is_none() {
+        builder.data_set_export_tasks = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_data_set_import_history_output_output_correct_errors(
     mut builder: crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder,
 ) -> crate::operation::list_data_set_import_history::builders::ListDataSetImportHistoryOutputBuilder {
@@ -416,6 +446,27 @@ pub(crate) fn application_version_summary_correct_errors(
     builder
 }
 
+pub(crate) fn data_set_export_summary_correct_errors(
+    mut builder: crate::types::builders::DataSetExportSummaryBuilder,
+) -> crate::types::builders::DataSetExportSummaryBuilder {
+    if builder.total.is_none() {
+        builder.total = Some(Default::default())
+    }
+    if builder.succeeded.is_none() {
+        builder.succeeded = Some(Default::default())
+    }
+    if builder.failed.is_none() {
+        builder.failed = Some(Default::default())
+    }
+    if builder.pending.is_none() {
+        builder.pending = Some(Default::default())
+    }
+    if builder.in_progress.is_none() {
+        builder.in_progress = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn data_set_import_summary_correct_errors(
     mut builder: crate::types::builders::DataSetImportSummaryBuilder,
 ) -> crate::types::builders::DataSetImportSummaryBuilder {
@@ -508,6 +559,24 @@ pub(crate) fn batch_job_execution_summary_correct_errors(
     }
     if builder.start_time.is_none() {
         builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn data_set_export_task_correct_errors(
+    mut builder: crate::types::builders::DataSetExportTaskBuilder,
+) -> crate::types::builders::DataSetExportTaskBuilder {
+    if builder.task_id.is_none() {
+        builder.task_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DataSetTaskLifecycle>().ok()
+    }
+    if builder.summary.is_none() {
+        builder.summary = {
+            let builder = crate::types::builders::DataSetExportSummaryBuilder::default();
+            Some(crate::serde_util::data_set_export_summary_correct_errors(builder).build())
+        }
     }
     builder
 }

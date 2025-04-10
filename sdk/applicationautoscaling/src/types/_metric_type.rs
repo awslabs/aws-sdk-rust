@@ -26,6 +26,8 @@
 ///     MetricType::EcsServiceAverageMemoryUtilization => { /* ... */ },
 ///     MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => { /* ... */ },
 ///     MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => { /* ... */ },
+///     MetricType::ElastiCacheDatabaseMemoryUsagePercentage => { /* ... */ },
+///     MetricType::ElastiCacheEngineCpuUtilization => { /* ... */ },
 ///     MetricType::ElastiCachePrimaryEngineCpuUtilization => { /* ... */ },
 ///     MetricType::ElastiCacheReplicaEngineCpuUtilization => { /* ... */ },
 ///     MetricType::KafkaBrokerStorageUtilization => { /* ... */ },
@@ -96,6 +98,10 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
     #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheDatabaseMemoryUsagePercentage,
+    #[allow(missing_docs)] // documentation missing in model
+    ElastiCacheEngineCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCachePrimaryEngineCpuUtilization,
     #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReplicaEngineCpuUtilization,
@@ -142,6 +148,8 @@ impl ::std::convert::From<&str> for MetricType {
             "ECSServiceAverageMemoryUtilization" => MetricType::EcsServiceAverageMemoryUtilization,
             "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage,
             "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" => MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+            "ElastiCacheDatabaseMemoryUsagePercentage" => MetricType::ElastiCacheDatabaseMemoryUsagePercentage,
+            "ElastiCacheEngineCPUUtilization" => MetricType::ElastiCacheEngineCpuUtilization,
             "ElastiCachePrimaryEngineCPUUtilization" => MetricType::ElastiCachePrimaryEngineCpuUtilization,
             "ElastiCacheReplicaEngineCPUUtilization" => MetricType::ElastiCacheReplicaEngineCpuUtilization,
             "KafkaBrokerStorageUtilization" => MetricType::KafkaBrokerStorageUtilization,
@@ -186,6 +194,8 @@ impl MetricType {
             MetricType::EcsServiceAverageMemoryUtilization => "ECSServiceAverageMemoryUtilization",
             MetricType::ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage => "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage",
             MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
+            MetricType::ElastiCacheDatabaseMemoryUsagePercentage => "ElastiCacheDatabaseMemoryUsagePercentage",
+            MetricType::ElastiCacheEngineCpuUtilization => "ElastiCacheEngineCPUUtilization",
             MetricType::ElastiCachePrimaryEngineCpuUtilization => "ElastiCachePrimaryEngineCPUUtilization",
             MetricType::ElastiCacheReplicaEngineCpuUtilization => "ElastiCacheReplicaEngineCPUUtilization",
             MetricType::KafkaBrokerStorageUtilization => "KafkaBrokerStorageUtilization",
@@ -221,6 +231,8 @@ impl MetricType {
             "ECSServiceAverageMemoryUtilization",
             "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage",
             "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage",
+            "ElastiCacheDatabaseMemoryUsagePercentage",
+            "ElastiCacheEngineCPUUtilization",
             "ElastiCachePrimaryEngineCPUUtilization",
             "ElastiCacheReplicaEngineCPUUtilization",
             "KafkaBrokerStorageUtilization",
@@ -275,6 +287,8 @@ impl ::std::fmt::Display for MetricType {
             MetricType::ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage => {
                 write!(f, "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage")
             }
+            MetricType::ElastiCacheDatabaseMemoryUsagePercentage => write!(f, "ElastiCacheDatabaseMemoryUsagePercentage"),
+            MetricType::ElastiCacheEngineCpuUtilization => write!(f, "ElastiCacheEngineCPUUtilization"),
             MetricType::ElastiCachePrimaryEngineCpuUtilization => write!(f, "ElastiCachePrimaryEngineCPUUtilization"),
             MetricType::ElastiCacheReplicaEngineCpuUtilization => write!(f, "ElastiCacheReplicaEngineCPUUtilization"),
             MetricType::KafkaBrokerStorageUtilization => write!(f, "KafkaBrokerStorageUtilization"),

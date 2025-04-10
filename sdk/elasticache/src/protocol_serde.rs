@@ -449,6 +449,8 @@ pub(crate) mod shape_reserved_cache_nodes_offering_not_found_fault;
 
 pub(crate) mod shape_resharding_configuration;
 
+pub(crate) mod shape_scale_config;
+
 pub(crate) mod shape_serverless_cache_already_exists_fault;
 
 pub(crate) mod shape_serverless_cache_not_found_fault;

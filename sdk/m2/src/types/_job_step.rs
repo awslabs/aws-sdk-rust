@@ -16,6 +16,12 @@ pub struct JobStep {
     pub step_cond_code: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if a step can be restarted or not.</p>
     pub step_restartable: bool,
+    /// <p>A registered step-level checkpoint identifier that can be used for restarting an Amazon Web Services Blu Age application batch job.</p>
+    pub step_checkpoint: ::std::option::Option<i32>,
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub step_checkpoint_status: ::std::option::Option<::std::string::String>,
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub step_checkpoint_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobStep {
     /// <p>The number of a step.</p>
@@ -42,6 +48,18 @@ impl JobStep {
     pub fn step_restartable(&self) -> bool {
         self.step_restartable
     }
+    /// <p>A registered step-level checkpoint identifier that can be used for restarting an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint(&self) -> ::std::option::Option<i32> {
+        self.step_checkpoint
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint_status(&self) -> ::std::option::Option<&str> {
+        self.step_checkpoint_status.as_deref()
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.step_checkpoint_time.as_ref()
+    }
 }
 impl JobStep {
     /// Creates a new builder-style object to manufacture [`JobStep`](crate::types::JobStep).
@@ -60,6 +78,9 @@ pub struct JobStepBuilder {
     pub(crate) proc_step_name: ::std::option::Option<::std::string::String>,
     pub(crate) step_cond_code: ::std::option::Option<::std::string::String>,
     pub(crate) step_restartable: ::std::option::Option<bool>,
+    pub(crate) step_checkpoint: ::std::option::Option<i32>,
+    pub(crate) step_checkpoint_status: ::std::option::Option<::std::string::String>,
+    pub(crate) step_checkpoint_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JobStepBuilder {
     /// <p>The number of a step.</p>
@@ -146,6 +167,48 @@ impl JobStepBuilder {
     pub fn get_step_restartable(&self) -> &::std::option::Option<bool> {
         &self.step_restartable
     }
+    /// <p>A registered step-level checkpoint identifier that can be used for restarting an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint(mut self, input: i32) -> Self {
+        self.step_checkpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A registered step-level checkpoint identifier that can be used for restarting an Amazon Web Services Blu Age application batch job.</p>
+    pub fn set_step_checkpoint(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.step_checkpoint = input;
+        self
+    }
+    /// <p>A registered step-level checkpoint identifier that can be used for restarting an Amazon Web Services Blu Age application batch job.</p>
+    pub fn get_step_checkpoint(&self) -> &::std::option::Option<i32> {
+        &self.step_checkpoint
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.step_checkpoint_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn set_step_checkpoint_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.step_checkpoint_status = input;
+        self
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn get_step_checkpoint_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.step_checkpoint_status
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn step_checkpoint_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.step_checkpoint_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn set_step_checkpoint_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.step_checkpoint_time = input;
+        self
+    }
+    /// <p>The step-level checkpoint status for an Amazon Web Services Blu Age application batch job.</p>
+    pub fn get_step_checkpoint_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.step_checkpoint_time
+    }
     /// Consumes the builder and constructs a [`JobStep`](crate::types::JobStep).
     pub fn build(self) -> crate::types::JobStep {
         crate::types::JobStep {
@@ -155,6 +218,9 @@ impl JobStepBuilder {
             proc_step_name: self.proc_step_name,
             step_cond_code: self.step_cond_code,
             step_restartable: self.step_restartable.unwrap_or_default(),
+            step_checkpoint: self.step_checkpoint,
+            step_checkpoint_status: self.step_checkpoint_status,
+            step_checkpoint_time: self.step_checkpoint_time,
         }
     }
 }

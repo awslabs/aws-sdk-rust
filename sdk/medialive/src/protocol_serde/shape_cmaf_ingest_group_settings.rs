@@ -48,6 +48,30 @@ pub fn ser_cmaf_ingest_group_settings(
     if let Some(var_13) = &input.id3_name_modifier {
         object.key("id3NameModifier").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.caption_language_mappings {
+        let mut array_15 = object.key("captionLanguageMappings").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_cmaf_ingest_caption_language_mapping::ser_cmaf_ingest_caption_language_mapping(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
+    }
+    if let Some(var_18) = &input.timed_metadata_id3_frame {
+        object.key("timedMetadataId3Frame").string(var_18.as_str());
+    }
+    if let Some(var_19) = &input.timed_metadata_id3_period {
+        object.key("timedMetadataId3Period").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
+    if let Some(var_20) = &input.timed_metadata_passthrough {
+        object.key("timedMetadataPassthrough").string(var_20.as_str());
+    }
     Ok(())
 }
 
@@ -143,6 +167,32 @@ where
                             builder = builder.set_id3_name_modifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "captionLanguageMappings" => {
+                            builder = builder.set_caption_language_mappings(
+                                    crate::protocol_serde::shape_list_of_cmaf_ingest_caption_language_mapping::de_list_of_cmaf_ingest_caption_language_mapping(tokens)?
+                                );
+                        }
+                        "timedMetadataId3Frame" => {
+                            builder = builder.set_timed_metadata_id3_frame(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafTimedMetadataId3Frame::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "timedMetadataId3Period" => {
+                            builder = builder.set_timed_metadata_id3_period(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "timedMetadataPassthrough" => {
+                            builder = builder.set_timed_metadata_passthrough(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmafTimedMetadataPassthrough::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

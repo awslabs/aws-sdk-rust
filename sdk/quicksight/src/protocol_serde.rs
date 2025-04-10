@@ -1565,6 +1565,8 @@ pub(crate) mod shape_upload_settings;
 
 pub(crate) mod shape_visual;
 
+pub(crate) mod shape_visual_custom_action_defaults;
+
 pub(crate) mod shape_visual_options;
 
 pub(crate) mod shape_agg_function;
@@ -1876,6 +1878,8 @@ pub(crate) mod shape_topic_visuals;
 pub(crate) mod shape_transform_operation_list;
 
 pub(crate) mod shape_tree_map_visual;
+
+pub(crate) mod shape_visual_highlight_operation;
 
 pub(crate) mod shape_visual_list;
 

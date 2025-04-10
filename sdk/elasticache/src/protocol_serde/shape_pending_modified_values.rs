@@ -111,6 +111,16 @@ pub fn de_pending_modified_values(
                 builder = builder.set_transit_encryption_mode(var_8);
             }
             ,
+            s if s.matches("ScaleConfig") /* ScaleConfig com.amazonaws.elasticache#PendingModifiedValues$ScaleConfig */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_scale_config::de_scale_config(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_scale_config(var_9);
+            }
+            ,
             _ => {}
         }
     }

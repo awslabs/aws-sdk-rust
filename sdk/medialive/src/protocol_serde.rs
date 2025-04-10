@@ -1017,6 +1017,8 @@ pub(crate) mod shape_av1_color_space_settings;
 
 pub(crate) mod shape_caption_language_mapping;
 
+pub(crate) mod shape_cmaf_ingest_caption_language_mapping;
+
 pub(crate) mod shape_cmaf_ingest_output_settings;
 
 pub(crate) mod shape_dvb_sub_source_settings;
@@ -1128,6 +1130,8 @@ pub(crate) mod shape_hls_settings;
 pub(crate) mod shape_hls_webdav_settings;
 
 pub(crate) mod shape_list_of_caption_language_mapping;
+
+pub(crate) mod shape_list_of_cmaf_ingest_caption_language_mapping;
 
 pub(crate) mod shape_list_of_hls_ad_markers;
 

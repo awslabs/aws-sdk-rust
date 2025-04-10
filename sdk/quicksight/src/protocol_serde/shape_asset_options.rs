@@ -21,6 +21,12 @@ pub fn ser_asset_options(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.custom_action_defaults {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("CustomActionDefaults").start_object();
+        crate::protocol_serde::shape_visual_custom_action_defaults::ser_visual_custom_action_defaults(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,11 @@ where
                         "ExcludedDataSetArns" => {
                             builder =
                                 builder.set_excluded_data_set_arns(crate::protocol_serde::shape_data_set_arns_list::de_data_set_arns_list(tokens)?);
+                        }
+                        "CustomActionDefaults" => {
+                            builder = builder.set_custom_action_defaults(
+                                crate::protocol_serde::shape_visual_custom_action_defaults::de_visual_custom_action_defaults(tokens)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -233,4 +233,21 @@ impl UpdateChatControlsConfigurationFluentBuilder {
     pub fn get_creator_mode_configuration(&self) -> &::std::option::Option<crate::types::CreatorModeConfiguration> {
         self.inner.get_creator_mode_configuration()
     }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn hallucination_reduction_configuration(mut self, input: crate::types::HallucinationReductionConfiguration) -> Self {
+        self.inner = self.inner.hallucination_reduction_configuration(input);
+        self
+    }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn set_hallucination_reduction_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::HallucinationReductionConfiguration>,
+    ) -> Self {
+        self.inner = self.inner.set_hallucination_reduction_configuration(input);
+        self
+    }
+    /// <p>The hallucination reduction settings for your application.</p>
+    pub fn get_hallucination_reduction_configuration(&self) -> &::std::option::Option<crate::types::HallucinationReductionConfiguration> {
+        self.inner.get_hallucination_reduction_configuration()
+    }
 }

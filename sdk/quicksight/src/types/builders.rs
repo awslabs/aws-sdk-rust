@@ -105,6 +105,10 @@ pub use crate::types::_query_execution_options::QueryExecutionOptionsBuilder;
 
 pub use crate::types::_asset_options::AssetOptionsBuilder;
 
+pub use crate::types::_visual_custom_action_defaults::VisualCustomActionDefaultsBuilder;
+
+pub use crate::types::_visual_highlight_operation::VisualHighlightOperationBuilder;
+
 pub use crate::types::_analysis_defaults::AnalysisDefaultsBuilder;
 
 pub use crate::types::_default_new_sheet_configuration::DefaultNewSheetConfigurationBuilder;

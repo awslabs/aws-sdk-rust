@@ -21,6 +21,8 @@ pub struct PendingModifiedValues {
     pub transit_encryption_enabled: ::std::option::Option<bool>,
     /// <p>A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
     pub transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
+    /// <p>The scaling configuration changes that are pending for the Memcached cluster.</p>
+    pub scale_config: ::std::option::Option<crate::types::ScaleConfig>,
 }
 impl PendingModifiedValues {
     /// <p>The new number of cache nodes for the cluster.</p>
@@ -60,6 +62,10 @@ impl PendingModifiedValues {
     pub fn transit_encryption_mode(&self) -> ::std::option::Option<&crate::types::TransitEncryptionMode> {
         self.transit_encryption_mode.as_ref()
     }
+    /// <p>The scaling configuration changes that are pending for the Memcached cluster.</p>
+    pub fn scale_config(&self) -> ::std::option::Option<&crate::types::ScaleConfig> {
+        self.scale_config.as_ref()
+    }
 }
 impl PendingModifiedValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedValues`](crate::types::PendingModifiedValues).
@@ -80,6 +86,7 @@ pub struct PendingModifiedValuesBuilder {
     pub(crate) log_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::PendingLogDeliveryConfiguration>>,
     pub(crate) transit_encryption_enabled: ::std::option::Option<bool>,
     pub(crate) transit_encryption_mode: ::std::option::Option<crate::types::TransitEncryptionMode>,
+    pub(crate) scale_config: ::std::option::Option<crate::types::ScaleConfig>,
 }
 impl PendingModifiedValuesBuilder {
     /// <p>The new number of cache nodes for the cluster.</p>
@@ -212,6 +219,20 @@ impl PendingModifiedValuesBuilder {
     pub fn get_transit_encryption_mode(&self) -> &::std::option::Option<crate::types::TransitEncryptionMode> {
         &self.transit_encryption_mode
     }
+    /// <p>The scaling configuration changes that are pending for the Memcached cluster.</p>
+    pub fn scale_config(mut self, input: crate::types::ScaleConfig) -> Self {
+        self.scale_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scaling configuration changes that are pending for the Memcached cluster.</p>
+    pub fn set_scale_config(mut self, input: ::std::option::Option<crate::types::ScaleConfig>) -> Self {
+        self.scale_config = input;
+        self
+    }
+    /// <p>The scaling configuration changes that are pending for the Memcached cluster.</p>
+    pub fn get_scale_config(&self) -> &::std::option::Option<crate::types::ScaleConfig> {
+        &self.scale_config
+    }
     /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::types::PendingModifiedValues).
     pub fn build(self) -> crate::types::PendingModifiedValues {
         crate::types::PendingModifiedValues {
@@ -223,6 +244,7 @@ impl PendingModifiedValuesBuilder {
             log_delivery_configurations: self.log_delivery_configurations,
             transit_encryption_enabled: self.transit_encryption_enabled,
             transit_encryption_mode: self.transit_encryption_mode,
+            scale_config: self.scale_config,
         }
     }
 }

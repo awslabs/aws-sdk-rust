@@ -6,7 +6,7 @@ With Application Auto Scaling, you can configure automatic scaling for the follo
   - Amazon Comprehend document classification and entity recognizer endpoints
   - Amazon DynamoDB tables and global secondary indexes throughput capacity
   - Amazon ECS services
-  - Amazon ElastiCache for Redis clusters (replication groups)
+  - Amazon ElastiCache replication groups (Redis OSS and Valkey) and Memcached clusters
   - Amazon EMR clusters
   - Amazon Keyspaces (for Apache Cassandra) tables
   - Lambda function provisioned concurrency
@@ -40,7 +40,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-applicationautoscaling = "1.69.0"
+aws-sdk-applicationautoscaling = "1.70.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

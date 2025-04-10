@@ -31,6 +31,10 @@ pub use crate::types::_data_set_import_task::DataSetImportTaskBuilder;
 
 pub use crate::types::_data_set_import_summary::DataSetImportSummaryBuilder;
 
+pub use crate::types::_data_set_export_task::DataSetExportTaskBuilder;
+
+pub use crate::types::_data_set_export_summary::DataSetExportSummaryBuilder;
+
 pub use crate::types::_job_step::JobStepBuilder;
 
 pub use crate::types::_batch_job_execution_summary::BatchJobExecutionSummaryBuilder;
@@ -66,6 +70,8 @@ pub use crate::types::_po_attributes::PoAttributesBuilder;
 pub use crate::types::_gdg_attributes::GdgAttributesBuilder;
 
 pub use crate::types::_vsam_attributes::VsamAttributesBuilder;
+
+pub use crate::types::_data_set_export_item::DataSetExportItemBuilder;
 
 pub use crate::types::_log_group_summary::LogGroupSummaryBuilder;
 

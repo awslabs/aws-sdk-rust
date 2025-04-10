@@ -821,6 +821,18 @@ pub(crate) fn caption_language_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn cmaf_ingest_caption_language_mapping_correct_errors(
+    mut builder: crate::types::builders::CmafIngestCaptionLanguageMappingBuilder,
+) -> crate::types::builders::CmafIngestCaptionLanguageMappingBuilder {
+    if builder.caption_channel.is_none() {
+        builder.caption_channel = Some(Default::default())
+    }
+    if builder.language_code.is_none() {
+        builder.language_code = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn hls_output_settings_correct_errors(
     mut builder: crate::types::builders::HlsOutputSettingsBuilder,
 ) -> crate::types::builders::HlsOutputSettingsBuilder {

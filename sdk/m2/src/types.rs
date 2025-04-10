@@ -49,6 +49,10 @@ pub use crate::types::_data_set_import_summary::DataSetImportSummary;
 
 pub use crate::types::_data_set_task_lifecycle::DataSetTaskLifecycle;
 
+pub use crate::types::_data_set_export_task::DataSetExportTask;
+
+pub use crate::types::_data_set_export_summary::DataSetExportSummary;
+
 pub use crate::types::_job_step::JobStep;
 
 pub use crate::types::_batch_job_execution_summary::BatchJobExecutionSummary;
@@ -101,6 +105,10 @@ pub use crate::types::_gdg_attributes::GdgAttributes;
 
 pub use crate::types::_vsam_attributes::VsamAttributes;
 
+pub use crate::types::_data_set_export_config::DataSetExportConfig;
+
+pub use crate::types::_data_set_export_item::DataSetExportItem;
+
 pub use crate::types::_definition::Definition;
 
 pub use crate::types::_log_group_summary::LogGroupSummary;
@@ -138,6 +146,14 @@ mod _batch_job_identifier;
 mod _batch_job_type;
 
 mod _data_set;
+
+mod _data_set_export_config;
+
+mod _data_set_export_item;
+
+mod _data_set_export_summary;
+
+mod _data_set_export_task;
 
 mod _data_set_import_config;
 

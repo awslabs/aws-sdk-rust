@@ -679,6 +679,12 @@ pub use crate::types::_input_loss_action_for_udp_out::InputLossActionForUdpOut;
 
 pub use crate::types::_cmaf_ingest_group_settings::CmafIngestGroupSettings;
 
+pub use crate::types::_cmaf_timed_metadata_passthrough::CmafTimedMetadataPassthrough;
+
+pub use crate::types::_cmaf_timed_metadata_id3_frame::CmafTimedMetadataId3Frame;
+
+pub use crate::types::_cmaf_ingest_caption_language_mapping::CmafIngestCaptionLanguageMapping;
+
 pub use crate::types::_cmaf_id3_behavior::CmafId3Behavior;
 
 pub use crate::types::_cmaf_klv_behavior::CmafKlvBehavior;
@@ -1495,6 +1501,8 @@ mod _cluster_type;
 
 mod _cmaf_id3_behavior;
 
+mod _cmaf_ingest_caption_language_mapping;
+
 mod _cmaf_ingest_group_settings;
 
 mod _cmaf_ingest_output_settings;
@@ -1504,6 +1512,10 @@ mod _cmaf_ingest_segment_length_units;
 mod _cmaf_klv_behavior;
 
 mod _cmaf_nielsen_id3_behavior;
+
+mod _cmaf_timed_metadata_id3_frame;
+
+mod _cmaf_timed_metadata_passthrough;
 
 mod _color_correction;
 

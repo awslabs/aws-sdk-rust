@@ -7,6 +7,9 @@ pub mod cancel_batch_job_execution;
 /// Types for the `CreateApplication` operation.
 pub mod create_application;
 
+/// Types for the `CreateDataSetExportTask` operation.
+pub mod create_data_set_export_task;
+
 /// Types for the `CreateDataSetImportTask` operation.
 pub mod create_data_set_import_task;
 
@@ -37,6 +40,9 @@ pub mod get_batch_job_execution;
 /// Types for the `GetDataSetDetails` operation.
 pub mod get_data_set_details;
 
+/// Types for the `GetDataSetExportTask` operation.
+pub mod get_data_set_export_task;
+
 /// Types for the `GetDataSetImportTask` operation.
 pub mod get_data_set_import_task;
 
@@ -63,6 +69,9 @@ pub mod list_batch_job_executions;
 
 /// Types for the `ListBatchJobRestartPoints` operation.
 pub mod list_batch_job_restart_points;
+
+/// Types for the `ListDataSetExportHistory` operation.
+pub mod list_data_set_export_history;
 
 /// Types for the `ListDataSetImportHistory` operation.
 pub mod list_data_set_import_history;

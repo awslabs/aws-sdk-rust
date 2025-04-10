@@ -145,6 +145,49 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_set_export_task::CreateDataSetExportTaskError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_set_export_task::CreateDataSetExportTaskError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_data_set_export_task::CreateDataSetExportTaskError> for Error {
+    fn from(err: crate::operation::create_data_set_export_task::CreateDataSetExportTaskError) -> Self {
+        match err {
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_data_set_export_task::CreateDataSetExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_data_set_import_task::CreateDataSetImportTaskError, R>>
     for Error
 where
@@ -476,6 +519,40 @@ impl From<crate::operation::get_data_set_details::GetDataSetDetailsError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_set_export_task::GetDataSetExportTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_set_export_task::GetDataSetExportTaskError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_data_set_export_task::GetDataSetExportTaskError> for Error {
+    fn from(err: crate::operation::get_data_set_export_task::GetDataSetExportTaskError) -> Self {
+        match err {
+            crate::operation::get_data_set_export_task::GetDataSetExportTaskError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_data_set_export_task::GetDataSetExportTaskError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_data_set_export_task::GetDataSetExportTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_data_set_export_task::GetDataSetExportTaskError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_data_set_export_task::GetDataSetExportTaskError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_data_set_export_task::GetDataSetExportTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_data_set_import_task::GetDataSetImportTaskError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -772,6 +849,45 @@ impl From<crate::operation::list_batch_job_restart_points::ListBatchJobRestartPo
                 Error::ValidationException(inner)
             }
             crate::operation::list_batch_job_restart_points::ListBatchJobRestartPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_set_export_history::ListDataSetExportHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_data_set_export_history::ListDataSetExportHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_data_set_export_history::ListDataSetExportHistoryError> for Error {
+    fn from(err: crate::operation::list_data_set_export_history::ListDataSetExportHistoryError) -> Self {
+        match err {
+            crate::operation::list_data_set_export_history::ListDataSetExportHistoryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_data_set_export_history::ListDataSetExportHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_data_set_export_history::ListDataSetExportHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_data_set_export_history::ListDataSetExportHistoryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_data_set_export_history::ListDataSetExportHistoryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_data_set_export_history::ListDataSetExportHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

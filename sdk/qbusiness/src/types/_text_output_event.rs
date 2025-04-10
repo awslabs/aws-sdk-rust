@@ -4,6 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextOutputEvent {
+    /// <p>The type of AI-generated message in a <code>TextOutputEvent</code>. Amazon Q Business currently supports two types of messages:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RESPONSE</code> - The Amazon Q Business system response.</p></li>
+    /// <li>
+    /// <p><code>GROUNDED_RESPONSE</code> - The corrected, hallucination-reduced, response returned by Amazon Q Business. Available only if hallucination reduction is supported and configured for the application and detected in the end user chat query by Amazon Q Business.</p></li>
+    /// </ul>
+    pub system_message_type: ::std::option::Option<crate::types::SystemMessageType>,
     /// <p>The identifier of the conversation with which the text output event is associated.</p>
     pub conversation_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of an end user message in a <code>TextOutputEvent</code>.</p>
@@ -14,6 +22,16 @@ pub struct TextOutputEvent {
     pub system_message: ::std::option::Option<::std::string::String>,
 }
 impl TextOutputEvent {
+    /// <p>The type of AI-generated message in a <code>TextOutputEvent</code>. Amazon Q Business currently supports two types of messages:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RESPONSE</code> - The Amazon Q Business system response.</p></li>
+    /// <li>
+    /// <p><code>GROUNDED_RESPONSE</code> - The corrected, hallucination-reduced, response returned by Amazon Q Business. Available only if hallucination reduction is supported and configured for the application and detected in the end user chat query by Amazon Q Business.</p></li>
+    /// </ul>
+    pub fn system_message_type(&self) -> ::std::option::Option<&crate::types::SystemMessageType> {
+        self.system_message_type.as_ref()
+    }
     /// <p>The identifier of the conversation with which the text output event is associated.</p>
     pub fn conversation_id(&self) -> ::std::option::Option<&str> {
         self.conversation_id.as_deref()
@@ -42,12 +60,45 @@ impl TextOutputEvent {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct TextOutputEventBuilder {
+    pub(crate) system_message_type: ::std::option::Option<crate::types::SystemMessageType>,
     pub(crate) conversation_id: ::std::option::Option<::std::string::String>,
     pub(crate) user_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) system_message_id: ::std::option::Option<::std::string::String>,
     pub(crate) system_message: ::std::option::Option<::std::string::String>,
 }
 impl TextOutputEventBuilder {
+    /// <p>The type of AI-generated message in a <code>TextOutputEvent</code>. Amazon Q Business currently supports two types of messages:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RESPONSE</code> - The Amazon Q Business system response.</p></li>
+    /// <li>
+    /// <p><code>GROUNDED_RESPONSE</code> - The corrected, hallucination-reduced, response returned by Amazon Q Business. Available only if hallucination reduction is supported and configured for the application and detected in the end user chat query by Amazon Q Business.</p></li>
+    /// </ul>
+    pub fn system_message_type(mut self, input: crate::types::SystemMessageType) -> Self {
+        self.system_message_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of AI-generated message in a <code>TextOutputEvent</code>. Amazon Q Business currently supports two types of messages:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RESPONSE</code> - The Amazon Q Business system response.</p></li>
+    /// <li>
+    /// <p><code>GROUNDED_RESPONSE</code> - The corrected, hallucination-reduced, response returned by Amazon Q Business. Available only if hallucination reduction is supported and configured for the application and detected in the end user chat query by Amazon Q Business.</p></li>
+    /// </ul>
+    pub fn set_system_message_type(mut self, input: ::std::option::Option<crate::types::SystemMessageType>) -> Self {
+        self.system_message_type = input;
+        self
+    }
+    /// <p>The type of AI-generated message in a <code>TextOutputEvent</code>. Amazon Q Business currently supports two types of messages:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RESPONSE</code> - The Amazon Q Business system response.</p></li>
+    /// <li>
+    /// <p><code>GROUNDED_RESPONSE</code> - The corrected, hallucination-reduced, response returned by Amazon Q Business. Available only if hallucination reduction is supported and configured for the application and detected in the end user chat query by Amazon Q Business.</p></li>
+    /// </ul>
+    pub fn get_system_message_type(&self) -> &::std::option::Option<crate::types::SystemMessageType> {
+        &self.system_message_type
+    }
     /// <p>The identifier of the conversation with which the text output event is associated.</p>
     pub fn conversation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversation_id = ::std::option::Option::Some(input.into());
@@ -107,6 +158,7 @@ impl TextOutputEventBuilder {
     /// Consumes the builder and constructs a [`TextOutputEvent`](crate::types::TextOutputEvent).
     pub fn build(self) -> crate::types::TextOutputEvent {
         crate::types::TextOutputEvent {
+            system_message_type: self.system_message_type,
             conversation_id: self.conversation_id,
             user_message_id: self.user_message_id,
             system_message_id: self.system_message_id,

@@ -77,6 +77,8 @@ pub use crate::types::_notification_configuration::NotificationConfiguration;
 
 pub use crate::types::_pending_modified_values::PendingModifiedValues;
 
+pub use crate::types::_scale_config::ScaleConfig;
+
 pub use crate::types::_global_replication_group::GlobalReplicationGroup;
 
 pub use crate::types::_global_node_group::GlobalNodeGroup;
@@ -342,6 +344,8 @@ mod _reserved_cache_nodes_offering;
 mod _resharding_configuration;
 
 mod _resharding_status;
+
+mod _scale_config;
 
 mod _security_group_membership;
 
