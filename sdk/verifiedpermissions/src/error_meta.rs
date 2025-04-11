@@ -9,6 +9,8 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The request failed because of an internal error. Try your request again later</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The policy store can't be deleted because deletion protection is enabled. To delete this policy store, disable deletion protection.</p>
+    InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>The request failed because it references a resource that doesn't exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request failed because it would cause a service quota to be exceeded.</p>
@@ -65,6 +67,7 @@ impl ::std::fmt::Display for Error {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
+            Error::InvalidStateException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -93,6 +96,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
+            Self::InvalidStateException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -393,6 +397,7 @@ where
 impl From<crate::operation::delete_policy_store::DeletePolicyStoreError> for Error {
     fn from(err: crate::operation::delete_policy_store::DeletePolicyStoreError) -> Self {
         match err {
+            crate::operation::delete_policy_store::DeletePolicyStoreError::InvalidStateException(inner) => Error::InvalidStateException(inner),
             crate::operation::delete_policy_store::DeletePolicyStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_policy_store::DeletePolicyStoreError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_policy_store::DeletePolicyStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -890,6 +895,7 @@ impl ::std::error::Error for Error {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
+            Error::InvalidStateException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -904,6 +910,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidStateException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

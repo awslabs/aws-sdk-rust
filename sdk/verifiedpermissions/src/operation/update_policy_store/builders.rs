@@ -138,6 +138,23 @@ impl UpdatePolicyStoreFluentBuilder {
     pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         self.inner.get_validation_settings()
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.inner = self.inner.deletion_protection(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.inner = self.inner.set_deletion_protection(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        self.inner.get_deletion_protection()
+    }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());

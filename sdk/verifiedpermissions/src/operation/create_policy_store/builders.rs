@@ -172,4 +172,21 @@ impl CreatePolicyStoreFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.inner = self.inner.deletion_protection(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.inner = self.inner.set_deletion_protection(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        self.inner.get_deletion_protection()
+    }
 }

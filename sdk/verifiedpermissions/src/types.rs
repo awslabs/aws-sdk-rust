@@ -49,6 +49,8 @@ pub use crate::types::_batch_is_authorized_output_item::BatchIsAuthorizedOutputI
 
 pub use crate::types::_batch_is_authorized_input_item::BatchIsAuthorizedInputItem;
 
+pub use crate::types::_deletion_protection::DeletionProtection;
+
 pub use crate::types::_validation_settings::ValidationSettings;
 
 pub use crate::types::_validation_mode::ValidationMode;
@@ -196,6 +198,8 @@ mod _configuration_item;
 mod _context_definition;
 
 mod _decision;
+
+mod _deletion_protection;
 
 mod _determining_policy_item;
 

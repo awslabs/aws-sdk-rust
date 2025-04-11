@@ -15,6 +15,9 @@ pub struct CreatePolicyStoreInput {
     pub validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl CreatePolicyStoreInput {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -35,6 +38,11 @@ impl CreatePolicyStoreInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreatePolicyStoreInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -42,6 +50,7 @@ impl ::std::fmt::Debug for CreatePolicyStoreInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("validation_settings", &self.validation_settings);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("deletion_protection", &self.deletion_protection);
         formatter.finish()
     }
 }
@@ -59,6 +68,7 @@ pub struct CreatePolicyStoreInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
 }
 impl CreatePolicyStoreInputBuilder {
     /// <p>Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
@@ -122,6 +132,23 @@ impl CreatePolicyStoreInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// Consumes the builder and constructs a [`CreatePolicyStoreInput`](crate::operation::create_policy_store::CreatePolicyStoreInput).
     pub fn build(
         self,
@@ -130,6 +157,7 @@ impl CreatePolicyStoreInputBuilder {
             client_token: self.client_token,
             validation_settings: self.validation_settings,
             description: self.description,
+            deletion_protection: self.deletion_protection,
         })
     }
 }
@@ -139,6 +167,7 @@ impl ::std::fmt::Debug for CreatePolicyStoreInputBuilder {
         formatter.field("client_token", &self.client_token);
         formatter.field("validation_settings", &self.validation_settings);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("deletion_protection", &self.deletion_protection);
         formatter.finish()
     }
 }

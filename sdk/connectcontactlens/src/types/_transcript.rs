@@ -169,7 +169,6 @@ impl TranscriptBuilder {
         &self.end_offset_millis
     }
     /// <p>The sentiment detected for this piece of transcript.</p>
-    /// This field is required.
     pub fn sentiment(mut self, input: crate::types::SentimentValue) -> Self {
         self.sentiment = ::std::option::Option::Some(input);
         self

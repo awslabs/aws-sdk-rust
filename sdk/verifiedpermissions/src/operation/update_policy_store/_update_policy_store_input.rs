@@ -7,6 +7,9 @@ pub struct UpdatePolicyStoreInput {
     pub policy_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that defines the validation settings that want to enable for the policy store.</p>
     pub validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
@@ -19,6 +22,11 @@ impl UpdatePolicyStoreInput {
     pub fn validation_settings(&self) -> ::std::option::Option<&crate::types::ValidationSettings> {
         self.validation_settings.as_ref()
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -29,6 +37,7 @@ impl ::std::fmt::Debug for UpdatePolicyStoreInput {
         let mut formatter = f.debug_struct("UpdatePolicyStoreInput");
         formatter.field("policy_store_id", &self.policy_store_id);
         formatter.field("validation_settings", &self.validation_settings);
+        formatter.field("deletion_protection", &self.deletion_protection);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -46,6 +55,7 @@ impl UpdatePolicyStoreInput {
 pub struct UpdatePolicyStoreInputBuilder {
     pub(crate) policy_store_id: ::std::option::Option<::std::string::String>,
     pub(crate) validation_settings: ::std::option::Option<crate::types::ValidationSettings>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePolicyStoreInputBuilder {
@@ -79,6 +89,23 @@ impl UpdatePolicyStoreInputBuilder {
     pub fn get_validation_settings(&self) -> &::std::option::Option<crate::types::ValidationSettings> {
         &self.validation_settings
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>When you call <code>UpdatePolicyStore</code>, this parameter is unchanged unless explicitly included in the call.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -100,6 +127,7 @@ impl UpdatePolicyStoreInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_policy_store::UpdatePolicyStoreInput {
             policy_store_id: self.policy_store_id,
             validation_settings: self.validation_settings,
+            deletion_protection: self.deletion_protection,
             description: self.description,
         })
     }
@@ -109,6 +137,7 @@ impl ::std::fmt::Debug for UpdatePolicyStoreInputBuilder {
         let mut formatter = f.debug_struct("UpdatePolicyStoreInputBuilder");
         formatter.field("policy_store_id", &self.policy_store_id);
         formatter.field("validation_settings", &self.validation_settings);
+        formatter.field("deletion_protection", &self.deletion_protection);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

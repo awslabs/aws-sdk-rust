@@ -64,9 +64,6 @@ pub(crate) fn transcript_correct_errors(mut builder: crate::types::builders::Tra
     if builder.end_offset_millis.is_none() {
         builder.end_offset_millis = Some(Default::default())
     }
-    if builder.sentiment.is_none() {
-        builder.sentiment = "no value was set".parse::<crate::types::SentimentValue>().ok()
-    }
     builder
 }
 

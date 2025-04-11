@@ -15,5 +15,8 @@ pub fn ser_create_policy_store_input_input(
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.deletion_protection {
+        object.key("deletionProtection").string(var_5.as_str());
+    }
     Ok(())
 }

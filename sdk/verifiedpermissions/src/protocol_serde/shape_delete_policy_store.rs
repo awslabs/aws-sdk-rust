@@ -18,6 +18,20 @@ pub fn de_delete_policy_store_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidStateException" => crate::operation::delete_policy_store::DeletePolicyStoreError::InvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidStateExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::delete_policy_store::DeletePolicyStoreError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::invalid_state_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::delete_policy_store::DeletePolicyStoreError::unhandled)?
+            };
+            tmp
+        }),
         "AccessDeniedException" => crate::operation::delete_policy_store::DeletePolicyStoreError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp = {

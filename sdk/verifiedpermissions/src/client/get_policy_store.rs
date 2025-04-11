@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`created_date(DateTime)`](crate::operation::get_policy_store::GetPolicyStoreOutput::created_date): <p>The date and time that the policy store was originally created.</p>
     ///   - [`last_updated_date(DateTime)`](crate::operation::get_policy_store::GetPolicyStoreOutput::last_updated_date): <p>The date and time that the policy store was last updated.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::description): <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
+    ///   - [`deletion_protection(Option<DeletionProtection>)`](crate::operation::get_policy_store::GetPolicyStoreOutput::deletion_protection): <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p> <p>The default state is <code>DISABLED</code>.</p>
     /// - On failure, responds with [`SdkError<GetPolicyStoreError>`](crate::operation::get_policy_store::GetPolicyStoreError)
     pub fn get_policy_store(&self) -> crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder {
         crate::operation::get_policy_store::builders::GetPolicyStoreFluentBuilder::new(self.handle.clone())

@@ -15,6 +15,9 @@ pub struct GetPolicyStoreOutput {
     pub last_updated_date: ::aws_smithy_types::DateTime,
     /// <p>Descriptive text that you can provide to help with identification of the current policy store.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     _request_id: Option<String>,
 }
 impl GetPolicyStoreOutput {
@@ -44,6 +47,11 @@ impl GetPolicyStoreOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
+        self.deletion_protection.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetPolicyStoreOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -54,6 +62,7 @@ impl ::std::fmt::Debug for GetPolicyStoreOutput {
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("deletion_protection", &self.deletion_protection);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -80,6 +89,7 @@ pub struct GetPolicyStoreOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
     _request_id: Option<String>,
 }
 impl GetPolicyStoreOutputBuilder {
@@ -172,6 +182,23 @@ impl GetPolicyStoreOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn deletion_protection(mut self, input: crate::types::DeletionProtection) -> Self {
+        self.deletion_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<crate::types::DeletionProtection>) -> Self {
+        self.deletion_protection = input;
+        self
+    }
+    /// <p>Specifies whether the policy store can be deleted. If enabled, the policy store can't be deleted.</p>
+    /// <p>The default state is <code>DISABLED</code>.</p>
+    pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
+        &self.deletion_protection
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -217,6 +244,7 @@ impl GetPolicyStoreOutputBuilder {
                 )
             })?,
             description: self.description,
+            deletion_protection: self.deletion_protection,
             _request_id: self._request_id,
         })
     }
@@ -230,6 +258,7 @@ impl ::std::fmt::Debug for GetPolicyStoreOutputBuilder {
         formatter.field("created_date", &self.created_date);
         formatter.field("last_updated_date", &self.last_updated_date);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("deletion_protection", &self.deletion_protection);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -56,6 +56,42 @@ pub(super) fn resolve_endpoint(
                     }
                 }
             }
+            if (partition_result.name()) == ("aws-cn") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (true) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://metering-marketplace.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push('.');
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.dual_stack_dns_suffix());
+                                out
+                            })
+                            .build());
+                    }
+                }
+            }
+            if (partition_result.name()) == ("aws-us-gov") {
+                if (*use_fips) == (false) {
+                    if (*use_dual_stack) == (true) {
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
+                            .url({
+                                let mut out = String::new();
+                                out.push_str("https://metering-marketplace.");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&region.as_ref() as &str);
+                                out.push('.');
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.dual_stack_dns_suffix());
+                                out
+                            })
+                            .build());
+                    }
+                }
+            }
             if (*use_fips) == (true) {
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {

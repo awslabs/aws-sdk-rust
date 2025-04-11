@@ -123,6 +123,8 @@ pub(crate) mod shape_get_schema_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_invalid_state_exception;
+
 pub(crate) mod shape_is_authorized_input;
 
 pub(crate) mod shape_is_authorized_with_token_input;

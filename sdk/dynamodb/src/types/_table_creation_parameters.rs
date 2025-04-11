@@ -12,7 +12,7 @@ pub struct TableCreationParameters {
     pub key_schema: ::std::vec::Vec<crate::types::KeySchemaElement>,
     /// <p>The billing mode for provisioning the table created as part of the import operation.</p>
     pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index. You must use <code>ProvisionedThroughput</code> or <code>OnDemandThroughput</code> based on your table’s capacity mode.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Sets the maximum number of read and write units for the specified on-demand table. If you use this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.</p>
@@ -42,7 +42,7 @@ impl TableCreationParameters {
     pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
         self.billing_mode.as_ref()
     }
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index. You must use <code>ProvisionedThroughput</code> or <code>OnDemandThroughput</code> based on your table’s capacity mode.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(&self) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
@@ -152,19 +152,19 @@ impl TableCreationParametersBuilder {
     pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
         &self.billing_mode
     }
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index. You must use <code>ProvisionedThroughput</code> or <code>OnDemandThroughput</code> based on your table’s capacity mode.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
         self.provisioned_throughput = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index. You must use <code>ProvisionedThroughput</code> or <code>OnDemandThroughput</code> based on your table’s capacity mode.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_provisioned_throughput(mut self, input: ::std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
         self.provisioned_throughput = input;
         self
     }
-    /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
+    /// <p>Represents the provisioned throughput settings for the specified global secondary index. You must use <code>ProvisionedThroughput</code> or <code>OnDemandThroughput</code> based on your table’s capacity mode.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn get_provisioned_throughput(&self) -> &::std::option::Option<crate::types::ProvisionedThroughput> {
         &self.provisioned_throughput

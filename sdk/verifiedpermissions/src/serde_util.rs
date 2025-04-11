@@ -179,6 +179,15 @@ pub(crate) fn create_policy_template_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invalid_state_exception_correct_errors(
+    mut builder: crate::types::error::builders::InvalidStateExceptionBuilder,
+) -> crate::types::error::builders::InvalidStateExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_identity_source_output_output_correct_errors(
     mut builder: crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder,
 ) -> crate::operation::get_identity_source::builders::GetIdentitySourceOutputBuilder {

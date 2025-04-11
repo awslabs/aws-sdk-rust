@@ -264,6 +264,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeletePolicyS
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeletePolicyStoreError {
+    /// <p>The policy store can't be deleted because deletion protection is enabled. To delete this policy store, disable deletion protection.</p>
+    InvalidStateException(crate::types::error::InvalidStateException),
     /// <p>You don't have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request failed because of an internal error. Try your request again later</p>
@@ -338,12 +340,17 @@ impl DeletePolicyStoreError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `DeletePolicyStoreError::InvalidStateException`.
+    pub fn is_invalid_state_exception(&self) -> bool {
+        matches!(self, Self::InvalidStateException(_))
     }
     /// Returns `true` if the error kind is `DeletePolicyStoreError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
@@ -365,6 +372,7 @@ impl DeletePolicyStoreError {
 impl ::std::error::Error for DeletePolicyStoreError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -376,6 +384,7 @@ impl ::std::error::Error for DeletePolicyStoreError {
 impl ::std::fmt::Display for DeletePolicyStoreError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidStateException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -405,6 +414,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for DeletePolicyStoreError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DeletePolicyStoreError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

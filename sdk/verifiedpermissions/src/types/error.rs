@@ -13,11 +13,15 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_invalid_state_exception::InvalidStateException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
 
 mod _internal_server_exception;
+
+mod _invalid_state_exception;
 
 mod _resource_not_found_exception;
 

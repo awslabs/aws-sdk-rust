@@ -187,11 +187,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://metering.marketplace.cn-northwest-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://metering-marketplace.cn-northwest-1.api.amazonwebservices.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://metering.marketplace.cn-northwest-1.api.amazonwebservices.com.cn")
+                .url("https://metering-marketplace.cn-northwest-1.api.amazonwebservices.com.cn")
                 .build()
         );
     }
@@ -267,11 +267,11 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://metering.marketplace.us-gov-west-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://metering-marketplace.us-gov-west-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://metering.marketplace.us-gov-west-1.api.aws")
+                .url("https://metering-marketplace.us-gov-west-1.api.aws")
                 .build()
         );
     }
