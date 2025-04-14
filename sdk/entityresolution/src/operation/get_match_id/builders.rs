@@ -22,7 +22,8 @@ impl crate::operation::get_match_id::builders::GetMatchIdInputBuilder {
 }
 /// Fluent builder constructing a request to `GetMatchId`.
 ///
-/// <p>Returns the corresponding Match ID of a customer record if the record has been processed.</p>
+/// <p>Returns the corresponding Match ID of a customer record if the record has been processed in a rule-based matching workflow or ML matching workflow.</p>
+/// <p>You can call this API as a dry run of an incremental load on the rule-based matching workflow.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMatchIdFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

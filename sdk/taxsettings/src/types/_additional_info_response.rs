@@ -36,6 +36,8 @@ pub struct AdditionalInfoResponse {
     pub saudi_arabia_additional_info: ::std::option::Option<crate::types::SaudiArabiaAdditionalInfo>,
     /// <p>Additional tax information in India.</p>
     pub india_additional_info: ::std::option::Option<crate::types::IndiaAdditionalInfo>,
+    /// <p>Additional tax information associated with your TRN in Indonesia.</p>
+    pub indonesia_additional_info: ::std::option::Option<crate::types::IndonesiaAdditionalInfo>,
     /// <p>Additional tax information to specify for a TRN in Vietnam.</p>
     pub vietnam_additional_info: ::std::option::Option<crate::types::VietnamAdditionalInfo>,
     /// <p>Additional tax information to specify for a TRN in Egypt.</p>
@@ -110,6 +112,10 @@ impl AdditionalInfoResponse {
     pub fn india_additional_info(&self) -> ::std::option::Option<&crate::types::IndiaAdditionalInfo> {
         self.india_additional_info.as_ref()
     }
+    /// <p>Additional tax information associated with your TRN in Indonesia.</p>
+    pub fn indonesia_additional_info(&self) -> ::std::option::Option<&crate::types::IndonesiaAdditionalInfo> {
+        self.indonesia_additional_info.as_ref()
+    }
     /// <p>Additional tax information to specify for a TRN in Vietnam.</p>
     pub fn vietnam_additional_info(&self) -> ::std::option::Option<&crate::types::VietnamAdditionalInfo> {
         self.vietnam_additional_info.as_ref()
@@ -154,6 +160,7 @@ pub struct AdditionalInfoResponseBuilder {
     pub(crate) poland_additional_info: ::std::option::Option<crate::types::PolandAdditionalInfo>,
     pub(crate) saudi_arabia_additional_info: ::std::option::Option<crate::types::SaudiArabiaAdditionalInfo>,
     pub(crate) india_additional_info: ::std::option::Option<crate::types::IndiaAdditionalInfo>,
+    pub(crate) indonesia_additional_info: ::std::option::Option<crate::types::IndonesiaAdditionalInfo>,
     pub(crate) vietnam_additional_info: ::std::option::Option<crate::types::VietnamAdditionalInfo>,
     pub(crate) egypt_additional_info: ::std::option::Option<crate::types::EgyptAdditionalInfo>,
     pub(crate) greece_additional_info: ::std::option::Option<crate::types::GreeceAdditionalInfo>,
@@ -384,6 +391,20 @@ impl AdditionalInfoResponseBuilder {
     pub fn get_india_additional_info(&self) -> &::std::option::Option<crate::types::IndiaAdditionalInfo> {
         &self.india_additional_info
     }
+    /// <p>Additional tax information associated with your TRN in Indonesia.</p>
+    pub fn indonesia_additional_info(mut self, input: crate::types::IndonesiaAdditionalInfo) -> Self {
+        self.indonesia_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information associated with your TRN in Indonesia.</p>
+    pub fn set_indonesia_additional_info(mut self, input: ::std::option::Option<crate::types::IndonesiaAdditionalInfo>) -> Self {
+        self.indonesia_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information associated with your TRN in Indonesia.</p>
+    pub fn get_indonesia_additional_info(&self) -> &::std::option::Option<crate::types::IndonesiaAdditionalInfo> {
+        &self.indonesia_additional_info
+    }
     /// <p>Additional tax information to specify for a TRN in Vietnam.</p>
     pub fn vietnam_additional_info(mut self, input: crate::types::VietnamAdditionalInfo) -> Self {
         self.vietnam_additional_info = ::std::option::Option::Some(input);
@@ -459,6 +480,7 @@ impl AdditionalInfoResponseBuilder {
             poland_additional_info: self.poland_additional_info,
             saudi_arabia_additional_info: self.saudi_arabia_additional_info,
             india_additional_info: self.india_additional_info,
+            indonesia_additional_info: self.indonesia_additional_info,
             vietnam_additional_info: self.vietnam_additional_info,
             egypt_additional_info: self.egypt_additional_info,
             greece_additional_info: self.greece_additional_info,

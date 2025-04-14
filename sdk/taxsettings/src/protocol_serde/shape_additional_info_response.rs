@@ -85,6 +85,11 @@ where
                             builder = builder
                                 .set_india_additional_info(crate::protocol_serde::shape_india_additional_info::de_india_additional_info(tokens)?);
                         }
+                        "indonesiaAdditionalInfo" => {
+                            builder = builder.set_indonesia_additional_info(
+                                crate::protocol_serde::shape_indonesia_additional_info::de_indonesia_additional_info(tokens)?,
+                            );
+                        }
                         "vietnamAdditionalInfo" => {
                             builder = builder.set_vietnam_additional_info(
                                 crate::protocol_serde::shape_vietnam_additional_info::de_vietnam_additional_info(tokens)?,

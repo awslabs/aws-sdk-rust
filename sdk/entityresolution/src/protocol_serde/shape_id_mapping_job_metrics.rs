@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "uniqueRecordsLoaded" => {
+                            builder = builder.set_unique_records_loaded(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

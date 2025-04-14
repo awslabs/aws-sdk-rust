@@ -87,29 +87,35 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_saudi_arabia_additional_info::ser_saudi_arabia_additional_info(&mut object_28, var_27)?;
         object_28.finish();
     }
-    if let Some(var_29) = &input.vietnam_additional_info {
+    if let Some(var_29) = &input.indonesia_additional_info {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("vietnamAdditionalInfo").start_object();
-        crate::protocol_serde::shape_vietnam_additional_info::ser_vietnam_additional_info(&mut object_30, var_29)?;
+        let mut object_30 = object.key("indonesiaAdditionalInfo").start_object();
+        crate::protocol_serde::shape_indonesia_additional_info::ser_indonesia_additional_info(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.egypt_additional_info {
+    if let Some(var_31) = &input.vietnam_additional_info {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("egyptAdditionalInfo").start_object();
-        crate::protocol_serde::shape_egypt_additional_info::ser_egypt_additional_info(&mut object_32, var_31)?;
+        let mut object_32 = object.key("vietnamAdditionalInfo").start_object();
+        crate::protocol_serde::shape_vietnam_additional_info::ser_vietnam_additional_info(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.greece_additional_info {
+    if let Some(var_33) = &input.egypt_additional_info {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("greeceAdditionalInfo").start_object();
-        crate::protocol_serde::shape_greece_additional_info::ser_greece_additional_info(&mut object_34, var_33)?;
+        let mut object_34 = object.key("egyptAdditionalInfo").start_object();
+        crate::protocol_serde::shape_egypt_additional_info::ser_egypt_additional_info(&mut object_34, var_33)?;
         object_34.finish();
     }
-    if let Some(var_35) = &input.uzbekistan_additional_info {
+    if let Some(var_35) = &input.greece_additional_info {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("uzbekistanAdditionalInfo").start_object();
-        crate::protocol_serde::shape_uzbekistan_additional_info::ser_uzbekistan_additional_info(&mut object_36, var_35)?;
+        let mut object_36 = object.key("greeceAdditionalInfo").start_object();
+        crate::protocol_serde::shape_greece_additional_info::ser_greece_additional_info(&mut object_36, var_35)?;
         object_36.finish();
+    }
+    if let Some(var_37) = &input.uzbekistan_additional_info {
+        #[allow(unused_mut)]
+        let mut object_38 = object.key("uzbekistanAdditionalInfo").start_object();
+        crate::protocol_serde::shape_uzbekistan_additional_info::ser_uzbekistan_additional_info(&mut object_38, var_37)?;
+        object_38.finish();
     }
     Ok(())
 }

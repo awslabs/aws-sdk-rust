@@ -177,6 +177,8 @@ pub(crate) mod shape_greece_additional_info;
 
 pub(crate) mod shape_india_additional_info;
 
+pub(crate) mod shape_indonesia_additional_info;
+
 pub(crate) mod shape_israel_additional_info;
 
 pub(crate) mod shape_italy_additional_info;

@@ -27,6 +27,10 @@ pub use crate::types::_egypt_additional_info::EgyptAdditionalInfo;
 
 pub use crate::types::_vietnam_additional_info::VietnamAdditionalInfo;
 
+pub use crate::types::_indonesia_additional_info::IndonesiaAdditionalInfo;
+
+pub use crate::types::_indonesia_tax_registration_number_type::IndonesiaTaxRegistrationNumberType;
+
 pub use crate::types::_saudi_arabia_additional_info::SaudiArabiaAdditionalInfo;
 
 pub use crate::types::_saudi_arabia_tax_registration_number_type::SaudiArabiaTaxRegistrationNumberType;
@@ -166,6 +170,10 @@ mod _greece_additional_info;
 mod _heritage_status;
 
 mod _india_additional_info;
+
+mod _indonesia_additional_info;
+
+mod _indonesia_tax_registration_number_type;
 
 mod _industries;
 
